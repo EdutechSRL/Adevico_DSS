@@ -1,0 +1,21 @@
+1) server web:
+	- creare coda lm_filetransfer
+	- installare come servizio l'applicazione FileTransfer.WinService [disco]\[directory servizio[\FileTransfer.WinService.exe --install
+2) server media:
+	-	creare coda lm_fileunzip
+	- installare il servizio di ricezione dei file FileTransfer.WCFservice
+	- installare il servizio di analisi dei file FileTransfer.FileUnzip
+3) Configurazioni:
+	- identiche per tutti i servizi
+	- sono scritte neil file Configuration.xml presente nella cartella dei tre servizi
+	- Configurazione:
+		Platform >> raggruppa le info per ciascuna istanza
+			ActiveTransferProtocol -- Lasciare invariato
+			ConnectionString -- DB istanza
+			ScormConnectionString -- DB player SCORM
+			MultimediaAnalysis -- configurazione file multimediali, lasciare invariato;
+			MultimediaFilePath --> dove vanno salvati i file multimediali scompattati
+			RemoteFilePath -->Dove saranno caricati i file tramite WCF
+			ScormFilePath --> dove vanno salvati i file SCORM scompattati
+			WCF
+				PhysicalPath --> Dove saranno caricati i file tramite WCF

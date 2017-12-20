@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="urn:ComolTranslation">
+  <item name="LoadFileNotExist" html="false" placeholder="false">ATTENTION: requested file was not found.</item>
+  <item name="LoadFileNoPermission" html="false" placeholder="false">No permissions to manage files, please contact an administrator.</item>
+  <item name="InvalidType.FileStandard" html="false" placeholder="false">The requested file can not be played but only downloaded.</item>
+  <item name="InvalidType.ScormPackage" html="false" placeholder="false">The requested file can not be played but only downloaded.</item>
+  <item name="InvalidType.Folder" html="false" placeholder="false">The requested file can not be played but only downloaded.</item>
+  <item name="InvalidType.VideoStreaming" html="false" placeholder="false">The requested file can not be played but only downloaded.</item>
+  <item name="InvalidType.Multimedia" html="false" placeholder="false">The requested file can not be played but only downloaded.</item>
+  <item name="NoReadyToPlay.FileStandard" html="false" placeholder="false">The requested file is not available for playing.</item>
+  <item name="NoReadyToPlay.ScormPackage" html="false" placeholder="false">The requested file is not available for playing.</item>
+  <item name="NoReadyToPlay.Folder" html="false" placeholder="false">The requested file is not available for playing.</item>
+  <item name="NoReadyToPlay.VideoStreaming" html="false" placeholder="false">The requested file is not available for playing.</item>
+  <item name="NoReadyToPlay.Multimedia" html="false" placeholder="false">The requested file can not be displayed yet.</item>
+  <item name="TransferStatus.Multimedia_AnalyzeError" html="false" placeholder="true" mustcontains="{0}">(ERRORE: multimedia package analysis - error code:{0}).</item>
+  <item name="TransferStatus.Scorm_AnalyzeError" html="false" placeholder="true" mustcontains="{0}">(ERRORE: SCORM package analysis - error code:{0})."</item>
+  <item name="TransferStatus.FileTypeError" html="false" placeholder="true" mustcontains="{0}">(ERROR: file not correctly formatted - error code:{0})."</item>
+  <item name="TransferStatus.UnableToUnzip" html="false" placeholder="true" mustcontains="{0}">(ERROR: it is not possible to unzip the file - error code:{0})."</item>
+  <item name="TransferStatus.ReadyForTransfer" html="false" placeholder="true" mustcontains="{0}">(file ready for the transfer on the media server - code:{0})."</item>
+  <item name="TransferStatus.Copying" html="false" placeholder="true" mustcontains="{0}">(file is transferring on the media server - code:{0})."</item>
+  <item name="TransferStatus.ReadyToUnzip" html="false" placeholder="true" mustcontains="{0}">(file ready to be unzipped - code:{0})."</item>
+  <item name="TransferStatus.Unzipping" html="false" placeholder="true" mustcontains="{0}">(file is being unzipped - code:{0})."</item>
+  <item name="TransferStatus.Unzipped" html="false" placeholder="true" mustcontains="{0}">(file was transferred and unzipped - code:{0})."</item>
+  <item name="TransferStatus.ReadyToDelete" html="false" placeholder="true" mustcontains="{0}">(media server file ready to be deleted - code:{0})."</item>
+  <item name="TransferStatus.Deleted" html="false" placeholder="true" mustcontains="{0}">(file deleted from the media server - code:{0})."</item>
+  <item name="TransferStatus.Deleting" html="false" placeholder="true" mustcontains="{0}">(file is being deleted from the media server - code:{0})."</item>
+  <item name="TransferStatus.ReadyToAnalyze" html="false" placeholder="true" mustcontains="{0}">(file ready for analysis - code:{0})."</item>
+  <item name="TransferStatus.Analyzed" html="false" placeholder="true" mustcontains="{0}">(analysis of the correctness of the file completed - code:{0})."</item>
+  <item name="TransferStatus.UnzipFileNotFound" html="false" placeholder="true" mustcontains="{0}">(ERROR: the unzipped file on the media server was NOT found - error code:{0})."</item>
+  <item name="TransferStatus.UnableToDeleteAfterUnzip" html="false" placeholder="true" mustcontains="{0}">(ERROR: the file transferred on the media server was NOT deleted - error code:{0})."</item>
+  <item name="TransferStatus.UnzipFileNotFound" html="false" placeholder="true" mustcontains="{0}">(ERRORE: file scompattato sul media server NON è stato individuato - codice errore:{0})."</item>
+  <item name="TransferStatus.UploadFileNotFound" html="false" placeholder="true" mustcontains="{0}">(ERROR: the file you want to transfer to the media server was NOT detected - error code:{0})."</item>
+  <item name="TransferStatus.Error" html="false" placeholder="true" mustcontains="{0}">(ERROR: generic error - error code:{0})."</item>
+  <item name="HYPback.text" html="false" placeholder="false">Back to previous page</item>
+  <item name="HYPback.ToolTip" html="false" placeholder="false">Back to previous page</item>
+  <item name="HYPback.status" html="false" placeholder="false">Back to previous page</item>
+  <item name="BTNsetDefault.text" html="false" placeholder="false">Set default</item>
+  <item name="BTNsetDefault.ToolTip" html="false" placeholder="false">Set the file to be loaded by default in the player</item>
+  <item name="BTNsetDefault.status" html="false" placeholder="false">Set the file to be loaded by default in the player</item>
+  <item name="LTmultimediaInfo.text" html="false" placeholder="false">No file found in the selected package.</item>
+  <item name="serviceSettings_Title" html="false" placeholder="false">Multimedia package - Choose the main player file.</item>
+  <item name="ServiceSettings_NoPermission" html="false" placeholder="false">You don't have permissions to access this page</item>
+  <item name="LoadFileNoPermission" html="false" placeholder="false">Nessun permesso per gestire il file, spiacente contattare l'amministratore di comunità o di sistema.</item>
+  <item name="LoadFileNotExist" html="false" placeholder="false">ATTENZIONE: il file richiesto non è stato individuato.</item>
+  <item name="LoadFileWithoutIndex" html="true" placeholder="true" mustcontains="{0}|{1}|{2}">The file &lt;img src="{1}"/&gt; {0} ({2}) has not a default document to set.</item>
+  <item name="LoadInvalidFileType" html="true" placeholder="true" mustcontains="{0}|{1}|{2}">The file &lt;img src="{1}"/&gt; {0} ({2}) has not a default document to set.</item>
+  <item name="LTinfo.text" html="false" placeholder="false">ATTENTION: una voce dell'albero a sinistra per selezionare il file da caricare di default all'apertura del pacchetto multimediale.</item>
+</Resource>

@@ -1,0 +1,97 @@
+.reTopcell {
+  background-color: #bbd7fa; }
+
+.RadToolBar_Office2007 .rtbText {
+  background-image: url('FileExplorer/FileExplorerToolbarSprites.png');
+  _background-image: url('FileExplorer/FileExplorerToolbarSpritesIE6.gif') !important;
+  background-repeat: no-repeat; }
+
+/* RAD EDITOR DIALOGS REDESIGN */
+.redWrapper .redSection {
+  border-bottom-color: #abc1de; }
+.redWrapper .reTool {
+  border-color: #a7bedb;
+  color: #00156e;
+  background-color: #e8f1fc;
+  background-image: linear-gradient(#e8f1fc, #e9f1fc 50%, #d2e1f4 50%, #e8f1fc);
+  border-color: #a7bedb; }
+.redWrapper .reTool:hover {
+  border-color: #c6ba9d;
+  color: #000000;
+  background-color: #ffe18a;
+  background-image: linear-gradient(#fffce8, #ffedb3 50%, #ffd563 50%, #ffe18a);
+  box-shadow: inset 0 0 1px #ffffff; }
+.redWrapper .reTool:active, .redWrapper .reTool:focus {
+  border-color: #c3bdae;
+  color: #000000;
+  background-color: #fde292;
+  background-image: linear-gradient(#ebc59b, #faad60 50%, #f99631 50%, #fde292);
+  box-shadow: inset 0 0 1px #ffffff; }
+.redWrapper a.reDropdown:hover {
+  background-image: url('Editor/ToolBarSprites.gif');
+  background-color: #ffe27b; }
+.redWrapper .redDialogSeparator {
+  border-left: 1px solid #abc1de;
+  border-right: 1px solid #abc1de;
+  background-image: -webkit-linear-gradient(top, #dee8f5 0%, #c3d8f1 100%);
+  background-image: -moz-linear-gradient(top, #dee8f5 0%, #c3d8f1 100%);
+  background-image: -ms-linear-gradient(top, #dee8f5 0%, #c3d8f1 100%);
+  background-image: -o-linear-gradient(top, #dee8f5 0%, #c3d8f1 100%);
+  background-image: linear-gradient(top, #dee8f5 0%, #c3d8f1 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dee8f5', endColorstr='#c3d8f1',GradientType=0 );
+  filter: none;
+  background-color: #c3d8f1;
+  background-position: 0 0; }
+.redWrapper .redMsgContainerFBDialogs #propertyValueDescription, .redWrapper .redMsgContainerFBDialogs #propertyValuePane {
+  background-color: #d6e6f4;
+  color: #000000; }
+.redWrapper .redImageMapProperties {
+  border-left-color: #abc1de; }
+
+/* Right to Left Support */
+.RadForm_Office2007 .redRtl .redWrapper .reTool .split_arrow:hover {
+  border-right-color: #c6ba9d; }
+.RadForm_Office2007 .redRtl .reDropdown:hover {
+  background-image: url('Editor/ToolbarSprites.gif');
+  background-color: #ffe27b; }
+.RadForm_Office2007 .redRtl .redImageMapPreview {
+  border-left-color: #abc1de; }
+
+/* Mobile Editor */
+.reMobileDialog.RadForm_Office2007 {
+  font-size: 14px;
+  font-family: "Segoe UI", Arial, Helvetica, sans-serif; }
+  .reMobileDialog.RadForm_Office2007.rfdZone {
+    background-color: #d8e5f6; }
+  .reMobileDialog.RadForm_Office2007 .reMobileDialogTitleBar {
+    background-image: linear-gradient(#dee8f5, #c3d8f1);
+    border-color: #688caf; }
+  .reMobileDialog.RadForm_Office2007 .reToolList > li {
+    background-color: #ffffff;
+    color: #333333;
+    border-color: #d9e2eb; }
+  .reMobileDialog.RadForm_Office2007 .reIcon {
+    color: #00156e; }
+  .reMobileDialog.RadForm_Office2007 .reIconSelected {
+    color: #000000; }
+  .reMobileDialog.RadForm_Office2007 .reDialog {
+    background-color: #c3d8f1;
+    color: #333333; }
+  .reMobileDialog.RadForm_Office2007 .reToolList.reImageManagerHeader > li, .reMobileDialog.RadForm_Office2007 .reToolList > .reColorBoxWrapper, .reMobileDialog.RadForm_Office2007 .reColorPicker {
+    background-color: #d6e6f4; }
+  .reMobileDialog.RadForm_Office2007 .reCurrentColor {
+    border-color: #a7bedb; }
+  .reMobileDialog.RadForm_Office2007 .reSpinBoxButtons span, .reMobileDialog.RadForm_Office2007 .reDialog .reButton, .reMobileDialog.RadForm_Office2007 .reColorPicker .reButton {
+    border-color: #a7bedb;
+    color: #00156e;
+    background-color: #e8f1fc;
+    background-image: linear-gradient(#e8f1fc, #e9f1fc 50%, #d2e1f4 50%, #e8f1fc); }
+  .reMobileDialog.RadForm_Office2007 .reSpinBoxButtons span.reSpinBoxButtonHover, .reMobileDialog.RadForm_Office2007 .reDialog .reButton:hover, .reMobileDialog.RadForm_Office2007 .reColorPicker .reButton:hover {
+    border-color: #c3bdae;
+    color: #000000;
+    background-color: #fde292;
+    background-image: linear-gradient(#ebc59b, #faad60 50%, #f99631 50%, #fde292); }
+  .reMobileDialog.RadForm_Office2007 span.ruFakeInput, .reMobileDialog.RadForm_Office2007 .reSpinBox input[type="text"], .reMobileDialog.RadForm_Office2007 .reSelect {
+    background-color: #ffffff;
+    border-color: #abc1de;
+    color: #333333; }

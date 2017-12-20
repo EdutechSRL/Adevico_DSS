@@ -1,0 +1,55 @@
+﻿<root>
+  <modules>
+    <module name="RadEditorStatistics" dockingZone="Modules" enabled="true" visible="true" dockable="true" />
+  </modules>
+  <tools name="StandardTools">
+    <tool name="Cut" />
+    <tool name="Copy" />
+    <EditorToolStrip Name="PasteStrip" PopupHeight="250px">
+      <EditorTool Name="Paste" shortcut="CTRL+!"/>
+      <EditorTool Name="PasteFromWord" />
+      <EditorTool Name="Paste" />
+      <EditorTool Name="PasteFromWordNoFontsNoSizes" />
+      <EditorTool Name="PastePlainText" />
+      <EditorTool Name="PasteAsHtml" />
+    </EditorToolStrip>
+    <tool separator="true"/>
+    <tool name="Undo" />
+    <tool name="Redo" />
+  </tools>
+  <tools name="FormattingFonts">
+    <tool name="ForeColor"/>
+    <tool separator="true"/>
+    <tool name="FontName"/>
+    <tool name="FontSize"/>
+    <tool name="RealFontSize"/>
+  </tools>
+  <tools name="FormattingDef">
+    <tool name="Bold"/>
+    <tool name="Italic"/>
+    <tool name="Underline"/>
+  </tools>
+  <tools name="FormattingParagraph">
+    <tool name="JustifyLeft"/>
+    <tool name="JustifyCenter"/>
+    <tool name="JustifyRight"/>
+    <tool name="JustifyFull"/>
+    <tool name="JustifyNone"/>
+    <tool separator="true"/>
+    <tool name="InsertOrderedList"/>
+    <tool name="InsertUnorderedList"/>
+    <tool separator="true"/>
+    <tool name="Outdent"/>
+    <tool name="Indent"/>
+    <tool separator="true"/>
+    <tool name="FormatStripper"/>
+  </tools>
+  <tools name="InsertStandard">
+    <tool name="InsertEmoticons"></tool>
+    <tool name="LinkManager"/>
+    <tool name="Unlink"/>
+  </tools>
+  <tools name="InsertAdvanced">
+    <tool name="ImageManager" shortcut="CTRL+M"/>
+  </tools>
+</root>

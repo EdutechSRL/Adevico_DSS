@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="urn:ComolTranslation">
+  <item name="serviceManagementTitle" html="false" placeholder="false">Authentication providers management</item>
+  <item name="serviceManagementNopermission" html="false" placeholder="false">Sorry, you do not have permission to.</item>
+  <item name="LogoutMessage" html="false" placeholder="false">Sorry, youe work session has expired, retry accessing the system.</item>
+  <item name="HYPaddProvider.text" html="false" placeholder="false">New</item>
+  <item name="HYPaddProvider.ToolTip" html="false" placeholder="false">New authentication provider</item>
+  <item name="HYPaddProvider.status" html="false" placeholder="false">New authentication provider</item>
+  <item name="LBpagesize.text" html="false" placeholder="false">Elements per page:</item>
+  <item name="LTprogress.text" html="false" placeholder="false">Data loading in progress..........</item>
+  <item name="LBinfo_t.text" disambiguation="I=informazione (un solo carattere)" html="false" placeholder="false">I</item>
+  <item name="LBedit.text" disambiguation="M=modifica (un solo carattere)" html="false" placeholder="false">M</item>
+  <item name="LBdelete_t.text" disambiguation="C=cancella (un solo carattere)" html="false" placeholder="false">D</item>
+  <item name="LBactions_t.text" html="false" placeholder="false">Actions</item>
+  <item name="LBproviderName_t.text" html="false" placeholder="false">Name</item>
+  <item name="LBproviderType_t.text" html="false" placeholder="false">Type</item>
+  <item name="LBproviderUsedBy_t.text" html="false" placeholder="false">Used</item>
+  <item name="LBproviderIsEnabled_t.text" html="false" placeholder="false">Active</item>
+  <item name="isEnabled.True" html="false" placeholder="false">Yes.</item>
+  <item name="isEnabled.False" html="false" placeholder="false">No.</item>
+  <item name="LNBproviderInfo.text" html="false" placeholder="false" />
+  <item name="LNBproviderInfo.status" html="false" placeholder="false">Advanced details</item>
+  <item name="LNBproviderInfo.ToolTip" html="false" placeholder="false">Advanced details</item>
+  <item name="HYPedit.text" disambiguation="M=modifica (un solo carattere)" html="false" placeholder="false">M</item>
+  <item name="HYPedit.status" disambiguation="verbo" html="false" placeholder="false">Modify.</item>
+  <item name="HYPedit.ToolTip" disambiguation="verbo" html="false" placeholder="false">Modify.</item>
+  <item name="LNBdelete.text" disambiguation="C=cancella (un solo carattere)" html="false" placeholder="false">D</item>
+  <item name="LNBdelete.status" html="false" placeholder="false">Permanently delete.</item>
+  <item name="LNBdelete.ToolTip" html="false" placeholder="false">Permanently delete.</item>
+  <item name="LNBdelete.ConfirmText" html="false" placeholder="false">Are you sure you want to permanently delete the authentication system?</item>
+  <item name="LNBvirtualDelete.text" html="false" placeholder="false" />
+  <item name="LNBvirtualDelete.status" html="false" placeholder="false">Trash</item>
+  <item name="LNBvirtualDelete.ToolTip" html="false" placeholder="false">Trash</item>
+  <item name="LNBvirtualUnDelete.text" html="false" placeholder="false" />
+  <item name="LNBvirtualUnDelete.status" html="false" placeholder="false">Recover from trashbin</item>
+  <item name="LNBvirtualUnDelete.ToolTip" html="false" placeholder="false">Recover from trashbin</item>
+  <item name="AuthenticationProviderType.None" html="false" placeholder="false" hidden="true"> --  </item>
+  <item name="AuthenticationProviderType.Internal" html="false" placeholder="false">Internal</item>
+  <item name="AuthenticationProviderType.Ldap" html="false" placeholder="false">Ldap</item>
+  <item name="AuthenticationProviderType.Url" html="false" placeholder="false">Url</item>
+  <item name="AuthenticationProviderType.ActiveDirectory" html="false" placeholder="false">Active Directory</item>
+  <item name="AuthenticationProviderType.WebService" html="false" placeholder="false">Web Service</item>
+  <item name="AuthenticationProviderType.ExternalAPI" html="false" placeholder="false">External API</item>
+  <item name="AuthenticationProviderType.Shibboleth" html="false" placeholder="false">Shibboleth</item>
+  <item name="AuthenticationProviderType.UrlMacProvider" html="false" placeholder="false">Url with mac validation</item>
+  <item name="serviceEditProviderTitle" html="false" placeholder="false">Modify authentication provider</item>
+  <item name="serviceEditProviderNopermission" html="false" placeholder="false">Sorry, you do not have permission to.</item>
+  <item name="LNBsaveTop.text" html="false" placeholder="false">Save</item>
+  <item name="LNBsaveTop.status" html="false" placeholder="false">Save</item>
+  <item name="LNBsaveTop.ToolTip" html="false" placeholder="false">Save</item>
+  <item name="HYPbackToManagementTop.text" html="false" placeholder="false">Back to management</item>
+  <item name="HYPbackToManagementTop.status" html="false" placeholder="false">Back to management</item>
+  <item name="HYPbackToManagementTop.ToolTip" html="false" placeholder="false">Back to management</item>
+  <item name="DisplayErrorSaving" html="false" placeholder="false">Error while saving data.</item>
+  <item name="DisplayNoPermission" html="false" placeholder="false">Sorry, you do not have permission to edit this authentication type</item>
+  <item name="DisplayProviderUnknown" html="false" placeholder="false">Sorry, authentication system not found.</item>
+  <item name="DisplayDeletedProvider" html="false" placeholder="true" mustcontains="{0}|{1}">The authentication provider {0} of type {1} was deleted, it is not possible to edit it.</item>
+  <item name="serviceEditNameProviderTitle" html="false" placeholder="true" mustcontains="{0}|{1}">Modify authentication provider {0} of type {1}.</item>
+  <item name="serviceAddProviderTitle" html="false" placeholder="false">Create a new authentication provider</item>
+  <item name="serviceAddProviderNopermission" html="false" placeholder="false">You do not have permission to create a new authentication provider.</item>
+  <item name="LBselectProviderType_t.text" html="false" placeholder="false">Provider type:</item>
+  <item name="BTNbackBottom.text" html="false" placeholder="false">Back</item>
+  <item name="BTNbackBottom.status" html="false" placeholder="false">Back to previous step</item>
+  <item name="BTNbackBottom.ToolTip" html="false" placeholder="false">Back to previous step</item>
+  <item name="BTNbackTop.text" html="false" placeholder="false">Back</item>
+  <item name="BTNbackTop.status" html="false" placeholder="false">Back to previous step</item>
+  <item name="BTNbackTop.ToolTip" html="false" placeholder="false">Back to previous step</item>
+  <item name="BTNnextBottom.text" html="false" placeholder="false">Next</item>
+  <item name="BTNnextBottom.status" html="false" placeholder="false">Go to next step</item>
+  <item name="BTNnextBottom.ToolTip" html="false" placeholder="false">Go to next step</item>
+  <item name="BTNnextTop.text" html="false" placeholder="false">Next</item>
+  <item name="BTNnextTop.status" html="false" placeholder="false">Go to next step</item>
+  <item name="BTNnextTop.ToolTip" html="false" placeholder="false">Go to next step</item>
+  <item name="BTNcompleteTop.text" html="false" placeholder="false">Create</item>
+  <item name="BTNcompleteTop.status" html="false" placeholder="false">Create authentication provider</item>
+  <item name="BTNcompleteTop.ToolTip" html="false" placeholder="false">Create authentication provider</item>
+  <item name="BTNcompleteBottom.text" html="false" placeholder="false">Create</item>
+  <item name="BTNcompleteBottom.status" html="false" placeholder="false">Create authentication provider</item>
+  <item name="BTNcompleteBottom.ToolTip" html="false" placeholder="false">Create authentication provider</item>
+  <item name="ProviderWizardStep.SelectType.Title" html="false" placeholder="true" mustcontains="{0}">Step {0}: choose authentication type</item>
+  <item name="ProviderWizardStep.SelectType.Description" html="false" placeholder="false">The first step to cre&lt;ate a new authenticatin system is to choose a category/type. Attention: after this choise you will not be allowed to change it anymore.</item>
+  <item name="ProviderWizardStep.ProviderData.Title" html="false" placeholder="true" mustcontains="{0}">Step {0}: enter authentication provider data</item>
+  <item name="ProviderWizardStep.ProviderData.Description" html="false" placeholder="false">Please, insert the necessary data to make the authentcation system work.</item>
+  <item name="ProviderWizardStep.DefaultTranslation.Title" html="false" placeholder="true" mustcontains="{0}">Step {0}: internationalization</item>
+  <item name="ProviderWizardStep.DefaultTranslation.Description" html="false" placeholder="false">Verify the data below before creating the authentication system.</item>
+  <item name="ProviderWizardStep.Summary.Title" disambiguation="verbo" html="false" placeholder="false">CONFIRM</item>
+  <item name="ProviderWizardStep.DefaultTranslation.Description" html="false" placeholder="false">Verify the data below before creating the authentication system.</item>
+  <item name="Summary" html="false" placeholder="true" mustcontains="{0}|{1}|{2}">ATTENTION: by clicking "COMPLETE" the authentication system {0} will be creted: unique code {1} ,type {2}.</item>
+  <item name="SummarySettings" html="false" placeholder="true" mustcontains="{0}">The authentication system {0} needs further parameters to work correctly. After its creation you will therefore redirect to the advanced settings page.</item>
+  <item name="ErrorAddingProvider" html="false" placeholder="false">Error while entering data, retry later or contact a platform administrator.</item>
+  <item name="HYPadvancedSettings.text" html="false" placeholder="false">Advanced settings</item>
+  <item name="HYPadvancedSettings.ToolTip" html="false" placeholder="false">Advanced settings</item>
+  <item name="HYPadvancedSettings.status" html="false" placeholder="false">Advanced settings</item>
+  <item name="ProviderInfo" html="false" placeholder="false">Authentication provider details</item>
+  <item name="LBproviderDisplayInfoDescription.text" html="false" placeholder="false">Dettagli sistema di autenticazione</item>
+  <item name="BTNcloseProviderDisplayInfo.text" html="false" placeholder="false">Chiudi</item>
+  <item name="BTNcloseProviderDisplayInfo.ToolTip" html="false" placeholder="false">Chiudi la finestra di dettaglio.</item>
+</Resource>

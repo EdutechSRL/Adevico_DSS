@@ -1,0 +1,52 @@
+/*========================================= Toolbar related CSS ========================*/
+.RadFileExplorer_Windows7 {
+  /* Overwrites padding for better presentation and space saving */
+  /* Thumbnail view */
+  /* Thumbnail filter */ }
+  .RadFileExplorer_Windows7 .RadToolBar .rtbText {
+    background-image: url('FileExplorer/FileExplorerToolbarSprites.png');
+    _background-image: url('FileExplorer/FileExplorerToolbarSpritesIE6.gif') !important;
+    background-repeat: no-repeat; }
+  .RadFileExplorer_Windows7,
+  .RadFileExplorer_Windows7 .rfeAddressBox,
+  .RadFileExplorer_Windows7 .rfeFilterTxt {
+    border-color: #b8cbde; }
+  .RadFileExplorer_Windows7 div.selectedFileName {
+    border-top: 1px solid #A8D8EB;
+    border-bottom: 1px solid #A8D8EB; }
+  .RadFileExplorer_Windows7 .RadGrid_Windows7 .rgRow td {
+    border-bottom: 1px solid transparent !important; }
+  .RadFileExplorer_Windows7 .RadGrid_Windows7 .rgHoveredRow td {
+    border-bottom: 1px solid #A8D8EB !important; }
+  .RadFileExplorer_Windows7 .RadGrid_Windows7 tr.rgSelectedRow {
+    background-position: 0 -3900px; }
+  .RadFileExplorer_Windows7 .RadGrid_Windows7 .rgRow td,
+  .RadFileExplorer_Windows7 .RadGrid_Windows7 .rgAltRow td,
+  .RadFileExplorer_Windows7 .RadGrid_Windows7 .rgEditRow td,
+  .RadFileExplorer_Windows7 .RadGrid_Windows7 .rgFooter td {
+    padding-left: 8px;
+    padding-right: 8px; }
+  .RadFileExplorer_Windows7 .rfeThumbList a:hover,
+  .RadFileExplorer_Windows7 .rfeThumbList .rfeHoveredLink,
+  .RadFileExplorer_Windows7 .rfeThumbList .rfeSelectedLink,
+  .RadFileExplorer_Windows7 .rfeThumbList .rfeSelectedLink:hover {
+    background-image: url('../Common/Gradients/windows7_smoothSprite_20.png');
+    background-color: #edf5fd;
+    border-color: #f6f9fe; }
+  .RadFileExplorer_Windows7 .rfeThumbList .rfeSelectedLink,
+  .RadFileExplorer_Windows7 .rfeThumbList .rfeSelectedLink:hover {
+    background-color: #c4ddfc;
+    border-color: #dfedfd; }
+  .RadFileExplorer_Windows7 .rfeFilterContainer {
+    background-image: url('../Common/Gradients/windows7_smoothSprite_20.png');
+    background-color: #f1f5fb; }
+  .RadFileExplorer_Windows7 .rfeDropZone {
+    background-color: rgba(249, 252, 253, 0.8); }
+  .RadFileExplorer_Windows7 .rfeDropUploadInfoPanel {
+    background-color: #dde9f7;
+    color: #000000; }
+
+.RadForm_Windows7 .DialogSeparator {
+  border-left: 1px solid #b8cbde;
+  border-right: 1px solid #b8cbde;
+  background-color: #f1f5fb; }

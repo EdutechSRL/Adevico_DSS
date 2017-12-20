@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/lm.Comol.Core.Mail.Messages" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/lm.Comol.Core.Mail.Messages" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/lm.Comol.Core.MailCommons.Domain" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/lm.Comol.Core.Mail" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/lm.Comol.Core.DomainModel.Languages" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/lm.Comol.Core.DomainModel" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/lm.Comol.Core.MailCommons.Domain.Messages" />
+  <xs:complexType name="ArrayOfdtoMailTranslatedMessage">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="dtoMailTranslatedMessage" nillable="true" type="tns:dtoMailTranslatedMessage" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfdtoMailTranslatedMessage" nillable="true" type="tns:ArrayOfdtoMailTranslatedMessage" />
+  <xs:complexType name="dtoMailTranslatedMessage">
+    <xs:sequence>
+      <xs:element name="_x003C_Body_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_CodeLanguage_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_IdLanguage_x003E_k__BackingField" type="xs:int" />
+      <xs:element name="_x003C_Recipients_x003E_k__BackingField" nillable="true" type="tns:ArrayOfdtoBaseMessageRecipient" />
+      <xs:element name="_x003C_RemovedRecipients_x003E_k__BackingField" nillable="true" type="tns:ArrayOfdtoBaseMessageRecipient" />
+      <xs:element name="_x003C_Sent_x003E_k__BackingField" type="xs:boolean" />
+      <xs:element name="_x003C_Subject_x003E_k__BackingField" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="dtoMailTranslatedMessage" nillable="true" type="tns:dtoMailTranslatedMessage" />
+  <xs:complexType name="ArrayOfdtoBaseMessageRecipient">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="dtoBaseMessageRecipient" nillable="true" type="tns:dtoBaseMessageRecipient" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfdtoBaseMessageRecipient" nillable="true" type="tns:ArrayOfdtoBaseMessageRecipient" />
+  <xs:complexType name="dtoBaseMessageRecipient">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/lm.Comol.Core.Mail" base="q1:dtoRecipient">
+        <xs:sequence>
+          <xs:element name="_x003C_CodeLanguage_x003E_k__BackingField" nillable="true" type="xs:string" />
+          <xs:element name="_x003C_IdLanguage_x003E_k__BackingField" type="xs:int" />
+          <xs:element name="_x003C_IdModuleObject_x003E_k__BackingField" type="xs:long" />
+          <xs:element name="_x003C_IdModuleType_x003E_k__BackingField" type="xs:int" />
+          <xs:element name="_x003C_IdPerson_x003E_k__BackingField" type="xs:int" />
+          <xs:element name="_x003C_IdProfileType_x003E_k__BackingField" type="xs:int" />
+          <xs:element name="_x003C_IdUserModule_x003E_k__BackingField" type="xs:long" />
+          <xs:element name="_x003C_ModuleCode_x003E_k__BackingField" nillable="true" type="xs:string" />
+          <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/lm.Comol.Core.MailCommons.Domain" name="_x003C_Type_x003E_k__BackingField" type="q2:RecipientType" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="dtoBaseMessageRecipient" nillable="true" type="tns:dtoBaseMessageRecipient" />
+  <xs:complexType name="dtoBaseMailTemplate">
+    <xs:sequence>
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/lm.Comol.Core.DomainModel.Languages" name="_x003C_DefaultTranslation_x003E_k__BackingField" nillable="true" type="q3:ItemObjectTranslation" />
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/lm.Comol.Core.DomainModel" name="_x003C_Deleted_x003E_k__BackingField" type="q4:BaseStatusDeleted" />
+      <xs:element name="_x003C_IdTemplate_x003E_k__BackingField" type="xs:long" />
+      <xs:element name="_x003C_IdVersion_x003E_k__BackingField" type="xs:long" />
+      <xs:element name="_x003C_IsTemplateCompliant_x003E_k__BackingField" type="xs:boolean" />
+      <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/lm.Comol.Core.MailCommons.Domain.Messages" name="_x003C_MailSettings_x003E_k__BackingField" nillable="true" type="q5:MessageSettings" />
+      <xs:element name="_x003C_Translations_x003E_k__BackingField" nillable="true" type="tns:ArrayOfdtoBaseMailTemplateContent" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="dtoBaseMailTemplate" nillable="true" type="tns:dtoBaseMailTemplate" />
+  <xs:complexType name="ArrayOfdtoBaseMailTemplateContent">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="dtoBaseMailTemplateContent" nillable="true" type="tns:dtoBaseMailTemplateContent" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfdtoBaseMailTemplateContent" nillable="true" type="tns:ArrayOfdtoBaseMailTemplateContent" />
+  <xs:complexType name="dtoBaseMailTemplateContent">
+    <xs:sequence>
+      <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/lm.Comol.Core.DomainModel" name="_x003C_Deleted_x003E_k__BackingField" type="q6:BaseStatusDeleted" />
+      <xs:element name="_x003C_IdLanguage_x003E_k__BackingField" type="xs:int" />
+      <xs:element name="_x003C_LanguageCode_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_LanguageName_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/lm.Comol.Core.DomainModel.Languages" name="_x003C_Translation_x003E_k__BackingField" nillable="true" type="q7:ItemObjectTranslation" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="dtoBaseMailTemplateContent" nillable="true" type="tns:dtoBaseMailTemplateContent" />
+</xs:schema>

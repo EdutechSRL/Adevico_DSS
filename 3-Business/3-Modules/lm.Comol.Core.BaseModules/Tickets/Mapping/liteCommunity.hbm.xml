@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping
+	xmlns="urn:nhibernate-mapping-2.2"
+	assembly="lm.Comol.Core.BaseModules"
+	namespace="lm.Comol.Core.BaseModules.Tickets.Domain" auto-import="false"
+	>
+
+	<class name="lm.Comol.Core.BaseModules.Tickets.Domain.liteCommunity" table="COMUNITA" >
+
+		<id name="Id" column="CMNT_id" type="Int32">
+			<generator class="native"/>
+		</id>
+
+		<property name="Name" type="String" column="CMNT_nome" />
+	</class>
+
+</hibernate-mapping>

@@ -1,0 +1,2 @@
+﻿<%@ Control Language="vb" AutoEventWireup="false" CodeBehind="UC_ItemPermissionsHeader.ascx.vb" Inherits="Comunita_OnLine.UC_ItemPermissionsHeader" %>
+<%@ Register TagPrefix="CTRL" TagName="SelectUsersHeader" Src="~/Modules/Common/UC/UC_SelectUsersHeader.ascx" %>

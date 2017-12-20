@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="lm.Comol.Core.DomainModel" namespace="lm.Comol.Core.TemplateMessages.Domain">
+	<class name="VersionPermission" table="TM_VersionPermission" discriminator-value="0" lazy="false" optimistic-lock ="version">
+    <id name="Id" column="Id" type="Int64" unsaved-value="0">
+      <generator class="native"/>
+    </id>
+    <discriminator column="Discriminator" not-null="true" insert ="true" type="Int32"/>
+    <version name="TimeStamp" generated="always" unsaved-value="null" type="BinaryBlob">
+      <column name="_Timestamp" not-null="false" sql-type="timestamp"/>
+    </version>
+    <many-to-one name="Version" class="lm.Comol.Core.TemplateMessages.Domain.TemplateDefinitionVersion" column="IdVersion" foreign-key="IdVersion" cascade="none"  />
+    <many-to-one name="Template" class="lm.Comol.Core.TemplateMessages.Domain.TemplateDefinition" column="IdTemplate" foreign-key="IdTemplate" cascade="none"  />
+    
+    <property name="ToApply" type="Boolean" column="ToApply" />
+    <property name="Clone" type="Boolean" column="Clone" />
+    <property name="Edit" type="Boolean" column="Edit"/>
+    <property name="See" type="Boolean" column="See"/>
+    <property name="ChangePermission" type="Boolean" column="ChangePermission"/>
+    <property name="Type" type="lm.Comol.Core.TemplateMessages.Domain.PermissionType,lm.Comol.Core.DomainModel" column="Discriminator" insert="false" update="false" />
+
+    <property name="Deleted" type="lm.Comol.Core.DomainModel.BaseStatusDeleted,lm.Comol.Core.DomainModel" column="_Deleted" />
+    <property name="CreatedOn" type="DateTime" column="_CreatedOn" />
+    <many-to-one name="CreatedBy" class="lm.Comol.Core.DomainModel.litePerson" column="_CreatedBy" foreign-key="_CreatedBy" cascade="none" />
+    <property name="ModifiedOn" type="DateTime" column="_ModifiedOn" />
+    <many-to-one name="ModifiedBy" class="lm.Comol.Core.DomainModel.litePerson" column="_ModifiedBy" foreign-key="_ModifiedBy" cascade="none" />
+    <property name="CreatorProxyIpAddress" type="String" column="_CreatedProxyIPaddress" />
+    <property name="CreatorIpAddress" type="String" column="_CreatedIPaddress" />
+    <property name="ModifiedProxyIpAddress" type="String" column="_ModifiedProxyIPaddress" />
+    <property name="ModifiedIpAddress" type="String" column="_ModifiedIPaddress" />
+    
+    <subclass discriminator-value="1" name="VersionOwnerPermission">
+      <many-to-one name="AssignedTo" class="lm.Comol.Core.DomainModel.litePerson, lm.Comol.Core.DomainModel" column="IdPerson" foreign-key="IdPerson" cascade="none" lazy="false" not-found="ignore"  />
+    </subclass>
+    <subclass
+        discriminator-value="2"
+        name="VersionCommunityPermission">
+      <many-to-one name="AssignedTo" class="lm.Comol.Core.DomainModel.liteCommunity, lm.Comol.Core.DomainModel" column="IdCommunity" foreign-key="IdCommunity" cascade="none" lazy="false" not-found="ignore" />
+    </subclass>
+    <subclass
+			 discriminator-value="3"
+			 name="VersionRolePermission">
+      <many-to-one name="Community" class="lm.Comol.Core.DomainModel.liteCommunity, lm.Comol.Core.DomainModel" column="IdCommunity" foreign-key="IdCommunity" cascade="none" lazy="false" not-found="ignore" />
+      <many-to-one name="AssignedTo" class="lm.Comol.Core.DomainModel.Role, lm.Comol.Core.DomainModel" column="IdRole" foreign-key="IdRole" cascade="none" lazy="false" not-found="ignore"  />
+    </subclass>
+    <subclass
+      discriminator-value="4"
+      name="VersionProfileTypePermission">
+      <property name="AssignedTo" type="Int32" column="IdPersonType" lazy="false" />
+    </subclass>
+    <subclass
+			 discriminator-value="5"
+			 name="VersionPersonPermission">
+      <many-to-one name="AssignedTo" class="lm.Comol.Core.DomainModel.litePerson, lm.Comol.Core.DomainModel" column="IdPerson" foreign-key="IdPerson" cascade="none" lazy="false" not-found="ignore"  />
+    </subclass>
+    <!--<subclass
+			 discriminator-value="5"
+			 name="VersionModulePermission">
+
+      <property name="IdModule" type="Int32" column="IdModule"/>
+      <property name="ModuleCode" type="String" column="ModuleCode"/>
+      <property name="ModulePermission" type="Int64" column="ModulePermission"/>
+      <property name="ForPortal" type="Boolean" column="ForPortal"/>
+      <property name="AllUserCommunity" type="Boolean" column="AllUserCommunity"/>
+      <many-to-one name="Community" class="lm.Comol.Core.DomainModel.Community, lm.Comol.Core.DomainModel" column="IdCommunity" foreign-key="IdCommunity" cascade="none" lazy="false" not-found="ignore" />
+    </subclass>-->
+  </class>
+</hibernate-mapping>

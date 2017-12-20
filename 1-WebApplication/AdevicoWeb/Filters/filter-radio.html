@@ -1,0 +1,9 @@
+﻿<div class="filterinner">
+    <span class="title" ng-show="filter.Label!=''">{{filter.Label}}:</span>
+    <span class="content">        
+        <span ng-repeat="value in filter.Values track by value.Id" class="input-group">
+            <input class="input" type="radio" id="{{filter.Name}}_{{$index}}"
+                   name="{{filter.Name}}" ng-value="value.Id" ng-model="filter.SelectedId" ng-disabled="value.Disabled" /><label class="label" for="{{filter.Name}}_{{$index}}">{{value.Name}}</label>
+        </span>
+    </span>
+</div>  

@@ -1,0 +1,62 @@
+.TreeNode
+{
+	font-weight: normal;
+	font-size: 11px;
+	margin-left: 3px;
+	color: black;
+	font-family: Verdana, Arial;
+}
+
+.TreeNodeOver
+{
+	margin-left: 3px;
+	font-family: Verdana, Arial;
+	text-decoration: underline;
+}
+
+.TreeNodeSelect 
+{ 
+	font-weight: normal;
+	font-size: 11px;
+	color: navy;
+	font-family: Verdana, Arial;
+	margin-left: 3px;	
+}
+
+.TreeNodeDisabled
+{ 
+	font-weight: normal;
+	font-size: 11px;
+	color: dimgray;
+	font-family: Verdana, Arial;
+	margin-left: 3px;
+	cursor: default;
+}
+
+.TreeContextItem
+{ 
+	font-family: Arial, Verdana;
+	font-size:11px;
+	cursor: default;
+	cursor: hand;
+	padding-left:4px;
+	height:24px;
+	background-color:#F6F6F6;
+	background-image:url(itemsBg.gif);
+	background-repeat:repeat-y;
+	width:130px;
+	padding-top:1px;
+}
+
+.TreeContextItemOver
+{
+	font-family: Arial, Verdana;
+	font-size:11px;
+	cursor: default;
+	cursor: hand;
+	padding-left:4px;
+	height:24px;
+	background-color: #FFEEC2;
+	border: 1px solid #000080;
+	width:130px;
+}

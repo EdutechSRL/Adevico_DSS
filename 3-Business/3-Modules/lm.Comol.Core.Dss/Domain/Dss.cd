@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="lm.Comol.Core.Dss.Domain.Templates.DssTemplateTranslation">
+    <Position X="6.5" Y="3.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>EABAIAAAACgIAAACAAgAAAAAAAAgAAAAAQAAAAAEAAA=</HashCode>
+      <FileName>Domain\Templates\DssTemplateTranslation.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Type" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="lm.Comol.Core.Dss.Domain.Templates.TemplateMethod">
+    <Position X="3.5" Y="1.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAACAASAAEAAAAAAAAAAAEAAQAAIIAAAAA=</HashCode>
+      <FileName>Domain\Templates\TemplateMethod.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="DefaultTranslation" />
+      <Property Name="Type" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="Translations" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="lm.Comol.Core.Dss.Domain.Templates.TemplateRatingSet">
+    <Position X="6.75" Y="0.5" Width="2.5" />
+    <AssociationLine Name="DefaultTranslation" Type="lm.Comol.Core.Dss.Domain.Templates.ItemObjectTranslation" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="6.75" Y="1.798" />
+        <Point X="6.344" Y="1.798" />
+        <Point X="6.344" Y="0.167" />
+        <Point X="1.188" Y="0.167" />
+        <Point X="1.188" Y="1" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-5.065" Y="0.558" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAAAAACAASAAAAAAAAAAAACAAAAAAgIAAAAAA=</HashCode>
+      <FileName>Domain\Templates\TemplateRatingSet.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="DefaultTranslation" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="Translations" />
+      <Property Name="Values" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="lm.Comol.Core.Dss.Domain.Templates.TemplateRatingValue">
+    <Position X="10.5" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAAAAACAASAABAAAAAAAAAAAAAAAAgIAAAAAA=</HashCode>
+      <FileName>Domain\Templates\TemplateRatingValue.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Translations" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="lm.Comol.Core.Dss.Domain.Templates.ItemObjectTranslation">
+    <Position X="0.5" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAgAAAAAAgAAQQAAwAAAIAAAAAAAAAAAAA=</HashCode>
+      <FileName>Domain\Templates\ItemObjectTranslation.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="lm.Comol.Core.Dss.Domain.Templates.TranslationType">
+    <Position X="10" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAAAAAACAAAAAAAAAAAAAAAAAAAAAAAQAAAAA=</HashCode>
+      <FileName>Domain\Templates\TranslationType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="lm.Comol.Core.Dss.Domain.AlgorithmType">
+    <Position X="1.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAACAAAAAAAAIAAAAAAAAAwAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Domain\AlgorithmType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

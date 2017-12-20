@@ -1,0 +1,2216 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+	<!--[if lt IE 9]>
+	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+    <title>ActionType - lm.Comol.Core.DomainModel Documentation</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+    <link type="text/css" rel="stylesheet" href="../main.css"/>
+    <script type="text/javascript" src="../js/jquery-1.3.2.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.scrollTo-min.js"></script>
+    <script type="text/javascript" src="../js/navigation.js"></script>
+    <script type="text/javascript" src="../js/example.js"></script>
+  </head>
+  <body>
+  	<header><h1>lm.Comol.Core.DomainModel : API Documentation</h1>
+	</header>
+<nav id="namespaces">
+	<h2 class="fixed">Namespaces</h2>
+	<div class="scroll">
+		<ul>
+			<li>
+          <a href="../lm.Comol.Core.Authentication/index.htm">lm.Comol.Core.Authentication</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.Authentication.Business/index.htm">lm.Comol.Core.Authentication.Business</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.Authentication.Helpers/index.htm">lm.Comol.Core.Authentication.Helpers</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.Business/index.htm">lm.Comol.Core.Business</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.Catalogues/index.htm">lm.Comol.Core.Catalogues</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.Certifications/index.htm">lm.Comol.Core.Certifications</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.Certifications.Business/index.htm">lm.Comol.Core.Certifications.Business</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.Communities/index.htm">lm.Comol.Core.Communities</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.Dashboard.Business/index.htm">lm.Comol.Core.Dashboard.Business</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.Dashboard.Domain/index.htm">lm.Comol.Core.Dashboard.Domain</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.DomainModel/index.htm">lm.Comol.Core.DomainModel</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.DomainModel.Assignment/index.htm">lm.Comol.Core.DomainModel.Assignment</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.DomainModel.Common/index.htm">lm.Comol.Core.DomainModel.Common</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.DomainModel.DocTemplateVers/index.htm">lm.Comol.Core.DomainModel.DocTemplateVers</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.DomainModel.DocTemplateVers.Business/index.htm">lm.Comol.Core.DomainModel.DocTemplateVers.Business</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.DomainModel.DocTemplateVers.Domain.Core/index.htm">lm.Comol.Core.DomainModel.DocTemplateVers.Domain.Core</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.DomainModel.DocTemplateVers.Domain.DTO.Management/index.htm">lm.Comol.Core.DomainModel.DocTemplateVers.Domain.DTO.Management</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.DomainModel.DocTemplateVers.Domain.DTO.ServiceExport/index.htm">lm.Comol.Core.DomainModel.DocTemplateVers.Domain.DTO.ServiceExport</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.DomainModel.DocTemplateVers.Helpers/index.htm">lm.Comol.Core.DomainModel.DocTemplateVers.Helpers</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.DomainModel.Domain/index.htm">lm.Comol.Core.DomainModel.Domain</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.DomainModel.Filters/index.htm">lm.Comol.Core.DomainModel.Filters</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.DomainModel.Helpers/index.htm">lm.Comol.Core.DomainModel.Helpers</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.DomainModel.Helpers.Export/index.htm">lm.Comol.Core.DomainModel.Helpers.Export</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.DomainModel.Helpers.Tags/index.htm">lm.Comol.Core.DomainModel.Helpers.Tags</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.DomainModel.Languages/index.htm">lm.Comol.Core.DomainModel.Languages</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.DomainModel.Repository/index.htm">lm.Comol.Core.DomainModel.Repository</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.DomainModel.SrvFileTransfer/index.htm">lm.Comol.Core.DomainModel.SrvFileTransfer</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.DomainModel.SrvFileUnzip/index.htm">lm.Comol.Core.DomainModel.SrvFileUnzip</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.Event/index.htm">lm.Comol.Core.Event</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.Event.Business/index.htm">lm.Comol.Core.Event.Business</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.Events.Domain/index.htm">lm.Comol.Core.Events.Domain</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.FileRepository.Business/index.htm">lm.Comol.Core.FileRepository.Business</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.FileRepository.Domain/index.htm" class="current">lm.Comol.Core.FileRepository.Domain</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.FileRepository.Domain.ScormSettings/index.htm">lm.Comol.Core.FileRepository.Domain.ScormSettings</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.FileRepository.Domain.toRemove/index.htm">lm.Comol.Core.FileRepository.Domain.toRemove</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.InLineTags.Business/index.htm">lm.Comol.Core.InLineTags.Business</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.InLineTags.Domain/index.htm">lm.Comol.Core.InLineTags.Domain</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.Mail/index.htm">lm.Comol.Core.Mail</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.Mail.Messages/index.htm">lm.Comol.Core.Mail.Messages</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.ModuleLinks/index.htm">lm.Comol.Core.ModuleLinks</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.Msmq.DataContract/index.htm">lm.Comol.Core.Msmq.DataContract</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.Notification.DataContract/index.htm">lm.Comol.Core.Notification.DataContract</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.Notification.Domain/index.htm">lm.Comol.Core.Notification.Domain</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.PersonalInfo/index.htm">lm.Comol.Core.PersonalInfo</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.Subscriptions/index.htm">lm.Comol.Core.Subscriptions</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.Tag.Business/index.htm">lm.Comol.Core.Tag.Business</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.Tag.Domain/index.htm">lm.Comol.Core.Tag.Domain</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.TemplateMessages/index.htm">lm.Comol.Core.TemplateMessages</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.TemplateMessages.Business/index.htm">lm.Comol.Core.TemplateMessages.Business</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.TemplateMessages.Domain/index.htm">lm.Comol.Core.TemplateMessages.Domain</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.WinService.Configurations/index.htm">lm.Comol.Core.WinService.Configurations</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.Wizard/index.htm">lm.Comol.Core.Wizard</a>
+      </li>
+		</ul>
+	</div>
+</nav><nav id="types">
+  <h2 class="fixed">Types in lm.Comol.Core.FileRepository.Domain</h2>
+	<div class="scroll">
+		<ul>
+				<li>
+            <a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm" class="current">ActionType</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.FileRepository.Domain/AssignmentType.htm">AssignmentType</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.FileRepository.Domain/Base2Permission.htm">Base2Permission</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.FileRepository.Domain/BaseAssignments.htm">BaseAssignments</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.FileRepository.Domain/BaseItemIdentifiers.htm">BaseItemIdentifiers</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.FileRepository.Domain/BaseRepositoryItem.htm">BaseRepositoryItem</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.FileRepository.Domain/CacheKeys.htm">CacheKeys</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.FileRepository.Domain/CalculationMode.htm">CalculationMode</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.FileRepository.Domain/CustomizationLevel.htm">CustomizationLevel</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.FileRepository.Domain/DiskSettings.htm">DiskSettings</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.FileRepository.Domain/DisplayMode.htm">DisplayMode</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.FileRepository.Domain/DownloadErrorType.htm">DownloadErrorType</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.FileRepository.Domain/DownloadStatistics.htm">DownloadStatistics</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.FileRepository.Domain/dtoBaseItem.htm">dtoBaseItem</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.FileRepository.Domain/dtoBaseRepositoryItem.htm">dtoBaseRepositoryItem</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.FileRepository.Domain/dtoContainerQuota.htm">dtoContainerQuota</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.FileRepository.Domain/dtoCreatedItem.htm">dtoCreatedItem</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.FileRepository.Domain/dtoDisplayAssignment.htm">dtoDisplayAssignment</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.FileRepository.Domain/dtoDisplayObjectRepositoryItem.htm">dtoDisplayObjectRepositoryItem</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.FileRepository.Domain/dtoDisplayPermissions.htm">dtoDisplayPermissions</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.FileRepository.Domain/dtoDisplayRepositoryItem.htm">dtoDisplayRepositoryItem</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.FileRepository.Domain/dtoDownloadError.htm">dtoDownloadError</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.FileRepository.Domain/dtoEditAssignment.htm">dtoEditAssignment</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.FileRepository.Domain/dtoEvaluationLink.htm">dtoEvaluationLink</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.FileRepository.Domain/dtoFolderItem.htm">dtoFolderItem</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.FileRepository.Domain/dtoFolderName.htm">dtoFolderName</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.FileRepository.Domain/dtoFolderSize.htm">dtoFolderSize</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.FileRepository.Domain/dtoFolderTreeItem.htm">dtoFolderTreeItem</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.FileRepository.Domain/dtoItemFile.htm">dtoItemFile</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.FileRepository.Domain/dtoItemIdentifier.htm">dtoItemIdentifier</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.FileRepository.Domain/dtoItemToAdd.htm">dtoItemToAdd</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.FileRepository.Domain/dtoItemToDelete.htm">dtoItemToDelete</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.FileRepository.Domain/dtoLinkedItems.htm">dtoLinkedItems</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.FileRepository.Domain/dtoLinkedModules.htm">dtoLinkedModules</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.FileRepository.Domain/dtoModuleUploadedItem.htm">dtoModuleUploadedItem</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.FileRepository.Domain/dtoMultimediaFileObject.htm">dtoMultimediaFileObject</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.FileRepository.Domain/dtoNodeFolderItem.htm">dtoNodeFolderItem</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.FileRepository.Domain/dtoNodeItem.htm">dtoNodeItem</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.FileRepository.Domain/dtoPackageEvaluation.htm">dtoPackageEvaluation</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.FileRepository.Domain/dtoRepositoryItem.htm">dtoRepositoryItem</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.FileRepository.Domain/dtoRepositoryItemToSelect.htm">dtoRepositoryItemToSelect</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.FileRepository.Domain/dtoRepositoryItemToSelectBase.htm">dtoRepositoryItemToSelectBase</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.FileRepository.Domain/dtoUploadedItem.htm">dtoUploadedItem</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.FileRepository.Domain/dtoUrlItem.htm">dtoUrlItem</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.FileRepository.Domain/FileTransferBase.htm">FileTransferBase</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.FileRepository.Domain/FileTransferMultimedia.htm">FileTransferMultimedia</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.FileRepository.Domain/FileTransferScorm.htm">FileTransferScorm</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.FileRepository.Domain/FileTransferType.htm">FileTransferType</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.FileRepository.Domain/FileTransferVideoStreaming.htm">FileTransferVideoStreaming</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.FileRepository.Domain/FolderSizeItem.htm">FolderSizeItem</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.FileRepository.Domain/FolderSizeItemType.htm">FolderSizeItemType</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.FileRepository.Domain/FolderType.htm">FolderType</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.FileRepository.Domain/ItemAction.htm">ItemAction</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.FileRepository.Domain/ItemAssignments.htm">ItemAssignments</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.FileRepository.Domain/ItemAvailability.htm">ItemAvailability</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.FileRepository.Domain/ItemIdentifierType.htm">ItemIdentifierType</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.FileRepository.Domain/ItemModuleSettings.htm">ItemModuleSettings</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.FileRepository.Domain/ItemPermission.htm">ItemPermission</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.FileRepository.Domain/ItemSaving.htm">ItemSaving</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.FileRepository.Domain/ItemStatisticType.htm">ItemStatisticType</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.FileRepository.Domain/ItemStatus.htm">ItemStatus</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.FileRepository.Domain/ItemType.htm">ItemType</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.FileRepository.Domain/ItemTypeSettings.htm">ItemTypeSettings</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.FileRepository.Domain/ItemUploadError.htm">ItemUploadError</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.FileRepository.Domain/liteBaseAssignments.htm">liteBaseAssignments</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.FileRepository.Domain/liteBaseItemIdentifiers.htm">liteBaseItemIdentifiers</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.FileRepository.Domain/liteBaseRepositoryItem.htm">liteBaseRepositoryItem</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.FileRepository.Domain/liteFileTransfer.htm">liteFileTransfer</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.FileRepository.Domain/liteItemAssignments.htm">liteItemAssignments</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.FileRepository.Domain/liteItemTypeSettings.htm">liteItemTypeSettings</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.FileRepository.Domain/liteManageRepositoryItem.htm">liteManageRepositoryItem</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.FileRepository.Domain/liteMultimediaFileObject.htm">liteMultimediaFileObject</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.FileRepository.Domain/litePlayerSettings.htm">litePlayerSettings</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.FileRepository.Domain/liteProfileTypeAvailability.htm">liteProfileTypeAvailability</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.FileRepository.Domain/liteRepositoryItem.htm">liteRepositoryItem</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.FileRepository.Domain/liteRepositoryItemVersion.htm">liteRepositoryItemVersion</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.FileRepository.Domain/liteRepositorySettings.htm">liteRepositorySettings</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.FileRepository.Domain/liteRepositoryTag.htm">liteRepositoryTag</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.FileRepository.Domain/liteViewSettings.htm">liteViewSettings</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.FileRepository.Domain/ModuleRepository.htm">ModuleRepository</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.FileRepository.Domain/MultimediaFileObject.htm">MultimediaFileObject</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.FileRepository.Domain/NodeType.htm">NodeType</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.FileRepository.Domain/ObjectType.htm">ObjectType</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.FileRepository.Domain/OldActionType.htm">OldActionType</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.FileRepository.Domain/OrderBy.htm">OrderBy</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.FileRepository.Domain/OverflowAction.htm">OverflowAction</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.FileRepository.Domain/PackageStatus.htm">PackageStatus</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.FileRepository.Domain/PermissionsTranslation.htm">PermissionsTranslation</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.FileRepository.Domain/PermissionType.htm">PermissionType</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.FileRepository.Domain/PlayerPlaceHolders.htm">PlayerPlaceHolders</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.FileRepository.Domain/PlayerSettings.htm">PlayerSettings</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.FileRepository.Domain/PlayStatistics.htm">PlayStatistics</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.FileRepository.Domain/PresetType.htm">PresetType</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.FileRepository.Domain/ProfileTypeAvailability.htm">ProfileTypeAvailability</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.FileRepository.Domain/QueryKeyNames.htm">QueryKeyNames</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.FileRepository.Domain/RepositoryContextSettings.htm">RepositoryContextSettings</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.FileRepository.Domain/RepositoryFullSize.htm">RepositoryFullSize</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.FileRepository.Domain/RepositoryIdentifier.htm">RepositoryIdentifier</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.FileRepository.Domain/RepositoryItem.htm">RepositoryItem</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.FileRepository.Domain/RepositoryItemLink`1.htm">RepositoryItemLink&lt;T&gt;</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.FileRepository.Domain/RepositoryItemLinkBase`1.htm">RepositoryItemLinkBase&lt;T&gt;</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.FileRepository.Domain/RepositoryItemObject.htm">RepositoryItemObject</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.FileRepository.Domain/RepositoryItemVersion.htm">RepositoryItemVersion</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.FileRepository.Domain/RepositoryType.htm">RepositoryType</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.FileRepository.Domain/RootObject.htm">RootObject</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.FileRepository.Domain/ScormPackageRequestForRecalc.htm">ScormPackageRequestForRecalc</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.FileRepository.Domain/ScormPackageUserEvaluation.htm">ScormPackageUserEvaluation</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.FileRepository.Domain/ScormPackageUserSession.htm">ScormPackageUserSession</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.FileRepository.Domain/ScormPackageWithVersionToEvaluate.htm">ScormPackageWithVersionToEvaluate</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.FileRepository.Domain/ScormStatus.htm">ScormStatus</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.FileRepository.Domain/SessionConstants.htm">SessionConstants</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.FileRepository.Domain/SettingsType.htm">SettingsType</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.FileRepository.Domain/SizeType.htm">SizeType</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.FileRepository.Domain/StatisticType.htm">StatisticType</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.FileRepository.Domain/TransferPolicy.htm">TransferPolicy</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.FileRepository.Domain/TransferStatus.htm">TransferStatus</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.FileRepository.Domain/TreeViewOption.htm">TreeViewOption</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.FileRepository.Domain/VersionPermission.htm">VersionPermission</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.FileRepository.Domain/ViewOption.htm">ViewOption</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.FileRepository.Domain/ViewSettings.htm">ViewSettings</a>
+        </li>
+		</ul>
+	</div>
+</nav>
+	<article>
+    <header>
+		<p class="class"><strong>Type</strong> ActionType</p>
+	</header>
+	<section>
+		<header>
+		<p><strong>Namespace</strong> lm.Comol.Core.FileRepository.Domain</p>
+		<p><strong>Parent</strong> <span title="System.Enum">Enum</span></p>
+		</header>
+    <div class="sub-header">
+		
+		
+		
+		
+			<h3 class="section">Fields</h3>
+			<ul>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm#value__">value__</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm#None">None</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm#NoPermission">NoPermission</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm#GenericError">GenericError</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm#AddFolder">AddFolder</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm#AddFile">AddFile</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm#DownloadFile">DownloadFile</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm#PlayFile">PlayFile</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm#DeleteFolder">DeleteFolder</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm#DeleteFile">DeleteFile</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm#ShowItem">ShowItem</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm#HideItem">HideItem</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm#ShowFolder">ShowFolder</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm#HideFolder">HideFolder</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm#LoadRepository">LoadRepository</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm#UnableToLoadRepository">UnableToLoadRepository</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm#UnknownItemFound">UnknownItemFound</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm#UnavailableItem">UnavailableItem</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm#UnableToHide">UnableToHide</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm#UnableToShow">UnableToShow</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm#VirtualDeleteItem">VirtualDeleteItem</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm#UndeleteItem">UndeleteItem</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm#PhisicalDeleteItem">PhisicalDeleteItem</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm#UnableToVirtualDeleteItem">UnableToVirtualDeleteItem</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm#UnableToUndeleteItem">UnableToUndeleteItem</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm#UnableToPhisicalDeleteItem">UnableToPhisicalDeleteItem</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm#TryToMoveItem">TryToMoveItem</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm#UnableToTryToMoveItem">UnableToTryToMoveItem</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm#UnknownItemsFound">UnknownItemsFound</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm#UnableToFindItems">UnableToFindItems</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm#NotMovedItem">NotMovedItem</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm#NotMovedItems">NotMovedItems</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm#MovedItem">MovedItem</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm#MovedItems">MovedItems</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm#UnavailableSpaceOnFolder">UnavailableSpaceOnFolder</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm#UnableToAddFolder">UnableToAddFolder</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm#AddLink">AddLink</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm#UnableToAddLink">UnableToAddLink</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm#UnableToAddFile">UnableToAddFile</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm#UnableToAddSomeFile">UnableToAddSomeFile</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm#UnavailableItems">UnavailableItems</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm#ShowItems">ShowItems</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm#HideItems">HideItems</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm#VirtualDeleteItems">VirtualDeleteItems</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm#UndeleteItems">UndeleteItems</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm#PhisicalDeleteItems">PhisicalDeleteItems</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm#UnableToVirtualDeleteItems">UnableToVirtualDeleteItems</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm#UnableToUndeleteItems">UnableToUndeleteItems</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm#UnableToPhisicalDeleteItems">UnableToPhisicalDeleteItems</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm#VersionUnableToAdd">VersionUnableToAdd</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm#VersionAddedToFile">VersionAddedToFile</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm#VersionAddingToFile">VersionAddingToFile</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm#InLineItemDetailsLoaded">InLineItemDetailsLoaded</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm#InLineItemDetailsTryView">InLineItemDetailsTryView</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm#EditDetailsTryToLoad">EditDetailsTryToLoad</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm#EditDetailsLoaded">EditDetailsLoaded</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm#EditDetailsNoPermissions">EditDetailsNoPermissions</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm#ViewDetailsTryToLoad">ViewDetailsTryToLoad</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm#ViewDetailsLoaded">ViewDetailsLoaded</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm#ViewDetailsNoPermissions">ViewDetailsNoPermissions</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm#ItemSavedDetails">ItemSavedDetails</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm#ItemSavedSomeDetails">ItemSavedSomeDetails</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm#ItemTryToSaveDetails">ItemTryToSaveDetails</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm#ThumbnailAdded">ThumbnailAdded</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm#ThumbnailRemoved">ThumbnailRemoved</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm#ThumbnailUnableToAdd">ThumbnailUnableToAdd</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm#ThumbnailUnableToRemove">ThumbnailUnableToRemove</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm#ThumbnailNoPermissionToAdd">ThumbnailNoPermissionToAdd</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm#ThumbnailNoPermissionToRemove">ThumbnailNoPermissionToRemove</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm#VersionUnableToVirtualDelete">VersionUnableToVirtualDelete</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm#VersionVirtualDeleted">VersionVirtualDeleted</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm#VersionUnableToVirtualUndelete">VersionUnableToVirtualUndelete</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm#VersionVirtualUndeleted">VersionVirtualUndeleted</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm#VersionUnableToPhisicalDelete">VersionUnableToPhisicalDelete</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm#VersionPhisicalDeleted">VersionPhisicalDeleted</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm#VersionSetAsActive">VersionSetAsActive</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm#VersionUnableToSetAsActive">VersionUnableToSetAsActive</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm#PermissionsNothingToSave">PermissionsNothingToSave</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm#PermissionsSaved">PermissionsSaved</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm#PermissionsNotSaved">PermissionsNotSaved</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm#MultimedaSettingsTryToLoad">MultimedaSettingsTryToLoad</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm#MultimedaSettingsLoaded">MultimedaSettingsLoaded</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm#MultimedaSettingsNoPermissions">MultimedaSettingsNoPermissions</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm#MultimedaSettingsInvalidType">MultimedaSettingsInvalidType</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm#MultimedaSettingsStatusError">MultimedaSettingsStatusError</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm#MultimedaSettingsUnableToSetDefaultDocument">MultimedaSettingsUnableToSetDefaultDocument</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm#MultimedaSettingsSetDefaultDocument">MultimedaSettingsSetDefaultDocument</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm#ScormSettingsTryToLoad">ScormSettingsTryToLoad</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm#ScormSettingsLoaded">ScormSettingsLoaded</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm#ScormSettingsNoPermissions">ScormSettingsNoPermissions</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm#ScormSettingsInvalidType">ScormSettingsInvalidType</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm#ScormSettingsStatusError">ScormSettingsStatusError</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm#ScormSettingsWaiting">ScormSettingsWaiting</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm#ScormSettingsUnableToSave">ScormSettingsUnableToSave</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm#ScormSettingsSaved">ScormSettingsSaved</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm#DeleteScormPackage">DeleteScormPackage</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm#DeleteMultimedia">DeleteMultimedia</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm#DeleteLink">DeleteLink</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm#DeleteSharedDocument">DeleteSharedDocument</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm#DeleteVideoStreaming">DeleteVideoStreaming</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm#ShowScormPackage">ShowScormPackage</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm#ShowMultimedia">ShowMultimedia</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm#ShowLink">ShowLink</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm#ShowSharedDocument">ShowSharedDocument</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm#ShowVideoStreaming">ShowVideoStreaming</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm#HideScormPackage">HideScormPackage</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm#HideMultimedia">HideMultimedia</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm#HideLink">HideLink</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm#HideSharedDocument">HideSharedDocument</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm#HideVideoStreaming">HideVideoStreaming</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm#VirtualDeleteFile">VirtualDeleteFile</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm#VirtualDeleteFolder">VirtualDeleteFolder</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm#VirtualDeleteMultimedia">VirtualDeleteMultimedia</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm#VirtualDeleteScormPackage">VirtualDeleteScormPackage</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm#VirtualDeleteLink">VirtualDeleteLink</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm#VirtualDeleteSharedDocument">VirtualDeleteSharedDocument</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm#VirtualDeleteVideoStreaming">VirtualDeleteVideoStreaming</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm#VirtualUndeleteFile">VirtualUndeleteFile</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm#VirtualUndeleteFolder">VirtualUndeleteFolder</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm#VirtualUndeleteMultimedia">VirtualUndeleteMultimedia</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm#VirtualUndeleteScormPackage">VirtualUndeleteScormPackage</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm#VirtualUndeleteLink">VirtualUndeleteLink</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm#VirtualUndeleteSharedDocument">VirtualUndeleteSharedDocument</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm#VirtualUndeleteVideoStreaming">VirtualUndeleteVideoStreaming</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm#ScormSettingsView">ScormSettingsView</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm#AddInternalFile">AddInternalFile</a></li>
+			</ul>
+	</div>
+	
+	
+	
+  <h3 class="section">Public fields</h3>
+
+  <div id="value__" class="method">
+    <h4>int <strong>value__</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <span title="System.int">int</span></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="None" class="method">
+    <h4>ActionType <strong>None</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="NoPermission" class="method">
+    <h4>ActionType <strong>NoPermission</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="GenericError" class="method">
+    <h4>ActionType <strong>GenericError</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="AddFolder" class="method">
+    <h4>ActionType <strong>AddFolder</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="AddFile" class="method">
+    <h4>ActionType <strong>AddFile</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="DownloadFile" class="method">
+    <h4>ActionType <strong>DownloadFile</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="PlayFile" class="method">
+    <h4>ActionType <strong>PlayFile</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="DeleteFolder" class="method">
+    <h4>ActionType <strong>DeleteFolder</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="DeleteFile" class="method">
+    <h4>ActionType <strong>DeleteFile</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="ShowItem" class="method">
+    <h4>ActionType <strong>ShowItem</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="HideItem" class="method">
+    <h4>ActionType <strong>HideItem</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="ShowFolder" class="method">
+    <h4>ActionType <strong>ShowFolder</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="HideFolder" class="method">
+    <h4>ActionType <strong>HideFolder</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="LoadRepository" class="method">
+    <h4>ActionType <strong>LoadRepository</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="UnableToLoadRepository" class="method">
+    <h4>ActionType <strong>UnableToLoadRepository</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="UnknownItemFound" class="method">
+    <h4>ActionType <strong>UnknownItemFound</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="UnavailableItem" class="method">
+    <h4>ActionType <strong>UnavailableItem</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="UnableToHide" class="method">
+    <h4>ActionType <strong>UnableToHide</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="UnableToShow" class="method">
+    <h4>ActionType <strong>UnableToShow</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="VirtualDeleteItem" class="method">
+    <h4>ActionType <strong>VirtualDeleteItem</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="UndeleteItem" class="method">
+    <h4>ActionType <strong>UndeleteItem</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="PhisicalDeleteItem" class="method">
+    <h4>ActionType <strong>PhisicalDeleteItem</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="UnableToVirtualDeleteItem" class="method">
+    <h4>ActionType <strong>UnableToVirtualDeleteItem</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="UnableToUndeleteItem" class="method">
+    <h4>ActionType <strong>UnableToUndeleteItem</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="UnableToPhisicalDeleteItem" class="method">
+    <h4>ActionType <strong>UnableToPhisicalDeleteItem</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="TryToMoveItem" class="method">
+    <h4>ActionType <strong>TryToMoveItem</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="UnableToTryToMoveItem" class="method">
+    <h4>ActionType <strong>UnableToTryToMoveItem</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="UnknownItemsFound" class="method">
+    <h4>ActionType <strong>UnknownItemsFound</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="UnableToFindItems" class="method">
+    <h4>ActionType <strong>UnableToFindItems</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="NotMovedItem" class="method">
+    <h4>ActionType <strong>NotMovedItem</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="NotMovedItems" class="method">
+    <h4>ActionType <strong>NotMovedItems</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="MovedItem" class="method">
+    <h4>ActionType <strong>MovedItem</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="MovedItems" class="method">
+    <h4>ActionType <strong>MovedItems</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="UnavailableSpaceOnFolder" class="method">
+    <h4>ActionType <strong>UnavailableSpaceOnFolder</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="UnableToAddFolder" class="method">
+    <h4>ActionType <strong>UnableToAddFolder</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="AddLink" class="method">
+    <h4>ActionType <strong>AddLink</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="UnableToAddLink" class="method">
+    <h4>ActionType <strong>UnableToAddLink</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="UnableToAddFile" class="method">
+    <h4>ActionType <strong>UnableToAddFile</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="UnableToAddSomeFile" class="method">
+    <h4>ActionType <strong>UnableToAddSomeFile</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="UnavailableItems" class="method">
+    <h4>ActionType <strong>UnavailableItems</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="ShowItems" class="method">
+    <h4>ActionType <strong>ShowItems</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="HideItems" class="method">
+    <h4>ActionType <strong>HideItems</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="VirtualDeleteItems" class="method">
+    <h4>ActionType <strong>VirtualDeleteItems</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="UndeleteItems" class="method">
+    <h4>ActionType <strong>UndeleteItems</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="PhisicalDeleteItems" class="method">
+    <h4>ActionType <strong>PhisicalDeleteItems</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="UnableToVirtualDeleteItems" class="method">
+    <h4>ActionType <strong>UnableToVirtualDeleteItems</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="UnableToUndeleteItems" class="method">
+    <h4>ActionType <strong>UnableToUndeleteItems</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="UnableToPhisicalDeleteItems" class="method">
+    <h4>ActionType <strong>UnableToPhisicalDeleteItems</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="VersionUnableToAdd" class="method">
+    <h4>ActionType <strong>VersionUnableToAdd</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="VersionAddedToFile" class="method">
+    <h4>ActionType <strong>VersionAddedToFile</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="VersionAddingToFile" class="method">
+    <h4>ActionType <strong>VersionAddingToFile</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="InLineItemDetailsLoaded" class="method">
+    <h4>ActionType <strong>InLineItemDetailsLoaded</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="InLineItemDetailsTryView" class="method">
+    <h4>ActionType <strong>InLineItemDetailsTryView</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="EditDetailsTryToLoad" class="method">
+    <h4>ActionType <strong>EditDetailsTryToLoad</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="EditDetailsLoaded" class="method">
+    <h4>ActionType <strong>EditDetailsLoaded</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="EditDetailsNoPermissions" class="method">
+    <h4>ActionType <strong>EditDetailsNoPermissions</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="ViewDetailsTryToLoad" class="method">
+    <h4>ActionType <strong>ViewDetailsTryToLoad</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="ViewDetailsLoaded" class="method">
+    <h4>ActionType <strong>ViewDetailsLoaded</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="ViewDetailsNoPermissions" class="method">
+    <h4>ActionType <strong>ViewDetailsNoPermissions</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="ItemSavedDetails" class="method">
+    <h4>ActionType <strong>ItemSavedDetails</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="ItemSavedSomeDetails" class="method">
+    <h4>ActionType <strong>ItemSavedSomeDetails</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="ItemTryToSaveDetails" class="method">
+    <h4>ActionType <strong>ItemTryToSaveDetails</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="ThumbnailAdded" class="method">
+    <h4>ActionType <strong>ThumbnailAdded</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="ThumbnailRemoved" class="method">
+    <h4>ActionType <strong>ThumbnailRemoved</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="ThumbnailUnableToAdd" class="method">
+    <h4>ActionType <strong>ThumbnailUnableToAdd</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="ThumbnailUnableToRemove" class="method">
+    <h4>ActionType <strong>ThumbnailUnableToRemove</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="ThumbnailNoPermissionToAdd" class="method">
+    <h4>ActionType <strong>ThumbnailNoPermissionToAdd</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="ThumbnailNoPermissionToRemove" class="method">
+    <h4>ActionType <strong>ThumbnailNoPermissionToRemove</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="VersionUnableToVirtualDelete" class="method">
+    <h4>ActionType <strong>VersionUnableToVirtualDelete</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="VersionVirtualDeleted" class="method">
+    <h4>ActionType <strong>VersionVirtualDeleted</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="VersionUnableToVirtualUndelete" class="method">
+    <h4>ActionType <strong>VersionUnableToVirtualUndelete</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="VersionVirtualUndeleted" class="method">
+    <h4>ActionType <strong>VersionVirtualUndeleted</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="VersionUnableToPhisicalDelete" class="method">
+    <h4>ActionType <strong>VersionUnableToPhisicalDelete</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="VersionPhisicalDeleted" class="method">
+    <h4>ActionType <strong>VersionPhisicalDeleted</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="VersionSetAsActive" class="method">
+    <h4>ActionType <strong>VersionSetAsActive</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="VersionUnableToSetAsActive" class="method">
+    <h4>ActionType <strong>VersionUnableToSetAsActive</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="PermissionsNothingToSave" class="method">
+    <h4>ActionType <strong>PermissionsNothingToSave</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="PermissionsSaved" class="method">
+    <h4>ActionType <strong>PermissionsSaved</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="PermissionsNotSaved" class="method">
+    <h4>ActionType <strong>PermissionsNotSaved</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="MultimedaSettingsTryToLoad" class="method">
+    <h4>ActionType <strong>MultimedaSettingsTryToLoad</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="MultimedaSettingsLoaded" class="method">
+    <h4>ActionType <strong>MultimedaSettingsLoaded</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="MultimedaSettingsNoPermissions" class="method">
+    <h4>ActionType <strong>MultimedaSettingsNoPermissions</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="MultimedaSettingsInvalidType" class="method">
+    <h4>ActionType <strong>MultimedaSettingsInvalidType</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="MultimedaSettingsStatusError" class="method">
+    <h4>ActionType <strong>MultimedaSettingsStatusError</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="MultimedaSettingsUnableToSetDefaultDocument" class="method">
+    <h4>ActionType <strong>MultimedaSettingsUnableToSetDefaultDocument</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="MultimedaSettingsSetDefaultDocument" class="method">
+    <h4>ActionType <strong>MultimedaSettingsSetDefaultDocument</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="ScormSettingsTryToLoad" class="method">
+    <h4>ActionType <strong>ScormSettingsTryToLoad</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="ScormSettingsLoaded" class="method">
+    <h4>ActionType <strong>ScormSettingsLoaded</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="ScormSettingsNoPermissions" class="method">
+    <h4>ActionType <strong>ScormSettingsNoPermissions</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="ScormSettingsInvalidType" class="method">
+    <h4>ActionType <strong>ScormSettingsInvalidType</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="ScormSettingsStatusError" class="method">
+    <h4>ActionType <strong>ScormSettingsStatusError</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="ScormSettingsWaiting" class="method">
+    <h4>ActionType <strong>ScormSettingsWaiting</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="ScormSettingsUnableToSave" class="method">
+    <h4>ActionType <strong>ScormSettingsUnableToSave</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="ScormSettingsSaved" class="method">
+    <h4>ActionType <strong>ScormSettingsSaved</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="DeleteScormPackage" class="method">
+    <h4>ActionType <strong>DeleteScormPackage</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="DeleteMultimedia" class="method">
+    <h4>ActionType <strong>DeleteMultimedia</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="DeleteLink" class="method">
+    <h4>ActionType <strong>DeleteLink</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="DeleteSharedDocument" class="method">
+    <h4>ActionType <strong>DeleteSharedDocument</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="DeleteVideoStreaming" class="method">
+    <h4>ActionType <strong>DeleteVideoStreaming</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="ShowScormPackage" class="method">
+    <h4>ActionType <strong>ShowScormPackage</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="ShowMultimedia" class="method">
+    <h4>ActionType <strong>ShowMultimedia</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="ShowLink" class="method">
+    <h4>ActionType <strong>ShowLink</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="ShowSharedDocument" class="method">
+    <h4>ActionType <strong>ShowSharedDocument</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="ShowVideoStreaming" class="method">
+    <h4>ActionType <strong>ShowVideoStreaming</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="HideScormPackage" class="method">
+    <h4>ActionType <strong>HideScormPackage</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="HideMultimedia" class="method">
+    <h4>ActionType <strong>HideMultimedia</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="HideLink" class="method">
+    <h4>ActionType <strong>HideLink</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="HideSharedDocument" class="method">
+    <h4>ActionType <strong>HideSharedDocument</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="HideVideoStreaming" class="method">
+    <h4>ActionType <strong>HideVideoStreaming</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="VirtualDeleteFile" class="method">
+    <h4>ActionType <strong>VirtualDeleteFile</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="VirtualDeleteFolder" class="method">
+    <h4>ActionType <strong>VirtualDeleteFolder</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="VirtualDeleteMultimedia" class="method">
+    <h4>ActionType <strong>VirtualDeleteMultimedia</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="VirtualDeleteScormPackage" class="method">
+    <h4>ActionType <strong>VirtualDeleteScormPackage</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="VirtualDeleteLink" class="method">
+    <h4>ActionType <strong>VirtualDeleteLink</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="VirtualDeleteSharedDocument" class="method">
+    <h4>ActionType <strong>VirtualDeleteSharedDocument</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="VirtualDeleteVideoStreaming" class="method">
+    <h4>ActionType <strong>VirtualDeleteVideoStreaming</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="VirtualUndeleteFile" class="method">
+    <h4>ActionType <strong>VirtualUndeleteFile</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="VirtualUndeleteFolder" class="method">
+    <h4>ActionType <strong>VirtualUndeleteFolder</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="VirtualUndeleteMultimedia" class="method">
+    <h4>ActionType <strong>VirtualUndeleteMultimedia</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="VirtualUndeleteScormPackage" class="method">
+    <h4>ActionType <strong>VirtualUndeleteScormPackage</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="VirtualUndeleteLink" class="method">
+    <h4>ActionType <strong>VirtualUndeleteLink</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="VirtualUndeleteSharedDocument" class="method">
+    <h4>ActionType <strong>VirtualUndeleteSharedDocument</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="VirtualUndeleteVideoStreaming" class="method">
+    <h4>ActionType <strong>VirtualUndeleteVideoStreaming</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="ScormSettingsView" class="method">
+    <h4>ActionType <strong>ScormSettingsView</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="AddInternalFile" class="method">
+    <h4>ActionType <strong>AddInternalFile</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.FileRepository.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+	</section>
+	</article><footer>
+	<span id="version">Built from v1.0.0.0 of lm.Comol.Core.DomainModel</span>
+	<span id="docu-link">
+		Generated by <a href="http://docu.jagregory.com">docu</a>
+	</span>
+</footer>
+  </body>
+</html>

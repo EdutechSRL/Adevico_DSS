@@ -1,0 +1,878 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+	<!--[if lt IE 9]>
+	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+    <title>ProfileAttributeType - lm.Comol.Core.DomainModel Documentation</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+    <link type="text/css" rel="stylesheet" href="../main.css"/>
+    <script type="text/javascript" src="../js/jquery-1.3.2.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.scrollTo-min.js"></script>
+    <script type="text/javascript" src="../js/navigation.js"></script>
+    <script type="text/javascript" src="../js/example.js"></script>
+  </head>
+  <body>
+  	<header><h1>lm.Comol.Core.DomainModel : API Documentation</h1>
+	</header>
+<nav id="namespaces">
+	<h2 class="fixed">Namespaces</h2>
+	<div class="scroll">
+		<ul>
+			<li>
+          <a href="../lm.Comol.Core.Authentication/index.htm" class="current">lm.Comol.Core.Authentication</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.Authentication.Business/index.htm">lm.Comol.Core.Authentication.Business</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.Authentication.Helpers/index.htm">lm.Comol.Core.Authentication.Helpers</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.Business/index.htm">lm.Comol.Core.Business</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.Catalogues/index.htm">lm.Comol.Core.Catalogues</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.Certifications/index.htm">lm.Comol.Core.Certifications</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.Certifications.Business/index.htm">lm.Comol.Core.Certifications.Business</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.Communities/index.htm">lm.Comol.Core.Communities</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.Dashboard.Business/index.htm">lm.Comol.Core.Dashboard.Business</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.Dashboard.Domain/index.htm">lm.Comol.Core.Dashboard.Domain</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.DomainModel/index.htm">lm.Comol.Core.DomainModel</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.DomainModel.Assignment/index.htm">lm.Comol.Core.DomainModel.Assignment</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.DomainModel.Common/index.htm">lm.Comol.Core.DomainModel.Common</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.DomainModel.DocTemplateVers/index.htm">lm.Comol.Core.DomainModel.DocTemplateVers</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.DomainModel.DocTemplateVers.Business/index.htm">lm.Comol.Core.DomainModel.DocTemplateVers.Business</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.DomainModel.DocTemplateVers.Domain.Core/index.htm">lm.Comol.Core.DomainModel.DocTemplateVers.Domain.Core</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.DomainModel.DocTemplateVers.Domain.DTO.Management/index.htm">lm.Comol.Core.DomainModel.DocTemplateVers.Domain.DTO.Management</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.DomainModel.DocTemplateVers.Domain.DTO.ServiceExport/index.htm">lm.Comol.Core.DomainModel.DocTemplateVers.Domain.DTO.ServiceExport</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.DomainModel.DocTemplateVers.Helpers/index.htm">lm.Comol.Core.DomainModel.DocTemplateVers.Helpers</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.DomainModel.Domain/index.htm">lm.Comol.Core.DomainModel.Domain</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.DomainModel.Filters/index.htm">lm.Comol.Core.DomainModel.Filters</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.DomainModel.Helpers/index.htm">lm.Comol.Core.DomainModel.Helpers</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.DomainModel.Helpers.Export/index.htm">lm.Comol.Core.DomainModel.Helpers.Export</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.DomainModel.Helpers.Tags/index.htm">lm.Comol.Core.DomainModel.Helpers.Tags</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.DomainModel.Languages/index.htm">lm.Comol.Core.DomainModel.Languages</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.DomainModel.Repository/index.htm">lm.Comol.Core.DomainModel.Repository</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.DomainModel.SrvFileTransfer/index.htm">lm.Comol.Core.DomainModel.SrvFileTransfer</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.DomainModel.SrvFileUnzip/index.htm">lm.Comol.Core.DomainModel.SrvFileUnzip</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.Event/index.htm">lm.Comol.Core.Event</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.Event.Business/index.htm">lm.Comol.Core.Event.Business</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.Events.Domain/index.htm">lm.Comol.Core.Events.Domain</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.FileRepository.Business/index.htm">lm.Comol.Core.FileRepository.Business</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.FileRepository.Domain/index.htm">lm.Comol.Core.FileRepository.Domain</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.FileRepository.Domain.ScormSettings/index.htm">lm.Comol.Core.FileRepository.Domain.ScormSettings</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.FileRepository.Domain.toRemove/index.htm">lm.Comol.Core.FileRepository.Domain.toRemove</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.InLineTags.Business/index.htm">lm.Comol.Core.InLineTags.Business</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.InLineTags.Domain/index.htm">lm.Comol.Core.InLineTags.Domain</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.Mail/index.htm">lm.Comol.Core.Mail</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.Mail.Messages/index.htm">lm.Comol.Core.Mail.Messages</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.ModuleLinks/index.htm">lm.Comol.Core.ModuleLinks</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.Msmq.DataContract/index.htm">lm.Comol.Core.Msmq.DataContract</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.Notification.DataContract/index.htm">lm.Comol.Core.Notification.DataContract</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.Notification.Domain/index.htm">lm.Comol.Core.Notification.Domain</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.PersonalInfo/index.htm">lm.Comol.Core.PersonalInfo</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.Subscriptions/index.htm">lm.Comol.Core.Subscriptions</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.Tag.Business/index.htm">lm.Comol.Core.Tag.Business</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.Tag.Domain/index.htm">lm.Comol.Core.Tag.Domain</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.TemplateMessages/index.htm">lm.Comol.Core.TemplateMessages</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.TemplateMessages.Business/index.htm">lm.Comol.Core.TemplateMessages.Business</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.TemplateMessages.Domain/index.htm">lm.Comol.Core.TemplateMessages.Domain</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.WinService.Configurations/index.htm">lm.Comol.Core.WinService.Configurations</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.Wizard/index.htm">lm.Comol.Core.Wizard</a>
+      </li>
+		</ul>
+	</div>
+</nav><nav id="types">
+  <h2 class="fixed">Types in lm.Comol.Core.Authentication</h2>
+	<div class="scroll">
+		<ul>
+				<li>
+            <a href="../lm.Comol.Core.Authentication/AgencyError.htm">AgencyError</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Authentication/ApplicationAttribute.htm">ApplicationAttribute</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Authentication/AttributeType.htm">AttributeType</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Authentication/AuthenticationProvider.htm">AuthenticationProvider</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Authentication/AuthenticationProviderTranslation.htm">AuthenticationProviderTranslation</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Authentication/AuthenticationProviderType.htm">AuthenticationProviderType</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Authentication/AuthenticationResult.htm">AuthenticationResult</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Authentication/BaseLoginInfo.htm">BaseLoginInfo</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Authentication/BaseLoginInfoHistory.htm">BaseLoginInfoHistory</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Authentication/BaseUrlMacAttribute.htm">BaseUrlMacAttribute</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Authentication/CatalogueAttribute.htm">CatalogueAttribute</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Authentication/CatalogueAttributeItem.htm">CatalogueAttributeItem</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Authentication/CompositeAttributeItem.htm">CompositeAttributeItem</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Authentication/CompositeProfileAttribute.htm">CompositeProfileAttribute</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Authentication/CreatorInfo.htm">CreatorInfo</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Authentication/dtoBaseProfile.htm">dtoBaseProfile</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Authentication/dtoCompany.htm">dtoCompany</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Authentication/dtoComposerAttribute.htm">dtoComposerAttribute</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Authentication/dtoCreatedProfile.htm">dtoCreatedProfile</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Authentication/dtoEmployee.htm">dtoEmployee</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Authentication/dtoExternal.htm">dtoExternal</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Authentication/dtoExternalCredentials.htm">dtoExternalCredentials</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Authentication/dtoInternalCredentials.htm">dtoInternalCredentials</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Authentication/dtoMacUrlProviderIdentifier.htm">dtoMacUrlProviderIdentifier</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Authentication/dtoMacUrlToken.htm">dtoMacUrlToken</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Authentication/dtoMacUrlTokenEvaluation.htm">dtoMacUrlTokenEvaluation</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Authentication/dtoMacUrlUserAttribute.htm">dtoMacUrlUserAttribute</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Authentication/dtoUrlToken.htm">dtoUrlToken</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Authentication/dtoUrlTokenEvaluation.htm">dtoUrlTokenEvaluation</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Authentication/EditType.htm">EditType</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Authentication/ExternalLoginInfo.htm">ExternalLoginInfo</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Authentication/ExternalLoginInfoHistory.htm">ExternalLoginInfoHistory</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Authentication/FunctionAttribute.htm">FunctionAttribute</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Authentication/GenericEncryption.htm">GenericEncryption</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Authentication/IdentifierField.htm">IdentifierField</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Authentication/InternalAuthenticationProvider.htm">InternalAuthenticationProvider</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Authentication/InternalLoginInfo.htm">InternalLoginInfo</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Authentication/InternalLoginInfoHistory.htm">InternalLoginInfoHistory</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Authentication/InvalidPasswordException.htm">InvalidPasswordException</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Authentication/LDAPAuthenticationProvider.htm">LDAPAuthenticationProvider</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Authentication/liteGenericEncryption.htm">liteGenericEncryption</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Authentication/LoginFormat.htm">LoginFormat</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Authentication/LogoutMode.htm">LogoutMode</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Authentication/MacAttribute.htm">MacAttribute</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Authentication/MacAttributeItem.htm">MacAttributeItem</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Authentication/MacType.htm">MacType</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Authentication/MacUrlAuthenticationProvider.htm">MacUrlAuthenticationProvider</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Authentication/MailEditingPending.htm">MailEditingPending</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Authentication/OrganizationAttribute.htm">OrganizationAttribute</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Authentication/OrganizationAttributeItem.htm">OrganizationAttributeItem</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Authentication/ProfileAttributeType.htm" class="current">ProfileAttributeType</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Authentication/ProfileDefaultCommunity.htm">ProfileDefaultCommunity</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Authentication/ProfilerError.htm">ProfilerError</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Authentication/ProfilerException.htm">ProfilerException</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Authentication/SamePasswordException.htm">SamePasswordException</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Authentication/TempAuthenticationProvider.htm">TempAuthenticationProvider</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Authentication/TimestampAttribute.htm">TimestampAttribute</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Authentication/TimestampFormat.htm">TimestampFormat</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Authentication/UrlAuthenticationProvider.htm">UrlAuthenticationProvider</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Authentication/UrlMacAttributeType.htm">UrlMacAttributeType</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Authentication/UrlProviderResult.htm">UrlProviderResult</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Authentication/UrlUserTokenFormat.htm">UrlUserTokenFormat</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Authentication/UserProfileAttribute.htm">UserProfileAttribute</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Authentication/WaitingActivationProfile.htm">WaitingActivationProfile</a>
+        </li>
+		</ul>
+	</div>
+</nav>
+	<article>
+    <header>
+		<p class="class"><strong>Type</strong> ProfileAttributeType</p>
+	</header>
+	<section>
+		<header>
+		<p><strong>Namespace</strong> lm.Comol.Core.Authentication</p>
+		<p><strong>Parent</strong> <span title="System.Enum">Enum</span></p>
+		</header>
+    <div class="sub-header">
+		
+		
+		
+		
+			<h3 class="section">Fields</h3>
+			<ul>
+				<li><a href="../lm.Comol.Core.Authentication/ProfileAttributeType.htm#value__">value__</a></li>
+				<li><a href="../lm.Comol.Core.Authentication/ProfileAttributeType.htm#skip">skip</a></li>
+				<li><a href="../lm.Comol.Core.Authentication/ProfileAttributeType.htm#unknown">unknown</a></li>
+				<li><a href="../lm.Comol.Core.Authentication/ProfileAttributeType.htm#externalId">externalId</a></li>
+				<li><a href="../lm.Comol.Core.Authentication/ProfileAttributeType.htm#name">name</a></li>
+				<li><a href="../lm.Comol.Core.Authentication/ProfileAttributeType.htm#surname">surname</a></li>
+				<li><a href="../lm.Comol.Core.Authentication/ProfileAttributeType.htm#mail">mail</a></li>
+				<li><a href="../lm.Comol.Core.Authentication/ProfileAttributeType.htm#telephoneNumber">telephoneNumber</a></li>
+				<li><a href="../lm.Comol.Core.Authentication/ProfileAttributeType.htm#fax">fax</a></li>
+				<li><a href="../lm.Comol.Core.Authentication/ProfileAttributeType.htm#mobile">mobile</a></li>
+				<li><a href="../lm.Comol.Core.Authentication/ProfileAttributeType.htm#taxCode">taxCode</a></li>
+				<li><a href="../lm.Comol.Core.Authentication/ProfileAttributeType.htm#login">login</a></li>
+				<li><a href="../lm.Comol.Core.Authentication/ProfileAttributeType.htm#password">password</a></li>
+				<li><a href="../lm.Comol.Core.Authentication/ProfileAttributeType.htm#companyName">companyName</a></li>
+				<li><a href="../lm.Comol.Core.Authentication/ProfileAttributeType.htm#companyAddress">companyAddress</a></li>
+				<li><a href="../lm.Comol.Core.Authentication/ProfileAttributeType.htm#companyCity">companyCity</a></li>
+				<li><a href="../lm.Comol.Core.Authentication/ProfileAttributeType.htm#companyRegion">companyRegion</a></li>
+				<li><a href="../lm.Comol.Core.Authentication/ProfileAttributeType.htm#companyTaxCode">companyTaxCode</a></li>
+				<li><a href="../lm.Comol.Core.Authentication/ProfileAttributeType.htm#externalUserInfo">externalUserInfo</a></li>
+				<li><a href="../lm.Comol.Core.Authentication/ProfileAttributeType.htm#address">address</a></li>
+				<li><a href="../lm.Comol.Core.Authentication/ProfileAttributeType.htm#zipCode">zipCode</a></li>
+				<li><a href="../lm.Comol.Core.Authentication/ProfileAttributeType.htm#city">city</a></li>
+				<li><a href="../lm.Comol.Core.Authentication/ProfileAttributeType.htm#autoGeneratedLogin">autoGeneratedLogin</a></li>
+				<li><a href="../lm.Comol.Core.Authentication/ProfileAttributeType.htm#companyReaNumber">companyReaNumber</a></li>
+				<li><a href="../lm.Comol.Core.Authentication/ProfileAttributeType.htm#companyAssociations">companyAssociations</a></li>
+				<li><a href="../lm.Comol.Core.Authentication/ProfileAttributeType.htm#webSite">webSite</a></li>
+				<li><a href="../lm.Comol.Core.Authentication/ProfileAttributeType.htm#agencyExternalCode">agencyExternalCode</a></li>
+				<li><a href="../lm.Comol.Core.Authentication/ProfileAttributeType.htm#agencyTaxCode">agencyTaxCode</a></li>
+				<li><a href="../lm.Comol.Core.Authentication/ProfileAttributeType.htm#agencyNationalCode">agencyNationalCode</a></li>
+				<li><a href="../lm.Comol.Core.Authentication/ProfileAttributeType.htm#agencyName">agencyName</a></li>
+				<li><a href="../lm.Comol.Core.Authentication/ProfileAttributeType.htm#agencyInternalCode">agencyInternalCode</a></li>
+				<li><a href="../lm.Comol.Core.Authentication/ProfileAttributeType.htm#language">language</a></li>
+				<li><a href="../lm.Comol.Core.Authentication/ProfileAttributeType.htm#job">job</a></li>
+				<li><a href="../lm.Comol.Core.Authentication/ProfileAttributeType.htm#sector">sector</a></li>
+				<li><a href="../lm.Comol.Core.Authentication/ProfileAttributeType.htm#birthDate">birthDate</a></li>
+				<li><a href="../lm.Comol.Core.Authentication/ProfileAttributeType.htm#birthPlace">birthPlace</a></li>
+			</ul>
+	</div>
+	
+	
+	
+  <h3 class="section">Public fields</h3>
+
+  <div id="value__" class="method">
+    <h4>int <strong>value__</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <span title="System.int">int</span></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="skip" class="method">
+    <h4>ProfileAttributeType <strong>skip</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.Authentication/ProfileAttributeType.htm">ProfileAttributeType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="unknown" class="method">
+    <h4>ProfileAttributeType <strong>unknown</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.Authentication/ProfileAttributeType.htm">ProfileAttributeType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="externalId" class="method">
+    <h4>ProfileAttributeType <strong>externalId</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.Authentication/ProfileAttributeType.htm">ProfileAttributeType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="name" class="method">
+    <h4>ProfileAttributeType <strong>name</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.Authentication/ProfileAttributeType.htm">ProfileAttributeType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="surname" class="method">
+    <h4>ProfileAttributeType <strong>surname</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.Authentication/ProfileAttributeType.htm">ProfileAttributeType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="mail" class="method">
+    <h4>ProfileAttributeType <strong>mail</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.Authentication/ProfileAttributeType.htm">ProfileAttributeType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="telephoneNumber" class="method">
+    <h4>ProfileAttributeType <strong>telephoneNumber</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.Authentication/ProfileAttributeType.htm">ProfileAttributeType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="fax" class="method">
+    <h4>ProfileAttributeType <strong>fax</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.Authentication/ProfileAttributeType.htm">ProfileAttributeType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="mobile" class="method">
+    <h4>ProfileAttributeType <strong>mobile</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.Authentication/ProfileAttributeType.htm">ProfileAttributeType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="taxCode" class="method">
+    <h4>ProfileAttributeType <strong>taxCode</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.Authentication/ProfileAttributeType.htm">ProfileAttributeType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="login" class="method">
+    <h4>ProfileAttributeType <strong>login</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.Authentication/ProfileAttributeType.htm">ProfileAttributeType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="password" class="method">
+    <h4>ProfileAttributeType <strong>password</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.Authentication/ProfileAttributeType.htm">ProfileAttributeType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="companyName" class="method">
+    <h4>ProfileAttributeType <strong>companyName</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.Authentication/ProfileAttributeType.htm">ProfileAttributeType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="companyAddress" class="method">
+    <h4>ProfileAttributeType <strong>companyAddress</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.Authentication/ProfileAttributeType.htm">ProfileAttributeType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="companyCity" class="method">
+    <h4>ProfileAttributeType <strong>companyCity</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.Authentication/ProfileAttributeType.htm">ProfileAttributeType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="companyRegion" class="method">
+    <h4>ProfileAttributeType <strong>companyRegion</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.Authentication/ProfileAttributeType.htm">ProfileAttributeType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="companyTaxCode" class="method">
+    <h4>ProfileAttributeType <strong>companyTaxCode</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.Authentication/ProfileAttributeType.htm">ProfileAttributeType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="externalUserInfo" class="method">
+    <h4>ProfileAttributeType <strong>externalUserInfo</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.Authentication/ProfileAttributeType.htm">ProfileAttributeType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="address" class="method">
+    <h4>ProfileAttributeType <strong>address</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.Authentication/ProfileAttributeType.htm">ProfileAttributeType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="zipCode" class="method">
+    <h4>ProfileAttributeType <strong>zipCode</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.Authentication/ProfileAttributeType.htm">ProfileAttributeType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="city" class="method">
+    <h4>ProfileAttributeType <strong>city</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.Authentication/ProfileAttributeType.htm">ProfileAttributeType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="autoGeneratedLogin" class="method">
+    <h4>ProfileAttributeType <strong>autoGeneratedLogin</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.Authentication/ProfileAttributeType.htm">ProfileAttributeType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="companyReaNumber" class="method">
+    <h4>ProfileAttributeType <strong>companyReaNumber</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.Authentication/ProfileAttributeType.htm">ProfileAttributeType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="companyAssociations" class="method">
+    <h4>ProfileAttributeType <strong>companyAssociations</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.Authentication/ProfileAttributeType.htm">ProfileAttributeType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="webSite" class="method">
+    <h4>ProfileAttributeType <strong>webSite</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.Authentication/ProfileAttributeType.htm">ProfileAttributeType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="agencyExternalCode" class="method">
+    <h4>ProfileAttributeType <strong>agencyExternalCode</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.Authentication/ProfileAttributeType.htm">ProfileAttributeType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="agencyTaxCode" class="method">
+    <h4>ProfileAttributeType <strong>agencyTaxCode</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.Authentication/ProfileAttributeType.htm">ProfileAttributeType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="agencyNationalCode" class="method">
+    <h4>ProfileAttributeType <strong>agencyNationalCode</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.Authentication/ProfileAttributeType.htm">ProfileAttributeType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="agencyName" class="method">
+    <h4>ProfileAttributeType <strong>agencyName</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.Authentication/ProfileAttributeType.htm">ProfileAttributeType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="agencyInternalCode" class="method">
+    <h4>ProfileAttributeType <strong>agencyInternalCode</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.Authentication/ProfileAttributeType.htm">ProfileAttributeType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="language" class="method">
+    <h4>ProfileAttributeType <strong>language</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.Authentication/ProfileAttributeType.htm">ProfileAttributeType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="job" class="method">
+    <h4>ProfileAttributeType <strong>job</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.Authentication/ProfileAttributeType.htm">ProfileAttributeType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="sector" class="method">
+    <h4>ProfileAttributeType <strong>sector</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.Authentication/ProfileAttributeType.htm">ProfileAttributeType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="birthDate" class="method">
+    <h4>ProfileAttributeType <strong>birthDate</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.Authentication/ProfileAttributeType.htm">ProfileAttributeType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="birthPlace" class="method">
+    <h4>ProfileAttributeType <strong>birthPlace</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.Authentication/ProfileAttributeType.htm">ProfileAttributeType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+	</section>
+	</article><footer>
+	<span id="version">Built from v1.0.0.0 of lm.Comol.Core.DomainModel</span>
+	<span id="docu-link">
+		Generated by <a href="http://docu.jagregory.com">docu</a>
+	</span>
+</footer>
+  </body>
+</html>

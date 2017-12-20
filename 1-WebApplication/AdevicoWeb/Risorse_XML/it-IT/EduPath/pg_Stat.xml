@@ -1,0 +1,437 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--ita-->
+<Resource xmlns="urn:ComolTranslation">
+  <item name="CHBshowall.text">Mostra partecipanti nascosti</item>
+  <item name="EvaluateSubAct">Valutazione sottoattività</item>
+  <item name="LNBcsv.text" mustcontains="Excel">Esporta in Excel</item>
+  <item name="LNBcsv.ToolTip" mustcontains="Excel">Esporta in Excel</item>
+  <item name="LNBpdf.text" mustcontains="Pdf">Esporta in Pdf</item>
+  <item name="LNBpdf.ToolTip" mustcontains="Pdf">Esporta in Pdf</item>
+  <item name="LNBxml.text" mustcontains="Xml">Esporta in Xml</item>
+  <item name="LNBxml.ToolTip" mustcontains="Xml">Esporta in Xml</item>
+  <item name="HYPuserStat.text">Statistiche Utenti</item>
+  <item name="HYPuserStat.ToolTip">Statistiche Utenti</item>
+  <item name="HYPpathStat.text">Statistiche del percorso formativo</item>
+  <item name="HYPpathStat.ToolTip">Statistiche del percorso formativo</item>
+  <item name="UserEpStat">Statistiche dell'utente nel percorso formativo</item>
+  <item name="UsersEpStat">Statistiche degli utenti</item>
+  <item name="GlobalEpStat">Statistiche globali degli utenti nel percorso formativo</item>
+  <item name="UserActivityStat">Statistiche dell'utente nell'attività: </item>
+  <item name="Path">Percorso formativo</item>
+  <item name="Unit" disambiguation="singolare">Unità</item>
+  <item name="Activity" disambiguation="singolare">Attività</item>
+  <item name="SubActivity" disambiguation="singolare">Sottoattività</item>
+  <item name="ExportStatistics">Esporta statistiche</item>
+  <item name="ViewStatistics">Statistiche</item>
+  <item name="StatusStatistic.None">Non iniziato</item>
+  <item name="StatusStatistic.Browsed">Visitato</item>
+  <item name="StatusStatistic.Started">Iniziato</item>
+  <item name="StatusStatistic.Completed">Completato</item>
+  <item name="StatusStatistic.Passed">Passato</item>
+  <item name="StatusStatistic.CompletedPassed">Completato e superato</item>
+  <item name="StatusStatistic.NotPassed">Non passato</item>
+  <item name="LBnameTit.text">Nome</item>
+  <item name="LBmandatoryTit.text">Elementi obbligatori</item>
+  <item name="LBToDoTit.text">Elementi da fare</item>
+  <item name="LBallTit.text">Tutti gli elementi</item>
+  <item name="LBbarTit.text">Barra di avazamento</item>
+  <item name="LBcompletionTit.percent.text">% Completamento</item>
+  <item name="LBcompletionTit.time.text">Tempo di Completamento</item>
+  <item name="LBtypeTit.text">Tipo di contenuto</item>
+  <item name="LBstatusTit.text" disambiguation="status: attivo/chiuso/in corso/valutazione">Stato</item>
+  <item name="LBactionsTit.text">Azioni</item>
+  <item name="PassedCompleted.Item">N° di elementi superati: </item>
+  <item name="NotStarted.Item">N° di elementi non iniziati: </item>
+  <item name="Started.Item">N° di elementi iniziati: </item>
+  <item name="HYPdetail.ToolTip">Visualizza dettagli</item>
+  <item name="HYPquizstats.ToolTip">Statistiche Quiz</item>
+  <item name="HYPstats.ToolTip">Statistiche</item>
+  <item name="HYPcertificates.Text">Certificati</item>
+  <item name="HYPcertificates.ToolTip">Certificati</item>
+  <item name="HYPinfo.ToolTip">Dettagli</item>
+  <item name="HYPeditMetadata.ToolTip">Edita Metadata</item>
+  <item name="HYPdetail.text">Dettagli</item>
+  <item name="Error.Generic">Errore di sistema</item>
+  <item name="Error.NotPermission">Nessun permesso per eseguire l'operazione</item>
+  <item name="Error.Url">Indirizzo errato</item>
+  <item name="Error.Data">Errore nel salvataggio dei dati</item>
+  <item name="Error.EmptyActivities">Impossibile cambiare la visibilità. Esistono attività vuote !</item>
+  <item name="Error.PathTimeNotEqualToActivities">Le ore riconosciute per il percorso non corrispondono a quelle riconosciute per le attivita`, impossibile sbloccare.</item>
+  <item name="Error.PathNotFind">Percorso formativo NON trovato</item>
+  <item name="Error.NotManageable">Percorso bloccato</item>
+  <item name="SubActivityType.Quiz">Questionario</item>
+  <item name="SubActivityType.Forum">Forum</item>
+  <item name="SubActivityType.File" description="materiale inteso come file/materiale didattico" disambiguation="materiale=file">Materiale</item>
+  <item name="SubActivityType.Wiki">Wiki</item>
+  <item name="SubActivityType.Text">Testo</item>
+  <item name="LBnoSubAct.text">Nessuna sottoattività presente!</item>
+  <item name="LbTotMandAct.text">Sottoattività obbligatorie totali: </item>
+  <item name="LbTotMandUnit.text">Attività obbligatorie totali: </item>
+  <item name="LbTotMandPath.text">Unità obbligatorie totali: </item>
+  <item name="LbOnlyCompAct.text">Sottoattività obbligatorie completate: </item>
+  <item name="LbOnlyCompUnit.text">Attività obbligatorie completate: </item>
+  <item name="LbOnlyCompPath.text">Unità obbligatorie completate: </item>
+  <item name="LbOnlyPassAct.text">Sottoattività obbligatorie passate: </item>
+  <item name="LbOnlyPassUnit.text">Attività obbligatorie passate: </item>
+  <item name="LbOnlyPassPath.text">Unità obbligatorie passate: </item>
+  <item name="LbPassComplAct.text">Sottoattività obbligatorie completate e passate: </item>
+  <item name="LbPassComplUnit.text">Attività obbligatorie completate e passate: </item>
+  <item name="LbPassComplPath.text">Unità obbligatorie completate e passate: </item>
+  <item name="IMGmandatory.AlternateText">Clicca per visualizzare lo stato degli oggetti obbligatori</item>
+  <item name="LBmarkTit.text">% Punteggio</item>
+  <item name="LbDialogActivity.text">Avanzamento delle sottoattività dell'</item>
+  <item name="LbDialogUnit.text">Avanzamento delle attività dell'</item>
+  <item name="LbDialogPath.text">Avanzamento delle unità del </item>
+  <item name="HYPeduPathView.text">Visualizza Percorso</item>
+  <item name="HYPeduPathView.ToolTip">Visualizza Percorso Formativo</item>
+  <item name="HYPeduPathList.text">Lista Percorsi</item>
+  <item name="HYPeduPathList.ToolTip">Torna alla lista dei Percorsi Formativi</item>
+  <item name="HYPback.text">Indietro</item>
+  <item name="HYPback.ToolTip">Ritorna indietro</item>
+  <item name="HYPerror.text">Lista percorsi</item>
+  <item name="HYPerror.ToolTip">Va alla lista dei percorsi formativi</item>
+  <item name="LBmarkSubActTit.text">% Punteggio</item>
+  <item name="LBcompletionSubActTit.text">% Completamento</item>
+  <item name="IMGSubActMand.AlternateText">Sottoattività obbligatoria</item>
+  <item name="IMGmandatory.AlternateText">L'oggetto è obbligatorio</item>
+  <item name="FileCreate">Percorso formativo</item>
+  <item name="DisplayMessageToken">Il file richiesto è in fase di preparazione, attendere qualche minuto per il download.</item>
+  <item name="Blocked.True">Bloccato</item>
+  <item name="Blocked.False">Non bloccato</item>
+  <item name="LBnoPartecipant.text">Nessun partecipante da visualizzare</item>
+
+  <item name="LKBblocked.text">Blocca/Sblocca</item>
+  <item name="LKBblocked.ToolTip">Blocca/Sblocca</item>
+  <item name="BTNevaluate.text">Salva voti</item>
+  <item name="BTNevaluate.ToolTip">Salva voti</item>
+  <item name="LKBeduPathView.text">Visualizza Percorso Formativo</item>
+  <item name="LKBeduPathView.ToolTip">Visualizza Percorso Formativo</item>
+  <item name="LKBupdateList.text">Aggiorna la lista dei partecipanti</item>
+  <item name="LKBupdateList.ToolTip">Aggiorna la lista dei partecipanti</item>
+  <item name="LBsaveVote.text">Vuoi aggiornare i voti assegnati?</item>
+  <item name="BTNsave.text">Salva</item>
+  <item name="BTNsave.ToolTip">Salva</item>
+  <item name="BTNnoSave.text">Non salvare</item>
+  <item name="BTNnoSave.ToolTip">Non salvare</item>
+
+  <item name="EduPathTranslations.Path">Percorso formativo</item>
+  <item name="EduPathTranslations.Unit" disambiguation="singolare">Unità</item>
+  <item name="EduPathTranslations.Activity" disambiguation="singolare">Attività</item>
+  <item name="EduPathTranslations.SubActivity">Sottoattività</item>
+  <item name="EduPathTranslations.SurnameAndName">Cognome e nome</item>
+  <item name="EduPathTranslations.Completion">% di completamento</item>
+  <item name="EduPathTranslations.MinCompletion">% minima di completamento</item>
+  <item name="EduPathTranslations.Mark">% punteggio</item>
+  <item name="EduPathTranslations.MinMark">% punteggio minimo</item>
+  <item name="EduPathTranslations.Status" disambiguation="status: attivo/chiuso/in corso/valutazione">Stato</item>
+  <item name="EduPathTranslations.Name">Nome</item>
+  <item name="EduPathTranslations.CompletedPassed">Completato e superato</item>
+  <item name="EduPathTranslations.Completed">Completato</item>
+  <item name="EduPathTranslations.Passed">Passato</item>
+  <item name="EduPathTranslations.Started">Iniziato</item>
+  <item name="EduPathTranslations.NotStarted">Non iniziato</item>
+  <item name="EduPathTranslations.ContentType">Tipo di contenuto</item>
+  <item name="EduPathTranslations.Quiz">Quiz</item>
+  <item name="EduPathTranslations.Forum">Forum</item>
+  <item name="EduPathTranslations.File">File</item>
+  <item name="EduPathTranslations.Wiki">Wiki</item>
+  <item name="EduPathTranslations.Mandatory">Obbligatorio</item>
+  <item name="EduPathTranslations.Type">Tipo di oggetto</item>
+  <item name="EduPathTranslations.LevelType">Livello dell'oggetto</item>
+  <item name="EduPathTranslations.PartecipantNumber">N° di partecipanti</item>
+  <item name="EduPathTranslations.Weight">Peso</item>
+  <item name="EduPathTranslations.Time">Tempo</item>
+  <item name="EduPathTranslations.MinTime">Tempo minimo</item>
+  <item name="EduPathTranslations.Certification">Certificato</item>
+  <item name="EduPathTranslations.ParticipantNumber">N° utenti</item>
+  <item name="EduPathTranslations.FileCreationError">Errore nella creazione del file</item>
+  <item name="EduPathTranslations.YesOption">Si</item>
+  <item name="EduPathTranslations.NoOption">No</item>
+  <item name="EduPathTranslations.StatisticsInfo" placeholder="true" mustcontains="{0}">Statistiche fino al {0}</item>
+  <item name="EduPathTranslations.CellTitleViewedOn">Visualizzato il</item>
+  <item name="EduPathTranslations.CellTitleCompletedOn">Completato il</item>
+  <item name="EduPathTranslations.CellTitleLastActionOn">Ultima azione il</item>
+  <item name="EduPathTranslations.CellTitlePathName">Percorso</item>
+  <item name="EduPathTranslations.CellTitleCommunityName" disambiguation="singolare">Comunità</item>
+  <item name="EduPathTranslations.CellTitlePathAvailableFrom">Disponibile dal</item>
+  <item name="EduPathTranslations.CellTitlePathAvailableTo">Disponibile al</item>
+  <item name="EduPathTranslations.CellTitleQuizName">Questionario</item>
+  <item name="EduPathTranslations.CellTitleQuizType">Tipo questionario</item>
+  <item name="EduPathTranslations.CellTitleQuizAttemptsNumber">N° max tentativi</item>
+  <item name="EduPathTranslations.CellTitleQuizAttemptNumber">Tentativo n.</item>
+  <item name="EduPathTranslations.CellTitleQuizAttemptDate">Salvato il</item>
+  <item name="EduPathTranslations.CellTitleQuizQuestionsSkipped" description="D. = domande">D. Saltate</item>
+  <item name="EduPathTranslations.CellTitleQuizQuestionsCount">N° domande </item>
+  <item name="EduPathTranslations.CellTitleQuizCorrectAnswers" description="D. = domande">D. corrette</item>
+  <item name="EduPathTranslations.CellTitleQuizWrongAnswers" description="D. = domande">D. errate</item>
+  <item name="EduPathTranslations.CellTitleQuizUngradedAnswers" description="D. = domande">D. non valutate</item>
+  <item name="EduPathTranslations.CellTitleQuizSemiCorrectAnswers" description="D. = domande">D. parzialmente corrette</item>
+  <item name="EduPathTranslations.CellTitleQuizAnswersCount" description="D. = domande">D. risposte</item>
+  <item name="EduPathTranslations.CellTitleMinScore">Punteggio minimo</item>
+  <item name="EduPathTranslations.CellTitleMaxScore">Punteggio massimo</item>
+  <item name="EduPathTranslations.CellTitleAttemptScore">Punteggio ottenuto</item>
+  <item name="EduPathTranslations.QuestionnaireAttemptsNoLimits">Nessun limite</item>
+  <item name="EduPathTranslations.DeletedCommunity" mustcontains="{0}" placeholder="true" description="cod = codice">cancellata (cod {0})</item>
+  <item name="EduPathTranslations.DeletedUser" mustcontains="{0}" placeholder="true" description="cod = codice">cancellato (cod {0})</item>
+  <item name="EduPathTranslations.DisplayUserInfo">Statistiche avanzate utente:</item>
+  <item name="EduPathTranslations.DisplayPathsInfos">Percorsi formativi:</item>
+  <item name="EduPathTranslations.DisplayStartedPathsInfos">Iniziati</item>
+  <item name="EduPathTranslations.DisplayCompletedPathsInfos">Completati</item>
+  <item name="EduPathTranslations.DisplayNotStartedPathsInfos">Non iniziati</item>
+  <item name="EduPathTranslations.AnonymousUser">Utente sconosciuto</item>
+  <item name="EduPathTranslations.CellTitleStartAgencyName">Inizio con ente</item>
+  <item name="EduPathTranslations.CellTitleEndAgencyName">Completato con ente</item>
+  <item name="EduPathTranslations.CellTitleCurrentAgencyName">Ente attuale</item>
+  <item name="EduPathTranslations.DisplayUserAgencyInfo" mustcontains="{0}|{1}|{2}" placeholder="true">Ente {0} dal {1} al {2}.</item>
+  <item name="EduPathTranslations.DisplayCurrentUserAgencyInfo" mustcontains="{0}|{1}" placeholder="true">Ente {0} dal {1} ad oggi. </item>
+  <item name="EduPathTranslations.CellTitleIdUser">Id utente</item>
+  <item name="EduPathTranslations.CellTitleIdCommunity">Id Comunità</item>
+  <item name="EduPathTranslations.CellTitleIdPath">Id percorso</item>
+  <item name="EduPathTranslations.CellTitleIdStartAgency">Id ente </item>
+  <item name="EduPathTranslations.CellTitleIdEndAgency">Id ente </item>
+  <item name="EduPathTranslations.CellTitleIdCurrentAgency">Id ente </item>
+  <item name="EduPathTranslations.CellTitleTaxCode">Cod. Fiscale</item>
+  <item name="EduPathTranslations.DisplayPathNameInfo">Nome Percorso:</item>
+  <item name="EduPathTranslations.DisplayPathMinCompletionInfo">Completamento minimo:</item>
+  <item name="EduPathTranslations.DisplayPathMinMarkInfo">Punteggio minimo:</item>
+  <item name="EduPathTranslations.DisplayPathTimeInfo">Durata percorso:</item>
+  <item name="EduPathTranslations.DisplayPathStatisticInfos">Statistiche percorso:</item>
+  <item name="EduPathTranslations.DisplayPathUsersCompleted">Completato da:</item>
+  <item name="EduPathTranslations.DisplayPathUsersStarted">Iniziato da:</item>
+  <item name="EduPathTranslations.DisplayPathUsersNotStarted">NON iniziato da:</item>
+  <item name="EduPathTranslations.GenericTextAction">attività' manuale</item>
+  <item name="EduPathTranslations.CellTitleActivityNumber" mustcontains="{0}" placeholder="true" disambiguation="singolare">Attività {0}</item>
+  <item name="EduPathTranslations.CellTitleSubActivityNumber" mustcontains="{0}" placeholder="true" disambiguation="singolare">Sotto attività {0}</item>
+  <item name="EduPathTranslations.CompletedPassedChar" disambiguation="C=completetato/passato (un solo carattere)">C</item>
+  <item name="EduPathTranslations.PassedChar" disambiguation="P=passato (un solo carattere)">P</item>
+  <item name="EduPathTranslations.CompletedChar" disambiguation="C=completetato (un solo carattere)">C</item>
+  <item name="EduPathTranslations.StartedChar" disambiguation="I=iniziato (un solo carattere)">I</item>
+  <item name="EduPathTranslations.NotStartedChar" disambiguation="N=non iniziato (un solo carattere)">N</item>
+  <item name="EduPathTranslations.CellTitleCompletion">Completamento totale</item>
+  <item name="EduPathTranslations.CellTitleMinCompletion">Completamento minimo</item>
+  <item name="EduPathTranslations.CellTitleTotalTime">Ore fruite</item>
+  <item name="EduPathTranslations.CellTitleTotalMark">Punteggio ottenuti</item>
+  <item name="EduPathTranslations.TitleUserInfo">Utente</item>
+  <item name="EduPathTranslations.TitleUserInfoTaxCode">Codice fiscale</item>
+  <item name="EduPathTranslations.TitleStatisticsDate">Statistiche al</item>
+  <item name="EduPathTranslations.CompletedPassedCharInfo" mustcontains="{0}" placeholder="true">{0} completata e passata</item>
+  <item name="EduPathTranslations.PassedCharInfo" mustcontains="{0}" placeholder="true">{0} passata</item>
+  <item name="EduPathTranslations.CompletedCharInfo" mustcontains="{0}" placeholder="true">{0} completata</item>
+  <item name="EduPathTranslations.StartedCharInfo" mustcontains="{0}" placeholder="true">{0} iniziata</item>
+  <item name="EduPathTranslations.NotStartedCharInfo" mustcontains="{0}" placeholder="true">{0} NON iniziata</item>
+  <item name="EduPathTranslations.CellTitleIdRole">Id ruolo</item>
+  <item name="EduPathTranslations.CellTitleIdUnit">Id unità</item>
+  <item name="EduPathTranslations.CellTitleIdActivity">Id attività</item>
+  <item name="EduPathTranslations.CellTitleIdSubActivity">Id azione</item>
+  <item name="EduPathTranslations.TitleUserInfoRole">Ruolo:</item>
+  <item name="EduPathTranslations.CellTitleIdOrganization">Id organizzazione</item>
+  <item name="EduPathTranslations.CellTitleOrganizationName">Id organizzazione</item>
+  <item name="EduPathTranslations.CellTitleStartedOn">Iniziato il</item>
+  <item name="EduPathTranslations.CellTitleName">Nome</item>
+  <item name="EduPathTranslations.CellTitleSurname">Cognome</item>
+  <item name="EduPathTranslations.StrictCompletedPassed">C</item>
+  <item name="EduPathTranslations.StrictCompleted">C</item>
+  <item name="EduPathTranslations.StrictPassed">P</item>
+  <item name="EduPathTranslations.StrictStarted">I</item>
+  <item name="EduPathTranslations.StrictNotStarted">-</item>
+  <item name="EduPathTranslations.StrictUnitName">U-</item>
+  <item name="EduPathTranslations.StrictActivityName">A-</item>
+  <item name="EduPathTranslations.StrictSubactivityName">SA-</item>
+  <item name="EduPathTranslations.CellTitlePathStartOn">Inizia dal</item>
+  <item name="EduPathTranslations.CellTitlePathEndOn">Finisce il</item>
+  <item name="EduPathTranslations.CellTitlePathDeadline">Data limite</item>
+  <item name="EduPathTranslations.CellTitlePathTime">Durata percorso</item>
+  <item name="EduPathTranslations.CellTitleUserPercentageCompletion">% completamento</item>
+  <item name="EduPathTranslations.CellTitleMail">Mail</item>
+  <item name="EduPathTranslations.CellTitleTaxCode">Codice fiscale</item>
+  <item name="EduPathTranslations.CellTitleRole">Ruolo</item>
+  
+  <item name="ExecutedWeight">Punteggio raggiunto: </item>
+  <item name="Min"> (Minimo)</item>
+  <item name="EvaluationFilter.Evaluated">Utenti valutati</item>
+  <item name="EvaluationFilter.NotEvaluated">Utenti da valutare</item>
+  <item name="EpError.EmptyActivities" html="true">&lt;script language="javascript" type="text/javascript"&gt;alert('Impossibile cambiare la visibilità. Esistono attività vuote !');&lt;/script&gt;</item>
+  <item name="MSGalert" html="true">&lt;script language="javascript" type="text/javascript"&gt;alert('Le ore riconosciute per il percorso non corrispondono a quelle riconosciute per le attivita`, impossibile sbloccare.');&lt;/script&gt;</item>
+  <item name="LNBexportCertification.ToolTip">Visualizza il documento</item>
+  <item name="LNBexportCertification.text" hidden="true"> </item>
+ 
+ 
+  <item name="NONE" hidden="true">---</item>
+  <item name="LBpathNameTitle.text">Percorso</item>
+  <item name="BTNupdateFilter.text">Aggiorna</item>
+  <item name="LBuserfilterTitle.text">Nome / Cognome</item>
+  <item name="LBcommunityRoleTitle.text">Ruolo Comunità</item>
+  <item name="LBnameheader.text">Utente / Percorso</item>
+  <item name="LBpathheader.text">Percorso</item>
+  <item name="LBuserheader.text">Utente</item>
+  <item name="LBstatusheader.text" disambiguation="status: attivo/chiuso/in corso/valutazione">Status</item>
+  <item name="LBcompletionheader.text">Completamento</item>
+  <item name="LBstartdateheader.text">Data Inizio</item>
+  <item name="LBenddateheader.text">Data Fine</item>
+  <item name="LBdeadlineheader.text">Scadenza</item>
+  <item name="LBactionheader.text">Azioni</item>
+  <item name="LBservice.text">Sommario Percorsi</item>
+  <item name="LTpageBottom.text">Vai a pagina:</item>
+  <item name="LTpageTop.text">Vai a pagina:</item>
+  <item name="HYPlistEduPath.text">Visualizza la Lista dei Percorsi Formativi</item>
+  <item name="LBnotstarted.tooltip">Non iniziati</item>
+  <item name="LBstarted.tooltip">Iniziati</item>
+  <item name="LBcompleted.tooltip">Completati</item>
+
+  <item name="Aclearit.text">Svuota</item>
+  <item name="LBcommunitynameTitle.text" disambiguation="singolare">Comunità</item>
+  <item name="LBstatusTitle.text" disambiguation="status: attivo/chiuso/in corso/valutazione">Status</item>
+  <item name="LBlegend.text">Legenda</item>
+
+  <item name="Export.Filename.PathStatistics" mustcontains="{0}|{1}|{2}" placeholder="true">StatistichePercorso_{0}_{1}_{2}</item>
+  <item name="DisplayMessageToken.PathStatistics">Il file richiesto è in fase di preparazione, attendere qualche minuto per il download.</item>
+  <item name="DisplayTitleToken.PathStatistics">Statistiche globali</item>
+  <item name="Export.Filename.UsersStatistics" mustcontains="{0}|{1}|{2}" placeholder="true">StatisticheUtenti_{0}_{1}_{2}</item>
+  <item name="DisplayMessageToken.UsersStatistics">Il file richiesto è in fase di preparazione, attendere qualche minuto per il download.</item>
+  <item name="DisplayTitleToken.UsersStatistics">Statistiche utenti</item>
+  <item name="DisplayMessageToken.UserStatistics">Il file richiesto è in fase di preparazione, attendere qualche minuto per il download.</item>
+  <item name="DisplayTitleToken.UserStatistics">Statistiche utenti</item>
+  <item name="Export.Filename.SubActivityStatistics" mustcontains="{0}|{1}|{2}" placeholder="true">StatisticheAzione_{0}_{1}_{2}</item>
+  <item name="Export.Filename.UserStatistics" mustcontains="{0}|{1}|{2}" placeholder="true">StatisticheUtente_Al_{0}_{1}_{2}</item>
+  <item name="Export.Filename.UserSubActivityStatistics" mustcontains="{0}|{1}|{2}" placeholder="true">StatisticheAzioneUtente_Al_{0}_{1}_{2}</item>
+  <!-- Path Statistics-->
+  
+  <item name="HYPadvancedStatistics.text">Esportazione avanzata statistiche</item>
+  <item name="HYPadvancedStatistics.ToolTip">Esportazione avanzata statistiche</item>
+  <item name="LNBexportPSstandardToCsv.text" mustcontains="CSV">Esporta dati visualizzati in CSV</item>
+  <item name="LNBexportPSstandardToCsv.ToolTip" mustcontains="CSV">Esporta dati visualizzati in CSV</item>
+  <item name="LNBexportPSfullToCsv.text" mustcontains="CSV">Esporta dati completi in CSV</item>
+  <item name="LNBexportPSfullToCsv.ToolTip" mustcontains="CSV">Esporta dati completi in CSV</item>
+  <item name="LNBexportPSfullCertificationToCsv.text" mustcontains="CSV">Esporta dati certificazione in CSV</item>
+  <item name="LNBexportPSfullCertificationToCsv.ToolTip" mustcontains="CSV">Esporta i dati validi ai fini della certificazione in CSV</item>
+  <item name="LNBexportPSstandardToXml.text" mustcontains="XML">Esporta dati visualizzati in XML</item>
+  <item name="LNBexportPSstandardToXml.ToolTip" mustcontains="XML">Esporta dati visualizzati in XML</item>
+  <item name="LNBexportPSfullToXml.text" mustcontains="XML">Esporta dati completi in XML</item>
+  <item name="LNBexportPSfullToXml.ToolTip" mustcontains="XML">Esporta dati completi in XML</item>
+  <item name="LNBexportPSfullCertificationToXml.text" mustcontains="XML">Esporta dati certificazione in XML</item>
+  <item name="LNBexportPSfullCertificationToXml.ToolTip" mustcontains="XML">Esporta i dati validi ai fini della certificazione in XML</item>
+  <item name="LNBexportPSstandardToPdf.text" mustcontains="PDF">Esporta dati visualizzati in PDF</item>
+  <item name="LNBexportPSstandardToPdf.ToolTip" mustcontains="PDF">Esporta dati visualizzati in PDF</item>
+
+  <!-- Users Statistics-->
+  <item name="Export.Filename.FullPathData.True" mustcontains="{0}|{1}|{2}|{3}" placeholder="true">Percorso_{0}_StatisticheCertificazione_{1}_{2}_{3}</item>
+  <item name="Export.Filename.FullPathData.False" mustcontains="{0}|{1}|{2}|{3}" placeholder="true">Percorso_{0}_StatisticheComplete_{1}_{2}_{3}</item>
+  <item name="LNBexportUsersStatisticToCsv.text" mustcontains="CSV">Esporta statistiche utenti in CSV</item>
+  <item name="LNBexportUsersStatisticToCsv.ToolTip" mustcontains="CSV">Esporta statistiche utenti in CSV</item>
+  <item name="LNBexportUsersStatisticToXml.text" mustcontains="XML">Esporta statistiche utenti in XML</item>
+  <item name="LNBexportUsersStatisticToXml.ToolTip" mustcontains="XML">Esporta statistiche utenti in XML</item>
+  <item name="LNBexportUsersStatisticToPdf.text" mustcontains="PDF">Esporta statistiche utenti in PDF</item>
+  <item name="LNBexportUsersStatisticToPdf.ToolTip" mustcontains="PDF">Esporta statistiche utenti in PDF</item>
+
+  <!-- User Statistics-->
+  <item name="Export.Filename.UserFullPathData.True" mustcontains="{0}|{1}|{2}|{3}" placeholder="true">Percorso_{0}_StatisticheUtenteCertificazione_{1}_{2}_{3}</item>
+  <item name="Export.Filename.UserFullPathData.False" mustcontains="{0}|{1}|{2}|{3}" placeholder="true">Percorso_{0}_StatisticheUtenteComplete_{1}_{2}_{3}</item>
+  
+  <item name="LNBexportUserStatisticToCsv.text" mustcontains="CSV">Esporta dati visualizzati in CSV</item>
+  <item name="LNBexportUserStatisticToCsv.ToolTip" mustcontains="CSV">Esporta dati visualizzati in CSV</item>
+  <item name="LNBexportUserStatisticToXml.text" mustcontains="XML">Esporta dati visualizzati in XML</item>
+  <item name="LNBexportUserStatisticToXml.ToolTip" mustcontains="XML">Esporta dati visualizzati in XML</item>
+  <item name="LNBexportUserStatisticToPdf.text" mustcontains="PDF">Esporta dati visualizzati in PDF</item>
+  <item name="LNBexportUserStatisticToPdf.ToolTip" mustcontains="PDF">Esporta dati visualizzati in PDF</item>
+
+  <item name="LNBexportUserStatisticfullToXml.text" mustcontains="XML">Esporta dati completi in XML</item>
+  <item name="LNBexportUserStatisticfullToXml.ToolTip" mustcontains="XML">Esporta dati completi in XML</item>
+  <item name="LNBexportUserStatisticfullCertificationToXml.text" mustcontains="XML">Esporta dati certificazione in XML</item>
+  <item name="LNBexportUserStatisticfullCertificationToXml.ToolTip" mustcontains="XML">Esporta i dati validi ai fini della certificazione in XML</item>
+
+  <item name="LNBexportUserStatisticfullToCsv.text" mustcontains="CSV">Esporta dati completi in CSV</item>
+  <item name="LNBexportUserStatisticfullToCsv.ToolTip" mustcontains="CSV">Esporta dati completi in CSV</item>
+  <item name="LNBexportUserStatisticfullCertificationToCsv.text" mustcontains="CSV">Esporta dati certificazione in CSV</item>
+  <item name="LNBexportUserStatisticfullCertificationToCsv.ToolTip" mustcontains="CSV">Esporta i dati validi ai fini della certificazione in CSV</item>
+
+
+  <item name="CertificationError.None.savingRequired.False.saved.False">Attestato prodotto correttamente</item>
+  <item name="CertificationError.None.savingRequired.False.saved.True">Attestato prodotto correttamente</item>
+  <item name="CertificationError.None.savingRequired.True.saved.False">Attestato prodotto correttamente, non è stata salvata una copia sul server web</item>
+  <item name="CertificationError.None.savingRequired.True.saved.True">Attestato prodotto correttamente: è stata salvata una copia sul server web</item>
+  <item name="CertificationError.Unknown.savingRequired.False.saved.False">Errore sconosciuto nella generazione dell'attestato</item>
+  <item name="CertificationError.Unknown.savingRequired.False.saved.True">Errore sconosciuto nella generazione dell'attestato</item>
+  <item name="CertificationError.Unknown.savingRequired.True.saved.False">Errore sconosciuto nella generazione dell'attestato, NON è stato possibile salvare una copia dell'attestato  sul server web</item>
+  <item name="CertificationError.Unknown.savingRequired.True.saved.True">Errore sconosciuto nella generazione dell'attestato</item>
+  <item name="CertificationError.RepositoryError.savingRequired.False.saved.False">Errore sul server web</item>
+  <item name="CertificationError.RepositoryError.savingRequired.False.saved.True">Errore sul server web</item>
+  <item name="CertificationError.RepositoryError.savingRequired.True.saved.False">Errore sul server web: impossibile procedere con la memorizzazione del file</item>
+  <item name="CertificationError.RepositoryError.savingRequired.True.saved.True">Errore sul server web: impossibile procedere con la memorizzazione del file</item>
+  <item name="CertificationError.SavingFile.savingRequired.False.saved.False">Errore nella memorizzazione temporanea dell'attestato sul server web per consentirne poi lo scaricamento</item>
+  <item name="CertificationError.SavingFile.savingRequired.False.saved.True">Errore nella memorizzazione temporanea dell'attestato sul server web per consentirne poi lo scaricamento</item>
+  <item name="CertificationError.SavingFile.savingRequired.True.saved.False">Errore nella memorizzazione dell'attestato sul server web</item>
+  <item name="CertificationError.SavingFile.savingRequired.True.saved.True">Errore nella memorizzazione dell'attestato sul server web</item>
+  <item name="CertificationError.TransmittingFile.savingRequired.False.saved.False">Errore nella fase di scaricamento dell'attestato</item>
+  <item name="CertificationError.TransmittingFile.savingRequired.False.saved.True">Errore nella fase di scaricamento dell'attestato</item>
+  <item name="CertificationError.TransmittingFile.savingRequired.True.saved.False">Errore nella fase di scaricamento dell'attestato, NON è stato inoltre creato il relativo file sul server web</item>
+  <item name="CertificationError.TransmittingFile.savingRequired.True.saved.True">Errore nella fase di scaricamento dell'attestato, è stato creato comunque il relativo file sul server web</item>
+  <item name="CertificationError.ParsingTemplate.savingRequired.False.saved.False">Errore nella generazione del contenuto dell'attestato</item>
+  <item name="CertificationError.ParsingTemplate.savingRequired.False.saved.True">Errore nella generazione del contenuto dell'attestato</item>
+  <item name="CertificationError.ParsingTemplate.savingRequired.True.saved.False">Errore nella generazione del contenuto dell'attestato</item>
+  <item name="CertificationError.ParsingTemplate.savingRequired.True.saved.True">Errore nella generazione del contenuto dell'attestato: è stata creata comunque una copia dell'attestato (anche se illeggibile) sul server web</item>
+  <item name="CertificationError.EmptyTemplateItem.savingRequired.False.saved.False">Un campo presente nell'attestato non è stato valorizzato, impossibile salvare l'attestato</item>
+  <item name="CertificationError.EmptyTemplateItem.savingRequired.False.saved.True">Un campo presente nell'attestato non è stato valorizzato, impossibile salvare l'attestato</item>
+  <item name="CertificationError.EmptyTemplateItem.savingRequired.True.saved.False">Un campo presente nell'attestato non è stato valorizzato, impossibile salvare l'attestato</item>
+  <item name="CertificationError.EmptyTemplateItem.savingRequired.True.saved.True">Un campo presente nell'attestato non è stato valorizzato, l'attestato è stato comunque salvato in formato pdf sul server web</item>
+  <item name="CertificationError.EmptyTemplateItems.savingRequired.False.saved.False">Alcuni campi presenti nell'attestato risultano NON compilati</item>
+  <item name="CertificationError.EmptyTemplateItems.savingRequired.False.saved.True">Alcuni campi presenti nell'attestato risultano NON compilati</item>
+  <item name="CertificationError.EmptyTemplateItems.savingRequired.True.saved.False">Alcuni campi presenti nell'attestato risultano NON compilati</item>
+  <item name="CertificationError.EmptyTemplateItems.savingRequired.True.saved.True">Alcuni campi presenti nell'attestato risultano NON compilati, l'attestato è stato comunque salvato in formato pdf sul server web</item>
+  <item name="HYPexportCertification.ToolTip">Scarica l'attestato</item>
+  <item name="LNBrefreshCertificate.ToolTip">Rigenera il documento</item>
+  <item name="LNBrefreshCertificate.text" hidden="true"> </item>
+  <item name="HYPrefreshCertificate.ToolTip">Rigenera l'attestato</item>
+  <item name="HYPrefreshCertificate.text" hidden="true"> </item>
+  <item name="EduPath.ModuleStatus.DisableForCommunity">ATTENZIONE: il servizio risulta disattivato per questa comunità.</item>
+  <item name="EduPath.ModuleStatus.DisableForSystem">ATTENZIONE: il servizio risulta disattivato per la piattaforma.</item>
+  <item name="EduPath.ModuleStatus.DisableForCommunityAvailableForAdmin">ATTENZIONE: il servizio risulta disattivato per questa comunità, l'accesso Le è consentito in quanto amministratore/amministratrice.</item>
+  <item name="EduPath.ModuleStatus.DisableForSystemAvailableForAdmin">ATTENZIONE: il servizio risulta disattivato per la piattaforma, l'accesso Le è consentito in quanto amministratore/amministratrice.</item>
+  <item name="Title.AdvancedStatistics">Esportazione avanzata statistiche percorso formativo</item>
+  <item name="NoPermissions.AdvancedStatistics">Spiacente NON disponi dei permessi necessari per questa tipologia di statistica del percorso formativo</item>
+  <item name="LBfilterTitle.text">Impostazioni avanzate</item>
+  <item name="LBfiltersShow.text">Premi per mostrare</item>
+  <item name="LBfiltersHide.text">Premi per nascondere</item>
+  <item name="LBexportMode_t.text">Oggetti percorso:</item>
+  <item name="LBstatusMode_t.text">Completamento oggetti:</item>
+  <item name="LBexportCells_t.text">Dati da esportare:</item>
+  <item name="LBexportRoles_t.text">Ruoli da includere:</item>
+  <item name="LBexportAgencies.text">Enti/agenzie da includere:</item>
+  <item name="LBshowAlsoDeleted_t.text">Nelle statistiche:</item>
+  <item name="CBXshowAlsoDeleted.text">includi anche gli utenti non più presenti nella comunità del percorso</item>
+
+  <item name="BTNexportData.text">Esporta</item>
+  <item name="BTNexportData.ToolTip">Esporta le statistiche in base alle impostazioni</item>
+  <item name="SPNagenciesSelectAll.ToolTip">Seleziona tutti gli enti/agenzie</item>
+  <item name="SPNagenciesSelectNone.ToolTip">Deseleziona tutti gli enti/agenzie</item>
+  <item name="SPNrolesSelectAll.ToolTip">Seleziona tutti i ruoli</item>
+  <item name="SPNrolesSelectNone.ToolTip">Deseleziona tutti i ruoli</item>
+  <item name="SelectRoles.data-placeholder">Seleziona uno o più ruoli</item>
+  <item name="SelectAgencies.data-placeholder">Seleziona uno o più enti/agenzie</item>
+  <item name="FilterBy.ExportNamingMode.FullName">nome esteso (es. Azione 1 - Scaricare il file introduzione.pdf)</item>
+  <item name="FilterBy.ExportNamingMode.NumericData">nome ridotto (es. A1)</item>
+  <item name="FilterBy.CellType.Time">Durata percorso</item>
+  <item name="FilterBy.CellType.IdUser">Id utente</item>
+  <item name="FilterBy.CellType.UserMail">Mail utente</item>
+  <item name="FilterBy.CellType.UserSurname">Cognome utente</item>
+  <item name="FilterBy.CellType.UserName">Nome utente</item>
+  <item name="FilterBy.CellType.UserTaxCode">Codice fiscale utente</item>
+  <item name="FilterBy.CellType.IdRole">Id ruolo</item>
+  <item name="FilterBy.CellType.RoleName">Nome ruolo</item>
+  <item name="FilterBy.CellType.IdAgency">Id ente/agenzia</item>
+  <item name="FilterBy.CellType.AgencyCurrent">Nome ente/agenzia</item>
+  <item name="FilterBy.CellType.StartDate">Percorso aperto dal</item>
+  <item name="FilterBy.CellType.EndDate">Percorso chiuso al</item>
+  <item name="FilterBy.CellType.Deadline">Deadline percorso</item>
+  <item name="FilterBy.CellType.PathName">Nome percorso</item>
+  <item name="FilterBy.CellType.MinCompletion">Completamento minimo</item>
+  <item name="FilterBy.CellType.PathTime">Durata percorso</item>
+  <item name="FilterBy.CellType.UserPathCompletion">Completamento utente</item>
+  <item name="FilterBy.Status.ExportNamingMode.FullName">esteso (Completato, Iniziato, NON iniziato)</item>
+  <item name="FilterBy.Status.ExportNamingMode.NumericData">ridotto (C, I,-)</item>
+  <item name="FilterBy.Status.ExportNamingMode.NumericData">ridotto (C, I,-)</item>
+  <item name="IViewAdvancedPathStatistics.DefaultFilename">Statistiche del</item>
+  <item name="IViewAdvancedPathStatistics.DefaultSheetName">Statistiche</item>
+  <item name="IViewAdvancedPathStatistics.DisplayExportCompletion.completed.True">Esportazione conclusa correttamente</item>
+  <item name="IViewAdvancedPathStatistics.DisplayExportCompletion.completed.False">Errore nella fase di produzione del file</item>
+  <item name="CTRLselTime.DisplayTitle">Per l'esportazione usa le statistiche al:</item>
+</Resource>

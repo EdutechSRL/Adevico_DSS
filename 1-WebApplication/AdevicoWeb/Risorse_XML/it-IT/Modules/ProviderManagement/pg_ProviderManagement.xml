@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Resource xmlns="urn:ComolTranslation">
+  <item name="serviceManagementTitle">Gestione sistemi di autenticazione</item>
+  <item name="serviceManagementNopermission">Spiacente, non disponi dei permessi necessari.</item>
+  <item name="LogoutMessage">Spiacente, la tua sessione di lavoro è scaduta, riprova a riaccedere al sistema.</item>
+  <item name="HYPaddProvider.text">Nuovo</item>
+  <item name="HYPaddProvider.ToolTip">Nuovo sistema di autenticazione</item>
+  <item name="HYPaddProvider.status">Nuovo sistema di autenticazione</item>
+  <item name="LBpagesize.text">Elementi per pagina:</item>
+  <item name="LTprogress.text">Caricamento dati in corso..........</item>
+  <item name="LBinfo_t.text" disambiguation="I=informazione (un solo carattere)">I</item>
+  <item name="LBedit.text" disambiguation="M=modifica (un solo carattere)">M</item>
+  <item name="LBdelete_t.text" disambiguation="C=cancella (un solo carattere)">C</item>
+  <item name="LBactions_t.text">Azioni</item>
+  <item name="LBproviderName_t.text">Nome</item>
+  <item name="LBproviderType_t.text">Tipo</item>
+  <item name="LBproviderUsedBy_t.text">Usato</item>
+  <item name="LBproviderIsEnabled_t.text">Attivo</item>
+  <item name="isEnabled.True">Si.</item>
+  <item name="isEnabled.False">No.</item>
+  
+  <item name="LNBproviderInfo.text"></item>
+  <item name="LNBproviderInfo.status">Dettagli avanzati</item>
+  <item name="LNBproviderInfo.ToolTip">Dettagli avanzati</item>
+  
+  <item name="HYPedit.text" disambiguation="M=modifica (un solo carattere)">M</item>
+  <item name="HYPedit.status" disambiguation="verbo">Modifica.</item>
+  <item name="HYPedit.ToolTip" disambiguation="verbo">Modifica.</item>
+  <item name="LNBdelete.text" disambiguation="C=cancella (un solo carattere)">C</item>
+  <item name="LNBdelete.status">Cancella definitivamente.</item>
+  <item name="LNBdelete.ToolTip">Cancella definitivamente.</item>
+  <item name="LNBdelete.ConfirmText">Sicuro di voler cancellare definitivamente il sistema di autenticazione ?</item>
+  <item name="LNBvirtualDelete.text"></item>
+  <item name="LNBvirtualDelete.status">Cestina</item>
+  <item name="LNBvirtualDelete.ToolTip">Cestina</item>
+  <item name="LNBvirtualUnDelete.text"></item>
+  <item name="LNBvirtualUnDelete.status">Recupera dal cestino</item>
+  <item name="LNBvirtualUnDelete.ToolTip">Recupera dal cestino</item>
+  <item name="AuthenticationProviderType.None" hidden="true"> --  </item>
+  <item name="AuthenticationProviderType.Internal">Interno</item>
+  <item name="AuthenticationProviderType.Ldap">Ldap</item>
+  <item name="AuthenticationProviderType.Url">Url</item>
+  <item name="AuthenticationProviderType.ActiveDirectory">Active Directory</item>
+  <item name="AuthenticationProviderType.WebService">Web Service</item>
+  <item name="AuthenticationProviderType.ExternalAPI">API esterne</item>
+  <item name="AuthenticationProviderType.Shibboleth">Shibboleth</item>
+  <item name="AuthenticationProviderType.UrlMacProvider">Url con validazione mac</item>
+  
+
+  <item name="serviceEditProviderTitle">Modifica sistema di autenticazione</item>
+  <item name="serviceEditProviderNopermission">Spiacente, non disponi dei permessi necessari.</item>
+  <item name="LNBsaveTop.text">Salva</item>
+  <item name="LNBsaveTop.status">Salva</item>
+  <item name="LNBsaveTop.ToolTip">Salva</item>
+  <item name="HYPbackToManagementTop.text">Torna alla gestione</item>
+  <item name="HYPbackToManagementTop.status">Torna alla gestione</item>
+  <item name="HYPbackToManagementTop.ToolTip">Torna alla gestione</item>
+
+  <item name="DisplayErrorSaving">Errore nella fase di salvataggio dei dati.</item>
+  <item name="DisplayNoPermission">Spiacente, non dispone dei permessi necessari per modificare questo tipo di autenticazione.</item>
+  <item name="DisplayProviderUnknown">Spiacente, sistema di autenticazione non trovato.</item>
+  <item name="DisplayDeletedProvider" placeholder="true" mustcontains="{0}|{1}">Il sistema di autenticazione {0} di tipo {1} è cancellato, non è possibile apportare delle modifiche.</item>
+  <item name="serviceEditNameProviderTitle" placeholder="true" mustcontains="{0}|{1}">Modifica sistema di autenticazione {0} di tipo {1}.</item>
+
+
+  <item name="serviceAddProviderTitle">Crea un nuovo sistema di autenticazione.</item>
+  <item name="serviceAddProviderNopermission">Non disponi dei permessi necessari per creare un nuovo sistema di autenticazione.</item>
+  <item name="LBselectProviderType_t.text">Tipo provider:</item>
+  <item name="BTNbackBottom.text">Indietro</item>
+  <item name="BTNbackBottom.status">Torna al passo precedente</item>
+  <item name="BTNbackBottom.ToolTip">Torna al passo precedente</item>
+  <item name="BTNbackTop.text">Indietro</item>
+  <item name="BTNbackTop.status">Torna al passo precedente</item>
+  <item name="BTNbackTop.ToolTip">Torna al passo precedente</item>
+  <item name="BTNnextBottom.text">Avanti</item>
+  <item name="BTNnextBottom.status">Vai al prossimo passo</item>
+  <item name="BTNnextBottom.ToolTip">Vai al prossimo passo</item>
+  <item name="BTNnextTop.text">Avanti</item>
+  <item name="BTNnextTop.status">Vai al prossimo passo</item>
+  <item name="BTNnextTop.ToolTip">Vai al prossimo passo</item>
+  <item name="BTNcompleteTop.text">Crea</item>
+  <item name="BTNcompleteTop.status">Crea il sistema di autenticazione</item>
+  <item name="BTNcompleteTop.ToolTip">Crea il sistema di autenticazione</item>
+  <item name="BTNcompleteBottom.text">Crea</item>
+  <item name="BTNcompleteBottom.status">Crea il sistema di autenticazione</item>
+  <item name="BTNcompleteBottom.ToolTip">Crea il sistema di autenticazione</item>
+
+  <item name="ProviderWizardStep.SelectType.Title" placeholder="true" mustcontains="{0}">Passo {0}: scelta del tipo di autenticazione</item>
+  <item name="ProviderWizardStep.SelectType.Description">Il primo passo per aggiungere un nuovo sistema di autenticazione è quello di selezionarne la categoria/tipo. Attenzione: una volta selezionato NON sarà possibile modificarlo.</item>
+  <item name="ProviderWizardStep.ProviderData.Title" placeholder="true" mustcontains="{0}">Passo {0}: inserire i dati tipo di autenticazione</item>
+  <item name="ProviderWizardStep.ProviderData.Description">Inserire i dati indispensabili per consentire un corretto funzionamento del sistema di autenticazione che si intende creare.</item>
+  <item name="ProviderWizardStep.DefaultTranslation.Title" placeholder="true" mustcontains="{0}">Passo {0}: internazionalizzazione</item>
+  <item name="ProviderWizardStep.DefaultTranslation.Description">Inserire i dati internazionalizzati indispensabili per consentire un corretto funzionamento del sistema di autenticazione, successivamente in modifica sarà possibile cambiare il testo anche per le lingue non di default dell'applicazione.</item>
+  <item name="ProviderWizardStep.Summary.Title" disambiguation="verbo">CONFERMA</item>
+  <item name="ProviderWizardStep.DefaultTranslation.Description">Verificare i dati sottostanti prima di creare in maniere definitiva il sistema di autenticazione.</item>
+
+  <item name="Summary" placeholder="true" mustcontains="{0}|{1}|{2}">ATTENZIONE premendo sul pulsante "Completa" sarà creato il sistema di autenticazione {0} con codice univoco {1} di tipo {2}.</item>
+  <item name="SummarySettings" placeholder="true" mustcontains="{0}">Il sistema di autenticazione di tipo {0} richiede comunque alcuni parametri ulteriori per poter funzionare correttamente, di conseguenza dopo la creazione del sistema di autenticazione verrà reindirizzato alla pagina di impostazioni avanzate.</item>
+  <item name="ErrorAddingProvider">Errore nella fase di inserimento dati, riprovare più tardi o segnalare il problema all'amministratore di piattaforma.</item>
+  <item name="HYPadvancedSettings.text">Impostazioni avanzate</item>
+  <item name="HYPadvancedSettings.ToolTip">Impostazioni avanzate</item>
+  <item name="HYPadvancedSettings.status">Impostazioni avanzate</item>
+  <item name="ProviderInfo">Dettagli sistema di autenticazione</item>
+  <item name="LBproviderDisplayInfoDescription.text">Dettagli sistema di autenticazione</item>
+  <item name="BTNcloseProviderDisplayInfo.text">Chiudi</item>
+  <item name="BTNcloseProviderDisplayInfo.ToolTip">Chiudi la finestra di dettaglio.</item>
+</Resource>

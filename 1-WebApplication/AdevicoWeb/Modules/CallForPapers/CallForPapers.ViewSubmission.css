@@ -1,0 +1,445 @@
+﻿ /*n*/  
+        input[type="text"]
+        {
+            width:60%;
+        }
+        /*n*/
+        fieldset.fieldSet
+        {
+            width:900px;
+        }
+        /*!*/
+        .DivEpButton
+        {
+           text-align: right;
+           padding: 10px 10px 5px 10px;
+        }
+        
+        div.DivEpButton
+        {
+            width: 900px;
+            text-align:right;    
+        }
+        /*n*/
+        .informationBox
+        {
+            margin-top:1em;
+            width:900px;
+            background-color:#eee;
+            padding-top:0.2em;
+        }
+        /*n*/
+        .informationBox legend
+        {
+            font-weight:bold;
+            font-size:1.1em;
+            font-style:italic;
+            background-color:#fff;
+            padding:0.3em;
+            padding-left:1em;
+            padding-right:1em;
+            margin-left:0.5em;
+            border:1px solid #9C9C9C;
+        }
+        /*n*/
+        .projectName
+        {
+            color:#aaa;
+        }
+        /*n*/
+        .columns
+        {
+            display:block;
+            
+            margin-top:0.5em;
+            margin-bottom:0.5em;
+            float:left;
+            clear:both;
+            width:100%;  
+            
+        }
+        /*n*/
+        .columns .column
+        {
+            display:block;
+            margin-top:1em;
+            margin-bottom:1em;
+        }
+        /*n*/
+        .columns .left
+        {
+            clear:left;
+            float:left;
+            /*width:20%;*/
+        }
+        /*n*/
+        .columns .right
+        {
+            float:left;
+           /* width:75%;*/
+            clear:right;
+        }
+        /*n*/
+        .central
+        {
+            clear:both;
+            float:left;
+            width:100%;
+            text-align:center;            
+        }
+        /*n*/
+        .columns label
+        {
+            font-weight:bold;
+        }
+        .columns .column span label
+        {
+            font-weight:bold;
+        }
+        .fieldDescription
+        {
+            display:block;
+            font-style:italic;
+            padding:0.5em;
+            border:1px solid #7EBDF0;
+            background-color:#D6EDED;
+            font-size:small;            
+        }
+
+        .fieldValue
+        {
+            display:block;
+            font-style:normal;
+            padding:0.5em;
+            border:1px solid #FF0000;
+            background-color:#FFFFFF;
+            font-size:small;            
+        }
+        
+        .columns .inline
+        {
+            float:left;
+            /*clear:left;*/
+            display:inline-block;
+            *display:inline;
+            margin-right:4em;
+        }
+        
+        .redMark
+        {
+            color:Red;
+            font-weight:bold;
+        }
+        
+        .greenMark
+        {
+            background-color:green;
+            font-weight:bold;
+        }
+        
+        .yellowMark
+        {
+            background-color:yellow;
+            font-weight:bold;
+        }
+        
+        .columns .inline label
+        {            
+            margin-right:2em;
+        }
+        
+        ul.projectFiles
+        {
+            margin:0;
+            padding:0;
+        }
+        
+        ul.projectFiles li.projectFile
+        {
+            display:block;
+        }
+        
+        label.filetype
+        {
+            display:inline-block;
+            *display:inline;
+            width:32px;
+            height:32px;
+            
+            background-position:center center;
+            vertical-align:middle;
+            background-repeat:no-repeat;
+            background-image:url("img/file.png");
+            
+            /*border:1px solid black;*/
+            margin-right:0.5em;
+            margin-bottom:0.3em;
+        }
+        
+        .projectDescription
+        {
+            border:1px solid #9C9C9C;
+            display:block;
+            padding-left:0.5em;
+            padding-right:0.5em;
+            text-align:justify;
+            
+            overflow:auto;
+            height:200px;
+        }
+        
+        .height_limited
+        {
+            overflow:auto;
+            height:120px;
+        }
+        
+        label.file_pdf
+        {
+            background-image:url("img/pdf.png");
+        }
+        
+        label.file_zip
+        {
+            background-image:url("img/zip.png");
+        }
+        
+        label.file_doc
+        {
+            background-image:url("img/doc.png");
+        }
+        
+        span.closer
+        {
+            clear:left;
+            float:right;
+            display:block;   
+            
+
+            width:16px;
+            height:16px;
+            
+            background-position:center center;
+            vertical-align:middle;
+            background-repeat:no-repeat;            
+            background-image:url("img/bullet_toggle_plus.png");
+        }
+        
+        span.up
+        {
+            background-image:url("img/bullet_toggle_minus.png");
+        }
+        
+        .fieldSet
+        {
+            margin-top:1em;
+            /*border:0;*/
+        }
+        
+        .fieldSet .columns .column
+        {
+            margin-bottom:0.25em;
+            margin-top:0.25em;
+        }
+        
+        .fieldSet .columns label
+        {
+            font-weight:normal;
+            
+        }
+        
+        .fieldSet legend
+        {
+            font-weight:bold;
+            font-size:1.0em;
+            font-style:italic;
+            background-color:#fff;
+            padding:0.1em;
+            padding-left:1em;
+            padding-right:1em;
+            margin-left:0.5em;
+            border:1px solid #9C9C9C;
+                        
+        }
+        
+        .actions
+        {
+            width:100%;
+            
+        }
+        
+        .actions input[type="submit"]
+        {
+            font-size:1.1em;
+         
+        }
+        
+        .columns .action
+        {
+           border:1px solid #9C9C9C;
+            width:37%;
+            text-align:center;
+            /*margin:1em;*/
+            height:100px;
+            margin-left:5%;
+            margin-right:6%;
+            padding:0.5em;
+        }
+        
+        .columns .action input
+        {
+            margin-bottom:1em;
+        }
+        
+        ul.submits
+        {
+            margin:0;
+            padding:0;
+        }
+        
+        ul.submits li
+        {
+            list-style:none;
+        }
+        
+         .w20
+        {
+            width:20%;
+        }
+        
+        .w25
+        {
+            width:25%;
+        }
+        
+        .w30
+        {
+            width:30%;
+        }
+        
+        .w40
+        {
+            width:40%;
+        }
+        
+        .w50
+        {
+            width:50%;
+        }
+        
+        .w60
+        {
+            width:60%;
+        }
+        
+        .w75
+        {
+            width:75%;
+        }
+        
+        .w80
+        {
+            width:80%;
+        }
+        
+        .w90
+        {
+            width:90%;
+        }
+        
+        .w100
+        {
+            width:100%;
+        }
+
+
+        .columns textarea
+        {
+            width:80%;
+            height:80px;
+        }
+        
+        .field_inrows .left
+        {
+            float:left;
+            clear:both;
+            margin-bottom:0.25em;
+            margin-top:0.25em;
+            padding-bottom:0.25em;
+            margin-top:0.25em;
+        }
+        
+        .field_inrows .right
+        {
+            float:right;
+            clear:both;
+            margin-bottom:0.25em;
+            margin-top:0.25em;
+            padding-bottom:0.25em;
+            margin-top:0.25em;
+        }
+        .icon
+        {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            /*text-indent: -999999px;*/
+            background-position: center center;
+            background-repeat: no-repeat;
+            margin: 1px;
+            padding: 0;
+        }
+        .icon a
+        {
+            text-decoration:none;
+            }
+        .iconLarge
+        {
+            display: inline-block;
+            width: 32px;
+            height: 32px;
+            /*text-indent: -999999px;*/
+            vertical-align:text-top;
+            background-position: center bottom;
+            background-repeat: no-repeat;
+            margin: 1px;
+            padding: 0;
+        }    
+        .iconLarge a
+        {
+            text-decoration:none;
+            }
+        .iconLarge a:hover
+        {
+            text-decoration:none;
+            background-color:Yellow;
+            }
+        .exportPDF
+        {
+            background-image: url("img/exportPDF.png");
+        }
+        .exportRTF
+        {
+            background-image: url("img/exportRTF.png");
+        }
+        .settings
+        {
+            background-image: url("img/settings.gif");
+        }
+
+        .playScorm
+        {
+            background-image: url("img/playScorm.gif");
+        }
+
+        .playMultimedia
+        {
+            background-image: url("img/playMultimedia.gif");
+        }
+        
+        /* File info - Patch */
+        div.File_SMInfo_Actions,
+        LI.li_item_files DIV.File_SMInfo_Actions div.File_SMInfo_Actions ul.File_Actions, div.File_SMInfo_Actions ul.File_Actions 
+        {
+            padding-top:0px;
+        }

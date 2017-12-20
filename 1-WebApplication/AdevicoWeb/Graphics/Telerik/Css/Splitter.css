@@ -1,0 +1,253 @@
+.RadSplitter {
+  border-collapse: separate;
+  /* Borders */
+  /* RadSlidingPane resize element */
+  /* RadPane */
+  /* RadSlidingPane elements position */
+  /* hidden RadSlidingPane */
+  /* RadSlidingPane title - determines the height of the RadSlidingPane header */
+  /* RadSlidingPane command button wrapper */
+  /* RadSlidingPane command buttons */
+  /* RadSlidingPane tabs container */
+  /* RadSlidingPane tab - SlideDirection=Right/Left */
+  /* RadSlidingPane tab - SlideDirection=Top/Bottom */
+  /* RadSlidingPane tab text */
+  /* RadSlidingPane tab icon */
+  /* RadSplitBar/RadSlidingPane resize elements */
+  /* RadSplitBar/RadSlidingPane resize helper elements */
+  /* Cannot move RadSplitBar/RadSlidingPane resize element */
+  /* RadSplitBar buttons */
+  /* RadSlidingPane buttons */
+  /* Cannot collapse/expand a pane */
+  /* Support for displayng the rspLoading image in the iframe's parent */
+  /* RadSlidingPane content elements overflow problem in Firefox */
+  /* Backwards compatibility */
+  /* RadSlidingPane title text */
+  /* New rendering of splitbar buttons */
+  /* RadSlidingPane content - this element should not be transparent as it shows above content in adjacent RadPanes */ }
+  .RadSplitter,
+  .RadSplitter .rspSlideZone,
+  .RadSplitter .rspSlideContainer,
+  .RadSplitter .rspPaneTabContainer,
+  .RadSplitter .rspPane,
+  .RadSplitter .rspResizeBar,
+  .RadSplitter .rspSlideContainerResize,
+  .RadSplitter .rspPaneHorizontal,
+  .RadSplitter .rspResizeBarHorizontal,
+  .RadSplitter .rspSlideContainerResizeHorizontal {
+    border-width: 0;
+    border-style: solid; }
+  .RadSplitter .rspSlideContainerResize {
+    border-width: 0 1px; }
+  .RadSplitter .rspSlideContainerResizeHorizontal {
+    border-width: 1px 0; }
+  .RadSplitter .rspPane,
+  .RadSplitter .rspPaneHorizontal {
+    padding: 0; }
+  .RadSplitter .rspSlidePane,
+  .RadSplitter .rspSlideContainer,
+  .RadSplitter .RadSlidingPaneQuirksMode {
+    position: absolute;
+    top: 0;
+    left: 0; }
+  .RadSplitter .rspSlidePane,
+  .RadSplitter .RadSlidingPaneQuirksMode {
+    top: -9999px;
+    overflow: hidden; }
+  .RadSplitter .rspSlideHeader .rspSlideTitle {
+    line-height: 25px;
+    height: 25px;
+    overflow: hidden;
+    margin: 0 5px;
+    white-space: nowrap;
+    text-overflow: ellipsis; }
+  .RadSplitter .rspSlideHeaderIconWrapper {
+    width: 17px;
+    padding: 0 3px; }
+  .RadSplitter .rspSlideHeaderDockIcon,
+  .RadSplitter .rspSlideHeaderUndockIcon,
+  .RadSplitter .rspSlideHeaderCollapseIcon {
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+    font-size: 1px;
+    line-height: 1px;
+    margin-left: 3px; }
+  .RadSplitter .rspTabsContainer {
+    vertical-align: top; }
+  .RadSplitter .rspPaneTabContainer {
+    padding: 6px 0px;
+    overflow: hidden;
+    cursor: pointer;
+    text-align: center;
+    font-size: 1px;
+    border-width: 0 1px 1px 0;
+    background-position: -81px 0; }
+  .RadSplitter .rspRight .rspPaneTabContainer {
+    border-width: 0 0 1px 1px; }
+  .RadSplitter .rspTop .rspPaneTabContainer,
+  .RadSplitter .rspBottom .rspPaneTabContainer {
+    float: left;
+    padding: 0 6px;
+    border-width: 1px 1px 0 0;
+    background-position: 0 -1px; }
+  .RadSplitter .rspBottom .rspPaneTabContainer {
+    border-width: 0 1px 1px 0; }
+  .RadSplitter .rspPaneTabText {
+    writing-mode: tb-rl;
+    white-space: nowrap; }
+  .RadSplitter .rspTop .rspPaneTabText,
+  .RadSplitter .rspBottom .rspPaneTabText {
+    writing-mode: lr-tb; }
+  .RadSplitter .rspRotatedTabText.rspPaneTabText {
+    display: inline-block;
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg); }
+  .RadSplitter .rspPaneTabText,
+  .RadSplitter .rspPaneTabIcon {
+    margin: 2px; }
+  .RadSplitter .rspTop .rspPaneTabIcon,
+  .RadSplitter .rspBottom .rspPaneTabIcon {
+    display: block;
+    float: left; }
+  .RadSplitter .rspResizeBar,
+  .RadSplitter .rspResizeBarHorizontal,
+  .RadSplitter .rspSlideContainerResize,
+  .RadSplitter .rspSlideContainerResizeHorizontal {
+    padding: 0px;
+    font-size: 1px;
+    line-height: 1px;
+    text-align: center;
+    vertical-align: middle; }
+  .RadSplitter .rspResizeBar,
+  .RadSplitter .rspSlideContainerResize {
+    background-repeat: repeat-y;
+    background-position: 0 0; }
+  .RadSplitter .rspResizeBarOver,
+  .RadSplitter .rspSlideContainerResizeOver {
+    background-position: -4px 0; }
+  .RadSplitter .rspResizeBarHorizontal,
+  .RadSplitter .rspSlideContainerResizeHorizontal {
+    background-repeat: repeat-x;
+    background-position: 0 0; }
+  .RadSplitter .rspResizeBarOverHorizontal,
+  .RadSplitter .rspSlideContainerResizeOverHorizontal {
+    background-position: 0 -4px; }
+  .RadSplitter .rspHelperBarDrag,
+  .RadSplitter .rspHelperBarSlideDrag {
+    font-size: 1px;
+    background-color: #ccc;
+    filter: alpha(opacity=60);
+    opacity: 0.6; }
+  .RadSplitter .rspHelperBarError,
+  .RadSplitter .rspHelperBarSlideError {
+    background-color: #f60; }
+  .RadSplitter .rspCollapseBarWrapper {
+    width: 4px;
+    height: 54px;
+    margin: auto; }
+  .RadSplitter .rspCollapseBarHorizontalWrapper {
+    height: 4px;
+    width: 54px;
+    margin: auto; }
+  .RadSplitter .rspCollapseBarExpand,
+  .RadSplitter .rspCollapseBarCollapse,
+  .RadSplitter .rspCollapseBarHorizontalExpand,
+  .RadSplitter .rspCollapseBarHorizontalCollapse,
+  .RadSplitter .rspCollapseBarSpacer {
+    margin: 0;
+    padding: 0;
+    border: 0 none;
+    font-size: 1px;
+    cursor: pointer;
+    outline: none;
+    background-color: transparent; }
+  .RadSplitter .rspCollapseBarExpand:focus::-moz-focus-inner,
+  .RadSplitter .rspCollapseBarCollapse:focus::-moz-focus-inner,
+  .RadSplitter .rspCollapseBarHorizontalExpand:focus::-moz-focus-inner,
+  .RadSplitter .rspCollapseBarHorizontalCollapse:focus::-moz-focus-inner {
+    border-color: transparent; }
+  .RadSplitter .rspCollapseBarExpand,
+  .RadSplitter .rspCollapseBarCollapse {
+    width: 4px;
+    height: 27px;
+    line-height: 27px; }
+  .RadSplitter .rspCollapseBarHorizontalExpand,
+  .RadSplitter .rspCollapseBarHorizontalCollapse {
+    width: 27px;
+    height: 4px;
+    line-height: 4px; }
+  .RadSplitter .rspCollapseBarCollapse {
+    background-position: 0 0; }
+  .RadSplitter .rspCollapseBarCollapseOver {
+    background-position: -192px 0; }
+  .RadSplitter .rspCollapseBarExpand {
+    background-position: -4px 0; }
+  .RadSplitter .rspCollapseBarExpandOver {
+    background-position: -196px 0; }
+  .RadSplitter .rspCollapseBarHorizontalExpand {
+    background-position: -8px -4px; }
+  .RadSplitter .rspCollapseBarHorizontalExpandOver {
+    background-position: -8px -12px; }
+  .RadSplitter .rspCollapseBarHorizontalCollapse {
+    background-position: -8px 0; }
+  .RadSplitter .rspCollapseBarHorizontalCollapseOver {
+    background-position: -8px -8px; }
+  .RadSplitter .rspSlideHeaderUndockIcon {
+    background-position: -50px 0; }
+  .RadSplitter .rspSlideHeaderDockIcon {
+    background-position: -35px 0; }
+  .RadSplitter .rspSlideHeaderCollapseIcon {
+    background-position: -65px 0; }
+  .RadSplitter .rspCollapseBarExpandError,
+  .RadSplitter .rspCollapseBarCollapseError,
+  .RadSplitter .rspCollapseBarHorizontalExpandError,
+  .RadSplitter .rspCollapseBarHorizontalCollapseError {
+    background-color: red; }
+  .RadSplitter .rspLoading {
+    background-repeat: no-repeat;
+    background-position: center; }
+  .RadSplitter .rspHideContentOverflow div {
+    overflow: hidden !important; }
+  .RadSplitter .rspHideContentOverflow iframe {
+    visibility: hidden !important; }
+  .RadSplitter .rspSlideTitle,
+  .RadSplitter .rspPaneTabText {
+    font: normal 10px "Segoe UI", Arial, Sans-serif; }
+  .RadSplitter .rspSlideTitle {
+    font-size: 12px; }
+  .RadSplitter .rspCollapseBarSpacer {
+    visibility: hidden;
+    vertical-align: middle; }
+  .RadSplitter .rspCollapseBarHorizontalExpand,
+  .RadSplitter .rspCollapseBarHorizontalCollapse {
+    float: none;
+    vertical-align: middle; }
+  .RadSplitter .rspCollapseBarCollapse,
+  .RadSplitter .rspCollapseBarExpand {
+    margin: 0 auto;
+    display: block; }
+  .RadSplitter .rspSlideContent {
+    background-color: #fff; }
+
+/* We need to use !important here in order to override the inline border settings of a pane in a nested splitter. */
+.rspNested .rspLastItem {
+  border-right-width: 0 !important; }
+
+.rspNestedHorizontal .rspLastItem {
+  border-bottom-width: 0 !important; }
+
+/* VisibleDuringInit */
+.rspHideRadSplitter {
+  position: absolute;
+  top: -9999px; }
+
+/* RadSlidingPane elements position */
+/* QuirksMode support for RadSlidingPanes */
+.RadSlidingPaneQuirksMode {
+  _position: absolute;
+  _top: -9999px;
+  _left: 0;
+  _overflow: hidden; }
+

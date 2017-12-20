@@ -1,0 +1,26 @@
+html,
+body,
+div#header,
+div#cFooter,
+#container.page-width {
+	background: #fff !important;
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+
+#toolbar,
+#nav-main {
+    display:none;
+}
+    
+div#header,
+div#cFooter {
+	display: block !important;
+}
+
+div#cFooter,
+div#Footer {
+	border-top: 1px solid #ccc;
+	color: #222;
+}

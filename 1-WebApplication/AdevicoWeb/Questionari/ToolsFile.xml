@@ -1,0 +1,105 @@
+<!-- ==============================================================================================
+	Tools File valid structure:
+	<root>
+		<tools>
+			<tool />
+			<tool />
+			...
+		</tools>
+		<tools>
+			<tool />
+			...
+		</tools>
+		...
+	</root>
+
+	"tool" element valid attributes:
+	name (required):
+				Bold, Italic, Underline, StrikeThrough, Superscript, Subscript,
+				JustifyLeft, JustifyCenter, JustifyRight, JustifyFull, InsertOrderedList,
+				InsertUnorderedList, Outdent, Indent, Cut, Copy, Paste, Print,
+				Undo, Redo, InsertImage, AbsolutePosition, CreateLink, Unlink,
+				InsertHorizontalRule, InsertTable, ToggleBorders, Paragraph, Class, Font,
+				Links, Custom, Symbols, BackColor, ForeColor, InsertFlash,
+				InsertMedia, SpellCheck, Sweeper, InsertParagraph, InsertSnippet,
+				Help, FindAndReplace
+	title (required):
+				Some hint string
+	enabled (required):
+				true/false (Indicates whether the tool should appear in the toolbar or not)
+	separator (not required):
+				true/false (Indicates whether a separator should appear after the tool)
+
+	"link" element valid attributes:
+	(link elements should appear as child elements of a tool element with "name" attribute set to "Links")
+	name (required):
+				Link/Category Name/Alias
+	href (not required):
+				URL of the link/category
+
+	"font" element valid attributes:
+	(font elements should appear as child elements of a tool element with "name" attribute set to "Font")
+	name (required):
+				Font Name
+
+	"class" element valid attributes:
+	(class elements should appear as child elements of a tool element with "name" attribute set to "Class")
+	name (required):
+				Class Alias
+	value (required):
+				Class Name
+
+	"paragraph" element valid attributes:
+	(paragraph elements should appear as child elements of a tool element with "name" attribute set to "Paragraph")
+	name (required):
+				Paragraph Alias
+	value (required):
+				Paragraph Name
+
+	"color" element valid attributes:
+	(color elements should appear as child elements of a tool element with "name" attribute set to "ForeColor" or "BackColor")
+	value (required):
+				Hex value of the color
+
+	"snippet" element valid attributes:
+	(snippet elements should appear as child elements of a tool element with "name" attribute set to "InsertSnippet")
+	name (required):
+				Snippet Alias
+=============================================================================================== -->
+<root>
+  
+	<tools name="MainToolbar" dockable="false">
+		<tool name="FindAndReplace" title="Cerca e sostituisci" enabled="true" separator="true"  />
+		<tool name="SpellCheck" title="Controllo Ortografico" enabled="false" separator="true" />
+		<tool name="Cut" title="Taglia" enabled="true" />
+		<tool name="Copy" title="Copia" enabled="true" />
+		<tool name="Paste" title="Incolla" enabled="true" separator="true" />
+    <tool name="PasteFromWord" title="Incolla da Word" enabled="true" />
+    <tool separator="true" />
+    <tool name="Undo" title="Annulla" enabled="true" />
+    <tool name="Redo" title="Riapplica" enabled="true" separator="true" />
+    <!--<tool name="InsertTable" title="Inserisci Tabella" enabled="true" />-->
+    <tool separator="true" />
+    <tool name="FontSize" title="Font Size" enabled="true" />
+    <tool name="Bold" title="Grassetto" enabled="true" />
+    <tool name="Italic" title="Corsivo" enabled="true" />
+    <tool name="Underline" title="Sottolineato" enabled="true" separator="true" />
+    <tool name="ForeColor" title="Colore testo" enabled="true" />
+    <tool name="BackColor" title="Colore sfondo" enabled="true" />
+    <tool separator="true" />
+    <tool name="JustifyLeft" title="Allinea a sinistra" enabled="true" />
+    <tool name="JustifyCenter" title="Allinea al centro" enabled="true" />
+    <tool name="JustifyRight" title="Allinea a destra" enabled="true" />
+    <tool name="JustifyFull" title="Giustificato" enabled="true" separator="true" />
+    <tool separator="true" />
+ 		<tool name="InsertOrderedList" title="Elenco numerato" enabled="true" />
+		<tool name="InsertUnorderedList" title="Elenco puntato" enabled="true" />
+		<tool name="Outdent" title="Outdent" enabled="true" />
+		<tool name="Indent" title="Indent" enabled="true" separator="true" />
+		<tool name="Superscript" title="Superscript" enabled="true" />
+		<tool name="Help" title="Help" enabled="true" />
+    <tool name="ImageManager" shortcut="CTRL+G"/>
+    <tool name="LinkManager" shortcut="CTRL+K"/>
+  
+	</tools>
+</root>

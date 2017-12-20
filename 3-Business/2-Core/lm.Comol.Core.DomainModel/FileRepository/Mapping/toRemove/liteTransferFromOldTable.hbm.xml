@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="lm.Comol.Core.DomainModel" namespace="lm.Comol.Core.FileRepository.Domain.toRemove">
+  <class name="liteTransferFromOldTable" table="FILE_Disponibile">
+    <id name="FLDS_id" column="FLDS_id" type="Int64" unsaved-value="0">
+      <generator class="native"/>
+    </id>
+
+    <property name="changedname"/>
+    <property name="updated"/>    
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,213 @@
+﻿.descriptionswitch
+{
+    cursor: pointer;
+
+    display: block;
+    width: 16px;
+    height: 16px;
+    background-position: center center;
+    background-repeat: no-repeat;
+
+
+    /*background-color: #eee;
+   width: 18px;
+   height: 18px;
+   border:1px solid #444;
+   -moz-border-radius: 10px;
+   -webkit-border-radius: 10px;
+   border-radius: 10px;*/
+}
+.description .descriptionswitch{
+    background-image: url(http://www.iconfinder.com/ajax/download/png/?id=42165&s=16);
+}
+.description.expanded .descriptionswitch{
+    background-image: url(http://www.iconfinder.com/ajax/download/png/?id=42168&s=16);
+}
+
+.description .body
+{
+
+    display: none;
+    /*border: 1px dashed gray;*/
+}
+.description.expanded .body
+{
+    display: block;
+}
+
+.body
+{
+    border-top: 1px solid #ddd;
+}
+
+
+
+
+
+.contentwrapper.edit
+{
+    width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+
+    border:1px solid black;
+    padding: 5px;
+}
+
+.contentwrapper.edit .column.left
+{
+    float:left;
+    width: 190px;
+    border: 1px solid black;
+    height: 675px;
+}
+
+.contentwrapper.edit .column.right
+{
+    float:right;
+    width: 700px;
+    border: 1px solid black;
+}
+
+.contentwrapper.edit .column.right .header, .contentwrapper.edit .right .footer
+{
+    text-align: center;
+    border: 1px solid black;
+}
+
+.contentwrapper.edit .column.right
+{
+
+}
+
+.contentwrapper.edit .column.right .header
+{
+    margin-bottom: 5px;
+    width: 688px;
+}
+
+.contentwrapper.edit .column.right .footer
+{
+    margin-top: 5px;
+}
+
+.contentwrapper.edit .column.right .contentouter
+{
+    border: 1px solid black;
+    padding: 5px;
+
+   /* overflow-y: scroll;
+    *overflow:scroll;*/
+}
+
+.contentwrapper.edit .column.right .content
+{
+
+   /* height: 1000px;
+    padding: 5px;*/
+
+}
+
+.contentwrapper.edit .column.right .rightcontent
+{
+    text-align: left;
+    padding: 5px;
+}
+
+ul.navigation
+{
+    margin: 5px;
+    padding: 0;
+}
+ul.navigation li.navigationitem
+{
+    margin-left: 0;
+    padding-left: 10px;
+    list-style: none;
+    margin-bottom: 5px;
+}
+
+ul.navigation li.navigationitem .title
+{
+    margin-left: 10px;
+}
+
+.left
+{
+    float: left;
+}
+.right
+{
+    float: right;
+}
+
+.contentwrapper.edit .icons .icon
+{
+    display: inline-block;
+    *display: inline;
+    width: 16px;
+    height: 16px;
+
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+.icons .icon.status
+{
+    background-color: #eee;
+    border:1px solid #ccc;
+}
+.icons .icon.status.ko
+{
+    background-color: #ff3019;
+    border:1px solid #ccc;
+}
+.icons .icon.status.ok
+{
+    background-color: green;
+    border:1px solid #ccc;
+}
+.icons .icon.help
+{
+    background-image: url(http://www.iconfinder.com/ajax/download/png/?id=21464&s=16);
+    border:0px;
+}
+.icons .icon.alert
+{
+    background-image: url(http://www.iconfinder.com/ajax/download/png/?id=22662&s=16);
+    border:0px;
+}
+
+.button.publish
+{
+    display: inline-block;
+    *display: inline;
+    width: 100px;
+    text-align: center;
+    background-color: #eee;
+    border:1px solid #ccc;
+    padding: 2px;
+    margin-top: -6px;
+}
+.button.publish.ok
+{
+    background-color: #007700;
+    border:1px solid #ccc;
+    color: white;
+}
+
+.messages .message
+{
+    border:1px solid black;
+
+    margin: 10px;
+    padding: 10px;
+
+}
+
+
+.floatingHeader {
+    position: fixed;
+    top:0px;
+
+    background-color: white;
+}

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Resource xmlns="urn:ComolTranslation">
+    <item name="ServiceTitle">Sondaggi</item>
+    <item name="LBsondaggio.text">sondaggio statico: </item>
+    <item name="LBsondaggioDescrizione.text">Il tipo più semplice di sondaggio. Le domande sono fisse, anche se può essere reso casuale il loro ordine di visualizzazione.</item>
+    <item name="LBAutovalutazione.text">Test di autovalutazione: </item>
+    <item name="LBAutovalutazioneDescrizione.text">Sarà possibile scegliere le librerie dalle quali selezionare le domande che verranno presentate singolarmente all'utente. Dopo aver risposto ad ogni domanda l'utente potrà visualizzare la correzione alla propria risposta (per i tipi di domanda valutabili automaticamente) ed eventualmente un suggerimento sulla parte di programma da rivedere per acquisire le conoscenze necessarie a rispondere correttamente, o altro testo a discrezione di chi ha creato la domanda.</item>
+    <item name="LBLibreria.text" disambiguation="libreria=libreria di domande">Libreria di domande: </item>
+    <item name="LBLibreriaDescrizione.text" disambiguation="libreria=libreria di domande">Le domande aggiunte ad una libreria possono essere utilizzate per creare rapidamente diversi tipi di sondaggio. </item>
+    <item name="LBModello.text" disambiguation="modello=modello di questionario"	>Modello di sondaggio: </item>
+    <item name="LBModelloDescrizione.text" html="false" placeholder="false" disambiguation="modello=modello di questionario">Permette di creare un modello statico e pubblico di sondaggio (con impostazioni di base, domanda, ecc): altri gestori del servizio potranno utilizzare tale modello (con le relative impostazioni) per creare dei sondaggi personalizzati.</item>
+    <item name="LBRandom.text">sondaggio Random: </item>
+    <item name="LBRandomDescrizione.text">Sarà possibile selezionare quante domande per ogni livello di difficoltà e per ogni libreria disponibile presentare all'utente. Ogni utente visualizzerà un sondaggio con domande differenti.</item>
+    <item name="LBSceltasondaggio.text">SELEZIONA IL TIPO DI sondaggio CLICCANDO SU "SCEGLI" </item>
+    <item name="LBSondaggio.text">Sondaggio: </item>
+    <item name="LBSondaggioDescrizione.text">Come il sondaggio statico, ma senza la possibilità di valutare automaticamente le risposte alle domande.</item>
+    <item name="LNBwizard">Wizard</item>
+    <item name="LNBavanzato">Avanzato</item>
+
+    <item name="MSGNoPermessi">Non si hanno i permessi per visualizzare questa pagina.</item>
+
+    <item name="LBDescrizionesondaggio_WQ.text">Inserire, se si desidera, una descrizione che riassume i contenuti del sondaggio, o con indicazioni e suggerimenti da fornire all'utente prima che inizi la compilazione.</item>
+    <item name="LBNome_WQ.text">Inserire il nome che si vuole dare al sondaggio (obbligatorio)</item>
+    <item name="CUVNome_WQ.ErrorMessage">Esiste gia' un sondaggio con questo nome in questa comunità</item>
+    <item name="RFVNome_WQ.ErrorMessage">Nome Obbligatorio</item>
+    <item name="LBDataInizioTitolo_WQ.text" html="true">Inserire le date di inizio e fine del sondaggio.&lt;br&gt;Il sondaggio è aperto il </item>
+    <item name="LBDataFineTitolo_WQ.text">e sarà chiuso il </item>
+    <item name="CUVdate_WQ.ErrorMessage">La data di fine deve essere successiva a quella di inizio</item>
+    <item name="CKisBloccato_WQ.text" html="true">La compilazione del sondaggio è temporaneamente bloccata (barrare la casella se SI)&lt;br&gt;&lt;br&gt;</item>
+    <item name="LBDurata_WQ.text">L’utente avrà a disposizione al massimo </item>
+    <item name="LBDurataDopo_WQ.text">minuti per la compilazione del sondaggio. (0=nessun limite)</item>
+    <item name="LBScalaValutazione_WQ.text">Il sondaggio verrà valutato con una scala di valori che andrà da 1 a </item>
+    <item name="LBvisualizzazione_WQ.text" html="true">Dopo aver compilato il sondaggio l'utente registrato potrà:  &lt;br&gt;</item>
+    <item name="LBLinguaDefault_WQ.text">Definire la lingua predefinita del sondaggio </item>
+      <item name="LBvisualizzaRisposta_WQ.text" html="true">Visualizzare la risposta (barrare la casella se SI)&lt;br&gt;</item>
+      <item name="LBvisualizzaCorrezione_WQ.text" html="true">Visualizzare la correzione (barrare la casella se SI)&lt;br&gt;</item>
+      <item name="LBvisualizzaSuggerimenti_WQ.text" html="true">Visualizzare suggerimenti (barrare la casella se SI)&lt;br&gt;</item>
+      <item name="LBeditaRisposta_WQ.text">Modificare la risposta data (barrare la casella se SI) </item>
+    <item name="COVDurataInt_WQ.ErrorMessage">Il tempo massimo deve essere un numero intero (indicare 0 se il sondaggio non è a tempo)</item>
+    <item name="COVScalaValutazioneInt_WQ.ErrorMessage">La scala di valutazione deve essere un numero intero</item>
+    <item name="LBOrdineDomandeRandom_WQ.text" html="true">&lt;br&gt;&lt;br&gt;Barrare la casella se si vuole che le domande vengano proposte in ordine casuale </item>
+    <item name="LBtitoloDestinatari_WQ.text" html="true">Il sondaggio potrà essere utilizzato da:&lt;br&gt;</item>
+    <item name="LBavvisoBloccato_WQ.text">ATTENZIONE: premendo su "Crea" il sondaggio verrà salvato e si passerà all'inserimento delle domande. Una volta terminato l'inserimento andare alla lista dei questionari e cliccare il pulsante rosso (che diventerà verde) a fianco del sondaggio per abilitarne la compilazione.</item>
+    <item name="LBtitoloS1.text">GENERALE</item>
+    <item name="LBdescrizioneS1.text">Sezione generale, all’interno della quale definire le informazioni basilari sul sondaggio.</item>
+    <item name="LBtitoloS2.text">MODALITA’ SOMMINISTRAZIONE</item>
+    <item name="LBdescrizioneS2.text">In questa sezione definire le modalità secondo le quali gli utenti potranno rispondere alle domande contenute nel sondaggio.</item>
+    <item name="LBtitoloS3.text">DESTINATARI</item>
+    <item name="LBdescrizioneS3.text">In questa sezione è possibile definire gli utenti ai quali si desidera riservare il sondaggio.</item>
+    <item name="CHKUtentiComunita_WQ.text">Tutti gli utenti della comunità corrente</item>
+    <item name="CHKUtentiNonComunita_WQ.text">Gli utenti di tutte le comunità presenti nel sistema</item>
+    <item name="CHKUtentiInvitati_WQ.text">Particolari utenti invitati. Per invitare gli utenti premere il tasto seguente </item>
+    <item name="CHKUtentiEsterni_WQ.text">Utenti non registrati a Comunità On Line. A questi dovrà essere comunicato questo link per accedere al sondaggio</item>
+  <item name="StartNextButtonText">Successivo</item>
+  <item name="StepNextButtonText">Successivo</item>
+  <item name="StepPreviousButtonText">Precedente</item>
+  <item name="FinishCompleteButtonText">Crea</item>
+</Resource>

@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping
+	xmlns="urn:nhibernate-mapping-2.2"
+	assembly="lm.Comol.Core.BaseModules"
+	namespace="lm.Comol.Core.BaseModules.Tickets.Domain" auto-import="false"
+	>
+
+	<class name="lm.Comol.Core.BaseModules.Tickets.Domain.Category" table="TK_Category" >
+
+		<id name="Id" column="Id" type="Int64">
+			<generator class="native"/>
+		</id>
+
+		<version name="TimeStamp"
+			generated="always"
+			unsaved-value="null"
+			type="BinaryBlob">
+			<column name="_Timestamp"
+				not-null="false"
+				sql-type="timestamp"/>
+		</version>
+
+
+		<property name="Name" type="String" column="Name" />
+		<property name="Description" type="String" column="Description" />
+
+		<property name="IsDefault" type="Boolean" column="IsDefault" />
+
+		<many-to-one name="Father" class="lm.Comol.Core.BaseModules.Tickets.Domain.Category" column="IdFather" foreign-key="IdFather" cascade="none" />
+
+		<!--order-by="OrderValue"-->
+		<bag name="Children" inverse="true" lazy="false">
+			<key column="IdFather"/>
+			<one-to-many class="lm.Comol.Core.BaseModules.Tickets.Domain.Category"/>
+		</bag>
+
+		<bag name="Translations" inverse="true" lazy="false" cascade="all" >
+			<key column="IdCategory"/>
+			<one-to-many class="lm.Comol.Core.BaseModules.Tickets.Domain.CategoryTranslation"/>
+		</bag>
+		
+		<property name="Type" type="lm.Comol.Core.BaseModules.Tickets.Domain.Enums.CategoryType, lm.Comol.Core.BaseModules" column="Type"/>
+		
+		<property name="Order" type="Int32" column="OrderValue" />
+		
+		<property name="IdCommunity" type="Int32" column="IdCommunity" />
+
+		<!--Mapping dei figli--><!--
+		<bag name="TaskChildren" inverse="true" lazy="true" >
+			<key column="TSK_idTaskParent"/>
+			<one-to-many class="lm.Comol.Modules.TaskList.Domain.Task"/>
+		</bag>-->
+
+		<property name="CreatedOn" type="DateTime" column="_CreatedOn" />
+		<many-to-one name="CreatedBy" class="lm.Comol.Core.DomainModel.Person" column="_CreatedBy" foreign-key="_CreatedBy" cascade="none" />
+		<property name="ModifiedOn" type="DateTime" column="_ModifiedOn" />
+		<many-to-one name="ModifiedBy" class="lm.Comol.Core.DomainModel.Person" column="_ModifiedBy" foreign-key="_ModifiedBy" cascade="none" />
+		<property name="CreatorProxyIpAddress" type="String" column="_CreatedProxyIPaddress" />
+		<property name="CreatorIpAddress" type="String" column="_CreatedIPaddress" />
+		<property name="ModifiedProxyIpAddress" type="String" column="_ModifiedProxyIPaddress" />
+		<property name="ModifiedIpAddress" type="String" column="_ModifiedIPaddress" />
+		<property name="Deleted" type="lm.Comol.Core.DomainModel.BaseStatusDeleted,lm.Comol.Core.DomainModel" column="_Deleted" />
+
+	</class>
+
+</hibernate-mapping>

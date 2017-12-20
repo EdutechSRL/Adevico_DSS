@@ -1,0 +1,183 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Resource xmlns="urn:ComolTranslation">
+  <item name="serviceTitle">Gestione enti utente</item>
+  <item name="serviceNopermission">Spiacente, non dispone dei permessi per accedere a questa pagina.</item>
+	<item name="LBNopermessi.text">Spiacente, non dispone dei permessi per accedere a questa pagina.</item>
+	<item name="LogoutMessage">Spiacenti, la sessione è scaduta.Dovrà effettuare nuovamente l'accesso al sistema.</item>
+	<item name="HYPaddAgency.text">Nuovo ente</item>
+	<item name="HYPaddAgency.ToolTip">Aggiunge un nuovo ente</item>
+	<item name="HYPaddAgency.status">Aggiunge un nuovo ente</item>
+  <item name="HYPimportAgency.text">Importa ente</item>
+  <item name="HYPimportAgency.ToolTip">Importa ente da sorgenti dati esterne/interne</item>
+  <item name="HYPimportAgency.status">Importa ente da sorgenti dati esterne/interne</item>
+	<item name="LBtipoRicerca_t.text">Trova:</item>
+  <item name="SearchAgencyBy.All">--				--</item>
+	<item name="SearchAgencyBy.Contains">Contiene</item>
+	<item name="SearchAgencyBy.ExternalCode">Codice esterno</item>
+	<item name="SearchAgencyBy.Name">Nome</item>
+	<item name="SearchAgencyBy.NationalCode">Codice istat</item>
+	<item name="SearchAgencyBy.TaxCode">Codice fiscale</item>
+	<item name="LBvalore_t.text">Valore:</item>
+  <item name="LNBtutti.text">Tutti</item>
+  <item name="LNBaltro.text" disambiguation="caratt.=caratteri">Altri caratt.</item>
+	<item name="BTNcerca.text">Trova</item>
+	<item name="BTNcerca.ToolTip">Trova</item>
+	<item name="BTNcerca.status">Trova</item>
+	<item name="LBpagesize.text">Enti per pagina:</item>
+	<item name="LBinfo_t.text" disambiguation="I=informazione (un solo carattere)">I</item>
+	<item name="LBedit.text" disambiguation="M=modifica (un solo carattere)">M</item>
+	<item name="LBdelete_t.text" disambiguation="C=cancella (un solo carattere)">C</item>
+	<item name="LBname_t.text">Ente</item>
+	<item name="LBexternalCode_t.text" disambiguation="codice esterno">Cod. esterno</item>
+	<item name="LBtaxCode_t.text">P.Iva/Cod fisc.</item>
+	<item name="LBnationalCode_t.text">Cod.istat</item>
+	<item name="LBemployeesNumber_t.text">N° dipendenti</item>
+  <item name="HYPinfo.text" disambiguation="I=informazione (un solo carattere)">I</item>
+  <item name="HYPinfo.status">Dettagli ente</item>
+  <item name="HYPinfo.ToolTip">Dettagli ente</item>
+  <item name="HYPedit.text" disambiguation="M=modifica (un solo carattere)">M</item>
+  <item name="HYPedit.status">Modifica ente</item>
+  <item name="HYPedit.ToolTip">Modifica ente</item>
+  <item name="HYPdelete.text" disambiguation="C=cancella (un solo carattere)">C</item>
+  <item name="HYPdelete.status">Cancella l'ente</item>
+  <item name="HYPdelete.ToolTip">Cancella l'ente</item>
+  <item name="LNBvirtualDelete.text" disambiguation="C=cancella (un solo carattere)">C</item>
+  <item name="LNBvirtualDelete.status">Cestina l'ente</item>
+  <item name="LNBvirtualDelete.ToolTip">Cestina l'ente</item>
+  <item name="LNBrecover.text" disambiguation="R=recupera dal cestino (un solo carattere)">R</item>
+  <item name="LNBrecover.status">Recupera l'ente dal cestino</item>
+  <item name="LNBrecover.ToolTip">Recupera l'ente dal cestino</item>
+  <item name="serviceTitleDeleteAgency">Cancellazione ente</item>
+  <item name="serviceTitleDeleteNamedAgency" placeholder="true" mustcontains="{0}">Cancellazione ente {0}</item>
+  <item name="HYPbackToManagement.text">Indietro</item>
+  <item name="HYPbackToManagement.status">Torna alla gestione degli enti</item>
+  <item name="HYPbackToManagement.ToolTip">Torna alla gestione degli enti</item>
+  <item name="LNBconfirmDelete.text">Cancella</item>
+  <item name="LNBconfirmDelete.status">Cancella definitivamente l'ente dalla piattaforma.</item>
+  <item name="LNBconfirmDelete.ToolTip">Cancella definitivamente l'ente dalla piattaforma.</item>
+
+  <item name="Delete.Single" placeholder="true" mustcontains="{0}|{1}">Sei sicuro di voler cancellare definitivamente l'ente {0} (Dipendenti associati={1}) ?</item>
+  <item name="Delete.Multiple" placeholder="true" mustcontains="{0}|{1}">Se tu cancelli l'ente {0} (Dipendenti associati={1}) cancellerai anche tutti i dati ad esso associati.Sicuro di voler completare la procedura di cancellazione ?</item>
+  <item name="DisplayAgencyUnknown">Ente non riconosciuto oppure già cancellato dal sistema.</item>
+
+  <item name="serviceAgencyInfo">Informazioni relative all'ente.</item>
+  <item name="serviceAgencyInfoNopermission">Nessun permesso per visualizzare le informazioni relative all'ente.</item>
+  <item name="LBinfoMessage.text">Nessun permesso per visualizzare le informazioni relative all'ente.</item>
+  <item name="LBagencyName_t.text">Nome ente:</item>
+  <item name="LBagencyDescription_t.text">Descrizione:</item>
+  <item name="LBagencyTaxCode_t.text">P.Iva  / Cod. Fiscale:</item>
+  <item name="LBagencyExternalCode_t.text" disambiguation="codice esterno">Cod. esterno:</item>
+  <item name="LBagencyNationalCode_t.text" disambiguation="codice istat">Cod. Istat:</item>
+  <item name="LBalwaysAvailable_t.text">Sempre disponbile:</item>
+  <item name="LBorganizations_t.text">Disponbile per:</item>
+  <item name="LBisEditable_t.text">Editabile:</item>
+  <item name="isEditable.True">Si.</item>
+  <item name="isEditable.False">No.</item>
+  <item name="LBdefault_t.text">Default:</item>
+  <item name="LBdempty_t.text">Ente "vuoto":</item>
+
+  
+  <item name="serviceTitleAddAgency">Aggiungi ente</item>
+  <item name="serviceTitleEditAgency">Modifica ente</item>
+  <item name="serviceTitleEditNamedAgency" placeholder="true" mustcontains="{0}">Modifica ente "{0}"</item>
+  <item name="serviceAddAgencyNopermission">Spiacente, non dispone dei permessi per aggiungere un nuovo ente.</item>
+  <item name="serviceEditAgencyNopermission">Spiacente, non dispone dei permessi per modificare questo ente.</item>
+  <item name="LNBsaveTop.text">Salva</item>
+  <item name="LNBsaveTop.status">Salva l'ente.</item>
+  <item name="LNBsaveTop.ToolTip">Salva l'ente.</item>
+  <item name="LNBsaveBottom.text">Salva</item>
+  <item name="LNBsaveBottom.status">Salva l'ente.</item>
+  <item name="LNBsaveBottom.ToolTip">Salva l'ente.</item>
+  <item name="EditDisplayAgencyUnknown">Ente non individuato: l'ente potrebbe essere stato cancellato oppure potrebbero esserci dei problemi nell'accesso ai dati (contattare l'amministratore della piattaforma).</item>
+  <item name="DisplaySessionTimeout">Sessione di lavoro terminata, è necessario effettuare nuovamente il login alla piattaforma.</item>
+  <item name="DisplayErrorSaving">ERRORE: i dati non sono stati salvati correttamente, riprovare.</item>
+  <item name="LBavailableForOrganizations_t.text">Disponibile per:</item>
+  <item name="LBexternalCodeDuplicate.text">Codice esterno già esistente.</item>
+  <item name="LBtaxCodeDuplicate.text">Partita Iva / Codice fiscale già esistente.</item>
+  <item name="LBnationalCodeDuplicate.text">Codice Istat già esistente.</item>
+  <item name="LBagencyNameDuplicated.text">Nome già esistente.</item>
+  
+
+  <item name="LBimportAlwaysAvailable_t.text">Visibili:</item>
+  <item name="LBimportAlwaysAvailable.text">per tutte le organizzazioni presenti.</item>
+  <item name="LBimportAvailableForOrganizations_t.text">Visibili solo per:</item>
+  <item name="DisplaySessionTimeout.AgencyOrganizations">Sessione di lavoro conclusa, riaccedere al sistema per continuare</item>
+
+
+
+  <item name="serviceTitleImportAgency">Importa enti</item>
+  <item name="serviceTitleImportAgencyNopermission" placeholder="true" mustcontains="CSV">Nessun permesso per importare enti da file CSV"</item>
+  <item name="BTNbackBottom.text">Indietro</item>
+  <item name="BTNbackBottom.status">Torna al passo precedente</item>
+  <item name="BTNbackBottom.ToolTip">Torna al passo precedente</item>
+  <item name="BTNbackTop.text">Indietro</item>
+  <item name="BTNbackTop.status">Torna al passo precedente</item>
+  <item name="BTNbackTop.ToolTip">Torna al passo precedente</item>
+  <item name="BTNnextBottom.text">Avanti</item>
+  <item name="BTNnextBottom.status">Vai al prossimo passo</item>
+  <item name="BTNnextBottom.ToolTip">Vai al prossimo passo</item>
+  <item name="BTNnextTop.text">Avanti</item>
+  <item name="BTNnextTop.status">Vai al prossimo passo</item>
+  <item name="BTNnextTop.ToolTip">Vai al prossimo passo</item>
+  <item name="BTNcompleteTop.text">Importa</item>
+  <item name="BTNcompleteTop.status">Importa i dati selezionati</item>
+  <item name="BTNcompleteTop.ToolTip">Importa i dati selezionati</item>
+  <item name="BTNcompleteBottom.text">Importa</item>
+  <item name="BTNcompleteBottom.status">Importa i dati selezionati</item>
+  <item name="BTNcompleteBottom.ToolTip">Importa i dati selezionati</item>
+
+  <item name="HYPbackToManagement.text">Gestione enti</item>
+  <item name="HYPbackToManagement.status">Torna alla gestione degli enti</item>
+  <item name="HYPbackToManagement.ToolTip">Torna alla gestione degli enti</item>
+
+  <item name="AgencyImportStep.SourceCSV.Title" placeholder="true" mustcontains="{0}|CSV">Passo {0}: File CSV"</item>
+  <item name="AgencyImportStep.SourceCSV.Description" mustcontains="CSV">Definire le impostazioni principali del file CSV da cui recuperare i dati.</item>
+  <item name="AgencyImportStep.FieldsMatcher.Title" placeholder="true" mustcontains="{0}">Passo {0}: corrispondenza colonne dati"</item>
+  <item name="AgencyImportStep.FieldsMatcher.Description">Indicare per ciascuna colonna dei dati di input la relativa "colonna" dell'ente.</item>
+
+  <item name="AgencyImportStep.ItemsSelctor.Title" placeholder="true" mustcontains="{0}">Passo {0}: selezione record / gestione conflitti"</item>
+  <item name="AgencyImportStep.ItemsSelctor.Description">Selezionare gli enti da importare.</item>
+  <item name="AgencyImportStep.OrganizationAvailability.Title" placeholder="true" mustcontains="{0}">Passo {0}: selezione organizzazioni"</item>
+  <item name="AgencyImportStep.OrganizationAvailability.Description">Selezionare le organizzazioni a cui associare gli enti da importare.</item>
+  <item name="AgencyImportStep.Summary.Title" placeholder="true" mustcontains="{0}">Passo {0}: conferma finale"</item>
+  <item name="AgencyImportStep.Summary.Description">Conferma definitiva delle operazioni da realizzare.</item>
+  <item name="AgencyImportStep.ImportCompleted.Title">Importazione enti CONCLUSA</item>
+  <item name="AgencyImportStep.ImportCompleted.Description"></item>
+  <item name="AgencyImportStep.ImportWithErrors.Title">Importazione enti CONCLUSA con errori</item>
+  <item name="AgencyImportStep.ImportWithErrors.Description">Dettaglio degli errori nelle procedure di importazione in piattaforma:</item>
+  <item name="ImportedAgencyColumn.skip">--    Ignora    --</item>
+  <item name="ImportedAgencyColumn.name">Nome</item>
+  <item name="ImportedAgencyColumn.externalCode">Codice esterno</item>
+  <item name="ImportedAgencyColumn.nationalCode">Codice nazionale</item>
+  <item name="ImportedAgencyColumn.taxCode">Codice fiscale / Partita iva</item>
+ 
+
+  <item name="Localization.Uploaded">Avanzamento complessivo</item>
+  <item name="Localization.UploadedAgencies">Avanzamento</item>
+  <item name="Localization.CurrentAgencyName">Agenzia corrente: </item>
+  <item name="Localization.Total">Completamento</item>
+  <item name="Localization.TotalAgencies">Enti totali</item>
+  <item name="Localization.ElapsedTime">Tempo impiegato:</item>
+  <item name="Localization.EstimatedTime">Tempo stimato:</item>
+  <item name="Localization.TransferSpeed">Velocità esecuzione:</item>
+  <item name="Import.Completed.1">Tutte le operazioni di importazione sono state concluse con successo, e' stato creato un ente in piattaforma.</item>
+  <item name="Import.Completed" placeholder="true" mustcontains="{0}">Tutte le operazioni di importazione sono state concluse con successo, sono stati creati {0} ente in piattaforma."</item>
+  <item name="Import.ImportOther" placeholder="true" mustcontains="{0}">Dalla sorgente dati selezionati risultano disponibili ulteriori {0} ente da creare: per procedere con la loro eventuale importazione premere sul pulsante "Indietro".</item>
+  <item name="Import.ImportOther.1" placeholder="true">Dalla sorgente dati selezionati risulta disponibile un ulteriore ente da creare: per procedere con la sua eventuale importazione premere sul pulsante "Indietro".</item>
+  <item name="ImportError.Completed.1" html="true">Le operazioni di importazione NON sono state concluse con successo, e' stato creato SOLO un ente in piattaforma.&lt;br&gt;Dettaglio degli errori:</item>
+  <item name="ImportError.Completed" html="true" placeholder="true" mustcontains="{0}">Le operazioni di importazione NON sono state concluse tutte con successo, sono stati creati {0} ente in piattaforma.&lt;br&gt;Dettaglio degli errori:</item>
+  <item name="LBimportedAgenciesErrors_t.text">Enti non importati:</item>
+
+  <item name="Summary.0">Ente da importare:</item>
+  <item name="Summary">Enti da importare:</item>
+  <item name="Summary.Organizations.0">Disponibile per:</item>
+  <item name="Summary.Organizations">Disponibili per:</item>
+  <item name="Summary.Platform">l'intera piattaforma</item>
+  <item name="CurrentOperationText.True" placeholder="true" mustcontains="{0}">importazione ente {0}</item>
+  <item name="CurrentOperationText.False" placeholder="true" mustcontains="{0}">importazione ente {0} NON avvenuta correttamente.</item>
+  <item name="OnLoadingTranslation">Caricamento dati in corso</item>
+  <item name="LBagencyAvailability_t.text" disambiguation="inteso come ricerca fra gli enti (disponibili,default,vuoti)">fra:</item>
+  <item name="AgencyAvailability.All">tutti gli enti</item>
+  <item name="AgencyAvailability.Default">gli enti di default</item>
+  <item name="AgencyAvailability.Empty">gli enti "non assegnati"</item> 
+</Resource>

@@ -1,0 +1,37 @@
+
+/* Additional values for some task list elements */
+.gresource,
+.gduration,
+.gpccomplete,
+.gstartdate					{ height: 19px; text-align: center; min-width: 70px; max-width: 70px; width: 70px; font-size: 10px; }
+.genddate					{ height: 19px; text-align: center; min-width: 70px; max-width: 70px; width: 70px; font-size: 10px; }
+.gtaskheading				{ height: 19px; text-align: center; }
+.gtaskname					{ min-width: 130px; max-width: 130px; width: 130px; font-size: 9px; border-left: none; }
+
+.gantt				{ min-width: 200px;	/* 2x LC width */ }
+#ganttcontainer			{ padding-left: 200px;	/* LC width */ }
+#ganttcontainer .column	{ position: relative; float: left; }
+#rightside			{ width: 100%; }
+#leftside			{ width: 200px; /* LC width */ margin-left: -100%; right: 200px; /* LC width */ }
+#footer				{ clear: both; }
+#rightsideh			{ width: 100%; }
+#leftsideh			{ width: 200px; /* LC width */ margin-left: -100%; right: 200px; /* LC width */ }
+#footer2			{ clear: both; }
+
+.rhscrpad			{ width: 150px; }
+
+/* Old Internet Explorer version hacks */
+.gantt						{ _height: 100% }	/* otherwise the chart disappears! */
+div .gantt					{ _width: 1064px; }	/* ie6 fixed width */
+div #rightsideh,
+div #rightside				{ _width: 200px; }	/* ie6 fixed width */
+div #leftsideh,
+div #leftside {
+	*right: 0px;			/* ie7 pulls the content too far left with the negative margin */
+	_right: 200px;			/* but ie6 fixed width needs this */
+	_margin-left: -200px;	/* ie6 fixed width */
+
+div#GanttChartDIV.gantt
+{
+    overflow: hidden;
+}

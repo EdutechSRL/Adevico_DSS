@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="urn:ComolTranslation">
+  <item name="ServiceTitle" disambiguation="modello=modello di questionario" html="false" placeholder="false">Models</item>
+  <item name="LBmodello.text" disambiguation="modello=modello di questionario" html="false" placeholder="false">Static model: </item>
+  <item name="LBmodelloDescrizione.text" html="false" placeholder="false">The simplest type of model. Answers are fixed, but you can sort their visualization at random.</item>
+  <item name="LBAutovalutazione.text" html="false" placeholder="false">Self-assessment test</item>
+  <item name="LBAutovalutazioneDescrizione.text" html="false" placeholder="false">It will be possible to choose libraries from which select questions to present to the user. Once answered every question, the user will be able to see corrections ( in case of automatically evaluable questions) and, possibly   suggestions about the knowledge he/she lacks or custom texts, inserted by the creator of the question.</item>
+  <item name="LBLibreria.text" disambiguation="libreria=libreria di domande" html="false" placeholder="false">Questions library: </item>
+  <item name="LBLibreriaDescrizione.text" html="false" placeholder="false">Questions added to a library can be used to quickly create several types of model.</item>
+  <item name="LBModello.text" html="false" placeholder="false">Model's model: </item>
+  <item name="LBModelloDescrizione.text"  disambiguation="modello=modello di questionario" html="false" placeholder="false">Permette di creare un modello statico e pubblico di questionario (con impostazioni di base, domande, pagine, ecc): altri gestori del servizio potranno utilizzare tale modello (con le relative impostazioni) per creare dei questionari personalizzati.</item>
+  <item name="LBRandom.text" html="false" placeholder="false">Random model: </item>
+  <item name="LBRandomDescrizione.text" html="false" placeholder="false">It will be possible to select how many questions, for each difficulty level and available library, will be presented to the user. To every user will be displayed a different set of questions.</item>
+  <item name="LBSceltamodello.text" html="false" placeholder="false">SELECT THE TYPE OF MODEL BY CLICKING "CHOOSE" </item>
+  <item name="LBSondaggio.text" html="false" placeholder="false">Poll: </item>
+  <item name="LBSondaggioDescrizione.text" html="false" placeholder="false">Like the static model, but you can not automatically evaluate answers.</item>
+  <item name="LNBwizard" html="false" placeholder="false">Wizard</item>
+  <item name="LNBavanzato" html="false" placeholder="false">Advanced</item>
+  <item name="MSGNoPermessi" html="false" placeholder="false">You do not have permission to view this page</item>
+  <item name="LBDescrizionemodello_WQ.text" html="false" placeholder="false">Inserire, se si desidera, una descrizione che riassume i contenuti del modello, o con indicazioni e suggerimenti da fornire all'utente prima che inizi la compilazione.</item>
+  <item name="LBNome_WQ.text" html="false" placeholder="false">Enter a name for the model (mandatory)</item>
+  <item name="CUVNome_WQ.ErrorMessage" disambiguation="modello=modello di questionario" html="false" placeholder="false">A model with this name already exists in this community</item>
+  <item name="RFVNome_WQ.ErrorMessage" html="false" placeholder="false">Mandatory name</item>
+  <item name="LBDataInizioTitolo_WQ.text" html="true" placeholder="false">Enter the end and start date for the model.&lt;br&gt;Model is open on</item>
+  <item name="LBDataFineTitolo_WQ.text" html="false" placeholder="false">and will be closed</item>
+  <item name="CUVdate_WQ.ErrorMessage" html="false" placeholder="false">End date must be greater than start date.</item>
+  <item name="CKisBloccato_WQ.text" html="true" placeholder="false">Model compilation is currently blocked (tick the box if YES)&lt;br&gt;&lt;br&gt;</item>
+  <item name="LBDurata_WQ.text" html="false" placeholder="false">User will have maximum</item>
+  <item name="LBDurataDopo_WQ.text" html="false" placeholder="false">minutes available for the model compilation. (0=no limit)</item>
+  <item name="LBScalaValutazione_WQ.text" html="false" placeholder="false">Themodel's rating scale will go from 1 to</item>
+  <item name="LBvisualizzazione_WQ.text" html="true" placeholder="false">After the compilation of the module the user will be allowed to:  &lt;br&gt;</item>
+  <item name="LBLinguaDefault_WQ.text" html="false" placeholder="false">Define model default language</item>
+  <item name="LBvisualizzaRisposta_WQ.text" html="true" placeholder="false">Display answer (tick the box if YES)&lt;br&gt;</item>
+  <item name="LBvisualizzaCorrezione_WQ.text" html="true" placeholder="false">Display correction (tick the box if YES)&lt;br&gt;</item>
+  <item name="LBeditaRisposta_WQ.text" html="false" placeholder="false">Modify the given answer (tick the box to activate)</item>
+  <item name="LBvisualizzaSuggerimenti_WQ.text" html="true" placeholder="false">Display tips (tick the box if YES)&lt;br&gt;</item>
+  <item name="LBvisualizzaCorrezioneAutovalutazione.text" html="true">Display correction (tick the box if YES)&lt;br&gt;</item>
+  <item name="COVDurataInt_WQ.ErrorMessage" disambiguation="modello=modello di questionario" html="false" placeholder="false">maximum time must be an integer (0 the model is time-indipendent)</item>
+  <item name="COVScalaValutazioneInt_WQ.ErrorMessage" html="false" placeholder="false">Rating scale must be an integer</item>
+  <item name="LBOrdineDomandeRandom_WQ.text" html="true" placeholder="false">&lt;br&gt;&lt;br&gt;Tick the box if you want questions in random order </item>
+  <item name="LBtitoloDestinatari_WQ.text" html="true" placeholder="false">The model ca be used by:&lt;br&gt;</item>
+  <item name="LBavvisoBloccato_WQ.text" html="false" placeholder="false">ATTENTION: by pressing "Create" the model will be saved. Once entered, go to the questionnaire list and click the red button (that will become green) next to the model in order to enable compilation.</item>
+  <item name="LBtitoloS1.text" html="false" placeholder="false">GENERAL</item>
+  <item name="LBdescrizioneS1.text" html="false" placeholder="false">General section, where you can add the basilar information about the model.</item>
+  <item name="LBtitoloS2.text" html="false" placeholder="false">ADMINISTERING METHOD </item>
+  <item name="LBdescrizioneS2.text" html="false" placeholder="false">In this section choose the methods by which users will answer the model questions.</item>
+  <item name="LBtitoloS3.text" html="false" placeholder="false">RECIPIENTS</item>
+  <item name="LBdescrizioneS3.text" html="false" placeholder="false">In this section it is possible to choose users to whom dispatch the model.</item>
+  <item name="CHKUtentiComunita_WQ.text" html="false" placeholder="false">All current community users</item>
+  <item name="CHKUtentiNonComunita_WQ.text" html="false" placeholder="false">All communities users </item>
+  <item name="CHKUtentiInvitati_WQ.text" html="false" placeholder="false">Particolar invited users. In order to invite users press the following button</item>
+  <item name="CHKUtentiEsterni_WQ.text" html="false" placeholder="false">Users not registered to Comunita' On Line. This link must be sent to them in order to access model</item>
+  <item name="StartNextButtonText">Next</item>
+  <item name="StepNextButtonText">Next</item>
+  <item name="StepPreviousButtonText">Previous</item>
+  <item name="FinishCompleteButtonText">Create</item>
+</Resource>

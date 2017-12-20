@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="lm.Comol.Core.DomainModel" namespace="lm.Comol.Core.Mail.Messages">
+	<class name="MailRecipient" table="ML_Recipient" lazy="false">
+    <id name="Id" column="Id" type="Int64" unsaved-value="0">
+      <generator class="native"/>
+    </id>
+    <many-to-one name="Message" class="lm.Comol.Core.Mail.Messages.MailMessage" column="IdMessage" foreign-key="IdMessage" cascade="none"  />
+    <many-to-one name="Item" class="lm.Comol.Core.Mail.Messages.MessageTranslation" column="IdMessageTranslation" foreign-key="IdMessageTranslation" cascade="none"  />
+    <property name="Type" type="lm.Comol.Core.MailCommons.Domain.RecipientType,lm.Comol.Core.MailCommons" />
+    <property name="MailAddress" type="String"/>
+    <property name="DisplayName" type="String"/>
+    <property name="IdPerson" type="Int32" column="IdPerson"/>
+    <property name="IdRole" type="Int32" column="IdRole"/>
+    <property name="IdUserModule" type="Int64" />
+    <property name="IdModuleObject" type="Int64" />
+    <property name="IdModuleType" type="Int32" />
+    <property name="IsMailSent" type="Boolean" />
+    <property name="IdLanguage" type="Int32"/>
+    <property name="LanguageCode" type="String"/>
+    <property name="Deleted" type="lm.Comol.Core.DomainModel.BaseStatusDeleted,lm.Comol.Core.DomainModel" column="_Deleted" />
+    <component name="Ownership">
+      <many-to-one name="Community" class="lm.Comol.Core.DomainModel.liteCommunity" column="IdCommunity" foreign-key="IdCommunity" cascade="none" not-found="ignore" />
+      <property name="IdModule" type="Int32" column="IdModule"/>
+      <property name="ModuleCode" type="String" column="ModuleCode"/>
+      <property name="IsPortal" type="Boolean" column="IsPortal"/>
+      <component name="ModuleObject">
+        <property name="ServiceCode" type="String" column="SRC_serviceOwner"/>
+        <property name="FQN" type="String" column="SRC_ownerFullyQualifiedName"/>
+        <property name="ObjectTypeID" type="Int32" column="SRC_objectTypeID"/>
+        <property name="ObjectLongID" type="Int64" column="SRC_ownerLongID"/>
+        <property name="ObjectGuidID" type="Guid" column="SRC_ownerGuidID"/>
+        <property name="ServiceID" type="Int32" column="SRC_serviceOwnerID"/>
+        <property name="CommunityID" type="Int32" column="SRC_CommunityID"/>
+      </component>
+    </component>
+  </class>
+</hibernate-mapping>

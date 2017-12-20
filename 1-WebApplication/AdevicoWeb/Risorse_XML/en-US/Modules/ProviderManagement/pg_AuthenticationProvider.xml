@@ -1,0 +1,399 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="urn:ComolTranslation">
+  <item name="LBproviderName_t.text" html="false" placeholder="false" mustcontains="(*)">Name (*):</item>
+  <item name="LBuniqueCode_t.text" html="false" placeholder="false" mustcontains="(*)">Unique code (*):</item>
+  <item name="LBproviderType_t.text" html="false" placeholder="false">Type:</item>
+  <item name="AuthenticationProviderType.None" html="false" placeholder="false" hidden="true"> --  </item>
+  <item name="AuthenticationProviderType.Internal" html="false" placeholder="false">Internal</item>
+  <item name="AuthenticationProviderType.Ldap" html="false" placeholder="false">Via LDAP</item>
+  <item name="AuthenticationProviderType.Url" html="false" placeholder="false">Via url</item>
+  <item name="AuthenticationProviderType.ActiveDirectory" html="false" placeholder="false">Active Directory</item>
+  <item name="AuthenticationProviderType.WebService" html="false" placeholder="false">Web Service</item>
+  <item name="AuthenticationProviderType.ExternalAPI" html="false" placeholder="false">External API</item>
+  <item name="AuthenticationProviderType.Shibboleth" html="false" placeholder="false">Shibboleth</item>
+  <item name="AuthenticationProviderType.UrlMacProvider" html="false" placeholder="false">Url with mac validation</item>
+  <item name="HYPadvancedSettings.text" html="false" placeholder="false">Advanced settings</item>
+  <item name="HYPadvancedSettings.ToolTip" html="false" placeholder="false">Advanced settings</item>
+  <item name="HYPadvancedSettings.status" html="false" placeholder="false">Advanced settings</item>
+  <item name="LBdisplayToUser_t.text" html="false" placeholder="false">Display to users :</item>
+  <item name="CBXdisplayToUser.text" html="false" placeholder="false">yes</item>
+  <item name="LBallowAdminProfileInsert_t.text" html="false" placeholder="false">Allow:</item>
+  <item name="CBXallowAdminProfileInsert.text" html="false" placeholder="false">profile creation performed by administrators.</item>
+  <item name="LBallowMultipleInsert_t.text" html="false" placeholder="false">Multiple insertions:</item>
+  <item name="CBXallowMultipleInsert.text" html="false" placeholder="false">yes</item>
+  <item name="LBidentifierFields_t.text" html="false" placeholder="false">Identification fields:</item>
+  <item name="IdentifierField.none" html="false" placeholder="false">None </item>
+  <item name="IdentifierField.longField" html="false" placeholder="false">Long integer</item>
+  <item name="IdentifierField.stringField" html="false" placeholder="false">String</item>
+  <item name="LBdateToChangePassword_t.text" html="false" placeholder="false">Password validity:</item>
+  <item name="DDLpasswordDays.3" html="false" placeholder="false">3 mounths</item>
+  <item name="DDLpasswordDays.6" html="false" placeholder="false">6 mounths</item>
+  <item name="DDLpasswordDays.9" html="false" placeholder="false">9 mounths</item>
+  <item name="DDLpasswordDays.12" html="false" placeholder="false">1 year</item>
+  <item name="DDLpasswordDays.24" html="false" placeholder="false">2 years</item>
+  <item name="DDLpasswordDays.36" html="false" placeholder="false">3 years</item>
+  <item name="DDLpasswordDays.0" html="false" placeholder="false">No expiration</item>
+  <item name="LBsenderUrl_t.text" html="false" placeholder="false" mustcontains="(*)">Starting Url (*):</item>
+  <item name="LBremoteLoginUrl_t.text" html="false" placeholder="false">Login remote Url :</item>
+  <item name="LBverifyRemoteUrl_t.text" html="false" placeholder="false">Verify strating url:</item>
+  <item name="Option.True" html="false" placeholder="false">yes</item>
+  <item name="Option.False" html="false" placeholder="false">No</item>
+  <item name="CBXverifyRemoteUrl.text" html="false" placeholder="false">yes</item>
+  <item name="LBurlIdentifier_t.text" html="false" placeholder="false" mustcontains="(*)">Url identifier (*):</item>
+  <item name="LBdeltaTime_t.text" html="false" placeholder="false" mustcontains="(*)">Token validity (*):</item>
+  <item name="LBdeltaTime.text" html="false" placeholder="false" mustcontains="5|7200">seconds (min 5, max 7200).</item>
+  <item name="LBtokenFormat_t.text" html="false" placeholder="false">Token format:</item>
+  <item name="UrlUserTokenFormat.PrefixDateTimeLogin" html="false" placeholder="false">"[some information] 2050-10-07T12:00:00 mario.rossi"</item>
+  <item name="UrlUserTokenFormat.DateTimeLogin" html="false" placeholder="false" hidden="true">"2050-10-07T12:00:00 mario.rossi"</item>
+  <item name="UrlUserTokenFormat.LoginDateTime" html="false" placeholder="false" hidden="true">"mario.rossi 2050-10-07T12:00:00"</item>
+  <item name="UrlUserTokenFormat.PrefixLoginDateTime" html="false" placeholder="false">"[some information] mario.rossi 2050-10-07T12:00:00"</item>
+  <item name="LBkey_t.text" html="false" placeholder="false" mustcontains="(*)|256">Key 256-bit(*):</item>
+  <item name="LBinitializationVector_t.text" html="false" placeholder="false" mustcontains="(*)|128">Inizialization 128-bit vector (*):</item>
+  <item name="LBencryptionAlgorithm_t.text" html="false" placeholder="false">Algorithm:</item>
+  <item name="EncryptionAlgorithm.None" html="false" placeholder="false">None </item>
+  <item name="EncryptionAlgorithm.Des" html="false" placeholder="false" hidden="true">Des</item>
+  <item name="EncryptionAlgorithm.Rc2" html="false" placeholder="false" hidden="true">Rc2</item>
+  <item name="EncryptionAlgorithm.Rijndael" html="false" placeholder="false" hidden="true">Rijndael</item>
+  <item name="EncryptionAlgorithm.TripleDes" html="false" placeholder="false" hidden="true">TripleDes</item>
+  <item name="EncryptionAlgorithm.Md5" html="false" placeholder="false" hidden="true">Md5</item>
+  <item name="LBenabledProvider_t.text" html="false" placeholder="false">Enabled:</item>
+  <item name="LBprivateKey_t.text" html="false" placeholder="false" mustcontains="(*)">Private key (*):</item>
+  <item name="LBautoEnroll_t.text" html="false" placeholder="false">Automatic profiling:</item>
+  <item name="LBautoAddAgency_t.text" html="false" placeholder="false">Unknown agency:</item>
+  <item name="CBXautoEnroll.text" html="false" placeholder="false">Yes</item>
+  <item name="CBXautoAddAgency.text" html="false" placeholder="false">automatically generated</item>
+  <item name="CBXenabled.text" html="false" placeholder="false">Yes</item>
+  <item name="LBallowTaxCodeDuplication.text" disambiguation="cod.=codice" html="false" placeholder="false">TaxCode:</item>
+  <item name="CBXallowTaxCodeDuplication.text" html="false" placeholder="false">allow duplicated</item>
+  <item name="LBallowRequestFromIpAddresses_t.text" disambiguation="Accesso consentito (da una lista di indirizzi ip)" html="false" placeholder="false">Allow by:</item>
+  <item name="LBdenyRequestFromIpAddresses_t.text" disambiguation="Accesso NON consentito (da una lista di indirizzi ip)" html="false" placeholder="false">NOT allowed by:</item>
+  <item name="FormatiIP" html="false" placeholder="false">Specify the IP addresses separated by commas (10.0.0.*, 10.0.0.1-10.0.0.10, 10.0.0.23).</item>
+  <item name="CBXallowTaxCodeDuplication.text" html="false" placeholder="false">consenti duplicati</item>
+  <item name="LBtranslationName_t.text" html="false" placeholder="false" mustcontains="(*)">Name (*):"</item>
+  <item name="LBtranslationDescription_t.text" html="false" placeholder="false">Description:</item>
+  <item name="LBtranslationForSubscribeName_t.text" html="false" placeholder="false" mustcontains="(*)">Name for registration (*):"</item>
+  <item name="LBforSubscribeDescription_t.text" html="false" placeholder="false">Registration description:</item>
+  <item name="LBfieldLong_t.text" disambiguation="ident.=identificativo" html="false" placeholder="false">  "Big int" ident. name:</item>
+  <item name="LBfieldString_t.text" disambiguation="ident.=identificativo" html="false" placeholder="false"> "String" ident. name:</item>
+  <item name="LBduplicateUniqueCode.text" html="false" placeholder="false">Duplicated unique code</item>
+  <item name="BTNvalidateKey.text" html="false" placeholder="false">Valid</item>
+  <item name="BTNvalidateKey.ToolTip" html="false" placeholder="false">Validate 256 bit key</item>
+  <item name="BTNvalidateKey.status" html="false" placeholder="false">Validate 256 bit key</item>
+  <item name="keyValidated.True" html="false" placeholder="false">Valid</item>
+  <item name="keyValidated.False" html="false" placeholder="false">Invalid</item>
+  <item name="BTNvalidateVector.text" html="false" placeholder="false">Valid</item>
+  <item name="BTNvalidateVector.ToolTip" html="false" placeholder="false">Validate 128 bit vector</item>
+  <item name="BTNvalidateVector.status" html="false" placeholder="false">Validate 128 bit vector</item>
+  <item name="vectorValidated.True" html="false" placeholder="false">Valid</item>
+  <item name="vectorValidated.False" html="false" placeholder="false">Invalid</item>
+  <item name="serviceUrlSettingsProviderTitle" html="false" placeholder="false">Advanced settings</item>
+  <item name="serviceUrlSettingsProviderNopermission" html="false" placeholder="false">No permission to modify the advanced settings of the authentication provider.</item>
+  <item name="serviceNamedUrlSettingsProviderTitle" html="false" placeholder="true" mustcontains="{0}">Advanced settings of the authentication provider "{0}"</item>
+  <item name="HYPbackToManagementTop.text" html="false" placeholder="false">Back to management</item>
+  <item name="HYPbackToManagementTop.status" html="false" placeholder="false">Back to management</item>
+  <item name="HYPbackToManagementTop.ToolTip" html="false" placeholder="false">Back to management</item>
+  <item name="HYPbackToManagementBottom.text" html="false" placeholder="false">Back to management</item>
+  <item name="HYPbackToManagementBottom.status" html="false" placeholder="false">Back to management</item>
+  <item name="HYPbackToManagementBottom.ToolTip" html="false" placeholder="false">Back to management</item>
+  <item name="HYPbackToProviderEdit.text" html="false" placeholder="false">Modify authentication provider</item>
+  <item name="HYPbackToProviderEdit.status" html="false" placeholder="false">Modify authentication provider</item>
+  <item name="HYPbackToProviderEdit.ToolTip" html="false" placeholder="false">Modify authentication provider</item>
+  <item name="HYPbackToProviderEditBottom.text" html="false" placeholder="false">Modify authentication provider</item>
+  <item name="HYPbackToProviderEditBottom.status" html="false" placeholder="false">Modify authentication provider</item>
+  <item name="HYPbackToProviderEditBottom.ToolTip" html="false" placeholder="false">Modify authentication provider</item>
+  <item name="BTNaddLoginFormat.text" html="false" placeholder="false">New login format</item>
+  <item name="BTNaddLoginFormat.status" html="false" placeholder="false">New login format</item>
+  <item name="BTNaddLoginFormat.ToolTip" html="false" placeholder="false">New login format</item>
+  <item name="LTprogress.text" html="false" placeholder="false">Data loading..........</item>
+  <item name="BTNvalidate.text" html="false" placeholder="false">Validate parameters</item>
+  <item name="BTNvalidate.status" html="false" placeholder="false">Validate configuration parameters</item>
+  <item name="BTNvalidate.ToolTip" html="false" placeholder="false">Validate configuration parameters</item>
+  <item name="BTNdecrypt.text" html="false" placeholder="false">Decrypt</item>
+  <item name="BTNdecrypt.status" html="false" placeholder="false">Decrypt specified value</item>
+  <item name="BTNdecrypt.ToolTip" html="false" placeholder="false">Decrypt specified value</item>
+  <item name="BTNcrypt.text" html="false" placeholder="false">Encrypt</item>
+  <item name="BTNcrypt.status" html="false" placeholder="false">Encrypt specified value</item>
+  <item name="BTNcrypt.ToolTip" html="false" placeholder="false">Encrypt inserted value</item>
+  <item name="LBencryptedValue_t.text" html="false" placeholder="false">Encrypted value:</item>
+  <item name="LBdecrypted_t.text" html="false" placeholder="false">Decrypted:</item>
+  <item name="LBdecryptedValue_t.text" html="false" placeholder="false">Dencrypted value:</item>
+  <item name="LBcrypted_t.text" html="false" placeholder="false">Encrypted:</item>
+  <item name="BTNupdateConfigurationParameters.text" html="false" placeholder="false">Save  configuration parameters</item>
+  <item name="BTNupdateConfigurationParameters.status" html="false" placeholder="false">Save  configuration parameters</item>
+  <item name="BTNupdateConfigurationParameters.ToolTip" html="false" placeholder="false">Save  configuration parameters</item>
+  <item name="LBedit_t.text" disambiguation="M=modifica (un solo carattere)" html="false" placeholder="false">M</item>
+  <item name="LBdelete_t.text" disambiguation="C=cancella (un solo carattere)" html="false" placeholder="false">D</item>
+  <item name="LBdefault_t.text" html="false" placeholder="false">Default</item>
+  <item name="LBformatName_t.text" html="false" placeholder="false">Format name:</item>
+  <item name="LBformatBefore_t.text" html="false" placeholder="false">Previous text</item>
+  <item name="LBformatAfter_t.text" html="false" placeholder="false">Next text</item>
+  <item name="LNBedit.text" html="false" placeholder="false" />
+  <item name="LNBedit.status" disambiguation="verbo" html="false" placeholder="false">Modify.</item>
+  <item name="LNBedit.ToolTip" disambiguation="verbo" html="false" placeholder="false">Modify.</item>
+  <item name="LNBdelete.text" disambiguation="C=cancella (un solo carattere)" html="false" placeholder="false">D</item>
+  <item name="LNBdelete.status" html="false" placeholder="false">Permanently delete.</item>
+  <item name="LNBdelete.ToolTip" html="false" placeholder="false">Permanently delete.</item>
+  <item name="LNBdelete.ConfirmText" html="false" placeholder="false">Are you sure you want to permanently delete the element?</item>
+  <item name="LNBvirtualDelete.text" html="false" placeholder="false" />
+  <item name="LNBvirtualDelete.status" html="false" placeholder="false">Trash</item>
+  <item name="LNBvirtualDelete.ToolTip" html="false" placeholder="false">Trash</item>
+  <item name="LNBvirtualUnDelete.text" html="false" placeholder="false" />
+  <item name="LNBvirtualUnDelete.status" html="false" placeholder="false">Recover from trashbin</item>
+  <item name="LNBvirtualUnDelete.ToolTip" html="false" placeholder="false">Recover from trashbin</item>
+  <item name="LBisDefault.True" html="false" placeholder="false">yes.</item>
+  <item name="LBisDefault.False" html="false" placeholder="false" />
+  <item name="BTNundoSaveTop.text" html="false" placeholder="false">Cancel</item>
+  <item name="BTNundoSaveTop.status" html="false" placeholder="false">Cancel</item>
+  <item name="BTNundoSaveTop.ToolTip" html="false" placeholder="false">Cancel</item>
+  <item name="BTNsaveTop.text" html="false" placeholder="false">Save</item>
+  <item name="BTNsaveTop.status" html="false" placeholder="false">Save</item>
+  <item name="BTNsaveTop.ToolTip" html="false" placeholder="false">Save</item>
+  <item name="BTNundoSaveBottom.text" html="false" placeholder="false">Cancel</item>
+  <item name="BTNundoSaveBottom.status" html="false" placeholder="false">Cancel</item>
+  <item name="BTNundoSaveBottom.ToolTip" html="false" placeholder="false">Cancel</item>
+  <item name="BTNsaveBottom.text" html="false" placeholder="false">Save</item>
+  <item name="BTNsaveBottom.status" html="false" placeholder="false">Save</item>
+  <item name="BTNsaveBottom.ToolTip" html="false" placeholder="false">Save</item>
+  <item name="LBloginFormatName_t.text" html="false" placeholder="false" mustcontains="(*)">Name(*):"</item>
+  <item name="LBloginFormatDefault_t.text" html="false" placeholder="false">Default format:</item>
+  <item name="CBXloginFormatDefault.text" html="false" placeholder="false">yes</item>
+  <item name="LBloginFormatTextBefore_t.text" html="false" placeholder="false">Previous text:</item>
+  <item name="LBloginFormatTextAfter_t.text" html="false" placeholder="false">Next text:</item>
+  <item name="DisplayErrorSaving" html="false" placeholder="false">Error while saving data.</item>
+  <item name="DisplayNoPermission" html="false" placeholder="false">Sorry, you do not have permission to edit this authentication type</item>
+  <item name="DisplayProviderUnknown" html="false" placeholder="false">Sorry, authentication system not found.</item>
+  <item name="DisplayDeletedProvider" html="false" placeholder="true" mustcontains="{0}|{1}">The authentication provider {0} of type {1} was deleted, it is not possible to edit it.</item>
+  <item name="LBproviderAttributeName_t.text" html="false" placeholder="false" mustcontains="(*)">Name (*):"</item>
+  <item name="LBproviderAttributeAlias_t.text" html="false" placeholder="false" mustcontains="(*)">Alias (*):"</item>
+  <item name="LBproviderAttributeType_t.text" html="false" placeholder="false">Type:</item>
+  <item name="LBproviderAttributeDescription_t.text" html="false" placeholder="false">Description:</item>
+  <item name="AttributeType.sessionId" html="false" placeholder="false">Session Id</item>
+  <item name="AttributeType.unknown" html="false" placeholder="false">Not defined</item>
+  <item name="AttributeType.externalId" html="false" placeholder="false">External ID</item>
+  <item name="AttributeType.accountId" html="false" placeholder="false">Account id</item>
+  <item name="AttributeType.name" html="false" placeholder="false">Name</item>
+  <item name="AttributeType.surname" html="false" placeholder="false">Surname</item>
+  <item name="AttributeType.mail" html="false" placeholder="false">Mail</item>
+  <item name="AttributeType.telephoneNumber" html="false" placeholder="false">Telephone</item>
+  <item name="AttributeType.fax" html="false" placeholder="false">Fax</item>
+  <item name="AttributeType.im" html="false" placeholder="false">Instant Messaging</item>
+  <item name="AttributeType.mobile" html="false" placeholder="false">Mobile</item>
+  <item name="AttributeType.taxCode" html="false" placeholder="false">Tax code</item>
+  <item name="AttributeType.login" html="false" placeholder="false">Login</item>
+  <item name="AttributeType.password" html="false" placeholder="false">Password</item>
+  <item name="AttributeType.externalRoles" html="false" placeholder="false">External roles</item>
+  <item name="AttributeType.externalProfileId" html="false" placeholder="false">Profile id</item>
+  <item name="BTNundoSaveAttributeTop.text" html="false" placeholder="false">Cancel</item>
+  <item name="BTNundoSaveAttributeTop.status" html="false" placeholder="false">Cancel</item>
+  <item name="BTNundoSaveAttributeTop.ToolTip" html="false" placeholder="false">Cancel</item>
+  <item name="BTNsaveAttributeTop.text" html="false" placeholder="false">Save</item>
+  <item name="BTNsaveAttributeTop.status" html="false" placeholder="false">Save data related to the attribute</item>
+  <item name="BTNsaveAttributeTop.ToolTip" html="false" placeholder="false">Save data related to the attribute</item>
+  <item name="BTNundoSaveAttributeBottom.text" html="false" placeholder="false">Cancel</item>
+  <item name="BTNundoSaveAttributeBottom.status" html="false" placeholder="false">Cancel</item>
+  <item name="BTNundoSaveAttributeBottom.ToolTip" html="false" placeholder="false">Cancel</item>
+  <item name="BTNsaveAttributeBottom.text" html="false" placeholder="false">Save</item>
+  <item name="BTNsaveAttributeBottom.status" html="false" placeholder="false">Save data related to the attribute</item>
+  <item name="BTNsaveAttributeBottom.ToolTip" html="false" placeholder="false">Save data related to the attribute</item>
+  <item name="BTNaddAttribute.text" html="false" placeholder="false">Add attribute</item>
+  <item name="BTNaddAttribute.status" html="false" placeholder="false">Add a new attribute</item>
+  <item name="BTNaddAttribute.ToolTip" html="false" placeholder="false">Add a new attribute</item>
+  <item name="BTNaddRole.text" html="false" placeholder="false">Add role</item>
+  <item name="BTNaddRole.status" html="false" placeholder="false">Add a new role</item>
+  <item name="BTNaddRole.ToolTip" html="false" placeholder="false">Add a new role</item>
+  <item name="LBattributeName_t.text" html="false" placeholder="false">Attribute name</item>
+  <item name="LBattributeAlias_t.text" html="false" placeholder="false">Alias</item>
+  <item name="LBattributeType_t.text" html="false" placeholder="false">Type</item>
+  <item name="LBroleAlias_t.text" html="false" placeholder="false">Alias:</item>
+  <item name="LBroleProfile_t.text" html="false" placeholder="false">Internal role</item>
+  <item name="LBroleOrganization_t.text" html="false" placeholder="false">Organization</item>
+  <item name="BTNundoSaveRoleTop.text" html="false" placeholder="false">Cancel</item>
+  <item name="BTNundoSaveRoleTop.status" html="false" placeholder="false">Cancel</item>
+  <item name="BTNundoSaveRoleTop.ToolTip" html="false" placeholder="false">Cancel</item>
+  <item name="BTNsaveRoleTop.text" html="false" placeholder="false">Save</item>
+  <item name="BTNsaveRoleTop.status" html="false" placeholder="false">Save data related to the external role</item>
+  <item name="BTNsaveRoleTop.ToolTip" html="false" placeholder="false">Save data related to the external role</item>
+  <item name="BTNundoSaveRoleBottom.text" html="false" placeholder="false">Cancel</item>
+  <item name="BTNundoSaveRoleBottom.status" html="false" placeholder="false">Cancel</item>
+  <item name="BTNundoSaveRoleBottom.ToolTip" html="false" placeholder="false">Cancel</item>
+  <item name="BTNsaveRoleBottom.text" html="false" placeholder="false">Save</item>
+  <item name="BTNsaveRoleBottom.status" html="false" placeholder="false">Save data related to the external role</item>
+  <item name="BTNsaveRoleBottom.ToolTip" html="false" placeholder="false">Save data related to the external role</item>
+  <item name="LBroleName_t.text" html="false" placeholder="false">Name:</item>
+  <item name="LBroleCode_t.text" html="false" placeholder="false">Code:</item>
+  <item name="LBroleAlias_t.text" html="false" placeholder="false">Alias:</item>
+  <item name="LBproviderRoleName_t.text" html="false" placeholder="false">Name:</item>
+  <item name="LBproviderRoleAlias_t.text" html="false" placeholder="false">Alias:</item>
+  <item name="LBproviderRoleCode_t.text" html="false" placeholder="false">Code:</item>
+  <item name="LBproviderRoleProfile_t.text" html="false" placeholder="false">Type:</item>
+  <item name="LBproviderRoleOrganization_t.text" html="false" placeholder="false">Organization:</item>
+  <item name="DDLprofileType.0" html="false" placeholder="false" hidden="true">--          --</item>
+  <item name="DDLorganizations.0" html="false" placeholder="false" hidden="true">--          --</item>
+  <item name="ProviderAttribute" html="false" placeholder="false">Attribute of the authentication provider</item>
+  <item name="ProviderRole" html="false" placeholder="false">External role associated to the authentication system</item>
+  <item name="LoadProviderInfo" html="false" placeholder="true" mustcontains="{0}|{1}">Authentication system "{0}" of type {1}.</item>
+  <item name="LBpagesize.text" html="false" placeholder="false">Elements per page:</item>
+  <item name="LBroleNameSearch_t.text" html="false" placeholder="false">Alias contains:</item>
+  <item name="BTNsearch.text" html="false" placeholder="false">Find</item>
+  <item name="BTNsearch.status" html="false" placeholder="false">Find</item>
+  <item name="BTNsearch.ToolTip" html="false" placeholder="false">Find</item>
+  <item name="LBmultipleValue_t.text" html="false" placeholder="false">Multiple values per record:</item>
+  <item name="LBmultipleValue_t.Tooltip" html="false" placeholder="false">Allows users to associate several identifiers for the same record</item>
+  <item name="CBXseparator.text" html="false" placeholder="false">yes</item>
+  <item name="serviceMacUrlSettingsProviderTitle" html="false" placeholder="false">Advanced settings</item>
+  <item name="serviceMacUrlSettingsProviderNopermission" html="false" placeholder="false">No permission to modify the advanced settings of the authentication provider.</item>
+  <item name="BTNaddMacAttribute.text" html="false" placeholder="false">Add</item>
+  <item name="BTNaddMacAttribute.status" html="false" placeholder="false">Add attribute</item>
+  <item name="BTNaddMacAttribute.ToolTip" html="false" placeholder="false">Add attribute</item>
+  <item name="BTNsaveSettingsBottom.text" html="false" placeholder="false">Save settings</item>
+  <item name="BTNsaveSettingsBottom.status" html="false" placeholder="false">Save settings</item>
+  <item name="BTNsaveSettingsBottom.ToolTip" html="false" placeholder="false">Save settings</item>
+  <item name="BTNsaveSettingsTop.text" html="false" placeholder="false">Save settings</item>
+  <item name="BTNsaveSettingsTop.status" html="false" placeholder="false">Save settings</item>
+  <item name="BTNsaveSettingsTop.ToolTip" html="false" placeholder="false">Save settings</item>
+  <item name="UrlMacAttributeType.url" html="false" placeholder="false">Generic</item>
+  <item name="UrlMacAttributeType.mac" html="false" placeholder="false">MAC</item>
+  <item name="UrlMacAttributeType.timestamp" html="false" placeholder="false">Timestamp</item>
+  <item name="UrlMacAttributeType.profile" html="false" placeholder="false">Profile</item>
+  <item name="UrlMacAttributeType.organization" html="false" placeholder="false">Organization</item>
+  <item name="UrlMacAttributeType.coursecatalogue" html="false" placeholder="false">Catalogue</item>
+  <item name="UrlMacAttributeType.applicationId" html="false" placeholder="false">Applicatoin id</item>
+  <item name="UrlMacAttributeType.functionId" html="false" placeholder="false">Service Id</item>
+  <item name="UrlMacAttributeType.compositeProfile" html="false" placeholder="false">Composite field</item>
+  <item name="LBmacAttributeType_t.text" html="false" placeholder="false">Attribute type:</item>
+  <item name="ApplicationAttribute.Name" html="false" placeholder="false">Applicatoin id</item>
+  <item name="ApplicationAttribute.Description" html="false" placeholder="false">Application identifier, necessary to identify the external calling application.</item>
+  <item name="ApplicationAttribute.QueryStringName" html="false" placeholder="false" hidden="true">ApplicationID</item>
+  <item name="ApplicationAttribute.Value" disambiguation="non tradurre" html="false" placeholder="true" hidden="true" mustcontains="APP_{0}">APP_{0}</item>
+  <item name="CatalogueAttribute.Name" html="false" placeholder="false">Catalogue</item>
+  <item name="CatalogueAttribute.Description" html="false" placeholder="false">Attribute that indicates the default catalogue associated to the user by default.</item>
+  <item name="CatalogueAttribute.QueryStringName" html="false" placeholder="false">CatalogueID</item>
+  <item name="FunctionAttribute.Name" html="false" placeholder="false">Service Id</item>
+  <item name="FunctionAttribute.Description" html="false" placeholder="false">External service identifier, needed to identify the calling external application</item>
+  <item name="FunctionAttribute.QueryStringName" html="false" placeholder="false" hidden="true">FunctionID</item>
+  <item name="FunctionAttribute.Value" disambiguation="non tradurre" html="false" placeholder="false" hidden="true">FN_{0}</item>
+  <item name="MacAttribute.Name" html="false" placeholder="false" hidden="true">MAC</item>
+  <item name="MacAttribute.Description" html="false" placeholder="false">Encrypted control Token.</item>
+  <item name="MacAttribute.QueryStringName" html="false" placeholder="false" hidden="true">MAC</item>
+  <item name="OrganizationAttribute.Name" html="false" placeholder="false">Organization</item>
+  <item name="OrganizationAttribute.Description" html="false" placeholder="false">Membership organization</item>
+  <item name="OrganizationAttribute.QueryStringName" html="false" placeholder="false">Organization</item>
+  <item name="UserProfileAttribute.Name" html="false" placeholder="false">Profile attribute </item>
+  <item name="UserProfileAttribute.Description" html="false" placeholder="false">Attribute to associate to a profile</item>
+  <item name="UserProfileAttribute.QueryStringName" disambiguation="att=attributo" html="false" placeholder="true" mustcontains="{0}">Att{0}</item>
+  <item name="TimestampAttribute.Name" html="false" placeholder="false">TimeStamp</item>
+  <item name="TimestampAttribute.Description" html="false" placeholder="false">Token validity timeStamp</item>
+  <item name="TimestampAttribute.QueryStringName" html="false" placeholder="false">TimeStamp</item>
+  <item name="CompositeUserProfileAttribute.Name" html="false" placeholder="false">Profile composite attribute   </item>
+  <item name="CompositeUserProfileAttribute.Description" html="false" placeholder="false">Allows to define a profile attribute as the sum of two profile attributes contained in the url.</item>
+  <item name="CompositeUserProfileAttribute.QueryStringName" html="false" placeholder="false" hidden="true">cmp</item>
+  <item name="BaseUrlMacAttribute.Name" html="false" placeholder="false">Generic attribute</item>
+  <item name="BaseUrlMacAttribute.Description" html="false" placeholder="false">Generic attribute</item>
+  <item name="BaseUrlMacAttribute.QueryStringName" html="false" placeholder="true" mustcontains="{0}">Generic {0}</item>
+  <item name="DisplayAttributeAdded" html="false" placeholder="false">Attribute correctly added</item>
+  <item name="DisplayAttributeNotAdded" html="false" placeholder="false">Error while creating new attribue</item>
+  <item name="DisplayAttributeNotDeleted" html="false" placeholder="false">Attribute not deleted</item>
+  <item name="DisplayAttributeOptionNotDeleted" html="false" placeholder="false">Element not deleted</item>
+  <item name="DisplayAttributeOptionNotAdded" html="false" placeholder="false">Element not added to the attribute</item>
+  <item name="DisplayDuplicatedRemoteCode" html="false" placeholder="false">Duplicated external code</item>
+  <item name="DisplayInvalidAttribute" html="false" placeholder="false">Some mandatory elements were not specified, impossible to perform the operation successfully.</item>
+  <item name="DisplayInvalidAttributeAndRemoteCode" html="false" placeholder="false">Alcuni elementi obbligatori non sono stati specificat ed alcuni codici esterni sono duplicati: impossibile concludere l'operazione correttamente.</item>
+  <item name="ProfileAttributeType.skip" html="false" placeholder="false">--    Ignore    --</item>
+  <item name="ProfileAttributeType.unknown" html="false" placeholder="false">Unknown</item>
+  <item name="ProfileAttributeType.externalId" html="false" placeholder="false">External login identifier</item>
+  <item name="ProfileAttributeType.name" html="false" placeholder="false">Name</item>
+  <item name="ProfileAttributeType.surname" html="false" placeholder="false">Surname</item>
+  <item name="ProfileAttributeType.mail" html="false" placeholder="false">Mail</item>
+  <item name="ProfileAttributeType.telephoneNumber" html="false" placeholder="false">Telephone</item>
+  <item name="ProfileAttributeType.fax" html="false" placeholder="false">Fax</item>
+  <item name="ProfileAttributeType.mobile" html="false" placeholder="false">Mobile</item>
+  <item name="ProfileAttributeType.taxCode" html="false" placeholder="false">Tax code</item>
+  <item name="ProfileAttributeType.login" html="false" placeholder="false">Login</item>
+  <item name="ProfileAttributeType.password" html="false" placeholder="false">Password</item>
+  <item name="ProfileAttributeType.companyName" html="false" placeholder="false">Company Tax Code</item>
+  <item name="ProfileAttributeType.companyAddress" html="false" placeholder="false">Company Address</item>
+  <item name="ProfileAttributeType.companyCity" html="false" placeholder="false">Company city</item>
+  <item name="ProfileAttributeType.companyRegion" html="false" placeholder="false">Company region</item>
+  <item name="ProfileAttributeType.companyTaxCode" html="false" placeholder="false">Tax code / Company Vat Code</item>
+  <item name="ProfileAttributeType.companyReaNumber" html="false" placeholder="false">Company R.E.A</item>
+  <item name="ProfileAttributeType.companyAssociations" html="false" placeholder="false">Professional associations</item>
+  <item name="ProfileAttributeType.matricula" html="false" placeholder="false">Matriculation number</item>
+  <item name="ProfileAttributeType.matriculaYear" html="false" placeholder="false">Matriculation year</item>
+  <item name="ProfileAttributeType.institute" html="false" placeholder="false">Institute/School</item>
+  <item name="ProfileAttributeType.classroom" html="false" placeholder="false">Class</item>
+  <item name="ProfileAttributeType.matters" html="false" placeholder="false">Subject</item>
+  <item name="ProfileAttributeType.phdTitle" html="false" placeholder="false">Doctor's degree</item>
+  <item name="ProfileAttributeType.externalUserInfo" html="false" placeholder="false">External user details</item>
+  <item name="ProfileAttributeType.jobInfo" html="false" placeholder="false">Job/Role</item>
+  <item name="ProfileAttributeType.address" html="false" placeholder="false">Address</item>
+  <item name="ProfileAttributeType.zipCode" disambiguation="codice di avviamento postale" html="false" placeholder="false">ZIP code</item>
+  <item name="ProfileAttributeType.city" html="false" placeholder="false">City</item>
+  <item name="ProfileAttributeType.autoGeneratedLogin" html="false" placeholder="false">Automatically generated login </item>
+  <item name="ProfileAttributeType.agencyName" html="false" placeholder="false">Agency name</item>
+  <item name="ProfileAttributeType.agencyNationalCode" html="false" placeholder="false">National code - Agency</item>
+  <item name="ProfileAttributeType.agencyTaxCode" html="false" placeholder="false">Tax code / Vat Code - Agency</item>
+  <item name="ProfileAttributeType.agencyExternalCode" html="false" placeholder="false">External code - Agency</item>
+  <item name="ProfileAttributeType.agencyInternalCode" html="false" placeholder="false">Platform code - Agency</item>
+  <item name="ProfileAttributeType.language" html="false" placeholder="false">Language</item>
+  <item name="GroupBy.MandatoryCommon" html="false" placeholder="false">Mandatory common fields</item>
+  <item name="GroupBy.NotMandatoryCommon" html="false" placeholder="false">Common NOT mandatory fields</item>
+  <item name="GroupBy.UserTypeStandard" html="false" placeholder="true" mustcontains="{0}">Profile fields {0}</item>
+  <item name="BTNcancelAttributeEditing.text" html="false" placeholder="false">Close</item>
+  <item name="BTNcancelAttributeEditing.ToolTip" html="false" placeholder="false">Close</item>
+  <item name="BTNsaveAttributeSettings.text" html="false" placeholder="false">Save</item>
+  <item name="BTNsaveAttributeSettings.ToolTip" html="false" placeholder="false">Save settings</item>
+  <item name="BTNdeleteAttribute.text" html="false" placeholder="false" />
+  <item name="BTNdeleteAttribute.ToolTip" html="false" placeholder="false">Attribute deletion</item>
+  <item name="BTNeditAttribute.text" html="false" placeholder="false" />
+  <item name="BTNeditAttribute.ToolTip" html="false" placeholder="false">Modify attribute</item>
+  <item name="LBmacUrlAttributeName_t.text" html="false" placeholder="false" mustcontains="(*)">Name (*):</item>
+  <item name="RFVname.errorMessage" html="false" placeholder="false">mandatory field</item>
+  <item name="LBmacUrlAttributeMultipleValue_t.text" html="false" placeholder="false">Multiple values/Separator:</item>
+  <item name="LTmacUrlAttributeMultipleValue.text" html="false" placeholder="false">yes</item>
+  <item name="LBmacUrlAttributeDescription_t.text" html="false" placeholder="false">Description:</item>
+  <item name="LBmacUrlAttributeQueryStringName_t.text" html="false" placeholder="false" mustcontains="(*)">Query item (*):</item>
+  <item name="RFVqueryStringName.errorMessage" html="false" placeholder="false">mandatory field</item>
+  <item name="LBmacUrlAttributeRequiredValue_t.text" html="false" placeholder="false" mustcontains="(*)">Value (*):</item>
+  <item name="RFVrequiredValue.errorMessage" html="false" placeholder="false">mandatory field</item>
+  <item name="LBtimeStampAttributeFormatType_t.text" html="false" placeholder="false">Time format:</item>
+  <item name="LBprofileAttribute_t.text" html="false" placeholder="false">Attribute:</item>
+  <item name="LTmacAttributeItemsTitle.text" html="false" placeholder="false">Composition:</item>
+  <item name="LBmacAttributeItemsTitle_t.text" html="false" placeholder="false">Attributes</item>
+  <item name="LBmoveMacAttributeItem.ToolTip" html="false" placeholder="false">Change evaluation order</item>
+  <item name="BTNdeleteMacAttributeItem.text" html="false" placeholder="false" />
+  <item name="BTNdeleteMacAttributeItem.ToolTip" html="false" placeholder="false">Delete the element of the MAC composite attribute</item>
+  <item name="BTNaddMacAttributeitem.text" html="false" placeholder="false">Add</item>
+  <item name="BTNaddMacAttributeitem.ToolTip" html="false" placeholder="false">Add element to MAC composition</item>
+  <item name="LBcompositeProfileAttribute_t.text" html="false" placeholder="false">Attribute:</item>
+  <item name="LTcompositeAttributeItemsTitle.text" html="false" placeholder="false">Composition:</item>
+  <item name="LBmoveUrlAttributeItem.ToolTip" html="false" placeholder="false">Change evaluation order</item>
+  <item name="BTNdeleteUrlAttributeItem.text" html="false" placeholder="false" />
+  <item name="BTNdeleteUrlAttributeItem.ToolTip" html="false" placeholder="false">Delete the element of the composite attribute</item>
+  <item name="BTNaddUrlAttributeitem.text" html="false" placeholder="false">Add</item>
+  <item name="BTNaddUrlAttributeitem.ToolTip" html="false" placeholder="false">Add element to composition</item>
+  <item name="LTorganizationAttributeItemsTitle.text" html="false" placeholder="false">Options:</item>
+  <item name="LBorgNameTitle_t.text" html="false" placeholder="false">Organization</item>
+  <item name="LBorgProfileTitle_t.text" html="false" placeholder="false">Profile</item>
+  <item name="LBorgPageTitle_t.text" html="false" placeholder="false">Deafult page</item>
+  <item name="LBorgCodeTitle_t.text" html="false" placeholder="false">Code</item>
+  <item name="BTNdeleteOrganizationAttributeItem.text" html="false" placeholder="false" />
+  <item name="BTNdeleteOrganizationAttributeItem.ToolTip" html="false" placeholder="false">Delete element</item>
+  <item name="BTNaddOrganizationAttributeitem.text" html="false" placeholder="false">Add</item>
+  <item name="BTNaddOrganizationAttributeitem.ToolTip" html="false" placeholder="false">Add</item>
+  <item name="QuerySampleValue" disambiguation="tradurre solo -valore url-" html="false" placeholder="true" mustcontains="{|}">{url value}</item>
+  <item name="LTcatalogueAttributeItemsTitle.text" html="false" placeholder="false">Options:</item>
+  <item name="LBctgNameTitle_t.text" html="false" placeholder="false">Catalogue</item>
+  <item name="LBctgCodeTitle_t.text" html="false" placeholder="false">Code</item>
+  <item name="BTNdeleteCatalogueAttributeItem.text" html="false" placeholder="false" />
+  <item name="BTNdeleteCatalogueAttributeItem.ToolTip" html="false" placeholder="false">Delete element</item>
+  <item name="BTNaddCatalogueAttributeitem.text" html="false" placeholder="false">Add</item>
+  <item name="BTNaddCatalogueAttributeitem.ToolTip" html="false" placeholder="false">Add</item>
+  <item name="LBlogoutMode_t.text" html="false" placeholder="false">When you log out:</item>
+  <item name="LogoutMode.internalLogonPage" html="false" placeholder="false">go to the internal login </item>
+  <item name="LogoutMode.externalPage" html="false" placeholder="false">Go to external url</item>
+  <item name="LogoutMode.logoutMessage" html="false" placeholder="false">exit message</item>
+  <item name="LogoutMode.logoutMessageAndUrl" html="false" placeholder="false">Exit message and login url</item>
+  <item name="LogoutMode.logoutMessageAndClose" html="false" placeholder="false">Exit message and browser closure</item>
+  <item name="LogoutMode.portalPage" html="false" placeholder="false">Go to the main page</item>
+  <item name="LBnotifySubscriptionTo_t.text" html="false" placeholder="false">Notifica iscrizione (e-mail):</item>
+</Resource>

@@ -1,0 +1,820 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--ita version-->
+<Resource xmlns="urn:ComolTranslation">
+  <item name="Repository.ServiceTitle">Materiale</item>
+  <item name="Repository.ServiceTitle.RepositoryType.Community">Materiale comunità</item>
+  <item name="Repository.ServiceTitle.RepositoryType.Community.Name" placeholder="true" mustcontains="{0}">Materiale comunità {0}</item>
+  <item name="Repository.ServiceTitle.RepositoryType.Portal">Materiale piattaforma</item>
+  <item name="Repository.ServiceTitle.NoPermission">Non disponi dei permessi per gestire/visualizzare il materiale</item>
+  <item name="Repository.ServiceTitle.NoPermission.RepositoryType.Community">Non disponi dei permessi per gestire/visualizzare il materiale della comunità</item>
+  <item name="Repository.ServiceTitle.NoPermission.RepositoryType.Community.Name" placeholder="true" mustcontains="{0}">Non disponi dei permessi per gestire/visualizzare il materiale della comunità {0}</item>
+  <item name="Repository.ServiceTitle.NoPermission.RepositoryType.Portal">Non disponi dei permessi per gestire/visualizzare il materiale di piattaforma.</item>
+  <item name="IViewRepository.DisplayUnknownCommunity">Comunita sconosciuta</item>
+  <item name="IViewRepository.DisplayUnknownUser">Utente sconosciuto</item>
+  <item name="UnknownUserName">Utente rimosso</item>
+  <item name="LTtitleName.text">nome</item>
+  <item name="LTtitleDate.text">data</item>
+  <item name="LTtitleStatistics.text">stat</item>
+  <item name="LBtitleActionInfo.text">i</item>
+  <item name="LBtitleActionInfo.ToolTip">dettagli avanzati</item>
+  <item name="NoFileFolders">Nessun elemento presente</item>
+  <item name="LBitemVersions.ToolTip">Vi sono delle versioni precedenti</item>
+  <item name="LBitemOtherPermissions.ToolTip">Permessi specifici per l'elemento</item>
+  <item name="HYPdetails.ToolTip">Visualizza dettagli</item>
+  <item name="IViewRepository.DisplayMessage.Executed.True.ItemAction.undelete" mustcontains="{0}" placeholder="true">L'oggetto {0} è stato recuperato dal cestino.</item>
+  <item name="IViewRepository.DisplayMessage.Executed.True.ItemAction.delete" mustcontains="{0}" placeholder="true">L'oggetto {0} è stato cancellato definitivamente.</item>
+  <item name="IViewRepository.DisplayMessage.Executed.True.ItemAction.virtualdelete" mustcontains="{0}" placeholder="true">L'oggetto {0} è stato inviato al cestino.</item>
+  <item name="IViewRepository.DisplayMessage.Executed.True.ItemAction.addVersion" mustcontains="{0}" placeholder="true">E' stata aggiunta una nuova versione al file {0}.</item>
+  <item name="IViewRepository.DisplayMessage.Executed.True.ItemAction.move" mustcontains="{0}|{1}|{2}" placeholder="true">L'oggetto {0} è stato spostato dalla cartella "{1}" alla cartella "{2}".</item>
+  <item name="IViewRepository.DisplayMessage.Executed.True.ItemAction.hide" mustcontains="{0}" placeholder="true">L'oggetto {0} è stato nascosto.</item>
+  <item name="IViewRepository.DisplayMessage.Executed.True.ItemAction.show" mustcontains="{0}" placeholder="true">L'oggetto {0} è ora visibile.</item>
+  <item name="IViewRepository.DisplayMessage.Executed.True.ItemAction.none" mustcontains="{0}" placeholder="true">L'azione richiesta sull'oggetto{0} è stata eseguita correttamente.</item>
+  <item name="IViewRepository.DisplayMessage.Executed.False.ItemAction.undelete" mustcontains="{0}" placeholder="true">L'oggetto {0} NON è stato recuperato dal cestino.</item>
+  <item name="IViewRepository.DisplayMessage.Executed.False.ItemAction.delete" mustcontains="{0}" placeholder="true">L'oggetto {0} NON è stato cancellato definitivamente.</item>
+  <item name="IViewRepository.DisplayMessage.Executed.False.ItemAction.virtualdelete" mustcontains="{0}" placeholder="true">L'oggetto {0} NON è stato inviato al cestino.</item>
+  <item name="IViewRepository.DisplayMessage.Executed.False.ItemAction.addVersion" mustcontains="{0}" placeholder="true">NON è stata aggiunta una nuova versione al file {0}.</item>
+  <item name="IViewRepository.DisplayMessage.Executed.False.ItemAction.move" mustcontains="{0}|{1}" placeholder="true">L'oggetto {0} NON è stato spostato nella cartella "{1}".</item>
+  <item name="IViewRepository.DisplayMessage.Executed.False.ItemAction.hide" mustcontains="{0}" placeholder="true">L'oggetto {0} NON è stato nascosto.</item>
+  <item name="IViewRepository.DisplayMessage.Executed.False.ItemAction.show" mustcontains="{0}" placeholder="true">L'oggetto {0} NON è stato reso visibile.</item>
+  <item name="IViewRepository.DisplayMessage.Executed.False.ItemAction.none" mustcontains="{0}" placeholder="true">L'azione richiesta sull'oggetto {0} NON è stata eseguita correttamente.</item>
+  <item name="IViewRepository.DisplayMessage.MultipleActions.Executed.True.ItemAction.undelete" mustcontains="{0}" placeholder="true">Sono stati ripristinati dal cestino: {0}</item>
+  <item name="IViewRepository.DisplayMessage.MultipleActions.Executed.True.ItemAction.delete" mustcontains="{0}" placeholder="true">Sono stati cancellati definitivamente: {0}</item>
+  <item name="IViewRepository.DisplayMessage.MultipleActions.Executed.True.ItemAction.virtualdelete" mustcontains="{0}" placeholder="true">Sono stati inviati al cestino: {0}</item>
+  <item name="IViewRepository.DisplayMessage.MultipleActions.Executed.True.ItemAction.move" mustcontains="{0}|{1}|{2}" placeholder="true">Sono stati spostati dalla cartella "{1}" alla cartella "{2}": {0}</item>
+  <item name="IViewRepository.DisplayMessage.MultipleActions.Executed.True.ItemAction.hide" mustcontains="{0}" placeholder="true">Sono stati nascosti: {0}</item>
+  <item name="IViewRepository.DisplayMessage.MultipleActions.Executed.True.ItemAction.show" mustcontains="{0}" placeholder="true">Sono stati resi visibili: {0}</item>
+  <item name="IViewRepository.DisplayMessage.MultipleActions.Executed.True.ItemAction.none" mustcontains="{0}" placeholder="true">L'azione richiesta è stata eseguita correttamente su: {0}.</item>
+  <item name="IViewRepository.DisplayMessage.MultipleActions.Executed.False.ItemAction.undelete" mustcontains="{0}" placeholder="true">NON sono stati ripristinati dal cestino: {0}</item>
+  <item name="IViewRepository.DisplayMessage.MultipleActions.Executed.False.ItemAction.delete" mustcontains="{0}" placeholder="true">NON sono stati cancellati definitivamente: {0}</item>
+  <item name="IViewRepository.DisplayMessage.MultipleActions.Executed.False.ItemAction.virtualdelete" mustcontains="{0}" placeholder="true">NON sono stati inviati al cestino: {0}</item>
+  <item name="IViewRepository.DisplayMessage.MultipleActions.Executed.False.ItemAction.move" mustcontains="{0}|{1}" placeholder="true">NON sono stati spostati nella cartella "{1}": {0}</item>
+  <item name="IViewRepository.DisplayMessage.MultipleActions.Executed.False.ItemAction.hide" mustcontains="{0}" placeholder="true">Non stati nascosti: {0}</item>
+  <item name="IViewRepository.DisplayMessage.MultipleActions.Executed.False.ItemAction.show" mustcontains="{0}" placeholder="true">Non stati resi visibili: {0}</item>
+  <item name="IViewRepository.DisplayMessage.MultipleActions.Executed.False.ItemAction.none" mustcontains="{0}" placeholder="true">L'azione richiesta NON è stata eseguita correttamente su: {0}</item>
+  <item name="MultipleActions.ItemType.None.1.1">un oggetto</item>
+  <item name="MultipleActions.ItemType.None.n.1" mustcontains="#selecteditems#" placeholder="true">un oggetto su #selecteditems#</item>
+  <item name="MultipleActions.ItemType.None.n.n" mustcontains="#items#|#selecteditems#" placeholder="true">#items# oggetti su #selecteditems#</item>
+  <item name="MultipleActions.ItemType.File.1.1">un file</item>
+  <item name="MultipleActions.ItemType.File.n.1" mustcontains="#selecteditems#" placeholder="true">un file su #selecteditems#</item>
+  <item name="MultipleActions.ItemType.File.n.n" mustcontains="#items#|#selecteditems#" placeholder="true">#items# file su #selecteditems#</item>
+  <item name="MultipleActions.ItemType.ScormPackage.1.1">un pacchetto SCORM</item>
+  <item name="MultipleActions.ItemType.ScormPackage.n.1" mustcontains="#selecteditems#" placeholder="true">un pacchetto SCORM su #selecteditems#</item>
+  <item name="MultipleActions.ItemType.ScormPackage.n.n" mustcontains="#items#|#selecteditems#" placeholder="true">#items# pacchetti SCORM su #selecteditems#</item>
+  <item name="MultipleActions.ItemType.Folder.1.1">una cartella</item>
+  <item name="MultipleActions.ItemType.Folder.n.1" mustcontains="#selecteditems#" placeholder="true">una cartella su #selecteditems#</item>
+  <item name="MultipleActions.ItemType.Folder.n.n" mustcontains="#items#|#selecteditems#" placeholder="true">#items# cartelle su #selecteditems#</item>
+  <item name="MultipleActions.ItemType.VideoStreaming.1.1">un video</item>
+  <item name="MultipleActions.ItemType.VideoStreaming.n.1" mustcontains="#selecteditems#" placeholder="true">un video su #selecteditems#</item>
+  <item name="MultipleActions.ItemType.VideoStreaming.n.n" mustcontains="#items#|#selecteditems#" placeholder="true">#items# video su #selecteditems#</item>
+  <item name="MultipleActions.ItemType.Multimedia.1.1">un pacchetto multimediale</item>
+  <item name="MultipleActions.ItemType.Multimedia.n.1" mustcontains="#selecteditems#" placeholder="true">un pacchetto multimediale su #selecteditems#</item>
+  <item name="MultipleActions.ItemType.Multimedia.n.n" mustcontains="#items#|#selecteditems#" placeholder="true">#items# pacchetti multimediale su #selecteditems#</item>
+  <item name="MultipleActions.ItemType.Link.1.1">un url</item>
+  <item name="MultipleActions.ItemType.Link.n.1" mustcontains="#selecteditems#" placeholder="true">un url su #selecteditems#</item>
+  <item name="MultipleActions.ItemType.Link.n.n" mustcontains="#items#|#selecteditems#" placeholder="true">#items# url su #selecteditems#</item>
+  <item name="MultipleActions.ItemType.SharedDocument.1.1">un documento condiviso</item>
+  <item name="MultipleActions.ItemType.SharedDocument.n.1" mustcontains="#selecteditems#" placeholder="true">un documento condiviso su #selecteditems#</item>
+  <item name="MultipleActions.ItemType.SharedDocument.n.n" mustcontains="#items#|#selecteditems#" placeholder="true">#items# documenti condivisi su #selecteditems#</item>
+  <item name="IViewRepository.DisplayUnavailableItem.ItemAction.addfolder" mustcontains="{0}" placeholder="true">Non si dispone dei permessi necessari per aggiungere nuove cartelle nella cartella {0}.</item>
+  <item name="IViewRepository.DisplayUnavailableItem.ItemAction.addlink" mustcontains="{0}" placeholder="true">Non si dispone dei permessi necessari per aggiungere link nella cartella {0}.</item>
+  <item name="IViewRepository.DisplayUnavailableItem.ItemAction.upload" mustcontains="{0}" placeholder="true">Non si dispone dei permessi necessari per aggiungere materiale nella cartella {0}.</item>
+  <item name="IViewRepository.DisplayUnavailableItem.ItemAction.undelete" mustcontains="{0}" placeholder="true">Non si dispone dei permessi necessari per recuperare dal cestino l'oggetto {0}.</item>
+  <item name="IViewRepository.DisplayUnavailableItem.ItemAction.delete" mustcontains="{0}" placeholder="true">Non si dispone dei permessi necessari per cancellare definitivamente l'oggetto {0}.</item>
+  <item name="IViewRepository.DisplayUnavailableItem.ItemAction.details" mustcontains="{0}" placeholder="true">Non si dispone dei permessi necessari per visualizzare i dettagli dell'oggetto {0}.</item>
+  <item name="IViewRepository.DisplayUnavailableItem.ItemAction.virtualdelete" mustcontains="{0}" placeholder="true">Non si dispone dei permessi necessari per inviare l'oggetto {0} al cestino.</item>
+  <item name="IViewRepository.DisplayUnavailableItem.ItemAction.addVersion" mustcontains="{0}" placeholder="true">Non si dispone dei permessi necessari per aggiungere una nuova versione all'oggetto {0}.</item>
+  <item name="IViewRepository.DisplayUnavailableItem.ItemAction.move" mustcontains="{0}" placeholder="true">Non si dispone dei permessi necessari per spostare l'oggetto {0} in un altra cartella .</item>
+  <item name="IViewRepository.DisplayUnavailableItem.ItemAction.hide" mustcontains="{0}" placeholder="true">Non si dispone dei permessi necessari per modificare la visualizzazione dell'oggetto {0}.</item>
+  <item name="IViewRepository.DisplayUnavailableItem.ItemAction.show" mustcontains="{0}" placeholder="true">Non si dispone dei permessi necessari per modificare la visualizzazione dell'oggetto {0}.</item>
+  <item name="IViewRepository.DisplayUnavailableItem.ItemAction.edit" mustcontains="{0}" placeholder="true">Non si dispone dei permessi necessari per modificare l'oggetto {0}.</item>
+  <item name="IViewRepository.DisplayUnavailableItem.ItemAction.none" mustcontains="{0}" placeholder="true">Non è possibile accedere all'oggetto {0} ed eseguire l'azione richiesta.</item>
+  <item name="IViewRepository.DisplayUnavailableItems.ItemAction.undelete">Non si dispone dei permessi necessari per recuperare dal cestino gli elementi selezionati.</item>
+  <item name="IViewRepository.DisplayUnavailableItems.ItemAction.delete">Non si dispone dei permessi necessari per cancellare definitivamente gli elementi selezionati.</item>
+  <item name="IViewRepository.DisplayUnavailableItems.ItemAction.details">Non si dispone dei permessi necessari per visualizzare i dettagli degli elementi selezionati.</item>
+  <item name="IViewRepository.DisplayUnavailableItems.ItemAction.virtualdelete">Non si dispone dei permessi necessari per inviare gli elementi selezionati al cestino.</item>
+  <item name="IViewRepository.DisplayUnavailableItems.ItemAction.unzip">Non si dispone dei permessi necessari per estrarre il contenuto dei file selezionati.</item>
+  <item name="IViewRepository.DisplayUnavailableItems.ItemAction.move">Non si dispone dei permessi necessari per spostare gli elementi selezionati in un altra cartella .</item>
+  <item name="IViewRepository.DisplayUnavailableItems.ItemAction.hide">Non si dispone dei permessi necessari per modificare la visualizzazione degli elementi selezionati.</item>
+  <item name="IViewRepository.DisplayUnavailableItems.ItemAction.show">Non si dispone dei permessi necessari per modificare la visualizzazione degli elementi selezionati.</item>
+  <item name="IViewRepository.DisplayUnavailableItems.ItemAction.edit">Non si dispone dei permessi necessari per modificare gli elementi selezionati.</item>
+  <item name="IViewRepository.DisplayUnavailableItems.ItemAction.none">Non è possibile accedere agli elementi selezionati ed eseguire l'azione richiesta.</item>
+  <item name="IViewRepository.DisplaySameDirectory">Si sta cercando di spostare l'oggetto nella stessa cartella di provenienza !</item>
+  <item name="IViewRepository.DisplayUnableToExecute.ItemAction.undelete" disambiguation="relativo ad un file/folder presente nel cestino">Impossibile eseguire l'operazione di ripristinarlo dal cestino.</item>
+  <item name="IViewRepository.DisplayUnableToExecute.ItemAction.delete" disambiguation="relativo ad un file/folder">Impossibile eseguire l'operazione di cancellazione definitiva dal cestino.</item>
+  <item name="IViewRepository.DisplayUnableToExecute.ItemAction.details" disambiguation="relativo ad un file/folder">Impossibile visualizzare i dettagli dell'oggetto.</item>
+  <item name="IViewRepository.DisplayUnableToExecute.ItemAction.virtualdelete" disambiguation="relativo ad un file/folder">Impossibile eseguire l'operazione di invio al cestino.</item>
+  <item name="IViewRepository.DisplayUnableToExecute.ItemAction.addVersion" disambiguation="relativo ad un file">Impossibile aggiungere una nuova versione del file.</item>
+  <item name="IViewRepository.DisplayUnableToExecute.ItemAction.move" disambiguation="relativo ad un file/folder">Impossibile eseguire il cambio di cartella.</item>
+  <item name="IViewRepository.DisplayUnableToExecute.ItemAction.hide" disambiguation="relativo ad un file/folder">Impossibile nascondere l'oggetto/gli oggetti selezionato/i.</item>
+  <item name="IViewRepository.DisplayUnableToExecute.ItemAction.show" disambiguation="relativo ad un file/folder">Impossibile mostrare l'oggetto/gli oggetti selezionato/i.</item>
+  <item name="IViewRepository.DisplayUnableToExecute.ItemAction.none">Non è stato possibile eseguire l'azione richiesta.</item>
+  <item name="IViewRepository.DisplayUnknownItem.ItemAction.undelete" disambiguation="relativo ad un file/folder presente nel cestino">L'elemento NON è stato trovato, impossibile ripristinarlo dal cestino.</item>
+  <item name="IViewRepository.DisplayUnknownItem.ItemAction.delete" disambiguation="relativo ad un file/folder">L'elemento NON è stato trovato, impossibile cancellarlo definitivamente.</item>
+  <item name="IViewRepository.DisplayUnknownItem.ItemAction.details" disambiguation="relativo ad un file/folder">L'elemento NON è stato trovato, impossibile mostrarne i dettagli.</item>
+  <item name="IViewRepository.DisplayUnknownItem.ItemAction.virtualdelete" disambiguation="relativo ad un file/folder">L'elemento NON è stato trovato, impossibile inviarlo al cestino.</item>
+  <item name="IViewRepository.DisplayUnknownItem.ItemAction.addVersion" disambiguation="relativo ad un file">L'elemento NON è stato trovato, impossibile aggiungere una nuova versione del file.</item>
+  <item name="IViewRepository.DisplayUnknownItem.ItemAction.move" disambiguation="relativo ad un file/folder">L'elemento NON è stato trovato, impossibile spostarlo in un altra cartella.</item>
+  <item name="IViewRepository.DisplayUnknownItem.ItemAction.hide" disambiguation="relativo ad un file/folder">L'elemento NON è stato trovato, impossibile nasconderlo.</item>
+  <item name="IViewRepository.DisplayUnknownItem.ItemAction.show" disambiguation="relativo ad un file/folder">L'elemento NON è stato trovato, impossibile mostrarlo.</item>
+  <item name="IViewRepository.DisplayUnknownItem.ItemAction.none">L'elemento NON è stato trovato.</item>
+  <item name="IViewRepository.DisplayUnknownItem.ItemAction.upload">Non è possibile effettuare il caricamento di materiale nella cartella corrente (non è accessibile oppure è stata rimossa dal sistema).</item>
+  <item name="IViewRepository.DisplayUnknownItem.ItemAction.addfolder">Non è possibile aggiungere nuove cartelle alla cartella corrente (non è accessibile oppure è stata rimossa dal sistema).</item>
+  <item name="IViewRepository.DisplayUnknownItem.ItemAction.addlink">Non è possibile aggiungere dei link alla cartella corrente (non è accessibile oppure è stata rimossa dal sistema).</item>
+  <item name="IViewRepository.DisplayUnavailableSpace" mustcontains="{0}" placeholder="true">Nella cartella prescelta non vi è spazio sufficiente per spostare {0}.</item>
+  <item name="IViewRepository.DisplayUnavailableSpace.OverflowAction.Allow" mustcontains="{0}|{1}|{2}" placeholder="true">Nella cartella prescelta non vi è spazio sufficiente per spostare {0}, il limite di {1} viene superato di {2}.</item>
+  <item name="IViewRepository.DisplayUnavailableSpace.OverflowAction.AllowWithWarning" mustcontains="{0}|{1}|{2}" placeholder="true">Nella cartella prescelta non vi è spazio sufficiente per spostare {0}, il limite di {1} viene superato di {2}.</item>
+  <item name="IViewRepository.DisplayUnavailableSpace.OverflowAction.NotAllow" mustcontains="{0}|{1}|{2}" placeholder="true">Nella cartella prescelta non vi è spazio sufficiente per spostare {0}, il limite di {1} viene superato di {2}.</item>
+  <item name="IViewRepository.DisplayUnableToAddFolders" mustcontains="{0}" placeholder="true">Non è stato possibile procedere con la creazione di {0} cartella/e.</item>
+  <item name="IViewRepository.DisplayAddedFolders" mustcontains="{0}" placeholder="true">{0} cartelle/a sono state create/è stata creata correttamente.</item>
+  <item name="IViewRepository.DisplayUnableToAddLinks" mustcontains="{0}" placeholder="true">Non è stato possibile procedere con la creazione del link {0}.</item>
+  <item name="IViewRepository.DisplayAddedLinks" mustcontains="{0}" placeholder="true">{0} link sono stati creati/è stato creato correttamente.</item>
+  <item name="IViewRepository.DisplayUnableToAddFiles" mustcontains="{0}" placeholder="true">Non è stato possibile caricare correttamente {0} file.</item>
+  <item name="IViewRepository.DisplayAddedFiles" mustcontains="{0}" placeholder="true">{0} file sono stati/ è stato caricato correttamente.</item>
+  <item name="IViewRepository.DisplayDeletedItems.Deleted" >Gli oggetti selezionati sono stati cancellati definitivamente.</item>
+  <item name="IViewRepository.DisplayDeletedItems.NotDeleted" mustcontains="{0}" placeholder="true">NON sono stati cancellati definitivamente {0} elementi.</item>
+  <item name="IViewRepository.DisplayAddedVersion.True" mustcontains="#renderFile#" placeholder="true">E' stata aggiunta una nuova versione a #renderFile#.</item>
+  <item name="IViewRepository.DisplayAddedVersion.False.ItemUploadError.UnableToFindFile" mustcontains="#renderFile#" placeholder="true">Non è stato possibile aggiungere una nuova versione all'oggetto #renderFile#.</item>
+  <item name="IViewRepository.DisplayAddedVersion.False.ItemUploadError.UnableToSaveVersion" mustcontains="#renderFile#" placeholder="true">Il file NON è stato caricato correttamente, NON è stato possibile aggiungere una nuova versione all'oggetto #renderFile#.</item>
+  <item name="IViewRepository.DisplayAddedVersion.False.ItemUploadError.VersioningNotAllowed" mustcontains="#renderFile#" placeholder="true">NON è consentito aggiungere una nuova versione all'oggetto #renderFile#.</item>
+  <item name="IViewRepository.DisplayAddedVersion.False.ItemUploadError.VersioningNotAllowedByModule" mustcontains="#renderFile#" placeholder="true">NON è consentito aggiungere una nuova versione all'oggetto #renderFile# in quanto utilizzato da altri servizi della comunità.</item>
+  <item name="DisplayFolderInfo.Folder.OverflowAction.Allow" mustcontains="{0}|{1}|{2}|{3}" placeholder="true">La cartella {0} ha superato il limite di {1} (lo spazio occupato in più è di circa {2}, è possibile occupare ancora {3}).</item>
+  <item name="DisplayFolderInfo.Folder.OverflowAction.Allow.AllowOverrideQuota" mustcontains="{0}|{1}|{2}|{3}" placeholder="true">La cartella {0} ha superato il limite di {1} (lo spazio occupato in più è di circa {2}, è possibile occupare ancora {3}).</item>
+  <item name="DisplayFolderInfo.MainFolder.OverflowAction.Allow" mustcontains="{0}|{1}|{2}|{3}" placeholder="true">Lo spazio disponibile per i materiali di comunità ha superato il limite di {0} (lo spazio occupato in più è di circa {1}, è possibile occupare ancora {2}).</item>
+  <item name="DisplayFolderInfo.MainFolder.OverflowAction.Allow.AllowOverrideQuota" mustcontains="{0}|{1}|{2}" placeholder="true">Lo spazio disponibile per i materiali di comunità ha superato il limite di {0} (lo spazio occupato in più è di circa {1}, è possibile occupare ancora {2}).</item>
+  <item name="DisplayFolderInfo.Folder.OverflowAction.AllowWithWarning" mustcontains="{0}|{1}|{2}|{3}" placeholder="true">La cartella {0} ha superato il limite di {1} (lo spazio occupato in più è di circa {2}, è possibile occupare ancora {3}).</item>
+  <item name="DisplayFolderInfo.Folder.OverflowAction.AllowWithWarning.AllowOverrideQuota" mustcontains="{0}|{1}|{2}" placeholder="true">La cartella {0} ha superato il limite di {1} (lo spazio occupato in più è di circa {2}, è possibile occupare ancora {3}).</item>
+  <item name="DisplayFolderInfo.MainFolder.OverflowAction.AllowWithWarning" mustcontains="{0}|{1}|{2}|{3}" placeholder="true">Lo spazio disponibile per i materiali di comunità ha superato il limite di {0} (lo spazio occupato in più è di circa {1}, è possibile occupare ancora {2}).</item>
+  <item name="DisplayFolderInfo.MainFolder.OverflowAction.AllowWithWarning.AllowOverrideQuota" mustcontains="{0}|{1}|{2}" placeholder="true">Lo spazio disponibile per i materiali di comunità ha superato il limite di {0} (lo spazio occupato in più è di circa {1}, è possibile occupare ancora {2}).</item>
+  <item name="IViewRepository.DisplayFolderInfo.Folder.OverflowAction.NotAllow" mustcontains="{0}|{1}|{2}" placeholder="true">La cartella {0} ha superato di {1} il limite di {2}. NON è possibile caricare ulteriori file.</item>
+  <item name="IViewRepository.DisplayFolderInfo.Folder.OverflowAction.NotAllow.AllowOverrideQuota" mustcontains="{0}|{1}|{2}|{3}" placeholder="true">La cartella {0} ha superato di {1} il limite di {2}. E' possibile occupare ancora {3}.</item>
+  <item name="IViewRepository.DisplayFolderInfo.MainFolder.OverflowAction.NotAllow" mustcontains="{0}|{1}" placeholder="true">Lo spazio disponibile per i materiali di comunità ha superato di {0} il limite di {1}. NON è possibile caricare ulteriori file.</item>
+  <item name="IViewRepository.DisplayFolderInfo.MainFolder.OverflowAction.NotAllow.AllowOverrideQuota" mustcontains="{0}|{1}|{2}" placeholder="true">Lo spazio disponibile per i materiali di comunità ha superato di {0} il limite di {1}. E' possibile occupare ancora {2}.</item>
+  <item name="DisplayUploadQuotaInfo.FreeSpace.OverflowAction.Allow" mustcontains="#freespace#|#uploadsize#" placeholder="true">Hai ancora a disposizione #freespace# (ogni file che vuoi caricare deve avere una dimensione massima pari a #uploadsize#).</item>
+  <item name="DisplayUploadQuotaInfo.FreeSpace.OverflowAction.AllowWithWarning" mustcontains="#freespace#|#uploadsize#" placeholder="true">Hai ancora a disposizione #freespace# (ogni file che vuoi caricare deve avere una dimensione massima pari a #uploadsize#).</item>
+  <item name="DisplayUploadQuotaInfo.FreeSpace.OverflowAction.NotAllow" mustcontains="#freespace#|#uploadsize#" placeholder="true">Hai ancora a disposizione #freespace# (ogni file che vuoi caricare deve avere una dimensione massima pari a #uploadsize#).</item>
+  <item name="DisplayUploadQuotaInfo.FreeSpace.AllowOverrideQuota.OverflowAction.Allow" mustcontains="#freespace#|#uploadsize#|#availablesize#|#maxsize#" placeholder="true">Hai ancora a disposizione #freespace#, puoi superare il limite di #availablesize# fino ad un massimo di #maxsize#. Ogni file che vuoi caricare deve avere una dimensione massima pari a #uploadsize#.</item>
+  <item name="DisplayUploadQuotaInfo.FreeSpace.AllowOverrideQuota.OverflowAction.AllowWithWarning" mustcontains="#freespace#|#uploadsize#|#availablesize#|#maxsize#" placeholder="true">Hai ancora a disposizione #freespace#, puoi superare il limite di #availablesize# fino ad un massimo di #maxsize#. Ogni file che vuoi caricare deve avere una dimensione massima pari a #uploadsize#.</item>
+  <item name="DisplayUploadQuotaInfo.FreeSpace.AllowOverrideQuota.OverflowAction.NotAllow" mustcontains="#freespace#|#uploadsize#|#availablesize#|#maxsize#" placeholder="true">Hai ancora a disposizione #freespace#, puoi superare il limite di #availablesize# fino ad un massimo di #maxsize#. Ogni file che vuoi caricare deve avere una dimensione massima pari a #uploadsize#.</item>
+  <item name="DisplayUploadQuotaInfo.OverflowAction.Allow" mustcontains="#oversize#|#availablesize#|#maxsize#|#uploadsize#" placeholder="true">E' stato superato di #oversize# il limite di #availablesize#, puoi caricare altri file fino ad un massimo di #maxsize#. Ogni file che vuoi caricare deve avere una dimensione massima pari a #uploadsize#.</item>
+  <item name="DisplayUploadQuotaInfo.OverflowAction.AllowWithWarning" mustcontains="#oversize#|#availablesize#|#maxsize#|#uploadsize#" placeholder="true">E' stato superato di #oversize# il limite di #availablesize#, puoi caricare altri file fino ad un massimo di #maxsize#. Ogni file che vuoi caricare deve avere una dimensione massima pari a #uploadsize#.</item>
+  <item name="DisplayUploadQuotaInfo.OverflowAction.NotAllow" mustcontains="#oversize#|#availablesize#" placeholder="true">E' stato superato di #oversize# il limite di #availablesize#, NON è possibile aggiungere altri file.</item>
+  <item name="DisplayUploadQuotaInfo.MainFolder.OverflowAction.Allow" mustcontains="#fatherlimit#|#maxsize#|#uploadsize#" placeholder="true">Il limite di #fatherlimit# imposto sullo spazio disponibile è stato superato, puoi caricare altri file fino ad un massimo di #maxsize#. Ogni file che vuoi caricare deve avere una dimensione massima pari a #uploadsize#.</item>
+  <item name="DisplayUploadQuotaInfo.MainFolder.OverflowAction.AllowWithWarning" mustcontains="#fatherlimit#|#maxsize#|#uploadsize#" placeholder="true">Il limite di #fatherlimit# imposto sullo spazio disponibil è stato superato, puoi caricare altri file fino ad un massimo di #maxsize#. Ogni file che vuoi caricare deve avere una dimensione massima pari a #uploadsize#.</item>
+  <item name="DisplayUploadQuotaInfo.MainFolder.OverflowAction.NotAllow" mustcontains="#fatherlimit#" placeholder="true">Il limite di #fatherlimit# imposto sullo spazio disponibil è stato superato, NON è possibile aggiungere altri file.</item>
+  <item name="DisplayUploadQuotaInfo.AllowOverrideQuota.OverflowAction.Allow" mustcontains="#oversize#|#uploadsize#|#availablesize#|#maxsize#" placeholder="true">E' stato superato di #oversize# il limite di #availablesize#, puoi caricare altri file fino ad un massimo di #maxsize#. Ogni file che vuoi caricare deve avere una dimensione massima pari a #uploadsize#.</item>
+  <item name="DisplayUploadQuotaInfo.AllowOverrideQuota.OverflowAction.AllowWithWarning" mustcontains="#oversize#|#uploadsize#|#availablesize#|#maxsize#" placeholder="true">E' stato superato di #oversize# il limite di #availablesize#, puoi caricare altri file fino ad un massimo di #maxsize#. Ogni file che vuoi caricare deve avere una dimensione massima pari a #uploadsize#.</item>
+  <item name="DisplayUploadQuotaInfo.AllowOverrideQuota.OverflowAction.NotAllow" mustcontains="#oversize#|#uploadsize#|#availablesize#|#maxsize#" placeholder="true">E' stato superato di #oversize# il limite di #availablesize#, puoi caricare altri file fino ad un massimo di #maxsize#. Ogni file che vuoi caricare deve avere una dimensione massima pari a #uploadsize#.</item>
+  <item name="DisplayUploadQuotaInfo.MainFolder.AllowOverrideQuota.OverflowAction.Allow" mustcontains="#uploadsize#|#fatherlimit#|#maxsize#" placeholder="true">Il limite di #fatherlimit# imposto sullo spazio disponibile è stato superato, puoi caricare altri file fino ad un massimo di #maxsize#. Ogni file che vuoi caricare deve avere una dimensione massima pari a #uploadsize#.</item>
+  <item name="DisplayUploadQuotaInfo.MainFolder.AllowOverrideQuota.OverflowAction.AllowWithWarning" mustcontains="#uploadsize#|#fatherlimit#|#maxsize#" placeholder="true">Il limite di #fatherlimit# imposto sullo spazio disponibile è stato superato, puoi caricare altri file fino ad un massimo di #maxsize#. Ogni file che vuoi caricare deve avere una dimensione massima pari a #uploadsize#.</item>
+  <item name="DisplayUploadQuotaInfo.MainFolder.AllowOverrideQuota.OverflowAction.NotAllow" mustcontains="#uploadsize#|#fatherlimit#|#maxsize#" placeholder="true">Il limite di #fatherlimit# imposto sullo spazio disponibilei è stato superato, puoi caricare altri file fino ad un massimo di #maxsize#. Ogni file che vuoi caricare deve avere una dimensione massima pari a #uploadsize#.</item>
+  <item name="OtherDownloadStatistics">Quante volte hanno scaricato il file</item>
+  <item name="MyDownloadStatistics">Quante volte ho scaricato il file</item>
+  <item name="ItemAvailabilityTooltip.ItemAvailability.notavailable" mustcontains="{0}" placeholder="true">L'oggetto {0} NON è disponibile.</item>
+  <item name="ItemAvailabilityTooltip.ItemAvailability.transfer" mustcontains="{0}" placeholder="true">Il file {0} è in fase di trasferimento.</item>
+  <item name="ItemAvailabilityTooltip.ItemAvailability.waitingsettings" mustcontains="{0}" placeholder="true">Le impostazioni del file {0} non sono opportunamente configurate.</item>
+  <item name="ItemAvailabilityTooltip.ItemAvailability.witherrors" mustcontains="{0}" placeholder="true">Vi sono stati degli errori nella gestione del file {0}, ricontrollare il file {0}.</item>
+  <item name="ItemAvailabilityTooltip.ItemAvailability.increation" mustcontains="{0}" placeholder="true">Il file {0} è in fase di creazione in piattaforma.</item>
+  <item name="ItemAvailabilityTooltip.ItemAvailability.unzip" mustcontains="{0}" placeholder="true">Il file {0} sta per essere scompattato.</item>
+  <item name="ItemAvailabilityTooltip.ItemAvailability.unabletounzip" mustcontains="{0}" placeholder="true">Non è stato possibile scompattare il file {0}.</item>
+  <item name="ItemAvailabilityTooltip.ItemAvailability.unabletoverwrite" mustcontains="{0}" placeholder="true">Non è stato possibile sovrascrivere il file {0}.</item>
+  <item name="ItemAvailabilityTooltip.ItemAvailability.invalidtype" mustcontains="{0}" placeholder="true">>L'oggetto {0} è in un formato non corretto.</item>
+  <item name="ItemAvailabilityTooltip.ItemAvailability.analyzing" mustcontains="{0}" placeholder="true">Il file {0} è in fase di analisi.</item>
+  <item name="ItemAvailabilityTooltip.ItemAvailability.notuploaded" mustcontains="{0}" placeholder="true">>L'oggetto {0} NON è stato caricato in piattaforma correttamente.</item>
+  <item name="LBitemTagsTitle.text">Tags:</item>
+  <item name="LBtagItemType.ItemType.None"></item>
+  <item name="LBtagItemType.ItemType.File">File</item>
+  <item name="LBtagItemType.ItemType.ScormPackage">Pacchetto scorm</item>
+  <item name="LBtagItemType.ItemType.Folder">Cartella</item>
+  <item name="LBtagItemType.ItemType.VideoStreaming">VideoStreaming</item>
+  <item name="LBtagItemType.ItemType.Multimedia">Multimedia</item>
+  <item name="LBtagItemType.ItemType.Link">Url</item>
+  <item name="LBtagItemType.ItemType.SharedDocument">Documenti condivisi</item>
+  <item name="LTitemPathTitle.text">Percorso originale:</item>
+  <item name="FolderName.FolderType.none"></item>
+  <item name="FolderName.FolderType.standard">Cartella</item>
+  <item name="FolderName.FolderType.links">Link</item>
+  <item name="FolderName.FolderType.recycleBin">Cestino</item>
+  <item name="FolderName.FolderType.modules">Servizi</item>
+  <item name="FolderName.FolderType.module">Servizio</item>
+  <item name="FolderName.FolderType.module.Name" mustcontains="{0}" placeholder="true">{0}</item>
+  <item name="FolderName.FolderType.tags">Tags</item>
+  <item name="FolderName.FolderType.tag">Tag</item>
+  <item name="FolderName.FolderType.specialtag">Tag speciali</item>
+  <item name="FolderName.FolderType.othertags">Altri tag</item>
+  <item name="FolderName.ItemType.None"></item>
+  <item name="FolderName.ItemType.File">File</item>
+  <item name="FolderName.ItemType.ScormPackage">Pacchetto scorm</item>
+  <item name="FolderName.ItemType.Folder">Cartella</item>
+  <item name="FolderName.ItemType.VideoStreaming">VideoStreaming</item>
+  <item name="FolderName.ItemType.Multimedia">Multimedia</item>
+  <item name="FolderName.ItemType.Link">Url</item>
+  <item name="FolderName.ItemType.SharedDocument">Documenti condivisi</item>
+  <item name="TranslationSeeOtherFolder">Altre cartelle</item>
+  <item name="HYProotFolder.text">Cartella principale</item>
+  <item name="HYProotFolder.ToolTip">Cartella principale</item>
+  <item name="LNBrootFolder.text">Cartella principale</item>
+  <item name="LNBrootFolder.ToolTip">Cartella principale</item>
+  <item name="RepositorySize.Title.FolderType.none">Totale:</item>
+  <item name="RepositorySize.Title.FolderType.standard">Cartella corrente:</item>
+  <item name="RepositorySize.Title.FolderType.recycleBin">Cestino:</item>
+  <item name="RepositorySize.FolderSizeItemType.file">File</item>
+  <item name="RepositorySize.FolderSizeItemType.link">Link</item>
+  <item name="RepositorySize.FolderSizeItemType.folder">Cartella</item>
+  <item name="RepositorySize.FolderSizeItemType.version">Versioni</item>
+  <item name="RepositorySize.FolderSizeItemType.deleted">File/Cartelle rimossi/e</item>
+  <item name="RepositorySize.FolderSizeItemType.freespace">Spazio disponibile</item>
+  <item name="RepositorySize.FolderSizeItemType.overflow">Spazio superato</item>
+  <item name="RepositorySize.FolderSizeItemType.unavailableItems">Non accessibili</item>
+  <item name="RepositorySize.FolderSizeItemType.childrenfolders">Sotto cartelle</item>
+  <item name="RepositorySize.FolderSizeItemType.deletedonsubfolders">Cestinati nelle sotto cartelle:</item>
+  <item name="RepositorySize.FolderSizeItemType.onchildrenfolders">Nelle sotto cartelle</item>
+  <item name="RepositorySize.FolderSizeItemType.fullSize">Totale Spazio occupato</item>
+  <item name="RepositorySize.FolderSizeItemType.ToolTip" mustcontains="{0}" placeholder="true">Occupati {0}</item>
+  <item name="RepositorySize.ProgressTooltip.FolderSizeItemType.file" html="false" placeholder="true" mustcontains="{0}|{1}">File {0}% ({1})</item>
+  <item name="RepositorySize.ProgressTooltip.FolderSizeItemType.version" html="false" placeholder="true" mustcontains="{0}|{1}">Versioni {0}% ({1})</item>
+  <item name="RepositorySize.ProgressTooltip.FolderSizeItemType.deleted" html="false" placeholder="true" mustcontains="{0}|{1}">Cancellati {0}% ({1})</item>
+  <item name="RepositorySize.ProgressTooltip.FolderSizeItemType.freespace" html="false" placeholder="true" mustcontains="{0}|{1}">Spazio disponibile {0}% ({1})</item>
+  <item name="RepositorySize.ProgressTooltip.FolderSizeItemType.unavailableItems" html="false" placeholder="true" mustcontains="{0}|{1}">Altri non accessibili {0}% ({1})</item>
+  <item name="RepositorySize.ProgressTooltip.FolderSizeItemType.childrenfolders" html="false" placeholder="true" mustcontains="{0}|{1}">Sotto cartelle {0}% ({1})</item>
+  <item name="RepositorySize.ProgressTooltip.FolderSizeItemType.overflow" html="false" placeholder="true" mustcontains="{0}|{1}">Limite superato {0}% ({1})</item>
+  <item name="RepositorySize.ProgressTooltip.FolderSizeItemType.deletedonsubfolders" html="false" placeholder="true" mustcontains="{0}">Cancellati nelle sotto cartelle {0}</item>
+  <item name="RepositorySize.ProgressTooltip.FolderSizeItemType.onchildrenfolders" html="false" placeholder="true" mustcontains="{0}">Nelle sotto cartelle {0}</item>
+  <item name="RepositorySize.ProgressTooltip.FolderSizeItemType.fullSize" html="false" placeholder="true" mustcontains="{0}">Totale Spazio occupato {0}</item>
+  <item name="LBorderBySelectorDescription.text">Ordina per:</item>
+  <item name="List.OrderBy.name" disambiguation="visibile in lista di selezione">Nome</item>
+  <item name="List.OrderBy.date" disambiguation="visibile in lista di selezione">Data caricamento</item>
+  <item name="List.OrderBy.size" disambiguation="visibile in lista di selezione">Dimensioni</item>
+  <item name="List.OrderBy.displayorder" disambiguation="visibile in lista di selezione">Predefinito</item>
+  <item name="Selected.OrderBy.name" disambiguation="ordinamento corrente">Nome</item>
+  <item name="Selected.OrderBy.date" disambiguation="ordinamento corrente">Data caricamento</item>
+  <item name="Selected.OrderBy.size" disambiguation="ordinamento corrente">Dimensioni</item>
+  <item name="Selected.OrderBy.displayorder" disambiguation="ordinamento corrente">Predefinito</item>
+  <item name="HYPpresetTypeSimple.text">Semplice</item>
+  <item name="HYPpresetTypeSimple.ToolTip">Visione semplificata</item>
+  <item name="HYPpresetTypeStandard.text">Predefinita</item>
+  <item name="HYPpresetTypeStandard.ToolTip">Visione predefinita</item>
+  <item name="HYPpresetTypeAdvanced.text">Avanzata</item>
+  <item name="HYPpresetTypeAdvanced.ToolTip">Visione avanzata</item>
+  <item name="LBwideView.text">Vista espansa</item>
+  <item name="LBnarrowView.text">Vista ristretta</item>
+  <item name="Option.ViewOption.Date">Data</item>
+  <item name="Option.ViewOption.Extrainfo">Informazioni aggiuntive</item>
+  <item name="Option.ViewOption.Statistics">Statistiche</item>
+  <item name="Option.ViewOption.Tree">Albero</item>
+  <item name="DIVcustomSettings.Title">Opzioni personalizzate</item>
+  <item name="ViewOption.FolderPath"></item>
+  <item name="ViewOption.Date"></item>
+  <item name="ViewOption.Extrainfo"></item>
+  <item name="ViewOption.Statistics"></item>
+  <item name="ViewOption.Tree"></item>
+  <item name="ViewOption.AvailableSpace"></item>
+  <item name="ViewOption.NarrowWideView"></item>
+  <item name="Menu.ItemAction.none"></item>
+  <item name="Menu.ItemAction.undelete" disambiguation="relativo ad un file/folder presente nel cestino">Ripristina</item>
+  <item name="Menu.ItemAction.delete" disambiguation="relativo ad un file/folder">Cancella definitivamente</item>
+  <item name="Menu.ItemAction.download" disambiguation="relativo ad un file/folder">Scarica</item>
+  <item name="Menu.ItemAction.details" disambiguation="relativo ad un file/folder">Dettagli</item>
+  <item name="Menu.ItemAction.virtualdelete" disambiguation="relativo ad un file/folder">Cancella</item>
+  <item name="Menu.ItemAction.link" disambiguation="relativo ad un file">Url diretto</item>
+  <item name="Menu.ItemAction.viewMyStatistics" disambiguation="relativo ad un file">Le mie statistiche</item>
+  <item name="Menu.ItemAction.viewOtherStatistics" disambiguation="relativo ad un file">Statistiche</item>
+  <item name="Menu.ItemAction.viewPermission" disambiguation="relativo ad un file/folder">Visualizza permessi</item>
+  <item name="Menu.ItemAction.edit" disambiguation="relativo ad un file/folder">Modifica</item>
+  <item name="Menu.ItemAction.editPermission" disambiguation="relativo ad un file/folder">Modifica permessi</item>
+  <item name="Menu.ItemAction.editSettings" disambiguation="relativo ad un file/folder">Modifica impostazioni</item>
+  <item name="Menu.ItemAction.manageVersions" disambiguation="relativo ad un file">Gestione versioni</item>
+  <item name="Menu.ItemAction.addVersion" disambiguation="relativo ad un file">Aggiungi versione</item>
+  <item name="Menu.ItemAction.removeVersion" disambiguation="relativo ad un file">Rimuovi versione</item>
+  <item name="Menu.ItemAction.setCurrentVersion" disambiguation="relativo ad un file">Imposta versione corrente</item>
+  <item name="Menu.ItemAction.preview" disambiguation="relativo ad un file">Anteprima</item>
+  <item name="Menu.ItemAction.move" disambiguation="relativo ad un file/folder">Sposta</item>
+  <item name="Menu.ItemAction.hide" disambiguation="relativo ad un file/folder">Nascondi</item>
+  <item name="Menu.ItemAction.show" disambiguation="relativo ad un file/folder">Mostra</item>
+  <item name="Menu.ItemAction.none"></item>
+  <item name="Menu.ToolTip.ItemAction.undelete" disambiguation="relativo ad un file/folder presente nel cestino">Ripristina dal cestino</item>
+  <item name="Menu.ToolTip.ItemAction.delete" disambiguation="relativo ad un file/folder">Cancella definitivamente dal cestino</item>
+  <item name="Menu.ToolTip.ItemAction.download" disambiguation="relativo ad un file/folder">Scarica</item>
+  <item name="Menu.ToolTip.ItemAction.details" disambiguation="relativo ad un file/folder">Dettagli elemento</item>
+  <item name="Menu.ToolTip.ItemAction.virtualdelete" disambiguation="relativo ad un file/folder">Cancella</item>
+  <item name="Menu.ToolTip.ItemAction.link" disambiguation="relativo ad un file">Url diretto</item>
+  <item name="Menu.ToolTip.ItemAction.viewMyStatistics" disambiguation="relativo ad un file">Visualizza le mie statistiche</item>
+  <item name="Menu.ToolTip.ItemAction.viewOtherStatistics" disambiguation="relativo ad un file">Visualizza le statistiche</item>
+  <item name="Menu.ToolTip.ItemAction.viewPermission" disambiguation="relativo ad un file/folder">Visualizza i permessi</item>
+  <item name="Menu.ToolTip.ItemAction.edit" disambiguation="relativo ad un file/folder">Modifica l'elemento</item>
+  <item name="Menu.ToolTip.ItemAction.editPermission" disambiguation="relativo ad un file/folder">Modifica permessi dell'elemento</item>
+  <item name="Menu.ToolTip.ItemAction.editSettings" disambiguation="relativo ad un file/folder">Modifica le impostazioni dell'elemento</item>
+  <item name="Menu.ToolTip.ItemAction.manageVersions" disambiguation="relativo ad un file">Gestisci le versioni del file</item>
+  <item name="Menu.ToolTip.ItemAction.addVersion" disambiguation="relativo ad un file">Aggiungi una nuova versione</item>
+  <item name="Menu.ToolTip.ItemAction.removeVersion" disambiguation="relativo ad un file">Rimuovi una versione del file</item>
+  <item name="Menu.ToolTip.ItemAction.setCurrentVersion" disambiguation="relativo ad un file">Imposta la versione corrente del file</item>
+  <item name="Menu.ToolTip.ItemAction.preview" disambiguation="relativo ad un file">Anteprima del file</item>
+  <item name="Menu.ToolTip.ItemAction.move" disambiguation="relativo ad un file/folder">Sposta l'elemento</item>
+  <item name="Menu.ToolTip.ItemAction.hide" disambiguation="relativo ad un file/folder">Nascondi l'elemento</item>
+  <item name="Menu.ToolTip.ItemAction.show" disambiguation="relativo ad un file/folder">Mostra l'elemento</item>
+  <item name="Repository.Download.PageTitle">Download materiale</item>
+  <item name="IViewDownloadError.UnknownItem.DownloadErrorType.none">Errore nello scaricamento del file: NON è stato possibile individuare il file richiesto.</item>
+  <item name="IViewDownloadError.UnknownItem.DownloadErrorType.notExist">Errore nello scaricamento del file: NON è stato possibile individuare il file richiesto.</item>
+  <item name="IViewDownloadError.UnknownItem.DownloadErrorType.noPermissions">Errore nello scaricamento del file: NON è stato possibile individuare il file richiesto o non si dispone dei permessi per poterlo scaricare.</item>
+  <item name="IViewDownloadError.UnknownItem.DownloadErrorType.notLoggedIn">Errore nello scaricamento del file: NON è stato possibile individuare il file richiesto.</item>
+  <item name="IViewDownloadError.UnknownItem.DownloadErrorType.impersonationFailed">Errore nello scaricamento del file: NON è stato possibile individuare il file richiesto.</item>
+  <item name="IViewDownloadError.RepositoryType.Portal.DownloadErrorType.none" mustcontains="{0}" placeholder="true">Attenzione NON è stato possibile individuare il file {0}.</item>
+  <item name="IViewDownloadError.RepositoryType.Portal.DownloadErrorType.notExist" mustcontains="{0}" placeholder="true">Attenzione NON è stato possibile individuare il file {0}.</item>
+  <item name="IViewDownloadError.RepositoryType.Portal.DownloadErrorType.noPermissions" mustcontains="{0}" placeholder="true">Attenzione NON disponi dei permessi necessari per scaricare il file {0}.</item>
+  <item name="IViewDownloadError.RepositoryType.Portal.DownloadErrorType.notLoggedIn" mustcontains="{0}" placeholder="true">Attenzione per scaricare il file {0} devi aver effettuato l'accesso in piattaforma.</item>
+  <item name="IViewDownloadError.RepositoryType.Portal.DownloadErrorType.impersonationFailed" mustcontains="{0}" placeholder="true">Attenzione NON è stato possibile individuare il file {0}.</item>
+  <item name="IViewDownloadError.RepositoryType.Community.DownloadErrorType.none" mustcontains="{0}" placeholder="true">Attenzione NON è stato possibile individuare il file {0} nella comunità.</item>
+  <item name="IViewDownloadError.RepositoryType.Community.DownloadErrorType.notExist" mustcontains="{0}" placeholder="true">Attenzione NON è stato possibile individuare il file {0} nella comunità.</item>
+  <item name="IViewDownloadError.RepositoryType.Community.DownloadErrorType.noPermissions" mustcontains="{0}" placeholder="true">Attenzione NON disponi dei permessi necessari per scaricare il file {0} della comunità.</item>
+  <item name="IViewDownloadError.RepositoryType.Community.DownloadErrorType.notLoggedIn" mustcontains="{0}" placeholder="true">Attenzione per scaricare il file {0} devi aver effettuato l'accesso in piattaforma.</item>
+  <item name="IViewDownloadError.RepositoryType.Community.DownloadErrorType.impersonationFailed" mustcontains="{0}" placeholder="true">Attenzione NON è stato possibile individuare il file {0}.</item>
+  <item name="IViewDownloadError.RepositoryType.Community.name.DownloadErrorType.none" mustcontains="{0}|{1}" placeholder="true">Attenzione NON è stato possibile individuare il file {0} nella comunità {1}.</item>
+  <item name="IViewDownloadError.RepositoryType.Community.name.DownloadErrorType.notExist" mustcontains="{0}|{1}" placeholder="true">Attenzione NON è stato possibile individuare il file {0} nella comunità {1}.</item>
+  <item name="IViewDownloadError.RepositoryType.Community.name.DownloadErrorType.noPermissions" mustcontains="{0}|{1}" placeholder="true">Attenzione NON disponi dei permessi necessari per scaricare il file {0} della comunità {1}.</item>
+  <item name="IViewDownloadError.RepositoryType.Community.name.DownloadErrorType.notLoggedIn" mustcontains="{0}|{1}" placeholder="true">Attenzione per scaricare il file {0} devi aver effettuato l'accesso in piattaforma.</item>
+  <item name="IViewDownloadError.RepositoryType.Community.name.DownloadErrorType.impersonationFailed" mustcontains="{0}|{1}" placeholder="true">Attenzione NON è stato possibile individuare il file {0} nella comunità {1}.</item>
+  <item name="HYPbackToPreviousUrl.text">Torna alla pagina precedente</item>
+  <item name="HYPbackToPreviousUrl.ToolTip">Torna alla pagina precedente</item>
+  <item name="IViewPlayer.ServiceTitle">Visualizza il materiale</item>
+  <item name="IViewPlayer.ServiceTitle.NoPermission">Non disponi dei permessi per visualizzare il materiale</item>
+  <item name="IViewPlayer.DisplayUnknownItem">Materiale NON individuato</item>
+  <item name="IViewPlayer.PlayerErrors.InvalidType" mustcontains="{0}" placeholder="true">Il materiale {0} non può essere visualizzato in modalità "play"</item>
+  <item name="IViewPlayer.DisplayPlayUnavailable.isSpecificVersion.True.ItemStatus.Draft.ItemType.None" mustcontains="{0}" placeholder="true">La versione prescelta del materiale {0} è in bozza, non può essere quindi visualizzata.</item>
+  <item name="IViewPlayer.DisplayPlayUnavailable.isSpecificVersion.True.ItemStatus.Replaced.ItemType.None" mustcontains="{0}" placeholder="true">La versione prescelta del materiale {0} è stata sostituita, non può essere quindi visualizzata.</item>
+  <item name="IViewPlayer.DisplayPlayUnavailable.isSpecificVersion.True.ItemStatus.Removed.ItemType.None" mustcontains="{0}" placeholder="true">La versione prescelta del materiale {0} è stata rimossa, non può essere quindi visualizzata.</item>
+  <item name="IViewPlayer.DisplayPlayUnavailable.isSpecificVersion.False.ItemStatus.Draft.ItemType.None" mustcontains="{0}" placeholder="true">Il materiale {0} è in bozza, non può essere quindi visualizzato.</item>
+  <item name="IViewPlayer.DisplayPlayUnavailable.isSpecificVersion.False.ItemStatus.Replaced.ItemType.None" mustcontains="{0}" placeholder="true">Il materiale {0} è stato sostituito, non può essere quindi visualizzato.</item>
+  <item name="IViewPlayer.DisplayPlayUnavailable.isSpecificVersion.False.ItemStatus.Removed.ItemType.None" mustcontains="{0}" placeholder="true">Il materiale {0} è stato rimosso, non può essere quindi visualizzato.</item>
+  <item name="IViewPlayer.DisplayPlayUnavailable.isSpecificVersion.True.ItemStatus.Draft.ItemType.File" mustcontains="{0}" placeholder="true">La versione prescelta del file {0} è in bozza, non può essere quindi visualizzata.</item>
+  <item name="IViewPlayer.DisplayPlayUnavailable.isSpecificVersion.True.ItemStatus.Replaced.ItemType.File" mustcontains="{0}" placeholder="true">La versione prescelta del file {0} è stata sostituita, non può essere quindi visualizzata.</item>
+  <item name="IViewPlayer.DisplayPlayUnavailable.isSpecificVersion.True.ItemStatus.Removed.ItemType.File" mustcontains="{0}" placeholder="true">La versione prescelta del file {0} è stata rimossa, non può essere quindi visualizzata.</item>
+  <item name="IViewPlayer.DisplayPlayUnavailable.isSpecificVersion.False.ItemStatus.Draft.ItemType.File" mustcontains="{0}" placeholder="true">Il file {0} è in bozza, non può essere quindi visualizzato.</item>
+  <item name="IViewPlayer.DisplayPlayUnavailable.isSpecificVersion.False.ItemStatus.Replaced.ItemType.File" mustcontains="{0}" placeholder="true">Il file {0} è stato sostituito, non può essere quindi visualizzato.</item>
+  <item name="IViewPlayer.DisplayPlayUnavailable.isSpecificVersion.False.ItemStatus.Removed.ItemType.File" mustcontains="{0}" placeholder="true">Il file {0} è stato rimosso, non può essere quindi visualizzato.</item>
+  <item name="IViewPlayer.DisplayPlayUnavailable.isSpecificVersion.True.ItemStatus.Draft.ItemType.ScormPackage" mustcontains="{0}" placeholder="true">La versione prescelta del pacchetto SCORM {0} è in bozza, non può essere quindi visualizzata.</item>
+  <item name="IViewPlayer.DisplayPlayUnavailable.isSpecificVersion.True.ItemStatus.Replaced.ItemType.ScormPackage" mustcontains="{0}" placeholder="true">La versione prescelta del pacchetto SCORM {0} è stata sostituita, non può essere quindi visualizzata.</item>
+  <item name="IViewPlayer.DisplayPlayUnavailable.isSpecificVersion.True.ItemStatus.Removed.ItemType.ScormPackage" mustcontains="{0}" placeholder="true">La versione prescelta del pacchetto SCORM {0} è stata rimossa, non può essere quindi visualizzata.</item>
+  <item name="IViewPlayer.DisplayPlayUnavailable.isSpecificVersion.False.ItemStatus.Draft.ItemType.ScormPackage" mustcontains="{0}" placeholder="true">Il pacchetto SCORM {0} è in bozza, non può essere quindi visualizzato.</item>
+  <item name="IViewPlayer.DisplayPlayUnavailable.isSpecificVersion.False.ItemStatus.Replaced.ItemType.ScormPackage" mustcontains="{0}" placeholder="true">Il pacchetto SCORM {0} è stato sostituito, non può essere quindi visualizzato.</item>
+  <item name="IViewPlayer.DisplayPlayUnavailable.isSpecificVersion.False.ItemStatus.Removed.ItemType.ScormPackage" mustcontains="{0}" placeholder="true">Il pacchetto SCORM {0} è stato rimosso, non può essere quindi visualizzato.</item>
+  <item name="IViewPlayer.DisplayPlayUnavailable.isSpecificVersion.True.ItemStatus.Draft.ItemType.VideoStreaming" mustcontains="{0}" placeholder="true">La versione prescelta del video {0} è in bozza, non può essere quindi visualizzata.</item>
+  <item name="IViewPlayer.DisplayPlayUnavailable.isSpecificVersion.True.ItemStatus.Replaced.ItemType.VideoStreaming" mustcontains="{0}" placeholder="true">La versione prescelta del video {0} è stata sostituita, non può essere quindi visualizzata.</item>
+  <item name="IViewPlayer.DisplayPlayUnavailable.isSpecificVersion.True.ItemStatus.Removed.ItemType.VideoStreaming" mustcontains="{0}" placeholder="true">La versione prescelta del video {0} è stata rimossa, non può essere quindi visualizzata.</item>
+  <item name="IViewPlayer.DisplayPlayUnavailable.isSpecificVersion.False.ItemStatus.Draft.ItemType.VideoStreaming" mustcontains="{0}" placeholder="true">Il video {0} è in bozza, non può essere quindi visualizzato.</item>
+  <item name="IViewPlayer.DisplayPlayUnavailable.isSpecificVersion.False.ItemStatus.Replaced.ItemType.VideoStreaming" mustcontains="{0}" placeholder="true">Il video {0} è stato sostituito, non può essere quindi visualizzato.</item>
+  <item name="IViewPlayer.DisplayPlayUnavailable.isSpecificVersion.False.ItemStatus.Removed.ItemType.VideoStreaming" mustcontains="{0}" placeholder="true">Il video {0} è stato rimosso, non può essere quindi visualizzato.</item>
+  <item name="IViewPlayer.DisplayPlayUnavailable.isSpecificVersion.True.ItemStatus.Draft.ItemType.Multimedia" mustcontains="{0}" placeholder="true">La versione prescelta del pacchetto multimediale {0} è in bozza, non può essere quindi visualizzata.</item>
+  <item name="IViewPlayer.DisplayPlayUnavailable.isSpecificVersion.True.ItemStatus.Replaced.ItemType.Multimedia" mustcontains="{0}" placeholder="true">La versione prescelta del pacchetto multimediale {0} è stata sostituita, non può essere quindi visualizzata.</item>
+  <item name="IViewPlayer.DisplayPlayUnavailable.isSpecificVersion.True.ItemStatus.Removed.ItemType.Multimedia" mustcontains="{0}" placeholder="true">La versione prescelta del pacchetto multimediale {0} è stata rimossa, non può essere quindi visualizzata.</item>
+  <item name="IViewPlayer.DisplayPlayUnavailable.isSpecificVersion.False.ItemStatus.Draft.ItemType.Multimedia" mustcontains="{0}" placeholder="true">Il pacchetto multimediale {0} è in bozza, non può essere quindi visualizzato.</item>
+  <item name="IViewPlayer.DisplayPlayUnavailable.isSpecificVersion.False.ItemStatus.Replaced.ItemType.Multimedia" mustcontains="{0}" placeholder="true">Il pacchetto multimediale {0} è stato sostituito, non può essere quindi visualizzato.</item>
+  <item name="IViewPlayer.DisplayPlayUnavailable.isSpecificVersion.False.ItemStatus.Removed.ItemType.Multimedia" mustcontains="{0}" placeholder="true">Il pacchetto multimediale {0} è stato rimosso, non può essere quindi visualizzato.</item>
+  <item name="IViewPlayer.DisplayPlayUnavailable.isSpecificVersion.True.ItemStatus.Draft.ItemType.SharedDocument" mustcontains="{0}" placeholder="true">La versione prescelta del documento condiviso {0} è in bozza, non può essere quindi visualizzata.</item>
+  <item name="IViewPlayer.DisplayPlayUnavailable.isSpecificVersion.True.ItemStatus.Replaced.ItemType.SharedDocument" mustcontains="{0}" placeholder="true">La versione prescelta del documento condiviso {0} è stata sostituita, non può essere quindi visualizzata.</item>
+  <item name="IViewPlayer.DisplayPlayUnavailable.isSpecificVersion.True.ItemStatus.Removed.ItemType.SharedDocument" mustcontains="{0}" placeholder="true">La versione prescelta del documento condiviso {0} è stata rimossa, non può essere quindi visualizzata.</item>
+  <item name="IViewPlayer.DisplayPlayUnavailable.isSpecificVersion.False.ItemStatus.Draft.ItemType.SharedDocument" mustcontains="{0}" placeholder="true">Il documento condiviso {0} è in bozza, non può essere quindi visualizzato.</item>
+  <item name="IViewPlayer.DisplayPlayUnavailable.isSpecificVersion.False.ItemStatus.Replaced.ItemType.SharedDocument" mustcontains="{0}" placeholder="true">Il documento condiviso {0} è stato sostituito, non può essere quindi visualizzato.</item>
+  <item name="IViewPlayer.DisplayPlayUnavailable.isSpecificVersion.False.ItemStatus.Removed.ItemType.SharedDocument" mustcontains="{0}" placeholder="true">Il documento condiviso {0} è stato rimosso, non può essere quindi visualizzato.</item>
+  <item name="IViewPlayer.DisplayPlayUnavailable.ItemAvailability.notavailable" mustcontains="{0}" placeholder="true">Il pacchetto SCORM {0} non è disponibile per l'utilizzo</item>
+  <item name="IViewPlayer.DisplayPlayUnavailable.ItemAvailability.transfer" mustcontains="{0}" placeholder="true">Il file {0} non è disponibile per l'utilizzo (in trasferimento)</item>
+  <item name="IViewPlayer.DisplayPlayUnavailable.ItemAvailability.waitingsettings" mustcontains="{0}" placeholder="true">Il file {0} non è disponibile per l'utilizzo (in attesa di configurazione da parte del proprietario)</item>
+  <item name="IViewPlayer.DisplayPlayUnavailable.ItemAvailability.witherrors" mustcontains="{0}" placeholder="true">Il file {0} non è disponibile per l'utilizzo: la procedura di messa in linea ha generato degli errori.</item>
+  <item name="IViewPlayer.DisplayPlayUnavailable.ItemAvailability.increation" mustcontains="{0}" placeholder="true">Il file {0} non è disponibile per l'utilizzo: il file caricato sta per essere messo in linea.</item>
+  <item name="IViewPlayer.DisplayPlayUnavailable.ItemAvailability.unzip" mustcontains="{0}" placeholder="true">Il file {0} non è disponibile per l'utilizzo: il file caricato è in fase di analisi.</item>
+  <item name="IViewPlayer.DisplayPlayUnavailable.ItemAvailability.unableToUnzip" mustcontains="{0}" placeholder="true">Il file {0} non è disponibile per l'utilizzo: il file caricato NON può essere scompattato.</item>
+  <item name="IViewPlayer.DisplayPlayUnavailable.ItemAvailability.unableToOverwrite" mustcontains="{0}" placeholder="true">Il file {0} non è disponibile per l'utilizzo: non è stato possibile sovrascrivere la versione precedente.</item>
+  <item name="IViewPlayer.DisplayPlayUnavailable.ItemAvailability.invalidtype" mustcontains="{0}" placeholder="true">Il file {0} non è disponibile per l'utilizzo: il file caricato sembra non essere del formato corretto.</item>
+  <item name="IViewPlayer.DisplayPlayUnavailable" mustcontains="{0}" placeholder="true">Attualmente il materiale {0} non può essere visualizzato</item>
+  <item name="IViewPlayer.PlayerErrors.NoPermissionToPlay" mustcontains="{0}" placeholder="true">Non disponi dei permessi per visualizzare il materiale {0}</item>
+    <item name="IViewPlayer.PlayerErrors.PlayerUnavailable" mustcontains="{0}" placeholder="true">Non esiste alcun player per visualizzare il materiale {0}</item>
+    <item name="IViewPlayer.PlayerErrors.InvalidSettings" mustcontains="{0}" placeholder="true">Impostazioni errate per il materiale {0}, impossibile visualizzare il file</item>
+    <item name="IViewPlayer.PlayerErrors.InvalidTransfer" mustcontains="{0}" placeholder="true">Problemi nel trasferimento del materiale {0}, impossibile visualizzare il file</item>
+    <item name="IViewPlayer.PlayerErrors.InvalidType" mustcontains="{0}" placeholder="true">Il materiale {0} non è un file valido per il play</item>
+    <item name="IViewPlayer.PlayerErrors.UnknownItem">Materiale sconosciuto.</item>   
+  <item name="IViewPlayer.DisplaySessionExpired">Sessione di lavoro scaduta, chiudere la finestra e riaccedere alla piattaforma.</item>
+  <item name="InitializePlayer.Title" mustcontains="{0}" placeholder="true">Visualizzazione materiale {0}</item>
+  <item name="BTNclosePlayerDialog.text" >Chiudi</item>
+  <item name="BTNclosePlayerDialog.ToolTip" >Chiudi la finestra corrente</item>
+  <item name="LBcloseWindow.text" >X</item>
+  <item name="LBcloseWindow.ToolTip" >Chiudi la finestra</item>
+  <item name="GetOnUpdatingMoveAction">Attendere la visualizzazione della finestra per la selezione della cartella di destinazione</item>
+  <item name="LBmoveDialogDescription.text">Selezionare la cartella di destinazione dove spostare l'elemento</item>
+  <item name="LBmoveDialogDescription.Item" mustcontains="{0}" placeholder="true">Selezionare la cartella di destinazione dove spostare {0}</item>
+  <item name="LBmoveDialogDescription.Items" mustcontains="{0}" placeholder="true">Selezionare la cartella di destinazione dove spostare gli elementi selezionati {0}</item>
+  <item name="Move.ItemType.File">un file</item>
+  <item name="Move.ItemType.Folder">una cartella</item>
+  <item name="Move.ItemType.ScormPackage">un pacchetto SCORM</item>
+  <item name="Move.ItemType.VideoStreaming">un video</item>
+  <item name="Move.ItemType.Multimedia">un pacchetto multimediale</item>
+  <item name="Move.ItemType.Link">un link</item>
+  <item name="Move.ItemType.SharedDocument">un documento condiviso</item>
+  <item name="Move.ItemType.File.n" mustcontains="{0}" placeholder="true">{0} file</item>
+  <item name="Move.ItemType.Folder.n" mustcontains="{0}" placeholder="true">{0} cartelle</item>
+  <item name="Move.ItemType.ScormPackage.n" mustcontains="{0}" placeholder="true">{0} pacchetti SCORM</item>
+  <item name="Move.ItemType.VideoStreaming.n" mustcontains="{0}" placeholder="true">{0} video</item>
+  <item name="Move.ItemType.Multimedia.n" mustcontains="{0}" placeholder="true">{0} pacchetti multimediali</item>
+  <item name="Move.ItemType.Link.n" mustcontains="{0}" placeholder="true">{0} link</item>
+  <item name="Move.ItemType.SharedDocument.n" mustcontains="{0}" placeholder="true">{0} documenti condivisi</item>
+  <item name="LBcurrentPath_t.text">Percorso corrente</item>
+  <item name="BTNapplyMoveTo.text">Sposta</item>
+  <item name="BTNapplyMoveTo.ToolTip">Sposta nella cartella selezionata</item>
+  <item name="HYPcloseMoveConfirmDialog.text">Chiudi</item>
+  <item name="HYPcloseMoveConfirmDialog.ToolTip">Chiudi la finestra ed annulla l'operazione</item>
+  <item name="UC_MoveItemsDialog.GetDialogTitle">Cambio cartella</item>
+  <item name="RootFolder">Cartella principale</item>
+  <item name="RootFolderName">principale</item>
+  <item name="LBselectDestinationFolderPath.text">Cartella destinazione:</item>
+  <item name="LBcommandFolder_t.text">Cartella:</item>
+  <item name="LBcommandResources_t.text">Risorse:</item>
+  <item name="LBcommandSelectedResources_t.text">Selezionati/e:</item>
+  <item name="HYPgotofolderfather.ToolTip">Vai alla cartella superiore</item>
+  <item name="HYPgotofolderfather.ToolTip.name" mustcontains="{0}" placeholder="true">Vai alla cartella {0}</item>
+  <item name="HYPaddFolder.ToolTip">Crea cartella</item>
+  <item name="HYPaddlink.ToolTip">Aggiungi link</item>
+  <item name="HYPupload.ToolTip">Aggiungi file</item>
+  <item name="LNBhideItems.ToolTip">Nascondi gli elementi selezionati</item>
+  <item name="LNBshowItems.ToolTip">Mostra gli elementi selezionati</item>
+  <item name="LNBvirtualDeleteItems.ToolTip">Cestina gli elementi selezionati</item>
+  <item name="LNBvirtualUndeleteItems.ToolTip">Recupera dal cestino gli elementi selezionati</item>
+  <item name="LNBphisicalDeleteItems.ToolTip">Cancella definitivamente gli elementi selezionati</item>
+  <item name="AddFolderDialogTitle">Crea nuova cartella</item>
+  <item name="LTaddFolderDescription.text">Da questa finestra è possibile procedere con la creazione di una o più cartelle: verranno create SOLO le cartelle con nomi validi.</item>
+  <item name="LBaddFolderToCommunity_t" disambiguation="singolare">Comunità:</item>
+  <item name="LBnewFolderName_t.text">Nome cartella:</item>
+  <item name="DefaultFolderName" mustcontains="{0}" placeholder="true">Cartella {0}</item>
+  <item name="LBhideFolders_t.text">Nascondi:</item>
+  <item name="LBhideFolders.text">se l'opzione è attiva le cartelle create saranno visibili solo al creatore e agli amministratori.</item>
+  <item name="LBallowUploadIntoFolder_t.text">Consenti aggiunte:</item>
+  <item name="LBallowUploadIntoFolder.text">se l'opzione è attiva sarà consentita l'aggiunta di file/cartelle/link agli utenti che vi possono accedere.</item>
+  <item name="BTNaddFolder.text">Crea</item>
+  <item name="BTNaddFolder.ToolTip">Crea una o più cartelle con i nomi indicati nei relativi campi.</item>
+  <item name="HYPcloseAddFolderDialog.text">Chiudi</item>
+  <item name="HYPcloseAddFolderDialog.ToolTip">Chiudi la finestra ed annulla l'operazione</item>
+  <item name="AddLinksDialogTitle">Crea nuovi link</item>
+  <item name="LTaddLinksDescription.text">Da questa finestra è possibile procedere con la creazione di uno o più link: per ciascun link è possibile indicare l'indirizzo internet ed un nome da visualizzare. Il sistema creerà SOLO i link con indicato un indirizzo.</item>
+  <item name="LBaddLinksToCommunity_t" disambiguation="singolare">Comunità:</item>
+  <item name="LBnewUrl_t.text">Url:</item>
+  <item name="LBnewUrlName_t.text">Nome da visualizzare:</item>
+  <item name="LBhideLinks_t.text">Nascondi:</item>
+  <item name="LBhideLinks.text">se l'opzione è attiva i link creati saranno visibili solo al creatore e agli amministratori.</item>
+  <item name="BTNaddLinks.text">Crea</item>
+  <item name="BTNaddLinks.ToolTip">Crea una o più link con i dati indicati nei relativi campi.</item>
+  <item name="HYPcloseAddLinkDialog.text">Chiudi</item>
+  <item name="HYPcloseAddLinkDialog.ToolTip">Chiudi la finestra ed annulla l'operazione</item>
+  <item name="AddFilesDialogTitle">Aggiungi uno o più file alla cartella</item>
+  <item name="LTaddFilesDescription.text">Da questa finestra è possibile caricare uno o più file: per TUTTI i file è possibile impostare la visibilità (SE selezionata la relativa voce TUTTI i file caricati saranno NASCOSTI) e l'eventuale tipologia (normale, SCORM, ecc).</item>
+  <item name="LTaddFilesDescription.1.text">Da questa finestra è possibile caricare uno o più file: è possibile nascondere i file caricati, SE selezionata la relativa voce TUTTI i file caricati saranno NASCOSTI.</item>
+  <item name="LBaddFilesToCommunity_t" disambiguation="singolare">Comunità:</item>
+  <item name="LBfilesItemType_t.text">Tipo file:</item>
+  <item name="RBLitemType.ItemType.File">normale</item>
+  <item name="RBLitemType.ItemType.ScormPackage">pacchetto scorm</item>
+  <item name="RBLitemType.ItemType.Multimedia">pacchetto multimediale</item>
+  <item name="RBLitemType.ItemType.SharedDocument">documento condiviso</item>
+  <item name="RBLitemType.ItemType.VideoStreaming">video</item>
+  <item name="LBhideFiles_t.text">Nascondi:</item>
+  <item name="LBhideFiles.text">se l'opzione è attiva i file creati saranno visibili solo al creatore e agli amministratori.</item>
+  <item name="LBselectAsyncFiles_t.text">File:</item>
+  <item name="LBitemTypeDescription.text">ATTENZIONE: il tipo di file che scegli sarà associato a TUTTI i file che vuoi caricare.</item>
+  <item name="BTNaddFiles.text">Carica</item>
+  <item name="BTNaddFiles.ToolTip">Carica i file selezionati.</item>
+  <item name="HYPcloseAddFilesDialog.text">Chiudi</item>
+  <item name="HYPcloseAddFilesDialog.ToolTip">Chiudi la finestra ed annulla l'operazione</item>
+  <item name="AddVersionDialogTitle">Aggiunta di una nuova versione</item>
+  <item name="HYPcloseAddVersionDialog.text">Chiudi</item>
+  <item name="HYPcloseAddVersionDialog.ToolTip">Chiudi la finestra ed annulla l'operazione</item>
+  <item name="BTNaddVersion.text">Aggiungi</item>
+  <item name="BTNaddFiles.ToolTip">Carica il file selezionato ed aggiungilo come nuova versione.</item>
+  <item name="LBaddVersion_t.text">Seleziona il file:</item>
+  <item name="LTaddVersionDescription.text" mustcontains="#filerender#" placeholder="true">Da questa finestra è possibile aggiungere una nuova versione al file #filerender#</item>
+  <item name="itemError_Extension">File privo di estensione</item>
+  <item name="itemError_Size">Il file ha una dimensione superiore rispetto a quella consentita.</item>
+  <item name="itemError_NotSupported">Estensione del file diversa da quella di origine.</item>
+  <item name="ClosePlayer.PlayerClosed.ActionSaved">I dati del play sono stati salvati correttamente, l'attività è stata registrata e puoi chiudere la finestra tranquillamente.</item>
+  <item name="ClosePlayer.PlayerClosed">I dati del play sono stati salvati correttamente, puoi chiudere la finestra tranquillamente.</item>
+  <item name="ClosePlayer.PlayerClosedNotSaved">I dati del play sono stati salvati correttamente ma non quelli relativi all'attività, puoi chiudere la finestra ed eventualmente riprovare.</item>
+  <item name="ClosePlayer.SessionExpired">La sessione di lavoro è scaduta, devi riaccedere alla piattaforma per guardare il file.</item>
+  <item name="ClosePlayer.Close">Chiudi la finestra del play.</item>
+  <item name="ClosePlayer.CloseForError">ATTENZIONE: errore nella visualizzazione del file, chiudere la finestra del player !.</item>
+  <item name="PlayerClosedMessage.Successful"  mustcontains="{0}" placeholder="true">I dati del play del file {0} sono stati salvati correttamente, puoi chiudere la finestra tranquillamente</item>
+  <item name="PlayerClosedMessage.EvaluationSaved"  mustcontains="{0}" placeholder="true">I dati del play del file {0} sono stati salvati correttamente, l'attività è stata registrata e puoi chiudere la finestra tranquillamente.</item>
+  <item name="PlayerClosedMessage.EvaluationNotSaved"  mustcontains="{0}" placeholder="true">I dati del play del file {0} sono stati salvati correttamente ma non quelli relativi allo svolgimento dell'attività, puoi chiudere la finestra ed eventualmente riprovare.</item>
+  <item name="PlayerClosedMessage.SessionExpired"  mustcontains="{0}" placeholder="true">La sessione di lavoro è scaduta, devi riaccedere alla piattaforma per guardare il file {0}</item>
+  <item name="PlayerClosedMessage.ClosedForError"  mustcontains="{0}" placeholder="true">ATTENZIONE: errore nella visualizzazione del file {0}, chiudere la finestra del player !.</item>
+  <item name="PlayerClosedMessage.Close">Chiudi la finestra del play.</item>
+  <item name="LBinlineInfoTitle.text">Dettagli elemento</item>
+  <item name="LBinlineInfoTitle.ItemType.Folder">Dettagli cartella</item>
+  <item name="LBinlineInfoTitle.ItemType.File">Dettagli file</item>
+  <item name="LBinlineInfoTitle.ItemType.Link">Dettagli url</item>
+  <item name="LBinlineInfoTitle.ItemType.ScormPackage">Dettagli pacchetto SCORM</item>
+  <item name="LBinlineInfoTitle.ItemType.Multimedia">Dettagli pacchetto multimediale</item>
+  <item name="LBinlineInfoTitle.ItemType.VideoStreaming">Dettagli video</item>
+  <item name="LBinlineInfoTitle.ItemType.SharedDocument">Dettagli documento condiviso</item>
+  <item name="HYPmoreItemInfo.text">visualizza avanzati</item>
+  <item name="HYPmoreItemInfo.ToolTip">visualizza dettagli avanzati</item>
+  <item name="LTitemName_t.text">Nome:</item>
+  <item name="LTitemUrl_t.text">Url:</item>
+  <item name="LBitemDescription_t.text">Descrizione</item>
+  <item name="LTitemSizeTitle.text">Dimensione:</item>
+  <item name="LTitemAuthorTitle.text">Autore:</item>
+  <item name="LTitemCreatedOnTitle.text">Data creazione:</item>
+  <item name="LTitemUpdatedOnTitle.text">Ultima modifica:</item>
+  <item name="LTitemVersionsTitle.text">Versioni:</item>
+  <item name="LTitemVersionsValue.1">una versione</item>
+  <item name="LTitemVersionsValue.n" mustcontains="{0}" placeholder="true">{0} versioni</item>
+  <item name="LTitemMyDownloadsTitle.text">Statistiche personali:</item>
+  <item name="LTitemDownloadsTitle.text">Statistiche generali:</item>
+  <item name="downloadinfo.0">mai scaricato</item>
+  <item name="downloadinfo.1">scaricato una volta</item>
+  <item name="downloadinfo.n" mustcontains="{0}" placeholder="true">scaricato {0} volte</item>
+  <item name="LTitemTypeTitle.text">Tipo file:</item>
+  <item name="Info.ItemType.None"></item>
+  <item name="Info.ItemType.File">File</item>
+  <item name="Info.ItemType.ScormPackage">Pacchetto scorm</item>
+  <item name="Info.ItemType.Folder">Cartella</item>
+  <item name="Info.ItemType.VideoStreaming">VideoStreaming</item>
+  <item name="Info.ItemType.Multimedia">Multimedia</item>
+  <item name="Info.ItemType.Link">Url</item>
+  <item name="Info.ItemType.SharedDocument">Documento condiviso</item>
+  <item name="LTitemAllowUploadTitle.text">Caricamento dati:</item>
+  <item name="Folder.AllowUpload.True">Consentita la creazione di cartelle ed il caricamento di file</item>
+  <item name="Folder.AllowUpload.False">Non consentito</item>
+  <item name="LTitemVisibilityTitle.text">Visibilità:</item>
+  <item name="Item.Visibility.False">Solo al proprietario o agli amministratori.</item>
+  <item name="LTitemStatusTitle.text">Stato:</item>
+  <item name="Info.ItemAvailability.notavailable">Non disponibile per l'utilizzo.</item>
+  <item name="Info.ItemAvailability.transfer" >Non disponibile per l'utilizzo, il pacchetto è in fase di trasferimento.</item>
+  <item name="Info.ItemAvailability.waitingsettings" >Non disponibile per l'utilizzo, il pacchetto è in attesa di configurazione da parte del proprietario.</item>
+  <item name="Info.ItemAvailability.witherrors" >Non disponibile per l'utilizzo, la procedura di messa in linea ha generato degli errori.</item>
+  <item name="Info.ItemAvailability.increation" >Non disponibile per l'utilizzo, il pacchetto caricato sta per essere messo in linea.</item>
+  <item name="Info.ItemAvailability.unzip" >Non disponibile per l'utilizzo, il pacchetto caricato è in fase di analisi.</item>
+  <item name="Info.ItemAvailability.unableToUnzip" >Non disponibile per l'utilizzo, il pacchetto caricato NON può essere scompattato.</item>
+  <item name="Info.ItemAvailability.unableToOverwrite" >Non disponibile per l'utilizzo, non è stato possibile sovrascrivere la versione precedente.</item>
+  <item name="Info.ItemAvailability.invalidtype">Non disponibile per l'utilizzo, il pacchetto caricato sembra non essere del formato corretto.</item>
+  <item name="Info.ItemAvailability.notavailable">Non disponibile per l'utilizzo.</item>
+  <item name="LTpermissionRolesHeader.text">Ruolo/Persona</item>
+  <item name="LTpermissionHeader.text">Permessi</item>
+  <item name="HYPmanagePermissions.text">Gestione permessi</item>
+  <item name="HYPmanagePermissions.ToolTip">Gestione permessi</item>
+  <item name="UnknownUserNameWithId" mustcontains="{0}" placeholder="true">({0}) Utente rimosso</item>
+  <item name="MoreItems.AssignmentType.role">altri ruoli ({0})</item>
+  <item name="MoreItems.AssignmentType.person">altre persone ({0})</item>
+  <item name="MoreItems.AssignmentType.personType">altre tipi utente ({0})</item>
+  <item name="PermissionsTranslation.UnknownUser" mustcontains="{0}" placeholder="true">({0}) Utente rimosso</item>
+  <item name="PermissionsTranslation.CommunityPermission">Tutti gli iscritti</item>
+  <item name="PermissionsTranslation.DenyedPermission">Non consentito:</item>
+  <item name="PermissionsTranslation.AllowedPermission">Consentito:</item>
+  <item name="PermissionsTranslation.InheritedPermission">Ereditati dalla cartella padre/i - </item>
+  <item name="PermissionsTranslation.NoPermission">nessuno</item>
+  <item name="PermissionsTranslation.MoreInfoOnAdvancedDetails">maggiori informazioni nei dettagli avanzati</item>
+  <item name="Permissions.Base2Permission.DownloadOrPlay">Visualizzazione</item>
+  <item name="Permissions.Base2Permission.Upload">Aggiunta (file, cartelle, ecc)</item>
+  <item name="HYPviewPermissions.text">Vedi dettagli permessi</item>
+  <item name="HYPviewPermissions.ToolTip">Vedi dettagli sui permessi di accesso</item>
+  <item name="HYPgotoViewDetailsPage.text">Vedi dettagli</item>
+  <item name="HYPgotoViewDetailsPage.ToolTip">Vai alla pagina per la visualizzazione dei dati.</item>
+  <item name="HYPgotoEditDetailsPage.text">Modifica</item>
+  <item name="HYPgotoEditDetailsPage.ToolTip">Vai alla pagina per la modifica dei dati.</item>
+  <item name="BTNsaveItemDetails.text">Salva</item>
+  <item name="BTNsaveItemDetails.ToolTip">Salva le modifiche apportate.</item>
+  <item name="BTNhideItem.text">Nascondi</item>
+  <item name="BTNhideItem.ToolTip">Nasconde l'oggetto.</item>
+  <item name="BTNshowItem.text">Mostra</item>
+  <item name="BTNshowItem.ToolTip">Mostra l'oggetto.</item>
+  <item name="IViewEditViewDetails.DisplayUnknownItem.Edit.True">L'oggetto da modificare non è stato individuato.</item>
+  <item name="IViewEditViewDetails.DisplayUnknownItem.Edit.False">L'oggetto di cui visualizzare i dettagli non è stato individuato.</item>
+  <item name="Edit.ServiceTitle.ItemType.None">Modifica file</item>
+  <item name="Edit.ServiceTitle.ItemType.File">Modifica file</item>
+  <item name="Edit.ServiceTitle.ItemType.ScormPackage">Modifica pacchetto SCORM</item>
+  <item name="Edit.ServiceTitle.ItemType.Folder">Modifica cartella</item>
+  <item name="Edit.ServiceTitle.ItemType.VideoStreaming">Modifica video</item>
+  <item name="Edit.ServiceTitle.ItemType.Multimedia">Modifica pacchetto Multimediale</item>
+  <item name="Edit.ServiceTitle.ItemType.Link">Modifica link</item>
+  <item name="Edit.ServiceTitle.ItemType.SharedDocument">Modifica documento condiviso</item>
+  <item name="Edit.ServiceTitle.NoPermission.ItemType.None">Non disponi dei permessi per modificare il file.</item>
+  <item name="Edit.ServiceTitle.NoPermission.ItemType.File">Non disponi dei permessi per modificare il file.</item>
+  <item name="Edit.ServiceTitle.NoPermission.ItemType.ScormPackage">Non disponi dei permessi per modificare il pacchetto SCORM.</item>
+  <item name="Edit.ServiceTitle.NoPermission.ItemType.Folder">Non disponi dei permessi per modificare la cartella.</item>
+  <item name="Edit.ServiceTitle.NoPermission.ItemType.VideoStreaming">Non disponi dei permessi per modificare il video.</item>
+  <item name="Edit.ServiceTitle.NoPermission.ItemType.Multimedia">Non disponi dei permessi per modificare il pacchetto Multimediale.</item>
+  <item name="Edit.ServiceTitle.NoPermission.ItemType.Link">Non disponi dei permessi per modificare il link</item>
+  <item name="Edit.ServiceTitle.NoPermission.ItemType.SharedDocument">Non disponi dei permessi per modificare il documento condiviso</item>
+  <item name="Details.ServiceTitle.ItemType.None">Dettagli file</item>
+  <item name="Details.ServiceTitle.ItemType.File">Dettagli file</item>
+  <item name="Details.ServiceTitle.ItemType.ScormPackage">Dettagli pacchetto SCORM</item>
+  <item name="Details.ServiceTitle.ItemType.Folder">Dettagli cartella</item>
+  <item name="Details.ServiceTitle.ItemType.VideoStreaming">Dettagli video</item>
+  <item name="Details.ServiceTitle.ItemType.Multimedia">Dettagli pacchetto Multimediale</item>
+  <item name="Details.ServiceTitle.ItemType.Link">Dettagli link</item>
+  <item name="Details.ServiceTitle.ItemType.SharedDocument">Dettagli documento condiviso</item>
+  <item name="Details.ServiceTitle.NoPermission.ItemType.None">Non disponi dei permessi per visualizzare i dettagli del file</item>
+  <item name="Details.ServiceTitle.NoPermission.ItemType.File">Non disponi dei permessi per visualizzare i dettagli del file</item>
+  <item name="Details.ServiceTitle.NoPermission.ItemType.ScormPackage">Non disponi dei permessi per visualizzare i dettagli del pacchetto SCORM</item>
+  <item name="Details.ServiceTitle.NoPermission.ItemType.Folder">Non disponi dei permessi per visualizzare i dettagli della cartella</item>
+  <item name="Details.ServiceTitle.NoPermission.ItemType.VideoStreaming">Non disponi dei permessi per visualizzare i dettagli del video</item>
+  <item name="Details.ServiceTitle.NoPermission.ItemType.Multimedia">Non disponi dei permessi per visualizzare i dettagli del pacchetto Multimediale</item>
+  <item name="Details.ServiceTitle.NoPermission.ItemType.Link">Non disponi dei permessi per visualizzare i dettagli del link</item>
+  <item name="Details.ServiceTitle.NoPermission.ItemType.SharedDocument">Non disponi dei permessi per visualizzare i dettagli del documento condiviso</item>
+  <item name="LBemptyPreview.text">Anteprima non disponibile.</item>
+  <item name="LTinformationSection.text">Informazioni base</item>
+  <item name="LTthumbnailSection.text">Anteprima</item>
+  <item name="LTdescriptionSection.text">Descrizione</item>
+  <item name="LTitemUrlName_t.text">Nome da visualizzare:</item>
+  <item name="LBitemEditTagsTitle.text">Tags:</item>
+  <item name="HYPplayItem.text">Visualizza</item>
+  <item name="HYPplayItem.ToolTip">Visualizza il file.</item>
+  <item name="HYPdownloadItem.text">Scarica</item>
+  <item name="HYPdownloadItem.ToolTip">Scarica il file.</item>
+  <item name="LTdisplayModeTitle.text">Modalità visualizzazione:</item>
+  <item name="CBXallowUpload.text">consenti</item>
+  <item name="Select.DisplayModeTranslation.auto">automatica (determinata dal tipo di file)</item>
+  <item name="Select.DisplayModeTranslation.onlydownload">solo download</item>
+  <item name="Select.DisplayModeTranslation.onlyotherwindow">in un altra finestra del browser</item>
+  <item name="Select.DisplayModeTranslation.onlymodal">solo in finestra modale</item>
+  <item name="Select.DisplayModeTranslation.downloadandpreview">in download ed anteprima</item>
+  <item name="Select.DisplayModeTranslation.otherwindowormodal">in un altra finestra del browser o in finestra modale</item>
+  <item name="UserMessageType.detailsNoPermissionToSave.ItemType.None">Non hai i permessi per modificare i dati del file.</item>
+  <item name="UserMessageType.detailsNoPermissionToSave.ItemType.File">Non hai i permessi per modificare i dati del file.</item>
+  <item name="UserMessageType.detailsNoPermissionToSave.ItemType.ScormPackage">Non hai i permessi per modificare i dati del pacchetto SCORM</item>
+  <item name="UserMessageType.detailsNoPermissionToSave.ItemType.Folder">Non hai i permessi per modificare i dati della cartella.</item>
+  <item name="UserMessageType.detailsNoPermissionToSave.ItemType.VideoStreaming">Non hai i permessi per modificare i dati del video.</item>
+  <item name="UserMessageType.detailsNoPermissionToSave.ItemType.Multimedia">Non hai i permessi per modificare i dati del pacchetto Multimediale</item>
+  <item name="UserMessageType.detailsNoPermissionToSave.ItemType.Link">Non hai i permessi per modificare i dati del link</item>
+  <item name="IViewItemDetails.NameExist.ItemType.Link" mustcontains="#name#|#foldername#" placeholder="true">Il nome #name# esiste già nella cartella #foldername#, selezionare un altro nome per il file</item>
+  <item name="IViewItemDetails.NameExist.ItemType.File" mustcontains="#name#|#foldername#" placeholder="true">Il nome #name# esiste già nella cartella #foldername#, selezionare un altro nome per il file</item>
+  <item name="IViewItemDetails.NameExist.ItemType.ScormPackage" mustcontains="#name#|#foldername#" placeholder="true">Il nome #name# esiste già nella cartella #foldername#, selezionare un altro nome per il pacchetto SCORM</item>
+  <item name="IViewItemDetails.NameExist.ItemType.Folder" mustcontains="#name#|#foldername#" placeholder="true">Il nome #name# esiste già nella cartella #foldername#, selezionare un altro nome per la cartella</item>
+  <item name="IViewItemDetails.NameExist.ItemType.VideoStreaming" mustcontains="#name#|#foldername#" placeholder="true">Il nome #name# esiste già nella cartella #foldername#, selezionare un altro nome per il video</item>
+  <item name="IViewItemDetails.NameExist.ItemType.Multimedia" mustcontains="#name#|#foldername#" placeholder="true">Il nome #name# esiste già nella cartella #foldername#, selezionare un altro nome per il pacchetto Multimediale</item>
+  <item name="IViewItemDetails.NameExist.ItemType.Link" mustcontains="#name#|#foldername#" placeholder="true">Il nome #name# esiste già nella cartella #foldername#, selezionare un altro nome per il link oppure lasciare il campo vuoto (il nome visualizzato sarà infatti l'url stessa).</item>
+  <item name="IViewItemDetails.UrlExist" mustcontains="#url#|#foldername#" placeholder="true">L'indirizzo #url# esiste già nella cartella #foldername#.</item>
+  <item name="IViewItemDetails.DisplayUnknownItem.ItemAction.hide">Non è stato possibile nascondere l'oggetto: oggetto NON individuato.</item>
+  <item name="IViewItemDetails.DisplayUnknownItem.ItemAction.show">Non è stato possibile rendere visibile l'oggetto: oggetto NON individuato.</item>
+  <item name="IViewItemDetails.DisplayUnknownItem.ItemAction.edit">Non è stato possibile salvare le modifiche l'oggetto: oggetto NON individuato.</item>
+  <item name="IViewItemDetails.ItemSaving.None">Le modifiche ai dati dell'oggetto NON sono state salvate.</item>
+  <item name="IViewItemDetails.ItemSaving.NameDuplicate">I dati dell'oggetto sono stati salvati ad eccezione del nome: esiste già nella cartella attuale in cui il file si trova.</item>
+  <item name="IViewItemDetails.ItemSaving.UrlDuplicate">I dati dell'oggetto sono stati salvati ad eccezione dell'indirizzo del link: esiste già nella cartella.</item>
+  <item name="IViewItemDetails.ItemSaving.NameAndUrlDuplicate">I dati dell'oggetto sono stati salvati ad eccezione dell'indirizzo del link e del nome da visualizzare: esistono già nella cartella.</item>
+  <item name="IViewItemDetails.ItemSaving.Saved">I dati del file sono stati salvati correttamente.</item>
+  <item name="LTversionSection.text">Versioni</item>
+  <item name="LTversionName_t.text">Nome</item>
+  <item name="LTversionSize_t.text">Dimensioni</item>
+  <item name="LTversionDate_t.text">Data</item>
+  <item name="LTversionAuthor_t.text">Autore</item>
+  <item name="BTNaddVersionToItem.text">Nuova versione</item>
+  <item name="BTNaddVersionToItem.ToolTip">Aggiungi una nuova versione al file</item>
+  <item name="BTNpromoteItemVersion.text"></item>
+  <item name="BTNpromoteItemVersion.ToolTip">Imposta come versione attuale dell'oggetto</item>
+  <item name="HYPplayItem.text">Visualizza</item>
+  <item name="HYPplayItem.ToolTip">Visualizza la versione selezionata.</item>
+  <item name="HYPdownloadItem.text">Scarica</item>
+  <item name="HYPdownloadItem.ToolTip">Scarica la versione selezionata del file.</item>
+  <item name="UserMessageType.versionAdded">Nuova versione aggiunta.</item>
+  <item name="UserMessageType.versionNotAdded">Non è stato possibile aggiungere una nuova versione.</item>
+  <item name="UserMessageType.versionPromoted">La versione selezionata è diventata l'ultima versione del file.</item>
+  <item name="UserMessageType.versionNotPromoted">La versione selezionata NON è diventata l'ultima versione del file.</item>
+  <item name="UserMessageType.versionItemNoPermission">Non disponi dei permessi per gestire le versioni di questo file.</item>
+  <item name="UserMessageType.versionItemNotFound">File non trovato, impossibile eseguire l'operazione richiesta.</item>
+  <item name="LTpermissionsSection.text">Permessi</item>
+  <item name="LTpermissionsRolePerson_t.text">Ruolo/Persona</item>
+  <item name="LTpermissionsPermissions_t.text">Permessi</item>
+  <item name="LNBaddRoles.text">Aggiungi ruolo/i</item>
+  <item name="LNBaddRoles.ToolTip">Aggiungi ruolo/i</item>
+  <item name="LNBaddProfileTypes.text">Aggiungi tipologia di profilo</item>
+  <item name="LNBaddProfileTypes.ToolTip">Aggiungi tipologia di profilo</item>
+  <item name="LNBaddUsers.text">Aggiungi utente/i</item>
+  <item name="LNBaddUsers.ToolTip">Aggiungi utente/i</item>
+  <item name="BTNdeleteItemPermission.text"></item>
+  <item name="BTNdeleteItemPermission.ToolTip">Cancella</item>
+  <item name="LBprofileTypesDescription.text">Seleziona le tipologie di profilo a cui rendere accessibile l'oggetto:</item>
+  <item name="HYPcloseAddProfileTypesDialog.text">Annulla</item>
+  <item name="HYPcloseAddProfileTypesDialog.ToolTip">Chiudi la finestra</item>
+  <item name="BTNsaveProfileTypesAssignments.text">Associa</item>
+  <item name="BTNsaveProfileTypesAssignments.ToolTip">Associa le tipologie selezionate</item>
+  <item name="LBselectRolesDescription.text">Seleziona  a quali ruoli della comunità rendere accessibile l'oggetto:</item>
+  <item name="LBcommunityName_t.text">Comunità:</item>
+  <item name="HYPcloseAddRoleDialog.text">Annulla</item>
+  <item name="HYPcloseAddRoleDialog.ToolTip">Chiudi la finestra</item>
+  <item name="BTNsaveRoleAssignments.text">Associa</item>
+  <item name="BTNsaveRoleAssignments.ToolTip">Associa le tipologie selezionate</item>
+  <item name="UsersSelector.Community">Seleziona gli utenti della comunità a cui rendere visibile l'oggetto:</item>
+  <item name="UsersSelector.Portal">Seleziona gli utenti del portale a cui rendere visibile l'oggetto:</item>
+  <item name="UsersSelector.MyUsers">Seleziona gli utenti delle tue comunità a cui rendere visibile l'oggetto:</item>
+  <item name="LTpendingChangesOnPermissions.text">I cambiamenti ai permessi di accesso NON sono stati ancora salvati in modo definitivo, utilizzare gli appositi pulsanti per ripristinare i permessi precedenti o per salvare le nuove impostazioni.</item>
+  <item name="LNBreloadPermissionsToItem.text">Annulla modifiche</item>
+  <item name="LNBreloadPermissionsToItem.ToolTip">Annulla le modifiche alle impostazioni di accesso all'oggetto</item>
+  <item name="LNBapplyPermissionsToItem.text">Applica</item>
+  <item name="LNBapplyPermissionsToItem.ToolTip">Applica le impostazioni di accesso all'oggetto</item>
+  <item name="LNBapplyPermissionsToItem.Folder.text">Applica SOLO alla cartella</item>
+  <item name="LNBapplyPermissionsToItem.Folder.ToolTip">Applica le impostazioni di accesso SOLO alla cartella</item>
+  <item name="LNBapplyPermissionsToContent.text">Applica alla cartella ed al contenuto</item>
+  <item name="LNBapplyPermissionsToContent.ToolTip">Applica alla cartella ed al contenuto</item>
+  <item name="UserMessageType.permissionsSaved">Permessi di accesso al file salvati correttamente.</item>
+  <item name="UserMessageType.permissionsUnableToSave">I permessi di accesso all'oggetto NON sono stati salvati correttamente.</item>
+  <item name="UserMessageType.permissionsNoPermissionToSave">Non disponi dei permessi necessari per modificare i permessi di accesso all'oggetto.</item>
+  <item name="UserMessageType.permissionsNoItemToSave">L'oggetto risulterebbe inaccessibile con i permessi impostati, correggere le impostazioni di accesso al file.</item>
+  <item name="UserMessageType.permissionsReloaded">I permessi salvati precedentemente sono stati ricaricati.</item>
+  <item name="LBfolderToApplyOptions.text" mustcontains="{0}" placeholder="true">Selezionare una delle opzioni seguenti per stabilire come applicare i permessi alla cartella {0}:.</item>
+  <item name="LBapplyToFolder.text">Applica SOLO alla cartella: applica i permessi solo alla cartella, non al suo eventuale contenuto.</item>
+  <item name="BTNapplyToFolder.text">Applica SOLO alla cartella</item>
+  <item name="BTNapplyToFolder.ToolTip">Applica le impostazioni di accesso SOLO alla cartella</item>
+  <item name="LBapplyToFolderContent.text">Applica alla cartella ed al contenuto: applica i permessi alla cartella e agli oggetti in essa presenti.</item>
+  <item name="BTNapplyToFolderContent.text">Applica alla cartella ed al contenuto</item>
+  <item name="BTNapplyToFolderContent.ToolTip">Applica alla cartella ed al contenuto</item>
+  <item name="BTNsaveDefaultDocument.text">Salva</item>
+  <item name="BTNsaveDefaultDocument.ToolTip">Salva le impostazioni relative al file predefinito</item>
+  <item name="MultimediaSettings.ServiceTitle">Impostazioni pacchetto multimediale</item>
+  <item name="MultimediaSettings.NoPermission">Non disponi dei permessi per modificare le impostazioni del pacchetto multimediale</item>
+  <item name="LBdefaultDocument_t.text">Documento principale:</item>
+  <item name="LBdescriptionMultimediaSettings.text">Impostare il file principale da caricare all'avvio del pacchetto Multimediale. Selezionare il file desiderato dalla lista dei file presenti nell'albero sottostante:</item>
+  <item name="LBdefaultDocument.text">Nessun documento principale selezionato.</item>
+  <item name="UserMessageType.multimediaSettingsSaved" mustcontains="#filename#|#defaultdocument#" placeholder="true">Il file #defaultdocument# è il nuovo file predefinito del pacchetto Multimediale #filename#.</item>
+  <item name="UserMessageType.multimediaSettingsUnableToSave" mustcontains="#filename#|#defaultdocument#" placeholder="true">Non è stato possibile definire il file #defaultdocument# come nuovo file predefinito del pacchetto Multimediale #filename#.</item>
+  <item name="UserMessageType.multimediaSettingsInvalidType" mustcontains="#filename#" placeholder="true">Il file #filename# NON è un pacchetto Multimediale.</item>
+  <item name="UserMessageType.multimediaSettingsNoPermission" mustcontains="#filename#" placeholder="true">Non hai i permessi per modificare le impostazioni del pacchetto Multimediale #filename#.</item>
+  <item name="UserMessageType.multimediaSettingsNoDefaultDocument" mustcontains="#filename#" placeholder="true">ATTENZIONE: il pacchetto Multimediale #filename# NON ha alcun file predefinito da eseguire all'play.</item>
+  <item name="UserMessageType.multimediaSettingsDocumentNotFound" mustcontains="#filename#" placeholder="true">ATTENZIONE: il file predefinito prescelto NON è stato individuato, impossibile impostarlo come file predefinito per il pacchetto Multimediale #filename#.</item>
+  
+  
+  <item name="UserMessageType.multimediaSettingsInvalidStatus.ItemAvailability.available" mustcontains="#filename#" placeholder="true">ATTENZIONE: il pacchetto Multimediale #filename# NON è al momento disponibile per la configurazione.</item>
+  <item name="UserMessageType.multimediaSettingsInvalidStatus.ItemAvailability.notavailable" mustcontains="#filename#" placeholder="true">ATTENZIONE: il pacchetto Multimediale #filename# NON è disponibile per l'utilizzo.</item>
+  <item name="UserMessageType.multimediaSettingsInvalidStatus.ItemAvailability.transfer" mustcontains="#filename#" placeholder="true">ATTENZIONE: il pacchetto Multimediale #filename# è in fase di trasferimento: NON è al momento possibile gestirne le impostazioni.</item>
+  <item name="UserMessageType.multimediaSettingsInvalidStatus.ItemAvailability.waitingsettings" mustcontains="#filename#" placeholder="true">ATTENZIONE: il pacchetto Multimediale #filename# è in attesa di configurazione.</item>
+  <item name="UserMessageType.multimediaSettingsInvalidStatus.ItemAvailability.witherrors" mustcontains="#filename#" placeholder="true">ATTENZIONE: il pacchetto Multimediale #filename# NON disponibile per l'utilizzo, la procedura di messa in linea ha generato degli errori.</item>
+  <item name="UserMessageType.multimediaSettingsInvalidStatus.ItemAvailability.increation" mustcontains="#filename#" placeholder="true">ATTENZIONE: il pacchetto Multimediale #filename# NON è al momento disponibile per l'utilizzo: il file sta per essere messo in linea.</item>
+  <item name="UserMessageType.multimediaSettingsInvalidStatus.ItemAvailability.unzip" mustcontains="#filename#" placeholder="true">ATTENZIONE: il pacchetto Multimediale #filename# NON è al momento disponibile per l'utilizzo: il file è in fase di analisi.</item>
+  <item name="UserMessageType.multimediaSettingsInvalidStatus.ItemAvailability.unableToUnzip" mustcontains="#filename#" placeholder="true">ATTENZIONE: il pacchetto Multimediale #filename# NON disponibile per l'utilizzo: il file caricato NON può essere scompattato.</item>
+  <item name="UserMessageType.multimediaSettingsInvalidStatus.ItemAvailability.unableToOverwrite" mustcontains="#filename#" placeholder="true">ATTENZIONE: il pacchetto Multimediale #filename# NON disponibile per l'utilizzo: NON è stato possibile sovrascrivere la versione precedente.</item>
+  <item name="UserMessageType.multimediaSettingsInvalidStatus.ItemAvailability.invalidtype" mustcontains="#filename#" placeholder="true">ATTENZIONE: il pacchetto Multimediale #filename# NON disponibile per l'utilizzo: il file NON è del formato corretto (.ZIP).</item>
+  <item name="IViewMultimediaSettings.DisplayUnknownItem">Pacchetto Multimediale sconosciuto</item>
+  <item name="BTNsaveScormSettings.text">Salva</item>
+  <item name="BTNsaveScormSettings.ToolTip">Salva le impostazioni di completamento del pacchetto SCORM</item>
+  <item name="ScormSettings.ServiceTitle">Impostazioni completamento pacchetto SCORM</item>
+  <item name="ScormSettings.NoPermission">Non disponi dei permessi per modificare le impostazioni del pacchetto SCORM</item>
+  <item name="LBdescriptionScormSettings.text">In questa pagina è possibile definire la modalità di completamento del pacchetto SCORM. L'albero sottostante rappresenta la struttura logica del pacchetto, è possibile lasciare che il pacchetto stesso dia le informazioni relative al proprio completamento/superamento oppure personalizzare le impostazioni di completamento a livello di pacchetto o di singola attività. Al salvataggio le nuove impostazioni verranno applicate a tutti i play in corso o successivi.</item>
+  <item name="LBdescriptionScormSettings.viewMode">Impostazioni relative al completamento del pacchetto SCORM</item>
+  <item name="LTscormSettingsBoxTitle.text">Impostazioni completamento</item>
+  <item name="LBscormSettingsBoxModified.text">(modificate)</item>
+  <item name="LTscormSettingsBoxDescription.text">Selezionare la modalità di completamento predefinita per questo pacchetto SCORM.</item>
+  <item name="HYPscormOriginalSettings.text">Originali (da pacchetto SCORM)</item>
+  <item name="HYPscormOriginalSettings.ToolTip">Originali (da pacchetto SCORM)</item>
+  <item name="HYPscormPackageSettings.text">Personalizzate a livello di pacchetto</item>
+  <item name="HYPscormPackageSettings.ToolTip">Personalizzate a livello di pacchetto</item>
+  <item name="HYPscormActivitySettings.text">Personalizzate a livello di attività</item>
+  <item name="HYPscormActivitySettings.ToolTip">Personalizzate a livello di singole attività</item>
+  <item name="LTscormPackageSettingsBoxTitle.text">Impostazioni pacchetto</item>
+  <item name="LBscormPackageSettingsBoxModified.text">(modificate)</item>
+  <item name="LBscormActivitySettingsBoxModified.text">(modificate)</item>
+  <item name="LTscormMessage.text">Stai visualizzando un sotto-insieme di tutte le attività disponibili in base all'organizzazione/cartella selezionata.</item>
+  <item name="HYPseeAllScormActivities.text">premi qui per vederle tutte</item>
+  <item name="HYPseeAllScormActivities.ToolTip">premi qui per vederle tutte</item>
+  <item name="LBcheckScormCompletion.text">Completamento SCORM</item>
+  <item name="LBcheckTime.text">Tempo minimo permanenza</item>
+  <item name="LBcheckScore.text">Punteggio minimo</item>
+  <item name="IViewScormSettings.DisplayUnknownItem">Pacchetto SCORM sconosciuto</item>
+  <item name="ScormSettingsError.time">un elemento con tempo minimo NON valido</item>
+  <item name="ScormSettingsError.time.n" mustcontains="{0}" placeholder="true">{0} elementi con tempo minimo NON valido</item>
+  <item name="ScormSettingsError.score">un elemento con punteggio minimo NON valido</item>
+  <item name="ScormSettingsError.score.n" mustcontains="{0}" placeholder="true">{0} elementi con punteggio minimo NON valido</item>
+  <item name="ScormSettingsError.timescore">un elemento con tempo e punteggio minimo NON validi</item>
+  <item name="ScormSettingsError.timescore.n" mustcontains="{0}" placeholder="true">{0} elementi con tempo e punteggio minimo NON validi</item>
+  <item name="UserMessageType.scormSettingsErrors">ATTENZIONE le impostazioni NON possono essere salvate perchè vi sono alcuni elementi con valori non validi: </item>
+  <item name="UserMessageType.scormSettingsSaved" mustcontains="#filename#" placeholder="true">Le impostazioni di completamento per il pacchetto SCORM #filename# sono state salvate correttamente.</item>
+  <item name="UserMessageType.scormSettingsUnableToSave" mustcontains="#filename#" placeholder="true">Le impostazioni di completamento per il pacchetto SCORM #filename# NON sono state salvate correttamente.</item>
+  <item name="UserMessageType.scormSettingsInvalidType" mustcontains="#filename#" placeholder="true">Il file #filename# NON è un pacchetto SCORM.</item>
+  <item name="UserMessageType.scormSettingsNoPermission" mustcontains="#filename#" placeholder="true">Non hai i permessi per modificare le impostazioni del pacchetto SCORM #filename#.</item>
+  <item name="UserMessageType.scormSettingsNotFound" mustcontains="#filename#" placeholder="true">ATTENZIONE: le impostazioni di completamento del pacchetto SCORM #filename# NON sono state individuate nel sistema.</item>
+  <item name="UserMessageType.scormSettingsWaitingToSet" mustcontains="#filename#" placeholder="true">ATTENZIONE: il pacchetto SCORM #filename# è in attesa delle impostazioni relative il completamento.</item>
+  <item name="UserMessageType.scormSettingsInvalidStatus.ItemAvailability.notavailable" mustcontains="#filename#" placeholder="true">ATTENZIONE: il pacchetto SCORM #filename# NON è disponibile per l'utilizzo.</item>
+  <item name="UserMessageType.scormSettingsInvalidStatus.ItemAvailability.transfer" mustcontains="#filename#" placeholder="true">ATTENZIONE: il pacchetto SCORM #filename# è in fase di trasferimento: NON è al momento possibile gestirne le impostazioni.</item>
+  <item name="UserMessageType.scormSettingsInvalidStatus.ItemAvailability.waitingsettings" mustcontains="#filename#" placeholder="true">ATTENZIONE: il pacchetto SCORM #filename# è in attesa di configurazione.</item>
+  <item name="UserMessageType.scormSettingsInvalidStatus.ItemAvailability.witherrors" mustcontains="#filename#" placeholder="true">ATTENZIONE: il pacchetto SCORM #filename# NON disponibile per l'utilizzo, la procedura di messa in linea ha generato degli errori.</item>
+  <item name="UserMessageType.scormSettingsInvalidStatus.ItemAvailability.increation" mustcontains="#filename#" placeholder="true">ATTENZIONE: il pacchetto SCORM #filename# NON è al momento disponibile per l'utilizzo: il file sta per essere messo in linea.</item>
+  <item name="UserMessageType.scormSettingsInvalidStatus.ItemAvailability.unzip" mustcontains="#filename#" placeholder="true">ATTENZIONE: il pacchetto SCORM #filename# NON è al momento disponibile per l'utilizzo: il file è in fase di analisi.</item>
+  <item name="UserMessageType.scormSettingsInvalidStatus.ItemAvailability.unableToUnzip" mustcontains="#filename#" placeholder="true">ATTENZIONE: il pacchetto SCORM #filename# NON disponibile per l'utilizzo: il file caricato NON può essere scompattato.</item>
+  <item name="UserMessageType.scormSettingsInvalidStatus.ItemAvailability.unableToOverwrite" mustcontains="#filename#" placeholder="true">ATTENZIONE: il pacchetto SCORM #filename# NON disponibile per l'utilizzo: NON è stato possibile sovrascrivere la versione precedente.</item>
+  <item name="UserMessageType.scormSettingsInvalidStatus.ItemAvailability.invalidtype" mustcontains="#filename#" placeholder="true">ATTENZIONE: il pacchetto SCORM #filename# NON disponibile per l'utilizzo: il file NON è del formato corretto (.ZIP).</item>
+  <item name="RNVscore.ErrorMessage">Inserire un valore numerico valido !</item>
+  <item name="IViewScormSettingsView.BindNoPermessi">Non disponi dei permessi per visualizzare le impostazioni di completamento del pacchetto SCORM</item>
+  <item name="HideItemsForSessionTimeout">Sessione di lavoro scaduta, impossibile visualizzare il contenuto della pagina</item>
+  <item name="LNBselectProfileItemsIntoAllPages.text">Seleziona su tutte le pagine</item>
+  <item name="LNBselectProfileItemsIntoAllPages.Tooltip">Seleziona su tutte le pagine</item>
+  <item name="LNBunselectProfileItemsIntoAllPages.text">Deseleziona su tutte le pagine</item>
+  <item name="LNBunselectProfileItemsIntoAllPages.Tooltip">Deseleziona su tutte le pagine</item>
+  <item name="LBitemNameHeader_t.text">Nome</item>
+  <item name="LBitemStatisticsHeader_t.text">Statistiche</item>
+  <item name="LBrepositoryItemsEmpty.text">Nessun elemento individuato</item>
+  <item name="Header.StatisticType.downloads">Scaricamenti</item>
+  <item name="Header.StatisticType.mydownloads">Miei download</item>
+  <item name="Header.StatisticType.plays">Play</item>
+  <item name="Header.StatisticType.MyPlays">Miei play</item>
+  <item name="LBrecordsForPageTop_t.text">Elementi per pagina:</item>
+  <item name="LBrecordsForPage_t.text">Elementi per pagina:</item>
+  <item name="LTlinkedItemsToOtherModule.text">Questi elementi sono già stati selezionati:</item>
+  <item name="IViewModuleCommunityUploader.DisplayUploadQuotaUnavailable">Non vi è spazio disponibile per caricare dei file</item>
+  <item name="IViewModuleCommunityUploader.DisplayUploadUnavailable">Non è possibile caricare dei file nella comunità</item>
+  <item name="IViewModuleCommunityUploader.ItemUploadError.UnableToAddFileToUnknownFolder">Non è possibile caricare dei file nella cartella selezionata, non esiste !</item>
+  <item name="IViewModuleCommunityUploader.ItemUploadError.MissingPermissionsToAddFile" mustcontains="{0}" placeholder="true">Non hai i permessi per caricare i file nella cartella {0}.</item>
+  <item name="IViewModuleCommunityUploader.ItemUploadError.UnableToAddFile" mustcontains="{0}|{1}" placeholder="true">Non è stato possibile caricare {0} file nella cartella {1}.</item>
+  <item name="action.CreateFolder" mustcontains="{0}" placeholder="true">Crea una cartella nella seguente posizione del materiale di comunità: {0}</item>
+  <item name="action.UploadFile" mustcontains="{0}" placeholder="true">Carica un file nella cartella {0}</item>
+  <item name="action.RemovedObject">ATTENZIONE - L'oggetto dell'attività da svolgere è stato eliminato.</item>
+</Resource>

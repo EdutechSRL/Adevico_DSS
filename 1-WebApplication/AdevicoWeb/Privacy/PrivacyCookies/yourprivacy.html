@@ -1,0 +1,79 @@
+<!doctype html>
+<!--[if IE 9]><html class="lt-ie10" lang="en" > <![endif]-->
+<html class="no-js" lang="en" data-useragent="Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; Trident/6.0)">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Divas Cookies jQuery plugin - cookie and privacy policy</title>
+		<meta name="description" content="" />
+		<meta name="author" content="Federica Sibella - Michela Chiucini" />
+		<meta name="copyright" content="Coding Divas Copyright (c) 2014-15" />
+		<link href="favicon.gif" rel="shortcut icon" />
+		<link rel="apple-touch-icon-precomposed" href="images/apple-touch-icon.png">
+		<link rel="stylesheet" href="css/normalize.css" />
+		<link rel="stylesheet" href="css/style.css" />
+		<link rel="stylesheet" href="css/divascookies_style_dark_top.css" />
+		<link href='http://fonts.googleapis.com/css?family=Lato:400,400italic,900,700,300' rel='stylesheet' type='text/css'>		
+        <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,700,600' rel='stylesheet' type='text/css'>
+		<!--[if lt IE 9]>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.2/html5shiv.js"></script>
+		<link rel="stylesheet" href="css/ie.css" />
+		<![endif]-->
+	</head>
+	<body>
+		<!-- Header and Nav -->
+		<header class="site-header" role="banner">
+			<h1><a href="index.html">Divas Cookies demo</a></h1>
+		</header>
+		<!-- content -->
+		<section>
+			<div>
+				<h2>Your cookie &amp; privacy policy</h2>
+				<p>This is just a demo page for your extended privacy policy page.</p>
+				<p>
+					Cupcake ipsum dolor sit amet. Oat cake biscuit biscuit marshmallow. Tart I love dragée chupa chups jujubes bear claw. Bear claw dessert carrot cake I love toffee danish. Cake halvah fruitcake soufflé oat cake pastry sugar plum. Liquorice dragée unerdwear.com biscuit caramels caramels. Candy lemon drops bonbon chocolate tiramisu. Chupa chups chupa chups gingerbread. Ice cream bonbon I love candy canes applicake pie muffin chocolate cake.
+				</p>
+				<p>
+					Soufflé cotton candy unerdwear.com toffee unerdwear.com I love biscuit fruitcake dragée. Pastry tootsie roll cotton candy macaroon tiramisu gummi bears. Gingerbread I love I love I love chocolate I love carrot cake I love jelly beans. Unerdwear.com cookie gummi bears gummies chocolate cake gingerbread tootsie roll topping icing. Oat cake danish sweet roll oat cake gummi bears. Liquorice cake icing lollipop sesame snaps cotton candy biscuit. Chocolate bar bear claw marzipan cotton candy jelly-o. Jujubes lemon drops apple pie brownie cookie. Muffin bear claw gingerbread gummi bears danish I love tiramisu sweet roll.
+				</p>
+				<p>
+					Chocolate tiramisu danish unerdwear.com sweet I love. Tiramisu jelly beans topping pudding jujubes sweet roll dessert croissant. Pastry marshmallow jujubes carrot cake candy canes danish carrot cake. Pastry marshmallow gingerbread jelly I love cotton candy soufflé bear claw. Cookie croissant sweet roll. Croissant jujubes candy canes icing. Pastry gummi bears brownie sweet roll tootsie roll bear claw topping marzipan. Sweet danish gummi bears lollipop candy canes sweet roll cupcake sweet roll soufflé. Brownie lemon drops caramels. Gingerbread lemon drops apple pie muffin jelly-o I love I love bonbon.
+				</p>
+				<p>
+					Sugar plum tart chocolate bar dragée candy muffin marshmallow toffee apple pie. Cake sweet macaroon unerdwear.com. Pudding liquorice tootsie roll icing tiramisu. Chupa chups croissant cotton candy I love I love croissant donut gummies. Sweet roll candy donut croissant ice cream I love. I love cupcake tiramisu fruitcake I love biscuit dragée jelly-o. Donut cake candy bonbon.
+				</p>
+				<p>
+					Gummi bears sesame snaps fruitcake dessert sesame snaps I love tootsie roll sweet roll. Biscuit dessert marshmallow. Macaroon toffee gummies tart gummies. Liquorice marshmallow liquorice icing macaroon dessert macaroon. Chocolate cake lemon drops pudding chocolate cake ice cream cheesecake oat cake pie jelly-o. Chupa chups biscuit tart chocolate bar lemon drops. I love I love chupa chups. Applicake cookie I love chocolate cake bear claw I love jelly pudding I love.
+				</p>
+			</div>
+		</section>
+		<!-- footer -->
+		<footer class="clearfix">
+			<p>
+				&copy;2014 - 15 [&#9733;] <a href="http://codingdivas.net">CODING DIVAS</a> 
+			</p>
+		</footer>
+		<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+		<script type="text/javascript" src="js/jquery.divascookies-0.3.min.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function() {
+				$.DivasCookies({
+					bannerText				: "This website uses cookies in order to improve your web experience. ",		// text for the Divas Cookies banner
+					cookiePolicyLink		: "yourprivacy.html",		// link to the extended cookie policy
+					cookiePolicyLinkText	: "More info",				// text for the link to the extended cookie policy
+					thirdPartyPolicyWidget	: "",						// if set to "iubenda" tries to use the Iubenda widget
+					acceptButtonText		: "OK",						// text for the close button
+					acceptButtonSrc			: "",						// source for the close button image
+					openEffect				: "slideDown",				// opening effect for Divas Cookies banner ["fade", "slideUp", "slideDown", "slideLeft", "slideRight"]
+					openEffectDuration		: 600,						// duration of the opening effect (msec)
+					openEffectEasing		: "swing",					// easing for the opening effect
+					closeEffect				: "slideUp",				// closing effect for Divas Cookies banner ["fade", "slideUp", "slideDown", "slideLeft", "slideRight"]
+					closeEffectDuration		: 600,						// duration of the closing effect (msec)
+					closeEffectEasing		: "swing",					// easing for the closing effect
+					debugMode				: false,					// if true, the options are checked and warnings are shown
+					saveUserPreferences		: false						// if true, sets a cookie after the Divas Cookies is closed the first time and never shows it again
+				});
+			});
+		</script>
+	</body>
+</html>

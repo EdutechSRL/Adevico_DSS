@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping 
+	xmlns="urn:nhibernate-mapping-2.2" 
+	assembly="lm.Comol.Core.BaseModules" 
+	namespace="lm.Comol.Core.BaseModules.Tickets.Domain">
+	
+	<class name="liteDraftTicket" table="TK_Ticket" >
+		
+		<id name="Id" column="Id" type="Int64">
+			<generator class="native"/>
+		</id>
+
+		<property name="CreatorId" type="Int64" column="IdCreator" />
+		<property name="IsDraft" type="Boolean" column="IsDraft" />
+
+		<property name="Deleted" type="lm.Comol.Core.DomainModel.BaseStatusDeleted,lm.Comol.Core.DomainModel" column="_Deleted" />
+		
+	</class>
+	
+</hibernate-mapping>

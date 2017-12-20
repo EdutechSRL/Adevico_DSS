@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping
+	xmlns="urn:nhibernate-mapping-2.2"
+	assembly="lm.Comol.Core.BaseModules"
+	namespace="lm.Comol.Core.BaseModules.Tickets.Domain">
+
+	<class name="Message" table="TK_Message" >
+
+		<id name="Id" column="Id" type="Int64">
+			<generator class="native"/>
+		</id>
+
+		<version name="TimeStamp"
+			generated="always"
+			unsaved-value="null"
+			type="BinaryBlob">
+			<column name="_Timestamp"
+				not-null="false"
+				sql-type="timestamp"/>
+		</version>
+
+		<property name="Text" type="String" column="Text" />
+		<property name="Preview" type="String" column="Preview" />
+		<property name="DisplayName" type="String" column="DisplayName" />
+
+		<property name="Type" type="lm.Comol.Core.BaseModules.Tickets.Domain.Enums.MessageType, lm.Comol.Core.BaseModules" column="MessageType"/>
+
+		<property name="UserType" type="lm.Comol.Core.BaseModules.Tickets.Domain.Enums.MessageUserType, lm.Comol.Core.BaseModules" column="UserType"/>
+
+		<property name="Action" type="lm.Comol.Core.BaseModules.Tickets.Domain.Enums.MessageActionType, lm.Comol.Core.BaseModules" column="Action"/>
+		
+		<property name="ToStatus" type="lm.Comol.Core.BaseModules.Tickets.Domain.Enums.TicketStatus, lm.Comol.Core.BaseModules" column="ToStatus"/>
+
+		<property name="ToCondition" type="lm.Comol.Core.BaseModules.Tickets.Domain.Enums.TicketCondition, lm.Comol.Core.BaseModules" column="ToCondition"/>
+		
+		<many-to-one name="Creator"
+			 class="lm.Comol.Core.BaseModules.Tickets.Domain.TicketUser"
+			 column="IdCreator" foreign-key="IdCreator" cascade="none" />
+
+		<many-to-one name="ToUser"
+			 class="lm.Comol.Core.BaseModules.Tickets.Domain.TicketUser"
+			 column="ToUser" foreign-key="ToUser" cascade="none" />
+
+		<many-to-one name="ToCategory"
+			 class="Category, lm.Comol.Core.BaseModules.Tickets.Domain.Category"
+			 column="ToCategory" foreign-key="ToCategory" cascade="none" />
+
+		<property name="SendDate" type="DateTime" column="SendDate" />
+
+		<bag name="Attachments" table="TK_File" lazy="true" fetch="subselect" cascade="save-update" inverse="true" >
+			<key column="IdMessage" />
+			<one-to-many class="lm.Comol.Core.BaseModules.Tickets.Domain.TicketFile"/>
+		</bag>
+
+		<property name="Visibility" type="Boolean" column="Visibility" />
+		<property name="IsDraft" type="Boolean" column="IsDraft" />
+
+        <property name="IsBehalf" type="Boolean" column="IsBehalf" />
+        
+		<many-to-one name="Ticket"
+					 class="lm.Comol.Core.BaseModules.Tickets.Domain.Ticket"
+					 column="IdTicket" foreign-key="IdTicket" cascade="none" />
+
+		<property name="ShowRealName" type="Boolean" column="ShowRealName" />
+
+		<property name="CreatedOn" type="DateTime" column="_CreatedOn" />
+		<many-to-one name="CreatedBy" class="lm.Comol.Core.DomainModel.Person" column="_CreatedBy" foreign-key="_CreatedBy" cascade="none" />
+		<property name="ModifiedOn" type="DateTime" column="_ModifiedOn" />
+		<many-to-one name="ModifiedBy" class="lm.Comol.Core.DomainModel.Person" column="_ModifiedBy" foreign-key="_ModifiedBy" cascade="none" />
+		<property name="CreatorProxyIpAddress" type="String" column="_CreatedProxyIPaddress" />
+		<property name="CreatorIpAddress" type="String" column="_CreatedIPaddress" />
+		<property name="ModifiedProxyIpAddress" type="String" column="_ModifiedProxyIPaddress" />
+		<property name="ModifiedIpAddress" type="String" column="_ModifiedIPaddress" />
+		<property name="Deleted" type="lm.Comol.Core.DomainModel.BaseStatusDeleted,lm.Comol.Core.DomainModel" column="_Deleted" />
+
+	</class>
+
+</hibernate-mapping>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="3f4e26e0-584d-463f-9946-c22eb54d5869" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:9698/ServiceNotifications/mex" Protocol="mex" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="6964b5c8-114b-49d4-b41d-15536cf9d208" SourceId="1" SourceUrl="http://localhost:9698/ServiceNotifications/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="f3c6ccb5-4b29-4504-844e-50188b15b83e" SourceId="1" SourceUrl="http://localhost:9698/ServiceNotifications/mex" />
+    <MetadataFile FileName="lm.Comol.Core.Notification.Domain.xsd" MetadataType="Schema" ID="4dd5325f-69ed-42f3-8e24-d8b18b5f57dd" SourceId="1" SourceUrl="http://localhost:9698/ServiceNotifications/mex" />
+    <MetadataFile FileName="Arrays.xsd" MetadataType="Schema" ID="d1481e30-3051-4a7c-9d24-b16de1f237a8" SourceId="1" SourceUrl="http://localhost:9698/ServiceNotifications/mex" />
+    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="f8f9864a-2394-4369-a9c2-6d63c32d9ef8" SourceId="1" SourceUrl="http://localhost:9698/ServiceNotifications/mex" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

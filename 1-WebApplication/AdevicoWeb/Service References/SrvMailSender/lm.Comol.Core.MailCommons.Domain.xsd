@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/lm.Comol.Core.MailCommons.Domain" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/lm.Comol.Core.MailCommons.Domain" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:simpleType name="RecipientStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Available">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Blocked">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Waiting">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">4</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="All">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">7</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="RecipientStatus" nillable="true" type="tns:RecipientStatus" />
+  <xs:simpleType name="RecipientType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="To">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CC">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="BCC">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="RecipientType" nillable="true" type="tns:RecipientType" />
+  <xs:simpleType name="SubjectPrefixType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="SystemConfiguration" />
+      <xs:enumeration value="None" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="SubjectPrefixType" nillable="true" type="tns:SubjectPrefixType" />
+  <xs:simpleType name="SenderUserType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="LoggedUser" />
+      <xs:enumeration value="System" />
+      <xs:enumeration value="OtherUser" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="SenderUserType" nillable="true" type="tns:SenderUserType" />
+  <xs:simpleType name="Signature">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None" />
+      <xs:enumeration value="FromConfigurationSettings" />
+      <xs:enumeration value="FromTemplate" />
+      <xs:enumeration value="FromSkin" />
+      <xs:enumeration value="FromField" />
+      <xs:enumeration value="FromNoReplySettings" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Signature" nillable="true" type="tns:Signature" />
+</xs:schema>

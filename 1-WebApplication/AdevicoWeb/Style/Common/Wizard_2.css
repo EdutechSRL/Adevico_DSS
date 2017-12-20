@@ -1,0 +1,241 @@
+﻿div#Wizard div.StepContent div.StepData              
+{
+    min-height: 250px; 
+	border:  1px solid #000;
+	border-top: none;
+	padding: 1em 1.5em;
+	-moz-border-radius-topleft: 0;
+	-moz-border-radius-topright: 0;
+	-moz-border-radius-bottomright: 6px;
+	-moz-border-radius-bottomleft: 6px;
+	-webkit-border-radius: 0px 0px 6px 6px;
+	border-radius: 0px 0px 6px 6px;
+}
+
+div#Wizard div.StepContent div.StepData label.large { min-width: 300px; }
+div#Wizard div.StepContent div.StepData .Titolo_campo { vertical-align: top; display: inline-block; }
+
+div#Wizard div.StepContent div.StepData .Testo_Campo input,
+div#Wizard div.StepContent div.StepData .testo_campoSmall input { border: 0px; }
+
+div#Wizard div.StepContent div.StepData span.full { width: 100%; }
+div#Wizard div.StepContent div.StepData .Testo_Campo { clear: right; }
+div#Wizard div.StepContent { min-height: 250px; }
+
+div#Wizard span.Fieldrow { display: block; clear: both; }
+
+/* Allineamento RadioButtonList */
+/* Normale */
+div#Wizard div.StepContent div.StepData span.rbl_MultiElement            { display: inline-block; }
+div#Wizard div.StepContent div.StepData span.rbl_MultiElement label      { display: inline-block; width: 136px;}
+div#Wizard div.StepContent div.StepData span.rbl_MultiElement label,
+div#Wizard div.StepContent div.StepData span.rbl_MultiElement input      { vertical-align: top; }
+
+/* Allineamento RadioButtonList */
+/* Stretto (es: sì/no, max 4 char)*/
+div#Wizard div.StepContent div.StepData span.rbl_MultiElement_small            { display: inline-block; }
+div#Wizard div.StepContent div.StepData span.rbl_MultiElement_small label      { display: inline-block; width: 60px;}
+div#Wizard div.StepContent div.StepData span.rbl_MultiElement_small label,
+div#Wizard div.StepContent div.StepData span.rbl_MultiElement_small input      { vertical-align: top; }
+
+/* Allineamento RadioButtonList */
+/* Largo (es: indirizzi mail, circa 50%) */
+div#Wizard div.StepContent div.StepData span.rbl_MultiElement_large            { display: inline-block; }
+div#Wizard div.StepContent div.StepData span.rbl_MultiElement_large label      { display: inline-block; width: 325px;}
+div#Wizard div.StepContent div.StepData span.rbl_MultiElement_large label,
+div#Wizard div.StepContent div.StepData span.rbl_MultiElement_large input      { vertical-align: top; }
+
+/* IE HACK */
+* html div#Wizard div.StepData   { height: 250px; } /* 6 */
+*+html div#Wizard div.StepData   { height: 250px; } /* 7 */
+@media \0 screen { div#Wizard div.StepData   { height: 250px; } }/* 8 */
+:root div#Wizard div.StepData   { height: 250px\9; } /* 9 */
+
+
+
+
+
+#wizard {
+	margin: 1em 0;
+}
+
+div.wiz_header,
+div.wiz_content,
+div.wiz_bot_nav {
+	border: 1px solid #bbb;
+	padding: 5px;
+}
+
+
+
+div.wiz_header,
+div.wiz_bot_nav {
+	background-color: #ededed;
+}
+
+div.wiz_content {
+	border-top: none;
+}
+
+div.wiz_bot_nav {
+	border-top: none;	
+}
+
+#wizard div.wiz_header div.wiz_top_info.clearfix div.wiz_top_desc {
+	*width: 910px;
+}
+
+div.stepButton {
+	width: 300px;
+	float: right;
+	text-align: right;
+}
+
+#wizard div.wiz_header div.wiz_top_info div.wiz_top_desc img.titleicon {
+	display: block;
+	float: left;
+	margin-right: 10px;
+	margin-bottom: 10px;
+}
+
+#wizard div.wiz_header div.wiz_top_info div.wiz_top_desc h2 {
+	margin: 0;
+	margin-bottom: .5em;
+	width: 600px;
+	*width: 500px;
+}
+
+#wizard div.wiz_header div.wiz_top_info div.wiz_top_desc h2 span {
+	font-size: 18px;
+	font-weight: normal;
+	font-style: normal;
+}
+
+#wizard div.wiz_header div.wiz_top_info div.wiz_top_desc span.Testo_Campo {
+	margin: 0;
+	margin-bottom: .5em;
+	float: left;
+	width: 500px;
+	display: block;
+}
+
+#wizard div.wiz_header div.wiz_top_info div.wiz_export {
+	text-align: right;
+	display: block;
+	clear: both;
+	*width: 900px;
+}
+
+#wizard div.wiz_header div.wiz_top_nav div.stepButton {
+	margin-bottom: 20px;
+}
+
+#wizard div.wiz_header div.wiz_top_info div.spacer {
+
+}
+
+.clearfix:after {
+	content: ".";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	line-height: 0;
+	height: 0;
+}
+
+.clearfix {
+	display: block;
+	*display: inline-block;
+	margin: 0;
+	padding: 0;
+}
+
+html[xmlns] .clearfix {
+	display: block;
+}
+
+* html .clearfix {
+	height: 1%;
+	font-size: 0;
+}
+
+/* @group *** input / a.Link_Menu *** */
+
+div#Wizard div.stepButton a.Link_Menu,
+div#Wizard div.stepButton input[type="submit"] {
+	color: #555555;
+	font-size: 11px;
+	line-height: 14px;
+	text-shadow: 1px 1px 0 #edede9;
+	font-weight: normal;
+	font-style: normal;
+	background-color: #ddddd9;
+	border: 1px solid #aaaaa9;
+	-moz-border-radius-topleft: 3px;
+	-moz-border-radius-topright: 3px;
+	-moz-border-radius-bottomright: 3px;
+	-moz-border-radius-bottomleft: 3px;
+	-webkit-border-radius: 3px 3px 3px 3px;
+	border-radius: 3px 3px 3px 3px;
+	-moz-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+	-webkit-box-shadow: 1px 1px 1px  rgba(0, 0, 0, 0.3);
+	box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+}
+
+div#Wizard div.stepButton input[type="submit"] {
+	display: inline-block;
+	position: relative;
+	padding: 2px 4px;
+	margin: 2px;
+}
+
+div#Wizard div.stepButton a.Link_Menu {
+	display: inline-block;
+	line-height: 14px;
+	height: 14px;
+	padding: 2px 4px;
+	margin: 2px;
+}
+
+div#Wizard div.stepButton input[type="submit"].img_btn,
+div#Wizard div.stepButton input[type="submit"].btn_link,
+div#Wizard div.stepButton input[type="submit"].img_span {
+	background-color: transparent;
+	border: 0px;
+}
+
+div#Wizard div.stepButton input:hover[type="submit"],
+div#Wizard div.stepButton a.Link_Menu:hover {
+	outline: none;
+	color: #565656;
+	text-shadow: 1px 1px 0px #ddd;
+	background-color: #bcbcbc;
+}
+
+div#Wizard div.stepButton input:active[type="submit"],
+div#Wizard div.stepButton a.Link_Menu:active {
+	outline: none;
+	border: 1px solid #777;
+	-moz-box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.7);
+	-webkit-box-shadow: inset 0 0 32px rgba(0, 0, 0, 0.7);
+	box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.7);
+}
+
+/* @end */
+
+/* @group ** Controllare ** Bordo tasti esportazione - M.B.  */
+
+ .wiz_export input { border: 0px; }
+
+/* @end */
+
+/* @group ** RIMUOVERE ** Temporanei di pagina  */
+
+#page {
+	width: 920px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+
+/* @end */

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="urn:ComolTranslation">
+  <item name="Element.Select" html="false" placeholder="false">Select a template</item>
+  <item name="Element.Last" html="false" placeholder="false" mustcontains="#item.TemplateName#">Always last version - #item.TemplateName#</item>
+  <item name="Element.Generic" description="V. = versione" html="false" placeholder="false" mustcontains="#item.Version#|#item.TemplateName#">V. #item.Version# - #item.TemplateName#</item>
+  <item name="Element.Disapproved" html="false" placeholder="false" mustcontains="#item.Version#">! #item.Version# ! not active</item>
+  <item name="Element.Draft" html="false" placeholder="false" mustcontains="#item.Version#">! #item.Version# ! draft</item>
+  <item name="HYPpreview.Text" html="false" placeholder="false">Preview</item>
+</Resource>

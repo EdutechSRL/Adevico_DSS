@@ -1,0 +1,16 @@
+.RadSiteMap_Windows7 {
+  color: #333333;
+  font-size: 12px;
+  font-family: "Segoe UI", Arial, Helvetica, sans-serif; }
+  .RadSiteMap_Windows7 .rsmManyLevels > .rsmItem > .rsmLink {
+    border-color: #aabfd6; }
+  .RadSiteMap_Windows7 .rsmTwoLevels > .rsmItem > .rsmLink, .RadSiteMap_Windows7 .rsmThreeLevels > .rsmItem > .rsmLink, .RadSiteMap_Windows7 .rsmManyLevels .rsmLevel1 > .rsmItem > .rsmLink {
+    border-color: #aabfd6; }
+  .RadSiteMap_Windows7 .rsmOneLevel .rsmLink, .RadSiteMap_Windows7 .rsmTwoLevels .rsmLevel1 .rsmLink, .RadSiteMap_Windows7 .rsmThreeLevels .rsmLevel1 .rsmLink, .RadSiteMap_Windows7 .rsmManyLevels .rsmLevel2 .rsmLink {
+    border-radius: 4px; }
+    .RadSiteMap_Windows7 .rsmOneLevel .rsmLink:hover, .RadSiteMap_Windows7 .rsmTwoLevels .rsmLevel1 .rsmLink:hover, .RadSiteMap_Windows7 .rsmThreeLevels .rsmLevel1 .rsmLink:hover, .RadSiteMap_Windows7 .rsmManyLevels .rsmLevel2 .rsmLink:hover {
+      color: #1e395b;
+      background-color: #edf4fd;
+      background-image: linear-gradient(#f9fbfd, #edf4fd); }
+  * + html .RadSiteMap_Windows7 .rsmLink {
+    color: #333333; }

@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping
+	xmlns="urn:nhibernate-mapping-2.2"
+	assembly="lm.Comol.Core.BaseModules"
+	namespace="lm.Comol.Core.BaseModules.Tickets.Domain">
+
+	<class name="lm.Comol.Core.BaseModules.Tickets.Domain.Token" table="TK_Token" >
+
+		<id name="Id" column="Id" type="Int64">
+			<generator class="native"/>
+		</id>
+		
+		<property name="Code" type="Guid" column="Token" />
+		
+		<many-to-one name="User"
+					 class="lm.Comol.Core.BaseModules.Tickets.Domain.TicketUser"
+					 column="IdUser" foreign-key="IdUser" cascade="none" />
+
+		
+		<property name="CreatedOn" type="DateTime" column="_CreatedOn" />
+
+		<property name="Type" type="lm.Comol.Core.BaseModules.Tickets.Domain.Enums.TokenType, lm.Comol.Core.BaseModules" column="Type" />
+		
+
+	</class>
+</hibernate-mapping>

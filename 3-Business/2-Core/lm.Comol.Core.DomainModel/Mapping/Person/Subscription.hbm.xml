@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="lm.Comol.Core.DomainModel" namespace="lm.Comol.Core.DomainModel">
+  <class name="Subscription" table="LK_RUOLO_PERSONA_COMUNITA" lazy="false">
+    <id name="Id">
+	 <column name="RLPC_id" sql-type="int" not-null="true"/>
+	 <generator class="identity"/>
+    </id>
+    <many-to-one name="Person" class="Person" column="RLPC_PRSN_id" foreign-key="RLPC_PRSN_id" fetch="select" lazy="false"/>
+    <many-to-one name="Community" class="Community" column="RLPC_CMNT_id" foreign-key="RLPC_CMNT_id" fetch="select" lazy="false"/>
+    <property name="SubscriptedOn">
+	 <column name="RLPC_IscrittoIl" sql-type="DateTime"/>
+    </property>
+	  <property name="LastAccessOn">
+		  <column name="RLPC_UltimoCollegamento" sql-type="DateTime"/>
+	  </property>
+	  <property name="Accepted" column="RLPC_attivato" type="Boolean"/>
+    <property name="Enabled" column="RLPC_abilitato" type="Boolean"/>
+    <property name="isResponsabile" column="RLPC_responsabile" type="Boolean"/>
+    <property name="DisplayMail" column="RLPC_PRSN_mostraMail" type="Boolean"/>
+    
+    <many-to-one name="Role" class="Role" foreign-key="RLPC_TPRL_id" column="RLPC_TPRL_id" fetch="select" lazy="false" cascade="none"/>
+  </class>
+</hibernate-mapping>

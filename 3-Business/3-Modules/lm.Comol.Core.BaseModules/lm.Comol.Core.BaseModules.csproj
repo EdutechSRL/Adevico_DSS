@@ -1,0 +1,1010 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7FAE537E-6ACF-4C65-9D68-E22AEC839EEA}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>lm.Comol.Core.BaseModules</RootNamespace>
+    <AssemblyName>lm.Comol.Core.BaseModules</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\lm.Comol.Core.BaseModules.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.1.0.39271, Culture=neutral, PublicKeyToken=3a9cab8f8d22bfb7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\9-AdevicoMIT_Library\lm.Comol.MitLibrary\External\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Core, Version=1.1.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\9-AdevicoMIT_Library\lm.Comol.MitLibrary\External\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.DynamicProxy2, Version=2.1.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\9-AdevicoMIT_Library\lm.Comol.MitLibrary\External\Castle.DynamicProxy2.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlRenderer, Version=1.5.0.6, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\Solution\packages\HtmlRenderer.Core.1.5.0.6\lib\net40-client\HtmlRenderer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="HtmlRenderer.WinForms, Version=1.5.0.6, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\Solution\packages\HtmlRenderer.WinForms.1.5.0.6\lib\net40-client\HtmlRenderer.WinForms.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Iesi.Collections, Version=1.0.1.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\9-AdevicoMIT_Library\lm.Comol.MitLibrary\External\Iesi.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=3.1.6.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\9-AdevicoMIT_Library\lm.Comol.MitLibrary\External\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp5, Version=5.3.2.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\9-AdevicoMIT_Library\lm.Comol.MitLibrary\External\itextsharp5.dll</HintPath>
+    </Reference>
+    <Reference Include="lm.Comol.Modules.ScormStat, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\9-AdevicoMIT_Library\lm.Comol.MitLibrary\lm.Comol.Modules.ScormStat.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\9-AdevicoMIT_Library\lm.Comol.MitLibrary\External\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate, Version=2.1.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\9-AdevicoMIT_Library\lm.Comol.MitLibrary\External\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate.ByteCode.Castle, Version=2.1.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\9-AdevicoMIT_Library\lm.Comol.MitLibrary\External\NHibernate.ByteCode.Castle.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate.Linq, Version=1.0.0.4000, Culture=neutral, PublicKeyToken=444cf6a87fdab271, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\9-AdevicoMIT_Library\lm.Comol.MitLibrary\External\NHibernate.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Telerik.Web.Spreadsheet, Version=2017.2.612.40, Culture=neutral, PublicKeyToken=121fae78165ba3d4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\9-AdevicoMIT_Library\lm.Comol.MitLibrary\External\Telerik\Telerik.Web.Spreadsheet.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Web.UI, Version=2017.2.711.40, Culture=neutral, PublicKeyToken=121fae78165ba3d4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\9-AdevicoMIT_Library\lm.Comol.MitLibrary\External\Telerik\Telerik.Web.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Core, Version=2017.2.607.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\9-AdevicoMIT_Library\lm.Comol.MitLibrary\External\Telerik\Telerik.Windows.Documents.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Flow, Version=2017.2.607.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\9-AdevicoMIT_Library\lm.Comol.MitLibrary\External\Telerik\Telerik.Windows.Documents.Flow.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Spreadsheet, Version=2017.2.607.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\9-AdevicoMIT_Library\lm.Comol.MitLibrary\External\Telerik\Telerik.Windows.Documents.Spreadsheet.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Spreadsheet.FormatProviders.OpenXml, Version=2017.2.607.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\9-AdevicoMIT_Library\lm.Comol.MitLibrary\External\Telerik\Telerik.Windows.Documents.Spreadsheet.FormatProviders.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Zip, Version=2017.2.607.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\9-AdevicoMIT_Library\lm.Comol.MitLibrary\External\Telerik\Telerik.Windows.Zip.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AuthenticationManagement\Business\MacProviderHelper.cs" />
+    <Compile Include="AuthenticationManagement\Business\ServiceAuthenticationManagement.cs" />
+    <Compile Include="AuthenticationManagement\Presentation\Access\LogonExpiredPasswordPresenter.cs" />
+    <Compile Include="AuthenticationManagement\Presentation\Access\ActivateUserProfilePresenter.cs" />
+    <Compile Include="AuthenticationManagement\Presentation\Access\TokenValidationPresenter.cs" />
+    <Compile Include="AuthenticationManagement\Presentation\Access\InvalidTokenPresenter.cs" />
+    <Compile Include="AuthenticationManagement\Presentation\Access\OldNewAuthenticationPresenter.cs" />
+    <Compile Include="AuthenticationManagement\Presentation\Access\RemoteLoginPresenter.cs" />
+    <Compile Include="AuthenticationManagement\Presentation\Access\PublicAccessPresenter.cs" />
+    <Compile Include="AuthenticationManagement\Presentation\Access\AnonymousAccessPresenter.cs" />
+    <Compile Include="AuthenticationManagement\Presentation\Access\ProfileDisabledPresenter.cs" />
+    <Compile Include="AuthenticationManagement\Presentation\Access\View\IViewBaseAuthenticationPages.cs" />
+    <Compile Include="AuthenticationManagement\Presentation\Access\View\IViewLogonExpiredPassword.cs" />
+    <Compile Include="AuthenticationManagement\Presentation\Access\View\IViewTokenValidation.cs" />
+    <Compile Include="AuthenticationManagement\Presentation\Access\View\IViewInvalidToken.cs" />
+    <Compile Include="AuthenticationManagement\Presentation\Access\View\IViewOldNewAuthenticationPage.cs" />
+    <Compile Include="AuthenticationManagement\Presentation\Access\View\IViewRemoteLogin.cs" />
+    <Compile Include="AuthenticationManagement\Presentation\Access\View\IViewPublicAccess.cs" />
+    <Compile Include="AuthenticationManagement\Presentation\Access\View\IViewAnonymousAccess.cs" />
+    <Compile Include="AuthenticationManagement\Presentation\Access\View\IViewProfileDisabled.cs" />
+    <Compile Include="AuthenticationManagement\Presentation\Access\View\IViewActivateUserProfile.cs" />
+    <Compile Include="Certifications\Domain\dtos.cs" />
+    <Compile Include="Certifications\Presentation\AddCertificationPresenter.cs" />
+    <Compile Include="Certifications\Presentation\CertificationsListPresenter.cs" />
+    <Compile Include="Certifications\Presentation\IViewMyCertification.cs" />
+    <Compile Include="Certifications\Presentation\IViewAddCertification.cs" />
+    <Compile Include="Certifications\Presentation\IViewCertificationsList.cs" />
+    <Compile Include="Certifications\Presentation\MyCertificationsPresenter.cs" />
+    <Compile Include="CommonControls\Domain\AlphabetDisplayMode.cs" />
+    <Compile Include="CommonControls\Presentation\ContentTranslatorSelectorPresenter.cs" />
+    <Compile Include="CommonControls\Presentation\IView\IViewContentTranslator.cs" />
+    <Compile Include="CommonControls\Presentation\IView\IViewContentTranslatorSelector.cs" />
+    <Compile Include="CommonControls\Presentation\IView\IViewAlphabetSelector.cs" />
+    <Compile Include="CommonControls\Presentation\AlphabetSelectorPresenter.cs" />
+    <Compile Include="CommonControls\Presentation\ContentTranslatorPresenter.cs" />
+    <Compile Include="CommunityDiary\Business\ServiceCommunityDiary.ModuleLink.cs" />
+    <Compile Include="CommunityDiary\Business\ServiceCommunityDiary.Repository.cs" />
+    <Compile Include="CommunityDiary\Presentation\Controls\AddAttachmentPresenter.cs" />
+    <Compile Include="CommunityDiary\Presentation\View\Controls\IViewAddAttachment.cs" />
+    <Compile Include="CommunityManagement\Domain\CacheKeys.cs" />
+    <Compile Include="CommunityManagement\Domain\dto\new\dtoUserEnrollments.cs" />
+    <Compile Include="CommunityManagement\Domain\dto\new\dtoEnrollment.cs" />
+    <Compile Include="CommunityManagement\Domain\dto\new\dtoCommunityToEnroll.cs" />
+    <Compile Include="CommunityManagement\Domain\dto\new\dtoCommunityInfoForEnroll.cs" />
+    <Compile Include="CommunityManagement\Domain\EnrolledStatus.cs" />
+    <Compile Include="CommunityManagement\Domain\EnrollingStatus.cs" />
+    <Compile Include="CommunityManagement\Domain\CommunityAvailability.cs" />
+    <Compile Include="CommunityManagement\Domain\RootObject.cs" />
+    <Compile Include="CommunityManagement\Presentation\ToReview\View\IViewBase.cs" />
+    <Compile Include="CommunityManagement\Presentation\ToReview\View\IViewPageBase.cs" />
+    <Compile Include="Dashboard\Domain\dto\dtoCommunityNodeItem.cs" />
+    <Compile Include="Dashboard\Domain\dto\dtoCommunityPlainItem.cs" />
+    <Compile Include="Dashboard\Domain\dto\dtoPathItem.cs" />
+    <Compile Include="Dashboard\Domain\dto\dtoEnrollmentsDetailInfo.cs" />
+    <Compile Include="Dashboard\Domain\dto\dtoEnrollingItem.cs" />
+    <Compile Include="CommunityManagement\Domain\dto\dtoNewProfileSubscription.cs" />
+    <Compile Include="CommunityManagement\Domain\dto\dtoCommunityPlainPath.cs" />
+    <Compile Include="CommunityManagement\Domain\dto\dtoCommunityPlain.cs" />
+    <Compile Include="CommunityManagement\Domain\dto\dtoCommunityPath.cs" />
+    <Compile Include="CommunityManagement\Domain\dto\dtoBaseUserSubscription.cs" />
+    <Compile Include="CommunityManagement\Domain\dto\dtoRoleCommunityTypeTemplate.cs" />
+    <Compile Include="CommunityManagement\Domain\dto\dtoBaseCommunityNode.cs" />
+    <Compile Include="CommunityManagement\Domain\dto\dtoTreeUnsubscribeNode.cs" />
+    <Compile Include="CommunityManagement\Domain\dto\dtoUserSubscription.cs" />
+    <Compile Include="CommunityManagement\Domain\dto\dtoCommunityNode.cs" />
+    <Compile Include="CommunityManagement\Domain\dto\dtoCommunitiesFilters.cs" />
+    <Compile Include="CommunityManagement\Domain\dto\dtoTreeCommunityNode.cs" />
+    <Compile Include="CommunityManagement\Domain\dto\dtoCommunityNodeType.cs" />
+    <Compile Include="CommunityManagement\Domain\ModuleCommunityMembersManagement.cs" />
+    <Compile Include="CommunityManagement\Domain\OrderCommunitiesBy.cs" />
+    <Compile Include="CommunityManagement\Domain\SearchCommunitiesBy.cs" />
+    <Compile Include="Dashboard\Presentation\IView\1_Load\IViewAutoLogonCommunity.cs" />
+    <Compile Include="Dashboard\Presentation\Presenter\1_Load\AutoLogonCommunityPresenter.cs" />
+    <Compile Include="Dashboard\Presentation\Presenter\1_Load\UC\SelectCommunitiesPresenter.cs" />
+    <Compile Include="Dashboard\Presentation\Presenter\1_Load\UC\SearchCommunitiesPresenter.cs" />
+    <Compile Include="CommunityManagement\Presentation\ToReview\NewSubscriptionsListPresenter.cs" />
+    <Compile Include="CommunityManagement\Presentation\ToReview\StandardUnsubscriptionsListPresenter.cs" />
+    <Compile Include="CommunityManagement\Presentation\ToReview\StandardSubscriptionsListPresenter.cs" />
+    <Compile Include="CommunityManagement\Presentation\ToReview\StandardCommunityTreePresenter.cs" />
+    <Compile Include="Dashboard\Business\ServiceDashboardCommunities.cs" />
+    <Compile Include="Dashboard\Domain\searchColumn.cs" />
+    <Compile Include="Dashboard\Domain\searchFilterType.cs" />
+    <Compile Include="Dashboard\Domain\dto\dtoCommunityForTags.cs" />
+    <Compile Include="Dashboard\Presentation\IView\1_Load\IViewBaseSearch.cs" />
+    <Compile Include="Dashboard\Presentation\IView\1_Load\IViewCommunityDetailsPage.cs" />
+    <Compile Include="Dashboard\Presentation\IView\1_Load\IViewEnrollToDashboard.cs" />
+    <Compile Include="Dashboard\Presentation\IView\1_Load\IViewViewTree.cs" />
+    <Compile Include="Dashboard\Presentation\IView\1_Load\IViewSearchDashboard.cs" />
+    <Compile Include="Dashboard\Presentation\IView\1_Load\UC\IViewCommunitiesTree.cs" />
+    <Compile Include="Dashboard\Presentation\IView\1_Load\UC\IViewConfirmEnrollTo.cs" />
+    <Compile Include="Dashboard\Presentation\IView\1_Load\UC\IViewCommunityDetails.cs" />
+    <Compile Include="Dashboard\Presentation\IView\1_Load\UC\IViewEnrollToCommunities.cs" />
+    <Compile Include="Dashboard\Presentation\IView\1_Load\UC\IViewDashboardTilesList.cs" />
+    <Compile Include="Dashboard\Presentation\IView\1_Load\UC\IViewSearchCommunities.cs" />
+    <Compile Include="Dashboard\Presentation\IView\1_Load\UC\IViewSearchCommunitiesModal.cs" />
+    <Compile Include="Dashboard\Presentation\IView\1_Load\UC\IViewMiniTileList.cs" />
+    <Compile Include="Dashboard\Presentation\IView\1_Load\UC\IViewNoticeboardTile.cs" />
+    <Compile Include="Dashboard\Presentation\IView\1_Load\UC\IViewNoticeboardBlock.cs" />
+    <Compile Include="Dashboard\Presentation\IView\1_Load\UC\IViewCommunitiesList.cs" />
+    <Compile Include="Dashboard\Presentation\IView\2_List\IViewEditTilesOrder.cs" />
+    <Compile Include="Dashboard\Presentation\IView\2_List\IViewDashboardPreview.cs" />
+    <Compile Include="Dashboard\Presentation\IView\2_List\IViewEditViews.cs" />
+    <Compile Include="Dashboard\Presentation\IView\2_List\IViewEditSettings.cs" />
+    <Compile Include="Dashboard\Presentation\IView\2_List\IViewBaseSettingsList.cs" />
+    <Compile Include="Dashboard\Presentation\IView\2_List\IViewBaseEditSettings.cs" />
+    <Compile Include="Dashboard\Presentation\IView\2_List\IViewSettingsList.cs" />
+    <Compile Include="Dashboard\Presentation\Presenter\1_Load\CommunityDetailsPagePresenter.cs" />
+    <Compile Include="Dashboard\Presentation\Presenter\1_Load\EnrollToPresenter.cs" />
+    <Compile Include="Dashboard\Presentation\Presenter\1_Load\ViewTreePresenter.cs" />
+    <Compile Include="Dashboard\Presentation\Presenter\1_Load\SearchPresenter.cs" />
+    <Compile Include="Dashboard\Presentation\IView\1_Load\UC\IViewConfirmUnsubscription.cs" />
+    <Compile Include="Dashboard\Presentation\Presenter\1_Load\UC\CommunitiesTreePresenter.cs" />
+    <Compile Include="Dashboard\Presentation\Presenter\1_Load\UC\CommunityDetailsPresenter.cs" />
+    <Compile Include="Dashboard\Presentation\Presenter\1_Load\UC\EnrollToCommunitiesPresenter.cs" />
+    <Compile Include="Dashboard\Presentation\Presenter\1_Load\UC\DashboardTilesListPresenter.cs" />
+    <Compile Include="Dashboard\Presentation\Presenter\1_Load\UC\MiniTileListPresenter.cs" />
+    <Compile Include="Dashboard\Presentation\Presenter\1_Load\UC\NoticeboardTilePresenter.cs" />
+    <Compile Include="Dashboard\Presentation\Presenter\1_Load\UC\NoticeboardBlockPresenter.cs" />
+    <Compile Include="Dashboard\Presentation\Presenter\1_Load\UC\CommunitiesListPresenter.cs" />
+    <Compile Include="Dashboard\Presentation\Presenter\2_List\EditTilesOrderPresenter.cs" />
+    <Compile Include="Dashboard\Presentation\Presenter\2_List\EditViewsPresenter.cs" />
+    <Compile Include="Dashboard\Presentation\Presenter\2_List\EditSettingsPresenter.cs" />
+    <Compile Include="Dashboard\Presentation\Presenter\2_List\DashboardPreviewPresenter.cs" />
+    <Compile Include="Dashboard\Presentation\Presenter\2_List\SettingsListPresenter.cs" />
+    <Compile Include="Dashboard\Presentation\Presenter\2_List\SettingsManagerPresenter.cs" />
+    <Compile Include="Errors\Domain\RootObject.cs" />
+    <Compile Include="Errors\Presentation\IViewErrorMessage.cs" />
+    <Compile Include="Federation\Business\FederationService.cs" />
+    <Compile Include="Federation\Domain\dtoUserfederationData.cs" />
+    <Compile Include="Federation\Domain\liteFederation.cs" />
+    <Compile Include="Federation\Enums.cs" />
+    <Compile Include="FileRepository\Business\ServiceRepository.AddVersion.cs" />
+    <Compile Include="FileRepository\Business\ServiceRepository.Clone.cs" />
+    <Compile Include="FileRepository\Business\ServiceRepository.cs" />
+    <Compile Include="FileRepository\Business\ServiceRepository.Management.cs" />
+    <Compile Include="FileRepository\Business\ServiceRepositoryScorm.cs" />
+    <Compile Include="FileRepository\Domain\Column.cs" />
+    <Compile Include="FileRepository\Domain\cookieRepository.cs" />
+    <Compile Include="FileRepository\Domain\dtoItemToEvaluate.cs" />
+    <Compile Include="FileRepository\Domain\VersionErrors.cs" />
+    <Compile Include="FileRepository\Presentation\IView\IViewBase.cs" />
+    <Compile Include="FileRepository\Presentation\IView\IViewPageBase.cs" />
+    <Compile Include="FileRepository\Presentation\Repository\Domain\dtoDisplayVersionItem.cs" />
+    <Compile Include="FileRepository\Presentation\Repository\Domain\PlayerClosedMessage.cs" />
+    <Compile Include="FileRepository\Presentation\Repository\Domain\PlayerErrors.cs" />
+    <Compile Include="FileRepository\Presentation\Repository\Domain\TreeMode.cs" />
+    <Compile Include="FileRepository\Presentation\Repository\Domain\UserMessageType.cs" />
+    <Compile Include="FileRepository\Presentation\Repository\IView\IViewCommonActionSender.cs" />
+    <Compile Include="FileRepository\Presentation\Repository\IView\IViewDownloadError.cs" />
+    <Compile Include="FileRepository\Presentation\Repository\IView\IViewEditViewDetails.cs" />
+    <Compile Include="FileRepository\Presentation\Repository\IView\IViewEditViewDetailsPageBase.cs" />
+    <Compile Include="FileRepository\Presentation\Repository\IView\IViewItemPageBase.cs" />
+    <Compile Include="FileRepository\Presentation\Repository\IView\IViewMultimediaSettings.cs" />
+    <Compile Include="FileRepository\Presentation\Repository\IView\IViewPlayer.cs" />
+    <Compile Include="FileRepository\Presentation\Repository\IView\IViewPlayerClosed.cs" />
+    <Compile Include="FileRepository\Presentation\Repository\IView\IViewRepository.cs" />
+    <Compile Include="FileRepository\Presentation\Repository\IView\IViewRepositoryPageBase.cs" />
+    <Compile Include="FileRepository\Presentation\Repository\IView\IViewScormSettings.cs" />
+    <Compile Include="FileRepository\Presentation\Repository\IView\IViewScormSettingsBase.cs" />
+    <Compile Include="FileRepository\Presentation\Repository\IView\IViewScormSettingsView.cs" />
+    <Compile Include="FileRepository\Presentation\Repository\IView\UC\IViewFolderSelector.cs" />
+    <Compile Include="FileRepository\Presentation\Repository\IView\UC\IViewItemDetails.cs" />
+    <Compile Include="FileRepository\Presentation\Repository\IView\UC\IViewItemPermissions.cs" />
+    <Compile Include="FileRepository\Presentation\Repository\IView\UC\IViewItemSelectorsBase.cs" />
+    <Compile Include="FileRepository\Presentation\Repository\IView\UC\IViewItemsSelectorTableMode.cs" />
+    <Compile Include="FileRepository\Presentation\Repository\IView\UC\IViewItemsSelectorTreeMode.cs" />
+    <Compile Include="FileRepository\Presentation\Repository\IView\UC\IViewItemVersions.cs" />
+    <Compile Include="FileRepository\Presentation\Repository\IView\UC\IViewModuleInternalLink.cs" />
+    <Compile Include="FileRepository\Presentation\Repository\IView\UC\IViewModuleUploader.cs" />
+    <Compile Include="FileRepository\Presentation\Repository\IView\UC\IViewRepositoryRenderAction.cs" />
+    <Compile Include="FileRepository\Presentation\Repository\IView\UC\IViewViewOptions.cs" />
+    <Compile Include="FileRepository\Presentation\Repository\Presentation\CommonActionSenderPresenter.cs" />
+    <Compile Include="FileRepository\Presentation\Repository\Presentation\DownloadErrorPresenter.cs" />
+    <Compile Include="FileRepository\Presentation\Repository\Presentation\EditViewDetailsPresenter.cs" />
+    <Compile Include="FileRepository\Presentation\Repository\Presentation\MultimediaSettingsPresenter.cs" />
+    <Compile Include="FileRepository\Presentation\Repository\Presentation\PlayerClosedPresenter.cs" />
+    <Compile Include="FileRepository\Presentation\Repository\Presentation\PlayerPresenter.cs" />
+    <Compile Include="FileRepository\Presentation\Repository\Presentation\RepositoryPresenter.cs" />
+    <Compile Include="FileRepository\Presentation\Repository\Presentation\ScormSettingsPresenter.cs" />
+    <Compile Include="FileRepository\Presentation\Repository\Presentation\ScormSettingsViewPresenter.cs" />
+    <Compile Include="FileRepository\Presentation\Repository\Presentation\UC\FolderSelectorPresenter.cs" />
+    <Compile Include="FileRepository\Presentation\Repository\Presentation\UC\ItemDetailsPresenter.cs" />
+    <Compile Include="FileRepository\Presentation\Repository\Presentation\UC\ItemPermissionsPresenter.cs" />
+    <Compile Include="FileRepository\Presentation\Repository\Presentation\UC\ItemsSelectorTableModePresenter.cs" />
+    <Compile Include="FileRepository\Presentation\Repository\Presentation\UC\ItemsSelectorTreeModePresenter.cs" />
+    <Compile Include="FileRepository\Presentation\Repository\Presentation\UC\ItemVersionsPresenter.cs" />
+    <Compile Include="FileRepository\Presentation\Repository\Presentation\UC\ModuleCommunityUploaderPresenter.cs" />
+    <Compile Include="FileRepository\Presentation\Repository\Presentation\UC\ModuleInternalUploaderPresenter.cs" />
+    <Compile Include="FileRepository\Presentation\Repository\Presentation\UC\RepositoryRenderActionPresenter.cs" />
+    <Compile Include="NoticeBoard\Domain\dto\dtoHistoryItem.cs" />
+    <Compile Include="NoticeBoard\Domain\Status.cs" />
+    <Compile Include="NoticeBoard\Domain\Lite\liteHistoryItem.cs" />
+    <Compile Include="NoticeBoard\Domain\StyleSettings.cs" />
+    <Compile Include="NoticeBoard\Domain\RootObject.cs" />
+    <Compile Include="Dashboard\Presentation\IView\0_Base\IViewBase.cs" />
+    <Compile Include="Dashboard\Presentation\IView\0_Base\IViewPageBase.cs" />
+    <Compile Include="Dashboard\Presentation\IView\0_Base\IViewPageBaseEdit.cs" />
+    <Compile Include="Dashboard\Presentation\IView\1_Load\IViewBaseDashboardLoader.cs" />
+    <Compile Include="Dashboard\Presentation\IView\1_Load\IViewPortalDashboard.cs" />
+    <Compile Include="Dashboard\Presentation\IView\1_Load\IViewDefaultDashboardLoader.cs" />
+    <Compile Include="Dashboard\Presentation\IView\1_Load\UC\IViewPortalDashboardTopBar.cs" />
+    <Compile Include="Dashboard\Presentation\Presenter\1_Load\PortalDashboardPresenter.cs" />
+    <Compile Include="Dashboard\Presentation\Presenter\1_Load\DefaultDashboardPresenter.cs" />
+    <Compile Include="Dashboard\Presentation\Presenter\1_Load\UC\PortalDashboardTopBarPresenter.cs" />
+    <Compile Include="NoticeBoard\Presentation\CreateThumbnailPresenter.cs" />
+    <Compile Include="NoticeBoard\Presentation\ViewNoticeboardMessagePresenter.cs" />
+    <Compile Include="NoticeBoard\Presentation\IView\IViewViewNoticeboardMessage.cs" />
+    <Compile Include="NoticeBoard\Presentation\IView\IViewEditMessage.cs" />
+    <Compile Include="NoticeBoard\Presentation\IView\IViewNoticeboardEditing.cs" />
+    <Compile Include="NoticeBoard\Presentation\IView\IViewNoticeboardDashboard.cs" />
+    <Compile Include="NoticeBoard\Presentation\IView\IViewCreateThumbnail.cs" />
+    <Compile Include="NoticeBoard\Presentation\IView\IViewNoticeboardRenderPage.cs" />
+    <Compile Include="NoticeBoard\Presentation\EditMessagePresenter.cs" />
+    <Compile Include="NoticeBoard\Presentation\IView\UC\IViewBaseEditorLoader.cs" />
+    <Compile Include="NoticeBoard\Presentation\NoticeboardDashboardPresenter.cs" />
+    <Compile Include="NoticeBoard\Presentation\NoticeboardRenderPagePresenter.cs" />
+    <Compile Include="NoticeBoard\Presentation\IView\IViewNoticeboardPage.cs" />
+    <Compile Include="NoticeBoard\Presentation\IView\IViewNoticeboardBasePage.cs" />
+    <Compile Include="NoticeBoard\Presentation\IView\UC\IViewNoticeboardRenderControl.cs" />
+    <Compile Include="NoticeBoard\Presentation\UC\BaseEditorLoaderPresenter.cs" />
+    <Compile Include="NoticeBoard\Presentation\UC\NoticeboardRenderControlPresenter.cs" />
+    <Compile Include="ProfileManagement\Domain\ContactDisplayPolicy.cs" />
+    <Compile Include="ProfileManagement\Domain\ContactsSelectionMode.cs" />
+    <Compile Include="ProfileManagement\Domain\dto\dtoUserContact.cs" />
+    <Compile Include="CommunityManagement\Presentation\ToReview\View\IViewNewProfileSubscriptionsList.cs" />
+    <Compile Include="Dashboard\Presentation\IView\1_Load\UC\IViewSelectCommunities.cs" />
+    <Compile Include="CommunityManagement\Presentation\ToReview\View\IViewStandardUnsubscriptionsList.cs" />
+    <Compile Include="CommunityManagement\Presentation\ToReview\View\IViewStandardSubscriptionsList.cs" />
+    <Compile Include="CommunityManagement\Presentation\ToReview\View\IViewStandardCommunityTree.cs" />
+    <Compile Include="DocTemplate\Domain\dtoModulePlaceHolder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DocTemplate\Presentation\DocTemplateAddPresenter.cs" />
+    <Compile Include="DocTemplate\Presentation\DocTemplateAssociationPresenter.cs" />
+    <Compile Include="DocTemplate\Presentation\DocTemplateEditPresenter.cs" />
+    <Compile Include="DocTemplate\Presentation\DocTemplateEditSkinPresenter.cs" />
+    <Compile Include="DocTemplate\Presentation\DocTemplatePreviewPresenter.cs" />
+    <Compile Include="DocTemplate\Presentation\DocTemplateListPresenter.cs" />
+    <Compile Include="DocTemplate\Presentation\Helpers\DocTempalteFileHelper.cs" />
+    <Compile Include="DocTemplate\Presentation\Helpers\HelperExportPDF.cs" />
+    <Compile Include="DocTemplate\Presentation\Helpers\HelperExportRTF.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DocTemplate\Presentation\View\IViewDocTemplateAdd.cs" />
+    <Compile Include="DocTemplate\Presentation\View\IViewDocTemplateAssociation.cs" />
+    <Compile Include="DocTemplate\Presentation\View\IViewDocTemplateEdit.cs" />
+    <Compile Include="DocTemplate\Presentation\View\IVIewDocTemplateEditSkin.cs" />
+    <Compile Include="DocTemplate\Presentation\View\IViewDocTemplatePreview.cs" />
+    <Compile Include="DocTemplate\Presentation\View\IViewDocTemplateList.cs" />
+    <Compile Include="DocTemplate\Presentation\View\ViewEnum.cs" />
+    <Compile Include="MailSender\Domain\DisplayItem.cs" />
+    <Compile Include="MailSender\Domain\dto\dtoUsersByMessageFilters.cs" />
+    <Compile Include="MailSender\Domain\dto\dtoPreviewOptions.cs" />
+    <Compile Include="MailSender\Domain\PreviewMode.cs" />
+    <Compile Include="MailSender\Domain\UserByMessagesOrder.cs" />
+    <Compile Include="MailSender\Presenter\Messages\MessageTemplatePresenter.cs" />
+    <Compile Include="MailSender\Presenter\IView\Messages\IViewMessageTemplate.cs" />
+    <Compile Include="MailSender\Presenter\Messages\UserMessagesPresenter.cs" />
+    <Compile Include="MailSender\Presenter\IView\Messages\IViewModuleMessages.cs" />
+    <Compile Include="MailSender\Presenter\IView\Messages\IViewUserMessages.cs" />
+    <Compile Include="MailSender\Presenter\Edit\MailSettingsPresenter.cs" />
+    <Compile Include="MailSender\Presenter\IView\Edit\IViewMailSettings.cs" />
+    <Compile Include="MailSender\Presenter\Messages\MailMessagePresenter.cs" />
+    <Compile Include="MailSender\Presenter\IView\Messages\IViewMailMessage.cs" />
+    <Compile Include="MailSender\Presenter\IView\Edit\IViewMailEditor.cs" />
+    <Compile Include="MailSender\Presenter\Edit\MailEditorPresenter.cs" />
+    <Compile Include="ModulesLoader\Domain\RootObject.cs" />
+    <Compile Include="AuthenticationManagement\Presentation\Access\UserLogoutPresenter.cs" />
+    <Compile Include="AuthenticationManagement\Presentation\Access\View\IViewUserLogout.cs" />
+    <Compile Include="ModulesLoader\Presentation\GenericUserSessionExpiredPresenter.cs" />
+    <Compile Include="ModulesLoader\Presentation\IViewGenericUserSessionExpired.cs" />
+    <Compile Include="ModulesLoader\Presentation\UserSessionExpiredPresenter.cs" />
+    <Compile Include="ModulesLoader\Presentation\IViewUserSessionExpired.cs" />
+    <Compile Include="ProfileManagement\Business\ProfileManagementService.cs" />
+    <Compile Include="ProfileManagement\Domain\AgencyAvailability.cs" />
+    <Compile Include="ProfileManagement\Domain\dto\dtoIstantMessagingSettings.cs" />
+    <Compile Include="ProfileManagement\Domain\dto\dtoSelectItem.cs" />
+    <Compile Include="ProfileManagement\Domain\dto\dtoSubscriptionProfileItem.cs" />
+    <Compile Include="ProfileManagement\Domain\TemplatePlaceHolders.cs" />
+    <Compile Include="ProfileManagement\Domain\UserSelectionType.cs" />
+    <Compile Include="ProfileManagement\Domain\dto\dtoUserFilters.cs" />
+    <Compile Include="ProfileManagement\Domain\OrderUsersBy.cs" />
+    <Compile Include="ProfileManagement\Domain\dto\dtoAvailableAffiliation.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ProfileManagement\Domain\ImportedAgencyColumn.cs" />
+    <Compile Include="ProfileManagement\Domain\CommunitySubscriptionWizardStep.cs" />
+    <Compile Include="ProfileManagement\Domain\AgencyImportStep.cs" />
+    <Compile Include="ProfileManagement\Domain\SearchAgencyBy.cs" />
+    <Compile Include="ProfileManagement\Domain\dto\dtoAgencyPermission.cs" />
+    <Compile Include="ProfileManagement\Domain\dto\dtoAgencyItem.cs" />
+    <Compile Include="ProfileManagement\Domain\OrderAgencyBy.cs" />
+    <Compile Include="ProfileManagement\Domain\dto\dtoAgencyFilters.cs" />
+    <Compile Include="ProfileManagement\Domain\dto\dtoProfileAttributeType.cs" />
+    <Compile Include="ProfileManagement\Domain\dto\dtoImportedProfile.cs" />
+    <Compile Include="ProfileManagement\Domain\ProfileImportAction.cs" />
+    <Compile Include="ProfileManagement\Domain\dto\dtoImportFieldsSettings.cs" />
+    <Compile Include="ProfileManagement\Domain\dto\dtoImportSettings.cs" />
+    <Compile Include="ProfileManagement\Presentation\Import\AgenciesImportPresenter.cs" />
+    <Compile Include="ProfileManagement\Presentation\Import\AgencyOrganizationsPresenter.cs" />
+    <Compile Include="ProfileManagement\Presentation\Import\View\IViewAgencyOrganizations.cs" />
+    <Compile Include="ProfileManagement\Presentation\Management\AgenciesManagementPresenter.cs" />
+    <Compile Include="ProfileManagement\Presentation\Management\AgencyInfoPresenter.cs" />
+    <Compile Include="ProfileManagement\Presentation\Management\SelectUsersPresenter.cs" />
+    <Compile Include="ProfileManagement\Presentation\Management\SearchUsersForModulePresenter.cs" />
+    <Compile Include="ProfileManagement\Presentation\Management\EditAgencyPresenter.cs" />
+    <Compile Include="ProfileManagement\Presentation\Management\DeleteAgencyPresenter.cs" />
+    <Compile Include="ProfileManagement\Presentation\Import\View\IViewImportAgencies.cs" />
+    <Compile Include="ProfileManagement\Presentation\Management\View\IViewSelectUsers.cs" />
+    <Compile Include="ProfileManagement\Presentation\Management\View\IViewBaseProfilesManagement.cs" />
+    <Compile Include="ProfileManagement\Presentation\Management\View\IViewSearchUsersForModule.cs" />
+    <Compile Include="ProfileManagement\Presentation\Management\View\IViewEditAgency.cs" />
+    <Compile Include="ProfileManagement\Presentation\Management\View\IViewAgencyInfo.cs" />
+    <Compile Include="ProfileManagement\Presentation\Management\View\IViewDeleteAgency.cs" />
+    <Compile Include="ProfileManagement\Presentation\Management\View\IViewAgenciesManagement.cs" />
+    <Compile Include="ProfileManagement\Presentation\Wizard\MacUrlWizardPresenter.cs" />
+    <Compile Include="ProfileManagement\Presentation\Wizard\StepProfileInfoPresenter.cs" />
+    <Compile Include="ProfileManagement\Presentation\Wizard\View\IViewUserProfileWizardMacUrl.cs" />
+    <Compile Include="ProfileManagement\Presentation\Wizard\View\IViewStepProfileInfo.cs" />
+    <Compile Include="ProviderManagement\Domain\dto\dtoMacUrlProvider.cs" />
+    <Compile Include="ProviderManagement\Presentation\EditMacAttributePresenter.cs" />
+    <Compile Include="ProviderManagement\Presentation\MacUrlProviderSettingsPresenter.cs" />
+    <Compile Include="ProviderManagement\Presentation\View\IViewEditMacAttributeView.cs" />
+    <Compile Include="ProviderManagement\Presentation\View\IViewMacUrlProviderSettings.cs" />
+    <Compile Include="Repository\Domain\dtoFileFolder.cs" />
+    <Compile Include="Repository\Domain\DisplayRepositoryAction.cs" />
+    <Compile Include="Repository\Domain\dtoCSVfile.cs" />
+    <Compile Include="ProfileManagement\Domain\SourceType.cs" />
+    <Compile Include="ProfileManagement\Domain\ProfileImportStep.cs" />
+    <Compile Include="ProfileManagement\Domain\ProfileSettingsTab.cs" />
+    <Compile Include="ProfileManagement\Domain\dto\dtoProfileOrganization.cs" />
+    <Compile Include="ProfileManagement\Domain\ProfileInfoTab.cs" />
+    <Compile Include="ProfileManagement\Domain\ProfileColumn.cs" />
+    <Compile Include="ProfileManagement\Domain\dto\dtoProfilePermission.cs" />
+    <Compile Include="ProfileManagement\Domain\dto\dtoProfileItem.cs" />
+    <Compile Include="ProfileManagement\Domain\OrderProfilesBy.cs" />
+    <Compile Include="ProfileManagement\Presentation\Import\MailTemplatePresenter.cs" />
+    <Compile Include="ProfileManagement\Presentation\Import\ItemsSelectorPresenter.cs" />
+    <Compile Include="ProfileManagement\Presentation\Import\FieldsMatcherPresenter.cs" />
+    <Compile Include="ProfileManagement\Presentation\Import\ProfilesImportPresenter.cs" />
+    <Compile Include="ProfileManagement\Presentation\Import\SourceCsvPresenter.cs" />
+    <Compile Include="ProfileManagement\Presentation\Import\View\IViewProfilesImportSummary.cs" />
+    <Compile Include="ProfileManagement\Presentation\Import\View\IViewMailTemplate.cs" />
+    <Compile Include="ProfileManagement\Presentation\Import\View\IViewItemsSelector.cs" />
+    <Compile Include="ProfileManagement\Presentation\Import\View\IViewFieldsMatcher.cs" />
+    <Compile Include="ProfileManagement\Presentation\Import\View\IViewIMsourceCSV.cs" />
+    <Compile Include="ProfileManagement\Presentation\Import\View\IViewIMsourceSelector.cs" />
+    <Compile Include="ProfileManagement\Presentation\Import\View\IViewProfilesImport.cs" />
+    <Compile Include="ProfileManagement\Presentation\Management\ActivateUserMailPresenter.cs" />
+    <Compile Include="ProfileManagement\Presentation\Management\MailProfilePolicyPresenter.cs" />
+    <Compile Include="ProfileManagement\Presentation\Management\MailEditorPresenter.cs" />
+    <Compile Include="ProfileManagement\Presentation\Management\ProfileSettingsPresenter.cs" />
+    <Compile Include="ProfileManagement\Presentation\Management\View\IViewMailProfilePolicy.cs" />
+    <Compile Include="ProfileManagement\Presentation\Management\View\IViewActivateUserMail.cs" />
+    <Compile Include="ProfileManagement\Presentation\Management\View\IViewMailEditor.cs" />
+    <Compile Include="ProfileManagement\Presentation\Management\View\IViewProfileSettings.cs" />
+    <Compile Include="ProfileManagement\Presentation\Wizard\UrlWizardPresenter.cs" />
+    <Compile Include="ProviderManagement\Domain\dto\dtoProviderRole.cs" />
+    <Compile Include="ProviderManagement\Domain\dto\dtoLoginFormat.cs" />
+    <Compile Include="ProviderManagement\Domain\dto\dtoProviderAttribute.cs" />
+    <Compile Include="ProviderManagement\Domain\dto\dtoUrlProvider.cs" />
+    <Compile Include="ProviderManagement\Domain\dto\dtoInternalProvider.cs" />
+    <Compile Include="ProviderManagement\Domain\dto\dtoProviderPermission.cs" />
+    <Compile Include="ProviderManagement\Domain\dto\dtoBaseProvider.cs" />
+    <Compile Include="ProfileManagement\Domain\dto\dtoExternalUserProvider.cs" />
+    <Compile Include="ProfileManagement\Domain\dto\dtoFilters.cs" />
+    <Compile Include="ProfileManagement\Domain\dto\dtoInternalUserProvider.cs" />
+    <Compile Include="ProfileManagement\Domain\dto\dtoUserProvider.cs" />
+    <Compile Include="ProviderManagement\Domain\dto\dtoProviderTranslation.cs" />
+    <Compile Include="ProfileManagement\Domain\EditingType.cs" />
+    <Compile Include="ProfileManagement\Domain\ModuleProfileManagement.cs" />
+    <Compile Include="ProfileManagement\Domain\ProfileSubscriptionMessage.cs" />
+    <Compile Include="ProfileManagement\Domain\RootObject.cs" />
+    <Compile Include="ProfileManagement\Domain\SearchProfilesBy.cs" />
+    <Compile Include="ProfileManagement\Domain\StatusProfile.cs" />
+    <Compile Include="ProfileManagement\Domain\WizardType.cs" />
+    <Compile Include="ProfileManagement\Domain\ProfileWizardStep.cs" />
+    <Compile Include="AuthenticationManagement\Domain\RootObject.cs" />
+    <Compile Include="ProfileManagement\Presentation\Management\BaseProfileInfoPresenter.cs" />
+    <Compile Include="ProfileManagement\Presentation\Management\AdvancedProfileInfoPresenter.cs" />
+    <Compile Include="ProfileManagement\Presentation\Management\AddCommunityToProfilePresenter.cs" />
+    <Compile Include="ProfileManagement\Presentation\Management\ProfileInfoPresenter.cs" />
+    <Compile Include="ProfileManagement\Presentation\Management\ProfileCommunitiesPresenter.cs" />
+    <Compile Include="ProfileManagement\Presentation\Management\EditProfileTypePresenter.cs" />
+    <Compile Include="ProfileManagement\Presentation\Management\EditProfileAuthenticationsPresenter.cs" />
+    <Compile Include="ProfileManagement\Presentation\Management\EditProfilePresenter.cs" />
+    <Compile Include="ProfileManagement\Presentation\Management\ProfileDataPresenter.cs" />
+    <Compile Include="ProfileManagement\Presentation\Management\DeleteProfilePresenter.cs" />
+    <Compile Include="ProfileManagement\Presentation\Management\ManageProfileAuthenticationProvidersPresenter.cs" />
+    <Compile Include="ProfileManagement\Presentation\Management\ProfilesManagementPresenter.cs" />
+    <Compile Include="ProfileManagement\Presentation\Management\EditPasswordPresenter.cs" />
+    <Compile Include="ProfileManagement\Presentation\Management\View\IViewAddCommunityToProfile.cs" />
+    <Compile Include="ProfileManagement\Presentation\Management\View\IViewAdvancedProfileInfo.cs" />
+    <Compile Include="ProfileManagement\Presentation\Management\View\IViewBaseProfileInfo.cs" />
+    <Compile Include="ProfileManagement\Presentation\Management\View\IViewProfileCommunities.cs" />
+    <Compile Include="ProfileManagement\Presentation\Management\View\IViewProfileInfo.cs" />
+    <Compile Include="ProfileManagement\Presentation\Management\View\IViewEditProfileType.cs" />
+    <Compile Include="ProfileManagement\Presentation\Management\View\IViewEditProfileAuthentications.cs" />
+    <Compile Include="ProfileManagement\Presentation\Management\View\IViewEditProfile.cs" />
+    <Compile Include="ProfileManagement\Presentation\Management\View\IViewProfileData.cs" />
+    <Compile Include="ProfileManagement\Presentation\Management\View\IViewDeleteProfile.cs" />
+    <Compile Include="ProfileManagement\Presentation\Management\View\IViewManageProfileAuthenticationProviders.cs" />
+    <Compile Include="ProfileManagement\Presentation\Management\View\IViewProfilesManagement.cs" />
+    <Compile Include="ProfileManagement\Presentation\Management\View\IViewEditPassword.cs" />
+    <Compile Include="ProfileManagement\Presentation\Wizard\AddProfileToPortalWizardPresenter.cs" />
+    <Compile Include="ProfileManagement\Presentation\Wizard\ProfileWizardEndPagelPresenter.cs" />
+    <Compile Include="ProfileManagement\Presentation\Wizard\UserProfileAddPresenter.cs" />
+    <Compile Include="ProfileManagement\Presentation\Wizard\Todo\BaseProfileWizardPresenter.cs" />
+    <Compile Include="ProfileManagement\Presentation\Wizard\ProfileWizardInternalPresenter.cs" />
+    <Compile Include="ProfileManagement\Presentation\Wizard\View\IViewProfileWizard.cs" />
+    <Compile Include="ProfileManagement\Presentation\Wizard\View\IViewAddProfileToPortalWizard.cs" />
+    <Compile Include="ProfileManagement\Presentation\Wizard\View\IViewUserProfileWizardUrl.cs" />
+    <Compile Include="ProfileManagement\Presentation\Wizard\View\IViewUserProfileWizardExternal.cs" />
+    <Compile Include="ProfileManagement\Presentation\Wizard\View\IViewUserProfileWizardEndPage.cs" />
+    <Compile Include="ProfileManagement\Presentation\Wizard\View\IViewUserProfileAdd.cs" />
+    <Compile Include="ProfileManagement\Presentation\Wizard\View\IViewUserProfileWizardInternal.cs" />
+    <Compile Include="ProfileManagement\Presentation\Wizard\View\IViewUserProfileWizard.cs" />
+    <Compile Include="ProfileManagement\Presentation\Wizard\Todo\IViewProfileWizardLdap.cs" />
+    <Compile Include="AuthenticationManagement\Presentation\Access\SystemOutOfOrderPresenter.cs" />
+    <Compile Include="AuthenticationManagement\Presentation\Access\RetrievePasswordPresenter.cs" />
+    <Compile Include="AuthenticationManagement\Presentation\Access\InternalLoginPresenter.cs" />
+    <Compile Include="ProfileManagement\Presentation\Wizard\Todo\UrlProviderWizardPresenter.cs" />
+    <Compile Include="AuthenticationManagement\Presentation\Access\View\IViewSystemOutOfOrder.cs" />
+    <Compile Include="AuthenticationManagement\Presentation\Access\View\IViewRetrievePassword.cs" />
+    <Compile Include="AuthenticationManagement\Presentation\Access\View\IViewAuthenticationPage.cs" />
+    <Compile Include="AuthenticationManagement\Presentation\Access\View\IViewLogin.cs" />
+    <Compile Include="AuthenticationManagement\Presentation\Access\View\IViewInternalLogin.cs" />
+    <Compile Include="CommunityDiary\Business\Exceptions.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CommunityDiary\Business\ServiceCommunityDiary.cs" />
+    <Compile Include="CommunityDiary\Domain\TreeItemsTranslations.cs" />
+    <Compile Include="CommunityDiary\Domain\dtoDiaryItem.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CommunityDiary\Domain\ModuleCommunityDiary.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CommunityDiary\Domain\RootObject.cs" />
+    <Compile Include="CommunityDiary\Presentation\CommunityDiaryPresenter.cs" />
+    <Compile Include="CommunityDiary\Presentation\EditDiaryItemPresenter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CommunityDiary\Presentation\View\IViewCommunityDiary.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CommunityDiary\Presentation\View\IviewDiaryItem.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CommunityManagement\Business\ServiceCommunityManagement.cs" />
+    <Compile Include="FileStatistics\Domain\dtoDownInfo.cs" />
+    <Compile Include="FileStatistics\Domain\dtoFileDetail.cs" />
+    <Compile Include="FileStatistics\Domain\dtoUserDownInfo.cs" />
+    <Compile Include="FileStatistics\Presentation\DisplayDetailFilePresenter.cs" />
+    <Compile Include="FileStatistics\Presentation\DisplayDetailScormPresenter.cs" />
+    <Compile Include="FileStatistics\Presentation\IViewDisplayDetailfile.cs" />
+    <Compile Include="FileStatistics\Presentation\IViewDisplayDetailScorm.cs" />
+    <Compile Include="FileStatistics\Presentation\IViewDisplayFileStatistics.cs" />
+    <Compile Include="FileStatistics\Presentation\IViewDisplayUsersStatistics.cs" />
+    <Compile Include="FileStatistics\Presentation\DisplayFileStatisticsPresenter.cs" />
+    <Compile Include="FileStatistics\Presentation\DisplayUsersStatisticsPresenter.cs" />
+    <Compile Include="FileStatistics\Presentation\IVIewModuleItemPersonSelector.cs" />
+    <Compile Include="ModulesLoader\Presentation\ExternalModuleLoaderPresenter.cs" />
+    <Compile Include="ModulesLoader\Presentation\IViewExternalModuleLoader.cs" />
+    <Compile Include="ModulesLoader\Presentation\InternalModuleLoaderPresenter.cs" />
+    <Compile Include="ModulesLoader\Presentation\IViewInternalModuleLoader.cs" />
+    <Compile Include="NoticeBoard\Domain\ModuleNoticeboard.cs" />
+    <Compile Include="NoticeBoard\Business\ServiceNoticeBoard.cs" />
+    <Compile Include="NoticeBoard\Domain\NoticeBoardMessage.cs" />
+    <Compile Include="NoticeBoard\Domain\MessageStyle.cs" />
+    <Compile Include="NoticeBoard\Presentation\DisplayMessagePresenter.cs" />
+    <Compile Include="NoticeBoard\Presentation\IView\IViewDisplayMessage.cs" />
+    <Compile Include="PolicyManagement\Business\PolicyService.cs" />
+    <Compile Include="PolicyManagement\Domain\dto\dtoUserDataPolicy.cs" />
+    <Compile Include="PolicyManagement\Domain\RootObject.cs" />
+    <Compile Include="PolicyManagement\Domain\dto\dtoUserPolicyInfo.cs" />
+    <Compile Include="PolicyManagement\Domain\ServiceExceptions.cs" />
+    <Compile Include="PolicyManagement\Presentation\AcceptLogonPolicyPresenter.cs" />
+    <Compile Include="PolicyManagement\Presentation\ProfilePolicySubmissionPresenter.cs" />
+    <Compile Include="PolicyManagement\Presentation\View\IViewAcceptLogonPolicy.cs" />
+    <Compile Include="PolicyManagement\Presentation\View\IViewProfilePolicySubmission.cs" />
+    <Compile Include="Repository\Presentation\Presenter\Display\DisplayUrlItemPresenter.cs" />
+    <Compile Include="Repository\Presentation\View\Display\IViewDisplayUrlItem.cs" />
+    <Compile Include="Tags\Business\Exceptions.cs" />
+    <Compile Include="Tags\Business\ServiceTags.cs" />
+    <Compile Include="Tags\Domain\dtoBulkCommunityForTags.cs" />
+    <Compile Include="Tags\Presentation\IView\IViewBulkTagsAssignment.cs" />
+    <Compile Include="Tags\Presentation\IView\IViewBase.cs" />
+    <Compile Include="Tags\Presentation\IView\IViewTagsSelectorForCommunity.cs" />
+    <Compile Include="Tags\Presentation\IView\IViewTagsList.cs" />
+    <Compile Include="Tags\Presentation\IView\IViewPageBase.cs" />
+    <Compile Include="Tags\Presentation\Presenter\BulkTagsAssignmentPresenter.cs" />
+    <Compile Include="Tags\Presentation\Presenter\TagsSelectorForCommunityPresenter.cs" />
+    <Compile Include="Tags\Presentation\Presenter\TagsListPresenter.cs" />
+    <Compile Include="Tags\Presentation\Presenter\TagsManagerPresenter.cs" />
+    <Compile Include="TemplateMessages\Business\ModuleTemplateMessageService.cs" />
+    <Compile Include="TemplateMessages\Domain\ColumnMessageGrid.cs" />
+    <Compile Include="TemplateMessages\Domain\DisplayItems.cs" />
+    <Compile Include="TemplateMessages\Domain\dto\dtoModuleEvents.cs" />
+    <Compile Include="TemplateMessages\Domain\dto\dtoTextualRecipient.cs" />
+    <Compile Include="TemplateMessages\Domain\EditMessageMode.cs" />
+    <Compile Include="TemplateMessages\Domain\ListAction.cs" />
+    <Compile Include="TemplateMessages\Domain\dto\dtoSelectItem.cs" />
+    <Compile Include="TemplateMessages\Presentation\TemplatePreviewPresenter.cs" />
+    <Compile Include="TemplateMessages\Presentation\View\AddPresenter.cs" />
+    <Compile Include="TemplateMessages\Presentation\CommonListPresenter.cs" />
+    <Compile Include="MailSender\Presenter\Messages\SelectMessagePresenter.cs" />
+    <Compile Include="TemplateMessages\Presentation\NotificationSettingsPresenter.cs" />
+    <Compile Include="TemplateMessages\Presentation\TemplateSelectorPresenter.cs" />
+    <Compile Include="TemplateMessages\Presentation\MessageRecipientsPresenter.cs" />
+    <Compile Include="TemplateMessages\Presentation\MessagesSentPresenter.cs" />
+    <Compile Include="TemplateMessages\Presentation\EditMessagePresenter.cs" />
+    <Compile Include="TemplateMessages\Presentation\SendMessagePresenter.cs" />
+    <Compile Include="TemplateMessages\Presentation\EditPermissionsPresenter.cs" />
+    <Compile Include="TemplateMessages\Presentation\EditTranslationsPresenter.cs" />
+    <Compile Include="TemplateMessages\Presentation\EditSettingsPresenter.cs" />
+    <Compile Include="TemplateMessages\Presentation\ListPresenter.cs" />
+    <Compile Include="TemplateMessages\Presentation\TemplateAssociationPresenter.cs" />
+    <Compile Include="MailSender\Presenter\IView\Messages\IViewSelectMessage.cs" />
+    <Compile Include="TemplateMessages\Presentation\View\IViewTemplatePreview.cs" />
+    <Compile Include="TemplateMessages\Presentation\View\IViewNotificationSettings.cs" />
+    <Compile Include="TemplateMessages\Presentation\View\IViewTemplateSelector.cs" />
+    <Compile Include="TemplateMessages\Presentation\View\IViewMessageRecipients.cs" />
+    <Compile Include="TemplateMessages\Presentation\View\IViewTemplateAssociation.cs" />
+    <Compile Include="TemplateMessages\Presentation\View\IViewEditMessage.cs" />
+    <Compile Include="TemplateMessages\Presentation\View\IViewMessagesSent.cs" />
+    <Compile Include="TemplateMessages\Presentation\View\IViewSendMessage.cs" />
+    <Compile Include="TemplateMessages\Presentation\View\IViewBaseModuleMessage.cs" />
+    <Compile Include="TemplateMessages\Presentation\View\IViewCommonTemplateList.cs" />
+    <Compile Include="TemplateMessages\Presentation\View\IViewEditPermissions.cs" />
+    <Compile Include="TemplateMessages\Presentation\View\IViewEditTranslations.cs" />
+    <Compile Include="TemplateMessages\Presentation\View\IViewBaseEditSetting.cs" />
+    <Compile Include="TemplateMessages\Presentation\View\IViewEditSettings.cs" />
+    <Compile Include="TemplateMessages\Presentation\View\IViewAdd.cs" />
+    <Compile Include="TemplateMessages\Presentation\View\IViewBaseEdit.cs" />
+    <Compile Include="TemplateMessages\Presentation\View\IViewBase.cs" />
+    <Compile Include="TemplateMessages\Presentation\View\IViewListTemplates.cs" />
+    <Compile Include="Tickets\Business\TicketService.iNotifiableService.cs" />
+    <Compile Include="Tickets\Business\TicketService.Categories.cs" />
+    <Compile Include="Tickets\Business\TicketService.Attachments.cs" />
+    <Compile Include="Tickets\Business\TicketService.cs" />
+    <Compile Include="Tickets\Business\TicketService.iLinkedService.cs" />
+    <Compile Include="Tickets\Business\TicketService.Messages.cs" />
+    <Compile Include="Tickets\Business\TicketService.Notifications.cs" />
+    <Compile Include="Tickets\Business\TicketService.Settings.cs" />
+    <Compile Include="Tickets\Business\TicketService.Tickets.cs" />
+    <Compile Include="Tickets\Business\TicketService.Users.cs" />
+    <Compile Include="Tickets\Domain\Assignment.cs" />
+    <Compile Include="Tickets\Domain\Category.cs" />
+    <Compile Include="Tickets\Domain\CategoryTranslation.cs" />
+    <Compile Include="Tickets\Domain\DTO\DTO_PortalSettingsSwitch.cs" />
+    <Compile Include="Tickets\Domain\DTO\DTO_SettingsPermissionPersonType.cs" />
+    <Compile Include="Tickets\Domain\DTO\DTO_Access.cs" />
+    <Compile Include="Tickets\Domain\DTO\DTO_AddInit.cs" />
+    <Compile Include="Tickets\Domain\DTO\DTO_AddRolesResponse.cs" />
+    <Compile Include="Tickets\Domain\DTO\DTO_Assignment.cs" />
+    <Compile Include="Tickets\Domain\DTO\DTO_AttachmentItem.cs" />
+    <Compile Include="Tickets\Domain\DTO\DTO_CategoryCheckResponse.cs" />
+    <Compile Include="Tickets\Domain\DTO\DTO_CategoryDDLItem.cs" />
+    <Compile Include="Tickets\Domain\DTO\DTO_CategoryList.cs" />
+    <Compile Include="Tickets\Domain\DTO\DTO_CategoryListUser.cs" />
+    <Compile Include="Tickets\Domain\DTO\DTO_CategoryRole.cs" />
+    <Compile Include="Tickets\Domain\DTO\DTO_CategoryTranslation.cs" />
+    <Compile Include="Tickets\Domain\DTO\DTO_CategoryTree.cs" />
+    <Compile Include="Tickets\Domain\DTO\DTO_CategoryTypeComPermission.cs" />
+    <Compile Include="Tickets\Domain\DTO\DTO_ExternalUserData.cs" />
+    <Compile Include="Tickets\Domain\DTO\DTO_ExtUserAddResult.cs" />
+    <Compile Include="Tickets\Domain\DTO\DTO_ListFilterManager.cs" />
+    <Compile Include="Tickets\Domain\DTO\DTO_ListFilterUser.cs" />
+    <Compile Include="Tickets\Domain\DTO\DTO_ListInfo.cs" />
+    <Compile Include="Tickets\Domain\DTO\DTO_ListInit.cs" />
+    <Compile Include="Tickets\Domain\DTO\DTO_ManagerModify.cs" />
+    <Compile Include="Tickets\Domain\DTO\DTO_NotificationData.cs" />
+    <Compile Include="Tickets\Domain\DTO\DTO_NotificationSettings.cs" />
+    <Compile Include="Tickets\Domain\DTO\DTO_ResModifyItem.cs" />
+    <Compile Include="Tickets\Domain\DTO\DTO_SettingsPermissionUsers.cs" />
+    <Compile Include="Tickets\Domain\DTO\DTO_SettingsPermissionList.cs" />
+    <Compile Include="Tickets\Domain\DTO\DTO_SysCategoryInfo.cs" />
+    <Compile Include="Tickets\Domain\DTO\DTO_Ticket.cs" />
+    <Compile Include="Tickets\Domain\DTO\DTO_TicketListItemManager.cs" />
+    <Compile Include="Tickets\Domain\DTO\DTO_TicketListItemUser.cs" />
+    <Compile Include="Tickets\Domain\DTO\DTO_TKattachment.cs" />
+    <Compile Include="Tickets\Domain\DTO\DTO_TkLanguage.cs" />
+    <Compile Include="Tickets\Domain\DTO\DTO_UC_ListInfoItem.cs" />
+    <Compile Include="Tickets\Domain\DTO\DTO_User.cs" />
+    <Compile Include="Tickets\Domain\DTO\DTO_UserModify.cs" />
+    <Compile Include="Tickets\Domain\DTO\DTO_UserModifyItem.cs" />
+    <Compile Include="Tickets\Domain\DTO\DTO_UserRole.cs" />
+    <Compile Include="Tickets\Domain\DTO\DTO_UserSettings.cs" />
+    <Compile Include="Tickets\Domain\LK_UserCategory.cs" />
+    <Compile Include="Tickets\Domain\Enums.cs" />
+    <Compile Include="Tickets\Domain\MappedDTO\liteCategory.cs" />
+    <Compile Include="Tickets\Domain\MappedDTO\liteAssignment.cs" />
+    <Compile Include="Tickets\Domain\MappedDTO\liteCategoryId.cs" />
+    <Compile Include="Tickets\Domain\MappedDTO\liteCategoryReorderItem.cs" />
+    <Compile Include="Tickets\Domain\MappedDTO\liteCategoryTreeItem.cs" />
+    <Compile Include="Tickets\Domain\MappedDTO\liteCommunity.cs" />
+    <Compile Include="Tickets\Domain\MappedDTO\liteDraftTicket.cs" />
+    <Compile Include="Tickets\Domain\MappedDTO\liteLK_UserCategory.cs" />
+    <Compile Include="Tickets\Domain\MappedDTO\liteManResTicketAccess.cs" />
+    <Compile Include="Tickets\Domain\MappedDTO\liteMessage.cs" />
+    <Compile Include="Tickets\Domain\MappedDTO\liteSettingsPermission.cs" />
+    <Compile Include="Tickets\Domain\MappedDTO\liteTicket.cs" />
+    <Compile Include="Tickets\Domain\MappedDTO\liteTicketUserInfo.cs" />
+    <Compile Include="Tickets\Domain\MappedDTO\liteTinyAssignment.cs" />
+    <Compile Include="Tickets\Domain\MappedDTO\liteTranslation.cs" />
+    <Compile Include="Tickets\Domain\MappedDTO\liteUser.cs" />
+    <Compile Include="Tickets\Domain\SettingsPermission.cs" />
+    <Compile Include="Tickets\Domain\TicketFile.cs" />
+    <Compile Include="Tickets\Domain\MailNotification.cs" />
+    <Compile Include="Tickets\Domain\Message.cs" />
+    <Compile Include="Tickets\Domain\ModuleTicket.cs" />
+    <Compile Include="Tickets\Domain\RootObject.cs" />
+    <Compile Include="Tickets\Domain\SettingsComType.cs" />
+    <Compile Include="Tickets\Domain\SettingsPortal.cs" />
+    <Compile Include="Tickets\Domain\Ticket.cs" />
+    <Compile Include="Tickets\Domain\TemplatePlaceHolders.cs" />
+    <Compile Include="Tickets\Domain\TicketUser.cs" />
+    <Compile Include="Tickets\Domain\Token.cs" />
+    <Compile Include="Tickets\Presentation\AddAttachmentPresenter.cs" />
+    <Compile Include="Tickets\Presentation\CategoriesListPresenter.cs" />
+    <Compile Include="Tickets\Presentation\CategoryAddPresenter.cs" />
+    <Compile Include="Tickets\Presentation\CategoryDeletePresenter.cs" />
+    <Compile Include="Tickets\Presentation\CategoryPresenter.cs" />
+    <Compile Include="Tickets\Presentation\CategoryTreePresenter.cs" />
+    <Compile Include="Tickets\Presentation\GlobalAdminPresenter.cs" />
+    <Compile Include="Tickets\Presentation\TicketAccessPresenter.cs" />
+    <Compile Include="Tickets\Presentation\TicketAddExtPresenter.cs" />
+    <Compile Include="Tickets\Presentation\TicketAddPresenter.cs" />
+    <Compile Include="Tickets\Presentation\TicketEditExtPresenter.cs" />
+    <Compile Include="Tickets\Presentation\TicketEditManPresenter.cs" />
+    <Compile Include="Tickets\Presentation\TicketEditUsrPresenter.cs" />
+    <Compile Include="Tickets\Presentation\TicketListExtPresenter.cs" />
+    <Compile Include="Tickets\Presentation\TicketListManPresenter.cs" />
+    <Compile Include="Tickets\Presentation\TicketListUsrPresenter.cs" />
+    <Compile Include="Tickets\Presentation\UcAddAttachPresenter.cs" />
+    <Compile Include="Tickets\Presentation\UcUserSettingsPresenter.cs" />
+    <Compile Include="Tickets\Presentation\UcMailSettingsPresenter.cs" />
+    <Compile Include="Tickets\Presentation\UcPasswordPresenter.cs" />
+    <Compile Include="Tickets\Presentation\View\IViewAddAttachment.cs" />
+    <Compile Include="Tickets\Presentation\View\iViewBase.cs" />
+    <Compile Include="Tickets\Presentation\View\iViewCategoriesList.cs" />
+    <Compile Include="Tickets\Presentation\View\iViewCategory.cs" />
+    <Compile Include="Tickets\Presentation\View\iViewCategoryAdd.cs" />
+    <Compile Include="Tickets\Presentation\View\iViewCategoryDelete.cs" />
+    <Compile Include="Tickets\Presentation\View\iViewCategoryTree.cs" />
+    <Compile Include="Tickets\Presentation\View\iViewGlobalAdmin.cs" />
+    <Compile Include="Tickets\Presentation\View\iViewTicketAccess.cs" />
+    <Compile Include="Tickets\Presentation\View\iViewTicketAddExt.cs" />
+    <Compile Include="Tickets\Presentation\View\iViewTicketEditExt.cs" />
+    <Compile Include="Tickets\Presentation\View\iViewTicketEditMan.cs" />
+    <Compile Include="Tickets\Presentation\View\iViewTicketEditUsr.cs" />
+    <Compile Include="Tickets\Presentation\View\iViewTicketListExt.cs" />
+    <Compile Include="Tickets\Presentation\View\iViewTicketListMan.cs" />
+    <Compile Include="Tickets\Presentation\View\iViewTicketListUsr.cs" />
+    <Compile Include="Tickets\Presentation\View\iViewTicketAdd.cs" />
+    <Compile Include="Tickets\Presentation\View\iViewUcAddAttach.cs" />
+    <Compile Include="Tickets\Presentation\View\iViewUcMailSets.cs" />
+    <Compile Include="Tickets\Presentation\View\iViewUcPassword.cs" />
+    <Compile Include="Tickets\Presentation\View\iViewUcUserSettings.cs" />
+    <Compile Include="Tile\Business\Exceptions.cs" />
+    <Compile Include="Tile\Business\ServiceTiles.cs" />
+    <Compile Include="Tile\Domain\dtoTileFullTranslation.cs" />
+    <Compile Include="Tile\Domain\dtoToolTipLanguageItem.cs" />
+    <Compile Include="Tile\Domain\dtoEditTileItem.cs" />
+    <Compile Include="Tile\Domain\dtoFilters.cs" />
+    <Compile Include="Tile\Domain\dtoPermission.cs" />
+    <Compile Include="Tile\Domain\dtoEditTile.cs" />
+    <Compile Include="Tile\Domain\dtoTileItem.cs" />
+    <Compile Include="Tile\Domain\OrderTilesBy.cs" />
+    <Compile Include="Tile\Domain\searchFilterType.cs" />
+    <Compile Include="Tile\Presentation\IView\IViewBase.cs" />
+    <Compile Include="Tile\Presentation\IView\IViewTile.cs" />
+    <Compile Include="Tile\Presentation\IView\IViewTileEdit.cs" />
+    <Compile Include="Tile\Presentation\IView\IViewEditPageBase.cs" />
+    <Compile Include="Tile\Presentation\IView\IViewEditPage.cs" />
+    <Compile Include="Tile\Presentation\IView\IViewPageBase.cs" />
+    <Compile Include="Tile\Presentation\IView\IViewTileList.cs" />
+    <Compile Include="Tile\Presentation\Presenter\ViewTilePresenter.cs" />
+    <Compile Include="Tile\Presentation\Presenter\TileEditPresenter.cs" />
+    <Compile Include="Tile\Presentation\Presenter\TileListPresenter.cs" />
+    <Compile Include="Tile\Presentation\Presenter\TileEditPagePresenter.cs" />
+    <Compile Include="Tile\Presentation\Presenter\TileManagerPresenter.cs" />
+    <Compile Include="WebControls\CompletionProgressBar\ProgressBarItem.cs" />
+    <Compile Include="WebControls\Editor\Domain\EditorHelper.cs" />
+    <Compile Include="WebControls\Editor\Business\DBDataServer.cs" />
+    <Compile Include="WebControls\Editor\Business\ServiceRepositoryContent.cs" />
+    <Compile Include="WebControls\Editor\Business\ServiceEditor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WebControls\Editor\Domain\AdvancedLinkItem.cs" />
+    <Compile Include="WebControls\Editor\Domain\AutoResizePolicy.cs" />
+    <Compile Include="WebControls\Editor\Domain\EditorRepositoryItem.cs" />
+    <Compile Include="WebControls\Editor\Domain\EditorToolbar.cs" />
+    <Compile Include="WebControls\Editor\Domain\EditorConfiguration.cs" />
+    <Compile Include="WebControls\Editor\Domain\EditorNewLineMode.cs" />
+    <Compile Include="WebControls\Editor\Domain\EditorType.cs" />
+    <Compile Include="WebControls\Editor\Domain\RootObject.cs" />
+    <Compile Include="WebControls\Editor\Presentation\IView\IViewEditorLoader.cs" />
+    <Compile Include="WebControls\Editor\Presentation\IView\IViewTelerikEditor.cs" />
+    <Compile Include="WebControls\Editor\Presentation\IView\IViewTextareaEditor.cs" />
+    <Compile Include="WebControls\Editor\Presentation\IView\IViewEditor.cs" />
+    <Compile Include="WebControls\Editor\Presentation\IView\IViewBaseEditor.cs" />
+    <Compile Include="WebControls\Editor\Presentation\Presenter\EditorLoaderPresenter.cs" />
+    <Compile Include="WebControls\CompletionProgressBar\CompletionProgressBar.cs" />
+    <Compile Include="WebControls\Selectors\IView\IViewModuleItemUserSelector.cs" />
+    <Compile Include="WebControls\Selectors\ModuleItemUserSelectorPresenter.cs" />
+    <Compile Include="ProviderManagement\Business\ProviderManagementService.cs" />
+    <Compile Include="ProviderManagement\Domain\dto\dtoProvider.cs" />
+    <Compile Include="ProviderManagement\Domain\dto\dtoPermission.cs" />
+    <Compile Include="ProviderManagement\Domain\ModuleProviderManagement.cs" />
+    <Compile Include="ProviderManagement\Domain\ProviderWizardStep.cs" />
+    <Compile Include="ProviderManagement\Domain\RootObject.cs" />
+    <Compile Include="ProviderManagement\Presentation\AddProviderPresenter.cs" />
+    <Compile Include="ProviderManagement\Presentation\ProviderInfoPresenter.cs" />
+    <Compile Include="ProviderManagement\Presentation\UrlProviderSettingsPresenter.cs" />
+    <Compile Include="ProviderManagement\Presentation\TranslationDataPresenter.cs" />
+    <Compile Include="ProviderManagement\Presentation\ProviderDataPresenter.cs" />
+    <Compile Include="ProviderManagement\Presentation\EditProviderPresenter.cs" />
+    <Compile Include="ProviderManagement\Presentation\ProvidersManagementPresenter.cs" />
+    <Compile Include="ProviderManagement\Presentation\View\IViewProviderInfo.cs" />
+    <Compile Include="ProviderManagement\Presentation\View\IViewUrlProviderSettings.cs" />
+    <Compile Include="ProviderManagement\Presentation\View\IViewAddProvider.cs" />
+    <Compile Include="ProviderManagement\Presentation\View\IViewTranslationData.cs" />
+    <Compile Include="ProviderManagement\Presentation\View\IViewProviderData.cs" />
+    <Compile Include="ProviderManagement\Presentation\View\IViewEditProvider.cs" />
+    <Compile Include="ProviderManagement\Presentation\View\IViewProvidersManagement.cs" />
+    <Compile Include="Repository\Domain\ItemDisplayMode.cs" />
+    <Compile Include="Repository\Domain\ItemDisplayView.cs" />
+    <Compile Include="Repository\Domain\RootObject.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\Business\ServiceCommunityRepository.cs" />
+    <Compile Include="WebControls\Selectors\IView\IViewModuleItemFilesSelector.cs" />
+    <Compile Include="Repository\Presentation\Presenter\Controls\CommunityFileSelectorPresenter.cs" />
+    <Compile Include="Repository\Presentation\Presenter\Controls\MultipleFileUploaderPresenter.cs" />
+    <Compile Include="Repository\Presentation\Presenter\CSV\GenericItemsSelectorPresenter.cs" />
+    <Compile Include="Repository\Presentation\Presenter\Display\ModuleRepositoryActionPresenter.cs" />
+    <Compile Include="Repository\Presentation\Presenter\OtherModules\ModuleToRepositoryPresenter.cs" />
+    <Compile Include="Repository\Presentation\View\Community\IViewImportItemsToRepository.cs" />
+    <Compile Include="Repository\Presentation\View\Controls\IViewCommunityFileSelector.cs" />
+    <Compile Include="Repository\Presentation\View\Display\IViewModuleRepositoryAction.cs" />
+    <Compile Include="Repository\Presentation\View\CSV\IViewGenericItemsSelector.cs" />
+    <Compile Include="Repository\Presentation\Presenter\Display\ModuleToRepositoryDisplayPresenter.cs" />
+    <Compile Include="Repository\Presentation\Presenter\CSV\GenericFieldsMatcherPresenter.cs" />
+    <Compile Include="Repository\Presentation\View\CSV\IViewGenericFieldsMatcher.cs" />
+    <Compile Include="Repository\Presentation\Presenter\Player\MultimediaFileSettingsPresenter.cs" />
+    <Compile Include="Repository\Presentation\DisplayRepositoryItemPresenter.cs" />
+    <Compile Include="Repository\Presentation\dtoEvaluationLink.cs" />
+    <Compile Include="Repository\Presentation\Presenter\Player\FilePlayerPresenter.cs" />
+    <Compile Include="Repository\Presentation\Presenter\CSV\GenericCSVuploaderPresenter.cs" />
+    <Compile Include="Repository\Presentation\View\CSV\IViewGenericCSVuploader.cs" />
+    <Compile Include="Repository\Presentation\View\Display\IViewModuleModuleToRepositoryDisplay.cs" />
+    <Compile Include="Repository\Presentation\View\Display\IViewDisplayRepositoryItem.cs" />
+    <Compile Include="Repository\Presentation\View\Controls\IViewMultipleFileUploader.cs" />
+    <Compile Include="Repository\Presentation\View\OtherModules\IViewModuleToRepository.cs" />
+    <Compile Include="Repository\Presentation\View\Player\IViewFilePlayer.cs" />
+    <Compile Include="Repository\Presentation\Presenter\Player\ScormStatisticsUpdatePresenter.cs" />
+    <Compile Include="Repository\Presentation\View\Player\IViewMultimediaFileSettings.cs" />
+    <Compile Include="Repository\Presentation\View\Player\IViewScormStatisticsUpdate.cs" />
+    <Compile Include="Repository\Presentation\Presenter\Display\RepositoryDisplayInLinePresenter.cs" />
+    <Compile Include="Repository\Presentation\View\Display\IViewModuleToRepositoryDisplayInLine.cs" />
+    <Compile Include="Repository\Presentation\Presenter\Statistics\ModuleItemFilesSelectorPresenter.cs" />
+    <Compile Include="Repository\Presentation\Presenter\Statistics\FileStatisticsPresenter.cs" />
+    <Compile Include="Repository\Presentation\Presenter\Statistics\FileStatPages.cs" />
+    <Compile Include="Repository\Presentation\GenericUploadFileErrorsPresenter.cs" />
+    <Compile Include="Repository\Presentation\View\OtherModules\IViewModuleItemFilesSelector.cs" />
+    <Compile Include="Repository\Presentation\View\Statistics\IViewFileStatistics.cs" />
+    <Compile Include="Repository\Presentation\View\IViewGenericUploadFileErrors.cs" />
+    <Compile Include="Repository\Presentation\Presenter\Player\ScormMetadataPermission.cs" />
+    <Compile Include="Repository\Presentation\View\Player\IViewScormPackageSettings.cs" />
+    <Compile Include="Repository\Presentation\Presenter\Player\ScormPackageSettingsPresenter.cs" />
+    <Compile Include="Repository\Presentation\WizardStep.cs" />
+    <Compile Include="Repository\Presentation\View\OtherModules\IViewModuleInternalFilesSelector.cs" />
+    <Compile Include="Repository\Presentation\View\OtherModules\IViewOtherModuleItemFilesGuid.cs" />
+    <Compile Include="Repository\Presentation\View\OtherModules\IViewOtherModuleItemFilesLong.cs" />
+    <Compile Include="Repository\Presentation\View\OtherModules\IViewOtherModuleItemFiles.cs" />
+    <Compile Include="Repository\Presentation\View\IViewPublishIntoRepositoryFromModuleItem.cs" />
+    <Compile Include="Repository\Presentation\OtherModuleManagmentFilesLongPresenter.cs" />
+    <Compile Include="Repository\Presentation\PublishIntoRepositoryFromModulePresenter.cs" />
+    <Compile Include="FileStatistics\Business\ServiceFileStatistics.cs" />
+    <Compile Include="WebControls\Generic\ExtendedDropDown.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\2-Core\lm.Comol.Core.File\lm.Comol.Core.File.csproj">
+      <Project>{FFA417B0-A44B-441A-921B-FEB57C5FD7DA}</Project>
+      <Name>lm.Comol.Core.File</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\2-Core\lm.Comol.Core.DomainModel\lm.Comol.Core.DomainModel.csproj">
+      <Project>{9B7DA676-5030-47CD-8B2B-A30A09C8D0B5}</Project>
+      <Name>lm.Comol.Core.DomainModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\2-Core\lm.Comol.Core.MailCommons\lm.Comol.Core.MailCommons.csproj">
+      <Project>{428243cb-28cd-4d81-8099-74d1448b5e1d}</Project>
+      <Name>lm.Comol.Core.MailCommons</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Business\" />
+    <Folder Include="CommunityManagement\Mapping\" />
+    <Folder Include="CommunityManagement\Presentation\View\" />
+    <Folder Include="Dashboard\Presentation\IView\3_Edit\" />
+    <Folder Include="Dashboard\Presentation\Presenter\3_Edit\" />
+    <Folder Include="FileRepository\Presentation\Settings\IView\UC\" />
+    <Folder Include="FileRepository\Presentation\Settings\Presentation\UC\" />
+    <Folder Include="Repository\Mapping\" />
+    <Folder Include="TemplateMessages\Mapping\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Tickets\Mapping\liteSettingsPermission.hbm.xml" />
+    <EmbeddedResource Include="Tickets\Mapping\SettingsPermission.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tickets\Mapping\liteTicketUserInfo.hbm.xml" />
+    <EmbeddedResource Include="Tickets\Mapping\liteTinyAssignment.hbm.xml" />
+    <EmbeddedResource Include="Tickets\Mapping\liteLK_UserCategory.hbm.xml" />
+    <EmbeddedResource Include="Tickets\Mapping\liteDraftTicket.hbm.xml" />
+    <EmbeddedResource Include="NoticeBoard\Mapping\liteHistoryItem.hbm.xml" />
+    <EmbeddedResource Include="Tickets\Mapping\Token.hbm.xml" />
+    <EmbeddedResource Include="Tickets\Mapping\liteCategoryReorderItem.hbm.xml" />
+    <EmbeddedResource Include="Tickets\Mapping\liteCategoryId.hbm.xml" />
+    <EmbeddedResource Include="Tickets\Mapping\liteManResTicketAccess.hbm.xml" />
+    <EmbeddedResource Include="Tickets\Mapping\liteCategoryTreeItem.hbm.xml" />
+    <EmbeddedResource Include="Tickets\Mapping\CategoryTranslation.hbm.xml" />
+    <EmbeddedResource Include="Tickets\Mapping\Assignment.hbm.xml" />
+    <EmbeddedResource Include="Tickets\Mapping\Category.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Tickets\Domain\MappedDTO\liteObject.cd" />
+    <EmbeddedResource Include="Tickets\Mapping\liteAssignment.hbm.xml" />
+    <EmbeddedResource Include="Tickets\Mapping\liteCategory.hbm.xml" />
+    <EmbeddedResource Include="Tickets\Mapping\liteCommunity.hbm.xml" />
+    <EmbeddedResource Include="Tickets\Mapping\liteMessage.hbm.xml" />
+    <EmbeddedResource Include="Tickets\Mapping\liteTicket.hbm.xml" />
+    <EmbeddedResource Include="Tickets\Mapping\liteTranslation.hbm.xml" />
+    <EmbeddedResource Include="Tickets\Mapping\liteUser.hbm.xml" />
+    <EmbeddedResource Include="Tickets\Mapping\LK_UserCategory.hbm.xml" />
+    <EmbeddedResource Include="Tickets\Mapping\MailNotification.hbm.xml" />
+    <EmbeddedResource Include="Tickets\Mapping\Message.hbm.xml" />
+    <EmbeddedResource Include="Tickets\Mapping\SettingsComType.hbm.xml" />
+    <EmbeddedResource Include="Tickets\Mapping\SettingsPortal.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tickets\Mapping\TicketFile.hbm.xml" />
+    <EmbeddedResource Include="Tickets\Mapping\TicketUser.hbm.xml" />
+    <EmbeddedResource Include="Tickets\Mapping\Ticket.hbm.xml" />
+    <EmbeddedResource Include="WebControls\Editor\Mapping\EditorRepositoryItem.hbm.xml" />
+    <EmbeddedResource Include="NoticeBoard\Mapping\MessageStyle.hbm.xml" />
+    <EmbeddedResource Include="NoticeBoard\Mapping\NoticeBoardMessage.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Content Include="DocTemplate\Presentation\ADD NEW SERVICES TO LIST.txt" />
+    <EmbeddedResource Include="Federation\Mapping\liteFederation.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Content Include="FileStatistics\Domain\Readme.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="FileStatistics\Domain\DtoFileDetailStat.cd" />
+    <None Include="NoticeBoard\Domain\Noticeboard.cd" />
+    <None Include="Tickets\Diagram\Service.cd" />
+    <None Include="Tickets\Diagram\TicketSystem.cd" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

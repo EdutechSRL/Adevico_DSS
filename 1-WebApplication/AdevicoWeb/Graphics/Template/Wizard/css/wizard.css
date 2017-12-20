@@ -1,0 +1,458 @@
+
+
+/* --- updated 13.11.13 --- */
+
+div.StepData {
+	padding: 1em 1.5em;
+	min-height: 200px;
+}
+
+div.StepData div.StepData {
+	padding: 0;
+}
+
+div#wizard div.StepContent div.StepData,
+div#Wizard div.StepContent div.StepData {
+	min-height: 250px;
+	border: 1px solid #000;
+	border-top: none;
+	padding: 1em 1.5em;
+	-moz-border-radius-topleft: 0;
+	-moz-border-radius-topright: 0;
+	-moz-border-radius-bottomright: 6px;
+	-moz-border-radius-bottomleft: 6px;
+	-webkit-border-radius: 0px 0px 6px 6px;
+	border-radius: 0px 0px 6px 6px;
+}
+
+div#wizard div.StepContent div.StepData label.large,
+div#Wizard div.StepContent div.StepData label.large {
+	min-width: 300px;
+}
+
+div#wizard div.StepContent div.StepData .Titolo_campo,
+div#Wizard div.StepContent div.StepData .Titolo_campo {
+	vertical-align: top;
+	display: inline-block;
+}
+
+div#wizard div.StepContent div.StepData .Testo_Campo input,
+div#wizard div.StepContent div.StepData .testo_campoSmall input,
+div#Wizard div.StepContent div.StepData .Testo_Campo input,
+div#Wizard div.StepContent div.StepData .testo_campoSmall input {
+	border: 0px;
+}
+
+div#wizard div.StepContent div.StepData span.full,
+div#Wizard div.StepContent div.StepData span.full {
+	width: 100%;
+}
+
+div#wizard div.StepContent div.StepData .Testo_Campo,
+div#Wizard div.StepContent div.StepData .Testo_Campo {
+	clear: right;
+}
+
+div#wizard div.StepContent,
+div#Wizard div.StepContent {
+	min-height: 250px;
+}
+
+div#wizard span.Fieldrow, 
+div#Wizard span.Fieldrow {
+	display: block;
+	clear: both;
+}
+
+.rightcontent div#fizard span.Fieldrow,
+.rightcontent div#Wizard span.Fieldrow {
+	margin-bottom: 1em;
+}
+
+/* Allineamento RadioButtonList */
+/* Normale */
+
+div#wizard div.StepContent div.StepData span.rbl_MultiElement,
+div#Wizard div.StepContent div.StepData span.rbl_MultiElement {
+	display: inline-block;
+}
+
+div#wizard div.StepContent div.StepData span.rbl_MultiElement label,
+div#Wizard div.StepContent div.StepData span.rbl_MultiElement label {
+	display: inline-block;
+	width: 136px;
+}
+
+div#wizard div.StepContent div.StepData span.rbl_MultiElement label,
+div#wizard div.StepContent div.StepData span.rbl_MultiElement input,
+div#Wizard div.StepContent div.StepData span.rbl_MultiElement label,
+div#Wizard div.StepContent div.StepData span.rbl_MultiElement input {
+	vertical-align: top;
+}
+
+/* Allineamento RadioButtonList */
+/* Stretto (es: sì/no, max 4 char)*/
+
+div#wizard div.StepContent div.StepData span.rbl_MultiElement_small,
+div#Wizard div.StepContent div.StepData span.rbl_MultiElement_small {
+	display: inline-block;
+}
+
+div#wizard div.StepContent div.StepData span.rbl_MultiElement_small label,
+div#Wizard div.StepContent div.StepData span.rbl_MultiElement_small label {
+	display: inline-block;
+	width: 60px;
+}
+
+div#wizard div.StepContent div.StepData span.rbl_MultiElement_small label,
+div#wizard div.StepContent div.StepData span.rbl_MultiElement_small input,
+div#Wizard div.StepContent div.StepData span.rbl_MultiElement_small label,
+div#Wizard div.StepContent div.StepData span.rbl_MultiElement_small input {
+	vertical-align: top;
+}
+
+/* Allineamento RadioButtonList */
+/* Largo (es: indirizzi mail, circa 50%) */
+
+div#wizard div.StepContent div.StepData span.rbl_MultiElement_large,
+div#Wizard div.StepContent div.StepData span.rbl_MultiElement_large {
+	display: inline-block;
+}
+
+div#wizard div.StepContent div.StepData span.rbl_MultiElement_large label,
+div#Wizard div.StepContent div.StepData span.rbl_MultiElement_large label {
+	display: inline-block;
+	width: 325px;
+}
+
+div#wizard div.StepContent div.StepData span.rbl_MultiElement_large label,
+div#wizard div.StepContent div.StepData span.rbl_MultiElement_large input,
+div#Wizard div.StepContent div.StepData span.rbl_MultiElement_large label,
+div#Wizard div.StepContent div.StepData span.rbl_MultiElement_large input {
+	vertical-align: top;
+}
+
+/* IE HACK */
+
+/** html div#wizard div.StepData,
+* html div#Wizard div.StepData {
+	height: 250px;
+} 
+
+*+html div#wizard div.StepData,
+*+html div#Wizard div.StepData {
+	height: 250px;
+} */
+
+@media \0 screen {
+	div#wizard div.StepData,
+	div#Wizard div.StepData {
+	    height:auto;
+	}
+
+} /* 8 */
+
+:root div#wizard div.StepData,
+:root div#Wizard div.StepData {
+
+} /* 9 */
+
+
+#wizard,
+#Wizard {
+	margin: 1em 0;
+	-moz-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+	-webkit-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+	box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+	
+}
+
+div.wiz_header,
+div.wiz_content,
+div.wiz_bot_nav {
+	border: 1px solid #ccc;
+	padding: 10px;
+}
+
+div.wiz_content {
+	border-top: none;
+}
+
+
+div.wiz_bot_nav {
+	padding: 5px 10px;
+}
+
+div.wiz_header,
+div.wiz_bot_nav {
+	background-color: #e6e9ed;
+	-moz-box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.5);
+	-webkit-box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.5);
+	box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+div.wiz_header {
+
+}
+
+div.contenitoreEditor {
+}
+
+div.StepData div.messageBox {
+	margin-bottom: 1em;
+}
+
+div.RowCellLeft,
+div.RowCellRight,
+span.Fieldrow {
+	margin-bottom: .5em;
+}
+
+div.wiz_content div.RowCellRight label {
+	margin-right: 1em;
+}
+
+div.wiz_content:after {
+	content: ".";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	line-height: 0;
+	height: 0;
+}
+
+div.wiz_content {
+	display: block;
+	*display: inline-block;
+	*zoom:1;
+	margin: 0;
+	padding: 0;
+	*padding: 10px;
+}
+
+#wizard div.wiz_content,
+#Wizard div.wiz_content {
+	border-top: none;
+	padding-bottom: 20px;
+}
+
+/*#wizard div.wiz_content,
+#Wizard div.wiz_content {
+	*width: 882px;
+}*/
+
+html[xmlns] div.wiz_content {
+	display: block;
+}
+
+* html div.wiz_content {
+
+}
+
+div.wiz_bot_nav {
+	border-top: none;
+}
+
+#wizard div.wiz_header div.wiz_top_info.clearfix div.wiz_top_desc,
+#Wizard div.wiz_header div.wiz_top_info.clearfix div.wiz_top_desc {
+	/**width: 900px;*/
+	/*margin-bottom: -2em;*/
+}
+
+div#wizard div.stepButton,
+div#Wizard div.stepButton {
+	display: inline-block;
+	width: auto !important;
+	float: right !important;
+	text-align: right !important;
+	padding: 0;
+}
+
+#wizard div.wiz_header div.wiz_top_info div.wiz_top_desc img.titleicon,
+#Wizard div.wiz_header div.wiz_top_info div.wiz_top_desc img.titleicon {
+	/*display: block;*/
+	display:inline-block; /*fix*/
+	*display:inline; /*ie fix*/
+	float: left !important;
+	margin-right: 10px;
+	margin-bottom: 10px;
+}
+
+#wizard div.wiz_header div.wiz_top_info div.wiz_top_desc h2,
+#Wizard div.wiz_header div.wiz_top_info div.wiz_top_desc h2 {
+	margin: 0;
+	margin-bottom: .3em;
+	text-align
+	width: 590px;
+	*width: 490px;
+}
+
+#wizard div.wiz_header div.wiz_top_info div.wiz_top_desc h2 span,
+#Wizard div.wiz_header div.wiz_top_info div.wiz_top_desc h2 span {
+	font-size: 18px;
+	font-weight: normal;
+	font-style: normal;
+}
+
+#wizard div.wiz_header div.wiz_top_info div.wiz_top_desc span.Testo_Campo,
+#Wizard div.wiz_header div.wiz_top_info div.wiz_top_desc span.Testo_Campo {
+	margin: 0;
+	margin-bottom: .5em;
+	float: left;
+	width: 490px;
+	display: block;
+}
+
+#wizard div.wiz_header div.wiz_top_info div.wiz_export,
+#Wizard div.wiz_header div.wiz_top_info div.wiz_export {
+	text-align: right !important;
+	display: block;
+	clear: both;
+	*width: 890px;
+}
+
+#wizard div.wiz_header div.wiz_top_info div.wiz_export span,
+#Wizard div.wiz_header div.wiz_top_info div.wiz_export span {
+	vertical-align: bottom;
+}
+
+#wizard div.wiz_header div.wiz_top_nav div.stepButton,
+#Wizard div.wiz_header div.wiz_top_nav div.stepButton {
+	margin-bottom: 20px;
+}
+
+#wizard div.wiz_header div.wiz_top_info div.spacer,
+#Wizard div.wiz_header div.wiz_top_info div.spacer {
+	
+}
+
+#wizard div.wiz_header span.errore {
+	color: #c00;
+	padding: 3px 0;
+	font-weight: bold;
+	padding-left: 20px;
+	background: url(/images/DefaultCommand/warning16.png) no-repeat 0 4px;
+	*background: none;
+}
+
+
+/* @group *** input / a.Link_Menu *** */
+
+div#wizard div.stepButton a.Link_Menu,
+div#wWizard div.stepButton input[type="submit"],
+div#Wizard div.stepButton a.Link_Menu,
+div#Wizard div.stepButton input[type="submit"] {
+}
+
+div#wizard div.stepButton input[type="submit"],
+div#Wizard div.stepButton input[type="submit"] {
+	display: inline-block;
+	*display:inline;
+	*zoom: 1;
+	position: relative;
+	padding: 0 2px;
+	margin: 2px;
+	line-height: 18px;
+	height: 20px;
+	font-size: .9em !important;
+}
+
+div#wizard div.stepButton a.Link_Menu,
+div#Wizard div.stepButton a.Link_Menu {
+	display: inline-block;
+	line-height: 14px;
+	height: 14px;
+	padding: 2px 4px;
+	margin: 2px;
+}
+
+div#wizard div.stepButton input[type="submit"].img_btn,
+
+div#wizard div.stepButton input[type="submit"].btn_link,
+
+div#wizard div.stepButton input[type="submit"].img_span,
+
+div#Wizard div.stepButton input[type="submit"].img_btn,
+
+div#Wizard div.stepButton input[type="submit"].btn_link,
+
+div#Wizard div.stepButton input[type="submit"].img_span {
+	background-color: transparent;
+	border: 0;
+}
+
+div#wizard div.stepButton input:hover[type="submit"],
+div#wizard div.stepButton a.Link_Menu:hover,
+div#Wizard div.stepButton input:hover[type="submit"],
+div#Wizard div.stepButton a.Link_Menu:hover {
+	outline: none;
+	color: #565656;
+	text-shadow: 1px 1px 0px #ddd;
+	background-color: #bcbcbc;
+}
+
+div#wizard div.stepButton input:active[type="submit"],
+div#wizard div.stepButton a.Link_Menu:active,
+div#Wizard div.stepButton input:active[type="submit"],
+div#Wizard div.stepButton a.Link_Menu:active {
+	outline: none;
+	border: 1px solid #777;
+	-moz-box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.7);
+	-webkit-box-shadow: inset 0 0 32px rgba(0, 0, 0, 0.7);
+	box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.7);
+}
+
+/* @end */
+
+/* @group ** Controllare ** Bordo tasti esportazione - M.B.  */
+
+.wiz_export input {
+	border: 0px;
+}
+
+/* @end */
+
+#wizard div.wiz_content div.StepData div.IW_ProfileInfo div.StepData span.Fieldrow,
+#Wizard div.wiz_content div.StepData div.IW_ProfileInfo div.StepData span.Fieldrow {
+	margin: .5em ;
+	padding: 0;
+}
+
+#wizard div.wiz_content div.StepData div.IW_Summary div.StepData span.Fieldrow,
+#wizard div.wiz_content div.StepData div.IW_ProfileInfo div.StepData span.Fieldrow,
+#Wizard div.wiz_content div.StepData div.IW_Summary div.StepData span.Fieldrow,
+#Wizard div.wiz_content div.StepData div.IW_ProfileInfo div.StepData span.Fieldrow {
+	margin: 1em 0;
+	padding: 0;
+}
+
+#wizard div.wiz_content div.StepData div.IW_Summary div.StepData span.Fieldrow .Titolo_campo,
+#wizard div.wiz_content div.StepData div.IW_ProfileInfo div.StepData span.Fieldrow label.Titolo_campo,
+#Wizard div.wiz_content div.StepData div.IW_Summary div.StepData span.Fieldrow .Titolo_campo,
+#Wizard div.wiz_content div.StepData div.IW_ProfileInfo div.StepData span.Fieldrow label.Titolo_campo {
+	width: 140px;
+	display: inline-block;
+	*display: inline;
+	zoom: 1;
+}
+
+span.Validatori {
+	color: #c20;
+}
+
+#wizard div.wiz_content div.StepData div.StepOrgn  div.FlotLeft, .LeftCol,
+#Wizard div.wiz_content div.StepData div.StepOrgn  div.FlotLeft, .LeftCol {
+	margin-bottom: 1em;
+}
+
+#wizard div.wiz_header div.wiz_top_nav div.stepButton,
+#Wizard div.wiz_header div.wiz_top_nav div.stepButton {
+	margin: 0 0 0 1em;
+	padding: 0;
+}
+
+#wizard div.wiz_bot_nav div.stepButton, 
+#Wizard div.wiz_bot_nav div.stepButton {
+	margin: 0 0 0 1em;
+	padding: 0;
+}

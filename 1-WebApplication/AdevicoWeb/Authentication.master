@@ -1,0 +1,158 @@
+﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="Authentication.master.vb"Inherits="Comunita_OnLine.Authentication" %>
+<%@ Register TagPrefix="FOOTER" TagName="CtrLFooter" Src="UC/UC_PortalFooter.ascx" %><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd"> 
+<html class="no-js lang-<%=IsoCode %>" lang="<%=IsoCode %>">
+<head id="Head1" runat="server">
+	<title id="Title1" runat="server">Comunità On Line
+		<asp:ContentPlaceHolder ID="PageTitleContent" runat="server">
+		</asp:ContentPlaceHolder>
+	</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=1' />
+	<style type="text/css">	
+        body div#tools{
+            min-height:34px;
+            height:auto;
+        }
+		@media screen and (max-width: 1200px) {
+			div#Wizard,
+			div.StepButton{
+				max-width: 100% !important;
+				min-width: 320px !important;
+				width:auto !important;
+			}
+			.page-width, #header .page-width, #footer .page-width {
+				max-width: 100% !important;
+				min-width: 320px !important;
+				width: auto !important;
+			}
+			.mainForm{
+				min-width: 320px !important;
+			}
+			div.section {
+				max-width: 100% !important;
+				min-width: 320px !important;
+				width: auto !important;
+			}
+			
+			body div#tools ul {
+				display:block;
+				width: 100%;
+			}
+			body div#tools ul li {
+				display:block;
+				width: 100%;
+			}
+			body div#tools ul li a {
+				line-height: 28px;
+				border-bottom: solid 1px #ccc;
+			}
+			
+			/* fix mobile input form */
+			div#Wizard div.StepContent span.Fieldrow label.Titolo_campo, div#Wizard div.StepContent span.Fieldrow span.Titolo_campo {
+				text-align: left !important;
+			}
+		}
+	</style>
+	<!-- JQuery -->
+	<link href="<%=ResolveUrl("~/Content/themes/"& Me.SystemSettings.Style.jqueryTheme &"/jquery-ui-"&Me.SystemSettings.Style.jqueryUIVersion &".css")%>" rel="stylesheet" type="text/css" />
+	<script type="text/javascript" src="<%=ResolveUrl("~/scripts/jquery-" & Me.SystemSettings.Style.jqueryVersion &".min.js")%>"></script>
+    <script type="text/javascript" src="<%=ResolveUrl("~/scripts/modernizr-2.8.3.js")%>"></script>
+	<script type="text/javascript" src="<%=ResolveUrl("~/scripts/jquery-migrate-1.2.1.js")%>"></script> <!-- JQuery Migrate -->
+	<script type="text/javascript" src="<%=ResolveUrl("~/scripts/jquery-ui-" & Me.SystemSettings.Style.jqueryUIVersion &".min.js")%>"></script>
+	<script type="text/javascript" src="<%=ResolveUrl("~/scripts/jquery.blockUI.min.js")%>"></script>
+	<script type="text/javascript" src="<%=ResolveUrl("~/Jscript/jquery.cookie.js")%>"></script>
+    <script type="text/javascript" src="<%=ResolveUrl("~/scripts/jquery.watermark.js")%>"></script>
+	<!-- Altri script servizi globali -->  
+	<!-- Stili NEW Menu -->
+	<!--[if lte IE 7]>
+			<link rel="stylesheet" href="~/Style/NewMenuDemo/css/ie6.css" type="text/css" media="screen">
+			<script type="text/javascript" src="..<%=ResolveUrl("~/Style/NewMenuDemo/js/ie.js")%>"></script>
+		<![endif]-->
+	<!-- CPH Header -->
+	<asp:ContentPlaceHolder ID="HeadContent" runat="server">
+	</asp:ContentPlaceHolder>
+		<!-- Mantain dialog open-->
+	<script type="text/javascript" src="<%=ResolveUrl("~/JScript/Modules/Common/autoopendialog.js")%>"></script>
+	<link rel="Stylesheet" type="text/css" href="<%=ResolveUrl("~/Graphics/Generics/css/logindefault.css?v=201604071200lm") %>" />
+	<asp:Literal ID="LTskin" runat="server"></asp:Literal>
+	<!-- Script NEW Menu -->
+	<script type="text/javascript" src="<%=ResolveUrl("~/Style/NewMenuDemo/js/jquery.bgiframe.js") %>"></script>
+	<script type="text/javascript" src="<%=ResolveUrl("~/Style/NewMenuDemo/js/jquery-hoverIntent.js") %>"></script>  
+	<script type="text/javascript" src="<%=ResolveUrl("~/Style/NewMenuDemo/js/d.js") %>"></script>
+	<link rel="Stylesheet" type="text/css" href="<%=ResolveUrl("~/Privacy/PrivacyCookies/css/divascookies_style_dark_bottom.css") %>" />
+	<link rel="Stylesheet" type="text/css" href="<%=ResolveUrl("~/Privacy/css/privacycookie.css?v=201604071200lm") %>" />
+	<script type="text/javascript" src="<%=ResolveUrl("~/Privacy/PrivacyCookies/js/jquery.divascookies-0.3.min.js") %>"></script>
+	<script type="text/javascript" src="<%=ResolveUrl("~/Privacy/js/privacycookie.js") %>"></script>
+</head>
+<body class="internal_body" id="AuthenticationMaster">
+	<form id="aspnetForm" class="mainForm" runat="server">
+	<asp:ScriptManager ID="SCMmanager" runat="server" EnablePageMethods="true" EnablePartialRendering="true">
+	</asp:ScriptManager>
+	<!-- header -->
+	<div id="header">
+		<!-- toolbar -->
+		<div id="toolbar">
+			<div class="page-width">
+			</div>
+			<!--<div class="clear"></div>-->
+		</div>
+		<!-- end toolbar -->
+		<!-- branding -->
+		<div id="branding" class="page-width">
+			<asp:Image ID="logo" runat="server" alt="logo" CssClass="logo" />
+			<asp:Literal ID="Lit_Logo" runat="server"></asp:Literal>
+			<h1>
+				<span>Adevico</span>
+			</h1>
+		</div>
+		<!-- end branding -->
+		<!-- nav main -->
+		<div id="nav-main">
+			<div class="page-width">
+			</div>
+		</div>
+		<!-- end nav main -->
+	</div>
+	<!-- end header -->
+	<!-- page-box -->
+	<div id="page-box">
+		<!-- container -->
+		<div id="container" class="page-width">
+			<div id="top-content">
+				<div id="tools" class="section clearfix">
+					<ul>
+						<asp:ContentPlaceHolder ID="CPHmenu" runat="server">
+						</asp:ContentPlaceHolder>
+						<li>
+							<asp:HyperLink ID="HYPhelp" class="help" runat="server" Target="_blank">&nbsp;</asp:HyperLink>
+						</li>
+						<asp:Literal ID="LTlanguage" runat="server"></asp:Literal>
+					</ul>
+					<div class="clearer">
+					</div>
+				</div>
+			</div>
+			<div id="middle-content">
+				<asp:ContentPlaceHolder ID="CPHcontent" runat="server">
+				</asp:ContentPlaceHolder>
+				<div class="clearer">
+				</div>
+			</div>
+			<div id="bottom-content">
+			</div>
+		</div>
+		<!-- end container -->
+	</div>
+	<!-- end page-box -->
+	<!-- footer -->
+	<div id="footer">
+		<div id="siteinfo" class="page-width">
+			<FOOTER:CtrLFooter ID="CtrlFooter" runat="server" AutoUpdate="false" />
+		</div>
+	</div>
+	<!-- end footer -->
+	<asp:ContentPlaceHolder ID="CPHbottomScripts" runat="server">
+	</asp:ContentPlaceHolder>
+			<input type="hidden" id="HDNwindowopened"  runat="server" class="autoopendialog" />
+	  </form>
+</body>
+</html>

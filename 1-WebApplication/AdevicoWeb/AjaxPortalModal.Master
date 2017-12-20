@@ -1,0 +1,138 @@
+﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="AjaxPortalModal.master.vb" Inherits="Comunita_OnLine.AjaxPortalModal" %>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html class="no-js lang-<%=IsoCode %>" lang="<%=IsoCode %>">
+<head id="Head1" runat="server">
+    <title id="Title1" runat="server">
+        Comunità On Line
+        <asp:ContentPlaceHolder ID="PageTitleContent" runat="server"></asp:ContentPlaceHolder>
+    </title>
+    <!-- LINK CSS START -->
+    <link href="~/Styles.css?v=201605041410lm" type="text/css" rel="stylesheet" />
+
+    <!-- Latex -->
+    <link rel="Stylesheet" href="<%=ResolveUrl("~/Style/New/statistiche.css?v=201605041410lm")%>" />
+    <link rel="Stylesheet" href="~/Style/Latex/Latex.css?v=201605041410lm" />
+    <link rel="Stylesheet" href="~/Style/Latex/Latex.css?v=201605041410lm" media="print" />
+    <script type="text/javascript" src="<%=ResolveUrl("~/Style/Latex/Latex.js") %>"></script>
+    
+    <!-- Localizations-->
+    <script type="text/javascript" src="<%=ResolveUrl("~/Jscript/Modules/Common/Localization/localization." &  Me.PageUtility.LinguaCode  & ".js")%>"></script>
+
+     <!-- CPH Header -->
+    <asp:ContentPlaceHolder ID="CPHserviceLocalization" runat="server">
+    </asp:ContentPlaceHolder>
+
+   <script type="text/javascript" src="<%=ResolveUrl("~/Jscript/Modules/Common/Localization/localization.helpers.js")%>"></script>
+
+    <!-- JQuery -->
+    <link href="<%#ResolveUrl("~/Content/themes/"& Me.SystemSettings.Style.jqueryTheme &"/jquery-ui-"&Me.SystemSettings.Style.jqueryUIVersion &".css")%>" rel="stylesheet" type="text/css" />
+
+    <script type="text/javascript" src="<%=ResolveUrl("~/scripts/jquery-"&Me.SystemSettings.Style.jqueryVersion &".min.js")%>"></script>
+    <script type="text/javascript" src="<%=ResolveUrl("~/scripts/modernizr-2.8.3.js")%>"></script>
+    <script type="text/javascript" src="<%=ResolveUrl("~/scripts/jquery-migrate-1.2.1.js")%>"></script> <!-- JQuery Migrate -->
+    <%--<script type="text/javascript" src="<%#ResolveUrl("~/scripts/jquery-migrate-"&Me.SystemSettings.Style.jqueryMigrateVersion &".js")%>"></script> <!-- JQuery Migrate -->--%>
+    <!--<script type="text/javascript" src="<%#ResolveUrl("~/Jscript/jquery.validate.min.js")%>"></script>-->
+    <script type="text/javascript" src="<%=ResolveUrl("~/scripts/jquery-ui-"&Me.SystemSettings.Style.jqueryUIVersion &".min.js")%>"></script>
+    <script type="text/javascript" src="<%=ResolveUrl("~/scripts/jquery.blockUI.min.js")%>"></script>
+    <script type="text/javascript" src="<%=ResolveUrl("~/Jscript/jquery.cookie.js")%>"></script>
+    <script type="text/javascript" src="<%=ResolveUrl("~/Jscript/jquery.tools.126.min.js")%>"></script>
+
+    <link rel="Stylesheet" href="<%=ResolveUrl("~/Graphics/Generics/css/comolTooltip.css?v=201605041410lm") %>" />
+
+    <!-- Javascript confirmation-->
+    <script type="text/javascript" src="<%=ResolveUrl("~/JScript/Modules/Common/jquery.needConfirm.js")%>"></script>
+    <script type="text/javascript" src="<%=ResolveUrl("~/JScript/Modules/Common/jquery.needConfirm.base.js")%>"></script>
+   
+    <!-- Other Header -->
+    <script type="text/javascript" src="<%=ResolveUrl("~/Style/NewMenuDemo/js/jquery-hoverIntent.js") %>"></script>  
+    <!-- CPH Header -->
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server"></asp:ContentPlaceHolder>
+    <asp:Literal ID="LTtoolTip" runat="server" Visible="false"></asp:Literal>
+
+    <!-- Stili Skin -->
+    <asp:Literal ID="LTskin" runat="server"></asp:Literal>
+    <script type="text/javascript">
+        $(function () {
+
+            //$(".tooltipHook").tooltip();
+
+            $(".tooltipHook").tooltip({
+
+                // tweak the position                
+                delay: 300,
+                predelay: 300,
+                effect: "slide",
+                relative: "true"
+
+                // use the "slide" effect
+
+
+                // add dynamic plugin with optional configuration for bottom edge
+            }).dynamic({ bottom: { direction: 'down', bounce: true } });
+
+            $(".checklenght").each(function () {
+
+                var min = 9;
+
+                var $this = $(this);
+
+                var origsize = $this.css("font-size");
+
+                var cycle = true;
+
+                while (cycle) {
+                    var clone = $this.clone();
+                    clone.html("-");
+                    $this.append(clone);
+                    var short = clone.height();
+                    clone.remove();
+                    var long = $this.height();
+
+                    var font = $this.css("font-size").replace("px", "");
+
+                    if (long - short > 0 && font > min) {
+                        font = $this.css("font-size").replace("px", "") - 1;
+                        $this.css("font-size", font + "px");
+                        $this.addClass("resized");
+                    } else {
+                        cycle = false;
+                    }
+                }
+            });
+
+        });
+    </script>
+
+    <link rel="stylesheet" type="text/css" media="print" href="<%=ResolveUrl("~/Graphics/Generics/css/Print.css")%>" />
+</head>
+<body id="<%=Me.BodyIdCode() %>" class="internal_body <%=Me.DocTypeClass %> <%=Me.FullWidthClass %>">
+    <form id="aspnetForm" class="mainForm" runat="server">
+        <asp:ScriptManager ID="SCMmanager" runat="server" EnablePageMethods="true" EnablePartialRendering="true"/>
+        <div id="page-box">
+            <div id="container" class="page-width <%=Me.FullWidthClass %>">
+                <div id="content">
+                    <asp:MultiView ID="MLVservice" runat="server" ActiveViewIndex="0">
+                        <asp:View ID="VIWservice" runat="server">
+                            <div class="DIV_MP_Content <%=TitleRowClass%>">
+                                <asp:ContentPlaceHolder ID="CPHservice" runat="server"></asp:ContentPlaceHolder>
+                            </div>
+                        </asp:View>
+                        <asp:View ID="VIWnoPermission" runat="server">
+                            <div id="DVpermessi" align="center">
+                                <div style="height: 50px;">
+                                </div>
+                                <div align="center">
+                                    <asp:Label ID="LBNopermessi" runat="server" CssClass="messaggio"></asp:Label>
+                                </div>
+                                <div style="height: 50px;">
+                                </div>
+                            </div>
+                        </asp:View>
+                    </asp:MultiView>
+                </div>
+                <div style="clear:both "></div>
+            </div>
+        </div>
+    </form>
+</body>
+</html>

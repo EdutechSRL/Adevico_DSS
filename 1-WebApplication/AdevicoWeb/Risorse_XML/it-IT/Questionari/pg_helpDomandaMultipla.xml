@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Resource xmlns="urn:ComolTranslation">
+    <item name="LBTitolo.text">Domanda a scelta multipla</item>
+    <item name="LibreriaDiDomande" disambiguation="libreria=libreria di domande">Librerie</item>
+    <item name="Modello" disambiguation="modello=modello di questionario">Modelli</item>
+    <item name="Autovalutazione">Test di autovalutazione</item>
+    <item name="Sondaggio">Sondaggi</item>
+    <item name="Questionari">Questionari</item>
+    <item name="Meeting">Meeting</item>
+    <item name="testoUnico" html="true" placeholder="true" mustcontains="{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}">
+        Per questo tipo di domanda l’utente finale potrà scegliere tra più risposte disponibili in relazione alla domanda presentata.
+        &lt;br&gt;Le domande a più risposte permettono di scegliere una o più risposte e ogni risposta può essere accompagnata da una valutazione sia positiva che negativa.
+        &lt;br&gt;&lt;br&gt;Un esempio di domanda a risposta multipla è il seguente:&lt;br&gt;&lt;br&gt;
+        {0}&lt;br&gt;&lt;br&gt;
+        Per creare una domanda di questo tipo in Comunità Online seguire i passi:&lt;br&gt;&lt;br&gt;
+        1) Definire la pagina del questionario / sondaggio nella quale dovrà comparire la domanda&lt;br&gt;&lt;br&gt;
+        {1}&lt;br&gt;&lt;br&gt;
+        In questo caso vogliamo inserire la domanda nella pagina sulla scoperta dell’America&lt;br&gt;&lt;br&gt;
+        2) Inserire il testo della domanda&lt;br&gt;&lt;br&gt;
+        {2}&lt;br&gt;&lt;br&gt;
+        3) Indicare quale è il peso della domanda all’interno del questionario&lt;br&gt;&lt;br&gt;
+        {3}&lt;br&gt;&lt;br&gt;
+        4) Indicare qual è la difficoltà della domanda&lt;br&gt;&lt;br&gt;
+        {4}&lt;br&gt;&lt;br&gt;
+        Se consideriamo la risposta difficile, scegliamo una difficoltà alta&lt;br&gt;&lt;br&gt;
+        5) Scegliere il numero di risposte da presentare all’utente per la domanda:&lt;br&gt;&lt;br&gt;
+        {5}&lt;br&gt;&lt;br&gt;
+        Nel nostro caso abbiamo tre risposte possibili; Dante Alighieri, Giuseppe Garibaldi e Cristoforo Colombo&lt;br&gt;&lt;br&gt;
+        6) Definire quante risposte l’utente potrà dare per la domanda&lt;br&gt;&lt;br&gt;
+        {6}&lt;br&gt;&lt;br&gt;
+        Nel caso del nostro questionario una sola è la risposta corretta, quindi vogliamo che l’utente scelga quella che a parer suo è la sola corretta&lt;br&gt;&lt;br&gt;
+        7) Inserire le risposte che verranno proposte all’utente. La scelta al punto (5) comporterà la creazione automatica del numero di risposte da proporre all’utente. &lt;br&gt;&lt;br&gt;
+        All’amministratore resta solo inserire il testo per ogni risposta possibile.&lt;br&gt;
+        {7}&lt;br&gt;&lt;br&gt;
+        Nel caso di questa domanda la risposta corretta è “Cristoforo Colombo”. &lt;br&gt;&lt;br&gt;
+        Per questo è selezionata l’opzione “Corretta”, che vale il 100% dei punti in palio per quella domanda. &lt;br&gt;&lt;br&gt;
+        Al contrario, la risposta “Dante Alighieri” è errata, e quindi non consente all’utente totalizzare nessun punteggio positivo. &lt;br&gt;&lt;br&gt;
+        La scelta del punteggio è lasciata a discrezione dell’amministratore; possono essere scelte anche diverse configurazioni di punteggio, come 10 – 20 – 70 rispettivamente per le tre risposte (ovviamente in questo caso senza senso), e via dicendo&lt;br&gt;&lt;br&gt;
+        8) Un'opportunità finale è quella di proporre un testo aggiuntivo alla conclusione della domanda. &lt;br&gt;&lt;br&gt;
+        Un esempio può essere il seguente:&lt;br&gt;&lt;br&gt;
+        {8}&lt;br&gt;&lt;br&gt;
+        Al termine, quando la compilazione è terminata, premere il tasto “Salva Modifiche”&lt;br&gt;
+        Ecco come si presenta la schermata dopo avere seguito i passi qui indicati.&lt;br&gt;
+        Immagine della domanda compilata.&lt;br&gt;&lt;br&gt;
+        {9}
+    </item>
+    <item name="IMGdomandaMultipla" hidden="true">&lt;img src="img/domandaMultipla.png"&gt;</item>
+    <item name="IMGpaginaAmerica" hidden="true">&lt;img src="img/paginaAmerica.png"&gt;</item>
+    <item name="IMGtestoDomanda" hidden="true">&lt;img src="img/testoDomandaMultipla.png"&gt;</item>
+    <item name="IMGpesoDomanda" hidden="true">&lt;img src="img/pesoDomanda.png"&gt;</item>
+    <item name="IMGdifficoltaDomanda" hidden="true">&lt;img src="img/difficoltaDomanda.png"&gt;</item>
+    <item name="IMGnumeroRisposte" hidden="true">&lt;img src="img/numeroRisposte3.gif"&gt;</item>
+    <item name="IMGnumeroMaxRisposte" hidden="true">&lt;img src="img/numeroMaxRisposte.gif"&gt;</item>
+    <item name="IMGdomandaMultiplaOpzioni" hidden="true">&lt;img src="img/domandaMultiplaOpzioni.png"&gt;</item>
+    <item name="IMGtestoDopoDomanda" hidden="true">&lt;img src="img/testoDopoDomanda.png"&gt;</item>
+
+</Resource>

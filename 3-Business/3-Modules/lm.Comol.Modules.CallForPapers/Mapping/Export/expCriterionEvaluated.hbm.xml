@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="lm.Comol.Modules.CallForPapers" namespace="lm.Comol.Modules.CallForPapers.Domain.Evaluation.Export">
+  <class name="expCriterionEvaluated" table="CP_CriterionEvaluated">
+    <!--where="_Deleted=0">-->
+    <id name="Id" column="Id" type="Int64">
+      <generator class="native"/>
+    </id>
+    <property name="IdCall" type="Int64" column="IdCall" />
+    <!--<many-to-one name="Submission" class="lm.Comol.Modules.CallForPapers.Domain.Export.UserSubmission" column="IdUserSubmission" foreign-key="IdUserSubmission" cascade="none" not-found="ignore"  />-->
+    <many-to-one name="Evaluation" class="lm.Comol.Modules.CallForPapers.Domain.Evaluation.Export.expEvaluation" column="IdEvaluation" foreign-key="IdEvaluation" cascade="none" not-found="ignore" />
+    <many-to-one name="Criterion" class="lm.Comol.Modules.CallForPapers.Domain.Evaluation.Export.expCriterion" column="IdCriterion" foreign-key="IdCriterion" cascade="none" not-found="ignore" />
+
+    <property name="StringValue" type="String" column="StringValue" />
+    <property name="DecimalValue" type="Decimal" column="Value" />
+    <many-to-one name="Option" class="lm.Comol.Modules.CallForPapers.Domain.Evaluation.Export.expCriterionOption" column="IdOption" foreign-key="IdOption" cascade="none" not-found="ignore"  />
+    <property name="Comment" type="String" column="Comment" />
+    <property name="IsValueEmpty" type="Boolean" column="IsValueEmpty" />
+    <component name="DssValue" class="lm.Comol.Core.Dss.Domain.Templates.ItemRating,lm.Comol.Core.Dss">
+      <property name="IdRatingValue" column="IdDssRatingValue" />
+      <property name="IdRatingValueEnd" column="IdDssRatingValueEnd" />
+      <property name="Value" column="Rating" />
+      <property name="ValueFuzzy" column="RatingFuzzy" />
+      <property name="IsFuzzy" column="IsFuzzyRating" />
+      <property name="RatingType" type="lm.Comol.Core.Dss.Domain.RatingType, lm.Comol.Core.Dss" column="RatingType"  />
+    </component>
+  </class>
+</hibernate-mapping>

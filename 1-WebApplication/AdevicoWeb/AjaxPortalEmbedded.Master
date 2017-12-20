@@ -1,0 +1,55 @@
+﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="AjaxPortalEmbedded.Master.vb" Inherits="Comunita_OnLine.AjaxPortalEmbedded" %>
+<asp:Literal ID="Lit_DocType" runat="server" visible="true"><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"></asp:Literal>
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js lang-<%=IsoCode %>" lang="<%=IsoCode %>">
+<head runat="server">
+    <title id="Title1" runat="server">
+        <asp:ContentPlaceHolder ID="PageTitleContent" runat="server"></asp:ContentPlaceHolder>
+    </title>
+    <!-- Col Master -->
+    <link href="<%#ResolveUrl("~/Styles.css?v=201604071200lm")%>" type="text/css" rel="stylesheet" />
+    <!-- Latex -->
+    <link rel="Stylesheet" href="<%#ResolveUrl("~/Style/New/statistiche.css?v=201604071200lm")%>" />
+    <link rel="Stylesheet" href="~/Style/Latex/Latex.css?v=201604071200lm" />
+    <link rel="Stylesheet" href="~/Style/Latex/Latex.css?v=201604071200lm" media="print" />
+    <script type="text/javascript" src="<%#ResolveUrl("~/Style/Latex/Latex.js") %>"></script>
+    
+    <!-- Localizations-->
+    <script type="text/javascript" src="<%#ResolveUrl("~/Jscript/Modules/Common/Localization/localization." &  Me.PageUtility.LinguaCode  & ".js")%>"></script>
+
+     <!-- CPH Header -->
+    <asp:ContentPlaceHolder ID="CPHserviceLocalization" runat="server">
+    </asp:ContentPlaceHolder>
+
+   <script type="text/javascript" src="<%#ResolveUrl("~/Jscript/Modules/Common/Localization/localization.helpers.js")%>"></script>
+
+    <!-- JQuery -->
+    <link href="<%#ResolveUrl("~/Content/themes/"& Me.SystemSettings.Style.jqueryTheme &"/jquery-ui-"&Me.SystemSettings.Style.jqueryUIVersion &".css")%>" rel="stylesheet" type="text/css" />
+
+    <script type="text/javascript" src="<%#ResolveUrl("~/scripts/jquery-"&Me.SystemSettings.Style.jqueryVersion &".min.js")%>"></script>
+    <script type="text/javascript" src="<%#ResolveUrl("~/scripts/modernizr-2.8.3.js")%>"></script>
+    <script type="text/javascript" src="<%#ResolveUrl("~/scripts/jquery-migrate-1.2.1.js")%>"></script> <!-- JQuery Migrate -->
+    <script type="text/javascript" src="<%#ResolveUrl("~/scripts/jquery-ui-"&Me.SystemSettings.Style.jqueryUIVersion &".min.js")%>"></script>
+    <script type="text/javascript" src="<%#ResolveUrl("~/scripts/jquery.blockUI.min.js")%>"></script>
+    <script type="text/javascript" src="<%#ResolveUrl("~/Jscript/jquery.cookie.js")%>"></script>
+    <script type="text/javascript" src="<%#ResolveUrl("~/Jscript/jquery.tools.126.min.js")%>"></script>
+    <!-- Other Header -->
+    <script type="text/javascript" src="<%#ResolveUrl("~/Style/NewMenuDemo/js/jquery-hoverIntent.js") %>"></script>  
+    <!-- CPH Header -->
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+    <!-- Stili Skin -->
+    <asp:Literal ID="LTskin" runat="server"></asp:Literal>
+    <link rel="stylesheet" type="text/css" media="print" href="<%#ResolveUrl("~/Graphics/Generics/css/Print.css")%>" />
+</head>
+<body class="embeddedbody <%=Me.DocTypeClass %> <%=Me.FullWidthClass %>" id="PortalMasterEmbedded">
+    <form id="form1" runat="server">
+    <div>
+        <asp:ScriptManager ID="SCMmanager" runat="server" EnablePageMethods="true" EnablePartialRendering="true">
+        </asp:ScriptManager>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+</body>
+</html>

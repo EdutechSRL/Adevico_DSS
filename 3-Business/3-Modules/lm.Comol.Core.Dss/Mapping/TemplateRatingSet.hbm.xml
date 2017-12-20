@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="lm.Comol.Core.Dss" namespace="lm.Comol.Core.Dss.Domain.Templates">
+  <class name="TemplateRatingSet" table="DSS_RatingSet" lazy="false" optimistic-lock ="version">
+    <id name="Id" column="Id" type="Int64" unsaved-value="0">
+      <generator class="native"/>
+    </id>
+    <version name="TimeStamp" generated="always" unsaved-value="null" type="BinaryBlob">
+      <column name="_Timestamp" not-null="false" sql-type="timestamp"/>
+    </version>
+    <component name="DefaultTranslation">
+      <property name="Name" type="String" column="Name"/>
+      <property name="Description" type="String" column="Description" not-null="false"/>
+      <property name="ShortName" type="String" column="ShortName" not-null="false"/>
+      <property name="BadFor" type="String" column="BadFor" not-null="false"/>
+      <property name="GoodFor" type="String" column="GoodFor" not-null="false"/>
+    </component>
+    <property name="IsFuzzy" type="Boolean" column="IsFuzzy"/>
+    <property name="IsDefault" type="Boolean" column="IsDefault"/>
+    <property name="IsForWeights"/>
+    
+    <bag name="Translations" table="DSS_Translation" lazy="false" where="Type=1" fetch="subselect" cascade="all-delete-orphan">
+      <key column="IdRatingSet"/>
+      <one-to-many class="lm.Comol.Core.Dss.Domain.Templates.DssTemplateTranslation,lm.Comol.Core.DomainModel"/>
+    </bag>
+    <bag name="Values" table="DSS_RatingValue" lazy="false" inverse="true" fetch="subselect" cascade="all-delete-orphan">
+      <key column="IdRatingSet"/>
+      <one-to-many class="TemplateRatingValue"/>
+    </bag>
+    <property name="Deleted" type="lm.Comol.Core.DomainModel.BaseStatusDeleted,lm.Comol.Core.DomainModel" column="_Deleted" />
+    <property name="IdModifiedBy" type="Int32" column="_ModifiedBy" />
+    <property name="CreatedOn" type="DateTime" column="_CreatedOn" />
+    <property name="ModifiedOn" type="DateTime" column="_ModifiedOn" />
+    <property name="IdCreatedBy" type="Int32" column="_CreatedBy" />
+    <property name="CreatorProxyIpAddress" type="String" column="_CreatedProxyIPaddress" />
+    <property name="CreatorIpAddress" type="String" column="_CreatedIPaddress" />
+    <property name="ModifiedProxyIpAddress" type="String" column="_ModifiedProxyIPaddress" />
+    <property name="ModifiedIpAddress" type="String" column="_ModifiedIPaddress" />
+  </class>
+</hibernate-mapping>

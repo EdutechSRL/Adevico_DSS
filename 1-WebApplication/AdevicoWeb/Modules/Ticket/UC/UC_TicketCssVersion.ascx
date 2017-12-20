@@ -1,0 +1,2 @@
+﻿<%@ Control Language="vb" AutoEventWireup="false" CodeBehind="UC_TicketCssVersion.ascx.vb" Inherits="Comunita_OnLine.UC_TicketCssVersion" %>
+<asp:Literal runat="server" ID="LTticketCssVersion">?v=201605312359lm</asp:Literal>

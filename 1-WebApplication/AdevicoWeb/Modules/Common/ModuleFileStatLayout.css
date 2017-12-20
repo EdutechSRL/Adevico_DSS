@@ -1,0 +1,216 @@
+﻿body 
+{
+    word-wrap: break-word;
+}
+
+     /* Allineamenti dati package   */
+    .scst_Head
+    {
+    }
+            
+    .scst_Bordered
+    {
+        border:1px solid #888;
+        margin: 1px;
+    }
+            
+    .scst_TopRight
+    {
+        margin: 1px 0px 10px 0px;    
+    }
+            
+    .scst_LeftCol
+    {
+        display:inline-block;
+        width: 49%; 
+        vertical-align: top; 
+        padding:0;
+        float:left;
+    }
+            
+    .scst_RightCol
+    {
+        display:inline-block;
+        width: 49%; 
+        top: 0px; 
+        vertical-align: top; 
+        padding:0;
+        float:right;
+    }
+    
+    .scst_Bold
+    {
+        font-weight:bold;
+    }
+    /*          END -> allineamenti dati package   */
+    
+    
+    
+        
+    .DivEpButton
+    {
+        width: 950px;
+        padding-top: 5px;
+        padding-left: 20px;
+        margin: 0px auto;
+        clear: both;
+        display:inline-block;
+    }
+    
+    /*FireFox*/
+    .BNT_Top_Left
+    {
+        width:29%; 
+        padding-right: 10%;
+        text-align:left;
+        display:inline;
+    }
+    
+    /*IE*/
+    * html .BNT_Top_Left
+    {
+        width:29%;
+        text-align:left;
+        display:inline;
+    }
+    
+    /*FireFox*/
+    .BNT_Top_Right
+    {
+        width:70%; 
+        text-align:right;
+        display:inline-block;
+    }
+    
+    /*Internet Exploder*/
+    * html .BNT_Top_Right
+    {
+        width:70%; 
+        text-align:right;
+        display:inline;
+    }
+    
+    
+    
+    /*
+    .DivContainer
+    {
+        width: 100%;
+        }*/
+        
+    .WizardContaner
+    {
+        width: 100%;
+        background-color:#EFF3FB;
+        border-width:1px;
+        border-color: #B5C7DE;
+        }
+    .StepStyle
+    {
+        font-size:0.8em;
+    }
+    .StepStyleContainer
+    {
+        height: 400px;
+        padding: 10px 10px 10px 10px;
+        background-color: White;
+    }
+    .PublishRow
+    {
+        clear:both;
+        width: 100%;
+        padding-top: 10px;
+        }
+    .RenameRow
+    {
+        padding-left: 4%;
+        }
+    .SummaryRow
+    {
+        clear:both;
+        width: 100%;
+        }
+    table.itemsTable
+    {
+        margin-top:3em;
+        width:100%;            
+        border-width: 2px;
+	    border-spacing: 2px;
+	    border-style: outset;
+	    border-color: #9C9C9C;
+	    border-collapse: collapse;
+	    /*background-color: white;*/
+    }
+        
+    /*FireFox*/
+    .MFS_ImgStartCenter
+    {
+        display: inline-block;
+        vertical-align: inherit;
+        }
+        
+    /*Internet Explorer*/
+    * html .MFS_ImgStartCenter
+    {
+        display: inline-block;
+        vertical-align:middle;
+        }
+            
+    .MFS_StartSep1
+    {
+        padding-bottom: 30px;
+        padding-left: 0px;
+        padding-right: 0px;
+        padding-top: 15px;
+    }
+            
+    .MFS_StartDesc
+    {
+        padding-bottom: 0px;
+        padding-left: 25px;
+        padding-right: 20px;
+        padding-top: 0px;
+    }
+        
+    .ItemGreen
+    {
+        background-color: #99FF99;
+        text-align:center; 
+        padding: 2px 5px 2px 5px;
+        white-space:nowrap;   
+    }
+    
+    .ItemYellow
+    {
+        background-color: #FFFF99;
+        text-align:center; 
+        padding: 2px 5px 2px 5px;
+        white-space:nowrap;
+    }
+    
+    .ItemRed
+    {
+        background-color: #FF9999;
+        text-align:center; 
+        padding: 2px 5px 2px 5px;
+        white-space:nowrap;
+    }
+    
+    ._IMG_Link_Menu
+    {
+        vertical-align:text-bottom;
+    }
+    
+    .BreakWord
+    {
+        display: block;
+        word-wrap: break-word;
+        width: 200px;
+        max-width: 200px;
+        min-width: 200px;
+    }
+    
+    .DivContent
+    {
+        padding-left: 35px;
+    }

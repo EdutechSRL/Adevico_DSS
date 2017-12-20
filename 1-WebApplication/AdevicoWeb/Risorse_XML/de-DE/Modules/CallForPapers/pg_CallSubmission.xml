@@ -1,0 +1,628 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!-- de-->
+<Resource xmlns="urn:ComolTranslation">
+  <item name="serviceTitle.Preview.CallForBids" placeholder="true" mustcontains="{0}">Anteprima bando "{0}"</item>
+  <item name="serviceTitle.Preview.RequestForMembership" placeholder="true" mustcontains="{0}">Anteprima adesione {0}</item>
+  <item name="serviceTitle.Community.Preview.CallForBids" placeholder="true" mustcontains="{0}">Anteprima bando per la comunità "{0}"</item>
+  <item name="serviceTitle.Community.Preview.RequestForMembership" placeholder="true" mustcontains="{0}">Anteprima adesione per la comunità "{0}"</item>
+  <item name="serviceTitle.Submit.CallForBids" placeholder="true" mustcontains="{0}">Partecipazione al bando "{0}"</item>
+  <item name="serviceTitle.Submit.RequestForMembership" placeholder="true" mustcontains="{0}">{0}</item>
+  <item name="serviceTitle.Community.Submit.CallForBids" placeholder="true" mustcontains="{0}">Partecipazione bando per la comunità "{0}"</item>
+  <item name="serviceTitle.Community.Submit.RequestForMembership" placeholder="true" mustcontains="{0}">{0}</item>
+  <item name="serviceTitle.Review">Revisione</item>
+  <item name="serviceTitle.Review.CallForBids" placeholder="true" mustcontains="{0}">Revisione domanda partecipazione al bando "{0}"</item>
+  <item name="serviceTitle.Review.RequestForMembership" placeholder="true" mustcontains="{0}">Revisione di adesione {0}</item>
+  <item name="serviceTitle.ManageRevision">Gestione revisione</item>
+
+  <item name="LTsaveBottomExplanation.text" disambiguation="domanda di partecipazione/domanda di adesione">Salva una bozza della domanda e potrai modificarla in un secondo momento. La domanda non è sottomessa fino a quando non verrà premuto "Sottometti definitivamente"</item>
+    <item name="LTsaveAndSubmitBottomExplanation.text" disambiguation="domanda di partecipazione/domanda di adesione">
+        Sottometti definitivamente la domanda affinchè venga valutata.&lt;br/&gt;Non sarà più possibile modificare la &lt;b&gt;domanda di partecipazione&lt;/b&gt;.
+    </item>
+  <item name="LBcallDescriptionTitle.text">Descrizione</item>
+  <item name="LTsubmitterTypesTitle.CallForBids.text">Partecipa come</item>
+  <item name="LTsubmitterTypesTitle.RequestForMembership.text">Aderisci come</item>
+  <item name="LTattachmentsTitle.text">Documenti allegati</item>
+  <item name="LTrequiredFilesTitle.text">Documenti richiesti</item>
+  <item name="LTrequiredFilesDescription.text" disambiguation="domanda di partecipazione/domanda di adesione">Lista dei documenti da allegare alla domanda (solo quelli con * davanti sono obbligatori !).</item>
+
+  <item name="serviceTitleCommunity" html="true" placeholder="true" mustcontains="{0}" disambiguation="singolare">Comunità &lt;span tooltip="{0}" &gt;{1} &lt;span/&gt;</item>
+  <item name="nopermission">Spiacente, non hai i permessi per accedere a questa pagina.</item>
+  <item name="ServiceViewSubmissionTitle" disambiguation="domanda di partecipazione/domanda di adesione">Domanda sottomessa</item>
+  <item name="ServiceViewSubmissionNopermission">Spiacente, non hai i permessi per accedere a questa pagina.</item>
+  <item name="ServiceReviewSubmissionNopermission">Spiacente, non hai i permessi per effettuare una revisione.</item>
+
+
+  <item name="HYPlist.text">Lista</item>
+  <item name="HYPlist.status">Torna alla lista</item>
+  <item name="HYPlist.ToolTip">Torna alla lista</item>
+  <item name="LNBdelete.text" disambiguation="domanda di partecipazione/domanda di adesione">Cancella domanda</item>
+  <item name="LNBdelete.status">Cancella domanda di partecipazione</item>
+  <item name="LNBdelete.ToolTip">Cancella domanda di partecipazione</item>
+  <item name="LNBsave.text">Salva</item>
+  <item name="LNBsave.status">Salva la domanda di partecipazione</item>
+  <item name="LNBsave.ToolTip">Salva la domanda di partecipazione</item>
+  <item name="LNBsaveAndSubmit.text">Sottometti definitivamente</item>
+  <item name="LNBsaveAndSubmit.status">Sottometti definitivamente la domanda di partecipazione</item>
+  <item name="LNBsaveAndSubmit.ToolTip">Sottometti definitivamente la domanda di partecipazione</item>
+  <item name="LTdisplayTitle.text">Sottomissione documenti:</item>
+  <item name="LTdescriptionTitle.text">Descrizione:</item>
+  <item name="LTfileAttachments.text">Per saperne di più:</item>
+  <item name="LTendDateTitle.text">Scadenza:</item>
+  <item name="LTawardDateTitle.text">Premiazione finale:</item>
+  <item name="LTsubmitterTypeSelection.text">INIZIA LA PROCEDURA DI SOTTOMISSIONE</item>
+  <item name="LTrequestedFiles.text">Allegati</item>
+  <item name="LNBsaveBottom.text">Salva</item>
+  <item name="LNBsaveBottom.status">Salva la domanda di partecipazione</item>
+  <item name="LNBsaveBottom.ToolTip">Salva la domanda di partecipazione</item>
+  <item name="LNBsaveAndSubmitBottom.text">Sottometti definitivamente</item>
+  <item name="LNBsaveAndSubmitBottom.status">Sottometti definitivamente la domanda di partecipazione</item>
+  <item name="LNBsaveAndSubmitBottom.ToolTip">Sottometti definitivamente la domanda di partecipazione</item>
+  <item name="SubmitAs.CallForBids" placeholder="true" mustcontains="{0}">Bando - Partecipi come "{0}"</item>
+  <item name="SubmitAs.RequestForMembership" placeholder="true" mustcontains="{0}">Partecipa come "{0}"</item>
+  <item name="SubmitAs.CallForBids.Generic">Bando - Partecipa</item>
+  <item name="SubmitAs.RequestForMembership.Generic">Partecipa</item>
+  <item name="NotificationMessage.CallForBids.SubmissionStatus.accepted.Subject">Notifica automatica partecipazione bando: domanda ACCETTATA</item>
+  <item name="NotificationMessage.CallForBids.SubmissionStatus.accepted.Body" placeholder="true" mustcontains="{0}|{1}|[SubmitterSurname]|[SubmitterName]|[CallName]|[LinkUrl]">Gentile [SubmitterSurname] [SubmitterName],&lt;br/&gt;      il {0} alle {1} è stata &lt;b/&gt;accettata&lt;/b&gt; la sua domanda di partecipazione al bando "[CallName]".&lt;br/&gt;&lt;br/&gt;Può visualizzare la sua domanda direttamente da questo link: [LinkUrl].&lt;br/&gt;&lt;br/&gt;</item>
+  <item name="NotificationMessage.RequestForMembership.SubmissionStatus.accepted.Subject">Notifica automatica adesione/pre adesione: domanda RIFIUTATA</item>
+  <item name="NotificationMessage.RequestForMembership.SubmissionStatus.accepted.Body" placeholder="true" mustcontains="{0}|{1}|[SubmitterSurname]|[SubmitterName]|[CallName]|[LinkUrl]">Gentile [SubmitterSurname] [SubmitterName], &lt;br/&gt;      il {0} alle {1} è stata &lt;b/&gt;rifiutata&lt;/b&gt; la sua domanda di partecipazione al bando "[CallName]".&lt;br/&gt;&lt;br/&gt;Può visualizzare la sua domanda direttamente da questo link: [LinkUrl].&lt;br/&gt;&lt;br/&gt;</item>
+  <item name="NotificationMessage.CallForBids.SubmissionStatus.rejected.Subject">Notifica automatica partecipazione bando: domanda ACCETTATA</item>
+  <item name="NotificationMessage.CallForBids.SubmissionStatus.rejected.Body" placeholder="true" mustcontains="{0}|{1}|[SubmitterSurname]|[SubmitterName]|[CallName]|[LinkUrl]">Gentile [SubmitterSurname] [SubmitterName], &lt;br/&gt;      il {0} alle {1} è stata &lt;b/&gt;accettata&lt;/b&gt; la sua domanda di partecipazione all'adesione/alla pre-adesione "[CallName]".&lt;br/&gt;&lt;br/&gt;Può visualizzare la sua domanda direttamente da questo link: [LinkUrl].&lt;br/&gt;&lt;br/&gt;</item>
+  <item name="NotificationMessage.RequestForMembership.SubmissionStatus.rejected.Subject">Notifica automatica adesione/pre adesione: domanda RIFIUTATA</item>
+  <item name="NotificationMessage.RequestForMembership.SubmissionStatus.rejected.Body" placeholder="true" mustcontains="{0}|{1}|[SubmitterSurname]|[SubmitterName]|[CallName]|[LinkUrl]">Gentile [SubmitterSurname] [SubmitterName], &lt;br/&gt;      il {0} alle {1} è stata &lt;b/&gt;rifiutata&lt;/b&gt; la sua domanda di partecipazione all'adesione/alla pre-adesione "[CallName]".&lt;br/&gt;&lt;br/&gt;Può visualizzare la sua domanda direttamente da questo link: [LinkUrl].&lt;br/&gt;&lt;br/&gt;</item>
+
+
+  <item name="LBtimeValidity_t.text">Validità:</item>
+  <item name="LBsubmitterSelector_t.text">Tipo partecipante:</item>
+  <item name="SubmitterSelect">-- Seleziona il tipo --</item>
+  <item name="LTpreviewSubmittersMessage.text" html="true">In modalita' anteprima la lista dei tipi di partecipante viene disattivata.&lt;br/&gt; Selezionare un tipo di partecipante dal menu a tendina superiore per visualizzarne l'anteprima.</item>
+  <item name="LTsubmittersSelectorMessage.text">Selezionare un tipo di partecipante:</item>
+
+  <item name="LBstartDate.text" placeholder="true" mustcontains="{0}|{1}">{0} ore {1}</item>
+  <item name="LBendDate.text" placeholder="true" mustcontains="{0}|{1}">{0} ore {1}</item>
+  <item name="NoExpirationDate">Nessuna scadenza</item>
+  <item name="DescriptionTitle.CallForBids" placeholder="true" mustcontains="{0}">Bando "{0}"</item>
+  <item name="DescriptionTitle.CallForBids.ToolTip" placeholder="true" mustcontains="{0}">Descrizione del bando "{0}"</item>
+  <item name="DescriptionTitle.RequestForMembership" placeholder="true" mustcontains="{0}">Adesione {0}</item>
+  <item name="DescriptionTitle.RequestForMembership.ToolTip" placeholder="true" mustcontains="{0}">Descrizione dell'adesione {0}</item>
+
+
+
+  <item name="SubmissionErrorView.CallForBids.InvalidFields">Per confermare definitivamente la domanda è necessario verificare i campi evidenziati.</item>
+  <item name="SubmissionErrorView.CallForBids.RequiredItems">Per confermare definitivamente la domanda è necessario compilare i campi obbligatori.</item>
+  <item name="SubmissionErrorView.CallForBids.SubmissionDeleted">Errore nella cancellazione della domanda di partecipazione.</item>
+  <item name="SubmissionErrorView.CallForBids.SubmissionsClosed" placeholder="true" mustcontains="{0}|{1}">Il tempo per sottomettere la propria domanda è scaduto, i termini di consegna erano fissati per il {0} alle ore {1}.</item>
+  <item name="SubmissionErrorView.CallForBids.GenericError">Errore nella fase di salvataggio. Ritentare in un secondo momento.</item>
+  <item name="SubmissionErrorView.CallForBids.SubmissionValueSaving">Errore nel salvataggio di alcuni campi della domanda, l'operazione non è stata conclusa correttamente.</item>
+  <item name="SubmissionErrorView.CallForBids.SubmissionFileSaving">Errore nel caricamento dei file da associare alla domanda, l'operazione non è stata conclusa correttamente.</item>
+  <item name="SubmissionErrorView.CallForBids.SubmissionTimeExpired">ATTENZIONE ! I termini di consegna della domanda di partecipazione al bando sono scaduti il {0} alle {1} !</item>
+  <item name="SubmissionErrorView.CallForBids.SubmissionTimeExpired.None">ATTENZIONE ! I termini di consegna della domanda di partecipazione al bando sono scaduti !</item>
+  <item name="SubmissionErrorView.CallForBids.SubmissionEarlyTime">ATTENZIONE ! La partecipazione al bando è disponibile dal giorno {0} dalle ore {1} !</item>
+  <item name="SubmissionErrorView.CallForBids.UnavailableCall">ATTENZIONE ! Non è più possibile partecipare al bando</item>
+  <item name="SubmissionErrorView.RequestForMembership.InvalidFields">Per confermare definitivamente la domanda  è necessario verificare i campi evidenziati.</item>
+  <item name="SubmissionErrorView.RequestForMembership.RequiredItems">Per confermare definitivamente la domanda è necessario compilare i campi obbligatori.</item>
+  <item name="SubmissionErrorView.RequestForMembership.SubmissionDeleted">Errore nella cancellazione della domanda di partecipazione.</item>
+  <item name="SubmissionErrorView.RequestForMembership.SubmissionsClosed" placeholder="true" mustcontains="{0}|{1}">Il tempo per sottomettere la propria domanda è scaduto, i termini di consegna erano fissati per il {0} alle ore {1}.</item>
+  <item name="SubmissionErrorView.RequestForMembership.GenericError">Errore nella fase di salvataggio. Ritentare in un secondo momento.</item>
+  <item name="SubmissionErrorView.RequestForMembership.SubmissionValueSaving">Errore nel salvataggio di alcuni campi della domanda, l'operazione non è stata conclusa correttamente.</item>
+  <item name="SubmissionErrorView.RequestForMembership.SubmissionFileSaving">Errore nel caricamento dei file da associare alla domanda, l'operazione non è stata conclusa correttamente.</item>
+  <item name="SubmissionErrorView.RequestForMembership.SubmissionTimeExpired">ATTENZIONE ! I termini di compilazione sono scaduti il {0} alle {1} !</item>
+  <item name="SubmissionErrorView.RequestForMembership.SubmissionTimeExpired.None">ATTENZIONE ! I termini di compilazione sono scaduti !</item>
+  <item name="SubmissionErrorView.RequestForMembership.SubmissionEarlyTime">ATTENZIONE ! La compilazione può avvenire dal giorno {0} dalle ore {1} !</item>
+  <item name="SubmissionErrorView.RequestForMembership.UnavailableCall">ATTENZIONE ! Non è più possibile partecipare.</item>
+
+  <item name="DisplayCallUnavailableForPublic.CallForBids">La partecipazione al bando richiede la registrazione nella piattaforma.</item>
+  <item name="DisplayCallUnavailableForPublic.RequestForMembership">La partecipazione richiede la registrazione nella piattaforma.</item>
+  <item name="DisplayCallUnavailable.CallForBids">Il bando richiesto NON è al momento accessibile.</item>
+  <item name="DisplayCallUnavailable.CallForBids.CallForPaperStatus.Draft">Non è possibile partecipare al bando in quanto al momento è in stato "bozza".</item>
+  <item name="DisplayCallUnavailable.CallForBids.CallForPaperStatus.Published">Il bando è stato pubblicato ma il gestore non ha aperto le sottomissioni.</item>
+  <item name="DisplayCallUnavailable.CallForBids.CallForPaperStatus.SubmissionOpened">I termini di sottomisione per il bando sono scaduti.</item>
+  <item name="DisplayCallUnavailable.CallForBids.CallForPaperStatus.SubmissionClosed">Non è possibile partecipare al bando, il gestore ne ha bloccato la partecipazione.</item>
+  <item name="DisplayCallUnavailable.CallForBids.CallForPaperStatus.SubmissionsLimitReached">E' stato raggiunto il limite dei posti disponibili, NON è possibile creare ulteriori domande di sottomissione.</item>
+  <item name="DisplayCallUnavailable.RequestForMembership">La domanda di adesione richiesta NON è al momento accessibile.</item>
+  <item name="DisplayCallUnavailable.RequestForMembership.CallForPaperStatus.Draft">Non è possibile partecipare al domanda di adesione in quanto al momento è in stato "bozza".</item>
+  <item name="DisplayCallUnavailable.RequestForMembership.CallForPaperStatus.Published">La domanda di adesione è stata pubblicata ma il gestore non ha aperto le sottomissioni.</item>
+  <item name="DisplayCallUnavailable.RequestForMembership.CallForPaperStatus.SubmissionOpened">I termini di partecipazione alla domanda di adesione sono scaduti.</item>
+  <item name="DisplayCallUnavailable.RequestForMembership.CallForPaperStatus.SubmissionClosed">Non è possibile partecipare alla domanda di adesione, il gestore ha chiuso le sottomissioni.</item>
+  <item name="DisplayCallUnavailable.RequestForMembership.CallForPaperStatus.SubmissionsLimitReached">E' stato raggiunto il limite dei posti disponibili, NON è possibile accettare ulteriori richieste.</item>
+  <item name="maxCharToInsert" placeholder="true" mustcontains="{0}">(massimo {0} caratteri compresi gli spazi)</item>
+  <item name="LTremainingChars.text">caratteri rimanenti</item>
+  <item name="LTfieldMandatory.text" hidden="true" html="true">
+    &lt;span class='mandatory'&gt;(*)&lt;/span>&gt;
+  </item>
+  <item name="SubmissionErrorView.RequiredItems">Per confermare definitivamente la domanda è necessario compilare le seguenti voci:</item>
+  <item name="SubmissionErrorView.SubmissionDeleted"></item>
+  <item name="SubmissionErrorView.SubmissionsClosed" placeholder="true" mustcontains="{0}|{1}">Il tempo per sottomettere la propria domanda è scaduto, i termini di consegna erano fissati per il {0} alle ore {1}.</item>
+  <item name="SubmissionErrorView.GenericError">Errore nella fase di salvataggio. Ritentare in un secondo momento.</item>
+  <item name="SubmissionErrorView.SubmissionValueSaving">Errore nel salvataggio di alcuni campi della domanda, l'operazione non è stata conclusa correttamente.</item>
+  <item name="SubmissionErrorView.SubmissionFileSaving">Errore nel caricamento dei file da associare alla domanda, l'operazione non è stata conclusa correttamente.</item>
+  <item name="SubmissionErrorView.SubmissionTimeExpired">ATTENZIONE ! I termini di consegna della domanda sono scaduti !</item>
+  <item name="HYPlistFromMessage.text">Lista</item>
+  <item name="HYPlistFromMessage.status">Torna alla lista</item>
+  <item name="HYPlistFromMessage.ToolTip">Torna alla lista</item>
+  <item name="HYPmanage.text">Torna al bando</item>
+  <item name="HYPmanage.status">Torna al bando</item>
+  <item name="HYPmanage.ToolTip">Torna al bando</item>
+  <item name="HYPsubmissionsList.text">Torna alla lista</item>
+  <item name="HYPsubmissionsList.status" disambiguation="domanda di partecipazione/domanda di adesione">Torna alla lista delle domande</item>
+  <item name="HYPsubmissionsList.ToolTip" disambiguation="domanda di partecipazione/domanda di adesione">Torna alla lista delle domande</item>
+
+  <item name="LNBretry.text" disambiguation="domanda di partecipazione/domanda di adesione">Torna alla domanda</item>
+  <item name="LNBretry.status" disambiguation="domanda di partecipazione/domanda di adesione">Torna alla domanda</item>
+  <item name="LNBretry.ToolTip" disambiguation="domanda di partecipazione/domanda di adesione">Torna alla domanda</item>
+  <item name="HYPlistFromMessageBottom.text">Lista</item>
+  <item name="HYPlistFromMessageBottom.status">Torna alla lista</item>
+  <item name="HYPlistFromMessageBottom.ToolTip">Torna alla lista</item>
+  <item name="LNBretryBottom.text" disambiguation="domanda di partecipazione/domanda di adesione">Torna alla domanda</item>
+  <item name="LNBretryBottom.status" disambiguation="domanda di partecipazione/domanda di adesione">Torna alla domanda</item>
+  <item name="LNBretryBottom.ToolTip" disambiguation="domanda di partecipazione/domanda di adesione">Torna alla domanda</item>
+  <item name="LTuserMessage.text">Messaggi / errori</item>
+  <item name="LTemptyFields.text">Campi obbligatori mancanti:</item>
+  <item name="LTemptyFiles.text">File obbligatori mancanti:</item>
+  <item name="CompleteSubmissionMessage">La domanda di partecipazione è stata correttamente sottomessa.</item>
+  <item name="ServiceTitle">Sottomissione domanda</item>
+  <item name="ServiceNopermission">Spiacente, non dispone dei permessi necessari per visualizzare questa pagina.</item>
+  <item name="LNBremoveFile.text" hidden="true">&lt;img src="{0}" ToolTip="{1}"&gt;</item>
+  <item name="LNBremoveFile.ToolTip">Rimuovi il documento</item>
+  <item name="LNBremoveFile.status">Rimuovi il documento</item>
+  <item name="Portalname">Portale / Home</item>
+  <item name="LTsubmitterSection.text" disambiguation="domanda di partecipazione/domanda di adesione">Informazioni generali sulla domanda</item>
+  <item name="LTsubmitterTypeTitle.text" disambiguation="domanda di partecipazione/domanda di adesione">Tipo domanda:</item>
+  <item name="LTstatusTitle.text" disambiguation="domanda di partecipazione/domanda di adesione">Stato domanda:</item>
+  <item name="SubmissionStatus.none" disambiguation="domanda di partecipazione/domanda di adesione">Domanda non effettuata</item>
+  <item name="SubmissionStatus.draft" disambiguation="domanda di partecipazione/domanda di adesione">Domanda in compilazione</item>
+  <item name="SubmissionStatus.submitted" disambiguation="domanda di partecipazione/domanda di adesione">Domanda sottomessa</item>
+  <item name="SubmissionStatus.accepted" disambiguation="domanda di partecipazione/domanda di adesione">Domanda accettata</item>
+  <item name="SubmissionStatus.rejected" disambiguation="domanda di partecipazione/domanda di adesione">Domanda rifiutata</item>
+  <item name="SubmissionStatus.waitingValuation" disambiguation="domanda di partecipazione/domanda di adesione">Domanda in attesa di valutazione</item>
+  <item name="SubmissionStatus.valuating" disambiguation="domanda di partecipazione/domanda di adesione">Domanda in fase di valutazione</item>
+  <item name="SubmissionStatus.valuated" disambiguation="domanda di partecipazione/domanda di adesione">Domanda valutata</item>
+  <item name="SubmissionStatus.deleted" disambiguation="domanda di partecipazione/domanda di adesione">Domanda cancellata</item>
+  <item name="SubmissionStatus.tosubmit" disambiguation="domanda di partecipazione/domanda di adesione">Domanda da sottomettere</item>
+
+  <item name="Closed.SubmissionStatus.draft">Bozza non sottomessa</item>
+  <item name="LNBstatus.submitted" disambiguation="domanda di partecipazione/domanda di adesione">Sottometti domanda</item>
+  <item name="LNBstatus.accepted" disambiguation="domanda di partecipazione/domanda di adesione">Accetta domanda</item>
+  <item name="LNBstatus.rejected" disambiguation="domanda di partecipazione/domanda di adesione">Rifiuta domanda</item>
+
+  <item name="submissionConfirm.Subject">Notifica automatica risposta bando</item>
+  <item name="submissionConfirm.Body" placeholder="true" mustcontains="{0}|{1}|{2}|{3}|{4}">Il {0} alle {1} l'utente {2} ha sottomesso definitivamente la domanda di partecipazione al bando {3} con scadenza {4}.</item>
+  <item name="UnknowSubmission">Domanda di partecipazione sconosciuta, tornare alla lista dei bandi.</item>
+  <item name="UnavailableSubmission">La domanda di partecipazione NON è disponibile per la consultazione in quanto non si dispone dei permessi necessari per svolgere tale azione.</item>
+
+  <item name="RfM_submissionConfirm.Body" placeholder="true" mustcontains="{0}|{1}|{2}|{3}|{4}">Il {0} alle {1} l'utente {2} ha sottomesso definitivamente la domanda di partecipazione al bando {3} con scadenza {4}.</item>
+
+
+  <item name="ServiceEvaluateSubmissionTitle" disambiguation="domanda di partecipazione/domanda di adesione">Domanda sottomessa da valutare</item>
+  <item name="ServiceEvaluateSubmissionNopermission" disambiguation="domanda di partecipazione/domanda di adesione">Spiacente, non hai i permessi per valutare questa domanda.</item>
+  <item name="LNBsaveEvaluation.text">Salva la valutazione</item>
+  <item name="LNBsaveEvaluation.status">Salva i dati relativi alla valutazione</item>
+  <item name="LNBsaveEvaluation.ToolTip">Salva i dati relativi alla valutazione</item>
+  <item name="LNBevaluationComplete.text">Completa la valutazione</item>
+  <item name="LNBevaluationComplete.status">Salva i dati relativi alla valutazione in modo definitivo</item>
+  <item name="LNBevaluationComplete.ToolTip">Salva i dati relativi alla valutazione in modo definitivo</item>
+  <item name="DefaulCriterionValue">-- Non valutato --</item>
+  <item name="LBcomment.text">Commenti:</item>
+  <item name="LTevaluation.text">Valutazione:</item>
+  <item name="EvaluationStarted" placeholder="true" mustcontains="{0}|{1}">Valutazione iniziata il {0} alle {1}:</item>
+  <item name="EvaluationCompleted" placeholder="true" mustcontains="{0}|{1}">Valutazione conclusa il {0} alle {1}:</item>
+
+  <item name="DLGconfirmEvaluationTitle">Conferma valutazione</item>
+  <item name="DLGconfirmEvaluationText">ATTENZIONE: una volta definiti tutti i criteri e confermata la valutazione NON sarà possibile effettuare delle modifiche.</item>
+  <item name="view.evaluationError">Errore nella memorizzazione dei dati</item>
+  <item name="LBevaluationErrorInfo.text">Errori rilevati:</item>
+  <item name="BTNretry.text">Indietro</item>
+  <item name="BTNretry.status">Torna alla pagina di inserimento della valutazione</item>
+  <item name="BTNretry.ToolTip">Torna alla pagina di inserimento della valutazione</item>
+  <item name="CriterionEvaluationError">Non è stato possibile memorizzare correttamente i dati relativi ai seguenti criteri:</item>
+  <item name="CriterionError" placeholder="true" mustcontains="{0}|{1}">{0} (Valore non memorizzato: {1})</item>
+  <item name="CriterionErrorEmpty" placeholder="true" mustcontains="{0}">{0} ("Non valutato")</item>
+  <item name="EvaluationCompleteError" placeholder="true" mustcontains="{0}">Non è possibile concludere la valutazione, mancano ancora {0} criterio/criteri da valutare.</item>
+  <item name="EvaluationError">Errore nella fase di memorizzazione della valutazione, riprovare nuovamente o contattare gli amministratori</item>
+  <item name="LTsubmitterNameTitle.text">Sottomessa da:</item>
+  <item name="submitterNameOwner" placeholder="true" mustcontains="{0}|{1}">{0} il {1}.</item>
+  <item name="submitterName" placeholder="true" mustcontains="{0}|{1}|{2}">{0} il {1} per conto di {2}.</item>
+  <item name="ToolTipDownloadZip">Scarica il materiale allegato alla domanda.</item>
+  <item name="DescriptionAfter">Materiale completo allegato alla domanda di partecipazione.</item>
+  <item name="UnknowEvaluation">La domanda che si intende valutare NON è stata assegnata, spiacente ma non è possibile continuare con la valutazione.</item>
+
+
+
+  <item name="submitterNameOwner" placeholder="true" mustcontains="{0}|{1}">{0} il {1}.</item>
+  <item name="SubmissionTranslations.CallTitle" placeholder="true" mustcontains="{0}">Domanda di partecipazione al bando {0}</item>
+  <item name="SubmissionTranslations.CallTitleAndEdition" placeholder="true" mustcontains="{0}|{1}">Domanda di partecipazione al bando {0} edizione {1}</item>
+  <item name="SubmissionTranslations.PrintInfo" placeholder="true" mustcontains="{0}|{1}|{2}">Stampata da {0} il {1} alle {2}</item>
+  <item name="SubmissionTranslations.SubmittedByTitle">Sottomessa da:</item>
+  <item name="SubmissionTranslations.SubmittedByInfo" placeholder="true" mustcontains="{0}|{1}|{2}">{0} il {1} alle {2}</item>
+  <item name="SubmissionTranslations.SubmittedForInfo" placeholder="true" mustcontains="{0}|{1}|{2}|{3}">{0} per conto di {1} il {2} alle {3}</item>
+  <item name="SubmissionTranslations.SubmittedTypeTitle" disambiguation="domanda di partecipazione/domanda di adesione">Tipo domanda</item>
+  <item name="SubmissionTranslations.SubmissionStatusTitle" disambiguation="status: attivo/chiuso/in corso/valutazione" >Status:</item>
+  <item name="SubmissionTranslations.SubmissionStatus" hidden="true">- </item>
+  <item name="SubmissionTranslations.EmptyItem" hidden="true"> // </item>
+  <item name="SubmissionTranslations.SubmittedFilesTitle">File allegati:</item>
+  <item name="SubmissionTranslations.SubmissionInfo"> Informazioni di base</item>
+  <item name="SubmissionTranslations.CommunityNameTitle" disambiguation="singolare" placeholder="true" mustcontains="{0}">Comunità {0}</item>
+  <item name="SubmissionTranslations.PortalCommunityName">Portale</item>
+  <item name="SubmissionTranslations.CreatedByInfo" placeholder="true" mustcontains="{0}|{1}|{2}">{0} il {1} alle {2}</item>
+  <item name="SubmissionTranslations.FileSubmitted">sottomesso</item>
+  <item name="SubmissionTranslations.FileNotSubmitted">NON sottomesso</item>
+  <item name="SubmissionTranslations.StatusAccepted">Accettata</item>
+  <item name="SubmissionTranslations.StatusDraft">In bozza</item>
+  <item name="SubmissionTranslations.StatusRejected">Rifiutata</item>
+  <item name="SubmissionTranslations.StatusSubmitted">Sottomessa</item>
+  <item name="SubmissionTranslations.StatusValuated">Valutata</item>
+  <item name="SubmissionTranslations.StatusValuating">In valutazione</item>
+  <item name="SubmissionTranslations.StatusWaitingValuation">In attesa di valutazione</item>
+  <item name="SubmissionTranslations.ItemMandatory" hidden="true" disambiguation="non tradurre"> *</item>
+  <item name="SubmissionTranslations.MaxCharInfo" placeholder="true" mustcontains="{0}">(massimo {0} caratteri compresi gli spazi)</item>
+  <item name="SubmissionTranslations.DisclaimerAccept"> Accetta</item>
+  <item name="SubmissionTranslations.DisclaimerReject"> Non accetta</item>
+  <item name="SubmissionTranslations.FileCreationError">Errore nella fase di creazione del file.</item>
+  <item name="SubmissionTranslations.Pager">Pag.</item>
+  <item name="SubmissionTranslations.FilesSubmitted">DocumentiAllegati</item>
+  <item name="SubmissionTranslations.SubmissionCallFileName" placeholder="true" mustcontains="{0}">DomandaSottomessa_{0}</item>
+  <item name="SubmissionTranslations.SubmissionRequestFileName" placeholder="true" mustcontains="{0}">DomandaPartecipazione_{0}</item>
+  <item name="SubmissionTranslations.AnonymousUser">Utente anonimo</item>
+  <item name="SubmissionTranslations.MinOption" placeholder="true" mustcontains="{0}">Almeno {0} opzione/i</item>
+  <item name="SubmissionTranslations.MaxOption" placeholder="true" mustcontains="{0}">Al massimo {0} opzioni/e</item>
+  <item name="SubmissionTranslations.MinOptionMaxOption" placeholder="true" mustcontains="{0}|{1}">Minimo {0} opzioni/e, massimo {1}</item>
+  <item name="SubmissionTranslations.RequestTitle" placeholder="true" mustcontains="{0}">Domanda di adesione a "{0}"</item>
+  <item name="SubmissionTranslations.SubmitToCallFileName" placeholder="true" mustcontains="{0}">DomandaBando_{0}</item>
+  <item name="SubmissionTranslations.SubmitToRequestFileName" placeholder="true" mustcontains="{0}">DomandaAdesione_{0}</item>
+  <item name="SubmissionTranslations.DisclaimerRead">Letto</item>
+  <item name="SubmissionTranslations.OtherOption">Altro:</item>
+  <item name="SubmissionTranslations.OtherOptionValue" mustcontains="{0}|{1}" placeholder="true">{0}:{1}</item>
+  <item name="DisplayMessageToken" mustcontains="RTF/PDF">Il file RTF/PDF richiesto è in fase di preparazione, attendere qualche secondo per il download.</item>
+  <item name="LNBpdf.text"> </item>
+  <item name="LNBpdf.status" mustcontains="pdf">Esporta la domanda in formato pdf.</item>
+  <item name="LNBpdf.ToolTip" mustcontains="pdf">Esporta la domanda in formato pdf.</item>
+  <item name="LNBrtf.text"> </item>
+  <item name="LNBrtf.status" mustcontains="rtf">Esporta la domanda in formato rtf.</item>
+  <item name="LNBrtf.ToolTip" mustcontains="rtf">Esporta la domanda in formato rtf.</item>
+  <item name="ExportFileName" placeholder="true" mustcontains="{0}" disambiguation="domanda di partecipazione/domanda di adesione">Domanda{0}</item>
+  <item name="EvaluationSaved">La valutazione è stata salvata correttamente.</item>
+
+  <item name="LTstartDateTitle">Inizio:</item>
+
+
+  <item name="HYPlistBottom.CallForBids.text">Torna alla lista</item>
+  <item name="HYPlistBottom.CallForBids.ToolTip">Torna alla lista dei bandi</item>
+  <item name="HYPlistBottom.RequestForMembership.text">Torna alla lista</item>
+  <item name="HYPlistBottom.RequestForMembership.ToolTip">Torna alla lista delle adesioni</item>
+  <item name="HYPlistTop.CallForBids.text">Torna alla lista</item>
+  <item name="HYPlistTop.CallForBids.ToolTip">Torna alla lista dei bandi</item>
+  <item name="HYPlistTop.RequestForMembership.text">Torna alla lista</item>
+  <item name="HYPlistTop.RequestForMembership.ToolTip">Torna alla lista delle adesioni</item>
+
+  <item name="HYPviewSubmissionTop.CallForBids.text" disambiguation="domanda di partecipazione/domanda di adesione">Vedi domanda</item>
+  <item name="HYPviewSubmissionTop.CallForBids.ToolTip" disambiguation="domanda di partecipazione/domanda di adesione">Vedi la domanda di partecipazione al bando</item>
+  <item name="HYPviewSubmissionBottom.CallForBids.text" disambiguation="domanda di partecipazione/domanda di adesione">Vedi domanda</item>
+  <item name="HYPviewSubmissionBottom.CallForBids.ToolTip" disambiguation="domanda di partecipazione/domanda di adesione">Vedi la domanda di partecipazione al bando</item>
+  <item name="HYPviewSubmissionTop.RequestForMembership.text">Vedi adesione</item>
+  <item name="HYPviewSubmissionTop.RequestForMembership.ToolTip" disambiguation="domanda di partecipazione/domanda di adesione">Vedi la domanda di adesione sottomessa</item>
+  <item name="HYPviewSubmissionBottom.RequestForMembership.text">Vedi adesione</item>
+  <item name="HYPviewSubmissionBottom.RequestForMembership.ToolTip" disambiguation="domanda di partecipazione/domanda di adesione">Vedi la domanda di adesione sottomessa</item>
+
+  <item name="DefaultMessage.CallForBids">La domanda di partecipazione al bando è stata correttamente sottomessa.</item>
+  <item name="DefaultMessage.RequestForMembership">La domanda di adesione è stata correttamente sottomessa.</item>
+  <item name="DisplayUnknowSubmission.CallForBids">La domanda di partecipazione al bando sconosciuta.</item>
+  <item name="DisplayUnknowSubmission.RequestForMembership">La domanda di adesione è sconosciuta.</item>
+
+
+  <item name="BTNstartCompile.text.CallForBids">Avanti</item>
+  <item name="BTNstartCompile.ToolTip.CallForBids">Inizia la compilazione della domanda di partecipazione al bando</item>
+  <item name="BTNstartCompile.text.RequestForMembership">Avanti</item>
+  <item name="BTNstartCompile.ToolTip.RequestForMembership">Inizia a compilare la domanda di adesione</item>
+
+  <item name="BTNgoToFirstStep.text">Indietro</item>
+  <item name="BTNgoToFirstStep.ToolTip">Torna al passo precedente.</item>
+  <item name="BTNgoToFirstStepTop.text">Indietro</item>
+  <item name="BTNgoToFirstStepTop.ToolTip">Torna al passo precedente.</item>
+
+  <item name="BTNsubmitRequest.text">Avanti</item>
+  <item name="BTNsubmitRequest.ToolTip">Vai al passo successivo</item>
+  <item name="BTNgoToCompileStep.text">Indietro</item>
+  <item name="BTNgoToCompileStep.ToolTip">Torna al passo precedente.</item>
+  <item name="BTNsubmitRequestTop.text">Avanti</item>
+  <item name="BTNsubmitRequestTop.ToolTip">Vai al passo successivo</item>
+
+
+  <item name="HYPdownloadzip.text" hidden="false"></item>
+  <item name="HYPdownloadzip.ToolTip">Scarica i file allegati</item>
+  <item name="BTNdownloadzip.text" hidden="false"></item>
+  <item name="BTNdownloadzip.ToolTip">Scarica i file allegati</item>
+  <item name="HYPdownloadrtf.text" hidden="false"></item>
+  <item name="HYPdownloadrtf.ToolTip">Esporta la domanda in RTF</item>
+  <item name="BTNdownloadrtf.text" hidden="false"></item>
+  <item name="BTNdownloadrtf.ToolTip">Esporta la domanda in RTF</item>
+  <item name="HTPdownloadpdf.text" hidden="false"></item>
+  <item name="HTPdownloadpdf.ToolTip">Esporta la domanda in PDF</item>
+  <item name="BTNdownloadpdf.text" hidden="false"></item>
+  <item name="BTNdownloadpdf.ToolTip">Esporta la domanda in PDF</item>
+  <item name="HYPexportEvaluations.text" hidden="false"></item>
+  <item name="HYPexportEvaluations.ToolTip">Scarica le valutazioni della domanda</item>
+  <item name="BTNexportEvaluations.text" hidden="false"></item>
+  <item name="BTNexportEvaluations.ToolTip">Scarica le valutazioni della domanda</item>
+  <item name="BTNaccept.text"></item>
+  <item name="BTNaccept.ToolTip">Accetta la domanda</item>
+  <item name="BTNrefuse.text"></item>
+  <item name="BTNrefuse.ToolTip">Rifiuta la domanda</item>
+  <item name="BTNsubmitForUser.text"></item>
+  <item name="BTNsubmitForUser.ToolTip">Sottometti la domanda per conto dell'utente</item>
+  <item name="LTowner_t.text">Proprietario:</item>
+  <item name="LTsubmitterType_t.text">Tipo partecipante:</item>
+  <item name="LTsubmissionStatus_t.text">Stato domanda:</item>
+  <item name="LTsubmittedOn_t.text">Domanda sottomessa il:</item>
+  <item name="LTsubmittedBy_t.text" disambiguation="da=inteso come azione eseguita dall'utente">da</item>
+  <item name="LTrevisionListTitle_t.text">Revisioni:</item>
+  <item name="Revision.Original" placeholder="true" mustcontains="{0}|{1}">Originale ({0} {1})</item>
+  <item name="Revision.Item" placeholder="true" mustcontains="{0}|{1}|{2}">Versione {0} ({1} {2})</item>
+  <item name="LBdeadline_t.text">Da concludere entro:</item>
+  <item name="LBrequestReason_t.text">Motivazione:</item>
+  <item name="LBreasonHelp.text"></item>
+  <item name="DisplayRevisionUnavailable.CallForBids">Revisione della domanda di partecipazione al bando non disponibile.</item>
+  <item name="DisplayRevisionUnavailable.RequestForMembership">Revisione della richiesta di adesione non disponibile.</item>
+  <item name="DisplayRevisionUnknown.CallForBids">Revisione della domanda di partecipazione al bando inesistente.</item>
+  <item name="DisplayRevisionUnknown.RequestForMembership">Revisione della richiesta di adesione inesistente.</item>
+
+
+
+  <item name="BTNaddRequest.text" disambiguation="verbo">Conferma</item>
+  <item name="BTNaddRequest.ToolTip">Conferma la richiesta di revisione</item>
+  <item name="BTNundoRequest.text">Annulla</item>
+  <item name="BTNundoRequest.ToolTip">Annulla</item>
+
+  <item name="BTNreview.text.UserRequired">Revisione</item>
+  <item name="BTNreview.ToolTip.UserRequired">Richiedi una revisione al gestore</item>
+  <item name="BTNreview.text.Manager">Revisione</item>
+  <item name="BTNreview.ToolTip.Manager">Richiedi una revisione al partecipante</item>
+  <item name="TXBreason.UserRequired">Indicare il motivo per cui si intende chiedere una revisione della propria domanda di partecipazione.</item>
+  <item name="TXBreason.Manager">Indicare il motivo per cui si richiede un integrazione della domanda/adesione sottomessa dall'utente. E' OBBLIGATORIO specificare una data di termine.</item>
+
+
+  <item name="LBrequiredRevision_t.DisplaySelfPendingRequest.Request">La sua richiesta di revisione NON è stata ancora accettata, vuole annullarla ?</item>
+  <item name="LBrequiredRevision_t.DisplaySelfPendingRequest.RequestAccepted">La sua richiesta di revisione è stata accettata, può procedere con la revisione</item>
+  <item name="LBrequiredRevision_t.DisplaySelfPendingRequest.Submitted">Revisione sottomessa, in attesa di approvazione dal gestore.</item>
+  <item name="LBrequiredRevision_t.DisplaySelfPendingRequest.Approved">Revisione approvata dal gestore.</item>
+  <item name="LBrequiredRevision_t.DisplaySelfPendingRequest.Refused">Revisione rifiutata dal gestore.</item>
+  <item name="LBrequiredRevision_t.DisplaySelfPendingRequest.Cancelled">Revisione cancellata.</item>
+  <item name="LBrequiredRevision_t.DisplayUserPendingRequest.Request">E' stata richiesta una revisione alla domanda</item>
+  <item name="LBrequiredRevision_t.DisplayUserPendingRequest.RequestAccepted">Domanda di revisione accettata</item>
+  <item name="LBrequiredRevision_t.DisplayUserPendingRequest.Submitted">Revisione sottomessa</item>
+  <item name="LBrequiredRevision_t.DisplayUserPendingRequest.Approved">Revisione approvata</item>
+  <item name="LBrequiredRevision_t.DisplayUserPendingRequest.Refused">Revisione rifiutata</item>
+  <item name="LBrequiredRevision_t.DisplayUserPendingRequest.Cancelled">Revisione cancellata</item>
+
+  <item name="HTPreviewUserSubmission.text">Vai a</item>
+  <item name="HTPreviewUserSubmission.ToolTip">Revisione della domanda/adesione</item>
+  <item name="HTPviewUserRequest.text">Vai a</item>
+  <item name="HTPviewUserRequest.ToolTip">Visualizza la richiesta di revisione</item>
+  <item name="BTNcancelUserRequest.text">Cancella</item>
+  <item name="BTNcancelUserRequest.ToolTip">Cancella la richiesta di revisione</item>
+  <item name="BTNrefuseUserRequest.text">Rifiuta</item>
+  <item name="BTNrefuseUserRequest.ToolTip">Rifiuta la richiesta di revisione</item>
+  <item name="BTNacceptUserRequest.text">Accetta</item>
+  <item name="BTNacceptUserRequest.ToolTip">Accetta la richiesta di revisione</item>
+  <item name="BTNcancelManagerRequest.text">Cancella</item>
+  <item name="BTNcancelManagerRequest.ToolTip">Cancella la richiesta di revisione</item>
+  <item name="BTNrefuseRevision.text">Rifiuta</item>
+  <item name="BTNrefuseRevision.ToolTip">Rifiuta la revisione</item>
+  <item name="BTNacceptRevision.text">Accetta</item>
+  <item name="BTNacceptRevision.ToolTip">Accetta la revisione</item>
+  <item name="BTNcancelUserRevisionRequest.text">Annulla richiesta</item>
+  <item name="BTNcancelUserRevisionRequest.ToolTip">Rifiuta la richiesta di revisione dell'utente</item>
+  <item name="BTNsaveRevisionSettings.text">Salva</item>
+  <item name="BTNsaveRevisionSettings.ToolTip">Salva le impostazioni relative alla data di termine della revisione</item>
+
+
+  <item name="LBstatusInfo_t.text">Stato attuale della revisione:</item>
+  <item name="LBfeedbackHelp.text"></item>
+  <item name="LBfeedback_t.text">Feedback utente:</item>
+  <item name="LTrevisionDate.text">Ultima attività svolta il:</item>
+  <item name="LTrevisionBy_t.text" disambiguation="da=inteso come azione eseguita dall'utente">da</item>
+
+  <item name="LTrevisionRequired_t.text">E' stata richiesta una revisione</item>
+  <item name="LTrevisionRequiredBy_t.text" disambiguation="da=inteso come azione eseguita dall'utente">da</item>
+  <item name="LTdeadline_t.text">Da concludere entro il</item>
+  <item name="HTPreviewManagerSubmission.text">Vai a</item>
+  <item name="HTPreviewManagerSubmission.ToolTip">Visualizza la richiesta di revisione</item>
+  <item name="BTNcancelManagerReview.text">Cancella</item>
+  <item name="BTNcancelManagerReview.ToolTip">Cancella la richiesta di revisione</item>
+
+  <item name="LTrevisionRequiredInfo_t.text">Revisione richiesta</item>
+  <item name="LTrevisionRequiredByInfo_t.text" disambiguation="da=inteso come azione eseguita dall'utente">da</item>
+  <item name="LTrevisionManagedByInfo_t.text" disambiguation="da=inteso come azione eseguita dall'utente">da</item>
+  <item name="LTrevisionDate_t.text" disambiguation="il=inteso come il giorno">il</item>
+
+  <item name="RevisionStatus.None"></item>
+  <item name="RevisionStatus.Request" disambiguation="relativo a status revisione di un bando">Richiesta dal partecipante</item>
+  <item name="RevisionStatus.RequestAccepted" disambiguation="relativo a status revisione di un bando">Richiesta accettata</item>
+  <item name="RevisionStatus.Required" disambiguation="relativo a status revisione di un bando">Richiesta dal gestore</item>
+  <item name="RevisionStatus.Submitted" disambiguation="relativo a status revisione di un bando">Sottomessa</item>
+  <item name="RevisionStatus.Approved" disambiguation="relativo a status revisione di un bando">Approvata</item>
+  <item name="RevisionStatus.Refused" disambiguation="relativo a status revisione di un bando">Rifiutata</item>
+  <item name="RevisionStatus.Cancelled" disambiguation="relativo a status revisione di un bando">Rimossa</item>
+
+  <item name="AskForRevision.CallForBids.Subject">Richiesta revisione domanda</item>
+  <item name="AskForRevision.CallForBids.Body" html="true" placeholder="true" mustcontains="[RequiredBy]|[RequestOn]|[RequestTime]|[LinkUrl]|[CallName]|[Reason]">Buongiorno,&lt;br/&gt;[RequiredBy] ha richiesto il [RequestOn] alle [RequestTime] la revisione della sua domanda di partecipazione ([LinkUrl]) al bando [CallName] per i seguenti motivi:&lt;br/&gt;&lt;br/&gt;[Reason]&lt;br/&gt;&lt;br/&gt;</item>
+  <item name="RequireRevision.CallForBids.Subject">Richiesta revisione domanda</item>
+  <item name="RequireRevision.CallForBids.Body" html="true" placeholder="true" mustcontains="[RequiredBy]|[RequestOn]|[RequestTime]|[LinkUrl]|[CallName]|[Reason]|[DeadlineOn]|[DeadlineTime]">Buongiorno,&lt;br/&gt;[RequiredBy] ha richiesto il [RequestOn] alle [RequestTime] di rivedere della sua domanda di partecipazione ([LinkUrl]) al bando [CallName] entro e non oltre il [DeadlineOn] alle [DeadlineTime] per i seguenti motivi:&lt;br/&gt;&lt;br/&gt;[Reason]&lt;br/&gt;&lt;br/&gt;</item>
+  <item name="RemoveSelfRequest.CallForBids.Subject">CANCELLAZIONE richiesta revisione domanda</item>
+  <item name="RemoveSelfRequest.CallForBids.Body" html="true" placeholder="true" mustcontains="[RequiredBy]|[RequestOn]|[RequestTime]|[LinkUrl]|[CallName]">Buongiorno,&lt;br/&gt;[RequiredBy] ha richiesto il [RequestOn] alle [RequestTime] di cancellare la propria richiesta di revisione della propria domanda di partecipazione ([LinkUrl]) al bando [CallName].&lt;br/&gt;&lt;br/&gt;</item>
+  <item name="RemoveManagerRequest.CallForBids.Subject">CANCELLAZIONE richiesta revisione domanda</item>
+  <item name="RemoveManagerRequest.CallForBids.Body" html="true" placeholder="true" mustcontains="[RequiredBy]|[RequestOn]|[RequestTime]|[LinkUrl]">Buongiorno,&lt;br/&gt;[RequiredBy] ha annullato la sua richiesta di revisione ([LinkUrl]) il [RequestOn] alle [RequestTime].&lt;br/&gt;&lt;br/&gt;</item>
+  <item name="RemoveManagerRequest.CallForBids.Body.Reason" html="true" placeholder="true" mustcontains="[RequiredBy]|[RequestOn]|[RequestTime]|[LinkUrl]|[Reason]">Buongiorno,&lt;br/&gt;[RequiredBy] ha annullato la sua richiesta di revisione ([LinkUrl]) il [RequestOn] alle [RequestTime] per i seguenti motivi:&lt;br/&gt;&lt;br/&gt;[Reason]&lt;br/&gt;&lt;br/&gt;</item>
+  <item name="RemoveUserRequest.CallForBids.Subject">CANCELLAZIONE richiesta revisione domanda</item>
+  <item name="RemoveUserRequest.CallForBids.Body" html="true" placeholder="true" mustcontains="[SubmitterSurname]|[SubmitterName]|[LinkUrl]|[RequestOn]|[RequestTime]">Buongiorno,&lt;br/&gt;[SubmitterSurname] [SubmitterName] ha annullato la sua richiesta di revisione ([LinkUrl]) il [RequestOn] alle [RequestTime].&lt;br/&gt;&lt;br/&gt;</item>
+  <item name="RemoveUserRequest.CallForBids.Body.Reason" html="true" placeholder="true" mustcontains="[SubmitterSurname]|[SubmitterName]|[LinkUrl]|[RequestOn]|[RequestTime]|[Reason]">Buongiorno,&lt;br/&gt;[SubmitterSurname] [SubmitterName]ha annullato la sua richiesta di revisione ([LinkUrl]) il [RequestOn] alle [RequestTime] per i seguenti motivi:&lt;br/&gt;&lt;br/&gt;[Reason]&lt;br/&gt;&lt;br/&gt;</item>
+
+  <item name="SaveSettings.CallForBids.Subject">Modifica data revisione / Campi da revisionare</item>
+  <item name="SaveSettings.CallForBids.Body" html="true" placeholder="true" mustcontains="[SubmitterSurname]|[SubmitterName]|[DeadlineOn]|[DeadlineTime]|[Fields]">Buongiorno,&lt;br/&gt;[SubmitterSurname] [SubmitterName] ha modificato i dati relativi alla revisione, in particolare la data ultima per sottomettere la revisione è il &lt;b&gt;[DeadlineOn]&lt;b/&gt; alle &lt;b&gt;[DeadlineTime]&lt;b/&gt; per i campi:&lt;br/&gt;[Fields]&lt;br/&gt;&lt;br/&gt;</item>
+  <item name="AcceptUserRequest.CallForBids.Subject">Domanda revisione accettata</item>
+  <item name="AcceptUserRequest.CallForBids.Body" html="true" placeholder="true" mustcontains="[RequiredBy]|[RequestOn]|[RequestTime]|[LinkUrl]">Buongiorno,&lt;br/&gt;[RequiredBy] il [RequestOn] alle [RequestTime] ha accettato la sua richiesta di revisione della domanda di partecipazione al bando ([LinkUrl]).&lt;br/&gt;&lt;br/&gt;</item>
+  <item name="RefuseUserRequest.CallForBids.Subject">Rifiuto revisione domanda</item>
+  <item name="RefuseUserRequest.CallForBids.Body" html="true" placeholder="true" mustcontains="[RequiredBy]|[RequestOn]|[LinkUrl]|[RequestTime]|[Reason]">Buongiorno,&lt;br/&gt;[RequiredBy] ha rifiutato la sua richiesta ([LinkUrl]) di revisione il [RequestOn] alle [RequestTime] per i seguenti motivi:[Reason].&lt;br/&gt;&lt;br/&gt;</item>
+  <item name="SubmitRevision.CallForBids.Subject">Sottomissione revisione domanda</item>
+  <item name="SubmitRevision.CallForBids.Body" html="true" placeholder="true" mustcontains="[SubmitterSurname]|[SubmitterName]|[CallName]|[LinkUrl]">Buongiorno,&lt;br/&gt;[SubmitterSurname] [SubmitterName] ha sottomesso definitivamente la revisione alla sua domanda di partecipazione al bando [CallName].&lt;br/&gt;Per verificare la revisione accedere al seguente link: [LinkUrl].&lt;br/&gt;&lt;br/&gt;</item>
+  <item name="AcceptUserRevision.CallForBids.Subject">Revisione confermata</item>
+  <item name="AcceptUserRevision.CallForBids.Body" html="true" placeholder="true" mustcontains="[SubmitterSurname]|[SubmitterName]|[LinkUrl]">Buongiorno,&lt;br/&gt;[SubmitterSurname] [SubmitterName] la tua revisione è stata accettata definitivamente.&lt;br/&gt;Per visualizzare la versione finale della domanda accedere al seguente link: [LinkUrl].&lt;br/&gt;&lt;br/&gt;</item>
+  <item name="RefuseUserRevision.CallForBids.Subject">Revisione NON confermata</item>
+  <item name="RefuseUserRevision.CallForBids.Body" html="true" placeholder="true" mustcontains="[SubmitterSurname]|[SubmitterName]|[LinkUrl]">Buongiorno,&lt;br/&gt;[SubmitterSurname] [SubmitterName] la tua revisione NON è stata accettata.&lt;br/&gt;Per visualizzare la versione finale della domanda accedere al seguente link: [LinkUrl].&lt;br/&gt;&lt;br/&gt;</item>
+
+
+
+
+  <item name="AskForRevision.RequestForMembership.Subject">Richiesta revisione adesione</item>
+  <item name="AskForRevision.RequestForMembership.Body" html="true" placeholder="true" mustcontains="[RequiredBy]|[RequestOn]|[RequestTime]|[LinkUrl]|[CallName]|[Reason]">Buongiorno,&lt;br/&gt;[RequiredBy] ha richiesto il [RequestOn] alle [RequestTime] la revisione della sua domanda di adesione ([LinkUrl]) a [CallName] per i seguenti motivi:&lt;br/&gt;&lt;br/&gt;[Reason]&lt;br/&gt;&lt;br/&gt;</item>
+  <item name="RequireRevision.RequestForMembership.Subject">Richiesta revisione adesione</item>
+  <item name="RequireRevision.RequestForMembership.Body" html="true" placeholder="true" mustcontains="[RequiredBy]|[RequestOn]|[RequestTime]|[LinkUrl]|[LinkUrl]|[Reason]|[DeadlineOn]|[DeadlineTime]">Buongiorno,&lt;br/&gt;[RequiredBy] ha richiesto il [RequestOn] alle [RequestTime] di rivedere la sua domanda di adesione ([LinkUrl]) entro e non oltre il [DeadlineOn] alle [DeadlineTime] per i seguenti motivi:&lt;br/&gt;&lt;br/&gt;[Reason]&lt;br/&gt;&lt;br/&gt;</item>
+  <item name="RemoveSelfRequest.RequestForMembership.Subject">CANCELLAZIONE richiesta revisione adesione</item>
+  <item name="RemoveSelfRequest.RequestForMembership.Body" html="true" placeholder="true" mustcontains="[RequiredBy]|[RequestOn]|[RequestTime]|[LinkUrl]|[CallName]">Buongiorno,&lt;br/&gt;[RequiredBy] ha richiesto il [RequestOn] alle [RequestTime] di cancellare la propria richiesta di revisione dell'adesione ([LinkUrl]) a [CallName].&lt;br/&gt;&lt;br/&gt;</item>
+  <item name="RemoveManagerRequest.RequestForMembership.Subject">CANCELLAZIONE richiesta revisione adesione</item>
+  <item name="RemoveManagerRequest.RequestForMembership.Body" html="true" placeholder="true" mustcontains="[RequiredBy]|[RequestOn]|[RequestTime]|[LinkUrl]">Buongiorno,&lt;br/&gt;[RequiredBy] ha annullato la sua richiesta di revisione ([LinkUrl]) il [RequestOn] alle [RequestTime].&lt;br/&gt;&lt;br/&gt;</item>
+  <item name="RemoveManagerRequest.RequestForMembership.Body.Reason" html="true" placeholder="true" mustcontains="[RequiredBy]|[RequestOn]|[RequestTime]|[LinkUrl]|[Reason]">Buongiorno,&lt;br/&gt;[RequiredBy] ha annullato la sua richiesta di revisione ([LinkUrl]) il [RequestOn] alle [RequestTime] per i seguenti motivi:&lt;br/&gt;&lt;br/&gt;[Reason]&lt;br/&gt;&lt;br/&gt;</item>
+  <item name="RemoveUserRequest.RequestForMembership.Subject">CANCELLAZIONE richiesta revisione adesione</item>
+  <item name="RemoveUserRequest.RequestForMembership.Body" html="true" placeholder="true" mustcontains="[SubmitterSurname]|[SubmitterName]|[LinkUrl]|[RequestOn]|[RequestTime]">Buongiorno,&lt;br/&gt;[SubmitterSurname] [SubmitterName] ha annullato la sua richiesta di revisione ([LinkUrl]) il [RequestOn] alle [RequestTime].&lt;br/&gt;&lt;br/&gt;</item>
+  <item name="RemoveUserRequest.RequestForMembership.Body.Reason" html="true" placeholder="true" mustcontains="[SubmitterSurname]|[SubmitterName]|[LinkUrl]|[RequestOn]|[RequestTime]|[Reason]">Buongiorno,&lt;br/&gt;[SubmitterSurname] [SubmitterName] ha annullato la sua richiesta di revisione ([LinkUrl]) il [RequestOn] alle [RequestTime] per i seguenti motivi:&lt;br/&gt;&lt;br/&gt;[Reason]&lt;br/&gt;&lt;br/&gt;</item>
+
+  <item name="SaveSettings.RequestForMembership.Subject">Modifica data revisione / Campi da revisionare</item>
+  <item name="SaveSettings.RequestForMembership.Body" html="true" placeholder="true" mustcontains="[SubmitterSurname]|[SubmitterName]|[DeadlineOn]|[DeadlineTime]|[Fields]">Buongiorno,&lt;br/&gt;[SubmitterSurname] [SubmitterName] ha modificato i dati relativi alla revisione, in particolare la data ultima per sottomettere la revisione è il &lt;b&gt;[DeadlineOn]&lt;b/&gt; alle &lt;b&gt;[DeadlineTime]&lt;b/&gt; per i campi:&lt;br/&gt;[Fields]&lt;br/&gt;&lt;br/&gt;</item>
+  <item name="AcceptUserRequest.RequestForMembership.Subject">Domanda revisione accettata</item>
+  <item name="AcceptUserRequest.RequestForMembership.Body" html="true" placeholder="true" mustcontains="[RequiredBy]|[RequestOn]|[RequestTime]|[LinkUrl]">Buongiorno,&lt;br/&gt;[RequiredBy] il [RequestOn] alle [RequestTime] ha accettato la sua richiesta di revisione della domanda di adesione ([LinkUrl]).&lt;br/&gt;&lt;br/&gt;</item>
+  <item name="RefuseUserRequest.RequestForMembership.Subject">Rifiuto revisione adesione</item>
+  <item name="RefuseUserRequest.RequestForMembership.Body" html="true" placeholder="true" mustcontains="[RequiredBy]|[RequestOn]|[LinkUrl]|[RequestTime]|[Reason]">Buongiorno,&lt;br/&gt;[RequiredBy] ha rifiutato la sua richiesta ([LinkUrl]) di revisione il [RequestOn] alle [RequestTime] per i seguenti motivi:[Reason].&lt;br/&gt;&lt;br/&gt;</item>
+  <item name="SubmitRevision.RequestForMembership.Subject">Sottomissione revisione adesione</item>
+  <item name="SubmitRevision.RequestForMembership.Body" html="true" placeholder="true" mustcontains="[SubmitterSurname]|[SubmitterName]|[CallName]|[LinkUrl]">Buongiorno,&lt;br/&gt;[SubmitterSurname] [SubmitterName] ha sottomesso definitivamente la revisione alla sua domanda di adesione a "[CallName]".&lt;br/&gt;Per verificare la revisione accedere al seguente link: [LinkUrl].&lt;br/&gt;&lt;br/&gt;</item>
+  <item name="AcceptUserRevision.RequestForMembership.Subject">Revisione confermata</item>
+  <item name="AcceptUserRevision.RequestForMembership.Body" html="true" placeholder="true" mustcontains="[SubmitterSurname]|[SubmitterName]|[LinkUrl]">Buongiorno,&lt;br/&gt;[SubmitterSurname] [SubmitterName] la tua revisione è stata accettata definitivamente.&lt;br/&gt;Per visualizzare la versione finale dell'adesione accedere al seguente link: [LinkUrl].&lt;br/&gt;&lt;br/&gt;</item>
+  <item name="RefuseUserRevision.RequestForMembership.Subject">Revisione NON confermata</item>
+  <item name="RefuseUserRevision.RequestForMembership.Body" html="true" placeholder="true" mustcontains="[SubmitterSurname]|[SubmitterName]|[LinkUrl]">Buongiorno,&lt;br/&gt;[SubmitterSurname] [SubmitterName] la tua revisione NON è stata accettata.&lt;br/&gt;Per visualizzare la versione finale dell'adesione accedere al seguente link: [LinkUrl].&lt;br/&gt;&lt;br/&gt;</item>
+
+
+  <item name="AnonymousOwnerName">Utente anonimo</item>
+
+
+  <item name="DisplayCallUnavailableForPublic.View.CallForBids">La visualizzazione della partecipazione al bando non è possibile senza essersi prima autenticati in piattaforma.</item>
+  <item name="DisplayCallUnavailableForPublic.View.RequestForMembership">La visualizzazione dell'adesione non è possibile senza essersi prima autenticati in piattaforma.</item>
+  <item name="DisplayCallUnavailable.View.CallForBids">Il bando richiesto NON è al momento accessibile.</item>
+  <item name="DisplayCallUnavailable.View.RequestForMembership">La domanda di adesione richiesta NON è al momento accessibile.</item>
+  <item name="DisplaySubmissionUnavailable.View.CallForBids">La visualizzazione della domanda di partecipazione al bando non è al momento possibile.</item>
+  <item name="DisplaySubmissionUnavailable.View.RequestForMembership">La visualizzazione dell'adesione non è al momento possibile.</item>
+  <item name="DisplayUnknownCall.CallForBids">Bando sconosciuto.</item>
+  <item name="DisplayUnknownCall.RequestForMembership">Richiesta di adesione sconosciuta.</item>
+  <item name="DisplayUnknownSubmission.CallForBids">Domanda di partecipazione al bando inesistente o cancellata.</item>
+  <item name="DisplayUnknownSubmission.RequestForMembership">Adesione inesistente o cancellata.</item>
+
+  <item name="DisplayMessageToken.Title">Attendere.</item>
+  <item name="DisplayMessageToken.pdf">Il file PDF richiesto è in fase di preparazione, attendere qualche secondo per il download.</item>
+  <item name="DisplayMessageToken.rtf">Il file RTF richiesto è in fase di preparazione, attendere qualche secondo per il download.</item>
+  <item name="DisplayMessageToken.zip">Il file ZIP con tutto il materiale allegato alla domanda è in fase di preparazione, attendere qualche secondo per il download.</item>
+  <item name="DisplayMessageToken.xml">Il file XML richiesto è in fase di preparazione, attendere qualche secondo per il download.</item>
+  <item name="DisplayMessageToken.xls">Il file XLS richiesto è in fase di preparazione, attendere qualche secondo per il download.</item>
+  <item name="DisplayMessageToken.csv">Il file CSV richiesto è in fase di preparazione, attendere qualche secondo per il download.</item>
+  <item name="BTNsaveRevisionTop.text">Salva revisione</item>
+  <item name="BTNsaveRevisionTop.ToolTip">Salva revisione</item>
+  <item name="BTNsaveRevisionBottom.text">Salva revisione</item>
+  <item name="BTNsaveRevisionBottom.ToolTip">Salva revisione</item>
+
+  <item name="BTNsubmitRevisionTop.text">Sottometti definitivamente</item>
+  <item name="BTNsubmitRevisionTop.ToolTip">Sottometti definitivamente la revisione</item>
+  <item name="BTNsubmitRevisionBottom.text">Sottometti definitivamente</item>
+  <item name="BTNsubmitRevisionBottom.ToolTip">Sottometti definitivamente la revisione</item>
+  <item name="LTsaveBottomRevisionExplanation.text">
+    Salva una bozza della revisione e potrai modificarla in un secondo momento.
+    La revisione non è sottomessa fino a quando non verrà premuto &lt;Sottometti definitivamente/&gt;
+  </item>
+  <item name="LTsaveAndSubmitBottomRevisionExplanation.text">
+    Sottometti definitivamente la revisione affinchè venga valutata. Non sarà più possibile
+    modificare la domanda
+  </item>
+  <item name="HYPrevisions.text">Torna alla lista</item>
+  <item name="HYPrevisions.ToolTip">Torna alla lista delle revisioni</item>
+
+  <item name="RevisionErrorView.CallForBids.InvalidFields">Per confermare definitivamente la revisione è necessario verificare i campi evidenziati.</item>
+  <item name="RevisionErrorView.CallForBids.RequiredItems">Per confermare definitivamente la revisione è necessario compilare i campi obbligatori.</item>
+  <item name="RevisionErrorView.CallForBids.Deleted">Errore nella cancellazione della revisione.</item>
+  <item name="RevisionErrorView.CallForBids.Unknown">Revisione inesistente, tornare alla lista dei bandi</item>
+  <item name="RevisionErrorView.CallForBids.GenericError">Errore nella fase di salvataggio. Ritentare in un secondo momento.</item>
+  <item name="RevisionErrorView.CallForBids.StringValueSaving">Errore nel salvataggio di alcuni campi della revisione, l'operazione non è stata conclusa correttamente.</item>
+  <item name="RevisionErrorView.CallForBids.FileSaving">Errore nel caricamento dei file, l'operazione non è stata conclusa correttamente.</item>
+  <item name="RevisionErrorView.CallForBids.TimeExpired">ATTENZIONE ! I termini per la revisione della domanda di partecipazione al bando sono scaduti !</item>
+  <item name="RevisionErrorView.CallForBids.Unavailable">Revisione al momento non disponibile</item>
+  <item name="RevisionErrorView.RequestForMembership.InvalidFields">Per confermare definitivamente la revisione è necessario verificare i campi evidenziati.</item>
+  <item name="RevisionErrorView.RequestForMembership.RequiredItems">Per confermare definitivamente la revisione è necessario compilare i campi obbligatori.</item>
+  <item name="RevisionErrorView.RequestForMembership.Deleted">Errore nella cancellazione della revisione.</item>
+  <item name="RevisionErrorView.RequestForMembership.Unknown">Revisione inesistente, tornare alla lista delle adesioni</item>
+  <item name="RevisionErrorView.RequestForMembership.GenericError">Errore nella fase di salvataggio. Ritentare in un secondo momento.</item>
+  <item name="RevisionErrorView.RequestForMembership.StringValueSaving">Errore nel salvataggio di alcuni campi della revisione, l'operazione non è stata conclusa correttamente.</item>
+  <item name="RevisionErrorView.RequestForMembership.FileSaving">Errore nel caricamento dei file, l'operazione non è stata conclusa correttamente.</item>
+  <item name="RevisionErrorView.RequestForMembership.TimeExpired">ATTENZIONE ! I termini per la revisione della propria adesione sono scaduti !</item>
+  <item name="RevisionErrorView.RequestForMembership.Unavailable">Revisione al momento non disponibile</item>
+
+  <item name="RevisionAction.UserRequired">Richiesta di revisione effettuata a</item>
+  <item name="RevisionAction.Manager">Revisione richiesta</item>
+  <item name="LTrevisionActionBy_t.text"  disambiguation="da=inteso come azione eseguita dall'utente">da</item>
+  <item name="LTrevisionActionDeadline_t.text">da sottomettere entro il</item>
+  <item name="revisionActionDeadline">Non è stata definita ancora una data per la sottomissione definitiva</item>
+  <item name="LTrevisionStatus.Request"></item>
+  <item name="LTrevisionStatus.RequestAccepted" disambiguation="relativo a status revisione di un bando">Richiesta accettata</item>
+  <item name="LTrevisionStatus.Submitted">Revisione sottomessa definitivamente</item>
+  <item name="LTrevisionStatus.Approved">Revisione approvata</item>
+  <item name="LTrevisionStatus.Refused">Revisione NON approvata</item>
+  <item name="LTrevisionStatus.Cancelled">Revisione cancellata</item>
+  <item name="LTrevisionActionSubmittedOn.text" placeholder="true" mustcontains="{0}|{1}">il {0} alle {1}</item>
+  <item name="LTrevisionActionManagedBy_t.text"  disambiguation="da=inteso come azione eseguita dall'utente">da</item>
+  <item name="LBrevisionExpectedAction.text" disambiguation="relativo a status revisione di un bando">(in attesa di verifica)</item>
+
+  <item name="LoadUnknowCall.none">Nessun elemento individuato</item>
+  <item name="LoadUnknowCall.CallForBids">Bando non trovato</item>
+  <item name="LoadUnknowCall.RequestForMembership">Adesione / Preadesione non individuata</item>
+
+  <!-- EVALUATE-->
+  <item name="Evaluate.Title" placeholder="true" mustcontains="{0}" disambiguation="domanda di partecipazione/domanda di adesione">Valutazione domanda di {0}</item>
+  <item name="Evaluate.Tooltip" placeholder="true" mustcontains="{0}|{1}|{2}">Tipo {0} - Sottomessa da {1} - Bando "{2}"</item>
+  <item name="GeneralTabName">Generale</item>
+  <item name="LBcriterionSelect_t.text">Seleziona un criterio</item>
+  <item name="LBcommentEvaluation_t.text">Commento complessivo:</item>
+  <item name="LBcommentHelp.text"></item>
+  <item name="LTmaxCharsComment.text">Caratteri disponibili:</item>
+  <item name="LBerrorMessageComment.text">Commento obbligatorio.</item>
+  <item name="ServiceEvaluateNopermission">Non dispone dei permessi per valutare questa domanda di partecipazione al bando</item>
+  <item name="DisplayEvaluationUnavailable">Non è possibile valutare questa domanda: attualmente Lei non risulta un valutatore/una valutatrice della domanda.</item>
+  <item name="DisplayNotEvaluationPermission">Non dispone dei permessi per valutare questa domanda di partecipazione al bando</item>
+  <item name="DisplayUnknownEvaluation">Valutazione inesistente, chiudere questa finestra e ricarciare la pagina con la lista delle domande da valutare.</item>
+  <item name="BTNsaveEvaluation.text">Salva in bozza</item>
+  <item name="BTNsaveEvaluation.Tooltip">Salva la valutazione, consentendo ulteriori modifiche</item>
+  <item name="BTNcompleteEvaluation.text">Salva definitivamente</item>
+  <item name="BTNcompleteEvaluation.Tooltip">Salva definitivamente la valutazione</item>
+  <item name="DisplayEvaluationSaved">Valutazione salvata correttamente.</item>
+  <item name="EvaluationEditorErrors.SavingEvaluation">ATTENZIONE: i dati della valutazione NON sono stati salvati correttamente</item>
+  <item name="EvaluationEditorErrors.SavingEvaluationCompleted">ATTENZIONE: NON è stato possibile salvare correttamente la valutazione in modo definitivo.</item>
+  <item name="EvaluationEditorErrors.SavingEvaluation.Count" placeholder="true" mustcontains="{0}">ATTENZIONE: i dati della valutazione NON sono stati salvati correttamente ({0} criteri non valutati/dati errati).</item>
+  <item name="EvaluationEditorErrors.SavingEvaluationCompleted.Count" placeholder="true" mustcontains="{0}">ATTENZIONE: NON è stato possibile salvare correttamente la valutazione in modo definitivo({0} criteri non valutati/dati errati).</item>
+  <item name="EvaluationInfo.Evaluated">Valutazione della domanda iniziata il {0} e conclusa il {1}.</item>
+  <item name="EvaluationInfo.EvaluatorReplacement.True" placeholder="true" mustcontains="{0}|{1}|{2}">Valutatore SOSTITUITO il {1} (valutazione iniziata il {0} e conclusa il {2}).</item>
+  <item name="EvaluationInfo.EvaluatorReplacement.False" placeholder="true" mustcontains="{0}|{1}">Valutatore SOSTITUITO il {1} (valutazione iniziata il {0}).</item>
+  <item name="EvaluationInfo.Invalidated.True" placeholder="true" mustcontains="{0}|{1}|{2}">Valutazione cancellata il {1} (valutazione iniziata il {0} e conclusa il {2}).</item>
+  <item name="EvaluationInfo.Invalidated.False" placeholder="true" mustcontains="{0}|{1}">Valutazione cancellata il {1} (valutazione iniziata il {0}).</item>
+  <item name="EvaluationInfo.Evaluating" placeholder="true" mustcontains="{0}|{1}">Valutazione della domanda in corso, iniziata il {0} ed ultima modifica il {1}.</item>
+  <item name="UnknownDisplayname">Utente rimosso</item>
+
+  <item name="BTNvirtualDeleteSubmission.text" html="false" placeholder="false">Cancella</item>
+  <item name="BTNvirtualDeleteSubmission.Tooltip" html="false" placeholder="false">Cancella</item>
+
+  <item name="BTNsaveSubmissionTop.text" html="false" placeholder="false">Salva in bozza</item>
+  <item name="BTNsaveSubmissionTop.Tooltip" html="false" placeholder="false">Salva in bozza</item>
+
+  <item name="BTNsubmitSubmissionTop.text" html="false" placeholder="false">Sottometti defintivamente</item>
+  <item name="BTNsubmitSubmissionTop.Tooltip" html="false" placeholder="false">Sottometti defintivamente</item>
+  <!--Aggiunte Tia da mail MB: doppioni non ce ne sono, controllare al limite-->
+  <item name="BTNsaveSubmissionBottom.text" html="false" placeholder="false">Salva in bozza</item>
+  <item name="BTNsaveSubmissionBottom.Tooltip" html="false" placeholder="false">Salva in bozza</item>
+
+  <item name="BTNsubmitSubmissionBottom.text" html="false" placeholder="false">Sottometti defintivamente</item>
+  <item name="BTNsubmitSubmissionBottom.Tooltip" html="false" placeholder="false">Sottometti defintivamente</item>
+  <item name="Closed.RequestForMembership.SubmissionStatus.draft.n">Altre bozze non sottomesse</item>
+  <item name="Closed.CallForBids.SubmissionStatus.draft.n">Altre bozze non sottomesse</item>
+  <item name="Closed.RequestForMembership.SubmissionStatus.draft.1">Altra non sottomessa</item>
+  <item name="Closed.CallForBids.SubmissionStatus.draft.1">Altra non sottomessa</item>
+</Resource>

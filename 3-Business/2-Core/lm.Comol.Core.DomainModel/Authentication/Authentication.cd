@@ -1,0 +1,256 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="lm.Comol.Core.Authentication.AuthenticationProvider">
+    <Position X="2.75" Y="11" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAIAAAAAAAACAAAEAAQAAAgAGAAEABAAEABAAAA=</HashCode>
+      <FileName>Authentication\Providers\AuthenticationProvider.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="ProviderType" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="Translations" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="lm.Comol.Core.Authentication.AuthenticationProviderAttribute">
+    <Position X="7" Y="6.75" Width="2.5" />
+    <AssociationLine Name="Type" Type="lm.Comol.Core.Authentication.AttributeType">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.248" Y="0.141" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAIkAAAAAAAAAAQAAAAAAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>Authentication\Providers\AuthenticationProviderAttribute.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Type" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="lm.Comol.Core.Authentication.AuthenticationProviderRole">
+    <Position X="3.5" Y="6.75" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAIEAAAAAAAgAAQAAAAAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>Authentication\Providers\AuthenticationProviderRole.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="lm.Comol.Core.Authentication.AuthenticationProviderTranslation">
+    <Position X="9.75" Y="0.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAAkgAAAAAAAAEQAAAAAAAAAAAAAEAAAAEA=</HashCode>
+      <FileName>Authentication\Providers\AuthenticationProviderTranslation.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="lm.Comol.Core.Authentication.InternalAuthenticationProvider">
+    <Position X="0.5" Y="4.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAAAAAAAAAACAAAAgAAAAAEAAAAAAAAAAQA=</HashCode>
+      <FileName>Authentication\Providers\InternalAuthenticationProvider.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="lm.Comol.Core.Authentication.LDAPAuthenticationProvider">
+    <Position X="3.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Authentication\Providers\LDAPAuthenticationProvider.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="lm.Comol.Core.Authentication.LoginFormat">
+    <Position X="15" Y="6.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAEEAAAAAAAAAAQAAAAAAAAAAAAAAAQAQAA=</HashCode>
+      <FileName>Authentication\Providers\LoginFormat.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="lm.Comol.Core.Authentication.ShibbolethAuthenticationProvider">
+    <Position X="5.5" Y="4.5" Width="2.5" />
+    <AssociationLine Name="Attributes" Type="lm.Comol.Core.Authentication.AuthenticationProviderAttribute">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.152" Y="0.456" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="Roles" Type="lm.Comol.Core.Authentication.AuthenticationProviderRole">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.11" Y="0.456" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAQAgAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Authentication\Providers\ShibbolethAuthenticationProvider.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Attributes" />
+      <Property Name="Roles" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="lm.Comol.Core.Authentication.UrlAuthenticationProvider">
+    <Position X="11.5" Y="4.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>UAAgAAACAAAAQAABAAAAgAAAAAAAECAAAAAAAAAAAAE=</HashCode>
+      <FileName>Authentication\Providers\UrlAuthenticationProvider.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="TokenFormat" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="LoginFormats" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="lm.Comol.Core.Authentication.BaseLoginInfo">
+    <Position X="7" Y="11.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAEAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Authentication\Logon\BaseLoginInfo.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Provider" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="lm.Comol.Core.Authentication.ExternalLoginInfo">
+    <Position X="5.25" Y="14" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAhA=</HashCode>
+      <FileName>Authentication\Logon\ExternalUserInfo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="lm.Comol.Core.Authentication.InternalLoginInfo">
+    <Position X="8.25" Y="14" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAACAAAAAAAAAAAAAAAACACAQAAAAAAA=</HashCode>
+      <FileName>Authentication\Logon\InternalLoginInfo.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="ResetType" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="lm.Comol.Core.Authentication.MailEditingPending">
+    <Position X="13.5" Y="14" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAACAAAAAAAAAAAEAAAAAAACAAAAAAAAAQAAAAA=</HashCode>
+      <FileName>Authentication\Logon\MailEditingPending.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="lm.Comol.Core.Authentication.WaitingActivationProfile">
+    <Position X="13.5" Y="11.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAACAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Authentication\Logon\WaitingActivationProfile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="lm.Comol.Core.Authentication.UrlMacAuthenticationProvider">
+    <Position X="17" Y="4.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>QAAgAAAAAAAAAAABAAAAgAAQAAAAEAAAAACAAAAAAAA=</HashCode>
+      <FileName>Authentication\Providers\Mac\UrlMacAuthenticationProvider.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Attributes" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="lm.Comol.Core.Authentication.BaseUrlMacAttribute">
+    <Position X="23" Y="4.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAkAAAAAAAAAAQAAAAAAAQAAQAAICAAAAA=</HashCode>
+      <FileName>Authentication\Providers\Mac\BaseUrlMacProviderAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="lm.Comol.Core.Authentication.MacAttribute">
+    <Position X="18.75" Y="7.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Authentication\Providers\Mac\MacProviderAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="lm.Comol.Core.Authentication.MacAttributeItem">
+    <Position X="19" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQACAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Authentication\Providers\Mac\MacProviderAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="lm.Comol.Core.Authentication.TimestampAttribute">
+    <Position X="21" Y="7.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAgACAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Authentication\Providers\Mac\TimestampProviderAttribute.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Format" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="lm.Comol.Core.Authentication.CourseCatalogueAttribute">
+    <Position X="29.5" Y="7.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Authentication\Providers\Mac\CourseCatalogueProviderAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="lm.Comol.Core.Authentication.CourseCatalogueAttributeItem">
+    <Position X="29.5" Y="9.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACCAAAAAA=</HashCode>
+      <FileName>Authentication\Providers\Mac\CourseCatalogueMapping.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="lm.Comol.Core.Authentication.OrganizationAttributeItem">
+    <Position X="25.75" Y="9.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAACAACAAAAAAAAAAAAAAAAAAAAACAAAAAI=</HashCode>
+      <FileName>Authentication\Providers\Mac\OrganizationMapping.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="lm.Comol.Core.Authentication.OrganizationAttribute">
+    <Position X="25.5" Y="7.75" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Authentication\Providers\Mac\OrganizationProviderAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="lm.Comol.Core.Authentication.UserProfileAttribute">
+    <Position X="23.5" Y="7.75" Width="2" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Authentication\Providers\Mac\ProfileProviderAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="lm.Comol.Core.Authentication.AuthenticationProviderType">
+    <Position X="12.75" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAAAAAAAAAIAgAAAAAEDAAAAADAAAAAEAAAA=</HashCode>
+      <FileName>Authentication\Providers\AuthenticationProviderType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="lm.Comol.Core.Authentication.UrlUserTokenFormat">
+    <Position X="15" Y="4.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAIAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAQA=</HashCode>
+      <FileName>Authentication\Providers\UrlUserTokenFormat.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="lm.Comol.Core.Authentication.AttributeType" Collapsed="true">
+    <Position X="10.5" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAEAAAAAACEAAAAAgEIABAAgAEAAAACABAggAAEAE=</HashCode>
+      <FileName>Authentication\Providers\AttributeType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="lm.Comol.Core.Authentication.EditType">
+    <Position X="11.5" Y="14" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAEAAAAAAAAAAAACAAAAAEAAAAAAAAAAACAAQA=</HashCode>
+      <FileName>Authentication\Logon\EditType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="lm.Comol.Core.Authentication.TimestampFormat">
+    <Position X="21.25" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAACAAAAAAAIAAAAAAQAAAA=</HashCode>
+      <FileName>Authentication\Providers\Mac\TimestampFormat.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

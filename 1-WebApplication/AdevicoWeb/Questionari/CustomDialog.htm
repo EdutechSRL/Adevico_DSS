@@ -1,0 +1,57 @@
+<html>
+<head>
+	<title>
+		The Custom Dialog
+	</title>
+    <link rel="stylesheet" type="text/css" href="../RadControls/Editor/Schemes/Default/Dialogs.css?v=201604071200lm" />
+  
+</head>
+<body>
+<script language="javascript" src="../RadControls/Editor/Scripts/7_0_0/RadWindow.js"></script>
+<script language="javascript">
+	function GetDialogArguments()
+	{
+		if (window.radWindow) 
+		{
+			return window.radWindow.Argument;
+		}
+		else
+		{
+			return null;
+		}
+	}
+
+	var isRadWindow = true;
+	var radWindow = GetEditorRadWindowManager().GetCurrentRadWindow(window);
+	if (radWindow)
+	{ 
+		if (window.dialogArguments) 
+		{ 
+			radWindow.Window = window;
+		} 
+		radWindow.OnLoad(); 
+	}
+</script>
+	<br />
+				<!--start_list_tag--><select id="linkContainer">
+					<option value="Latex">Latex</option>
+					<option value="IMG">Link Immagine</option>
+				</select><!--end_list_tag--><br />
+				<input id="INTesto" type="text" style="width:600px" />
+			<br />
+				<button class="Button" onclick="javascript:insertLink();">OK</button>
+	<script language="javascript">
+		function insertLink()
+		{
+			var linkContainer = document.getElementById("linkContainer");
+			var textContainer = document.getElementById("INTesto");
+			var returnValue = 
+			{
+				url:linkContainer.options[linkContainer.selectedIndex].value,
+				text:textContainer.value
+			};
+			CloseDlg(returnValue);
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="lm.Comol.Core.DomainModel"  namespace="lm.Comol.Core.FileRepository.Domain.ScormSettings">
+	<class name="ScormItemSettings" table="FR_ScormItemSettings" lazy="false">
+		<id name="Id" column="Id" type="Int64">
+			<generator class="native"/>
+		</id>
+    <property name="IdScormOrganizationSettings" type="Int64" column="IdScormOrganizationSettings" />
+    <property name="IdScormPackageSettings" type="Int64" column="IdScormPackageSettings" />
+    <property name="IdParentItem" type="Int64" column="IdParentItem" />
+		<property name="IsVisible" type="Boolean" column="IsVisible" />
+		<property name="Title" type="String" column="Title" />
+		<property name="ScormType" type="String" column="ScormType" />
+		<property name="ActivityId" type="String" column="ActivityId" />
+		<property name="MinTime" type="Int64" column="MinTime" />
+    <property name="MinScore" type="Decimal" column="MinScore" />
+		<property name="CheckTime" type="Boolean" column="CheckTime" />
+		<property name="CheckScore" type="Boolean" column="CheckScore" />
+    <property name="UseScoreScaled" type="Boolean" column="UseScoreScaled" />
+    <property name="IsLeaf" type="Boolean" column="IsLeaf" />
+    
+		<property name="CheckScormCompletion" type="Boolean" column="CheckScormCompletion" />
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,163 @@
+/* doc template stylesheet - updated 11.12.12 ore 17.00 */
+
+
+div.TemplateContainer {
+	
+}
+
+div.TemplateContainerRow {
+	border: 0px;
+	padding: 3px;
+	margin: 0px;
+	width: 920px;
+}
+
+div.TemplateContainer2 {
+	vertical-align: text-top;
+	display: inline-block;
+	width: 456px;
+}
+
+div.TemplateContainter2Right {
+	display: inline-block;
+	width: 456px;
+	text-align: right;
+}
+
+div.TemplateContainer3 {
+	display: inline-block;
+	width: 302px;
+	vertical-align: top;
+}
+
+div.TemplateContainer3 span,
+div.TemplateContainer3 div {
+	vertical-align: top;
+}
+
+span.TemplateDataRow {
+	display: inline-block;
+	vertical-align: text-top;
+	width: 100%;
+}
+
+span.TemplateDataRow .Field,
+span.TemplateDataRow .Data * {
+	vertical-align: top;
+}
+
+.Field {
+	font-weight: bold;
+	display: inline-block;
+	width: 100px;
+}
+
+.Data {
+	display: inline-block;
+	width: 300px;
+}
+
+.Data ul,
+ul.li_Type {
+	list-style-type: none;
+}
+
+.Data ul li,
+ul.li_Type li {
+	display: inline-block;
+	width: 30%;
+}
+
+span.uc_measure {
+	display: inline-block;
+	width: 45%;
+}
+
+ul.li_BackGround {
+	
+}
+
+div.TemplateHeaderRow,
+div.TemplateContentRow,
+div.TemplateFooterRow {
+	border: 0px;
+	padding: 0px;
+	margin: 0px;
+	vertical-align: top;
+}
+
+div.TemplateContentRow {
+	/*height: 200px;*/
+    vertical-align: middle;
+}
+
+div.TemplateContentRow * {
+	vertical-align: middle;
+}
+
+div.ItemCol1 {
+	width: 99%;
+	border: 0px;
+	padding: 0px;
+	margin: 0px;
+	vertical-align: top;
+}
+
+div.ItemCol2 {
+	display: inline-block;
+	border: 0px;
+	width: 49.5%;
+	padding: 0px;
+	margin: 0px;
+	vertical-align: top;
+}
+
+div.ItemCol3 {
+	display: inline-block;
+	border: 0px;
+	width: 32%;
+	padding: 0px;
+	margin: 0px;
+	vertical-align: top;
+}
+
+/* Da usare le robe "generiche" */
+
+.viewbuttons {
+	width: 100%;
+	text-align: left;
+}
+
+/*  Una volta standardizzato il nome, spostare in stile di piattaforma */
+
+/*  NOTA: nel caso specifico indica un elemento deprecato. */
+
+/*  PS: c'è la possibilità di sitinguere gli elementi deprecati da quelli in bozza.*/
+
+span.DDLContainer option.ItemDisapproved {
+	color: Red;
+}
+
+span.DDLContainer option.ItemDraft {
+	color: Yellow;
+}
+
+span.DDLContainer option.ItemLast {
+	color: Green;
+}
+
+span.DDLContainer option {
+	
+}
+
+div.viewbuttons {
+	text-align: right;
+	margin: 1em 0;
+}
+
+div.TemplateContainerRow {
+	border: 1px solid #aaa;
+	padding: 0;
+	box-shadow: 5px 5px 0 0 rgba(0,0,0,0.25);
+}
+

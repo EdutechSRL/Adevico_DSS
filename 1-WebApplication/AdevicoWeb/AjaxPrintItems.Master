@@ -1,0 +1,98 @@
+﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="AjaxPrintItems.master.vb" Inherits="Comunita_OnLine.AjaxPrintItems" %>
+<asp:Literal ID="Lit_DocType" runat="server" visible="false"><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"></asp:Literal>
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js lang-<%=IsoCode %>" lang="<%=IsoCode %>">
+<head id="Head1" runat="server">
+    <title id="Title1" runat="server">Comunità On Line </title>
+    <link href="~/Styles.css?v=201604071200lm" type="text/css" rel="stylesheet" />
+    <link rel="Stylesheet" href="<%#ResolveUrl("~/Style/New/statistiche.css?v=201604071200lm")%>" />
+    <link rel="Stylesheet" href="~/Style/Latex/Latex.css?v=201604071200lm" />
+    <link rel="Stylesheet" href="~/Style/Latex/Latex.css?v=201604071200lm" media="print" />
+    <script type="text/javascript" src="<%#ResolveUrl("~/Style/Latex/Latex.js") %>"></script>
+    <link href="~/Style/comol-theme/jquery-ui-1.7.3.custom.css?v=201604071200lm" rel="stylesheet" type="text/css" />
+    <style type="text/css">
+        .formLayout
+        {
+            background-color: #fff;
+            border: solid 1px #a1a1a1;
+            padding: 10px;
+            width: 300px;
+        }
+        .formLayout legend
+        {
+            font-weight: bold;
+        }
+        .formLayout label, .formLayout input, .formLayout span.label
+        {
+            display: block;
+            float: left;
+            margin-bottom: 10px;
+        }
+        .formLayout input
+        {
+            min-width: 50px;
+            margin-left: 0.5em;
+        }
+        .formLayout label, .formLayout span.label
+        {
+            text-align: right;
+            padding-right: 20px;
+            width: 120px;
+        }
+        .formLayout br
+        {
+            clear: left;
+        }
+    </style>
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+        <!-- Mantain dialog open-->
+    <script type="text/javascript" src="<%#ResolveUrl("~/JScript/Modules/Common/autoopendialog.js")%>"></script>
+</head>
+<body style="margin-top: 0px; margin-right: 0px; margin-left: 0px;" id="popup" class="<%=Me.DocTypeClass %>">
+     <form id="aspnetForm" class="mainForm" runat="server">
+    <asp:ScriptManager ID="SCMmanager" runat="server">
+    </asp:ScriptManager>
+    <script type="text/javascript">
+        function ChiudiMi() {
+            this.window.close();
+        }
+
+        function stampa() {
+            this.window.print();
+        }
+    </script>
+    <div style="margin: 0 auto; bottom: 0px 0px; width: 95%">
+        <div style="width: 100%; text-align: right; padding: 5px 5px;">
+            <asp:Button runat="server" ID="BTNclose" Text="Chiudi" CssClass="LINK_MENU" OnClientClick="return ChiudiMi();">
+            </asp:Button>&nbsp;
+            <asp:Button runat="server" ID="BTNprintItems" Text="Stampa" CssClass="LINK_MENU"
+                OnClientClick="stampa();return false;"></asp:Button>
+        </div>
+        <div style="width: 100%; text-align: center; border: 1px; border-color: Black; border-style: solid;
+            clear: both;">
+            <div style="width: 100%; text-align: center; height: 24px;" class="DiarioLezioni_DGheader">
+                <asp:Label ID="LBtitle" runat="server">Items</asp:Label>
+            </div>
+        </div>
+        <asp:MultiView ID="MLVservice" runat="server" ActiveViewIndex="0">
+            <asp:View ID="VIWservice" runat="server">
+                <asp:ContentPlaceHolder ID="CPHservice" runat="server">
+                </asp:ContentPlaceHolder>
+            </asp:View>
+            <asp:View ID="VIWnoPermission" runat="server">
+                <div id="DVpermessi" align="center">
+                    <div style="height: 50px;">
+                    </div>
+                    <div align="center">
+                        <asp:Label ID="LBNopermessi" runat="server" CssClass="messaggio"></asp:Label>
+                    </div>
+                    <div style="height: 50px;">
+                    </div>
+                </div>
+            </asp:View>
+        </asp:MultiView>
+    </div>
+    <input type="hidden" id="HDNwindowopened"  runat="server" class="autoopendialog" />
+    </form>
+</body>
+</html>

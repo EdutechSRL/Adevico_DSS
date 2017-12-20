@@ -1,0 +1,2474 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>TEST - Grafica UC Files</title>
+    <!-- STILI COMOL -->
+    <link rel="stylesheet" href="../../../Styles.css" type="text/css" media="screen"/>
+    <link rel="stylesheet" href="../../../Style/NewMenuDemo/css/d.css" type="text/css" media="screen"/>
+    <!-- /STILI COMOL -->
+
+    <!-- Stili usati (spostati nel foglio di stile Repository.Common.css)-->
+    <link rel="stylesheet" href="../Repository.Common.css" type="text/css" media="screen"/>
+    <!-- VERSIONE ESTESA -->
+    <!--<style type="text/css" media="all">
+        div.File_MainInfo
+        {   word-wrap: break-word; text-align:left;
+            border: 0px solid Black; padding: 0.5em; font-size: 13px; }
+        div.File_MainInfo div.File_SMInfo_Actions
+        {   display: block; height: 28px;
+            min-height: 28px; padding: 0.1em 0em 0.1em 0em; }
+        /*div.File_MainInfo div.File_SMInfo_Actions div.File_Download
+        {
+            padding:0.2em 0em 0em 0em;
+            display: inline-block;
+            font-size: smaller;
+        }*/
+        div.File_MainInfo ul.File_Actions
+        {   padding:0; margin:0; white-space:nowrap; list-style-type:none;
+            display: inline-block; text-align: right; float: right; }
+        div.File_MainInfo ul.File_Actions li { display:inline; padding:0px; margin:0px; border:0px; }
+        div.File_MainInfo div.File_Detail { padding:0px; margin:0px; border:0px; font-size:smaller;}
+        div.File_MainInfo img.File_Img_Action { padding:0px; margin:0px; border:0px; }
+        div.File_MainInfo a.File_ImgLnk { font-size:smaller; }
+        div.FileInfoSmall { width: 230px; max-width: 230px; }
+    </style>
+    -->
+    <!-- Versione normale -->
+    <!--<style type="text/css" media="all">
+         
+        div.File_MainInfo_Normal
+        {
+            word-wrap: break-word;
+            text-align:left;
+            border: 0px solid Black;
+            padding: 0.5em;
+            font-size: 13px;
+        }
+        div.File_MainInfo_Normal div.File_SMInfo_Actions
+        {
+            display: block;
+            height: 28px;
+            min-height: 28px;
+            padding: 0.1em 0em 0.1em 0em;
+        }
+        /*div.File_MainInfo div.File_SMInfo_Actions div.File_Download
+        {
+            padding:0.2em 0em 0em 0em;
+            display: inline-block;
+            font-size: smaller;
+        }*/
+        div.File_MainInfo_Normal ul.File_Actions
+        {
+            padding:0;
+            margin:0;
+            white-space:nowrap;
+            list-style-type:none;
+            display: inline-block;
+            text-align: right;
+            float: right;
+        }
+        div.File_MainInfo_Normal ul.File_Actions li
+        {
+            display:inline;
+            padding:0px;
+            margin:0px;
+            border:0px;
+        }
+        div.File_MainInfo_Normal div.File_Detail { padding:0px; margin:0px; border:0px; font-size:smaller;}
+        div.File_MainInfo_Normal img.File_Img_Action { padding:0px; margin:0px; border:0px; }
+        div.File_MainInfo_Normal a.File_ImgLnk { font-size:smaller; }
+        
+        div.File_MainInfo_Normal div.FileInfoSmall { width: 230px; max-width: 230px; }
+        
+        div.File_MainInfo_Normal div.File_NameExt { display: inline-block; width: 15em; max-width:15em;}
+        
+    </style>
+    -->
+    <!-- /* Tiny HTML CUT */ -->
+    <!--<style type="text/css" media="all">
+        div.File_MainInfo_TinyCut
+        {
+            text-align:left;
+            padding: 0em;
+            /*font-size: 13px;*/
+            border: 0px;
+            display: inline-block;
+        }
+        div.File_MainInfo_TinyCut img
+        {
+            width: 13px;
+            min-width: 13px;
+            height: 13px;
+            min-height: 13px;
+        }
+        div.File_MainInfo_TinyCut div.File_SMInfo_Actions { display: inline-block; padding: 0.1em 0em 0.1em 0em; }
+        div.File_MainInfo_TinyCut div.File_SMInfo_Actions div.File_Download
+        {
+            padding:0.2em 0em 0em 0em;
+            display: inline-block;
+            font-size: smaller;
+        }
+        div.File_MainInfo_TinyCut ul.File_Actions
+        {
+            float: inherit;
+            padding:0;
+            margin:0;
+            white-space:nowrap;
+            list-style-type:none;
+            display: inline-block;
+            text-align: right;
+        }
+        div.File_MainInfo_TinyCut ul.File_Actions li
+        {
+            display:inline;
+            padding:0px;
+            margin:0px;
+            border:0px;
+        }
+        div.File_MainInfo_TinyCut div.File_Detail { padding:0px; margin:0px; border:0px; }
+        div.File_MainInfo_TinyCut img.File_Img_Action { padding:0px; margin:0px; border:0px; }
+        div.File_MainInfo_TinyCut div.File_NameExt { display: inline-block; }
+    
+    </style>
+    -->
+    <!-- /* Tiny HTML HIDE*/ -->
+    <!--<style type="text/css" media="all">
+        div.File_MainInfo_TinyHide
+        {
+            text-align:left;
+            padding: 0em;
+            /*font-size: 13px;*/
+            border: 0px;
+            display: inline-block;
+        }
+        div.File_MainInfo_TinyHide img
+        {
+            width: 13px;
+            min-width: 13px;
+            height: 13px;
+            min-height: 13px;
+        }
+        div.File_MainInfo_TinyHide div.File_SMInfo_Actions { display: inline-block; padding: 0.1em 0em 0.1em 0em; }
+        /*div.File_MainInfo_TinyHide div.File_SMInfo_Actions div.File_Download
+        {
+            padding:0.2em 0em 0em 0em;
+            display: inline-block;
+            font-size: smaller;
+        }*/
+        span.DataField { font-weight:bold; }
+        div.File_MainInfo_TinyHide ul.File_Actions
+        {
+            float: inherit;
+            padding:0;
+            margin:0;
+            white-space:nowrap;
+            list-style-type:none;
+            display: inline-block;
+            text-align: right;
+        }
+        div.File_MainInfo_TinyHide ul.File_Actions li
+        {
+            display:inline;
+            padding:0px;
+            margin:0px;
+            border:0px;
+        }
+        div.File_MainInfo_TinyHide div.File_Detail { padding:0px; margin:0px; border:0px; }
+        div.File_MainInfo_TinyHide img.File_Img_Action { padding:0px; margin:0px; border:0px; }
+        div.File_MainInfo_TinyHide div.File_NameExt { display: inline-block; }
+        div.File_MainInfo_TinyHide div.File_Download { background-color:Red; display:none; }
+        
+        
+        
+        div.File_Download { font-size:smaller; }
+    </style>
+    -->
+    <!-- /Stili di base -->
+    <!-- Stili di Servizio -->
+    <!--<style type="text/css" media="all">
+        /* Stili utilizzati per allineare con grafica comol di alcune tabelle o impaginazione pagina di test*/
+        ul.DiarioLezione_FileList { padding:0px; margin:0px; border:0px; }
+        ul.DiarioLezione_FileList li { padding:0px; margin:0px; border:0px; }
+        
+        div.note { text-align: left; width: 100%; padding: 1em; }
+        ul.note { padding:1em; list-style-type:circle; }
+        ul.note li { display: list-item; }
+        hr { color:White; }
+    </style>
+    -->
+    <!-- /Stili di Servizio -->
+</head>
+<body>
+    <br /><hr /><br />
+    <a name="Top"></a>
+    <h1>Indice</h1>
+    <a href="#UC_Code">Codice controlli</a><br />
+    <a href="#Note">Note sulle versioni</a><br />
+    <a href="#File">Tabella file + tree (Con modifiche al servizio file)</a><br />
+    <a href="#FileInfo">Tabella file + tree (Con modifiche al servizio file) - Estesa</a><br />
+    <br /><hr /><br />
+
+    <h1><a name="UC_Code"></a>Codice Controlli</h1>
+    <br /><hr /><br />
+    <!-- Div ESTESO -->
+    <div class="File_MainInfo">
+        <div class="File_NameExt">
+            <a href="#" class="File_Name" title="Click to download">
+                <img src="../../../images/ico/no_G.gif" class="File_Ext" />
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ut mi turpis, in laoreet nunc. Maecenas odio sem, laoreet in vulputate nec nullam sodales.zip
+            </a>
+        </div>
+        <div class="File_SMInfo_Actions">
+            <!--<div class="File_Download"><b>15</b> download</div>-->
+            <span class="Titolo_campoSmall">25 Mb</span> - <span class="Titolo_campoSmall">15</span> <span class="testo_campoSmall">download</span>
+            <ul class="File_Actions">
+                <li>
+                    <a href="#" class="File_ImgLnk"">
+                        <img src="../../../images/FileActions/playScorm.png" alt="Play pacchetto" class="File_Img_Action" title="Play pacchetto"/>
+                        Play pacchetto
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="File_ImgLnk"">
+                        <img src="../../../images/Grid/statistic.gif" alt="Statistiche" class="File_Img_Action" title="Statistiche"/>
+                        Statistiche
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="File_ImgLnk"">
+                        <img src="../../../images/FileActions/settings.png" alt="Impostazioni pacchetto" class="File_Img_Action" title="Impostazioni pacchetto"/>
+                        Impostazioni pacchetto
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="File_Detail ToolTip">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pellentesque, est quis ornare consequat, arcu magna tristique justo, ut fringilla odio justo non nunc. Phasellus malesuada, nisi vel molestie elementum, nisl eros porttitor tellus, ut porttitor ante est id nunc. Nullam interdum rutrum risus, non facilisis dolor commodo eu. Proin vulputate, dui eu tempor faucibus, tortor nibh molestie enim, vel molestie leo nunc nec odio. Nam at elementum nisl. Phasellus vulputate, erat ac lacinia tempor, dui mauris ornare quam, vel euismod neque urna sit amet ligula. Maecenas eu leo vitae velit pretium lobortis vel id risus. Cras molestie, enim sit amet placerat adipiscing, risus tellus mollis enim, quis ultrices nisl velit in sapien. Praesent sollicitudin lacinia urna in tincidunt. Proin luctus pretium massa sit amet egestas. Nam viverra porta augue. Aliquam bibendum felis at mi posuere in tempor libero tincidunt. Donec vulputate, sem ut blandit porta, lacus nunc euismod neque.
+        </div>
+    </div>
+    <!-- /Div ESTESO -->
+
+    <br /><hr /><br />
+
+    <!-- Normal version -->
+    <div class="File_MainInfo_Normal">
+        <div class="File_NameExt">
+            <a href="#" class="File_Name" title="(Click to download) Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ut mi turpis, in laoreet nunc. Maecenas odio sem, laoreet in vulputate nec nullam sodales.zip">
+                <img src="../../../images/ico/no_G.gif" class="File_Ext" />
+                Lorem ipsu...odales.zip
+            </a>
+            <br />
+            <div class="File_SMInfo_Actions File_Download">
+                    <span class="Titolo_campoSmall">25 Mb</span> - <span class="Titolo_campoSmall">15</span> <span class="testo_campoSmall">download</span>
+                    <span class="File_Detail ToolTip" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pellentesque, est quis ornare consequat, arcu magna tristique justo, ut fringilla odio justo non nunc. Phasellus malesuada, nisi vel molestie elementum, nisl eros porttitor tellus, ut porttitor ante est id nunc. Nullam interdum rutrum risus, non facilisis dolor commodo eu. Proin vulputate, dui eu tempor faucibus, tortor nibh molestie enim, vel molestie leo nunc nec odio. Nam at elementum nisl. Phasellus vulputate, erat ac lacinia tempor, dui mauris ornare quam, vel euismod neque urna sit amet ligula. Maecenas eu leo vitae velit pretium lobortis vel id risus. Cras molestie, enim sit amet placerat adipiscing, risus tellus mollis enim, quis ultrices nisl velit in sapien. Praesent sollicitudin lacinia urna in tincidunt. Proin luctus pretium massa sit amet egestas. Nam viverra porta augue. Aliquam bibendum felis at mi posuere in tempor libero tincidunt. Donec vulputate, sem ut blandit porta, lacus nunc euismod neque.">
+                        <a href="#">Description</a>
+                    </span>
+            </div>
+        </div>
+        
+        <ul class="File_Actions">
+            <li>
+                <a href="#" class="File_ImgLnk"">
+                    <img src="../../../images/FileActions/playScorm.png" alt="Play pacchetto" class="File_Img_Action" title="Play pacchetto"/>
+                </a>
+            </li>
+            <li>
+                <a href="#" class="File_ImgLnk"">
+                    <img src="../../../images/Grid/statistic.gif" alt="Statistiche" class="File_Img_Action" title="Statistiche"/>
+                </a>
+            </li>
+            <li>
+                <a href="#" class="File_ImgLnk"">
+                    <img src="../../../images/FileActions/settings.png" alt="Impostazioni pacchetto" class="File_Img_Action" title="Impostazioni pacchetto"/>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <!-- /Normal Version -->
+    
+    <br /><hr /><br />
+
+    <!-- Tiny version V1 - html CUT -->
+    <div class="File_MainInfo_TinyCut">
+        <div class="File_NameExt">
+            <a href="#" class="File_Name" title="(Click to download) Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ut mi turpis, in laoreet nunc. Maecenas odio sem, laoreet in vulputate nec nullam sodales.zip">
+                <img src="../../../images/ico/no_G.gif" class="File_Ext" alt="Download" />
+                Lorem ipsu...odales.zip
+            </a>
+        </div>
+        <div class="File_SMInfo_Actions">
+            <ul class="File_Actions">
+                <li>
+                    <a href="#" class="File_ImgLnk"">
+                        <img src="../../../images/FileActions/playScorm.png" alt="Play pacchetto" class="File_Img_Action" title="Play pacchetto"/>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="File_ImgLnk"">
+                        <img src="../../../images/Grid/statistic.gif" alt="Statistiche" class="File_Img_Action" title="Statistiche"/>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="File_ImgLnk"">
+                        <img src="../../../images/FileActions/settings.png" alt="Impostazioni pacchetto" class="File_Img_Action" title="Impostazioni pacchetto"/>
+                    </a>
+                </li>
+                <!-- TEST!!! -->
+                <li>
+                    <a href="#" title="(27Mb - 15 download)
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pellentesque, est quis ornare consequat, arcu magna tristique justo, ut fringilla odio justo non nunc. Phasellus malesuada, nisi vel molestie elementum, nisl eros porttitor tellus, ut porttitor ante est id nunc. Nullam interdum rutrum risus, non facilisis dolor commodo eu. Proin vulputate, dui eu tempor faucibus, tortor nibh molestie enim, vel molestie leo nunc nec odio. Nam at elementum nisl. Phasellus vulputate, erat ac lacinia tempor, dui mauris ornare quam, vel euismod neque urna sit amet ligula. Maecenas eu leo vitae velit pretium lobortis vel id risus. Cras molestie, enim sit amet placerat adipiscing, risus tellus mollis enim, quis ultrices nisl velit in sapien. Praesent sollicitudin lacinia urna in tincidunt. Proin luctus pretium massa sit amet egestas. Nam viverra porta augue. Aliquam bibendum felis at mi posuere in tempor libero tincidunt. Donec vulputate, sem ut blandit porta, lacus nunc euismod neque.">
+                        ??
+                    </a>
+                </li>
+            </ul>
+        </div>
+        
+    </div>
+    <!-- /Tiny version V1 -->
+    
+    <br /><hr /><br />
+    
+     <!-- Tiny version V2 - CSS HIDE -->
+    <div class="File_MainInfo_TinyHide">
+        <div class="File_NameExt">
+            <a href="#" class="File_Name" title="(Click to download) Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ut mi turpis, in laoreet nunc. Maecenas odio sem, laoreet in vulputate nec nullam sodales.zip">
+                <img src="../../../images/ico/no_G.gif" class="File_Ext" />
+                Lorem ipsu...odales.zip
+            </a>
+        </div>
+        <div class="File_SMInfo_Actions">
+            <div class="File_Download">
+                <span class="Titolo_campoSmall">25 Mb</span> - <span class="Titolo_campoSmall">15</span> <span class="testo_campoSmall">download</span>
+                <div class="File_Detail ToolTip" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pellentesque, est quis ornare consequat, arcu magna tristique justo, ut fringilla odio justo non nunc. Phasellus malesuada, nisi vel molestie elementum, nisl eros porttitor tellus, ut porttitor ante est id nunc. Nullam interdum rutrum risus, non facilisis dolor commodo eu. Proin vulputate, dui eu tempor faucibus, tortor nibh molestie enim, vel molestie leo nunc nec odio. Nam at elementum nisl. Phasellus vulputate, erat ac lacinia tempor, dui mauris ornare quam, vel euismod neque urna sit amet ligula. Maecenas eu leo vitae velit pretium lobortis vel id risus. Cras molestie, enim sit amet placerat adipiscing, risus tellus mollis enim, quis ultrices nisl velit in sapien. Praesent sollicitudin lacinia urna in tincidunt. Proin luctus pretium massa sit amet egestas. Nam viverra porta augue. Aliquam bibendum felis at mi posuere in tempor libero tincidunt. Donec vulputate, sem ut blandit porta, lacus nunc euismod neque.">
+                    <a href="#">Description</a>
+                </div>    
+            </div>
+            <ul class="File_Actions">
+                <li>
+                    <a href="#" class="File_ImgLnk"">
+                        <img src="../../../images/FileActions/playScorm.png" alt="Play pacchetto" class="File_Img_Action" title="Play pacchetto"/>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="File_ImgLnk"">
+                        <img src="../../../images/Grid/statistic.gif" alt="Statistiche" class="File_Img_Action" title="Statistiche"/>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="File_ImgLnk"">
+                        <img src="../../../images/FileActions/settings.png" alt="Impostazioni pacchetto" class="File_Img_Action" title="Impostazioni pacchetto"/>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        
+    </div>
+    <!-- /Tiny version V2 -->
+    
+    <br /><hr />
+    <a href="#Top">^TOP - Indice</a>
+    <hr /><br />
+
+    <div class="note">
+        <center>
+            <a name="Note"></a>
+            <h1>NOTA: Differenze tra le versioni!</h1>
+        </center>
+        <br />
+        <ul class="note">
+            <li>
+                <b>Informazioni (description)</b><br />
+                Le informazioni sono spostate all'interno del flusso html e con leggere differenze.
+            </li>
+            <li>
+                <b>Barra strumenti</b><br />
+                Il testo è presente come "testo" quando visualizzato (NO JQUERY e property strane)
+            </li>
+            <li>
+                <b>Tiny HTML CUT</b><br />
+                La versione "Tiny" è stata nominata "cut" poichè gli elementi non necessari sono stati cancellati dall'html.
+                Il resto della struttura rimane <b>inalterato</b> rispetto alla seconda versione.
+                E' quindi possibile mantere INALTERATO l'HTML e cambiare SOLO la classe del DIV contenitore: da <b>File_MainInfo</b> a <b>File_MainInfo_TinyCut</b>
+            </li>
+            <li>
+                <b>Tiny CSS HIDE</b><br />
+                L'HTML di questa versione è IDENTICA alla versione NORMALE, cambia solo la classe CSS del DIV che contiene tutto.
+                Vengono NASCOSTI gli elementi non necessari, ma non è "possibile" aggiungere il ??? a meno raddoppiarlo e nasconderlo nella versione normale.
+            </li>
+            <li>Eventualmente correggere con l'utilizzo di Jquery e porcate simili.</li> 
+            <li>Intanto puo' essere facilmente aggirato via codice (literal et simila)</li> 
+            <li>Rivedere anche la nomenclatura.</li> 
+            <li><b>Tutti</b> i css sono "localizzati", hanno cioè influenza solo al loro interno. Non sono stati usati gli ID, ma le classi, poichè gli elementi possono essere ripetuti.</li> 
+            <li>Le <b>Immagini</b> sono inserite puramente via html in modo "barbaro". All'interno del codice sorgente sono stata inserite tutte, ma visualizzate SOLO quelle SCORM, questo perchè anche nel caso di "FILE MULTIMEDIALI" il numero e la dimensione delle icone rimane invariata. Eventualmente aggiungere quella interessata.</li>
+        </ul>
+    </div>
+
+    <br /><hr />
+    <a href="#Top">^TOP - Indice</a>
+    <hr /><br />
+
+     <!-- Table test, Diario lezioni style -->
+     <!-- Stili ereditati dalla pagina "Diario lezione" su COMOL-->
+     <style type="text/css">
+        .formLayout
+        {
+            background-color: #fff;
+            border: solid 1px #a1a1a1;
+            padding: 10px;
+            width: 300px;
+        }
+        .formLayout legend { font-weight: bold; }
+        .formLayout label, .formLayout input, .formLayout span.label { display: block; float: left; margin-bottom: 10px; }
+        .formLayout input { min-width: 50px; margin-left: 0.5em; }
+        .formLayout label, .formLayout span.label { text-align: right; padding-right: 20px; width: 120px; }
+        .formLayout br { clear: left; }
+
+        .DiaryItemRow { padding: 5px; text-align: left; width: 890px; }
+        
+        .DiaryItemRow .cellLeft { float: left; width: 110px; text-align: left; }
+         .DiaryItemRow .cellRight
+        {
+            float: left; 
+            overflow: hidden;
+            word-wrap: break-word;
+            width: 730px;
+        }
+        .ItemTitle { clear: both; width: 900px; }
+         .ItemTitle .Cell20
+         {
+             float: left; 
+             padding-left: 5px; 
+             height: 20px;
+             width: 20px;
+             vertical-align: middle;
+             }
+        .ItemTitle .Cell70
+        {
+            float: left; 
+            padding-left: 5px; 
+            height: 20px;
+            width: 70px;
+            vertical-align: middle;
+        }
+         .ItemTitle .Cell80
+        {
+            float: left;
+            padding-right: 5px;
+            padding-top: 2px;
+            text-align: right;
+            width: 80px;
+            height: 20px;
+            vertical-align: middle;
+        }
+          .ItemTitle .CellManagement
+        {
+            float: left;
+            padding-right: 5px;
+            padding-top: 2px;
+            text-align: right;
+            width: 180px;
+            height: 20px;
+            vertical-align: middle;
+        }
+           .ItemTitle .CellTitle
+        {
+            float: left;
+            padding-left: 10px;
+            padding-top: 2px;
+            width: 525px;
+            text-align: left;
+            height: 20px;
+            vertical-align: middle;
+        }
+    </style>
+    <!-- /Stili ereditati dalla pagina "Diario lezione" su COMOL-->
+    <center>
+    <h1>Diario lezioni (HTML CUT VERSION)</h1>
+    <br />
+        <table width="900px" cellspacing="0" cellpadding="0" border="0">
+            <tr>
+                <td style="background-color:#666; color:White;">
+                    Lezioni
+                </td>
+            </tr>
+            <tr>
+                <td width="900px" valign="middle" align="left" class="DiarioLezioni_HeaderRigaLezione_Bold" scope="row">
+                    <div class="ItemTitle">
+                        <div class="Cell80">
+                            <input type="checkbox"> &nbsp;
+                            <a target="_self" href="#" class="DiarioLezioni_HeaderLink" title="Edita voce"><img tooltip="Edita voce" src="../../../images/m.gif"></a>
+                                            
+
+                            <a href="#"><img tooltip="" src="../../../images/x.gif"></a>
+                        </div>
+                        <div class="Cell70">
+                            <a name="15632">
+                                <span class="DiarioLezioni_HeaderRigaLezione_Bold">Lez. 1</span>
+                            </a>
+                                            
+                        </div>
+                        <div class="CellTitle">
+                            &nbsp;lunedì 20 settembre 2010 13.00 - 15.00
+                        </div>
+                        <div class="CellManagement">
+                            <a href="#" class="DiarioLezioni_HeaderLink" title="Gestione dei file di questa voce">Gestione file</a>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+            <td width="900px" class="ROW_Normal_Small">
+                <div style="Display:block;" class="DiaryItemRow">
+                    <div class="cellLeft">
+                        <span class="Titolo_campoSmall">Titolo:</span>
+                    </div>
+                    <div class="cellRight">
+                        Concetti introduttivi &amp; Nozioni generali sulla progettazione
+                    </div>
+                </div>
+                <div style="Display:block;" class="DiaryItemRow">
+                    <div class="cellLeft">
+                        <span class="Titolo_campoSmall">Luogo:</span>
+                    </div>
+                    <div class="cellRight">
+                        2 B
+                    </div>
+                </div>
+                <div style="Display:block;" class="DiaryItemRow">
+                    <div class="cellLeft">
+                        <span class="Titolo_campoSmall">Descrizione:</span>
+                    </div>
+                    <div class="cellRight">
+                        Chiavi<br>Organizzazione fisica<br>Mapping record logici &amp; record fisici<br>Accessi: Sequenziali vs. diretti<br><br>Perché è importante progettare i dati<br>Natura della progettazione<br>Livelli del discorso in un progetto di dati<br>
+                    </div>
+                </div>
+                <div style="Display:none;" class="DiaryItemRow">
+                    <div class="cellLeft">
+                        <span class="Titolo_campoSmall">Link:</span>
+                    </div>
+                    <div class="cellRight">
+                        <span class="Titolo_campoSmall"></span>
+                    </div>
+                </div>
+                <div style="Display:none;" class="DiaryItemRow">
+                    <div class="cellLeft">
+                        <span class="Titolo_campoSmall">Note:</span>
+                    </div>
+                    <div class="cellRight">
+                                           
+                    </div>
+                </div>
+                <div style="Display:block;" class="DiaryItemRow">
+                    <div class="cellLeft">
+                        <span class="Titolo_campoSmall">File:</span>&nbsp;
+                    </div>
+                                        
+                    <div class="cellRight">
+                        <ul style="padding-left:0px;" class="DiarioLezione_FileList">
+                            <li style="width: 730px; vertical-align: text-top;">
+                                
+                                <!-- Tiny version V1 - html CUT -->
+                                <div class="File_MainInfo_TinyCut">
+                                    <div class="File_NameExt">
+                                        <a href="#" class="File_Name" title="(Click to download) Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ut mi turpis, in laoreet nunc. Maecenas odio sem, laoreet in vulputate nec nullam sodales.zip">
+                                            <img src="../../../images/ico/no_G.gif" class="File_Ext" alt="Download" />
+                                            Lorem ipsu...odales.zip
+                                        </a>
+                                    </div>
+                                    <div class="File_SMInfo_Actions">
+                                        <ul class="File_Actions">
+                                            <li>
+                                                <a href="#" class="File_ImgLnk"">
+                                                    <img src="../../../images/FileActions/playScorm.png" alt="Play pacchetto" class="File_Img_Action" title="Play pacchetto"/>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="File_ImgLnk"">
+                                                    <img src="../../../images/Grid/statistic.gif" alt="Statistiche" class="File_Img_Action" title="Statistiche"/>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="File_ImgLnk"">
+                                                    <img src="../../../images/FileActions/settings.png" alt="Impostazioni pacchetto" class="File_Img_Action" title="Impostazioni pacchetto"/>
+                                                </a>
+                                            </li>
+                                            <!-- TEST!!! -->
+                                            <li>
+                                                <a href="#" title="(27Kb - 15 download) 
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pellentesque, est quis ornare consequat, arcu magna tristique justo, ut fringilla odio justo non nunc. Phasellus malesuada, nisi vel molestie elementum, nisl eros porttitor tellus, ut porttitor ante est id nunc. Nullam interdum rutrum risus, non facilisis dolor commodo eu. Proin vulputate, dui eu tempor faucibus, tortor nibh molestie enim, vel molestie leo nunc nec odio. Nam at elementum nisl. Phasellus vulputate, erat ac lacinia tempor, dui mauris ornare quam, vel euismod neque urna sit amet ligula. Maecenas eu leo vitae velit pretium lobortis vel id risus. Cras molestie, enim sit amet placerat adipiscing, risus tellus mollis enim, quis ultrices nisl velit in sapien. Praesent sollicitudin lacinia urna in tincidunt. Proin luctus pretium massa sit amet egestas. Nam viverra porta augue. Aliquam bibendum felis at mi posuere in tempor libero tincidunt. Donec vulputate, sem ut blandit porta, lacus nunc euismod neque.">
+                                                    ??
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+        
+                                </div>
+                                <!-- /Tiny version V1 -->
+
+                                <span class="Testo_campoSmall">VISIBILE voce / materiale comunità</span>
+                                <a href="#" class="ROW_ItemLink_Small" title="Cambia la visibilità del materiale">Cambia</a>
+                            </li>
+                            <li style="width: 730px; vertical-align: text-top;">
+                                
+                                <!-- Tiny version V1 - html CUT -->
+                                <div class="File_MainInfo_TinyCut">
+                                    <div class="File_NameExt">
+                                        <a href="#" class="File_Name" title="(Click to download) Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ut mi turpis, in laoreet nunc. Maecenas odio sem, laoreet in vulputate nec nullam sodales.zip">
+                                            <img src="../../../images/ico/no_G.gif" class="File_Ext" alt="Download" />
+                                            Lorem ipsu...odales.zip
+                                        </a>
+                                    </div>
+                                    <div class="File_SMInfo_Actions">
+                                        <ul class="File_Actions">
+                                            <li>
+                                                <a href="#" class="File_ImgLnk"">
+                                                    <img src="../../../images/FileActions/playScorm.png" alt="Play pacchetto" class="File_Img_Action" title="Play pacchetto"/>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="File_ImgLnk"">
+                                                    <img src="../../../images/Grid/statistic.gif" alt="Statistiche" class="File_Img_Action" title="Statistiche"/>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="File_ImgLnk"">
+                                                    <img src="../../../images/FileActions/settings.png" alt="Impostazioni pacchetto" class="File_Img_Action" title="Impostazioni pacchetto"/>
+                                                </a>
+                                            </li>
+                                            <!-- TEST!!! -->
+                                            <li>
+                                                <a href="#" title="(27Kb - 15 download) 
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pellentesque, est quis ornare consequat, arcu magna tristique justo, ut fringilla odio justo non nunc. Phasellus malesuada, nisi vel molestie elementum, nisl eros porttitor tellus, ut porttitor ante est id nunc. Nullam interdum rutrum risus, non facilisis dolor commodo eu. Proin vulputate, dui eu tempor faucibus, tortor nibh molestie enim, vel molestie leo nunc nec odio. Nam at elementum nisl. Phasellus vulputate, erat ac lacinia tempor, dui mauris ornare quam, vel euismod neque urna sit amet ligula. Maecenas eu leo vitae velit pretium lobortis vel id risus. Cras molestie, enim sit amet placerat adipiscing, risus tellus mollis enim, quis ultrices nisl velit in sapien. Praesent sollicitudin lacinia urna in tincidunt. Proin luctus pretium massa sit amet egestas. Nam viverra porta augue. Aliquam bibendum felis at mi posuere in tempor libero tincidunt. Donec vulputate, sem ut blandit porta, lacus nunc euismod neque.">
+                                                    ??
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+        
+                                </div>
+                                <!-- /Tiny version V1 -->
+
+                                <span class="Testo_campoSmall">VISIBILE voce / materiale comunità</span>
+                                <a href="#" class="ROW_ItemLink_Small" title="Cambia la visibilità del materiale">Cambia</a>
+                            </li>
+                            <li style="width: 730px; vertical-align: text-top;">
+                                
+                                <!-- Tiny version V1 - html CUT -->
+                                <div class="File_MainInfo_TinyCut">
+                                    <div class="File_NameExt">
+                                        <a href="#" class="File_Name" title="(Click to download) Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ut mi turpis, in laoreet nunc. Maecenas odio sem, laoreet in vulputate nec nullam sodales.zip">
+                                            <img src="../../../images/ico/no_G.gif" class="File_Ext" alt="Download" />
+                                            Lorem ipsu...odales.zip
+                                        </a>
+                                    </div>
+                                    <div class="File_SMInfo_Actions">
+                                        <ul class="File_Actions">
+                                            <li>
+                                                <a href="#" class="File_ImgLnk"">
+                                                    <img src="../../../images/FileActions/playScorm.png" alt="Play pacchetto" class="File_Img_Action" title="Play pacchetto"/>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="File_ImgLnk"">
+                                                    <img src="../../../images/Grid/statistic.gif" alt="Statistiche" class="File_Img_Action" title="Statistiche"/>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="File_ImgLnk"">
+                                                    <img src="../../../images/FileActions/settings.png" alt="Impostazioni pacchetto" class="File_Img_Action" title="Impostazioni pacchetto"/>
+                                                </a>
+                                            </li>
+                                            <!-- TEST!!! -->
+                                            <li>
+                                                <a href="#" title="(27Kb - 15 download) 
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pellentesque, est quis ornare consequat, arcu magna tristique justo, ut fringilla odio justo non nunc. Phasellus malesuada, nisi vel molestie elementum, nisl eros porttitor tellus, ut porttitor ante est id nunc. Nullam interdum rutrum risus, non facilisis dolor commodo eu. Proin vulputate, dui eu tempor faucibus, tortor nibh molestie enim, vel molestie leo nunc nec odio. Nam at elementum nisl. Phasellus vulputate, erat ac lacinia tempor, dui mauris ornare quam, vel euismod neque urna sit amet ligula. Maecenas eu leo vitae velit pretium lobortis vel id risus. Cras molestie, enim sit amet placerat adipiscing, risus tellus mollis enim, quis ultrices nisl velit in sapien. Praesent sollicitudin lacinia urna in tincidunt. Proin luctus pretium massa sit amet egestas. Nam viverra porta augue. Aliquam bibendum felis at mi posuere in tempor libero tincidunt. Donec vulputate, sem ut blandit porta, lacus nunc euismod neque.">
+                                                    ??
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+        
+                                </div>
+                                <!-- /Tiny version V1 -->
+
+                                <span class="Testo_campoSmall">VISIBILE voce / materiale comunità</span>
+                                <a href="#" class="ROW_ItemLink_Small" title="Cambia la visibilità del materiale">Cambia</a>
+                            </li>
+                            <li style="width: 730px; vertical-align: text-top;">
+                                
+                                <!-- Tiny version V1 - html CUT -->
+                                <div class="File_MainInfo_TinyCut">
+                                    <div class="File_NameExt">
+                                        <a href="#" class="File_Name" title="(Click to download) Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ut mi turpis, in laoreet nunc. Maecenas odio sem, laoreet in vulputate nec nullam sodales.zip">
+                                            <img src="../../../images/ico/no_G.gif" class="File_Ext" alt="Download" />
+                                            Lorem ipsu...odales.zip
+                                        </a>
+                                    </div>
+                                    <div class="File_SMInfo_Actions">
+                                        <ul class="File_Actions">
+                                            <li>
+                                                <a href="#" class="File_ImgLnk"">
+                                                    <img src="../../../images/FileActions/playScorm.png" alt="Play pacchetto" class="File_Img_Action" title="Play pacchetto"/>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="File_ImgLnk"">
+                                                    <img src="../../../images/Grid/statistic.gif" alt="Statistiche" class="File_Img_Action" title="Statistiche"/>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="File_ImgLnk"">
+                                                    <img src="../../../images/FileActions/settings.png" alt="Impostazioni pacchetto" class="File_Img_Action" title="Impostazioni pacchetto"/>
+                                                </a>
+                                            </li>
+                                            <!-- TEST!!! -->
+                                            <li>
+                                                <a href="#" title="(27Kb - 15 download) 
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pellentesque, est quis ornare consequat, arcu magna tristique justo, ut fringilla odio justo non nunc. Phasellus malesuada, nisi vel molestie elementum, nisl eros porttitor tellus, ut porttitor ante est id nunc. Nullam interdum rutrum risus, non facilisis dolor commodo eu. Proin vulputate, dui eu tempor faucibus, tortor nibh molestie enim, vel molestie leo nunc nec odio. Nam at elementum nisl. Phasellus vulputate, erat ac lacinia tempor, dui mauris ornare quam, vel euismod neque urna sit amet ligula. Maecenas eu leo vitae velit pretium lobortis vel id risus. Cras molestie, enim sit amet placerat adipiscing, risus tellus mollis enim, quis ultrices nisl velit in sapien. Praesent sollicitudin lacinia urna in tincidunt. Proin luctus pretium massa sit amet egestas. Nam viverra porta augue. Aliquam bibendum felis at mi posuere in tempor libero tincidunt. Donec vulputate, sem ut blandit porta, lacus nunc euismod neque.">
+                                                    ??
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+        
+                                </div>
+                                <!-- /Tiny version V1 -->
+
+                                <span class="Testo_campoSmall">VISIBILE voce / materiale comunità</span>
+                                <a href="#" class="ROW_ItemLink_Small" title="Cambia la visibilità del materiale">Cambia</a>
+                            </li>
+                                                
+                        </ul>
+                                                
+                    </div>
+                </div>
+                <div style="padding: 0px 5px 5px 5px; text-align: left; clear: both;">
+                    &nbsp;&nbsp;&nbsp;
+                </div>
+            </td>
+            </tr>
+        </table>
+
+    </center>
+    <!-- /Table test, Diario lezioni style -->
+
+    <br /><hr />
+    <a href="#Top">^TOP - Indice</a>
+    <hr /><br />
+
+         <!-- Table test, Diario lezioni style -->
+    <center>
+        <h1>Diario lezioni (CSS HIDE VERSION)</h1>
+        <br />
+        <table width="900px" cellspacing="0" cellpadding="0" border="0">
+            <tr>
+                <td style="background-color:#666; color:White;">
+                    Lezioni
+                </td>
+            </tr>
+            <tr>
+                <td width="900px" valign="middle" align="left" class="DiarioLezioni_HeaderRigaLezione_Bold" scope="row">
+                    <div class="ItemTitle">
+                        <div class="Cell80">
+                            <input type="checkbox"> &nbsp;
+                            <a href="#" class="DiarioLezioni_HeaderLink" title="Edita voce">
+                                <img tooltip="Edita voce" src="../../../images/m.gif">
+                            </a>
+                            <a href="#"><img tooltip="" src="../../../images/x.gif"></a>
+                        </div>
+                        <div class="Cell70">
+                            <a>
+                                <span class="DiarioLezioni_HeaderRigaLezione_Bold">Lez. 1</span>
+                            </a>
+                                            
+                        </div>
+                        <div class="CellTitle">
+                            &nbsp;lunedì 20 settembre 2010 13.00 - 15.00
+                        </div>
+                        <div class="CellManagement">
+                            <a href="#" title="Gestione dei file di questa voce">Gestione file</a>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+            <td width="900px" class="ROW_Normal_Small">
+                <div style="Display:block;" class="DiaryItemRow">
+                    <div class="cellLeft">
+                        <span class="Titolo_campoSmall">Titolo:</span>
+                    </div>
+                    <div class="cellRight">
+                        Concetti introduttivi &amp; Nozioni generali sulla progettazione
+                    </div>
+                </div>
+                <div style="Display:block;" class="DiaryItemRow">
+                    <div class="cellLeft">
+                        <span class="Titolo_campoSmall">Luogo:</span>
+                    </div>
+                    <div class="cellRight">2 B</div>
+                </div>
+                <div style="Display:block;" class="DiaryItemRow">
+                    <div class="cellLeft">
+                        <span class="Titolo_campoSmall">Descrizione:</span>
+                    </div>
+                    <div class="cellRight">
+                        Chiavi<br>Organizzazione fisica<br>Mapping record logici &amp; record fisici<br>Accessi: Sequenziali vs. diretti<br><br>Perché è importante progettare i dati<br>Natura della progettazione<br>Livelli del discorso in un progetto di dati<br>
+                    </div>
+                </div>
+                <div style="Display:none;" class="DiaryItemRow">
+                    <div class="cellLeft">
+                        <span class="Titolo_campoSmall">Link:</span>
+                    </div>
+                    <div class="cellRight">
+                        <span class="Titolo_campoSmall"></span>
+                    </div>
+                </div>
+                <div style="Display:none;" class="DiaryItemRow">
+                    <div class="cellLeft">
+                        <span class="Titolo_campoSmall">Note:</span>
+                    </div>
+                    <div class="cellRight">
+                                           
+                    </div>
+                </div>
+                <div style="Display:block;" class="DiaryItemRow">
+                    <div class="cellLeft">
+                        <span class="Titolo_campoSmall">File:</span>&nbsp;
+                    </div>
+                                        
+                    <div class="cellRight">
+                        <ul style="padding-left:0px;" class="DiarioLezione_FileList">
+                            <li style="width: 730px; vertical-align: text-top;">
+                                
+                                 <!-- Tiny version V2 - CSS HIDE -->
+                                <div class="File_MainInfo_TinyHide">
+                                    <div class="File_NameExt">
+                                        <a href="#" class="File_Name" title="(Click to download) Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ut mi turpis, in laoreet nunc. Maecenas odio sem, laoreet in vulputate nec nullam sodales.zip">
+                                            <img src="../../../images/ico/no_G.gif" class="File_Ext" />
+                                            Lorem ipsu...odales.zip
+                                        </a>
+                                    </div>
+                                    <div class="File_SMInfo_Actions">
+                                        <div class="File_Download">
+                                            <b>15</b> download
+                                            <div class="File_Detail ToolTip" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pellentesque, est quis ornare consequat, arcu magna tristique justo, ut fringilla odio justo non nunc. Phasellus malesuada, nisi vel molestie elementum, nisl eros porttitor tellus, ut porttitor ante est id nunc. Nullam interdum rutrum risus, non facilisis dolor commodo eu. Proin vulputate, dui eu tempor faucibus, tortor nibh molestie enim, vel molestie leo nunc nec odio. Nam at elementum nisl. Phasellus vulputate, erat ac lacinia tempor, dui mauris ornare quam, vel euismod neque urna sit amet ligula. Maecenas eu leo vitae velit pretium lobortis vel id risus. Cras molestie, enim sit amet placerat adipiscing, risus tellus mollis enim, quis ultrices nisl velit in sapien. Praesent sollicitudin lacinia urna in tincidunt. Proin luctus pretium massa sit amet egestas. Nam viverra porta augue. Aliquam bibendum felis at mi posuere in tempor libero tincidunt. Donec vulputate, sem ut blandit porta, lacus nunc euismod neque.">
+                                                <a href="#">Description</a>
+                                            </div>    
+                                        </div>
+                                        <ul class="File_Actions">
+                                            <li>
+                                                <a href="#" class="File_ImgLnk"">
+                                                    <img src="../../../images/FileActions/playScorm.png" alt="Play pacchetto" class="File_Img_Action" title="Play pacchetto"/>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="File_ImgLnk"">
+                                                    <img src="../../../images/Grid/statistic.gif" alt="Statistiche" class="File_Img_Action" title="Statistiche"/>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="File_ImgLnk"">
+                                                    <img src="../../../images/FileActions/settings.png" alt="Impostazioni pacchetto" class="File_Img_Action" title="Impostazioni pacchetto"/>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <!-- /Tiny version V2 -->
+
+                                <span class="Testo_campoSmall">VISIBILE voce / materiale comunità</span>
+                                <a href="#" class="ROW_ItemLink_Small" title="Cambia la visibilità del materiale">Cambia</a>
+                            </li>
+                            <li style="width: 730px; vertical-align: text-top;">
+                                
+                                <!-- Tiny version V2 - CSS HIDE -->
+                                <div class="File_MainInfo_TinyHide">
+                                    <div class="File_NameExt">
+                                        <a href="#" class="File_Name" title="(Click to download) Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ut mi turpis, in laoreet nunc. Maecenas odio sem, laoreet in vulputate nec nullam sodales.zip">
+                                            <img src="../../../images/ico/no_G.gif" class="File_Ext" />
+                                            Lorem ipsu...odales.zip
+                                        </a>
+                                    </div>
+                                    <div class="File_SMInfo_Actions">
+                                        <div class="File_Download">
+                                            <b>15</b> download
+                                            <div class="File_Detail ToolTip" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pellentesque, est quis ornare consequat, arcu magna tristique justo, ut fringilla odio justo non nunc. Phasellus malesuada, nisi vel molestie elementum, nisl eros porttitor tellus, ut porttitor ante est id nunc. Nullam interdum rutrum risus, non facilisis dolor commodo eu. Proin vulputate, dui eu tempor faucibus, tortor nibh molestie enim, vel molestie leo nunc nec odio. Nam at elementum nisl. Phasellus vulputate, erat ac lacinia tempor, dui mauris ornare quam, vel euismod neque urna sit amet ligula. Maecenas eu leo vitae velit pretium lobortis vel id risus. Cras molestie, enim sit amet placerat adipiscing, risus tellus mollis enim, quis ultrices nisl velit in sapien. Praesent sollicitudin lacinia urna in tincidunt. Proin luctus pretium massa sit amet egestas. Nam viverra porta augue. Aliquam bibendum felis at mi posuere in tempor libero tincidunt. Donec vulputate, sem ut blandit porta, lacus nunc euismod neque.">
+                                                <a href="#">Description</a>
+                                            </div>    
+                                        </div>
+                                        <ul class="File_Actions">
+                                            <li>
+                                                <a href="#" class="File_ImgLnk"">
+                                                    <img src="../../../images/FileActions/playScorm.png" alt="Play pacchetto" class="File_Img_Action" title="Play pacchetto"/>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="File_ImgLnk"">
+                                                    <img src="../../../images/Grid/statistic.gif" alt="Statistiche" class="File_Img_Action" title="Statistiche"/>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="File_ImgLnk"">
+                                                    <img src="../../../images/FileActions/settings.png" alt="Impostazioni pacchetto" class="File_Img_Action" title="Impostazioni pacchetto"/>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+        
+                                </div>
+                                <!-- /Tiny version V2 -->
+
+                                <span class="Testo_campoSmall">VISIBILE voce / materiale comunità</span>
+                                <a href="#" class="ROW_ItemLink_Small" title="Cambia la visibilità del materiale">Cambia</a>
+                            </li>
+                            <li style="width: 730px; vertical-align: text-top;">
+                                
+                                <!-- Tiny version V2 - CSS HIDE -->
+                                <div class="File_MainInfo_TinyHide">
+                                    <div class="File_NameExt">
+                                        <a href="#" class="File_Name" title="(Click to download) Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ut mi turpis, in laoreet nunc. Maecenas odio sem, laoreet in vulputate nec nullam sodales.zip">
+                                            <img src="../../../images/ico/no_G.gif" class="File_Ext" />
+                                            Lorem ipsu...odales.zip
+                                        </a>
+                                    </div>
+                                    <div class="File_SMInfo_Actions">
+                                        <div class="File_Download">
+                                            <b>15</b> download
+                                            <div class="File_Detail ToolTip" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pellentesque, est quis ornare consequat, arcu magna tristique justo, ut fringilla odio justo non nunc. Phasellus malesuada, nisi vel molestie elementum, nisl eros porttitor tellus, ut porttitor ante est id nunc. Nullam interdum rutrum risus, non facilisis dolor commodo eu. Proin vulputate, dui eu tempor faucibus, tortor nibh molestie enim, vel molestie leo nunc nec odio. Nam at elementum nisl. Phasellus vulputate, erat ac lacinia tempor, dui mauris ornare quam, vel euismod neque urna sit amet ligula. Maecenas eu leo vitae velit pretium lobortis vel id risus. Cras molestie, enim sit amet placerat adipiscing, risus tellus mollis enim, quis ultrices nisl velit in sapien. Praesent sollicitudin lacinia urna in tincidunt. Proin luctus pretium massa sit amet egestas. Nam viverra porta augue. Aliquam bibendum felis at mi posuere in tempor libero tincidunt. Donec vulputate, sem ut blandit porta, lacus nunc euismod neque.">
+                                                <a href="#">Description</a>
+                                            </div>    
+                                        </div>
+                                        <ul class="File_Actions">
+                                            <li>
+                                                <a href="#" class="File_ImgLnk"">
+                                                    <img src="../../../images/FileActions/playScorm.png" alt="Play pacchetto" class="File_Img_Action" title="Play pacchetto"/>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="File_ImgLnk"">
+                                                    <img src="../../../images/Grid/statistic.gif" alt="Statistiche" class="File_Img_Action" title="Statistiche"/>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="File_ImgLnk"">
+                                                    <img src="../../../images/FileActions/settings.png" alt="Impostazioni pacchetto" class="File_Img_Action" title="Impostazioni pacchetto"/>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+        
+                                </div>
+                                <!-- /Tiny version V2 -->
+
+                                <span class="Testo_campoSmall">VISIBILE voce / materiale comunità</span>
+                                <a href="#" class="ROW_ItemLink_Small" title="Cambia la visibilità del materiale">Cambia</a>
+                            </li>
+                            <li style="width: 730px; vertical-align: text-top;">
+                                
+                                <!-- Tiny version V2 - CSS HIDE -->
+                                <div class="File_MainInfo_TinyHide">
+                                    <div class="File_NameExt">
+                                        <a href="#" class="File_Name" title="(Click to download) Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ut mi turpis, in laoreet nunc. Maecenas odio sem, laoreet in vulputate nec nullam sodales.zip">
+                                            <img src="../../../images/ico/no_G.gif" class="File_Ext" />
+                                            Lorem ipsu...odales.zip
+                                        </a>
+                                    </div>
+                                    <div class="File_SMInfo_Actions">
+                                        <div class="File_Download">
+                                            <span class="Titolo_campoSmall">25 Mb</span> - <span class="Titolo_campoSmall">15</span> <span class="testo_campoSmall">download</span>
+                                            <div class="File_Detail ToolTip" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pellentesque, est quis ornare consequat, arcu magna tristique justo, ut fringilla odio justo non nunc. Phasellus malesuada, nisi vel molestie elementum, nisl eros porttitor tellus, ut porttitor ante est id nunc. Nullam interdum rutrum risus, non facilisis dolor commodo eu. Proin vulputate, dui eu tempor faucibus, tortor nibh molestie enim, vel molestie leo nunc nec odio. Nam at elementum nisl. Phasellus vulputate, erat ac lacinia tempor, dui mauris ornare quam, vel euismod neque urna sit amet ligula. Maecenas eu leo vitae velit pretium lobortis vel id risus. Cras molestie, enim sit amet placerat adipiscing, risus tellus mollis enim, quis ultrices nisl velit in sapien. Praesent sollicitudin lacinia urna in tincidunt. Proin luctus pretium massa sit amet egestas. Nam viverra porta augue. Aliquam bibendum felis at mi posuere in tempor libero tincidunt. Donec vulputate, sem ut blandit porta, lacus nunc euismod neque.">
+                                                <a href="#">Description</a>
+                                            </div>    
+                                        </div>
+                                        <ul class="File_Actions">
+                                            <li>
+                                                <a href="#" class="File_ImgLnk"">
+                                                    <img src="../../../images/FileActions/playScorm.png" alt="Play pacchetto" class="File_Img_Action" title="Play pacchetto"/>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="File_ImgLnk"">
+                                                    <img src="../../../images/Grid/statistic.gif" alt="Statistiche" class="File_Img_Action" title="Statistiche"/>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="File_ImgLnk"">
+                                                    <img src="../../../images/FileActions/settings.png" alt="Impostazioni pacchetto" class="File_Img_Action" title="Impostazioni pacchetto"/>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+        
+                                </div>
+                                <!-- /Tiny version V2 -->
+
+                                <span class="Testo_campoSmall">VISIBILE voce / materiale comunità</span>
+                                <a href="#" class="ROW_ItemLink_Small" title="Cambia la visibilità del materiale">Cambia</a>
+                            </li>
+                                                
+                        </ul>
+                                                
+                    </div>
+                </div>
+            </td>
+            </tr>
+        </table>
+    </center>
+    <!-- /Table test, Diario lezioni style -->
+
+    <br /><hr />
+    <a href="#Top">^TOP - Indice</a>
+    <hr /><br />
+
+
+
+    <!-- Table test, FILE NEW VERSION -->
+    <center>
+        <h1>
+            <a name="File"></a>
+            Tabella file + tree (Con modifiche al servizio file)
+        </h1>
+        <br />
+        <table width="900px" cellpadding="0px" cellspacing="0px" border="1">
+            <tr>
+                <td colspan="5">
+                    <div style="display:block; min-height:120px; height:120px;">
+                        Service info & other...
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <img src="../../../images/RifiutaProposta2.gif" width="30px" height="0px"/>
+                </td>
+                <td style="width:370px; min-width:370px; border:2px solid black">
+                    - TREE - <br />
+                    <img src="../../../images/RifiutaProposta2.gif" width="370px" height="500" />
+                </td>
+                <td>
+                    <img src="../../../images/RifiutaProposta2.gif" width="10px" height="0px" />
+                </td>
+                <td style="border:2px solid black">
+                    <table style="clear:both; width:520px; max-width:520px;" cellspacing="0" cellpadding="0" border="1">
+                        <tbody>
+                        <tr style="height: 25px;" class="ROW_header_Small_Center">
+                            <td style="width: 60px;">
+                                &nbsp;
+                            </td>
+                            <td style="width: 20px;">
+                                <span>P</span>
+                            </td>
+                            <td>
+                                <span>Nome</span>
+                                <a href="#" title="Ordina per nome"><img tooltip="Ordina per nome" src="../../../images/DG/down.gif"></a>
+                            </td>
+                            <td  style="width: 140px;">
+                                <span>Info</span>
+                                <a href="#" title="Ordina per data"><img tooltip="Ordina per data" src="../../../images/DG/down.gif"></a>
+                            </td>
+                        </tr>
+                            
+                        <tr class="ROW_Normal_Small">
+                            <td style="width: 60px; text-align: center;">
+                                <br>
+                            </td>
+                            <td style="width: 20px; text-align:center;">
+                                &nbsp;&nbsp;
+                            </td>
+                            <td>
+                                <div>
+                                    <div style="float: left; width: 35px;">
+                                        &nbsp;<img  src="../../../RadControls/TreeView/Skins/Materiale/Folder.gif">
+                                    </div>
+                                    <div style="float: left;">
+                                        <a href="#" class="ROW_ItemLink_Small">..</a>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <span>&nbsp;</span>
+                            </td>
+                       </tr>
+
+                        <tr class="ROW_Alternate_Small">
+                            <td style="width: 60px; text-align: center;">
+                                <a href="#" title="Dettagli">
+                                    <img alt="Dettagli" tooltip="Dettagli" src="../../../images/proprieta.gif" width="15px" height="15px" />
+                                </a>
+                                <a href="#" title="Modifica">
+                                    <img alt="Modifica" tooltip="Modifica" src="../../../images/m.gif" width="15px" height="15px">
+                                </a>
+                                <a href="#" title="Cancella definitivamente">
+                                    <img alt="Cancella definitivamente" tooltip="Cancella definitivamente" src="../../../images/Grid/cancella.gif" width="15px" height="15px">
+                                </a>
+                            </td>
+                            <td style="width: 20px; text-align:center;">
+                                <a href="#" title="Modifica permessi">
+                                    <img tooltip="Accessibile dai membri della comunità" src="../../../images/Grid/permessicomunita.gif" />
+                                </a>
+                            </td>
+                            <td>
+
+
+                                <!-- Normal version -->
+                                <div class="File_MainInfo">
+                                    <div class="File_NameExt">
+                                        <a href="#" class="File_Name" title="(Click to download) Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ut mi turpis, in laoreet nunc. Maecenas odio sem, laoreet in vulputate nec nullam sodales.zip">
+                                            <img src="../../../images/ico/no_G.gif" class="File_Ext" />
+                                            Lorem ipsu...odales.zip
+                                        </a>
+                                    </div>
+                                    <div class="File_SMInfo_Actions">
+                                        <div class="File_SMInfo_Actions">
+                                            <div class="File_Download">
+                                                <span class="Titolo_campoSmall">25 Mb</span> - <span class="Titolo_campoSmall">15</span> <span class="testo_campoSmall">download</span>
+                                                <div class="File_Detail ToolTip" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pellentesque, est quis ornare consequat, arcu magna tristique justo, ut fringilla odio justo non nunc. Phasellus malesuada, nisi vel molestie elementum, nisl eros porttitor tellus, ut porttitor ante est id nunc. Nullam interdum rutrum risus, non facilisis dolor commodo eu. Proin vulputate, dui eu tempor faucibus, tortor nibh molestie enim, vel molestie leo nunc nec odio. Nam at elementum nisl. Phasellus vulputate, erat ac lacinia tempor, dui mauris ornare quam, vel euismod neque urna sit amet ligula. Maecenas eu leo vitae velit pretium lobortis vel id risus. Cras molestie, enim sit amet placerat adipiscing, risus tellus mollis enim, quis ultrices nisl velit in sapien. Praesent sollicitudin lacinia urna in tincidunt. Proin luctus pretium massa sit amet egestas. Nam viverra porta augue. Aliquam bibendum felis at mi posuere in tempor libero tincidunt. Donec vulputate, sem ut blandit porta, lacus nunc euismod neque.">
+                                                    <a href="#">Description</a>
+                                                </div>    
+                                            </div>
+                                            <ul class="File_Actions">
+                                                <li>
+                                                    <a href="#" class="File_ImgLnk"">
+                                                        <img src="../../../images/FileActions/playScorm.png" alt="Play pacchetto" class="File_Img_Action" title="Play pacchetto"/>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="File_ImgLnk"">
+                                                        <img src="../../../images/Grid/statistic.gif" alt="Statistiche" class="File_Img_Action" title="Statistiche"/>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="File_ImgLnk"">
+                                                        <img src="../../../images/FileActions/settings.png" alt="Impostazioni pacchetto" class="File_Img_Action" title="Impostazioni pacchetto"/>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+        
+                                </div>
+                                <!-- /Normal Version -->
+                                        
+                            </td>
+                            <td style="padding-left:1em;">
+                                <span>Admin Sistema</span>
+                                <br />
+                                <span title="Aggiunto da Admin Sistema il 11:44 alle 16/03/11">16/03/11 11:44</span>
+                                <br />
+                                <span>
+                                    <a href="#" class="ROW_ItemLink_Small" title="Sposta in un altra cartella">Sposta in</a>
+                                    <a href="#" class="ROW_ItemLink_Small" title="Nascondi">Nascondi</a>    
+                                </span>
+                            </td>
+                        </tr>
+                        <tr class="ROW_Normal_Small">
+                            <td style="width: 60px; text-align: center;">
+                                <a href="#" title="Dettagli">
+                                    <img alt="Dettagli" tooltip="Dettagli" src="../../../images/proprieta.gif" width="15px" height="15px" />
+                                </a>
+                                <a href="#" title="Modifica">
+                                    <img alt="Modifica" tooltip="Modifica" src="../../../images/m.gif" width="15px" height="15px">
+                                </a>
+                                <a href="#" title="Cancella definitivamente">
+                                    <img alt="Cancella definitivamente" tooltip="Cancella definitivamente" src="../../../images/Grid/cancella.gif" width="15px" height="15px">
+                                </a>
+                            </td>
+                            <td style="width: 20px; text-align:center;">
+                                <a href="#" title="Modifica permessi">
+                                    <img tooltip="Accessibile dai membri della comunità" src="../../../images/Grid/permessicomunita.gif" />
+                                </a>
+                            </td>
+                            <td>
+
+
+                                <!-- Normal version -->
+                                <div class="File_MainInfo">
+                                    <div class="File_NameExt">
+                                        <a href="#" class="File_Name" title="(Click to download) Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ut mi turpis, in laoreet nunc. Maecenas odio sem, laoreet in vulputate nec nullam sodales.zip">
+                                            <img src="../../../images/ico/no_G.gif" class="File_Ext" />
+                                            Lorem ipsu...odales.zip
+                                        </a>
+                                    </div>
+                                    <div class="File_SMInfo_Actions">
+                                        <div class="File_SMInfo_Actions">
+                                            <div class="File_Download">
+                                                <span class="Titolo_campoSmall">25 Mb</span> - <span class="Titolo_campoSmall">15</span> <span class="testo_campoSmall">download</span>
+                                                <div class="File_Detail ToolTip" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pellentesque, est quis ornare consequat, arcu magna tristique justo, ut fringilla odio justo non nunc. Phasellus malesuada, nisi vel molestie elementum, nisl eros porttitor tellus, ut porttitor ante est id nunc. Nullam interdum rutrum risus, non facilisis dolor commodo eu. Proin vulputate, dui eu tempor faucibus, tortor nibh molestie enim, vel molestie leo nunc nec odio. Nam at elementum nisl. Phasellus vulputate, erat ac lacinia tempor, dui mauris ornare quam, vel euismod neque urna sit amet ligula. Maecenas eu leo vitae velit pretium lobortis vel id risus. Cras molestie, enim sit amet placerat adipiscing, risus tellus mollis enim, quis ultrices nisl velit in sapien. Praesent sollicitudin lacinia urna in tincidunt. Proin luctus pretium massa sit amet egestas. Nam viverra porta augue. Aliquam bibendum felis at mi posuere in tempor libero tincidunt. Donec vulputate, sem ut blandit porta, lacus nunc euismod neque.">
+                                                    <a href="#">Description</a>
+                                                </div>    
+                                            </div>
+                                            <ul class="File_Actions">
+                                                <li>
+                                                    <a href="#" class="File_ImgLnk"">
+                                                        <img src="../../../images/FileActions/playScorm.png" alt="Play pacchetto" class="File_Img_Action" title="Play pacchetto"/>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="File_ImgLnk"">
+                                                        <img src="../../../images/Grid/statistic.gif" alt="Statistiche" class="File_Img_Action" title="Statistiche"/>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="File_ImgLnk"">
+                                                        <img src="../../../images/FileActions/settings.png" alt="Impostazioni pacchetto" class="File_Img_Action" title="Impostazioni pacchetto"/>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+        
+                                </div>
+                                <!-- /Normal Version -->
+                                        
+                            </td>
+                            <td  style="padding-left:1em;">
+                                <span>Admin Sistema</span>
+                                <br />
+                                <span title="Aggiunto da Admin Sistema il 11:44 alle 16/03/11">16/03/11 11:44</span>
+                                <br />
+                                <span>
+                                    <a href="#" class="ROW_ItemLink_Small" title="Sposta in un altra cartella">Sposta in</a>
+                                    <a href="#" class="ROW_ItemLink_Small" title="Nascondi">Nascondi</a>    
+                                </span>
+                            </td>
+                        </tr>
+                        <tr class="ROW_Alternate_Small">
+                            <td style="width: 60px; text-align: center;">
+                                <a href="#" title="Dettagli">
+                                    <img alt="Dettagli" tooltip="Dettagli" src="../../../images/proprieta.gif" width="15px" height="15px" />
+                                </a>
+                                <a href="#" title="Modifica">
+                                    <img alt="Modifica" tooltip="Modifica" src="../../../images/m.gif" width="15px" height="15px">
+                                </a>
+                                <a href="#" title="Cancella definitivamente">
+                                    <img alt="Cancella definitivamente" tooltip="Cancella definitivamente" src="../../../images/Grid/cancella.gif" width="15px" height="15px">
+                                </a>
+                            </td>
+                            <td style="width: 20px; text-align:center;">
+                                <a href="#" title="Modifica permessi">
+                                    <img tooltip="Accessibile dai membri della comunità" src="../../../images/Grid/permessicomunita.gif" />
+                                </a>
+                            </td>
+                            <td>
+
+
+                                <!-- Normal version -->
+                                <div class="File_MainInfo">
+                                    <div class="File_NameExt">
+                                        <a href="#" class="File_Name" title="(Click to download) Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ut mi turpis, in laoreet nunc. Maecenas odio sem, laoreet in vulputate nec nullam sodales.zip">
+                                            <img src="../../../images/ico/no_G.gif" class="File_Ext" />
+                                            Lorem ipsu...odales.zip
+                                        </a>
+                                    </div>
+                                    <div class="File_SMInfo_Actions">
+                                        <div class="File_SMInfo_Actions">
+                                            <div class="File_Download">
+                                                <span class="Titolo_campoSmall">25 Mb</span> - <span class="Titolo_campoSmall">15</span> <span class="testo_campoSmall">download</span>
+                                                <div class="File_Detail ToolTip" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pellentesque, est quis ornare consequat, arcu magna tristique justo, ut fringilla odio justo non nunc. Phasellus malesuada, nisi vel molestie elementum, nisl eros porttitor tellus, ut porttitor ante est id nunc. Nullam interdum rutrum risus, non facilisis dolor commodo eu. Proin vulputate, dui eu tempor faucibus, tortor nibh molestie enim, vel molestie leo nunc nec odio. Nam at elementum nisl. Phasellus vulputate, erat ac lacinia tempor, dui mauris ornare quam, vel euismod neque urna sit amet ligula. Maecenas eu leo vitae velit pretium lobortis vel id risus. Cras molestie, enim sit amet placerat adipiscing, risus tellus mollis enim, quis ultrices nisl velit in sapien. Praesent sollicitudin lacinia urna in tincidunt. Proin luctus pretium massa sit amet egestas. Nam viverra porta augue. Aliquam bibendum felis at mi posuere in tempor libero tincidunt. Donec vulputate, sem ut blandit porta, lacus nunc euismod neque.">
+                                                    <a href="#">Description</a>
+                                                </div>    
+                                            </div>
+                                            <ul class="File_Actions">
+                                                <li>
+                                                    <a href="#" class="File_ImgLnk"">
+                                                        <img src="../../../images/FileActions/playScorm.png" alt="Play pacchetto" class="File_Img_Action" title="Play pacchetto"/>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="File_ImgLnk"">
+                                                        <img src="../../../images/Grid/statistic.gif" alt="Statistiche" class="File_Img_Action" title="Statistiche"/>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="File_ImgLnk"">
+                                                        <img src="../../../images/FileActions/settings.png" alt="Impostazioni pacchetto" class="File_Img_Action" title="Impostazioni pacchetto"/>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+        
+                                </div>
+                                <!-- /Normal Version -->
+                                        
+                            </td>
+                            <td style="padding-left:1em;">
+                                <span>Admin Sistema</span>
+                                <br />
+                                <span title="Aggiunto da Admin Sistema il 11:44 alle 16/03/11">16/03/11 11:44</span>
+                                <br />
+                                <span>
+                                    <a href="#" class="ROW_ItemLink_Small" title="Sposta in un altra cartella">Sposta in</a>
+                                    <a href="#" class="ROW_ItemLink_Small" title="Nascondi">Nascondi</a>    
+                                </span>
+                            </td>
+                        </tr>
+                        <tr class="ROW_Normal_Small">
+                            <td style="width: 60px; text-align: center;">
+                                <a href="#" title="Dettagli">
+                                    <img alt="Dettagli" tooltip="Dettagli" src="../../../images/proprieta.gif" width="15px" height="15px" />
+                                </a>
+                                <a href="#" title="Modifica">
+                                    <img alt="Modifica" tooltip="Modifica" src="../../../images/m.gif" width="15px" height="15px">
+                                </a>
+                                <a href="#" title="Cancella definitivamente">
+                                    <img alt="Cancella definitivamente" tooltip="Cancella definitivamente" src="../../../images/Grid/cancella.gif" width="15px" height="15px">
+                                </a>
+                            </td>
+                            <td style="width: 20px; text-align:center;">
+                                <a href="#" title="Modifica permessi">
+                                    <img tooltip="Accessibile dai membri della comunità" src="../../../images/Grid/permessicomunita.gif" />
+                                </a>
+                            </td>
+                            <td>
+
+
+                                 <!-- Normal version -->
+                                <div class="File_MainInfo">
+                                    <div class="File_NameExt">
+                                        <a href="#" class="File_Name" title="(Click to download) Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ut mi turpis, in laoreet nunc. Maecenas odio sem, laoreet in vulputate nec nullam sodales.zip">
+                                            <img src="../../../images/ico/no_G.gif" class="File_Ext" />
+                                            Lorem ipsu...odales.zip
+                                        </a>
+                                    </div>
+                                    <div class="File_SMInfo_Actions">
+                                        <div class="File_SMInfo_Actions">
+                                            <div class="File_Download">
+                                                <b>15</b> download
+                                                <div class="File_Detail ToolTip" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pellentesque, est quis ornare consequat, arcu magna tristique justo, ut fringilla odio justo non nunc. Phasellus malesuada, nisi vel molestie elementum, nisl eros porttitor tellus, ut porttitor ante est id nunc. Nullam interdum rutrum risus, non facilisis dolor commodo eu. Proin vulputate, dui eu tempor faucibus, tortor nibh molestie enim, vel molestie leo nunc nec odio. Nam at elementum nisl. Phasellus vulputate, erat ac lacinia tempor, dui mauris ornare quam, vel euismod neque urna sit amet ligula. Maecenas eu leo vitae velit pretium lobortis vel id risus. Cras molestie, enim sit amet placerat adipiscing, risus tellus mollis enim, quis ultrices nisl velit in sapien. Praesent sollicitudin lacinia urna in tincidunt. Proin luctus pretium massa sit amet egestas. Nam viverra porta augue. Aliquam bibendum felis at mi posuere in tempor libero tincidunt. Donec vulputate, sem ut blandit porta, lacus nunc euismod neque.">
+                                                    <a href="#">Description</a>
+                                                </div>    
+                                            </div>
+                                            <ul class="File_Actions">
+                                                <li>
+                                                    <a href="#" class="File_ImgLnk"">
+                                                        <img src="../../../images/FileActions/playScorm.png" alt="Play pacchetto" class="File_Img_Action" title="Play pacchetto"/>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="File_ImgLnk"">
+                                                        <img src="../../../images/Grid/statistic.gif" alt="Statistiche" class="File_Img_Action" title="Statistiche"/>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="File_ImgLnk"">
+                                                        <img src="../../../images/FileActions/settings.png" alt="Impostazioni pacchetto" class="File_Img_Action" title="Impostazioni pacchetto"/>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+        
+                                </div>
+                                <!-- /Normal Version -->
+                                
+                                        
+                            </td>
+                            <td  style="padding-left:1em;">
+                                <span>Admin Sistema</span>
+                                <br />
+                                <span title="Aggiunto da Admin Sistema il 11:44 alle 16/03/11">16/03/11 11:44</span>
+                                <br />
+                                <span>
+                                    <a href="#" class="ROW_ItemLink_Small" title="Sposta in un altra cartella">Sposta in</a>
+                                    <a href="#" class="ROW_ItemLink_Small" title="Nascondi">Nascondi</a>    
+                                </span>
+                            </td>
+                        </tr>
+                    </tbody></table>
+                </td>
+                <td>
+                    <img src="../../../images/RifiutaProposta2.gif" width="30px" height="0px" />
+                </td>
+            </tr>
+        </table>
+    </center>
+
+    <br /><hr />
+    <a href="#Top">^TOP - Indice</a>
+    <hr /><br />
+
+
+    <!-- Table test, FILE >ESTESA!< NEW VERSION -->
+    <center>
+        <h1>
+            <a name="FileInfo"></a>
+            Tabella file + tree (Con modifiche al servizio file)
+        </h1>
+        <br />
+        <table width="900px" cellpadding="0px" cellspacing="0px" border="1">
+            <tr>
+                <td colspan="5">
+                    <div style="display:block; min-height:120px; height:120px;">
+                        Service info & other...
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <img src="../../../images/RifiutaProposta2.gif" width="30px" height="0px"/>
+                </td>
+                <td style="width:370px; min-width:370px; border:2px solid black">
+                    - TREE - <br />
+                    <img src="../../../images/RifiutaProposta2.gif" width="370px" height="500" />
+                </td>
+                <td>
+                    <img src="../../../images/RifiutaProposta2.gif" width="10px" height="0px" />
+                </td>
+                <td style="border:2px solid black">
+                    <table style="clear:both; width:520px; max-width:520px;" cellspacing="0" cellpadding="0" border="1">
+                        <tbody>
+                        <tr style="height: 25px;" class="ROW_header_Small_Center">
+                            <td style="width: 60px;">
+                                &nbsp;
+                            </td>
+                            <td style="width: 20px;">
+                                <span>P</span>
+                            </td>
+                            <td>
+                                <span>Nome</span>
+                                <a href="#" title="Ordina per nome"><img tooltip="Ordina per nome" src="../../../images/DG/down.gif"></a>
+                            </td>
+                            <td  style="width: 140px;">
+                                <span>Info</span>
+                                <a href="#" title="Ordina per data"><img tooltip="Ordina per data" src="../../../images/DG/down.gif"></a>
+                            </td>
+                        </tr>
+                            
+                        <tr class="ROW_Normal_Small">
+                            <td style="width: 60px; text-align: center;">
+                                <br>
+                            </td>
+                            <td style="width: 20px; text-align:center;">
+                                &nbsp;&nbsp;
+                            </td>
+                            <td>
+                                <div>
+                                    <div style="float: left; width: 35px;">
+                                        &nbsp;<img src="../../../RadControls/TreeView/Skins/Materiale/Folder.gif">
+                                    </div>
+                                    <div style="float: left;">
+                                        <a href="#" class="ROW_ItemLink_Small">..</a>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <span>&nbsp;</span>
+                            </td>
+                       </tr>
+
+                        <tr class="ROW_Alternate_Small">
+                            <td style="width: 60px; text-align: center;">
+                                <a href="#" title="Dettagli">
+                                    <img alt="Dettagli" tooltip="Dettagli" src="../../../images/proprieta.gif" width="15px" height="15px" />
+                                </a>
+                                <a href="#" title="Modifica">
+                                    <img alt="Modifica" tooltip="Modifica" src="../../../images/m.gif" width="15px" height="15px">
+                                </a>
+                                <a href="#" title="Cancella definitivamente">
+                                    <img alt="Cancella definitivamente" tooltip="Cancella definitivamente" src="../../../images/Grid/cancella.gif" width="15px" height="15px">
+                                </a>
+                            </td>
+                            <td style="width: 20px; text-align:center;">
+                                <a href="#" title="Modifica permessi">
+                                    <img tooltip="Accessibile dai membri della comunità" src="../../../images/Grid/permessicomunita.gif" />
+                                </a>
+                            </td>
+                            <td>
+
+
+                                <!-- Div ESTESO -->
+                                <div class="File_MainInfo">
+                                    <div class="File_NameExt">
+                                        <a href="#" class="File_Name" title="Click to download">
+                                            <img src="../../../images/ico/no_G.gif" class="File_Ext" />
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ut mi turpis, in laoreet nunc. Maecenas odio sem, laoreet in vulputate nec nullam sodales.zip
+                                        </a>
+                                    </div>
+                                    <div class="File_SMInfo_Actions">
+                                        <div class="File_Download"><b>15</b> download</div>
+                                        <ul class="File_Actions">
+                                            <li>
+                                                <a href="#" class="File_ImgLnk"">
+                                                    <img src="../../../images/FileActions/playScorm.png" alt="Play pacchetto" class="File_Img_Action" title="Play pacchetto"/>
+                                                    Play pacchetto
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="File_ImgLnk"">
+                                                    <img src="../../../images/Grid/statistic.gif" alt="Statistiche" class="File_Img_Action" title="Statistiche"/>
+                                                    Statistiche
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="File_ImgLnk"">
+                                                    <img src="../../../images/FileActions/settings.png" alt="Impostazioni pacchetto" class="File_Img_Action" title="Impostazioni pacchetto"/>
+                                                    Impostazioni pacchetto
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="File_Detail ToolTip">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pellentesque, est quis ornare consequat, arcu magna tristique justo, ut fringilla odio justo non nunc. Phasellus malesuada, nisi vel molestie elementum, nisl eros porttitor tellus, ut porttitor ante est id nunc. Nullam interdum rutrum risus, non facilisis dolor commodo eu. Proin vulputate, dui eu tempor faucibus, tortor nibh molestie enim, vel molestie leo nunc nec odio. Nam at elementum nisl. Phasellus vulputate, erat ac lacinia tempor, dui mauris ornare quam, vel euismod neque urna sit amet ligula. Maecenas eu leo vitae velit pretium lobortis vel id risus. Cras molestie, enim sit amet placerat adipiscing, risus tellus mollis enim, quis ultrices nisl velit in sapien. Praesent sollicitudin lacinia urna in tincidunt. Proin luctus pretium massa sit amet egestas. Nam viverra porta augue. Aliquam bibendum felis at mi posuere in tempor libero tincidunt. Donec vulputate, sem ut blandit porta, lacus nunc euismod neque.
+                                    </div>
+                                </div>
+                                <!-- /Div ESTESO -->
+
+                                        
+                            </td>
+                            <td style="padding-left:1em;">
+                                <span>Admin Sistema</span>
+                                <br />
+                                <span title="Aggiunto da Admin Sistema il 11:44 alle 16/03/11">16/03/11 11:44</span>
+                                <br />
+                                <span>
+                                    <a href="#" class="ROW_ItemLink_Small" title="Sposta in un altra cartella">Sposta in</a>
+                                    <a href="#" class="ROW_ItemLink_Small" title="Nascondi">Nascondi</a>    
+                                </span>
+                            </td>
+                        </tr>
+                        <tr class="ROW_Normal_Small">
+                            <td style="width: 60px; text-align: center;">
+                                <a href="#" title="Dettagli">
+                                    <img alt="Dettagli" tooltip="Dettagli" src="../../../images/proprieta.gif" width="15px" height="15px" />
+                                </a>
+                                <a href="#" title="Modifica">
+                                    <img alt="Modifica" tooltip="Modifica" src="../../../images/m.gif" width="15px" height="15px">
+                                </a>
+                                <a href="#" title="Cancella definitivamente">
+                                    <img alt="Cancella definitivamente" tooltip="Cancella definitivamente" src="../../../images/Grid/cancella.gif" width="15px" height="15px">
+                                </a>
+                            </td>
+                            <td style="width: 20px; text-align:center;">
+                                <a href="#" title="Modifica permessi">
+                                    <img tooltip="Accessibile dai membri della comunità" src="../../../images/Grid/permessicomunita.gif" />
+                                </a>
+                            </td>
+                            <td>
+
+
+                                <!-- Div ESTESO -->
+                                <div class="File_MainInfo">
+                                    <div class="File_NameExt">
+                                        <a href="#" class="File_Name" title="Click to download">
+                                            <img src="../../../images/ico/no_G.gif" class="File_Ext" />
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ut mi turpis, in laoreet nunc. Maecenas odio sem, laoreet in vulputate nec nullam sodales.zip
+                                        </a>
+                                    </div>
+                                    <div class="File_SMInfo_Actions">
+                                        <span class="Titolo_campoSmall">25 Mb</span> - <span class="Titolo_campoSmall">15</span> <span class="testo_campoSmall">download</span>
+                                        <ul class="File_Actions">
+                                            <li>
+                                                <a href="#" class="File_ImgLnk"">
+                                                    <img src="../../../images/FileActions/playScorm.png" alt="Play pacchetto" class="File_Img_Action" title="Play pacchetto"/>
+                                                    Play pacchetto
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="File_ImgLnk"">
+                                                    <img src="../../../images/Grid/statistic.gif" alt="Statistiche" class="File_Img_Action" title="Statistiche"/>
+                                                    Statistiche
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="File_ImgLnk"">
+                                                    <img src="../../../images/FileActions/settings.png" alt="Impostazioni pacchetto" class="File_Img_Action" title="Impostazioni pacchetto"/>
+                                                    Impostazioni pacchetto
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="File_Detail ToolTip">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pellentesque, est quis ornare consequat, arcu magna tristique justo, ut fringilla odio justo non nunc. Phasellus malesuada, nisi vel molestie elementum, nisl eros porttitor tellus, ut porttitor ante est id nunc. Nullam interdum rutrum risus, non facilisis dolor commodo eu. Proin vulputate, dui eu tempor faucibus, tortor nibh molestie enim, vel molestie leo nunc nec odio. Nam at elementum nisl. Phasellus vulputate, erat ac lacinia tempor, dui mauris ornare quam, vel euismod neque urna sit amet ligula. Maecenas eu leo vitae velit pretium lobortis vel id risus. Cras molestie, enim sit amet placerat adipiscing, risus tellus mollis enim, quis ultrices nisl velit in sapien. Praesent sollicitudin lacinia urna in tincidunt. Proin luctus pretium massa sit amet egestas. Nam viverra porta augue. Aliquam bibendum felis at mi posuere in tempor libero tincidunt. Donec vulputate, sem ut blandit porta, lacus nunc euismod neque.
+                                    </div>
+                                </div>
+                                <!-- /Div ESTESO -->
+
+                                        
+                            </td>
+                            <td style="padding-left:1em;">
+                                <span>Admin Sistema</span>
+                                <br />
+                                <span title="Aggiunto da Admin Sistema il 11:44 alle 16/03/11">16/03/11 11:44</span>
+                                <br />
+                                <span>
+                                    <a href="#" class="ROW_ItemLink_Small" title="Sposta in un altra cartella">Sposta in</a>
+                                    <a href="#" class="ROW_ItemLink_Small" title="Nascondi">Nascondi</a>    
+                                </span>
+                            </td>
+                        </tr>
+
+                        <tr class="ROW_Alternate_Small">
+                            <td style="width: 60px; text-align: center;">
+                                <a href="#" title="Dettagli">
+                                    <img alt="Dettagli" tooltip="Dettagli" src="../../../images/proprieta.gif" width="15px" height="15px" />
+                                </a>
+                                <a href="#" title="Modifica">
+                                    <img alt="Modifica" tooltip="Modifica" src="../../../images/m.gif" width="15px" height="15px">
+                                </a>
+                                <a href="#" title="Cancella definitivamente">
+                                    <img alt="Cancella definitivamente" tooltip="Cancella definitivamente" src="../../../images/Grid/cancella.gif" width="15px" height="15px">
+                                </a>
+                            </td>
+                            <td style="width: 20px; text-align:center;">
+                                <a href="#" title="Modifica permessi">
+                                    <img tooltip="Accessibile dai membri della comunità" src="../../../images/Grid/permessicomunita.gif" />
+                                </a>
+                            </td>
+                            <td>
+
+
+                                <!-- Div ESTESO -->
+                                <div class="File_MainInfo">
+                                    <div class="File_NameExt">
+                                        <a href="#" class="File_Name" title="Click to download">
+                                            <img src="../../../images/ico/no_G.gif" class="File_Ext" />
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ut mi turpis, in laoreet nunc. Maecenas odio sem, laoreet in vulputate nec nullam sodales.zip
+                                        </a>
+                                    </div>
+                                    <div class="File_SMInfo_Actions">
+                                        <span class="Titolo_campoSmall">25 Mb</span> - <span class="Titolo_campoSmall">15</span> <span class="testo_campoSmall">download</span>
+                                        <ul class="File_Actions">
+                                            <li>
+                                                <a href="#" class="File_ImgLnk"">
+                                                    <img src="../../../images/FileActions/playScorm.png" alt="Play pacchetto" class="File_Img_Action" title="Play pacchetto"/>
+                                                    Play pacchetto
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="File_ImgLnk"">
+                                                    <img src="../../../images/Grid/statistic.gif" alt="Statistiche" class="File_Img_Action" title="Statistiche"/>
+                                                    Statistiche
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="File_ImgLnk"">
+                                                    <img src="../../../images/FileActions/settings.png" alt="Impostazioni pacchetto" class="File_Img_Action" title="Impostazioni pacchetto"/>
+                                                    Impostazioni pacchetto
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="File_Detail ToolTip">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pellentesque, est quis ornare consequat, arcu magna tristique justo, ut fringilla odio justo non nunc. Phasellus malesuada, nisi vel molestie elementum, nisl eros porttitor tellus, ut porttitor ante est id nunc. Nullam interdum rutrum risus, non facilisis dolor commodo eu. Proin vulputate, dui eu tempor faucibus, tortor nibh molestie enim, vel molestie leo nunc nec odio. Nam at elementum nisl. Phasellus vulputate, erat ac lacinia tempor, dui mauris ornare quam, vel euismod neque urna sit amet ligula. Maecenas eu leo vitae velit pretium lobortis vel id risus. Cras molestie, enim sit amet placerat adipiscing, risus tellus mollis enim, quis ultrices nisl velit in sapien. Praesent sollicitudin lacinia urna in tincidunt. Proin luctus pretium massa sit amet egestas. Nam viverra porta augue. Aliquam bibendum felis at mi posuere in tempor libero tincidunt. Donec vulputate, sem ut blandit porta, lacus nunc euismod neque.
+                                    </div>
+                                </div>
+                                <!-- /Div ESTESO -->
+
+                                        
+                            </td>
+                            <td style="padding-left:1em;">
+                                <span>Admin Sistema</span>
+                                <br />
+                                <span title="Aggiunto da Admin Sistema il 11:44 alle 16/03/11">16/03/11 11:44</span>
+                                <br />
+                                <span>
+                                    <a href="#" class="ROW_ItemLink_Small" title="Sposta in un altra cartella">Sposta in</a>
+                                    <a href="#" class="ROW_ItemLink_Small" title="Nascondi">Nascondi</a>    
+                                </span>
+                            </td>
+                        </tr>
+                        <tr class="ROW_Normal_Small">
+                            <td style="width: 60px; text-align: center;">
+                                <a href="#" title="Dettagli">
+                                    <img alt="Dettagli" tooltip="Dettagli" src="../../../images/proprieta.gif" width="15px" height="15px" />
+                                </a>
+                                <a href="#" title="Modifica">
+                                    <img alt="Modifica" tooltip="Modifica" src="../../../images/m.gif" width="15px" height="15px">
+                                </a>
+                                <a href="#" title="Cancella definitivamente">
+                                    <img alt="Cancella definitivamente" tooltip="Cancella definitivamente" src="../../../images/Grid/cancella.gif" width="15px" height="15px">
+                                </a>
+                            </td>
+                            <td style="width: 20px; text-align:center;">
+                                <a href="#" title="Modifica permessi">
+                                    <img tooltip="Accessibile dai membri della comunità" src="../../../images/Grid/permessicomunita.gif" />
+                                </a>
+                            </td>
+                            <td>
+
+
+                                <!-- Div ESTESO -->
+                                <!--Lorem_ipsum_dolor_sit_amet_consectetur_adipiscing_elit_Ut_ut_mi_turpis_in_laoreet_nunc_Maecenas_odio_sem_laoreet_in_vulputate_nec_nullam_sodales.zip-->
+                                <div class="File_MainInfo">
+                                    <div class="File_NameExt">
+                                        <a href="#" class="File_Name" title="Click to download">
+                                            <img src="../../../images/ico/no_G.gif" class="File_Ext" />
+                                            NomeFileLungoSenzaSpazi.zip
+                                        </a>
+                                    </div>
+                                    <div class="File_SMInfo_Actions">
+                                        <span class="Titolo_campoSmall">25 Mb</span> - <span class="Titolo_campoSmall">15</span> <span class="testo_campoSmall">download</span>
+                                        <ul class="File_Actions">
+                                            <li>
+                                                <a href="#" class="File_ImgLnk"">
+                                                    <img src="../../../images/FileActions/playScorm.png" alt="Play pacchetto" class="File_Img_Action" title="Play pacchetto"/>
+                                                    Play pacchetto
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="File_ImgLnk"">
+                                                    <img src="../../../images/Grid/statistic.gif" alt="Statistiche" class="File_Img_Action" title="Statistiche"/>
+                                                    Statistiche
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="File_ImgLnk"">
+                                                    <img src="../../../images/FileActions/settings.png" alt="Impostazioni pacchetto" class="File_Img_Action" title="Impostazioni pacchetto"/>
+                                                    Impostazioni pacchetto
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="File_Detail ToolTip">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pellentesque, est quis ornare consequat, arcu magna tristique justo, ut fringilla odio justo non nunc. Phasellus malesuada, nisi vel molestie elementum, nisl eros porttitor tellus, ut porttitor ante est id nunc. Nullam interdum rutrum risus, non facilisis dolor commodo eu. Proin vulputate, dui eu tempor faucibus, tortor nibh molestie enim, vel molestie leo nunc nec odio. Nam at elementum nisl. Phasellus vulputate, erat ac lacinia tempor, dui mauris ornare quam, vel euismod neque urna sit amet ligula. Maecenas eu leo vitae velit pretium lobortis vel id risus. Cras molestie, enim sit amet placerat adipiscing, risus tellus mollis enim, quis ultrices nisl velit in sapien. Praesent sollicitudin lacinia urna in tincidunt. Proin luctus pretium massa sit amet egestas. Nam viverra porta augue. Aliquam bibendum felis at mi posuere in tempor libero tincidunt. Donec vulputate, sem ut blandit porta, lacus nunc euismod neque.
+                                    </div>
+                                </div>
+                                <!-- /Div ESTESO -->
+
+                                        
+                            </td>
+                            <td style="padding-left:1em;">
+                                <span>Admin Sistema</span>
+                                <br />
+                                <span title="Aggiunto da Admin Sistema il 11:44 alle 16/03/11">16/03/11 11:44</span>
+                                <br />
+                                <span>
+                                    <a href="#" class="ROW_ItemLink_Small" title="Sposta in un altra cartella">Sposta in</a>
+                                    <a href="#" class="ROW_ItemLink_Small" title="Nascondi">Nascondi</a>    
+                                </span>
+                            </td>
+                        </tr>
+                        
+                    </tbody></table>
+                </td>
+                <td>
+                    <img src="../../../images/RifiutaProposta2.gif" width="30px" height="0px" />
+                </td>
+            </tr>
+        </table>
+    </center>
+
+    <br /><hr />
+    <a href="#Top">^TOP - Indice</a>
+    <hr /><br />
+
+    <div style="display:none;">
+        <!-- Table test, file tree style -->
+    <center>
+    <h1>Test Tabella file + tree (NORMAL VERSION)</h1>
+    <br />
+    <table width="900px" cellpadding="0px" cellspacing="0px" border="1">
+        <tr>
+            <td colspan="5">
+                <div style="display:block; min-height:120px; height:120px;">
+                    Service info & other...
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <img src="../../../images/RifiutaProposta2.gif" width="30px" height="0px"/>
+            </td>
+            <td style="width:370px; min-width:370px; border:2px solid black">
+                - TREE - <br />
+                <img src="../../../images/RifiutaProposta2.gif" width="370px" height="500" />
+            </td>
+            <td>
+                <img src="../../../images/RifiutaProposta2.gif" width="10px" height="0px" />
+            </td>
+            <td style="width:370px; min-width:370px; border:2px solid black">
+                <table cellpadding="0px" cellspacing="0px" border="1px">
+                <tr>
+                    <td colspan="6">
+                        <img src="../../../images/RifiutaProposta2.gif" width="510px" height="0px" />    
+                    </td> 
+                </tr>
+                <tr>
+                    <td>
+                        <img src="../../../images/proprieta.gif" width="15px" height="15px" />
+                        <img src="../../../images/m.gif" width="15px" height="15px" />
+                        <img src="../../../images/Grid/cancella.gif" width="15px" height="15px" />
+                    </td>
+                    <td>
+                        <img src="../../../images/Grid/permessicomunita.gif" />
+                    </td>
+                    <td>
+                    
+
+                        <!-- Normal version -->
+                        <div class="File_MainInfo">
+                            <div class="File_NameExt">
+                                <a href="#" class="File_Name" title="(Click to download) Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ut mi turpis, in laoreet nunc. Maecenas odio sem, laoreet in vulputate nec nullam sodales.zip">
+                                    <img src="../../../images/ico/no_G.gif" class="File_Ext" />
+                                    Lorem ipsu...odales.zip
+                                </a>
+                            </div>
+                            <div class="File_SMInfo_Actions">
+                                <div class="File_SMInfo_Actions">
+                                    <div class="File_Download">
+                                        <span class="Titolo_campoSmall">25 Mb</span> - <span class="Titolo_campoSmall">15</span> <span class="testo_campoSmall">download</span>
+                                        <div class="File_Detail ToolTip" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pellentesque, est quis ornare consequat, arcu magna tristique justo, ut fringilla odio justo non nunc. Phasellus malesuada, nisi vel molestie elementum, nisl eros porttitor tellus, ut porttitor ante est id nunc. Nullam interdum rutrum risus, non facilisis dolor commodo eu. Proin vulputate, dui eu tempor faucibus, tortor nibh molestie enim, vel molestie leo nunc nec odio. Nam at elementum nisl. Phasellus vulputate, erat ac lacinia tempor, dui mauris ornare quam, vel euismod neque urna sit amet ligula. Maecenas eu leo vitae velit pretium lobortis vel id risus. Cras molestie, enim sit amet placerat adipiscing, risus tellus mollis enim, quis ultrices nisl velit in sapien. Praesent sollicitudin lacinia urna in tincidunt. Proin luctus pretium massa sit amet egestas. Nam viverra porta augue. Aliquam bibendum felis at mi posuere in tempor libero tincidunt. Donec vulputate, sem ut blandit porta, lacus nunc euismod neque.">
+                                            <a href="#">Description</a>
+                                        </div>    
+                                    </div>
+                                    <ul class="File_Actions">
+                                        <li>
+                                            <a href="#" class="File_ImgLnk"">
+                                                <img src="../../../images/FileActions/playScorm.png" alt="Play pacchetto" class="File_Img_Action" title="Play pacchetto"/>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="File_ImgLnk"">
+                                                <img src="../../../images/Grid/statistic.gif" alt="Statistiche" class="File_Img_Action" title="Statistiche"/>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="File_ImgLnk"">
+                                                <img src="../../../images/FileActions/settings.png" alt="Impostazioni pacchetto" class="File_Img_Action" title="Impostazioni pacchetto"/>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+        
+                        </div>
+                        <!-- /Normal Version -->
+
+
+
+
+                    </td>
+                    <td>Admin sistema</td>
+                    <td>16/11/10 10:11</td>
+                    <td>
+                        <a href="#">Move To</a>
+                        <br />
+                        <a href="#">Hide item</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="../../../images/proprieta.gif" width="15px" height="15px" />
+                        <img src="../../../images/m.gif" width="15px" height="15px" />
+                        <img src="../../../images/Grid/cancella.gif" width="15px" height="15px" />
+                    </td>
+                    <td>
+                        <img src="../../../images/Grid/permessicomunita.gif" />
+                    </td>
+                    <td>
+                    
+
+                        <!-- Normal version -->
+                        <div class="File_MainInfo">
+                            <div class="File_NameExt">
+                                <a href="#" class="File_Name" title="(Click to download) Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ut mi turpis, in laoreet nunc. Maecenas odio sem, laoreet in vulputate nec nullam sodales.zip">
+                                    <img src="../../../images/ico/no_G.gif" class="File_Ext" />
+                                    Lorem ipsu...odales.zip
+                                </a>
+                            </div>
+                            <div class="File_SMInfo_Actions">
+                                <div class="File_SMInfo_Actions">
+                                    <div class="File_Download">
+                                        <span class="Titolo_campoSmall">25 Mb</span> - <span class="Titolo_campoSmall">15</span> <span class="testo_campoSmall">download</span>
+                                        <div class="File_Detail ToolTip" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pellentesque, est quis ornare consequat, arcu magna tristique justo, ut fringilla odio justo non nunc. Phasellus malesuada, nisi vel molestie elementum, nisl eros porttitor tellus, ut porttitor ante est id nunc. Nullam interdum rutrum risus, non facilisis dolor commodo eu. Proin vulputate, dui eu tempor faucibus, tortor nibh molestie enim, vel molestie leo nunc nec odio. Nam at elementum nisl. Phasellus vulputate, erat ac lacinia tempor, dui mauris ornare quam, vel euismod neque urna sit amet ligula. Maecenas eu leo vitae velit pretium lobortis vel id risus. Cras molestie, enim sit amet placerat adipiscing, risus tellus mollis enim, quis ultrices nisl velit in sapien. Praesent sollicitudin lacinia urna in tincidunt. Proin luctus pretium massa sit amet egestas. Nam viverra porta augue. Aliquam bibendum felis at mi posuere in tempor libero tincidunt. Donec vulputate, sem ut blandit porta, lacus nunc euismod neque.">
+                                            <a href="#">Description</a>
+                                        </div>    
+                                    </div>
+                                    <ul class="File_Actions">
+                                        <li>
+                                            <a href="#" class="File_ImgLnk"">
+                                                <img src="../../../images/FileActions/playScorm.png" alt="Play pacchetto" class="File_Img_Action" title="Play pacchetto"/>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="File_ImgLnk"">
+                                                <img src="../../../images/Grid/statistic.gif" alt="Statistiche" class="File_Img_Action" title="Statistiche"/>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="File_ImgLnk"">
+                                                <img src="../../../images/FileActions/settings.png" alt="Impostazioni pacchetto" class="File_Img_Action" title="Impostazioni pacchetto"/>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+        
+                        </div>
+                        <!-- /Normal Version -->
+
+
+
+
+                    </td>
+                    <td>Admin sistema</td>
+                    <td>16/11/10 10:11</td>
+                    <td>
+                        <a href="#">Move To</a>
+                        <br />
+                        <a href="#">Hide item</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="../../../images/proprieta.gif" width="15px" height="15px" />
+                        <img src="../../../images/m.gif" width="15px" height="15px" />
+                        <img src="../../../images/Grid/cancella.gif" width="15px" height="15px" />
+                    </td>
+                    <td>
+                        <img src="../../../images/Grid/permessicomunita.gif" />
+                    </td>
+                    <td>
+                    
+
+                        <!-- Normal version -->
+                        <div class="File_MainInfo">
+                            <div class="File_NameExt">
+                                <a href="#" class="File_Name" title="(Click to download) Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ut mi turpis, in laoreet nunc. Maecenas odio sem, laoreet in vulputate nec nullam sodales.zip">
+                                    <img src="../../../images/ico/no_G.gif" class="File_Ext" />
+                                    Lorem ipsu...odales.zip
+                                </a>
+                            </div>
+                            <div class="File_SMInfo_Actions">
+                                <div class="File_SMInfo_Actions">
+                                    <div class="File_Download">
+                                        <span class="Titolo_campoSmall">25 Mb</span> - <span class="Titolo_campoSmall">15</span> <span class="testo_campoSmall">download</span>
+                                        <div class="File_Detail ToolTip" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pellentesque, est quis ornare consequat, arcu magna tristique justo, ut fringilla odio justo non nunc. Phasellus malesuada, nisi vel molestie elementum, nisl eros porttitor tellus, ut porttitor ante est id nunc. Nullam interdum rutrum risus, non facilisis dolor commodo eu. Proin vulputate, dui eu tempor faucibus, tortor nibh molestie enim, vel molestie leo nunc nec odio. Nam at elementum nisl. Phasellus vulputate, erat ac lacinia tempor, dui mauris ornare quam, vel euismod neque urna sit amet ligula. Maecenas eu leo vitae velit pretium lobortis vel id risus. Cras molestie, enim sit amet placerat adipiscing, risus tellus mollis enim, quis ultrices nisl velit in sapien. Praesent sollicitudin lacinia urna in tincidunt. Proin luctus pretium massa sit amet egestas. Nam viverra porta augue. Aliquam bibendum felis at mi posuere in tempor libero tincidunt. Donec vulputate, sem ut blandit porta, lacus nunc euismod neque.">
+                                            <a href="#">Description</a>
+                                        </div>    
+                                    </div>
+                                    <ul class="File_Actions">
+                                        <li>
+                                            <a href="#" class="File_ImgLnk"">
+                                                <img src="../../../images/FileActions/playScorm.png" alt="Play pacchetto" class="File_Img_Action" title="Play pacchetto"/>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="File_ImgLnk"">
+                                                <img src="../../../images/Grid/statistic.gif" alt="Statistiche" class="File_Img_Action" title="Statistiche"/>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="File_ImgLnk"">
+                                                <img src="../../../images/FileActions/settings.png" alt="Impostazioni pacchetto" class="File_Img_Action" title="Impostazioni pacchetto"/>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+        
+                        </div>
+                        <!-- /Normal Version -->
+
+
+
+
+                    </td>
+                    <td>Admin sistema</td>
+                    <td>16/11/10 10:11</td>
+                    <td>
+                        <a href="#">Move To</a>
+                        <br />
+                        <a href="#">Hide item</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="../../../images/proprieta.gif" width="15px" height="15px" />
+                        <img src="../../../images/m.gif" width="15px" height="15px" />
+                        <img src="../../../images/Grid/cancella.gif" width="15px" height="15px" />
+                    </td>
+                    <td>
+                        <img src="../../../images/Grid/permessicomunita.gif" />
+                    </td>
+                    <td>
+                    
+
+                        <!-- Normal version -->
+                        <div class="File_MainInfo">
+                            <div class="File_NameExt">
+                                <a href="#" class="File_Name" title="(Click to download) Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ut mi turpis, in laoreet nunc. Maecenas odio sem, laoreet in vulputate nec nullam sodales.zip">
+                                    <img src="../../../images/ico/no_G.gif" class="File_Ext" />
+                                    Lorem ipsu...odales.zip
+                                </a>
+                            </div>
+                            <div class="File_SMInfo_Actions">
+                                <div class="File_SMInfo_Actions">
+                                    <div class="File_Download">
+                                        <span class="Titolo_campoSmall">25 Mb</span> - <span class="Titolo_campoSmall">15</span> <span class="testo_campoSmall">download</span>
+                                        <div class="File_Detail ToolTip" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pellentesque, est quis ornare consequat, arcu magna tristique justo, ut fringilla odio justo non nunc. Phasellus malesuada, nisi vel molestie elementum, nisl eros porttitor tellus, ut porttitor ante est id nunc. Nullam interdum rutrum risus, non facilisis dolor commodo eu. Proin vulputate, dui eu tempor faucibus, tortor nibh molestie enim, vel molestie leo nunc nec odio. Nam at elementum nisl. Phasellus vulputate, erat ac lacinia tempor, dui mauris ornare quam, vel euismod neque urna sit amet ligula. Maecenas eu leo vitae velit pretium lobortis vel id risus. Cras molestie, enim sit amet placerat adipiscing, risus tellus mollis enim, quis ultrices nisl velit in sapien. Praesent sollicitudin lacinia urna in tincidunt. Proin luctus pretium massa sit amet egestas. Nam viverra porta augue. Aliquam bibendum felis at mi posuere in tempor libero tincidunt. Donec vulputate, sem ut blandit porta, lacus nunc euismod neque.">
+                                            <a href="#">Description</a>
+                                        </div>    
+                                    </div>
+                                    <ul class="File_Actions">
+                                        <li>
+                                            <a href="#" class="File_ImgLnk"">
+                                                <img src="../../../images/FileActions/playScorm.png" alt="Play pacchetto" class="File_Img_Action" title="Play pacchetto"/>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="File_ImgLnk"">
+                                                <img src="../../../images/Grid/statistic.gif" alt="Statistiche" class="File_Img_Action" title="Statistiche"/>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="File_ImgLnk"">
+                                                <img src="../../../images/FileActions/settings.png" alt="Impostazioni pacchetto" class="File_Img_Action" title="Impostazioni pacchetto"/>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+        
+                        </div>
+                        <!-- /Normal Version -->
+
+
+
+
+                    </td>
+                    <td>Admin sistema</td>
+                    <td>16/11/10 10:11</td>
+                    <td>
+                        <a href="#">Move To</a>
+                        <br />
+                        <a href="#">Hide item</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="../../../images/proprieta.gif" width="15px" height="15px" />
+                        <img src="../../../images/m.gif" width="15px" height="15px" />
+                        <img src="../../../images/Grid/cancella.gif" width="15px" height="15px" />
+                    </td>
+                    <td>
+                        <img src="../../../images/Grid/permessicomunita.gif" />
+                    </td>
+                    <td>
+                    
+
+                        <!-- Normal version -->
+                        <div class="File_MainInfo">
+                            <div class="File_NameExt">
+                                <a href="#" class="File_Name" title="(Click to download) Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ut mi turpis, in laoreet nunc. Maecenas odio sem, laoreet in vulputate nec nullam sodales.zip">
+                                    <img src="../../../images/ico/no_G.gif" class="File_Ext" />
+                                    Lorem ipsu...odales.zip
+                                </a>
+                            </div>
+                            <div class="File_SMInfo_Actions">
+                                <div class="File_SMInfo_Actions">
+                                    <div class="File_Download">
+                                        <span class="Titolo_campoSmall">25 Mb</span> - <span class="Titolo_campoSmall">15</span> <span class="testo_campoSmall">download</span>
+                                        <div class="File_Detail ToolTip" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pellentesque, est quis ornare consequat, arcu magna tristique justo, ut fringilla odio justo non nunc. Phasellus malesuada, nisi vel molestie elementum, nisl eros porttitor tellus, ut porttitor ante est id nunc. Nullam interdum rutrum risus, non facilisis dolor commodo eu. Proin vulputate, dui eu tempor faucibus, tortor nibh molestie enim, vel molestie leo nunc nec odio. Nam at elementum nisl. Phasellus vulputate, erat ac lacinia tempor, dui mauris ornare quam, vel euismod neque urna sit amet ligula. Maecenas eu leo vitae velit pretium lobortis vel id risus. Cras molestie, enim sit amet placerat adipiscing, risus tellus mollis enim, quis ultrices nisl velit in sapien. Praesent sollicitudin lacinia urna in tincidunt. Proin luctus pretium massa sit amet egestas. Nam viverra porta augue. Aliquam bibendum felis at mi posuere in tempor libero tincidunt. Donec vulputate, sem ut blandit porta, lacus nunc euismod neque.">
+                                            <a href="#">Description</a>
+                                        </div>    
+                                    </div>
+                                    <ul class="File_Actions">
+                                        <li>
+                                            <a href="#" class="File_ImgLnk"">
+                                                <img src="../../../images/FileActions/playScorm.png" alt="Play pacchetto" class="File_Img_Action" title="Play pacchetto"/>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="File_ImgLnk"">
+                                                <img src="../../../images/Grid/statistic.gif" alt="Statistiche" class="File_Img_Action" title="Statistiche"/>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="File_ImgLnk"">
+                                                <img src="../../../images/FileActions/settings.png" alt="Impostazioni pacchetto" class="File_Img_Action" title="Impostazioni pacchetto"/>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+        
+                        </div>
+                        <!-- /Normal Version -->
+
+
+
+
+                    </td>
+                    <td>Admin sistema</td>
+                    <td>16/11/10 10:11</td>
+                    <td>
+                        <a href="#">Move To</a>
+                        <br />
+                        <a href="#">Hide item</a>
+                    </td>
+                </tr>
+                </table>
+            </td>
+            <td>
+                <img src="../../../images/RifiutaProposta2.gif" width="30px" height="0px" />
+            </td>
+        </tr>
+    </table>
+    </center>
+    <!-- /Table test, file tree style -->
+
+    <br /><hr /><br />
+        <!-- Table test, file tree style -->
+    <center>
+    <h1>Test Tabella file + tree (NORMAL VERSION)</h1>
+    <br />
+    <table width="900px" cellpadding="0px" cellspacing="0px" border="1">
+        <tr>
+            <td colspan="5">
+                <div style="display:block; min-height:120px; height:120px;">
+                    Service info & other...
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <img src="../../../images/RifiutaProposta2.gif" width="30px" height="0px"/>
+            </td>
+            <td style="width:370px; min-width:370px; border:2px solid black">
+                - TREE - <br />
+                <img src="../../../images/RifiutaProposta2.gif" width="370px" height="500" />
+            </td>
+            <td>
+                <img src="../../../images/RifiutaProposta2.gif" width="10px" height="0px" />
+            </td>
+            <td style="border:2px solid black">
+                <table cellpadding="0px" cellspacing="0px" border="1px" width="520px">
+                <tr>
+                    <td colspan="3">
+                        <img src="../../../images/RifiutaProposta2.gif" width="510px" height="0px" />    
+                    </td> 
+                </tr>
+                <tr>
+                    <td style="width:55px; min-width:55px;">
+                        <img src="../../../images/proprieta.gif" width="15px" height="15px" />
+                        <img src="../../../images/m.gif" width="15px" height="15px" />
+                        <img src="../../../images/Grid/cancella.gif" width="15px" height="15px" />
+                    </td>
+                    <td style="width:27px; min-width:27px;">
+                        <img src="../../../images/Grid/permessicomunita.gif" />
+                    </td>
+                    <td  style="width:265px; min-width:265px;">
+                    
+
+                        <!-- Normal version -->
+                        <div class="File_MainInfo">
+                            <div class="File_NameExt">
+                                <a href="#" class="File_Name" title="(Click to download) Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ut mi turpis, in laoreet nunc. Maecenas odio sem, laoreet in vulputate nec nullam sodales.zip">
+                                    <img src="../../../images/ico/no_G.gif" class="File_Ext" />
+                                    Lorem ipsu...odales.zip
+                                </a>
+                            </div>
+                            <div class="File_SMInfo_Actions">
+                                <div class="File_SMInfo_Actions">
+                                    <div class="File_Download">
+                                        <span class="Titolo_campoSmall">25 Mb</span> - <span class="Titolo_campoSmall">15</span> <span class="testo_campoSmall">download</span>
+                                        <div class="File_Detail ToolTip" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pellentesque, est quis ornare consequat, arcu magna tristique justo, ut fringilla odio justo non nunc. Phasellus malesuada, nisi vel molestie elementum, nisl eros porttitor tellus, ut porttitor ante est id nunc. Nullam interdum rutrum risus, non facilisis dolor commodo eu. Proin vulputate, dui eu tempor faucibus, tortor nibh molestie enim, vel molestie leo nunc nec odio. Nam at elementum nisl. Phasellus vulputate, erat ac lacinia tempor, dui mauris ornare quam, vel euismod neque urna sit amet ligula. Maecenas eu leo vitae velit pretium lobortis vel id risus. Cras molestie, enim sit amet placerat adipiscing, risus tellus mollis enim, quis ultrices nisl velit in sapien. Praesent sollicitudin lacinia urna in tincidunt. Proin luctus pretium massa sit amet egestas. Nam viverra porta augue. Aliquam bibendum felis at mi posuere in tempor libero tincidunt. Donec vulputate, sem ut blandit porta, lacus nunc euismod neque.">
+                                            <a href="#">Description</a>
+                                        </div>    
+                                    </div>
+                                    <ul class="File_Actions">
+                                        <li>
+                                            <a href="#" class="File_ImgLnk"">
+                                                <img src="../../../images/FileActions/playScorm.png" alt="Play pacchetto" class="File_Img_Action" title="Play pacchetto"/>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="File_ImgLnk"">
+                                                <img src="../../../images/Grid/statistic.gif" alt="Statistiche" class="File_Img_Action" title="Statistiche"/>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="File_ImgLnk"">
+                                                <img src="../../../images/FileActions/settings.png" alt="Impostazioni pacchetto" class="File_Img_Action" title="Impostazioni pacchetto"/>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+        
+                        </div>
+                        <!-- /Normal Version -->
+
+
+
+
+                    </td>
+                    <td style="width:140px; min-width:140px;">
+                        <span>Admin sistema</span>
+                        <br />
+                        <span>16/11/10 10:11</span>
+                        <br />
+                        <a href="#">Move To</a> &nbsp;&nbsp;
+                        <a href="#">Hide item</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="../../../images/proprieta.gif" width="15px" height="15px" />
+                        <img src="../../../images/m.gif" width="15px" height="15px" />
+                        <img src="../../../images/Grid/cancella.gif" width="15px" height="15px" />
+                    </td>
+                    <td>
+                        <img src="../../../images/Grid/permessicomunita.gif" />
+                    </td>
+                    <td>
+                    
+
+                        <!-- Normal version -->
+                        <div class="File_MainInfo">
+                            <div class="File_NameExt">
+                                <a href="#" class="File_Name" title="(Click to download) Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ut mi turpis, in laoreet nunc. Maecenas odio sem, laoreet in vulputate nec nullam sodales.zip">
+                                    <img src="../../../images/ico/no_G.gif" class="File_Ext" />
+                                    Lorem ipsu...odales.zip
+                                </a>
+                            </div>
+                            <div class="File_SMInfo_Actions">
+                                <div class="File_SMInfo_Actions">
+                                    <div class="File_Download">
+                                        <span class="Titolo_campoSmall">25 Mb</span> - <span class="Titolo_campoSmall">15</span> <span class="testo_campoSmall">download</span>
+                                        <div class="File_Detail ToolTip" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pellentesque, est quis ornare consequat, arcu magna tristique justo, ut fringilla odio justo non nunc. Phasellus malesuada, nisi vel molestie elementum, nisl eros porttitor tellus, ut porttitor ante est id nunc. Nullam interdum rutrum risus, non facilisis dolor commodo eu. Proin vulputate, dui eu tempor faucibus, tortor nibh molestie enim, vel molestie leo nunc nec odio. Nam at elementum nisl. Phasellus vulputate, erat ac lacinia tempor, dui mauris ornare quam, vel euismod neque urna sit amet ligula. Maecenas eu leo vitae velit pretium lobortis vel id risus. Cras molestie, enim sit amet placerat adipiscing, risus tellus mollis enim, quis ultrices nisl velit in sapien. Praesent sollicitudin lacinia urna in tincidunt. Proin luctus pretium massa sit amet egestas. Nam viverra porta augue. Aliquam bibendum felis at mi posuere in tempor libero tincidunt. Donec vulputate, sem ut blandit porta, lacus nunc euismod neque.">
+                                            <a href="#">Description</a>
+                                        </div>    
+                                    </div>
+                                    <ul class="File_Actions">
+                                        <li>
+                                            <a href="#" class="File_ImgLnk"">
+                                                <img src="../../../images/FileActions/playScorm.png" alt="Play pacchetto" class="File_Img_Action" title="Play pacchetto"/>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="File_ImgLnk"">
+                                                <img src="../../../images/Grid/statistic.gif" alt="Statistiche" class="File_Img_Action" title="Statistiche"/>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="File_ImgLnk"">
+                                                <img src="../../../images/FileActions/settings.png" alt="Impostazioni pacchetto" class="File_Img_Action" title="Impostazioni pacchetto"/>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+        
+                        </div>
+                        <!-- /Normal Version -->
+
+
+
+
+                    </td>
+                    <td>
+                        <span>Admin sistema</span>
+                        <br />
+                        <span>16/11/10 10:11</span>
+                        <br />
+                        <a href="#">Move To</a> &nbsp;&nbsp;
+                        <a href="#">Hide item</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="../../../images/proprieta.gif" width="15px" height="15px" />
+                        <img src="../../../images/m.gif" width="15px" height="15px" />
+                        <img src="../../../images/Grid/cancella.gif" width="15px" height="15px" />
+                    </td>
+                    <td>
+                        <img src="../../../images/Grid/permessicomunita.gif" />
+                    </td>
+                    <td>
+                    
+
+                        <!-- Normal version -->
+                        <div class="File_MainInfo">
+                            <div class="File_NameExt">
+                                <a href="#" class="File_Name" title="(Click to download) Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ut mi turpis, in laoreet nunc. Maecenas odio sem, laoreet in vulputate nec nullam sodales.zip">
+                                    <img src="../../../images/ico/no_G.gif" class="File_Ext" />
+                                    Lorem ipsu...odales.zip
+                                </a>
+                            </div>
+                            <div class="File_SMInfo_Actions">
+                                <div class="File_SMInfo_Actions">
+                                    <div class="File_Download">
+                                        <span class="Titolo_campoSmall">25 Mb</span> - <span class="Titolo_campoSmall">15</span> <span class="testo_campoSmall">download</span>
+                                        <div class="File_Detail ToolTip" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pellentesque, est quis ornare consequat, arcu magna tristique justo, ut fringilla odio justo non nunc. Phasellus malesuada, nisi vel molestie elementum, nisl eros porttitor tellus, ut porttitor ante est id nunc. Nullam interdum rutrum risus, non facilisis dolor commodo eu. Proin vulputate, dui eu tempor faucibus, tortor nibh molestie enim, vel molestie leo nunc nec odio. Nam at elementum nisl. Phasellus vulputate, erat ac lacinia tempor, dui mauris ornare quam, vel euismod neque urna sit amet ligula. Maecenas eu leo vitae velit pretium lobortis vel id risus. Cras molestie, enim sit amet placerat adipiscing, risus tellus mollis enim, quis ultrices nisl velit in sapien. Praesent sollicitudin lacinia urna in tincidunt. Proin luctus pretium massa sit amet egestas. Nam viverra porta augue. Aliquam bibendum felis at mi posuere in tempor libero tincidunt. Donec vulputate, sem ut blandit porta, lacus nunc euismod neque.">
+                                            <a href="#">Description</a>
+                                        </div>    
+                                    </div>
+                                    <ul class="File_Actions">
+                                        <li>
+                                            <a href="#" class="File_ImgLnk"">
+                                                <img src="../../../images/FileActions/playScorm.png" alt="Play pacchetto" class="File_Img_Action" title="Play pacchetto"/>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="File_ImgLnk"">
+                                                <img src="../../../images/Grid/statistic.gif" alt="Statistiche" class="File_Img_Action" title="Statistiche"/>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="File_ImgLnk"">
+                                                <img src="../../../images/FileActions/settings.png" alt="Impostazioni pacchetto" class="File_Img_Action" title="Impostazioni pacchetto"/>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+        
+                        </div>
+                        <!-- /Normal Version -->
+
+
+
+
+                    </td>
+                    <td>
+                        <span>Admin sistema</span>
+                        <br />
+                        <span>16/11/10 10:11</span>
+                        <br />
+                        <a href="#">Move To</a> &nbsp;&nbsp;
+                        <a href="#">Hide item</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="../../../images/proprieta.gif" width="15px" height="15px" />
+                        <img src="../../../images/m.gif" width="15px" height="15px" />
+                        <img src="../../../images/Grid/cancella.gif" width="15px" height="15px" />
+                    </td>
+                    <td>
+                        <img src="../../../images/Grid/permessicomunita.gif" />
+                    </td>
+                    <td>
+                    
+
+                        <!-- Normal version -->
+                        <div class="File_MainInfo">
+                            <div class="File_NameExt">
+                                <a href="#" class="File_Name" title="(Click to download) Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ut mi turpis, in laoreet nunc. Maecenas odio sem, laoreet in vulputate nec nullam sodales.zip">
+                                    <img src="../../../images/ico/no_G.gif" class="File_Ext" />
+                                    Lorem ipsu...odales.zip
+                                </a>
+                            </div>
+                            <div class="File_SMInfo_Actions">
+                                <div class="File_SMInfo_Actions">
+                                    <div class="File_Download">
+                                        <span class="Titolo_campoSmall">25 Mb</span> - <span class="Titolo_campoSmall">15</span> <span class="testo_campoSmall">download</span>
+                                        <div class="File_Detail ToolTip" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pellentesque, est quis ornare consequat, arcu magna tristique justo, ut fringilla odio justo non nunc. Phasellus malesuada, nisi vel molestie elementum, nisl eros porttitor tellus, ut porttitor ante est id nunc. Nullam interdum rutrum risus, non facilisis dolor commodo eu. Proin vulputate, dui eu tempor faucibus, tortor nibh molestie enim, vel molestie leo nunc nec odio. Nam at elementum nisl. Phasellus vulputate, erat ac lacinia tempor, dui mauris ornare quam, vel euismod neque urna sit amet ligula. Maecenas eu leo vitae velit pretium lobortis vel id risus. Cras molestie, enim sit amet placerat adipiscing, risus tellus mollis enim, quis ultrices nisl velit in sapien. Praesent sollicitudin lacinia urna in tincidunt. Proin luctus pretium massa sit amet egestas. Nam viverra porta augue. Aliquam bibendum felis at mi posuere in tempor libero tincidunt. Donec vulputate, sem ut blandit porta, lacus nunc euismod neque.">
+                                            <a href="#">Description</a>
+                                        </div>    
+                                    </div>
+                                    <ul class="File_Actions">
+                                        <li>
+                                            <a href="#" class="File_ImgLnk"">
+                                                <img src="../../../images/FileActions/playScorm.png" alt="Play pacchetto" class="File_Img_Action" title="Play pacchetto"/>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="File_ImgLnk"">
+                                                <img src="../../../images/Grid/statistic.gif" alt="Statistiche" class="File_Img_Action" title="Statistiche"/>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="File_ImgLnk"">
+                                                <img src="../../../images/FileActions/settings.png" alt="Impostazioni pacchetto" class="File_Img_Action" title="Impostazioni pacchetto"/>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+        
+                        </div>
+                        <!-- /Normal Version -->
+
+
+
+
+                    </td>
+                    <td>
+                        <span>Admin sistema</span>
+                        <br />
+                        <span>16/11/10 10:11</span>
+                        <br />
+                        <a href="#">Move To</a> &nbsp;&nbsp;
+                        <a href="#">Hide item</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="../../../images/proprieta.gif" width="15px" height="15px" />
+                        <img src="../../../images/m.gif" width="15px" height="15px" />
+                        <img src="../../../images/Grid/cancella.gif" width="15px" height="15px" />
+                    </td>
+                    <td>
+                        <img src="../../../images/Grid/permessicomunita.gif" />
+                    </td>
+                    <td>
+                    
+
+                        <!-- Normal version -->
+                        <div class="File_MainInfo">
+                            <div class="File_NameExt">
+                                <a href="#" class="File_Name" title="(Click to download) Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ut mi turpis, in laoreet nunc. Maecenas odio sem, laoreet in vulputate nec nullam sodales.zip">
+                                    <img src="../../../images/ico/no_G.gif" class="File_Ext" />
+                                    Lorem ipsu...odales.zip
+                                </a>
+                            </div>
+                            <div class="File_SMInfo_Actions">
+                                <div class="File_SMInfo_Actions">
+                                    <div class="File_Download">
+                                        <span class="Titolo_campoSmall">25 Mb</span> - <span class="Titolo_campoSmall">15</span> <span class="testo_campoSmall">download</span>
+                                        <div class="File_Detail ToolTip" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pellentesque, est quis ornare consequat, arcu magna tristique justo, ut fringilla odio justo non nunc. Phasellus malesuada, nisi vel molestie elementum, nisl eros porttitor tellus, ut porttitor ante est id nunc. Nullam interdum rutrum risus, non facilisis dolor commodo eu. Proin vulputate, dui eu tempor faucibus, tortor nibh molestie enim, vel molestie leo nunc nec odio. Nam at elementum nisl. Phasellus vulputate, erat ac lacinia tempor, dui mauris ornare quam, vel euismod neque urna sit amet ligula. Maecenas eu leo vitae velit pretium lobortis vel id risus. Cras molestie, enim sit amet placerat adipiscing, risus tellus mollis enim, quis ultrices nisl velit in sapien. Praesent sollicitudin lacinia urna in tincidunt. Proin luctus pretium massa sit amet egestas. Nam viverra porta augue. Aliquam bibendum felis at mi posuere in tempor libero tincidunt. Donec vulputate, sem ut blandit porta, lacus nunc euismod neque.">
+                                            <a href="#">Description</a>
+                                        </div>    
+                                    </div>
+                                    <ul class="File_Actions">
+                                        <li>
+                                            <a href="#" class="File_ImgLnk"">
+                                                <img src="../../../images/FileActions/playScorm.png" alt="Play pacchetto" class="File_Img_Action" title="Play pacchetto"/>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="File_ImgLnk"">
+                                                <img src="../../../images/Grid/statistic.gif" alt="Statistiche" class="File_Img_Action" title="Statistiche"/>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="File_ImgLnk"">
+                                                <img src="../../../images/FileActions/settings.png" alt="Impostazioni pacchetto" class="File_Img_Action" title="Impostazioni pacchetto"/>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+        
+                        </div>
+                        <!-- /Normal Version -->
+
+
+
+
+                    </td>
+                    <td>
+                        <span>Admin sistema</span>
+                        <br />
+                        <span>16/11/10 10:11</span>
+                        <br />
+                        <a href="#">Move To</a> &nbsp;&nbsp;
+                        <a href="#">Hide item</a>
+                    </td>
+                </tr>
+                </table>
+            </td>
+            <td>
+                <img src="../../../images/RifiutaProposta2.gif" width="30px" height="0px" />
+            </td>
+        </tr>
+    </table>
+    </center>
+    <!-- /Table test, file tree style -->
+    </div>
+</body>
+</html>

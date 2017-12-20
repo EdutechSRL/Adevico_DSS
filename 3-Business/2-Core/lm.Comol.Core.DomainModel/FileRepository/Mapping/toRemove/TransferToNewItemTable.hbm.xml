@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="lm.Comol.Core.DomainModel" namespace="lm.Comol.Core.FileRepository.Domain.toRemove">
+  <class name="TransferToNewItemTable" table="FR_Item" >
+    <id name="Id" column="Id" type="Int64">
+      <generator class="assigned"/>
+    </id>
+    <property name="IdFolder"/>
+    <property name="UniqueId"/>
+    <property name="IdPerson"/>
+    <property name="IdCommunity"/>
+    <property name="Name"/>
+    <property name="Extension"/>
+    <property name="Description"/>
+    <property name="Url"/>
+    
+    <property name="ContentType"/>
+    <property name="Size"/>
+    <property name="VersionsSize"/>
+    <property name="DeletedSize"/>
+    <property name="Downloaded"/>
+    <property name="IsFile"/>
+    <property name="Type" column="ItemType" type="lm.Comol.Core.FileRepository.Domain.ItemType,lm.Comol.Core.DomainModel" />
+    <property name="IdVersion"/>
+    <property name="UniqueIdVersion"/>
+    <property name="Status" type="lm.Comol.Core.FileRepository.Domain.ItemStatus,lm.Comol.Core.DomainModel" />
+    <property name="Availability" type="lm.Comol.Core.FileRepository.Domain.ItemAvailability,lm.Comol.Core.DomainModel" />
+    <property name="DisplayMode" type="lm.Comol.Core.FileRepository.Domain.DisplayMode,lm.Comol.Core.DomainModel" />
+    
+    <property name="IdPlayer"/>
+    <property name="PreviewTime" type="Int64" />
+    <property name="Thumbnail" type="String" />
+    <property name="AutoThumbnail"  type="Boolean" />
+    <property name="Time" type="Int64" />
+    <property name="Number"/>
+    <property name="Tags"/>
+    <property name="CloneOf"/>
+    <property name="CloneOfUniqueId"/>
+    <property name="HasVersions"/>
+
+    <property name="IsVisible"/>
+    <property name="IsDownloadable"/>
+    <property name="IsInternal"/>
+    <property name="IsVirtual"/>
+    <property name="IsPersonal"/>
+
+
+    <component name="Module" class="lm.Comol.Core.FileRepository.Domain.ItemModuleSettings">
+      <property name="IdModuleAction" type="Int32" not-null="false"/>
+      <property name="IdModuleAjaxAction" type="Int32" not-null="false"/>
+      <property name="ModuleCode" type="String" not-null="false"/>
+      <property name="FullyQualifiedName" type="String" not-null="false"/>
+      <property name="IdObjectType" type="Int32" not-null="false"/>
+      <property name="IdObject" type="Int64" not-null="false"/>
+    </component>
+    <property name="DisplayOrder"/>
+
+    <property name="_Deleted"/>
+    <property name="_CreatedOn"/>
+    <property name="_CreatedBy"/>
+    <property name="_ModifiedOn"/>
+    <property name="_ModifiedBy"/>
+    <property name="_CreatedProxyIPaddress"/>
+    <property name="_CreatedIPaddress"/>
+    <property name="_ModifiedIPaddress"/>
+    <property name="_ModifiedProxyIPaddress"/>
+    <property name="AllowUpload" type="Boolean" />
+    <component name="Repository" class="lm.Comol.Core.FileRepository.Domain.RepositoryIdentifier,lm.Comol.Core.DomainModel">
+      <property name="IdCommunity" type="Int32" column="repositoryIdCommunity"/>
+      <property name="IdPerson" type="Int32" column="repositoryIdPerson"/>
+      <property name="Type" type="lm.Comol.Core.FileRepository.Domain.RepositoryType,lm.Comol.Core.DomainModel" column="repositoryType" />
+    </component>
+  </class>
+</hibernate-mapping>

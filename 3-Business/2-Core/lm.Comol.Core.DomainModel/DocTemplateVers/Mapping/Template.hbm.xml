@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="lm.Comol.Core.DomainModel" namespace="lm.Comol.Core.DomainModel.DocTemplateVers">
+	<class name="Template" table="DT_Template" >
+		<id name="Id" column="Id" type="Int64">
+			<generator class="native"/>
+		</id>
+        <version name="TimeStamp"
+            generated="always"
+            unsaved-value="null"
+            type="BinaryBlob">
+            <column name="_Timestamp"
+                    not-null="false"
+                    sql-type="timestamp"/>
+        </version>
+        
+		<property name="Name" type="String" column="Name" />
+        <property name="Type" type="lm.Comol.Core.DomainModel.DocTemplateVers.TemplateType, lm.Comol.Core.DomainModel" column="TemplateType"/>
+        
+		<property name="IsActive" type="Boolean" column="IsActive" />
+		<property name="IsSystem" type="Boolean" column="IsSystem" />
+		<property name="HasDraft" type="Boolean" column="HasDraft" />
+        <property name="HasDefinitive" type="Boolean" column="HasDefinitive" />
+		<property name="HasActive" type="Boolean" column="HasActive" />
+        
+
+        <bag name="Versions" table="DT_Version" cascade="all-delete-orphan" lazy="true" inverse="true">
+            <key column="IdTemplate" foreign-key="Id"/>
+            <one-to-many class="TemplateVersion"/>
+        </bag>
+
+        <bag name="Services" table="DT_ServiceContent" cascade="all-delete-orphan" lazy="true" inverse="true">
+            <key column="IdTemplate" foreign-key="Id"/>
+            <one-to-many class="ServiceContent"/>
+        </bag>
+        <!--fetch="subselect"-->
+        <property name="CreatedOn" type="DateTime" column="_CreatedOn" />
+        <many-to-one name="CreatedBy" class="lm.Comol.Core.DomainModel.Person" column="_CreatedBy" foreign-key="_CreatedBy" cascade="none" />
+        <property name="ModifiedOn" type="DateTime" column="_ModifiedOn" />
+        <many-to-one name="ModifiedBy" class="lm.Comol.Core.DomainModel.Person" column="_ModifiedBy" foreign-key="_ModifiedBy" cascade="none" />
+        <property name="CreatorProxyIpAddress" type="String" column="_CreatedProxyIPaddress" />
+        <property name="CreatorIpAddress" type="String" column="_CreatedIPaddress" />
+        <property name="ModifiedProxyIpAddress" type="String" column="_ModifiedProxyIPaddress" />
+        <property name="ModifiedIpAddress" type="String" column="_ModifiedIPaddress" />
+        <property name="Deleted" type="lm.Comol.Core.DomainModel.BaseStatusDeleted,lm.Comol.Core.DomainModel" column="_Deleted" />
+	</class>
+</hibernate-mapping>

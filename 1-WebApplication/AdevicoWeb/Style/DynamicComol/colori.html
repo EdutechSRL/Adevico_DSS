@@ -1,0 +1,79 @@
+<html>
+	<head>
+		<title>Colori</title>
+
+	<style>
+		body {font-size: 32px;}
+		li {padding-bottom: 20px;}
+		td { padding: 10px;}
+		span {
+			width: 100px; height: 50px;
+			border: 1px solid black;
+		} 
+	
+	</style>
+
+	</head>
+	<body>
+	
+	
+	
+<table>
+<tr><td>darkblue</td><td bgcolor="darkblue">&nbsp;</td>
+		<td>#652040</td><td bgcolor="#652040">&nbsp;</td></tr>
+		
+<tr><td>blue</td><td bgcolor="blue">&nbsp;</td>
+		<td>#ffffff</td><td bgcolor="#ffffff">&nbsp;</td></tr>
+
+<tr><td>powderblue</td><td bgcolor="darkblue">&nbsp;</td>
+		<td>#ffffff</td><td bgcolor="#ffffff">&nbsp;</td></tr>
+
+<tr><td>aliceblue</td><td bgcolor="aliceblue">&nbsp;</td>
+		<td>#f9edf4</td><td bgcolor="#f9edf4">&nbsp;</td></tr>
+			
+<tr><td>darkslateblue</td><td bgcolor="darkslateblue">&nbsp;</td>
+		<td>#ffffff</td><td bgcolor="#ffffff">&nbsp;</td></tr>
+
+<tr><td>slateblue</td><td bgcolor="slateblue">&nbsp;</td>
+		<td>#ffffff</td><td bgcolor="#ffffff">&nbsp;</td></tr>
+
+
+<tr><td>lavender</td><td bgcolor="lavender">&nbsp;</td>
+		<td>#f9edf4</td><td bgcolor="#f9edf4">&nbsp;</td></tr>
+
+
+			
+</table>
+
+
+<table>
+
+
+Da sostituire in tutte le pagine:
+
+<tr><td>#8080ff</td><td bgcolor="#8080ff">&nbsp;</td>
+		<td>#947885</td><td bgcolor="#947885">&nbsp;</td>
+		<td>Bordo tabella principale</td></tr>
+
+<tr><td>#e6e6fa</td><td bgcolor="#e6e6fa">&nbsp;</td>
+		<td>#f9edf4</td><td bgcolor="#f9edf4">&nbsp;</td>
+		<td>Sfondo tabelle</td></tr>
+
+<tr><td>lavender</td><td bgcolor="lavender">&nbsp;</td>
+		<td>#f9edf4</td><td bgcolor="#f9edf4">&nbsp;</td>
+		<td>Sfondo tabelle</td></tr>
+			
+</table>
+
+Modifiche:
+<ul>
+	<li><strong>uc/UC_Footer.ascx</strong>: aggiunti 2 div per la centratura</li>
+	<li><strong>uc/UC_Header.ascx</strong>: creata una copia di backup UC_Header.ascx_backup</li> 
+  <li><strong>dhtmlcentral.css</strong>: commentato tutto il contenuto perchè ridondante (definiva lo stile di default del menù js). Spostato lo stile specifico da UC_Header a NewStyle.css.</li> 
+  <li><strong>freccia_dx.png</strong>: aggiunta l'immagine nella directory images</li>
+	<li><strong>eventi/CalendarioMensile.aspx, InserimentoEvento.aspx, CalendarioSettimanale.aspx, RicercaEvento.aspx, ModificaEvento.aspx</strong> rimosso un "bgcolor=whote" dalla tabella header</li>
+  <li><strong>generici/RicevimentoDocenti.aspx</strong> tirato fuori il footer dalla tabella<li>
+</ul>
+  
+	</body>
+</html>

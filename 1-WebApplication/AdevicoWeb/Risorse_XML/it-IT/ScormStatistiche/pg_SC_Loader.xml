@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Resource xmlns="urn:ComolTranslation">
+  <item name="LBTitolo.text">SCORM - Statistiche File</item>
+  <item name="LBNopermessi.text">Non si dispone dei permessi necessari per l'utilizzo del servizio</item>
+
+  <item name="FileNotExist">Il file non esiste.</item>
+  <item name="FileOtherCommunity">Il file selezionato non appartiene alla comunità corrente.</item>
+
+  <item name="LBL_Info.Wait" html="true">Si sta per essere redirezionati al player.&lt;br /&gt;
+    Si prega di attendere qualche istante.</item>
+  <item name="LBL_Info.NoScorm" html="true">Il file richiesto non &amp;egrave; al momento disponibile per il player.&lt;br /&gt;
+    Si prega di riprovare pi&amp;ugrave; tardi.&lt;br /&gt;
+    Se il problema persiste, contattare l'amministratore del sistema.&lt;br /&gt;</item>
+  <item name="LBL_Info.NoSession" html="true">Utente non riconosciuto.&lt;br /&gt;
+    Probabilmente la sessione è scaduta.&lt;br /&gt;
+    Si prega di evvettuare nuovamente l'accesso al sistema.&lt;br /&gt;
+    Premere &lt;a href="./../index.aspx" alt="Login"&gt;QUI&lt;/a&gt; per ritornare alla pagina di login.&lt;br /&gt;</item>
+
+  <item name="LNBreturnTocommunityFiles.text">Ritorna al materiale</item>
+  <item name="LNBreturnTocommunityFiles.ToolTip">Ritorna al materiale</item>
+  <item name="LNBreturnTocommunityFiles.status">Ritorna al materiale</item>
+
+  <item name="LNBreturnToFileStat.text">Statistiche file</item>
+  <item name="LNBreturnToFileStat.ToolTip">Statistiche file</item>
+  <item name="LNBreturnToFileStat.status">Ritorna alla visualizzazione delle statistiche relative al file selezionato</item>
+
+  <item name="LNBGetXML.text">Esporta</item>
+  <item name="LNBGetXML.ToolTip">Esporta statistiche</item>
+  <item name="LNBGetXML.status">Esporta statistiche correnti</item>
+  
+  
+  <item name="Titolo.User">Statistiche SCORM - utente</item>
+  <item name="Titolo.File">Statistiche SCORM - file</item>
+	<item name="LoadFileNoPermission">Non hai i permessi per visualizzare questo materiale</item>
+	<item name="LoadFileNoReadyToPlay">Il file non è ancora disponibile per il play !</item>
+	<item name="LoadFileNotExist">Il file richiesto non esiste !</item>
+	<item name="LoadNoFileScorm">Il file richiesto non è un pacchetto scorm !</item>
+
+  <item name="TransferStatus.Multimedia_AnalyzeError" placeholder="true" mustcontains="{0}">(ERRORE: analisi pacchetto multimediale - codice errore:{0}).</item>
+  <item name="TransferStatus.Scorm_AnalyzeError" placeholder="true" mustcontains="{0}">(ERRORE: analisi pacchetto SCORM - codice errore:{0}).</item>
+  <item name="TransferStatus.FileTypeError" placeholder="true" mustcontains="{0}">(ERRORE: file non in formato corretto - codice errore:{0}).</item>
+  <item name="TransferStatus.UnableToUnzip" placeholder="true" mustcontains="{0}">(ERRORE: impossibile scompattare il file - codice errore:{0}).</item>
+  <item name="TransferStatus.ReadyForTransfer" placeholder="true" mustcontains="{0}">(file pronto per il trasferimento al media server - codice:{0}).</item>
+  <item name="TransferStatus.Copying" placeholder="true" mustcontains="{0}">(file in fase di trasferimento al media server - codice:{0}).</item>
+  <item name="TransferStatus.ReadyToUnzip" placeholder="true" mustcontains="{0}">(file pronto per essere scompattato - codice:{0}).</item>
+  <item name="TransferStatus.Unzipping" placeholder="true" mustcontains="{0}">(file in fase di decompressione - codice:{0}).</item>
+  <item name="TransferStatus.Unzipped" placeholder="true" mustcontains="{0}">(file trasferito e scompattato - codice:{0}).</item>
+  <item name="TransferStatus.ReadyToDelete" placeholder="true" mustcontains="{0}">(file sul media server pronto per la cancellazione - codice:{0}).</item>
+  <item name="TransferStatus.Deleted" placeholder="true" mustcontains="{0}">(file cancellato sul media server - codice:{0}).</item>
+  <item name="TransferStatus.Deleting" placeholder="true" mustcontains="{0}">(file in cancellazione sul media server - codice:{0}).</item>
+  <item name="TransferStatus.ReadyToAnalyze" placeholder="true" mustcontains="{0}">(file pronto per l'analisi - codice:{0}).</item>
+  <item name="TransferStatus.Analyzed" placeholder="true" mustcontains="{0}">(analisi della correttezza del file completata - codice:{0}).</item>
+  <item name="TransferStatus.UnzipFileNotFound" placeholder="true" mustcontains="{0}">(ERRORE: file trasferito sul media server NON individuato - codice errore:{0}).</item>
+  <item name="TransferStatus.UnableToDeleteAfterUnzip" placeholder="true" mustcontains="{0}">(ERRORE: file zip trasferito sul media server NON cancellato - codice errore:{0}).</item>
+  <item name="TransferStatus.UnzipFileNotFound" placeholder="true" mustcontains="{0}">(ERRORE: file scompattato sul media server NON è stato individuato - codice errore:{0}).</item>
+  <item name="TransferStatus.UploadFileNotFound" placeholder="true" mustcontains="{0}">(ERRORE: il file da trasferire sul media server NON è stato individuato - codice errore:{0}).</item>
+  <item name="TransferStatus.Error" placeholder="true" mustcontains="{0}">(ERRORE: errore generico - codice errore:{0}).</item>
+</Resource>

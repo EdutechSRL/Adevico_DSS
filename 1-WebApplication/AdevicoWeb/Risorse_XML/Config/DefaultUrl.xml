@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Urls>
+  <TagQuestionario>
+    <tag name="link" value="#LINKQUESTIONARIO#" isObligatory="true" fase="2"></tag>
+    <tag name="destinatario" value="#DESTINATARIO#" proprieta="Anagrafica" isObligatory="false" fase="2"></tag>
+    <tag name="dataFine" value="#DATAFINE#" proprieta="dataFine" isObligatory="false" fase="1"></tag>
+    <tag name="autore" value="#AUTORE#" proprieta="autore" isObligatory="false" fase="1"></tag>
+    <tag name="dataInizio" value="#DATAINIZIO#" proprieta="dataInizio" isObligatory="false" fase="1"></tag>
+    <tag name="nomeQuestionario" value="#NOMEQUESTIONARIO#" proprieta="nome" isObligatory="false" fase="1"></tag>
+    <tag name="descrizioneQuestionario" value="#DESCRIZIONEQUESTIONARIO#" proprieta="descrizione" isObligatory="false" fase="1"></tag>
+    <tag name="durata" value="#DURATA#" proprieta="durata" isObligatory="false" fase="1"></tag>
+  </TagQuestionario>
+  
+  <url value="Generici/Bacheca.aspx">
+    <urlParameter name="ComunitaID" property="ID"></urlParameter>
+    <urlParameter name="ComunitaPath" property="Path"></urlParameter>
+    <urlParameter name="PersonaID" property="ID"></urlParameter>
+  </url>
+  <url value="Forum/Forums.aspx">
+    <urlParameter name="ComunitaID" property="ID"></urlParameter>
+    <urlParameter name="ComunitaPath" property="Path"></urlParameter>
+    <urlParameter name="PersonaID" property="ID"></urlParameter>
+  </url>
+  <url value="Forum/ForumThreads.aspx">
+    <urlParameter name="ComunitaID" property="ID"></urlParameter>
+    <urlParameter name="ComunitaPath" property="Path"></urlParameter>
+    <urlParameter name="PersonaID" property="ID"></urlParameter>
+    <urlParameter name="ForumID" property="ID"></urlParameter>
+  </url>
+  <url value="Forum/ElencoPost.aspx">
+    <urlParameter name="ComunitaID" property="ID"></urlParameter>
+    <urlParameter name="ComunitaPath" property="Path"></urlParameter>
+    <urlParameter name="PersonaID" property="ID"></urlParameter>
+    <urlParameter name="ForumID" property="ID"></urlParameter>
+    <urlParameter name="ThreadID" property="ID"></urlParameter>
+  </url>
+  <url value="Forum/Adm_Forums.aspx">
+    <urlParameter name="ComunitaID" property="ID"></urlParameter>
+    <urlParameter name="ComunitaPath" property="Path"></urlParameter>
+    <urlParameter name="PersonaID" property="ID"></urlParameter>
+  </url>
+  
+  <url >Generici/Cover.aspx</url>
+  <url >Modules/CommunityDiary/CommunityDiary.aspx</url>
+  <url >Modules/Repository/CommunityRepositoryManagement.aspx?FolderID=0</url>
+  <url >Modules/Repository/CommunityRepository.aspx?FolderID=0</url>
+  <url >Generici/Gallery.aspx</url>
+  <url >Generici/LinkComunita.aspx</url>
+  <url >Generici/ListaDistribuzione.aspx</url>
+  <url >Generici/MailSender.aspx</url>
+  <url >Generici/MailSender_home.aspx</url>
+  <url >Generici/Materiale_VisualizzaScorm.aspx</url>
+  <url >Generici/Materiale_PlayVideocast.aspx</url>
+  <url >Generici/RicevimentoDocenti.aspx</url>
+
+  <url >Memo/ManagementMemo.aspx</url>
+  <url >Statistiche/StatisticheAccessi.aspx</url>
+  <url >Statistiche/StatisticheComunita.aspx</url>
+  <url >Wiki/Wiki_Comunita.aspx</url>
+  <url >Wiki/Wiki_Home.aspx</url>
+  <url >Utente/AttivaMail.aspx</url>
+  <url >Utente/CambiaPassword.aspx</url>
+  <url >Utente/CambioMail.aspx</url>
+  <url >Utente/UserSettings.aspx</url>
+  <url >Utente/RegistrazioneUtente.aspx</url>
+  <url >Eventi/RicercaEvento.aspx</url>
+  <url >Eventi/ModificaEvento.aspx</url>
+  <url >Eventi/InserimentoEvento.aspx</url>
+  <url >Eventi/DettaglioEvento.aspx</url>
+  <url >Eventi/CalendarioSettimanale.aspx</url>
+  <url >Eventi/CalendarioMensile.aspx</url>
+  <url >Eventi/CalendarioAnnuale.aspx</url>
+  <url >Curriculum/CurriculumEuropeo.aspx</url>
+  <url >Curriculum/CurriculumIscrittiComunita.aspx</url>
+  <url >Curriculum/InfoCurriculum.aspx</url>
+  <url >Curriculum/VetrinaCurriculum.aspx</url>
+  <url >Chat_Messenger/Chat_Ext.aspx</url>
+  <url >Chat_Messenger/Chat_Ext_Login.aspx</url>
+  <url >Comunita/GestioneIscritti.aspx</url>
+  <url >Comunita/CreazioneMultiplaCorsi.aspx</url>
+  <url >Comunita/EntrataComunita.aspx</url>
+  <url >Comunita/GestioneServizioDefault.aspx</url>
+  <url >Comunita/InfoIscritto.aspx</url>
+  <url >Comunita/IscrittiSottocomunita.aspx</url>
+  <url >Comunita/Iscrizione_Gruppi.aspx</url>
+  <url >Comunita/IscrizioneComunita.aspx</url>
+  <url >Comunita/IscrizioneCorso.aspx</url>
+  <url >Comunita/IscrizioneTesi.aspx</url>
+  <url >Comunita/ListaIscritti.aspx</url>
+  <url >Comunita/Management.aspx</url>
+  <url >Comunita/Management_ProfiliServizi.aspx</url>
+  <url >Comunita/ManagementServizi.aspx</url>
+  <url >Comunita/NavigazioneTreeView.aspx</url>
+  <url >Comunita/PermissionDetails.aspx</url>
+  <url >Comunita/RicercaComunita.aspx</url>
+  <url >Comunita/RicercaComunitaAlbero.aspx</url>
+</Urls>

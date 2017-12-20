@@ -1,0 +1,249 @@
+
+/* ------------------------------------
+ PAGE BODY
+-------------------------------------*/
+
+body {
+	font-family: "Lucida Grande", verdana, arial, helvetica, sans-serif;
+  font-size: 14px;
+	background: #e5e5e5;
+	color: #333;
+	margin:0 auto;
+}
+
+.clear {
+	clear: both;
+} 
+
+/* ------------------------------------
+ HEADER
+-------------------------------------*/
+#Header {
+	background-color: #f4f4f4;
+}
+
+#Title {
+	padding: 25px; 
+	margin-left: 20px; margin-right: 20px;
+}
+
+#Title ul {
+	text-align: right;
+}	
+
+#Header h1 {
+	font-size: 20px;
+	color: black;
+	font-weight: bold;
+	/* text-shadow: -1px -1px 2px #000, 1px 1px 4px #000; */
+}
+
+#Header h2 {
+	font-size: 14px;
+}
+		
+		
+/* ------------------------------------
+ MENU
+-------------------------------------*/
+
+#Menu .container {
+	padding: 10px 25px; 
+	margin-left: 20px; margin-right: 20px;
+}
+
+/* 
+#Menu ul {
+	margin: 0; padding: 0;
+}
+
+#Menu li {
+	margin: 0; padding: 0;
+	padding: 0 5px;	
+	display: inline;
+	list-style: none;
+	border: none;
+}
+
+#Menu li:first-child {
+	padding-left: 0;
+}
+
+#Menu a {
+	color: red;
+  text-decoration: underline;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+#Menu a:hover {
+	color:white;;
+  text-decoration: none;
+	background: red;
+}
+*/
+
+
+/*------------------------------------*\
+	NAV
+\*------------------------------------*/
+#Nav{
+	float:left;
+	width:100%;
+	list-style:none;
+}
+#Nav li{
+	float:left;
+	margin-right:10px;
+	position:relative;
+	display:block;
+}
+#Nav li a{
+	display:block;
+	padding:5px;
+	color:red;
+	font-size: 14px;
+	font-weight: bold;
+	text-decoration:none;
+}
+#Nav li a:hover{
+	text-decoration:underline;
+}
+
+/*--- DROPDOWN ---*/
+#Nav ul{
+	list-style:none;
+	position:absolute;
+	left:-9999px; /* Hide off-screen when not needed (this is more accessible than display:none;) */
+	opacity:0; /* Set initial state to transparent */
+}
+#Nav ul li{
+	float:none;
+	color: black;
+	background-color: white;
+	padding: 0; margin: 0;
+	border-bottom: 1px solid #ccc;
+	border-left: 1px solid #ccc;
+	border-right: 1px solid #ccc;
+}
+#Nav ul a{
+	white-space:nowrap; /* Stop text wrapping and creating multi-line dropdown items */
+	display:block;
+}
+#Nav li:hover ul{ /* Display the dropdown on hover */
+	left:0; /* Bring back on-screen when needed */
+	opacity:1; /* Fade to opaque */
+}
+#Nav li:hover a{ /* Set styles for top level when dropdown is hovered */
+	text-decoration:underline;
+	color: black;	
+	background-color: white;	
+}
+#Nav li:hover ul a{ /* Override some top level styles when dropdown is hovered */
+	text-decoration:none;
+}
+#Nav li:hover ul li a:hover{ /* Set styles for dropdown when items are hovered */
+	background:white; /* Solid colour fall-back */
+	color: white;
+	background: red;
+}
+
+/* ------------------------------------
+ FOOTER
+-------------------------------------*/
+
+#Footer .container {
+	padding: 25px; 
+	margin-left: 20px; margin-right: 20px;
+}
+
+/* ------------------------------------
+ STATUS
+-------------------------------------*/
+
+#Status {
+	font-size: 12px;
+	height: 25px;
+	background-color: #003A8F;
+	color: white;
+	border-bottom: 1px solid #597196;
+	padding-left: 45px; padding-right: 45px;
+}
+
+#Status .name {
+	width:30%;
+	float: left;
+}
+
+#Status .user {
+	width:70%;
+	float: left;
+	text-align: right;
+}
+
+#Status ul {
+	margin: 0; padding: 0;
+	padding-top: 5px;
+}
+
+#Status li {
+	margin: 0; padding: 0;
+	padding: 0 5px;	
+	display: inline;
+	list-style: none;
+	border: none;
+}
+
+#Status li:first-child {
+	padding-left: 0;
+}
+
+#Status a {
+	color: yellow;
+  text-decoration: underline;
+}
+
+#Status a:hover {
+	color:black;;
+	background: yellow;
+  text-decoration: none;
+}
+
+/* ------------------------------------
+ALERT
+-------------------------------------*/
+#Alert {
+	background-color: white;
+	padding: 5px;
+	text-align: center;
+}
+
+#Alert.invisible {
+	display: none;
+}
+
+#Alert h3 {
+	font-weight: bold;
+	color: #cc0000;
+}
+
+#Alert p {
+	margin: 0;
+	color: #666;
+}
+
+
+/* ------------------------------------
+ CONTENT
+-------------------------------------*/
+
+#Content {
+	background-color: white;
+}
+
+#Content .container {
+	padding: 25px; 
+	margin-left: 20px; margin-right: 20px;
+}
+
+

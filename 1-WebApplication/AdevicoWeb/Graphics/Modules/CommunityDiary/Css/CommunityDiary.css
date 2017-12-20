@@ -1,0 +1,407 @@
+﻿/* @override http://193.205.200.34/test/Graphics/Modules/CommunityDiary/css/CommunityDiary.css */
+
+.communitydiary{
+
+}
+
+.communitydiary a:hover{
+    background-color:transparent;
+    text-decoration:underline;
+}
+
+.fieldobject .fieldrow .fieldlabel{
+    display:inline-block;
+    *display:inline;
+    *zoom:1;
+    width:150px;
+    font-weight:bold;
+}
+
+.communitydiary.diaryitem .fieldobject .fieldrow .fieldlabel{            
+    width:150px;            
+    vertical-align:middle;
+}
+
+.communitydiary.diaryitem .fieldobject .fieldrow{
+    margin-bottom:1em;
+
+}
+
+.communitydiary.diaryitem .fieldobject .fieldrow .description{
+    display:inline-block;
+    *display:inline;
+    *zoom:1;
+    margin-top:0.5em;
+    margin-bottom:1em;
+    font-style:italic;
+}
+
+.communitydiary .inlinewrapper.boxed{
+    margin-top:0.5em;
+    margin-bottom:0.5em;
+    padding:5px;
+    border:1px solid #ccc;
+}
+
+    /*.communitydiary.diaryitem .fieldobject .fieldrow.dates{
+        margin-top:1em;
+        margin-bottom:1em;
+    }*/
+
+.fieldobject .fieldrow .links a{            
+    display:inline-block;
+    *display:inline;
+    *zoom:1;
+    margin-right:10px;
+    margin-bottom:5px;
+
+    text-decoration:none;
+    color:#5689ba;
+}
+
+.fieldobject .fieldrow .links a:hover{
+    text-decoration:underline;
+    background-color:transparent;
+}
+
+.communitydiary .lessons{
+    position:relative;
+}
+
+div.inlinewrapper{
+    display:inline-block;
+    *display:inline;
+    *zoom:1;
+
+    max-width:80%;
+}
+
+.communitydiary .lessons .lesson{
+    position:relative;
+    border:1px solid #ccc;
+    border-radius:3px;
+    margin-bottom:2em;     
+    
+}
+
+.papershadow
+{
+    position:relative;
+    box-shadow:0 1px 4px rgba(0, 0, 0, 0.2), 0 0 20px rgba(0, 0, 0, 0.1) inset;
+    background: #f7f6f2;
+}
+.papershadow:before, .papershadow:after
+{
+	content:"";
+    position:absolute; 
+    z-index:-1;
+    box-shadow:-1px -10px 20px rgba(0,0,0,0.1);
+    top:20px;
+    /*bottom:10px;*/
+    bottom:0px;
+    left:0;
+    right:0;
+    /*border-radius:100px / 10px;*/
+    
+} 
+.papershadow:after
+{
+    right:10px; 
+    left:auto; 
+    transform:skew(8deg) rotate(3deg);
+}
+
+.communitydiary .lessons .lesson .lessonheader{
+            
+    border-bottom:1px solid #ccc;
+    background: #ddd7cf;   
+    padding:  0 10px;  
+    width: 898px;      
+
+}
+
+table.attachedfiles  {
+	background: transparent !important;
+}
+
+table.attachedfiles td {
+	background: #fff !important;
+}
+
+.inputgroup span.item {
+	display: inline-block;
+	margin-right: .5em;
+}
+
+.inputgroup input,
+.inputgroup label {
+
+	margin-right: .5em !important;
+	vertical-align: top;
+	line-height: 1.5em !important;
+
+}
+
+table .actions a.ROW_ItemLink_Small {
+	  color:#5689ba !important;
+	  font-size: 10px;
+	  margin: 0 .5em ;
+	text-decoration: none;
+}
+
+table .actions a.ROW_ItemLink_Small:hover {
+
+	text-decoration: underline;
+}
+
+.communitydiary .lessons .lesson .lessonheader .lessonheaderitem {
+    padding: 7px 0px;
+   
+
+}
+
+.communitydiary .lessons .lesson .lessonheader .lessonheaderitem * {
+   
+    vertical-align: top !important; 
+    line-height: 2em !important;  
+}
+
+.communitydiary .lessons .lesson div.fieldrow {
+	font-size: 12px;
+	margin-bottom: 1em;
+}
+
+.communitydiary .lessons .lesson .lessonheader .lessonheaderitem input,
+.communitydiary .lessons .lesson .lessonheader .lessonheaderitem .icons {
+	position: relative;
+	top: 2px;
+}
+
+.communitydiary .lessons .lesson .lessonheader .lessonheaderitem.lezfiles{
+    text-align:right;
+}
+
+.communitydiary .lessons .lesson .lessoncontent{
+                        
+}
+
+.communitydiary .lessons .lesson .lessoncontent .lessoninner{
+    margin:10px;
+}
+
+.communitydiary .fieldobject .tablewrapper{
+    margin-top: -1em;
+    margin-bottom:1em;
+}
+
+.communitydiary.diaryitem .fieldobject .tablewrapper{
+    margin-top: 1em;
+    margin-bottom:1em;
+}
+
+.communitydiary.diaryitem .fieldobject .tablewrapper .actions{
+   width: 110px;
+}
+
+.notavailable span.iteminfo {
+	color: #c20;
+	font-size: 11px;
+	padding: 5px;
+	display: inline-block;
+}
+
+.communitydiary .File_SMInfo_Actions{
+    padding-top:0;
+    margin-right:10px;
+}
+
+.communitydiary table.attachedfiles td.filename{
+    width:auto;
+    padding-left: 5px;
+}
+
+table.CheckboxList {
+	margin: 1em 0 ;
+}
+
+ul.columns {
+	padding: 1em;
+}
+
+.communitydiary table.attachedfiles td.visibility{
+    width:300px;
+    font-size:0.9em;
+}
+
+.communitydiary table.attachedfiles td.actions{
+    width:50px;
+}
+
+.communitydiary .icons .icon.edit img,
+.communitydiary .icons .icon.delete img{
+    display:none;
+}
+
+.communitydiary .icons a{
+            
+}
+
+.communitydiary .lessons .lesson .lessonheader .lessonheaderitem .icons,
+.communitydiary .lessons .lesson .lessonheader .lessonheaderitem span.lessonid,
+.communitydiary .lessons .lesson .lessonheader .lessonheaderitem span.lessontitle{
+    height:20px;
+    line-height:20px;
+    vertical-align:top;
+}
+
+.communitydiary .lessons .lesson .lessonheader .lessonheaderitem input{
+    vertical-align:top;
+}
+
+.communitydiary .lessons .lesson .lessonheader .lessonheaderitem .lessontitle,
+.communitydiary .lessons .lesson .lessonheader .lessonheaderitem .lessonid{
+    font-weight:bold;
+    text-transform:capitalize;
+    text-shadow: 1px 1px 2px rgba(250, 250, 250, 0.8);
+}
+
+.inputgroup label,
+.inputgroup span,
+.inputgroup input,
+.inputgroup select{
+    vertical-align:bottom;
+}
+
+.communitydiary.diaryitem .inputgroup label,
+.communitydiary.diaryitem .inputgroup span,
+.communitydiary.diaryitem .inputgroup input,
+.communitydiary.diaryitem .inputgroup select{
+    vertical-align:middle;
+}
+
+div.visibility.itemgreen,
+        div.visibility.itemred,
+        div.visibility.itemyellow,
+        div.visibility.itemgray,
+		div.visibility.itemempty
+		{
+            margin: 0 !important;
+            -moz-box-shadow: none;
+            -webkit-box-shadow: none;
+            box-shadow: inset 1px 1px 3px rgba(0,0,0,0.3);
+            padding: 1px !important;
+            vertical-align: baseline;
+            border-radius: 3px;
+         
+            text-shadow: 0 1px 1px rgba(255,255,255,0.3);
+            font-size: 11px;
+            
+        }
+
+		
+		
+        div.visibility.itemgreen {
+            background-color: #99c74a !important;
+            text-align: center;
+            padding: 2px 15px;
+        /*	border: 1px solid #99c74a;*/
+        }
+
+        div.visibility.itemyellow {
+            background-color: #ffcd40 !important;
+            text-align: center;
+            padding: 2px 15px;
+        /*	border: 1px solid #ffcd40;*/
+        }
+
+        div.visibility.itemred {
+            background-color: #FF9999 !important;
+            text-align: center;
+            padding: 2px 15px;
+        /*	border: 1px solid #FF9999;*/
+        }
+                div.visibility.itemgray {
+            background-color: #ccc !important;
+            text-align: center;
+            padding: 2px 15px;
+        /*	border: 1px solid #FF9999;*/
+        }
+		
+		div.visibility.itemempty {
+            background-color: #e5e5e5 !important;
+            text-align: center;
+            padding: 0px 15px;
+        /*	border: 1px solid #FF9999;*/
+        }
+        
+        table .visibilityrepository,
+        table .visibilitylesson{
+            width:100px;
+        }
+	
+		
+		table.attachedfiles th {
+			text-align: center;
+			font-style: normal;
+			font-weight: normal;
+		}
+		
+		#CPHservice_RPTitemsDetails_DIVmateriale_2 div.tablewrapper {
+			
+		}
+				
+@media print {
+
+    .DIV_MP_Content{
+        border:none !important;
+    }
+
+    .communitydiary .lessons .lesson .lessonheader .lezcommands *,
+    .communitydiary .lessons .lesson .lessonheader .lezfiles *,
+    .attachedfiles td.actions *{
+        display:none;
+    }
+
+    .communitydiary .lessons .lesson{
+        display: inline-table;
+        width:100%;
+      
+                
+    }
+
+    #header, #toolbar, #branding, #serviceinfo{
+        display:none !important;
+    }            
+
+	.hidetoprinter{
+        display:none;
+    }
+
+    .papershadow{
+        box-shadow:none;
+    }
+
+    .papershadow:after,
+    .papershadow:before{
+        content:"";
+        box-shadow:none;
+    }
+}
+
+.filecontainer .iteminfo .name .text {
+    vertical-align: middle;	
+	top: -3px;	
+    position: relative;
+}
+
+.dialog div.inlinewrapper{
+  max-width:70%;
+}
+
+table .actions {
+	width: 100px;
+}
+
+div.fieldobject.diaryitem {
+	padding: 10px !important;
+}

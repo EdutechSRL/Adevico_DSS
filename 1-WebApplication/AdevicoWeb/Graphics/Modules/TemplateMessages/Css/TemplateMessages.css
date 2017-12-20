@@ -1,0 +1,444 @@
+
+/* GS: 20/01/2014 14:50 */
+
+.fieldobject.eventoptions .fieldrow.events.disabled,
+.fieldobject.eventoptions .fieldrow.service.disabled {
+   display:none;
+}
+
+.fieldobject.eventoptions .fieldrow.events.enabled,
+.fieldobject.eventoptions .fieldrow.service.enabled {
+
+}
+
+ul.templates li.template div.templatecontent div.title div.left *,
+ul.userselections li.userselection div.userselectioncontent div.title div.left * ,
+ul.templatemedia li.templatemedium div.templatemediumcontent div.title div.left * {
+	vertical-align: middle;	
+}
+
+div.fieldobject div.fieldrow {
+	margin: .5em 0;
+}
+
+.mailbody div.editorloader.loadercssclass {
+	border: 1px solid #ccc;
+	padding: 10px;
+	margin: 1em 5px 0 0;
+}
+
+.mailbody div.editorloader.loadercssclass div {
+	display: inline;
+}
+
+div.choseselect div.right .Link_Menu {
+	margin-left: 20px !important;
+	position: relative;
+	top: -2px;
+}
+
+div.choseselect div.right span.icons {
+	position: relative;
+	top: 2px;
+}
+
+div.chzn-container {
+    font-size: 1em;
+    width: 450px !important;
+    vertical-align: middle;
+}
+
+table div.chzn-container,
+table div.chzn-container-multi {
+	width: 390px !important;
+	*width:370px !important;
+}
+
+fieldset .left div.chzn-container,
+fieldset .left div.chzn-container-multi {
+	width: 438px !important;
+	*width: 438px !important;
+}
+
+fieldset div.choseselect {
+	margin-bottom: .5em;
+}
+
+table div.chzn-container div.chzn-drop,
+table div.chzn-container div.chzn-drop div.chzn-results {
+	width: 389px !important;
+	*width:369px !important;
+}
+
+table div.chzn-container.chzn-container-single {
+	width: 402px !important;
+}
+
+table div.chzn-container.chzn-container-single a.chzn-default {
+	border-color: #ccc;
+}
+
+table .chzn-container-multi .chzn-choices,
+table div.chzn-container ul.choices {
+  border: none !important;
+  background-image: none !important;
+}
+
+table .chzn-container.chzn-container-multi.chzn-container-active {
+	border: 1px solid #ccc !important;
+}	
+
+ul.chzn-choices li.search-field input.default {
+    padding-top: 0;
+    padding-bottom: 0;
+    *padding: 4px;
+}
+
+ul.chzn-choices li.search-field input.default {
+}
+
+ul.chzn-choices li.search-field {
+	overflow: visible !important;
+}
+
+div.chzn-container div.chzn-drop,
+div.chzn-container div.chzn-drop div.chzn-results {
+    width: 446px !important;
+}
+
+.textarea,
+input[type="text"],
+div.chzn-container-multi .chzn-choices {
+    border: 1px solid #ccc;
+    color: #333;
+    margin-left: 0;
+	font-size: inherit;
+	vertical-align: middle;
+}
+
+textarea {
+	vertical-align: middle;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+    border: none !important;
+}
+
+.fieldoptions {
+	padding: 10px;
+	margin: .5em 0;
+	border: 1px solid #ccc;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+}
+
+.fieldoptions table.options {
+	width: 50%;
+}
+
+ul.templatemedia li.templatemedium div.templatemediumcontent div.fieldobject.fieldoptions {
+   background-color: #fff;
+   border: none;   
+}
+
+div.fieldobject div.fieldrow span.Titolo_Campo,
+div.fieldobject div.fieldrow span.Titolo_campo,
+div.fieldobject div.fieldrow label.Titolo_campo,
+div.fieldobject div.fieldrow label.Titolo_Campo,
+div.fieldfooter div.choseselect div.left label.fieldlabel, div.fieldfooter div.choseselect div.left span.fieldlabel
+div.fieldfooter div.choseselect div.left label.fieldlabel, div.fieldobject div.fieldrow span.fieldlabel,
+div.fieldobject div.fieldrow label.fieldlabel,
+label.fieldlabel,
+span.fieldlabel {
+	color: #222;
+    width: 118px;
+    *width: 123px;    
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    font-size: inherit;
+    margin-right: 5px;
+    font-weight: normal;   
+}
+
+div.fieldrow.fielddescription span {
+	display: inline-block;
+	margin-bottom: .5em;
+}
+
+.right label {
+    margin-right: .5em;
+    vertical-align: middle;
+    display: inline-block;
+}
+
+label#CPHservice_LBtemplateVersion.fieldlabel {
+	color: #888;
+	font-size: .9em;
+	vertical-align: baseline;
+}
+
+.templatemediumcontent .title .left span {
+	font-weight: bold;
+}
+
+.selectorwrapper.mediumselector {
+	margin: 2em 0 .5em 0 !important;
+}
+
+.selectorwrapper .title {
+	text-transform: uppercase;
+}
+
+div.fieldrow.placeholders {
+	margin-top: 1em !important;
+}
+
+div.fieldrow.placeholders .fieldlabel {
+	margin-bottom: .5em !important;
+}
+
+div.varbuttons {
+	margin-bottom: 1em !important;
+	margin-right: 40px;
+}
+
+div.varbuttons .icon.help {
+	vertical-align: sub;
+}
+
+div.varbuttons .commands .command {
+	font-size: .9em;
+}
+
+span.languageadd {
+	position: absolute;
+	right: 33px;
+	text-align: right;	
+}
+
+table.templatelegend * {
+	font-size: 11px;
+}
+
+.fieldeditor input.fieldinput[type="text"],
+input.fieldinput[type="text"] {
+	width: 330px;
+}
+
+ul.modules.placeholderslist,
+ul.modules.placeholderslist ul {
+	padding-left: 20px;
+}
+
+ul.placehoderlist {
+	margin-bottom: 1em;
+}
+
+ul.modules.placeholderslist .modulename {
+	font-style: italic;
+	display: block;
+}
+
+ul.modules.placeholderslist li {
+	display: inline;
+	margin-bottom: .5em;
+	display: block;
+}
+
+ul.modules.placeholderslist li li {
+	display: inline;
+}
+
+ul.modules.placeholderslist li.last .separator {
+	display: none;
+}
+
+td.error input {
+	border: 1px solid #B10612 !important;
+}
+
+td.error .icons .icon {
+	vertical-align: middle;
+}
+
+td.templatename span.name span.text {
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+    width: 85%;
+}                                                                                                                                                                                       
+
+div.contenttop {
+	padding: 1em 0 0 0;
+	margin: 0;
+}
+
+div.tabcontent {
+	border: 1px solid #ccc;
+	padding: 20px 10px 10px 10px;
+}   
+
+div.tabcontent .title label {
+	font-size: 16px;
+}      
+   
+div.fieldobject.mailsettings,
+div.fieldobject.fieldeditor .fieldrow.subject {
+	margin: 1em 0;
+}
+
+.tabcontent.templatelist .filters  input.fieldinput {
+	width: 400px !important;
+}
+
+.tabcontent.templatelist .filters  select.fieldinput {
+	width: 405px !important;
+}
+
+.tabcontent.templatelist table.treetable{
+	table-layout: fixed;
+}
+
+.tabcontent.templatelist .treetable .templatename {
+	width: 320px;
+}
+
+.tabcontent.templatelist .treetable .createdon,
+.tabcontent.templatelist .treetable .actions {
+	width: 120px;
+}
+
+div.fieldobject.mailsettings {
+	padding: .5em 1em;
+	color: #666;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    background-color: #e6e9ed;
+    padding: 5px;
+    border: 1px solid #ccc;
+    *border-bottom: 2px;
+    -moz-box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.5), 1px 1px 1px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.5), 1px 1px 1px rgba(0, 0, 0, 0.3);
+    box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.5), 1px 1px 0 rgba(0, 0, 0, 0.15);
+}
+
+.title div.fieldrow.inline.left label {
+	font-size: 1.3em;
+	color: #888;
+}
+
+.title div.fieldrow.inline.left {
+	margin: 0;
+}
+
+table.table .warning {
+	width: 18px;
+	text-align: center;
+}
+
+table.treetable {
+	table-layout: fixed;
+	
+}
+
+table.treetable td {
+	font-size: 11px;
+	font-style: italic;
+}
+
+table.treetable tr {
+	background: #fff;
+}
+
+table.treetable tr.parent {
+	background-color: #eee;
+	-moz-box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.4);
+	-webkit-box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.4);
+	box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.4);
+	text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+table.treetable tr.parent td {
+	font-size: 12px;
+	font-style: normal;
+	font-weight: normal;
+}
+
+td.name span.icons span.icon.mandatory {
+	width: 14px;
+	height: 14px;
+	background-position: -81px -481px;
+	cursor: help;
+}
+
+table .templatename {
+	width: 350px;
+}
+
+table.templatelist .actions {
+	width: 100px;
+}
+
+table.msglistusers .actions {
+	width: 50px;
+	text-align: center;
+}
+
+div.no-data-message {
+	padding: 5px;
+	margin: 1em 0;
+}
+
+div.tabcontent.sendmessage  .filters select {
+	width: auto !important;
+}
+
+table.msglistmessages {
+	margin: 1em 0 !important;
+}
+
+table.msglistmessages .datecol {
+	width: 120px;
+}
+
+table.msglistmessages .actions {
+	width: 60px;
+	text-align: center;
+}
+
+.templatemediumcontent div.inlinewrapper {
+	width: 510px;
+}
+
+.mailsettings div.inlinewrapper, 
+.sendmessage div.inlinewrapper {
+	width: 740px;
+}
+
+div.inlinewrapper .group {
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+	margin-right: 10px;
+}
+
+table.templatenotificationsettings{
+    
+}                                  
+
+table.templatenotificationsettings th.template,
+table.templatenotificationsettings td.template{
+    width:450px;
+}
+
+
+table.templatenotificationsettings td.template select{
+    width:410px;
+    font-size: 11px;
+}
+
+                                                                                                                                                                             

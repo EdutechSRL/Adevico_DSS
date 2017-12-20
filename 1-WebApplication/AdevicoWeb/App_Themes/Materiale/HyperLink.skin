@@ -1,0 +1,28 @@
+﻿<%--
+Default skin template. The following skins are provided as examples only.
+
+1. Named control skin. The SkinId should be uniquely defined because
+   duplicate SkinId's per control type are not allowed in the same theme.
+
+<asp:GridView runat="server" SkinId="gridviewSkin" BackColor="White" >
+   <AlternatingRowStyle BackColor="Blue" />
+</asp:GridView>
+
+2. Default skin. The SkinId is not defined. Only one default 
+   control skin per control type is allowed in the same theme.
+
+<asp:Image runat="server" ImageUrl="~/images/image1.jpg" />
+--%>
+    <asp:HyperLink runat="server" BorderColor="#000099" BorderWidth="1" BorderStyle="Solid" 
+    Font-Size="X-Small" ForeColor="#333333" Height="20" BackColor="#ffffff" SkinID="Menu_Button"  Font-Underline="false"></asp:HyperLink>
+    
+    <asp:HyperLink runat="server" Text="Back" SkinID="Command_Link" Font-Size="X-Small" 
+        Font-Underline="True"></asp:HyperLink>
+        <asp:HyperLink runat="server" Text="Back" SkinID="Menu_Link" Font-Size="X-Small" 
+        Font-Underline="True"></asp:HyperLink>
+ <asp:HyperLink runat="server" Text="Back" SkinID="CommandDeleted_Link" Font-Size="X-Small" 
+        Font-Underline="True" ForeColor="#FFFFFF"></asp:HyperLink>
+        
+    <asp:HyperLink runat="server" BorderColor="#000099" BorderWidth="1" BorderStyle="Solid" Font-Bold="false"
+    Font-Size="X-Small" ForeColor="#333333" Height="18" BackColor="#ffffff" SkinID="Menu_ButtonLike"  Font-Underline="false"></asp:HyperLink>
+        

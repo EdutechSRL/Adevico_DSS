@@ -1,0 +1,102 @@
+﻿div.popupcontainer
+        {
+            width:500px;
+        }
+
+        div.popupcontainer .fieldrow
+        {
+            margin-bottom: 1px;
+        }
+
+        div.popupcontainer .fieldrow.previewer
+        {
+            margin-bottom: 5px;
+        }
+        
+        div.popupcontainer .fieldrow.previewer .preview
+        {
+            overflow:auto;
+        }
+
+        div.popupcontainer .logo .fieldlabel
+        {
+            vertical-align: middle;
+            height: 30px;
+        }
+        div.popupcontainer .logo span.logoimg
+        {
+            vertical-align: top;
+
+        }
+
+        div.popupcontainer .fieldrow.input input,
+        div.popupcontainer .fieldrow.input textarea
+        {
+            width: 500px;
+            vertical-align: bottom;
+            border: 1px solid #ccc;
+        }
+        div.popupcontainer .fieldrow.input textarea
+        {
+            width: 496px;
+            vertical-align: top;
+        }
+
+        div.popupcontainer div.preview
+        {
+            border: 1px solid #ccc;
+
+            height: 200px;
+            width: 100%;
+        }
+        
+        div.popupcontainer.youtube div.preview
+        {
+            border: 1px solid #ccc;
+
+            height: 350px;
+            width: 100%;
+            text-align:center;
+        }
+        
+        div.popupcontainer.youtube div.preview iframe
+        {
+            vertical-align:middle;
+            margin:10px;
+        }
+        
+        div.popupcontainer .fieldrow.commands
+        {
+            text-align: right;
+        }
+
+        div.popupcontainer.latex div.preview
+        {
+
+        }
+
+        div.popupcontainer.youtube div.preview
+        {
+
+        }
+        div.popupcontainer.youtube span.logoimg
+        {
+            display:inline-block;
+            *display:inline;
+            zoom:1;
+            background: no-repeat url(../img/youtube.png);
+            background-size: auto;
+            width: 72px;
+            height: 30px;
+        }
+
+        div.popupcontainer.latex span.logoimg
+        {
+            display:inline-block;
+            *display:inline;
+            zoom:1;
+            background: no-repeat url(../img/latex.png);
+            background-size: auto;
+            width: 64px;
+            height: 32px;
+        }

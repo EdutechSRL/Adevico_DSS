@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping
+    xmlns="urn:nhibernate-mapping-2.2"
+    assembly="lm.Comol.Core.BaseModules"
+    namespace="lm.Comol.Core.BaseModules.Tickets.Domain">
+
+    <class name="liteUser" table="TK_User" >
+
+        <id name="Id" column="Id" type="Int64">
+            <generator class="native"/>
+        </id>
+
+        <many-to-one name="Person" class="lm.Comol.Core.DomainModel.litePerson" column="IdPerson" foreign-key="IdPerson" cascade="none" />
+        
+         <!--<many-to-one name="Person"
+    class="lm.Comol.Core.DomainModel.litePerson" column="IdPerson" foreign-key="" cascade="none" lazy="false" />-->
+        
+        <property name="Name" type="String" column="Name" />
+        <property name="Surname" type="String" column="SName" />
+      
+    </class>
+
+</hibernate-mapping>

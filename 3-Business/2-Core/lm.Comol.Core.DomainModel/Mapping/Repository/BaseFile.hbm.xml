@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="lm.Comol.Core.DomainModel" namespace="lm.Comol.Core.DomainModel">
+	<class name="BaseFile" table="GN_FILE_REPOSITORY" lazy="true">
+		<id name="Id" column="FLRP_ID" type="Guid">
+			<generator class="guid"/>
+		</id>
+		<property name="Name" type="String" column="FLRP_Name" />
+		<property name="Extension" type="String" column="FLRP_Extension" />
+		<property name="Description" type="String" column="FLRP_Description" />
+		<!--<property name="FileSystemName" type="String" column="FLRP_FileSystemName" />-->
+		<property name="Size" type="Int64" column="FLRP_Size" />
+		<property name="ContentType" type="String" column="FLRP_ContentType" />
+	  <property name="HardLink" type="Int64" column="FLRP_HardLink" />
+	  <property name="IsDownloadable" type="Boolean" column="FLRP_IsDownloadable" />
+	  <property name="IsScormFile" type="Boolean" column="FLRP_IsScorm" />
+	  <many-to-one name="MetaInfo" class="lm.Comol.Core.DomainModel.MetaData, lm.Comol.Core.DomainModel" column="FLRP_MTDT_ID" foreign-key="FLRP_MTDT_ID" cascade="all-delete-orphan"/>
+		<many-to-one name="Owner" class="lm.Comol.Core.DomainModel.Person, lm.Comol.Core.DomainModel" column="FLRP_PersonID" foreign-key="FLRP_PersonID" cascade="none" lazy="false"/>
+	</class>
+</hibernate-mapping>

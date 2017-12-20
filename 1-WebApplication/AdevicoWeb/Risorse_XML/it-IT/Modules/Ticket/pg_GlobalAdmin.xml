@@ -1,0 +1,193 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--ita: commentati elementi rimossi-->
+<Resource xmlns="urn:ComolTranslation">
+	<item name="LNBupdateComType.text">Aggiorna tipi comunità</item>
+	<item name="LNBupdateComType.ToolTip">Aggiunge alla lista i tipi di comunità mancanti</item>
+	<item name="LNBupdateComType.status">Aggiunge alla lista i tipi di comunità mancanti</item>
+
+	<item name="LNBsaveSettings.text">Salva</item>
+	<item name="LNBsaveSettings.ToolTip">Salva le modifiche</item>
+	<item name="LNBsaveSettings.status">Salva le modifiche</item>
+
+	<item name="CBXexternalLimit.text">Limita ticket utenti esterni</item>
+	<!--<item name="CBXexternalLimit.ToolTip">Limita il numero di Ticket che possono essere creati da utenti esterni</item>-->
+	<item name="CBXinternalLimit.text">Limita ticket utenti interni</item>
+	<!--<item name="CBXinternalLimit.ToolTip">Limita il numero di Ticket che possono essere creati da utenti esterni</item>-->
+	
+	<item name="LBcategoryTree_t.text">Categorie ticket</item>
+	<item name="LBcategoryTree_t.ToolTip">Categorie Ticket pubbliche</item>
+
+	<item name="LBsettings_Name_t.text">Tipo comunità</item>
+	<item name="LBsettings_Name_t.ToolTip">Tipo comunità</item>
+	<item name="LBsettings_ViewTicket_t.text">Visualizza Tipo Ticket</item>
+	<item name="LBsettings_ViewTicket_t.ToolTip">Permette di visualizzare all'interno delle comunità, tutte le categoria di tipo ticket presenti in piattaforma.</item>
+	<item name="LBsettings_Public_t.text">Crea Pubbliche</item>
+	<item name="LBsettings_Public_t.ToolTip">Crea Categorie di tipo Pubblico, visibili all'interno di tutta la piattaforma.</item>
+	<item name="LBsettings_Ticket_t.text">Crea Ticket</item>
+	<item name="LBsettings_Ticket_t.ToolTip">Crea Categorie visibili solo per le comunità di creazione o in cui è impostato "Visualizza Tipo Ticket".</item>
+	<item name="LBsettings_Private_t.text">Crea private</item>
+	<item name="LBsettings_Private_t.ToolTip">Crea Categorie che possono essere viste solamente all'interno della comunità di creazione.</item>
+
+	<item name="LBpublicNum_t.text">pubbliche</item>
+	<item name="LBpublicNum_t.ToolTip">Totale categorie pubbliche</item>
+	<item name="LBcommunityNum_t.text">comunità</item>
+	<item name="LBcommunityNum_t.ToolTip">Totale categorie di comunità</item>
+	<item name="LBticketNum_t.text">ticket</item>
+	<item name="LBticketNum_t.ToolTip">Totale categorie ticket</item>
+
+	<!-- Add-On -->
+	<item name="LTpageTitle_t.text">Amministrazione globale TicketSystem</item>
+	<item name="LTtitle_t.text">Amministrazione globale TicketSystem</item>
+
+	<!-- Add-On -->
+	<item name="LBcateDef_t.text">Categoria di default</item>
+	<item name="LBcateDef_t.ToolTip">Imposta la categoria di default</item>
+	
+	<item name="Category.select">Selezionare categoria</item>
+
+	<item name="LNBsetDefault.text">Imposta</item>
+	<item name="LNBsetDefault.ToolTip">Imposta come categoria di default.</item>
+	<item name="LNBsetDefault.ConfirmText">Non sarà possibile riordinare nè modificare la visibilità della categoria. Continuare?</item>
+	<item name="LNBsetDefault.status">Imposta come categoria di default.</item>
+
+	<item name="LNBremDefault.text">Rimuovi</item>
+	<item name="LNBremDefault.ToolTip">Rimuove la categoria di default.</item>
+	<item name="LNBremDefault.ConfirmText">Senza una categoria di default, il servizio potrebbe non funzionare correttamente. Continure?</item>
+	<item name="LNBremDefault.status">Rimuove la categoria di default.</item>
+
+	<item name="LTnotification_t.text">Impostazioni notifiche di default</item>
+	
+	<item name="CTRLswService.On.Text">On</item>
+	<item name="CTRLswService.On.ToolTip">Stato del servizio</item>
+	<item name="CTRLswService.Off.Text">Off</item>
+	<item name="CTRLswService.Off.ToolTip">Stato del servizio</item>
+	<item name="CTRLswService.Description.Pre">Il servizio </item>
+	<item name="CTRLswService.Description.Post"></item>
+	<item name="CTRLswService.Description.On">è attivo.</item>
+	<item name="CTRLswService.Description.Off">è disattivato</item>
+
+	<item name="CTRLswCat.On.Text">On</item>
+	<item name="CTRLswCat.On.ToolTip">Abilita gestione categorie</item>
+	<item name="CTRLswCat.Off.Text">Off</item>
+	<item name="CTRLswCat.Off.ToolTip">Disabilita gestione categorie</item>
+	<item name="CTRLswCat.Description.Pre">La gestione delle categorie </item>
+	<item name="CTRLswCat.Description.Post">.</item>
+	<item name="CTRLswCat.Description.On">è attiva</item>
+	<item name="CTRLswCat.Description.Off">è disattivata</item>
+
+	<item name="LTService_t.text">Impostazioni globali</item>
+	<item name="LTService_d.text" html="true">Attiva o disattiva il servizio in blocco e permette l'impostazione sul limite di ticket.&lt;br/&gt;Per i &lt;b&gt;ticket in bozza&lt;/b&gt; può essere impostato un valore interto tra 1 e 32000.&lt;br/&gt;Per i &lt;b&gt;ticket interni o esterni&lt;/b&gt; un valore tra 0 e 32000. &lt;b&gt;0&lt;/b&gt; impedisce l'apertura di nuovi Ticket.</item>
+	<item name="LTlimits_t.text">Limiti accesso</item>
+	<item name="LTcategories_t.text">Gestione categorie</item>
+	<item name="LTcategories_d.text">Imposta quali tipi di comunità possono creare o visualizzare quali tipi di categorie.&lt;br/&gt;Se alcuni tipi non sono in elenco, premere "Aggiorna tipi comunità" in alto.</item>
+	<item name="LTpermission_t.text">Permessi per tipo comunità</item>
+	<item name="LTmandatory_l.text" mustcontains="{0}">I campi contrassegnati con {0} sono obbligatori.</item>
+	<item name="LTedit_t.text">Visualizzazione e modifica</item>
+	<item name="LTedit_d.text">Permette di bloccare l'accesso in scrittura o in lettura ai Ticket. Disabilitando la visualizzazione i Ticket esterni saranno disabilitati.</item>
+
+	<item name="Status.SaveOK">Impostazioni salvate correttamente.</item>
+	<item name="Status.ImportTypeOK">Tipi comunità aggiornati</item>
+	<item name="Status.CategoryDefSetted">Categoria di default impostata.</item>
+	<item name="Status.CategoryDefRemoved">Categoria di default rimossa.</item>
+	
+	<!-- Aggiunte-->
+	<item name="CBXdraftLimit.text">Limita ticket in bozza</item>
+	
+	<!-- Aggiunte 06/03/2015 -->
+	<item name="LTname_t.text">Nome utente</item>
+	<item name="LTuserType_t.text">Tipo persona</item>
+	<item name="Table.Delete.UserPermission">Revoca permessi utente</item>
+
+	<item name="LBdescritption_t.noUsers">Nessun utente selezionato</item>
+	<item name="LBdescritption_t.hasUsers">Utenti abilitati per nome</item>
+
+	<item name="LTbehalf_t.text" description="Titolo sezione">Gestione "Crea per conto di..."</item>
+	<item name="LTbehalf_d.text" description="Descrizione.">Permette ad alcuni utenti di creare ticket per conto di altri. Disabilitando la creazione "per conto di" o togliendo tale permesso, il o i creatori non avranno più modo di intervenire sui Ticket.&lt;br/&gt;Inoltre agli utenti dorvà essere garantito l'accesso alla lista degli iscritti alla comunità o al portale, altrimenti in fase di creazione del ticket, la funzionalità non sarà accessibile.</item>
+
+	<item name="LBbehalfType.text">Tipi persona abilitati</item>
+	<item name="LBbehalfType.ToolTip">Seleziona i Tipi Persona o gli utenti che sono abilitati a creare ticket "per conto di...".</item>
+
+	<item name="CTRLswBehalf.On.Text">On</item>
+	<item name="CTRLswBehalf.On.ToolTip">Attiva la creazione "per conto di..."</item>
+	<item name="CTRLswBehalf.Off.Text">Off</item>
+	<item name="CTRLswBehalf.Off.ToolTip">Disattiva la creazione "per conto di..."</item>
+	<item name="CTRLswBehalf.Description.On">La creazione "per conto di..." è attiva.</item>
+	<item name="CTRLswBehalf.Description.Off">La creazione "per conto di..." non è attiva.</item>
+
+	<item name="Modal.InternalUsers.Description">Selezionare gli utenti a cui aggiungere il permesso per la creazione di Ticket per conto di altri utenti. Si ricorda che tali utenti potranno avere accesso a TUTTI gli ISCRITTI in piattaforma!</item>
+
+	<item name="LNBsaveSettings_Bot.text">Salva</item>
+	<item name="LNBsaveSettings_Bot.ToolTip">Salva le modifiche</item>
+	<item name="LNBsaveSettings_Bot.status">Salva le modifiche</item>
+
+	<item name="LNBaddUsers.text">Aggiungi</item>
+	<item name="LNBaddUsers.ToolTip">Aggiunge utenti che possono creare "Per conto di..."</item>
+	<item name="LNBaddUsers.status">Aggiunge utenti che possono creare "Per conto di..."</item>
+	
+	<!-- Add 15/05/2015 -->
+	<item name="Status.InternalError">Errore interno.</item>
+
+	<item name="LTnotificationUsr_t.text">Notifiche utente</item>
+	<item name="LTnotificationMan_t.text">Notifiche manager/resolver</item>
+	
+	<item name="LNBsaveMailSets.text">Salva impostazioni mail</item>
+	<item name="LNBsaveMailSets.ToolTip">Salva ed attiva/disattiva le impostaizoni delle notifiche</item>
+	<item name="LNBsaveMailSets.status">Salva ed attiva/disattiva le impostaizoni delle notifiche</item>
+
+	<item name="CTRLswUserNotification.On.Text">On</item>
+	<item name="CTRLswUserNotification.On.ToolTip">Attiva invio notifiche per gli utenti</item>
+	<item name="CTRLswUserNotification.Off.Text">Off</item>
+	<item name="CTRLswUserNotification.Off.ToolTip">Disattiva invio notifiche per gli utenti</item>
+	<item name="CTRLswUserNotification.Description.On">Le notifiche per gli utenti sono attive.</item>
+	<item name="CTRLswUserNotification.Description.Off">Le notifiche per gli utenti sono disattive.</item>
+
+	<item name="CTRLswManNotification.On.Text">On</item>
+	<item name="CTRLswManNotification.On.ToolTip">Attiva invio notifiche per i manager/resolver</item>
+	<item name="CTRLswManNotification.Off.Text">Off</item>
+	<item name="CTRLswManNotification.Off.ToolTip">Disattiva invio notifiche per i manager/resolver</item>
+	<item name="CTRLswManNotification.Description.On">Le notifiche per i manager/resolver sono attive.</item>
+	<item name="CTRLswManNotification.Description.Off">Le notifiche per i manager/resolver sono disattive.</item>
+
+	<!--MODIFY 22/05/1979-->
+
+	<item name="CTRLswEdit.On.Text">On</item>
+	<item name="CTRLswEdit.On.ToolTip">Consente la modifica dei Ticket</item>
+	<item name="CTRLswEdit.Off.Text">Off</item>
+	<item name="CTRLswEdit.Off.ToolTip">Blocca la modifica dei Ticket</item>
+	<item name="CTRLswEdit.Description.On">I Ticket sono modificabili</item>
+	<item name="CTRLswEdit.Description.Off">Modifica Ticket bloccata</item>
+
+	<item name="CTRLswView.On.Text">On</item>
+	<item name="CTRLswView.On.ToolTip">Consente la visualizzazione dei Ticket.</item>
+	<item name="CTRLswView.Off.Text">Off</item>
+	<item name="CTRLswView.Off.ToolTip">Blocca la visualizzazione dei Ticket.</item>
+	<item name="CTRLswView.Description.On">I Ticket sono accessibili</item>
+	<item name="CTRLswView.Description.Off">I Ticket non sono accessibili</item>
+	
+	<!-- Add 21/09/2015 -->
+	<item name="Error.NoPermission">Non si dispone dei permessi per visualizzare la pagina.</item>
+
+	<item name="Status.Success.InvalidField">Impostazioni salvate.</item>
+	<item name="Status.Success.InvalidField.Draft">Limite ticket in bozza non valido. Reimpostato valore precedente.</item>
+	<item name="Status.Success.InvalidField.Internal">Limite ticket utenti interni non valido. Reimpostato valore precedente.</item>
+	<item name="Status.Success.InvalidField.External">Limite ticket utenti esterni non valido. Reimpostato valore precedente.</item>
+
+	<!-- Add 26/10/2016 -->
+	<!--<item name="Status.Switch.Service.True"></item>
+	<item name="Status.Switch.Service.False"></item>-->
+	<item name="Status.Switch.NotificationUser.True">Notifiche utente abilitate.</item>
+	<item name="Status.Switch.NotificationUser.False">Notifiche utente disabilitate.</item>
+	<item name="Status.Switch.NotificationManager.True">Notifiche manager/resolver abilitate.</item>
+	<item name="Status.Switch.NotificationManager.False">Notifiche manager/resolver disabilitate.</item>
+	<item name="Status.Switch.CategoryManagement.True">Gestione categorie attivata.</item>
+	<item name="Status.Switch.CategoryManagement.False">Gestione categorie disattivata.</item>
+	<item name="Status.Switch.TicketRead.True">Ticket accessibili in sola lettura.</item>
+	<item name="Status.Switch.TicketRead.False">Ticket non accessibili.</item>
+	<item name="Status.Switch.TicketWrite.True">Ticket modificabili.</item>
+	<item name="Status.Switch.TicketWrite.False">Ticket accessibili in sola lettura.</item>
+	<item name="Status.Switch.TicketBehalf.True">Creazione "per conto di..." attiva.</item>
+	<item name="Status.Switch.TicketBehalf.False">Creazione "per conto di..." disattivata.</item>
+
+	<item name="Status.InternalError">Errore interno.</item>
+
+</Resource>

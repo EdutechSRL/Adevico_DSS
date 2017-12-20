@@ -1,0 +1,995 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+	<!--[if lt IE 9]>
+	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+    <title>EvaluationTranslations - lm.Comol.Modules.CallForPapers Documentation</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+    <link type="text/css" rel="stylesheet" href="../main.css"/>
+    <script type="text/javascript" src="../js/jquery-1.3.2.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.scrollTo-min.js"></script>
+    <script type="text/javascript" src="../js/navigation.js"></script>
+    <script type="text/javascript" src="../js/example.js"></script>
+  </head>
+  <body>
+  	<header><h1>lm.Comol.Modules.CallForPapers : API Documentation</h1>
+	</header>
+<nav id="namespaces">
+	<h2 class="fixed">Namespaces</h2>
+	<div class="scroll">
+		<ul>
+			<li>
+          <a href="../lm.Comol.Modules.CallForPapers.Advanced/index.htm">lm.Comol.Modules.CallForPapers.Advanced</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Modules.CallForPapers.Advanced.Domain/index.htm">lm.Comol.Modules.CallForPapers.Advanced.Domain</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Modules.CallForPapers.Advanced.dto/index.htm">lm.Comol.Modules.CallForPapers.Advanced.dto</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Modules.CallForPapers.Advanced.Helpers/index.htm">lm.Comol.Modules.CallForPapers.Advanced.Helpers</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Modules.CallForPapers.Advanced.Presentation/index.htm">lm.Comol.Modules.CallForPapers.Advanced.Presentation</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Modules.CallForPapers.Advanced.Presentation.iView/index.htm">lm.Comol.Modules.CallForPapers.Advanced.Presentation.iView</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Modules.CallForPapers.AdvEconomic/index.htm">lm.Comol.Modules.CallForPapers.AdvEconomic</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Modules.CallForPapers.AdvEconomic.Domain/index.htm">lm.Comol.Modules.CallForPapers.AdvEconomic.Domain</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Modules.CallForPapers.AdvEconomic.dto/index.htm">lm.Comol.Modules.CallForPapers.AdvEconomic.dto</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Modules.CallForPapers.AdvEconomic.Helpers/index.htm">lm.Comol.Modules.CallForPapers.AdvEconomic.Helpers</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Modules.CallForPapers.AdvEconomic.Presentation/index.htm">lm.Comol.Modules.CallForPapers.AdvEconomic.Presentation</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Modules.CallForPapers.AdvEconomic.Presentation.View/index.htm">lm.Comol.Modules.CallForPapers.AdvEconomic.Presentation.View</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Modules.CallForPapers.Business/index.htm">lm.Comol.Modules.CallForPapers.Business</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Modules.CallForPapers.Domain/index.htm">lm.Comol.Modules.CallForPapers.Domain</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/index.htm" class="current">lm.Comol.Modules.CallForPapers.Domain.Evaluation</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation.Export/index.htm">lm.Comol.Modules.CallForPapers.Domain.Evaluation.Export</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Modules.CallForPapers.Presentation/index.htm">lm.Comol.Modules.CallForPapers.Presentation</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Modules.CallForPapers.Presentation.Base.Controls/index.htm">lm.Comol.Modules.CallForPapers.Presentation.Base.Controls</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Modules.CallForPapers.Presentation.Base.Controls.IView/index.htm">lm.Comol.Modules.CallForPapers.Presentation.Base.Controls.IView</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Modules.CallForPapers.Presentation.Call/index.htm">lm.Comol.Modules.CallForPapers.Presentation.Call</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Modules.CallForPapers.Presentation.Evaluation/index.htm">lm.Comol.Modules.CallForPapers.Presentation.Evaluation</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Modules.CallForPapers.Trap/index.htm">lm.Comol.Modules.CallForPapers.Trap</a>
+      </li>
+		</ul>
+	</div>
+</nav><nav id="types">
+  <h2 class="fixed">Types in lm.Comol.Modules.CallForPapers.Domain.Evaluation</h2>
+	<div class="scroll">
+		<ul>
+				<li>
+            <a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/BaseCriterion.htm">BaseCriterion</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/BoolCriterion.htm">BoolCriterion</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/CallEvaluator.htm">CallEvaluator</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/CommentType.htm">CommentType</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/CommitteeAssignedSubmitterType.htm">CommitteeAssignedSubmitterType</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/CommitteeMember.htm">CommitteeMember</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/CriterionEvaluated.htm">CriterionEvaluated</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/CriterionOption.htm">CriterionOption</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/CriterionType.htm">CriterionType</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/DisplayCriterionType.htm">DisplayCriterionType</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/DisplayEvaluations.htm">DisplayEvaluations</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/DssCallEvaluation.htm">DssCallEvaluation</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/DssCriterion.htm">DssCriterion</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/DssEvaluationType.htm">DssEvaluationType</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/DssRankingGroup.htm">DssRankingGroup</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/DssRankingGroupItem.htm">DssRankingGroupItem</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/dtoAssignSubmissionWithNoEvaluationtStep.htm">dtoAssignSubmissionWithNoEvaluationtStep</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/dtoBaseCommittee.htm">dtoBaseCommittee</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/dtoBaseCommitteeMember.htm">dtoBaseCommitteeMember</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/dtoBaseEvaluation.htm">dtoBaseEvaluation</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/dtoBaseEvaluatorStatistics.htm">dtoBaseEvaluatorStatistics</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/dtoBaseSummaryItem.htm">dtoBaseSummaryItem</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/dtoBasicComitteeEvaluatorItem.htm">dtoBasicComitteeEvaluatorItem</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/dtoBasicCommitteeItem.htm">dtoBasicCommitteeItem</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/dtoBasicSubmissionCommitteeItem.htm">dtoBasicSubmissionCommitteeItem</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/dtoBasicSubmissionItem.htm">dtoBasicSubmissionItem</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/dtoComitteeEvaluatorItem.htm">dtoComitteeEvaluatorItem</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/dtoCommittee.htm">dtoCommittee</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/dtoCommitteeAssignment.htm">dtoCommitteeAssignment</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/dtoCommitteeDisplayItem.htm">dtoCommitteeDisplayItem</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/dtoCommitteeEvaluation.htm">dtoCommitteeEvaluation</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/dtoCommitteeEvaluationInfo.htm">dtoCommitteeEvaluationInfo</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/dtoCommitteeEvaluationsDisplayItem.htm">dtoCommitteeEvaluationsDisplayItem</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/dtoCommitteeEvaluationsInfo.htm">dtoCommitteeEvaluationsInfo</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/dtoCommitteeEvaluatorEvaluationDisplayItem.htm">dtoCommitteeEvaluatorEvaluationDisplayItem</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/dtoCommitteeEvaluators.htm">dtoCommitteeEvaluators</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/dtoCommitteeMember.htm">dtoCommitteeMember</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/dtoCommitteePartialAssignment.htm">dtoCommitteePartialAssignment</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/dtoCommitteesSummaryItem.htm">dtoCommitteesSummaryItem</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/dtoCommitteeSummaryItem.htm">dtoCommitteeSummaryItem</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/dtoCriterion.htm">dtoCriterion</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/dtoCriterionEvaluated.htm">dtoCriterionEvaluated</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/dtoCriterionEvaluatedDisplayItem.htm">dtoCriterionEvaluatedDisplayItem</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/dtoCriterionForEvaluation.htm">dtoCriterionForEvaluation</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/dtoCriterionOption.htm">dtoCriterionOption</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/dtoCriterionSummaryItem.htm">dtoCriterionSummaryItem</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/dtoCriterionValueSummaryItem.htm">dtoCriterionValueSummaryItem</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/dtoDssEvaluationResultItem.htm">dtoDssEvaluationResultItem</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/dtoDssRating.htm">dtoDssRating</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/dtoEvaluation.htm">dtoEvaluation</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/dtoEvaluationCommitteeStep.htm">dtoEvaluationCommitteeStep</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/dtoEvaluationDisplayItem.htm">dtoEvaluationDisplayItem</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/dtoEvaluationEvaluatorsStep.htm">dtoEvaluationEvaluatorsStep</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/dtoEvaluationMultipleAssignmentStep.htm">dtoEvaluationMultipleAssignmentStep</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/dtoEvaluationsFilters.htm">dtoEvaluationsFilters</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/dtoEvaluationSingleAssignmentStep.htm">dtoEvaluationSingleAssignmentStep</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/dtoEvaluationsManageStep.htm">dtoEvaluationsManageStep</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/dtoEvaluationStep.htm">dtoEvaluationStep</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/dtoEvaluationSummaryItem.htm">dtoEvaluationSummaryItem</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/dtoEvaluationViewEvaluatorsStep.htm">dtoEvaluationViewEvaluatorsStep</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/dtoEvaluatorCommitteeStatistic.htm">dtoEvaluatorCommitteeStatistic</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/dtoEvaluatorDisplayItem.htm">dtoEvaluatorDisplayItem</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/dtoSelectEvaluationItem.htm">dtoSelectEvaluationItem</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/dtoSubmissionAssignment.htm">dtoSubmissionAssignment</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/dtoSubmissionCommitteeItem.htm">dtoSubmissionCommitteeItem</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/dtoSubmissionMultipleAssignment.htm">dtoSubmissionMultipleAssignment</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/EditingErrors.htm">EditingErrors</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/Evaluation.htm">Evaluation</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/EvaluationCommittee.htm">EvaluationCommittee</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/EvaluationEditorErrors.htm">EvaluationEditorErrors</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/EvaluationFilterStatus.htm">EvaluationFilterStatus</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/EvaluationStatus.htm">EvaluationStatus</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/EvaluationTranslations.htm" class="current">EvaluationTranslations</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/ExportData.htm">ExportData</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/ItemsToExport.htm">ItemsToExport</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/MembershipStatus.htm">MembershipStatus</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/NumericRangeCriterion.htm">NumericRangeCriterion</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/StringRangeCriterion.htm">StringRangeCriterion</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/SummaryType.htm">SummaryType</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/TextualCriterion.htm">TextualCriterion</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/WizardEvaluationStep.htm">WizardEvaluationStep</a>
+        </li>
+		</ul>
+	</div>
+</nav>
+	<article>
+    <header>
+		<p class="class"><strong>Type</strong> EvaluationTranslations</p>
+	</header>
+	<section>
+		<header>
+		<p><strong>Namespace</strong> lm.Comol.Modules.CallForPapers.Domain.Evaluation</p>
+		<p><strong>Parent</strong> <span title="System.Enum">Enum</span></p>
+		</header>
+    <div class="sub-header">
+		
+		
+		
+		
+			<h3 class="section">Fields</h3>
+			<ul>
+				<li><a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/EvaluationTranslations.htm#value__">value__</a></li>
+				<li><a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/EvaluationTranslations.htm#None">None</a></li>
+				<li><a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/EvaluationTranslations.htm#CallTitle">CallTitle</a></li>
+				<li><a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/EvaluationTranslations.htm#CallTitleAndEdition">CallTitleAndEdition</a></li>
+				<li><a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/EvaluationTranslations.htm#PrintInfo">PrintInfo</a></li>
+				<li><a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/EvaluationTranslations.htm#CommitteeName">CommitteeName</a></li>
+				<li><a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/EvaluationTranslations.htm#AnonymousUser">AnonymousUser</a></li>
+				<li><a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/EvaluationTranslations.htm#CellTitleSubmissionOwner">CellTitleSubmissionOwner</a></li>
+				<li><a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/EvaluationTranslations.htm#CellTitleSubmitterType">CellTitleSubmitterType</a></li>
+				<li><a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/EvaluationTranslations.htm#CellTitleSum">CellTitleSum</a></li>
+				<li><a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/EvaluationTranslations.htm#CellTitleEvaluationStatus">CellTitleEvaluationStatus</a></li>
+				<li><a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/EvaluationTranslations.htm#CellTitleCriterion">CellTitleCriterion</a></li>
+				<li><a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/EvaluationTranslations.htm#CellTitleCriterionComment">CellTitleCriterionComment</a></li>
+				<li><a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/EvaluationTranslations.htm#CellTitleEvaluationComment">CellTitleEvaluationComment</a></li>
+				<li><a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/EvaluationTranslations.htm#CommunityNameTitle">CommunityNameTitle</a></li>
+				<li><a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/EvaluationTranslations.htm#PortalCommunityName">PortalCommunityName</a></li>
+				<li><a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/EvaluationTranslations.htm#ItemMandatory">ItemMandatory</a></li>
+				<li><a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/EvaluationTranslations.htm#EmptyItem">EmptyItem</a></li>
+				<li><a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/EvaluationTranslations.htm#MinOption">MinOption</a></li>
+				<li><a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/EvaluationTranslations.htm#MaxOption">MaxOption</a></li>
+				<li><a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/EvaluationTranslations.htm#MinOptionMaxOption">MinOptionMaxOption</a></li>
+				<li><a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/EvaluationTranslations.htm#MinMaxValue">MinMaxValue</a></li>
+				<li><a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/EvaluationTranslations.htm#CellTitleCriterionRangeValue">CellTitleCriterionRangeValue</a></li>
+				<li><a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/EvaluationTranslations.htm#CellTitleEvaluationsCount">CellTitleEvaluationsCount</a></li>
+				<li><a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/EvaluationTranslations.htm#CellTitleEvaluationsEvaluated">CellTitleEvaluationsEvaluated</a></li>
+				<li><a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/EvaluationTranslations.htm#CellTitleEvaluationsEvaluating">CellTitleEvaluationsEvaluating</a></li>
+				<li><a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/EvaluationTranslations.htm#CellTitleEvaluationsInvalidated">CellTitleEvaluationsInvalidated</a></li>
+				<li><a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/EvaluationTranslations.htm#CellTitleEvaluationsEvaluatorReplacement">CellTitleEvaluationsEvaluatorReplacement</a></li>
+				<li><a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/EvaluationTranslations.htm#CellTitleEvaluationsNotStarted">CellTitleEvaluationsNotStarted</a></li>
+				<li><a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/EvaluationTranslations.htm#CellTitleCommitteeName">CellTitleCommitteeName</a></li>
+				<li><a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/EvaluationTranslations.htm#EvaluationsSummaryTitle">EvaluationsSummaryTitle</a></li>
+				<li><a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/EvaluationTranslations.htm#CellTitleCommitteeSum">CellTitleCommitteeSum</a></li>
+				<li><a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/EvaluationTranslations.htm#CellTitleEvaluator">CellTitleEvaluator</a></li>
+				<li><a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/EvaluationTranslations.htm#CellTitleCommittee">CellTitleCommittee</a></li>
+				<li><a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/EvaluationTranslations.htm#CellTitleGenericCriterion">CellTitleGenericCriterion</a></li>
+				<li><a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/EvaluationTranslations.htm#CellTitleGenericCriterionComment">CellTitleGenericCriterionComment</a></li>
+				<li><a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/EvaluationTranslations.htm#CellTitleGenericCriterionRangeValue">CellTitleGenericCriterionRangeValue</a></li>
+				<li><a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/EvaluationTranslations.htm#CellTitleGenericCriterionUserValue">CellTitleGenericCriterionUserValue</a></li>
+				<li><a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/EvaluationTranslations.htm#UnknownUser">UnknownUser</a></li>
+				<li><a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/EvaluationTranslations.htm#SubmissionInfo">SubmissionInfo</a></li>
+				<li><a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/EvaluationTranslations.htm#SubmittedByOther">SubmittedByOther</a></li>
+				<li><a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/EvaluationTranslations.htm#SubmittedOn">SubmittedOn</a></li>
+				<li><a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/EvaluationTranslations.htm#CellTitleDss">CellTitleDss</a></li>
+				<li><a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/EvaluationTranslations.htm#CellTitleAverage">CellTitleAverage</a></li>
+				<li><a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/EvaluationTranslations.htm#CellTitleCriterionFuzzyValue">CellTitleCriterionFuzzyValue</a></li>
+				<li><a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/EvaluationTranslations.htm#CellTitleDssFuzzyValue">CellTitleDssFuzzyValue</a></li>
+				<li><a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/EvaluationTranslations.htm#CellTitleDssEvaluation">CellTitleDssEvaluation</a></li>
+				<li><a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/EvaluationTranslations.htm#CellTitleDssEvaluationFuzzyValue">CellTitleDssEvaluationFuzzyValue</a></li>
+			</ul>
+	</div>
+	
+	
+	
+  <h3 class="section">Public fields</h3>
+
+  <div id="value__" class="method">
+    <h4>int <strong>value__</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <span title="System.int">int</span></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="None" class="method">
+    <h4>EvaluationTranslations <strong>None</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/EvaluationTranslations.htm">EvaluationTranslations</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="CallTitle" class="method">
+    <h4>EvaluationTranslations <strong>CallTitle</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/EvaluationTranslations.htm">EvaluationTranslations</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="CallTitleAndEdition" class="method">
+    <h4>EvaluationTranslations <strong>CallTitleAndEdition</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/EvaluationTranslations.htm">EvaluationTranslations</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="PrintInfo" class="method">
+    <h4>EvaluationTranslations <strong>PrintInfo</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/EvaluationTranslations.htm">EvaluationTranslations</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="CommitteeName" class="method">
+    <h4>EvaluationTranslations <strong>CommitteeName</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/EvaluationTranslations.htm">EvaluationTranslations</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="AnonymousUser" class="method">
+    <h4>EvaluationTranslations <strong>AnonymousUser</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/EvaluationTranslations.htm">EvaluationTranslations</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="CellTitleSubmissionOwner" class="method">
+    <h4>EvaluationTranslations <strong>CellTitleSubmissionOwner</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/EvaluationTranslations.htm">EvaluationTranslations</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="CellTitleSubmitterType" class="method">
+    <h4>EvaluationTranslations <strong>CellTitleSubmitterType</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/EvaluationTranslations.htm">EvaluationTranslations</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="CellTitleSum" class="method">
+    <h4>EvaluationTranslations <strong>CellTitleSum</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/EvaluationTranslations.htm">EvaluationTranslations</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="CellTitleEvaluationStatus" class="method">
+    <h4>EvaluationTranslations <strong>CellTitleEvaluationStatus</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/EvaluationTranslations.htm">EvaluationTranslations</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="CellTitleCriterion" class="method">
+    <h4>EvaluationTranslations <strong>CellTitleCriterion</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/EvaluationTranslations.htm">EvaluationTranslations</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="CellTitleCriterionComment" class="method">
+    <h4>EvaluationTranslations <strong>CellTitleCriterionComment</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/EvaluationTranslations.htm">EvaluationTranslations</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="CellTitleEvaluationComment" class="method">
+    <h4>EvaluationTranslations <strong>CellTitleEvaluationComment</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/EvaluationTranslations.htm">EvaluationTranslations</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="CommunityNameTitle" class="method">
+    <h4>EvaluationTranslations <strong>CommunityNameTitle</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/EvaluationTranslations.htm">EvaluationTranslations</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="PortalCommunityName" class="method">
+    <h4>EvaluationTranslations <strong>PortalCommunityName</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/EvaluationTranslations.htm">EvaluationTranslations</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="ItemMandatory" class="method">
+    <h4>EvaluationTranslations <strong>ItemMandatory</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/EvaluationTranslations.htm">EvaluationTranslations</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="EmptyItem" class="method">
+    <h4>EvaluationTranslations <strong>EmptyItem</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/EvaluationTranslations.htm">EvaluationTranslations</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="MinOption" class="method">
+    <h4>EvaluationTranslations <strong>MinOption</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/EvaluationTranslations.htm">EvaluationTranslations</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="MaxOption" class="method">
+    <h4>EvaluationTranslations <strong>MaxOption</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/EvaluationTranslations.htm">EvaluationTranslations</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="MinOptionMaxOption" class="method">
+    <h4>EvaluationTranslations <strong>MinOptionMaxOption</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/EvaluationTranslations.htm">EvaluationTranslations</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="MinMaxValue" class="method">
+    <h4>EvaluationTranslations <strong>MinMaxValue</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/EvaluationTranslations.htm">EvaluationTranslations</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="CellTitleCriterionRangeValue" class="method">
+    <h4>EvaluationTranslations <strong>CellTitleCriterionRangeValue</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/EvaluationTranslations.htm">EvaluationTranslations</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="CellTitleEvaluationsCount" class="method">
+    <h4>EvaluationTranslations <strong>CellTitleEvaluationsCount</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/EvaluationTranslations.htm">EvaluationTranslations</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="CellTitleEvaluationsEvaluated" class="method">
+    <h4>EvaluationTranslations <strong>CellTitleEvaluationsEvaluated</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/EvaluationTranslations.htm">EvaluationTranslations</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="CellTitleEvaluationsEvaluating" class="method">
+    <h4>EvaluationTranslations <strong>CellTitleEvaluationsEvaluating</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/EvaluationTranslations.htm">EvaluationTranslations</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="CellTitleEvaluationsInvalidated" class="method">
+    <h4>EvaluationTranslations <strong>CellTitleEvaluationsInvalidated</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/EvaluationTranslations.htm">EvaluationTranslations</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="CellTitleEvaluationsEvaluatorReplacement" class="method">
+    <h4>EvaluationTranslations <strong>CellTitleEvaluationsEvaluatorReplacement</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/EvaluationTranslations.htm">EvaluationTranslations</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="CellTitleEvaluationsNotStarted" class="method">
+    <h4>EvaluationTranslations <strong>CellTitleEvaluationsNotStarted</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/EvaluationTranslations.htm">EvaluationTranslations</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="CellTitleCommitteeName" class="method">
+    <h4>EvaluationTranslations <strong>CellTitleCommitteeName</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/EvaluationTranslations.htm">EvaluationTranslations</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="EvaluationsSummaryTitle" class="method">
+    <h4>EvaluationTranslations <strong>EvaluationsSummaryTitle</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/EvaluationTranslations.htm">EvaluationTranslations</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="CellTitleCommitteeSum" class="method">
+    <h4>EvaluationTranslations <strong>CellTitleCommitteeSum</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/EvaluationTranslations.htm">EvaluationTranslations</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="CellTitleEvaluator" class="method">
+    <h4>EvaluationTranslations <strong>CellTitleEvaluator</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/EvaluationTranslations.htm">EvaluationTranslations</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="CellTitleCommittee" class="method">
+    <h4>EvaluationTranslations <strong>CellTitleCommittee</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/EvaluationTranslations.htm">EvaluationTranslations</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="CellTitleGenericCriterion" class="method">
+    <h4>EvaluationTranslations <strong>CellTitleGenericCriterion</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/EvaluationTranslations.htm">EvaluationTranslations</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="CellTitleGenericCriterionComment" class="method">
+    <h4>EvaluationTranslations <strong>CellTitleGenericCriterionComment</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/EvaluationTranslations.htm">EvaluationTranslations</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="CellTitleGenericCriterionRangeValue" class="method">
+    <h4>EvaluationTranslations <strong>CellTitleGenericCriterionRangeValue</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/EvaluationTranslations.htm">EvaluationTranslations</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="CellTitleGenericCriterionUserValue" class="method">
+    <h4>EvaluationTranslations <strong>CellTitleGenericCriterionUserValue</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/EvaluationTranslations.htm">EvaluationTranslations</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="UnknownUser" class="method">
+    <h4>EvaluationTranslations <strong>UnknownUser</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/EvaluationTranslations.htm">EvaluationTranslations</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="SubmissionInfo" class="method">
+    <h4>EvaluationTranslations <strong>SubmissionInfo</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/EvaluationTranslations.htm">EvaluationTranslations</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="SubmittedByOther" class="method">
+    <h4>EvaluationTranslations <strong>SubmittedByOther</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/EvaluationTranslations.htm">EvaluationTranslations</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="SubmittedOn" class="method">
+    <h4>EvaluationTranslations <strong>SubmittedOn</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/EvaluationTranslations.htm">EvaluationTranslations</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="CellTitleDss" class="method">
+    <h4>EvaluationTranslations <strong>CellTitleDss</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/EvaluationTranslations.htm">EvaluationTranslations</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="CellTitleAverage" class="method">
+    <h4>EvaluationTranslations <strong>CellTitleAverage</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/EvaluationTranslations.htm">EvaluationTranslations</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="CellTitleCriterionFuzzyValue" class="method">
+    <h4>EvaluationTranslations <strong>CellTitleCriterionFuzzyValue</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/EvaluationTranslations.htm">EvaluationTranslations</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="CellTitleDssFuzzyValue" class="method">
+    <h4>EvaluationTranslations <strong>CellTitleDssFuzzyValue</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/EvaluationTranslations.htm">EvaluationTranslations</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="CellTitleDssEvaluation" class="method">
+    <h4>EvaluationTranslations <strong>CellTitleDssEvaluation</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/EvaluationTranslations.htm">EvaluationTranslations</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="CellTitleDssEvaluationFuzzyValue" class="method">
+    <h4>EvaluationTranslations <strong>CellTitleDssEvaluationFuzzyValue</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/EvaluationTranslations.htm">EvaluationTranslations</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+	</section>
+	</article><footer>
+	<span id="version">Built from v1.0.0.0 of lm.Comol.Modules.CallForPapers</span>
+	<span id="docu-link">
+		Generated by <a href="http://docu.jagregory.com">docu</a>
+	</span>
+</footer>
+  </body>
+</html>

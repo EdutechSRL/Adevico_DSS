@@ -1,0 +1,184 @@
+.Windows7 {
+  /* reWrapper */
+  /* common settings for .reModule, .reEditorModes and .reWrapper */
+  /* end of module */
+  /*Toolbar sprites*/
+  /* .reTool_text */
+  /* these settings will not be included in the common CSS file of RadEditor */
+  /* end of reTool_text */
+  /* reDropdown */
+  /* end of reDropdown */
+  /* InsertTable itself is a kind of tool strip, so it must be styled as a toolstrip */
+  /* end of context menu and toolstrip */
+  /* spinbox */
+  /* end of spinbox */
+  /* DOM inspector */
+  /* end of DOM inspector */
+  /* end of expanded dropdowns */
+  /* color picker */
+  /* end of color picker */
+  /* ajax spellchecker */
+  /* ajax spellchecker */
+  /* custom links */
+  /* end of custom links */
+  /* insert table dropdown */
+  /* end of insert table dropdown */
+  /* Popup Comments */
+  /* Commnet popups */
+  /* Inline Editor */
+  /* Right to Left */ }
+  .Windows7.RadEditor, .Windows7.RadEditor .reModule, .Windows7.RadEditor .reEditorModes, .Windows7.RadEditor .reWrapper {
+    background-color: #f1f5fb; }
+  .Windows7.reWrapper, .Windows7.RadEditor .reContentCell, .Windows7.reColorPicker, .Windows7.reInsertTable, .Windows7.reCustomLinks a:hover {
+    border: 1px solid #aabfd6;
+    background-color: #f1f5fb; }
+  .Windows7 .reEmptyMessage {
+    color: #a7a7a7; }
+  .Windows7.RadEditor .reContentCell {
+    background-color: #ffffff; }
+  .Windows7.reDropDownBody {
+    border: 1px solid #aabfd6;
+    background-color: #f1f5fb; }
+  .Windows7.reDropDownBody table {
+    background: transparent; }
+  .Windows7.RadEditor .reModule {
+    border-top: 1px solid #aabfd6; }
+  .Windows7.reCustomLinks a, .Windows7.reCustomLinks a:link, .Windows7.reCustomLinks a:visited {
+    border: 1px solid #ffffff;
+    /* should be the same as the background of the dropdown */
+    color: #000000 !important; }
+  .Windows7.reCustomLinks a:hover {
+    background-color: #e7ecf5;
+    border: 1px solid #c2cedb; }
+  .Windows7 .reToolbar li, .Windows7 .reSpinBox a, .Windows7.reToolbar .reSeparator, .Windows7.reToolbar .reGrip, .Windows7 .reDialog .reTool, .Windows7 .reModule .reTool, .Windows7 .reDialog .reTool:hover, .Windows7 .reToolbar .reTool:hover, .Windows7 .reModule .reTool:hover, .Windows7 .reToolbar .reTool.reTool_selected, .Windows7 .reToolbar .reTool.reTool_selected:hover, .Windows7 .reToolbar .reTool_text:hover, .Windows7 .reToolbar .reTool_text.reTool_selected, .Windows7 .reToolbar .reTool_text.reTool_selected:hover, .Windows7 .reTool .split_arrow, .Windows7 .reSplitButton.reTool_text .split_arrow, .Windows7 .reToolbar .reTool_text .split_arrow, .Windows7 .reDialog .reTool.reSplitButton, .Windows7 .reModule .reTool.reSplitButton, .Windows7 .reDropdown, .Windows7 .reTool_disabled.reDropdown:hover, .Windows7 .reResizeCell div, .Windows7.reInsertTable .reToolbar li .reTool:hover, .Windows7.RadEditor.reRtl .reDropdown:hover {
+    background-image: url('Editor/ToolBarSprites.gif'); }
+  .Windows7.RadEditor .reTlbVertical li, .Windows7 .reDropdown:hover, .Windows7.RadEditor .reTlbVertical .reToolbar.Default .reGrip, .Windows7.RadEditor.reTlbVertical .reToolbar.Default .reSeparator, .Windows7 .reTlbVertical .reTool:hover, .Windows7 .reTlbVertical .reTool_text.reSplitButton:hover, .Windows7 .reTlbVertical .reSplitButton:hover, .Windows7 .reTlbVertical .reTool_text:hover, .Windows7 .reTlbVertical .reTool.reTool_selected, .Windows7 .reTlbVertical .reTool_text.reTool_selected, .Windows7 .reTlbVertical .reTool_text.reTool_selected:hover, .Windows7.reDropDownBody .reTlbVertical ul li a:hover, .Windows7.reDropDownBody .reTlbVertical .reToolbar, .Windows7 .reMode_selected, .Windows7.reDropDownBody.reInsertTable div.reTlbVertical a.reTool_text:hover {
+    background-image: url('Editor/ToolbarVerticalSprites.gif'); }
+  .Windows7 .reToolbar li {
+    color: #000000; }
+  .Windows7 .reToolbar .reTool_text:hover, .Windows7 .reToolbar .reTool_text.reTool_selected, .Windows7 .reToolbar .reTool_text.reTool_selected:hover {
+    border-left: 1px solid #c2dbfb;
+    border-right: 1px solid #c2dbfb; }
+  .Windows7 .reToolbar .reTool_text.reTool_disabled, .Windows7 .reToolbar .reTool_text.reTool_disabled:hover {
+    margin-left: 0;
+    margin-right: 0;
+    border: 0; }
+  .Windows7 .reDropdown:link, .Windows7 .reDropdown:visited {
+    color: #000000 !important; }
+  .Windows7 .reDropdown, .Windows7 .reTool_disabled.reDropdown:hover {
+    border: 1px solid #b8cbde;
+    background-color: #ffffff; }
+  .Windows7 .reDropdown:hover {
+    border-color: #c1dbfc;
+    color: #000000; }
+  .Windows7.reDropDownBody .reTlbVertical .reToolbar {
+    background-color: #ffffff; }
+  .Windows7 table.reSpinBox, .Windows7.RadEditor input {
+    border-color: #b8cbde;
+    background-color: #ffffff; }
+  .Windows7 table.reSpinBox:hover, .Windows7.RadEditor input:hover {
+    border: 1px solid #c2dbfb; }
+  .Windows7 .reModule_domlink_selected, .Windows7 .reModule_domlink {
+    color: #000000; }
+  .Windows7.reDropDownBody .reItemOver {
+    background: #c3dcfc;
+    color: #1e395b; }
+  .Windows7.reColorPicker table div, .Windows7.reColorPicker span {
+    border: 1px solid #aabfd6; }
+  .Windows7.reColorPicker table td.reItemOver div {
+    border-color: #000000; }
+  .Windows7 .reAjaxspell_button {
+    border: 1px solid #c2cedb;
+    background-color: #dde8f6;
+    color: #1e395b; }
+  .Windows7 .reAjaxSpellCheckSeparator {
+    background-color: #ffffff; }
+  .Windows7.reCustomLinks, .Windows7.reCustomLinks ul {
+    color: #000000; }
+  .Windows7.reCustomLinks a {
+    background: none transparent;
+    color: #000000;
+    cursor: default !important; }
+  .Windows7.reCustomLinks a:hover {
+    color: #ffffff; }
+  .Windows7.reInsertTable table {
+    background-color: #ffffff; }
+  .Windows7.reInsertTable table td {
+    border: 1px solid #b8cbde;
+    background-color: #ffffff; }
+  .Windows7.reInsertTable table .reItemOver {
+    border: 1px solid #c1dbfc;
+    background-color: #eef6ff; }
+  .Windows7.reInsertTable .reTlbVertical ul {
+    background-color: #ffffff; }
+  .Windows7.reDropDownBody.reInsertTable div.reTlbVertical a.reTool_text, .Windows7.reDropDownBody.reInsertTable div.reTlbVertical a.reTool_text:link, .Windows7.reDropDownBody.reInsertTable div.reTlbVertical a.reTool_text:visited {
+    color: #000000 !important;
+    background: transparent none; }
+  .Windows7 .reCommentEdit, .Windows7 .reCommentTextArea, .Windows7 .reCommentView, .Windows7 .reCommentInfoPanel {
+    border-color: transparent;
+    background-color: #f1f5fb; }
+  .Windows7 .reCommentTitle, .Windows7 .reCommentInfoPanel {
+    color: #000000; }
+  .Windows7 .reCommentTextArea {
+    border-color: #aabfd6;
+    background-color: #f1f5fb; }
+  .Windows7.RadEditor .reCommentButton, .Windows7 .rePopupButtonContainer .rePopupButton {
+    border-color: #c2cedb;
+    color: #1e395b;
+    /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+    background: linear-gradient(#f4f8fa 25%, #e9f2fb 50%, #dde7f5 75%, #dde8f6 100%);
+    /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f4f8fa', endColorstr='#dde8f6',GradientType=0 );
+    /* IE6-8 */ }
+  .Windows7.RadEditor .reCommentButton:hover, .Windows7 .rePopupButtonContainer .rePopupButton:hover {
+    border-color: #c2dbfb;
+    color: #1e395b;
+    /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+    background: linear-gradient(#f9f9fc 25%, #f7f8fb 50%, #edf2f9 75%, #f9f9fc 100%);
+    /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9f9fc', endColorstr='#f9f9fc',GradientType=0 );
+    /* IE6-8 */ }
+  .Windows7.RadEditor .reCommentButton:active, .Windows7 .rePopupButtonContainer .rePopupButton:active {
+    color: #1e395b;
+    border-color: #9bc9ff;
+    /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+    background: linear-gradient(#acd1fe 25%, #e9f2fb 50%, #dde7f5 75%, #acd1fe 100%);
+    /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#acd1fe', endColorstr='#acd1fe',GradientType=0 );
+    /* IE6-8 */ }
+  .Windows7.rePopupContainer {
+    border-color: #b8cbde;
+    background-color: #f1f5fb; }
+  .Windows7.rePopupContainer .rePopupTitle {
+    color: #1e395b;
+    border-color: #a5b3c5;
+    /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+    background: linear-gradient(#e9eef5 0%, #f1f5fb 100%);
+    /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e9eef5', endColorstr='#f1f5fb',GradientType=0 );
+    /* IE6-8 */ }
+  .Windows7.reWrapper.reInlineEditor:hover {
+    border-color: #b8cbde; }
+  .Windows7.reWrapper.reInlineEditorSelected, .Windows7.reWrapper.reInlineEditorSelected:hover {
+    border-color: #9bc9ff; }
+  .Windows7.RadEditor.reRtl .reTool .split_arrow:hover {
+    border-right-color: #c2dbfb; }
+  .Windows7.RadEditor.reRtl .reDropdown:hover {
+    background-color: #eef6ff; }
+
+/* the rule below styles RadWindow's content cell, which is used in the floating and show on focus toolbar modes */
+.RadWindow.RadWindow_Windows7.reToolbarWindow td.rwWindowContent, .RadWindow.RadWindow_Windows7.reToolbarWindow div.rwContent {
+  background-color: #f1f5fb; }
+
+.RadWindow_Windows7 .reInsertTableLightWrapper .lightTable {
+  border-color: #aabfd6; }
+
+.Windows7 .reTool.reSplitButton:hover {
+  background-image: url('Editor/ToolBarSprites.gif'); }
+
+/* reTool */
+.reTool span, .Windows7.reInsertTable .reTlbVertical ul .reTool_text span, .reToolbar .reTool_text span {
+  background-image: url('../Common/CommandSpritesLight.png'); }
+
+.reTool .split_arrow:hover {
+  border-left-color: #c2dbfb; }

@@ -1,0 +1,105 @@
+.groupedselector {
+    position: relative;
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    *z-index: 99999;
+}
+
+div.selectorinner {
+	
+}
+
+.groupedselector .selectorgroup {
+    text-align: right;
+    display: inline-block;
+    *display: inline;
+    *zoom:1;
+}
+
+.groupedselector .selectorgroup .selectorlabel
+{
+    cursor: pointer;
+}
+
+.groupedselector .selectorgroup .selectoricon
+{
+    display: inline-block;
+    *display:inline;
+    *zoom:1;
+
+    background: url(arrow-down.png) no-repeat center;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+.groupedselector .selectormenu
+{
+    display:none;
+}
+
+.groupedselector.clicked .selectormenu{
+    display:block;
+    border:1px solid #ccc;
+
+    width: 75px;
+    margin-left: 20px;
+
+    background-color: #fff;
+    position: absolute;
+    z-index: 9000;
+}
+
+.groupedselector .selectormenu .selectorinner
+{
+    text-align: right;
+}
+
+.groupedselector .selectormenu .selectorinner .selectoritems
+{
+
+}
+
+.groupedselector .selectormenu .selectorinner .selectoritems .selectoritem
+{
+    cursor: pointer;
+}
+
+.groupedselector .selectormenu .selectorinner .selectoritems .selectoritem.first
+{
+
+}
+
+.groupedselector .selectormenu .selectorinner .selectoritems .selectoritem.last
+{
+
+}
+
+.groupedselector .selectormenu .selectorinner .selectoritems .selectoritem.active
+{
+
+}
+
+.groupedselector .selectormenu .selectorinner .selectoritems .selectoritem .activeicon
+{
+    display: inline-block;
+    *display:inline;
+    *zoom:1;
+
+    width: 10px;
+    background: none;
+    vertical-align: middle;
+}
+
+.groupedselector .selectormenu .selectorinner .selectoritems .selectoritem.active .activeicon
+{
+
+    display: inline-block;
+    *display:inline;
+    *zoom:1;
+
+    background: url(star.png) no-repeat center;
+    width: 10px;
+
+    vertical-align: top;
+}

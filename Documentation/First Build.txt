@@ -1,0 +1,58 @@
+
+						PRIMA COMPILAZIONE
+
+
+Il progetto corrente non compila senza i necessari controlli Telerik.
+
+Per la loro inclusione è possibile utilizzare i Tool Telerik,
+oppure aggiungere a:
+
+9-AdevicoMIT_Library
+	lm.Comol.MitLibrary
+		\External\Telerik
+
+Le seguenti librerie:
+
+RadEditor.Net2.dll
+RadTreeView.Net2.dll
+
+Telerik.Web.Spreadsheet.dll
+Telerik.Web.UI.dll
+Telerik.Web.UI.Skins.dll
+Telerik.Windows.Documents.Core.dll
+Telerik.Windows.Documents.Flow.dll
+Telerik.Windows.Documents.Spreadsheet.dll
+Telerik.Windows.Documents.Spreadsheet.FormatProviders.OpenXml.dll
+Telerik.Windows.Zip.dll
+
+
+						TEST
+
+E' necessario correggere:
+- stringhe di connessione ai database
+- url service
+- cartelle
+
+nei file di configurazione:
+
+1-WebApplication
+	AdevicoWeb
+		\web.config
+		\hibernate.cfg.xml.config
+		\Risorse_XML\Config\Config_Sviluppo.config
+		\Risorse_XML\Config\[LANG]\Config_Sviluppo.xml
+
+4-Services
+	\WebService\
+		WCF_CoreSErvices
+			\web.config
+			\hibernate.cfg.xml.config
+
+5-ExtService
+	Adevico.WebSNMTP
+		\web.config
+
+
+					ULTERIORI INFORMAZIONI
+
+Per ulteriori informazioni, fare riferimento alla manualistica.

@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Resource xmlns="urn:ComolTranslation">
+   <item name="LBemptyMessage.text">Sessione di lavoro scaduta, impossibile continuare</item>
+  <item name="LBsourceFile_t.text">Seleziona il file:</item>
+  <item name="BTNupload.text" disambiguation="carica=upload">Carica</item>
+  <item name="BTNupload.ToolTip" disambiguation="carica=upload" mustcontains="csv">Carica il file csv</item>
+  <item name="LBuploadedFile_t.text">File csv caricato:</item>
+  <item name="LBuploadedFile.text" placeholder="true" mustcontains="{0}|{1}|{2}">{0} il {1} alle {2}.</item>
+  <item name="BTNremoveFile.text"></item>
+  <item name="BTNremoveFile.ToolTip">Cancella il file</item>
+  <item name="LBfirstRowColumnNames_t.text">Nome colonne nella prima riga:</item>
+  <item name="CBXfirstRowColumnNames.text">Si</item>
+  <item name="LBcolumnDelimiter_t.text">Delimitatore di colonna:</item>
+  <item name="LBrowDelimiter_t.text">Delimitatore di riga:</item>
+  <item name="LBrowToSkip_t.text">Righe da ignorare:</item>
+  
+  <item name="TextDelimiter.None">Nessuno</item>
+  <item name="TextDelimiter.Semicolon">Punto e virgola {;}</item>
+  <item name="TextDelimiter.Colon">Due punti {:}</item>
+  <item name="TextDelimiter.Comma">Virgola {,}</item>
+  <item name="TextDelimiter.Tab" placeholder="true" mustcontains="{t}">Tabulazione {t}</item>
+  <item name="TextDelimiter.VerticalBar" mustcontains="{|}">Barra verticale {|}</item>
+  <item name="TextDelimiter.CrLf" placeholder="true" mustcontains="{CR}{LF}">{CR}{LF}</item>
+  <item name="TextDelimiter.Cr" placeholder="true" mustcontains="{CR}">{CR}</item>
+  <item name="TextDelimiter.Lf" placeholder="true" mustcontains="{LF}">{LF}</item>
+  <item name="BTNpreviewCSV.text">Anteprima</item>
+  <item name="BTNpreviewCSV.ToolTip">Anteprima</item>
+  <item name="Column" placeholder="true" mustcontains="{0}">Colonna {0}</item>
+
+  <item name="LBsourceColumn.text">Colonna sorgente</item>
+  <item name="LBdestinationColumn.text">Campo utente invitato</item>
+  <item name="ImportedUserColumn.skip">--    Ignora    --</item>
+  <item name="ImportedUserColumn.name">Nome</item>
+  <item name="ImportedUserColumn.surname">Cognome</item>
+  <item name="ImportedUserColumn.mail">Mail</item>
+  <item name="ImportedUserColumn.description">Descrizione</item>
+  <item name="InvalidMatch.None"></item>
+  <item name="InvalidMatch.DuplicatedItem" placeholder="true" mustcontains="{0}">Campo DUPLICATO: {0}"</item>
+  <item name="InvalidMatch.DuplicatedItems" placeholder="true" mustcontains="{0}">Campi DUPLICATI: {0}"</item>
+  <item name="InvalidMatch.IgnoredRequiredItem" placeholder="true" mustcontains="{0}">Campo RICHIESTO non specificato: {0}"</item>
+  <item name="InvalidMatch.IgnoredRequiredItems" placeholder="true" mustcontains="{0}">Campi RICHIESTI NON specificati: {0}</item>
+  <item name="InvalidMatch.IgnoredAllItems">ATTENZIONE: non si può proseguire se tutte le colonne di destinazione sono "ignorate"</item>
+  <item name="InvalidMatch.NoRequiredItems">ATTENZIONE: non si può proseguire in quanto non vi sono campi da associare</item>
+  <item name="InvalidMatch.GenericError">ATTENZIONE: non si può proseguire, verificare la corrispondenza colonne sorgente/destinazione ed eventuali duplicati</item>
+  <item name="InvalidMatch.IgnoredAlternativeRequiredItem" placeholder="true" mustcontains="{0}">Campo richiesto in alternativa: {0}</item>
+  <item name="InvalidMatch.IgnoredAlternativeRequiredItems" placeholder="true" mustcontains="{0}">Campi RICHIESTI in alternativa: {0}</item>
+  <item name="Field.InvalidMatch.None"></item>
+  <item name="Field.InvalidMatch.DuplicatedItem">Colonna duplicata</item>
+  <item name="Field.InvalidMatch.IgnoredRequiredItem">Colonna richiesta NON specificata</item>
+  <item name="Field.InvalidMatch.IgnoredAlternativeRequiredItem">Colonna alternativa richiesta NON specificata</item>
+  
+  <item name="LTselectRow_t.text" disambiguation="S=seleziona (un solo carattere)">S</item>
+  <item name="LTrowInfo_t.text" disambiguation="E=errori (un solo carattere)">E</item>
+  
+  <item name="InvalidImport.InvalidData" disambiguation="i=dato invalido (uno o due caratteri)" placeholder="true" mustcontains="[|]">[i]</item>
+  <item name="InvalidImport.SourceDuplicatedData" disambiguation="sd=dato sorgente duplicato (uno o due caratteri)" placeholder="true" mustcontains="[|]">[sd]</item>
+  <item name="InvalidImport.AlreadyExist" disambiguation="pp=dati presenti fra gli utenti invitati (uno o due caratteri)" placeholder="true" mustcontains="[|]">[pp]</item>
+  <item name="InvalidImport.InvalidData.Description" disambiguation="i=dato invalido (uno o due caratteri)" placeholder="true" mustcontains="[|]">[i] - Dato invalido"</item>
+  <item name="InvalidImport.SourceDuplicatedData.Description" disambiguation="sd=dato sorgente duplicato (uno o due caratteri)" placeholder="true" mustcontains="[|]">[sd] - Dato sorgente duplicato</item>
+  <item name="InvalidImport.AlreadyExist.Description" disambiguation="pp=dati presenti fra gli utenti invitati (uno o due caratteri)">[pp] - Dati presenti fra gli utenti invitati</item>
+</Resource>

@@ -1,0 +1,9 @@
+.RadRating_Office2007 a,
+.RadRating_Office2007 a span {
+  background-image: url('Rating/Sprite.png');
+  _background-image: url('Rating/Sprite.gif'); }
+@media print {
+  .RadRating_Office2007 a:before,
+  .RadRating_Office2007 a span:before {
+    content: url('Rating/Sprite.png'); } }
+

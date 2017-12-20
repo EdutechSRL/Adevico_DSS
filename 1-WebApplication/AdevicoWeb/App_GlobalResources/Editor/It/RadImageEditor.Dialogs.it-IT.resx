@@ -1,0 +1,456 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AddText_Color" xml:space="preserve">
+    <value>Colore</value>
+  </data>
+  <data name="AddText_ColorToolTip" xml:space="preserve">
+    <value>Il colore del testo da aggiungere</value>
+  </data>
+  <data name="AddText_CurrentColorText" xml:space="preserve">
+    <value>(Il colore corrente e' {0})</value>
+  </data>
+  <data name="AddText_FontFamily" xml:space="preserve">
+    <value>Tipo Font</value>
+  </data>
+  <data name="AddText_FontFamilyToolTip" xml:space="preserve">
+    <value>Il tipo di Font del testo da aggiungere</value>
+  </data>
+  <data name="AddText_FontSize" xml:space="preserve">
+    <value>Dimensione Font  </value>
+  </data>
+  <data name="AddText_FontSizeToolTip" xml:space="preserve">
+    <value>La dimensione del testo da aggiungere</value>
+  </data>
+  <data name="AddText_PickColorToolTip" xml:space="preserve">
+    <value>Scegli colore</value>
+  </data>
+  <data name="AddText_SampleText" xml:space="preserve">
+    <value>Insercisci testo qui...</value>
+  </data>
+  <data name="AddText_Title" xml:space="preserve">
+    <value>Inserisci testo</value>
+  </data>
+  <data name="BrightnessContrast_ApplyBtn_Text" xml:space="preserve">
+    <value>Applica</value>
+  </data>
+  <data name="BrightnessContrast_ApplyBtn_ToolTip" xml:space="preserve">
+    <value>Applica all'immagine i livelli di luminosita'/contrasto selezionati</value>
+  </data>
+  <data name="BrightnessContrast_ResetBtn_Text" xml:space="preserve">
+    <value>Resetta</value>
+  </data>
+  <data name="BrightnessContrast_ResetBtn_ToolTip" xml:space="preserve">
+    <value>Annulla le modifiche apportate finora</value>
+  </data>
+  <data name="BrightnessContrast_Title" xml:space="preserve">
+    <value>Luminosita'/Contrasto</value>
+  </data>
+  <data name="Brightness_TxtBoxToolTip" xml:space="preserve">
+    <value>Immetti un valore compreso tra -100 e 100</value>
+  </data>
+  <data name="Common_ActualSize" xml:space="preserve">
+    <value>Dimensioni attuali</value>
+  </data>
+  <data name="Common_Apply" xml:space="preserve">
+    <value>Applica</value>
+  </data>
+  <data name="Common_AppyDrawToolTip" xml:space="preserve">
+    <value>Unire le immagini al canvas principale </value>
+  </data>
+  <data name="Common_BestFit" xml:space="preserve">
+    <value>Adatta alla pagina</value>
+  </data>
+  <data name="Common_Cancel" xml:space="preserve">
+    <value>Cancella</value>
+  </data>
+  <data name="Common_ConstrainProportions" xml:space="preserve">
+    <value>Mantieni proporzioni?</value>
+  </data>
+  <data name="Common_Decrease" xml:space="preserve">
+    <value>Diminuisci</value>
+  </data>
+  <data name="Common_FileExists" xml:space="preserve">
+    <value>Esiste gia' un file con lo stesso nome di quello selezionato.</value>
+  </data>
+  <data name="Common_Height" xml:space="preserve">
+    <value>Altezza</value>
+  </data>
+  <data name="Common_Increase" xml:space="preserve">
+    <value>Aumenta</value>
+  </data>
+  <data name="Common_Insert" xml:space="preserve">
+    <value>Inserisci</value>
+  </data>
+  <data name="Common_Left" xml:space="preserve">
+    <value>Sinistra</value>
+  </data>
+  <data name="Common_MessageCannotWriteToFolder" xml:space="preserve">
+    <value>Impossibile scrivere nella cartella di destinazione!</value>
+  </data>
+  <data name="Common_NoPermissionsToDeleteFile" xml:space="preserve">
+    <value>Il file selezionato non puo' essere cancellato perche' non si hanno i permessi necessari. Prego contattare un amministratore.</value>
+  </data>
+  <data name="Common_OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="Common_OverwriteExisting" xml:space="preserve">
+    <value>Sovrascrivere il file se esistente?</value>
+  </data>
+  <data name="Common_Position" xml:space="preserve">
+    <value>Posizione</value>
+  </data>
+  <data name="Common_Set" xml:space="preserve">
+    <value>Imposta</value>
+  </data>
+  <data name="Common_SliderDrag" xml:space="preserve">
+    <value>Trascina per cambiare il valore</value>
+  </data>
+  <data name="Common_SwapWidthHeight" xml:space="preserve">
+    <value>Scambia Larghezza ed Altezza</value>
+  </data>
+  <data name="Common_Top" xml:space="preserve">
+    <value>Top</value>
+  </data>
+  <data name="Common_Transform" xml:space="preserve">
+    <value>Trasforma</value>
+  </data>
+  <data name="Common_Url" xml:space="preserve">
+    <value>URL</value>
+  </data>
+  <data name="Common_Width" xml:space="preserve">
+    <value>Larghezza</value>
+  </data>
+  <data name="Common_X" xml:space="preserve">
+    <value>X</value>
+  </data>
+  <data name="Common_Y" xml:space="preserve">
+    <value>Y</value>
+  </data>
+  <data name="Contrast_TxtBoxToolTip" xml:space="preserve">
+    <value>Immetti un valore tra -127 e 127</value>
+  </data>
+  <data name="Crop_AspectRatio" xml:space="preserve">
+    <value>Aspect Ratio</value>
+  </data>
+  <data name="Crop_AspectRatioToolTip" xml:space="preserve">
+    <value>Seleziona Aspect Ratio</value>
+  </data>
+  <data name="Crop_Button" xml:space="preserve">
+    <value>Ritaglia</value>
+  </data>
+  <data name="Crop_Title" xml:space="preserve">
+    <value>Ritaglia immagine</value>
+  </data>
+  <data name="DrawCircle_Color" xml:space="preserve">
+    <value>Colore:</value>
+  </data>
+  <data name="DrawCircle_CurrentColorText" xml:space="preserve">
+    <value>(Il colore corrente e' {0})</value>
+  </data>
+  <data name="DrawCircle_FillColor" xml:space="preserve">
+    <value>Colore riempimento:</value>
+  </data>
+  <data name="DrawCircle_LineSize" xml:space="preserve">
+    <value>Spessore Linea:</value>
+  </data>
+  <data name="DrawCircle_LineSizeToolTip" xml:space="preserve">
+    <value>Setta lo spessore della linea</value>
+  </data>
+  <data name="DrawCircle_PickColor" xml:space="preserve">
+    <value>Scegli colore</value>
+  </data>
+  <data name="DrawCircle_PickFillColor" xml:space="preserve">
+    <value>Scegli colore riempimento</value>
+  </data>
+  <data name="DrawCircle_Title" xml:space="preserve">
+    <value>Disegna Cerchio</value>
+  </data>
+  <data name="DrawRectangle_Color" xml:space="preserve">
+    <value>Colore:</value>
+  </data>
+  <data name="DrawRectangle_CurrentColorText" xml:space="preserve">
+    <value>(Il colore corrente e' {0})</value>
+  </data>
+  <data name="DrawRectangle_LineSize" xml:space="preserve">
+    <value>Spessore Linea:</value>
+  </data>
+  <data name="DrawRectangle_LineSizeToolTip" xml:space="preserve">
+    <value>Setta lo spessore della linea</value>
+  </data>
+  <data name="DrawRectangle_PickColor" xml:space="preserve">
+    <value>Scegli colore</value>
+  </data>
+  <data name="DrawRectangle_Title" xml:space="preserve">
+    <value>Disegna Rettangolo</value>
+  </data>
+  <data name="Export_ChooseExtension" xml:space="preserve">
+    <value>Scegli estensione dell'immagine</value>
+  </data>
+  <data name="Export_ClientRadioText" xml:space="preserve">
+    <value>Download Immagine</value>
+  </data>
+  <data name="Export_FileNameLabel" xml:space="preserve">
+    <value>Nome file  </value>
+  </data>
+  <data name="Export_FileNameToolTip" xml:space="preserve">
+    <value>Inserisci nome file</value>
+  </data>
+  <data name="Export_ServerRadioText" xml:space="preserve">
+    <value>Salva immagine su server</value>
+  </data>
+  <data name="Export_Title" xml:space="preserve">
+    <value>Esporta immagine</value>
+  </data>
+  <data name="Flip_None" xml:space="preserve">
+    <value>Nessun capovolgimento</value>
+  </data>
+  <data name="Flip_Title" xml:space="preserve">
+    <value>Capovolgi</value>
+  </data>
+  <data name="HueSaturation_ApplyBtn_Text" xml:space="preserve">
+    <value>Applica</value>
+  </data>
+  <data name="HueSaturation_ApplyBtn_ToolTip" xml:space="preserve">
+    <value>Applica all'immagine  i livelli di Tonalità / Saturazione selezionati </value>
+  </data>
+  <data name="HueSaturation_ResetBtn_Text" xml:space="preserve">
+    <value>Resetta</value>
+  </data>
+  <data name="HueSaturation_ResetBtn_ToolTip" xml:space="preserve">
+    <value>Annulla le modifiche apportate finora</value>
+  </data>
+  <data name="HueSaturation_Title" xml:space="preserve">
+    <value>Tonalita'/Saturazione</value>
+  </data>
+  <data name="Hue_TxtBoxToolTip" xml:space="preserve">
+    <value>Inserisci un valore compreso tra 0 e 360</value>
+  </data>
+  <data name="InsertImage_Title" xml:space="preserve">
+    <value>Inserisci Immagine</value>
+  </data>
+  <data name="InsertImage_UrlTxtToolTip" xml:space="preserve">
+    <value>URL di un'immagine da inserire (esempio http://domain.com/img.png)</value>
+  </data>
+  <data name="Line_Color" xml:space="preserve">
+    <value>Colore:</value>
+  </data>
+  <data name="Line_CurrentColorText" xml:space="preserve">
+    <value>(Il colore corrente e' {0})</value>
+  </data>
+  <data name="Line_LineSize" xml:space="preserve">
+    <value>Spessore Linea:</value>
+  </data>
+  <data name="Line_LineSizeToolTip" xml:space="preserve">
+    <value>Setta lo spessore della linea</value>
+  </data>
+  <data name="Line_PickColor" xml:space="preserve">
+    <value>Scegli colore</value>
+  </data>
+  <data name="Line_Title" xml:space="preserve">
+    <value>Disegna linea</value>
+  </data>
+  <data name="Opacity_TextboxToolTip" xml:space="preserve">
+    <value>Inserisci un valore compreso tra 0 e 100%</value>
+  </data>
+  <data name="Opacity_Title" xml:space="preserve">
+    <value>Opacita'</value>
+  </data>
+  <data name="Pencil_Color" xml:space="preserve">
+    <value>Colore:</value>
+  </data>
+  <data name="Pencil_CurrentColorText" xml:space="preserve">
+    <value>(Il colore corrente e' {0})</value>
+  </data>
+  <data name="Pencil_LineSize" xml:space="preserve">
+    <value>Spessore Linea:</value>
+  </data>
+  <data name="Pencil_LineSizeToolTip" xml:space="preserve">
+    <value>Setta lo spessore della linea</value>
+  </data>
+  <data name="Pencil_PickColor" xml:space="preserve">
+    <value>Scegli colore</value>
+  </data>
+  <data name="Pencil_Title" xml:space="preserve">
+    <value>Matita</value>
+  </data>
+  <data name="Print_Button" xml:space="preserve">
+    <value>Stampa</value>
+  </data>
+  <data name="Print_Title" xml:space="preserve">
+    <value>Stampa immagine</value>
+  </data>
+  <data name="ReservedResource" xml:space="preserve">
+    <value>Prego non cancellare quaesta stringa.</value>
+  </data>
+  <data name="Resize_Button" xml:space="preserve">
+    <value>Ridimensiona</value>
+  </data>
+  <data name="Resize_Percentage" xml:space="preserve">
+    <value>Percentuale</value>
+  </data>
+  <data name="Resize_PercentageToolTip" xml:space="preserve">
+    <value>Percentualedelle dimensioni originali Larghezza x Altezza [0,100%]</value>
+  </data>
+  <data name="Resize_PresetSizes" xml:space="preserve">
+    <value>Preimposta Dimensioni</value>
+  </data>
+  <data name="Resize_PresetSizesToolTip" xml:space="preserve">
+    <value>Seleziona Larghezza x Altezza preimpostate</value>
+  </data>
+  <data name="Resize_Title" xml:space="preserve">
+    <value>Ridimensiona</value>
+  </data>
+  <data name="Rotate_DropDownToolTip" xml:space="preserve">
+    <value>Seleziona un angolo di rotazione</value>
+  </data>
+  <data name="Rotate_Title" xml:space="preserve">
+    <value>Ruota</value>
+  </data>
+  <data name="Saturation_TxtBoxToolTip" xml:space="preserve">
+    <value>Inserisci un valore compreso tra -100 e 100</value>
+  </data>
+  <data name="Save_ClientRadioText" xml:space="preserve">
+    <value>Scarica Immagine</value>
+  </data>
+  <data name="Save_FileNameLabel" xml:space="preserve">
+    <value>Nome File </value>
+  </data>
+  <data name="Save_FileNameToolTip" xml:space="preserve">
+    <value>Immetti Nome File</value>
+  </data>
+  <data name="Save_ServerRadioText" xml:space="preserve">
+    <value>Salva immagine su server</value>
+  </data>
+  <data name="Save_Title" xml:space="preserve">
+    <value>Salva immagine</value>
+  </data>
+  <data name="Zoom_ActualSizeToolTip" xml:space="preserve">
+    <value>Zoom al 100%</value>
+  </data>
+  <data name="Zoom_BestFitToolTip" xml:space="preserve">
+    <value>Adatta immagine all'area editabile</value>
+  </data>
+  <data name="Zoom_TextboxToolTip" xml:space="preserve">
+    <value>Inserisci un valore compreso tra 0 e 100%</value>
+  </data>
+  <data name="Zoom_Title" xml:space="preserve">
+    <value>Zoom</value>
+  </data>
+</root>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="urn:ComolTranslation">
+  <item name="LBTitolo.text" html="false" placeholder="false">Free text question</item>
+  <item name="LibreriaDiDomande" disambiguation="libreria=libreria di domande" html="false" placeholder="false">Libraries</item>
+  <item name="Modello" disambiguation="modello=modello di questionario" html="false" placeholder="false">Models</item>
+  <item name="Autovalutazione" html="false" placeholder="false">Self-assessment test</item>
+  <item name="Sondaggio" html="false" placeholder="false">Polls</item>
+  <item name="Questionari" html="false" placeholder="false">Questionnaires</item>
+  <item name="Meeting" html="false" placeholder="false">Meeting</item>
+  <item name="testoUnico" html="true" placeholder="true" mustcontains="{0}|{1}|{2}|{3}|{4}|{5}|{6}">
+        La risposta a un quesito di questo tipo lo studente scrive è sotto forma di testo.
+        &lt;br&gt;
+        &lt;br&gt;
+        Un esempio di domanda a testo libero  è il seguente:
+        &lt;br&gt;
+        &lt;br&gt;
+        {0}
+        &lt;br&gt;
+        &lt;br&gt;
+        A questo tipo di domanda, l’utente finale potrà dare risposte diverse, a seconda del livello della propria preparazione.
+        &lt;br&gt;
+        Per creare una domanda di questo tipo in Comunità Online seguire i passi:
+        &lt;br&gt;
+        1) Definire la pagina del questionario / sondaggio nella quale dovrà comparire la domanda
+        &lt;br&gt;
+        &lt;br&gt;
+        {1}
+        &lt;br&gt;
+        &lt;br&gt;
+        In questo caso vogliamo inserire la domanda nella pagina sulla scoperta dell’America
+        &lt;br&gt;
+        &lt;br&gt;
+        2) Inserire il testo della domanda
+        &lt;br&gt;
+        &lt;br&gt;
+        {2}
+        &lt;br&gt;
+        &lt;br&gt;
+        3) Indicare quale è il peso della domanda all’interno del questionario
+        &lt;br&gt;
+        &lt;br&gt;
+        {3}
+        &lt;br&gt;
+        &lt;br&gt;
+        4) Indicare il livello di difficoltà della domanda
+        &lt;br&gt;
+        &lt;br&gt;
+        {4}
+        &lt;br&gt;
+        &lt;br&gt;
+        In questo caso la risposta ha una difficoltà alta, quindi scegliamo una difficoltà alta
+        &lt;br&gt;
+        &lt;br&gt;
+        5) Scegliere il numero di risposte da presentare all’utente per la domanda:
+        &lt;br&gt;
+        &lt;br&gt;
+        {5}
+        &lt;br&gt;
+        &lt;br&gt;
+        In questo caso l’utente darà una risposta testuale estesa. Non è esclusa però la possibilità di presentare più aree nelle quale l’utente possa inserire le risposte, nel qual caso sarà possibile impostare una descrizione per la singola area.
+        &lt;br&gt;
+        &lt;br&gt;
+        7) Un'opportunità finale è quella di proporre un testo aggiuntivo alla conclusione della domanda. Un esempio può essere il seguente
+        &lt;br&gt;
+        &lt;br&gt;
+        {6}
+        &lt;br&gt;
+        &lt;br&gt;
+        È un opzione utile per dare consigli all’utente sulla domanda o su come proseguire la compilazione delle successive risposte.
+        &lt;br&gt;
+        Al termine, quando la compilazione è terminata, premere il tasto “Salva Modifiche”
+        &lt;br&gt;
+    </item>
+  <item name="IMGdomandaTestoLibero" html="false" placeholder="false" hidden="true">&lt;img src="img/domandaTestoLibero.png"&gt;</item>
+  <item name="IMGpaginaAmerica" html="false" placeholder="false" hidden="true">&lt;img src="img/paginaAmerica.png"&gt;</item>
+  <item name="IMGdomandaTestoLibero2" html="false" placeholder="false" hidden="true">&lt;img src="img/domandaTestoLibero2.png"&gt;</item>
+  <item name="IMGpesoDomanda" html="false" placeholder="false" hidden="true">&lt;img src="img/pesoDomanda.png"&gt;</item>
+  <item name="IMGdifficoltaDomanda" html="false" placeholder="false" hidden="true">&lt;img src="img/difficoltaDomanda.png"&gt;</item>
+  <item name="IMGnumeroRisposte" html="false" placeholder="false" hidden="true">&lt;img src="img/numeroRisposte1.png"&gt;</item>
+  <item name="IMGdomandaTestoLibero6" html="false" placeholder="false" hidden="true">&lt;img src="img/testoDopoDomandaGenerico.png"&gt;</item>
+</Resource>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="lm.Comol.Core.DomainModel" namespace="lm.Comol.Core.DomainModel">
+	<class name="LazyModulePermissionTemplate" table="LK_PERMESSI_RUOLO_SERVIZIO">
+		<id name="Id" column="LPRS_ID" type="Int32">
+			<generator class="native"/>
+		</id>
+		<property name="IdModule" column="LPRS_SRVZ_id" type="Int32"/>
+		<property name="IdCommunityType" column="LPRS_TPCM_ID" type="Int32"/>
+		<property name="IdOrganization" column="LPRS_ORGN_ID" type="Int32"/>
+    <property name="IdRole" column="LPRS_TPRL_id" type="Int32"/>
+		<property name="Permission" column="LPRS_valore" type="String"/>
+	</class>
+</hibernate-mapping>

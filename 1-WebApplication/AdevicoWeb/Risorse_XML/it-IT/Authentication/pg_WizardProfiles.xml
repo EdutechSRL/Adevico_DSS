@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Resource  xmlns="urn:ComolTranslation">
+	<item name="TipoAutenticazione.1">Adevico</item>
+	<item name="TipoAutenticazione.2">LDAP/Altro</item>
+	<item name="TipoAutenticazione.3">IOP</item>
+	<item name="mail.infoSubject">Notifica iscrizione</item>
+	<item name="mail.infoSubject_Bloccata">Notifica iscrizione ed attivazione</item>
+	<item name="mail.infoBody" html="true" placeholder="true" mustcontains="#Link2#">Iscrizione alla piattaforma avvenuta correttamente.&lt;br&gt;&lt;br&gt;Per accedere al sistema utilizzare il seguente link: #Link2# &lt;br&gt;I dati da te inseriti sono:</item>
+	<item name="mail.infoBody_Bloccata" html="true" placeholder="true" mustcontains="#Link1#|#Link2#">Iscrizione alla piattaforma avvenuta correttamente.&lt;br&gt;&lt;br&gt;ATTIVARE la propria iscrizione con un semplice clic sull'indirizzo seguente (oppure copiarlo nella barra degli indirizzi di un browser): #Link1# (l'indirizzo deve stare su una sola riga)&lt;br&gt;&lt;br&gt;Dopo aver attivato il suo account potrà accedere al sistema dal seguente link: #Link2# &lt;br&gt;I dati da te inseriti sono:</item>
+	<item name="DescriptionAuthentication.1">Interna alla piattaforma</item>
+	<item name="DescriptionAuthentication.2">La stessa di LDAP</item>
+	<item name="DescriptionAuthentication.3">SOLO dal sito Io Provincia !</item>
+
+
+	<item name="LBcompleteInfo.text">Questo è lo step finale del processo di creazione, qui sotto sono riassunti i dati del profilo che si sta per creare. Per completare la procedura è sufficiente premere sul pulsante "Crea" posto in basso a destra.</item>
+	<item name="LBlogin_t.text">Login:</item>
+	<item name="LBauthenticationType_t.text">Tipo autenticazione:</item>
+	<item name="LBuserType_t.text">Tipo profilo:</item>
+	<item name="LBnome_t.text">Nome:</item>
+	<item name="LBcognome_t.text">Cognome:</item>
+	<item name="LBtaxCode_t.text">Codice fiscale:</item>
+	<item name="LBlingua_t.text">Lingua:</item>
+	<item name="LBmail_t.text">Mail:</item>
+	<item name="LBmatricola_t.text">Matricola:</item>
+	<item name="LBimmatricolazione_t.text">Immatricolato il:</item>
+	<item name="LBcodice_t.text">Codice:</item>
+	<item name="LBqualifica_t.text" disambiguation="qualifica=qualifica docenza universitaria">Qualifica:</item>
+	<item name="LBfascia_t.text" disambiguation="fascia=fascia docenza universitaria">Fascia:</item>
+	<item name="LBregime_t.text" disambiguation="regime=regime docenza universitaria">Regime:</item>
+	<item name="LBtipoDocente_t.text">Tipo:</item>
+	<item name="LBricevimento_t.text">Orario ricevimento:</item>
+	<item name="LBistitutoSTU_t.text">Istituto:</item>
+	<item name="LBclasseSezione_t.text" disambiguation="riferito alle scuole superiori">Classe e sezione:</item>
+	<item name="LBistituto_t.text">Istituto:</item>
+	<item name="LBmatters_t.text">Materie:</item>
+	<item name="LBphd_t.text">Dottorato in:</item>
+	<item name="LBexternalUser_t.text">Motivo registrazione / mansione svolta:</item>
+	<item name="LBtechnician_t.text">Area/funzione:</item>
+	<item name="LBorganizationInfo_t.text">Organizzazione:</item>
+	<item name="LBotherOrganizations_t.text">Altre organizzazioni:</item>
+	<item name="LBsendNotification_t.text">Mail di notifica:</item>
+	<item name="CBXnotify.text"></item>
+
+	<item name="LBuserInfo.text">Per l'utente:</item>
+	<item name="LBorganizationInfo.text">Per questa organizzazione:</item>
+	<item name="WaitingStudentID">In attesa di matricola</item>
+
+	<item name="LBpwd.text">Password:</item>
+	<item name="LBconfirmpwd.text">Conferma Password:</item>
+	<item name="LBlingua_t.text">Lingua:</item>
+	<item name="LBmail_t.text">Mail:</item>
+	<item name="CBXshowMail.text"></item>
+	<item name="LBmostraMail.text">Mostra</item>
+	<item name="LBmailInfo.text">Se l'opzione è abilitata tutti i membri delle comunità a cui si è iscritti potranno vedere la mail del profilo.</item>
+	<item name="LBsubscribeTo.text">Iscrivi a:</item>
+	<item name="LBsubscribeToDefault.text">Organizzazione di default:</item>
+	<item name="LBsubscribeToAlso.text">Iscrivi anche a:</item>
+	<item name="ErroreLDAP.2">Connessione al server LDAP fallita, impossibile registrare l'utente</item>
+	<item name="ErroreLDAP.1">Connessione al server LDAP fallita, impossibile registrare l'utente</item>
+	<item name="ErroreLDAP.4">Autenticazione utente fallita, impossibile registrare l'utente</item>
+	<item name="ErroreLDAP.3">La login specificata non è registrata su LDAP fallita, impossibile registrare l'utente</item>
+	<item name="erroreLDAP.-1">Registrazione LDAP al momento non disponibile</item>
+	<item name="LBdisclaimerTitle.text">Registrazione al sistema</item>
+	<item name="LBdisclaimerInfo_t.text">Istruzioni per completare il processo di registrazione</item>
+	<item name="LBdisclaimerInfo.text">Per completare il processo di registrazione devi selezionare il tuo profilo utente, indicare l'organizzazione di cui farai parte nel sistema, indicare il tipo di autenticazione desiderato ed infine indicare alcune informazioni utili per l'identificazione nel sistema (nome, email, etc.)</item>
+	<item name="LBdisclaimerInfoAutoLogon.text">Attualmente nel sistema non esiste un profilo per il suo account, La preghiamo gentilmente di completare il processo di profilazione. In particolare deve selezionare il tipo di profilo, l'organizzazione di cui fa parte, ed infine indicare alcune informazioni utili per l'identificazione nel sistema (nome, email, etc.)</item>
+	<item name="LBdisclaimerLanguage_t.text">Seleziona la tua lingua:</item>
+	<item name="LBsubscribeToInfo.text">Seleziona l'organizzazione di cui fai parte:</item>
+	<item name="HYPreturnToHome.text">Torna alla home</item>
+	<item name="HYPreturnToHome.ToolTip">Torna alla home della piattaforma</item>
+	<item name="HYPreturnToHome.status">Torna alla home della piattaforma</item>
+	<item name="HYPreturnToList.text">Torna alla home</item>
+	<item name="HYPreturnToList.ToolTip">Torna alla home della piattaforma</item>
+	<item name="HYPreturnToList.status">Torna alla home della piattaforma</item>
+	<item name="LBprofileInfo.text">Seleziona il tipo di profilo da creare:</item>
+	<item name="StartNextButton.text">Avanti</item>
+	<item name="StartNextButton.ToolTip">Prosegue allo step successivo</item>
+	<item name="StepNextButton.text">Avanti</item>
+	<item name="StepNextButton.ToolTip">Prosegue allo step successivo</item>
+	<item name="StepPreviousButton.text">Indietro</item>
+	<item name="StepPreviousButton.ToolTip">Torna allo step precedente.</item>
+	<item name="FinishPreviousButton.text">Indietro</item>
+	<item name="FinishPreviousButton.ToolTip">Torna allo step precedente.</item>
+	<item name="FinishButton.text">Crea</item>
+	<item name="FinishButton.ToolTip">Crea il profilo utente desiderato</item>
+	<item name="LBselectOrganization.text">STEP 2 - Selezionare l'organizzazione</item>
+	<item name="LBselectUserType.text">STEP 3 - Selezionare il tipo di profilo</item>
+	<item name="LBauthenticationType.text">STEP 4 - Selezionare un tipo di autenticazione</item>
+	<item name="LBbaseUserInfo.text" placeholder="true" mustcontains="{0}">STEP {0} - Informazioni utente</item>
+	<item name="LBdetailedUserInfo.text" placeholder="true" mustcontains="{0}">STEP {0} - Dettagli avanzati</item>
+	<item name="LBsummary.text">STEP FINALE - Conferma dei dati e creazione</item>
+	<item name="ErroreRegistrazione.1">Inserimento avvenuto correttamente</item>
+	<item name="ErroreRegistrazione.-1">Login già assegnata ad un altro utente</item>
+	<item name="ErroreRegistrazione.-2">Codice fiscale già assegnato ad un altro utente</item>
+	<item name="ErroreRegistrazione.-3">L'indirizzo mail ufficiale è già stato assegnato ad un altro utente</item>
+	<item name="ErroreRegistrazione.-4">Inserimento avvenuto, la mail di notifica non è stata inviata.</item>
+	<item name="ErroreRegistrazione.-11">L'indirizzo mail secondario è già presente nel sistema !.</item>
+	<item name="ErroreRegistrazione.-5">Inserimento fallito, si prega di contattare l'amministratore di sistema.</item>
+	<item name="ErroreRegistrazione.-6">Inserimento fallito, si prega di contattare l'amministratore di sistema.</item>
+	<item name="ErroreRegistrazione.-7">Inserimento fallito, si prega di contattare l'amministratore di sistema.</item>
+	<item name="ErroreRegistrazione.-8">Inserimento fallito, Lei risultà già iscritto, in caso contrario è pregato di contattare l'amministratore di sistema.</item>
+	<item name="ErroreRegistrazione.-10" html="true" placeholder="true" mustcontains="%mailAdress%|%mailSubject%">Inserimento fallito, il numero di MATRICOLA specificato è già presente nel sistema, per informazioni è pregato di contattare l'amministratore di sistema al seguente indirizzo: &lt;a href="mailto:%mailAdress%?Subject=%mailSubject%" class="1"&gt;%mailAdress%&lt;/a&gt;.</item>
+	<item name="ErroreRegistrazione.100" html="true">Inserimento avvenuto correttamente&lt;br&gt;Clicca sotto per fare il login</item>
+	<item name="ErroreRegistrazione.101" html="true">Inserimento avvenuto correttamente,ma in quanto studente in attesa di matricola si dovrà attendere la conferma del responsabile della facoltà di appartenenza prima di accedere liberamente a tale comunità.&lt;br&gt;Clicca sotto per fare il login</item>
+	<item name="ErroreRegistrazione.2">Inserimento avvenuto correttamente, il suo account è attivo e può accedere al sistema.</item>
+	<item name="ErroreRegistrazione.5" html="true">Registrazione completata, il suo account deve essere attivato attraverso la mail di attivazione che è stata inviata all'indirizzo mail specificato al momento dell'iscrizione.&lt;br&gt;La mail sarà recapitata con i tempi del suo gestore di posta elettronica.</item>
+	<item name="ErroreRegistrazione.6"  html="true">Registrazione completata, il suo account deve essere attivato attraverso la mail di attivazione che è stata inviata all'indirizzo mail specificato al momento dell'iscrizione.&lt;br&gt;La mail sarà recapitata con i tempi del suo gestore di posta elettronica.&lt;br&gt;L'accesso al sistema dovrà essere confermato dall'amministratore dell'organizzazione a cui si è iscritto.</item>
+  <item name="BTNclose.text">Chiudi</item>
+  <item name="BTNclose.ToolTip">Chiudi questo messaggio di errore</item>
+  <item name="BTNclose.status">Chiudi questo messaggio di errore</item>
+</Resource>
+
+<!--Per completare la procedura di registrazione è necessario selezionare il proprio profilo utente, l'organizzazione di appartenenza, specificare il tipo di autenticazione ed infine specificare alcuni dati per l'identificazione e l'utilizzo della piattaforma (nome, cognome, mail, ecc)-->

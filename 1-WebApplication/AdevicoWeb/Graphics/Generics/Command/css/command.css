@@ -1,0 +1,2687 @@
+/* GS: 04/05/2016 13:55 */
+
+/* @group Legacy - parte MVC  */
+
+._editlink {
+	background-image: url("../img/DefaultCommand/edit13.png");
+}
+
+._deletelink {
+	background-image: url("../img/DefaultCommand/delete13.png");
+}
+
+._infolink {
+	background-image: url("../img/DefaultCommand/info13.png");
+}
+
+.editlink {
+	background-image: url("../img/DefaultCommand/edit13.png");
+	background-repeat: no-repeat;
+	display: inline-block;
+	height: 15px;
+	line-height: 0px !important;
+	font-size: 0 !important;
+	overflow: hidden;
+	width: 15px;
+}
+
+.deletelink {
+	background-image: url("../img/DefaultCommand/delete13.png");
+	background-repeat: no-repeat;
+	display: inline-block;
+	height: 15px;
+	line-height: 0px !important;
+	overflow: hidden;
+	font-size: 0 !important;
+	width: 15px;
+}
+
+.infolink {
+	background-image: url("../img/DefaultCommand/info13.png");
+	background-repeat: no-repeat;
+	display: inline-block;
+	height: 15px;
+	overflow: hidden;
+	line-height: 0px !important;
+	font-size: 0 !important;
+	width: 15px;
+}
+
+.helplink_normal {
+	background-image: url("../img/DefaultCommand/help24.png");
+	background-repeat: no-repeat;
+	display: inline-block;
+	height: 25px;
+	line-height: 0px !important;
+	font-size: 0 !important;
+	overflow: hidden;
+	width: 25px;
+}
+
+/* @end */
+
+/* @group Legacy - Classi per link e bottoni */
+
+/* definizioni generiche */
+
+a.img_link {
+	background-repeat: no-repeat !important;
+	display: inline-block;
+	/*line-height: 999px !important;*/
+	overflow: hidden;
+	font-size: 0;
+}
+
+a.img_link,
+a.pulsante {
+	vertical-align: middle;
+	display: inline-block !important;
+	*display:inline;
+	zoom: 1;
+}
+
+input.img_btn {
+	background-color: transparent;
+	background-repeat: no-repeat !important;
+	display: inline-block;
+	/*line-height: 999px !important;*/
+	overflow: hidden;
+	font-size: 0;
+	border: none;
+}
+
+span.img_span {
+	background-repeat: no-repeat !important;
+	display: inline-block;
+	/*line-height: 999px !important;*/
+	overflow: hidden;
+	font-size: 0;
+}
+
+img.img_span {
+	background-repeat: no-repeat !important;
+	display: inline-block;
+	/*line-height: 999px !important;*/
+    overflow: hidden;
+	font-size: 0;
+}
+
+/* ATTENZIONE!!! Sr c'Ã¨ testo, vengon fuori casini, ma intanto cosÃ¬ vÃ ... */
+
+*html span.img_span {
+	text-indent: 0px;
+}
+
+/* definizioni specifiche */
+
+#content div.DIV_MP_Content div.glossarywrapper.view div.glossariescontent div.termscontainer.container_12.clearfix div.asidecontent.grid_12 div.filters.clearfix.collapsable.collapsed div.sectionheader.clearfix div.left h3.sectiontitle.clearfix {
+	
+}
+
+.ico_add_l,
+.ico_add_m,
+.ico_add_s,
+.ico_book_l,
+.ico_book_m,
+.ico_book_s,
+.ico_com_perm_l,
+.ico_com_perm_m,
+.ico_com_perm_s,
+.ico_copy_l,
+.ico_copy_m,
+.ico_copy_s,
+.ico_delete_l,
+.ico_delete_m,
+.ico_delete_s,
+.ico_document_l,
+.ico_document_m,
+.ico_document_s,
+.ico_download_l,
+.ico_download_m,
+.ico_download_s,
+.ico_edit_l,
+.ico_edit_m,
+.ico_edit_s,
+.ico_export_csv_l,
+.ico_export_csv_m,
+.ico_export_csv_s,
+.ico_export_l,
+.ico_export_m,
+.ico_export_pdf_l,
+.ico_export_pdf_m,
+.ico_export_pdf_s,
+.ico_export_rtf_l,
+.ico_export_rtf_m,
+.ico_export_rtf_s,
+.ico_export_s,
+.ico_export_xls_l,
+.ico_export_xls_m,
+.ico_export_xls_s,
+.ico_export_xml_l,
+.ico_export_xml_m,
+.ico_export_xml_s,
+.ico_folder_l,
+.ico_folder_m,
+.ico_folder_s,
+.ico_hasnews_l,
+.ico_hasnews_m,
+.ico_hasnews_s,
+.ico_help_l,
+.ico_help_m,
+.ico_help_s,
+.ico_import_l,
+.ico_import_m,
+.ico_import_s,
+.ico_info_l,
+.ico_info_m,
+.ico_info_s,
+.ico_is_favorite_l,
+.ico_is_favorite_m,
+.ico_is_favorite_s,
+.ico_is_new_item_l,
+.ico_is_new_item_m,
+.ico_is_new_item_s,
+.ico_lk_forum_l,
+.ico_lk_forum_m,
+.ico_lk_forum_s,
+.ico_lk_glossary_l,
+.ico_lk_glossary_m,
+.ico_lk_glossary_s,
+.ico_lk_mail_l,
+.ico_lk_mail_m,
+.ico_lk_mail_s,
+.ico_lk_quest_l,
+.ico_lk_quest_m,
+.ico_lk_quest_s,
+.ico_lk_workbook_l,
+.ico_lk_workbook_m,
+.ico_lk_workbook_s,
+.ico_move_horizontal_l,
+.ico_move_horizontal_m,
+.ico_move_horizontal_s,
+.ico_move_l,
+.ico_move_m,
+.ico_move_s,
+.ico_move_vertical_l,
+.ico_move_vertical_m,
+.ico_move_vertical_s,
+.ico_movebottom_l,
+.ico_movebottom_m,
+.ico_movebottom_s,
+.ico_movedown_l,
+.ico_movedown_m,
+.ico_movedown_s,
+.ico_moveleft_l,
+.ico_moveleft_m,
+.ico_moveleft_s,
+.ico_moveright_l,
+.ico_moveright_m,
+.ico_moveright_s,
+.ico_movetop_l,
+.ico_movetop_m,
+.ico_movetop_s,
+.ico_moveup_l,
+.ico_moveup_m,
+.ico_moveup_s,
+.ico_not_favorite_l,
+.ico_not_favorite_m,
+.ico_not_favorite_s,
+.ico_playmmd_l,
+.ico_playmmd_m,
+.ico_playmmd_s,
+.ico_playscorm_l,
+.ico_playscorm_m,
+.ico_playscorm_s,
+.ico_preview_l,
+.ico_preview_m,
+.ico_preview_s,
+.ico_publish_l,
+.ico_publish_m,
+.ico_publish_s,
+.ico_recover_l,
+.ico_recover_m,
+.ico_recover_s,
+.ico_search_l,
+.ico_search_m,
+.ico_search_s,
+.ico_settings_l,
+.ico_settings_m,
+.ico_settings_s,
+.ico_stat_l,
+.ico_stat_m,
+.ico_stat_s,
+.ico_trash_l,
+.ico_trash_m,
+.ico_trash_s,
+.ico_usr_perm_l,
+.ico_usr_perm_m,
+.ico_usr_perm_s,
+.ico_warning_l,
+.ico_warning_m,
+.ico_warning_s {
+	background-repeat: no-repeat;
+	background-color: transparent !important;
+}
+
+.ico_add_s,
+.ico_book_s,
+.ico_com_perm_s,
+.ico_copy_s,
+.ico_delete_s,
+.ico_document_s,
+.ico_download_s,
+.ico_edit_s,
+.ico_export_csv_s,
+.ico_export_pdf_s,
+.ico_export_rtf_s,
+.ico_export_s,
+.ico_export_xls_s,
+.ico_export_xml_s,
+.ico_folder_s,
+.ico_hasnews_s,
+.ico_help_s,
+.ico_import_s,
+.ico_info_s,
+.ico_is_favorite_s,
+.ico_is_new_item_s,
+.ico_lk_forum_s,
+.ico_lk_glossary_s,
+.ico_lk_mail_s,
+.ico_lk_quest_s,
+.ico_lk_workbook_s,
+.ico_move_horizontal_s,
+.ico_move_s,
+.ico_move_vertical_s,
+.ico_movebottom_s,
+.ico_movedown_s,
+.ico_moveleft_s,
+.ico_moveright_s,
+.ico_movetop_s,
+.ico_moveup_s,
+.ico_not_favorite_s,
+.ico_playmmd_s,
+.ico_playscorm_s,
+.ico_preview_s,
+.ico_publish_s,
+.ico_recover_s,
+.ico_search_s,
+.ico_settings_s,
+.ico_stat_s,
+.ico_trash_s,
+.ico_usr_perm_s,
+.ico_warning_s {
+	height: 16px !important;
+	height: 16px !important;
+}
+
+.ico_add_m,
+.ico_book_m,
+.ico_com_perm_m,
+.ico_copy_m,
+.ico_delete_m,
+.ico_document_m,
+.ico_download_m,
+.ico_edit_m,
+.ico_export_csv_m,
+.ico_export_m,
+.ico_export_pdf_m,
+.ico_export_rtf_m,
+.ico_export_xls_m,
+.ico_export_xml_m,
+.ico_folder_m,
+.ico_hasnews_m,
+.ico_help_m,
+.ico_import_m,
+.ico_info_m,
+.ico_is_favorite_m,
+.ico_is_new_item_m,
+.ico_lk_forum_m,
+.ico_lk_glossary_m,
+.ico_lk_mail_m,
+.ico_lk_quest_m,
+.ico_lk_workbook_m,
+.ico_move_horizontal_m,
+.ico_move_m,
+.ico_move_vertical_m,
+.ico_movebottom_m,
+.ico_movedown_m,
+.ico_moveleft_m,
+.ico_moveright_m,
+.ico_movetop_m,
+.ico_moveup_m,
+.ico_not_favorite_m,
+.ico_playmmd_m,
+.ico_playscorm_m,
+.ico_preview_m,
+.ico_publish_m,
+.ico_recover_m,
+.ico_search_m,
+.ico_settings_m,
+.ico_stat_m,
+.ico_trash_m,
+.ico_usr_perm_m,
+.ico_warning_m {
+	height: 24px !important;
+	height: 24px !important;
+}
+
+.ico_add_l,
+.ico_book_l,
+.ico_com_perm_l,
+.ico_copy_l,
+.ico_delete_l,
+.ico_document_l,
+.ico_download_l,
+.ico_edit_l,
+.ico_export_csv_l,
+.ico_export_l,
+.ico_export_pdf_l,
+.ico_export_rtf_l,
+.ico_export_xls_l,
+.ico_export_xml_l,
+.ico_folder_l,
+.ico_hasnews_l,
+.ico_help_l,
+.ico_import_l,
+.ico_info_l,
+.ico_is_favorite_l,
+.ico_is_new_item_l,
+.ico_lk_forum_l,
+.ico_lk_glossary_l,
+.ico_lk_mail_l,
+.ico_lk_quest_l,
+.ico_lk_workbook_l,
+.ico_move_horizontal_l,
+.ico_move_l,
+.ico_move_vertical_l,
+.ico_movebottom_l,
+.ico_movedown_l,
+.ico_moveleft_l,
+.ico_moveright_l,
+.ico_movetop_l,
+.ico_moveup_l,
+.ico_not_favorite_l,
+.ico_playmmd_l,
+.ico_playscorm_l,
+.ico_preview_l,
+.ico_publish_l,
+.ico_recover_l,
+.ico_search_l,
+.ico_settings_l,
+.ico_stat_l,
+.ico_trash_l,
+.ico_usr_perm_l,
+.ico_warning_l {
+	height: 32px !important;
+	height: 32px !important;
+}
+
+/* Book */
+
+.ico_book_s {
+	background-image: url("../img/book16.png");
+	height: 16px;
+	width: 16px;
+}
+
+.ico_book_m {
+	background-image: url("../img/book24.png");
+	height: 24px;
+	width: 24px;
+}
+
+.ico_book_l {
+	background-image: url("../img/book32.png");
+	height: 32px;
+	width: 32px;
+}
+
+/* Info */
+
+.ico_info_s {
+	background-image: url("../img/info16.png");
+	height: 16px;
+	width: 16px;
+}
+
+.ico_info_m {
+	background-image: url("../img/info24.png");
+	height: 24px;
+	width: 24px;
+}
+
+.ico_info_l {
+	background-image: url("../img/info32.png");
+	height: 32px;
+	width: 32px;
+}
+
+/* Add New */
+
+.ico_add_s {
+	background-image: url("../img/Add16.png");
+	height: 16px;
+	width: 16px;
+}
+
+.ico_add_m {
+	background-image: url("../img/Add24.png");
+	height: 24px;
+	width: 24px;
+}
+
+.ico_add_l {
+	background-image: url("../img/Add32.png");
+	height: 32px;
+	width: 32px;
+}
+
+/* Edit */
+
+.ico_edit_s {
+	background-image: url("../img/edit16.png");
+	height: 16px;
+	width: 16px;
+}
+
+.ico_edit_m {
+	background-image: url("../img/edit24.png");
+	height: 24px;
+	width: 24px;
+}
+
+.ico_edit_l {
+	background-image: url("../img/edit32.png");
+	height: 32px;
+	width: 32px;
+}
+
+/* Delete */
+
+input.img_btn.ico_delete_s {
+	vertical-align: top;
+	top: -2px;
+}
+
+input.img_btn.ico_delete_s,
+.ico_delete_s {
+	background-image: url("../img/delete16.png");
+	height: 16px;
+	width: 16px;
+}
+
+.ico_delete_m {
+	background-image: url("../img/delete24.png");
+	height: 24px;
+	width: 24px;
+}
+
+.ico_delete_l {
+	background-image: url("../img/delete32.png");
+	height: 32px;
+	width: 32px;
+}
+
+/* Trash */
+
+.ico_trash_s {
+	background-image: url("../img/Trash16.png");
+	height: 16px;
+	width: 16px;
+}
+
+.ico_trash_m {
+	background-image: url("../img/Trash24.png");
+	height: 24px;
+	width: 24px;
+}
+
+.ico_trash_l {
+	background-image: url("../img/Trash32.png");
+	height: 32px;
+	width: 32px;
+}
+
+/* Recover */
+
+.ico_recover_s {
+	background-image: url("../img/Recover16.png");
+	height: 16px;
+	width: 16px;
+}
+
+.ico_recover_m {
+	background-image: url("../img/Recover24.png");
+	height: 24px;
+	width: 24px;
+}
+
+.ico_recover_l {
+	background-image: url("../img/Recover32.png");
+	height: 32px;
+	width: 32px;
+}
+
+/* IsNewItem */
+
+.ico_is_new_item_s {
+	background-image: url("../img/IsNew16.png");
+	height: 16px;
+	width: 16px;
+}
+
+.ico_is_new_item_m {
+	background-image: url("../img/IsNew24.png");
+	height: 24px;
+	width: 24px;
+}
+
+.ico_is_new_item_l {
+	background-image: url("../img/IsNew32.png");
+	height: 32px;
+	width: 32px;
+}
+
+/* Copy */
+
+.ico_copy_s {
+	background-image: url("../img/copy16.png");
+	height: 16px;
+	width: 16px;
+}
+
+.ico_copy_m {
+	background-image: url("../img/copy24.png");
+	height: 24px;
+	width: 24px;
+}
+
+.ico_copy_l {
+	background-image: url("../img/copy32.png");
+	height: 32px;
+	width: 32px;
+}
+
+/* Play Scorm */
+
+.ico_playscorm_s {
+	background-image: url("../img/playScorm16.png");
+	height: 16px;
+	width: 16px;
+}
+
+.ico_playscorm_m {
+	background-image: url("../img/playScorm24.png");
+	height: 24px;
+	width: 24px;
+}
+
+.ico_playscorm_l {
+	background-image: url("../img/playScorm32.png");
+	height: 32px;
+	width: 32px;
+}
+
+/* Play MMD */
+
+.ico_playmmd_s {
+	background-image: url("../img/playMMD16.png");
+	height: 16px;
+	width: 16px;
+}
+
+.ico_playmmd_m {
+	background-image: url("../img/playMMD24.png");
+	height: 24px;
+	width: 24px;
+}
+
+.ico_playmmd_l {
+	background-image: url("../img/playMMD32.png");
+	height: 32px;
+	width: 32px;
+}
+
+/* Download */
+
+.ico_download_s {
+	background-image: url("../img/download16.png");
+	height: 16px;
+	width: 16px;
+}
+
+.ico_download_m {
+	background-image: url("../img/download24.png");
+	height: 24px;
+	width: 24px;
+}
+
+.ico_download_l {
+	background-image: url("../img/download32.png");
+	height: 32px;
+	width: 32px;
+}
+
+/* Settings */
+
+.ico_settings_s {
+	background-image: url("../img/setting16.png");
+	height: 16px;
+	width: 16px;
+}
+
+.ico_settings_m {
+	background-image: url("../img/setting24.png");
+	height: 24px;
+	width: 24px;
+}
+
+.ico_settings_l {
+	background-image: url("../img/setting32.png");
+	height: 32px;
+	width: 32px;
+}
+
+/* Statistics */
+
+.ico_stat_s {
+	background-image: url("../img/stat16.png");
+	height: 16px;
+	width: 16px;
+}
+
+.ico_stat_m {
+	background-image: url("../img/stat24.png");
+	height: 24px;
+	width: 24px;
+}
+
+.ico_stat_l {
+	background-image: url("../img/stat32.png");
+	height: 32px;
+	width: 32px;
+}
+
+/* Export PDF */
+
+.ico_export_pdf_s {
+	background-image: url("../img/exportPDF16.png");
+	height: 16px;
+	width: 16px;
+}
+
+.ico_export_pdf_m {
+	background-image: url("../img/exportPDF24.png");
+	height: 24px;
+	width: 24px;
+}
+
+.ico_export_pdf_l {
+	background-image: url("../img/exportPDF32.png");
+	height: 32px;
+	width: 32px;
+}
+
+/* Export RTF */
+
+.ico_export_rtf_s {
+	background-image: url("../img/exportRTF16.png");
+	height: 16px;
+	width: 16px;
+}
+
+.ico_export_rtf_m {
+	background-image: url("../img/exportRTF24.png");
+	height: 24px;
+	width: 24px;
+}
+
+.ico_export_rtf_l {
+	background-image: url("../img/exportRTF32.png");
+	height: 32px;
+	width: 32px;
+}
+
+/* Export XLS */
+
+.ico_export_xls_s {
+	background-image: url("../img/exportXLS16.png");
+	height: 16px;
+	width: 16px;
+}
+
+.ico_export_xls_m {
+	background-image: url("../img/exportXLS24.png");
+	height: 24px;
+	width: 24px;
+}
+
+.ico_export_xls_l {
+	background-image: url("../img/exportXLS32.png");
+	height: 32px;
+	width: 32px;
+}
+
+/* Export XLS */
+
+.ico_export_xml_s {
+	background-image: url("../img/exportXML16.png");
+	height: 16px;
+	width: 16px;
+}
+
+.ico_export_xml_m {
+	background-image: url("../img/exportXML24.png");
+	height: 24px;
+	width: 24px;
+}
+
+.ico_export_xml_l {
+	background-image: url("../img/exportXML32.png");
+	height: 32px;
+	width: 32px;
+}
+
+/* Export XLS */
+
+.ico_export_csv_s {
+	background-image: url("../img/exportCSV16.png");
+	height: 16px;
+	width: 16px;
+}
+
+.ico_export_csv_m {
+	background-image: url("../img/exportCSV24.png");
+	height: 24px;
+	width: 24px;
+}
+
+.ico_export_csv_l {
+	background-image: url("../img/exportCSV32.png");
+	height: 32px;
+	width: 32px;
+}
+
+/* Help */
+
+.ico_help_s {
+	background-image: url("../img/help16.png");
+	height: 16px;
+	width: 16px;
+}
+
+.ico_help_m {
+	background-image: url("../img/help24.png");
+	height: 24px;
+	width: 24px;
+}
+
+.ico_help_l {
+	background-image: url("../img/help32.png");
+	height: 32px;
+	width: 32px;
+}
+
+/* Community Permission */
+
+.ico_com_perm_s {
+	background-image: url("../img/permessiComunita16.png");
+	height: 16px;
+	width: 16px;
+}
+
+.ico_com_perm_m {
+	background-image: url("../img/permessiComunita24.png");
+	height: 24px;
+	width: 24px;
+}
+
+.ico_com_perm_l {
+	background-image: url("../img/permessiComunita32.png");
+	height: 32px;
+	width: 32px;
+}
+
+/* User Permission */
+
+.ico_usr_perm_s {
+	background-image: url("../img/permessiutenti16.png");
+	height: 16px;
+	width: 16px;
+}
+
+.ico_usr_perm_m {
+	background-image: url("../img/permessiutenti24.png");
+	height: 24px;
+	width: 24px;
+}
+
+.ico_usr_perm_l {
+	background-image: url("../img/permessiutenti32.png");
+	height: 32px;
+	width: 32px;
+}
+
+/* Preview */
+
+.ico_preview_s {
+	background-image: url("../img/preview16.png");
+	height: 16px;
+	width: 16px;
+}
+
+.ico_preview_m {
+	background-image: url("../img/preview24.png");
+	height: 24px;
+	width: 24px;
+}
+
+.ico_preview_l {
+	background-image: url("../img/preview32.png");
+	height: 32px;
+	width: 32px;
+}
+
+/* Search */
+
+.ico_search_s {
+	background-image: url("../img/search16.png");
+	height: 16px;
+	width: 16px;
+}
+
+.ico_search_m {
+	background-image: url("../img/search24.png");
+	height: 24px;
+	width: 24px;
+}
+
+.ico_search_l {
+	background-image: url("../img/search32.png");
+	height: 32px;
+	width: 32px;
+}
+
+/* Import */
+
+.ico_import_s {
+	background-image: url("../img/Import16.png");
+	height: 16px;
+	width: 16px;
+}
+
+.ico_import_m {
+	background-image: url("../img/Import24.png");
+	height: 24px;
+	width: 24px;
+}
+
+.ico_import_l {
+	background-image: url("../img/Import32.png");
+	height: 32px;
+	width: 32px;
+}
+
+/* Publish */
+
+.ico_publish_s {
+	background-image: url("../img/publish16.png");
+	height: 16px;
+	width: 16px;
+}
+
+.ico_publish_m {
+	background-image: url("../img/publish24.png");
+	height: 24px;
+	width: 24px;
+}
+
+.ico_publish_l {
+	background-image: url("../img/publish32.png");
+	height: 32px;
+	width: 32px;
+}
+
+/* Export */
+
+.ico_export_s {
+	background-image: url("../img/Export16.png");
+	height: 16px;
+	width: 16px;
+}
+
+.ico_export_m {
+	background-image: url("../img/Export24.png");
+	height: 24px;
+	width: 24px;
+}
+
+.ico_export_l {
+	background-image: url("../img/Export32.png");
+	height: 32px;
+	width: 32px;
+}
+
+/* Has News */
+
+.ico_hasnews_s {
+	background-image: url("../img/HasNew16.png");
+	height: 16px;
+	width: 16px;
+}
+
+.ico_hasnews_m {
+	background-image: url("../img/HasNew24.png");
+	height: 24px;
+	width: 24px;
+}
+
+.ico_hasnews_l {
+	background-image: url("../img/HasNew32.png");
+	height: 32px;
+	width: 32px;
+}
+
+/* Document */
+
+.ico_document_s {
+	background-image: url("../img/Document16.png");
+	height: 16px;
+	width: 16px;
+}
+
+.ico_document_m {
+	background-image: url("../img/Document24.png");
+	height: 24px;
+	width: 24px;
+}
+
+.ico_document_l {
+	background-image: url("../img/Document32.png");
+	height: 32px;
+	width: 32px;
+}
+
+/* Move */
+
+.ico_move_s {
+	background-image: url("../img/Move16.png");
+	height: 16px;
+	width: 16px;
+}
+
+.ico_move_m {
+	background-image: url("../img/Move24.png");
+	height: 24px;
+	width: 24px;
+}
+
+.ico_move_l {
+	background-image: url("../img/Move32.png");
+	height: 32px;
+	width: 32px;
+}
+
+/* Move Vertical */
+
+.ico_move_vertical_s {
+	background-image: url("../img/MoveVert16.png");
+	height: 16px;
+	width: 16px;
+}
+
+.ico_move_vertical_m {
+	background-image: url("../img/MoveVert24.png");
+	height: 24px;
+	width: 24px;
+}
+
+.ico_move_vertical_l {
+	background-image: url("../img/MoveVert32.png");
+	height: 32px;
+	width: 32px;
+}
+
+/* Move horizontal*/
+
+.ico_move_horizontal_s {
+	background-image: url("../img/MoveHor16.png");
+	height: 16px;
+	width: 16px;
+}
+
+.ico_move_horizontal_m {
+	background-image: url("../img/MoveHor24.png");
+	height: 24px;
+	width: 24px;
+}
+
+.ico_move_horizontal_l {
+	background-image: url("../img/MoveHor32.png");
+	height: 32px;
+	width: 32px;
+}
+
+/* Move UP */
+
+.ico_moveup_s {
+	background-image: url("../img/MoveUp16.png");
+	height: 16px;
+	width: 16px;
+}
+
+.ico_moveup_m {
+	background-image: url("../img/MoveUp24.png");
+	height: 24px;
+	width: 24px;
+}
+
+.ico_moveup_l {
+	background-image: url("../img/MoveUp32.png");
+	height: 32px;
+	width: 32px;
+}
+
+/* Move Down */
+
+.ico_movedown_s {
+	background-image: url("../img/MoveDown16.png");
+	height: 16px;
+	width: 16px;
+}
+
+.ico_movedown_m {
+	background-image: url("../img/MoveDown24.png");
+	height: 24px;
+	width: 24px;
+}
+
+.ico_movedown_l {
+	background-image: url("../img/MoveDown32.png");
+	height: 32px;
+	width: 32px;
+}
+
+/* Move Left */
+
+.ico_moveleft_s {
+	background-image: url("../img/MoveLeft16.png");
+	height: 16px;
+	width: 16px;
+}
+
+.ico_moveleft_m {
+	background-image: url("../img/MoveLeft24.png");
+	height: 24px;
+	width: 24px;
+}
+
+.ico_moveleft_l {
+	background-image: url("../img/MoveLeft32.png");
+	height: 32px;
+	width: 32px;
+}
+
+/* Move Right */
+
+.ico_moveright_s {
+	background-image: url("../img/Moveright16.png");
+	height: 16px;
+	width: 16px;
+}
+
+.ico_moveright_m {
+	background-image: url("../img/Moveright24.png");
+	height: 24px;
+	width: 24px;
+}
+
+.ico_moveright_l {
+	background-image: url("../img/Moveright32.png");
+	height: 32px;
+	width: 32px;
+}
+
+/* Move Top */
+
+.ico_movetop_s {
+	background-image: url("../img/MoveTop16.png");
+	height: 16px;
+	width: 16px;
+}
+
+.ico_movetop_m {
+	background-image: url("../img/MoveTop24.png");
+	height: 24px;
+	width: 24px;
+}
+
+.ico_movetop_l {
+	background-image: url("../img/MoveTop32.png");
+	height: 32px;
+	width: 32px;
+}
+
+/* Move Bottom */
+
+.ico_movebottom_s {
+	background-image: url("../img/MoveBottom16.png");
+	height: 16px;
+	width: 16px;
+}
+
+.ico_movebottom_m {
+	background-image: url("../img/MoveBottom24.png");
+	height: 24px;
+	width: 24px;
+}
+
+.ico_movebottom_l {
+	background-image: url("../img/MoveBottom32.png");
+	height: 32px;
+	width: 32px;
+}
+
+/* Folder */
+
+/*.ico_folder_s {
+	background-image: url("../img/Folder16.png");
+	height: 16px;
+	width: 16px;
+}*/
+
+.ico_folder_m {
+	background-image: url("../img/Folder24.png");
+	height: 24px;
+	width: 24px;
+}
+
+.ico_folder_l {
+	background-image: url("../img/Folder32.png");
+	height: 32px;
+	width: 32px;
+}
+
+/* LINK AI SERVIZI */
+
+/* Link Forum */
+
+.ico_lk_forum_s {
+	background-image: url("../img/LinkForum16.png");
+	height: 16px;
+	width: 16px;
+}
+
+.ico_lk_forum_m {
+	background-image: url("../img/LinkForum24.png");
+	height: 24px;
+	width: 24px;
+}
+
+.ico_lk_forum_l {
+	background-image: url("../img/LinkForum32.png");
+	height: 32px;
+	width: 32px;
+}
+
+/* Link  Glossary */
+
+.ico_lk_glossary_s {
+	background-image: url("../img/LinkGlossary16.png");
+	height: 16px;
+	width: 16px;
+}
+
+.ico_lk_glossary_m {
+	background-image: url("../img/LinkGlossary24.png");
+	height: 24px;
+	width: 24px;
+}
+
+.ico_lk_glossary_l {
+	background-image: url("../img/LinkGlossary32.png");
+	height: 32px;
+	width: 32px;
+}
+
+/* Link Mail */
+
+.ico_lk_mail_s {
+	background-image: url("../img/LinkMail16.png");
+	height: 16px;
+	width: 16px;
+}
+
+.ico_lk_mail_m {
+	background-image: url("../img/LinkMail24.png");
+	height: 24px;
+	width: 24px;
+}
+
+.ico_lk_mail_l {
+	background-image: url("../img/LinkMail32.png");
+	height: 32px;
+	width: 32px;
+}
+
+/* Link Quest */
+
+.ico_lk_quest_s {
+	background-image: url("../img/LinkQuest16.png");
+	height: 16px;
+	width: 16px;
+}
+
+.ico_lk_quest_m {
+	background-image: url("../img/LinkQuest24.png");
+	height: 24px;
+	width: 24px;
+}
+
+.ico_lk_quest_l {
+	background-image: url("../img/LinkQuest32.png");
+	height: 32px;
+	width: 32px;
+}
+
+/* Link WorkBook  */
+
+.ico_lk_workbook_s {
+	background-image: url("../img/LinkWorkBook16.png");
+	height: 16px;
+	width: 16px;
+}
+
+.ico_lk_workbook_m {
+	background-image: url("../img/LinkWorkBook24.png");
+	height: 24px;
+	width: 24px;
+}
+
+.ico_lk_workbook_l {
+	background-image: url("../img/LinkWorkBook32.png");
+	height: 32px;
+	width: 32px;
+}
+
+/* Is Favourite  */
+
+.ico_is_favorite_s {
+	background-image: url("../img/IsFavourite16.png");
+	height: 16px;
+	width: 16px;
+}
+
+.ico_is_favorite_m {
+	background-image: url("../img/IsFavourite24.png");
+	height: 24px;
+	width: 24px;
+}
+
+.ico_is_favorite_l {
+	background-image: url("../img/IsFavourite32.png");
+	height: 32px;
+	width: 32px;
+}
+
+/* Not Favourite  */
+
+.ico_not_favorite_s {
+	background-image: url("../img/NotFavourite16.png");
+	height: 16px;
+	width: 16px;
+}
+
+.ico_not_favorite_m {
+	background-image: url("../img/NotFavourite24.png");
+	height: 24px;
+	width: 24px;
+}
+
+.ico_not_favorite_l {
+	background-image: url("../img/NotFavourite32.png");
+	height: 32px;
+	width: 32px;
+}
+
+/* Warning */
+
+.ico_warning_s {
+	background-image: url("../img/warning16.png");
+	height: 16px;
+	width: 16px;
+}
+
+.ico_warning_m {
+	background-image: url("../img/warning24.png");
+	height: 24px;
+	width: 24px;
+}
+
+.ico_warning_l {
+	background-image: url("../img/warning32.png");
+	height: 32px;
+	width: 32px;
+}
+
+/* END - Classi per link e bottoni */
+
+/* @end */
+
+/* @group New styles - Icons generic [sprite set1] */
+
+.icons .icon,
+.icons input.icon,
+.messages .message .icon {
+	display: inline-block;
+	*display:inline;
+	*zoom: 1;
+    width: 16px;
+    height: 16px;
+    background: #ccc;
+    background-color: silver;
+    background-repeat: no-repeat;
+    text-align: left;	
+	text-indent: -9999px;
+	*text-indent: 0;
+	*font-size: 0;	 
+	*line-height: 0;
+	*overflow: hidden;
+	outline: 0;
+	cursor: pointer;
+	border: none;
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	*margin-left: 1px;
+	*margin-right: 1px;
+}
+
+span.icon.xs,
+.icons .icon.xs {
+	width: 13px;
+	height: 13px;
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+	background: #ccc;
+	background-repeat: no-repeat;
+	text-align: left;	
+	text-indent: -9999px;
+	*text-indent: 0;
+	*font-size: 0;	 
+	*line-height: 0;
+	*overflow: hidden;
+	outline: 0;
+	cursor: default;
+	border: none;
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	*margin-left: 1px;
+	*margin-right: 1px;
+}
+
+.icons input.icon {
+	border: none;
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+
+td.actions * {
+	vertical-align: middle;
+}
+
+.messages .message .icon {
+	margin-left: -5px;
+	top: -1px;
+	position: relative;
+}
+
+/* @group Icons: generics 16 */
+
+
+
+.messages .message.alert .icon,
+.messages .message.error .icon,
+.messages .message.ok .icon,
+.icons .icon.help,
+.icons .icon.copy,
+.icons .icon.alert,
+.icons .icon.expiring,
+.icons .icon.delete,
+.icons .icon.confirmDelete,
+.icons .icon.edit,
+.icons .icon.info,
+.icons .icon.infoalt,
+.icons .icon.infoaltred,
+.icons .icon.virtualdelete,
+.icons .icon.recover,
+.icons .icon.export,
+.icons .icon.download,
+.icons .icon.new,
+.icons .icon.viewdetails,
+.icons .icon.hasnew,
+.icons .icon.favorite,
+.icons .icon.special,
+.icons .icon.notspecial,
+.icons .icon.notfavourite,
+.icons .icon.stats,
+.icons .icon.statsalt,
+.icons .icon.editstats,
+.icons .icon.settings,
+.icons .icon.submission,
+.icons .icon.editmetadata,
+.icons .icon.enabled,
+.icons .icon.disabled,
+.icons .icon.locked,
+.icons .icon.certificate,
+.icons .icon.unlocked,
+.icons .icon.locked_xs,
+.icons .icon.unlocked_xs,
+.icons .icon.evaluate,
+.icons .icon.evaluator,
+.icons .icon.resolver,
+.icons .icon.assign,
+.icons .icon.user,
+.icons .icon.users,
+.icons .icon.delete.evaluator,
+.icons .icon.replaceuser.evaluator,
+.icons .icon.editpermissions,
+.icons .icon.committeesettings,
+.icons .icon.view,
+.icons .icon.email,
+.icons .icon.mail,
+.icons .icon.sendemail,
+.icons .icon.createfrom,
+.icons .icon.accept,
+.icons .icon.refuse,
+.icons .icon.error,
+.icons .icon.review,
+.icons .icon.comment,
+.icons .icon.requestreview,
+.icons .icon.edituser,
+.icons .icon.replaceuser,
+.icons .icon.attacchment,
+.icons .icon.xs.attacchment,
+.icons .icon.addfield,
+.icons .icon.addcriteria,
+.icons .icon.revision,
+.icons .icon.yes,
+.icons .icon.refresh,
+.icons .icon.no,
+.icons .icon.valid,
+.icons .icon.verified,
+.icons .icon.notverified,
+.icons .icon.addreview,
+.icons .icon.addversion,
+.icons .icon.addrevision,
+.icons .icon.submission,
+.icons .icon.pathlist,
+.icons .icon.newkey,
+.icons .icon.updatekey,
+.icons .icon.hide,
+.icons .icon.hideselected,
+.icons .icon.show,
+.icons .icon.showselected,
+.icons .icon.visible,
+.icons .icon.hidden,
+.icons .icon.closesolved,
+.icons .icon.closeunsolved,
+.icons .icon.reopen,
+.icons .icon.hasnews,
+.icons .icon.hasnonews,
+.icons .icon.subscribe,
+.icons .icon.newfolder,
+.icons .icon.upload,
+.icons .icon.newlink,
+.icons .icon.parentfolder,
+.icons .icon.fileupload,
+.icons .icon.warning,
+.icons .icon.promote {
+	background: transparent url(../img/common_icons_set1_16.png);
+}
+
+.messages .message.alert .icon,
+.icons .icon.warning{
+	background-position: -200px -160px;
+}
+
+.icons .icon.error,
+.messages .message.error .icon {
+	background-position: -120px -40px;
+}
+
+th .icons .icon {
+	width: 12px;
+	height: 12px;
+	background: transparent url(../img/jqui_888888_256x240.png);
+	vertical-align: top;
+}
+
+table.taskmap .icons .icon.xs {
+	width: 12px;
+	height: 12px;
+	background: transparent url(../img/jqui_888888_256x240.png);
+	vertical-align: top;
+}
+
+table.taskmap td .icons .icon.xs.error {
+	background: transparent url(../img/jqui_cd0a0a_256x240.png);
+	background-position: -2px -146px;
+}
+
+table.taskmap td.dates .icons .icon.xs.warning {
+	background: transparent url(../img/jqui_0078ae_256x240.png);
+	background-position: -226px -50px;
+}
+
+table.taskmap td.dates.error .icons .icon.xs.warning {
+	background: transparent url(../img/jqui_cd0a0a_256x240.png);
+	background-position: -226px -50px;
+}
+
+a.btnswitch.hide {
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+	width: 14px;
+	height: 16px;
+	text-align: left;	
+	text-indent: -9999px;
+	*text-indent: -9999px;
+	*font-size: 0;	 
+	*line-height: 0;
+	*overflow: hidden;
+	outline: 0;
+	cursor: pointer;
+	border: none;
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	*margin-left: 1px;
+	*margin-right: 1px;
+	background: transparent url(../img/common_icons_set1_16.png);
+	background-repeat: no-repeat;
+	background-position: -236px -197px;
+}
+
+.small a.btnswitch.hide {
+	height: 13px;
+	width: 8px;
+	background-position: -239px -199px;
+}
+
+a.btnswitch.hide.active {
+	background-position: -236px -237px;
+}
+
+.small a.btnswitch.hide.active {
+	background-position: -239px -239px;
+}
+
+th .icons .icon.actions {
+	background-repeat: no-repeat;
+	background-position: -194px -114px;
+	cursor: default;
+	background-position: -178px -114px;
+}
+
+.icons .icon.infoxs {
+	background: transparent url(../img/jqui_888888_256x240.png);
+	background-repeat: no-repeat;
+	background-position: -18px -146px !important;
+	cursor: pointer;
+}
+
+.icons .icon.infoxs {
+	border-radius: 24px;
+}
+
+/*.icons .icon.infoxs.permission,
+.icons .icon.infoxs.history {
+	width: 16px !important;
+	height: 16px !important;
+	background: #ccc url(../img/icons_simple_sprite.png) !important;
+	background-repeat: no-repeat;
+	cursor: pointer;
+}*/
+
+/*.icons .icon.infoxs.history {
+	background-color: transparent !important;
+	background-position: 48px -450px !important;
+}*/
+
+/*.icons .icon.infoxs.permission {
+	background-color: transparent !important;
+	background-position: 46px -249px !important;
+}*/
+
+th .icons .icon.infoxs {
+	background: transparent url(../img/jqui_454545_256x240.png);
+}
+
+span.cssicon {
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+	width: 16px;
+	height: 16px;
+	text-align: center;
+	background: #bbb;
+	color: #fff;
+	font-weight: bold;
+	font-size: 12px;
+	border-radius: 2px;
+}
+
+span.cssicon.xs {
+	width: 12px;
+	height: 12px;
+	font-size: 11px;
+}
+
+span.cssicon.xs.info {
+	font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+.messages .message.ok .icon {
+	background-position: -160px -80px;
+}
+
+.icons .icon.none {
+	background: none;
+}
+
+.icons .icon.help {
+	background-position: 0px -40px;
+}
+
+.icons .icon.info {
+	background-position: -40px -40px;
+}
+
+.icons .icon.infoalt {
+	background-position: -80px -40px !important;
+}
+
+.icons .icon.infoaltred,
+.requirements .icons .icon.infoalt {
+	background-position: -240px -40px !important;
+}
+
+.icons .icon.alert,
+.icons .icon.expiring {
+	background-position: -120px -40px;
+	cursor: default;
+}
+
+.icons .icon.delete,
+.icons .icon.confirmDelete,
+.icons .icon.delete.evaluator {
+ 	background-position: -40px 0px;
+}
+
+.icons .icon.edit {
+	background-position: 0px 0px;
+}
+
+.icons .icon.copy {
+	background-position: -200px 0px;
+}
+
+.icons .icon.virtualdelete {
+	background-position: 0px -80px;
+}
+
+.icons .icon.recover {
+	background-position: -40px -80px;
+}
+
+.icons .icon.export {
+	background-position: 0px -160px;
+}
+
+.icons .icon.download {
+	background-position: -160px 0px;
+}
+
+.icons .icon.hasnew {
+    cursor:default;
+    background-position: 0px -120px;
+}
+
+.icons .icon.hasnews {
+	background-position: -240px -120px;
+}
+
+.icons .icon.favourite,
+.icons .icon.favorite,
+.icons .icon.special {
+	background-position: -40px -120px;
+}
+
+.icons .icon.notfavourite,
+.icons .icon.notfavorite,
+.icons .icon.notspecial {
+	background-position: -80px -120px;
+}
+
+.icons .icon.loved {
+	background-position: -80px -360px;
+}
+
+icons .icon.notloved {
+	background-position: -120px -360px;
+}
+
+.icons .icon.stats {
+	background-position: -40px -160px;
+}
+
+.icons .icon.statsalt {
+	background-position: -120px -160px;
+}
+
+.icons .icon.editstats {
+	background-position: -80px -160px;
+}
+
+.icons .icon.settings,
+.icons .icon.editmetadata {
+	background-position: -160px -40px;
+}
+
+.icons .icon.yes,
+.icons .icon.valid {
+	background-position: -160px -80px;
+}
+
+.icons .icon.no {
+	background-position: -160px -160px;
+}
+
+.icons .icon.notverified,
+.icons .icon.verified {
+	background-position: -9999px -9999px;
+	border-radius: 24px;
+	width: 10px;
+	height: 10px;
+	margin: 1px;	
+}
+
+.icons .icon.notverified {
+	border: 1px solid #eaad4a;
+	background-color: #f2de6e;
+}
+
+.icons .icon.verified {
+	background-color: #b4c561;
+	border: 1px solid #808f37;
+}
+
+.icons .icon.refresh {
+	background-position: -160px -240px !important;	
+}
+
+.icons .icon.disabled,
+.icons .icon.locked {
+	background-position: 0px -280px;
+}
+
+.icons .icon.enabled,
+.icons .icon.unlocked {
+	background-position: -40px -280px;
+}
+
+.icons .icon.xs.locked,
+.icons .icon.locked_xs {
+	background-position: -80px -280px;
+	width: 16px;
+	height: 16px;
+}
+
+.icons .icon.xs.unlocked,
+.icons .icon.unlocked_xs {
+	background-position: -120px -280px;
+	width: 16px;
+	height: 16px;
+}
+
+.icons .icon.attacchment {
+	width: 16px;
+	height: 16px;
+}
+
+.icon.xs.attacchment,
+.icons .icon.xs.attacchment {
+	background-position: -202px -282px;
+	width: 12px;
+	height: 12px;
+}
+
+.icons .icon.evaluate {
+   	background-position: -80px -200px;
+}
+
+.icons .icon.view {
+	background-position: 0px -200px;
+}
+
+.icons .icon.createfrom {
+	background-position: 0px -240px;
+}
+
+.icons .icon.viewdetails {
+	background-position: -200px -40px;
+}
+
+.icons .icon.accept {
+	background-position: -40px -240px;
+}
+
+.icons .icon.refuse {
+	background-position: -80px -240px;
+}
+
+.icons .icon.certificate {
+	background-position: -120px -240px !important;
+}
+
+.icons .icon.review,
+.icons .icon.requestreview {
+	background-position: -40px -200px;
+}
+
+.icons .icon.resolver,
+.icons .icon.assign,
+.icons .icon.editpermissions,
+.icons .icon.edituser,
+.icons .icon.replaceuser,
+.icons .icon.replaceuser.evaluator {
+	background-position: -120px -120px;
+}
+
+.icons .icon.new,
+.icons .icon.add,
+.icons .icon.addfield,
+.icons .icon.addcriteria,
+.icons .icon.subscribe {
+	background-position: -80px 0px;
+}
+
+
+.icons .icon.revision {
+	background-position: -120px -200px;
+}
+
+.icons .icon.evaluator,
+.icons .icon.committeesettings {
+	background-position: -160px -200px;
+}
+
+.icons .icon.user {
+	background-position: -160px -120px;
+}
+
+.icons .icon.users {
+	background-position: -200px -120px;
+}
+
+.icons .icon.newkey {
+	background-position: 0px -400px;
+}
+
+.icons .icon.newfolder {
+	background-position: -160px -400px;
+}
+
+.icons .icon.upload {
+	background-position: -80px -400px
+}
+
+.icons .icon.newlink {
+	background-position: -120px -400px;
+}
+
+.icons .icon.parentfolder {
+	background-position: -200px -400px;
+}
+
+.icons .icon.fileupload {
+	background-position: -80px -400px;
+	background-position: -120px 0px;
+}
+
+.icons .icon.updatekey {
+	background-position: -40px -400px;
+}
+
+.icons .icon.addreview,
+.icons .icon.addversion,
+.icons .icon.addrevision {
+	background-position: -120px 0px;
+}
+
+.icons .icon.email,
+.icons .icon.mail,
+.icons .icon.sendemail {
+	background-position: 0px -360px;
+}
+
+.icons .icon.pathlist,
+.icons .icon.submission {
+	background-position: -40px -320px;
+}
+
+.icons .icon.separator {
+   background:none !important;
+   width: 8px !important;
+}
+
+.icons .icon.default,
+.icons .icon.makedefault,
+.icons .icon.mandatory,
+.icons .icon.notmandatory {
+	background-image: url(../img/common_icons_set1_16.png);
+	background-color: transparent;
+}
+
+.icons .icon.comment {
+	background-position: -160px -440px;
+}
+
+.icons .icon.default {
+	background-position: -40px -440px;
+}
+
+.icons .icon.makedefault {
+	background-position: 0 -440px;
+}
+
+.icons .icon.mandatory {
+	background-position: -80px -480px;
+}	
+
+.icons .icon.notmandatory {
+	background-position: -120px -480px;
+}
+
+.icons .icon.hide,
+.icons .icon.visible,
+.icons .icon.hideselected {
+	display: inline-block;
+	*display: inline;
+	*zoom:1;	
+	background-position: -240px -280px;
+}
+
+.icons .icon.show,
+.icons .icon.hidden,
+.icons .icon.showselected {
+	background-position: -240px -320px;
+}
+
+.icons .icon.closesolved {
+	background-position: -80px -320px;
+}
+
+.icons .icon.closeunsolved {
+	background-position: -120px -320px;
+}
+
+.icons .icon.promote,
+.icons .icon.reopen {
+	background-position: -160px -320px;
+}
+	
+/* @end */
+
+/* @end */
+
+/* @group Override .icons .icon export 16 */
+
+.icons .icon.export.pdf,
+.icons .icon.export.rtf,
+.icons .icon.export.xls,
+.icons .icon.download.zip,
+.icons .icon.play {
+	background: transparent url(../../File/img/Filetype_Set-1_16.png);
+}
+
+.icons a.icon.export.pdf {
+}
+
+.icons .icon.export.pdf {
+	background-position: 0 -462px !important;
+}
+
+.icons .icon.export.rtf {
+    background-position: 0 -858px !important;
+}
+
+.icons .icon.export.xls {
+    background-position: 0 -1056px !important;
+}
+
+.icons .icon.download.zip {
+    background-position: 0 -1188px !important;
+}
+
+.icons .icon.play {
+	background-position: 0 -1320px;
+}
+
+/* @end */
+
+/* @group Export temp */
+
+/*a.img_link.ico_export_csv_l {
+    background-color: transparent;
+    background-image: url(../../../Generics/File/img/Filetype_Set-2_32.png);
+    background-position: 0 0px;
+    width: 32px;
+    height: 32px;
+}
+
+a.img_link.ico_export_xml_l {
+    background-color: transparent;
+    background-image: url(../../../Generics/File/img/Filetype_Set-2_32.png);
+    background-position: 0 -82px;
+    width: 32px;
+    height: 32px;
+}
+
+a.img_link.ico_export_pdf_l {
+    background-color: transparent;
+    background-image: url(../../../Generics/File/img/Filetype_Set-1_32.png);
+    background-position: 0 -574px;
+    width: 32px;
+    height: 32px;
+}*/
+
+/* @end */
+
+span.button.moveUnit,
+span.button.moveActivity,
+.handle,
+.icon.arrowup,
+.icon.arrowdown,
+.icon.movesection,
+.icon.movecfield,
+.icon.movecfielditem,
+.icon.movecfp,
+.icon.moveproject,
+.icon.moveactivity,
+.icon.movepath,
+.icon.orderUp,
+.icon.orderDown,
+div.choseselect .icons .icon.selectall,
+div.choseselect .icons .icon.selectnone,
+.icon.selectall,
+.icon.selectnone,
+.icons .icon.selectall,
+.icons .icon.selectnone,
+.icon.checked,
+.icon.notchecked,
+.icon.close,
+span.movecfielditem {
+	display: inline-block;
+	*display:inline;
+	*zoom: 1;
+    background: transparent url(../img/handlers_set_1.png) no-repeat -240px 0px;
+    text-align: left;
+	text-indent: -9999px;
+	*text-indent: 0;
+	*font-size: 0;
+	*line-height: 0;
+	*overflow: hidden;
+}
+
+th input[alt='Ordinamento crescente'],
+th input[alt='Ordinamento decrescente'] {
+	background: transparent url(../img/handlers_set_1.png) no-repeat -240px 0px;
+	width: 8px !important;
+	height: 6px !important;
+	display: inline-block;
+	*display:inline;
+	*zoom: 1;
+	text-align: left;
+	text-indent: -9999px;
+	*text-indent: 0;
+	*font-size: 0;
+	*line-height: 0;
+	*overflow: hidden;
+	margin: 0 1px;
+}
+
+.icon.orderUp,
+.icon.orderDown {
+	/*	background: url(../img/handlers_set_1.png) no-repeat !important;*/
+	width: 8px !important;
+	height: 6px !important;
+	margin: 0 1px !important;
+}
+  
+.icon.orderUp,
+th input[alt='Ordinamento crescente'] {
+	background-position: 0px -252px !important;
+	margin-left: 2px;
+}
+
+.icon.orderDown,
+th input[alt='Ordinamento decrescente'] {
+	background-position: 0px -124px !important;
+	margin-right: 2px;
+}
+
+.icon.selectnone,
+.icons .icon.selectnone,
+div.choseselect .icons .icon.selectnone {
+	background-position: 0 -348px;
+	width: 16px;
+	height: 16px;
+}
+
+.icons .icon.selectall,
+.icon.selectall,
+div.choseselect .icons .icon.selectall {
+	background-position: 0 -383px;
+	width: 16px;
+	height: 16px;
+}
+
+.icon.checked {
+	background-position: 0 -938px;
+	width: 16px;
+	height: 16px;
+}
+
+.icon.notchecked {
+	background-position: 0 -899px;
+	width: 16px;
+	height: 16px;
+}
+
+span.button.moveUnit,
+.icon.vmove.large,
+.icon.movesection,
+span.movesection,
+.icon.movecfp,
+.icon.moveproject,
+.icon.moveunit,
+.icon.movepath {
+    background-position: -6px -619px ;
+	width: 16px;
+	height: 24px;
+}
+
+span.button.moveActivity,
+span.movecfield,
+span.movecfielditem {
+	background-position: 2px -579px !important;
+	width: 16px;
+	height: 16px;
+	padding: 0 !important;
+}
+
+.handle {
+	background-position: 0px -783px;
+    cursor: pointer;
+	width: 16px;
+	height: 16px;
+}
+
+.handle.collapsed {
+	background-position: 0px -861px;
+}
+
+.handle.expanded {
+	background-position: 0px -783px;
+}
+
+.handle.alt {
+	background-position: 0px -1103px;
+	width: 13px;
+	height: 13px;
+}
+
+.handle.alt.collapsed {
+	background-position: 0px -1064px;
+}
+
+.handle.alt.expanded {
+	background-position: 0px -1103px;
+}
+
+.handle.alt.close {
+	background-position: 0px -1142px;
+}
+
+.handle.alt.disabled {
+	background-position: 0px -1189px;
+	cursor: default;
+}
+
+.handle.expander {
+	width: 14px;
+	height: 14px;
+	background: transparent url(../img/jqui_454545_256x240.png) no-repeat -65px -17px;
+	line-height: inherit;
+	border-radius: 4px;
+}
+
+.handle.expander:hover {
+	background-color: #ddd;
+}
+
+.handle.expander.collapsed {
+	background-position: -34px -18px;	
+}
+
+.handle.expander.expanded {
+
+}
+
+.icon.arrowup {
+	background-position: 0 -54px;
+}
+
+.icon.arrowdown {
+	background-position: 0 -20px;
+}
+
+.icon.expand {
+	display: inline-block;
+	*display:inline;
+	zoom: 1;
+	background: transparent url(../img/jqui_888888_256x240.png) no-repeat -18px -82px;
+	text-align: left;
+	text-indent: -9999px;
+	*text-indent: 0;
+	*font-size: 0;
+	*line-height: 0;
+	*overflow: hidden;
+	width: 12px;
+	height: 12px;
+}
+
+.icon.navseparator,
+.icon.treenavseparator {
+	display: inline-block;
+	*display:inline;
+	zoom: 1;
+    background: transparent url(../img/jqui_888888_256x240.png) no-repeat -36px -18px;
+    text-align: left;
+	text-indent: -9999px;
+	*text-indent: 0;
+	*font-size: 0;
+	*line-height: 0;
+	*overflow: hidden;
+	width: 10px;
+	height: 10px;
+	margin: 0 2px;
+}
+
+.icon.comtype_64 {
+	display: inline-block;
+	*display:inline;
+	*zoom: 1;
+    width: 76px;
+    height: 84px;
+	background: transparent;
+	background-color: transparent;
+	background-repeat: no-repeat;
+	text-align: left;	
+	text-indent: -9999px;
+	*text-indent: 0;
+	*font-size: 0;	 
+	*line-height: 0;
+	*overflow: hidden;
+	outline: 0;
+	cursor: default;
+	border: none;
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	*margin-left: 1px;
+	*margin-right: 1px;
+	background: transparent url('/images/TilesDefault/icontent_76.png'); /*url('../img/comtypes_icons_64.png')*/
+}
+
+.icon.comtype_48 {
+	display: inline-block;
+	*display:inline;
+	*zoom: 1;
+	width: 48px;
+	height: 48px;
+	background: transparent;
+	background-color: transparent;
+	background-repeat: no-repeat;
+	text-align: left;	
+	text-indent: -9999px;
+	*text-indent: 0;
+	*font-size: 0;	 
+	*line-height: 0;
+	*overflow: hidden;
+	outline: 0;
+	cursor: default;
+	border: none;
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	*margin-left: 1px;
+	*margin-right: 1px;
+	background: transparent  url('/images/TilesDefault/icontent_48.png'); /*url('../img/comtypes_icons_48.png');*/
+}
+
+.gallery .icon {
+    border: 1px solid #fff;
+}
+
+
+
+.comtype_64.generic {
+                background-position: 0 0;
+}
+
+.comtype_64.course {
+                background-position: 0 -128px;
+}
+
+.comtype_64.organization {
+                background-position: 0 -256px;
+}
+
+.comtype_64.webconf {
+                background-position: 0 -384px;
+}
+
+.comtype_64.workgroup {
+                background-position: 0 -512px; 
+}
+
+.comtype_64.noticeboard {
+                background-position: 0 -640px;
+}
+
+.comtype_64.community {
+                background-position: 0 -768px;
+}
+
+/* Aggiunte */
+.comtype_64.portfolio {
+                background-position: 0 -896px;
+}
+
+.comtype_64.bandi {
+                background-position: 0 -1024px;
+}
+
+.comtype_64.webinar {
+                background-position: 0 -1152px;
+}
+
+.comtype_64.ticket {
+                background-position: 0 -1280px;
+}
+
+.comtype_64.info {
+                background-position: 0 -1408px;
+}
+
+.comtype_64.project {
+                background-position: 0 -1536px;
+}
+
+.comtype_64.test {
+                background-position: 0 -1664px;
+}
+
+.comtype_64.generic1 {
+                background-position: 0 -1792px;
+}
+.comtype_64.generic2 {
+                background-position: 0 -1152px;
+}
+
+.comtype_64.generic3 {
+                background-position: 0 -1920px;
+}
+
+.comtype_64.generic4 {
+                background-position: 0 -2048px;
+}
+
+/*
+.comtype_48.generic {
+	background-position: 0 0;
+}
+
+.comtype_48.course {
+	background-position: 0 -96px;
+}
+
+.comtype_48.organization {
+	background-position: 0 -192px;
+}
+
+.comtype_48.webconf {
+	background-position: 0 -288px;
+}
+
+.comtype_48.workgroup {
+	background-position: 0 -384px; 
+}
+
+.comtype_48.noticeboard {
+	background-position: 0 -480px;
+}
+
+.comtype_48.community {
+	background-position: 0 -576px;
+}
+*/
+
+.comtype_48.generic {
+                background-position: 0 0;
+}
+
+.comtype_48.course {
+                background-position: 0 -96px;
+}
+
+.comtype_48.organization {
+                background-position: 0 -192px;
+}
+
+.comtype_48.webconf {
+                background-position: 0 -288px;
+}
+
+.comtype_48.workgroup {
+                background-position: 0 -480px; 
+}
+
+.comtype_48.noticeboard {
+                background-position: 0 -576px;
+}
+
+.comtype_48.community {
+                background-position: 0 -672px;
+}
+
+/* Aggiunte */
+.comtype_48.portfolio {
+                background-position: 0 -768px;
+}
+
+.comtype_48.bandi {
+                background-position: 0 -864px;
+}
+
+.comtype_48.webinar {
+                background-position: 0 -960px;
+}
+
+.comtype_48.ticket {
+                background-position: 0 -1056px;
+}
+
+.comtype_48.info {
+                background-position: 0 -1152px;
+}
+
+.comtype_48.project {
+                background-position: 0 -1248px;
+}
+
+.comtype_48.test {
+                background-position: 0 -1344px;
+}
+
+.comtype_48.generic1 {
+                background-position: 0 -1440px;
+}
+.comtype_48.generic2 {
+                background-position: 0 -1536px;
+}
+
+.comtype_48.generic3 {
+                background-position: 0 -1632px;
+}
+
+.comtype_48.generic4 {
+                background-position: 0 -1728px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+.comtype_48.manual {
+	background: none;
+	border-radius: 200px;
+	border: 2px solid #aaa;
+	width: 40px;
+	height: 40px;
+}*/
+
+.comtype_48.custom {
+	background: none;
+}
+
+.viewnav.icons {
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	*display:inline;
+	*zoom:1;
+}
+
+.viewnav.icons .icon {
+	width: 32px !important;
+	height: 32px !important;
+	margin-right: 5px;
+	border: 1px solid #ccc;
+	background: #e5e5e5 url('../img/viewicons_sprite_32.png') 9999px 9999px;
+	text-shadow: 1px 1px 0 #eee;	
+	vertical-align: middle;	
+	border: 1px solid #ccc;
+	-webkit-border-radius: 4px;
+	-moz-border-radius   : 4px;
+	border-radius        : 4px;
+	-moz-background-clip   : padding;
+	-webkit-background-clip: padding-box;
+	background-clip        : padding-box;	
+	-webkit-box-shadow: 0 0 2px #ffffff inset, 0 1px 0 rgba(0,0,0,0.05);
+	-moz-box-shadow   : 0 0 2px #ffffff inset, 0 1px 0 rgba(0,0,0,0.05);
+	box-shadow        : 0 0 2px #ffffff inset, 0 1px 0 rgba(0,0,0,0.05);
+	cursor: pointer;
+}
+
+.viewnav.icons .icon:hover {
+	background-color: #e0e0e0;
+}
+
+.viewnav.icons .icon.active {
+	background-color: #d9d9d9;
+	-webkit-box-shadow: inset 0 0 2px rgba(0,0,0,0.1);
+	-moz-box-shadow   : inset 0 0 2px rgba(0,0,0,0.1);
+	box-shadow        : inset 0 0 10px rgba(0,0,0,0.1);
+	border: 1px solid #c0c0c0;
+	cursor: default;
+	position: relative;
+}
+
+.homepage .viewnav.icons .icon.active:before {
+	content: "";
+	display: inline-block;
+	height: 40px;
+	width: 1px;
+	background-color: #ddd;
+	position: absolute;
+	bottom: -16px;
+	left: 16px;
+	z-index: -10;
+}
+
+.viewnav.icons .icon.tile {
+	background-position: 0 0;
+}
+
+.viewnav.icons .icon.list {
+	background-position: 0 -32px;
+}
+
+.viewnav.icons .icon.tree {
+	background-position: 0 -64px;
+}
+
+.viewnav.icons .icon.expand {
+	background-position: 0 -128px;
+}
+
+.viewnav.icons .icon.stack {
+	background-position: 0 -193px;
+}
+
+.viewnav.icons .icon.combo {
+	background-position: 0 -96px;
+}
+
+.icons .icon.infoxs.history {
+	background: transparent url(../img/common_icons_set1_16.png) !important;
+	height: 16px !important;
+	width: 16px !important;
+	background-position: -240px -160px !important;
+	background-repeat: no-repeat !important;
+}
+
+.icons .icon.infoxs.permission {
+	background: transparent url(../img/common_icons_set1_16.png) !important;
+	height: 16px !important;
+	width: 16px !important;
+	background-position: -200px -120px !important;
+	background-repeat: no-repeat !important;
+}
+
+/* --- end stylesheet */

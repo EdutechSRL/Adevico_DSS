@@ -1,0 +1,15 @@
+/* 
+        Nel caso in cui non fosse possibile inserire la "nuova grafica" degli wizard,
+        aggiungere questo file dopo quello normale per "ripristinare" lo stato. (Vedi TSM)
+        Testato con Glossari e Statistiche SCORM
+*/
+
+
+#wizard div.wiz_header div.wiz_top_info div.wiz_top_desc h2 { display: none; }
+div.wiz_header, div.wiz_bot_nav { background-color: transparent; }
+div.wiz_header, div.wiz_content, div.wiz_bot_nav { border: 0; }
+#wizard { box-shadow: 0px 0px;}
+
+/* PER SCORM */
+div.SRV_Scorm #wizard div.wiz_header div.wiz_top_info div.wiz_top_desc span.Testo_Campo {  padding-top: 3em; }
+div.SRV_Scorm #wizard div.wiz_header div.wiz_top_info div.wiz_top_desc span.errore  {  padding-top: 0em; }

@@ -1,0 +1,161 @@
+.RadTabStrip_Office2007 {
+  color: black;
+  font: 12px "Segoe UI", Arial, Helvetica, sans-serif;
+  line-height: 26px; }
+  .RadTabStrip_Office2007 .rtsGhostTab {
+    border-color: #a7bedb;
+    border-radius: 5px;
+    color: #00156e;
+    background-color: #ccdbee; }
+  .RadTabStrip_Office2007 .rtsLevel {
+    background: #ccdbee; }
+    .RadTabStrip_Office2007 .rtsLevel.rtsLevel2, .RadTabStrip_Office2007 .rtsLevel.rtsLevel3 {
+      background-color: #ccdbee;
+      background-image: url('TabStrip/Level2Bg.png');
+      background-repeat: repeat-x; }
+  .RadTabStrip_Office2007 .rtsLI,
+  .RadTabStrip_Office2007 .rtsLink {
+    color: black;
+    font: 12px/26px "Segoe UI", Arial, Helvetica, sans-serif; }
+  .RadTabStrip_Office2007 .rtsLink {
+    background-image: none; }
+    .RadTabStrip_Office2007 .rtsLink:hover {
+      text-decoration: underline; }
+  .RadTabStrip_Office2007 .rtsOut {
+    background-image: none; }
+  .RadTabStrip_Office2007 .rtsSelected,
+  .RadTabStrip_Office2007 .rtsSelected:hover {
+    text-decoration: underline; }
+  .RadTabStrip_Office2007 .rtsDisabled {
+    color: #8d8d8d; }
+  .RadTabStrip_Office2007 .rtsLevel1 {
+    background-color: #bfdbff;
+    background-image: url('TabStrip/TabStripStates.png');
+    background-position: 0 100%;
+    background-repeat: no-repeat; }
+    .RadTabStrip_Office2007 .rtsLevel1 .rtsLink {
+      background-image: url('TabStrip/TabStripStates.png');
+      background-position: 0 0;
+      color: #00156e; }
+      .RadTabStrip_Office2007 .rtsLevel1 .rtsLink:hover {
+        background-position: 0 -52px; }
+    .RadTabStrip_Office2007 .rtsLevel1 .rtsSelected,
+    .RadTabStrip_Office2007 .rtsLevel1 .rtsSelected:hover {
+      text-decoration: none;
+      background-position: 0 -26px; }
+    .RadTabStrip_Office2007 .rtsLevel1 .rtsOut {
+      background-image: url('TabStrip/TabStripStates.png');
+      background-position: 100% 0; }
+    .RadTabStrip_Office2007 .rtsLevel1 .rtsLink:hover .rtsOut {
+      background-position: 100% -52px; }
+    .RadTabStrip_Office2007 .rtsLevel1 .rtsSelected .rtsOut,
+    .RadTabStrip_Office2007 .rtsLevel1 .rtsSelected:hover .rtsOut {
+      background-position: 100% -26px; }
+    .RadTabStrip_Office2007 .rtsLevel1 .rtsDisabled {
+      color: #8d8d8d; }
+    .RadTabStrip_Office2007 .rtsLevel1 .rtsDisabled:hover {
+      background-position: 0 0;
+      text-decoration: none; }
+    .RadTabStrip_Office2007 .rtsLevel1 .rtsDisabled:hover .rtsOut {
+      background-position: 100% 0; }
+  .RadTabStrip_Office2007 .rtsLevel2 {
+    background-position: 0 0; }
+  .RadTabStrip_Office2007 .rtsLevel3 {
+    background-position: 0 -26px; }
+  .RadTabStrip_Office2007 .rtsNextArrow,
+  .RadTabStrip_Office2007 .rtsPrevArrow,
+  .RadTabStrip_Office2007 .rtsPrevArrowDisabled,
+  .RadTabStrip_Office2007 .rtsNextArrowDisabled {
+    background-image: url('TabStrip/TabStripStates.png'); }
+
+.RadTabStrip_Office2007.RadTabStripVertical .rtsLevel1 {
+  background-image: none; }
+  .RadTabStrip_Office2007.RadTabStripVertical .rtsLevel1 .rtsLink {
+    background-image: url('TabStrip/TabStripVStates.png');
+    *zoom: 1; }
+  .RadTabStrip_Office2007.RadTabStripVertical .rtsLevel1 .rtsOut {
+    background-image: none; }
+.RadTabStrip_Office2007.RadTabStripVertical .rtsLevel2 {
+  background-image: none; }
+.RadTabStrip_Office2007.RadTabStripVertical .rtsLevel3 {
+  background-image: none; }
+
+.RadTabStripBottom_Office2007 .rtsLevel.rtsLevel2, .RadTabStripBottom_Office2007 .rtsLevel.rtsLevel3 {
+  background-image: none; }
+.RadTabStripBottom_Office2007 .rtsLevel1 {
+  background-position: 0 -599px;
+  background-repeat: repeat-x; }
+  .RadTabStripBottom_Office2007 .rtsLevel1 .rtsLink {
+    background-position: 0 -130px; }
+    .RadTabStripBottom_Office2007 .rtsLevel1 .rtsLink:hover {
+      background-position: 0 -182px; }
+  .RadTabStripBottom_Office2007 .rtsLevel1 .rtsOut {
+    background-position: 100% -130px; }
+  .RadTabStripBottom_Office2007 .rtsLevel1 .rtsLink:hover .rtsOut {
+    background-position: 100% -182px; }
+  .RadTabStripBottom_Office2007 .rtsLevel1 .rtsSelected,
+  .RadTabStripBottom_Office2007 .rtsLevel1 .rtsSelected:hover {
+    background-position: 0 -156px; }
+  .RadTabStripBottom_Office2007 .rtsLevel1 .rtsSelected .rtsOut,
+  .RadTabStripBottom_Office2007 .rtsLevel1 .rtsSelected:hover .rtsOut {
+    background-position: 100% -156px; }
+  .RadTabStripBottom_Office2007 .rtsLevel1 .rtsDisabled:hover {
+    background-position: 0 -599px; }
+    .RadTabStripBottom_Office2007 .rtsLevel1 .rtsDisabled:hover .rtsOut {
+      background-position: 100% -599px; }
+.RadTabStripBottom_Office2007 .rtsLevel2 {
+  background-image: none; }
+.RadTabStripBottom_Office2007 .rtsLevel3 {
+  background-image: none; }
+
+.RadTabStripLeft_Office2007 .rtsLevel1 .rtsLink {
+  background-position: 100% 0; }
+  .RadTabStripLeft_Office2007 .rtsLevel1 .rtsLink:hover {
+    background-position: 0 -200px; }
+  .RadTabStripLeft_Office2007 .rtsLevel1 .rtsLink.rtsSelected {
+    background-position: 0 -400px; }
+.RadTabStripLeft_Office2007 .rtsLevel1 .rtsDisabled:hover {
+  background-position: 100% 0; }
+.RadTabStripLeft_Office2007 .rtsSeparator {
+  background: #6f6f6f; }
+
+.RadTabStripRight_Office2007 .rtsLevel1 .rtsLink {
+  background-position: 100% 0; }
+  .RadTabStripRight_Office2007 .rtsLevel1 .rtsLink:hover {
+    background-position: 100% -200px; }
+  .RadTabStripRight_Office2007 .rtsLevel1 .rtsLink.rtsSelected {
+    background-position: 100% -400px; }
+.RadTabStripRight_Office2007 .rtsLevel1 .rtsDisabled:hover {
+  background-position: 100% 0; }
+.RadTabStripRight_Office2007 .rtsSeparator {
+  background: #6f6f6f; }
+
+html .RadTabStrip_Office2007_disabled .rtsLevel1 .rtsLink {
+  color: #8d8d8d;
+  cursor: default; }
+  html .RadTabStrip_Office2007_disabled .rtsLevel1 .rtsLink:hover {
+    text-decoration: none; }
+
+/* <focus cue> */
+div.RadTabStrip_Office2010Blue a.rtsLink:focus {
+  outline-color: #6f6f6f; }
+
+div.RadTabStrip_Office2010Blue a.rtsLink:focus:after {
+  border-color: #6f6f6f \9; }
+
+/* </focus cue> */
+/** DropClues */
+.rtsDropClue_Office2007 {
+  background-image: url('../Common/TabStrip/rtsDropClueSprite.png'); }
+
+.rtsDropClueTop_Office2007 {
+  background-position: 0 -20px; }
+
+.rtsDropClueRight_Office2007 {
+  background-position: 0 -30px; }
+
+.rtsDropClueBottom_Office2007 {
+  background-position: 0 0; }
+
+.rtsDropClueLeft_Office2007 {
+  background-position: 0 -10px; }

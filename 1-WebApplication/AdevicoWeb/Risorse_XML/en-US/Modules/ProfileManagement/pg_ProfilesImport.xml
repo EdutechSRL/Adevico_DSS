@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="urn:ComolTranslation">
+  <item name="serviceTitleImportProfile" html="false" placeholder="false">Profile import</item>
+  <item name="serviceImportProfilesNopermission" html="false" placeholder="false">You do not have permission to view the selected profile's information</item>
+  <item name="BTNbackBottom.text" html="false" placeholder="false">Back</item>
+  <item name="BTNbackBottom.status" html="false" placeholder="false">Back to previous step</item>
+  <item name="BTNbackBottom.ToolTip" html="false" placeholder="false">Back to previous step</item>
+  <item name="BTNbackTop.text" html="false" placeholder="false">Back</item>
+  <item name="BTNbackTop.status" html="false" placeholder="false">Back to previous step</item>
+  <item name="BTNbackTop.ToolTip" html="false" placeholder="false">Back to previous step</item>
+  <item name="BTNnextBottom.text" html="false" placeholder="false">Next</item>
+  <item name="BTNnextBottom.status" html="false" placeholder="false">Go to next step</item>
+  <item name="BTNnextBottom.ToolTip" html="false" placeholder="false">Go to next step</item>
+  <item name="BTNnextTop.text" html="false" placeholder="false">Next</item>
+  <item name="BTNnextTop.status" html="false" placeholder="false">Go to next step</item>
+  <item name="BTNnextTop.ToolTip" html="false" placeholder="false">Go to next step</item>
+  <item name="BTNcompleteTop.text" html="false" placeholder="false">Import</item>
+  <item name="BTNcompleteTop.status" html="false" placeholder="false">Import the selected data and create the related profiles</item>
+  <item name="BTNcompleteTop.ToolTip" html="false" placeholder="false">Import the selected data and create the related profiles</item>
+  <item name="BTNcompleteBottom.text" html="false" placeholder="false">Import</item>
+  <item name="BTNcompleteBottom.status" html="false" placeholder="false">Import the selected data and create the related profiles</item>
+  <item name="BTNcompleteBottom.ToolTip" html="false" placeholder="false">Import the selected data and create the related profiles</item>
+  <item name="HYPbackToManagement.text" html="false" placeholder="false">Profiles management</item>
+  <item name="HYPbackToManagement.status" html="false" placeholder="false">Back to profiles management</item>
+  <item name="HYPbackToManagement.ToolTip" html="false" placeholder="false">Back to profiles management</item>
+  <item name="ProfileImportStep.SelectSource.Title" html="false" placeholder="true" mustcontains="{0}">Step {0}: choose data source</item>
+  <item name="ProfileImportStep.SelectSource.Description" html="false" placeholder="false">Select source from which import data and create a profile</item>
+  <item name="ProfileImportStep.SourceCSV.Title" html="false" placeholder="true" mustcontains="{0}|CSV">Step {0}: CSV File</item>
+  <item name="ProfileImportStep.SourceCSV.Description" html="false" placeholder="false" mustcontains="CSV">Define CSVfile main settings and retrieve data.</item>
+  <item name="ProfileImportStep.SourceRequestForMembership.Title" html="false" placeholder="true" mustcontains="{0}">Step {0}: request for membership</item>
+  <item name="ProfileImportStep.SourceRequestForMembership.Description" html="false" placeholder="false">Select the request for membership from which you want to import data.</item>
+  <item name="ProfileImportStep.SourceCallForPapers.Title" html="false" placeholder="true" mustcontains="{0}">Step {0}: call</item>
+  <item name="ProfileImportStep.SourceCallForPapers.Description" html="false" placeholder="false">Select the call from which you want to recover data.</item>
+  <item name="ProfileImportStep.FieldsMatcher.Title" html="false" placeholder="true" mustcontains="{0}">Step {0}:data columns correspondence</item>
+  <item name="ProfileImportStep.FieldsMatcher.Description" html="false" placeholder="false">Set for every input data column the related column of the user profile.</item>
+  <item name="ProfileImportStep.ItemsSelctor.Title" html="false" placeholder="true" mustcontains="{0}">Step {0}: select record / manage conflicts</item>
+  <item name="ProfileImportStep.ItemsSelctor.Description" html="false" placeholder="false">Select users to imoprt.</item>
+  <item name="ProfileImportStep.SelectOrganizations.Title" html="false" placeholder="true" mustcontains="{0}">Step {0}: select organizations</item>
+  <item name="ProfileImportStep.SelectOrganizations.Description" html="false" placeholder="false">Select organizations to which associate users to import.</item>
+  <item name="ProfileImportStep.SelectCommunities.Title" html="false" placeholder="true" mustcontains="{0}">Step {0}: select community</item>
+  <item name="ProfileImportStep.SelectCommunities.Description" html="false" placeholder="false">Select community in which enroll users</item>
+  <item name="ProfileImportStep.MailTemplate.Title" html="false" placeholder="true" mustcontains="{0}">Step {0}: template mail</item>
+  <item name="ProfileImportStep.MailTemplate.Description" html="false" placeholder="false">Define the template for the mail to send to the single enrollee.</item>
+  <item name="ProfileImportStep.SubscriptionsSettings.Title" html="false" placeholder="true" mustcontains="{0}">Step {0}: communities roles</item>
+  <item name="ProfileImportStep.SubscriptionsSettings.Description" html="false" placeholder="false">Set role for the users you want to import into the platform and enroll in the selected communities.</item>
+  <item name="ProfileImportStep.Summary.Title" html="false" placeholder="true" mustcontains="{0}">Step {0}: final comfirmation</item>
+  <item name="ProfileImportStep.Summary.Description" html="false" placeholder="false">Definitive confirmation of the operations to perform.</item>
+  <item name="ProfileImportStep.ImportCompleted.Title" html="false" placeholder="false">Profile import CONCLUDED</item>
+  <item name="ProfileImportStep.ImportCompleted.Description" html="false" placeholder="false" />
+  <item name="ProfileImportStep.ImportWithErrors.Title" html="false" placeholder="false">Profile import CONCLUDED with errors</item>
+  <item name="ProfileImportStep.ImportWithErrors.Description" html="false" placeholder="false">Error details in the user importation procedure:</item>
+  <item name="LBemptyMessage.text" html="false" placeholder="false">Work session has expired, it is impossible to continue</item>
+  <item name="LBsourceSelector_t.text" html="false" placeholder="false">Data source:</item>
+  <item name="SourceType.None" html="false" placeholder="false">- not specified -</item>
+  <item name="SourceType.FileCSV" html="false" placeholder="true" mustcontains="CSV">CSV file</item>
+  <item name="SourceType.RequestForMembership" html="false" placeholder="false">Request for membership</item>
+  <item name="SourceType.FileExcel" html="false" placeholder="false">Excel file</item>
+  <item name="SourceType.CallForPapers" html="false" placeholder="false">Calls</item>
+  <item name="LBsourceFile_t.text" html="false" placeholder="false">Select file:</item>
+  <item name="BTNupload.text" disambiguation="carica=upload" html="false" placeholder="false">Upload</item>
+  <item name="BTNupload.ToolTip" html="false" placeholder="true" mustcontains="CSV">Upload CSV file </item>
+  <item name="LBuploadedFile_t.text" html="false" placeholder="true" mustcontains="CSV">CSV file uploaded:</item>
+  <item name="LBuploadedFile.text" html="false" placeholder="true" mustcontains="{0}|{1}|{2}">{0} on {1} at {2}.</item>
+  <item name="BTNremoveFile.text" html="false" placeholder="false" />
+  <item name="BTNremoveFile.ToolTip" html="false" placeholder="false">Delete file</item>
+  <item name="LBfirstRowColumnNames_t.text" html="false" placeholder="false">Column name on the first row:</item>
+  <item name="CBXfirstRowColumnNames.text" html="false" placeholder="false">Yes</item>
+  <item name="LBcolumnDelimiter_t.text" html="false" placeholder="false">Column delimiter:</item>
+  <item name="LBrowDelimiter_t.text" html="false" placeholder="false">Row delimiter:</item>
+  <item name="LBrowToSkip_t.text" html="false" placeholder="false">Row to ignore:</item>
+  <item name="TextDelimiter.None" html="false" placeholder="false">None </item>
+  <item name="TextDelimiter.Semicolon" html="false" placeholder="false">Semicolon {;}</item>
+  <item name="TextDelimiter.Colon" html="false" placeholder="false">Colon {:}</item>
+  <item name="TextDelimiter.Comma" html="false" placeholder="false">Comma {,}</item>
+  <item name="TextDelimiter.Tab" html="false" placeholder="true" mustcontains="{t}">Tabulation {t}"</item>
+  <item name="TextDelimiter.VerticalBar" html="false" placeholder="false" mustcontains="{|}">Vertical bar  {|}</item>
+  <item name="TextDelimiter.CrLf" html="false" placeholder="true" mustcontains="{CR}{LF}">{CR}{LF}</item>
+  <item name="TextDelimiter.Cr" html="false" placeholder="true" mustcontains="{CR}">{CR}</item>
+  <item name="TextDelimiter.Lf" html="false" placeholder="true" mustcontains="{LF}">{LF}</item>
+  <item name="BTNpreviewCSV.text" html="false" placeholder="false">Preview</item>
+  <item name="BTNpreviewCSV.ToolTip" html="false" placeholder="false">Preview</item>
+  <item name="Column" html="false" placeholder="true" mustcontains="{0}">Column {0}"</item>
+  <item name="DisplayProfileUnknown" html="false" placeholder="false">Unknown user.</item>
+  <item name="DisplayNoPermissionForProfile" html="false" placeholder="false">Sorry, you do not have permission to view the details related to the selected profile.</item>
+  <item name="LBauthenticationProviders_t.text" html="false" placeholder="false">Choose  an authentication type:</item>
+  <item name="LBallowPWDinsert_t.text" html="false" placeholder="false">Allow password insertion:</item>
+  <item name="CBXallowPWDinsert.text" html="false" placeholder="false">yes</item>
+  <item name="LBdefaultLogin_t.text" html="false" placeholder="false">Login assigned by th system:</item>
+  <item name="CBXdefaultLogin.text" html="false" placeholder="false">yes</item>
+  <item name="LBprofileToSelect_t.text" html="false" placeholder="false">Choose profile type:</item>
+  <item name="LBdefaultAgency_t.text" html="false" placeholder="false">Deafault agency (IF not found):</item>
+  <item name="LBsourceColumn.text" html="false" placeholder="false">Source column</item>
+  <item name="LBdestinationColumn.text" html="false" placeholder="false">Profile field</item>
+  <item name="ProfileAttributeType.skip" html="false" placeholder="false">--    Ignore    --</item>
+  <item name="ProfileAttributeType.unknown" html="false" placeholder="false">Unknown</item>
+  <item name="ProfileAttributeType.externalId" html="false" placeholder="false">External login identifier</item>
+  <item name="ProfileAttributeType.name" html="false" placeholder="false">Name</item>
+  <item name="ProfileAttributeType.surname" html="false" placeholder="false">Surname</item>
+  <item name="ProfileAttributeType.mail" html="false" placeholder="false">Mail</item>
+  <item name="ProfileAttributeType.telephoneNumber" html="false" placeholder="false">Telephone</item>
+  <item name="ProfileAttributeType.fax" html="false" placeholder="false">Fax</item>
+  <item name="ProfileAttributeType.mobile" html="false" placeholder="false">Mobile</item>
+  <item name="ProfileAttributeType.taxCode" html="false" placeholder="false">Tax code</item>
+  <item name="ProfileAttributeType.login" html="false" placeholder="false">Login</item>
+  <item name="ProfileAttributeType.password" html="false" placeholder="false">Password</item>
+  <item name="ProfileAttributeType.companyName" html="false" placeholder="false">Company Tax Code</item>
+  <item name="ProfileAttributeType.companyAddress" html="false" placeholder="false">Company Address</item>
+  <item name="ProfileAttributeType.companyCity" html="false" placeholder="false">Company city</item>
+  <item name="ProfileAttributeType.companyRegion" html="false" placeholder="false">Company region</item>
+  <item name="ProfileAttributeType.companyTaxCode" html="false" placeholder="false">Tax code / Company Vat Code</item>
+  <item name="ProfileAttributeType.companyReaNumber" html="false" placeholder="false">Company R.E.A</item>
+  <item name="ProfileAttributeType.companyAssociations" html="false" placeholder="false">Professional associations</item>
+  <item name="ProfileAttributeType.matricula" html="false" placeholder="false">Matriculation number</item>
+  <item name="ProfileAttributeType.matriculaYear" html="false" placeholder="false">Matriculation year</item>
+  <item name="ProfileAttributeType.institute" html="false" placeholder="false">Institute/School</item>
+  <item name="ProfileAttributeType.classroom" html="false" placeholder="false">Class</item>
+  <item name="ProfileAttributeType.matters" html="false" placeholder="false">Subject</item>
+  <item name="ProfileAttributeType.phdTitle" html="false" placeholder="false">Doctor's degree</item>
+  <item name="ProfileAttributeType.externalUserInfo" html="false" placeholder="false">External user details</item>
+  <item name="ProfileAttributeType.jobInfo" html="false" placeholder="false">Job/Role</item>
+  <item name="ProfileAttributeType.address" html="false" placeholder="false">Address</item>
+  <item name="ProfileAttributeType.zipCode" disambiguation="codice di avviamento postale" html="false" placeholder="false">ZIP code</item>
+  <item name="ProfileAttributeType.city" html="false" placeholder="false">City</item>
+  <item name="ProfileAttributeType.autoGeneratedLogin" html="false" placeholder="false">Automatically generated login </item>
+  <item name="ProfileAttributeType.agencyName" html="false" placeholder="false">Agency name</item>
+  <item name="ProfileAttributeType.agencyNationalCode" html="false" placeholder="false">National code - Agency</item>
+  <item name="ProfileAttributeType.agencyTaxCode" html="false" placeholder="false">Tax code / Vat Code - Agency</item>
+  <item name="ProfileAttributeType.agencyExternalCode" html="false" placeholder="false">External code - Agency</item>
+  <item name="ProfileAttributeType.agencyInternalCode" html="false" placeholder="false">Platform code - Agency</item>
+  <item name="ProfileAttributeType.language" html="false" placeholder="false">Language</item>
+
+    <item name="ProfileAttributeType.job">Job</item>
+    <item name="ProfileAttributeType.sector">Sector</item>
+
+
+    <item name="ProfileAttributeType.birthPlace">Luogo di nascita</item>
+    <item name="ProfileAttributeType.birthDate">Data di nascita</item>
+
+
+    <item name="InvalidMatch.None" html="false" placeholder="false" />
+  <item name="InvalidMatch.DuplicatedItem" html="false" placeholder="true" mustcontains="{0}">DUPLICATED field: {0}</item>
+  <item name="InvalidMatch.DuplicatedItems" html="false" placeholder="true" mustcontains="{0}">DUPLICATED fields: {0}</item>
+  <item name="InvalidMatch.IgnoredRequiredItem" html="false" placeholder="true" mustcontains="{0}">Not specified REQUESTED field: {0}</item>
+  <item name="InvalidMatch.IgnoredRequiredItems" html="false" placeholder="true" mustcontains="{0}">NOT specified REQUESTED fields: {0}</item>
+  <item name="InvalidMatch.IgnoredAllItems" html="false" placeholder="false">ATTENTION: you can not go on, if all the destination columns are set as "ignored"</item>
+  <item name="InvalidMatch.NoRequiredItems" html="false" placeholder="false">ATTENTION: you can not go on, because there are no profile fields to associate.</item>
+  <item name="InvalidMatch.GenericError" html="false" placeholder="false">ATTENTION: you can not go on, verify  the correspondence source/destination columns and possible duplicated</item>
+  <item name="InvalidMatch.IgnoredAlternativeRequiredItem" html="false" placeholder="true" mustcontains="{0}">Alternative requested field: {0}</item>
+  <item name="InvalidMatch.IgnoredAlternativeRequiredItems" html="false" placeholder="true" mustcontains="{0}">Alternative REQUESTED fileds : {0}</item>
+  <item name="Field.InvalidMatch.None" html="false" placeholder="false" />
+  <item name="Field.InvalidMatch.DuplicatedItem" html="false" placeholder="false">Duplicated column</item>
+  <item name="Field.InvalidMatch.IgnoredRequiredItem" html="false" placeholder="false">Required column NOT specified</item>
+  <item name="Field.InvalidMatch.IgnoredAlternativeRequiredItem" html="false" placeholder="false">Alternative column is required and it was not specified</item>
+  <item name="LTselectRow_t.text" disambiguation="S=seleziona (un solo carattere)" html="false" placeholder="false">S</item>
+  <item name="LTrowInfo_t.text" disambiguation="E=errori (un solo carattere)" html="false" placeholder="false">E</item>
+  <item name="LBselectedProvider_t.text" html="false" placeholder="false">Authentication type:</item>
+  <item name="LBselectedProfile_t.text" html="false" placeholder="false">Profile to create:</item>
+  <item name="LBattributesInfo.text" html="false" placeholder="false">Profile fileds placeholders:</item>
+  <item name="Mail.Subject" html="false" placeholder="false">Enrollment</item>
+  <item name="Mail.Standard" html="true" placeholder="true" mustcontains="[name]|[surname]|{0}|{1}">Dear [name] [surname],&lt;br&gt;               You have been registered in the platform.{0}&lt;br&gt;You can access the system at the web address {1}.&lt;br&gt;&lt;br&gt;</item>
+  <item name="Mail.Login" html="true" placeholder="true" mustcontains="[login]|[password]">&lt;br&gt;Access data is:&lt;br&gt;Login:[login]&lt;br&gt;Password:[password]&lt;br&gt;</item>
+  <item name="InvalidImport.InvalidData" disambiguation="i=dato invalido (uno o due caratteri)" html="false" placeholder="true" mustcontains="[|]">[i]</item>
+  <item name="InvalidImport.SourceDuplicatedData" disambiguation="sd=dato sorgente duplicato (uno o due caratteri)" html="false" placeholder="true" mustcontains="[|]">[sd]</item>
+  <item name="InvalidImport.AlreadyExist" disambiguation="pp=dati presenti in piattaforma (uno o due caratteri)" html="false" placeholder="true" mustcontains="[|]">[pp]</item>
+  <item name="InvalidImport.InvalidData.Description" disambiguation="i=dato invalido (uno o due caratteri)" html="false" placeholder="true" mustcontains="[|]">[i] - Invalid data</item>
+  <item name="InvalidImport.SourceDuplicatedData.Description" disambiguation="sd=dato sorgente duplicato (uno o due caratteri)" html="false" placeholder="true" mustcontains="[|]">[sd] - Duplicated source data</item>
+  <item name="InvalidImport.AlreadyExist.Description" disambiguation="pp=dati presenti in piattaforma (uno o due caratteri)" html="false" placeholder="true" mustcontains="[|]">[pp] - Data presenti in piattaforma</item>
+  <item name="CTRLselectCommunities.DisplayInfo" html="false" placeholder="false">List of further communities in which enroll the users to import </item>
+  <item name="LBmailSelector_t.text" html="false" placeholder="false">Send mail to users:</item>
+  <item name="RBLmailSelector.True" html="false" placeholder="false">Yes</item>
+  <item name="RBLmailSelector.False" html="false" placeholder="false">No</item>
+  <item name="LBsummarySubscriptions_t.text" html="false" placeholder="false">Profiles to create:</item>
+  <item name="LBsummaryAuthenticationType_t.text" html="false" placeholder="false">Selected authentication type:</item>
+  <item name="LBsummaryUserType_t.text" html="false" placeholder="false">Profile Type</item>
+  <item name="LBsummaryPrimaryOrganization_t.text" html="false" placeholder="false">Membership organization:</item>
+  <item name="LBsummaryOtherOrganizations_t.text" html="false" placeholder="false">Other organizations to associate:</item>
+  <item name="LBsummaryMailSelector_t.text" html="false" placeholder="false">Send mail to users:</item>
+  <item name="LBsummaryMailSelector.True" html="false" placeholder="false">Yes</item>
+  <item name="LBsummaryMailSelector.False" html="false" placeholder="false">No</item>
+  <item name="LBsummarySubscribeTo_t.text" html="false" placeholder="false">Enroll in communities:</item>
+  <item name="summarySubscription" html="false" placeholder="true" mustcontains="{0}|{1}">{0} - Role: {1}</item>
+  <item name="ProfileImportAction.Create" html="false" placeholder="true" mustcontains="{0}">{0} profile creation</item>
+  <item name="ProfileImportAction.Create.True" html="false" placeholder="true" mustcontains="{0}">{0} profile creation.</item>
+  <item name="ProfileImportAction.Create.False" html="false" placeholder="true" mustcontains="{0}">{0} profile creation NOT performed</item>
+  <item name="ProfileImportAction.AddToOtherOrganizations.True" html="false" placeholder="true" mustcontains="{0}">Profiles association to the organization {0}</item>
+  <item name="ProfileImportAction.AddToOtherOrganizations.False" html="false" placeholder="true" mustcontains="{0}">Profiles association to the organization {0} NOT successfully performed</item>
+  <item name="ProfileImportAction.AddToCommunities.True" html="false" placeholder="true" mustcontains="{0}">Enrollment in the community {0}</item>
+  <item name="ProfileImportAction.AddToCommunities.False" html="false" placeholder="true" mustcontains="{0}">Enrollment in the community {0} NOT correctly performed.</item>
+  <item name="ProfileImportAction.SendMail.True" html="false" placeholder="true" mustcontains="{0}">sending registration mail to {0}</item>
+  <item name="ProfileImportAction.SendMail.False" html="false" placeholder="true" mustcontains="{0}">sending registration mail to {0} NOT correctly performed.</item>
+  <item name="Localization.Uploaded" html="false" placeholder="false">Overall progress</item>
+  <item name="Localization.UploadedFiles" html="false" placeholder="false">Progress</item>
+  <item name="Localization.CurrentFileName" html="false" placeholder="false">Current actions: </item>
+  <item name="Localization.Total" html="false" placeholder="false">Completion</item>
+  <item name="Localization.TotalFiles" html="false" placeholder="false">Overall activities</item>
+  <item name="Localization.ElapsedTime" html="false" placeholder="false">Taken time:</item>
+  <item name="Localization.EstimatedTime" html="false" placeholder="false">Estimated time:</item>
+  <item name="Localization.TransferSpeed" html="false" placeholder="false">Executioin speed:</item>
+  <item name="Import.Completed.1" html="false" placeholder="false">All the import operation have been correcly performed. A platform profile has been created.</item>
+  <item name="Import.Completed" html="false" placeholder="true" mustcontains="{0}">All the import operation have been correcly performed. {0} platform profiles have been created.</item>
+  <item name="Import.ImportOther" html="false" placeholder="true" mustcontains="{0}">From selected data source there are another {0} profiles to be created: if you want to import them, click "Back".</item>
+  <item name="Import.ImportOther.1" html="false" placeholder="false">From selected data source there is another profile to be created: if you want to import it, click "Back".</item>
+  <item name="ImportError.Completed.1" html="true" placeholder="false">Le operazioni di importazione NON sono state concluse con successo, e' stato creato SOLO un profilo in piattaforma.&lt;br&gt;Dettaglio degli errori:</item>
+  <item name="ImportError.Completed" html="true" placeholder="true" mustcontains="{0}">Le operazioni di importazione NON sono state concluse tutte con successo, sono stati creati {0} profili in piattaforma.&lt;br&gt;Dettaglio degli errori:</item>
+  <item name="LTheaderSelect.text" disambiguation="S=seleziona (un solo carattere)" html="false" placeholder="false">S</item>
+  <item name="LTheaderName.text" html="false" placeholder="false">Name</item>
+  <item name="LTheaderDate.text" html="false" placeholder="false">Start date</item>
+  <item name="LTheaderSubmittedQuestions.text" html="false" placeholder="false">Submitted</item>
+  <item name="LTheaderIncompletedQuestions.text" html="false" placeholder="false">Incompleted</item>
+  <item name="LTheaderSelect.text" disambiguation="S=seleziona (un solo carattere)" html="false" placeholder="false">S</item>
+  <item name="LBnameRFM.text" html="false" placeholder="false">Name: </item>
+  <item name="LBstartDate.text" html="false" placeholder="false">Starts on: </item>
+  <item name="LBsubmittedItems.text" html="false" placeholder="false">Submitted: </item>
+  <item name="LBwaitingItems.text" html="false" placeholder="false">Incompleted: </item>
+  <item name="RBLfilterRFM.0" html="false" placeholder="false">All</item>
+  <item name="RBLfilterRFM.1" html="false" placeholder="false">Incompleted</item>
+  <item name="RBLfilterRFM.2" html="false" placeholder="false">Submitted</item>
+  <item name="RBLfilterRFM.4" html="false" placeholder="false">Rejected</item>
+  <item name="BTNreturn.text" html="false" placeholder="false">Back to list</item>
+  <item name="True" html="false" placeholder="false">accepted</item>
+  <item name="False" html="false" placeholder="false">rejected</item>
+  <item name="GroupBy.MandatoryCommon" html="false" placeholder="false">Mandatory common fields</item>
+  <item name="GroupBy.NotMandatoryCommon" html="false" placeholder="false">Common NOT mandatory fields</item>
+  <item name="GroupBy.UserTypeStandard" html="false" placeholder="true" mustcontains="{0}">Profile fields {0}</item>
+  <item name="Details" html="false" placeholder="false">Details</item>
+</Resource>

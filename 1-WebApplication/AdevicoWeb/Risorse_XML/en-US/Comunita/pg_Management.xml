@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="urn:ComolTranslation">
+  <item name="LBtitolo.text" html="false" placeholder="false">Sub-community management</item>
+  <item name="LBNopermessi.text" html="false" placeholder="false">You do not have permission to access this page.</item>
+  <item name="LogoutMessage" html="false" placeholder="false">Sorry, your session has expired, you have to log into the system again.</item>
+  <item name="LBresponsabili.creatore" html="false" placeholder="true" mustcontains="#creatore#">Created by: #creatore#.</item>
+  <item name="LBresponsabili.responsabile" html="false" placeholder="true" mustcontains="#responsabile#">Responsible: #responsabile#.</item>
+  <item name="LBresponsabili.resp_creatore" html="false" placeholder="true" mustcontains="#creatore#|#responsabile#">Created by #creatore#, Responsible: #responsabile#.</item>
+  <item name="LBtipoComunita_c.text" html="false" placeholder="false">Community type:</item>
+  <item name="LBnumeroRecord_c.text" html="false" placeholder="false">N° Record:</item>
+  <item name="LBtipoRicerca_c.text" html="false" placeholder="false">Search by:</item>
+  <item name="LBvalore_c.text" description="Valore ricerca" html="false" placeholder="false">Value:</item>
+  <item name="DDLTipoRicerca.-2" description="relativo a comunità" html="false" placeholder="false">Name begins with</item>
+  <item name="DDLTipoRicerca.-7" description="relativo a comunità" html="false" placeholder="false">Name contains</item>
+  <item name="DDLTipoRicerca.-3" description="relativo a comunità" html="false" placeholder="false">Created after the </item>
+  <item name="DDLTipoRicerca.-5" description="relativo a comunità" html="false" placeholder="false">Enrollment date</item>
+  <item name="DDLTipoRicerca.-6" description="relativo a comunità" html="false" placeholder="false">Registration end date</item>
+  <item name="DDLTipoRicerca.-9" description="relativo a comunità" html="false" placeholder="false">Of the responsible:</item>
+  <item name="BTNCerca.text" html="false" placeholder="false">Search</item>
+  <item name="LBorganizzazione_c.text" html="false" placeholder="false">Organization:&amp;nbsp;</item>
+  <item name="LBannoAccademico_c.text" disambiguation="A.A.=Anno accademico" html="false" placeholder="false">A.Y.:&amp;nbsp;</item>
+  <item name="LBperiodo_c.text" html="false" placeholder="false">Period:&amp;nbsp;</item>
+  <item name="LBcorsoDiStudi_t.text" html="false" placeholder="false">Type:&amp;nbsp;</item>
+  <item name="LKBaltro.status" html="false" placeholder="false">Other characters</item>
+  <item name="LKBaltro.text" disambiguation="Relativo a caratteri" html="false" placeholder="false">Other</item>
+  <item name="LKBaltro.ToolTip" html="false" placeholder="false">Other characters</item>
+  <item name="LKBtutti.status" disambiguation="Relativo a caratteri" html="false" placeholder="false">All</item>
+  <item name="LKBtutti.text" disambiguation="Relativo a caratteri" html="false" placeholder="false">All</item>
+  <item name="LKBtutti.ToolTip" disambiguation="Relativo a caratteri" html="false" placeholder="false">All</item>
+  <item name="Lettera.status" disambiguation="lettera=carattere" html="false" placeholder="true" mustcontains="#%%#">Letter #%%#</item>
+  <item name="Lettera.ToolTip" disambiguation="lettera=carattere" html="false" placeholder="true" mustcontains="#%%#">Letter #%%#</item>
+  <item name="LNBtreeView.status" html="false" placeholder="false">Tree view</item>
+  <item name="LNBtreeView.text" html="false" placeholder="false">Tree view</item>
+  <item name="LNBtreeView.ToolTip" html="false" placeholder="false">Tree view</item>
+  <item name="DGComunita.page" html="false" placeholder="true" mustcontains="#%%#">Page &lt;#%%#&gt;</item>
+  <item name="DGComunita.ordinamento.0.status" html="false" placeholder="true" mustcontains="#%%#">Ascending order by &lt;#%%#&gt;</item>
+  <item name="DGComunita.ordinamento.1.status" html="false" placeholder="true" mustcontains="#%%#">Descending order by &lt;#%%#&gt;</item>
+  <item name="DGComunita.ordinamento.2.status" html="false" placeholder="true" mustcontains="#%%#">Order by &lt;#%%#&gt;</item>
+  <item name="DGComunita.IMGEdit.ImageUrl" html="false" placeholder="false" hidden="true">../images/m.gif</item>
+  <item name="DGComunita.IMGEdit.status" html="false" placeholder="false">Modify role.</item>
+  <item name="DGComunita.IMGEdit.AlternateText" html="false" placeholder="false">Modify role.</item>
+  <item name="DGComunita.IMGDelete1.ImageUrl" html="false" placeholder="false" hidden="true">../images/x.gif</item>
+  <item name="DGComunita.IMGDelete1.status" html="false" placeholder="false">Delete.</item>
+  <item name="DGComunita.IMGDelete1.AlternateText" html="false" placeholder="false">Delete.</item>
+  <item name="DGComunita.IMGDelete1.ConfirmText" html="false" placeholder="false">Are you sure to delete the selected Community?</item>
+  <item name="DGComunita.IMGDettagli.ImageUrl" html="false" placeholder="false" hidden="true">../images/proprieta.gif</item>
+  <item name="DGComunita.IMGDettagli.status" html="false" placeholder="false">User info</item>
+  <item name="DGComunita.IMGDettagli.AlternateText" html="false" placeholder="false">User info</item>
+  <item name="DGComunita.TPCM_Descrizione.HeaderText" description="Relativo a Comunità" html="false" placeholder="false">Type</item>
+  <item name="DGComunita.CMNT_Nome.HeaderText" description="Relativo a Comunità" html="false" placeholder="false">Name</item>
+  <item name="DGComunita.AnagraficaCreatore.HeaderText" html="false" placeholder="false">Creator</item>
+  <item name="DGComunita.CMNT_Responsabile.HeaderText" html="false" placeholder="false">Responsible</item>
+  <item name="DGComunita.CMNT_dataCreazione.HeaderText" description="Relativo a Comunità" html="false" placeholder="false">Created on</item>
+  <item name="DGComunita.Cessazione.HeaderText" description="Relativo a Comunità" html="false" placeholder="false">Cessation</item>
+  <item name="DGComunita.LNBiscritti.status" html="false" placeholder="false">Enrollees management.</item>
+  <item name="DGComunita.LNBiscritti.AlternateText" html="false" placeholder="false">Enrollees management.</item>
+  <item name="DGComunita.LNBiscritti.ToolTip" html="false" placeholder="false">Enrollees management.</item>
+  <item name="DGComunita.LNBiscritti.text" html="false" placeholder="false">Enrollees management.</item>
+  <item name="DGComunita.LNBassociaPadri.status" html="false" placeholder="false">Associate to other communities as child.</item>
+  <item name="DGComunita.LNBassociaPadri.AlternateText" html="false" placeholder="false">Associate to other communities as child.</item>
+  <item name="DGComunita.LNBassociaPadri.ToolTip" html="false" placeholder="false">Associate to other communities as child.</item>
+  <item name="DGComunita.LNBassociaPadri.text" html="false" placeholder="false">Associate TO.</item>
+  <item name="DGComunita.LNBblocca.ConfirmText" html="false" placeholder="false">ATTENTION: community access is up to be blocked</item>
+  <item name="DGComunita.LNBblocca.ToolTip" html="false" placeholder="false">Block the selected community.</item>
+  <item name="DGComunita.LNBblocca.text" description="Relativo a Comunità" html="false" placeholder="false">Blocked</item>
+  <item name="DGComunita.LNBsblocca.ConfirmText" html="false" placeholder="false">ATTENTION: community access is up to be unblocked</item>
+  <item name="DGComunita.LNBsblocca.ToolTip" html="false" placeholder="false">Unblock the selected community.</item>
+  <item name="DGComunita.LNBsblocca.text" description="Relativo a Comunità" html="false" placeholder="false">Unblock</item>
+  <item name="DGComunita.LNBarchivia.ConfirmText" html="false" placeholder="false">ATTENTION: do you want to archive this community (no self-registration will be possible)?</item>
+  <item name="DGComunita.LNBarchivia.ToolTip" html="false" placeholder="false">Archive selected community.</item>
+  <item name="DGComunita.LNBarchivia.text" description="Relativo a Comunità" html="false" placeholder="false">Archive</item>
+  <item name="DGComunita.LNBdeArchivia.ConfirmText" html="false" placeholder="false">ATTENTION: do you confirm la de-archiviazione della comunità ?</item>
+  <item name="DGComunita.LNBdeArchivia.ToolTip" html="false" placeholder="false">Remove selected communities from archive</item>
+  <item name="DGComunita.LNBdeArchivia.text" description="Relativo a Comunità" html="false" placeholder="false">Remove from archive</item>
+  <item name="DGComunita.iscrivi.status" html="false" placeholder="false">Enroll me</item>
+  <item name="DGComunita.iscrivi.AlternateText" html="false" placeholder="false">Enroll me</item>
+  <item name="DGComunita.iscrivi.ToolTip" html="false" placeholder="false">Enroll me</item>
+  <item name="DGComunita.LNBservizi.status" html="false" placeholder="false">Services management.</item>
+  <item name="DGComunita.LNBservizi.AlternateText" html="false" placeholder="false">Services management.</item>
+  <item name="DGComunita.LNBservizi.ToolTip" html="false" placeholder="false">Services management.</item>
+  <item name="DGComunita.LNBservizi.text" html="false" placeholder="false">Service</item>
+  <item name="LKBcrea.status" html="false" placeholder="false">Create community</item>
+  <item name="LKBcrea.text" html="false" placeholder="false">Create a new sub-community</item>
+  <item name="LKBcrea.ToolTip" html="false" placeholder="false">Create a new sub-community</item>
+  <item name="LNBelenco.status" html="false" placeholder="false">Back to simple list</item>
+  <item name="LNBelenco.text" html="false" placeholder="false">Back to simple list</item>
+  <item name="LNBelenco.ToolTip" html="false" placeholder="false">Back to simple list</item>
+  <item name="LNBespandi.status" html="false" placeholder="false">Expand all.</item>
+  <item name="LNBespandi.text" html="false" placeholder="false">Expand all.</item>
+  <item name="LNBespandi.ToolTip" html="false" placeholder="false">Expand all.</item>
+  <item name="LNBcomprimi.status" html="false" placeholder="false">Compress all.</item>
+  <item name="LNBcomprimi.text" html="false" placeholder="false">Compress all.</item>
+  <item name="LNBcomprimi.ToolTip" html="false" placeholder="false">Compress all.</item>
+  <item name="LNBiscriviDettagli.status" html="false" placeholder="false">Enroll</item>
+  <item name="LNBiscriviDettagli.text" html="false" placeholder="false">Enroll</item>
+  <item name="LNBiscriviDettagli.ToolTip" html="false" placeholder="false">Enroll</item>
+  <item name="LNBnascondiDettagli.status" html="false" placeholder="false">Back to list</item>
+  <item name="LNBnascondiDettagli.text" html="false" placeholder="false">Back to list</item>
+  <item name="LNBnascondiDettagli.ToolTip" html="false" placeholder="false">Back to list</item>
+  <item name="LNBentraDettagli.status" html="false" placeholder="false">Sign in</item>
+  <item name="LNBentraDettagli.text" html="false" placeholder="false">Sign in</item>
+  <item name="LNBentraDettagli.ToolTip" html="false" placeholder="false">Sign in</item>
+  <item name="bloccate" html="false" placeholder="false">Blocked communities.</item>
+  <item name="archiviate" html="false" placeholder="false">Archived communities.</item>
+  <item name="stato.True" html="false" placeholder="false">Registration request MUST be validated.</item>
+  <item name="stato.False" html="false" placeholder="false">Access allowed to everybody.</item>
+  <item name="stato.image.True" html="false" placeholder="false" hidden="true">lucchetto_closed.gif</item>
+  <item name="stato.image.False" html="false" placeholder="false" hidden="true">lucchetto_open.gif</item>
+  <item name="creata" html="false" placeholder="true" mustcontains="#%%#">(created by #%%# )</item>
+  <item name="iscrizioni.0" html="false" placeholder="true" mustcontains="#%%#">Enrollments opened on&amp;nbsp;#%%#</item>
+  <item name="iscrizioni.1" html="false" placeholder="false">Enrollments closed</item>
+  <item name="iscrizioni.2" html="false" placeholder="false">Registrations limit reached</item>
+  <item name="iscrizioni.3" html="false" placeholder="true" mustcontains="#%%#"> &amp;nbsp;Register  &amp;nbsp;#%%#</item>
+  <item name="LBstatoComunita_t.text" disambiguation="status: attivo/chiuso/in corso/valutazione" html="false" placeholder="false">Community status:</item>
+  <item name="DDLstatoComunita.-1" disambiguation="Relativo a Comunità" html="false" placeholder="false">All</item>
+  <item name="DDLstatoComunita.0" disambiguation="Relativo a Comunità" html="false" placeholder="false">Active</item>
+  <item name="DDLstatoComunita.1" disambiguation="Relativo a Comunità" html="false" placeholder="false">Archived</item>
+  <item name="DDLstatoComunita.2" disambiguation="Relativo a Comunità" html="false" placeholder="false">blocked</item>
+  <item name="BTNindietro.text" html="false" placeholder="false">Cancel</item>
+  <item name="BTNconferma.text" disambiguation="verbo" html="false" placeholder="false">Confirm</item>
+  <item name="LBlegendaDettagli.text" disambiguation="singolare" html="false" placeholder="false">Community details</item>
+  <item name="BTNnascondi.text" html="false" placeholder="false">Back</item>
+  <item name="BTNentra.text" html="false" placeholder="false">Access</item>
+  <item name="BTNIndietroMessaggio.text" html="false" placeholder="false">Back</item>
+  <item name="BTNannullaElimina.text" html="false" placeholder="false">Back</item>
+  <item name="BTNconfermaElimina.text" html="false" placeholder="false">Next</item>
+  <item name="BTNtoGestione.text" html="false" placeholder="false">Go on..</item>
+  <item name="DDLTipo.-1" disambiguation="relativo a tipo comunità" html="false" placeholder="false">-- All --</item>
+  <item name="DDLorganizzazione.0" disambiguation="relativo ad organizzazione" html="false" placeholder="false">-- None --</item>
+  <item name="DDLannoAccademico.0" disambiguation="relativo ad anno accademico" html="false" placeholder="false">-- None --</item>
+  <item name="DDLperiodo.0" disambiguation="relativo a periodo" html="false" placeholder="false">-- None --</item>
+  <item name="DDLannoAccademico.-1" disambiguation="relativo ad anni accademici" html="false" placeholder="false">-- All --</item>
+  <item name="DDLperiodo.-1" disambiguation="relativo a periodi" html="false" placeholder="false">-- All --</item>
+  <item name="DDLtipoCorsoDiStudi.-1" disambiguation="relativo a tipo di corsi di studio (laurea)" html="false" placeholder="false">-- All --</item>
+  <item name="DDLtipoCorsoDiStudi.0" disambiguation="relativo a tipo di corsi di studio (laurea)" html="false" placeholder="false">-- None --</item>
+  <item name="nd" disambiguation="n.d.=nessun dato" html="false" placeholder="false">n.d.</item>
+  <item name="no" html="false" placeholder="false">No.</item>
+  <item name="si" html="false" placeholder="false">Yes.</item>
+  <item name="LBmsgDG1" html="false" placeholder="false">No element for this selection</item>
+  <item name="DGComunita.accedi.status" html="false" placeholder="false">Sign in</item>
+  <item name="DGComunita.accedi.AlternateText" html="false" placeholder="false">Sign in.</item>
+  <item name="DGComunita.accedi.ToolTip" html="false" placeholder="false">Sign in</item>
+  <item name="DGComunita.accedi.text" html="false" placeholder="false">Sign in</item>
+  <item name="DGComunita.IMGDelete2.ImageUrl" html="false" placeholder="false" hidden="true">../images/x.gif</item>
+  <item name="DGComunita.IMGDelete2.status" html="false" placeholder="false">Delete.</item>
+  <item name="DGComunita.IMGDelete2.AlternateText" html="false" placeholder="false">Delete.</item>
+  <item name="DGComunita.IMGDelete2.ConfirmText" html="false" placeholder="false">Are you sure to delete the selected Community?</item>
+  <item name="DGComunita.IMGDelete3.ImageUrl" html="false" placeholder="false" hidden="true">../images/x.gif</item>
+  <item name="DGComunita.IMGDelete3.status" html="false" placeholder="false">Delete.</item>
+  <item name="DGComunita.IMGDelete3.AlternateText" html="false" placeholder="false">Delete.</item>
+  <item name="DGComunita.IMGDelete3.ConfirmText" html="false" placeholder="false">Functioin under construction</item>
+  <item name="DGComunita.LNBcoordina.status" html="false" placeholder="false">Choose communities to coordinate</item>
+  <item name="DGComunita.LNBcoordina.AlternateText" html="false" placeholder="false">Choose communities to coordinate</item>
+  <item name="DGComunita.LNBcoordina.ToolTip" html="false" placeholder="false">Choose communities to coordinate</item>
+  <item name="DGComunita.LNBcoordina.text" html="false" placeholder="false">coordinates</item>
+  <item name="ElencoComunita" html="false" placeholder="false">Community list</item>
+  <item name="iscritti" html="false" placeholder="false">Enrolled community list</item>
+  <item name="noSottoCmnt" html="false" placeholder="false">There are no sub communities</item>
+  <item name="Comunita" disambiguation="singolare" html="false" placeholder="false">Community: </item>
+  <item name="eliminataCmnt" html="false" placeholder="false">Community deleted:</item>
+  <item name="eliminatoLink" html="false" placeholder="false">Community link deleted: </item>
+  <item name="LBdettagliElimina1" html="true" placeholder="false">Deleted communities list (real or simple link):&lt;br&gt;</item>
+  <item name="messaggio0" html="false" placeholder="false">You were successfully enrolled</item>
+  <item name="messaggio1" html="false" placeholder="false">You have been correctly registered but your account is not enabled yet." &amp; vbCrLf &amp; " Your registration must be first examinated.</item>
+  <item name="messaggio2" html="false" placeholder="false">Sorry, an error occurred during the registration</item>
+  <item name="messaggio3" html="false" placeholder="false">Sorry, your account is still disabled, so it is impossible to login.</item>
+  <item name="messaggio4" html="false" placeholder="false">Sorry, the community access is currently  disabled.</item>
+  <item name="menu.2" html="false" placeholder="false">Details&amp;nbsp;&amp;nbsp;</item>
+  <item name="menu.1" html="false" placeholder="false">Update&amp;nbsp;</item>
+  <item name="menu.3" html="false" placeholder="false">Enter&amp;nbsp;&amp;nbsp;</item>
+  <item name="menu.4" html="false" placeholder="false">Enroll&amp;nbsp;&amp;nbsp;</item>
+  <item name="menu.5" html="false" placeholder="false">Modify&amp;nbsp;&amp;nbsp;</item>
+  <item name="menu.6" html="false" placeholder="false">Delete&amp;nbsp;&amp;nbsp;</item>
+  <item name="menu.7" html="false" placeholder="false">Services manag.&amp;nbsp;&amp;nbsp;</item>
+  <item name="menu.8" html="false" placeholder="false">Users manag.&amp;nbsp;&amp;nbsp;</item>
+  <item name="menu.11" html="false" placeholder="false">Associate TO..&amp;nbsp;&amp;nbsp;</item>
+  <item name="menu.12" html="false" placeholder="false">Coordinates...&amp;nbsp;&amp;nbsp;</item>
+  <item name="menu.13" html="false" placeholder="false">Archive&amp;nbsp;&amp;nbsp;</item>
+  <item name="menu.14" html="false" placeholder="false">Remove from archive&amp;nbsp;&amp;nbsp;</item>
+  <item name="menu.15" html="false" placeholder="false">Block&amp;nbsp;&amp;nbsp;</item>
+  <item name="menu.16" html="false" placeholder="false">Unblock user&amp;nbsp;&amp;nbsp;</item>
+  <item name="LNBapriFiltro.text" html="true" placeholder="false">&lt;img src='./../images/filtro_open.gif' alt='' align=middle&gt;View filter</item>
+  <item name="LNBapriFiltro.status" html="false" placeholder="false">View community filter</item>
+  <item name="LNBapriFiltro.Tooltip" html="false" placeholder="false">View community filter</item>
+  <item name="LNBchiudiFiltro.text" html="true" placeholder="false">&lt;img src='./../images/filtro_close.gif' alt='' align=middle&gt;Hide filters</item>
+  <item name="LNBchiudiFiltro.status" html="false" placeholder="false">Hide filters</item>
+  <item name="LNBchiudiFiltro.Tooltip" html="false" placeholder="false">Hide filters</item>
+  <item name="ErroriIscrizioneComunita.1" html="false" placeholder="false">You were successfully enrolled in the selected community.</item>
+  <item name="ErroriIscrizioneComunita.2" html="true" placeholder="false">You have been correctly registered in the community but access is not enabled yet.&lt;br&gt;Your registration must be first examinated by a community administrator.</item>
+  <item name="ErroriIscrizioneComunita.-1" html="false" placeholder="false">Sorry, an error occurred while trying to register.</item>
+  <item name="ErroriIscrizioneComunita.-2" html="false" placeholder="false">Sorry, enrollment has NOT been accepted, enrollments limit has been reached.</item>
+  <item name="ErroriIscrizioneComunita.Multipla.1" html="true" placeholder="true" mustcontains="#nomeComunita#">You were successfully enrolled in the following communities:&lt;br&gt;#nomeComunita#</item>
+  <item name="ErroriIscrizioneComunita.Multipla.2" html="true" placeholder="true" mustcontains="#nomeComunita#">You were successfully registered in the following communities:&lt;br&gt;#nomeComunita#&lt;br&gt;You can NOT access the community, yet. A responsible will consider your enrollment.</item>
+  <item name="ErroriIscrizioneComunita.Multipla.-1" html="true" placeholder="true" mustcontains="#nomeComunita#">Sorry, an errror occurred while enrolling in these communities:&lt;br&gt;#nomeComunita#</item>
+  <item name="ErroriIscrizioneComunita.Multipla.-2" html="true" placeholder="true" mustcontains="#nomeComunita#">Sorry, enrollment in the following communities:&lt;br&gt;#nomeComunita#&lt;br&gt;  has NOT been accepted, enrollments limit has been reached.</item>
+  <item name="LNBindietro.text" html="false" placeholder="false">Back</item>
+  <item name="LNBindietro.status" html="false" placeholder="false">Back</item>
+  <item name="LNBindietro.Tooltip" html="false" placeholder="false">Back</item>
+  <item name="LNBelimina.text" html="false" placeholder="false">Confirm deletion</item>
+  <item name="LNBelimina.status" html="false" placeholder="false">Confirm deletion</item>
+  <item name="LNBelimina.Tooltip" html="false" placeholder="false">Confirm deletion</item>
+  <item name="LNBelimina.ConfirmText" html="false" placeholder="false">CAUTION, do you confirm deletion ?</item>
+  <item name="LBconfermaElimina.text" html="true" placeholder="true" mustcontains="#nomeComunita#">ATTENTION: do you want to si desidera procedere con la cancellazione della comunità [#nomeComunita#] ?&lt;br&gt;Tutti i file, i messaggi, gli eventi, gli iscritti alla comunità da eliminare ANDRANNO PERDUTI.&lt;br&gt;</item>
+  <item name="LBconfermaElimina.link" html="true" placeholder="true" mustcontains="#nomeComunita#">ATTENTION: do you want to delete the [#nomeComunita#] community link?&lt;br&gt;</item>
+  <item name="LBresponsabile_t.text" html="false" placeholder="false">Person in charge:&amp;nbsp;</item>
+  <item name="LBnomeComunita_t.text" html="false" placeholder="false">Community name:&amp;nbsp;</item>
+  <item name="DDLresponsabile.-1" disambiguation="relativo ad utente" html="false" placeholder="false">All</item>
+  <item name="DDLresponsabile.-2" disambiguation="relativo ad utente" html="false" placeholder="false">--  Select  --</item>
+  <item name="LThasnews.text" description="Tradurre solo: 'novità', Leggi News" html="true" placeholder="true" mustcontains="{3}|{0}|{1}|{2}">&amp;nbsp;&lt;a class='{3}' href='{0}' Title='{1} novità'&gt;&lt;img src='{2}'&gt; Read News&lt;/a&gt;</item>
+</Resource>

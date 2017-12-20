@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="lm.Comol.Core.DomainModel" namespace="lm.Comol.Core.Dashboard.Domain">
+	<class name="liteDashboardSettings" table="DB_DashboardSettings" lazy="false" optimistic-lock ="none">
+    <id name="Id" column="Id" type="Int64" unsaved-value="0">
+      <generator class="native"/>
+    </id>
+    <version name="TimeStamp" generated="always" unsaved-value="null" type="BinaryBlob">
+      <column name="_Timestamp" not-null="false" sql-type="timestamp"/>
+    </version>
+    <property name="Name" type="String"/>
+    <property name="Description" type="String"/>
+    <property name="Active" type="Boolean" column="Active"/>
+    <property name="Status" type="lm.Comol.Core.Dashboard.Domain.AvailableStatus,lm.Comol.Core.DomainModel" column="Status" />
+    <property name="ForAll" type="Boolean" column="ForAll"/>
+    <property name="FullWidth" type="Boolean" column="FullWidth"/>
+    <property name="Type" type="lm.Comol.Core.Dashboard.Domain.DashboardType,lm.Comol.Core.DomainModel" column="Type" />
+    <property name="IdCommunity" type="Int32" column="IdCommunity" update="false" insert="false"/>
+    <property name="IdModifiedBy" type="Int32" column="_ModifiedBy"/>
+    <property name="IdCreatedBy" type="Int32" column="_CreatedBy"/>
+    <property name="ModifiedOn" type="DateTime" column="_ModifiedOn" />
+    <component name="Container" class="lm.Comol.Core.Dashboard.Domain.ContainerSettings">
+      <idbag name="AvailableViews" table="DB_AvailableView" lazy="false" fetch="subselect" cascade="all">
+        <collection-id column="Id" type="Int64">
+          <generator class="native"/>
+        </collection-id>
+        <key column="IdDashboard" />
+        <element column="DashboardViewType" type="lm.Comol.Core.Dashboard.Domain.DashboardViewType,lm.Comol.Core.DomainModel" />
+      </idbag>
+      <idbag name="AvailableOrderBy" table="DB_AvailableOrderBy" lazy="false">
+        <collection-id column="Id" type="Int64">
+          <generator class="identity"/>
+        </collection-id>
+        <key column="IdDashboard"/>
+        <element column="OrderItemsBy" type="lm.Comol.Core.Dashboard.Domain.OrderItemsBy,lm.Comol.Core.DomainModel" />
+      </idbag >
+      <idbag  name="AvailableGroupBy" table="DB_AvailableGroupBy" lazy="false" fetch="subselect" cascade="all">
+        <collection-id column="Id" type="Int64">
+          <generator class="native"/>
+        </collection-id>
+        <key column="IdDashboard" />
+        <element column="GroupItemsBy" type="lm.Comol.Core.Dashboard.Domain.GroupItemsBy,lm.Comol.Core.DomainModel" />
+      </idbag>
+      <component name="Default" class="lm.Comol.Core.Dashboard.Domain.DefaultSettings">
+        <property name="View" type="lm.Comol.Core.Dashboard.Domain.DashboardViewType,lm.Comol.Core.DomainModel" column="dView" />
+        <property name="Search" type="lm.Comol.Core.Dashboard.Domain.DisplaySearchItems,lm.Comol.Core.DomainModel" column="dSearch" />
+        <property name="DefaultNoticeboard" type="lm.Comol.Core.Dashboard.Domain.DisplayNoticeboard,lm.Comol.Core.DomainModel" column="dNoticeboard" />
+        <property name="TileNoticeboard" type="lm.Comol.Core.Dashboard.Domain.DisplayNoticeboard,lm.Comol.Core.DomainModel" column="dTileNoticeboard" />
+        <property name="CombinedNoticeboard" type="lm.Comol.Core.Dashboard.Domain.DisplayNoticeboard,lm.Comol.Core.DomainModel" column="dCombinedNoticeboard" />
+        <property name="ListNoticeboard" type="lm.Comol.Core.Dashboard.Domain.DisplayNoticeboard,lm.Comol.Core.DomainModel" column="dListNoticeboard" />
+        <property name="AfterUserLogon" type="lm.Comol.Core.Dashboard.Domain.OnLoadSettings,lm.Comol.Core.DomainModel" column="dAfterUserLogon" />
+        <property name="OrderBy" type="lm.Comol.Core.Dashboard.Domain.OrderItemsBy,lm.Comol.Core.DomainModel" column="dOrderBy" />
+        <property name="GroupBy" type="lm.Comol.Core.Dashboard.Domain.GroupItemsBy,lm.Comol.Core.DomainModel" column="dGroupBy" />
+      </component>  
+    </component>
+    <bag name="Assignments" table="DB_Assignment" lazy="false" fetch="subselect" cascade="none">
+      <key column="IdDashboard"/>
+      <one-to-many class="lm.Comol.Core.Dashboard.Domain.liteDashboardAssignment,lm.Comol.Core.DomainModel"/>
+    </bag>
+    <bag name="Pages" table="DB_PageSettings" lazy="false" fetch="subselect" cascade="none">
+      <key column="IdDashboard" />
+      <one-to-many class="litePageSettings"/>
+    </bag>
+    
+    <property name="Deleted" type="lm.Comol.Core.DomainModel.BaseStatusDeleted,lm.Comol.Core.DomainModel" column="_Deleted" />
+  </class>
+</hibernate-mapping>

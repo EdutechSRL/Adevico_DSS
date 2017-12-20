@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="lm.Comol.Core.DomainModel" namespace="lm.Comol.Core.Authentication">
+	<class name="BaseUrlMacAttribute" table="AP_UrlAuthenticationProviderAttribute" discriminator-value="0" lazy="false">
+    <id name="Id" column="Id" type="Int64" unsaved-value="0">
+      <generator class="native"/>
+    </id>
+    <discriminator column="Discriminator" not-null="true" insert ="true" type="Int32"/>
+    <version name="TimeStamp" generated="always" unsaved-value="null" type="BinaryBlob">
+      <column name="_Timestamp" not-null="false" sql-type="timestamp"/>
+    </version>
+    <property name="Deleted" type="lm.Comol.Core.DomainModel.BaseStatusDeleted,lm.Comol.Core.DomainModel" column="_Deleted" />
+    <property name="Name" type="String" column="Name" />
+    <property name="QueryStringName" type="String" column="QueryStringName" />
+    <property name="Description" type="String" column="Description" />
+    <property name="Type" type="lm.Comol.Core.Authentication.UrlMacAttributeType,lm.Comol.Core.DomainModel" column="IdMacAttributeType" />
+    <many-to-one name="Provider" class="lm.Comol.Core.Authentication.AuthenticationProvider, lm.Comol.Core.DomainModel" column="IdAuthenticationProvider" foreign-key="IdAuthenticationProvider" cascade="none" />
+   
+
+    <subclass discriminator-value="1" name="MacAttribute" extends="BaseUrlMacAttribute">
+      <bag name="Items" table="AP_MacAttributeItem" lazy="true" inverse="true" fetch="subselect" cascade="all-delete-orphan">
+        <key column="IdMacProviderAttribute" foreign-key="Id"/>
+        <one-to-many class="MacAttributeItem"/>
+      </bag>
+    </subclass>
+    <subclass discriminator-value="2" name="TimestampAttribute" extends="BaseUrlMacAttribute">
+      <property name="UserFormat" type="String" column="UserFormat" />
+      <property name="Format" type="lm.Comol.Core.Authentication.TimestampFormat,lm.Comol.Core.DomainModel" column="IdTimestampFormat" />
+    </subclass>
+    <subclass discriminator-value="3" name="UserProfileAttribute" extends="BaseUrlMacAttribute">
+      <property name="Attribute" type="lm.Comol.Core.Authentication.ProfileAttributeType,lm.Comol.Core.DomainModel" column="IdProfileAttributeType" />
+    </subclass>
+    <subclass discriminator-value="4" name="OrganizationAttribute" extends="BaseUrlMacAttribute">
+      <property name="AllowMultipleValue" type="Boolean" column="AllowMultipleValue" />
+      <property name="MultipleValueSeparator" type="String" column="MultipleValueSeparator" />
+      <bag name="Items" table="AP_OrganizationAttributeItem" lazy="true" inverse="true" fetch="subselect" cascade="all-delete-orphan">
+        <key column="IdUrlProviderAttribute" foreign-key="Id"/>
+        <one-to-many class="OrganizationAttributeItem"/>
+      </bag>
+    </subclass>
+    <subclass discriminator-value="5" name="CatalogueAttribute" extends="BaseUrlMacAttribute">
+      <property name="AllowMultipleValue" type="Boolean" column="AllowMultipleValue" />
+      <property name="MultipleValueSeparator" type="String" column="MultipleValueSeparator" />
+      <bag name="Items" table="AP_CourseCatalogueAttributeItem" lazy="false" inverse="true" fetch="subselect" cascade="all-delete-orphan">
+        <key column="IdUrlProviderAttribute" foreign-key="Id"/>
+        <one-to-many class="CatalogueAttributeItem"/>
+      </bag>
+    </subclass>
+    <subclass discriminator-value="6" name="ApplicationAttribute" extends="BaseUrlMacAttribute">
+      <property name="Value" type="String" column="Value" />
+    </subclass>
+    <subclass discriminator-value="7" name="FunctionAttribute" extends="BaseUrlMacAttribute">
+      <property name="Value" type="String" column="Value" />
+    </subclass>
+    <subclass discriminator-value="8" name="CompositeProfileAttribute" extends="BaseUrlMacAttribute">
+      <property name="Attribute" type="lm.Comol.Core.Authentication.ProfileAttributeType,lm.Comol.Core.DomainModel" column="IdProfileAttributeType" />
+      <property name="MultipleValueSeparator" type="String" column="MultipleValueSeparator" />
+      <bag name="Items" table="AP_CompositeAttributeItem" lazy="false" inverse="true" fetch="subselect" cascade="all-delete-orphan">
+        <key column="IdOwnerAttribute" foreign-key="Id"/>
+        <one-to-many class="CompositeAttributeItem"/>
+      </bag>
+    </subclass>
+
+    
+  </class>
+</hibernate-mapping>

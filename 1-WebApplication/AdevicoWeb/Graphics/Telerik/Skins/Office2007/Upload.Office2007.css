@@ -1,0 +1,82 @@
+/* RadUpload / Office2007 skin */
+/* <general styles> */
+.RadUpload_Office2007, .RadUpload_Office2007 a, .RadUpload_Office2007 input {
+  font: normal 11px/10px "Segoe UI", Arial, sans-serif; }
+
+/* </general styles> */
+/* <file inputs> */
+.RadUpload_Office2007 .ruStyled .ruFileInput {
+  border-color: #abc1de; }
+
+.RadUpload_Office2007 input.ruFakeInput {
+  border-color: #abc1de;
+  color: #000;
+  background-image: url('Upload/ruSprite.png'); }
+
+* + html .RadUpload_Office2007 .ruFileWrap .ruInputHover {
+  border-color: #7b91ae; }
+
+.RadUpload_Office2007 .ruReadOnly .ruFakeInput {
+  background: #f3f3f3; }
+
+/* </file inputs> */
+/* <buttons> */
+.RadUpload_Office2007 .ruButton {
+  background-image: url('Upload/ruSprite.png');
+  color: #0e2377; }
+
+.RadUpload_Office2007 .ruRemove {
+  color: #0e2377; }
+
+div.RadUpload_Office2007 .ruInputs .ruButtonHover, div.RadUpload_Office2007 .ruActions .ruButtonHover {
+  background-position: 100% -23px;
+  color: #000; }
+
+div.RadUpload_Office2007 .ruFileWrap .ruButtonHover {
+  background-position: 100% 0;
+  color: #000; }
+
+.RadUpload_Office2007 .ruFileWrap .ruButton.ruButtonFocus {
+  background-position: -1px -1px; }
+
+.RadUpload_Office2007 .ruFileWrap .ruButton.ruButtonFocus.ruButtonHover {
+  background-position: 64px -1px;
+  background-repeat: repeat-x; }
+
+/* </buttons> */
+/* <submit button> */
+/* (use this class to style a single button for uploads) */
+.RadUploadSubmit {
+  background-image: url('Upload/ruSprite.png');
+  color: #000; }
+
+/* </submit button> */
+/* <RadAsyncUpload> */
+.RadUpload_Office2007 input.ruUploadInvalid {
+  background-repeat: no-repeat;
+  background-position: 100% -297px;
+  background-image: url('Input/sprite.gif'); }
+
+.RadUpload_Office2007_rtl input.ruUploadInvalid {
+  background-position: 3px -297px; }
+
+.RadUpload_Office2007 .ruFileProgress, .RadUpload_Office2007 .ruFileProgressWrap {
+  background-image: url('Upload/AsyncProgress.png'); }
+
+.RadUpload_Office2007 .ruFileProgress, .RadUpload_Office2007_rtl .ruFileProgressWrap {
+  background-position: 0 0; }
+
+.RadUpload_Office2007 .ruFileProgressWrap, .RadUpload_Office2007_rtl .ruFileProgress {
+  background-position: 100% 0; }
+
+.RadUpload_Office2007 .ruProgressStarted, .RadUpload_Office2007_rtl .ruProgressComplete {
+  background-position: 0 -5px; }
+
+.RadUpload_Office2007 .ruProgressComplete, .RadUpload_Office2007_rtl .ruProgressStarted {
+  background-position: 100% -5px; }
+
+/* </RadAsyncUpload> */
+.RadUpload_Office2007 .ruDropZone, .RadUpload_Office2007_rtl .ruDropZone {
+  border-color: #9ebfdb;
+  color: #3e69a3;
+  background-color: #d6e6f4; }

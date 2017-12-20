@@ -1,0 +1,596 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="lm.Comol.Modules.CallForPapers.Domain.AttachmentFile">
+    <Position X="20.25" Y="8" Width="2.25" />
+    <AssociationLine Name="Call" Type="lm.Comol.Modules.CallForPapers.Domain.BaseForPaper" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="22.5" Y="9.375" />
+        <Point X="22.875" Y="9.375" />
+        <Point X="22.875" Y="8.625" />
+        <Point X="24" Y="8.625" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAAAAhAAAAAAAAAAAAAAAEAAAAAAAAQAAAAAA=</HashCode>
+      <FileName>Domain\Base\Call\AttachmentFile.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Call" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="lm.Comol.Modules.CallForPapers.Domain.CallForPaper">
+    <Position X="23" Y="10" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAAAAAAAAAhAAAAAQAAIAAAAAAAAAAAA=</HashCode>
+      <FileName>Domain\CallForPaper\CallForPaper.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="EvaluationType" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="lm.Comol.Modules.CallForPapers.Domain.dtoCallPersonTypeAssignment" Collapsed="true">
+    <Position X="11.75" Y="1.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAA=</HashCode>
+      <FileName>Domain\Base\dto\new\dtoBaseForPaperAssignment.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="lm.Comol.Modules.CallForPapers.Domain.dtoCallPersonAssignment" Collapsed="true">
+    <Position X="11.75" Y="2.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAA=</HashCode>
+      <FileName>Domain\Base\dto\new\dtoBaseForPaperAssignment.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="lm.Comol.Modules.CallForPapers.Domain.dtoCallRoleAssignment" Collapsed="true">
+    <Position X="11.75" Y="3.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAA=</HashCode>
+      <FileName>Domain\Base\dto\new\dtoBaseForPaperAssignment.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="lm.Comol.Modules.CallForPapers.Domain.BaseForPaperCommunityAssignment" Collapsed="true">
+    <Position X="7.5" Y="2.75" Width="2.75" />
+    <InheritanceLine Type="lm.Comol.Modules.CallForPapers.Domain.BaseForPaperAssignment" FixedToPoint="true">
+      <Path>
+        <Point X="9.125" Y="2.175" />
+        <Point X="9.125" Y="2.45" />
+        <Point X="8.875" Y="2.45" />
+        <Point X="8.875" Y="2.75" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAA=</HashCode>
+      <FileName>Domain\Base\Assignment\BaseForPaperCommunityAssignment.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="lm.Comol.Modules.CallForPapers.Domain.FieldAssignment">
+    <Position X="16.25" Y="3.5" Width="2.25" />
+    <AssociationLine Name="SubmitterType" Type="lm.Comol.Modules.CallForPapers.Domain.SubmitterType" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="18.5" Y="3.938" />
+        <Point X="19.75" Y="3.938" />
+        <Point X="19.75" Y="3.204" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAA=</HashCode>
+      <FileName>Domain\Base\Call\FieldAssignment.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Field" />
+      <Property Name="SubmitterType" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="lm.Comol.Modules.CallForPapers.Domain.FieldDefinition">
+    <Position X="16.5" Y="7.5" Width="2.25" />
+    <AssociationLine Name="Call" Type="lm.Comol.Modules.CallForPapers.Domain.BaseForPaper" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="18.75" Y="9.25" />
+        <Point X="19.125" Y="9.25" />
+        <Point X="19.125" Y="7.688" />
+        <Point X="24" Y="7.688" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="Type" Type="lm.Comol.Modules.CallForPapers.Domain.FieldType" FixedToPoint="true">
+      <Path>
+        <Point X="16.812" Y="10.338" />
+        <Point X="16.812" Y="11" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="Section" Type="lm.Comol.Modules.CallForPapers.Domain.FieldsSection" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="17.969" Y="7.5" />
+        <Point X="17.969" Y="5.688" />
+        <Point X="20.25" Y="5.688" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAAAQgAAAAAAQAAAwAAAAAAAAAAQAQAIAAAAA=</HashCode>
+      <FileName>Domain\Base\Call\FieldDefinition.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Call" />
+      <Property Name="Type" />
+      <Property Name="Section" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="lm.Comol.Modules.CallForPapers.Domain.FieldsSection">
+    <Position X="20.25" Y="5.25" Width="2.25" />
+    <AssociationLine Name="Fields" Type="lm.Comol.Modules.CallForPapers.Domain.FieldDefinition" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="20.25" Y="6.535" />
+        <Point X="18.312" Y="6.535" />
+        <Point X="18.312" Y="7.5" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAAAAgAAAAAAAAAAQAAAAAAAAAAAAAAAAAgAA=</HashCode>
+      <FileName>Domain\Base\Call\FieldsSection.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Call" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="Fields" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="lm.Comol.Modules.CallForPapers.Domain.FieldValue">
+    <Position X="18.75" Y="12.75" Width="2.25" />
+    <AssociationLine Name="Field" Type="lm.Comol.Modules.CallForPapers.Domain.FieldDefinition" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="18.75" Y="13.366" />
+        <Point X="18.5" Y="13.366" />
+        <Point X="18.5" Y="10.338" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="Submission" Type="lm.Comol.Modules.CallForPapers.Domain.UserSubmission" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="21" Y="13.429" />
+        <Point X="22.026" Y="13.429" />
+        <Point X="22.026" Y="12.559" />
+        <Point X="27.188" Y="12.559" />
+        <Point X="27.188" Y="8.511" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAgAAAAgAA=</HashCode>
+      <FileName>Domain\Base\Call\FieldValue.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Field" />
+      <Property Name="Submission" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="lm.Comol.Modules.CallForPapers.Domain.LazyUserSubmission">
+    <Position X="15" Y="0.5" Width="2.25" />
+    <AssociationLine Name="Call" Type="lm.Comol.Modules.CallForPapers.Domain.BaseForPaper" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="15.938" Y="3.017" />
+        <Point X="15.938" Y="4.983" />
+        <Point X="17.26" Y="4.983" Type="JumpStart" />
+        <Point X="17.427" Y="4.983" Type="JumpEnd" />
+        <Point X="23.625" Y="4.983" />
+        <Point X="23.625" Y="4.625" />
+        <Point X="24" Y="4.625" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="Status" Type="lm.Comol.Modules.CallForPapers.Domain.SubmissionStatus" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="15.438" Y="3.017" />
+        <Point X="15.438" Y="15.95" />
+        <Point X="24" Y="15.95" />
+        <Point X="24" Y="15.335" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="Type" Type="lm.Comol.Modules.CallForPapers.Domain.SubmitterType" FixedToPoint="true">
+      <Path>
+        <Point X="17.25" Y="1.625" />
+        <Point X="19.5" Y="1.625" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAACQACEAABAAAAAAAAAEAEAAAAAAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>Domain\Base\Call\LazyUserSubmission.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Call" />
+      <Property Name="Status" />
+      <Property Name="Type" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="lm.Comol.Modules.CallForPapers.Domain.ModuleCallForPaper">
+    <Position X="4" Y="1" Width="2.25" />
+    <NestedTypes>
+      <Enum Name="lm.Comol.Modules.CallForPapers.Domain.ModuleCallForPaper.Base2Permission" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Domain\CallForPaper\ModuleCallForPaper.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+      <Enum Name="lm.Comol.Modules.CallForPapers.Domain.ModuleCallForPaper.ActionType" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Domain\CallForPaper\ModuleCallForPaper.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+      <Enum Name="lm.Comol.Modules.CallForPapers.Domain.ModuleCallForPaper.ObjectType" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Domain\CallForPaper\ModuleCallForPaper.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAACAAAAQAAACAANAAAAAAAAAAAEAIAAAA=</HashCode>
+      <FileName>Domain\CallForPaper\ModuleCallForPaper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="lm.Comol.Modules.CallForPapers.Domain.RequestedFile">
+    <Position X="26.75" Y="0.5" Width="2.25" />
+    <AssociationLine Name="Call" Type="lm.Comol.Modules.CallForPapers.Domain.BaseForPaper" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="26.75" Y="2.625" />
+        <Point X="24.75" Y="2.625" />
+        <Point X="24.75" Y="3.5" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAAAAgAAAAAAQAAAQAAAAAAAAAAAAAIAAAAAA=</HashCode>
+      <FileName>Domain\Base\Call\RequestedFile.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Call" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="lm.Comol.Modules.CallForPapers.Domain.RequestedFileAssignment">
+    <Position X="23.25" Y="1" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Domain\Base\Call\RequestedFileAssignment.cs</FileName>
+      <NewMemberFileName>Domain\FieldAssignment.cs</NewMemberFileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="RequestedFile" />
+      <Property Name="SubmitterType" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="lm.Comol.Modules.CallForPapers.Domain.RootObject">
+    <Position X="0.5" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AOAgYgAEAAIglJAEAKGBBAMgAAqABBgAwYBgg4KCIFg=</HashCode>
+      <FileName>Domain\Base\RootObject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="lm.Comol.Modules.CallForPapers.Domain.SubmissionNotFound" Collapsed="true">
+    <Position X="12" Y="13.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Domain\Base\ServiceExceptions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="lm.Comol.Modules.CallForPapers.Domain.SubmissionNotSaved" Collapsed="true">
+    <Position X="9.75" Y="12.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Domain\Base\ServiceExceptions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="lm.Comol.Modules.CallForPapers.Domain.SubmissionNotCreated" Collapsed="true">
+    <Position X="9.75" Y="11.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Domain\Base\ServiceExceptions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="lm.Comol.Modules.CallForPapers.Domain.SubmissionInternalFileNotLinked" Collapsed="true">
+    <Position X="12" Y="9.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Domain\Base\ServiceExceptions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="lm.Comol.Modules.CallForPapers.Domain.SubmissionStatusChange" Collapsed="true">
+    <Position X="12" Y="11.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Domain\Base\ServiceExceptions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="lm.Comol.Modules.CallForPapers.Domain.SubmissionItemsEmpty" Collapsed="true">
+    <Position X="12" Y="8.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Domain\Base\ServiceExceptions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="lm.Comol.Modules.CallForPapers.Domain.SubmissionTimeExpired" Collapsed="true">
+    <Position X="12" Y="8" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Domain\Base\ServiceExceptions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="lm.Comol.Modules.CallForPapers.Domain.CallForPaperInternalFileNotLinked" Collapsed="true">
+    <Position X="9.5" Y="9.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Domain\Base\ServiceExceptions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="lm.Comol.Modules.CallForPapers.Domain.SubmissionLinked" Collapsed="true">
+    <Position X="9.75" Y="11" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Domain\Base\ServiceExceptions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="lm.Comol.Modules.CallForPapers.Domain.CallForPaperInvalidStatus" Collapsed="true">
+    <Position X="9.75" Y="10.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Domain\Base\ServiceExceptions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="lm.Comol.Modules.CallForPapers.Domain.UnknownCallForPaper" Collapsed="true">
+    <Position X="9.75" Y="13.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Domain\Base\ServiceExceptions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="lm.Comol.Modules.CallForPapers.Domain.CallForPaperItemSave" Collapsed="true">
+    <Position X="12" Y="11" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Domain\Base\ServiceExceptions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="lm.Comol.Modules.CallForPapers.Domain.CallForPaperItemDelete" Collapsed="true">
+    <Position X="9.75" Y="7.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Domain\Base\ServiceExceptions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="lm.Comol.Modules.CallForPapers.Domain.CallForPaperItemUndelete" Collapsed="true">
+    <Position X="9.75" Y="6.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Domain\Base\ServiceExceptions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="lm.Comol.Modules.CallForPapers.Domain.UnknownItem" Collapsed="true">
+    <Position X="12" Y="12.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Domain\Base\ServiceExceptions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="lm.Comol.Modules.CallForPapers.Domain.ItemDeleteWithSubmission" Collapsed="true">
+    <Position X="12" Y="7.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAQAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Domain\Base\ServiceExceptions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="lm.Comol.Modules.CallForPapers.Domain.EvaluationError" Collapsed="true">
+    <Position X="12" Y="10.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Domain\Base\ServiceExceptions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="lm.Comol.Modules.CallForPapers.Domain.EvaluationCompleteError" Collapsed="true">
+    <Position X="9.75" Y="8" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAA=</HashCode>
+      <FileName>Domain\Base\ServiceExceptions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="lm.Comol.Modules.CallForPapers.Domain.ExportError" Collapsed="true">
+    <Position X="9.75" Y="8.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAAEAAAAAAAAAAAAAAAAAAAAEAAAAAAAA=</HashCode>
+      <FileName>Domain\Base\ServiceExceptions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="lm.Comol.Modules.CallForPapers.Domain.SubmittedFile">
+    <Position X="29.5" Y="3.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAgAQAAAAAAAAEAAAAAAAAQAAAAAg=</HashCode>
+      <FileName>Domain\Base\Call\SubmittedFile.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Submission" />
+      <Property Name="SubmittedAs" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="lm.Comol.Modules.CallForPapers.Domain.SubmitterType">
+    <Position X="19.5" Y="0.75" Width="2.25" />
+    <AssociationLine Name="Call" Type="lm.Comol.Modules.CallForPapers.Domain.BaseForPaper" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="21.75" Y="2.25" />
+        <Point X="22.125" Y="2.25" />
+        <Point X="22.125" Y="3.688" />
+        <Point X="24" Y="3.688" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAAEAggAAAAABAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Domain\Base\Call\SubmitterType.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Call" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="RequiredFiles" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="lm.Comol.Modules.CallForPapers.Domain.UserSubmission">
+    <Position X="26.25" Y="3.75" Width="2.25" />
+    <AssociationLine Name="Call" Type="lm.Comol.Modules.CallForPapers.Domain.BaseForPaper" FixedFromPoint="true">
+      <Path>
+        <Point X="26.25" Y="6.5" />
+        <Point X="25.5" Y="6.5" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="Files" Type="lm.Comol.Modules.CallForPapers.Domain.SubmittedFile" FixedToPoint="true">
+      <Path>
+        <Point X="28.5" Y="4.625" />
+        <Point X="29.5" Y="4.625" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="Status" Type="lm.Comol.Modules.CallForPapers.Domain.SubmissionStatus" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="27.875" Y="8.511" />
+        <Point X="27.875" Y="14.188" />
+        <Point X="25.25" Y="14.188" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAQBQACEQAJAAAIAAAIAAQAIAEBBAABAgQAAAAEAAIA=</HashCode>
+      <FileName>Domain\Base\Call\UserSubmission.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Call" />
+      <Property Name="Status" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="Files" />
+      <Property Name="Revisions" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="System.Exception" Collapsed="true">
+    <Position X="11.25" Y="5" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="lm.Comol.Modules.CallForPapers.Domain.BaseForPaper">
+    <Position X="24" Y="3.5" Width="1.5" />
+    <AssociationLine Name="SubmittersType" Type="lm.Comol.Modules.CallForPapers.Domain.SubmitterType" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="24" Y="3.938" />
+        <Point X="21.406" Y="3.938" />
+        <Point X="21.406" Y="3.204" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AACAAAAUCBIkAAMAAAAAAAQgCCAACAAAAUBQQEAgAAA=</HashCode>
+      <FileName>Domain\Base\Call\BaseForPaper.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Attachments" />
+      <Property Name="Sections" />
+      <Property Name="SubmittersType" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="lm.Comol.Modules.CallForPapers.Domain.BaseForPaperAssignment">
+    <Position X="8" Y="0.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAEAAAAAAAA=</HashCode>
+      <FileName>Domain\Base\Assignment\BaseForPaperAssignment.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="lm.Comol.Modules.CallForPapers.Domain.Revision">
+    <Position X="30.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAABAAAAAEEQAAAEEAAAAEAAQAQAEAAAAAQA=</HashCode>
+      <FileName>Domain\Base\Call\Revision.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Status" />
+      <Property Name="Submission" />
+      <Property Name="Type" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="lm.Comol.Modules.CallForPapers.Domain.dtoCallAssignment" Collapsed="true">
+    <Position X="12.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAQEAAAAAAAA=</HashCode>
+      <FileName>Domain\Base\dto\new\dtoBaseForPaperAssignment.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="lm.Comol.Modules.CallForPapers.Domain.CallForPaperStatus">
+    <Position X="6.5" Y="5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAEAQCAAAAAAACAAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>Domain\Base\Call\CallForPaperStatus.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="lm.Comol.Modules.CallForPapers.Domain.CallForPaperType">
+    <Position X="6.5" Y="7" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAAAAAAAAAAAACAAAAAAAAAAAAAAACAEAAAA=</HashCode>
+      <FileName>Domain\Base\Call\CallForPaperType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="lm.Comol.Modules.CallForPapers.Domain.CallStatusForSubmitters">
+    <Position X="6.5" Y="12.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAAAAAEAQAAAAAiAACEAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>Domain\Base\Presenter\CallStatusForSubmitters.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="lm.Comol.Modules.CallForPapers.Domain.EvaluationType">
+    <Position X="20" Y="11.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>Domain\Old\EvaluationType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="lm.Comol.Modules.CallForPapers.Domain.FieldType">
+    <Position X="16" Y="11" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAAAQAAAhABABAAQIBABAAAQFAAAQAQFAAQg=</HashCode>
+      <FileName>Domain\Base\Call\FieldType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="lm.Comol.Modules.CallForPapers.Domain.SubmissionFilterStatus">
+    <Position X="0.5" Y="12.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAIAAAAAAAAAQAAAAAAAAAgAQAAAAIAAAAAAAAA=</HashCode>
+      <FileName>Domain\Base\Call\SubmissionFilterStatus.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="lm.Comol.Modules.CallForPapers.Domain.FilterCallVisibility">
+    <Position X="6.5" Y="8.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAAAAAAAAAAAAAAAAABAAAAAIAAAAEAAAA=</HashCode>
+      <FileName>Domain\Base\Presenter\FilterCallVisibility.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="lm.Comol.Modules.CallForPapers.Domain.SubmissionStatus">
+    <Position X="23" Y="12.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>QQAABQAAAAAAAAAAAABAAIAAABAgAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Domain\Base\Call\SubmissionStatus.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="lm.Comol.Modules.CallForPapers.Domain.SubmissionTranslations">
+    <Position X="3.5" Y="5.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>IAAFBAEABEoFRIIAEEYABAAZQAkCiAAMBAAIEgEABAA=</HashCode>
+      <FileName>Domain\Base\Call\SubmissionTranslations.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="lm.Comol.Modules.CallForPapers.Domain.RevisionMode">
+    <Position X="6.5" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAACAAAAAEAAAAAAAAAAAAAAAAAEAEAA=</HashCode>
+      <FileName>Domain\Base\Call\Revision.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="lm.Comol.Modules.CallForPapers.Domain.RevisionStatus">
+    <Position X="29" Y="11.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgACACACEAAAAAAAAAACAAAAAAgAAAAAAAAAEAAAA=</HashCode>
+      <FileName>Domain\Base\Call\Revision.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="lm.Comol.Modules.CallForPapers.Domain.RevisionType">
+    <Position X="28.75" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAACEAAAQ=</HashCode>
+      <FileName>Domain\Base\Call\Revision.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

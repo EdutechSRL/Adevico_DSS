@@ -1,0 +1,1293 @@
+.glossarywrapper .maincontent h3.gridtitle {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.glossarywrapper .tiles {
+    padding-top: 0;
+}
+
+.glossarywrapper .tiles .header {
+    margin: 2em 0;
+    margin-bottom: 1em;
+    border-bottom: 1px solid #ccc;
+}
+
+.glossarywrapper .tiles .header .tool {
+    margin-top: 10px
+}
+
+.glossarywrapper .tiles .tile .tileheader {
+    cursor: pointer;
+}
+
+.glossarywrapper .tiles .tile .tileheader h3 {
+	font-size: 16px;
+	padding-right: 20px;
+}
+
+.glossarywrapper .tiles .tile .tilecontent.descriptioncontent {
+    top: 4em;
+}
+
+.glossarywrapper .tiles .tile.add .tilecontent {
+
+}
+
+.glossarywrapper .tiles .tile .tilecontent .description {
+    color: #888;
+    font-style: italic;
+    line-height: 1.8em;
+    max-height: 7em;
+    overflow: hidden;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.glossarywrapper .tiles h3.gridtitle {
+    color: #555;
+    padding: 5px;
+}
+
+.glossarywrapper .tiles .tile.add .innerwrapper {
+    background-color: #fff;
+    border: 1px dashed #ccc;
+}
+
+.glossarywrapper .tiles .tile.add .innerwrapper .tileheader .left {
+    width: 100%;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.glossarywrapper .tiles .tile.add .innerwrapper h3 {
+    color: #888;
+    line-height: 38px;
+    padding: 0;
+}
+
+.tile.add .tileheader {
+    opacity: 0.8;
+}
+
+.legend span.indicator,
+.tile span.indicator,
+.tile span.indicator .text {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+}
+
+.legend span.indicator,
+.tile span.indicator {
+    position: absolute;
+    top: -6px;
+    left: -6px;
+    z-index: 900;
+}
+
+.legend span.text,
+.tile span.indicator .text {
+    padding: 2px 4px;
+    font-size: 10px;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-shadow: 0 1px 0 rgba(0,0,0,0.2);
+}
+
+.nocsstransforms .legend span.indicator {
+    width: 22px;
+    height: 32px;
+}
+
+.csstransforms .legend span.indicator,
+.csstransforms .tile span.indicator {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    position: absolute;
+    top: -6px;
+    left: -6px;
+    z-index: 900;
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    left: -14px;
+    top: -14px;
+    width: 28px;
+    height: 28px;
+}
+
+.nocsstransforms .legend span.indicator {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    position: absolute;
+    width: 22px;
+    height: 32px;
+}
+
+.csstransforms .tile span.indicator .text {
+    padding: 0;
+    width: 28px;
+    height: 28px;
+    text-align: left;
+    text-indent: -9999px;
+    *text-indent: -9999px;
+    *font-size: 0;
+    *line-height: 0;
+    *overflow: hidden;
+    outline: 0;
+    cursor: help;
+}
+
+.csstransforms .legend .text {
+    color: #888;
+    text-shadow: 0 1px 0 #fff;
+    font-size: .9em;
+}
+
+.csstransforms .tile span.indicator:hover {
+    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    width: auto;
+    height: auto;
+    top: 0;
+    left: 0;
+    border-radius: 0 0 5px;
+    line-height: 14px;
+    box-shadow: inset 0px 3px 5px rgba(0,0,0,0.2), 0px 3px 5px rgba(0,0,0,0.2);
+}
+
+.csstransforms .tile span.indicator:hover .text {
+    padding: 2px 4px;
+    width: auto;
+    height: auto;
+    text-align: left;
+    text-indent: 0;
+    font-size: 10px;
+    line-height: normal;
+    outline: 0;
+    cursor: default;
+}
+
+.csstransforms .tile.glossary {
+    overflow: hidden;
+}
+
+.footerblockinner {
+    min-height: 28px;
+}
+
+.tile.glossary div.footerblockinner span.text,
+.tile.glossary div.footerblockinner span.counter,
+.tile.glossary div.footerblockinner span.icons {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    margin: 7px 0 3px 0;
+    line-height: 1em;
+    vertical-align: middle;
+}
+
+.tile.glossary div.footerblockinner span.templatelanguage {
+    margin: 0;
+    line-height: 1em;
+    padding: 2px;
+    vertical-align: middle;
+    *padding: 1px 3px 4px 3px;
+}
+
+.glossarywrapper .tiles .tile.internal span.indicator,
+.glossarywrapper .tiles .tile.internal.default span.indicator {
+    display: none;
+}
+
+div.legend {
+    margin: 2em;
+    color: #888;
+}
+
+.no-csstransforms div.legend {
+    display: none;
+}
+
+div.legend span.fieldlabel {
+    margin-right: 1em;
+}
+
+span.inlinewrapper {
+    display: inline-block;
+    vertical-align: top;
+}
+
+span.legenditem {
+    overflow: hidden;
+    position: relative;
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    width: auto;
+    padding: 4px;
+    padding-left: 16px;
+    background: #f5f5f5;
+    margin-right: 1em;
+    margin-bottom: 1em;
+    -webkit-border-top-right-radius: 3px;
+    -webkit-border-bottom-right-radius: 3px;
+    -moz-border-radius-topright: 3px;
+    -moz-border-radius-bottomright: 3px;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    border: 1px solid #ddd;
+}
+
+.sharing .box .fieldrow label.fieldlabel {
+	margin-bottom: 1em;
+	margin-right: 1em;
+	width: 120px;
+	font-weight: normal;
+	font-style: normal;
+}
+
+.legenditem.internal.shared span.indicator,
+.legenditem.internal.public span.indicator,
+.glossarywrapper .tiles .tile.internal.shared span.indicator,
+.glossarywrapper .tiles .tile.internal.public span.indicator {
+    background-color: #5481e9;
+}
+
+.legenditem.external span.indicator,
+.glossarywrapper .tiles .tile.external.public span.indicator,
+.glossarywrapper .tiles .tile.external.shared span.indicator {
+    background: #5ccfc1;
+}
+
+.legenditem.waiting span.indicator,
+.glossarywrapper .tiles .tile.external.shared.waiting span.indicator {
+    background: #f89d0b;
+}
+
+.unpublished.glossary .tileheader h3,
+.glossarywrapper .tiles .unpublished .tilecontent .description,
+.unpublished.glossary .footerinner {
+    color: #aaa;
+}
+
+.tile.unpublished div.innerwrapper {
+    background-color: #e1e4e5;
+}
+
+.legenditem.unpublished span.indicator,
+.glossarywrapper .tiles .tile.unpublished span.indicator {
+    background: #9ea4ac;
+}
+
+.legenditem.unpublished span.indicator,
+.glossarywrapper .tiles .tile.unpublished span.indicator,
+.legenditem.internal.shared span.indicator,
+.legenditem.internal.public span.indicator,
+.glossarywrapper .tiles .tile.internal.shared span.indicator,
+.glossarywrapper .tiles .tile.internal.public span.indicator {
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+}
+
+.tile.glossary {
+    margin-bottom: 2em;
+}
+
+.tile.glossary .innerwrapper {
+    background-color: #f5f5f5;
+    border-color: #e5e5e5;
+}
+
+.glossarywrapper .tiles .tile.add span.indicator {
+    display: none;
+}
+
+/*
+.glossarywrapper .tiles .tile.internal span.indicator{
+    display: none;
+}
+.glossarywrapper .tiles .tile.add span.indicator{
+    display: none;
+}*/
+
+.collapsable .expander {
+    cursor: pointer;
+    vertical-align: middle;
+}
+
+.collapsable .expander .on {
+    display: none;
+}
+
+.collapsable .expander .off {
+    display: inline;
+}
+
+.collapsable.collapsed .expander .off {
+    display: none;
+}
+
+.collapsable.collapsed .expander .on {
+    display: inline;
+}
+
+.collapsable.collapsed .hideme {
+    display: none;
+}
+
+.collapsable.collapsed .itemheader span.status {
+    display: inline-block;
+    *display: inline;
+    * zoom: 1;
+}
+
+.extrainfo {
+    color: #aaa;
+    font-style: italic;
+    font-size: 11px;
+}
+
+.filters .input-group input,
+.filters .input-group .input-group-btn {
+/*    height: 10px;*/
+}
+
+
+div.filters .sectionheader  div.right {
+    width: 49%;
+    text-align: right;
+}
+
+.filters .input-group .input-group-btn .btn.btn-default {
+    padding-top: 1px;
+    padding-bottom: 1px;
+}
+
+.filters .input-group input.form-control {
+    padding-top: 1px;
+    padding-bottom: 1px;
+}
+
+
+.filters .filtercontainer div.filter div.fieldrow label.fieldlabel {
+	width: 200px !important;
+	font-weight: normal;
+	font-style: normal;
+}
+
+.filters .filtercontainer div.fieldobject.filter {
+	margin: 0;
+}
+
+.filters .filtercontainer div.fieldobject.filter input.inputtext {
+	width: 300px;
+}
+
+.glossarywrapper.recyclebin table.glossaries th.actions {
+    text-align: center;
+}
+
+.glossarywrapper.recyclebin table.glossaries th.actions,
+.glossarywrapper.recyclebin table.glossaries td.actions {
+    width: 40px;
+}
+
+.glossarywrapper.recyclebin table.glossaries th.deletedon,
+.glossarywrapper.recyclebin table.glossaries td.deletedon {
+    width: 100px;
+}
+
+.glossarywrapper.recyclebin table.glossaries th.stats,
+.glossarywrapper.recyclebin table.glossaries td.stats {
+    width: 70px;
+}
+
+.glossarywrapper.recyclebin table.glossaries th.deletedfrom,
+.glossarywrapper.recyclebin table.glossaries td.deletedfrom {
+    width: 100px;
+}
+
+.glossarywrapper.recyclebin table.glossaries th.type,
+.glossarywrapper.recyclebin table.glossaries td.type {
+    width: 200px;
+}
+
+.glossarywrapper.reorder .sortabletree li .text {
+    cursor: move;
+}
+
+.glossarywrapper.reorder .sortabletree li.default .text {
+    background: #ddd;
+    cursor: default;
+}
+
+.glossarywrapper.view .glossariescontent dl.terms {
+    text-align: left;
+}
+
+.glossarywrapper.view.map div.term div.termcontent div.left,
+.glossarywrapper.view.map div.term div.termcontent div.right {
+    float: none;
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+}
+
+.glossarywrapper.view.map div.term div.termcontent div.left {
+    padding-right: 40px;
+}
+
+.glossarywrapper.view.map div.term div.termcontent div.right {
+    position: absolute;
+    width: 40px;
+    right: 1px;
+    bottom: 3px;
+}
+
+.glossarywrapper.view .glossariescontent dl.terms dt.term {
+    font-size: 14px;
+    text-align: left;
+    color: #333;
+    margin: .5em 0;
+}
+
+.termcontent .left span.handle.expander {
+    vertical-align: middle;
+}
+
+.glossarywrapper.view .glossariescontent dl.terms dt.term.expanded h3 {
+    font-size: 24px !important;  
+}
+
+.glossarywrapper.view .glossariescontent dl.terms dt.term.expanded .termcontent {
+	margin-bottom: 1em;
+}
+
+.glossarywrapper.view .glossariescontent dl.terms dd.definition.expanded {
+    margin-bottom: 2.5em;
+}
+
+.glossarywrapper.view .glossariescontent dl.terms dt.term h3.termtitle,
+.glossarywrapper.view.map .glossariescontent h3.termtitle {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    margin: 0;
+    cursor: pointer;
+    font-size: 14px;
+    line-height: 21px;
+    text-shadow: 1px 1px 0 #fff;
+    vertical-align: middle;
+}
+
+div.glossarywrapper div.filtercontainer {
+    margin-top: 1.667em;
+    width: 100%;
+}
+
+div.glossarywrapper div.filtercontainer span.btnswitchgroup {
+    display: block;
+    text-align: center;
+    width: 100%;
+}
+
+.glossarywrapper.viewterm h3.termtitle {
+    cursor: default !important;
+}
+
+.glossarywrapper.view .glossariescontent dl.terms dd.definition {
+    margin-top: 0.5em;
+    margin-bottom: 1em;
+    margin-left: 2.5em;
+    padding: 0 15px;
+    border-left: 1px solid #ddd;
+	/*    border-bottom:1px solid #ddd;
+    border-radius: 0 0 0 6px;*/
+}
+
+.glossarywrapper.view .glossariescontent dl.terms dd.definition.collapsed {
+    display: none;
+}
+
+.glossarywrapper.view .glossariescontent dl.terms dd.definition .definitioncontent {
+    width: 95%;
+}
+
+.glossarywrapper.view .glossariescontent dl.terms dd.definition .definitioncontent .footer {
+    margin-top: 0.5em;
+    padding: 10px 0;
+}
+
+.glossarywrapper.view .glossariescontent dl.terms dd.definition .footer div.attachments {
+
+}
+
+.glossarywrapper.view .glossariescontent dl.terms dd.definition .footer div.attachments .title,
+.glossarywrapper.view .glossariescontent dl.terms dd.definition .footer span.details,.glossarywrapper.edit .glossariescontent div.attachments .title {
+    margin: 0;
+    color: #999;
+}
+
+.glossarywrapper.view .glossariescontent dl.terms dd.definition .footer div.attachments ol.attachmentslist {
+    margin: 0;
+    margin-top: 0.5em;
+}
+
+.glossarywrapper.view .glossariescontent dl.terms dd.definition .footer div.attachments ol.attachmentslist li.attachment {
+    margin-bottom: 0.5em;
+}
+
+.glossarywrapper.view .glossariescontent div.pagedterms div.page div.title h2 {
+    font-size: 48px;
+    margin: 20px 0 0 0;
+    color: #9ea4ac;
+    text-shadow: 1px 1px 0 #fff;
+    display: inline-block;
+    padding: 0 6px;
+    font-weight: normal;
+    font-style: normal;
+}
+
+.glossarywrapper.view .glossariescontent div.pagedterms div.page div.title {
+    border-bottom: 1px solid #ddd;
+}
+
+.glossarywrapper.edit .glossariescontent div.attachments table.attachmentslist {
+    width: 600px;
+    margin-bottom: 2em;
+}
+
+.glossarywrapper.edit .glossariescontent .fieldobject .fieldrow.textarea.definition .inlinewrapper{
+    width: 600px;
+    margin-bottom: 1em;
+}
+
+.attachments .upload label {
+    margin-right: 1em;
+}
+
+.attachments .upload input {
+    font-size: 12px;
+    padding: 3px;
+}
+
+.glossarywrapper.edit .glossariescontent div.attachments table.attachmentslist td.actions {
+    width: 20px;
+}
+
+.glossarywrapper.edit .glossariescontent div.attachments table.attachmentslist td.idx {
+    width: 20px;
+    text-align: right;
+}
+
+div.fieldobject div.fieldrow label.fieldlabel {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    width: 200px;
+    font-weight: bold;
+}
+
+div.fieldobject div.fieldrow.textarea label.fieldlabel {
+    vertical-align: top;
+}
+
+.glossarywrapper.edit .glossariescontent div.fieldobject.termedit div.fieldrow input.inputtext {
+    width: 600px;
+}
+
+span.upload.inlinewrapper {
+
+}
+
+.glossarywrapper.edit .glossariescontent div.fieldobject.termedit div.fieldrow textarea.textarea {
+    width: 600px;
+}
+
+.glossarywrapper.edit .glossariescontent div.fieldobject.termedit {
+    margin: 2em 0;
+}
+
+.termedit .fieldrow {
+    margin-bottom: 2em;
+}
+
+.glossarywrapper.map .termsmap {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    padding-left: 1em;
+}
+
+.glossarywrapper.map .termsmap .term {
+
+}
+
+.glossarywrapper.map .termsmap .term {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    float: none;
+    width: 33%;
+    margin: 0 auto;
+    vertical-align: top;
+}
+
+.glossarywrapper.map .termsmap .term .termcontent {
+    padding: 3px;
+    border: 1px solid transparent;
+    position: relative;
+}
+
+.glossarywrapper.map .termsmap .term.unpublished,
+.glossarywrapper dt.term.unpublished h3,
+.glossarywrapper dd.unpublished.definition * {
+    color: #aaa;
+}
+
+.glossarywrapper dd.unpublished.definition {
+    background-color: #f0f0f0;
+    padding-top: 1em !important;
+}
+
+span.text span.infotag {
+    margin-left: 1em;
+    vertical-align: top;
+}
+
+div.fieldrow.objectheader {
+    margin-top: 2em;
+}
+
+.box div.fieldrow.objectheader {
+    margin-top: 0;
+    margin-bottom: 2em;
+}
+
+/*.box .itemheader h4,
+.box .objectheader h4 {
+    font-size: 16px;
+    color: #aaa;
+}*/
+
+.collapsed .box .itemheader h4,
+.collapsed .box .objectheader h4 {
+    margin-bottom: 0;
+}
+
+.box h4 span.status {
+    margin: auto 1em;
+}
+
+.box .itemheader h4 .name,
+.box .objectheader h4 .name {
+    color: #444;
+}
+
+.glossarywrapper .unpublished .infotag {
+    color: #fff;
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    font-size: 10px;
+    background-color: #9ea4ac;
+    text-shadow: 0 1px 0 #666;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 3px 6px;
+    line-height: 1em;
+    border-radius: 3px;
+    box-shadow: inset 1px 1px 3px rgba(0,0,0,0.2);
+    vertical-align: middle;
+}
+
+.glossarywrapper.map .termsmap .term .termcontent span.icons {
+    visibility: hidden
+}
+
+.glossarywrapper.map .termsmap .term:hover .termcontent {
+    background: #f0f0f0;
+    border-radius: 4px;
+}
+
+.glossarywrapper.map .termsmap .term:hover .termcontent span.icons {
+    visibility: visible;
+}
+
+.csscolumns .glossarywrapper.map .termsmap {
+    -webkit-column-count: 3;
+    -moz-column-count: 3;
+    column-count: 3;
+    -webkit-column-rule: 1px outset #ccc;
+    -moz-column-rule: 1px inset #ccc;
+    column-rule: 1px inset #ccc;
+    -webkit-column-gap: 30px;
+    -moz-column-gap: 30px;
+    column-gap: 30px;
+}
+
+.csscolumns .glossarywrapper.map .termsmap .term {
+    width: 98%;
+}
+
+.glossarywrapper.view .glossaryheader,
+.glossarywrapper.view .viewnav {
+    line-height: 28px;
+    margin-bottom: 2em;
+}
+
+.glossarywrapper.view div.viewnaw {
+    text-align: right;
+}
+
+.viewnaw span.description {
+    margin: auto 1em;
+}
+
+span.viewnav.icons {
+    *margin: 0 !important;
+}
+
+.glossarywrapper.view .glossaryheader h3 {
+    margin: 0;
+}
+
+.glossarywrapper.recyclebin table.terms th.actions {
+    text-align: center;
+}
+
+.glossarywrapper.recyclebin table.terms th.actions,
+.glossarywrapper.recyclebin table.terms td.actions {
+    width: 40px;
+}
+
+.glossarywrapper.recyclebin table.terms th.deletedon,
+.glossarywrapper.recyclebin table.terms td.deletedon {
+    width: 100px;
+}
+
+.glossarywrapper.recyclebin table.terms th.deletedfrom,
+.glossarywrapper.recyclebin table.terms td.deletedfrom {
+    width: 100px;
+}
+
+div#content div.pager {
+    margin: 3em 0;
+    padding-top: 1em;
+    border-top: 1px solid #ddd;
+}
+
+ul.sortabletree,
+ol.sortabletree {
+    background: #f5f5f5 !important;
+    border: 1px solid #ddd !important;
+}
+
+li.sortableitem .text,
+li.sortableitem .innerwrapper {
+    border: 1px solid #ddd;
+    padding: 3px 6px;
+    background-color: #fff;
+    -webkit-border-top-right-radius: 3px;
+    -webkit-border-bottom-right-radius: 3px;
+    -moz-border-radius-topright: 3px;
+    -moz-border-radius-bottomright: 3px;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    display: inline-block;
+    font-size: 14px;
+}
+
+li.sortableitem .text a,
+li.sortableitem .text span,
+li.sortableitem.disabled .innerwrapper span,
+li.sortableitem.disabled .innerwrapper a {
+    color: #888;
+}
+
+li.sortableitem.disabled .text,
+li.sortableitem.disabled .innerwrapper {
+    background-color: #e5e5e5;
+    border: 1px dashed #ccc;
+    border-left: 1px solid #ccc;
+}
+
+ol.sortabletree {
+    margin-top: 0;
+    margin-bottom: 0;
+    counter-reset: li;
+    padding: 10px;
+}
+
+ol.sortabletree li {
+    margin: .5em 3em;
+}
+
+ol.sortabletree  > li {
+    position: relative;
+    list-style: none;
+    *list-style: decimal;
+    *vertical-align: middle;
+}
+
+ol.sortabletree  > li:before {
+    font-size: 14px;
+    content: counter(li);
+    counter-increment: li;
+    position: absolute;
+    left: -2em;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 2em;
+    margin-right: 8px;
+    padding: 3px 2px;
+    border: 1px solid #c0c0c0;
+    color: #fff;
+    text-shadow: 1px 1px 0 rgba(0,0,0,0.25);
+    background: #c0c0c0;
+    font-weight: bold;
+    text-align: center;
+    -webkit-border-top-left-radius: 3px;
+    -webkit-border-bottom-left-radius: 3px;
+    -moz-border-radius-topleft: 3px;
+    -moz-border-radius-bottomleft: 3px;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
+
+ol.sortabletree > li.ui-state-highlightHelper:before {
+    border: 1px dashed #c0c0c0;
+    color: #666;
+    text-shadow: none;
+    background: transparent;
+    top: -1px;
+}
+
+ol.sortabletree li.dragging .innerwrapper {
+    margin: 0;
+    opacity: 0.75;
+}
+
+ol.sortabletree > li.disabled:before {
+
+}
+
+ol.sortabletree .details .visibile input {
+    margin: 1px;
+}
+
+li ol.sortabletree,
+li ul {
+    margin-top: 6px;
+}
+
+ol.sortabletree ol li:last-child {
+    margin-bottom: 0;
+}
+
+.ui-state-highlightHelper {
+    background: none;
+    border: 1px dashed #c0c0c0 !important;
+    margin-bottom: 1em;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    margin-left: 0;
+    padding: 0;
+    position: relative;
+    /*  padding-left: 24px;
+        left: -24px;*/
+    list-style-type: none;
+    max-height: 22px;
+    height: 22px;
+    /*    *height: 50px;
+    /*    background: #fcfc9f;*!/*/
+    margin: 1em 0;
+}
+
+.more.top {
+	margin-bottom: 2em;
+}
+
+.more.bottom {
+	margin-top: 2em;
+}
+
+.term .toolbar {
+	font-weight: normal;
+	font-style: normal;
+	margin: 1em 0;
+	font-size: 1em !important;
+	color: #888;
+}
+
+.page .more a {
+	padding: 2px 6px;
+}
+
+ol.sortabletree > li.dragging:before,
+ol.sortabletree > li.ui-sortable-helper:before {
+    display: none !important;
+}
+
+.sharing.first .box {
+    margin-top: 0;
+}
+
+.itemheader	span.statusitem,
+.status span.statusitem {
+    background: #bbb;
+    color: #fff;
+    text-shadow: 0 1px 0 rgba(0,0,0,0.4);
+    display: inline;
+    padding: 2px 6px;
+    border-radius: 3px;
+    box-shadow: inset 0px 3px 5px rgba(0,0,0,0.2);
+    vertical-align: middle;
+    margin: 0;
+    margin-right: 1em;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.itemheader	span.statusitem {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    width: 16px;
+    height: 16px;
+    background: #ccc;
+    background-color: silver;
+    background-repeat: no-repeat;
+    text-align: left;
+    text-indent: -9999px;
+    *text-indent: 0;
+    *font-size: 0;
+    *line-height: 0;
+    *overflow: hidden;
+    outline: 0;
+    padding: 0;
+}
+
+div.fieldrow.communityselection {
+    margin-bottom: .5em !important;
+}
+
+div.fieldrow.communityselection .right.item a {
+    position: relative;
+    top: -4px;
+}
+
+.notenabled.active span.statusitem {
+    background: #9ea4ac;
+}
+
+.active span.statusitem {
+    background: #99c74a;
+}
+
+.pending span.statusitem {
+    background: #f89d0b;
+}
+
+.refused span.statusitem {
+    background: #c00;
+}
+
+.rightcontent label {
+    margin: 0;
+    margin-right: .5em;
+}
+
+.fieldobject .fieldrow input.inputtext {
+    width: 440px;
+}
+
+ul.communities {
+    padding: 0;
+}
+
+ul.communities li.community {
+    margin: 1em 0;
+}
+
+ul.communities li.community li.community {
+   margin-bottom: 0;
+}
+
+ul.communities li.community .innerwrapper {
+    padding: 10px;
+    background: #f5f5f5;
+    border: 1px solid #e5e5e5;
+    border-radius: 4px;
+}
+
+ul.communities li.community .innerwrapper .innerwrapper {
+    padding: 10px;
+    background: #fff;
+    border: none;
+    border-radius: 4px;
+    margin: 0 5px 0 15px;
+}
+
+ul.communities li.community .innerwrapper span.btngroup.small a.btn,
+ul.communities li.community .innerwrapper span.btnswitchgroup.small a.btnswitch,
+ul.communities li.community .innerwrapper span.btnswitchgroup.small a.linkMenu {
+    line-height: 10px;
+    font-size: 10px;
+}
+
+.collapsed .itemcontent {
+    display: inline;
+}
+
+div.optiongroup.status .fieldlabel {
+    vertical-align: middle;
+}
+
+ul.communities li.community .innerwrapper h4.title {
+    font-size: 14px;
+    margin: 0;
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+ul.communities li.community li.community h4.title {
+    font-size: 14px;
+    margin: 0;
+	margin-right: 5px;
+	font-weight: normal;
+	font-style: normal;
+}
+
+li.community div.left {
+	width: 74% !important;
+}
+
+li.community div.right {
+	width: 25% !important;
+}
+
+.itemheader h4,
+.itemheader .status {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    vertical-align: top;
+    line-height: 16px;
+}
+
+.itemheader div.left {
+    width: 85% !important;
+}
+
+.itemheader div.right {
+    width: 13%;
+}
+
+.box {
+    padding: 10px;
+    margin: 2em 0;
+    border: 1px solid #ddd;
+}
+
+.box.first {
+    margin-top: 0;
+}
+
+.box.last {
+    margin-bottom: 0;
+}
+
+.viewsetsettings .right.column .fieldobject {
+
+}
+
+.rightcontent .fieldobject div.fieldrow .textarea {
+    width: 440px;
+    vertical-align: top;
+    resize: vertical;
+    overflow: auto;
+    height: 60px;
+    padding: 3px;
+}
+
+.rightcontent .fieldobject .fieldrow {
+    margin-bottom: 2em;
+}
+
+.rightcontent .fieldobject  .inlinewrapper .fieldrow {
+    margin-top: 0;
+    margin-bottom: .5em;
+}
+
+.inputgroup label,
+.inputgroup input {
+    vertical-align: middle;
+    margin: 0;
+    margin-right: .5em;
+}
+
+.inputgroup,
+.inlinewrapper {
+    vertical-align: top;
+    margin-right: 1em;
+}
+
+.inlinewrapper .inputgroup {
+    margin-bottom: 1em;
+}
+
+.itemheader h4,
+.itemheader .status {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    vertical-align: top;
+    line-height: 16px;
+}
+
+.defaultservicecontainer.collapsable .itemheader .status {
+    display: none;
+}
+
+.defaultservicecontainer.collapsable.collapsed .itemheader .status {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+}
+
+.itemheader div.left {
+    width: 85% !important;
+}
+
+.itemheader div.right {
+    width: 13%;
+}
+
+.defaultservicecontainer.collapsable.collapsed .itemcontent {
+    display: none;
+}
+
+.itemcontent .radiobuttonlist .item input,
+.itemcontent .radiobuttonlist .item label {
+    vertical-align: middle;
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    margin-right: .5em;
+}
+
+.itemcontent .radiobuttonlist .item label {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    width: 86%;
+    vertical-align: top;
+    margin-right: 0 !important;
+}
+
+.itemcontent .radiobuttonlist {
+    display: block;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+.itemcontent .radiobuttonlist .item {
+    width: 33%;
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    margin-bottom: 1em;
+}
+
+.csscolumns .itemcontent .radiobuttonlist {
+    display: block;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    padding: 10px 10px;
+    background: #fff;
+    -webkit-column-count: 3;
+    -moz-column-count: 3;
+    column-count: 3;
+    -webkit-column-rule: 1px outset #eee;
+    -moz-column-rule: 1px inset #eee;
+    column-rule: 1px inset #eee;
+    -webkit-column-gap: 20px;
+    -moz-column-gap: 20px;
+    column-gap: 20px;
+}
+
+.csscolumns .itemcontent .radiobuttonlist br {
+    display: none;
+}
+
+.csscolumns .itemcontent .radiobuttonlist .item {
+    display: block;
+    width: 100%;
+}
+
+.itemcontent .commands {
+	display: block;
+	text-align: right;	
+}
+
+.itemcontent .commands .command {
+    margin-right: 5px;
+    padding: 2px 6px;
+    font-size: 11px;
+}
+
+.fieldrow.fieldlongtext.defaultview .inputgroup {
+    display: block;
+}
+
+.fieldrow.fieldlongtext.defaultview .inputgroup .activeonly {
+    visibility: hidden;
+}
+
+.fieldrow.fieldlongtext.defaultview .inputgroup.active .activeonly {
+    visibility: visible;
+}
+
+.itemcontent .radiobuttonlist.short {
+    column-count: 1;
+    -webkit-column-count:1;
+}
+
+.itemcontent .radiobuttonlist.short .item{
+    display: block;
+    width: 100%;
+}
+
+.fieldrow.status .inlinewrapper,
+.fieldrow.status .inlinewrapper span {
+	vertical-align: middle;
+}
+
+.filtercontainer .filter{
+    
+}
+
+.filtercontainer .filter.textselect input{    
+    min-width: 30px !important;
+    width:100px;
+}
+
+.filtercontainer .filter.textselect select{    
+    width:100px !important;
+    min-width: 30px !important;
+}

@@ -1,0 +1,653 @@
+﻿/*  COMOL DEMO VERSION */
+body {   
+    background: #e5e5e5;
+    color: #333;
+    font: 75%/140% verdana, arial, helvetica, sans-serif;
+    text-align: center;
+}
+
+.clear { clear: both; } 
+.invisible{ display: none;}
+
+
+/*  Correzioni OLD STYLE
+"Reset" di alcuni elementi degli stili preesistenti.
+  __________________________________________________*/
+.ui-dialog { text-align: left; }
+
+li 
+{
+    list-style-type: none;
+    list-style: none outside none;
+}
+
+UL LI {
+    list-style-type: none;
+    list-style: none outside none;
+}
+
+UL LI LI {
+    list-style-type: none;
+    list-style: none outside none;
+}
+
+UL LI LI LI {
+    list-style-type: none;
+    list-style: none outside none;
+}
+
+li strong 
+{
+    font-style: inherit;
+    font-weight: inherit;
+    list-style: none outside none;
+}
+   
+/* END OLD STYLE
+"Reset" di alcuni elementi degli stili preesistenti.
+  __________________________________________________
+*/
+
+
+
+/* =layout
+-------------------------------------------------
+*/
+
+.page-width{
+    margin: 0 auto;
+    max-width: 1400px;
+    min-width: 640px;
+	width: 960px;
+}
+
+#header
+{
+    /* OLD VERSION */
+    overflow: visible;
+    /*padding-bottom: 1.87em;*/
+    position: relative;
+    z-index: 10;
+    
+    
+    /*  AGGIUNTE */ 
+    color: #444;
+    text-align: center;
+    
+    /* BG Color*/
+    background-color: #eee; /*url(../img/header-bg.jpg); /*url img aggiunti da Gian*/
+	/* Firefox 3.6+ */ 
+	background: -moz-linear-gradient(100% 100% 90deg, #dadada, #fff); 
+	/* Safari 4-5, Chrome 1-9 */ 
+	/* -webkit-gradient(<type>, <point> [, <radius>]?, <point> [, <radius>]? [, <stop>]*) */ 
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fff), to(#dadada)); 
+	/* Safari 5.1+, Chrome 10+ */ 
+	background: -webkit-linear-gradient(#dadada, #fff); 
+	/* Opera 11.10+ */ 
+	background: -o-linear-gradient(#dadada, #fff); 
+	/*  IE Hack */
+	*background-color: #eee; /* url(../img/header-bg.jpg);*/
+}
+
+#container{
+	background-color: #fff;
+    border-top: 10px solid #fff;
+    margin-bottom: 20px;
+    margin-top: 0;
+	position: relative;
+    text-align: left;
+    -moz-box-shadow: 0 4px 6px #333, 0 4px 6px #333;
+    -webkit-box-shadow: 0 4px 6px #333, 0 4px 6px #333;
+    box-shadow: 0 4px 6px #333, 0 4px 6px #333;
+    z-index: 1;
+    
+    /*  AGGIUNTE */
+    text-align:center;  
+    padding-bottom: 2em;
+    /*  IE Hack */
+    *padding-left: 2.5em;
+}
+
+#footer{
+    border-top: 3px solid #2b5b6e;
+    background-color: #dedede;
+    font-size: 0.9em;
+    padding: 20px 0;  
+}
+
+#footer #siteinfo{ margin: 0 20px; }
+
+
+/* =toolbar
+-------------------------------------------------
+*/
+#toolbar
+{
+    color: #E1E9ED;
+    font-size: 1em;
+    min-height: 1.7em;
+    text-align: left;
+    
+    /*  Tolti
+    padding-top: 4px; 
+    */
+    
+    /* Modificati */
+    background-color: #2b5b6e; 
+    padding: 0;
+    
+    /* Aggiunti*/ 
+	margin: 0;
+}
+
+#toolbar a{
+	color: #E1E9ED;
+    text-decoration: none;
+}
+
+#Toolbar a.Lang_Current {
+    color:  silver;
+}
+
+
+#toolbar div div 
+{
+    /* Tolti 
+    float: left;
+    */
+}
+
+#notifications
+{
+    /* Tolti 
+    width: 30%;
+    */
+    
+    /* Aggiunti */
+    float: left;
+    /*display: none;*/
+}
+
+#notifications ul li{
+	background-color: #2b5b6e;
+	display: block;
+	float: left;	
+	margin-right: 10px;
+	position: relative;
+}
+
+/* TOLTO */
+/*
+#notifications_OLD ul li span{
+    background-color: #000;
+    color: yellow;
+    display: block;
+    float: right;
+    font-size: 0.8em;
+    font-weight: bold;
+    margin: 1px 0 1px 4px;
+    padding: 0 4px; 
+    text-align: center;
+}
+*/
+#tools
+{
+    /* Modificati*/
+    width: 100%;
+    
+    /* Aggiunti */
+    padding-top: 0.1em;
+}
+
+#tools ul
+{
+    float: right;
+    
+    /* Aggiunti */
+    margin: 0;
+    padding: 0;
+}
+
+#tools ul li{
+	float: left;  
+    position: relative;
+    z-index: 400;
+}
+
+#tools ul li#greetings
+{
+    /* Modificati */
+    padding-right: 30px;
+    
+    /* Aggiunti */
+	color: #bbcddc;
+	font-style: inherit;
+    font-weight: inherit;
+}
+
+#tools ul li a
+{
+    /* Tolti
+    display: block; */
+    
+    /* Modificati */
+    padding: 0 12px;
+}
+
+#tools ul li .sub{
+    background-color: #2b5b6e;
+    display: none;
+    position: absolute; 
+    top: 1.6em; 
+    left: 0;
+    /* Modifica 25/07/2011 per allargare su contenuto */
+    width: 160px;
+}
+
+#tools ul li li{
+	float: none;
+	padding-right: 0;
+	display: block;
+}
+
+#tools ul li li a{
+    margin: 0 8px;
+    padding: 3px 0;
+}
+
+/*  Aggiunto 25/07/2011 */
+#tools ul li li span {
+    margin: 0 8px;
+    padding: 3px 0;
+}
+
+#tools ul li li.first a
+{
+    border-top: 1px solid #c7c7c7;
+    padding-top: 0.1em;
+}
+
+#message{ position: absolute; }
+
+
+/* icons */
+/* Nella versione attuale questa parte risulta come sotto (aggiunta al volo)
+
+#tools li a.home, 
+#tools li a.menu,
+#notifications li a.status {
+	padding-left: 22px;
+}
+
+#tools li a.home {background: url(../img/i-home.png) top left no-repeat;}
+#tools li a.menu {background: url(../img/i-triangle.png) top left no-repeat;}
+#notifications li a.status {background: url(../img/i-status-offline.png) top left no-repeat;}
+#notifications li a.online {background: url(../img/i-status-online.png) top left no-repeat;}
+
+#community-type img {
+	padding-top: 3px;
+}
+
+*/
+
+#tools li a.home 
+{
+    background: url(../img/i-home.png) top left no-repeat;
+    padding-left: 22px;
+}
+
+#tools li a.menu 
+{
+    background: url(../img/i-triangle.png) top left no-repeat;
+    padding-left: 22px;
+}
+
+#community-type img { padding-top: 3px; }
+
+
+
+/* =branding
+-------------------------------------------------
+*/
+
+#branding{
+    clear: both;
+    text-align: left;
+    
+    /* Aggiunte */
+    background: trasparent;
+    height: 8.5em;
+}
+
+#branding img.logo
+{
+    float: left;
+    /* Aggiunte */
+    padding-bottom: 3px;
+}
+
+#branding h1{
+    font-size: 2em;
+    padding: 30px 30px 30px 330px;
+    /* Aggiunte */
+    text-align: right;
+    color: #c2bfac;
+}
+
+#branding h1 span{
+    display: block;
+     padding: 3px 0;
+    text-transform: uppercase;
+    /* Modifiche */
+    font-size: 0.8em;
+    /* Aggiunte */
+    font-family: Georgia, "Times New Roman", Times, serif;
+	color: #8a8778;
+}
+  
+/* =nav-main
+-------------------------------------------------
+*/
+
+#nav-main
+{
+        
+    position: relative;  
+    /*text-align: left;*/
+    width: 100%;
+    z-index: 200;
+    
+    /* Modifiche
+        Indicate con /*Mod* / */
+    
+    /* fallback */ 
+	background-color: #8C8178;   /*Mod*/
+	/* Firefox 3.6+ */ 
+	background: -moz-linear-gradient(100% 100% 90deg, #766456, #A19C97);  /*Mod*/
+	/* Safari 4-5, Chrome 1-9 */ 
+	/* -webkit-gradient(<type>, <point> [, <radius>]?, <point> [, <radius>]? [, <stop>]*) */ 
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#A19C97), to(#766456)); /*Mod*/
+	/* Safari 5.1+, Chrome 10+ */ 
+	background: -webkit-linear-gradient(#54661B, #A19C97);  /*Mod*/
+	/* Opera 11.10+ */ 
+	background: -o-linear-gradient(#766456, #a19c97);  /*Mod*/
+	
+	
+    -moz-box-shadow: 0 2px 6px #333;
+    -webkit-box-shadow: 0 2px 6px #333;
+    box-shadow: 0 2px 6px #333;
+    height: 2.2em;  /*Mod*/
+    
+    /* Aggiunte */
+    /*  Hack IE */
+    *background-color: #8C8178;
+    margin: 0; padding: 0;
+}
+ 
+#nav-main ul#top
+{
+    margin: 0; padding: 0;
+    float:left;
+    line-height: 170%;
+	list-style: none;
+    text-align: left;
+    /* Modifiche */    
+    font-size: 1.2em;
+    /* Modifiche 25/07/2011 */
+    width: 100%;
+}
+
+#nav-main ul#top li 
+{
+    float: left;
+    margin: 0; padding: 0;
+    position: relative;
+    z-index: 300;
+}
+
+#nav-main ul#top li a {
+    color: #fff;
+	display: block;
+	padding: 0 14px;
+	text-decoration: none;
+	/* Aggiunte */
+	margin:0;
+}
+
+#nav-main ul#top li .sub {
+    background-color: #fdfefe;
+    border: 1px solid #444;
+    display: none;
+    font-size: 0.8em;
+	line-height: 140%;
+    position: absolute; 
+    top: 1.7em; left: 14px;
+    -moz-box-shadow: 2px 2px 3px #333;
+    -webkit-box-shadow: 2px 2px 3px #333;
+    box-shadow: 2px 2px 3px #333;
+    z-index: 300;
+    
+    /* Aggiunte */
+    padding: 0; margin:0;
+}
+
+#nav-main ul#top li .sub h2
+{
+	font-weight: bold;
+	padding: 4px 8px;
+	
+	/* Modifiche */
+	background-color: #d2d5cc;	
+	
+	/* Aggiunte */
+	font-size:100%;
+    margin: 0; padding: 0;
+}
+
+#nav-main ul#top li .sub .col
+{   
+	float: left;
+	margin-right: 4px;
+	width: 200px;
+	
+	/* Aggiunte */
+	padding: 0; margin:0;
+}
+
+#nav-main ul#top li .sub ul
+{
+    width: 200px;
+    
+    /* Aggiunte */
+    padding: 0; margin:0;
+}
+    
+#nav-main ul#top li .sub ul li
+{   
+	float: none;
+    height: 1%;
+	position: relative;
+	
+	/* Aggiunte */
+	padding: 0; margin:0;
+}
+
+#nav-main ul#top li .sub ul li a,
+#nav-main ul#top li .sub ul li span
+{
+    color: #000;
+    display: block;
+	padding: 4px 64px 4px 8px;
+	
+	/* Aggiunte */
+	margin:0;
+}
+
+#nav-main ul#top li .sub ul li span
+{   
+    color: #b4b4b4;
+    
+    /* Aggiunte */
+    padding: 0; margin:0;
+}
+
+#nav-main ul#top li .sub ul li a:hover
+{
+    /* Modifiche*/
+    background-color: #e6e9e9;
+}
+
+
+#nav-main ul#top li .sub ul li span.actions
+{
+	position: absolute;
+	height: 16px;
+	padding: 0;
+	right: 4px;
+	top: 4px;
+	width: 66px;
+}
+
+#nav-main ul#top li .sub ul li span.actions a
+{
+    background: transparent url(../img/i-cog.gif) 0 0 no-repeat;
+	height: 16px;
+    float: right;
+	padding: 0;
+	width: 19px;
+	text-indent: -9999px;
+	zoom: 1;
+}
+
+#nav-main ul#top li .sub ul li span.actions a.new{ background-image: url(../img/i-new.gif); }
+#nav-main ul#top li .sub ul li span.actions a.stats{ background-image: url(../img/i-stats.gif); }
+#nav-main ul#top li .sub ul li span.actions a:hover{ background-color: none; }
+
+/* TAG Aggiunti */
+#top li.admin a { color: #fff8a1 !Important; }
+#nav-main ul#top li.admin .sub,
+#top li.admin div.sub div.col ul li a { color: #000 !important; }
+/* End TAG Aggiunti */
+
+#nav-main ul#top li.admin .sub h2{ background-color: #ffdd00; }
+#nav-main ul#top li.admin .sub ul li span{ color: #b4b4b4; }
+#nav-main ul#top li.admin .sub ul li a:hover{ background-color: #dfe8d7; }
+#nav-main ul#top li.admin .sub{ left: auto;right: 0; }
+
+/* TAG Aggiunti */
+#top li.admin div.sub {	background-color: #f4feea !important;margin: 0; padding: 0; }
+/* End TAG Aggiunti */
+
+
+/* =content
+-------------------------------------------------
+*/
+
+/* Tag Eliminati */
+/*#content .box{margin: 20px;}
+#content p{margin: 10px 0;}
+#content ul,
+#content ol{margin: 10px 0 10px 2em;}*/
+/*#content ul li{list-style: disc outside;}
+#content ol li{list-style: upper-roman outside;}*/
+/* End elimintati*/
+
+/* TAG Aggiunti */
+#content { display: inline-block; }
+/* End TAG Aggiunti */
+
+
+/*  Aggiunte per allineare Chat/Memo */
+
+   
+    
+#notifications
+{
+   
+    /* Aggiunti */
+    padding-top: 0.1em;
+}
+
+#notifications ul
+{
+    float: right;
+    
+    /* Aggiunti */
+    margin: 0;
+    padding: 0;
+}
+
+#notifications ul li{
+	float: left;  
+    position: relative;
+    z-index: 400;
+}
+
+#notifications ul li a
+{
+    /* Tolti
+    display: block; */
+    
+    /* Modificati */
+	padding: 0 12px;
+}
+
+#notifications ul li .sub{
+    background-color: #2b5b6e;
+    display: none;
+    position: absolute; 
+    top: 1.6em; 
+    left: 0;
+    width: 140px;
+}
+
+#notifications ul li li{
+	float: none;
+	padding-right: 0;
+}
+
+#notifications ul li li a{
+    margin: 0 8px;
+    padding: 3px 0;
+}
+
+#notifications ul li li.first a
+{
+    border-top: 1px solid #c7c7c7;
+    padding-top: 0.1em;
+}
+
+#notifications ul li span {
+    background-color: red;
+    border: 2px solid #FFFFFF;
+    border-radius: 5px 5px 5px 5px;
+    color: #FFFFFF;
+    display: block;
+    float: right;
+    font-size: 0.8em;
+    font-weight: bold;
+    line-height: 140%;
+    margin: 0 0 1px 4px;
+    padding: 0 4px;
+    text-align: center;
+}
+
+/*  Post-It */
+ul.AjaxPostIt-list
+{
+    margin: 0;
+    }
+    
+div.post-it_repo
+{
+    height: 0;
+    }
+    
+/*  TAG Aggiunto */
+/*  Per non tagliare il footer con immagine + testo */
+#cFooter  
+{
+    height: 170px;
+    background-color: White;
+            }
+            

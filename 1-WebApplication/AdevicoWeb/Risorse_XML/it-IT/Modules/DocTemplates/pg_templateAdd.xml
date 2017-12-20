@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Resource xmlns="urn:ComolTranslation">
+
+    <item name="LTtitle_t.text" description="Template=schema predefinito per la creazione di documenti">Gestione Template certificati</item>
+    
+    <item name="LTtype_t.text" description="Template=schema predefinito per la creazione di documenti">Tipo Template</item>
+    <item name="LTservices_t.text">Servizi</item>
+
+    <item name="LBLname_t.text" description="Template=schema predefinito per la creazione di documenti">Template name:</item>
+
+    <item name="LBLtypeDescription_t.text" html="true" description="Template=schema predefinito per la creazione di documenti">Selezionare la tipologia di template.&lt;br/&gt;Non sarà più possibile modificare la tipologia dopo la creazione.</item>
+    <item name="LBLservicesDescription_t.text" html="true">Selezionare i servizi associati.&lt;br/&gt;Sono in servizi per i quali sarà possibile inserire parametri specifici all'interno del corpo del tamplate. Saranno trasformati nei relativi dati del servizio nel momento dell'esportazione/creazione del template stesso.</item>
+
+    <item name="LKBcrea.text" description="Template=schema predefinito per la creazione di documenti">Crea Template</item>
+    <item name="LKBcrea.ToolTip" description="Template=schema predefinito per la creazione di documenti">Crea Template</item>
+    <item name="LKBcrea.status" description="Template=schema predefinito per la creazione di documenti">Crea Template</item>
+
+
+    <!--<item name="RBLservices.0">&lt;dl&gt;&lt;dt&gt;System&lt;/dt&gt;&lt;dd&gt;Potranno essere inseriti esclusivamente tag comuni a livello di sistema.&lt;/dd&gt;&lt;/dl&gt;</item>
+    <item name="RBLservices.1">&lt;dl&gt;&lt;dt&gt;Service&lt;/dt&gt;&lt;dd&gt;Associando un template ad uno o più servizi, questo sarà visibile solamente ai servizi selezionati, e sarà possibile utilizzare etichette specifiche del servizio stesso.&lt;/dd&gt;&lt;/dl&gt;</item>
+
+    <item name="RBLtype.0">&lt;dl&gt;&lt;dt&gt;Default Template&lt;/dt&gt;&lt;dd&gt;Template di default. Tutti i parametri saranno gestiti internamente. Sarà possibile importare tutti i dati da una skin, ma rimarranno indipendenti dalla stessa.&lt;/dd&gt;&lt;/dl&gt;</item>
+    <item name="RBLtype.1">&lt;dl&gt;&lt;dt&gt;System Template&lt;/dt&gt;&lt;dd&gt;Template di sistema, solo per &lt;strong&gt;template definitivi&lt;/strong&gt;.&lt;br/&gt;Non sarà possibile modificarli in futuro.&lt;/dd&gt;&lt;/dl&gt;</item>
+    <item name="RBLtype.2">&lt;dl&gt;&lt;dt&gt;Skin Template&lt;/dt&gt;&lt;dd&gt;Il template utilizza i date di una skin. Se questa viene modificata o cancellata, il templete subisce le variazioni o potrà essere non più valido.&lt;/dd&gt;&lt;/dl&gt;</item>
+    <item name="RBLtype.3">&lt;dl&gt;&lt;dt&gt;External Template&lt;/dt&gt;&lt;dd&gt;Utilizza un pdf come base.&lt;/dd&gt;&lt;/dl&gt;</item>-->
+
+    <item name="HYPundo.text">Annulla</item>
+    <item name="HYPundo.ToolTip">Annulla</item>
+    <item name="HYPundo.blocked">Annulla</item>
+
+    <!-- Radio button list con dl-->
+    <item name="RBLtype.Term.0" description="Template=schema predefinito per la creazione di documenti">Template standard</item>
+    <item name="RBLtype.Definition.0">Tutti i parametri saranno gestiti internamente. Sarà possibile importare tutti i dati da una skin, ma rimarranno indipendenti dalla stessa.</item>
+
+    <item name="RBLtype.Term.1" description="Template=schema predefinito per la creazione di documenti">Tempalte di sistema</item>
+    <item name="RBLtype.Definition.1" description="Template=schema predefinito per la creazione di documenti">Solo per template definitivi. Non è prevista la modifica.</item>
+
+    <item name="RBLtype.Term.2" description="Template=schema predefinito per la creazione di documenti">Skin Template</item>
+    <item name="RBLtype.Definition.2" description="Template=schema predefinito per la creazione di documenti">Il template utilizza i dati della skin corrente. L'output dipenderà quindi dalla comunità in cui ci si trova al momento dell'utilizzo del template.</item>
+
+    <item name="RBLtype.Term.3">Esterni</item>
+    <item name="RBLtype.Definition.3" description="pdf - tipo di file">PER IMPLEMENTAZIONI FUTURE. Si prevede che l'utente possa caricare un suo pdf...</item>
+
+
+    <item name="RBLservices.Term.0">Sistema</item>
+    <item name="RBLservices.Definition.0">Potranno essere inseriti esclusivamente tag comuni a livello di sistema. Il Template sarà disponibile per tutti i servizi.</item>
+
+    <item name="RBLservices.Term.1">Servizio</item>
+    <item name="RBLservices.Definition.1">Associando un template ad uno o più servizi, questo sarà visibile solamente ai servizi selezionati, ma sarà possibile utilizzare etichette specifiche del servizio stesso.</item>
+</Resource>

@@ -1,0 +1,624 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+	<!--[if lt IE 9]>
+	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+    <title>HelperExportToCsv - lm.Comol.Modules.CallForPapers Documentation</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+    <link type="text/css" rel="stylesheet" href="../main.css"/>
+    <script type="text/javascript" src="../js/jquery-1.3.2.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.scrollTo-min.js"></script>
+    <script type="text/javascript" src="../js/navigation.js"></script>
+    <script type="text/javascript" src="../js/example.js"></script>
+  </head>
+  <body>
+  	<header><h1>lm.Comol.Modules.CallForPapers : API Documentation</h1>
+	</header>
+<nav id="namespaces">
+	<h2 class="fixed">Namespaces</h2>
+	<div class="scroll">
+		<ul>
+			<li>
+          <a href="../lm.Comol.Modules.CallForPapers.Advanced/index.htm">lm.Comol.Modules.CallForPapers.Advanced</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Modules.CallForPapers.Advanced.Domain/index.htm">lm.Comol.Modules.CallForPapers.Advanced.Domain</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Modules.CallForPapers.Advanced.dto/index.htm">lm.Comol.Modules.CallForPapers.Advanced.dto</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Modules.CallForPapers.Advanced.Helpers/index.htm">lm.Comol.Modules.CallForPapers.Advanced.Helpers</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Modules.CallForPapers.Advanced.Presentation/index.htm">lm.Comol.Modules.CallForPapers.Advanced.Presentation</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Modules.CallForPapers.Advanced.Presentation.iView/index.htm">lm.Comol.Modules.CallForPapers.Advanced.Presentation.iView</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Modules.CallForPapers.AdvEconomic/index.htm">lm.Comol.Modules.CallForPapers.AdvEconomic</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Modules.CallForPapers.AdvEconomic.Domain/index.htm">lm.Comol.Modules.CallForPapers.AdvEconomic.Domain</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Modules.CallForPapers.AdvEconomic.dto/index.htm">lm.Comol.Modules.CallForPapers.AdvEconomic.dto</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Modules.CallForPapers.AdvEconomic.Helpers/index.htm">lm.Comol.Modules.CallForPapers.AdvEconomic.Helpers</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Modules.CallForPapers.AdvEconomic.Presentation/index.htm">lm.Comol.Modules.CallForPapers.AdvEconomic.Presentation</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Modules.CallForPapers.AdvEconomic.Presentation.View/index.htm">lm.Comol.Modules.CallForPapers.AdvEconomic.Presentation.View</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Modules.CallForPapers.Business/index.htm" class="current">lm.Comol.Modules.CallForPapers.Business</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Modules.CallForPapers.Domain/index.htm">lm.Comol.Modules.CallForPapers.Domain</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation/index.htm">lm.Comol.Modules.CallForPapers.Domain.Evaluation</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation.Export/index.htm">lm.Comol.Modules.CallForPapers.Domain.Evaluation.Export</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Modules.CallForPapers.Presentation/index.htm">lm.Comol.Modules.CallForPapers.Presentation</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Modules.CallForPapers.Presentation.Base.Controls/index.htm">lm.Comol.Modules.CallForPapers.Presentation.Base.Controls</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Modules.CallForPapers.Presentation.Base.Controls.IView/index.htm">lm.Comol.Modules.CallForPapers.Presentation.Base.Controls.IView</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Modules.CallForPapers.Presentation.Call/index.htm">lm.Comol.Modules.CallForPapers.Presentation.Call</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Modules.CallForPapers.Presentation.Evaluation/index.htm">lm.Comol.Modules.CallForPapers.Presentation.Evaluation</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Modules.CallForPapers.Trap/index.htm">lm.Comol.Modules.CallForPapers.Trap</a>
+      </li>
+		</ul>
+	</div>
+</nav><nav id="types">
+  <h2 class="fixed">Types in lm.Comol.Modules.CallForPapers.Business</h2>
+	<div class="scroll">
+		<ul>
+				<li>
+            <a href="../lm.Comol.Modules.CallForPapers.Business/BaseService.htm">BaseService</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Modules.CallForPapers.Business/CallForPeaperPlaceHoldersType.htm">CallForPeaperPlaceHoldersType</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Modules.CallForPapers.Business/CallTableHelper.htm">CallTableHelper</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Modules.CallForPapers.Business/ExportContentType.htm">ExportContentType</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Modules.CallForPapers.Business/ExportHelper.htm">ExportHelper</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Modules.CallForPapers.Business/HelperExportToCsv.htm" class="current">HelperExportToCsv</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Modules.CallForPapers.Business/HelperExportToPDF.htm">HelperExportToPDF</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Modules.CallForPapers.Business/HelperExportToRTF.htm">HelperExportToRTF</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Modules.CallForPapers.Business/HelperExportToXml.htm">HelperExportToXml</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Modules.CallForPapers.Business/ManagerCallOfPapers.htm">ManagerCallOfPapers</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Modules.CallForPapers.Business/ManagerRequestForMemebership.htm">ManagerRequestForMemebership</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Modules.CallForPapers.Business/ServiceCallOfPapers.htm">ServiceCallOfPapers</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Modules.CallForPapers.Business/ServiceEvaluation.htm">ServiceEvaluation</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Modules.CallForPapers.Business/ServiceRequestForMembership.htm">ServiceRequestForMembership</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Modules.CallForPapers.Business/SubmissionAssignAllErrorValue.htm">SubmissionAssignAllErrorValue</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Modules.CallForPapers.Business/TemplateCallForPeaperPlaceHolders.htm">TemplateCallForPeaperPlaceHolders</a>
+        </li>
+		</ul>
+	</div>
+</nav>
+	<article>
+    <header>
+		<p class="class"><strong>Type</strong> HelperExportToCsv</p>
+	</header>
+	<section>
+		<header>
+		<p><strong>Namespace</strong> lm.Comol.Modules.CallForPapers.Business</p>
+		<p><strong>Parent</strong> <span title="lm.Comol.Core.DomainModel.Helpers.Export.ExportCsvBaseHelper">ExportCsvBaseHelper</span></p>
+		</header>
+    <div class="sub-header">
+		
+		
+			<h3 class="section">Methods</h3>
+			<ul>
+				<li><a href="../lm.Comol.Modules.CallForPapers.Business/HelperExportToCsv.htm#AddEmptyField">AddEmptyField</a></li>
+				<li><a href="../lm.Comol.Modules.CallForPapers.Business/HelperExportToCsv.htm#AddEmptyField">AddEmptyField</a></li>
+				<li><a href="../lm.Comol.Modules.CallForPapers.Business/HelperExportToCsv.htm#AddEmptyRow">AddEmptyRow</a></li>
+				<li><a href="../lm.Comol.Modules.CallForPapers.Business/HelperExportToCsv.htm#AddField">AddField</a></li>
+				<li><a href="../lm.Comol.Modules.CallForPapers.Business/HelperExportToCsv.htm#AddField">AddField</a></li>
+				<li><a href="../lm.Comol.Modules.CallForPapers.Business/HelperExportToCsv.htm#AddField">AddField</a></li>
+				<li><a href="../lm.Comol.Modules.CallForPapers.Business/HelperExportToCsv.htm#AddField">AddField</a></li>
+				<li><a href="../lm.Comol.Modules.CallForPapers.Business/HelperExportToCsv.htm#AddField">AddField</a></li>
+				<li><a href="../lm.Comol.Modules.CallForPapers.Business/HelperExportToCsv.htm#AddField">AddField</a></li>
+				<li><a href="../lm.Comol.Modules.CallForPapers.Business/HelperExportToCsv.htm#AddField">AddField</a></li>
+				<li><a href="../lm.Comol.Modules.CallForPapers.Business/HelperExportToCsv.htm#AddRow">AddRow</a></li>
+				<li><a href="../lm.Comol.Modules.CallForPapers.Business/HelperExportToCsv.htm#AppendItem">AppendItem</a></li>
+				<li><a href="../lm.Comol.Modules.CallForPapers.Business/HelperExportToCsv.htm#AppendItem">AppendItem</a></li>
+				<li><a href="../lm.Comol.Modules.CallForPapers.Business/HelperExportToCsv.htm#AppendItem">AppendItem</a></li>
+				<li><a href="../lm.Comol.Modules.CallForPapers.Business/HelperExportToCsv.htm#AppendItem">AppendItem</a></li>
+				<li><a href="../lm.Comol.Modules.CallForPapers.Business/HelperExportToCsv.htm#AppendItem">AppendItem</a></li>
+				<li><a href="../lm.Comol.Modules.CallForPapers.Business/HelperExportToCsv.htm#AppendRow">AppendRow</a></li>
+				<li><a href="../lm.Comol.Modules.CallForPapers.Business/HelperExportToCsv.htm#AppendRow">AppendRow</a></li>
+				<li><a href="../lm.Comol.Modules.CallForPapers.Business/HelperExportToCsv.htm#AppendToRow">AppendToRow</a></li>
+				<li><a href="../lm.Comol.Modules.CallForPapers.Business/HelperExportToCsv.htm#AppendToRow">AppendToRow</a></li>
+				<li><a href="../lm.Comol.Modules.CallForPapers.Business/HelperExportToCsv.htm#AppendToRow">AppendToRow</a></li>
+				<li><a href="../lm.Comol.Modules.CallForPapers.Business/HelperExportToCsv.htm#AppendToRow">AppendToRow</a></li>
+				<li><a href="../lm.Comol.Modules.CallForPapers.Business/HelperExportToCsv.htm#ExportEvaluatorStatistics">ExportEvaluatorStatistics</a></li>
+				<li><a href="../lm.Comol.Modules.CallForPapers.Business/HelperExportToCsv.htm#ExportFullSummaryStatistics">ExportFullSummaryStatistics</a></li>
+				<li><a href="../lm.Comol.Modules.CallForPapers.Business/HelperExportToCsv.htm#ExportSubmissionsData">ExportSubmissionsData</a></li>
+				<li><a href="../lm.Comol.Modules.CallForPapers.Business/HelperExportToCsv.htm#ExportSubmissionsList">ExportSubmissionsList</a></li>
+				<li><a href="../lm.Comol.Modules.CallForPapers.Business/HelperExportToCsv.htm#ExportSummaryDisplayStatistics">ExportSummaryDisplayStatistics</a></li>
+				<li><a href="../lm.Comol.Modules.CallForPapers.Business/HelperExportToCsv.htm#ExportSummaryDisplayStatistics">ExportSummaryDisplayStatistics</a></li>
+				<li><a href="../lm.Comol.Modules.CallForPapers.Business/HelperExportToCsv.htm#ExportSummaryDisplayStatistics">ExportSummaryDisplayStatistics</a></li>
+				<li><a href="../lm.Comol.Modules.CallForPapers.Business/HelperExportToCsv.htm#ExportSummaryDisplayStatistics">ExportSummaryDisplayStatistics</a></li>
+				<li><a href="../lm.Comol.Modules.CallForPapers.Business/HelperExportToCsv.htm#GetErrorDocument">GetErrorDocument</a></li>
+				<li><a href="../lm.Comol.Modules.CallForPapers.Business/HelperExportToCsv.htm#GetErrorDocument">GetErrorDocument</a></li>
+				<li><a href="../lm.Comol.Modules.CallForPapers.Business/HelperExportToCsv.htm#InternalExportFullSummaryStatistics">InternalExportFullSummaryStatistics</a></li>
+			</ul>
+		
+			<h3 class="section">Properties</h3>
+			<ul>
+				<li><a href="../lm.Comol.Modules.CallForPapers.Business/HelperExportToCsv.htm#CharDelimiter">CharDelimiter</a></li>
+				<li><a href="../lm.Comol.Modules.CallForPapers.Business/HelperExportToCsv.htm#EndCharFieldItem">EndCharFieldItem</a></li>
+				<li><a href="../lm.Comol.Modules.CallForPapers.Business/HelperExportToCsv.htm#EndFieldItem">EndFieldItem</a></li>
+				<li><a href="../lm.Comol.Modules.CallForPapers.Business/HelperExportToCsv.htm#EndRowItem">EndRowItem</a></li>
+				<li><a href="../lm.Comol.Modules.CallForPapers.Business/HelperExportToCsv.htm#StringDelimiter">StringDelimiter</a></li>
+			</ul>
+		
+	</div>
+	
+	<h3 class="section">Public instance methods</h3>
+
+	<div id="AddEmptyField" class="method">
+		<h4>
+			<span title="System.string">string</span> <strong>AddEmptyField</strong>(<span title="System.int">int</span> number, <span title="System.bool">bool</span> addFieldDelimiter)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="AddEmptyField" class="method">
+		<h4>
+			<span title="System.void">void</span> <strong>AddEmptyField</strong>(<span title="System.Text.StringBuilder">StringBuilder</span> sBuilder, <span title="System.int">int</span> number, <span title="System.bool">bool</span> addFieldDelimiter)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="AddEmptyRow" class="method">
+		<h4>
+			<span title="System.void">void</span> <strong>AddEmptyRow</strong>(<span title="System.Text.StringBuilder">StringBuilder</span> sBuilder, <span title="System.int">int</span> number)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="AddField" class="method">
+		<h4>
+			<span title="System.void">void</span> <strong>AddField</strong>(<span title="System.Text.StringBuilder">StringBuilder</span> sBuilder, <span title="System.Nullable<decimal>">Nullable&lt;decimal&gt;</span> item, <span title="System.bool">bool</span> addFieldDelimiter)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="AddField" class="method">
+		<h4>
+			<span title="System.void">void</span> <strong>AddField</strong>(<span title="System.Text.StringBuilder">StringBuilder</span> sBuilder, <span title="System.long">long</span> value, <span title="System.bool">bool</span> addFieldDelimiter)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="AddField" class="method">
+		<h4>
+			<span title="System.void">void</span> <strong>AddField</strong>(<span title="System.Text.StringBuilder">StringBuilder</span> sBuilder, <span title="System.int">int</span> value, <span title="System.bool">bool</span> addFieldDelimiter)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="AddField" class="method">
+		<h4>
+			<span title="System.void">void</span> <strong>AddField</strong>(<span title="System.Text.StringBuilder">StringBuilder</span> sBuilder, <span title="System.double">double</span> value, <span title="System.bool">bool</span> addFieldDelimiter)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="AddField" class="method">
+		<h4>
+			<span title="System.void">void</span> <strong>AddField</strong>(<span title="System.Text.StringBuilder">StringBuilder</span> sBuilder, <span title="System.string">string</span> lineText, <span title="System.bool">bool</span> addFieldDelimiter)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="AddField" class="method">
+		<h4>
+			<span title="System.void">void</span> <strong>AddField</strong>(<span title="System.Text.StringBuilder">StringBuilder</span> sBuilder, <span title="System.Nullable<DateTime>">Nullable&lt;DateTime&gt;</span> date, <span title="System.string">string</span> dateTimeFormat, <span title="System.bool">bool</span> addFieldDelimiter)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="AddField" class="method">
+		<h4>
+			<span title="System.void">void</span> <strong>AddField</strong>(<span title="System.string">string</span> rowFields, <span title="System.string">string</span> lineText, <span title="System.bool">bool</span> addFieldDelimiter)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="AddRow" class="method">
+		<h4>
+			<span title="System.string">string</span> <strong>AddRow</strong>(<span title="System.string">string</span> item)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="AppendItem" class="method">
+		<h4>
+			<span title="System.string">string</span> <strong>AppendItem</strong>(<span title="System.string">string</span> lineText, <span title="System.bool">bool</span> addFieldDelimiter)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="AppendItem" class="method">
+		<h4>
+			<span title="System.string">string</span> <strong>AppendItem</strong>(<span title="System.double">double</span> value)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="AppendItem" class="method">
+		<h4>
+			<span title="System.string">string</span> <strong>AppendItem</strong>(<span title="System.long">long</span> value)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="AppendItem" class="method">
+		<h4>
+			<span title="System.string">string</span> <strong>AppendItem</strong>(<span title="System.int">int</span> value)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="AppendItem" class="method">
+		<h4>
+			<span title="System.string">string</span> <strong>AppendItem</strong>(<span title="System.Nullable<DateTime>">Nullable&lt;DateTime&gt;</span> date)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="AppendRow" class="method">
+		<h4>
+			<span title="System.string">string</span> <strong>AppendRow</strong>()
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="AppendRow" class="method">
+		<h4>
+			<span title="System.string">string</span> <strong>AppendRow</strong>(<span title="System.int">int</span> number)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="AppendToRow" class="method">
+		<h4>
+			<span title="System.void">void</span> <strong>AppendToRow</strong>(<span title="System.String&">String&amp;</span> rowFields, <span title="System.string">string</span> lineText, <span title="System.bool">bool</span> addFieldDelimiter)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="AppendToRow" class="method">
+		<h4>
+			<span title="System.void">void</span> <strong>AppendToRow</strong>(<span title="System.Text.StringBuilder">StringBuilder</span> sBuilder, <span title="System.string">string</span> lineText, <span title="System.bool">bool</span> addFieldDelimiter)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="AppendToRow" class="method">
+		<h4>
+			<span title="System.void">void</span> <strong>AppendToRow</strong>(<span title="System.Text.StringBuilder">StringBuilder</span> sBuilder, <span title="System.int">int</span> value, <span title="System.bool">bool</span> addFieldDelimiter)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="AppendToRow" class="method">
+		<h4>
+			<span title="System.void">void</span> <strong>AppendToRow</strong>(<span title="System.Text.StringBuilder">StringBuilder</span> sBuilder, <span title="System.long">long</span> value, <span title="System.bool">bool</span> addFieldDelimiter)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="ExportEvaluatorStatistics" class="method">
+		<h4>
+			<span title="System.string">string</span> <strong>ExportEvaluatorStatistics</strong>(<a href="../lm.Comol.Modules.CallForPapers.Domain/dtoCall.htm">dtoCall</a> call, <span title="System.Collections.Generic.List<dtoEvaluatorCommitteeStatistic>">List&lt;dtoEvaluatorCommitteeStatistic&gt;</span> statistics, <span title="lm.Comol.Core.DomainModel.litePerson">litePerson</span> person)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="ExportFullSummaryStatistics" class="method">
+		<h4>
+			<span title="System.string">string</span> <strong>ExportFullSummaryStatistics</strong>(<a href="../lm.Comol.Modules.CallForPapers.Domain/dtoCall.htm">dtoCall</a> call, <span title="System.Collections.Generic.List<expCommittee>">List&lt;expCommittee&gt;</span> committees, <span title="System.string">string</span> anonymousDisplayName, <span title="lm.Comol.Core.DomainModel.litePerson">litePerson</span> person, <span title="System.bool">bool</span> oneColumnForCriteria)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="ExportSubmissionsData" class="method">
+		<h4>
+			<span title="System.string">string</span> <strong>ExportSubmissionsData</strong>(<span title="System.string">string</span> name, <span title="System.string">string</span> edition, <span title="System.Collections.Generic.List<dtoCallSection<dtoCallField>>">List&lt;dtoCallSection&lt;dtoCallField&gt;&gt;</span> requestSchema, <span title="System.Collections.Generic.List<dtoSubmissionDataDisplay>">List&lt;dtoSubmissionDataDisplay&gt;</span> submissions, <span title="lm.Comol.Core.DomainModel.litePerson">litePerson</span> person, <a href="../lm.Comol.Modules.CallForPapers.Domain/SubmissionFilterStatus.htm">SubmissionFilterStatus</a> filter)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="ExportSubmissionsList" class="method">
+		<h4>
+			<span title="System.string">string</span> <strong>ExportSubmissionsList</strong>(<a href="../lm.Comol.Modules.CallForPapers.Domain/CallForPaperType.htm">CallForPaperType</a> type, <span title="System.string">string</span> name, <span title="System.string">string</span> edition, <span title="System.Collections.Generic.List<dtoSubmissionDisplay>">List&lt;dtoSubmissionDisplay&gt;</span> submissions, <span title="lm.Comol.Core.DomainModel.litePerson">litePerson</span> person, <a href="../lm.Comol.Modules.CallForPapers.Domain/SubmissionFilterStatus.htm">SubmissionFilterStatus</a> filter)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="ExportSummaryDisplayStatistics" class="method">
+		<h4>
+			<span title="System.string">string</span> <strong>ExportSummaryDisplayStatistics</strong>(<a href="../lm.Comol.Modules.CallForPapers.Domain/dtoCall.htm">dtoCall</a> call, <a href="../lm.Comol.Modules.CallForPapers.Domain.Evaluation.Export/expCommittee.htm">expCommittee</a> committee, <span title="System.Collections.Generic.List<expEvaluation>">List&lt;expEvaluation&gt;</span> evaluations, <span title="System.string">string</span> anonymousDisplayName, <span title="lm.Comol.Core.DomainModel.litePerson">litePerson</span> person, <span title="System.bool">bool</span> oneColumnForCriteria)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="ExportSummaryDisplayStatistics" class="method">
+		<h4>
+			<span title="System.string">string</span> <strong>ExportSummaryDisplayStatistics</strong>(<a href="../lm.Comol.Modules.CallForPapers.Domain/dtoCall.htm">dtoCall</a> call, <span title="System.Collections.Generic.List<dtoEvaluationSummaryItem>">List&lt;dtoEvaluationSummaryItem&gt;</span> items, <span title="lm.Comol.Core.DomainModel.litePerson">litePerson</span> person)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="ExportSummaryDisplayStatistics" class="method">
+		<h4>
+			<span title="System.string">string</span> <strong>ExportSummaryDisplayStatistics</strong>(<span title="lm.Comol.Core.DomainModel.litePerson">litePerson</span> person, <a href="../lm.Comol.Modules.CallForPapers.Domain/dtoCall.htm">dtoCall</a> call, <span title="System.Collections.Generic.Dictionary<long, bool>">Dictionary&lt;long, bool&gt;</span> committeesFuzzy, <span title="System.long">long</span> idSubmission, <span title="System.string">string</span> owner, <span title="System.string">string</span> submittedBy, <span title="System.Nullable<DateTime>">Nullable&lt;DateTime&gt;</span> submittedOn, <span title="System.Collections.Generic.List<dtoSubmissionCommitteeItem>">List&lt;dtoSubmissionCommitteeItem&gt;</span> evaluations, <span title="System.bool">bool</span> oneColumnForCriteria)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="ExportSummaryDisplayStatistics" class="method">
+		<h4>
+			<span title="System.string">string</span> <strong>ExportSummaryDisplayStatistics</strong>(<a href="../lm.Comol.Modules.CallForPapers.Domain/dtoCall.htm">dtoCall</a> call, <span title="System.Collections.Generic.List<dtoCommittee>">List&lt;dtoCommittee&gt;</span> committees, <span title="System.Collections.Generic.List<dtoCommitteesSummaryItem>">List&lt;dtoCommitteesSummaryItem&gt;</span> items, <span title="lm.Comol.Core.DomainModel.litePerson">litePerson</span> person)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="GetErrorDocument" class="method">
+		<h4>
+			<span title="System.string">string</span> <strong>GetErrorDocument</strong>(<a href="../lm.Comol.Modules.CallForPapers.Domain/dtoCall.htm">dtoCall</a> call, <span title="lm.Comol.Core.DomainModel.litePerson">litePerson</span> person)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="InternalExportFullSummaryStatistics" class="method">
+		<h4>
+			<span title="System.string">string</span> <strong>InternalExportFullSummaryStatistics</strong>(<a href="../lm.Comol.Modules.CallForPapers.Domain/dtoCall.htm">dtoCall</a> call, <span title="System.Collections.Generic.List<expCommittee>">List&lt;expCommittee&gt;</span> committees, <span title="System.string">string</span> anonymousDisplayName, <span title="lm.Comol.Core.DomainModel.litePerson">litePerson</span> person, <span title="System.bool">bool</span> oneColumnForCriteria)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	
+	<h3 class="section">Public static methods</h3>
+
+	<div id="GetErrorDocument" class="method">
+		<h4>
+			<span title="System.string">string</span> <strong>GetErrorDocument</strong>(<span title="System.string">string</span> translation)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	
+	<h3 class="section">Public properties</h3>
+
+	<div id="CharDelimiter" class="method">
+		<h4>
+			<span title="System.Char">Char</span> <strong>CharDelimiter</strong> get; set;
+		</h4>
+		<div class="content">
+
+		</div>
+	</div>
+	<div id="EndCharFieldItem" class="method">
+		<h4>
+			<span title="System.Char">Char</span> <strong>EndCharFieldItem</strong> get; set;
+		</h4>
+		<div class="content">
+
+		</div>
+	</div>
+	<div id="EndFieldItem" class="method">
+		<h4>
+			<span title="System.string">string</span> <strong>EndFieldItem</strong> get; set;
+		</h4>
+		<div class="content">
+
+		</div>
+	</div>
+	<div id="EndRowItem" class="method">
+		<h4>
+			<span title="System.string">string</span> <strong>EndRowItem</strong> get; set;
+		</h4>
+		<div class="content">
+
+		</div>
+	</div>
+	<div id="StringDelimiter" class="method">
+		<h4>
+			<span title="System.string">string</span> <strong>StringDelimiter</strong> get; set;
+		</h4>
+		<div class="content">
+
+		</div>
+	</div>
+	</section>
+	</article><footer>
+	<span id="version">Built from v1.0.0.0 of lm.Comol.Modules.CallForPapers</span>
+	<span id="docu-link">
+		Generated by <a href="http://docu.jagregory.com">docu</a>
+	</span>
+</footer>
+  </body>
+</html>

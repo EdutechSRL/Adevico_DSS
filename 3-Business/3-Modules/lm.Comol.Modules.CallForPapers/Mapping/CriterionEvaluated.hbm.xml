@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="lm.Comol.Modules.CallForPapers" namespace="lm.Comol.Modules.CallForPapers.Domain.Evaluation">
+	<class name="CriterionEvaluated" table="CP_CriterionEvaluated" optimistic-lock ="version">
+		<id name="Id" column="Id" type="Int64">
+			<generator class="native"/>
+		</id>
+    <version name="TimeStamp" generated="always" unsaved-value="null" type="BinaryBlob">
+      <column name="_Timestamp" not-null="false" sql-type="timestamp"/>
+    </version>
+    <many-to-one name="Call" class="lm.Comol.Modules.CallForPapers.Domain.CallForPaper" column="IdCall" foreign-key="IdCall" cascade="none"  />
+    <many-to-one name="Submission" class="lm.Comol.Modules.CallForPapers.Domain.UserSubmission" column="IdUserSubmission" foreign-key="IdUserSubmission" cascade="none" not-found="ignore"  />
+    <many-to-one name="Evaluation" class="lm.Comol.Modules.CallForPapers.Domain.Evaluation.Evaluation" column="IdEvaluation" foreign-key="IdEvaluation" cascade="none" not-found="ignore" />
+    <many-to-one name="Criterion" class="lm.Comol.Modules.CallForPapers.Domain.Evaluation.BaseCriterion" column="IdCriterion" foreign-key="IdCriterion" cascade="none" not-found="ignore" />
+    
+    <property name="StringValue" type="String" column="StringValue" />
+    <property name="DecimalValue" type="Decimal" column="Value" />
+    <many-to-one name="Option" class="lm.Comol.Modules.CallForPapers.Domain.Evaluation.CriterionOption" column="IdOption" foreign-key="IdOption" cascade="none" not-found="ignore" />
+    <property name="Comment" type="String" column="Comment" />
+    <property name="IsValueEmpty" type="Boolean" column="IsValueEmpty" />
+
+    <component name="DssValue" class="lm.Comol.Core.Dss.Domain.Templates.ItemRating,lm.Comol.Core.Dss">
+      <property name="IdRatingValue" column="IdDssRatingValue" />
+      <property name="IdRatingValueEnd" column="IdDssRatingValueEnd" />
+      <property name="Value" column="Rating" />
+      <property name="ValueFuzzy" column="RatingFuzzy" />
+      <property name="IsFuzzy" column="IsFuzzyRating" />
+      <property name="RatingType" type="lm.Comol.Core.Dss.Domain.RatingType, lm.Comol.Core.Dss" column="RatingType"  />
+    </component>
+    <property name="CreatedOn" type="DateTime" column="_CreatedOn" />
+    <many-to-one name="CreatedBy" class="lm.Comol.Core.DomainModel.litePerson" column="_CreatedBy" foreign-key="_CreatedBy" cascade="none" not-found="ignore" />
+    <property name="ModifiedOn" type="DateTime" column="_ModifiedOn" />
+    <many-to-one name="ModifiedBy" class="lm.Comol.Core.DomainModel.litePerson" column="_ModifiedBy" foreign-key="_ModifiedBy" cascade="none" not-found="ignore"/>
+    <property name="CreatorProxyIpAddress" type="String" column="_CreatedProxyIPaddress" />
+    <property name="CreatorIpAddress" type="String" column="_CreatedIPaddress" />
+    <property name="ModifiedProxyIpAddress" type="String" column="_ModifiedProxyIPaddress" />
+    <property name="ModifiedIpAddress" type="String" column="_ModifiedIPaddress" />
+    <property name="Deleted" type="lm.Comol.Core.DomainModel.BaseStatusDeleted,lm.Comol.Core.DomainModel" column="_Deleted" />
+  </class>
+</hibernate-mapping>

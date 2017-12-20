@@ -1,0 +1,82 @@
+.RadUploadProgressArea {
+  *zoom: 1;
+  width: 430px;
+  text-align: left; }
+  .RadUploadProgressArea:after {
+    content: "";
+    height: 0;
+    clear: both;
+    display: block; }
+  .RadUploadProgressArea.RadUploadProgressAreaHidden {
+    display: none; }
+    @media screen and (-webkit-min-device-pixel-ratio: 0) {
+      .RadUploadProgressArea.RadUploadProgressAreaHidden {
+        width: 0;
+        height: 0;
+        display: block;
+        overflow: hidden;
+        visibility: hidden; } }
+  .RadUploadProgressArea .ruProgressHeader {
+    margin: 0 0 15px;
+    padding: 12px;
+    border-bottom: 1px solid;
+    font-size: 16px; }
+  .RadUploadProgressArea .ruActions {
+    margin: 0;
+    padding: 12px;
+    border-top: 1px solid;
+    text-align: right; }
+  .RadUploadProgressArea .ruButton {
+    width: 80px;
+    border: 1px solid;
+    background-position: 0 0;
+    background-repeat: repeat-x; }
+  .RadUploadProgressArea .ruProgress {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: none;
+    list-style: none;
+    *zoom: 1;
+    border: 1px solid; }
+    .RadUploadProgressArea .ruProgress:after {
+      content: "";
+      height: 0;
+      clear: both;
+      display: block; }
+  .RadUploadProgressArea .ruShadow .ruProgress {
+    box-shadow: 3px 3px 3px #bbbbbb; }
+  .RadUploadProgressArea .ruFilePortion {
+    margin: 0 20px 20px; }
+  .RadUploadProgressArea .ruFileCount {
+    margin: 0 20px 20px; }
+  .RadUploadProgressArea .ruCurrentFile {
+    margin: 20px 20px 5px;
+    font-size: 14px; }
+    .RadUploadProgressArea .ruCurrentFile span {
+      font-size: 14px;
+      line-height: 16px; }
+  .RadUploadProgressArea .ruTimeSpeed {
+    margin: 0 20px 20px; }
+  .RadUploadProgressArea .ruBar {
+    height: 16px;
+    margin: 0 0 0.4em;
+    border: 1px solid;
+    overflow: hidden; }
+    .RadUploadProgressArea .ruBar div {
+      height: 17px;
+      margin: -1px 0 0;
+      border: 0;
+      border-right: 1px solid;
+      background-color: transparent;
+      background-position: 0 0;
+      background-repeat: repeat-x; }
+
+.RadUploadProgressArea_rtl {
+  text-align: right; }
+  .RadUploadProgressArea_rtl .ruActions {
+    text-align: left; }
+  .RadUploadProgressArea_rtl .ruBar div {
+    background-position: 0 -17px;
+    border: 0;
+    border-left: 1px solid; }

@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5D1DEF77-9BEF-4912-A93B-0633186C69D2}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>lm.Comol.Core.Dss</RootNamespace>
+    <AssemblyName>lm.Comol.Core.Dss</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\lm.Comol.Core.Dss.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.1.0.39271, Culture=neutral, PublicKeyToken=3a9cab8f8d22bfb7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\9-AdevicoMIT_Library\lm.Comol.MitLibrary\External\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Core, Version=1.1.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\9-AdevicoMIT_Library\lm.Comol.MitLibrary\External\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.DynamicProxy2, Version=2.1.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\9-AdevicoMIT_Library\lm.Comol.MitLibrary\External\Castle.DynamicProxy2.dll</HintPath>
+    </Reference>
+    <Reference Include="FuzzyMCDMLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\9-AdevicoMIT_Library\lm.Comol.MitLibrary\Adevico\DSS\FuzzyMCDMLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="Iesi.Collections, Version=1.0.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\9-AdevicoMIT_Library\lm.Comol.MitLibrary\External\Iesi.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="LM.MathLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\9-AdevicoMIT_Library\lm.Comol.MitLibrary\Adevico\DSS\LM.MathLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate, Version=2.1.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\9-AdevicoMIT_Library\lm.Comol.MitLibrary\External\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate.ByteCode.Castle, Version=2.1.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\9-AdevicoMIT_Library\lm.Comol.MitLibrary\External\NHibernate.ByteCode.Castle.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate.Linq, Version=1.0.0.4000, Culture=neutral, PublicKeyToken=444cf6a87fdab271, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\9-AdevicoMIT_Library\lm.Comol.MitLibrary\External\NHibernate.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Business\ServiceDss.cs" />
+    <Compile Include="Domain\dto\dtoAlgorithmInput.cs" />
+    <Compile Include="Domain\dto\dtoItemWeight.cs" />
+    <Compile Include="Domain\NormalizationStatus.cs" />
+    <Compile Include="Domain\NormalizeTo.cs" />
+    <Compile Include="Domain\RootObject.cs" />
+    <Compile Include="Domain\Templates\Dto\dtoItemRating.cs" />
+    <Compile Include="Domain\Templates\Dto\dtoRatingType.cs" />
+    <Compile Include="Domain\dto\DssError.cs" />
+    <Compile Include="Domain\Templates\Dto\dtoObjectDssItemValue.cs" />
+    <Compile Include="Domain\Templates\Dto\dtoItemMethodSettings.cs" />
+    <Compile Include="Domain\Templates\Dto\dtoItemWeightSettings.cs" />
+    <Compile Include="Domain\Templates\Dto\dtoSelectMethod.cs" />
+    <Compile Include="Domain\RatingType.cs" />
+    <Compile Include="Domain\dto\dtoGenericRatingSet.cs" />
+    <Compile Include="Domain\Templates\Dto\dtoSelectRatingSet.cs" />
+    <Compile Include="Domain\dto\dtoGenericRatingValue.cs" />
+    <Compile Include="Domain\Templates\Dto\dtoSelectRatingValue.cs" />
+    <Compile Include="Domain\Templates\ItemMethodSettings.cs" />
+    <Compile Include="Domain\Templates\ItemObjectTranslation.cs" />
+    <Compile Include="Domain\Templates\ItemRating.cs" />
+    <Compile Include="Domain\Templates\ItemWeightSettings.cs" />
+    <Compile Include="Domain\Templates\TemplateRatingValue.cs" />
+    <Compile Include="Domain\Templates\TranslationType.cs" />
+    <Compile Include="Domain\Templates\TemplateMethod.cs" />
+    <Compile Include="Domain\AlgorithmType.cs" />
+    <Compile Include="Domain\Templates\DssTemplateTranslation.cs" />
+    <Compile Include="Domain\Templates\TemplateRatingSet.cs" />
+    <Compile Include="Presentation\FuzzyInputGenericPresenter.cs" />
+    <Compile Include="Presentation\FuzzyNumberPresenter.cs" />
+    <Compile Include="Presentation\IView\IViewFuzzyNumber.cs" />
+    <Compile Include="Presentation\IView\IViewFuzzyInputGeneric.cs" />
+    <Compile Include="Presentation\RatingScalesPresenter.cs" />
+    <Compile Include="Presentation\FuzzyInputPresenter.cs" />
+    <Compile Include="Presentation\AggregationSelectorPresenter.cs" />
+    <Compile Include="Presentation\IView\IViewRatingSetSelector.cs" />
+    <Compile Include="Presentation\IView\IViewFuzzyInput.cs" />
+    <Compile Include="Presentation\IView\IViewAggregationSelector.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\..\2-Core\lm.Comol.Core.DomainModel\lm.Comol.Core.DomainModel.csproj">
+      <Project>{9b7da676-5030-47cd-8b2b-a30a09c8d0b5}</Project>
+      <Name>lm.Comol.Core.DomainModel</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Mapping\DssTemplateTranslation.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Mapping\TemplateMethod.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Mapping\TemplateRatingSet.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Mapping\TemplateRatingValue.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Business\ServiceDss.Algorithms.cs" />
+    <None Include="Domain\Dss.cd" />
+    <None Include="Domain\DssDtoDiagram.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DssDLLreference\FuzzyMCDMLibrary.dll" />
+    <Content Include="DssDLLreference\FuzzyMCDMLibrary.resources.dll" />
+    <Content Include="DssDLLreference\Iesi.Collections.dll" />
+    <Content Include="DssDLLreference\LM.MathLibrary.dll" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,17 @@
+body {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	background-color: transparent;
+    color:Black;
+}
+.wikirow img{vertical-align: middle;}
+.wikirow span.wikiimg, .wikirow font.wikiimg{width:50px; display: inline-block; *display:inline; *zoom:1}
+.wikirow span.wikibody, .wikirow font.wikibody{display: block; padding-left: 50px;}            
+.wikirow span.wikititle, .wikirow font.wikititle{vertical-align: middle;display: inline-block;*display:inline; *zoom:1;width: 600px;}
+
+.wikirow span.wikibody, .wikirow font.wikibody{border:1px dotted #444;}            
+.wikirow{border:1px dashed #444;}
+
+
+div.wikirow-editoronly{color:red; font-style: italic}
+
+div.wikirow-editoronly+div.wikirow-editoronly{margin-top: 10px;}

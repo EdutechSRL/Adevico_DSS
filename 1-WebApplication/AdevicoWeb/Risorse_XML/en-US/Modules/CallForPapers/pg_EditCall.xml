@@ -1,0 +1,994 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--eng-->
+<Resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="urn:ComolTranslation">
+  <item name="Portalname" html="false" placeholder="false">Portal / Home</item>
+  <item name="nopermission" html="false" placeholder="false">Sorry, you do not have permission to view this page.</item>
+  <item name="serviceTitle.Edit.CallForBids" html="false" placeholder="true" mustcontains="{0}">Modify call  "{0}"</item>
+  <item name="serviceTitle.Add.CallForBids" html="false" placeholder="false">Create call</item>
+  <item name="serviceTitle.Community.Add.CallForBids" html="false" placeholder="true" mustcontains="{0}">Create call in the "{0}" community</item>
+  <item name="LBnoCalls.CallForBids" html="false" placeholder="false">Call not found.</item>
+  <item name="HYPbackTop.CallForBids.text" html="false" placeholder="false">Back to calls</item>
+  <item name="HYPbackTop.CallForBids.ToolTip" html="false" placeholder="false">Back to call list.</item>
+  <item name="HYPbackTop.CallForBids.status" html="false" placeholder="false">Back to call list.</item>
+  <item name="HYPbackBottom.CallForBids.text" html="false" placeholder="false">Back to calls</item>
+  <item name="HYPbackBottom.CallForBids.ToolTip" html="false" placeholder="false">Back to call list.</item>
+  <item name="HYPbackBottom.CallForBids.status" html="false" placeholder="false">Back to call list.</item>
+  <item name="HYPpreviewCallTop.CallForBids.text" html="false" placeholder="false">Call preview</item>
+  <item name="HYPpreviewCallTop.CallForBids.ToolTip" html="false" placeholder="false">Call preview.</item>
+  <item name="HYPpreviewCallTop.CallForBids.status" html="false" placeholder="false">Call preview.</item>
+  <item name="HYPpreviewCallBottom.CallForBids.text" html="false" placeholder="false">Call preview</item>
+  <item name="HYPpreviewCallBottom.CallForBids.ToolTip" html="false" placeholder="false">Call preview.</item>
+  <item name="HYPpreviewCallBottom.CallForBids.status" html="false" placeholder="false">Call preview.</item>
+  <item name="serviceTitle.Edit.RequestForMembership" html="false" placeholder="true" mustcontains="{0}">Modify request for accession {0}</item>
+  <item name="serviceTitle.Add.RequestForMembership" html="false" placeholder="false">New Request for Accession</item>
+  <item name="serviceTitle.Community.Add.RequestForMembership" html="false" placeholder="true" mustcontains="{0}">New request for accession for the community "{0}"</item>
+  <item name="LBnoCalls.RequestForMembership" html="false" placeholder="false">Request for accession/pre-accession not found</item>
+  <item name="HYPbackTop.RequestForMembership.text" html="false" placeholder="false">Back to accessions/pre-accessions</item>
+  <item name="HYPbackTop.RequestForMembership.ToolTip" html="false" placeholder="false">Back to request for accession/pre-accession list</item>
+  <item name="HYPbackTop.RequestForMembership.status" html="false" placeholder="false">Back to request for accession/pre-accession list</item>
+  <item name="HYPbackBottom.RequestForMembership.text" html="false" placeholder="false">Back to accessions/pre-accessions</item>
+  <item name="HYPbackBottom.RequestForMembership.ToolTip" html="false" placeholder="false">Back to request for accession/pre-accession list</item>
+  <item name="HYPbackBottom.RequestForMembership.status" html="false" placeholder="false">Back to request for accession/pre-accession list</item>
+  <item name="HYPpreviewCallTop.RequestForMembership.text" html="false" placeholder="false">Accession/pre-accession preview</item>
+  <item name="HYPpreviewCallTop.RequestForMembership.ToolTip" html="false" placeholder="false">Request for accession/ pre accession preview</item>
+  <item name="HYPpreviewCallTop.RequestForMembership.status" html="false" placeholder="false">Request for accession/ pre accession preview</item>
+  <item name="HYPpreviewCallBottom.RequestForMembership.text" html="false" placeholder="false">Accession/pre-accession preview</item>
+  <item name="HYPpreviewCallBottom.RequestForMembership.ToolTip" html="false" placeholder="false">Request for accession/ pre accession preview</item>
+  <item name="HYPpreviewCallBottom.RequestForMembership.status" html="false" placeholder="false">Request for accession/ pre accession preview</item>
+  <item name="BTNsaveSettingsTop.text" html="false" placeholder="false">Save</item>
+  <item name="BTNsaveSettingsTop.ToolTip" html="false" placeholder="false">Save settings</item>
+  <item name="BTNsaveSettingsBottom.text" html="false" placeholder="false">Save</item>
+  <item name="BTNsaveSettingsBottom.ToolTip" html="false" placeholder="false">Save settings</item>
+  <item name="LBtitle_t.text" html="false" placeholder="false">Title:</item>
+  <item name="LBedition_t.text" html="false" placeholder="false">Edition:</item>
+  <item name="LBstatus.text" disambiguation="status: attivo/chiuso/in corso/valutazione" html="false" placeholder="false">Status:</item>
+  <item name="LBsummary_t.text" html="false" placeholder="false">Summary:</item>
+  <item name="LBdescription_t.text" html="false" placeholder="false">Description:</item>
+  <item name="LBtimeValidity_t.text" html="false" placeholder="false">Temporal validity</item>
+  <item name="DefaultSubmitterName" html="false" placeholder="false">Participant</item>
+  <item name="LBfromDate_t.text" disambiguation="sottomisioni domande partecipazione aperte dal" html="false" placeholder="false">Subm. opened since:</item>
+  <item name="LBtoDate_t.text" html="false" placeholder="false">to</item>
+  <item name="LBsubmissionClosed.text" html="false" placeholder="false">temporarely close submissions</item>
+  <item name="LBoverrideData.text" html="false" placeholder="false">Allow users to complete the submission, if they started the compilation within the deadline but the terms expired in the menawhile. New expiry date is:</item>
+  <item name="LBhours.text" html="false" placeholder="false">hours and</item>
+  <item name="LBminutes.text" html="false" placeholder="false">minutes.</item>
+  <item name="LBendEvaluationOn.text" html="false" placeholder="false">Evaluations concluded within:</item>
+  <!--added MD-->
+  <item name="LBevaluationResults_t.text" html="false" placeholder="false">Results evaluated by:</item>
+  <item name="LBdisplayWinner.text" html="false" placeholder="false">Display winner:</item>
+  <item name="LBAwardDate.text" html="false" placeholder="false">Public link to Results:</item>
+  <!--/added MD-->
+  <item name="CBXallowExtensionDate.text" html="false" placeholder="false">yes</item>
+  <item name="LBallowExtensionDate.text" html="false" placeholder="false">allow submissions to be compiled BEYOND the expiration date for some users </item>
+  <item name="LBevaluationResults.text" html="false" placeholder="false">Evaluation results:</item>
+  <item name="EvaluationType.Avarage" html="false" placeholder="false">average grade</item>
+  <item name="EvaluationType.Sum" html="false" placeholder="false">Sum of grades</item>
+  <item name="EvaluationType.Dss">algorithm dss</item>
+  <item name="DDLevaluationType.0" html="false" placeholder="false">average grade</item>
+  <item name="DDLevaluationType.1" html="false" placeholder="false">Sum of grades</item>
+  <item name="DDLevaluationType.2">algorithm dss</item>
+  <item name="IViewEditCallSettings.UseOfDssEvaluation">ATTENZIONE: SE impostato su algoritmi DSS NON sarà possibile, una volta creata una commissione, cambiare il tipo di valutazione se NON rimuovendo le commissioni create.</item>
+  <item name="LBinfoConfirmStatus.CallForBids.Published" html="false" placeholder="false">Call will be visible for useres but submissions will not be enabled.</item>
+  <item name="LBinfoConfirmStatus.SubmissionOpened" html="false" placeholder="false">Submissions will be reopened. It is needed to enter a new end date for the participation submission</item>
+  <item name="LBinfoConfirmStatus.SubmissionsLimitReached">It will prevent the submission for limits reached.</item>
+  <item name="LBinfoConfirmStatus.SubmissionClosed" html="false" placeholder="false">ATTENTION:Submission end date will be moved up</item>
+  <item name="LBinfoConfirmStatus.RequestForMembership.Published" html="false" placeholder="false">Request for accession will be visible but submissions will not be enabled.</item>
+  <item name="LBinfoConfirmStatus.SubmissionClosed" html="false" placeholder="false">Si chiuderanno i termini di sottomisione delle domande in anticipo rispetto la data di termine.</item>
+  <item name="LBinfoConfirmStatus.CallForBids.Draft" html="false" placeholder="false">It is not possible to set a call as a draft if it has some submitted requests.</item>
+  <item name="LBinfoConfirmStatus.RequestForMembership.Draft" html="false" placeholder="false">It is not possible to set an accession as a draft if it has some submitted requests. Delete submissions first and then try again</item>
+  <item name="LBallowRevision_t.text" html="false" placeholder="false">Allow revisions:</item>
+  <item name="RevisionMode.None" html="false" placeholder="false">to nobody</item>
+  <item name="RevisionMode.OnlyManager" html="false" placeholder="false">only adminstrators</item>
+  <item name="RevisionMode.ManagerSubmitter" html="false" placeholder="false">administrators/ </item>
+  <item name="RevisionMode.OnlySubmitter" html="false" placeholder="false">only participant</item>
+  <item name="RBLrevisionType.None" html="false" placeholder="false">to nobody</item>
+  <item name="RBLrevisionType.OnlyManager" html="false" placeholder="false">only adminstrators</item>
+  <item name="RBLrevisionType.ManagerSubmitter" html="false" placeholder="false">administrators/ </item>
+  <item name="RBLrevisionType.OnlySubmitter" html="false" placeholder="false">only participant</item>
+  <item name="LBAcceptRefusePolicy_t.text" html="false" placeholder="false">Set users notification according to the submitted requests: </item>
+  <item name="RBLacceptRefusePolicy.None" html="false" placeholder="false">No notification found</item>
+  <item name="RBLacceptRefusePolicy.Accept" html="false" placeholder="false">notify ONLY the ACCEPTED ONES</item>
+  <item name="RBLacceptRefusePolicy.Refuse" html="false" placeholder="false">notify ONLY the REJECTED ONES</item>
+  <item name="RBLacceptRefusePolicy.All" html="false" placeholder="false">notify acceptation/rejection</item>
+  <item name="BTNconfirmStatus.text" disambiguation="verbo" html="false" placeholder="false">Confirm</item>
+  <item name="BTNconfirmStatus.status" disambiguation="verbo" html="false" placeholder="false">Confirm</item>
+  <item name="BTNconfirmStatus.ToolTip" disambiguation="verbo" html="false" placeholder="false">Confirm</item>
+  <item name="BTNundoConfirmStatus.text" html="false" placeholder="false">Cancel</item>
+  <item name="BTNundoConfirmStatus.status" html="false" placeholder="false">Cancel saving and modify status.</item>
+  <item name="BTNundoConfirmStatus.ToolTip" html="false" placeholder="false">Cancel saving and modify status.</item>
+  <item name="CMVconfirmEndDay.text" html="false" placeholder="true" mustcontains="{0}">End dat must be greater than {0}</item>
+  <item name="LBconfirmEndDate.text" disambiguation="domanda di partecipazione/domanda di adesione" html="false" placeholder="false">Requests submitted within: </item>
+  <item name="CallForPaperStatus.Draft" html="false" placeholder="false">Draft</item>
+  <item name="CallForPaperStatus.Published" html="false" placeholder="false">Publish</item>
+  <item name="CallForPaperStatus.SubmissionOpened" disambiguation="domanda di partecipazione/domanda di adesione" html="false" placeholder="false">Request submission OPENED</item>
+  <item name="CallForPaperStatus.SubmissionClosed" disambiguation="domanda di partecipazione/domanda di adesione" html="false" placeholder="false">Request submission CLOSED</item>
+  <item name="CallForPaperStatus.SubmissionsLimitReached" disambiguation="domanda di partecipazione/domanda di adesione">Limit submission REACHED</item>
+  <item name="CallForPaperStatus.None" html="false" placeholder="false" hidden="true">--</item>
+  <item name="DisplayDateError" html="false" placeholder="true" mustcontains="{0}|{1}">ATTENTION the end date ({1}) can not be lesser than the start date ({0})</item>
+  <item name="DisplayDateError.CallForBids" html="false" placeholder="false">ATTENTION: check evaluation date, end date and start date values</item>
+  <item name="DisplayDateError.RequestForMembership" html="false" placeholder="false">ATTENTION: check end date and start date values</item>
+  <item name="DisplayEvaluationDateError" html="false" placeholder="true" mustcontains="{0}|{1}">ATTENTION: the end of evaluations ({1}) can not be lesser than the call closure ({0}).</item>
+  <item name="EditSettings.DisplaySettingsError" html="false" placeholder="false">Settings were NOT successfully saved</item>
+  <item name="EditSettings.DisplaySettingsSaved" html="false" placeholder="false">Settings correctly saved</item>
+  <item name="DisplaySkippedRequiredSteps" html="false" placeholder="true" mustcontains="{0}">Invalid status , some mandatory steps were not correctly performed: {0}.</item>
+  <item name="BTNsaveAvailabilityTop.text" html="false" placeholder="false">Save</item>
+  <item name="BTNsaveAvailabilityTop.ToolTip" html="false" placeholder="false">Save settings</item>
+  <item name="BTNsaveAvailabilityBottom.text" html="false" placeholder="false">Save</item>
+  <item name="BTNsaveAvailabilityBottom.ToolTip" html="false" placeholder="false">Save settings</item>
+  <item name="LBisPublic_t.text" disambiguation="relativo a bando" html="false" placeholder="false">Public:</item>
+  <item name="LBisPublicInfo.CallForBids.text" html="false" placeholder="false">ATTENTION: call submission will be granted also to unregistered users</item>
+  <item name="LBisPublicInfo.RequestForMembership.text" html="false" placeholder="false">ATTENTION: accession submission will be granted also to unregistered users</item>
+  <item name="LBpublicUrlInfo_t.text" html="false" placeholder="false">Access link:</item>
+  <item name="LTpublicCallDirectUrlMessage.text" html="false" placeholder="false">Straight to item</item>
+  <item name="LTpublicCallDirectUrlMessage.CallForBids" html="false" placeholder="false">Straight to call</item>
+  <item name="LTpublicCallDirectUrlMessage.RequestForMembership" html="false" placeholder="false">Straight to accession/pre-accession</item>
+  <item name="LTpublicListUrlMessage.text" html="false" placeholder="false">To the public items list</item>
+  <item name="LTpublicListUrlMessage.CallForBids" html="false" placeholder="false">To the public calls list</item>
+  <item name="LTpublicListUrlMessage.RequestForMembership" html="false" placeholder="false">To the public accessions/pre-accessions list </item>
+  <item name="DisplayAvailabilitySaved" html="false" placeholder="false">Settings correctly saved</item>
+  <item name="LTtoolDescription.text.CallForBids" html="false" placeholder="false">In this section you can set the call participants</item>
+  <item name="BTNaddCommunity.text.CallForBids" html="false" placeholder="false">Add community</item>
+  <item name="BTNaddCommunity.ToolTip.CallForBids" html="false" placeholder="false">Open the call to a new community</item>
+  <item name="BTNaddUserFromCommunity.text.CallForBids" html="false" placeholder="false">Add user</item>
+  <item name="BTNaddUserFromCommunity.ToolTip.CallForBids" html="false" placeholder="false">Open the call to a community user</item>
+  <item name="BTNaddUserFromCall.text.CallForBids" html="false" placeholder="false">Add from call</item>
+  <item name="BTNaddUserFromCall.ToolTip.CallForBids" html="false" placeholder="false">Add users from another call</item>
+  <item name="BTNaddProfile.text.CallForBids" html="false" placeholder="false">Add user</item>
+  <item name="BTNaddProfile.ToolTip.CallForBids" html="false" placeholder="false">Open the call to a platform user</item>
+  <item name="LTaddCommunityDescription.CallForBids" html="false" placeholder="false">Opens the call to a new community </item>
+  <item name="LTaddUserFromCommunityDescription.CallForBids" html="false" placeholder="false">Opens the call to one or more users of the community </item>
+  <item name="LTaddUserFromCallDescription.CallForBids" html="false" placeholder="false">Adds one or more participants to another call</item>
+  <item name="LTaddProfileDescription.CallForBids" html="false" placeholder="false">Opens the call to one or more platform users</item>
+  <item name="LTtoolDescription.text.RequestForMembership" html="false" placeholder="false">In this section you can set the accession/pre-accession participants</item>
+  <item name="BTNaddCommunity.text.RequestForMembership" html="false" placeholder="false">Add community</item>
+  <item name="BTNaddCommunity.ToolTip.RequestForMembership" html="false" placeholder="false">Open the call to a new community</item>
+  <item name="BTNaddUserFromCommunity.text.RequestForMembership" html="false" placeholder="false">Add user</item>
+  <item name="BTNaddUserFromCommunity.ToolTip.RequestForMembership" html="false" placeholder="false">Open the accession/pre-accession to a community user</item>
+  <item name="BTNaddUserFromCall.text.RequestForMembership" html="false" placeholder="false">Add accession/pre-accession</item>
+  <item name="BTNaddUserFromCall.ToolTip.RequestForMembership" html="false" placeholder="false">Add users from another accession/pre-accession</item>
+  <item name="BTNaddProfile.text.RequestForMembership" html="false" placeholder="false">Add user</item>
+  <item name="BTNaddProfile.ToolTip.RequestForMembership" html="false" placeholder="false">Open the accession/pre-accession to a platform user</item>
+  <item name="LTaddCommunityDescription.RequestForMembership" html="false" placeholder="false">Opens the accession/pre-accession to a new community </item>
+  <item name="LTaddUserFromCommunityDescription.RequestForMembership" html="false" placeholder="false">Opens the accession/pre-accession to one or more users of the community</item>
+  <item name="LTaddUserFromCallDescription.RequestForMembership" html="false" placeholder="false">Adds one or more participants to another accession/pre-accession.</item>
+  <item name="LTaddProfileDescription.RequestForMembership" html="false" placeholder="false">Opens the accession/pre-accession to one or more platform users</item>
+  <item name="UnknownCommunity" html="false" placeholder="false">Deleted community</item>
+  <item name="UnknownUser" html="false" placeholder="false">Deleted user</item>
+  <item name="BTNeditCallCommunityAssignment.text" html="false" placeholder="false" />
+  <item name="BTNeditCallCommunityAssignment.ToolTip" html="false" placeholder="false">Modify  participation settings</item>
+  <item name="DisplayName.Portal" html="false" placeholder="false">Whole platform</item>
+  <item name="DisplayName.Community" disambiguation="singolare" html="false" placeholder="false">Community</item>
+  <item name="SelectedItems.PersonTypes" html="false" placeholder="false">Selected profile types:</item>
+  <item name="SelectedItems.Roles" html="false" placeholder="false">Selected roles:</item>
+  <item name="LBallSelectedItemsInfo.PersonTypes" html="false" placeholder="false">All profile types.</item>
+  <item name="LBallSelectedItemsInfo.PersonTypes.None" html="false" placeholder="false">None.</item>
+  <item name="LBallSelectedItemsInfo.Roles" html="false" placeholder="false">All commuity roles.</item>
+  <item name="LBallSelectedItemsInfo.Roles.None" html="false" placeholder="false">None.</item>
+  <item name="BTNdeleteCallCommunityAssignment.ToolTip" html="false" placeholder="false">Block access to the selected community</item>
+  <item name="showAllSelectedItems.Text" html="false" placeholder="false">Show all.</item>
+  <item name="showAllSelectedItems.PersonTypes" html="false" placeholder="false">Show all selected  profiles ({0} items).</item>
+  <item name="showAllSelectedItems.Roles" html="false" placeholder="false">Show all selected roles ({0} items).</item>
+  <item name="hideAllSelectedItems.Text" html="false" placeholder="false">Hide all.</item>
+  <item name="hideAllSelectedItems.PersonTypes" html="false" placeholder="false">Hide selected profile types</item>
+  <item name="hideAllSelectedItems.Roles" html="false" placeholder="false">Hide selected roles</item>
+  <item name="LBpersonTypesDescription.CallForBids" html="false" placeholder="false">Select profiles to which open the call</item>
+  <item name="LBpersonTypesDescription.RequestForMembership" html="false" placeholder="false">Select profiles to which open the accession/pre-accession</item>
+  <item name="LBselectAllpersonTypes_t.text" html="false" placeholder="false">To all users:</item>
+  <item name="BTNclosePersonTypesAssignments.text" html="false" placeholder="false">Close without saving</item>
+  <item name="BTNclosePersonTypesAssignments.ToolTip" html="false" placeholder="false">Close window without saving changes to the access settings.</item>
+  <item name="BTNsavePersonTypesAssignments.text" html="false" placeholder="false">Confirm</item>
+  <item name="BTNsavePersonTypesAssignments.ToolTip" html="false" placeholder="false">Confirm profile types selection</item>
+  <item name="DialogTitleTranslation.PersonType" html="false" placeholder="false">Participation settings - Profile type</item>
+  <item name="DialogTitleTranslation.Community" html="false" placeholder="false">Participation settings - Select Community</item>
+  <item name="DialogTitleTranslation.Role" html="false" placeholder="false">Participation settings - Community - Roles</item>
+  <item name="DialogTitleTranslation.Person" html="false" placeholder="false">Participation settings - Select enrolees</item>
+  <item name="DialogTitleTranslation.SubmitterOfBaseForPaper.CallForBids" html="false" placeholder="false">Participation settings - Select users from call</item>
+  <item name="DialogTitleTranslation.SubmitterOfBaseForPaper.RequestForMembership" html="false" placeholder="false">Participation settings - Select users from accession/pre-accession</item>
+  <item name="LBselectCommunityDescription.CallForBids" html="false" placeholder="false">Select community to which open the call:</item>
+  <item name="LBselectCommunityDescription.RequestForMembership" html="false" placeholder="false">Select community roles to which open the accession/pre-accession:</item>
+  <item name="BTNcloseSelectCommunity.text" html="false" placeholder="false">Cancel</item>
+  <item name="BTNcloseSelectCommunity.ToolTip" html="false" placeholder="false">Cancel community selection</item>
+  <item name="BTNselectCommunity.text" html="false" placeholder="false">Confirm</item>
+  <item name="BTNselectCommunity.ToolTip" html="false" placeholder="false">Confirm community selection</item>
+  <item name="LBselectRolesDescription.CallForBids" html="false" placeholder="false">Select community roles to which open the call:</item>
+  <item name="LBselectRolesDescription.RequestForMembership" html="false" placeholder="false">Select community roles to which open  the accession/pre-accession</item>
+  <item name="LBcommunityName_t.text" disambiguation="singolare" html="false" placeholder="false">Community:</item>
+  <item name="LBselectAllroles_t.text" html="false" placeholder="false">To all roles:</item>
+  <item name="BTNcloseRoleAssignments.text" html="false" placeholder="false">Close without saving</item>
+  <item name="BTNcloseRoleAssignments.ToolTip" html="false" placeholder="false">Close window without saving changes to the access settings.</item>
+  <item name="BTNsaveRoleAssignments.text" html="false" placeholder="false">Confirm</item>
+  <item name="BTNsaveRoleAssignments.ToolTip" html="false" placeholder="false">Confirm community roles selection</item>
+  <item name="LBemptyCallSelectorDescription.CallForBids" html="false" placeholder="false">There is no call from which you can select some participants. </item>
+  <item name="LBemptyCallSelectorDescription.RequestForMembership" html="false" placeholder="false">There is no accession/pre-accession from which you can select some participants. </item>
+  <item name="BTNemptyCloseCallSelector.text" html="false" placeholder="false">Close</item>
+  <item name="BTNemptyCloseCallSelector.ToolTip" html="false" placeholder="false">Close selection window</item>
+  <item name="LBcallSelectorDescription.CallForBids" html="false" placeholder="false">Select the call you want to import participants from.</item>
+  <item name="LBcallSelectorDescription.RequestForMembership" html="false" placeholder="false">Select the accession/pre-accession you want to import participants from.</item>
+  <item name="LTcallNameTitle.text" html="false" placeholder="false">Name</item>
+  <item name="LTsubmissionsCountTitle.text" html="false" placeholder="false">Participants</item>
+  <item name="LTsubscriptionsClosedOnTitle.text" html="false" placeholder="false">Available till</item>
+  <item name="LTselectTitle.text" html="false" placeholder="false">Select</item>
+  <item name="LNBselectCall.text" html="false" placeholder="false">Select</item>
+  <item name="LNBselectCall.ToolTip" html="false" placeholder="false">Select</item>
+  <item name="BTNcloseCallSelector.text" html="false" placeholder="false">Close</item>
+  <item name="BTNcloseCallSelector.ToolTip" html="false" placeholder="false">Close selection window</item>
+  <item name="BTNundoCallSelection.text" html="false" placeholder="false">Cancel</item>
+  <item name="BTNundoCallSelection.ToolTip" html="false" placeholder="false">Cancel selection change</item>
+  <item name="LBsubmissionsSelectorDescription.text" html="false" placeholder="false">Select participants to import:</item>
+  <item name="LBcallname_t.CallForBids" html="false" placeholder="false">Call:</item>
+  <item name="LBcallname_t.RequestForMembership" html="false" placeholder="false">Accession/pre-accession:</item>
+  <item name="BTNchangeSelectedCall.text" html="false" placeholder="false">Change</item>
+  <item name="BTNchangeSelectedCall.ToolTip" html="false" placeholder="false">Change selected element</item>
+  <item name="LBfilterSubmissionsStatus_t.text" disambiguation="domanda di partecipazione/domanda di adesione" html="false" placeholder="false">Submissions:</item>
+  <item name="LBfilterSubmissionsType_t.text" html="false" placeholder="false">Submission type:</item>
+  <item name="LBfilterSubmitterName.text" html="false" placeholder="false">Participant:</item>
+  <item name="BTNapplySubmissionsFilters.text" html="false" placeholder="false">Apply</item>
+  <item name="BTNapplySubmissionsFilters.ToolTip" html="false" placeholder="false">Applt selected filters.</item>
+  <item name="LTsubmissionTitle.text" disambiguation="intesa come domanda di partecipazione ad un bando/adesione" html="false" placeholder="false">Submission of</item>
+  <item name="LTsubmissionTypeTitle.text" html="false" placeholder="false">Type</item>
+  <item name="LTsubmissionEvaluationTitle.text" html="false" placeholder="false">Score</item>
+  <item name="LTsubmittedOnTitle.text" html="false" placeholder="false">Last changes</item>
+  <item name="LNBselectItemsIntoAllPages.text" html="false" placeholder="false">Select on all pages</item>
+  <item name="LNBselectItemsIntoAllPages.ToolTip" html="false" placeholder="false">Select all on alla pages</item>
+  <item name="LNBunselectItemsIntoAllPages.text" html="false" placeholder="false">Deselect on all pages</item>
+  <item name="LNBunselectItemsIntoAllPages.ToolTip" html="false" placeholder="false">Deselect all on all pages</item>
+  <item name="BTNcloseCallSumbissionsSelector.text" html="false" placeholder="false">Close</item>
+  <item name="BTNcloseCallSumbissionsSelector.ToolTip" html="false" placeholder="false">Close selection window</item>
+  <item name="BTNaddSubmissions.text" html="false" placeholder="false">Add</item>
+  <item name="BTNaddSubmissions.ToolTip" html="false" placeholder="false">Add selected users</item>
+  <item name="SubmissionsOrder.None" html="false" placeholder="false" />
+  <item name="SubmissionsOrder.ByStatus" html="false" placeholder="false">Request status  </item>
+  <item name="SubmissionsOrder.ByType" disambiguation="domanda di partecipazione/domanda di adesione" html="false" placeholder="false">submission type</item>
+  <item name="SubmissionsOrder.ByUser" html="false" placeholder="false">Participant name:</item>
+  <item name="SubmissionsOrder.ByDate" html="false" placeholder="false">last change</item>
+  <item name="SubmissionsOrder.BySubmittedOn" html="false" placeholder="false">submitted on</item>
+  <item name="SubmissionFilterStatus.All" html="false" placeholder="false">All</item>
+  <item name="SubmissionFilterStatus.OnlySubmitted" html="false" placeholder="false">only the submitted ones</item>
+  <item name="SubmissionFilterStatus.WaitingSubmission" html="false" placeholder="false">Waiting</item>
+  <item name="SubmissionFilterStatus.VirtualDeletedSubmission" html="false" placeholder="false">Deleted</item>
+  <item name="SubmissionFilterStatus.WithRevisions" html="false" placeholder="false">With revisions</item>
+  <item name="SubmissionFilterStatus.Accepted" html="false" placeholder="false">Accepted</item>
+  <item name="SubmissionFilterStatus.Rejected" html="false" placeholder="false">Rejected</item>
+  <item name="SubmissionsOrder.Ascending" html="false" placeholder="false">Ascending order by</item>
+  <item name="SubmissionsOrder.Descending" html="false" placeholder="false">Descending order by</item>
+  <item name="DDLfilterSubmitterTypes.-1" html="false" placeholder="false">All</item>
+  <item name="LBnoCallSubmissions.text" html="false" placeholder="false">No item found according to the specified criteria</item>
+  <item name="LastActionOn.draft" html="false" placeholder="false">Draft</item>
+  <item name="LastActionOn.submitted" html="false" placeholder="false">Submitted</item>
+  <item name="LastActionOn.accepted" html="false" placeholder="false">Accepted</item>
+  <item name="LastActionOn.rejected" html="false" placeholder="false">Rejected</item>
+  <item name="LastActionOn.waitingValuation" html="false" placeholder="false">Pending evaluation </item>
+  <item name="LastActionOn.valuating" html="false" placeholder="false">On evaluation</item>
+  <item name="LastActionOn.valuated" html="false" placeholder="false">Evaluated</item>
+  <item name="LastActionOn.deleted" html="false" placeholder="false">Deleted</item>
+  <item name="LastActionOn.tosubmit" html="false" placeholder="false">To submit</item>
+  <item name="LBuserListTitle.text" html="false" placeholder="false">Users</item>
+  <item name="LTusername_t.text" html="false" placeholder="false">User</item>
+  <item name="LTusermail_t.text" html="false" placeholder="false">Mail address</item>
+  <item name="LNBselectItemsIntoAllPages.Users.text" html="false" placeholder="false">Select all users</item>
+  <item name="LNBselectItemsIntoAllPages.Users.ToolTip" html="false" placeholder="false">Select all users</item>
+  <item name="LNBunselectItemsIntoAllPages.Users.text" html="false" placeholder="false">Deselect all users</item>
+  <item name="LNBunselectItemsIntoAllPages.Users.ToolTip" html="false" placeholder="false">Deselect all users</item>
+  <item name="LBshowextraUserItems.text" html="false" placeholder="false">Show all ({0}  users)</item>
+  <item name="LBhideextraUserItems.text" html="false" placeholder="false">Collapse table (show first {0} users)</item>
+  <item name="LBshowextraUserItems.ToolTip" html="false" placeholder="false">Expand users table.</item>
+  <item name="LBhideextraUserItems.ToolTip" html="false" placeholder="false">Collapse users table</item>
+  <item name="DisplayCommunityAssignmentAdded" html="false" placeholder="false">{0} community access granted.</item>
+  <item name="DisplayCommunityAssignmentsAdded" html="false" placeholder="false">Selected communities were successfully added</item>
+  <item name="DisplayCommunityAssignmentDeleted" html="false" placeholder="false">Participation for the {0} community was removed.  </item>
+  <item name="DisplayUserAssignmentsAdded" html="false" placeholder="false">Selected users were successfully added</item>
+  <item name="DisplayCommunityAssignmentSaved" html="false" placeholder="false">Participation settings for the community {0} successfully saved</item>
+  <item name="LBselectUsersDescription.CallForBids.text" html="false" placeholder="false">Select users to access the call:</item>
+  <item name="LBselectUsersDescription.RequestForMembership.text" html="false" placeholder="false">Select users to access the accession/pre-accession</item>
+  <item name="BTNcloseUsersAssignments.text" html="false" placeholder="false">Close</item>
+  <item name="BTNcloseUsersAssignments.ToolTip" html="false" placeholder="false">Close selection window</item>
+  <item name="BTNaddUserAssignments.text" html="false" placeholder="false">Add</item>
+  <item name="BTNaddUserAssignments.ToolTip" html="false" placeholder="false">Add selected users</item>
+  <item name="LBusers_t.text" html="false" placeholder="false">Users:</item>
+  <item name="BTNaddUser.text" html="false" placeholder="false">Add user</item>
+  <item name="BTNaddUser.ToolTip" html="false" placeholder="false">Adds new users.</item>
+  <item name="BTNsavePerson.text" disambiguation="verbo" html="false" placeholder="false">Confirm</item>
+  <item name="BTNsavePerson.ToolTip" html="false" placeholder="false">Adds selected new users</item>
+  <item name="BTNunsavePerson.text" html="false" placeholder="false">Close</item>
+  <item name="BTNunsavePerson.ToolTip" html="false" placeholder="false">Cancel new users selection</item>
+  <item name="DisplayAvailabilitySaveErrors" html="false" placeholder="false">ATTENTION: current access settings have not been correctly saved.</item>
+  <item name="DisplayNoAvailability" html="false" placeholder="false">ATTENTION: according to current settings, this item can not been accessed, settings have not been saved, yet.</item>
+  <item name="DisplayNoAssignments" html="false" placeholder="false">ATTENTION: current item can not been accessed, please set an access property.</item>
+  <item name="LBstartMessage_t.text" html="false" placeholder="false">opening message:</item>
+  <item name="LBendMessage_t.text" html="false" placeholder="false">Closing message:</item>
+  <item name="BTNsaveMessagesTop.text" html="false" placeholder="false">Save</item>
+  <item name="BTNsaveMessagesTop.ToolTip" html="false" placeholder="false">Save opening and closing messages</item>
+  <item name="BTNsaveMessagesBottom.text" html="false" placeholder="false">Save</item>
+  <item name="BTNsaveMessagesBottom.ToolTip" html="false" placeholder="false">Save opening and closing messages</item>
+  <item name="DisplayInvalidMessage" html="false" placeholder="false">it IS MANDATORY to enter text for open and close messages</item>
+  <item name="DisplayMessagesSaveErrors.True" html="false" placeholder="false">ATTENTION: it was not possible to save correctly the open and close messages</item>
+  <item name="DisplayMessagesSaveErrors.False">Open and close messages saved</item>
+  <item name="DisplayInvalidType" html="false" placeholder="false">ATTENTION: this page is available only for requests for accession</item>
+  <item name="BTNsaveSubmittersTop.text" html="false" placeholder="false">Save</item>
+  <item name="BTNsaveSubmittersTop.ToolTip" html="false" placeholder="false">Save submitter types</item>
+  <item name="BTNsaveSubmittersBottom.text" html="false" placeholder="false">Save</item>
+  <item name="BTNsaveSubmittersBottom.ToolTip" html="false" placeholder="false">Save submitter types</item>
+  <item name="LBsubmittersType.text" html="false" placeholder="false">Submitter type:</item>
+  <item name="BTNaddSubmitter.text" html="false" placeholder="false">Add</item>
+  <item name="BTNaddSubmitter.ToolTip" html="false" placeholder="false">Add a new submitter type</item>
+  <item name="LBmoveSubmitter.text" html="false" placeholder="false">Move receiver</item>
+  <item name="LBsubmitterName_t.text" html="false" placeholder="false">Name:</item>
+  <item name="LBmultipleSubmissions.text" html="false" placeholder="false">Allow multiple subm.</item>
+  <item name="LBmaxSubmissions.text" html="false" placeholder="false">MAX:</item>
+  <item name="LBsubmitterDescription_t.text" html="false" placeholder="false">Description:</item>
+  <item name="BTNremoveSubmitter.text" disambiguation="C=cancella (un solo carattere)" html="false" placeholder="false">D</item>
+  <item name="BTNremoveSubmitter.ToolTip" html="false" placeholder="false">Delete</item>
+  <item name="DisplayNoSubmitters" html="false" placeholder="false">ATTENTION: no submitter type defined</item>
+  <item name="SubmitterTypeError.InvalidName" html="false" placeholder="false">Name field not empty</item>
+  <item name="SubmitterTypeError.InvalidMaxNumber" html="false" placeholder="false">Invalid number of submissions</item>
+  <item name="SubmitterTypeError.EmptyMaxNumber" html="false" placeholder="false">Specify a maximum amount of submission</item>
+  <item name="SubmitterTypeError.ErrorSavingData" html="false" placeholder="false">Error while saving data</item>
+  <item name="SubmitterTypeError.SubmitterUsed" html="false" placeholder="false">Current typology</item>
+  <item name="DisplaySubmitterTypeError" html="false" placeholder="false">ATTENTION: error while saving data</item>
+  <item name="DisplaySubmittersSettingsSaved" html="false" placeholder="false">Settings correctly saved.</item>
+  <item name="LBmoveAttachment.text" html="false" placeholder="false">Move attachment</item>
+  <item name="BTNsaveAttachmentsBottom.text" html="false" placeholder="false">Save</item>
+  <item name="BTNsaveAttachmentsBottom.ToolTip" html="false" placeholder="false">Save attachments settings</item>
+  <item name="BTNsaveAttachmentsTop.text" html="false" placeholder="false">Save</item>
+  <item name="BTNsaveAttachmentsTop.ToolTip" html="false" placeholder="false">Save attachments settings</item>
+  <item name="BTNuploadAttachments.text" disambiguation="carica=upload" html="false" placeholder="false">Upload </item>
+  <item name="BTNuploadAttachments.ToolTip" html="false" placeholder="false">Upload the specified materials</item>
+  <item name="LBattachments_t.text" html="false" placeholder="false">Attachments</item>
+  <item name="LBuploadAttachments_t.text" html="false" placeholder="false">Upload  oad document/s</item>
+  <item name="DisplayNoAttachments" html="false" placeholder="false">No document attached.</item>
+  <item name="DisplayAttachmentsSettingsSaved" html="false" placeholder="false">The attachments settings were correctly saved.</item>
+  <item name="DisplayDeletingError" html="false" placeholder="false">Error while deleting attachment.</item>
+  <item name="DisplaySavingError" html="false" placeholder="false">Error while saving settings</item>
+  <item name="BTNvirtualDelete.text" html="false" placeholder="false" hidden="true" />
+  <item name="BTNvirtualDelete.ToolTip" html="false" placeholder="false">Delete attachment</item>
+  <item name="LBdescriptionAttachment_t.text" html="false" placeholder="false">Description:</item>
+  <item name="LBattachmentForAll_t.text" html="false" placeholder="false">Visible to all:</item>
+  <item name="LBattachmentSubmitters_t.text" html="false" placeholder="false">Participants:</item>
+  <item name="SPNattchSelectAll.ToolTip" html="false" placeholder="false">All</item>
+  <item name="SPNattchSelectNone.ToolTip" html="false" placeholder="false">None</item>
+  <item name="SPNsubmittersSelecttAll.ToolTip" html="false" placeholder="false">All</item>
+  <item name="SPNsubmittersSelecttNone.ToolTip" html="false" placeholder="false">None</item>
+  <item name="BTNsaveEditorBottom.text" html="false" placeholder="false">Save</item>
+  <item name="BTNsaveEditorBottom.ToolTip" disambiguation="domanda di partecipazione/domanda di adesione" html="false" placeholder="false">Save submission settings</item>
+  <item name="BTNsaveEditorTop.text" html="false" placeholder="false">Save</item>
+  <item name="BTNsaveEditorTop.ToolTip" disambiguation="domanda di partecipazione/domanda di adesione" html="false" placeholder="false">Save submission settings</item>
+  <item name="EditorErrors.NoSections" html="false" placeholder="false">ATTENTION: no section defined</item>
+  <item name="EditorErrors.Saving" disambiguation="domanda di partecipazione/domanda di adesione" html="false" placeholder="false">ATTENTION: data NOT correctly saved</item>
+  <item name="EditorErrors.AddingSection" html="false" placeholder="false">ATTENTION: new section NOT added</item>
+  <item name="EditorErrors.RemovingSection" html="false" placeholder="false">ATTENTION: new section NOT removed</item>
+  <item name="EditorErrors.AddingField" html="false" placeholder="false">ATTENTION: new field NOT added</item>
+  <item name="EditorErrors.RemovingField" html="false" placeholder="false">ATTENTION: field NOT removed</item>
+  <item name="EditorErrors.AddingOption" html="false" placeholder="false">ATTENTION: option NOT added</item>
+  <item name="EditorErrors.RemovingOption" html="false" placeholder="false">ATTENTION: option NOT removed</item>
+  <item name="EditorErrors.SubmissionLinked" html="false" placeholder="false">ATTENTION: there are submissions associated to the item.</item>
+  <item name="EditorErrors.AddingTemplate" html="false" placeholder="false">ATTENTION: template NOT correctly created</item>
+  <item name="EditorErrors.RemovingTemplate" html="false" placeholder="false">ATTENTION: template NOT correctly deleted</item>
+  <item name="EditorErrors.EditingTemplate" html="false" placeholder="false">ATTENTION: template NOT correctly saved</item>
+  <item name="EditorErrors.SavingTemplateSettings" html="false" placeholder="false">ATTENTION: data NOT correctly saved</item>
+  <item name="EditorErrors.RemovingRequestedFiles" html="false" placeholder="false">ATTENTION: attachment NOT removed</item>
+  <item name="EditorErrors.AddingRequestedFile" html="false" placeholder="false">ATTENTION: document NOT added</item>
+  <item name="EditorErrors.EditingRequestedFiles" html="false" placeholder="false">ATTENTION: data NOT correctly saved</item>
+  <item name="EditorErrors.CloningSection" html="false" placeholder="false">ATTENTION: no section copy created</item>
+  <item name="EditorErrors.CloningField" html="false" placeholder="false">ATTENTION: no field copy created</item>
+  <item name="EditorErrors.SetAsDefaultOption" html="false" placeholder="false">ATTENTION: current selected option has not been set as preselected option.</item>
+  <item name="EditorErrors.EditingDisclaimerType" html="false" placeholder="false">ATTENTION: it was not possible to modifiy the disclaimer.</item>
+  <item name="DisplaySectionsSettingsSaved" html="false" placeholder="false">Data correctly saved.</item>
+  <item name="DefaultSectionName" html="false" placeholder="false">Section</item>
+  <item name="DefaultDescriptionName" html="false" placeholder="false" />
+  <item name="LBfieldsHideTop.text" html="false" placeholder="false">Collapse fields</item>
+  <item name="LBfieldsHideTop.ToolTip" html="false" placeholder="false">Collapse fields in the current sections, both closed or open. Closed sections will not be opened.</item>
+  <item name="LBfieldsShowTop.text" html="false" placeholder="false">Expand fields</item>
+  <item name="LBfieldsShowTop.ToolTip" html="false" placeholder="false">Expand fields in the current sections, both closed or open. Closed sections will not be opened.</item>
+  <item name="LBcollapseAllTop.text" html="false" placeholder="false">Close all</item>
+  <item name="LBcollapseAllTop.ToolTip" html="false" placeholder="false">Collapse all sections and fields</item>
+  <item name="LBexpandAllTop.text" html="false" placeholder="false">Expand all</item>
+  <item name="LBexpandAllTop.ToolTip" html="false" placeholder="false">Expand all sections and fields</item>
+  <item name="BTNaddSectionTop.text" html="false" placeholder="false">New section</item>
+  <item name="BTNaddSectionTop.ToolTip" html="false" placeholder="false">Adds a new section</item>
+  <item name="BTNcloneSection.text" html="false" placeholder="false">Copy section</item>
+  <item name="BTNcloneSection.ToolTip" html="false" placeholder="false">Create a copy of the whole section</item>
+  <item name="LBmoveSection.text" html="false" placeholder="false">Move section</item>
+  <item name="LBsectionName_t.text" html="false" placeholder="false">Section:</item>
+  <item name="BTNaddField.text" html="false" placeholder="false">New field</item>
+  <item name="BTNaddField.ToolTip" html="false" placeholder="false">Add a new field</item>
+  <item name="BTNcloneField.text" html="false" placeholder="false">Copy field</item>
+  <item name="BTNcloneField.ToolTip" html="false" placeholder="false">Create a copy of the field</item>
+  <item name="BTNdeleteSection.text" html="false" placeholder="false" hidden="true">X</item>
+  <item name="BTNdeleteSection.ToolTip" html="false" placeholder="false">Remove sectin</item>
+  <item name="LBsectionDescription_t.text" html="false" placeholder="false">Description:</item>
+  <item name="HYPtoTopSection.text" html="false" placeholder="false" />
+  <item name="HYPtoTopSection.ToolTip" html="false" placeholder="false">Go to section</item>
+  <item name="AddFieldDialogTitle" html="false" placeholder="false">Add a new field to the submission </item>
+  <item name="LBmoveField.text" html="false" placeholder="false">Move field</item>
+  <item name="LBfieldName_t.text" html="false" placeholder="false">Field:</item>
+  <item name="LBfieldMandatory_t.text" html="false" placeholder="false">Mandatory</item>
+  <item name="BTNdeleteField.text" html="false" placeholder="false" hidden="true">X</item>
+  <item name="BTNdeleteField.ToolTip" html="false" placeholder="false">Remove field</item>
+  <item name="LBfieldSubmitters_t.text" html="false" placeholder="false">Participants:</item>
+  <item name="SPNfieldSelectAll.ToolTip" html="false" placeholder="false">All</item>
+  <item name="SPNfieldSelectNone.ToolTip" html="false" placeholder="false">None</item>
+  <item name="Field.FieldType.SingleLine" html="false" placeholder="false">(single line text)</item>
+  <item name="Field.FieldType.MultiLine" html="false" placeholder="false">(multiple line text)</item>
+  <item name="Field.FieldType.Disclaimer" html="false" placeholder="false">(disclaimer)</item>
+  <item name="Field.FieldType.Mail" html="false" placeholder="false">(mail)</item>
+  <item name="Field.FieldType.TelephoneNumber" html="false" placeholder="false">(phone number)</item>
+  <item name="Field.FieldType.Date" html="false" placeholder="false">(date)</item>
+  <item name="Field.FieldType.DateTime" html="false" placeholder="false">(date and time )</item>
+  <item name="Field.FieldType.Time" html="false" placeholder="false">(hour)</item>
+  <item name="Field.FieldType.TaxCode" html="false" placeholder="false">(tax code)</item>
+  <item name="Field.FieldType.RadioButtonList" html="false" placeholder="false">(single choice)</item>
+  <item name="Field.FieldType.DropDownList" html="false" placeholder="false">(single choice)</item>
+  <item name="Field.FieldType.CheckboxList" html="false" placeholder="false">(Multiple choise)</item>
+  <item name="Field.FieldType.CompanyCode" html="false" placeholder="false">(Company code)</item>
+  <item name="Field.FieldType.CompanyTaxCode" html="false" placeholder="false">(Vat Code or Company tax code)</item>
+  <item name="Field.FieldType.VatCode" html="false" placeholder="false">(Vat Code)</item>
+  <item name="Field.FieldType.Name" html="false" placeholder="false">(name)</item>
+  <item name="Field.FieldType.Surname" html="false" placeholder="false">(surname)</item>
+  <item name="Field.FieldType.Note" html="false" placeholder="false">(notes)</item>
+  <item name="Field.FieldType.FileInput" html="false" placeholder="false">(file)</item>
+  <item name="Field.FieldType.ZipCode" disambiguation="codice di avviamento postale" html="false" placeholder="false">(zip code)</item>
+  <item name="LBdisclaimer_t.text" html="false" placeholder="false">Disclaimer:</item>
+  <item name="LBfieldDescription_t.text" html="false" placeholder="false">Description:</item>
+  <item name="LBfieldMaxChar_t.text" disambiguation="N°=numero;car=caratteri" html="false" placeholder="false">N° char:</item>
+  <item name="LBfieldHelp_t.text" html="false" placeholder="false">Help:</item>
+  <item name="LBfieldDisclaimerType_t.text" html="false" placeholder="false">Typology:</item>
+  <item name="RBLdisclaimerType.Standard" html="false" placeholder="false">Accept/Reject</item>
+  <item name="RBLdisclaimerType.CustomDisplayOnly" html="false" placeholder="false">Read only</item>
+  <item name="RBLdisclaimerType.CustomMultiOptions" html="false" placeholder="false">Multiple choice (custom)</item>
+  <item name="RBLdisclaimerType.CustomSingleOption" html="false" placeholder="false">Single choice (custom)</item>
+  <item name="LBmultipleChoice_t.text" html="false" placeholder="false">Allow multiple submissions</item>
+  <item name="LBminOptions_t.text" html="false" placeholder="false">Select at least: </item>
+  <item name="LTminOptionsInfo.text" html="false" placeholder="false">N° min:</item>
+  <item name="LBmaxOptions_t.text" html="false" placeholder="false">Select maximum: </item>
+  <item name="LTmaxOptionsInfo.text" html="false" placeholder="false">N° max:</item>
+  <item name="BTNdeleteOption.text" disambiguation="C=cancella (un solo carattere)" html="false" placeholder="false">D</item>
+  <item name="BTNdeleteOption.ToolTip" html="false" placeholder="false">Remove option</item>
+  <item name="BTNsetDefaultOption.ToolTip" html="false" placeholder="false">Set as pre-selected</item>
+  <item name="BTNremoveAsDefaultOption.ToolTip" html="false" placeholder="false">Remove pre-selection</item>
+  <item name="LToptionsTitle.text" html="false" placeholder="false">Options:</item>
+  <item name="LToptionInfo.True.False" html="false" placeholder="false">Preselected</item>
+  <item name="LToptionInfo.True.True" html="false" placeholder="false">Preselected, free text</item>
+  <item name="LToptionInfo.False.True" html="false" placeholder="false">Free text</item>
+  <item name="LToptionInfo.False.False" html="false" placeholder="false" hidden="true" />
+  <item name="BTNaddOption.text" html="false" placeholder="false">Add</item>
+  <item name="BTNaddOption.ToolTip" html="false" placeholder="false">Add a new option</item>
+  <item name="BTNaddFreeOption.text" html="false" placeholder="false">Add free text</item>
+  <item name="BTNaddFreeOption.ToolTip" html="false" placeholder="false">Add a free text option</item>
+  <item name="LBgenericFields.text" html="false" placeholder="false">Generic fields</item>
+  <item name="LBspecificFields.text" html="false" placeholder="false">Specific fields</item>
+  <item name="LBdisclaimerFields.text" html="false" placeholder="false">Disclaimer/privacy fields</item>
+  <item name="LBcompanyFields.text" html="false" placeholder="false">Company specific fields</item>
+  <item name="LBdateFields.text" html="false" placeholder="false">Date/time fields</item>
+  <item name="FieldSelctor.FieldType.SingleLine" html="false" placeholder="false">Single line text</item>
+  <item name="FieldSelctor.FieldType.MultiLine" html="false" placeholder="false">Multiple line text</item>
+  <item name="FieldSelctor.FieldType.Disclaimer" html="false" placeholder="false">Disclaimer</item>
+  <item name="FieldSelctor.FieldType.Disclaimer.Standard" html="false" placeholder="false">Disclaimer (agree/cancel)</item>
+  <item name="FieldSelctor.FieldType.Disclaimer.CustomDisplayOnly" html="false" placeholder="false">Read-only disclaimer</item>
+  <item name="FieldSelctor.FieldType.Disclaimer.CustomMultiOptions" html="false" placeholder="false">Disclaimer - multiple options</item>
+  <item name="FieldSelctor.FieldType.Disclaimer.CustomSingleOption" html="false" placeholder="false">Disclaimer - single option</item>
+  <item name="FieldSelctor.FieldType.Mail" html="false" placeholder="false">Mail</item>
+  <item name="FieldSelctor.FieldType.TelephoneNumber" html="false" placeholder="false">Phone number</item>
+  <item name="FieldSelctor.FieldType.Date" html="false" placeholder="false">Date</item>
+  <item name="FieldSelctor.FieldType.DateTime" html="false" placeholder="false">Date and time</item>
+  <item name="FieldSelctor.FieldType.Time" html="false" placeholder="false">Hour</item>
+  <item name="FieldSelctor.FieldType.TaxCode" html="false" placeholder="false">Tax code</item>
+  <item name="FieldSelctor.FieldType.RadioButtonList" html="false" placeholder="false">Single choice</item>
+  <item name="FieldSelctor.FieldType.DropDownList" html="false" placeholder="false">Combo</item>
+  <item name="FieldSelctor.FieldType.CheckboxList" html="false" placeholder="false">Multiple choice</item>
+  <item name="FieldSelctor.FieldType.CompanyCode" html="false" placeholder="false">Company code</item>
+  <item name="FieldSelctor.FieldType.CompanyTaxCode" html="false" placeholder="false">Tax Code or Company tax code</item>
+  <item name="FieldSelctor.FieldType.VatCode" html="false" placeholder="false">Vat Code</item>
+  <item name="FieldSelctor.FieldType.Name" html="false" placeholder="false">Name</item>
+  <item name="FieldSelctor.FieldType.Surname" html="false" placeholder="false">Surname</item>
+  <item name="FieldSelctor.FieldType.Note" html="false" placeholder="false">Notes</item>
+  <item name="FieldSelctor.FieldType.FileInput" html="false" placeholder="false">File</item>
+  <item name="FieldSelctor.FieldType.ZipCode" disambiguation="codice di avviamento postale" html="false" placeholder="false">zip code</item>
+  <item name="FieldSelctor.FieldType.ZipCode.Text" disambiguation="codice di avviamento postale" html="false" placeholder="false">zip code</item>
+  <item name="FieldSelctor.FieldType.ZipCode.Description" html="false" placeholder="false">Specify zip code</item>
+  <item name="FieldSelctor.FieldType.ZipCode.Help" html="false" placeholder="false" />
+  <item name="FieldSelctor.FieldType.SingleLine.Text" html="false" placeholder="false">Single field</item>
+  <item name="FieldSelctor.FieldType.SingleLine.Description" html="false" placeholder="false">Specify the fields amount and related descriptions. It is a simple singleline text field provided with a characters limiter.</item>
+  <item name="FieldSelctor.FieldType.SingleLine.Help" html="false" placeholder="false" />
+  <item name="FieldSelctor.FieldType.MultiLine.Text" html="false" placeholder="false">Field</item>
+  <item name="FieldSelctor.FieldType.MultiLine.Description" html="false" placeholder="false">Specify the fields amount and related descriptions. It is a simple multiline text field provided with a characters limiter.</item>
+  <item name="FieldSelctor.FieldType.MultiLine.Help" html="false" placeholder="false" />
+  <item name="FieldSelctor.FieldType.Disclaimer.Text" html="false" placeholder="false">Disclaimer</item>
+  <item name="FieldSelctor.FieldType.Disclaimer.Description" html="false" placeholder="false">Disclaimer to agree</item>
+  <item name="FieldSelctor.FieldType.Disclaimer.Description.Standard" html="false" placeholder="false">Disclaimer to agree</item>
+  <item name="FieldSelctor.FieldType.Disclaimer.Description.CustomDisplayOnly" html="false" placeholder="false">Read-only disclaimer: it will be automatically accepted</item>
+  <item name="FieldSelctor.FieldType.Disclaimer.Description.CustomSingleOption" html="false" placeholder="false">Select one the options below</item>
+  <item name="FieldSelctor.FieldType.Disclaimer.Description.CustomMultiOptions" html="false" placeholder="false">Select to confirm</item>
+  <item name="FieldSelctor.FieldType.Disclaimer.Description.CustomMultiOptions.Min" html="false" placeholder="true" mustcontains="{0}">Multiple choice disclaimer (minimum {0} option/s).</item>
+  <item name="FieldSelctor.FieldType.Disclaimer.Description.CustomMultiOptions.Max" html="false" placeholder="true" mustcontains="{0}">Multiple choice disclaimer (maximum {0} option/s).</item>
+  <item name="FieldSelctor.FieldType.Disclaimer.Description.CustomMultiOptions.Min.Max" html="false" placeholder="true" mustcontains="{0}|{1}">Multiple choice disclaimer (minimo {0} option/s - (maximum {1} option/s).</item>
+  <item name="FieldSelctor.FieldType.Disclaimer.Help" html="false" placeholder="false" />
+  <item name="FieldSelctor.FieldType.Mail.Text" html="false" placeholder="false">Mail</item>
+  <item name="FieldSelctor.FieldType.Mail.Description" html="false" placeholder="false">Enter your mail address.</item>
+  <item name="FieldSelctor.FieldType.Mail.Help" html="false" placeholder="false" />
+  <item name="FieldSelctor.FieldType.TelephoneNumber.Text" html="false" placeholder="false">Phone</item>
+  <item name="FieldSelctor.FieldType.TelephoneNumber.Description" html="false" placeholder="false">Enter your mail phone number.</item>
+  <item name="FieldSelctor.FieldType.TelephoneNumber.Help" html="false" placeholder="false" />
+  <item name="FieldSelctor.FieldType.Date.Text" html="false" placeholder="false">Date:</item>
+  <item name="FieldSelctor.FieldType.Date.Description" html="false" placeholder="false">Specify date</item>
+  <item name="FieldSelctor.FieldType.Date.Help" html="false" placeholder="false" />
+  <item name="FieldSelctor.FieldType.Time.Text" html="false" placeholder="false">Hour:</item>
+  <item name="FieldSelctor.FieldType.Time.Description" html="false" placeholder="false">Specify time</item>
+  <item name="FieldSelctor.FieldType.Time.Help" html="false" placeholder="false" />
+  <item name="FieldSelctor.FieldType.DateTime.Text" html="false" placeholder="false">Date and time</item>
+  <item name="FieldSelctor.FieldType.DateTime.Description" html="false" placeholder="false">Specify date and time</item>
+  <item name="FieldSelctor.FieldType.DateTime.Help" html="false" placeholder="false" />
+  <item name="FieldSelctor.FieldType.TaxCode.Text" html="false" placeholder="false">Tax code</item>
+  <item name="FieldSelctor.FieldType.TaxCode.Description" html="false" placeholder="false" />
+  <item name="FieldSelctor.FieldType.TaxCode.Help" html="false" placeholder="false" />
+  <item name="FieldSelctor.FieldType.RadioButtonList.Text" html="false" placeholder="false">Field</item>
+  <item name="FieldSelctor.FieldType.RadioButtonList.Description" html="false" placeholder="false">Select one the options below</item>
+  <item name="FieldSelctor.FieldType.RadioButtonList.Help" html="false" placeholder="false" />
+  <item name="FieldSelctor.FieldType.DropDownList.Text" html="false" placeholder="false">Field</item>
+  <item name="FieldSelctor.FieldType.DropDownList.Description" html="false" placeholder="false">Select one the options below</item>
+  <item name="FieldSelctor.FieldType.DropDownList.Help" html="false" placeholder="false" />
+  <item name="FieldSelctor.FieldType.CheckboxList.Text" html="false" placeholder="false">Field</item>
+  <item name="FieldSelctor.FieldType.CheckboxList.Description" html="false" placeholder="false">Multiple choice field</item>
+  <item name="FieldSelctor.FieldType.CheckboxList.Description.Min" html="false" placeholder="true" mustcontains="{0}">Multiple choice field (minimum {0} option/s).</item>
+  <item name="FieldSelctor.FieldType.CheckboxList.Description.Max" html="false" placeholder="true" mustcontains="{0}">Multiple choice field (maximum {0} option/s).</item>
+  <item name="FieldSelctor.FieldType.CheckboxList.Description.Min.Max" html="false" placeholder="true" mustcontains="{0}|{1}">Multiple choice field (minimum {0} option/s - maximum {1} option/s).</item>
+  <item name="FieldSelctor.FieldType.CheckboxList.Help" html="false" placeholder="false" />
+  <item name="FieldSelctor.FieldType.CompanyCode.Text" html="false" placeholder="false">Company code</item>
+  <item name="FieldSelctor.FieldType.CompanyCode.Description" html="false" placeholder="false">Specify Company code</item>
+  <item name="FieldSelctor.FieldType.CompanyCode.Help" html="false" placeholder="false" />
+  <item name="FieldSelctor.FieldType.CompanyTaxCode.Text" html="false" placeholder="false">Tax Code or Company tax code</item>
+  <item name="FieldSelctor.FieldType.CompanyTaxCode.Description" html="false" placeholder="false">Specify vat code or company tax code</item>
+  <item name="FieldSelctor.FieldType.CompanyTaxCode.Help" html="false" placeholder="false" />
+  <item name="FieldSelctor.FieldType.VatCode.Text" html="false" placeholder="false">Tax Code</item>
+  <item name="FieldSelctor.FieldType.VatCode.Description" html="false" placeholder="false">Specify vat code.</item>
+  <item name="FieldSelctor.FieldType.VatCode.Help" html="false" placeholder="false" />
+  <item name="FieldSelctor.FieldType.Name.Text" html="false" placeholder="false">Name</item>
+  <item name="FieldSelctor.FieldType.Name.Description" html="false" placeholder="false">Specify your name</item>
+  <item name="FieldSelctor.FieldType.Name.Help" html="false" placeholder="false" />
+  <item name="FieldSelctor.FieldType.Surname.Text" html="false" placeholder="false">Surname</item>
+  <item name="FieldSelctor.FieldType.Surname.Description" html="false" placeholder="false">Specify your surname</item>
+  <item name="FieldSelctor.FieldType.Surname.Help" html="false" placeholder="false" />
+  <item name="FieldSelctor.FieldType.Note.Text" html="false" placeholder="false">Notes</item>
+  <item name="FieldSelctor.FieldType.Note.Description" disambiguation="domanda di partecipazione/domanda di adesione" html="false" placeholder="false">Text notes you can insert in the request</item>
+  <item name="FieldSelctor.FieldType.Note.Help" html="false" placeholder="false" />
+  <item name="FieldSelctor.FieldType.File.Text" html="false" placeholder="false">Document</item>
+  <item name="FieldSelctor.FieldType.File.Description" disambiguation="domanda di partecipazione/domanda di adesione" html="false" placeholder="false">Upload attachment to the submission.</item>
+  <item name="FieldSelctor.FieldType.File.Help" html="false" placeholder="false" />
+  <item name="FieldCreator.FieldType.ZipCode.Text" disambiguation="codice di avviamento postale" html="false" placeholder="false">zip code</item>
+  <item name="FieldCreator.FieldType.ZipCode.Description" html="false" placeholder="false">Specify zip code</item>
+  <item name="FieldCreator.FieldType.ZipCode.Help" html="false" placeholder="false" />
+  <item name="FieldCreator.FieldType.SingleLine.Text" html="false" placeholder="true" mustcontains="{0}">Field {0}</item>
+  <item name="FieldCreator.FieldType.SingleLine.Description" html="false" placeholder="false" />
+  <item name="FieldCreator.FieldType.SingleLine.Help" html="false" placeholder="false" />
+  <item name="FieldCreator.FieldType.MultiLine.Text" html="false" placeholder="true" mustcontains="{0}">Field {0}</item>
+  <item name="FieldCreator.FieldType.MultiLine.Description" html="false" placeholder="false" />
+  <item name="FieldCreator.FieldType.MultiLine.Help" html="false" placeholder="false" />
+  <item name="FieldCreator.FieldType.Disclaimer.Text" html="false" placeholder="false">Disclaimer</item>
+  <item name="FieldCreator.FieldType.Disclaimer.Description" html="false" placeholder="false">Enter the disclaimer text.</item>
+  <item name="FieldCreator.FieldType.Disclaimer.Help" html="false" placeholder="false" />
+  <item name="FieldCreator.FieldType.Disclaimer.Description.Standard" html="false" placeholder="false">Disclaimer to agree</item>
+  <item name="FieldCreator.FieldType.Disclaimer.Description.CustomDisplayOnly" html="false" placeholder="false">Read-only disclaimer: it will be automatically accepted</item>
+  <item name="FieldCreator.FieldType.Disclaimer.Description.CustomSingleOption" html="false" placeholder="false">Select one the options below</item>
+  <item name="FieldCreator.FieldType.Disclaimer.Description.CustomMultiOptions" html="false" placeholder="false">Select to confirm</item>
+  <item name="FieldCreator.FieldType.Disclaimer.Description.CustomMultiOptions.Min" html="false" placeholder="true" mustcontains="{0}">Multiple choice disclaimer (minimum {0} option/s).</item>
+  <item name="FieldCreator.FieldType.Disclaimer.Description.CustomMultiOptions.Max" html="false" placeholder="true" mustcontains="{0}">Multiple choice disclaimer (maximum {0} option/s).</item>
+  <item name="FieldSelctor.FieldType.Disclaimer.Description.CustomMultiOptions.Min.Max" html="false" placeholder="true" mustcontains="{0}|{1}">Multiple choice disclaimer (minimum {0} option/s - maximum {1} option/s).</item>
+  <item name="FieldCreator.FieldType.Mail.Text" html="false" placeholder="false">Mail</item>
+  <item name="FieldCreator.FieldType.Mail.Description" html="false" placeholder="false">Enter your mail address.</item>
+  <item name="FieldCreator.FieldType.Mail.Help" html="false" placeholder="false" />
+  <item name="FieldCreator.FieldType.TelephoneNumber.Text" html="false" placeholder="false">Phone</item>
+  <item name="FieldCreator.FieldType.TelephoneNumber.Description" html="false" placeholder="false">Enter your mail phone number.</item>
+  <item name="FieldCreator.FieldType.TelephoneNumber.Help" html="false" placeholder="false" />
+  <item name="FieldCreator.FieldType.Date.Text" html="false" placeholder="false">Date:</item>
+  <item name="FieldCreator.FieldType.Date.Description" html="false" placeholder="false">Specify date</item>
+  <item name="FieldCreator.FieldType.Date.Help" html="false" placeholder="false" />
+  <item name="FieldCreator.FieldType.Time.Text" html="false" placeholder="false">Hour:</item>
+  <item name="FieldCreator.FieldType.Time.Description" html="false" placeholder="false">Specify time</item>
+  <item name="FieldCreator.FieldType.Time.Help" html="false" placeholder="false" />
+  <item name="FieldCreator.FieldType.DateTime.Text" html="false" placeholder="false">Date and time</item>
+  <item name="FieldCreator.FieldType.DateTime.Description" html="false" placeholder="false">Specify date and time</item>
+  <item name="FieldCreator.FieldType.DateTime.Help" html="false" placeholder="false" />
+  <item name="FieldCreator.FieldType.TaxCode.Text" html="false" placeholder="false">Tax code</item>
+  <item name="FieldCreator.FieldType.TaxCode.Description" html="false" placeholder="false" />
+  <item name="FieldCreator.FieldType.TaxCode.Help" html="false" placeholder="false" />
+  <item name="FieldCreator.FieldType.RadioButtonList.Text" html="false" placeholder="true" mustcontains="{0}">Field {0}</item>
+  <item name="FieldCreator.FieldType.RadioButtonList.Description" html="false" placeholder="false">Select one the options below</item>
+  <item name="FieldCreator.FieldType.RadioButtonList.Help" html="false" placeholder="false" />
+  <item name="FieldCreator.FieldType.DropDownList.Text" html="false" placeholder="true" mustcontains="{0}">Field {0}</item>
+  <item name="FieldCreator.FieldType.DropDownList.Description" html="false" placeholder="false">Select one the options below</item>
+  <item name="FieldCreator.FieldType.DropDownList.Help" html="false" placeholder="false" />
+  <item name="FieldCreator.FieldType.CheckboxList.Text" html="false" placeholder="true" mustcontains="{0}">Field {0}</item>
+  <item name="FieldCreator.FieldType.CheckboxList.Description" html="false" placeholder="false">Multiple choice field</item>
+  <item name="FieldCreator.FieldType.CheckboxList.Description.Min" html="false" placeholder="true" mustcontains="{0}">Multiple choice field (minimum {0} option/s).</item>
+  <item name="FieldCreator.FieldType.CheckboxList.Description.Max" html="false" placeholder="true" mustcontains="{0}">Multiple choice field (maximum {0} option/s).</item>
+  <item name="FieldCreator.FieldType.CheckboxList.Description.Min.Max" html="false" placeholder="true" mustcontains="{0}|{1}">Multiple choice field (minimum {0} option/s - maximum {1} option/s).</item>
+  <item name="FieldCreator.FieldType.CheckboxList.Help" html="false" placeholder="false" />
+  <item name="FieldCreator.FieldType.CompanyCode.Text" html="false" placeholder="false">Company code</item>
+  <item name="FieldCreator.FieldType.CompanyCode.Description" html="false" placeholder="false">Specify Company code</item>
+  <item name="FieldCreator.FieldType.CompanyCode.Help" html="false" placeholder="false" />
+  <item name="FieldCreator.FieldType.CompanyTaxCode.Text" html="false" placeholder="false">Tax Code or Company tax code</item>
+  <item name="FieldCreator.FieldType.CompanyTaxCode.Description" html="false" placeholder="false">Specify vat code or company tax code</item>
+  <item name="FieldCreator.FieldType.CompanyTaxCode.Help" html="false" placeholder="false" />
+  <item name="FieldCreator.FieldType.VatCode.Text" html="false" placeholder="false">Tax Code</item>
+  <item name="FieldCreator.FieldType.VatCode.Description" html="false" placeholder="false">Specify vat code.</item>
+  <item name="FieldCreator.FieldType.VatCode.Help" html="false" placeholder="false" />
+  <item name="FieldCreator.FieldType.Name.Text" html="false" placeholder="false">Name</item>
+  <item name="FieldCreator.FieldType.Name.Description" html="false" placeholder="false">Specify your name</item>
+  <item name="FieldCreator.FieldType.Name.Help" html="false" placeholder="false" />
+  <item name="FieldCreator.FieldType.Surname.Text" html="false" placeholder="false">Surname</item>
+  <item name="FieldCreator.FieldType.Surname.Description" html="false" placeholder="false">Specify your surname</item>
+  <item name="FieldCreator.FieldType.Surname.Help" html="false" placeholder="false" />
+  <item name="FieldCreator.FieldType.Note.Text" html="false" placeholder="false">Notes</item>
+  <item name="FieldCreator.FieldType.Note.Description" disambiguation="domanda di partecipazione/domanda di adesione" html="false" placeholder="false">Text notes you can insert in the request</item>
+  <item name="FieldCreator.FieldType.Note.Help" html="false" placeholder="false" />
+  <item name="FieldCreator.FieldType.File.Text" html="false" placeholder="false">Document</item>
+  <item name="FieldCreator.FieldType.File.Description" disambiguation="domanda di partecipazione/domanda di adesione" html="false" placeholder="false">Upload attachment to the submission.</item>
+  <item name="FieldCreator.FieldType.File.Help" html="false" placeholder="false" />
+  <item name="OptionDefault" html="false" placeholder="true" mustcontains="{0}">Option {0}</item>
+  <item name="Submitters.data-placeholder" html="false" placeholder="false">Select submitter types</item>
+  <item name="Preview.FieldType" html="false" placeholder="true" mustcontains="{0}">"{0}" field preview</item>
+  <item name="LBfieldOptions.text" html="false" placeholder="true" mustcontains="{0}">Field creation options "{0}"</item>
+  <item name="LBstandardOptionsDescription.text" html="false" placeholder="false">Specify the amount of fields to insert in the selected section.</item>
+  <item name="LBstandardFieldsNumber_t.text" html="false" placeholder="false">Number of fields:</item>
+  <item name="LBstandardFieldsNumberHelp.text" html="false" placeholder="false">Enter a number between 1 and 30.</item>
+  <item name="LBmultipleFieldOptions.text" html="false" placeholder="true" mustcontains="{0}">Field creation advanced options "{0}"</item>
+  <item name="LBadvancedFieldOptionsDescription.text" html="false" placeholder="false">In the field below enter the default options to create, every row an option. In case of a blank text, two empty options will be anyway created.</item>
+  <item name="LBadvancedFieldOptionsList.text" html="false" placeholder="false">Options:</item>
+  <item name="LBadvancedFieldOptionsListHelp.text" html="false" placeholder="false">Please, enter an option for each row. Empty rows will not be considered.</item>
+  <item name="LTminOptionsradioButtonlist.text" html="false" placeholder="false">Min:</item>
+  <item name="LBmaxOptionradioButtonlist.text" html="false" placeholder="false">Max:</item>
+  <item name="LTminOptionscheckboxlist.text" html="false" placeholder="false">Min:</item>
+  <item name="LTmaxOptionscheckboxlist.text" html="false" placeholder="false">Max:</item>
+  <item name="LTminOptionsCustomMultiOptions.text" html="false" placeholder="false">Min:</item>
+  <item name="LTmaxOptionsCustomMultiOptions.text" html="false" placeholder="false">Max:</item>
+  <item name="LTminOptionsCustomSingleOption.text" html="false" placeholder="false">Min:</item>
+  <item name="LTmaxOptionsCustomSingleOption.text" html="false" placeholder="false">Max:</item>
+  <item name="BTNcreateField.text" html="false" placeholder="false">Create</item>
+  <item name="BTNcreateField.ToolTip" html="false" placeholder="false">Create</item>
+  <item name="BTNcloseCreateFieldWindow.text" html="false" placeholder="false">Cancel</item>
+  <item name="BTNcloseCreateFieldWindow.ToolTip" html="false" placeholder="false">Cancel</item>
+  <item name="BTNsaveTemplatesBottom.text" html="false" placeholder="false">Save</item>
+  <item name="BTNsaveTemplatesBottom.ToolTip" html="false" placeholder="false">Save template settings</item>
+  <item name="BTNsaveTemplatesTop.text" html="false" placeholder="false">Save</item>
+  <item name="BTNsaveTemplatesTop.ToolTip" html="false" placeholder="false">Save template settings</item>
+  <item name="BTNadd.text" html="false" placeholder="false">Create</item>
+  <item name="BTNadd.ToolTip" html="false" placeholder="false">Create</item>
+  <item name="BTNaddNewTemplate.text" html="false" placeholder="false">Save Template</item>
+  <item name="BTNaddNewTemplate.ToolTip" html="false" placeholder="false">Save new Template</item>
+  <item name="BTNsaveTemplate.text" html="false" placeholder="false">Save changes</item>
+  <item name="BTNsaveTemplate.ToolTip" html="false" placeholder="false">Save template changes</item>
+  <item name="BTNaddTemplate.text" html="false" placeholder="false">New</item>
+  <item name="BTNaddTemplate.ToolTip" html="false" placeholder="false">New template</item>
+  <item name="BTNundo.text" html="false" placeholder="false">Cancel</item>
+  <item name="BTNundo.ToolTip" html="false" placeholder="false">Cancel</item>
+  <item name="LBtemplateSubmitters_t.text" html="false" placeholder="false">Participant/s</item>
+  <item name="LBtemplateName_t.text" html="false" placeholder="false">Name:</item>
+  <item name="LBtemplateNameHeader_t.text" html="false" placeholder="false">Name:</item>
+  <item name="LBtemplateAddTitle.text" html="false" placeholder="false">Create a new template</item>
+  <item name="LBtemplateEditTitle.text" html="false" placeholder="false">Modify template</item>
+  <item name="BTNpreviewMailFromTemplate.text" html="false" placeholder="false">Mail preview</item>
+  <item name="BTNpreviewMailFromTemplate.ToolTip" html="false" placeholder="false">Mail preview</item>
+  <item name="MailMessagePreview.Title" html="false" placeholder="false">Mail preview</item>
+  <item name="BTNcloseMailMessageWindow.text" html="false" placeholder="false">Close</item>
+  <item name="BTNcloseMailMessageWindow.ToolTip" html="false" placeholder="false">Close preview window</item>
+  <item name="DisplayNoTemplates" html="false" placeholder="false">No model found</item>
+  <item name="DisplayTemplatesSettingsSaved" html="false" placeholder="false">Data correctly saved</item>
+  <item name="DisplayTemplatesSettingsSaved.missing.True" html="false" placeholder="false">Data correctly saved. Some participants still do not have a defined notification model.</item>
+  <item name="DisplayTemplatesSettingsSaved.missing.False" html="false" placeholder="false">Data correctly saved</item>
+  <item name="DisplayTemplateAdded.missing.True" html="false" placeholder="false">Model correctly saved. Some participants still do not have a defined notification model.</item>
+  <item name="DisplayTemplateAdded.missing.False" html="false" placeholder="false">Model successfully created </item>
+  <item name="DisplayTemplateMissing" html="false" placeholder="false">Some participants do not have a defined notificatin template.</item>
+  <item name="DisplayTemplateRemoved" html="false" placeholder="false">Template correctly removed.</item>
+  <item name="NewTemplateMail" html="false" placeholder="true" mustcontains="{0}">Model - {0}</item>
+  <item name="BTNpreviewNotificationMailTop.text" html="false" placeholder="false">Message preview</item>
+  <item name="BTNpreviewNotificationMailTop.ToolTip" html="false" placeholder="false">Show notification message preview</item>
+  <item name="BTNpreviewNotificationMailBottom.text" html="false" placeholder="false">Message preview</item>
+  <item name="BTNpreviewNotificationMailBottom.ToolTip" html="false" placeholder="false">Show notification message preview</item>
+  <item name="BTNsaveNotificationMailTop.text" html="false" placeholder="false">Save</item>
+  <item name="BTNsaveNotificationMailTop.ToolTip" html="false" placeholder="false">Save manager notifications settings</item>
+  <item name="BTNsaveNotificationMailBottom.text" html="false" placeholder="false">Save</item>
+  <item name="BTNsaveNotificationMailBottom.ToolTip" html="false" placeholder="false">Save manager notifications settings</item>
+  <item name="LBnotificationTemplateName_t.text" html="false" placeholder="false">Template:</item>
+  <item name="LBnotificationTemplateName.text" html="false" placeholder="false">This message will be sent to notificate participants submissions to the entered mail addresses.</item>
+  <item name="LBnotifyTo.text" html="false" placeholder="false">Notify:</item>
+  <item name="DisplayNotificationTemplateErrorSaving" html="false" placeholder="false">ATTENTION: error while saving settings</item>
+  <item name="DisplayNoNotificationTemplate" html="false" placeholder="false">ATTENTION: no notification message defined</item>
+  <item name="DisplayNotificationTemplateSettingsSaved" html="false" placeholder="false">Data correctly saved</item>
+  <item name="CallForBids.ManagerTemplate.Subject" html="false" placeholder="true" mustcontains="[CallName]">[CallName] call participation</item>
+  <item name="CallForBids.ManagerTemplate.Standard" html="false" placeholder="true" mustcontains="[SubmissionDay]|[SubmissionTime]|[CallName]|[AllFields]">On [SubmissionDay] at [SubmissionTime] a new request of participation to the call &lt;b&gt;"[CallName]"&lt;/b&gt;,  was submitted. Inserted data are:&lt;br/&gt;[AllFields].</item>
+  <item name="RequestForMembership.ManagerTemplate.Subject" html="false" placeholder="true" mustcontains="[CallName]">Accession confirmation to [CallName]</item>
+  <item name="RequestForMembership.ManagerTemplate.Standard" html="false" placeholder="true" mustcontains="[SubmissionDay]|[SubmissionTime]|[CallName]|[AllFields]">On [SubmissionDay] at [SubmissionTime] a new request of participation to [CallName] was submitted. Inserted data are:&lt;br/&gt;[AllFields].</item>
+  <item name="CallForBids.MailSubmitter.Subject" html="false" placeholder="true" mustcontains="[CallName]">[CallName] call participation</item>
+  <item name="CallForBids.MailSubmitter.Standard" html="true" placeholder="true" mustcontains="[SubmitterName]|[SubmitterSurname]|[CallName]|[CallEdition]|[SubmissionDay]|[SubmissionTime]">Dear [SubmitterName] [SubmitterSurname], &lt;br&gt;Your request of participation to the call  [CallName] [CallEdition] was successfully submitted on [SubmissionDay] at [SubmissionTime].</item>
+  <item name="CallForBids.PlaceHoldersType.CallName" html="false" placeholder="false">Call name</item>
+  <item name="CallForBids.PlaceHoldersType.CallEdition" html="false" placeholder="false">Call edition</item>
+  <item name="CallForBids.PlaceHoldersType.SubmissionDay" html="false" placeholder="false">Submission day</item>
+  <item name="CallForBids.PlaceHoldersType.SubmissionTime" html="false" placeholder="false">Submission date/time</item>
+  <item name="CallForBids.PlaceHoldersType.CallCommunity" disambiguation="singolare" html="false" placeholder="false">Community</item>
+  <item name="CallForBids.PlaceHoldersType.SubmitterName" html="false" placeholder="false">Participant name</item>
+  <item name="CallForBids.PlaceHoldersType.SubmitterSurname" html="false" placeholder="false">Participant surname</item>
+  <item name="CallForBids.PlaceHoldersType.SubmitterMail" html="false" placeholder="false">Participant mail </item>
+  <item name="CallForBids.PlaceHoldersType.SubmitterType" html="false" placeholder="false">Submitter type</item>
+  <item name="CallForBids.PlaceHoldersType.AllFields" html="false" placeholder="false">Entered fields</item>
+  <item name="CallForBids.PlaceHoldersType.CallPublicUrl" html="false" placeholder="false">Call public link</item>
+  <item name="CallForBids.PlaceHoldersType.CallInternalUrl" html="false" placeholder="false">Call internal link</item>
+  <item name="CallForBids.PlaceHoldersType.SubmissionUrl" html="false" placeholder="false">Request link</item>
+  <item name="RequestForMembership.MailSubmitter.Subject" html="false" placeholder="true" mustcontains="[CallName]">Accession confirmation to [CallName]</item>
+  <item name="RequestForMembership.MailSubmitter.Standard" html="true" placeholder="true" mustcontains="[SubmitterName]|[SubmitterSurname]|[CallName]|[SubmissionDay]|[SubmissionTime]">Dear [SubmitterName] [SubmitterSurname], &lt;br&gt;Your request for accession [CallName] [CallEdition] was successfully submitted on [SubmissionDay] at [SubmissionTime].</item>
+  <item name="RequestForMembership.PlaceHoldersType.CallName" html="false" placeholder="false">Accession name</item>
+  <item name="RequestForMembership.PlaceHoldersType.CallEdition" html="false" placeholder="false">Accession edition</item>
+  <item name="RequestForMembership.PlaceHoldersType.SubmissionDay" html="false" placeholder="false">Submission day</item>
+  <item name="RequestForMembership.PlaceHoldersType.SubmissionTime" html="false" placeholder="false">Submission date/time</item>
+  <item name="RequestForMembership.PlaceHoldersType.CallCommunity" disambiguation="singolare" html="false" placeholder="false">Community</item>
+  <item name="RequestForMembership.PlaceHoldersType.SubmitterName" html="false" placeholder="false">Participant name</item>
+  <item name="RequestForMembership.PlaceHoldersType.SubmitterSurname" html="false" placeholder="false">Participant surname</item>
+  <item name="RequestForMembership.PlaceHoldersType.SubmitterMail" html="false" placeholder="false">Participant mail </item>
+  <item name="RequestForMembership.PlaceHoldersType.SubmitterType" html="false" placeholder="false">Submitter type</item>
+  <item name="RequestForMembership.PlaceHoldersType.AllFields" html="false" placeholder="false">Entered fields</item>
+  <item name="RequestForMembership.PlaceHoldersType.CallPublicUrl" html="false" placeholder="false">Public link</item>
+  <item name="RequestForMembership.PlaceHoldersType.CallInternalUrl" html="false" placeholder="false">Internal link</item>
+  <item name="RequestForMembership.PlaceHoldersType.SubmissionUrl" html="false" placeholder="false">Request link</item>
+  <item name="MaxCharsInfo" html="false" placeholder="false">Available characters:</item>
+  <item name="LBrequiredFilesHideTop.text" html="false" placeholder="false">Hide details</item>
+  <item name="LBrequiredFileShowTop.text" html="false" placeholder="false">Show details</item>
+  <item name="LBrequiredFilesDescription.text" html="false" placeholder="false">Requested documents:</item>
+  <item name="SPNsubmittersSelecttAll.ToolTip" html="false" placeholder="false">All</item>
+  <item name="SPNsubmittersSelecttNone.ToolTip" html="false" placeholder="false">None</item>
+  <item name="BTNaddRequiredFile.text" html="false" placeholder="false" hidden="true" />
+  <item name="BTNaddRequiredFile.ToolTip" html="false" placeholder="false">Add a new request for a document</item>
+  <item name="BTNsaveFileToSubmitTop.text" html="false" placeholder="false">Save</item>
+  <item name="BTNsaveFileToSubmitTop.ToolTip" html="false" placeholder="false">Save requested docs settings</item>
+  <item name="BTNsaveFileToSubmitBottom.text" html="false" placeholder="false">Save</item>
+  <item name="BTNsaveFileToSubmitBottom.ToolTip" html="false" placeholder="false">Save requested docs settings</item>
+  <item name="LBmoveRequiredFile.ToolTip" html="false" placeholder="false">Modify display order</item>
+  <item name="LBrequiredFileName_t.text" html="false" placeholder="false">Name:</item>
+  <item name="LBrequiredFileMandatory_t.text" html="false" placeholder="false">mandatory:</item>
+  <item name="BTNrequiredFileVirtualDelete.text" html="false" placeholder="false" hidden="true" />
+  <item name="BTNrequiredFileVirtualDelete.ToolTip" html="false" placeholder="false">Delete attachment</item>
+  <item name="LBrequiredFileSubmitters_t.text" html="false" placeholder="false">Participants:</item>
+  <item name="DisplayFileToSubmitSettingsSaved" html="false" placeholder="false">Data correctly saved</item>
+  <item name="DisplayFileToSubmitDeletingError" html="false" placeholder="false">ATTENTION: error while deleting the selected document</item>
+  <item name="DisplayFileToSubmitDisplaySavingError" html="false" placeholder="false">ATTENTION: data NOT correctly saved</item>
+  <item name="RequiredFile.Default.Name" html="false" placeholder="true" mustcontains="{0}">Document {0}</item>
+  <item name="RequiredFile.Default.Description" html="false" placeholder="false" />
+  <item name="RequiredFile.Default.Tooltip" html="false" placeholder="false">Upload the requested file</item>
+  <item name="FieldError.None" html="false" placeholder="false" />
+  <item name="FieldError.Mandatory" html="false" placeholder="false">mandatory</item>
+  <item name="FieldError.Invalid" html="false" placeholder="false">Invalid date</item>
+  <item name="FieldError.InvalidFormat" html="false" placeholder="false">invalid format </item>
+  <item name="FieldError.MoreOptions" html="false" placeholder="false">too many options</item>
+  <item name="FieldError.LessOptions" html="false" placeholder="false">Select more options</item>
+  <item name="FieldError.InvalidOptions" html="false" placeholder="false">invalid number of options</item>
+  <item name="FieldError.Unknown" html="false" placeholder="false">error / invalid</item>
+  <item name="WizardCallStep.ImportUsersFrom" html="false" placeholder="false">Select receiver</item>
+  <item name="WizardCallStep.GeneralSettings" html="false" placeholder="false">General settings</item>
+  <item name="WizardCallStep.RequestMessages" html="false" placeholder="false">Opening/closing message</item>
+  <item name="WizardCallStep.CallAvailability" html="false" placeholder="false">Participation settings</item>
+  <item name="WizardCallStep.SubmittersType" html="false" placeholder="false">Submitters</item>
+  <item name="WizardCallStep.Attachments" html="false" placeholder="false">Attachments</item>
+  <item name="WizardCallStep.SubmissionEditor" disambiguation="domanda di partecipazione/domanda di adesione" html="false" placeholder="false">Submission editor</item>
+  <item name="WizardCallStep.FileToSubmit" html="false" placeholder="false">File to upload</item>
+  <item name="WizardCallStep.FieldsAssociation" html="false" placeholder="false">Profile fields</item>
+  <item name="WizardCallStep.NotificationTemplateMail" html="false" placeholder="false">Manager notification</item>
+  <item name="WizardCallStep.SubmitterTemplateMail" html="false" placeholder="false">User notification</item>
+  <item name="WizardCallStep.RequestMessages.Status.error" html="false" placeholder="false">No message defined</item>
+  <item name="WizardCallStep.CallAvailability.Status.error" html="false" placeholder="false">No participation settings defined</item>
+  <item name="WizardCallStep.SubmittersType.Status.error" html="false" placeholder="false">No submitter type defined</item>
+  <item name="WizardCallStep.Attachments.Status.warning" html="false" placeholder="false">Attachments can not be seen by thje selected submitter type</item>
+  <item name="WizardCallStep.SubmissionEditor.Status.warning" html="false" placeholder="false">Some fields are NOT visible to the defined submitter type.</item>
+  <item name="WizardCallStep.NotificationTemplateMail.Status.error" html="false" placeholder="false">No notification message set</item>
+  <item name="WizardCallStep.NotificationTemplateMail.Status.disabled" html="false" placeholder="false">No possible submitter</item>
+  <item name="WizardCallStep.SubmitterTemplateMail.Status.disabled" html="false" placeholder="false">Mail field missing / no possible receiver defined</item>
+  <item name="WizardCallStep.SubmitterTemplateMail.Status.warning" html="false" placeholder="false">Notifications are not available for some submitter types.</item>
+  <item name="WizardCallStep.SubmitterTemplateMail.Status.error" html="false" placeholder="false">No model defined</item>
+  <item name="WizardCallStep.ToolTip.ImportUsersFrom" html="false" placeholder="false">Select receiver</item>
+  <item name="WizardCallStep.ToolTip.GeneralSettings" html="false" placeholder="false">General settings</item>
+  <item name="WizardCallStep.ToolTip.RequestMessages" html="false" placeholder="false">Opening/closing message</item>
+  <item name="WizardCallStep.ToolTip.CallAvailability" html="false" placeholder="false">Visible to</item>
+  <item name="WizardCallStep.ToolTip.SubmittersType" html="false" placeholder="false">Submitters</item>
+  <item name="WizardCallStep.ToolTip.Attachments" html="false" placeholder="false">Attachments</item>
+  <item name="WizardCallStep.ToolTip.SubmissionEditor" disambiguation="domanda di partecipazione/domanda di adesione" html="false" placeholder="false">Submission editor</item>
+  <item name="WizardCallStep.ToolTip.FileToSubmit" html="false" placeholder="false">File to upload</item>
+  <item name="WizardCallStep.ToolTip.FieldsAssociation" html="false" placeholder="false">Profile fields</item>
+  <item name="WizardCallStep.ToolTip.SubmitterTemplateMail" html="false" placeholder="false">Notifications to send to participants</item>
+  <item name="WizardCallStep.ToolTip.NotificationTemplateMail" html="false" placeholder="false">Notifications to send to manager/s</item>
+  <item name="BTNremoveFile.text" html="false" placeholder="false" hidden="true">X</item>
+  <item name="BTNremoveFile.ToolTip" html="false" placeholder="false">Delete attachment</item>
+  <item name="RBLdisclaimer.True" html="false" placeholder="false">Accept</item>
+  <item name="RBLdisclaimer." html="false" placeholder="false">Reject</item>
+  <item name="RevisionField.Label" html="false" placeholder="false">Revised</item>
+  <item name="RevisionField.Check" html="false" placeholder="false">To revise</item>
+  <item name="RevisionField.LabelInfo" html="false" placeholder="false">To revise</item>
+  <item name="LTfieldName_t.text" html="false" placeholder="false">Field name</item>
+  <item name="LTmatchProfileItem_t.text" html="false" placeholder="false">Profile field correspondence</item>
+  <item name="ProfileAttributeType.skip" html="false" placeholder="false">--    Ignore    --</item>
+  <item name="ProfileAttributeType.unknown" html="false" placeholder="false">Unknown</item>
+  <item name="ProfileAttributeType.externalId" html="false" placeholder="false">External login identifier</item>
+  <item name="ProfileAttributeType.name" html="false" placeholder="false">Name</item>
+  <item name="ProfileAttributeType.surname" html="false" placeholder="false">Surname</item>
+  <item name="ProfileAttributeType.mail" html="false" placeholder="false">Mail</item>
+  <item name="ProfileAttributeType.telephoneNumber" html="false" placeholder="false">Phone</item>
+  <item name="ProfileAttributeType.fax" html="false" placeholder="false">Fax</item>
+  <item name="ProfileAttributeType.mobile" html="false" placeholder="false">Mobile</item>
+  <item name="ProfileAttributeType.taxCode" html="false" placeholder="false">Tax code</item>
+  <item name="ProfileAttributeType.login" html="false" placeholder="false">Login</item>
+  <item name="ProfileAttributeType.password" html="false" placeholder="false">Password</item>
+  <item name="ProfileAttributeType.companyName" html="false" placeholder="false">COmpany code</item>
+  <item name="ProfileAttributeType.companyAddress" html="false" placeholder="false">Company address</item>
+  <item name="ProfileAttributeType.companyCity" html="false" placeholder="false">Company city</item>
+  <item name="ProfileAttributeType.companyRegion" html="false" placeholder="false">Company region</item>
+  <item name="ProfileAttributeType.companyTaxCode" html="false" placeholder="false">Tax code / Company tax code</item>
+  <item name="ProfileAttributeType.companyReaNumber" html="false" placeholder="false">Company code</item>
+  <item name="ProfileAttributeType.companyAssociations" html="false" placeholder="false">Category assignment</item>
+  <item name="ProfileAttributeType.matricula" html="false" placeholder="false">Matriculation number</item>
+  <item name="ProfileAttributeType.matriculaYear" html="false" placeholder="false">Matriculation year</item>
+  <item name="ProfileAttributeType.institute" html="false" placeholder="false">Institute/School</item>
+  <item name="ProfileAttributeType.classroom" html="false" placeholder="false">Class</item>
+  <item name="ProfileAttributeType.matters" html="false" placeholder="false">Subject</item>
+  <item name="ProfileAttributeType.phdTitle" html="false" placeholder="false">doctor's degree</item>
+  <item name="ProfileAttributeType.externalUserInfo" html="false" placeholder="false">External user detail</item>
+  <item name="ProfileAttributeType.jobInfo" html="false" placeholder="false">Job/Role</item>
+  <item name="ProfileAttributeType.address" html="false" placeholder="false">Address</item>
+  <item name="ProfileAttributeType.zipCode" disambiguation="codice di avviamento postale" html="false" placeholder="false">zip code</item>
+  <item name="ProfileAttributeType.city" html="false" placeholder="false">City</item>
+  <item name="ProfileAttributeType.autoGeneratedLogin" html="false" placeholder="false">Self generated login</item>
+  <item name="ProfileAttributeType.agencyName" html="false" placeholder="false">Agency name</item>
+  <item name="ProfileAttributeType.agencyNationalCode" html="false" placeholder="false">National code - Agency</item>
+  <item name="ProfileAttributeType.agencyTaxCode" html="false" placeholder="false">Tax code / Vat code - Agency</item>
+  <item name="ProfileAttributeType.agencyExternalCode" html="false" placeholder="false">External code - Agency</item>
+  <item name="ProfileAttributeType.agencyInternalCode" html="false" placeholder="false">Platform code - Agency</item>
+  <item name="ProfileAttributeType.webSite" html="false" placeholder="false">Web site</item>
+  <item name="ProfileAttributeType.language" html="false" placeholder="false">Language</item>
+  <item name="GroupBy.MandatoryCommon" html="false" placeholder="false">Common mandatory fields</item>
+  <item name="GroupBy.NotMandatoryCommon" html="false" placeholder="false">Common NOT mandatory fields</item>
+  <item name="GroupBy.UserTypeStandard" html="false" placeholder="true" mustcontains="{0}">Profile fields {0}</item>
+  <item name="DisplayFieldAssociationsSettingsSaved" html="false" placeholder="false">Settings correctly saved</item>
+  <item name="DisplayFieldAssociationsSettingsUnSaved" html="false" placeholder="false">Settings were NOT successfully saved</item>
+  <item name="BTNsaveFieldAssociationsTop.text" html="false" placeholder="false">Save</item>
+  <item name="BTNsaveFieldAssociationsTop.ToolTip" html="false" placeholder="false">Save settings</item>
+  <item name="BTNsaveFieldAssociationsBottom.text" html="false" placeholder="false">Save</item>
+  <item name="BTNsaveFieldAssociationsBottom.ToolTip" html="false" placeholder="false">Save settings</item>
+  <item name="LNBaddAttachments.text" html="false" placeholder="false">Upload documents</item>
+  <item name="LNBaddAttachments.ToolTip" html="false" placeholder="false">Upload new documents</item>
+  <item name="BTNundoUpload.text" html="false" placeholder="false">Close</item>
+  <item name="BTNundoUpload.ToolTip" html="false" placeholder="false">Close and cancel operation</item>
+  <item name="SubmissionTranslations.CallTitle" html="false" placeholder="true" mustcontains="{0}">Request for participation to {0} call </item>
+  <item name="SubmissionTranslations.CallTitleAndEdition" html="false" placeholder="true" mustcontains="{0}|{1}">Request for participation to {0} call, edition {1}</item>
+  <item name="SubmissionTranslations.PrintInfo" html="false" placeholder="true" mustcontains="{0}|{1}|{2}">Printed by {0} on {1} at {2}</item>
+  <item name="SubmissionTranslations.SubmittedByTitle" html="false" placeholder="false">Submitted by:</item>
+  <item name="SubmissionTranslations.SubmittedByInfo" html="false" placeholder="true" mustcontains="{0}|{1}|{2}">{0} the {1} at {2}</item>
+  <item name="SubmissionTranslations.SubmittedForInfo" html="false" placeholder="true" mustcontains="{0}|{1}|{2}|{3}">{0} on behalf of  {1} the {2} at {3}</item>
+  <item name="SubmissionTranslations.SubmittedTypeTitle" disambiguation="domanda di partecipazione/domanda di adesione" html="false" placeholder="false">Submission type</item>
+  <item name="SubmissionTranslations.SubmissionStatusTitle" disambiguation="status: attivo/chiuso/in corso/valutazione" html="false" placeholder="false">Status:</item>
+  <item name="SubmissionTranslations.SubmissionStatus" html="false" placeholder="false" hidden="true">- </item>
+  <item name="SubmissionTranslations.EmptyItem" html="false" placeholder="false" hidden="true"> // </item>
+  <item name="SubmissionTranslations.SubmittedFilesTitle" html="false" placeholder="false">Attachments:</item>
+  <item name="SubmissionTranslations.SubmissionInfo" html="false" placeholder="false">Basic info</item>
+  <item name="SubmissionTranslations.CommunityNameTitle" disambiguation="singolare" html="false" placeholder="true" mustcontains="{0}">Community {0}</item>
+  <item name="SubmissionTranslations.PortalCommunityName" html="false" placeholder="false">Portal</item>
+  <item name="SubmissionTranslations.CreatedByInfo" html="false" placeholder="true" mustcontains="{0}|{1}|{2}">{0} the {1} at {2}</item>
+  <item name="SubmissionTranslations.FileSubmitted" html="false" placeholder="false">submitted </item>
+  <item name="SubmissionTranslations.FileNotSubmitted" html="false" placeholder="false">NOT submitted</item>
+  <item name="SubmissionTranslations.StatusAccepted" html="false" placeholder="false">Accepted</item>
+  <item name="SubmissionTranslations.StatusDraft" html="false" placeholder="false">Draft</item>
+  <item name="SubmissionTranslations.StatusRejected" html="false" placeholder="false">Rejected</item>
+  <item name="SubmissionTranslations.StatusSubmitted" html="false" placeholder="false">Submitted</item>
+  <item name="SubmissionTranslations.StatusValuated" html="false" placeholder="false">Evaluated</item>
+  <item name="SubmissionTranslations.StatusValuating" html="false" placeholder="false">On evaluation</item>
+  <item name="SubmissionTranslations.StatusWaitingValuation" html="false" placeholder="false">Pending evaluation </item>
+  <item name="SubmissionTranslations.ItemMandatory" disambiguation="non tradurre" html="false" placeholder="false" hidden="true"> *</item>
+  <item name="SubmissionTranslations.MaxCharInfo" html="false" placeholder="true" mustcontains="{0}">(max {0} characters, spaces included)</item>
+  <item name="SubmissionTranslations.DisclaimerAccept" html="false" placeholder="false">Accept</item>
+  <item name="SubmissionTranslations.DisclaimerReject" html="false" placeholder="false"> Cancel</item>
+  <item name="SubmissionTranslations.FileCreationError" html="false" placeholder="false">Error while creating file.</item>
+  <item name="SubmissionTranslations.Pager" html="false" placeholder="false">Pag.</item>
+  <item name="SubmissionTranslations.FilesSubmitted" html="false" placeholder="false">Attachments</item>
+  <item name="SubmissionTranslations.SubmissionCallFileName" html="false" placeholder="true" mustcontains="{0}">SubmittedRequest_{0}</item>
+  <item name="SubmissionTranslations.SubmissionRequestFileName" html="false" placeholder="true" mustcontains="{0}">ParticipationRequest_{0}</item>
+  <item name="SubmissionTranslations.AnonymousUser" html="false" placeholder="false">Anonymous user</item>
+  <item name="SubmissionTranslations.MinOption" html="false" placeholder="true" mustcontains="{0}">At least {0} option/s</item>
+  <item name="SubmissionTranslations.MaxOption" html="false" placeholder="true" mustcontains="{0}">Maximum {0} option/s</item>
+  <item name="SubmissionTranslations.MinOptionMaxOption" html="false" placeholder="true" mustcontains="{0}|{1}">Minimum {0} option/s, maximum {1}</item>
+  <item name="SubmissionTranslations.RequestTitle" html="false" placeholder="true" mustcontains="{0}">Request for accession to "{0}"</item>
+  <item name="SubmissionTranslations.SubmitToCallFileName" html="false" placeholder="true" mustcontains="{0}">Callrequest_{0}</item>
+  <item name="SubmissionTranslations.SubmitToRequestFileName" html="false" placeholder="true" mustcontains="{0}">AccessionRequest_{0}</item>
+  <item name="SubmissionTranslations.DisclaimerRead" html="false" placeholder="false">Read</item>
+  <item name="SubmissionTranslations.OtherOption" html="false" placeholder="false">Other:</item>
+  <item name="SubmissionTranslations.OtherOptionValue" html="false" placeholder="true" mustcontains="{0}|{1}">{0}:{1}</item>
+  <item name="AnonymousUserTranslation" html="false" placeholder="false">Unregistered user</item>
+  <item name="LBselectUsersFrom_t.text" html="false" placeholder="false">Select user from:</item>
+  <item name="AccessTypeFilter.CallForBids.NoSubmitters" html="false" placeholder="false">who can compile the call</item>
+  <item name="AccessTypeFilter.CallForBids.Submitters" html="false" placeholder="false">who participate to the call</item>
+  <item name="AccessTypeFilter.RequestForMembership.NoSubmitters" html="false" placeholder="false">who can compile the accession</item>
+  <item name="AccessTypeFilter.RequestForMembership.Submitters" html="false" placeholder="false">who participate to the accession</item>
+  <item name="LBselectMessages_t.text" html="false" placeholder="false">and from these messages:</item>
+  <item name="LNBselectMessages.text" html="false" placeholder="false">Select messagges</item>
+  <item name="LNBselectMessages.ToolTip" html="false" placeholder="false">Select messagges</item>
+  <item name="LBselectMessages.0" html="false" placeholder="false">(no selected).</item>
+  <item name="LBselectMessages.1" html="false" placeholder="false">( 1 selected).</item>
+  <item name="LBselectMessages.n" html="false" placeholder="true" mustcontains="{0}">( {0} selected).</item>
+  <item name="LBcommunityAgencyFilter_t.text" html="false" placeholder="false">Agency/Company:</item>
+  <item name="agencies.ignorefilter" html="false" placeholder="false">-- Ignore Filter   --</item>
+  <item name="agencies.noemployeee" html="false" placeholder="false">No associated agency</item>
+  <item name="agencies.all" html="false" placeholder="false">Any associated agency</item>
+  <item name="DDLsubmitterTypes.-1" html="false" placeholder="false">any</item>
+  <item name="SearchProfilesBy.All" html="false" placeholder="false">-- Ignore Filter   --</item>
+  <item name="SearchProfilesBy.Contains" html="false" placeholder="false">Contains</item>
+  <item name="SearchProfilesBy.Login" html="false" placeholder="false">Login</item>
+  <item name="SearchProfilesBy.Mail" html="false" placeholder="false">Mail</item>
+  <item name="SearchProfilesBy.Matricula" html="false" placeholder="false">Matriculation number</item>
+  <item name="SearchProfilesBy.Name" html="false" placeholder="false">Name</item>
+  <item name="SearchProfilesBy.Surname" html="false" placeholder="false">Surname</item>
+  <item name="SearchProfilesBy.TaxCode" html="false" placeholder="false">Tax code</item>
+  <item name="LBsubmissionStatusFilter_t.text" html="false" placeholder="false">with submissions:</item>
+  <item name="LBsubmissionTypeFilter_t.text" html="false" placeholder="false">of type:</item>
+  <item name="LBsearchUserByFilter_t.text" html="false" placeholder="false">Search by:</item>
+  <item name="BTNapplyFilters.text" html="false" placeholder="false">Apply filters</item>
+  <item name="BTNapplyFilters.text" html="false" placeholder="false">Applica i filtri</item>
+  <item name="LNBselectRecipientsIntoAllPages.text" html="false" placeholder="false">Select on all pages</item>
+  <item name="LNBunselectRecipientsIntoAllPages.text" html="false" placeholder="false">Deselect on all pages</item>
+  <item name="LBusernameHeader_t.text" html="false" placeholder="false">Name</item>
+  <item name="UserByMessagesOrder.Ascending" html="false" placeholder="false">Ascending order by</item>
+  <item name="UserByMessagesOrder.Descending" html="false" placeholder="false">Descending order by</item>
+  <item name="UserByMessagesOrder.None" html="false" placeholder="false" />
+  <item name="UserByMessagesOrder.ByStatus" html="false" placeholder="false">Submission status</item>
+  <item name="UserByMessagesOrder.ByType" html="false" placeholder="false">Request typology</item>
+  <item name="UserByMessagesOrder.ByUser" html="false" placeholder="false">name</item>
+  <item name="UserByMessagesOrder.ByMessageNumber" html="false" placeholder="false">Number of messages</item>
+  <item name="UserByMessagesOrder.ByAgency" html="false" placeholder="false">agency/company</item>
+  <item name="LBuserAgencyNameHeader_t.text" html="false" placeholder="false">Agency/Company</item>
+  <item name="LTsubPartecipantType_t.text" disambiguation="" html="false" placeholder="false">Type</item>
+  <item name="LTsubStatus_t.text" disambiguation="stato: attivo/chiuso/in corso/valutazione" html="false" placeholder="false">Status</item>
+  <item name="LTmessages_t.text" html="false" placeholder="false">Messages</item>
+  <item name="LTuserMessageActions_t.text" html="false" placeholder="false">Actions</item>
+  <item name="HYPdisplayMessages.ToolTip" html="false" placeholder="false">Show messages</item>
+  <item name="LBemptyItems.text" html="false" placeholder="false">Select users by using filters above the table</item>
+  <item name="NoUsersForSelection" html="false" placeholder="false">No user found according to the specified filters</item>
+  <item name="DVdialogMessages.Title" html="false" placeholder="false">Select messagges</item>
+  <item name="BTNcloseMessageSelectorWindow.text" html="false" placeholder="false">Confirm</item>
+  <item name="BTNcloseMessageSelectorWindow.ToolTip" html="false" placeholder="false">Confirm message selection</item>
+  <item name="SubmissionStatus.none" disambiguation="domanda di partecipazione/domanda di adesione" html="false" placeholder="false">Request not submitted</item>
+  <item name="SubmissionStatus.draft" disambiguation="domanda di partecipazione/domanda di adesione" html="false" placeholder="false">Submission on compilation</item>
+  <item name="SubmissionStatus.submitted" disambiguation="domanda di partecipazione/domanda di adesione" html="false" placeholder="false">Request submitted</item>
+  <item name="SubmissionStatus.accepted" disambiguation="domanda di partecipazione/domanda di adesione" html="false" placeholder="false">Submission approved</item>
+  <item name="SubmissionStatus.rejected" disambiguation="domanda di partecipazione/domanda di adesione" html="false" placeholder="false">Submission rejected</item>
+  <item name="SubmissionStatus.waitingValuation" disambiguation="domanda di partecipazione/domanda di adesione" html="false" placeholder="false">Submission not evaluated</item>
+  <item name="SubmissionStatus.valuating" disambiguation="domanda di partecipazione/domanda di adesione" html="false" placeholder="false">Submission on evaluation</item>
+  <item name="SubmissionStatus.valuated" disambiguation="domanda di partecipazione/domanda di adesione" html="false" placeholder="false">Submission evaluated</item>
+  <item name="SubmissionStatus.deleted" disambiguation="domanda di partecipazione/domanda di adesione" html="false" placeholder="false">Deleted submission</item>
+  <item name="SubmissionStatus.tosubmit" disambiguation="domanda di partecipazione/domanda di adesione" html="false" placeholder="false">Request to submit</item>
+
+
+
+    <!--Add for Sign-->
+    <item name="LBsignMandatory.text">Countersign:</item>
+
+    <item name="CBXsignMandatory.text">Enable countersign.</item>
+    <item name="CBXsignMandatory.ToolTip">Enable countersign.</item>
+
+    <!-- Add for Draft Printing -->
+    <item name="LKBprint.draft.text">Print Draft</item>
+    <item name="LKBprint.draft.ToolTip">Print Draft</item>
+    <item name="LKBprint.draft.status">Print Draft</item>
+
+    <item name="LKBprint.empytdraft.text">Print empty draft</item>
+    <item name="LKBprint.empytdraft.ToolTip">Print empty draft</item>
+    <item name="LKBprint.empytdraft.status">Print empty draft</item>
+
+    <item name="LKBprint.compiledDraft.text">Print current draft</item>
+    <item name="LKBprint.compiledDraft.ToolTip">Print current draft</item>
+    <item name="LKBprint.compiledDraft.status">Print current draft</item>
+
+    <item name="BTNprint.text">Print Draft</item>
+    <item name="BTNprint.ToolTip">Print Draft</item>
+    <item name="BTNprint.status">Print Draft</item>
+
+    <item name="BTNprint.text.draft">Print draft</item>
+    <item name="BTNprint.text.empytdraft">Print empty draft</item>
+    <item name="BTNprint.text.compiledDraft">Print current draft</item>
+
+
+    <!--Add x tabelle-->
+    <item name="FieldSelctor.FieldType.TableSimple">Simple table</item>
+    <item name="FieldSelctor.FieldType.TableReport">Calculated table</item>
+    <item name="FieldSelctor.FieldType.TableSummary">Summary table</item>
+</Resource>

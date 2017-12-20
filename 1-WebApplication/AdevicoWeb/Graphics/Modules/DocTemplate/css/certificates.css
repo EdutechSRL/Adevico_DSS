@@ -1,0 +1,5235 @@
+/* Certificates stylesheet updated 04/07/2013 */
+
+/* @group ex Doctemplate.css */
+
+div.TemplateContainer {
+	padding: 0;
+	width: 920px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+div.TemplateContainerRow {
+	border: 0px;
+	padding: 3px;
+	margin: 0px;
+}
+
+div.TemplateContainer2 {
+	vertical-align: text-top;
+	display: inline-block;
+	width: 456px;
+}
+
+div.TemplateContainter2Right {
+	display: inline-block;
+	width: 456px;
+	text-align: right;
+}
+
+div.TemplateContainer3 {
+	display: inline-block;
+	width: 302px;
+	vertical-align: top;
+}
+
+div.TemplateContainer3 span,
+div.TemplateContainer3 div {
+	vertical-align: top;
+}
+
+span.TemplateDataRow {
+	display: inline-block;
+	vertical-align: text-top;
+	width: 100%;
+}
+
+span.TemplateDataRow .Field,
+span.TemplateDataRow .Data * {
+	vertical-align: top;
+}
+
+.Field {
+	font-weight: bold;
+	display: inline-block;
+	width: 100px;
+}
+
+.Data {
+	display: inline-block;
+	width: 300px;
+}
+
+.Data ul,
+ul.li_Type {
+	list-style-type: none;
+}
+
+.Data ul li,
+ul.li_Type li {
+	display: inline-block;
+	width: 30%;
+}
+
+span.uc_measure {
+	display: inline-block;
+	width: 45%;
+}
+
+div.TemplateHeaderRow,
+div.TemplateContentRow,
+div.TemplateFooterRow {
+	border: 0px;
+	padding: 0px;
+	margin: 0px;
+	vertical-align: top;
+}
+
+div.TemplateContentRow {
+    vertical-align: middle;
+}
+
+div.TemplateContentRow * {
+	vertical-align: middle;
+}
+
+div.ItemCol1 {
+	width: 99%;
+	border: 0px;
+	padding: 0px;
+	margin: 0px;
+	vertical-align: top;
+}
+
+div.ItemCol2 {
+	display: inline-block;
+	border: 0px;
+	width: 49.5%;
+	padding: 0px;
+	margin: 0px;
+	vertical-align: top;
+}
+
+div.ItemCol3 {
+	display: inline-block;
+	border: 0px;
+	width: 32%;
+	padding: 0px;
+	margin: 0px;
+	vertical-align: top;
+}
+
+/* Da usare le robe "generiche" */
+
+.viewbuttons {
+	width: 100%;
+	text-align: left;
+}
+
+/*  Una volta standardizzato il nome, spostare in stile di piattaforma */
+/*  NOTA: nel caso specifico indica un elemento deprecato. */
+/*  PS: c'è la possibilità di sitinguere gli elementi deprecati da quelli in bozza.*/
+
+span.DDLContainer option.ItemDisapproved {
+	color: Red;
+}
+
+span.DDLContainer option.ItemDraft {
+	color: Yellow;
+}
+
+span.DDLContainer option.ItemLast {
+	color: Green;
+}
+
+div.viewbuttons {
+	text-align: right;
+	margin: 1em 0;
+}
+
+div.TemplateContainerRow {
+	border: 1px solid #aaa;
+	padding: 0;
+	box-shadow: 5px 5px 0 0 rgba(0,0,0,0.25);
+}
+
+/* @end */
+
+/* @group Filetype Render UC * service settings * */
+
+span.fileIco {
+    margin-right: 3px;
+    position: relative;
+    top: -1px;
+    *top: 4px;
+    *text-indent: 0;
+	*font-size: 0;
+	*line-height: 0;
+	*overflow: hidden;
+}
+
+/* @end */
+
+/* @group Icon: handlers */
+
+.handle,
+.movesection,
+.movecfield,
+.movecfielditem,
+.movecfp,
+.icon.orderUp,
+.icon.orderDown,
+div.choseselect .icons .icon.selectall,
+div.choseselect .icons .icon.selectnone {
+	display: inline-block;
+	*display:inline;
+	*zoom: 1;
+    background: url(../../../Generics/Command/img/handlers_set_1.png) no-repeat;
+    background-position: -240px 0px;
+    background-repeat: no-repeat !important;
+    text-align: left;
+	text-indent: -9999px;
+	*text-indent: 0;
+	*font-size: 0;
+	*line-height: 0;
+	*overflow: hidden;
+}
+
+.movesection,
+.movecfp {
+    width: 16px;
+    height: 24px;
+    margin-top: 2px;
+}
+
+.movecfield,
+.movecfielditem {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    text-indent: -9999px;
+    cursor: move;
+    *text-indent: 0;
+    *font-size: 0;
+    *line-height: 0;
+    vertical-align: middle;
+    margin-top: 2px;
+}
+
+.movecfield,
+.movecfielditem {
+	background-position: 2px -579px;
+	width: 16px;
+	height: 16px;
+}
+
+.handle {
+    cursor: pointer;
+    background-position: 0px -783px;
+	width: 16px;
+	height: 16px;
+}
+
+.collapsed .handle,
+.handle.collapsed {
+	background-position: 0px -861px;
+}
+
+li.cfield .handle {
+	background-position: 0px -743px;
+    position: relative;
+    top: 1px;
+    *top:1px;
+}
+
+span#ctl00_CPHservice_UCsignatures_LBLnosign {
+	display: block;
+	padding: 10px;
+	margin: 5px;
+	color: #444;
+}
+
+li.cfield .handle.collapsed {
+	background-position: 0px -821px;
+}
+
+.icon.orderUp,
+.icon.orderDown {
+	background: url(../../../Generics/Command/img/handlers_set_1.png) no-repeat !important;
+	width: 8px !important;
+	height: 6px !important;
+}
+  
+.icon.orderUp {
+	background-position: 0px -252px !important;
+}
+
+.icon.orderDown {
+	background-position: 0px -124px !important;
+}
+
+.icon.checkbox_no,
+div.choseselect .icons .icon.selectnone {
+	background-position: 0 -348px;
+	width: 16px;
+	height: 16px;
+}
+
+.icon.checkbox_yes,
+div.choseselect .icons .icon.selectall {
+	background-position: 0 -383px;
+	width: 16px;
+	height: 16px;
+}
+
+ul.cfps li.cfp.default .icon.movecfp {
+    display: none;
+}
+
+.descriptionswitch {
+	margin-top: 1em;
+	display: inline-block;
+	*display:inline;
+    cursor: pointer;
+    display: block;
+    width: 16px;
+    height: 16px;
+    background: url(../../../Generics/Command/img/handlers_set_1.png) no-repeat;
+    background-repeat: no-repeat;
+}
+
+.description .descriptionswitch {
+    background-position: 0px -24px;
+}
+
+.description.expanded .descriptionswitch {
+    background-position: 0px -58px;
+}
+
+/* @end */
+
+
+/* @group Icons: status lights */
+
+.icons .icon.status,
+.contentwrapper.edit .icons .icon.status {
+    width: 12px;
+    height: 12px;
+    *border: 1px solid #888;
+    *width: 10px;
+    *height: 10px;
+    margin-top: 3px;
+    background-color: #cccccc;
+    background-image: none;
+    -moz-box-shadow: inset 1px 1px 1px rgba(0,0,0,0.5);
+    -webkit-box-shadow: inset 1px 1px 1px rgba(0,0,0,0.5);
+    box-shadow: inset 1px 1px 1px rgba(0,0,0,0.5);
+    border-radius: 3px;
+}
+
+.icons .icon.status {
+    vertical-align: top;
+}
+
+.contentwrapper.edit table .icons .icon.status {
+	margin-top: 0;
+}
+
+.icons .icon.status.none,
+.contentwrapper.edit .icons .icon.status.none,
+ul.navigation li.navigationitem .icons .icon.status.none  {
+    display: none;
+}
+
+.icons .icon.status.green,
+.icons .icon.status.HasActive,
+.icons .icon.status.valid,
+.icons .icon.status.accepted,
+.icons .icon.status.requestaccepted,
+.icons .icon.status.approved,
+.contentwrapper.edit .icons .icon.status.valid,
+ul.navigation li.navigationitem.valid .icons .icon.status  {
+    background-color: #b4c561;
+    background: -moz-linear-gradient(top,  #a4b357 0%, #75890c 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#a4b357), color-stop(100%,#75890c));
+    background: -webkit-linear-gradient(top,  #a4b357 0%,#75890c 100%);
+    background: -o-linear-gradient(top,  #a4b357 0%,#75890c 100%);
+    background: -ms-linear-gradient(top,  #a4b357 0%,#75890c 100%);
+    background: linear-gradient(top,  #a4b357 0%,#75890c 100%);
+}
+
+.icons .icon.status.red,
+.submissions .icons .icon.status.error,
+.icons .icon.status.submission.refused,
+.icons .icon.status.submission.rejected,
+.icons .icon.status.submission.deleted,
+.icons .icon.status.submission.cancelled,
+.contentwrapper.edit .icons .icon.status.error,
+ul.navigation li.navigationitem.error .icons .icon.status {
+    background-color: #da0309;
+    background: -moz-linear-gradient(top,  #ff3019 0%, #cf0404 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ff3019), color-stop(100%,#cf0404));
+    background: -webkit-linear-gradient(top,  #ff3019 0%,#cf0404 100%);
+    background: -o-linear-gradient(top,  #ff3019 0%,#cf0404 100%);
+    background: -ms-linear-gradient(top,  #ff3019 0%,#cf0404 100%);
+    background: linear-gradient(top,  #ff3019 0%,#cf0404 100%);
+    -moz-box-shadow: inset 1px 1px 1px rgba(0,0,0,0.5);
+    -webkit-box-shadow: inset 1px 1px 1px rgba(0,0,0,0.5);
+    box-shadow: inset 1px 1px 1px rgba(0,0,0,0.5);
+}
+
+.icons .icon.status.yellow,
+.icons .icon.status.draft,
+.icons .icon.status.warning,
+.contentwrapper.edit .icons .icon.status.warning,
+ul.navigation li.navigationitem.warning .icons .icon.status {
+    background-color: #ffd564;
+    background: #ffd564;
+    -moz-box-shadow: inset 1px 1px 1px rgba(167,143,70,0.8);
+    -webkit-box-shadow: inset 1px 1px 1px rgba(167,143,70,0.8);
+    box-shadow: inset 1px 1px 1px rgba(167,143,70,0.8);
+}
+
+/* @end */
+
+/* @group *** misc commands temp *** */
+
+.exportButtons {
+    float: left;
+    margin-bottom: 1em;
+}
+
+.exportButtons .exportButton {
+    cursor: pointer;
+}
+
+.viewButtons {
+    margin-top: 1em;
+    float: right;
+    padding-right: 20px;
+    display: block;
+    text-align: right;
+    width: 240px
+}
+
+div.cfpTitle {
+    width: 100%;
+    display: inline-block;
+}
+
+div.cfpTitle span.Titolo_campo {
+    font-size: 1em;
+    font-weight: normal;
+    font-style: normal;
+}
+
+div.cfpTitle span.label.inline,
+span#ctl00_CPHservice_LBuserName.Titolo_campo {
+    font-size: 1.2em;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+div.cfpTitle span.objectRender span.itemTitle {
+    font-size: 1em;
+    font-weight: bold;
+    margin: 0 10px;
+}
+
+a.img_link {
+    border: none !important;
+}
+
+a.img_link.ico_export_csv_l {
+    background-color: transparent;
+    background-image: url(../../../Generics/File/img/Filetype_Set-2_32.png);
+    background-position: 0 0px;
+    width: 32px;
+    height: 32px;
+}
+
+a.img_link.ico_export_xml_l {
+    background-color: transparent;
+    background-image: url(../../../Generics/File/img/Filetype_Set-2_32.png);
+    background-position: 0 -82px;
+    width: 32px;
+    height: 32px;
+}
+
+a.img_link.ico_export_pdf_l {
+    background-color: transparent;
+    background-image: url(../../../Generics/File/img/Filetype_Set-1_32.png);
+    background-position: 0 -574px;
+    width: 32px;
+    height: 32px;
+}
+
+.viewButtons .viewButton {
+    cursor: pointer;
+    vertical-align: middle;
+}
+
+.dateFilter {
+    width: 650px;
+    clear: both;
+    float: left;
+    display: block;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    *margin-bottom: 0;
+}
+
+.dateFilter div.DetailLeftItem,
+.dateFilter div.RadPicker,
+.dateFilter div.DetailRightItem.inline {
+    *float: left;
+    *width: auto;
+}
+
+.dateFilter div.DetailLeftItem span.Titolo_campoSmall {
+    *line-height: 2.3em;
+    *padding-right: 8px;
+}
+
+.dateFilter div.DateSelector {
+    *width: 580px;
+}
+
+.dateFilter div.DateEnd {
+    display: block;
+    margin: 1em 0;
+}
+
+.dateFilter div.DetailItem.DateEnd {
+    margin-top: 1em;
+}
+
+.visibilityNav {
+    clear: both;
+}
+
+.dateTime input {
+    width: 30px;
+    margin-right: 0.2em;
+    margin-left: 0.2em;
+}
+
+.dateTime input.date {
+    width: 60px;
+}
+
+.dateTime input[type=button] {
+    width: auto;
+}
+
+/* @end */
+
+/* @group Vertical tabs */
+
+.description .body {
+    display: none;
+}
+
+.description.expanded .body {
+	margin-top: 0.75em;
+	padding-top: 0.75em;
+    display: block;
+}
+
+.body {
+    border-top: 1px solid #ddd;
+}
+
+.contentwrapper.edit {
+    width: 920px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1em;
+}
+
+.contentwrapper.edit .column.left {
+    float: left;
+    width: 198px;
+    border-right: none;
+    padding-bottom: 10px;
+}
+
+.contentwrapper.edit .column.right {
+    float: right;
+    width: 720px;
+    *float: left;
+    *width: 715px;
+    border: 1px solid #ccc;
+    *border-bottom: 2px solid #ccc;
+    background-color: #fff;
+    -moz-box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.7), 1px 1px 0 rgba(0, 0, 0, 0.2);
+    -webkit-box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.7), 1px 1px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.7), 1px 1px 0 rgba(0, 0, 0, 0.2);
+}
+
+.contentwrapper.edit .column.right .header {
+    margin-bottom: 5px;
+}
+
+.contentwrapper.edit .column.right .footer {
+    margin-top: 5px;
+    padding: .5em 0;
+}
+
+.contentwrapper.edit .column.right .content {
+    min-height: 160px;
+}
+
+.contentwrapper.edit .column.right .rightcontent {
+    text-align: left;
+    padding: 0 10px 0 20px;
+}
+
+div#CPHservice_DVfilter.contentwrapper .left label {
+	margin-bottom: 10px;
+	margin-right: 10px;
+}
+
+ul.navigation {
+    padding: 0;
+    margin: 0;
+}
+
+ul.navigation li.navigationitem {
+    margin-left: 0;
+    list-style: none;
+    position: relative;
+    left: 1px;
+    background-color: #dee2e6;
+    background-color: #e6e9ed;
+    border-right: 1px solid #ccc;
+    border: 1px solid #ccc;
+    border-top-color: #bcbcbc;
+    border-bottom: none;
+    -moz-box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.5);
+    -webkit-box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.5);
+    box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+ul.navigation li.navigationitem.first {
+    border-top-color: #ccc;
+    -webkit-border-top-left-radius: 4px;
+    -moz-border-radius-topleft: 4px;
+    border-top-left-radius: 4px;
+}
+
+ul.navigation li.navigationitem.last {
+    border-bottom: 2px solid #ccc;
+    margin-bottom: 20px;
+    -webkit-border-bottom-left-radius: 4px;
+    -moz-border-radius-bottomleft: 4px;
+    border-bottom-left-radius: 4px;
+}
+
+ul.navigation li.navigationitem.active {
+    background-color: #fff;
+    border-right: none;
+}
+
+ul.navigation li.navigationitem.active .navigationstep {
+    *border-top: 1px solid #fff;
+    *border-left: 1px solid #fff;
+}
+
+ul.navigation li.navigationitem.disabled {
+    color: #908e89;
+}
+
+ul.navigation li.navigationitem.separator {
+    height: 4px;
+    background-color: #bbc4ce;
+    -moz-box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.3);
+    -webkit-box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.3);
+    box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.3);
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden;
+    display: block;
+    *margin-top: -14px !important;
+}
+
+ul.navigation li.navigationitem.disabled .title {
+    color: #908e89;
+}
+
+ul.navigation li.navigationitem div.navigationstep {
+    *border-top: 1px solid #eee;
+    *border-left: 1px solid #eee;
+    padding: 5px 5px 7px 7px;
+}
+
+ul.navigation li.navigationitem.disabled div.navigationstep {
+    *border-top: 1px solid #ccc;
+}
+
+ul.navigation li.navigationitem .title {
+	font-size: 1em;
+    font-weight: bold;
+    padding-bottom: 4px;
+    text-shadow: 0 1px 0 #eee;
+}
+
+ul.navigation li.navigationitem.active .title {
+	color: #333;
+}
+
+ul.navigation li.navigationitem .title a {
+    color: #657ea3;
+}
+
+#page-box #content ul.navigation li.navigationitem div.stepinfo {
+    font-size: 11px ;
+}
+
+ul.navigation li.navigationitem div.stepinfo span.statustext {
+    padding: 3px 4px 0;
+    display: block;
+    float: left;
+    width: 140px;
+}
+
+ul.navigation li.navigationitem div.stepinfo ul.statusdetails {
+    padding-left: 16px;
+    display: inline-block;
+    *display: block;
+    margin-left: 16px;
+}
+
+ul.navigation li.navigationitem div.stepinfo ul.statusdetails li {
+    padding: 1px 0;
+    width: 120px;
+    /*padding-right: ; /*ERROR*/
+}
+
+li.readmore {
+    list-style-type: none;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+.tooLong {
+    position: relative;
+}
+
+.messages .message {
+	background-color: #fff;
+    border: 1px solid #ccc;
+    margin: 2em 0;
+    padding: 10px;
+}
+
+div.view .messages .message {
+    margin: 1em 0 2em 0;
+}
+
+div.rightcontent .messages {
+	padding: 0 6px;
+}
+
+.view .messages .message {
+    margin: 0;
+    padding: 10px;
+}
+
+.floatingHeader {
+    position: fixed;
+    top: -1px;
+    background-color: #fff;
+}
+
+div.downarrow {
+    height: 12px;
+    width: 18px;
+    font-size: 1%;
+    text-indent: -9999px;
+    position: absolute;
+    bottom: -12px;
+    right: 5px;
+    z-index: 100;
+    background: transparent url(../img/vertarrow.png) no-repeat 0 0;
+    *display:none !important;
+}
+
+li.active div.downarrow {
+    background-position: right;
+}
+
+li.last div.downarrow {
+    display: none;
+}
+
+.messages .message.alert,
+.messages .message.warning {
+	border-color: #ffd564;
+    background-color: #fff3b7;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#fff3b7),to(#ffe57c));
+    background-image: -webkit-linear-gradient(top, #fff3b7, #ffe57c);
+    background-image: -moz-linear-gradient(top, #fff3b7, #ffe57c);
+    background-image: -o-linear-gradient(top, #fff3b7, #ffe57c);
+    background-image: -ms-linear-gradient(top, #fff3b7, #ffe57c);
+    background-image: linear-gradient(top, #fff3b7, #ffe57c);
+}
+
+.messages .message.info {
+    background-color: #e3e6ea;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#eceef1),to(#dbdfe4));
+	background-image: -webkit-linear-gradient(top, #eceef1, #dbdfe4);
+	background-image: -moz-linear-gradient(top, #eceef1, #dbdfe4);
+	background-image: -o-linear-gradient(top, #eceef1, #dbdfe4);
+	background-image: -ms-linear-gradient(top, #eceef1, #dbdfe4);
+	background-image: linear-gradient(top, #eceef1, #dbdfe4);
+}
+
+fieldset.section .messages .message.info {
+	background-color: #f3f3f3;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#fdfdfd),to(#eaeaea));
+	background-image: -webkit-linear-gradient(top, #fdfdfd, #eaeaea);
+	background-image: -moz-linear-gradient(top, #fdfdfd, #eaeaea);
+	background-image: -o-linear-gradient(top, #fdfdfd, #eaeaea);
+	background-image: -ms-linear-gradient(top, #fdfdfd, #eaeaea);
+	background-image: linear-gradient(top, #fdfdfd, #eaeaea);
+}
+
+.messages .message.ok,
+.messages .message.valid {
+	border-color: #b4c561;
+    background-color: #e7fabb;
+    	background-image: -webkit-gradient(linear, left top, left bottom, from(#e7fabb),to(#dcefb3));
+	background-image: -webkit-linear-gradient(top, #e7fabb, #dcefb3);
+	background-image: -moz-linear-gradient(top, #e7fabb, #dcefb3);
+	background-image: -o-linear-gradient(top, #e7fabb, #dcefb3);
+	background-image: -ms-linear-gradient(top, #e7fabb, #dcefb3);
+	background-image: linear-gradient(top, #e7fabb, #dcefb3);
+  
+}
+
+.messages .message.error {	
+	background-color: #fbd6dd;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#fbdee3),to(#fbced7));
+	background-image: -webkit-linear-gradient(top, #fbdee3, #fbced7);
+	background-image: -moz-linear-gradient(top, #fbdee3, #fbced7);
+	background-image: -o-linear-gradient(top, #fbdee3, #fbced7);
+	background-image: -ms-linear-gradient(top, #fbdee3, #fbced7);
+	background-image: linear-gradient(top, #fbdee3, #fbced7);
+    color: #B10612;
+    border: 1px solid #fbbfcb;
+}
+
+/* @end */
+
+/* @group CFP Tables */
+
+table.RadEToolbar tbody tr td div {
+	word-break: normal;
+	word-wrap: normal;
+	overflow: hidden;
+}
+
+/*table,
+table {
+    margin: 0.5em 0;
+	width: 100%;
+}*/
+
+table thead {
+    font-size: 0.9em;
+    font-weight: normal;
+    font-style: normal;
+}
+
+table tfoot {
+    display: none;
+}
+
+table td a.expander {
+    *float: left;
+    *width: 18px;
+    *height: 14px;
+    *margin-right: 0 !important;
+    *padding: 0 !important;
+}
+
+table thead tr {
+    border-bottom: none;
+}
+
+table tr.cfp,
+table tr.cfp:hover,
+table tr.cfp span.itemdetail {
+    background-color: #888;
+    color: #fff;
+    text-shadow: #222 0px 1px 0px;
+}
+
+table tr.cfp span.name {
+    font-size: 1.3em;
+}
+
+table tr.section {
+    background-color: #ddd;
+    border-top: 1px double #888;
+    font-weight: bold;
+}
+
+table tr.section.expanded {
+    border-top: 1px double #888;
+}
+
+table tr.cfp + tr.section {
+    border-top: none !important;
+}
+
+table tr.section td {
+    border: 1px solid #ccc;
+    border-top: none;
+    border-bottom: none;
+}
+
+table tr.cfield {
+    background-color: #eee;
+    border-left: 1px solid #444;
+    border-right: 1px solid #444;
+    border-bottom: 1px solid #ccc;
+    font-size: 0.9em;
+}
+
+table tr.cfield.expanded {
+    border-bottom: 1px solid #ddd;
+}
+
+table tr.subcfield {
+    background-color: #fff;
+    border-left: 1px solid #444;
+    border-right: 1px solid #444;
+    border-bottom: 1px solid #ddd;
+    color: #888;
+}
+
+tr.section + tr.subcfield,
+tr.section + tr.subcfield ~ tr.subcfield {
+    color: #222;
+    font-size: 0.9em;
+}
+
+table tr.cfp td.description {
+    padding-left: 0.5em;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+table tr.cfp td.description span.itemdetail {
+    padding-left: 0.5em;
+    text-transform: none;
+    font-weight: normal;
+    font-style: normal;
+}
+
+table.light tbody tr:hover {
+    background-color: #fff8dc;
+}
+
+table tr.section td.description {
+    padding-left: 1.5em;
+}
+
+table tr.cfield td.description {
+    padding-left: 2.8em !important;
+}
+
+table tr.subcfield td.description {
+    padding-left: 3em !important;
+}
+
+table tr.hiddencfield {
+    display: none;
+}
+
+table tr.single {
+    background-color: #eee;
+    color: #222;
+}
+
+table th.description {
+    width: auto;
+}
+
+table th.completedpassed {
+    width: 80px;
+}
+
+table th.started {
+    width: 80px;
+}
+
+table th.notstarted {
+    width: 80px;
+}
+
+table td.partecipanttype {
+    width: 140px;
+    text-align: left;
+}
+
+table td.submittedon {
+    width: 140px;
+    text-align: center;
+}
+
+table td.submissionstatus {
+    width: 140px;
+    text-align: left;
+}
+
+table td.submissionstatus {
+    vertical-align: top;
+}
+table td.submissionstatus .icons .icon {
+	margin-left: 2px;
+	margin-top: 2px;
+}
+
+table  td.status .icons span,
+table  td.status .icons span,
+table  td.status label,
+table  td.status input {
+    vertical-align: baseline !important;
+}
+
+table td.status {
+	width: 80px;
+	text-align: left;
+}
+
+table td.actions {
+    width: 150px;
+    text-align: right;
+}
+
+table td.linkedservices {
+	  width: 150px;
+}
+
+table td.savedon,
+table td.submittedon {
+	  width: 140px;
+
+}
+
+table td.linkedservices,
+table td.savedon,
+table td.submittedon,
+table td.status {
+	 font-size: .8em;
+}	 
+
+table td.started,
+table td.notstarted,
+table td.completedpassed {
+    text-align: center;
+}
+
+
+
+table.user tr.cfp .iteminfo {
+    margin-top: 1px;
+}
+
+table tr.subcfield span.iteminfo {
+    width: 85%;
+    text-indent: -20px;
+    padding-left: 20px;
+}
+
+table tr.section span.iteminfo {
+    *width: 360px;
+}
+
+table tr.cfield span.iteminfo {
+    *width: 340px;
+}
+
+table tr.subcfield span.iteminfo {
+    *width: 320px;
+}
+
+table .timecompletion {
+    width: 20%;
+}
+
+table.users .status {
+    width: 120px;
+}
+
+/* @group table action icons *** check *** */
+
+table .icons.right {
+    float: right;
+}
+
+table tr .icons.right {
+    width: 38px;
+    text-align: right;
+}
+
+table .actionbuttons.right {
+    float: right;
+}
+
+table .play {
+    background-image: url(../../../Generics/File/img/Filetype_Set-1_16.png);
+    background-position: 0 -1320px;
+}
+
+table .quiz {
+    background-image: url(../../../Generics/File/img/Filetype_Set-1_16.png);
+    background-position: 0 -66px;
+}
+
+table .forum {
+    background-image: url(../../../Generics/File/img/Filetype_Set-1_16.png);
+    background-position: 0 0;
+}
+
+table tr.cfp .icons.right {
+    width: 13px;
+    background-color: #eee;
+    padding: 2px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+}
+
+table.user tr.cfp .icons.right {
+    width: 36px;
+    *width: 40px;
+    text-align: center;
+    -moz-box-shadow: inset 0 0 0 rgba(0, 0, 0, 0.2);
+    -webkit-box-shadow: inset 0 0 0 rgba(0, 0, 0, 0.2);
+    box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+table .icon.mandatory {
+    background-image: url(../../../Generics/Command/img/common_icons_set1_16.png);
+    background-position: 0 -686px;
+    width: 16px;
+    height: 16px;
+}
+
+table.user tr.cfp .icon.mandatory {
+    background-image: url(../../../Generics/Command/img/common_icons_set1_16.png);
+    background-position: -82px -65px;
+    width: 16px;
+    height: 16px;
+    margin-right: 2px;
+}
+
+table .icon.file_zip {
+    background-image: url(../../../Generics/File/img/Filetype_Set-1_16.png);
+    width: 16px;
+    height: 16px;
+    background-position: 0 -1188px;
+}
+
+/* @end */
+
+div.visibilityNav {
+    margin: .5em 0;
+    display: block;
+    width: 600px;
+}
+
+ul.expandbuttons {
+    margin: 0;
+    padding: 0;
+    display: inline;
+}
+
+ul.expandbuttons li.expandbutton {
+    cursor: pointer;
+    display: inline;
+    color: #888;
+    font-size: .95em;
+}
+
+ul.expandbuttons li.expandbutton.switchsubcfieldVis:hover,
+ul.expandbuttons li.expandbutton.switchcfieldVIs:hover,
+ul.expandbuttons li.expandbutton.switchsectionVus:hover {
+    color: #444
+}
+
+ul.expandbuttons li.expandbutton.switchsectionVus,
+ul.expandbuttons li.expandbutton.switchcfieldVis,
+ul.expandbuttons li.expandbutton.switchsubcfieldVis {
+    display: inline;
+    float: none;
+}
+
+/* @group Flag */
+
+.flag,
+.progressbar {
+    width: 100px;
+    display: inline-block;
+    line-height: 13px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    overflow: hidden;
+    border: 1px solid #aaa;
+    -moz-box-shadow: inset 0 0 3px #222;
+    -webkit-box-shadow: inset 0 0 3px #222;
+    box-shadow: inset 0 0 3px #222;
+}
+
+.flag {
+    *margin-top: -2px
+}
+
+tr.cfp .flag,
+tr.cfp .progressbar {
+    height: 18px;
+    border: 1px solid #666;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+}
+
+table.evaluators .flag,
+table.evaluators .progressbar,
+table.evaluation .flag,
+table.evaluation .progressbar {
+    height: 10px;
+}
+
+tr span.flag span,
+tr span.progressbar span {
+    height: 18px;
+}
+
+table.treeTable tr span.flag span,
+table.treeTable tr span.progressbar span {
+    height: 100%;
+}
+
+tr.cfield .flag,
+tr.cfield .progressbar {
+    height: 10px;
+}
+
+tr.subcfield .flag,
+tr.subcfield .progressbar {
+    height: 6px;
+}
+
+tr.section .flag,
+tr.section .progressbar {
+    height: 12px;
+}
+
+.flag .notstarted,
+.progressbar .notstarted {
+    display: inline-block;
+    width: 100%;
+    background: #cccccc;
+    background: -moz-linear-gradient(top,  #cccccc 0%, #eeeeee 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#cccccc), color-stop(100%,#eeeeee));
+    background: -webkit-linear-gradient(top,  #cccccc 0%,#eeeeee 100%);
+    background: -o-linear-gradient(top,  #cccccc 0%,#eeeeee 100%);
+    background: -ms-linear-gradient(top,  #cccccc 0%,#eeeeee 100%);
+    background: linear-gradient(top,  #cccccc 0%,#eeeeee 100%);
+    -moz-box-shadow: inset 1px 1px 1px rgba(0,0,0,0.2);
+    -webkit-box-shadow: inset 1px 1px 1px rgba(0,0,0,0.2);
+    box-shadow: inset 1px 1px 1px rgba(0,0,0,0.2);
+}
+
+.flag .started,
+.progressbar .started {
+    display: inline-block;
+    width: 0;
+    background: #ebdf00;
+    background: -webkit-gradient(linear, left top, left bottom, from(#ebdf00),to(#ffbb00));
+    background: -webkit-linear-gradient(top, #ebdf00, #ffbb00);
+    background: -moz-linear-gradient(top, #ebdf00, #ffbb00);
+    background: -o-linear-gradient(top, #ebdf00, #ffbb00);
+    background: -ms-linear-gradient(top, #ebdf00, #ffbb00);
+    background: linear-gradient(top, #ebdf00, #ffbb00);
+}
+
+.flag .completed,
+.progressbar .completed {
+    display: inline-block;
+    width: 0;
+    background: #a4b357;
+    background: -moz-linear-gradient(top,  #a4b357 0%, #75890c 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#a4b357), color-stop(100%,#75890c));
+    background: -webkit-linear-gradient(top,  #a4b357 0%,#75890c 100%);
+    background: -o-linear-gradient(top,  #a4b357 0%,#75890c 100%);
+    background: -ms-linear-gradient(top,  #a4b357 0%,#75890c 100%);
+    background: linear-gradient(top,  #a4b357 0%,#75890c 100%);
+}
+
+.flag .notpassed,
+.progressbar .notpassed {
+    display: inline-block;
+    width: 0;
+    background: #ff3019;
+    background: -moz-linear-gradient(top,  #ff3019 0%, #cf0404 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ff3019), color-stop(100%,#cf0404));
+    background: -webkit-linear-gradient(top,  #ff3019 0%,#cf0404 100%);
+    background: -o-linear-gradient(top,  #ff3019 0%,#cf0404 100%);
+    background: -ms-linear-gradient(top,  #ff3019 0%,#cf0404 100%);
+    background: linear-gradient(top,  #ff3019 0%,#cf0404 100%);
+}
+
+.timecompletion span.flag,
+.timecompletion span.progressbar {
+    box-shadow: none;
+    -moz-border-radius: 30px;
+    -webkit-border-radius: 30px;
+    border-radius: 30px;
+    border: 1px solid;
+    display: inline;
+    padding: 0 6px;
+    float: right;
+    width: auto;
+    height: 12px;
+    font-size: 1px;
+    display: inline-block;
+    clear: both;
+    /*float: none\0/;*/
+}
+
+*html .timecompletion span.flag,
+*+html .timecompletion span.flag,
+*html .timecompletion span.progressbar,
+*+html .timecompletion span.progressbar {
+    float: none;
+}
+
+.timecompletion span.flag.yes,
+.timecompletion span.progressbar.yes {
+    border-color: #828e44;
+    background: #a4b357;
+    background: -moz-linear-gradient(top,  #a4b357 0%, #75890c 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#a4b357), color-stop(100%,#75890c));
+    background: -webkit-linear-gradient(top,  #a4b357 0%,#75890c 100%);
+    background: -o-linear-gradient(top,  #a4b357 0%,#75890c 100%);
+    background: -ms-linear-gradient(top,  #a4b357 0%,#75890c 100%);
+    background: linear-gradient(top,  #a4b357 0%,#75890c 100%);
+}
+
+tr.cfp .timecompletion span.flag.yes {
+    border: 2px solid #fff;
+    -moz-box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2);
+    -webkit-box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 -1px 1 1px rgba(0, 0, 0, 0.2);
+}
+
+.timecompletion span.flag.no,
+.timecompletion span.progressbar.no {
+    border-color: #a61a09;
+    background: #ff3019;
+    background: -moz-linear-gradient(top,  #ff3019 0%, #cf0404 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ff3019), color-stop(100%,#cf0404));
+    background: -webkit-linear-gradient(top,  #ff3019 0%,#cf0404 100%);
+    background: -o-linear-gradient(top,  #ff3019 0%,#cf0404 100%);
+    background: -ms-linear-gradient(top,  #ff3019 0%,#cf0404 100%);
+    background: linear-gradient(top,  #ff3019 0%,#cf0404 100%);
+}
+
+span.flag.hidden {
+    display: none;
+}
+
+.status span.item {
+    color: #222;
+    text-shadow: none;
+    display: block;
+    padding: 3px;
+    font-size: 11px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+}
+
+table.user .status span.item {
+	
+}
+
+.cfp .status span.item {
+    border: 1px solid #777;
+    border-color: #888 #777 #666;
+    -moz-box-shadow: inset 0 1px 0 1px rgba(255, 255, 255, 0.2);
+    -webkit-box-shadow: inset 0 1px 0 1px rgba(255, 255, 255, 0.2);
+    box-shadow: inset 0 1px 0 1px rgba(255, 255, 255, 0.2);
+}
+
+span.item.started {
+    background-color: #ebdf00;
+    background: -webkit-gradient(linear, left top, left bottom, from(#ebdf00),to(#ffbb00));
+    background: -webkit-linear-gradient(top, #ebdf00, #ffbb00);
+    background: -moz-linear-gradient(top, #ebdf00, #ffbb00);
+    background: -o-linear-gradient(top, #ebdf00, #ffbb00);
+    background: -ms-linear-gradient(top, #ebdf00, #ffbb00);
+    background: linear-gradient(top, #ebdf00, #ffbb00);
+}
+
+span.item.notstarted {
+    background: #d4d6d7;
+}
+
+span.item.completed,
+span.item.completedpassed {
+    background-color: #a8b85a;
+    background: -moz-linear-gradient(top,  #b6c661 0%,#a4b357 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#b6c661), color-stop(100%,#a4b357));
+    background: -webkit-linear-gradient(top,  #b6c661 0%,#a4b357 100%);
+    background: -o-linear-gradient(top,  #b6c661 0%,#a4b357 100%);
+    background: -ms-linear-gradient(top,  #b6c661 0%,#a4b357 100%);
+    background: linear-gradient(top,  #b6c661 0%,#a4b357 100%);
+}
+
+span.item.notpassed {
+    background-color: #fca8ad;
+}
+
+/* @end */
+
+table .itemtitle {
+    vertical-align: text-bottom;
+    background-position: left center;
+    background-repeat: no-repeat;
+    padding-left: 20px;
+}
+
+table .itemtitle.play {
+    background-image: url(../../../Generics/File/img/Filetype_Set-1_16.png);
+    background-position: 0 -1320px;
+    width: 16px;
+    height: 16px;
+}
+
+.itemdetail,
+.itemDetails {
+    font-style: italic;
+    color: #777;
+    margin-left: 1em;
+    font-size: .9em;
+}
+
+table .subcfield span.objectRender {
+    display: inline-block;
+    width: 380px;
+    *float: left;
+    *width: 370px;
+}
+
+table span.objectRender span.leftDetail {
+    display: inline;
+}
+
+table span.objectRender span.leftDetail span.itemTitle {
+    display: inline-block;
+    text-indent: 0;
+    padding: 0;
+}
+
+table span.objectRender span.itemDetails,
+table span.itemdetail span,
+table span.duration {
+    font-size: .9em !important;
+    margin-left: 8px;
+    font-style: italic;
+    display: inline-block;
+    *display: inline;
+}
+
+table span.duration {
+    margin-left: 18px;
+}
+
+/* @end */
+
+/* @group CFP List */
+
+div.viewbuttons.clearfix {
+	text-align: right;
+	margin: 1em 0;
+}
+
+ul.cfps {
+    padding: 0;
+    margin: 0;
+    margin-top: 3em;
+}
+
+ul.cfps li.cfp {
+    list-style: none;
+    margin-bottom: 2em;
+}
+
+ul.cfps li.cfp.default {
+    margin-bottom: 4em;
+}
+
+ul.cfps li.cfp div.cfpcontainer {
+    background-color: #e6e9ed;
+    float: left;
+    width: 869px;
+    *width: 859px;
+	border: 1px solid #ccc;
+    *border-bottom: 2px;
+    -moz-box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.5), 1px 1px 1px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.5), 1px 1px 1px rgba(0, 0, 0, 0.3);
+    box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.5), 1px 1px 0 rgba(0, 0, 0, 0.15);
+}
+
+ul.cfps li.cfp.locked div.cfpcontainer {
+    color: #9e9d97 !important;
+}
+
+ul.cfps li.cfp div.cfpcontainer div.cfpheader,
+ul.cfps li.cfp div.cfpcontainer div.cfpdesc,
+ul.cfps li.cfp div.cfpcontainer div.cfpfooter {
+    padding: 5px 10px 5px 10px;
+}
+
+ul.cfps li.cfp div.cfpcontainer div.cfpdesc div.description.left div.intro p {
+	margin: 0;
+	margin-top: 1em;
+}
+
+ul.cfps.view li.cfp div.cfpcontainer div.cfpdesc a.icon.img_link.ico_playmmd_m {
+    background-color: transparent;
+    background-image: url(../../../Generics/File/img/Filetype_Set-1_32.png);
+    background-position: 0 -1640px;
+    width: 32px;
+    height: 32px;
+}
+
+ul.cfps.view li.cfp div.cfpcontainer div.cfpdesc a.icon.img_link.ico_playmmd_m {
+    background-color: transparent;
+    background-image: url(../../../Generics/File/img/Filetype_Set-1_32.png);
+    background-position: 0 -1640px;
+    width: 32px;
+    height: 32px;
+}
+
+ul.cfps.view li.cfp div.cfpcontainer div.cfpheader {
+    padding: 6px 10px 4px 10px;
+}
+
+ul.cfps li.cfp div.cfpcontainer div.cfpheader {
+    border-bottom: 1px solid #ccc;
+}
+
+ul.cfps li.cfp div.cfpcontainer div.cfpheader .icons .icon {
+	margin-left: 2px;
+}
+
+ul.cfps li.cfp div.cfpcontainer div.cfpdesc {
+    background-color: #fff;
+    min-height: 20px;
+    padding-top: 1em;
+}
+
+ul.cfps li.cfp div.cfpcontainer div.cfpfooter,
+ul.cfps.view li.cfp.blocked div.cfpcontainer div.cfpdesc {
+    border-top: 1px solid #ccc;
+    box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.7);
+    -webkit-border-bottom-right-radius: 4px;
+    -webkit-border-bottom-left-radius: 4px;
+    -moz-border-radius-bottomright: 4px;
+    -moz-border-radius-bottomleft: 4px;
+    border-bottom-right-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+
+ul.cfps li.cfp div.cfpcontainer div.cfpfooter div.left {
+    float: left;
+    width: 49%;
+}
+
+ul.cfps li.cfp div.cfpcontainer div.cfpfooter div.left ul {
+    display: inline-block;
+    *display: block;
+    *float:left;
+    *width: 300px;
+    margin: 0;
+    padding: 0;
+    vertical-align: top;
+    list-style: none;
+}
+
+ul.cfps li.cfp div.cfpcontainer div.cfpfooter div.right {
+    float: right;
+    width: 49%;
+}
+
+ul.cfps li.cfp div.cfpcontainer div.cfpfooter div.right a {
+    display: inline-block;
+    width: 100px;
+    text-align: left;
+}
+
+ul.cfps li.cfp div.cfpcontainer div.cfpfooter div.right span.label {
+    display: inline-block;
+    width: 120px;
+    padding-right: 1em;
+}
+
+ul.cfps.view li.cfp div.cfpcontainer div.cfpdesc.empty div.right {
+    margin-top: 1.2em;
+}
+
+ul.cfps.view li.cfp.blocked div.cfpcontainer div.cfpdesc {
+    background-color: #e6e9ed;
+    border-top: none;
+    color: #9e9d97;
+}
+
+ul.cfps.view li.cfp.blocked div.cfpcontainer div.cfpdesc div.description a {
+    color: #888 !important;
+    text-decoration: underline !important;
+}
+
+ul.cfps.view li.cfp.blocked div.cfpcontainer div.cfpdesc div.description a:hover {
+    color: #444 !important;
+}
+
+ul.cfps.view li.cfp.blocked div.cfpcontainer div.cfpdesc div.description span {
+    color: #9e9d97
+}
+
+ul.cfps.view li.cfp.blocked div.cfpcontainer div.cfpheader span.Details_titolo {
+    color: #9e9d97;
+    background: none;
+    font-size: 1em;
+}
+
+ul.cfps li.cfp div.cfpcontainer div.cfpheader .left {
+    display: block;
+    width: 75%;
+    float: left;
+}
+
+ul.cfps li.cfp div.cfpcontainer div.cfpdesc .left {
+    display: block;
+    width: 100%;
+    float: left;
+    margin-bottom: -1em;
+    *margin-bottom: 0;
+}
+
+ul.cfps li.cfp div.cfpcontainer div.cfpheader .right {
+    display: block;
+    width: 24%;
+    float: right;
+}
+
+ul.cfps li.cfp div.cfpcontainer div.cfpheader span.titlecont {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+ul.cfps li.cfp div.cfpcontainer div.cfpheader span.titlecont .icon {
+	position: relative;
+	top: 1px;
+}
+
+ul.cfps li.cfp div.cfpcontainer div.cfpheader span.titlecont span.title {
+    display: inline;
+    text-shadow: 0 1px 0 #fff;
+}
+
+ul.cfps li.cfp div.cfpcontainer div.cfpheader span.titlecont span.title a {
+    font-size: 1em;
+}
+
+ul.cfps li.cfp.default div.cfpcontainer div.cfpheader span.titlecont span.title {
+    text-transform: uppercase;
+}
+
+ul.cfps li.cfp div.cfpcontainer a {
+    color: #00567c;
+}
+
+.externalright {
+    float: right;
+    margin-right: -24px;
+    width: 20px;
+}
+
+ul.cfps.manage div.cfpcontainer div.cfpdesc div.description.left,
+ul.cfps.view li.blocked div.cfpcontainer div.cfpdesc div.description.left {
+    margin-bottom: .667em;
+}
+
+div.cfpcontainer div.cfpdesc div.description.left ul,
+div.cfpcontainer div.cfpdesc div.description.left ol {
+    margin: .5em 0;
+    padding-left: 24px;
+}
+
+div.cfpcontainer div.cfpdesc div.description.left ul,
+div.cfpcontainer div.cfpdesc div.description.left ul li {
+    list-style-position: outside;
+    list-style-type: square;
+}
+
+div.cfpcontainer div.cfpdesc div.description.left ol,
+div.cfpcontainer div.cfpdesc div.description.left ol li {
+    list-style-position: outside;
+    list-style-type: decimal;
+}
+
+ul.cfps div.cfpfooter span.label {
+    width: 80px;
+    display: inline-block;
+}
+
+ul.cfps div.cfpfooter div.left span.label {
+    *display: block;
+    *float: left;
+}
+
+ul.cfps div.cfpfooter span,
+ul.cfps div.cfpfooter  a {
+    font-size: .9em;
+    font-weight: bold;
+}
+
+ul.cfps div.cfpfooter span.Label,
+ul.cfps div.cfpfooter span.label {
+    display: inline-block;
+    *display:inline;
+    zoom: 1;
+    width: 80px;
+    margin-right: 10px;
+	font-weight: normal;
+	font-style: normal;
+}
+
+div.cfpcontainer div.cfpheader span.left span.titlecont .icons a.icon,
+div.cfpcontainer div.cfpheader span.right .icons {
+    position: relative;
+    top: 2px;
+}
+
+/* @end */
+
+/* @group CFP Ext Enrollment form list (lista adesioni esterna) */
+
+ul.cfps.externallist li.cfp div.cfpcontainer div.cfpheader .left {
+    display: block;
+    width: 100%;
+    float: none;
+}
+
+ul.cfps.externallist div.cfpcontainer div.cfpheader.clearfix span.left span.titlecont span.title {
+	float: left;
+	width: 90%;
+}
+
+ul.cfps.externallist div.cfpcontainer div.cfpheader.clearfix span.left span.titlecont span.icons {
+	float: right;
+	width: 8%;
+}
+
+ul.cfps.externallist div.cfpcontainer div.cfpheader.clearfix span.left span.titlecont span.icons .icon {
+	float: right;
+	margin: 2px;
+}
+
+ul.cfps.externallist li.cfp div.cfpcontainer div.cfpdesc .left {
+    display: block;
+    width: 100%;
+    float: left;
+    margin-bottom: 0;
+}
+
+ul.cfps.externallist div.cfpcontainer div.cfpfooter.clearfix div.right span.item a {
+	width: auto !important;
+	font-size: 1em;
+    font-weight: bold;
+    margin-left: 1em;
+}
+
+ul.cfps.externallist li.cfp div.cfpcontainer {
+	background: transparent;
+	border: none;
+	moz-box-shadow: none;
+	webkit-box-shadow:none;
+	box-shadow: none;
+}
+
+ul.cfps.externallist li.cfp div.cfpcontainer div.cfpheader {
+	padding-left: 0;
+}
+
+ul.cfps.externallist li.cfp div.cfpcontainer div.cfpdesc {
+    background-color: #fff;
+    min-height: 20px;
+    padding-top: .5em;
+}
+
+ul.cfps.externallist li.cfp div.cfpcontainer div.cfpheader,
+ul.cfps.externallist li.cfp div.cfpcontainer div.cfpdesc,
+ul.cfps.externallist li.cfp div.cfpcontainer div.cfpfooter {
+	padding: 0.3em 0;
+}
+
+ul.cfps.externallist li.cfp {
+	margin-bottom: 3em;
+}
+
+/* @end */
+
+/* @group Mgmt items */
+
+div.treetop {
+	margin: 0;
+	margin-bottom: 1em;
+	padding: 0;
+}
+
+div.treetop div.visibilitynav,
+div.treetop div.left  {
+	float: left;
+	width: 60%;
+}
+
+div.treetop div.visibilitynav  {
+	position: relative;
+    top: 10px;
+    height: 2em;
+}
+
+div.treetop .DivEpButton {
+    margin-bottom: 0;
+    padding: 0;
+    *padding: 4px;
+    float: right;
+    width: 39%;
+}
+
+div.visibilitynav span {
+    color: #888;
+    margin: 0 .3em;
+    padding: 0 .3em;
+    padding-left: .7em;
+    border-left: 1px solid #ccc;
+    display: inline-block;
+    float: left;
+    clear: right;
+    cursor: pointer;
+}
+
+div.visibilitynav span:hover {
+    color: #222;
+}
+
+div.visibilitynav span.fieldsHide {
+    border-left: none;
+}
+
+ul.sections {
+    width: 700px;
+    padding: 0;
+/*    margin-left: -10px;
+    margin-left: -12px; /*check 	*!/*/
+    *margin-left: 0;
+    list-style-position: outside;
+}
+
+li.invisible,
+ul.sections li.section,
+ul.sections li.cfield,
+ul.sections li.subcfield {
+    list-style: none;
+}
+
+li.invisible {
+    width: 10px;
+    height: 10px;
+    padding: 0;
+    margin: 0;
+    margin-bottom: -10px;
+    font-size: 1%;
+    background-color: transparent;
+    clear: both;
+    overflow: hidden;
+}
+
+ul.sections li.section {
+    margin: 0 0 1em 0;
+}
+
+ul.sections.addfile  {
+
+}
+
+div.sectioncontent,
+ul.templates li.template {
+	color: #666;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    background-color: #e6e9ed;
+    padding: 5px;
+    float: left;
+    width: 640px;
+    width: 670px; /*fix */
+    border: 1px solid #ccc;
+    *border-bottom: 2px;
+    -moz-box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.5), 1px 1px 1px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.5), 1px 1px 1px rgba(0, 0, 0, 0.3);
+    box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.5), 1px 1px 0 rgba(0, 0, 0, 0.15);
+}
+
+fieldset ul.sections li.section {
+    margin: 0;
+}
+
+fieldset ul.sections li.section .left {
+    float: left;
+    width: 510px;
+}
+
+fieldset ul.sections {
+    width: 690px;
+    padding: 0;
+    margin-left: -12px;
+}
+
+fieldset div.sectioncontent {
+    width: 650px;
+}
+
+fieldset ul.sections li.section div.sectioncontent div.innerwrapper {
+    float: left;
+    width: 625px;
+    *width: 615px;
+    *margin-left: 5px;
+}
+
+fieldset ul.sections li.section ul.fields li.cfield,
+fieldset ul.sections li.section ul.fields li.sectiondesc {
+    margin: .5em 0 1em 0;
+}
+
+fieldset ul.sections li.section ul.fields {
+    margin-left: 0;
+}
+
+ul.sections.addfile div.sectioncontent,
+ul.templates li.template.edit {
+	background-color: #fff;
+}
+
+ul.sections.addfile div.sectioncontent input#ctl00_CPHservice_BTNuploadAttachments {
+	float: right;
+	margin-top: 100px;
+	margin-bottom: -10px;
+	left: 20px;}
+
+ul.templates li.template {
+	list-style: none;
+    margin-bottom: 1em;
+}
+
+ul.sections.addfile div.sectioncontent div.fieldcontent {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border: none;
+    width: 640px;
+}
+
+ul.sections li.section li.cfield.note div.fieldcontent .internal {
+    border-bottom: none;
+}
+
+.externalleft {
+    margin-top: 4px;
+    width: 16px;
+    float: left;
+    display: block;
+}
+
+li.cfield .externalleft {
+    margin-top: 7px;
+}
+
+ul.sections li.section div.sectioncontent div.innerwrapper {
+    float: left;
+    width: 645px;
+    *width: 635px;
+    *margin-left: 5px;
+}
+
+ul.sections.submitters li.section div.sectioncontent div.innerwrapper {
+	 width: 666px;
+    *width: 656px;
+}
+
+ul.sections li.section div.sectioncontent.fileupload div.innerwrapper {
+    width: 661px;
+    *width: 651px;
+}
+
+ul.sections.submitters .internal,
+ul.sections.attachedfiles .internal {
+    margin-bottom: 1em;
+}
+
+span.filename {
+    font-weight: bold;
+}
+
+ul.sections li.section.note .internal {
+    margin-left: 0;
+    border-bottom: none;
+}
+
+ul.sections li.section .left {
+    float: left;
+    width: 525px;
+}
+
+ul.sections li.section.note .right {
+    width: 60px;
+}
+
+ul.sections li.section .right {
+    float: right;
+    width: 95px;
+}
+
+ul.sections li.section .right .icons {
+    position: relative;
+}
+
+ul.sections li.section li.cfield .right .icons {
+    top: 0;
+}
+
+div.lastcfield div.fieldcontent div.cfielddetails {
+    border-top: none;
+}
+
+ul.sections li.section .description {
+    clear: both;
+    margin: .5em 0 1em 0;
+}
+
+ul.sections li.section.collapsed .description {
+    clear: both;
+    margin: .5em 0 .5em 0;
+}
+
+ul.sections li.section div.sectionrules {
+    margin: 5px 0;
+}
+
+ul.sections li.section ul.fields {
+    padding: 0;
+    margin: 0;
+    margin-left: -4px;
+    clear: left;
+}
+
+ul.sections li.section ul.fields li.cfield .left {
+    display: inline-block;
+    width: 400px;
+    padding: 0;
+    margin: 0;
+}
+
+div.sectioncontent ul.fields.filesatteched li.cfield.fileattached div.fieldcontent div.internal span.left {
+	display: inline-block;
+	*display:inline;
+	*zoom: 1;
+	margin-bottom: 1em;
+}
+
+ul.fields.filesatteched li.cfield.fileattached div.fieldcontent div.internal span.right div.fieldrow.submit button {
+	margin: 0 !important;
+}
+
+ul.sections li.section .left input.itemname {
+    width: 405px;
+	font-weight: bold;
+	font-size: 1em;
+}
+
+ul.sections li.section input,
+ul.sections li.section textarea {
+	color: #000;
+}
+
+ul.sections li.section input.inputtext {
+	width: 450px;	
+}
+
+ul.sections li.section .fieldblockwrapper.imagesize {
+	width: 180px;
+}
+
+ul.sections li.section .fieldblockwrapper.imagesize input.inputtext {
+	width: 30px;	
+}
+
+ul.sections li.section input.inputtext.activator {
+	width: auto;	
+}
+
+ul.sections li.section li.cfield .left input.itemname {
+    width: 45%;
+    background-color: #fff;
+}
+
+ul.sections li.section input.inputchar {
+    width: 40px;
+}
+
+ul.sections li.section div.fieldcontent span.left input[type=text],
+ul.sections li.section input.inputchar {
+    margin: 0 10px; /*ERROR*/
+}
+
+ul.sections li.section .description {
+    margin: .5em 0 1em 0;
+    border-top: 1px solid #ccc;
+    padding-top: .5em;
+    -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7);
+    -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7);
+}
+
+ul.sections li.section .description.empty {
+    padding-top: 0;
+    *margin: 5px;
+    height: 1px;
+    *height: 1%;
+    *font-size: 0%;
+    overflow: hidden;
+    -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7);
+    -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7);
+}
+
+ul.sections li.section.collapsed .description {
+    margin: .5em 0 .5em 0;
+}
+
+ul.sections li.section.collapsed div.description.empty {
+    margin: 0;
+    border: none;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+ul.sections li.section li.cfield .description {
+    margin: .5em 0 1em 0;
+    border-top: 1px solid #ccc;
+    padding-top: .5em;
+    -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5);
+    -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+ul.sections li.section li.cfield div.description.empty {
+    margin: 0;
+    margin-top: .5em;
+    *margin-top: .5em;
+    padding-top: .5em;
+    height: 1px;
+    *height: 1%;
+    *font-size: 0%;
+    overflow: hidden;
+    -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7);
+    -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7);
+}
+
+ul.sections li.section li.cfield.single .description,
+ul.sections li.section li.collapsed .description {
+    margin: .5em 0 .5em 0;
+}
+
+ul.sections li.section li.cfield.single .description.empty,
+ul.sections li.section li.collapsed.cfield .description.empty {
+    margin-top: 0;
+}
+
+ul.sections li.section li.cfield.single div.description.epmty,
+ul.sections li.section li.collapsed div.description.empty {
+    border-top: none;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+div.sectioncontent div.internal span.left div.notecontent ul,
+div.sectioncontent div.internal span.left div.notecontent ol {
+    margin: .5em 0;
+    padding-left: 24px;
+}
+
+div.sectioncontent div.innerwrapper div.sectiondetails div.description ul,
+div.sectioncontent div.internal span.left div.notecontent ul,
+ul.sections li.section ul.fields li.cfield.note .left .notecontent ul {
+    list-style-position: outside;
+    list-style-type: square;
+}
+
+div.sectioncontent div.internal span.left div.notecontent ol,
+ul.sections li.section ul.fields li.cfield.note .left .notecontent ol {
+    list-style-position: outside;
+    list-style-type: decimal;
+}
+
+ul.sections li.section ul.fields li.cfield,
+ul.sections li.section ul.fields li.sectiondesc {
+    margin: .5em 0 1em 0;
+    *margin: 5px 0 7px 0;
+}
+
+ul.sections li.section ul.fields li.cfield.collapsed,
+ul.sections li.section ul.fields li.sectiondesc.collapsed {
+    margin: .5em 0 .5em 0;
+    *margin: 5px 0 5px 0;
+}
+
+ul.sections.attachedfiles.addfile li.section div.sectioncontent ul.fields.filesatteched li.cfield.fileattached {
+	margin: 0;
+}
+
+div#ctl00_CPHservice_CTRLmoduleUpload_DVfile0 div {
+	width: 100%;
+	text-align: left;
+}
+
+div.fieldcontent {
+    float: left;
+    width: 632px;
+    *width: 631px;
+    padding: 4px 8px;
+    padding-bottom: 5px;
+    border: 1px solid #fff;
+    *border-color: #fff #ccc #ccc #fff;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    background-color: #fff;
+    -moz-box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.15);
+    -webkit-box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.15);
+    box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.15);
+}
+
+li.sectiondesc div.fieldcontent {
+    border: none;
+    border-radius: 4px;
+    background-color: transparent;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    float: left;
+    width: 648px;
+    *width: 643px;
+    padding: 4px 0;
+}
+
+fieldset div.fieldcontent {
+    float: left;
+    width: 612px;
+    *width: 611px;
+}
+
+div.lastcfield div.fieldcontent {
+    border: none;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    background-color: #fff;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    float: left;
+    width: 100%;
+    padding: 4px;
+}
+
+div.lastcfield {
+    border: 1px solid #c7d0da;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    background-color: #fff;
+    -moz-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 1px 1px 1px  rgba(0, 0, 0, 0.3);
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+    width: 835px;
+    padding: 20px;
+    margin: 0;
+    margin-left: 15px;
+    margin-top: 1em;
+}
+
+div.lastcfield span.statuslight {
+    margin: 2px 10px
+}
+
+.tooLong {
+    position: relative;
+}
+
+.invisible {
+    height: 5px;
+}
+
+ul.sections li.section ul.fields li.cfield.note div.fieldcontent {
+    border: 1px solid #e6e9ed;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    background-color: transparent;
+    background: url(../img/text-note.png) no-repeat -2px 2px;
+    padding-left: 24px;
+    padding-bottom: .667em;
+}
+
+ul.sections li.section.note div.notecontent {
+    background: url(../img/text-note.png) no-repeat -3px -3px;
+    padding-left: 24px;
+    padding-bottom: .667em;
+    line-height: 1.2em;
+}
+
+ul.sections li.section ul.fields li.cfield .internal {
+    display: block;
+    padding: 0;
+    padding-bottom: 1px;
+    *padding: 0;
+}
+
+ul.sections.attachedfiles li.section ul.fields li.cfield div.fieldcontent div.internal {
+	padding-bottom: 3px;
+    margin-bottom: 1em;
+    margin-top: 3px;
+}
+
+ul.sections li.section ul.fields li.cfield .title {
+    line-height: 1.2em;
+}
+
+ul.sections li.section ul.submitters .left span.title input {
+	width: 180px;
+}
+
+div.fieldcontent div.fielddetails {
+    margin-top: 7px;
+    padding-top: 10px;
+    border-top: 1px solid #e6e9ed;
+}
+
+li.sectiondesc div.fieldcontent div.fielddetails {
+    margin-top: 7px;
+    padding-top: 0;
+    border-top: none;
+}
+
+ul.sections li.section ul.fields li.cfield ul.subfields {
+    padding-left: 20px;
+    *padding-left: 7px;
+    margin: 0;
+}
+
+ul.sections li.section ul.fields li.cfield ul.subfields li.subcfield {
+    margin-top: 0.5em;
+    padding: 0.2em;
+}
+
+ul.sections li.section ul.fields li.cfield ul.subfields li.subcfield .title {
+    font-size: 0.9em;
+    color: #999;
+    border-bottom: 0;
+}
+
+ul.sections li.cfield .internal {
+    margin-bottom: -2px;
+    *margin-bottom: 0;
+}
+
+ul.fields .internal {
+    margin-left: 0px;
+}
+
+ul.fields li.cfield .right {
+    float: right;
+    width: 190px;
+    *width: 185px;
+    position: relative;
+    top: .1em;
+}
+
+ul.fields li.note .right {
+    float: right;
+    width: 60px;
+}
+
+li.template hr {
+	display: none;
+}
+
+li.template.edit div.fieldobject {
+	margin-top: 5px;
+	border-top: 1px solid #ccc;
+}
+
+div.fieldobject div.fieldrow {
+    margin-top: 1em; 
+    margin: .5em 0;
+}
+
+
+
+div.fieldobject div.fieldrow.bodytext {
+    margin-bottom: 1em; 
+}
+
+div.fieldobject div.fieldrow .fieldblockwrapper .fieldrow {
+	margin-top: 0;
+}
+
+div.fieldobject div.fieldrow .fieldblockwrapper .fieldblockwrapper * {
+	vertical-align: top;
+}
+
+.rightcontent div#DIVcontenitoreSearch {
+	width: 640px !important;
+	margin: 1em auto !important;
+}
+
+.rightcontent div#DIVcontenitoreSearch table {
+	width: 100%;
+}
+
+div#ctl00_CPHservice_UCskin_PNLorganization,div#ctl00_CPHservice_UCskin_PNLcommunity {
+	margin-top: 1em;
+}
+
+#ctl00_CPHservice_UCskin_PNLorganization ul.UL_Orgn {
+	width: 100%;
+	padding-left: 2em;
+	font-size: .9em;
+}
+
+#ctl00_CPHservice_UCskin_PNLorganization ul.UL_Orgn li a {
+	padding: 2px 0;
+
+}
+
+#ctl00_CPHservice_UCskin_PNLorganization ul.UL_Orgn li a {
+	display: inline-block;
+	*display: inline;
+	zoom: 1;
+	padding: 2px;
+
+	/*	text-decoration: none;*/
+}
+
+#ctl00_CPHservice_UCskin_PNLorganization ul.UL_Orgn li a:hover {
+	
+}
+
+#ctl00_CPHservice_UCskin_UCcomSel_GRVcomunita tbody tr.ROW_header_Small th * {
+	vertical-align: middle;
+}
+
+.rightcontent div#DIVcontenitoreSearch div.StartCella120,
+.rightcontent div#DIVcontenitoreSearch div.Cella100,
+.rightcontent div#DIVcontenitoreSearch div.Cella100 {
+	width: auto;
+}
+
+.rightcontent div#DIVcontenitoreSearch div.RigaFiltro {
+	margin-bottom: .5em;
+}
+
+.rightcontent div#DIVcontenitoreSearch div input.FiltroCampoSmall10 {
+	width: 180px;
+	margin: 0;
+}
+
+.rightcontent div#DIVcontenitoreSearch table td {
+	font-size: .9em;
+	line-height: 2em;
+	padding: 3px !important;
+}
+
+
+div.fieldobject div.fieldrow .fieldblockwrapper .fieldblockwrapper span {
+	vertical-align: baseline;
+}
+
+div#ctl00_CPHservice_UCskin_PNLpreview fieldset {
+	padding: 12px;
+}
+
+div#ctl00_CPHservice_UCskin_PNLpreview fieldset div.fieldobject h1,
+div#ctl00_CPHservice_UCskin_PNLpreview fieldset div.fieldobject h2,
+div#ctl00_CPHservice_UCskin_PNLpreview fieldset div.fieldobject h3 {
+	margin: 0;
+}
+
+div#ctl00_CPHservice_UCskin_PNLpreview fieldset div.fieldobject img,
+div#ctl00_CPHservice_UCskin_PNLpreview fieldset div.fieldobject li img {
+	display: block;
+	margin: .5em 1em .5em 0
+}
+
+div#ctl00_CPHservice_UCskin_PNLpreview fieldset div.fieldobject ul {
+	padding-left: 0;
+}
+
+div#ctl00_CPHservice_UCskin_PNLpreview fieldset div.fieldobject ul li {
+/*	display: inline !important;*/
+	float: left;
+}
+
+span.fieldblockwrapper.contentcontextual.image {
+	margin-right: .5em;
+}
+
+span.fieldblockwrapper.image  {
+	text-align: right;
+}
+
+span.fieldblockwrapper.contentcontextual.image img  {
+	padding: 2px;
+	box-shadow: 3px 3px 0px  #ccc;
+	max-width: 610px;
+	border: 1px solid #ccc !important;
+	margin-bottom: 1em;
+}
+
+span.fieldblockwrapper.contentcontextual.image img.OldImage {
+	min-width: 50px;
+	min-height: 50px;
+}
+
+div.fieldobject div.fieldrow.short,
+div.fieldobject div.fieldrow.long {
+    margin-top: 1.5em;
+}
+
+div.fieldobject div.fieldrow.fieldendtime {
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+}
+
+li.submitter div.fieldobject div.fieldrow,
+.view div.fieldobject div.fieldrow {
+    margin-top: 0;
+}
+
+.view .innerwrapper div.fieldobject div.fieldrow {
+    margin-bottom: 1em;
+}
+
+div.RowMail {
+	margin: 1em 0;
+	clear: both;
+}
+
+.right div.RowCellLeft {
+	float: left;
+	width: 100px;
+	margin-right: .5em;
+}
+
+.right div.RowCellRight {
+	float: left;
+	width: 540px;
+	text-align: left;
+}
+
+.right li.template div.RowCellRight span {
+	display: inline-block;
+	*display:inline;
+	zoom: 1;
+	margin-right: 0.5em;
+	margin-bottom: 0.5em
+}
+
+.right li.template div.RowCellRight input[type="text"] {
+	display: inline-block;
+	*display:inline;
+	width: 350px;
+	zoom: 1;
+	margin-right: 0.5em;
+}
+
+div.contenitoreEditor {
+	margin-top: 0.5em;	
+}
+
+.right div.RowCellLeft label,
+.right div.RowCellRight label,
+.right div.RowCellLeft input,
+.right div.RowCellRight input {
+	vertical-align: baseline;
+}
+
+span#ctl00_CPHservice_CTRLtemplate_LBpreSubject {
+	margin-right: .5em;
+	
+}
+
+div.fieldobject div.submit {
+    text-align: right;
+}
+
+li.sectiondesc div.fieldobject div.fieldrow {
+    margin-bottom: 0;
+}
+
+div.fieldobject div.fieldrow span.Titolo_Campo,
+div.fieldobject div.fieldrow span.Titolo_campo,
+div.fieldobject div.fieldrow label.Titolo_campo,
+div.fieldobject div.fieldrow label.Titolo_Campo,
+div.fieldfooter div.choseselect div.left label.fieldlabel, div.fieldfooter div.choseselect div.left span.fieldlabel
+div.fieldfooter div.choseselect div.left label.fieldlabel, div.fieldobject div.fieldrow span.fieldlabel,
+div.fieldobject div.fieldrow label.fieldlabel,
+label.fieldlabel,
+span.fieldlabel {
+	color: #222;
+    width: 95px;
+    *width: 100px;
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+    font-size: inherit;
+    margin-right: 5px;
+    font-weight: normal;
+}
+
+div.fieldobject div.fieldrow span.Titolo_Campo,
+div.fieldobject div.fieldrow span.Titolo_campo,
+div.fieldobject div.fieldrow label.Titolo_campo,
+div.fieldobject div.fieldrow label.Titolo_Campo,
+div.fieldfooter div.choseselect div.left label.fieldlabel, div.fieldfooter div.choseselect div.left span.fieldlabel
+div.fieldfooter div.choseselect div.left label.fieldlabel, div.fieldobject div.fieldrow span.fieldlabel,
+div.fieldobject div.fieldrow label.fieldlabel {
+    width: 118px;
+    *width: 123px;
+}
+
+div.fielddescription span.fieldlabel {
+	margin-left: 10px;
+	width: 95px;
+	*width: 100px;
+}
+
+select#ctl00_CPHservice_CTRLmoduleSkin_DDLskin.Testo_Campo {
+	width: 420px;
+}
+
+div#ctl00_CPHservice_DVmoduleSkin.fieldrow * {
+	vertical-align: middle;
+	margin: 1em 0;
+}
+
+div.fieldobject div.fieldrow label.long,
+div.fieldobject div.fieldrow span.Testo_campo label,
+div.fieldobject div.fieldrow label.Testo_campo {
+    display: inline;
+    line-height: 2em;
+}
+
+div.fieldrow li.attachedfile {
+    display: block;
+    margin-bottom: 0.5em;
+    padding-bottom: 0.5em;
+    vertical-align: top;
+    border-bottom: 1px solid #ddd;
+}
+
+div.fieldrow li.attachedfile.last {
+    border-bottom: none;
+}
+
+div.fieldrow li.attachedfile div.itemrow span.description {
+    margin-bottom: 0;
+}
+
+div.content div.fieldrow label.alignr {
+    width: auto;
+    margin: 0 .5em;
+}
+
+div.content div.fieldrow label.alignr.first {
+    margin-left: 0;
+}
+
+div.content div.fieldrow span.group {
+    display: inline-block;
+}
+
+div.content .description label {
+    vertical-align: baseline;
+}
+
+div.content .description label.alignr.first {
+    margin-left: 1em;
+}
+
+div.content .description select {
+    margin-right: 1em !important;
+}
+
+div.fieldrow.fieldendtime select.testo_campoSmall {
+	margin-right: 0 !important;
+}
+
+div.fieldrow.fieldendtime span.description label.alignr {
+	margin: 0 !important;
+}
+
+div.fieldrow span.Testo_campo {
+	display: inline-block;
+	*display:inline;
+	zoom: 1;
+	vertical-align: top;
+}
+
+div.fieldrow span.Testo_campo input {
+	vertical-align: middle;
+}
+
+div.content div.fieldrow .inputtext[type=text],
+div.content div.fieldrow select {
+    margin-right: 2em;
+}
+
+div.fieldobject div.fieldrow .inputtext[type=text] {
+    vertical-align: middle;
+}
+
+div.fieldobject div.fieldrow.fieldtitle .inputtext[type=text],
+div.fieldobject div.fieldrow.fieldedition .inputtext[type=text] {
+    width: 450px;
+}
+
+div.fieldobject div.fieldrow .textarea {
+    width: 450px;
+    vertical-align: top;
+    resize: vertical;
+    overflow: auto;
+    height: 60px;
+}
+
+div.fieldobject div.fieldrow .textarea.small {
+    height: 1.4em;
+}
+
+ul.sections li.section.collapsed .left input.itemname {
+    background-color: #f2f3f3;
+}
+
+li.cfield div.fieldobject div.fieldrow .textarea {
+    background-color: #fff;
+}
+
+div.fieldobject div.fieldrow.fieldmaxchar a.linkMenu.advanced {
+    float: right;
+    clear: left;
+    *float:none;
+    *margin-left: 420px
+}
+
+div.fieldobject.disclaimer div.fieldrow.fieldtext .textarea {
+    height: 100px;
+}
+
+div.fieldobject div.fieldrow.fieldmaxchar .inputtext {
+    width: 50px;
+}
+
+div.fieldfooter div.choseselect {
+    border-top: 1px solid #e6e9ed;
+    margin-top: 0.5em;
+    padding-top: 0.5em;
+}
+
+div.fieldfooter div.choseselect div.left {
+    width: 92% !important;
+}
+
+div.fieldfooter div.choseselect div.right {
+    width: 8% !important;
+}
+
+div.fieldfooter div.choseselect .icon {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+}
+
+div.choseselect .icons .icon {
+    background-position: 0 0;
+}
+
+.partecipants,
+.chzn-container {
+    vertical-align: middle;
+}
+
+div.chzn-container {
+    font-size: 1em;
+    width: 448px !important;
+    *width: 448px !important;
+}
+
+table div.chzn-container,
+table div.chzn-container-multi {
+	width: 390px !important;
+	*width:370px !important;
+}
+
+table div.chzn-container div.chzn-drop,
+table div.chzn-container div.chzn-drop div.chzn-results {
+	width: 389px !important;
+	*width:369px !important;
+}
+
+table div.chzn-container.chzn-container-single {
+	width: 402px !important;
+}
+
+table div.chzn-container.chzn-container-single a.chzn-default {
+	border-color: #ccc;
+}
+
+table .chzn-container-multi .chzn-choices,
+table div.chzn-container ul.choices {
+  border: none !important;
+  background-image: none !important;
+}
+
+table .chzn-container.chzn-container-multi.chzn-container-active {
+	border: 1px solid #ccc !important;
+}	
+
+ul.chzn-choices li.search-field input.default {
+    padding-top: 0;
+    padding-bottom: 0;
+    *padding: 4px;
+}
+
+ul.chzn-choices li.search-field input.default {
+	width: 180px !important;
+}
+
+ul.chzn-choices li.search-field {
+	overflow: visible !important;
+}
+
+div.chzn-container div.chzn-drop,
+div.chzn-container div.chzn-drop div.chzn-results {
+    width: 446px !important;
+}
+
+div.chzn-container li.search-choice {
+
+}
+
+.textarea,
+input[type="text"],
+div.chzn-container-multi .chzn-choices,
+ul.submitters li.submitter div.fieldobject textarea {
+    border: 1px solid #ccc;
+    color: #333;
+    margin-left: 0;
+	font-size: inherit;
+}
+
+textarea {
+	vertical-align: middle;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+    border: none !important;
+}
+
+ul.fields li.subcfield {
+    border-bottom: 1px solid #e9e9e9;
+}
+
+ul.fields li.subcfield {
+    text-indent: -13px;
+    margin-left: 12px;
+}
+
+div.subfieldcontent {
+    padding-bottom: 2px;
+}
+
+ul.sections li.section ul.fields li.cfield .title {
+
+}
+
+ul.fields li.subcfield.last {
+    border-bottom: none;
+    margin-bottom: .5em;
+}
+
+span.description {
+    display: block;
+    line-height: 1.6em;
+    margin: 1em 0;
+}
+
+li.cfield.fileattached div.fieldrow span.description {
+    padding: .5em 0;
+    border-top: 1px solid #e6e9ed;
+}
+
+.switchsection,
+.switchcfield {
+    margin-right: 5px;
+    display: block;
+    float: left;
+}
+
+fieldset legend .switchsection {
+	display: none;
+}
+
+fieldset.collapsable legend .switchsection {
+	float: none;
+	display: inline-block;
+	*display:inline;
+	zoom: 1;
+	margin: 0;
+	padding: 0;
+}
+
+.switchcfield {
+    margin-top: 1px;
+}
+
+.expiration {
+    width: 200px;
+    display: inline-block;
+    font-size: 0.8em;
+    padding-top: .3em;
+}
+
+table .icon.locked {
+    width: 13px;
+    height: 13px;
+}
+
+.lockUnlock {
+    vertical-align: top;
+    display: inline-block;
+    background-color: transparent;
+    font-size: 0;
+    line-height: 16px;
+}
+
+li.section .lockUnlock {
+    width: 16px;
+    height: 16px;
+}
+
+li.cfield .lockUnlock {
+    width: 13px;
+    height: 13px;
+    margin-left: 2px;
+}
+
+span.objectRender span.leftDetail {
+    vertical-align: top;
+    padding-bottom: 4px;
+}
+
+li.cfield.single span.objectRender span.leftDetail {
+    *display: inline-block;
+    /**margin-left: 20px;*/
+}
+
+span.objectRender ul span.itemTitle {
+    max-width: 700px;
+    display: inline-block;
+    text-indent: -20px;
+    padding: 0;
+    padding-left: 20px;
+}
+
+ul.sections span.leftDetail span.itemTitle span.textAction,
+ul.sections span.leftDetail span.itemTitle span.fileIco,
+ul.sections span.leftDetail span.itemTitle span.actionIco {
+    position: relative;
+    top: -1px;
+}
+
+div.RowMail:after,
+.clearfix:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+
+.clearfix {
+    display: block;
+    *display: inline-block;
+    margin: 0;
+    padding: 0;
+}
+
+html[xmlns] .clearfix {
+    display: block;
+}
+
+* html .clearfix {
+    height: 1%;
+    font-size: 0;
+}
+
+.clearer:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+
+.clearer {
+    display: inline-block;
+    height: 1%;
+    font-size: 0;
+}
+
+span.expiration {
+    float: left;
+}
+
+.icons {
+    top: 0;  
+}
+
+table td.actions .icons {
+	margin-left: .5em;
+}
+
+table td.actions .icons:first-child {
+	float: left;
+}
+
+table td.actions .icons:last-child  {
+	float: right;
+}
+
+.right .icons {
+    margin: 0 5px;
+}
+
+.icons span,
+.right .icons span,
+.right  label,
+.right  input {
+    vertical-align: middle !important;
+}
+
+.right label {
+    margin-right: .5em;
+    vertical-align: middle;
+    display: inline-block;
+}
+
+legend.inlinelegend label,
+.right label.inline,
+.right legend label {
+    margin:  0;
+    margin: 0 .5em;
+    width: auto;
+}
+
+legend.inlinelegend {
+	margin-left: -1.2em;
+	padding: 2px;
+}
+
+legend.inlinelegend input{
+	margin:  0 1em;
+}
+
+fieldset.light.expandable legend {
+	margin-left: -1em;
+}
+
+fieldset.light.expandable .left label {
+	width: auto;
+}
+
+label#ctl00_CPHservice_LBsubmissionClosed.inline {
+	display: inline-block;
+	width: 170px !important;
+	margin-right: 0;
+}
+
+label.inline {
+    display: inline-block !important;
+    width: auto !important;
+}
+
+span.labelinput {
+	display: inline-block !important;
+    width: auto !important;
+}
+
+.left span.type,
+span.fieldinfo {
+	font-size: .9em;
+	vertical-align: middle;
+	font-style: italic;
+}
+
+.right  {
+    text-align: right;
+}
+
+li.section.locked .sectioncontent {
+    color: #9e9d97;
+}
+
+li.section.locked .fieldcontent,
+li.cfield.locked .fieldcontent,
+li.section.locked .subfieldcontent {
+    background-color: #e6e9ed;
+    border-color: #cacaca;
+    color: #9e9d97;
+}
+
+li.cfield.locked .fieldcontent {
+    border-color: #cacaca;
+    background-color: #e6e9ed;
+}
+
+li.section.locked .fieldcontent,
+li.cfield.locked .fieldcontent {
+    -moz-box-shadow: 1px 1px 0 rgba(255, 255, 255, 0.7), inset 1px 1px 0 rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 1px 1px 0 rgba(255, 255, 255, 0.7), inset 1px 1px 0 rgba(0, 0, 0, 0.1);
+    box-shadow: 1px 1px 0 rgba(255, 255, 255, 0.7), inset 1px 1px 0 rgba(0, 0, 0, 0.07);
+}
+
+li.section.locked span.duration,
+li.cfield.locked .fieldcontent span.duration {
+    color: #9e9d97 !important;
+}
+
+li.cfield.single div.cfielddetails,
+li.cfield.empty div.cfielddetails,
+li.cfield.collapsed div.cfielddetails {
+    border: 0;
+}
+
+.ui-state-highlightHelper {
+    background: none;
+    border: 3px dashed #aaa;
+    margin-bottom: 1em;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    margin-left: 0;
+    padding: 0;
+    width: 675px;
+    position: relative;
+    left: 16px;
+    list-style-type: none;
+    max-height: 50px;
+    *height: 50px;  
+}
+
+ul.sections li.section ul.fields li.ui-state-highlightHelper {
+    width: 643px !important;
+    *width: 643px !important;
+    margin: 1em 0;
+    max-height: 40px;
+    *height: 40px; 
+}
+
+ul.sections li.section ul.fielditems li.ui-state-highlightHelper {
+    width: 90% !important;
+    *width:200px !important;
+    height: auto;
+    border: 1px dashed #aaa;   
+}
+
+div.content fieldset,
+fieldset.commission,
+div.globalwrapper {
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin: 1em 0;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+}
+
+div.rightcontent fieldset {
+	margin-left: .5em;
+	width: 658px;
+}
+
+div.globalwrapper {
+	background-color: #e6e9ed;
+    border: 1px solid #ccc;
+    *border-bottom: 2px;
+    -moz-box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.5), 1px 1px 1px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.5), 1px 1px 1px rgba(0, 0, 0, 0.3);
+    box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.5), 1px 1px 0 rgba(0, 0, 0, 0.15);
+}
+  
+div.content fieldset.light {
+	padding: 4px 10px;
+}
+
+fieldset.disabled,
+fieldset.disabled * {
+    color: #888 !important;
+}
+
+fieldset.disabled legend,
+fieldset.disabled .messages .message {
+    color: #222 !important;
+}
+
+fieldset.expandable.hideall.disabled {
+	border: none;
+	margin-bottom: 0;
+	margin-left: 1px;
+	padding-bottom: 0;
+}
+
+fieldset.expandable.hideall.disabled * {
+	display: none;
+}
+
+fieldset.expandable.hideall.disabled legend,
+fieldset.expandable.hideall.disabled legend * {
+	display: inline;	
+}
+
+/* @group Typography */
+
+
+ul.sections span.left {
+
+}
+
+ul.sections li.section .title {
+    font-size: 1.2em;
+    margin-right: .5em;
+    display: inline-block;
+    vertical-align: middle;
+	text-transform: uppercase;
+}
+
+ul.sections li.section li.cfield .title {
+    font-size: 1em;
+	text-transform: none;
+}
+
+ul.sections li.section ul.fields li.cfield .itemTitle a {
+    color: #00567c;
+}
+
+div.fieldrow.fielddescription span {
+	display: inline-block;
+}
+
+ul.sections li.section ul.fields li.cfield .itemTitle a:hover {
+
+}
+
+ul.sections li.section div.innerwrapper div.internal.clearfix span.left {
+
+}
+
+ul.sections li.section span.leftDetail,
+ul.sections li.section span.leftDetail a {
+    font-size: 11px;
+}
+
+ul.sections span.duration,
+ul.sections span.itemDetails,
+ul.sections li.subcfield span.itemDetails {
+    font-size: 10px;
+    color: #888;
+    display: inline-block;
+    margin-left: 1.5em;
+}
+
+ul.sections li.fileattached span.itemTitle a {
+	font-weight: bold;
+}
+
+ul.sections div.fileattached span.left.uploaders {
+	float: none;
+	
+}
+
+ul.sections div.fileattached span.left.uploaders div {
+	width: 580px;
+	padding-top: 0 !important;
+}
+
+ {
+	width: auto;
+	margin-bottom: .5em;
+}
+
+ul.sections div.fileattached span.left.uploaders div div div span.Testo_campoSmall {
+	display: inline-block;
+	*display:inline;
+	zoom: 1;
+}
+
+ul.sections div.fileattached span.left.uploaders div div div {
+	margin-bottom: 0;
+}
+
+ul.sections div.fileattached span.left.uploaders input[type="file"] {
+	width: 200px;
+}
+
+@-moz-document url-prefix() {
+	ul.sections div.fileattached span.left.uploaders input[type="file"] {
+	width: 100%;
+    margin-top: 1em;	
+    margin-bottom: 0.5em;
+	}
+}
+
+@-moz-document url-prefix() {
+	ul.sections div.fileattached span.left.uploaders div div div span.Testo_campoSmall {
+	margin-left: -10px;
+	}
+}
+
+ div.sectioncontent div.fileattached div.fieldcontent div.fieldrow.submit {
+	text-align: right;
+	padding: .5em 0;
+}
+
+ul.sections span.duration {
+    *margin-top: 4px
+}
+
+div.sectionfooter {
+	padding: 0 5px;
+	height: 16px;
+	display: block;
+	margin-top: -5px;
+}
+
+li.collapsed div.sectionfooter {
+	display:none !important;
+}
+
+div.sectionfooter a.ui-icon {
+    float:right;
+    margin: 0;
+    padding: 0;
+}
+
+li.subcfield span.itemDetails {
+
+}
+
+/* @end */
+
+/* @group Dragging & NoDragging */
+
+li.dragging {
+    clear: both;
+    position: relative;
+    margin-left: auto;
+}
+
+ul.dragging li.cfp.dragging div.cfpcontainer,
+li.dragging  div.sectioncontent,
+li.cfield.dragging div.fieldcontent {
+    -moz-box-shadow: 0 0 15px rgba(0,0,0,0.20);
+    -webkit-box-shadow: 0 0 15px rgba(0,0,0,0.25);
+    box-shadow: 0 0 15px rgba(0,0,0,0.25);
+    *border: 1px solid #999;
+    background: #ecf0f6;
+}
+
+li.cfield.dragging div.fieldcontent {
+    *width: 631px !important;
+    /**margin-left: 3px !important;*/
+}
+
+ul.dragging li.cfp.blocked div.cfpcontainer div.cfpdesc {
+    background: #ecf0f6;
+}
+
+ul.sections li.section.dragging ul.fields li.cfield.note div.fieldcontent {
+    border-color: #ecf0f6;
+}
+
+li.locked.dragging  li.cfield div.fieldcontent,
+li.dragging  li.cfield.locked div.fieldcontent {
+    background: #ecf0f6;
+}
+
+li.cfield.dragging div.fieldcontent {
+    background: #fff;
+    margin: 0;
+}
+
+li.cfield.dragging div.subfieldcontent {
+    background: #fff;
+}
+
+ul.sections li.section div.sectioncontent ul.fields li.cfield.note.dragging div.fieldcontent {
+    -moz-box-shadow: 0 0 15px rgba(0,0,0,0.25);
+    -webkit-box-shadow: 0 0 15px rgba(0,0,0,0.25);
+    box-shadow: 0 0 15px rgba(0,0,0,0.25);
+    *border: 1px solid #ecf0f6;
+    background-color: #ecf0f6;
+}
+
+ul.sections.dragging .movesection {
+    background-position: -9999px -9999px;
+}
+
+ul.sections.dragging li.dragging .movesection {
+    background-position: -6px -619px;
+}
+
+ul.fields.dragging .movecfield {
+    background-position: -9999px -9999px;
+}
+
+ul.fields.dragging li.dragging .movecfield {
+    background-position: 0 0;
+}
+
+li.nodragging {
+    border: none;
+}
+
+li.nodragging div.sectioncontent,
+ul.dragging li.cfp.nodragging div.cfpcontainer {
+    background-color: #eee;
+    color: #bbb !important;
+    border-color: #ddd;
+}
+
+li.nodragging li.cfield div.fieldcontent {
+    background-color: #f6f6f6 !important;
+    border-color: #eee !important;
+}
+
+li.nodragging li.note div.fieldcontent {
+    border-color: #eee !important;
+    background-color: #eee !important;
+}
+
+li.nodragging li.locked div.fieldcontent,
+li.nodragging.cfield.locked .fieldcontent,
+li.nodragging li.locked div.subfieldcontent,
+li.nodragging.section.locked .fieldcontent,
+li.nodragging.cfield.locked .fieldcontent,
+li.nodragging.section.locked .subfieldcontent {
+    background-color: #eee !important;
+}
+
+li.nodragging li.locked div.fieldcontent,
+li.nodragging.section.locked .fieldcontent,
+li.nodragging.cfield.locked .fieldcontent,
+li.nodragging.section.locked .subfieldcontent {
+    border-color: #ddd !important;
+}
+
+li.nodragging div.cfpcontainer a,
+li.nodragging div.sectioncontent a,
+li.nodragging .expiration,
+li.nodragging .itemDetails,
+li.nodragging .duration {
+    color: #bbb !important;
+}
+
+li.nodragging .movecfield,
+li.nodragging .movesection {
+    background-image: none;
+}
+
+
+ul.fields.nodragging li .movecfield {
+}
+
+/* @end */
+
+/* @group Buttons */
+
+.statuslight {
+    margin-top: 6px;
+    vertical-align: top;
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    *width: 8px;
+    *height: 8px;
+    background-color: white;
+    *border: 1px solid #888;
+    line-height: 16px;
+    text-indent: -9999px;
+    *text-indent: 0;
+    font-size: 0;
+    *font-size: 0;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    -moz-box-shadow: inset 1px 1px 3px rgba(0,0,0,0.5);
+    -webkit-box-shadow: inset 1px 1px 3px rgba(0,0,0,0.5);
+    box-shadow: inset 1px 1px 3px rgba(0,0,0,0.5);
+}
+
+li.cfield .statuslight {
+    margin-top: 2px;
+}
+
+.statuslight.green,{
+    background-color: #99c74a
+}
+
+.statuslight.gray {
+    background-color: #ccc;
+}
+
+.statuslight.yellow {
+    background-color: #ffcd40;
+}
+
+.statuslight.red {
+    background-color: #FF1717;
+}
+
+.statuslight.hidden {
+    width: 8px;
+    height: 8px;
+    background-color: transparent;
+    border: 0;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    -moz-box-shadow: 0px 0px 0px #444;
+    -webkit-box-shadow: 0px 0px 0px #444;
+    box-shadow: 0px 0px 0px #444;
+    display: none;
+}
+
+.buttonwrapper,
+.DivEpButton {
+    padding: 5px 0;
+    text-align: right;
+    margin-bottom: 1em;
+}
+
+.buttonwrapper ul {
+	padding: 0;	
+	margin: 0;
+}
+
+.buttonwrapper ul li {
+	display: inline;	
+}
+
+div.fieldobject div.fieldrow div.buttonwrapper {
+	text-align: left;
+}
+
+div.group.filters {
+	margin: .5em 0;
+}
+
+div.group.filters .items {
+	margin-right: 2em;
+	vertical-align
+}
+
+div.group.filters * {
+	vertical-align: middle;
+}
+
+.DivEpButton.bottom {
+    margin-top: 1em;
+}
+
+.DivEpButton.big {
+	text-align: center;
+    padding: 1em 0;
+    margin: 1em 0;
+    /*border-top: 1px solid #ccc;*/
+}
+
+.view .DivEpButton.big a.linkMenu,
+.view .DivEpButton.big input[type="submit"],
+.CFPBox a.linkMenu,
+.CFPBox input[type="submit"] {
+	line-height: 1.2em;
+	display: inline;	
+	font-size: 1.2em;
+	padding: 7px 18px;
+	height: auto;
+}
+
+div.viewType {
+    float: left;
+    width: 400px;
+    text-align: left;
+}
+
+div.viewType span,
+div.viewType a {
+    vertical-align: middle;
+    margin-right: .5em;
+    border: none !important;
+}
+
+a.img_link {
+    text-indent: -9999px;
+    font-size: 1%;
+    line-height: 0.1em;
+    text-decoration: none;
+    font-weight: normal;
+    font-style: normal;
+}
+
+div.viewType a#ctl00_CPHservice_HYPcfpStat.img_link.ico_stat_l {
+    margin-top: 2px;
+    margin-left: 4px;
+}
+
+li.section.empty div.sectioncontent div.innerwrapper div.sectiondetails {
+    border: 0;
+}
+
+.spacer {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    text-indent: -9999px;
+    *text-indent: 0;
+    *font-size: 0;
+    cursor: default;
+}
+
+a.linkMenu.advanced {
+    line-height: 12px;
+    height: 1.2em;
+    margin: 2px;
+    font-size: 1em;
+    text-decoration: none !important;
+    padding: .1em .3em;
+    color: #555;
+    text-shadow: 1px 1px 0px #ddd;
+    border: 1px solid #aaa;
+    border-bottom-color: #999;
+    border-right-color: #999;
+    background-color: #ddd;
+    /*-moz-box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 1px 1px 0  rgba(0, 0, 0, 0.3);
+    box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.3);*/
+    -moz-border-radius-topleft: 3px;
+    -moz-border-radius-topright: 3px;
+    -moz-border-radius-bottomright: 3px;
+    -moz-border-radius-bottomleft: 3px;
+    -webkit-border-radius: 3px 3px 3px 3px;
+    border-radius: 3px 3px 3px 3px;
+}
+
+a.linkMenu.advanced:hover {
+    outline: none;
+    color: #565656;
+    text-shadow: 1px 1px 0px #ddd;
+    background-color: #ccc;
+    font-weight: normal;
+    font-style: normal;
+    text-decoration: none;
+}
+
+a.linkMenu.advanced:active {
+    outline: none;
+    border: 1px solid #777 !important;
+    -moz-box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.7);
+    -webkit-box-shadow: inset 0 0 32px rgba(0, 0, 0, 0.7);
+    box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.7);
+}
+
+.section input.error,
+.section textarea.error,
+div.view .error input,
+div.view .error textarea {
+    border-color: #c20 !important;
+}
+
+.section div.error {
+	border-color: #c20 !important;
+	margin-bottom: 0;
+	/*background: bisque !important;*/
+}
+
+.view .section div.error {
+	border-color: #fee !important;
+	background: #fee !important;
+	margin-bottom: 0;
+	/*background: bisque !important;*/
+}
+
+.section label.error,
+.section span.error,
+div.view .error label.fieldlabel,
+div.view .error span.fieldinfo {
+	color: #c20 !important;
+}
+
+.fieldobject.error span.error {
+	font-weight: bold;
+}
+
+div.view .fieldobject.error span.fieldinfo {
+
+}
+
+/* @end */
+
+/* @end*/
+
+/* @group CFP View & Preview */
+
+div.view ul.sumbmissiondetails {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	display: block;
+	width: 100% !important;
+}
+
+div.view ul.sumbmissiondetails li {
+	margin-bottom: .2em;
+}
+
+div.view ul.sumbmissiondetails.revisionrequest li.status {
+	margin-bottom: .5em;
+}
+
+div.view ul.sumbmissiondetails li span {
+	font-weight: bold;
+	background-repeat: no-repeat;
+}
+
+div.view ul.sumbmissiondetails li span.submittedby {
+	font-weight: normal;
+}
+
+div.view div.fieldrow label,
+div.view div.fieldrow label.fieldlabel,
+div.view div.fieldrow span.fieldlabel {
+    font-weight: bold;
+    display: block;
+    width: auto;
+    margin-bottom: .3em;
+}
+
+div.view div.fieldrow span.inputradiobuttonlist label,
+div.view div.fieldrow span.inputcheckboxlist label,
+div.view div.fieldrow span.checkboxlist label {
+	display: inline !important;
+	font-weight: normal;
+	font-style: normal;
+	margin: 0 .5em;
+	line-height: 1.3em;
+}
+
+div.view div.fieldrow li.status label,
+div.view div.fieldrow li.status label.fieldlabel,
+div.view div.fieldrow li.status span.fieldlabel {
+	display: inline !important;
+	margin-right: 1em;
+}
+
+div.view div.disclaimerwrapper div.disclaimerinput label.disclaimerlabel {
+    font-weight: normal;
+    float: none;
+    display: inline;
+    margin-left: .8em;
+    margin-right: .2em;
+    display: inline-block;
+    line-height: 1.4em;
+}
+
+div.view fieldset.section .sectiondescription {
+    margin: .5em 0 1em 0;
+    *padding-top: .5em;
+}
+
+.inlinetooltip {
+    display: none;
+}
+
+div.view .fieldobject {
+    margin-bottom: 1px;
+    *margin-bottom: 0;
+    padding: 5px 10px 5px 10px;
+    background-color: #fff;
+    border: 1px solid #fff;
+    *border-color: #fff #ccc #ccc #fff;
+    -moz-box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.15);
+    -webkit-box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.15);
+    box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.15);
+}
+
+div.view fieldset.section:first-child  .fieldobject {
+    *margin-top: 1em;
+}
+
+div.view .objectgroup .fieldobject.revision {
+	margin-top: -20px;
+	*margin-top: 0px;
+}
+
+div.view .fieldobject.fileupload span {
+
+}
+
+
+
+div.criteriatabs .fieldobject {
+    background-color: #fff;
+    border: 1px solid #fff;
+    *border-color: #fff #ccc #ccc #fff;
+    /*-moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;*/
+    -moz-box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.15);
+    -webkit-box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.15);
+    box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.15);
+}
+
+div.view .fieldobject .fielddescription .description {
+    font-size: .9em;
+    margin-bottom: 1em;
+    display: block;
+}
+
+div.view span.fieldinfo {
+	margin: 0.5em 0;
+	display: inline-block;
+	*display:inline;
+	zoom: 1;
+	color: #777;
+}
+
+div.view .fieldobject .fieldrow .disclaimerinput label.disclaimerlabel,
+div.view .fieldobject .fieldrow .disclaimerinput span.disclaimerlabel label {
+    width: 50px;
+    display: inline;
+    margin-right: 1em;
+    margin-left: 3px;
+}
+
+div.view .fieldobject .fieldrow .disclaimerinput,
+div.view .fieldobject .fieldrow .disclaimerinput span.disclaimerlabel input {
+    text-align: right;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+div.view div.fieldobject div.fieldrow .textarea {
+    background-color: #fff;
+    width: 80%;
+}
+
+div.view div.fieldobject div.fieldrow .inputtext {
+    background-color: #fff;
+    min-width: 300px
+}
+
+div.view .fieldobject .fieldrow .disclaimertext {
+    border:1px solid #ccc;
+    padding: .4em;
+    /*height: 150px;*/
+    min-height: 80px;
+    overflow: auto;
+    overflow-x: hidden;
+    font-size: .9em;
+    line-height: 1.4em;
+    color: #777;
+    margin-bottom: 0.2em;
+}
+
+div.view .fieldobject .fieldrow div.disclaimerwrapper {
+    width: 80%;
+}
+
+div.view .fieldobject .fieldrow.fieldinput .inlinetooltip.visible {
+	font-size: .9em;
+    color: #000;
+    background-color: #ffff99;
+    border:1px solid yellow;
+    padding-left: 0.3em;
+    padding-right: 0.3em;
+    margin-left: 1em;
+    display: inline-block;
+    *display: inline;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    line-height: 1.2em; 
+}
+
+div.view fieldset.section,
+div.view.preview div.partecipants,
+div.view.preview fieldset.section.partecipants,
+#content div.DIV_MP_Content div.view div.TemplateName {
+    padding: 10px;
+    position: relative;
+    margin: 0 0 1em 0;
+    *margin-top: 1em;
+    border: 1px solid #ccc;
+    *border: none;
+    -moz-box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.5), 1px 1px 1px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.5), 1px 1px 1px rgba(0, 0, 0, 0.3);
+    box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.5), 1px 1px 0 rgba(0, 0, 0, 0.15);
+    background-color: #e6e9ed;
+}
+
+#content div.DIV_MP_Content div.view div.TemplateName {
+	margin-top: 1em;
+}
+div.view div.TemplateName span#CPHservice_LBLname_t {
+	font-size: 1.1em;
+	/*text-transform: uppercase;*/
+	/*font-weight: bold;*/
+	margin: 0 .5em;
+	display: block !important;
+}
+
+#content div.DIV_MP_Content div.view div.TemplateName input#CPHservice_TXBname {
+	/*width: 590px;*/
+}
+
+div.view fieldset.section.collapsed {
+	padding-bottom: 0;
+	*padding-bottom: 10px;
+}
+
+div.view fieldset.section.cfpintro,
+div.view fieldset.section.partecipants,
+fieldset.commission {
+    /*background-color: #fff;*/
+}
+
+div.view fieldset.section legend {
+    font-weight: bold;
+    font-size: 1.2em;
+    border: 1px solid #ccc;
+    *border-color: #fff #ccc #ccc #fff;
+    background-color: #fff;
+    width: 720px;
+    padding: 0 4px;
+    line-height: 1.6em;
+    *margin-left: -5px;
+    /**padding-bottom: 4px;*/
+    /**position: absolute;*/
+    /**top: -0.7em;
+    *left: .5em;*/
+    -moz-box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.5), 1px 1px 1px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.5), 1px 1px 1px rgba(0, 0, 0, 0.3);
+    box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.5), 1px 1px 0 rgba(0, 0, 0, 0.15);
+	text-transform: uppercase;
+	word-wrap: normal;
+  	white-space: normal;
+  	display: block;  	
+}
+
+div.view fieldset.section legend * {
+	vertical-align: middle;
+}
+
+div.view fieldset.section legend span.title {
+	display: inline-block;
+	*display:inline;
+	zoom: 1;
+	*margin: 4px 0;
+	margin: 0;
+	padding: 0;
+	padding-bottom: 2px;
+
+}
+
+div.view fieldset.section.collapsable legend,
+div.view fieldset.section.collapsed legend {
+    background-color: #fff;
+    padding-right: 4px;
+    cursor:pointer;
+}
+
+div.view div.cfpdescription { 
+    margin-bottom: 2em;
+    *margin-bottom: 1.5em;
+    *padding-top: 2em;
+}
+
+div.view fieldset.cfpintro div.cfpdescription { 
+    margin-top: 1em;
+}
+
+div.view div.cfpdescription .textwrapper { 
+	padding-bottom: .5em;
+	border-bottom: 1px solid #ccc;
+}
+
+div.view li.attachedfile div.cfpdescription {
+	font-size: .9em;
+	margin-top: .5em;
+	margin-bottom: 0;
+	padding: 0;
+	padding-left: 20px;
+	color: #777;
+}
+
+div.view fieldset.section.cfpintro legend {
+}
+
+div.view div.fieldrow.fieldinput {	
+}
+
+div.view div.fieldmaincontent.clearfix {
+	margin-bottom: -10px;
+	*margin-bottom: 0;
+}
+
+ul.submittedfiles,
+div.view ul.attachedfiles {
+	list-style-type: none;
+	padding-left: 0;
+	margin: 0;
+}
+
+div.view ul.attachedfiles {
+	margin: .5em 0;
+}
+
+div.filerevisionscontainer {
+	color: #666;
+	font-size: .85em;
+	margin-top: .2em;
+	padding: 5px 0 5px 5px;
+	background-color: #f1f4f8;
+	*background-color: transparent;
+	-moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+}
+
+li.submittedfile {
+	padding-bottom: .5em;
+	margin-bottom: .5em;
+	border-bottom: 1px solid #ccc;
+}
+
+ul.filerevisions {
+	margin: .5em 0 0 0;
+	padding-left: 18px;
+}
+
+li.filerevision {
+	list-style-position: outside;
+	list-style-type: circle;
+	vertical-align: middle !important;
+}
+
+li.submittedfile div.submittedfilemain,
+li.filerevision div.filerevisioncontent {
+	padding: 2px;
+}
+
+li.submittedfile div.submittedfilemain span.fileIco,
+li.submittedfile div.submittedfilemain .icon,
+li.filerevision div.filerevisioncontent span.fileIco,
+li.filerevision div.filerevisioncontent .icon {
+	vertical-align: middle !important;
+}
+
+li.submittedfile div.submittedfilemain:hover,
+li.filerevision div.filerevisioncontent:hover {
+	background-color: #ddd !important;
+	-moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+}
+
+li.filerevision.addfile div.filerevisioncontent:hover {
+	background-color: transparent !important;
+}
+
+li.filerevision.addfile {
+	list-style-type: none;
+	margin-top: .3em;
+	padding-top: .3em;
+}
+
+li.submittedfile.last {
+	border-bottom: none;
+	margin-bottom: 0;
+}
+
+div.cfpdetail,
+div.cfpdetails {
+	padding: 10px;
+	background-color: #fff;
+	font-weight: bold;
+	/*border: 1px solid #ccc;
+	background-color: #f3f3f3;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#fdfdfd),to(#eaeaea));
+	background-image: -webkit-linear-gradient(top, #fdfdfd, #eaeaea);
+	background-image: -moz-linear-gradient(top, #fdfdfd, #eaeaea);
+	background-image: -o-linear-gradient(top, #fdfdfd, #eaeaea);
+	background-image: -ms-linear-gradient(top, #fdfdfd, #eaeaea);
+	background-image: linear-gradient(top, #fdfdfd, #eaeaea);*/
+}
+
+div.cfpdetail span,
+div.cfpdetail span span {
+	font-size: 1em !important;
+	line-height: inherit;
+	display: inline !important;
+	width: auto !important;
+	margin: 0;
+	padding: 0;
+}
+
+div.view div.cfpdetail span.expiration,
+div.view div.cfpdetails span.expiration {
+    float: none;
+    width: auto;
+    margin-right: 1em;
+    font-size: 1em;
+}
+
+.readonlyinput {
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+    border: 1px solid #ccc;
+    padding: 0.7em;
+    margin: .5em 0;
+}
+
+.readonlytextarea {
+    display: block;
+    border:1px solid #ccc;
+    padding: 0.7em;
+    margin: .5em 0;
+}
+
+.readonlyinput.empty,
+.readonlytextarea.empty {
+	border-color: #ccc;
+}
+
+.readonlyinput.empty {
+	width: 200px;
+}
+
+.readonlytextarea.empty {
+	width: 400px;
+	height: 50px;
+}
+
+.time .readonlyinput.empty,
+.date .readonlyinput.empty,
+.datetime .readonlyinput.empty {
+	width: 40px;
+}
+
+.rbldl {
+	display: block;
+}
+
+.rbldl * {
+	vertical-align: top;
+}
+
+div.view .rbldl label {
+	margin-left: .5em;
+}
+
+div.view .rbldl label {
+	display: inline !important;
+}
+
+.rbldl label dl {
+	display: inline-block;
+	*display:inline;
+	zoom: 1;
+	width: 90%;
+	margin: 0;
+	margin-bottom: 1em;
+	padding: 0;
+}
+
+.rbldl label dl dt {
+	display: inline-block;
+	*display: inline;
+	zoom: 1;
+	font-weight: bold;
+}
+
+.rbldl label dl dd.hidden {
+	display: none;
+}
+
+.rbldl label dl dd {
+    margin: 0;
+	padding: 0;
+  	font-weight: normal;
+  	font-size: .9em;
+}
+
+.rbldl label.checked {
+	
+}
+
+.view div.services {
+	padding-left: 20px;
+}
+
+div.services span.item {
+	display: inline-block;
+	*display:inline;
+	zoom: 1;
+	margin-right: 2em;
+}
+
+div.services input,
+div.services label {
+	display: inline !important;
+}
+
+.rbldl label.checked dl dd {
+	display: inline-block;
+	*display: block;
+	outline: none;
+}
+
+table td.templatename {
+	padding-left: 4px;
+}
+
+table tr.revision td.templatename {
+	padding-left: 32px !important;
+	background: url(../../../Generics/Command/img/corner_bottomleft_16.png) no-repeat 10px 0;
+	font-size: .9em;
+}
+
+table tr.template.hasrevision {
+
+}
+
+table tr.revision {
+    background-color: #e6e9ed;
+}
+
+table tr.revision.first {
+    border-top: 1px solid #aaa;
+}
+
+tr.revision.last {
+    border-bottom: 1px solid #aaa;
+}
+
+table td.templatename span.revisionby {
+	color: #666;
+	font-style: italic;
+	margin-left: 1em;
+}
+
+table td.templatename a.expander,
+table tr.expanded td.templatename a.expander {
+    width: 16px !important;
+    height: 16px !important;
+    display: inline-block;
+    *display:inline;
+    zoom: 1;
+    padding: 0 !important;
+    margin: 0 !important;
+    vertical-align: top !important;
+}
+
+div.viewoptions span.Testo_Campo label {
+	margin-right: 1em;
+}
+
+#content div.DIV_MP_Content div.view.preview div.innerwrapper.clearfix div.left span.partecipantselect {
+	margin: 1em 0;
+}
+
+
+/* @end */
+
+/* @group Revisions */
+
+.revisionsettings.hidden,
+.revisionfield.hidden {
+	display: none;
+}
+
+.revisionfield {
+	display: inline-block;
+	*display: inline;
+	-moz-border-radius-topleft: 2px;
+    -moz-border-radius-topright: 2px;
+    -moz-border-radius-bottomright: 2px;
+    -moz-border-radius-bottomleft: 2px;
+    -webkit-border-radius: 2px 2px 2px 2px;
+    border-radius: 2px 2px 2px 2px;
+    margin-right: 0.4em;
+}
+
+.revisionfield.revisioned {
+	padding: 0.3em 0.4em 0.1em 0.4em;
+	background: #ff3019;
+	background: -moz-linear-gradient(top,  #ff3019 0%, #cf0404 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ff3019), color-stop(100%,#cf0404));
+	background: -webkit-linear-gradient(top,  #ff3019 0%,#cf0404 100%);
+	background: -o-linear-gradient(top,  #ff3019 0%,#cf0404 100%);
+	background: -ms-linear-gradient(top,  #ff3019 0%,#cf0404 100%);
+	background: linear-gradient(to bottom,  #ff3019 0%,#cf0404 100%);
+	border: 1px solid #cf0404;
+}
+
+.revisionfield label,
+.revisionfield input, 
+span.revisionfield.revisioned {
+	display: inline-block !important;
+	*display: inline;
+	text-transform: uppercase;
+	font-size: 0.8em;
+	color: #cf0404;
+	vertical-align: middle;
+	margin: 0;
+}
+
+.revisionfield input {
+	margin: -2px 3px 0 0;
+	background: #c20;
+	border: 1px solid #c20;
+}
+
+.revisionfield.revisioned label,
+.revisionfield.revisioned input {
+	color: #fff;
+	text-shadow: #921000 0 1px 0;
+}
+
+td.partecipant span.revisionfield.revisioned {
+	padding: 0.2em 0.3em 0.2em 0.3em;
+	margin: 1px 0 0 0 ;
+	background: transparent;
+	border-radius:2px
+}
+
+td.template span.revisionfield.revisioned label,
+td.template span.revisionfield.revisioned input {
+	font-size: 0.75em;
+	color: #cf0404;
+	text-shadow: none;
+}
+
+.revisionfield + label {
+	display: inline-block !important;
+	*display: inline;
+}
+
+.revisionalert,
+.revisionconfirm {
+	text-align: center;
+}
+
+.revisionalert .revisionneeded,
+.revisionconfirm {
+	display: block;
+}
+
+.revisionalert .revisionneeded .revisionapplicant,
+.revisionconfirm .revisionmessage .revisionapplicant {
+	margin-top: 0.5em;
+	font-style: normal;
+}
+
+.revisionalert .revisionneeded .revisionapplicant .name,
+.revisionconfirm .revisionmessage .revisionapplicant .name {
+	font-weight: bold;
+}
+
+.revisionalert .revisionmsg {
+	display: block;
+	width: 70%;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: #fff;
+	padding: .7em .5em;
+	border: 1px solid #ccc;
+	margin-top: 0.2em;
+	margin-bottom: 0.5em;
+	font-style: italic;
+	line-height: 1.4em;
+	font-size: 0.9em;
+	color: #222;
+}
+
+.revisionalert .revisiondeadline {
+	color: #c00;
+	font-style: normal;
+}
+
+.revisionalert .revisionaction {
+	display: block;
+	margin: 1em 0;
+	text-align: center;
+}
+
+.revisionalert .revisiondeadline .date,
+.revisionconfirm .revisiondate .date {
+	font-weight: bold;
+	font-size: 1.2em;
+}
+
+.revisionconfirm span {
+	font-size: 1em !important;
+}
+
+/* @end */
+
+/* @group CFP Input types */
+
+input[type="file"] {
+	background-color: #fff;
+}
+
+div.fieldrow a.linkMenu {
+	display: inline-block;
+}
+
+span.inputradiobuttonlist,
+span.inputcheckboxlist,
+span.checkboxlist {
+	display: inline-block;
+	*display:inline;
+	zoom: 1;
+	vertical-align: top;
+}
+
+span.inputradiobuttonlist input,
+div.view fieldset.section span.inputradiobuttonlist input,
+span.inputcheckboxlist input,
+div.view fieldset.section span.inputcheckboxlist input,
+div.view fieldset.section span.checkboxlist input {
+	font-weight: normal;
+	font-style: normal;
+	display: inline;
+	margin-bottom: .5em;
+}
+
+span.inputradiobuttonlist label,
+div.view fieldset.section span.inputradiobuttonlist label,
+span.inputcheckboxlist label,
+div.view fieldset.section span.inputcheckboxlist label,
+div.view fieldset.section span.checkboxlist label {
+    font-weight: normal;
+    font-style: normal;
+    display: inline;
+    margin-right: 1em;
+}
+
+div.optionlist {
+    display: inline-block;
+    *display: inline;
+    width: 440px;
+    border: 1px solid #ccc;
+    padding: 5px;
+    vertical-align: middle;
+    margin: 1em 0;
+    margin-left: 105px !important;
+}
+
+div.optionlist label {
+    line-height: 1.4em;
+    margin-bottom: 4px;
+    display: inline-block;
+    width: 350px;
+    margin-left: 8px;
+    vertical-align: top;
+    padding-top: 2px;
+}
+
+div.optionlist input {
+    vertical-align: top;
+}
+
+div.optionlist div.right {
+    width: 450px !important;
+}
+
+table.optionbuilder {
+    margin-left: 105px !important;
+    width: 450px;
+}
+
+.varbuttons {
+    margin: 1em 0;
+}
+
+.varbuttons * {
+    vertical-align: middle;
+}
+
+.varbuttons a.varbutton.linkMenu {
+    font-size: .95em;
+}
+
+table.optionbuilder,
+table.optionbuilder td {
+    border: 1px solid #ccc;
+    padding: 2px;
+    margin: 1em 0;
+    border-collapse: collapse;
+}
+
+table.optionbuilder tfoot tr {
+    background-color: #eee;
+}
+
+div.fieldrow.fieldinput {
+
+}
+
+div.fileinputs {
+    position: relative;
+    display: inline-block;
+    margin: 0;
+}
+
+div.fakefile {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+    padding: 0;
+}
+
+div.fakefile input {
+    margin: 0;
+    border: 1px solid #ccc;
+}
+
+div.fakefile label {
+    text-align: center;
+    line-height: 12px;
+    *line-height: 14px;
+    text-decoration: none !important;
+    padding: .2em .6em;
+    color: #555;
+    text-shadow: 1px 1px 0px #ddd;
+    border: 1px solid #aaa;
+    border-bottom-color: #999;
+    border-right-color: #999;
+    background-color: #ddd;
+    -moz-box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 1px 1px 0  rgba(0, 0, 0, 0.1);
+    box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.1);
+    -moz-border-radius-topleft: 3px;
+    -moz-border-radius-topright: 3px;
+    -moz-border-radius-bottomright: 3px;
+    -moz-border-radius-bottomleft: 3px;
+    -webkit-border-radius: 3px 3px 3px 3px;
+    border-radius: 3px 3px 3px 3px;
+}
+
+input.file {
+    position: relative;
+    text-align: right;
+    -moz-opacity:0.5 ;
+    filter:alpha(opacity: 0);
+    opacity: 0;
+    z-index: 2;
+    text-indent: -9999px;
+}
+
+input.icon,
+input.icon:active,
+input.icon:hover {
+	border: none !important;
+	-moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    outline: none;
+    padding: 0;
+    margin: 0;
+    background-color: transparent;
+    line-height: 1em;
+    height: 16px;
+    width: 16px;
+    cursor: pointer;
+}
+
+div.fieldobject.fileupload .icons {
+	margin-left: 1em;
+	position: relative;
+	top: -1px;
+}
+
+/* @end */
+
+/* @group CFP Submitters */
+
+ul.submitters li.submitter .fieldobject .fieldrow label {
+}
+
+ul.submitters li.submitter span.titledetail {
+	display: inline-block;
+	*display:inline;
+	zoom: 1;
+	/*width: 270px;*/
+}
+
+ul.submitters li.submitter span.titledetail label {
+	width: auto;	
+}
+
+ul.submitters li.submitter .left {
+    width: 570px !important;
+}
+
+ul.submitters li.submitter .right {
+    width: 60px;
+}
+
+ul.submitters li.submitter div.fieldobject textarea {
+	vertical-align: top;
+}
+
+.fieldsubmitters .submitters {
+    padding: 0;
+}
+
+.fieldsubmitters .submitters .submitter {
+    list-style: none;
+    margin-bottom: 1em;
+    border-bottom: 1px solid #ddd;
+    padding: 5px;
+}
+
+.fieldsubmitters .submitters .submitter.new {
+    background-color: #eee;
+    border: 1px solid #ddd;
+}
+
+.fieldsubmitters .submitters .submitter .itemrow label {
+
+}
+
+.fieldsubmitters .submitters .submitter .itemrow .submissions label {
+    width: auto;
+}
+
+.fieldsubmitters .submitters .submitter .itemrow .submissions label.long {
+    width: 130px;
+}
+
+.fieldsubmitters .submitters .submitter input.inputchar {
+    width: 40px !important;
+}
+
+/* @end */
+
+/* @group CFP Add new field */
+
+
+.fieldtype:hover {
+    background-color: #b9b9b9;
+}
+
+.addnewfield {
+    overflow: hidden!important;
+}
+
+.addnewfield .title,
+.addnewcriteria .title {
+    margin-top:-1px;
+    display: block;
+    color: #333;
+    border-bottom: 1px solid #ccc;
+    border-top: 1px solid #b9b9b9;
+    padding: 5px;
+    background-color: #e6e9ed;
+    -moz-box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.5);
+    -webkit-box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.5);
+    box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+/* My Comment */
+
+.addnewfield .dialogcontent,
+.addnewcriteria .dialogcontent {
+    border:1px solid #b9b9b9;
+    padding: 0;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    background-color: #f4f5f5;
+    width: 771px !important;
+}
+
+.addnewfield .dialogheader,
+.addnewfield .dialogfooter,
+.addnewcriteria .dialogheader,
+.addnewcriteria .dialogfooter{
+    clear: both;
+    width: 100%;
+    margin-bottom: 5px;
+    text-align: right;
+}
+
+.addnewfield .leftfield {
+    width: 220px;
+    float:left;
+    border-right:1px solid #b9b9b9;
+}
+
+.addnewfield .rightfield {
+    width: 550px;
+    text-align: left;
+    float:left;
+    margin-bottom: 5px;
+}
+
+.rightfield div.fieldobject {
+	padding: 10px;
+	width: auto;
+}
+
+.rightfield div.fieldobject .fieldinput {
+	margin-top: 0;
+}
+
+.rightfield div.fieldobject .fieldinput label {
+	font-weight: bold;
+}
+
+.rightfield div.fieldobject .fieldinput label.description,
+.rightfield div.fieldrow.fieldinput span.inputcheckboxlist label,
+.rightfield div.fieldrow.fieldinput span.inputradiobuttonlist label {
+	font-weight: normal;
+}
+
+.rightfield div.fieldrow.fieldinput span.inputcheckboxlist,
+.rightfield div.fieldrow.fieldinput span.inputradiobuttonlist {
+	display: block;
+}
+
+
+ul.fieldtypes {
+    padding: 4px 0;
+    *padding-left: 0;
+    margin: 0;
+}
+
+ul.fieldtypes li.fieldtype {
+	list-style: none;
+	padding: 0 2px 0 4px;
+	margin-bottom: 2px;
+}
+
+.dialog.addnewfield {
+    font-size: 11px;
+}
+
+.dialog div.view .fieldobject {
+    margin-bottom: 0;
+    padding: 10px;
+    border: none;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.dialog div.view div.fieldobject .fieldrow.fielddescription,
+.dialog div.view span.description  {
+    margin: 0 ;
+}
+
+/* @end */
+
+/* @group CFP Templates */
+
+ul.templates {
+    margin: 0;
+    padding: 0;
+}
+
+ul.templates li.template .templatetitle {
+    margin-bottom: 0.5em;
+}
+
+ul.templates li.template .templatefooter {
+    width: 93%;
+}
+
+span.fielditemswrapper {
+	display: inline-block;
+	*display:inline;
+	vertical-align: top;	
+}
+
+ul.fielditems {
+	padding: 6px 6px 2px 6px;
+	margin-bottom: .5em;
+	/*-moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;*/
+    border: 1px solid #ccc;
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+    width: 442px;
+}
+
+ul.fielditems li.fielditem {
+	list-style-image: none;
+	list-style-type: none;
+
+}
+
+ul.templates li.template div.templatecontent div.title div.left * {
+	vertical-align: middle ;	
+}
+
+ul.templates li.template div.templatecontent div.title   {
+	margin-bottom: 1em;	
+}
+
+
+
+ul.templates li.template div.templatecontent div.RowMail div.RowCellRight * {
+}
+
+ul.templates li.template div.templatecontent div.RowMail div.RowCellRight input.Testo_Campo {
+	margin-top: -4px;
+}
+
+ul.fielditems li.fielditem div.fielditemcontent {
+	margin: 2px 0;
+}
+
+ul.fielditems li.fielditem div.fielditemcontent .inputtext,
+ul.fielditems li.fielditem div.fielditemcontent .spaninputtext,
+ul.fielditems li.fielditem div.fielditemcontent .inputchar,
+ul.fielditems li.fielditem div.fielditemcontent .spaninputchar {
+	display: inline-block;
+	*display: inline;
+	zoom: 1;
+	margin-right: .5em;
+}
+
+ul.fielditems li.fielditem div.fielditemcontent .spaninputtext {
+	width: 196px;
+}
+
+ul.fielditems li.fielditem div.fielditemcontent .inputtext {
+	width: 200px;
+}
+
+ul.fielditems li.fielditem div.fielditemcontent .spaninputchar {
+	width: 46px;
+}
+
+ul.fielditems li.fielditem div.fielditemcontent .inputchar {
+	width: 50px;
+}  
+
+ul.fielditems li.fielditem div.fielditemcontent .spaninputtext,
+ul.fielditems li.fielditem div.fielditemcontent .spaninputchar {
+	font-weight: bold;
+	padding: 2px;
+	vertical-align: middle;
+}
+
+ul.fielditems li.fielditem.footer div.fielditemcontent {
+	padding: 3px 0;
+	border-top: 1px solid #ccc;
+}
+
+ul.fielditems li.fielditem.header {
+	/*background-color: #eceef1;*/
+	/*border-bottom: 1px solid #ccc;*/
+}
+
+ul.fielditems li.fielditem.footer {
+	padding: 0 !important ;
+}
+
+ul.fielditems li.fielditem.header div.fielditemcontent,
+ul.fielditems li.fielditem.footer div.fielditemcontent {
+	margin: 0;
+}
+
+
+
+/* @end */
+
+.rightcontent table.revisions.minimal {
+	width: 97%;
+	font-size: .9em;
+	margin: 1em auto;
+}
+
+.rightcontent table.revisions.minimal td {
+
+	font-size: .9em;
+}
+
+.rightcontent table.revisions.minimal .cbx,
+.rightcontent table.revisions.minimal .actions {
+	width: 40px;
+	text-align: left;
+}
+
+.rightcontent table.revisions.minimal .actions .icons {
+	margin: 0;
+}
+
+/* @group CFP Evalutaion mgmt tables */
+
+table.match {
+	margin: 1em 0;
+	width: 100%;
+}
+
+table .submitternumber {
+	text-align: center;
+}
+
+table.match th.submitternumber {
+	width: 30px;
+}
+
+table.match th.submittername {
+	width: 120px;
+}
+
+table.match th.submittedon {
+	width: 120px;
+}
+
+table.match th.evaluators {
+	width: 470px;
+}
+
+table.match .submitterdetail span.detail.date {
+	color: #888;
+	float: right;
+	font-style: italic;
+}
+
+table.matchingtable {
+	width: 100%;
+	table-layout: fixed;
+}
+
+table.matchingtable td,
+table.matchingtable th {
+	padding: 0.2em;
+}
+
+div.fieldcontent table.evaluators,
+div.fieldcontent table.matchingtable {
+	width: 98%;
+	margin-top: 0;
+}
+
+/* @end */
+
+/* @group Dialogs */
+
+.commentdialog {
+    font-size: 12px;
+}
+
+.commentdialogtitle {
+   background-color: #eee;
+    padding:0.3em;
+    border: 1px solid #ccc;
+    font-size: 13px;
+    margin-bottom: 0.5em;
+    font-weight: bold;
+}
+
+.commentdialogtitle .submitter {
+    float:left;
+}
+
+.commentdialogtitle .evaluator {
+    float:right;
+}
+
+ .commentdialogtitle .criteria {
+     float: left;
+     clear: both;
+    display: block;
+}
+
+.ui-resizable-handle {
+	background: none !important;
+}
+
+div.ui-dialog {
+	box-shadow: 2px 2px 12px rgba(0,0,0,0.4);
+	font-family: inherit;
+}
+
+div.ui-dialog div.column.w70 {
+	display: inline-block;
+	width: 100%;
+	text-align: left;	
+}
+
+div.ui-dialog div.column input.Link_Menu {
+	float: right;	
+}
+
+div.ui-dialog div.column span.Titolo_campoSmall {
+	margin: 1em 0;
+	display: inline-block;
+	*display: inline;
+	zoom: 1;
+	float: left;
+}
+
+div.ui-dialog div.column #CPHservice_RDPconfirmEndDay_wrapper {
+	float: left;
+	width: auto;
+}
+
+/* @end */
+
+
+/* @group UI elements */
+
+table.light {
+	margin: .5em 0;
+	width: 100%;
+}
+
+dl dt,
+dl dd {
+	color: #222;
+}
+
+/* @end */
+
+/* End stylesheet */
+
+div.fieldobject div.fieldrow.pagesize {
+	margin-bottom: 1em;
+}
+
+span.fieldblockwrapper, 
+div.fieldblockwrapper {
+	display: inline-block;
+	*display:inline;
+	*zoom: 1;
+	vertical-align: top;
+	margin-bottom: .5em;
+}
+
+div.fieldblockwrapper.editor {
+	display: block;
+	margin: 1em 0;
+}
+
+div.fieldblockwrapper div.editorloader {
+	margin: .5em 0;
+}
+
+ul.fieldblockwrapper {
+	display: block;
+	margin: .5em 0;
+	padding-left: 1em;
+}
+
+span.fieldblockwrapper.varbuttons {
+	width: 500px;
+	margin: 0;
+}
+
+span.fieldblockwrapper input[type="text"] {
+	width: 45px;
+	margin-right: 1em !important;
+}
+
+div#ctl00_CPHservice_UCsignatures_RPTsignatures_ctl00_UCsignature_UCimgPosX_PNLMeasure,
+div#ctl00_CPHservice_UCsignatures_RPTsignatures_ctl00_UCsignature_UCimgPosY_PNLMeasure {
+	display: inline-block;
+	*display:inline;
+	zoom: 1;
+	width: 310px;
+}
+
+div#ctl00_CPHservice_UCsignatures_RPTsignatures_ctl00_UCsignature_UCimgPosX_PNLMeasure span,
+div#ctl00_CPHservice_UCsignatures_RPTsignatures_ctl00_UCsignature_UCimgPosY_PNLMeasure span {
+	display: inline-block;
+	*display:inline;
+	zoom: 1;
+	width: auto;
+}
+
+div#ctl00_CPHservice_UCsignatures_RPTsignatures_ctl00_UCsignature_UCimgPosX_PNLMeasure span.uc_measure input,
+div#ctl00_CPHservice_UCsignatures_RPTsignatures_ctl00_UCsignature_UCimgPosY_PNLMeasure span.uc_measure input,
+span.uc_measure input.inputtext {
+	width: 50px !important;
+}
+
+span.uc_measure,
+span.fieldblockwrapper span.uc_measure * {
+	display: inline-block;
+	width: auto !important;
+}
+
+span.fieldblockwrapper span.uc_measure * {
+	vertical-align: top;
+}
+
+span.fieldblockwrapper span.uc_measure .Titolo_campo  {
+	min-width: 130px !important;
+}
+
+th.status {
+	
+}
+
+div.fieldobject span.field {
+	display: inline-block;
+	*display: inline;
+	zoom: 1;
+	margin-right: 2em;
+}
+
+span.fieldblockwrapper select {
+	width: auto;
+	margin: 0;
+	margin-right:20px !important;
+	vertical-align: top;
+	margin-bottom: .5em;
+}
+
+span.fieldblockwrapper label {
+/*	width: 40px;*/
+}
+
+span#ctl00_CPHservice_UCsettings_LBLhfPosition_t.fieldlabel {
+	width: auto;
+}
+
+
+.pagebackground span.fieldblockwrapper.options {
+	width: 120px;
+}
+
+.pagebackground span.fieldblockwrapper.image {
+	width: 150px;
+}
+
+.pagebackground span.fieldblockwrapper span.inline *{
+	vertical-align: middle;
+}
+
+.pagebackground span.fieldblockwrapper.bgcontextual span.inline select{
+	width: inherit;
+}
+
+.pagebackground span.fieldblockwrapper span.inline {
+	margin-bottom: .5em;
+	display: inline-block;
+	*display: inline;
+	zoom: 1;
+}
+
+span.fieldblockwrapper span.previewimage img {
+	background-color: #ccc;
+	height: 100px;
+	/*width: ;/*ERROR*/
+}
+
+div.sectioncontent div.innerwrapper div.internal.clearfix span.right a.linkMenu {
+	display: inline-block;
+	*display:inline;
+	zoom: 1;
+	margin: 0;
+}
+
+dl dd div.services {
+	margin-top: 1em;
+}
+
+dl dd div.services * {
+	vertical-align: middle;
+}
+
+dl dd div.services span.item {
+	margin-right: 1em;
+}
+
+div.rightcontent div.contentouter div.content div.fieldobject div.fieldrow.fieldtitle input.inputtext {
+	width: 340px;
+	margin-right: 1em;
+}
+
+.right.code span {
+	width: auto !important;
+	font-size: 10px !important;
+	color: #888 !important;
+}
+
+ul.signature .internal span.left span.code {
+	vertical-align: bottom !important;
+	margin-top: 3px;
+}

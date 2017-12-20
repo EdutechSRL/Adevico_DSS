@@ -1,0 +1,317 @@
+﻿/* CallForPaper Print stylesheet - updated 07/02/2013 17:20 */
+
+table.light
+table.light th,
+table.light td {
+
+}
+
+table.light th {
+    background: #ccc;
+    text-shadow: none;
+    color: #333;
+    font-weight: normal;
+    font-style:italic;
+    webkit-box-shadow:none;
+    moz-box-shadow:none;
+    box-shadow: none;
+}
+
+td .green,
+td .gray,
+td .yellow,
+td .red,
+td.completed span,
+td.notstarted span,
+td.started span,
+span.statusitem span.green,
+span.statusitem span.gray,
+span.statusitem span.yellow,
+span.statusitem span.red {
+    background: transparent;
+    webkit-box-shadow:none;
+    moz-box-shadow:none;
+    box-shadow: none !important;
+}
+
+span.statusitem span.green,
+span.statusitem span.gray,
+span.statusitem span.yellow,
+span.statusitem span.red {
+       border: 1px solid #ccc;
+}
+
+div.infobar {
+    padding: 1em 1em;
+    border: 1px solid #ccc;
+    margin-bottom: 1em;
+    background: transparent;
+    webkit-box-shadow:none;
+    moz-box-shadow:none;
+    box-shadow: none;
+}
+
+div.infobar h2,
+div.infobar h3,
+div.infobar h4 {
+     margin-top: 0;
+     margin-bottom: .5em;
+}
+
+
+div.commissionname h3 {
+    margin-top: 2em;
+}
+
+div.infobar div.fieldobject div.fieldrow span.fieldlabel {
+    font-weight: normal;
+    font-style: normal;
+    float: left;
+    padding: 1px 0;
+    margin-right: 1em;
+}
+
+span#ctl00_CPHservice_LBnotstarted.yellow {
+
+}
+
+div.infobar div.fieldobject div.fieldrow span.status.completion {
+    float: left;
+    display: inline-block;
+    *display:inline;
+    zoom: 1;
+    width: 740px;
+}
+
+div.infobar div.fieldobject div.fieldrow span.status.completion span.statusitem {
+    margin-bottom: .5em;
+    display: inline-block;
+    *display:inline;
+    zoom: 1;
+}
+
+div.infobar div.fieldobject div.fieldrow.clearfix span.status.completion span.statusitem {
+    margin-right: 2em;
+}
+
+div.infobar div.fieldobject div.fieldrow span.status.completion span.statusitem span {
+    font-size: 1em;
+    font-weight: normal;
+    font-style: normal;
+}
+
+div.infobar div.fieldobject {
+    border: none;
+    webkit-box-shadow:none;
+    moz-box-shadow:none;
+    box-shadow: none;
+}
+
+div.infobar div.fieldobject div.fieldrow span.fieldtext span.extrainfo {
+    font-style: italic;
+    font-weight: normal;
+    margin-left: 1em;
+}
+
+div.infobar div.fieldobject div.fieldrow.clearfix span.status.completion span.statusitem span.label span.name {
+    font-weight: bold;
+}
+
+div.infobar div.fieldobject div.fieldrow {
+    margin: .5em 0;
+}
+
+div.infobar div.fieldrow.buttons {
+    display: none;
+}
+
+div.infobar div.fieldobject div.fieldrow label.fieldlabel {
+    width: auto;
+    display: inline-block;
+    font-weight: normal;
+    font-style: normal;
+}
+
+div.infobar div.fieldobject div.fieldrow span.fieldtext {
+    margin-right: 1em;
+    font-weight: bold;
+}
+
+dl.criterias {
+    padding: 0;
+    margin: 0;
+}
+
+dl.criterias dt.criteriatitle {
+    text-align: left;
+    padding: 0.2em;
+    padding-bottom: 0.5em;
+}
+
+dl.criterias dd.criteriacomment {
+    margin: 0;
+    padding-left: 1em;
+    margin-bottom: 1.5em;
+    border-bottom: 1px solid #ccc;
+    font-size: 0.9em;
+    color: #666;
+}
+
+dl.criterias dt.criteriatitle span.criteriavote {
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    width: auto;
+    height: 20px;
+    text-align: center;
+    padding: 1px 6px;
+    line-height: 1.2em;
+    font-size: 1.4em;
+    color: #333;
+}
+
+dl.criterias dt.criteriatitle span.criteriavote.notcompleted {
+    font-size: 1.1em;
+    line-height: 1.5em;
+    font-weight: normal;
+    font-style: normal;
+    color: #c20;
+    border-color: #c20;
+    border: none;
+}
+
+div.view.evaluation div.evaluation dl.criterias dt.criteriatitle * {
+    vertical-align: baseline;
+    *vertical-align: bottom;
+}
+
+div.view.evaluation div.evaluation dl.criterias dt.criteriatitle span.criteriavote {
+
+}
+
+table.evaluations {
+    width: 100%;
+}
+
+table.evaluations .expander {
+    margin-left: 0px !important;
+}
+
+table.evaluations .comment.hidden {
+    display: none;
+}
+
+table.evaluations tr.commission {
+    background: transparent;
+    vertical-align: middle;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    text-shadow: none;
+}
+
+table.evaluations tr.commission .title {
+    /*background-color: #ccc;*/
+
+    text-transform: uppercase;
+}
+
+table.evaluations tr.evaluator {
+/*    background-color: #ddd;*/
+    background-color: transparent;
+}
+
+table.evaluations tr.evaluator .title {
+/*    background-color: #ccc;*/
+
+}
+
+table.evaluations tr.criteria {
+/*    background-color: #eee;*/
+}
+
+table.evaluations tr.general td,
+table.evaluations tr.criteria.expanded td {
+/*    background-color: #eee;*/
+/*    border-top: none; !important;*/
+    border-bottom: none; !important;
+    border-right: none; !important;
+    border-left: none; !important;
+
+}
+
+table.evaluations tr.general td,
+table.evaluations tr.criteria.expanded td.vote {
+    border-right: 1px solid #ccc;
+}
+
+table.evaluations tr.criteria td.vote {
+}
+
+table.evaluations tr.general td.title {
+/*    font-weight: bold;*/
+}
+
+table.evaluations tr.general td.comment {
+/*    background-color: #eee;*/
+}
+
+table.evaluations tr.criteria .title {
+/*    background-color: #eee;*/
+}
+
+table.evaluations td.status {
+    margin-left: 0;
+    width: 200px;
+}
+
+table.evaluations th.title {
+    width: 650px;
+}
+
+table.evaluations td.status {
+    width: 80px;
+    text-align: center;
+}
+
+table.evaluations td.status span {
+    display: inline-block;
+    *display:inline;
+    zoom: 1;
+}
+
+table.evaluations tr td.status span {
+    width: 100%;
+}
+
+table.evaluations tr.commission td.status span,
+table.evaluations tr.evaluator td.status span,
+table.evaluations tr.criteria td.status span {
+    display: inline;
+    text-indent: 0;
+    font-size: inherit;
+    line-height: inherit;
+    overflow: visible;
+    width: auto !important;
+    height: auto;
+    background: none;
+    box-shadow: none;
+    border: none;
+}
+
+table.evaluations tr td.comment {
+/*    background-color: #eee;*/
+    border-top: none !important;
+    padding-top: 5px;
+    padding-bottom: 10px;
+    font-size: .9em;
+}
+
+table.evaluations td.vote {
+    font-weight: normal;
+    width: auto;
+}
+
+/* End stylesheet */

@@ -1,0 +1,256 @@
+﻿<!doctype html>
+<!--[if IE 9]><html class="lt-ie10" lang="en" > <![endif]-->
+<html class="no-js" lang="en" data-useragent="Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; Trident/6.0)">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Divas Cookies jQuery plugin</title>
+		<meta name="description" content="EU Cookie Law compliance jQuery plugin by Coding Divas" />
+		<meta name="author" content="Federica Sibella - Michela Chiucini" />
+		<meta name="copyright" content="Coding Divas Copyright (c) 2014-15" />
+		<link href="favicon.gif" rel="shortcut icon" />
+		<link rel="apple-touch-icon-precomposed" href="images/apple-touch-icon.png">
+		<link rel="stylesheet" href="css/normalize.css" />
+		<link rel="stylesheet" href="css/style.css" />
+		<link rel="stylesheet" href="css/divascookies_style_dark_top.css" />
+		<link rel="stylesheet" type="text/css" media="screen" href="css/prism.css" />
+		<link href='http://fonts.googleapis.com/css?family=Lato:400,400italic,900,700,300' rel='stylesheet' type='text/css'>		
+        <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,700,600' rel='stylesheet' type='text/css'>
+		<!--[if lt IE 9]>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.2/html5shiv.js"></script>
+		<link rel="stylesheet" href="css/ie.css" />
+		<![endif]-->
+	</head>
+	<body>
+		<!-- Header and Nav -->
+		<header class="site-header" role="banner">
+			<h1>Divas Cookies demo</h1>
+		</header>
+		<!-- content -->
+		<section class="instructions">
+			<div>
+				<h2>Divas Cookies documentation</h2>
+				<h3>Thank you for your interest in our jQuery plugin!</h3>
+				<p>If you have any questions that are beyond the scope of this help file, please feel free to email us writing to the email address below. Enjoy!</p>
+				<p class="version_log">
+					Version: 0.3<br />
+					Created: May 7th 2015<br />
+					By: Coding Divas [Federica Sibella &amp; Michela Chiucini]<br />
+					Email: support@codingdivas.net
+				</p>
+				<h2>Divas Cookies setup</h2>
+				<!--files to include-->
+				<h3>Files to include (mandatory)</h3>
+				<p>Remember to add these files in your &lt;head&gt; section.</p>
+				<pre>
+<code class="language-markup">&lt;!-- Divas Cookies skin -->
+&lt;link rel="stylesheet" type="text/css" media="screen" href="path-to-css/divascookies_dark_top.css" />
+
+&lt;!-- your jQuery version -->
+&lt;script type="text/javascript" src="path-to-js/jquery-2.1.4.min.js">&lt;/script>
+
+&lt;!-- your Divas Cookies version -->
+&lt;script type="text/javascript" src="path-to-js/jquery.divascookies-0.3.min.js">&lt;/script>
+</code>				
+				</pre>
+				<!--basic initialization-->
+				<h3>Basic initialization (mandatory)</h3>
+				<p>Just call Divas Cookies on document ready.</p>
+				<pre>
+<code class="language-javascript">$(document).ready(function() {
+	$.DivasCookies();
+});</code>				
+				</pre>
+				<!--basic CSS-->
+				<h3>Writing your own CSS for Divas Cookies</h3>
+				<p>Here is a list of CSS classes created by Divas Cookies. You can style them as you wish or just link at one of our Divas Cookies skins, if you prefer.</p>
+				<pre>
+<code class="language-css">/*
+* Divas Cookies CSS classes
+*/
+.divascookies {
+	// main container
+}
+
+.divascookies > .divascookies-banner-container {
+	// banner container
+}
+
+.divascookies p.divascookies-banner-text {
+	// banner text
+}
+
+span.divascookies-policy-link a {
+	// link to the extended policy page
+}
+
+.divascookies-banner-container > .divascookies-accept-button-container {
+	// container of the accept button
+}
+
+.divascookies-accept-button-container > .divascookies-accept-button-img {
+	// container of the accept button img
+}
+
+.divascookies-accept-button-container > .divascookies-accept-button-text {
+	// accept button text
+}	
+</code>				
+				</pre>
+				
+				<!--configurable parameters-->
+				<h2>Divas Cookies configurable parameters</h2>
+				<p class="intro">Divas Cookies can be configured to fit your needs with many straightforward parameters that you can set when calling the plugin.</p>
+			
+				<h3>bannerText <span class="variable_type">(string)</span></h3>
+				<p>It is the text for the Divas Cookies banner.<br />Default value: "This website uses cookies.". Configuration example: </p>
+				<pre>
+<code class="language-javascript">$.DivasCookies({
+	bannerText: "This website uses cookies."	
+});</code>					
+				</pre>
+				
+				<h3>cookiePolicyLink <span class="variable_type">(string)</span></h3>
+				<p>It is the link to your extended cookie policy.<br />Default value: "". Configuration example: </p>
+				<pre>
+<code class="language-javascript">$.DivasCookies({
+	cookiePolicyLink: "yourprivacy.html"	
+});</code>					
+				</pre>
+				
+				<h3>cookiePolicyLinkText <span class="variable_type">(string)</span></h3>
+				<p>It is the text for the link to the extended cookie policy.<br />Default value: "Read our cookie policy.". Configuration example: </p>
+				<pre>
+<code class="language-javascript">$.DivasCookies({
+	cookiePolicyLinkText: "More info."	
+});</code>					
+				</pre>
+				
+				<h3>thirdPartyPolicyWidget <span class="variable_type">(string)</span></h3>
+				<p>To be used with third party privacy policies, now active only for Iubenda policies. If set to "iubenda" tries to use the Iubenda widget.<br />Default value: "". Configuration example: </p>
+				<pre>
+<code class="language-javascript">$.DivasCookies({
+	thirdPartyPolicyWidget: "iubenda"	
+});</code>					
+				</pre>
+				
+				<h3>acceptButtonText <span class="variable_type">(string)</span></h3>
+				<p>It is the text for the acceptance button.<br />Default value: "Ok". Configuration example: </p>
+				<pre>
+<code class="language-javascript">$.DivasCookies({
+	acceptButtonText: "Ok, go ahead!"	
+});</code>					
+				</pre>
+				
+				<h3>acceptButtonSrc <span class="variable_type">(string)</span></h3>
+				<p>It is the source for the acceptance button image (optional).<br />Default value: "". Configuration example: </p>
+				<pre>
+<code class="language-javascript">$.DivasCookies({
+	acceptButtonText: "path-to-images/acceptButton.png"	
+});</code>					
+				</pre>
+				
+				<h3>openEffect <span class="variable_type">(string)</span></h3>
+				<p>It is the opening effect for Divas Cookies banner.<br />
+					Default value: "". Accepted values: "fade", "slideUp", "slideDown", "slideLeft", "slideRight". Configuration example: </p>
+				<pre>
+<code class="language-javascript">$.DivasCookies({
+	openEffect: "fade"	
+});</code>					
+				</pre>
+				
+				<h3>openEffectDuration <span class="variable_type">(integer)</span></h3>
+				<p>It is the duration in msec for the opening effect of Divas Cookies banner.<br />
+					Default value: 600. Configuration example: </p>
+				<pre>
+<code class="language-javascript">$.DivasCookies({
+	openEffectDuration: 1000	
+});</code>					
+				</pre>
+				
+				<h3>openEffectEasing <span class="variable_type">(string)</span></h3>
+				<p>It is the easing function for the opening effect of Divas Cookies banner.<br />
+					Default value: "swing". Accepted values: "swing", "linear". Configuration example: </p>
+				<pre>
+<code class="language-javascript">$.DivasCookies({
+	openEffectEasing: "linear"	
+});</code>					
+				</pre>
+				
+				<h3>closeEffect <span class="variable_type">(string)</span></h3>
+				<p>It is the closing effect for Divas Cookies banner.<br />
+					Default value: "". Accepted values: "fade", "slideUp", "slideDown", "slideLeft", "slideRight". Configuration example: </p>
+				<pre>
+<code class="language-javascript">$.DivasCookies({
+	closeEffect: "fade"	
+});</code>					
+				</pre>
+				
+				<h3>closeEffectDuration <span class="variable_type">(integer)</span></h3>
+				<p>It is the duration in msec for the closing effect of Divas Cookies banner.<br />
+					Default value: 600. Configuration example: </p>
+				<pre>
+<code class="language-javascript">$.DivasCookies({
+	closeEffectDuration: 1000	
+});</code>					
+				</pre>
+				
+				<h3>closeEffectEasing <span class="variable_type">(string)</span></h3>
+				<p>It is the easing function for the closing effect of Divas Cookies banner.<br />
+					Default value: "swing". Accepted values: "swing", "linear". Configuration example: </p>
+				<pre>
+<code class="language-javascript">$.DivasCookies({
+	closeEffectEasing: "linear"	
+});</code>					
+				</pre>
+				
+				<h3>saveUserPreferences <span class="variable_type">(boolean)</span></h3>
+				<p>If true, sets a cookie after the Divas Cookies is closed the first time and never shows it again.<br />
+					Default value: true. Accepted values: true, false. Configuration example: </p>
+				<pre>
+<code class="language-javascript">$.DivasCookies({
+	saveUserPreferences: false // keeps showing the banner after the accept button has been clicked	
+});</code>					
+				</pre>
+				
+				<h3>debugMode <span class="variable_type">(boolean)</span></h3>
+				<p>If true, Divas Cookies options are checked and warnings are shown if it is the case (only for debug purposes, do not use in production environment).<br />
+					Default value: false. Accepted values: true, false. Configuration example: </p>
+				<pre>
+<code class="language-javascript">$.DivasCookies({
+	debugMode: true
+});</code>					
+				</pre>
+			</div>
+		</section>
+		<!-- footer -->
+		<footer class="clearfix">
+			<p>
+				&copy;2014 - 2015 [&#9733;] <a href="http://codingdivas.net">CODING DIVAS</a> 
+			</p>
+		</footer>
+		<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+		<script type="text/javascript" src="js/jquery.divascookies-0.3.min.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function() {
+				$.DivasCookies({
+					bannerText				: "This website uses cookies in order to improve your web experience. ",		// text for the Divas Cookies banner
+					cookiePolicyLink		: "yourprivacy.html",		// link to the extended cookie policy
+					cookiePolicyLinkText	: "More info",				// text for the link to the extended cookie policy
+					thirdPartyPolicyWidget	: "",						// if set to "iubenda" tries to use the Iubenda widget
+					acceptButtonText		: "OK",						// text for the close button
+					acceptButtonSrc			: "",						// source for the close button image
+					openEffect				: "slideDown",				// opening effect for Divas Cookies banner ["fade", "slideUp", "slideDown", "slideLeft", "slideRight"]
+					openEffectDuration		: 600,						// duration of the opening effect (msec)
+					openEffectEasing		: "swing",					// easing for the opening effect
+					closeEffect				: "slideUp",				// closing effect for Divas Cookies banner ["fade", "slideUp", "slideDown", "slideLeft", "slideRight"]
+					closeEffectDuration		: 600,						// duration of the closing effect (msec)
+					closeEffectEasing		: "swing",					// easing for the closing effect
+					debugMode				: false,					// if true, the options are checked and warnings are shown
+					saveUserPreferences		: false						// if true, sets a cookie after the Divas Cookies is closed the first time and never shows it again
+				});
+			});
+		</script>
+		<script type="text/javascript" src="js/prism.js"></script>
+	</body>
+</html>

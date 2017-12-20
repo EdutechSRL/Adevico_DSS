@@ -1,0 +1,113 @@
+﻿.icon
+{
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    /*text-indent: -999999px;*/
+    background-position: center center;
+    background-repeat: no-repeat;
+    margin: 1px;
+    padding: 0;
+}
+
+.iconEmpty
+{
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    /*text-indent: -999999px;*/
+    background-position: center center;
+    background-repeat: no-repeat;
+    margin: 1px;
+    padding: 0;
+}
+
+.iconLarge
+{
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    /*text-indent: -999999px;*/
+    vertical-align:text-top;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    margin: 1px;
+    padding: 0;
+}    
+
+.iconLarge a { text-decoration:none; }
+.iconLarge a:hover { text-decoration:none; background-color:Yellow; }
+.inline
+{
+    height: 24px;
+    width: 24px; /*display:block;              float:left;*/
+    display: inline-block;
+    vertical-align: text-bottom;
+    background-position: center bottom;
+}
+.empty { background-image: url("img/empty20.gif"); }
+.play { background-image: url("img/play.gif"); }
+.orderUp { background-image:url("img/bullet_arrow_up.gif"); text-decoration:none; }
+.orderDown { background-image:url("img/bullet_arrow_down.gif"); text-decoration:none; }
+.stats { background-image: url("img/statistic.gif"); }
+.preview { background-image: url("img/preview.gif"); }
+.switch {
+    height: 30px;
+    width: 50px;
+    display: inline-block;
+    vertical-align: text-bottom;
+    background-position: center bottom;
+}
+.delete { background-image: url("img/delete.gif"); }
+.undelete { background-image: url("img/undelete.gif"); }
+.deletefrombasket { background-image: url("img/remove.gif"); }
+
+.h20 { height:20px; }  
+
+.w15 { width:15%; }
+.w20 { width:20%; }
+.w25 { width:25%; }
+.w30 { width:30%; }
+.w40 { width:40%; }
+.w50 { width:50%; }
+.w60 { width:60%; }
+.w75 { width:75%; }
+.w80 { width:80%; }
+.w90 { width:90%; }
+.w100 { width:100%; }
+        
+/* Correzioni grafiche */
+.RadTreeView { text-align:left; }
+.RadTreeView img {
+    height: 16px;
+    width: 16px;
+    padding: 0px;
+    margin: 0px;
+    border: 0px;
+    vertical-align: middle;
+}
+div.RadTreeViewContainer
+{
+    width: 400px; 
+    overflow: scroll; 
+    float: left;
+    min-height: 760px;
+    max-height: 760px;
+}
+
+/* Aggiunte Layout */
+div.Menu_FieldTitle {
+    padding: 0.3em;
+    padding-right: 0.5em;
+    width: 9em;
+    text-align: left;
+}
+div.Menu_FieldTitle_long { padding: 0.3em; padding-right: 0.5em; text-align: left; }
+div.Menu_FieldContent { padding: 0.2em; }
+ul.Menu_ProfileType { text-align: left; width:  400px; min-width: 400px; max-width: 400px; }
+ul.Menu_ProfileType li { display: inline-block; width: 190px; min-width: 190px; }
+div.Translation { border: 1px solid; padding: 0.3em; text-align: left; }
+div.Translation input { width: 23em; }
+div.Translation span { width: 10em; min-width: 10em; display: inline-block; }
+div.Menu_TransLangName { float: left; padding: 0.3em; padding-right: 1em; padding-bottom: 3em; }
+div.Menu_Translation { display: block; padding-left: 6em; }

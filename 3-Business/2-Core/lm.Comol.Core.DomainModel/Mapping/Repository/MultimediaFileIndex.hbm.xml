@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="lm.Comol.Core.DomainModel" namespace="lm.Comol.Core.DomainModel.Repository">
+  <class name="MultimediaFileIndex" table="FR_MultimediaFileIndex" lazy="true">
+    <id name="Id" column="Id" type="Int64">
+      <generator class="native"/>
+    </id>
+    <property name="Fullname" column="Fullname" type="String" />
+    <property name="IsDefaultDocument" column="IsDefaultDocument" type="Boolean" />
+    <property name="Probability" column="Probability" type="Single" />
+    <many-to-one name="MultimediaFile" column="IdMultimediaFileTransfer" class="MultimediaFileTransfer" />
+  </class>
+</hibernate-mapping>

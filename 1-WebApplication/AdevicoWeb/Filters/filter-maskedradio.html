@@ -1,0 +1,16 @@
+﻿<div class="filterinner">
+    <span class="title" ng-show="filter.Label!=''">{{filter.Label}}:</span>
+    <span class="content masked">
+        <div class="radio hide">
+            <span ng-repeat="value in filter.Values track by value.Id" class="input-group">
+                <input class="input" type="radio" id="{{filter.Name}}_{{$index}}"
+                       name="{{filter.Name}}" ng-value="value.Id" ng-model="filter.SelectedId" ng-disabled="value.Disabled" /><label class="label" for="{{filter.Name}}_{{$index}}">{{value.Name}}</label>
+            </span>
+        </div>
+        <span class="btnswitchgroup">
+            <a class="btnswitch" ng-repeat="value in filter.Values track by value.Id"
+               ng-class="{'first':$first, 'last':$last, 'active':filter.SelectedId==value.Id, 'disabled':value.Disabled}"
+               href="" title="{{value.Title}}" ng-click="select(filter,value)">{{value.Name}}</a>          
+        </span>
+    </span>
+</div>  

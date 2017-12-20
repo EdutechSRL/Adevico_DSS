@@ -1,0 +1,679 @@
+/* profile management stylesheet - updated 12.12.12 */
+
+/*  Generici */
+
+div.DVmenu {
+	width: 900px;
+	text-align: right;
+	padding-top: 5px;
+	margin: 0px auto;
+}
+
+span.Field_Row {
+	display: inline-block;
+	width: 100%;
+	padding: 0.2em;
+}
+
+/* UC */
+
+div.BoxContainer {
+	padding: 5px;
+	display: inline-block;
+	width: 760px;
+}
+
+div.Box80 {
+	float: left;
+	width: 80%
+}
+
+div.Box20 {
+	float: left;
+	width: 19%
+}
+
+.clear {
+	clear: both;
+}
+
+div.TopButton {
+	text-align: right;
+	width: 100%;
+}
+
+.BottomSpacing {
+	padding-bottom: 2em;
+	display: inline-block;
+}
+
+.TopSpacing {
+	padding-top: 4em;
+	display: inline-block;
+}
+
+div#AuthenticationProviders span.Fieldrow {
+	display: block;
+	clear: both;
+}
+
+div#AuthenticationProviders span.Fieldrow .Titolo_campo {
+	display: inline-block;
+	width: 120px;
+	min-width: 120px;
+	padding: 3px;
+}
+
+/*div.StepData*/
+
+span.Fieldrow {
+	display: inline-block;
+	width: 890px;
+	padding-top: 3px;
+	text-align: left;
+}
+
+/*div.StepData */
+
+span.Fieldrow .Titolo_campo {
+	display: inline-block;
+	width: 165px;
+}
+
+/* Pages ProfileManagement.aspx */
+
+.ProfileManagement {
+	
+}
+
+ProfileManagement.Menu {
+	width: 900px;
+	text-align: right;
+}
+
+.ProfileManagementFilters {
+	
+}
+
+#progressBackgroundFilter {
+	position: fixed;
+	top: 0px;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+	overflow: hidden;
+	padding: 0;
+	margin: 0;
+	background-color: #000;
+	filter: alpha(opacity=50);
+	opacity: 0.5;
+	z-index: 1000;
+}
+
+#processMessage {
+	position: fixed;
+	top: 30%;
+	left: 43%;
+	padding: 10px;
+	width: 14%;
+	z-index: 1001;
+	background-color: #fff;
+	border: solid 1px #000;
+}
+
+/* Pages DeleteProfile.aspx */
+
+#progressBackgroundFilter {
+	position: fixed;
+	top: 0px;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+	overflow: hidden;
+	padding: 0;
+	margin: 0;
+	background-color: #000;
+	filter: alpha(opacity=50);
+	opacity: 0.5;
+	z-index: 1000;
+}
+
+#processMessage {
+	position: fixed;
+	top: 30%;
+	left: 43%;
+	padding: 10px;
+	width: 14%;
+	z-index: 1001;
+	background-color: #fff;
+	border: solid 1px #000;
+}
+
+div.DeleteProfile_Del {
+	width: 900px;
+	text-align: center;
+	padding-top: 50px;
+	padding-bottom: 150px;
+	margin: 0px auto;
+}
+
+div.DeleteProfile_Update {
+	width: 100%;
+	text-align: center;
+}
+
+span.middle {
+	vertical-align: middle;
+}
+
+/* Altri stili layout (MB) */
+
+div#content div.DIV_MP_Content span.Field_Row {
+	display: inline-block;
+	width: 100%;
+	padding: 0.2em;
+}
+
+
+span.Field_Row span.Testo_Campo {
+	
+}
+
+div#content div.DIV_MP_Content span.Field_Row .Titolo_campo {
+	display: inline-block;
+	width: 170px;
+	vertical-align: top;
+}
+
+div#content div.DIV_MP_Content span.Field_Row .info_text {
+	display: inline-block;
+	width: auto !important;
+}
+
+div#DVlanguages {
+	margin-top: 1em;
+}
+
+div#DVlanguages span.translation_container {
+	display: block;
+	margin: 0;
+	margin-top: 1em;
+}
+
+.rbl_vertical {
+	display: inline-block;
+}
+
+div.StepButton {
+	margin-top: 1em;
+}
+
+span.rbl_field_row {
+	margin-top: 0.7em;
+	vertical-align: top;
+}
+
+/* Add login format */
+
+div#LoginFormat span.Field_Row {
+	display: inline-block;
+	padding: 0.2em;
+	width: 100%;
+}
+
+div#LoginFormat span.Field_Row .Titolo_Campo {
+	display: inline-block;
+	width: 130px;
+}
+
+/* Attributi sistema di autenticazione */
+
+div#ProviderAttribute span.Field_Row .Titolo_campo {
+	display: inline-block;
+	width: 85px;
+}
+
+/*Extra*/
+
+.topbar {
+	z-index: 50;
+	margin: 1em 0;
+	width: 900px;
+	text-align: right;
+}
+
+.topbar .innerwrapper {
+	padding: .5em;
+	border: 1px solid #ccc;
+	background-color: #e6e9ed;
+	-moz-box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.5), 1px 1px 1px rgba(0, 0, 0, 0.3);
+	-webkit-box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.5), 1px 1px 1px rgba(0, 0, 0, 0.3);
+	box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.5), 1px 1px 0 rgba(0, 0, 0, 0.15);
+}
+
+ul.dynamicfields {
+	margin: 0;
+	padding: 0;
+	width: 900px;
+}
+
+ul.dynamicfields li.dynamicfield {
+	margin: 0;
+	padding: 10px;
+	list-style: none;
+	border: 1px solid #ccc;
+	margin-bottom: 10px;
+}
+
+.addDynamicField {
+	font-size: 13px;
+}
+
+.viewmode .editarea {
+	display: none;
+}
+
+.editmode .editarea {
+	margin-top: 10px;
+}
+
+.editmode .editarea .details {
+	border: 1px solid #ccc;
+	margin-bottom: 5px;
+	padding-top: 5px;
+	padding-left: 5px;
+}
+
+span.Field_Row.other.hidden {
+	display: none !important;
+}
+
+.rightbutton {
+	text-align: right;
+}
+
+ul.dynamicfields li.dynamicfield span.icons {
+	float: right;
+}
+
+ul.dynamicfields li.dynamicfield .dynamicfieldname {
+	color: #000;
+	font-weight: bold;
+}
+
+ul.dynamicfields li.dynamicfield .dynamicfieldtype {
+	color: #777;
+	font-style: italic;
+}
+
+/*@ Group FieldItems*/
+
+span.fielditemswrapper {
+	display: inline-block;
+	*display: inline;
+	vertical-align: top;
+}
+
+ul.fielditems {
+	padding: 6px 6px 2px 6px;
+	margin-bottom: .5em;
+	/*-moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;*/
+    border: 1px solid #ccc;
+	display: inline-block;
+	*display: inline;
+	zoom: 1;
+	/*width: 442px;*/
+	/*width:100%*/
+    width: 342px;
+}
+
+.macattribute ul.fielditems {
+	width: 300px;
+}
+
+.organizationattribute ul.fielditems {
+	width: 542px;
+}
+
+.coursecatalogueattribute ul.fielditems {
+	width: 342px;
+}
+
+ul.fielditems li.fielditem {
+	list-style-image: none;
+	list-style-type: none;
+}
+
+ul.fielditems li.fielditem div.fielditemcontent {
+	margin: 2px 0;
+}
+
+ul.fielditems li.fielditem div.fielditemcontent .inputtext,
+ul.fielditems li.fielditem div.fielditemcontent .spaninputtext,
+ul.fielditems li.fielditem div.fielditemcontent .inputchar,
+ul.fielditems li.fielditem div.fielditemcontent .spaninputchar {
+	display: inline-block;
+	*display: inline;
+	zoom: 1;
+	margin-right: .5em;
+}
+
+ul.fielditems li.fielditem div.fielditemcontent .spaninputtext {
+	width: 196px;
+}
+
+ul.fielditems li.fielditem div.fielditemcontent .inputtext {
+	width: 200px;
+}
+
+ul.fielditems li.fielditem div.fielditemcontent .spaninputchar {
+	width: 46px;
+}
+
+ul.fielditems li.fielditem div.fielditemcontent .inputchar {
+	width: 50px;
+}
+
+ul.fielditems li.fielditem div.fielditemcontent .spaninputtext,
+ul.fielditems li.fielditem div.fielditemcontent .spaninputchar {
+	font-weight: bold;
+	padding: 2px;
+	vertical-align: middle;
+}
+
+ul.fielditems li.fielditem.footer div.fielditemcontent {
+	padding: 3px 0;
+	border-top: 1px solid #ccc;
+}
+
+ul.fielditems li.fielditem.header {
+	
+}
+
+ul.fielditems .code {
+	width: 165px !important;
+}
+
+ul.fielditems li.fielditem.foo
+
+ter {
+	padding: 0 !important;
+}
+
+ul.fielditems li.fielditem.header div.fielditemcontent,
+ul.fielditems li.fielditem.footer div.fielditemcontent {
+	margin: 0;
+}
+
+.movecfielditem {
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	text-indent: -9999px;
+	cursor: move;
+	*text-indent: 0;
+	*font-size: 0;
+	*line-height: 0;
+	vertical-align: middle;
+	margin-top: 2px;
+}
+
+.handle,
+.movesection,
+.movecfield,
+.movecfielditem,
+.movecfp,
+.icon.orderUp,
+.icon.orderDown,
+div.choseselect .icons .icon.selectall,
+div.choseselect .icons .icon.selectnone {
+	display: inline-block;
+	*display: inline;
+	background: url(../../../Generics/Command/img/handlers_set_1.png) no-repeat;
+	background-position: -240px 0px;
+	background-repeat: no-repeat !important;
+	text-align: left;
+	text-indent: -9999px;
+	*text-indent: 0;
+	*font-size: 0;
+	*line-height: 0;
+	*overflow: hidden;
+}
+
+.movecfield,
+.movecfielditem {
+	background-position: 2px -579px;
+	width: 16px;
+	height: 16px;
+}
+
+.icons .icon {
+	/*display: inline-block;
+	*display: inline;
+	zoom: 1;
+	width: 16px;
+	height: 16px;
+	background: url(../../../Generics/Command/img/common_icons_set1_16.png) no-repeat;
+	background-position: -240px 0px;
+	background-repeat: no-repeat !important;
+	text-align: left;
+	text-indent: -9999px;
+	*text-indent: 0;
+	*font-size: 0;
+	*line-height: 0;
+	*overflow: hidden;*/
+}
+
+td .icons {
+	display: inline-block;
+	*display:inline;
+	zoom: 1;
+}
+
+div#CPHservice_UDPshibbolethItems {
+	/*border: 1px solid #ccc;
+	border-top: none;*/
+}
+
+.icons .icon,
+.icons .icon:hover {
+	border:none !important;
+	box-shadow: none !important;
+}
+
+.icons .icon.delete {
+	background-position: -40px 0px !important;
+}
+
+.ui-state-highlightHelper {
+	background: none;
+	border: 3px dashed #aaa;
+	margin-bottom: 1em;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	margin-left: 0;
+	padding: 0;
+	width: 675px;
+    position: relative;
+	left: 16px;
+	list-style-type: none;
+	max-height: 50px;
+	*height: 50px;
+}
+
+ul.fielditems li.ui-state-highlightHelper {
+	width: 90% !important;
+	*width: 200px !important;
+	height: auto;
+	border: 1px dashed #aaa;
+}
+
+.fielditemcontent .icons {
+	float: right;
+}
+
+li.fielditem.dragging .icons {
+	display: none;
+}
+
+/*@ End Group FieldItems*/
+
+/*@Colors*/
+
+ul.dynamicfields li.dynamicfield {
+	border-radius: 5px;
+	box-shadow: 1px 1px 1px 0 #ccc;
+}
+
+ul.dynamicfields li.dynamicfield.viewmode {
+	background-color: #f9f9f9;
+}
+
+ul.dynamicfields li.dynamicfield.editmode {
+	border-color: #aaa;
+	background-color: #f7f7f7;
+}
+
+.editmode .editarea .details {
+	border-color: #9f9f9f;
+	background-color: #fefefe;
+}
+
+.editmode .editarea .details ul.fielditems {
+	border-color: #bfbfbf;
+	width: auto!important;
+}
+
+.editmode .editarea .details ul.fielditems select {
+	
+}
+
+span.Field_Row span.Field_Row {
+	margin-left: -3px;
+}
+
+input.inputchar {
+	width: 50px;
+}
+
+/* Fix widths*/
+
+.inputtext.organization,
+.inputtext.catalogue,
+.inputtext.attribute {
+	width: 190px !important;
+}
+
+.footer .inputtext.organization,
+.footer .inputtext.catalogue,
+.footer .inputtext.attribute {
+	width: 192px !important;
+}
+
+.spaninputtext.organization,
+.spaninputtext.attribute,
+.spaninputtext.catalogue {
+	width: 186px !important;
+}
+
+.inputtext.profile,
+.inputtext.page {
+	width: 100px !important;
+}
+
+.spaninputtext.profile,
+.spaninputtext.page {
+	width: 95px !important;
+}
+
+.spaninputchar.code,
+.inputchar.code {
+	width: 50px !important;
+}
+
+table td span.itemname {
+	display: inline-block;
+	*display:inline;
+	zoom: 1;
+	float: left;
+
+}
+
+table td div.settings {
+	display: inline-block;
+	*display:inline;
+	zoom: 1;
+	margin: 0 1em;
+	color: #3b5679 !Important;
+	font-size: .9em;
+	margin: 2px 0;
+	float: right;
+}
+
+table td div.settings a {
+	color: #3b5679 !Important;
+	margin: 0 2px;
+}
+
+span.Field_Row {
+	margin: 2px 0;
+	display: inline-block;
+	*display:block;
+	
+}
+
+span.Field_Row.topbuttons {
+	margin: 1em 0;
+	text-align: right;
+}
+
+label.Titolo_campo {
+	width: 185px !important;
+	margin-bottom: ;
+}
+
+div.divswitch span.Field_row {
+
+}
+
+div.DVmenu{
+	margin-bottom: 1em;
+}
+
+select#CPHservice_CTRLauthenticationProvider_DDLtokenFormat.Testo_Campo {
+	display: inline-block;
+}
+
+#DVlanguages span.translation_container {
+	border: 1px solid #000;
+	border-top: none;
+	margin-top: 0 !important;
+	padding: 5px;
+}
+
+#CPHservice_UDPshibbolethItems div table td,
+table td .Titolo_campo {
+	font-size: .9em;
+}
+
+#CPHservice_UDPshibbolethItems div table .actions {
+	text-align: left;
+}
+
+table.light {
+	margin: 1em 0;
+}
+
+#CPHservice_UDPshibbolethItems div div span.Field_Row {
+	text-align: left;
+	margin: 1em 0;
+}
+
+#CPHservice_UDPshibbolethItems div div span.Field_Row label {
+	width: auto !important;
+	vertical-align: baseline !important;
+	line-height: 1em;
+}

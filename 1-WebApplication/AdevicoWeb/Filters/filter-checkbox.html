@@ -1,0 +1,8 @@
+﻿<div class="filterinner">
+    <span class="title" ng-show="filter.Label!=''">{{filter.Label}}:</span>    
+    <span class="content">
+        <span ng-repeat="value in filter.Values" class="input-group">
+            <input class="input" ng-change="setFiltersChange(filter,'checkbox')" id="{{filter.Name}}_{{$index}}" ng-disabled="value.Disabled" name="{{filter.Name}}_{{$index}}" type="checkbox" ng-model="value.Checked" /><label class="label" for="{{filter.Name}}_{{$index}}">{{value.Name}}</label>
+        </span>
+    </span>
+</div>  

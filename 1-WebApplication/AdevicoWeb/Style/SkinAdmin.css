@@ -1,0 +1,233 @@
+﻿ul.skinList, li.skin, li.skin span.row  { display: block; }
+ul.skinList { list-style: none; padding-left: 0; margin-left:0; }
+li.skin { margin: 0 0 5px 0px; border: 1px solid silver; }
+
+li.skin span.row { padding: 5px; }
+
+span.skinInfo, span.buttonContainer { display: inline-block; margin: 0; }
+
+.row span.buttonContainer { width: 15%; }
+
+span.skinInfo { width: 77%; }
+
+span.buttonsSeeMore { text-align:right; }
+
+span.skinTitle {
+	font-size: 1.3em;
+	font-weight: bold;
+	display: inline-block;
+	padding-left: 1em;
+}
+span.row {}
+
+span.buttonContainer .button {
+	width: 24px;
+	height: 24px;
+	display: inline-block;
+	text-align: center;
+	vertical-align: text-top;
+	line-height: 1em;
+	padding: 0;
+	
+	background-position:center center;
+	background-repeat:no-repeat;
+	font-size:0;
+	line-height:0;
+	cursor:pointer;
+}
+
+span.buttonContainer .small { width: 16px; height: 16px; }
+span.buttonContainer .edit { background-image:url(../images/Grid/modifica.gif); } /*/images/SkinAdmin/edit.png); }*/
+span.buttonContainer .edit-new {  background-image:url(../images/SkinAdmin/new.png); }
+span.buttonContainer .delete { background-image:url(../images/Grid/cancella.gif); }/*/images/SkinAdmin/delete.png); }*/
+span.buttonContainer .share { background-image:url(../images/SkinAdmin/link.png); }
+span.buttonContainer .copy { background-image:url(../images/SkinAdmin/copy.png); }
+span.buttonContainer .add { background-image:url(../images/SkinAdmin/add.png); }
+span.buttonContainer .search  { background-image:url(../images/SkinAdmin/search.gif); border:0; }
+span.buttonContainer .move { background-image:url(../images/SkinAdmin/move.png); cursor:move; }
+span.buttonContainer .edit-small { background-image:url(../images/SkinAdmin/edit-small.png); }
+
+/*span.buttonContainer */
+.delete-small { background-image:url(../images/SkinAdmin/delete-small.png); }
+span.buttonContainer .share-small { background-image:url(../images/SkinAdmin/link-small.png); }
+span.buttonContainer .copy-small { background-image:url(../images/SkinAdmin/copy-small.png); }
+
+div.containerSkinList { text-align: left; width: 900px; }
+
+table.SkinTable { width:100%; border-collapse:collapse; }
+
+.SubmitContainer
+{
+    display:block;
+    width:100%;
+    float:none;
+    padding-top:1em;
+    text-align:center;
+    clear:both;
+}
+
+.SubmitContainer .FloatLeft { display:block; float:left; }
+.SubmitContainer .FloatRight { display:block; float:right; }
+
+tr .tdCommands { width:100px; text-align:center; }
+tr .tdShort { width:100px; }
+.tdHidden { display:none; }
+
+.dialog .SubmitContainer
+{
+    padding:0;
+    margin:0;
+    margin-top:2em;
+    padding-top:0.5em;
+    border-top:1px solid silver;
+}
+.add-logo-dialog { width:700px; }
+
+ul.fieldList { list-style:none; margin:0; padding:0.5em; }
+ul.fieldList li.fieldItem
+{
+    list-style:none;
+    margin:0;
+    padding:0;
+    margin-bottom:0.5em;
+}
+
+ul.fieldList li.fieldItem label
+{
+    display:inline-block;
+    *display:inline;   
+    margin:0;
+    padding:0.2em;
+    padding-right:0.5em;
+    width:70px;
+    
+}
+ul.fieldList li.fieldItem input
+{
+    display:inline-block;
+    *display:inline;   
+    margin-left:0.5em;
+    padding:0;
+        
+}
+ul.fieldList li.fieldItem input[type="file"] { width:70%; }
+ul.fieldList li.fieldItem .input-small { width:50px; }
+ul.fieldList li.centered { text-align:center; }
+
+label.dialog-title-hidden { display:none; }
+textarea.full-width { width:100%; }
+
+img.image-preview {
+    border:1px solid silver;
+    height:100px;
+    min-width:100px;
+    padding:0.3em;
+}
+
+ul.selection-list { margin:0; padding:0; }
+ul.selection-list li.selection-item { margin:0; padding:0; list-style:none; }
+
+/*Dialog Definition*/
+.dialog { width:400px; /*Base width*/ display:none; }
+.add-logo-dialog { width:500px; }
+.add-text-dialog { width:750px; }
+.editorSimple { height:400px; }
+.see-more-dialog { width:950px; min-width:950px; height:400px; }
+.share-dialog { width:950px; min-width:950px; height:400px; }
+.CommunitiesList { font-style:italic; }
+ul.SeeMoreList
+{
+    display:block;   
+    margin:1em;
+    padding:0; 
+    width: 800px;  
+}
+       
+ul.SeeMoreList li
+{
+    margin:0;
+    margin-left:2em;           
+    padding:0;
+    display:inline-block;
+    width:350px;
+}
+ul.SeeMoreList-Compacted li { margin-left:0em; }       
+ul.SeeMoreList-Compacted { display:inline-block; *display:inline; }
+ul.SeeMoreList li.SeeMoreItem { list-style:none; border:1px solid #fff; }
+ul.SeeMoreList-Compacted li.SeeMoreItem { display:none; }
+/*ul.SeeMoreList-Compacted li.Visible+li.Visible:before { content:" | "; } */            
+ul.SeeMoreList-Compacted li.Visible
+{           
+    display:inline-block;
+    *display:inline;        
+    padding-left: 10px; 
+    background: transparent url(../images/SkinAdmin/mini_circle.png) no-repeat 3px 5px;                
+}
+
+.buttonsSeeMore
+{
+    display:inline-block;
+    *display:inline;
+    margin:0;
+    margin-bottom:0.2em;
+}
+.buttonSeeMore
+{
+    display:inline-block;
+    *display:inline;
+    width:20px;
+    height:20px;
+    /*border:1px solid #ddd;*/
+    text-align:center;
+    text-indent: -9999px;           
+    background-position:center center;
+    background-repeat:no-repeat;
+    vertical-align:middle;
+    cursor:pointer;
+}
+.SeeMoreList .buttonsSeeMore { display:inline-block; *display:inline; }
+.SeeMoreList-Compacted .SeeMoreItem .buttonsSeeMore { display:none; }
+.ShowMoreLess { background-image:url(../images/SkinAdmin/gear.png); }
+.Close { background-image:url(../images/SkinAdmin/close.png); }
+.see-more { background-image:url(../images/SkinAdmin/add.png); }
+/*.SeeMoreList .see-more { display:inline-block; *display:inline; }*/
+/*.SeeMoreList-Compacted .see-more { display:none; } */
+.Delete { background-image:url(../images/SkinAdmin/delete.png); }
+.Ellipsis
+{
+    cursor:pointer;
+    display:inline-block;
+    *display:inline;
+    padding-left:1em;
+}
+.searchDiv { position:relative; }
+.searchDiv .searchField{
+    width: 240px;
+    height: 20px;
+    padding-left:25px;
+    padding-right: 25px; /* puts padding on the right side, so text doesn't go under the button. NOTE: TOTAL WIDTH IS 240 + 25 = 265px */
+    float: left; /* some browsers display correctly without this, but better to leave it for cross browser compatibility */
+    border: 1px solid black; /* sets new color for border of the field */
+    position:relative;
+}
+.searchDiv .searchSubmit{
+    background: transparent url("../images/SkinAdmin/search.gif") no-repeat;
+    width: 20px;
+    height: 20px;
+    border: none;
+    cursor: pointer;
+    margin-left: -22px; /* image is 20x20px, so leave little extra */
+    margin-top: 2px; /* leave some space from the top, so button looks in the middle */
+    position:relative;
+}
+.searchDiv .searchCancel{
+    background: transparent url("../images/SkinAdmin/delete-small.png") no-repeat;
+    width: 20px;
+    height: 20px;
+    border: none;
+    cursor: pointer;
+    margin-left: -292px; /* image is 20x20px, so leave little extra */
+    margin-top: 2px; /* leave some space from the top, so button looks in the middle */
+    position:relative;
+}
+span.skinApply { display:inline-block; width: 40%; }

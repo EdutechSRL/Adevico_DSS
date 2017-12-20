@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="a39f1fc8-55a7-4174-b9fb-6de7f882da6e" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:9699/ServiceMailSender/mex" Protocol="mex" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="b0cdfdb2-aa20-492d-8cbd-e6bb07e85675" SourceId="1" SourceUrl="http://localhost:9699/ServiceMailSender/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="9e956bd1-7cb3-41b1-b9e4-5cac3c48dc07" SourceId="1" SourceUrl="http://localhost:9699/ServiceMailSender/mex" />
+    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="ed44f7df-73a9-47c3-831f-c19e9cb5a453" SourceId="1" SourceUrl="http://localhost:9699/ServiceMailSender/mex" />
+    <MetadataFile FileName="lm.Comol.Core.MailCommons.Domain.Messages.xsd" MetadataType="Schema" ID="9ea2fc8a-2d37-4596-b013-25db99651020" SourceId="1" SourceUrl="http://localhost:9699/ServiceMailSender/mex" />
+    <MetadataFile FileName="Arrays.xsd" MetadataType="Schema" ID="2f5d3649-b893-42d1-b7a2-100db7f1c5bf" SourceId="1" SourceUrl="http://localhost:9699/ServiceMailSender/mex" />
+    <MetadataFile FileName="lm.Comol.Core.MailCommons.Domain.xsd" MetadataType="Schema" ID="a224105d-b78b-4297-b394-e55271289139" SourceId="1" SourceUrl="http://localhost:9699/ServiceMailSender/mex" />
+    <MetadataFile FileName="lm.Comol.Core.MailCommons.Domain.Configurations.xsd" MetadataType="Schema" ID="7c9d5f9e-8276-44be-b046-7e601f539180" SourceId="1" SourceUrl="http://localhost:9699/ServiceMailSender/mex" />
+    <MetadataFile FileName="lm.Comol.Core.Notification.Domain.xsd" MetadataType="Schema" ID="f45194c2-0819-4086-8956-8513a335ac7a" SourceId="1" SourceUrl="http://localhost:9699/ServiceMailSender/mex" />
+    <MetadataFile FileName="lm.Comol.Core.DomainModel.Languages.xsd" MetadataType="Schema" ID="a1e200ef-447b-4e29-ae3b-4c490a03098a" SourceId="1" SourceUrl="http://localhost:9699/ServiceMailSender/mex" />
+    <MetadataFile FileName="lm.Comol.Core.DomainModel.xsd" MetadataType="Schema" ID="c8bc7e20-b652-4839-a99c-69f0d32bda3f" SourceId="1" SourceUrl="http://localhost:9699/ServiceMailSender/mex" />
+    <MetadataFile FileName="lm.Comol.Core.Mail.Messages.xsd" MetadataType="Schema" ID="8b9313c8-dc2a-411e-80fe-76307257b2e7" SourceId="1" SourceUrl="http://localhost:9699/ServiceMailSender/mex" />
+    <MetadataFile FileName="lm.Comol.Core.Mail.xsd" MetadataType="Schema" ID="e2b36c5e-8df1-49f6-9bc3-81d486eea6d2" SourceId="1" SourceUrl="http://localhost:9699/ServiceMailSender/mex" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

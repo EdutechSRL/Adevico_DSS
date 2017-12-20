@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--ita-->
+<Resource xmlns="urn:ComolTranslation">
+
+	<item name="LTpageTitle_t.text">Gestione Ticket</item>
+	<item name="LTcontentTitle_t.text">Gestione Ticket</item>
+
+	<item name="HYPbackTop.text">Indietro</item>
+	<item name="HYPbackTop.ToolTip">Indietro</item>
+	<item name="HYPbackTop.status">Indietro</item>
+
+	<item name="HYPbackBot.text">Indietro</item>
+	<item name="HYPbackBot.ToolTip">Indietro</item>
+	<item name="HYPbackBot.status">Indietro</item>
+	
+	<item name="LBstatus_t.text">Stato</item>
+	<item name="LBstatus_t.ToolTip">Stato</item>
+	
+	<item name="LBsubject_t.text">Titolo</item>
+	<item name="LBsubject_t.ToolTip">Titolo</item>
+	
+	<item name="LBlang_t.text">Lingua</item>
+	<item name="LBlang_t.ToolTip">Lingua</item>
+	
+	<item name="LBdateField_t.text">Data</item>
+	<item name="LBdateField_t.ToolTip">Data</item>
+	
+	<item name="LBcategory_t.text">Categoria</item>
+	<item name="LBcategory_t.ToolTip">Categoria</item>
+	
+	<item name="LBnumTicket_t.text">Tickets</item>
+	<item name="LBnumTicket_t.ToolTip">Tickets</item>
+
+	<item name="LNBfilter.text">Applica filtri</item>
+	<item name="LNBfilter.ToolTip">Applica filtri</item>
+	<item name="LNBfilter.status">Applica filtri</item>
+	
+	<item name="LTnumOpen.title">Aperti</item>
+	<item name="LTnumOpen.text">Aperti</item>
+	
+	<item name="LTnumInProg.title">In lavorazione</item>
+	<item name="LTnumInProg.text">In lavorazione</item>
+	
+	<item name="LTnumRequest.title">Richiesta utente</item>
+	<item name="LTnumRequest.text">Richiesta utente</item>
+	
+	<item name="LTnumSolved.title">Risolti e chiusi</item>
+	<item name="LTnumSolved.text">Risolti e chiusi</item>
+	
+	<item name="LTnumClosed.title">Chiusi, non risolti</item>
+	<item name="LTnumClosed.text">Chiusi, non risolti</item>
+	
+	<item name="Status.open">Aperto</item>
+	<item name="Status.inProcess">In lavorazione</item>
+	<item name="Status.userRequest">In attesa</item>
+	<item name="Status.closeSolved">Chiuso e risolto</item>
+	<item name="Status.closeUnsolved">Chiuso non risolto</item>
+	<item name="Status.All">Tutti</item>
+
+	<item name="Languages.All">Tutte</item>
+
+	<item name="DateField.Creation">Di creazione</item>
+	<item name="DateField.LastModify">Ultima modifica</item>
+	<item name="DateField.LastAssignment">Ultima assegnazione</item>
+	<item name="DateField.LastMessage">Ultimo messaggio inviato</item>
+	
+	<item name="CBXonlyNoAnswers.text">Senza risposte</item>
+	<item name="CBXonlyNoAnswers.ToolTip">Senza risposte</item>
+	
+	<item name="CBXonlyNotAssigned.text">Non assegnati</item>
+	<item name="CBXonlyNotAssigned.ToolTip">Non assegnati</item>
+	
+	<item name="CBXonlyWithNews.text">Con novità</item>
+	<item name="CBXonlyWithNews.ToolTip">Con novità</item>
+	
+	<item name="CBXStart.text">dopo il</item>
+	<item name="CBXStart.ToolTip">dopo il</item>
+
+	<item name="CBXend.text">prima del</item>
+	<item name="CBXend.ToolTip">prima del</item>
+	
+	<item name="CBXshowId.text">Mostra codice</item>
+	<item name="CBXshowId.ToolTip">Mostra codice</item>
+	
+	<item name="CBXshowLang.text">Mostra lingua</item>
+	<item name="CBXshowLang.ToolTip">Mostra lingua</item>
+	
+	<item name="CBXshowCommunity.text">Mostra comunità</item>
+	<item name="CBXshowCommunity.ToolTip">Mostra comunità</item>
+	
+	<item name="CBXshowCategory.text">Mostra categoria</item>
+	<item name="CBXshowCategory.ToolTip">Mostra categoria</item>
+	
+	<item name="LTlkbBulk.text">Operazioni massive On/Off</item>
+	
+	<item name="LTtblSelAll_t.text">Seleziona tutti</item>
+	<item name="LTtblDeSelAll_t.text">Deseleziona tutti</item>
+	<item name="LTcode_t.text">Cod.</item>
+	<item name="LTsubject_t.text">Titolo</item>
+	<item name="LTlang_t.text">Lng.</item>
+	<item name="LTcommunity_t.text">Comunità</item>
+	<item name="LTass_t.text">In carico a</item>
+	<item name="LTcategory_t.text">Categoria</item>
+	<item name="LTsub_t.text">Inviato il</item>
+	<item name="LTstatus_t.text">Stato</item>
+	<item name="LTact_t.text">Azioni</item>
+
+	<item name="LTempty.text">Nessun ticket trovato con i parametri di ricerca specificati.</item>
+
+	<item name="Attachments.text">{num} allegati</item>
+
+	<item name="DDLcate.All.Name" description="Filtro categorie: tutte">Tutte</item>
+	<item name="DDLcate.All.Desciption">Tutte le categorie a cui si ha accesso</item>
+
+	<item name="AssignmentTo.None">nessuno</item>
+
+	<!--<item name="Category.select" description="Selettore categorie">Tutte</item>-->
+	<item name="ChangeStatus.message" mustcontains="{newstatus}">Stato modificato in '{newstatus}'.</item>
+
+	<item name="LBLerror.NoPermission">Non si dispone dei permessi per visualizzare la pagina.</item>
+
+	<item name="HYPedit.text" description="Bottoni: lasciare vuoto"></item>
+	<item name="HYPedit.ToolTip">Gestione ticket</item>
+	<item name="HYPedit.status">Gestione ticket</item>
+
+	<item name="LNBassign.text" description="Bottoni: lasciare vuoto"></item>
+	<item name="LNBassign.ToolTip">Assegna</item>
+	<item name="LNBassign.status">Assegna</item>
+
+	<item name="LNBreopen.text" description="Bottoni: lasciare vuoto"></item>
+	<item name="LNBreopen.ToolTip">Riapri</item>
+	<item name="LNBreopen.status">Riapri</item>
+
+	<item name="LNBcloseSolved.text" description="Bottoni: lasciare vuoto"></item>
+	<item name="LNBcloseSolved.ToolTip">Chiudi - risolto</item>
+	<item name="LNBcloseSolved.status">Chiudi - risolto</item>
+
+	<item name="LNBcloseUnSolved.text" description="Bottoni: lasciare vuoto"></item>
+	<item name="LNBcloseUnSolved.ToolTip">Chiudi - non risolto</item>
+	<item name="LNBcloseUnSolved.status">Chiudi - non risolto</item>
+
+	<!-- Add-On -->
+	<item name="Error.NoAccess">Accesso temporaneamente disabilitato.</item>
+
+	<!--Legend-->
+	<item name="LTleged_t.text">Legenda:</item>
+	<item name="Legend.hasnews.Text">News</item>
+	<item name="Legend.hasnews.Title">Aggiornamenti presenti dall'ultimo accesso</item>
+	<item name="Legend.noanswers.Text">Senza risposta</item>
+	<item name="Legend.noanswers.Title">Al Ticket non è ancora stata data alcuna risposta</item>
+	<item name="Legend.mine.Text">Personale</item>
+	<item name="Legend.mine.Title">Ticket che hai aperto</item>
+	<item name="Legend.manager.Text">Manager</item>
+	<item name="Legend.manager.Title">Ticket di cui sei manager</item>
+	<item name="Legend.assigned.Text">Assegnato</item>
+	<item name="Legend.assigned.Title">Ticket in carico a te</item>
+	<item name="Legend.locked.Text">Bloccato</item>
+	<item name="Legend.locked.Title">Ticket bloccato</item>
+	<item name="Legend.reported.Text">Segnalato</item>
+	<item name="Legend.reported.Title">Ticket segnalato</item>
+	<item name="Legend.deleted.Text">Annullato</item>
+	<item name="Legend.deleted.Title">Ticket annullato</item>
+
+	<item name="HYPmineTop.text">I miei ticket</item>
+	<item name="HYPmineTop.ToolTip">I miei ticket personali</item>
+	<item name="HYPmineTop.status">I miei ticket personali</item>
+
+	<item name="HYPaddTop.text">Nuovo</item>
+	<item name="HYPaddTop.ToolTip">Apri nuovo Ticket</item>
+	<item name="HYPaddTop.status">Apri nuovo Ticket</item>
+
+	<item name="HYPmineBot.text">Miei ticket</item>
+	<item name="HYPmineBot.ToolTip">I miei ticket personali</item>
+	<item name="HYPmineBot.status">I miei ticket personali</item>
+
+	<item name="HYPaddBot.text">Nuovo</item>
+	<item name="HYPaddBot.ToolTip">Apri nuovo Ticket</item>
+	<item name="HYPaddBot.status">Apri nuovo Ticket</item>
+	
+	<!--Add 15/12/2014-->
+	<item name="HYPaddTop.ConfirmText">Sono presenti altri Ticket in bozza. Creare un nuovo Ticket?</item>
+	<item name="HYPaddBot.ConfirmText">Sono presenti altri Ticket in bozza. Creare un nuovo Ticket?</item>
+	
+	<!-- Add 19/01/2015-->
+	<item name="Condition.active">Attivo</item>
+	<item name="Condition.flagged">Segnalato</item>
+	<item name="Condition.blocked">Bloccato</item>
+	<item name="Condition.flaggedNblocked">Segnalato e bloccato</item>
+	<item name="Condition.cancelled">Annullato</item>
+
+	<!-- Add 30/03/2015 -->
+	<item name="LInfo.value.draft">In bozza</item>
+	<item name="LInfo.title.draft">In bozza</item>
+	<item name="LInfo.value.open">Aperti</item>
+	<item name="LInfo.title.open">Aperti</item>
+	<item name="LInfo.value.inprogress">In lavorazione</item>
+	<item name="LInfo.title.inprogress">In lavorazione</item>
+	<item name="LInfo.value.request">Richiesta utente</item>
+	<item name="LInfo.title.request">Richiesta utente</item>
+	<item name="LInfo.value.solved">Risolti e chiusi</item>
+	<item name="LInfo.title.solved">Risolti e chiusi</item>
+	<item name="LInfo.value.closed">Chiusi, non risolti</item>
+	<item name="LInfo.title.closed">Chiusi, non risolti</item>
+
+	<!-- Add 05/06/2015 -->
+
+	<item name="LNBorderByIdUp.ToolTip">Ordinamento per Codice crescente</item>
+	<item name="LNBorderByIdDown.ToolTip">Ordinamento per Codice decrescente</item>
+	<item name="LNBorderBySubjUp.ToolTip">Ordinamento per Titolo crescente</item>
+	<item name="LNBorderBySubjDown.ToolTip">Ordinamento per Titolo decrescente</item>
+	<item name="LNBorderByLangUp.ToolTip">Ordinamento per Lingua crescente</item>
+	<item name="LNBorderByLangDown.ToolTip">Ordinamento per Lingua decrescente</item>
+	<item name="LNBorderByComUp.ToolTip">Ordinamento per Comunità crescente</item>
+	<item name="LNBorderByComDown.ToolTip">Ordinamento per Comunità decrescente</item>
+	<item name="LNBorderByAssUp.ToolTip">Ordinamento per Assegnazione crescente</item>
+	<item name="LNBorderByAssDown.ToolTip">Ordinamento per Assegnazione decrescente</item>
+	<item name="LNBorderByCatUp.ToolTip">Ordinamento per Categoria crescente</item>
+	<item name="LNBorderByCatDown.ToolTip">Ordinamento per Categoria decrescente</item>
+	<item name="LNBorderBySubmUp.ToolTip">Ordinamento per Data di invio crescente</item>
+	<item name="LNBorderBySubmDown.ToolTip">Ordinamento per Data di invio decrescente</item>
+	<item name="LNBorderByStatUp.ToolTip">Ordinamento per Stato crescente</item>
+	<item name="LNBorderByStatDown.ToolTip">Ordinamento per Stato decrescente</item>
+
+	<item name="LNBorderByIdUp.status">Ordinamento per Codice crescente</item>
+	<item name="LNBorderByIdDown.status">Ordinamento per Codice decrescente</item>
+	<item name="LNBorderBySubjUp.status">Ordinamento per Titolo crescente</item>
+	<item name="LNBorderBySubjDown.status">Ordinamento per Titolo decrescente</item>
+	<item name="LNBorderByLangUp.status">Ordinamento per Lingua crescente</item>
+	<item name="LNBorderByLangDown.status">Ordinamento per Lingua decrescente</item>
+	<item name="LNBorderByComUp.status">Ordinamento per Comunità crescente</item>
+	<item name="LNBorderByComDown.status">Ordinamento per Comunità decrescente</item>
+	<item name="LNBorderByAssUp.status">Ordinamento per Assegnazione crescente</item>
+	<item name="LNBorderByAssDown.status">Ordinamento per Assegnazione decrescente</item>
+	<item name="LNBorderByCatUp.status">Ordinamento per Categoria crescente</item>
+	<item name="LNBorderByCatDown.status">Ordinamento per Categoria decrescente</item>
+	<item name="LNBorderBySubmUp.status">Ordinamento per Data di invio crescente</item>
+	<item name="LNBorderBySubmDown.status">Ordinamento per Data di invio decrescente</item>
+	<item name="LNBorderByStatUp.status">Ordinamento per Stato crescente</item>
+	<item name="LNBorderByStatDown.status">Ordinamento per Stato decrescente</item>
+
+	<item name="TH.Action.Title">Azioni</item>
+	<item name="DateField.DEFAULT">- Seleziona una data -</item>
+
+	<!-- add 15/07/2015 -->
+
+	<item name="LBfilterTitle.text">Filtri ricerca</item>
+	<item name="LBfilterTitle.ToolTip"></item>
+
+	<item name="LBfiltersShow.text">Clicca per visualizzare</item>
+	<item name="LBfiltersShow.ToolTip">Mostra filtri</item>
+
+	<item name="LBfiltersHide.text">Clicca per nascondere</item>
+	<item name="LBfiltersHide.ToolTip">Nascondi filtri</item>
+
+
+	<item name="LBfiltDateStart.text">Dopo il</item>
+	<item name="LBfiltDateStart.ToolTip">Dopo la data indicata</item>
+	<item name="LBfiltDateEnd.text">Prima del</item>
+	<item name="LBfiltDateEnd.ToolTip">Prima della data indicata</item>
+
+	<item name="LBfiltcbxLeg_t.text" description="testo titolo checkbox filtri per senza risposte, non assegnati, con novità"></item>
+	<item name="LBfiltcbxLeg_t.ToolTip" description="tooltip titolo checkbox filtri per senza risposte, non assegnati, con novità"></item>
+
+	<item name="Legend.filterCategory.Text">Categoria diversa da quella selezionata</item>
+	<item name="Legend.filterCategory.Title">La categoria selezionata è presente nello storico del Ticket, ma non è qualla corrente.</item>
+	
+</Resource>

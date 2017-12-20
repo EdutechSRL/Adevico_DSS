@@ -1,0 +1,388 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+COL_Wiki
+</name>
+</assembly>
+<members>
+<member name="T:COL_Wiki.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:COL_Wiki.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:COL_Wiki.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="M:COL_Wiki.WikiNew.ManagerWikidB.CaricaWiki(System.Boolean)">
+ <summary>
+  Carica la Wiki della comunità impostata nel metodo NEW
+ </summary>
+ <param name="forced">
+ Se "TRUE" forza il caricamento da dB
+ </param>
+ <returns>L'oggetto Wiki con i parametri della Wiki della comunità</returns>
+ <remarks>Testare CACHE</remarks>
+</member>
+<member name="M:COL_Wiki.WikiNew.ManagerWikidB.CaricaSezioni(COL_Wiki.WikiNew.Wiki,System.Boolean)">
+ <summary>
+  Carica le sezioni di una data Wiki
+ </summary>
+ <param name="oWiki">Wiki da cui caricare le sezioni</param>
+ <param name="forced">Forza il caricamento da dB</param>
+ <returns>Una lista delle sezioni relative alla Wiki</returns>
+ <remarks>Testare CACHE</remarks>
+</member>
+<member name="M:COL_Wiki.WikiNew.ManagerWikidB.CaricaTopics(COL_Wiki.WikiNew.SezioneWiki,System.Boolean)">
+ <summary>
+ Carica TUTTI i TOPIC di una data sezione
+ </summary>
+ <param name="oSezione">Sezione di cui caricare i Topic.</param>
+ <param name="forced">Forza il caricamento da dB</param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:COL_Wiki.WikiNew.ManagerWikidB.CaricaStoriaTopic(COL_Wiki.WikiNew.TopicWiki,System.Boolean)">
+ <summary>
+ Carica lo storico di un Topic
+ </summary>
+ <param name="oTopic">Topic di cui caricare lo storico</param>
+ <param name="forced">Forza il caricamento da dB</param>
+ <returns>Lista della cronologia</returns>
+ <remarks>Testare CACHE</remarks>
+</member>
+<member name="M:COL_Wiki.WikiNew.ManagerWikidB.CaricaAllTopicWiki(COL_Wiki.WikiNew.Wiki,System.Boolean)">
+ <summary>
+ Carica TUTTI i Topic relativi ad una WIKI.
+ </summary>
+ <param name="oWiki"></param>
+ <returns></returns>
+ <remarks>
+ ATTENZIONE!
+ Al momento NON viene utilizzata. 
+ Puo' venire comoda per caricare TUTTI i dati in cache,
+ M A ( ! ! ! )
+ effettua più chiamate al dB nel caso NON ci siano i DATI in cache,
+ o nel caso FORCED sia TRUE
+ </remarks>
+</member>
+<member name="M:COL_Wiki.WikiNew.ManagerWikidB.CaricaSezione(COL_Wiki.WikiNew.SezioneWiki@)">
+ <summary>
+ Carica tutti i dati di una singola sezione
+ </summary>
+ <param name="oSezione">
+ ByRef la sezione di cui caricare i dati. 
+ E' necessario che l'ID della sezione e della wiki siano impostati.
+ </param>
+ <remarks>
+ Per la CACHE è NECESSARIO avere il WIKI.ID da cui vado a recuperare la lista sezioni da cui carico la singola sezione...</remarks>
+</member>
+<member name="M:COL_Wiki.WikiNew.ManagerWikidB.CaricaTopic(COL_Wiki.WikiNew.TopicWiki@)">
+ <summary>
+ Carica tutti i dati di un singolo topic
+ </summary>
+ <param name="oTopic">
+ ByRef del Topic di cui caricare i dati. 
+ E' necessario che l'ID del Topic e della relativa Sezioni siano impostati.
+ </param>
+ <remarks>
+ Testare CACHE
+ Per la CACHE si rende necessario l'ID della sezione
+ </remarks>
+</member>
+<member name="M:COL_Wiki.WikiNew.ManagerWikidB.CaricaTopicCrono(COL_Wiki.WikiNew.TopicHistoryWiki@,System.Boolean)">
+ <summary>
+ Carica una specifica cronologia
+ </summary>
+ <param name="oTopicCrono"></param>
+ <param name="forced"></param>
+ <remarks></remarks>
+</member>
+<member name="M:COL_Wiki.WikiNew.ManagerWikidB.SalvaWiki(COL_Wiki.WikiNew.Wiki)">
+ <summary>
+ Salva la Wiki, aggiornando dB e CACHE se necessario.
+ </summary>
+ <param name="oWiki"></param>
+ <remarks>
+ Testare Cache
+ </remarks>
+</member>
+<member name="M:COL_Wiki.WikiNew.ManagerWikidB.SalvaSezione(COL_Wiki.WikiNew.SezioneWiki)">
+ <summary>
+ Salva la sezione, aggiornando dB e CACHE se necessario.
+ </summary>
+ <param name="oSezione"></param>
+ <remarks></remarks>
+</member>
+<member name="M:COL_Wiki.WikiNew.ManagerWikidB.SalvaTopic(COL_Wiki.WikiNew.TopicWiki@,System.Boolean@)">
+ <summary>
+ Salva il Topic, aggiornando dB ed eventualmente CACHE se necessario.
+ </summary>
+ <param name="oTopic"></param>
+ <remarks></remarks>
+</member>
+<member name="M:COL_Wiki.WikiNew.ManagerWikidB.SalvaTopicHistory(COL_Wiki.WikiNew.TopicHistoryWiki)">
+ <summary>
+ Salva un TopicHistory
+ </summary>
+ <param name="oTopicHistory">
+ Oggetto sa salvare
+ </param>
+ <remarks></remarks>
+</member>
+<member name="M:COL_Wiki.WikiNew.ManagerWikidB.PreSaveTopic(COL_Wiki.WikiNew.TopicWiki)">
+ <summary>
+ Inutilizzato
+ </summary>
+ <param name="oTopic"></param>
+ <remarks>
+ Doveva servire per le immagini per avere un ID Topic 
+ al momento del caricamento delle stesse.
+ Tolto, grazie all'utilizzo dei GUID. 
+ Creo un guid, lo assegno come Topic.ID dell'immagine, 
+ poi salvo il Topic con quel guid.
+ </remarks>
+</member>
+<member name="M:COL_Wiki.WikiNew.ManagerWikidB.CaricaSezioniHomedB">
+ <summary>
+ Carica tutte le sezioni pubbliche dal dB.
+ </summary>
+ <returns></returns>
+ <remarks>Inoltre viene inserito l'oggetto WIKI e WIKI.COMUNITA con relativi ID e NOME</remarks>
+</member>
+<member name="M:COL_Wiki.WikiNew.ManagerWikidB.CaricaTopicsHome(COL_Wiki.WikiNew.SezioneWiki,System.Boolean)">
+ <summary>
+ Utilizza i metodi dei topic generici, ma filtra quelli che sono cancellati e non sono pubblici
+ </summary>
+ <param name="oSezione"></param>
+ <param name="forced"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:COL_Wiki.WikiNew.PresenterWikiEditor.#ctor(lm.Comol.Core.DomainModel.iApplicationContext,COL_Wiki.WikiNew.IViewEditorWiki,COL_Wiki.FactoryWiki.ConnectionType,System.Boolean)">
+ <summary>
+ Inizializzazione presenter
+ </summary>
+ <param name="view">Per iniettare la view</param>
+ <param name="DbSource">Per inizializzare nHybernate o SQL: in deployment SOLO SQL</param>
+ <param name="UseCache">Indica se utilizzare o meno la cache</param>
+ <remarks></remarks>
+</member>
+<member name="M:COL_Wiki.WikiNew.PresenterWikiEditor.BindSezione(System.Guid@)">
+ <summary>
+ Raccoglie le informazioni di una sezione per visualizzarle in testa alla lista di topic
+ </summary>
+ <param name="SezioneID"></param>
+ <remarks></remarks>
+</member>
+<member name="M:COL_Wiki.WikiNew.PresenterWikiEditor.BindCercaTopic(System.String)">
+ <summary>
+ Raccoglie i dati dei Topic relativi ed aggiorna la vista
+ </summary>
+ <returns>TRUE: esistono Topic, FALSE: non esistono Topic</returns>
+ <remarks></remarks>
+</member>
+<member name="M:COL_Wiki.WikiNew.PresenterWikiUC.#ctor(COL_Wiki.WikiNew.IViewWikiUC,lm.Comol.Core.DomainModel.iApplicationContext,COL_Wiki.FactoryWiki.ConnectionType,System.Boolean)">
+ <summary>
+ Inizializzazione presenter
+ </summary>
+ <param name="view">Per iniettare la view</param>
+ <param name="DbSource">Per inizializzare nHybernate o SQL: in deployment SOLO SQL</param>
+ <param name="UseCache">Indica se utilizzare o meno la cache</param>
+ <remarks></remarks>
+</member>
+<member name="M:COL_Wiki.WikiNew.PresenterWikiUC.BindSezione(System.Guid@)">
+ <summary>
+ Raccoglie le informazioni di una sezione per visualizzarle in testa alla lista di topic
+ </summary>
+ <param name="SezioneID"></param>
+ <remarks></remarks>
+</member>
+<member name="M:COL_Wiki.WikiNew.PresenterWikiUC.BindCercaTopic(System.String)">
+ <summary>
+ Raccoglie i dati dei Topic relativi ed aggiorna la vista
+ </summary>
+ <returns>TRUE: esistono Topic, FALSE: non esistono Topic</returns>
+ <remarks></remarks>
+</member>
+<member name="T:COL_Wiki.WikiNew.BindingUC">
+ <summary>
+ Indica su cosa effettuare il bind dei dati
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:COL_Wiki.WikiNew.PresenterWikiHome.#ctor(COL_Wiki.WikiNew.IViewWikiHome,COL_Wiki.FactoryWiki.ConnectionType,System.Boolean)">
+ <summary>
+ Inizializzazione presenter
+ </summary>
+ <param name="view">Per iniettare la view</param>
+ <param name="DbSource">Per inizializzare nHybernate o SQL: in deployment SOLO SQL</param>
+ <param name="UseCache">Indica se utilizzare o meno la cache</param>
+ <remarks></remarks>
+</member>
+<member name="M:COL_Wiki.WikiNew.PresenterWikiHome.BindNavigatore(COL_Wiki.WikiNew.SezioneWiki@,System.Boolean)">
+ <summary>
+  Recupera i dati per il navigatore tra le sezione e forza il bind della vista su tale elemento
+ </summary>
+ <returns>TRUE se esistono sezioni, FALSE se non esistono sezioni per la wiki</returns>
+ <remarks></remarks>
+</member>
+<member name="M:COL_Wiki.WikiNew.PresenterWikiHome.BindTopicSezione(COL_Wiki.WikiNew.SezioneWiki)">
+ <summary>
+ Raccoglie i dati dei Topic relativi ed aggiorna la vista
+ </summary>
+ <returns>TRUE: esistono Topic, FALSE: non esistono Topic</returns>
+ <remarks></remarks>
+</member>
+<member name="M:COL_Wiki.WikiNew.PresenterWikiHome.BindCercaTopic(System.String)">
+ <summary>
+ Raccoglie i dati dei Topic relativi ed aggiorna la vista
+ </summary>
+ <returns>TRUE: esistono Topic, FALSE: non esistono Topic</returns>
+ <remarks></remarks>
+</member>
+<member name="M:COL_Wiki.WikiNew.PresenterWikiHome.BindTopicTest(System.Guid)">
+ <summary>
+ Raccoglie i dati del topic per la visualizzazione della stessa
+ </summary>
+ <param name="TopicID"></param>
+ <remarks></remarks>
+</member>
+<member name="M:COL_Wiki.WikiNew.PresenterWiki.#ctor(COL_Wiki.WikiNew.IViewWiki,lm.Comol.Core.DomainModel.iApplicationContext,COL_Wiki.FactoryWiki.ConnectionType,System.Boolean)">
+ <summary>
+ Inizializzazione presenter
+ </summary>
+ <param name="view">Per iniettare la view</param>
+ <param name="DbSource">Per inizializzare nHybernate o SQL: in deployment SOLO SQL</param>
+ <param name="UseCache">Indica se utilizzare o meno la cache</param>
+ <remarks></remarks>
+</member>
+<member name="M:COL_Wiki.WikiNew.PresenterWiki.BindNavigatoreHome(COL_Wiki.WikiNew.SezioneWiki@,System.Boolean)">
+ <summary>
+  Recupera i dati per il navigatore tra le sezione e forza il bind della vista su tale elemento
+ </summary>
+ <returns>TRUE se esistono sezioni, FALSE se non esistono sezioni per la wiki</returns>
+ <remarks></remarks>
+</member>
+<member name="M:COL_Wiki.WikiNew.PresenterWiki.BindTopicSezioneHome(COL_Wiki.WikiNew.SezioneWiki)">
+ <summary>
+ Raccoglie i dati dei Topic relativi ed aggiorna la vista
+ </summary>
+ <returns>TRUE: esistono Topic, FALSE: non esistono Topic</returns>
+ <remarks></remarks>
+</member>
+<member name="M:COL_Wiki.WikiNew.PresenterWiki.BindCercaTopicHome(System.String)">
+ <summary>
+ Raccoglie i dati dei Topic relativi ed aggiorna la vista
+ </summary>
+ <returns>TRUE: esistono Topic, FALSE: non esistono Topic</returns>
+ <remarks></remarks>
+</member>
+<member name="M:COL_Wiki.WikiNew.PresenterWiki.BindTopicTestHome(System.Guid)">
+ <summary>
+ Raccoglie i dati del topic per la visualizzazione della stessa
+ </summary>
+ <param name="TopicID"></param>
+ <remarks></remarks>
+</member>
+<member name="M:COL_Wiki.WikiNew.PresenterWiki.BindCercaTopic(System.String)">
+ <summary>
+ Raccoglie i dati dei Topic relativi ed aggiorna la vista
+ </summary>
+ <returns>TRUE: esistono Topic, FALSE: non esistono Topic</returns>
+ <remarks></remarks>
+</member>
+<member name="M:COL_Wiki.WikiNew.PresenterWiki.BindNavigatore(COL_Wiki.WikiNew.SezioneWiki@,COL_Wiki.WikiNew.Wiki,System.Boolean)">
+ <summary>
+  Recupera i dati per il navigatore tra le sezione e forza il bind della vista su tale elemento
+ </summary>
+ <returns>TRUE se esistono sezioni, FALSE se non esistono sezioni per la wiki</returns>
+ <remarks></remarks>
+</member>
+<member name="M:COL_Wiki.WikiNew.PresenterWiki.BindSezione(System.Guid@)">
+ <summary>
+ Raccoglie le informazioni di una sezione per visualizzarle in testa alla lista di topic
+ </summary>
+ <param name="SezioneID"></param>
+ <remarks></remarks>
+</member>
+<member name="M:COL_Wiki.WikiNew.PresenterWiki.BindTopicSezione(COL_Wiki.WikiNew.SezioneWiki)">
+ <summary>
+ Raccoglie i dati dei Topic relativi ed aggiorna la vista
+ </summary>
+ <returns>TRUE: esistono Topic, FALSE: non esistono Topic</returns>
+ <remarks></remarks>
+</member>
+<member name="M:COL_Wiki.WikiNew.PresenterWiki.BindTopic(System.Guid)">
+ <summary>
+ Raccoglie i dati del topic per la successiva modifica
+ </summary>
+ <param name="TopicID"></param>
+ <remarks></remarks>
+</member>
+<member name="M:COL_Wiki.WikiNew.PresenterWiki.BindCronologia(COL_Wiki.WikiNew.TopicWiki)">
+ <summary>
+ Raccoglie i dati della cronologia di un topic
+ </summary>
+ <param name="oTopic"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="T:COL_Wiki.WikiNew.Binding">
+ <summary>
+ Indica su cosa effettuare il bind dei dati
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:COL_Wiki.PresenterGenerico.#ctor">
+ <summary>
+ Serve solo all'intellisense, altrimenti da errore...
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:COL_Wiki.PresenterGenerico.#ctor(COL_Wiki.IViewGenerico)">
+ <summary>
+ Per inizializzare la pagina che verrà pilotata dal presenter.
+ Utilizzare sempre questa
+ </summary>
+ <param name="view"></param>
+ <remarks>
+ Manca l'oggetto oResource! Rivedere la logica nella nuova ottica...
+ </remarks>
+</member>
+<member name="M:COL_Wiki.Util.HTMLUtil.ExtractH(System.String)">
+ <summary>
+ estrae un elenco degli header [H*] [/H*]
+ </summary>
+ <param name="strHTML"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:COL_Wiki.Util.HTMLUtil.LowerTags(System.String,System.String)">
+ <summary>
+ rende lowerCase tutti i tag indicati
+ </summary>
+ <param name="strHTML"></param>
+ <param name="tags"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:COL_Wiki.Util.HTMLUtil.LowerTag(System.String,System.String)">
+ <summary>
+ rende lowerCase tutti i gli elementi tag
+ </summary>
+ <param name="strHTML"></param>
+ <param name="tag"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+</members>
+</doc>

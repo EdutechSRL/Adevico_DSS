@@ -1,0 +1,857 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Resource xmlns="urn:ComolTranslation">
+  <item name="Portalname">Portale / Home</item>
+  <item name="nopermission">Spiacente, non hai i permessi per accedere a questa pagina.</item>
+  <item name="serviceTitle.EditStandard">Modifica modello</item>
+  <item name="serviceTitle.EditTranslations">Modifica modello</item>
+  <item name="serviceTitle.EditTranslations.Name">Modifica contenuto modello "{0}"</item>
+  <item name="serviceTitle.EditPermissions">Impostazione permessi</item>
+  <item name="serviceTitle.EditPermissions.Name">Impostazione permessi modello "{0}"</item>
+  <item name="serviceTitle.Edit" placeholder="true" mustcontains="{0}">Modifica modello "{0}"</item>
+  <item name="serviceTitle.Add">Crea modello</item>
+  <item name="serviceTitle.TemplateList">Lista modelli</item>
+  <item name="serviceTitle.Settings">Impostazioni messaggi automatici</item>
+  <item name="serviceTitle.Settings.Portal">Impostazioni di piattaforma</item>
+  <item name="serviceTitle.Settings.Community" placeholder="true" mustcontains="{0}">Impostazioni per la comunità {0}</item>
+  <item name="serviceTitle.Settings.Organization" placeholder="true" mustcontains="{0}">Impostazioni per l'organizzazione {0}</item>
+  <item name="serviceTitle.Settings.Object" placeholder="true" mustcontains="{0}">Impostazioni per {0}</item>
+
+  <item name="LBnoTemplate.text">Template non trovato</item>
+  <item name="HYPbackTop.text">Torna alla lista</item>
+  <item name="HYPbackTop.ToolTip">Torna alla lista</item>
+  <item name="HYPbackBottom.text">Torna alla lista</item>
+  <item name="HYPbackBottom.ToolTip">Torna alla lista</item>
+  <item name="LBnoNotifications.text">Per aggiungere le impostazioni di notifica utilizzare l'apposito tasto.</item>
+
+  <item name="BTNcreateSettingsTop.text">Crea</item>
+  <item name="BTNcreateSettingsTop.ToolTip">Crea il nuovo modello e ne salva le impostazioni generali.</item>
+  <item name="BTNcreateSettingsBottom.text">Crea</item>
+  <item name="BTNcreateSettingsBottom.ToolTip">Crea il nuovo modello e ne salva le impostazioni generali.</item>
+  <item name="UnableToReadUrlSettings">ATTENZIONE: i parametri presenti nell'url sono stati modificati manualmente, impossibile procedere con il caricamento della pagina.</item>
+  <item name="LBaddTemplateDescription.text">Nella creazione di un nuovo modello è necessario impostare all'inizio un nome (che verrà utilizzato di default in assenza di eventuali internazionalizzazione) ed il servizio di cui si vogliono utilizzare i tag.</item>
+  <item name="LBtemplateName_t.text">Nome:</item>
+  <item name="LBtemplateLanguage_t.text">MULTI</item>
+  <item name="LBtemplateLanguage_t.ToolTip">Multilingua</item>
+  <item name="templatename" placeholder="true" mustcontains="{0}">Template {0}</item>
+  <item name="Modules.data-placeholder">Seleziona servizio</item>
+  <item name="LBmoduleName_t.text">Servizio:</item>
+  <item name="SPNmoduleSelectAll.ToolTip">Seleziona tutti</item>
+  <item name="SPNmoduleSelectNone.ToolTip">Deseleaziona tutti</item>
+  <item name="LBnotificationSettings_t.text">Impostazioni notifiche:</item>
+  <item name="LBnotificationType_t.text">Aggiungi tipo:</item>
+  <item name="LNBnotificationType.Mail.text">Mail</item>
+  <item name="LNBnotificationType.Mail.ToolTip">Configurazione notifica via mail</item>
+  <item name="LNBnotificationType.CommunityNews.text">Novità di comunità</item>
+  <item name="LNBnotificationType.PersonalNews.text">Messaggi personali</item>
+  <item name="LNBnotificationType.Memo.text">Memo:</item>
+  <item name="DisplayNotificationSettingsError">Errore nel salvataggio delle impostazioni relative al sistema/ai sistemi di notifica</item>
+  <item name="DisplayTemplateAddError">Errore nella creazione del modello.</item>
+  <item name="DisplayTemplateUnableToAddNotificationType">Il sistema di notifica selezionato NON può essere aggiunto in quanto già presente nella lista.</item>
+  <item name="DisplayAddUnavailable">Non ti è possibile creare un modello di questo tipo.</item>
+
+  <item name="Mail.Title">Impostazioni Mail</item>
+  <item name="Mail.Description">E' possibile abilitare delle notifiche automatiche per il modello, in particolare attraverso la mail. E' necessario indicare per quale servizio e relativa azione deve essere inviata una mail con questo modello.</item>
+  <item name="CommunityNews.Title">Impostazioni Messaggi di Comunità</item>
+  <item name="CommunityNews.Description"></item>
+  <item name="PersonalNews.Title">Impostazioni Messaggi personali</item>
+  <item name="PersonalNews.Description"></item>
+  <item name="Memo.Title">Impostazioni Memo</item>
+  <item name="Memo.Description"></item>
+  <item name="BTNdeleteSettings.text"></item>
+  <item name="BTNdeleteSettings.ToolTip">Cancella impostazione.</item>
+  <item name="LBnotificationMode_t.text">Notifiche automatiche:</item>
+  <item name="CBXnotificationMode.text">si</item>
+  <item name="LBmodules_t.text">Servizio:</item>
+  <item name="LBmodulesAction_t.text">Evento:</item>
+  <item name="Module.Select">Seleziona in servizio</item>
+  <item name="Module.SelectAction">Seleziona l'evento</item>
+
+
+  <!-- EDIT-->
+  <item name="DialogTitleTranslation.ConfirmContentModules">Converma modifica servizi</item>
+  <item name="BTNeditDraftSettingsTop.text">Salva in bozza</item>
+  <item name="BTNeditDraftSettingsTop.ToolTip">Salva il modello in bozza.</item>
+  <item name="BTNeditDraftSettingsBottom.text">Salva in bozza</item>
+  <item name="BTNeditDraftSettingsBottom.ToolTip">Salva il modello in bozza.</item>
+  <item name="BTNeditSettingsTop.text">Salva ed abilita</item>
+  <item name="BTNeditSettingsTop.ToolTip">Salva il modello e lo abilita.</item>
+  <item name="BTNeditSettingsBottom.text">Salva ed abilita</item>
+  <item name="BTNeditSettingsBottom.ToolTip">Salva il modello e lo abilita.</item>
+  <item name="LBeditTemplateDescription.text">Dati principali relativi al modello</item>
+  <item name="LBeditTemplateDescription.draft">Questa versione del modello è attualmente in bozza, è necessario impostare corettamente il contenuto per poter passare dallo stato bozza allo stato abilitato. Nell'elenco sottostante è possibile definire quali servizi di piattaforma possono essere usati per la selezione dei campi dinamici da inserire nel testo del messaggio.</item>
+  <item name="LBtemplateVersion.text" placeholder="true" mustcontains="{0}">(versione {0})</item>
+  <item name="BTNapplyModules.text">Applica</item>
+  <item name="BTNapplyModules.ToolTip">Applica le modifiche</item>
+  <item name="LBconfirmModulesContent.text">ATTENZIONE: con le nuove impostazioni sui servizi associati al modello sono stati individuati dei campi dinamici appartenenti a dei servizi rimossi dalla selezione, ecco l'elenco preciso:</item>
+
+  <item name="LBconfirmModulesContentForApply.text">Specificare come si intende procedere con tali campi dinamici:</item>
+  <item name="BTNundoApplyModuleContentEdit.text">Annulla modifica</item>
+  <item name="BTNundoApplyModuleContentEdit.ToolTip">Annulla la modifica dei servizi.</item>
+  <item name="BTNremovePlaceHoldersFromContent.text">Rimuovi campi</item>
+  <item name="BTNremovePlaceHoldersFromContent.ToolTip">Rimuovi tutti i campi dinamici relativi a servizi NON più associati a questa versione del template.</item>
+  <item name="BTNnoActionOnPlaceHolders.text">Lascia campi dinamici</item>
+  <item name="BTNnoActionOnPlaceHolders.ToolTip">Lascia i campi relativi a servizi NON più associati a questa versione del template.</item>
+  <item name="DisplayTemplateAdded">Template creato correttamente: attualmente in modalità bozza.</item>
+  <item name="DisplayTemplateSettingsSaved">Impostazioni salvate correttamente.</item>
+  <item name="DisplayTemplateSettingsErrors">Le impostazioni NON sono state salvate correttamente.</item>
+  <item name="DisplayUnknownTemplate">Template/versione non individuata.</item>
+  <item name="DisplayTemplateSettingDeleted">Impostazioni cancellate correttamente.</item>
+  <item name="DisplayTemplateSettingErrorDeleting">Errore nella cancellazione delle impostazioni.</item>
+  <item name="DisplayContentModulesErrorSaving">NON sono state salvate le impostazioni sui servizi da cui reperire i campi dinamici da inserire nel testo del modello.</item>
+  <item name="DisplayContentModulesSaved">Sono state salvate correttamente le impostazioni sui servizi da cui reperire i campi dinamici da inserire nel testo del modello.</item>
+
+
+  <!-- Translations -->
+  <item name="BTNdeleteTranslationBottom.text">Rimuovi</item>
+  <item name="BTNdeleteTranslationBottom.ToolTip">Rimuovi il contenuto della lingua selezionata.</item>
+  <item name="BTNsaveTranslationBottom.text">Salva contenuto</item>
+  <item name="BTNsaveTranslationBottom.ToolTip">Salva contenuto.</item>
+  <item name="DisplayTemplateTranslationDeleted">Contenuto cancellato definitivamente</item>
+  <item name="DisplayTemplateTranslationErrorDeleting">Errore nella cancellazione del contenuto</item>
+  <item name="DisplayTemplateTranslationErrorSaving">Il contenuto NON è stato salvato correttamente</item>
+  <item name="DisplayTemplateTranslationSaved">Il contenuto è stato salvato correttamente</item>
+  <item name="MailMessagePreview.Title">Anteprima del testo inserito</item>
+  <item name="BTNtemplateMessagePreview.text">Anteprima contenuto</item>
+  <item name="BTNtemplateMessagePreview.ToolTip">Anteprima contenuto.</item>
+  <item name="BTNcloseMailMessageWindow.text">Chiudi anteprima</item>
+  <item name="BTNcloseMailMessageWindow.ToolTip">Chiudi anteprima contenuto.</item>
+
+  <item name="Module.PlaceHoldersType.ToolTip">Servizio "{0}"</item>
+
+  <item name="Module.SRVPRFMNG">Gestione profili</item>
+  <item name="Common.PlaceHoldersType.CommunityName">Nome comunità</item>
+  <item name="Common.PlaceHoldersType.UserName">Utente</item>
+  <item name="Common.PlaceHoldersType.RoleName">Ruolo</item>
+  <item name="Common.PlaceHoldersType.ProfileType">Tipo profilo</item>
+  <item name="Common.PlaceHoldersType.SubscriptionOn">Iscritto il</item>
+  <item name="Common.PlaceHoldersType.OrganizationName">Organizzazione</item>
+  <item name="Common.PlaceHoldersType.IstanceName">Nome piattaforma</item>
+  <item name="ModuleProfileManagement.PlaceHoldersType.Login">Login</item>
+  <item name="ModuleProfileManagement.PlaceHoldersType.Mail">Mail utente</item>
+  <item name="ModuleProfileManagement.PlaceHoldersType.Password">Password utente</item>
+  <item name="ModuleProfileManagement.PlaceHoldersType.PasswordExpireOn">Scadenza password</item>
+  <item name="ModuleProfileManagement.PlaceHoldersType.ExternalId">Identificativo esterno</item>
+  <item name="ModuleProfileManagement.PlaceHoldersType.AuthenticationType">Tipo autenticazione</item>
+  <item name="ModuleProfileManagement.PlaceHoldersType.InternalLoginUrl">Url login interna</item>
+  <item name="ModuleProfileManagement.PlaceHoldersType.ExternalLoginUrl">Url login esterna</item>
+
+  <item name="ModuleCallForPaper.PlaceHoldersType.CallName">Nome bando</item>
+  <item name="ModuleCallForPaper.PlaceHoldersType.CallEdition">Edizione bando</item>
+  <item name="ModuleCallForPaper.PlaceHoldersType.SubmissionDay">Giorno sottomissione</item>
+  <item name="ModuleCallForPaper.PlaceHoldersType.SubmissionTime">Data/ora sottomissione</item>
+  <item name="ModuleCallForPaper.PlaceHoldersType.CallCommunity" disambiguation="singolare">Comunità</item>
+  <item name="ModuleCallForPaper.PlaceHoldersType.SubmitterName">Nome partecipante</item>
+  <item name="ModuleCallForPaper.PlaceHoldersType.SubmitterSurname">Cognome partecipante</item>
+  <item name="ModuleCallForPaper.PlaceHoldersType.SubmitterMail">Mail partecipante</item>
+  <item name="ModuleCallForPaper.PlaceHoldersType.SubmitterType">Tipo partecipante</item>
+  <item name="ModuleCallForPaper.PlaceHoldersType.AllFields">Campi inseriti</item>
+  <item name="ModuleCallForPaper.PlaceHoldersType.CallPublicUrl">Link pubblico</item>
+  <item name="ModuleCallForPaper.PlaceHoldersType.CallInternalUrl">Link interno</item>
+  <item name="ModuleCallForPaper.PlaceHoldersType.SubmissionUrl">Link alla domanda</item>
+  <item name="ModuleRequestForMembership.PlaceHoldersType.CallName">Nome Adesione</item>
+  <item name="ModuleRequestForMembership.PlaceHoldersType.CallEdition">Edizione adesione</item>
+  <item name="ModuleRequestForMembership.PlaceHoldersType.SubmissionDay">Giorno sottomissione</item>
+  <item name="ModuleRequestForMembership.PlaceHoldersType.SubmissionTime">Data/ora sottomissione</item>
+  <item name="ModuleRequestForMembership.PlaceHoldersType.CallCommunity" disambiguation="singolare">Comunità</item>
+  <item name="ModuleRequestForMembership.PlaceHoldersType.SubmitterName">Nome partecipante</item>
+  <item name="ModuleRequestForMembership.PlaceHoldersType.SubmitterSurname">Cognome partecipante</item>
+  <item name="ModuleRequestForMembership.PlaceHoldersType.SubmitterMail">Mail partecipante</item>
+  <item name="ModuleRequestForMembership.PlaceHoldersType.SubmitterType">Tipo partecipante</item>
+  <item name="ModuleRequestForMembership.PlaceHoldersType.AllFields">Campi inseriti</item>
+  <item name="ModuleRequestForMembership.PlaceHoldersType.CallPublicUrl">Link pubblico</item>
+  <item name="ModuleRequestForMembership.PlaceHoldersType.CallInternalUrl">Link interno</item>
+  <item name="ModuleRequestForMembership.PlaceHoldersType.SubmissionUrl">Link alla domanda</item>
+  <item name="ModuleEduPath.PlaceHoldersType.PathName">Nome percorso</item>
+  <item name="ModuleEduPath.PlaceHoldersType.UnitCount">Numero unità</item>
+  <item name="ModuleEduPath.PlaceHoldersType.ActivitiesCount">Numero attività</item>
+  <item name="ModuleEduPath.PlaceHoldersType.StartedActivities">Attività iniziate</item>
+  <item name="ModuleEduPath.PlaceHoldersType.CompletedActivities">Attività completate</item>
+  <item name="ModuleEduPath.PlaceHoldersType.NotStartedActivities">Attività non iniziate</item>
+  <item name="ModuleEduPath.PlaceHoldersType.QuizName">Nome quiz</item>
+  <item name="ModuleEduPath.PlaceHoldersType.QuizMinMark">Punteggio minimo</item>
+  <item name="ModuleEduPath.PlaceHoldersType.QuizMark">Punteggio ottenuto</item>
+  <item name="ModuleEduPath.PlaceHoldersType.QuizMaxMark">Punteggio massimo</item>
+  <item name="ModuleEduPath.PlaceHoldersType.QuizAttempts">Numero tentativi</item>
+  <item name="ModuleEduPath.PlaceHoldersType.QuizList"></item>
+  <item name="ModuleEduPath.PlaceHoldersType.QuizTable"></item>
+  <item name="ModuleEduPath.PlaceHoldersType.PathDuration">Durata percorso</item>
+  <item name="ModuleEduPath.PlaceHoldersType.CompletedOn">Completato il</item>
+  <item name="ModuleEduPath.PlaceHoldersType.PathMinCompletion">Completamento minimo</item>
+
+  <item name="ModuleWebConferencing.PlaceHoldersType.RoomName">Nome stanza</item>
+  <item name="ModuleWebConferencing.PlaceHoldersType.ToolTip.RoomName">Nome stanza</item>
+  <item name="ModuleWebConferencing.PlaceHoldersType.RoomDescription">Descrizione stanza</item>
+  <item name="ModuleWebConferencing.PlaceHoldersType.ToolTip.RoomDescription">Descrizione stanza</item>
+  <item name="ModuleWebConferencing.PlaceHoldersType.RoomStartDate">Inizio</item>
+  <item name="ModuleWebConferencing.PlaceHoldersType.ToolTip.RoomStartDate">Data e ora di inizio della conferenza/meeting/chat</item>
+  <item name="ModuleWebConferencing.PlaceHoldersType.RoomEndDate">Fine</item>
+  <item name="ModuleWebConferencing.PlaceHoldersType.ToolTip.RoomEndDate">Data e ora di fine della conferenza/meeting/chat</item>
+  <item name="ModuleWebConferencing.PlaceHoldersType.RoomUrl">Url stanza</item>
+  <item name="ModuleWebConferencing.PlaceHoldersType.ToolTip.RoomUrl">Url di accesso alla stanza</item>
+  <item name="ModuleWebConferencing.PlaceHoldersType.UserKey">Chiave</item>
+  <item name="ModuleWebConferencing.PlaceHoldersType.ToolTip.UserKey">Chiave di accesso alla stanza</item>
+  <item name="ModuleWebConferencing.PlaceHoldersType.UserDisplayName">Cognome e nome utente</item>
+  <item name="ModuleWebConferencing.PlaceHoldersType.ToolTip.UserDisplayName">Cognome e nome utente</item>
+  <item name="ModuleWebConferencing.PlaceHoldersType.UserMail">Mail utente</item>
+  <item name="ModuleWebConferencing.PlaceHoldersType.ToolTip.UserMail">Mail utente</item>
+  <item name="ModuleWebConferencing.PlaceHoldersType.RoomCommunity">Comunità stanza</item>
+  <item name="ModuleWebConferencing.PlaceHoldersType.ToolTip.RoomCommunity">Comunità di appartenenza della stanza</item>
+  <item name="ModuleWebConferencing.PlaceHoldersType.RoomCreateDate">Data creazione</item>
+  <item name="ModuleWebConferencing.PlaceHoldersType.ToolTip.RoomCreateDate">Data di creazione della stanza</item>
+  <item name="ModuleWebConferencing.PlaceHoldersType.RoomCode">Codice stanza</item>
+  <item name="ModuleWebConferencing.PlaceHoldersType.ToolTip.RoomCode">Codice di accesso alla stanza</item>
+  <item name="ModuleWebConferencing.PlaceHoldersType.RoomCreatedBy">Creatore</item>
+  <item name="ModuleWebConferencing.PlaceHoldersType.ToolTip.RoomCreatedBy">Creatore della stanza</item>
+  <item name="ModuleWebConferencing.PlaceHoldersType.UserLanguageCode">Cod. lingua utente</item>
+  <item name="ModuleWebConferencing.PlaceHoldersType.ToolTip.UserLanguageCode">Codice lingua utente</item>
+  <item name="ModuleWebConferencing.PlaceHoldersType.IstanceName">Istanza Corrente</item>
+  <item name="ModuleWebConferencing.PlaceHoldersType.ToolTip.IstanceName">Istanza Corrente</item>
+
+   <!-- ModuleTicket-->
+  <item name="ModuleTicket.PlaceHoldersType.UserMail">Mail utente</item>
+  <item name="ModuleTicket.PlaceHoldersType.ToolTip.UserMail">Indirizzo mail utente.</item>
+  <item name="ModuleTicket.PlaceHoldersType.UserName">Nome utente</item>
+  <item name="ModuleTicket.PlaceHoldersType.ToolTip.UserName">Nome utente.</item>
+  <item name="ModuleTicket.PlaceHoldersType.UserSurname">Cognome utente</item>
+  <item name="ModuleTicket.PlaceHoldersType.ToolTip.UserSurname">Cognome utente.</item>
+  <item name="ModuleTicket.PlaceHoldersType.UserPassword">Password</item>
+  <item name="ModuleTicket.PlaceHoldersType.ToolTip.UserPassword">Password assegnata all'utente.</item>
+  <item name="ModuleTicket.PlaceHoldersType.UserLanguageCode">Codice lingua utente</item>
+  <item name="ModuleTicket.PlaceHoldersType.ToolTip.UserLanguageCode">Codice lingua associata all'utente.</item>
+  <item name="ModuleTicket.PlaceHoldersType.UserToken">Token utente</item>
+  <item name="ModuleTicket.PlaceHoldersType.ToolTip.UserToken">Token di accesso.</item>
+  <item name="ModuleTicket.PlaceHoldersType.UserTokenExpiration">Validità token</item>
+  <item name="ModuleTicket.PlaceHoldersType.ToolTip.UserTokenExpiration">Data scadenza TOKEN.</item>
+  <item name="ModuleTicket.PlaceHoldersType.UserTokenUrl">Url token</item>
+  <item name="ModuleTicket.PlaceHoldersType.ToolTip.UserTokenUrl">Url con il token.</item>
+  <item name="ModuleTicket.PlaceHoldersType.ExternalAccessUrl">Url accesso</item>
+  <item name="ModuleTicket.PlaceHoldersType.ToolTip.ExternalAccessUrl">Url Accesso Esterno.</item>
+  <item name="ModuleTicket.PlaceHoldersType.TicketStatus">Stato ticket</item>
+  <item name="ModuleTicket.PlaceHoldersType.ToolTip.TicketStatus">Stato corrente del ticket.</item>
+  <item name="ModuleTicket.PlaceHoldersType.TicketCategoryCurrent">Categoria ticket</item>
+  <item name="ModuleTicket.PlaceHoldersType.ToolTip.TicketCategoryCurrent">Categoria corrente del ticket.</item>
+  <item name="ModuleTicket.PlaceHoldersType.TicketCategoryInitial">Categoria iniziale ticket</item>
+  <item name="ModuleTicket.PlaceHoldersType.ToolTip.TicketCategoryInitial">Categoria iniziale del ticket.</item>
+  <item name="ModuleTicket.PlaceHoldersType.TicketAssigner">Assegnatario</item>
+  <item name="ModuleTicket.PlaceHoldersType.ToolTip.TicketAssigner">Assegnatario del ticket.</item>
+  <item name="ModuleTicket.PlaceHoldersType.TicketObject">Nome del ticket</item>
+  <item name="ModuleTicket.PlaceHoldersType.ToolTip.TicketObject">Nome del ticket.</item>
+  <item name="ModuleTicket.PlaceHoldersType.TicketPreview">Testo breve ticket</item>
+  <item name="ModuleTicket.PlaceHoldersType.ToolTip.TicketPreview">Testo breve del ticket.</item>
+  <item name="ModuleTicket.PlaceHoldersType.TicketLongText">Testo ticket</item>
+  <item name="ModuleTicket.PlaceHoldersType.ToolTip.TicketLongText">Testo esteso del ticket.</item>
+  <item name="ModuleTicket.PlaceHoldersType.TicketSendDate">Data invio</item>
+  <item name="ModuleTicket.PlaceHoldersType.ToolTip.TicketSendDate">Data invio del ticket.</item>
+  <item name="ModuleTicket.PlaceHoldersType.TicketLanguage">Nome lingua</item>
+  <item name="ModuleTicket.PlaceHoldersType.ToolTip.TicketLanguage">Nome lingua del ticket.</item>
+  <item name="ModuleTicket.PlaceHoldersType.TicketLanguageCode">Codice lingua</item>
+  <item name="ModuleTicket.PlaceHoldersType.ToolTip.TicketLanguageCode">Codice lingua del ticket.</item>
+  <item name="ModuleTicket.PlaceHoldersType.TicketCreatorDisplayName">Creatore ticket</item>
+  <item name="ModuleTicket.PlaceHoldersType.ToolTip.TicketCreatorDisplayName">Chi ha creato il ticket.</item>
+  <item name="ModuleTicket.PlaceHoldersType.ActionDisplayName">Chi compie l'azione</item>
+  <item name="ModuleTicket.PlaceHoldersType.ToolTip.ActionDisplayName">Nome visualizzato di CHI ha fatto l'azione (tipo per l'utente può anche essere solo "manager"...)</item>
+  <item name="ModuleTicket.PlaceHoldersType.ActionRole">Ruolo di compie l'azione</item>
+  <item name="ModuleTicket.PlaceHoldersType.ToolTip.ActionRole">"Qualifica" di chi ha compiuto l'azione.</item>
+  <item name="ModuleTicket.PlaceHoldersType.AnswerShortText">Risposta breve</item>
+  <item name="ModuleTicket.PlaceHoldersType.ToolTip.AnswerShortText">Testo breve risposta.</item>
+  <item name="ModuleTicket.PlaceHoldersType.AnswerFullText">Risposta completa</item>
+  <item name="ModuleTicket.PlaceHoldersType.ToolTip.AnswerFullText">Testo completo risposta (HTML).</item>
+  <item name="ModuleTicket.PlaceHoldersType.CategoryName">Categoria</item>
+  <item name="ModuleTicket.PlaceHoldersType.ToolTip.CategoryName">Nome della categoria di ticket.</item>
+  <item name="ModuleTicket.PlaceHoldersType.CategoryDescription">Descrizione categoria</item>
+  <item name="ModuleTicket.PlaceHoldersType.ToolTip.CategoryDescription">Descrizione della categoria.</item>
+  <item name="ModuleTicket.PlaceHoldersType.CategoryLONGNameAndDescriptionLIST">Info categoria</item>
+  <item name="ModuleTicket.PlaceHoldersType.ToolTip.CategoryLONGNameAndDescriptionLIST">Lista con lingua, nome e descrizione per tutte le lingue impostate.</item>
+  <item name="ModuleTicket.PlaceHoldersType.CategoryType">Tipo categoria</item>
+  <item name="ModuleTicket.PlaceHoldersType.ToolTip.CategoryType">Tipo categoria a cui assegnare/è stato assegnato il ticket.</item>
+  <item name="ModuleTicket.PlaceHoldersType.CategoryLanguagesCodeList">Lingue</item>
+  <item name="ModuleTicket.PlaceHoldersType.ToolTip.CategoryLanguagesCodeList">Lista con tutte le lingue impostate per quella categoria.</item>
+  <item name="ModuleTicket.PlaceHoldersType.CategoryNewAssignerDisplayName">Nuovo assegnatario</item>
+  <item name="ModuleTicket.PlaceHoldersType.ToolTip.CategoryNewAssignerDisplayName">Nome del nuovo utente assegnatario.</item>
+  <item name="ModuleTicket.PlaceHoldersType.TicketUrlUser">Url ticket - utente</item>
+  <item name="ModuleTicket.PlaceHoldersType.ToolTip.TicketUrlUser">Url per consentire all'utente di raggiungere il ticket.</item>
+  <item name="ModuleTicket.PlaceHoldersType.TicketUrlManager">Url ticket - gestore</item>
+  <item name="ModuleTicket.PlaceHoldersType.ToolTip.TicketUrlManager">Url per consentire al gestore (manager/resolver) di raggiungere il ticket.</item>
+  <item name="ModuleTicket.PlaceHoldersType.TicketUrlListManager">Url pagina gestione</item>
+  <item name="ModuleTicket.PlaceHoldersType.ToolTip.TicketUrlListManager">Url per raggiungere la pagina di gestione dei ticket.</item>
+  <item name="ModuleTicket.PlaceHoldersType.TicketCode">Codice univoco ticket</item>
+  <item name="ModuleTicket.PlaceHoldersType.ToolTip.TicketCode">Codice univoco del ticket.</item>
+  <item name="ModuleTicket.PlaceHoldersType.CategoryLinkListSimple">Lista categorie</item>
+  <item name="ModuleTicket.PlaceHoldersType.ToolTip.CategoryLinkListSimple">Lista semplice di categorie di un utente all'interno della comunità (nome, link).</item>
+  <item name="ModuleTicket.PlaceHoldersType.CategoryLinkListFull">Lista avanzata categorie</item>
+  <item name="ModuleTicket.PlaceHoldersType.ToolTip.CategoryLinkListFull">Lista avanzata di categorie di un utente all'interno della comunità (nome, link, descrizione).</item>
+  <item name="ModuleTicket.PlaceHoldersType.TicketOwnerDisplayName">Nome proprietario ticket</item>
+  <item name="ModuleTicket.PlaceHoldersType.ToolTip.TicketOwnerDisplayName">Nome del proprietario del ticket.</item>
+  <item name="ModuleTicket.PlaceHoldersType.UserNotificationSettingsUrl">Url impostazioni notifiche</item>
+  <item name="ModuleTicket.PlaceHoldersType.ToolTip.UserNotificationSettingsUrl">Url per raggiungere la pagina relativa alle proprie impostazioni sulle notifiche.</item>
+  <item name="ModuleTicket.PlaceHoldersType.UserIdCode">Codice utente</item>
+  <item name="ModuleTicket.PlaceHoldersType.ToolTip.UserIdCode">Codice identificativo dell'utente.</item>
+  <!-- ModuleProjectManagement-->
+  <item name="ModuleProjectManagement.PlaceHoldersType.ProjectName">Nome progetto</item>
+  <item name="ModuleProjectManagement.PlaceHoldersType.ToolTip.ProjectName">Nome del progetto in cui si è coinvolti</item>
+  <item name="ModuleProjectManagement.PlaceHoldersType.ProjectCommunity">Comunità progetto</item>
+  <item name="ModuleProjectManagement.PlaceHoldersType.ToolTip.ProjectCommunity">Nome della comunità di appartenenza del progetto</item>
+  <item name="ModuleProjectManagement.PlaceHoldersType.ProjectDashboardUrl">Nome progetto</item>
+  <item name="ModuleProjectManagement.PlaceHoldersType.ToolTip.ProjectDashboardUrl">Nome del progettio in cui si è coinvolti</item>
+  <item name="ModuleProjectManagement.PlaceHoldersType.ProjectsListUrl">Url progetti</item>
+  <item name="ModuleProjectManagement.PlaceHoldersType.ToolTip.ProjectsListUrl">Url per raggiungere la lista dei progetti.</item>
+  <item name="ModuleProjectManagement.PlaceHoldersType.TasksListUrl" disambiguation="plurale">Url attività progetto</item>
+  <item name="ModuleProjectManagement.PlaceHoldersType.ToolTip.TasksListUrl">Url per raggiungere la lista delle attività.</item>
+  <item name="ModuleProjectManagement.PlaceHoldersType.ExpiringTasksUrl" disambiguation="plurale">Url attività in scadenza</item>
+  <item name="ModuleProjectManagement.PlaceHoldersType.ToolTip.ExpiringTasksUrl">Url per raggiungere la lista delle attività in scadenza.</item>
+  <item name="ModuleProjectManagement.PlaceHoldersType.LateTasksUrl" disambiguation="plurale">Url attività in ritardo</item>
+  <item name="ModuleProjectManagement.PlaceHoldersType.ToolTip.LateTasksUrl">Url per raggiungere la lista delle attività in ritardo.</item>
+  <item name="ModuleProjectManagement.PlaceHoldersType.ToDoTasksUrl" disambiguation="plurale">Url attività da svolgere</item>
+  <item name="ModuleProjectManagement.PlaceHoldersType.ToolTip.ToDoTasksUrl">Url per raggiungere la lista delle attività da svolgere.</item>
+  <item name="ModuleProjectManagement.PlaceHoldersType.ResourceName">Risorsa</item>
+  <item name="ModuleProjectManagement.PlaceHoldersType.ToolTip.ResourceName">Nome della risorsa</item>
+  <item name="ModuleProjectManagement.PlaceHoldersType.ManagerName">Manager</item>
+  <item name="ModuleProjectManagement.PlaceHoldersType.ToolTip.ManagerName">Nome della risorsa</item>
+  <item name="ModuleProjectManagement.PlaceHoldersType.ToDoTasks" disambiguation="plurale">Attività da svolgere</item>
+  <item name="ModuleProjectManagement.PlaceHoldersType.ToolTip.ToDoTasks">Elenco delle attività da svolgere.</item>
+  <item name="ModuleProjectManagement.PlaceHoldersType.LateTasks" disambiguation="plurale">Attività scadute</item>
+  <item name="ModuleProjectManagement.PlaceHoldersType.ToolTip.LateTasks">Elenco delle attività scadute.</item>
+  <item name="ModuleProjectManagement.PlaceHoldersType.ExpiringTasks" disambiguation="plurale">Attività in scadenza progetto</item>
+  <item name="ModuleProjectManagement.PlaceHoldersType.ToolTip.ExpiringTasks">Elenco delle attività in scadenza.</item>
+  <item name="ModuleProjectManagement.PlaceHoldersType.TaskName">Nome attività</item>
+  <item name="ModuleProjectManagement.PlaceHoldersType.ToolTip.TaskName">Nome dell'attività.</item>
+  <!--NOTIFICATIONS-->
+  <item name="ModuleWebConferencing.NotificationAction.Credential">Credenziali</item>
+  <item name="ModuleWebConferencing.NotificationAction.LockUser">Blocco utente</item>
+  <item name="ModuleWebConferencing.NotificationAction.UnLockUser">Sblocco utente</item>
+  <item name="ModuleWebConferencing.NotificationAction.GenericInvitation">Invito generico</item>
+  <item name="ModuleProfileManagement.NotificationAction.SetPassword">Impostazione password (admin)</item>
+  <item name="ModuleProfileManagement.NotificationAction.RetrievePassword">Recupero password</item>
+  <item name="ModuleProfileManagement.NotificationAction.ExpiredPassword">Password scaduta</item>
+  <item name="ModuleProfileManagement.NotificationAction.ExpiringPassword">Password in scadenza</item>
+  <item name="ModuleProfileManagement.NotificationAction.MyProfileCreated">Iscrizione piattaforma</item>
+  <item name="ModuleProfileManagement.NotificationAction.CreateNewPassword">Creazione profilo</item>
+     <!-- ModuleTicket-->
+  <item name="ModuleTicket.NotificationAction.externalRegistration">Esterni - Registrazione</item>
+  <item name="ModuleTicket.NotificationAction.externalRecover">Esterni - Recupero credenziali</item>
+  <item name="ModuleTicket.NotificationAction.externalPasswordChanged">Esterni - Cambio password</item>
+  <item name="ModuleTicket.NotificationAction.TicketNewUser">Utente - Ticket creato</item>
+  <item name="ModuleTicket.NotificationAction.TicketSendMessageUser">Utente - Invio Risposta</item>
+  <item name="ModuleTicket.NotificationAction.TicketModeratedUser">Utente - Blocco/segnalazione ticket</item>
+  <item name="ModuleTicket.NotificationAction.TicketCategoryResetUser">Utente - Cambio categoria principale</item>
+  <item name="ModuleTicket.NotificationAction.TicketOwnerChanged">Ticket - Cambio proprietario</item>
+  <item name="ModuleTicket.NotificationAction.TicketNewMan">Gestori - Nuovo ticket</item>
+  <item name="ModuleTicket.NotificationAction.TicketSendMessageMan">Gestori - Invio Risposta</item>
+  <item name="ModuleTicket.NotificationAction.TicketModeratedMan">Gestori - Blocco/segnalazione ticket</item>
+  <item name="ModuleTicket.NotificationAction.TicketCategoryResetMan">Ticket - Modifica categoria principale</item>
+  <item name="ModuleTicket.NotificationAction.TicketCategoryAdd">Ticket - Aggiunta nuova categoria</item>
+  <item name="ModuleTicket.NotificationAction.TicketAssignmentAdd">Assegnazione ticket</item>
+  <item name="ModuleTicket.NotificationAction.TicketAssignmentAddAssigner">Resolver - Assegnazione ticket</item>
+  <item name="ModuleTicket.NotificationAction.TicketAssignmentAddManager">Ticket assegnato ad un resolver</item>
+  <item name="ModuleTicket.NotificationAction.CategoryModified">Gestori - Modifiche categoria di appartenenza</item>
+  <item name="ModuleTicket.NotificationAction.CategoryReorder">Gestori - Riordino categorie di appartenenza</item>
+  <item name="ModuleTicket.NotificationAction.TicketStatusChangedUser">Utente - Cambio stato del ticket</item>
+  <item name="ModuleTicket.NotificationAction.TicketStatusChangedMan">Gestori - Cambio stato del ticket</item>
+  
+  <!-- ModuleProjectManagement-->
+  <item name="ModuleProjectManagement.NotificationAction.projectassigned">Progetto assegnato</item>
+  <item name="ModuleProjectManagement.NotificationAction.projectdeleted">Progetto cancellato</item>
+  <item name="ModuleProjectManagement.NotificationAction.projectsuspended">Progetto sospeso</item>
+  <item name="ModuleProjectManagement.NotificationAction.taskcompleted">Attività completata</item>
+  <item name="ModuleProjectManagement.NotificationAction.taskdeleted">Attività cancellata</item>
+  <item name="ModuleProjectManagement.NotificationAction.taskassigned">Attività assegnata</item>
+  <item name="ModuleProjectManagement.NotificationAction.weeksummary">Sommario settimanale</item>
+  <item name="ModuleProjectManagement.NotificationAction.taskapproved">Attività approvate</item>
+  <item name="ModuleProjectManagement.NotificationAction.tasknotapproved">Attività non approvata</item>
+  <!-- PERMISSIONS-->
+  <item name="UnknownCommunity">Comunità cancellata</item>
+  <item name="UnknownUser">Utente cancellato</item>
+  <item name="BTNsavePermissionsBottom.text">Salva</item>
+  <item name="BTNsavePermissionsBottom.ToolTip">Salva le impostazioni sui permessi.</item>
+  <item name="BTNsavePermissionsTop.text">Salva</item>
+  <item name="BTNsavePermissionsTop.ToolTip">Salva le impostazioni sui permessi.</item>
+  <item name="BTNclosePersonTypesAssignments.text">Annulla</item>
+  <item name="BTNclosePersonTypesAssignments.ToolTip">Annulla la selezione delle tipologie di profilo.</item>
+  <item name="BTNsavePersonTypesAssignments.text">Conferma</item>
+  <item name="BTNsavePersonTypesAssignments.ToolTip">Conferma la selezione delle tipologie di profilo.</item>
+  <item name="BTNcloseSelectCommunity.text">Annulla</item>
+  <item name="BTNcloseSelectCommunity.ToolTip">Annulla la selezione delle comunità.</item>
+  <item name="BTNselectCommunity.text">Conferma</item>
+  <item name="BTNselectCommunity.ToolTip">Conferma la selezione delle comunità.</item>
+  <item name="LBcommunityName_t.text" disambiguation="singolare">Comunità:</item>
+
+  <item name="BTNsaveRoleAssignments.text">Conferma</item>
+  <item name="BTNsaveRoleAssignments.ToolTip">Conferma la selezione dei ruoli.</item>
+  <item name="BTNcloseRoleAssignments.text">Annulla</item>
+  <item name="BTNcloseRoleAssignments.ToolTip">Annulla la selezione dei ruoli.</item>
+  <item name="LTtoolDescription.text">In questa sezione è possibile gestire la personalizzazione dei permessi sul modello.</item>
+  <item name="LBselectCommunityDescription">Seleziona la comunità i cui si intende personalizzare i permessi di accesso/uso del modello:</item>
+  <item name="LBpersonTypesDescription.text">Seleziona le tiplogie di profilo di cui si intende personalizzare i permessi di accesso/uso del modello:</item>
+  <item name="LBselectRolesDescription.text">Seleziona i ruoli della comunità di cui si intende personalizzare i permessi di accesso/uso del modello:</item>
+  <item name="DialogTitleTranslation.ProfileType">Personalizzazione permessi - Tipo profilo</item>
+  <item name="DialogTitleTranslation.Community">Personalizzazione permessi - Seleziona Comunità</item>
+  <item name="DialogTitleTranslation.Role">Personalizzazione permessi - Comunità - Ruoli</item>
+  <item name="DialogTitleTranslation.Person">Personalizzazione permessi - Selezione Utenti</item>
+  <item name="BTNaddCommunity.text">Aggiungi Comunità</item>
+  <item name="BTNaddCommunity.ToolTip">Aggiungi una nuova comunità per la personalizzazione dei permessi.</item>
+  <item name="BTNaddUserFromCommunity.text">Aggiungi Utente</item>
+  <item name="BTNaddUserFromCommunity.ToolTip">Aggiungi un utente della comunità per poter personalizzare i permessi di accesso e di uso del modello.</item>
+  <item name="BTNaddProfile.text">Aggiungi Utente</item>
+  <item name="BTNaddProfile.ToolTip">Aggiungi un utente della piattaforma per poter personalizzare i permessi di accesso e di uso del modello.</item>
+  <item name="LTaddCommunityDescription.text">Aggiunge una nuova comunità per poterne personalizzare i permessi di accesso e di uso del modello.</item>
+  <item name="LTaddUserFromCommunityDescription.text">Aggiunge uno o più utenti della comunità per poterne personalizzare i permessi di accesso e di uso del modello.</item>
+  <item name="LTaddProfileDescription.text">Aggiunge uno o più utenti della piattaforma per poterne personalizzare i permessi di accesso e di uso del modello.</item>
+
+  <item name="DisplayName.Portal">Intera piattaforma</item>
+  <item name="DisplayName.Community" disambiguation="singolare">Comunità</item>
+  <item name="BTNeditCommunityAssignment.ToolTip">Modifica i ruoli selezionati</item>
+  <item name="BTNdeleteCommunityAssignment.ToolTip">Cancella l'accesso per la comunità selezionata</item>
+  <item name="LBcommunityItemModulePermissions_t.text">Permessi:</item>
+  <item name="LTcommunityItemModulePermissionInfo.text">Rendi disponibile ai gestori del servizio:</item>
+  <item name="LBpermissionUse.text">Uso</item>
+  <item name="LBpermissionEdit.text">Modifica</item>
+  <item name="LBpermissionClone.text">Copia</item>
+  <item name="LBpermissionChange.text">Gestione permessi</item>
+  <item name="LBroleHeader_t.PersonTypes">Tipo profilo</item>
+  <item name="LBroleHeader_t.Roles">Ruolo</item>
+  <item name="LBpermissionUseHeader_t.text">Uso</item>
+  <item name="LBpermissionEditHeader_t.text">Modifica</item>
+  <item name="LBpermissionCloneHeader_t.text">Copia</item>
+  <item name="LBpermissionChangeHeader_t.text">Gestione permessi</item>
+  <item name="LBuseSelectAll.ToolTip">Seleziona tutti</item>
+  <item name="LBuseSelectNone.ToolTip">Deseleziona tutti</item>
+  <item name="LBeditSelectAll.ToolTip">Seleziona tutti</item>
+  <item name="LBeditSelectNone.ToolTip">Deseleziona tutti</item>
+  <item name="LBcloneSelectAll.ToolTip">Seleziona tutti</item>
+  <item name="LBcloneSelectNone.ToolTip">Deseleziona tutti</item>
+  <item name="LBpermissionChangeSelectAll.ToolTip">Seleziona tutti</item>
+  <item name="LBpermissionChangeSelectNone.ToolTip">Deseleziona tutti</item>
+  <item name="DisplayNoAssignments">Attualmente non esiste alcuna personalizzazione di accesso ed utilizzo del modello.</item>
+
+  <item name="DisplayPortalPermissionsSaved">Impostazioni a livello di portale salvate correttamente.</item>
+  <item name="DisplayPortalPermissionsErrorSaving">Le impostazioni a livello di portale NON sono state salvate correttamente.</item>
+  <item name="DisplayCommunityAssignmentDeleted">Le impostazioni per la comunità {0} sono state rimosse correttamente.</item>
+  <item name="DisplayCommunityDeletingError">Le impostazioni per la comunità {0} NON sono state rimosse.</item>
+
+  <item name="DisplayCommunityAssignmentAdded">Accesso alla comunità {0} aggiunto correttamente.</item>
+  <item name="DisplayCommunityAssignmentsAdded">Le comunità selezionate sono state aggiunte correttamente.</item>
+  <item name="DisplayUserAssignmentsAdded">Gli utenti selezionati sono stati aggiunti correttamente.</item>
+  <item name="DisplayCommunityAssignmentSaved">Impostazioni di accesso per la comunità {0} salvate correttamente</item>
+  <item name="DisplayCommunityAddingError">Errore nella fase di aggiunte della nuova comunità.</item>
+  <item name="DisplayCommunityAssignmentErrorSaving">Le impostazioni non sono state salvate correttamente.</item>
+  <item name="DisplayUserAssignmentsAdded">Utenti/e aggiunti/o correttamente.</item>
+  <item name="DisplayUserAssignmentsSaved">Impostazioni utente/i salvate correttamente.</item>
+  <item name="DisplayUserAssigmentsSavingError">Le impostazioni relative agli utenti NON sono state salvate correttamente.</item>
+
+
+  <item name="LBuserListTitle.text">Utenti</item>
+  <item name="LTusername_t.text">Cognome e nome</item>
+  <item name="LBselectUsersDescription.text">Seleziona gli utenti a cui si intende personalizzare l'accesso al modello:</item>
+  <item name="LNBmanageUsers.text">Gestione</item>
+  <item name="LNBmanageUsers.ToolTip">Gestione utenti</item>
+  <item name="LNBsaveUsers.text">Salva</item>
+  <item name="LNBsaveUsers.ToolTip">Salva impostazioni</item>
+  <item name="VersionName">Versione {0}</item>
+  <item name="TemplateStatus.Translations.Draft">In bozza</item>
+  <item name="TemplateStatus.Translations.Active">Attivo</item>
+  <item name="TemplateStatus.Translations.Replaced">Sostituito</item>
+  <item name="TemplateType.Translations.None"></item>
+  <item name="TemplateType.Translations.System">Di sistema</item>
+  <item name="TemplateType.Translations.Module">Di servizio</item>
+  <item name="TemplateType.Translations.User">Personale</item>
+
+  <item name="HYPaddTemplate.text">Nuovo</item>
+  <item name="HYPaddTemplate.ToolTip">Nuovo modello</item>
+  <item name="HYPaddPersonalTemplate.text">Nuovo personale</item>
+  <item name="HYPaddPersonalTemplate.ToolTip">Nuovo modello personale</item>
+  <item name="HYPaddObjectTemplate.text">Nuovo per l'oggetto</item>
+  <item name="HYPaddObjectTemplate.ToolTip">Nuovo per l'oggetto selezionato</item>
+  <item name="LBtemplateNameFilter_t.text">Nome:</item>
+  <item name="BTNfilterTemplates.text">Cerca</item>
+  <item name="BTNfilterTemplates.ToolTip">Cerca i modelli in base alle impostazioni specificate</item>
+  <item name="LTtemplateName_t.text">Nome</item>
+  <item name="LTtemplateType_t.text">Tipo</item>
+  <item name="LTmoduleName_t.text">Servizio</item>
+  <item name="LTcreatedBy_t.text">Creato da</item>
+  <item name="LTlastEditBy_t.text">Modificato da</item>
+  <item name="LTlastEditOn_t.text">Modificato il</item>
+  <item name="LTactions_t.text">Azioni</item>
+  <item name="UnknownUserProfile">Utente rimosso</item>
+  <item name="TemplateOrder.None"></item>
+  <item name="TemplateOrder.ByType">tipo modello</item>
+  <item name="TemplateOrder.ByStatus">status</item>
+  <item name="TemplateOrder.ByUser">creatore</item>
+  <item name="TemplateOrder.ByDate">data di creazione</item>
+  <item name="TemplateOrder.ByName">nome</item>
+  <item name="TemplateOrder.Ascending">Ordinamento crescente per </item>
+  <item name="TemplateOrder.Descending">Ordinamento decrescente per </item>
+  <item name="LNBtemplateDelete.ToolTip">Cancella definitivamente il modello</item>
+  <item name="LNBtemplateVirtualDelete.ToolTip">Cestina il modello</item>
+  <item name="LNBtemplateRecover.ToolTip">Recupera il modello dal cestino.</item>
+  <item name="LNBtemplateclone.ToolTip">Copia il modello.</item>
+  <item name="LNBtemplateNewVersion.ToolTip">Nuova versione.</item>
+  <item name="LNBsendMail.ToolTip">Invia messaggio.</item>
+
+  <item name="HYPtemplateEdit.ToolTip">Modifica il modello.</item>
+  <item name="HYPtemplatePreview.ToolTip">Anteprima del modello.</item>
+  <item name="HYPtemplateEditPermissions.ToolTip">Modifica permessi.</item>
+
+  <item name="LNBversionDelete.ToolTip">Cancella definitivamente la versione</item>
+  <item name="LNBversionVirtualDelete.ToolTip">Cestina la versione</item>
+  <item name="LNBversionRecover.ToolTip">Recupera la versione dal cestino.</item>
+  <item name="LNBversionclone.ToolTip">Copia la versione.</item>
+  <item name="HYPversionEdit.ToolTip">Modifica la versione.</item>
+  <item name="HYPversionPreview.ToolTip">Anteprima della versione.</item>
+  <item name="HYPversionEditPermissions.ToolTip">Modifica permessi.</item>
+  <item name="LTpageBottom.text">Va alla pagina:</item>
+  <item name="LBnoTemplates.text">Nessun template individuato.</item>
+  <item name="LBtemplateDisplayFilter_t.text">Visualizza:</item>
+  <item name="DDLdisplayType.OnlyVisible">Gli attivi</item>
+  <item name="DDLdisplayType.Deleted">I cancellati</item>
+  <item name="DDLdisplayType.All">-- Tutti  --</item>
+  <item name="RBLdisplayType.All">Tutti</item>
+  
+  <item name="Template.Delete.True">Modello "{0}" cancellato definitivamente.</item>
+  <item name="Template.VirtualDelete.True">Modello "{0}" inviato al cestino.</item>
+  <item name="Template.VirtualUndelete.True">Il modello "{0}" è stato recuperato correttamente dal cestino.</item>
+  <item name="Template.Delete.False">Errore nelle procedure di cancellazione definitiva del modello "{0}".</item>
+  <item name="Template.VirtualDelete.False">Non è stato possibile inviare il modello "{0}" al cestino.</item>
+  <item name="Template.VirtualUndelete.False">Errore nelle procedure di recupero del modello "{0}" dal cestino.</item>
+  <item name="Template.AddVersion.True">E' stata aggiunta una nuova versione al modello "{0}".</item>
+  <item name="Template.AddVersion.False">Errore nella procedura di creazione di una nuova versione del modello "{0}".</item>
+  <item name="Template.Clone.True">E' stata creata correttamente una copia del modello "{0}".</item>
+  <item name="Template.Clone.False">Errore nelle procedure di copia del modello "{0}".</item>
+  <item name="Version.Delete.True">La versione selezionata del modello "{0}" è stata cancellata definitivamente.</item>
+  <item name="Version.Delete.False">Errore nelle procedure di cancellazione definitiva della versione selezionata del modello "{0}".</item>
+  <item name="Version.VirtualDelete.True">La versione selezionata del modello "{0}" è stata inviata al cestino.</item>
+  <item name="Version.VirtualUndelete.True">La versione selezionata del modello "{0}" è stato recuperata correttamente dal cestino.</item>
+  <item name="Version.VirtualDelete.False">Non è stato possibile inviare al cestion la versione selezionata del modello "{0}".</item>
+  <item name="Version.VirtualUndelete.False">Errore nelle procedure di recupero della versione selezionata del modello "{0}" dal cestino.</item>
+  <item name="Version.Clone.True">E' stata creata correttamente una copia della versione selezionata del modello "{0}".</item>
+  <item name="Version.Clone.False">Errore nelle procedure di copia  della versione selezionata del modello "{0}".</item>
+
+
+
+  <item name="TemplateClone">Copia - </item>
+  <item name="WizardTemplateStep.Settings">Impostazioni</item>
+  <item name="WizardTemplateStep.Translations">Testi</item>
+  <item name="WizardTemplateStep.Permission">Permessi</item>
+  <item name="WizardTemplateStep.Settings.ToolTip">Impostazioni</item>
+  <item name="WizardTemplateStep.Translations.ToolTip">Gestione testo del modello</item>
+  <item name="WizardTemplateStep.Permission.ToolTip">Gestione permessi sul modello</item>
+
+  <item name="WizardTemplateStep.Settings.Message">{0} notifiche</item>
+  <item name="WizardTemplateStep.Settings.Message.1">1 notifica</item>
+  <item name="WizardTemplateStep.Settings.Draft">In bozza</item>
+  <item name="WizardTemplateStep.Settings.Active">Attiva</item>
+  <item name="WizardTemplateStep.Settings.Replaced">Sostituita</item>
+
+  <item name="WizardTemplateStep.Translations.Message">{0} traduzioni</item>
+  <item name="WizardTemplateStep.Translations.Message.True">Multilingua=SI, altre/a {0} traduzioni/e</item>
+  <item name="WizardTemplateStep.Translations.Message.False">Multilingua=NO, altre/a {0} traduzioni/e</item>
+  <item name="WizardTemplateStep.Translations.Message.EditingErrors.EmptyMessage">predefinito NON specificato</item>
+  <item name="WizardTemplateStep.Translations.Message.EditingErrors.EmptyTranslations">{0} traduzioni/e vuote/a</item>
+  <item name="WizardTemplateStep.Translations.Message.EditingErrors.InvalidTranslations">{0} traduzioni/e incomplete/a</item>
+  <item name="WizardTemplateStep.Permission.Message">{0} personalizzazioni</item>
+  <item name="WizardTemplateStep.Permission.Message.EditingErrors.NoPermission">{0} elementi con nessun permesso</item>
+  <item name="WizardTemplateStep.Permission.Message.EditingErrors.NoPermission.1">un elemento con nessun permesso</item>
+  <!-- SEND MESSAGES -->
+
+  <item name="serviceTitle.TemplateList.SRVWBCF">Messaggi videoconferenza</item>
+  <item name="serviceTitle.TemplateList.SRVCFP">Messaggi bandi</item>
+  <item name="serviceTitle.TemplateList.SRVEDUP">Messaggi percorso formativo</item>
+  <item name="serviceTitle.TemplateList.SRVPRFMNG">Messaggi adesione/pre-adesione</item>
+  <item name="serviceTitle.SentMessages.SRVWBCF">Messaggi inviati per la videoconferenza</item>
+  <item name="serviceTitle.SentMessages.SRVCFP">Messaggi inviati per il bando</item>
+  <item name="serviceTitle.SentMessages.SRVEDUP">Messaggi inviati per il percorso formativo</item>
+  <item name="serviceTitle.SentMessages.SRVPRFMNG">Messaggi inviati per l'adesione/la pre-adesione</item>
+  <item name="serviceTitle.MessageRecipients.SRVWBCF">Messaggio inviato per la videoconferenza</item>
+  <item name="serviceTitle.MessageRecipients.SRVCFP">Messaggio inviato per il bando</item>
+  <item name="serviceTitle.MessageRecipients.SRVEDUP">Messaggio inviato per il percorso formativo</item>
+  <item name="serviceTitle.MessageRecipients.SRVPRFMNG">Messaggio inviato per l'adesione/la pre-adesione</item>
+
+  <item name="HYPbackUrl.text">Indietro</item>
+  <item name="HYPbackUrl.ToolTip">Indietro</item>
+
+  <item name="DisplayTab.List">Lista modelli</item>
+  <item name="DisplayTab.Send">Invio messaggio</item>
+  <item name="DisplayTab.Sent">Messaggi inviati</item>
+  <item name="SRVWBCF.DisplayTab.List">Modelli - VideoConferenza</item>
+  <item name="SRVRFM.DisplayTab.List">Modelli - Richieste di adesione/pre-adesione</item>
+  <item name="SRVCFP.DisplayTab.List">Modelli - Bandi</item>
+
+  <item name="BTNdeleteCurrentTranslation.text">Elimina contenuto</item>
+  <item name="BTNdeleteCurrentTranslation.ToolTip">Elimina contenuto.</item>
+  <item name="BTNselectRecipients.text">Seleziona destinatari</item>
+  <item name="BTNselectRecipients.ToolTip">Seleziona destinatari</item>
+
+  <item name="Element.Select">Seleziona un template</item>
+  <item name="Element.Last" mustcontains="#item.TemplateName#">Sempre l'ultima versione - #item.TemplateName#</item>
+  <item name="Element.Generic" mustcontains="#item.Version#|#item.TemplateName#" description="V. = versione">V. #item.Version# - #item.TemplateName#</item>
+  <item name="Element.Disapproved" mustcontains="#item.Version#">! #item.Version# ! non attivo</item>
+  <item name="Element.Draft" mustcontains="#item.Version#">! #item.Version# ! bozza</item>
+  <item name="HYPpreview.text">Anteprima</item>
+  <item name="HYPpreview.ToolTip">Anteprima</item>
+  <item name="LBinuseTemplate_t.text">Modello:</item>
+  <item name="LTmessageEdit_t.text">Composizione messaggio</item>
+  <item name="LNBsaveAsTemplate.text">Salva come modello</item>
+  <item name="LNBsaveAsTemplate.ToolTip">Salva come nuovo modello per il servizio</item>
+  <item name="LNBsaveAsObjectTemplate.text">Salva per {0}</item>
+  <item name="LNBsaveAsObjectTemplate.ToolTip">Salva come nuovo modello per {0}</item>
+  <item name="LNBsaveAsPersonalTemplate.text">Salva come personale</item>
+  <item name="LNBsaveAsPersonalTemplate.ToolTip">Salva come nuovo modello personale</item>
+  <item name="SaveAsObjectName.SRVWBCF">la stanza</item>
+  <item name="SaveAsObjectName.SRVCFP">il bando</item>
+  <item name="SaveAsObjectName.SRVEDUP">il percorso formativo</item>
+  <item name="SaveAsObjectName.SRVPRFMNG">l'adesione/pre-adesione</item>
+  <item name="TemplateSaveAsName">Modello salvato {0}</item>
+  <item name="TemplateSaveAsName.Person">Modello personale salvato {0}</item>
+  <item name="TemplateSaveAsName.Object">Modello per oggetto salvato {0}</item>
+  <item name="TemplateSaved.True.Module">E' stato creato un modello per il servizio.</item>
+  <item name="TemplateSaved.True.Person">E' stato creato un modello personale.</item>
+  <item name="TemplateSaved.True.Object">E' stato creato un modello per {0}.</item>
+  <item name="TemplateSaved.False.Module">Non è stato possibile creare un modello per il servizio</item>
+  <item name="TemplateSaved.False.Person">Non è stato possibile creare un modello personale</item>
+  <item name="TemplateSaved.False.Object">Non è stato possibile creare un modello per {0}</item>
+
+  <item name="BTNbackToMessage.text">Modifica messaggio</item>
+  <item name="BTNbackToMessage.ToolTip">Modifica messaggio</item>
+  <item name="BTNsendMessage.text">Invia</item>
+  <item name="BTNsendMessage.ToolTip">Invia il messaggio</item>
+  <item name="LTrecipientManualSelection_t.text">Inserimento manuale destinatari</item>
+  <item name="LTrecipientSelection_t.text">Selezione destinatari</item>
+  <item name="LTmailAddressLanguage_t.text">Indirizzi</item>
+  <item name="LTmailAddressInvalidErrorsInfo.text" html="false" placeholder="false">I seguenti indirizzi mail NON sono nel formato corretto:</item>
+  <item name="HYPhideErrors.text">nascondi gli errori</item>
+  <item name="HYPhideErrors.ToolTip">Nascondi gli errori</item>
+
+  <item name="DisplayEmptyMessage">Il messaggio è vuoto, impossibile continuare.</item>
+  <item name="DisplayEmptyMessage.1">Il messaggio è vuoto, impossibile continuare.</item>
+  <item name="DisplayEmptyMessage.n">Il messaggio è vuoto, impossibile continuare.</item>
+  <item name="DisplayNoRecipients">Nessun destinatario individuato, impossibile inviare il messaggio.</item>
+  <item name="DisplayUnableToSendMessage">Impossibile inviare il messaggio, contattare l'amministratore della piattaforma.</item>
+  <item name="DisplayMessageSentTo.0.0">Non è stato inviato alcun messaggio.</item>
+  <item name="DisplayMessageSentTo.0.1">Il messaggio NON è stato inviato.</item>
+  <item name="DisplayMessageSentTo.0.n">Non sono stati inviati {0} messaggi.</item>
+  <item name="DisplayMessageSentTo.n.0">Tutti e {0} i messaggi sono stati inviati.</item>
+  <item name="DisplayMessageSentTo.n.1">Sono stati inviati {0} messaggi, uno non è stato inviato.</item>
+  <item name="DisplayMessageSentTo.1.0">Il messaggio è stato inviato.</item>
+  <item name="DisplayMessageSentTo.1.1">Un messaggio è stato inviato, mentre NON è stato possibile procedere con l'altro.</item>
+  <item name="DisplayMessageSentTo.1.n">Un messaggio è stato inviato, NON è stato possibile procedere con l'invio di altri {0}.</item>
+  <item name="DisplayMessageSentTo.n.n">Sono stati inviati {0} messaggi, NON è stato possibile procedere con l'invio di altri {1}.</item>
+  <item name="SubmissionTranslations.CallTitle" placeholder="true" mustcontains="{0}">Domanda di partecipazione al bando {0}</item>
+  <item name="SubmissionTranslations.CallTitleAndEdition" placeholder="true" mustcontains="{0}|{1}">Domanda di partecipazione al bando {0} edizione {1}</item>
+  <item name="SubmissionTranslations.PrintInfo" placeholder="true" mustcontains="{0}|{1}|{2}">Stampata da {0} il {1} alle {2}</item>
+  <item name="SubmissionTranslations.SubmittedByTitle">Sottomessa da:</item>
+  <item name="SubmissionTranslations.SubmittedByInfo" placeholder="true" mustcontains="{0}|{1}|{2}">{0} il {1} alle {2}</item>
+  <item name="SubmissionTranslations.SubmittedForInfo" placeholder="true" mustcontains="{0}|{1}|{2}|{3}">{0} per conto di {1} il {2} alle {3}</item>
+  <item name="SubmissionTranslations.SubmittedTypeTitle" disambiguation="domanda di partecipazione/domanda di adesione">Tipo domanda</item>
+  <item name="SubmissionTranslations.SubmissionStatusTitle" disambiguation="status: attivo/chiuso/in corso/valutazione" >Status:</item>
+  <item name="SubmissionTranslations.SubmissionStatus" hidden="true">- </item>
+  <item name="SubmissionTranslations.EmptyItem" hidden="true"> // </item>
+  <item name="SubmissionTranslations.SubmittedFilesTitle">File allegati:</item>
+  <item name="SubmissionTranslations.SubmissionInfo"> Informazioni di base</item>
+  <item name="SubmissionTranslations.CommunityNameTitle" disambiguation="singolare" placeholder="true" mustcontains="{0}">Comunità {0}</item>
+  <item name="SubmissionTranslations.PortalCommunityName">Portale</item>
+  <item name="SubmissionTranslations.CreatedByInfo" placeholder="true" mustcontains="{0}|{1}|{2}">{0} il {1} alle {2}</item>
+  <item name="SubmissionTranslations.FileSubmitted">sottomesso</item>
+  <item name="SubmissionTranslations.FileNotSubmitted">NON sottomesso</item>
+  <item name="SubmissionTranslations.StatusAccepted">Accettata</item>
+  <item name="SubmissionTranslations.StatusDraft">In bozza</item>
+  <item name="SubmissionTranslations.StatusRejected">Rifiutata</item>
+  <item name="SubmissionTranslations.StatusSubmitted">Sottomessa</item>
+  <item name="SubmissionTranslations.StatusValuated">Valutata</item>
+  <item name="SubmissionTranslations.StatusValuating">In valutazione</item>
+  <item name="SubmissionTranslations.StatusWaitingValuation">In attesa di valutazione</item>
+  <item name="SubmissionTranslations.ItemMandatory" hidden="true" disambiguation="non tradurre"> *</item>
+  <item name="SubmissionTranslations.MaxCharInfo" placeholder="true" mustcontains="{0}">(massimo {0} caratteri compresi gli spazi)</item>
+  <item name="SubmissionTranslations.DisclaimerAccept"> Accetta</item>
+  <item name="SubmissionTranslations.DisclaimerReject"> Non accetta</item>
+  <item name="SubmissionTranslations.FileCreationError">Errore nella fase di creazione del file.</item>
+  <item name="SubmissionTranslations.Pager">Pag.</item>
+  <item name="SubmissionTranslations.FilesSubmitted">DocumentiAllegati</item>
+  <item name="SubmissionTranslations.SubmissionCallFileName" placeholder="true" mustcontains="{0}">DomandaSottomessa_{0}</item>
+  <item name="SubmissionTranslations.SubmissionRequestFileName" placeholder="true" mustcontains="{0}">DomandaPartecipazione_{0}</item>
+  <item name="SubmissionTranslations.AnonymousUser">Utente anonimo</item>
+  <item name="SubmissionTranslations.MinOption" placeholder="true" mustcontains="{0}">Almeno {0} opzione/i</item>
+  <item name="SubmissionTranslations.MaxOption" placeholder="true" mustcontains="{0}">Al massimo {0} opzioni/e</item>
+  <item name="SubmissionTranslations.MinOptionMaxOption" placeholder="true" mustcontains="{0}|{1}">Minimo {0} opzioni/e, massimo {1}</item>
+  <item name="SubmissionTranslations.RequestTitle" placeholder="true" mustcontains="{0}">Domanda di adesione a "{0}"</item>
+  <item name="SubmissionTranslations.SubmitToCallFileName" placeholder="true" mustcontains="{0}">DomandaBando_{0}</item>
+  <item name="SubmissionTranslations.SubmitToRequestFileName" placeholder="true" mustcontains="{0}">DomandaAdesione_{0}</item>
+  <item name="SubmissionTranslations.DisclaimerRead">Letto</item>
+  <item name="SubmissionTranslations.OtherOption">Altro:</item>
+  <item name="SubmissionTranslations.OtherOptionValue" mustcontains="{0}|{1}" placeholder="true">{0}:{1}</item>
+  <item name="LTmessageSentInfos_t.text">Dettagli messaggio</item>
+  <item name="BTNbackToRecipients.text">Torna ai destinatari</item>
+  <item name="BTNbackToRecipients.ToolTip">Torna ai destinatari</item>
+  <item name="BTNnewMessage.text">Nuovo messaggio</item>
+  <item name="BTNnewMessage.ToolTip">Nuovo messaggio</item>
+  <item name="Empty.WebConference.PlaceHoldersType.None"></item>
+  <item name="Empty.WebConference.PlaceHoldersType.RoomName"></item>
+  <item name="Empty.WebConference.PlaceHoldersType.RoomDescription"> </item>
+  <item name="Empty.WebConference.PlaceHoldersType.RoomStartDate"> </item>
+  <item name="Empty.WebConference.PlaceHoldersType.RoomEndDate"> (nessuna data di termine)</item>
+  <item name="Empty.WebConference.PlaceHoldersType.RoomUrl">(url di accesso non generata)</item>
+  <item name="Empty.WebConference.PlaceHoldersType.UserKey">(chiave NON generata, devi essere iscritto alla stanza)</item>
+  <item name="Empty.WebConference.PlaceHoldersType.UserDisplayName"></item>
+  <item name="Empty.WebConference.PlaceHoldersType.UserMail">(mail non indicata)</item>
+  <item name="Empty.WebConference.PlaceHoldersType.RoomCommunity">--</item>
+  <item name="Empty.WebConference.PlaceHoldersType.IstanceName"></item>
+  <item name="Empty.WebConference.PlaceHoldersType.RoomCreateDate"></item>
+  <item name="Empty.WebConference.PlaceHoldersType.RoomCode">(codice stanza NON generato)</item>
+  <item name="Empty.WebConference.PlaceHoldersType.RoomCreatedBy">-</item>
+  <item name="Empty.WebConference.PlaceHoldersType.UserLanguageCode">-</item>
+
+
+  <item name="LTmessageSent_t.text"></item>
+  <item name="LBsearchUserByFilter_t.text">Cerca per:</item>
+  <item name="SearchProfilesBy.All">--	Ignora Filtro   --</item>
+  <item name="SearchProfilesBy.Contains">Contiene</item>
+  <item name="SearchProfilesBy.Login">Login</item>
+  <item name="SearchProfilesBy.Mail">Mail</item>
+  <item name="SearchProfilesBy.Matricula">Matricola</item>
+  <item name="SearchProfilesBy.Name">Nome</item>
+  <item name="SearchProfilesBy.Surname">Cognome</item>
+  <item name="SearchProfilesBy.TaxCode">Codice fiscale</item>
+  <item name="LBcommunityRole_t.text">Ruolo:</item>
+  <item name="DDLroles.-1">--	Ignora Filtro   --</item>
+  <item name="LBprofileType_t.text">Profile type:</item>
+  <item name="DDLprofileTypes.-1">--	Ignora Filtro   --</item>
+  <item name="LBcommunityAgencyFilter_t.text">Ente/Agenzia:</item>
+  <item name="agencies.ignorefilter">--	Ignora Filtro   --</item>
+  <item name="agencies.noemployeee">nessun ente associato</item>
+  <item name="agencies.all">qualsiasi ente associato</item>
+
+  <item name="BTNapplyFilters.text">Applica</item>
+  <item name="BTNapplyFilters.ToolTip">Applica i filtri</item>
+  <item name="BTNcloseMailMessageWindow.text">Chiudi</item>
+  <item name="BTNcloseMailMessageWindow.ToolTip">Chiudi la finestra del messaggio</item>
+  <item name="DVpreview.title">Anteprima messaggio</item>
+
+
+  <item name="UserByMessagesOrder.Ascending">Ordinamento crescente per </item>
+  <item name="UserByMessagesOrder.Descending">Ordinamento decrescente per </item>
+  <item name="UserByMessagesOrder.None"></item>
+  <item name="UserByMessagesOrder.ByMail">mail</item>
+  <item name="UserByMessagesOrder.ByType">tipologia utente</item>
+  <item name="UserByMessagesOrder.ByName">nome</item>
+  <item name="UserByMessagesOrder.BySurname">cognome</item>
+  <item name="UserByMessagesOrder.ByMessageNumber">numero messaggi</item>
+  <item name="UserByMessagesOrder.ByAgency">ente/agenzia</item>
+  <item name="UserByMessagesOrder.ByStatus">stato partecipazione</item>
+  <item name="RemovedUserName">Utente rimosso</item>
+  <item name="UnknownUserName">Utente esterno</item>
+  <item name="LTrecipientHeaderName_t.text">Nome</item>
+  <item name="LTmessageNumberHeaderName_t.text">Messaggi</item>
+  <item name="LTuserAgencyNameHeader_t.text">Ente/Agenzia</item>
+  <item name="LBemptyItems.text" >Utilizza  i filtri sopra la tabella per individuare gli utenti.</item>
+  <item name="NoUsersForSelection" >Nessun utente trovato con i filtri impostati.</item>
+  <item name="DisplayObjectWithNoMessage" >Non risultano al momento dei messaggi inviati.</item>
+  <item name="LBsearchMessageBySubject_t.text" >Oggetto contiene:</item>
+  <item name="LBmessageSentEmptyItems.text">Utilizza  i filtri sopra la tabella per individuare i messaggi</item>
+  <item name="NoMessagesForSelection" >Nessun messaggio trovato con i filtri impostati.</item>
+
+  <item name="LTmessageSentName_t.text">Nome</item>
+  <item name="LTmessageSentOn_t.text">Inviato il</item>
+  <item name="LTmessageSentAction_t.text">Azione</item>
+  <item name="LTmessageRecipientActionsHeader_t.text">Azione</item>
+  <item name="Not.ExternalTemplateCompliant">Modificato rispetto al modello {0}</item>
+  <item name="MessageOrder.Ascending">Ordinamento crescente per </item>
+  <item name="MessageOrder.Descending">Ordinamento decrescente per </item>
+  <item name="MessageOrder.None"></item>
+  <item name="MessageOrder.ByDate">data invio</item>
+  <item name="MessageOrder.ByRecipientsNumber">numero destinatari</item>
+  <item name="MessageOrder.ByName">oggetto messaggio</item>
+  <item name="LNBfilterByUser.text">Per destinatario</item>
+  <item name="LNBfilterByUser.ToolTip">Filtra per destinatario</item>
+  <item name="LNBfilterByMessage.text">Per messaggi</item>
+  <item name="LNBfilterByMessage.ToolTip">Filtra per messaggi</item>
+
+  <item name="InfoSent" mustcontains="{0}" disambiguation="da = inteso come da un utente">Messaggio inviato da {0}</item>
+  <item name="InfoSentOn" mustcontains="{0}" disambiguation="inteso come il giorno">il {0}</item>
+  <item name="InfoSentAt" mustcontains="{0}" disambiguation="inteso come alle ore x:y">alle {0}</item>
+  <item name="LTmoduleNameHeader_t.text">Nome servizio</item>
+  <item name="LTtemplateNameHeader_t.text">Modello da utilizzare</item>
+  <item name="LNBsaveSettingsUp.text">Salva</item>
+  <item name="LNBsaveSettingsUp.ToolTip">Salva le impostazioni</item>
+  <item name="LNBsaveSettingsDown.text">Salva</item>
+  <item name="LNBsaveSettingsDown.ToolTip">Salva le impostazioni</item>
+  <item name="LBeventsEnabled.text">eventi attivi</item>
+  <item name="LBeventsTotal.text">totali</item>
+  <item name="LBemptyNotificationSettingItems.text">Non vi sono notifiche che puoi impostare per i servizi attivi.</item>
+  <item name="EventError.None.True"></item>
+  <item name="EventError.TemplateRemoved.True">Modello rimosso dalla piattaforma, selezionarne un altro</item>
+  <item name="EventError.VersionRemoved.True">Versone del modello deprecata o rimossa dalla piattaforma, selezionarne un altra</item>
+  <item name="EventError.NoActionSelected.True">E' obbligatorio selezionare un modello per l'azione</item>
+  <item name="EventError.TemplateUnselected.True">In precedenza era stato selezionato un modello per questa azione</item>
+  <item name="EventError.None.False"></item>
+  <item name="EventError.TemplateRemoved.False">Modello rimosso dalla piattaforma, selezionarne un altro</item>
+  <item name="EventError.VersionRemoved.False">Versone del modello deprecata o rimossa dalla piattaforma, selezionarne un altra</item>
+  <item name="EventError.NoActionSelected.False">Selezionare un modello per l'azione</item>
+  <item name="EventError.TemplateUnselected.False">In precedenza era stato selezionato un modello per questa azione</item>
+
+  <item name="EventErrors.Verify.1">Verifica il problema su un'azione di notifica del servizio</item>
+  <item name="EventErrors.Verify.n">Verifica i {0} problemi sulle possibili azioni di notifica del servizio</item>
+  <item name="DialogTitle.SettingsError">Messaggio/i di errore</item>
+  <item name="LBmandatoryAction.ToolTip">Obbligatorio scegliere un modello per questa azione</item>
+
+
+  <item name="Element.Select">Seleziona un modello</item>
+  <item name="Element.Last" mustcontains="#item.TemplateName#">Sempre l'ultima versione - #item.TemplateName#</item>
+  <item name="Element.Generic" mustcontains="#item.Version#|#item.TemplateName#" description="V. = versione">V. #item.Version# - #item.TemplateName#</item>
+  <item name="Element.Disapproved" mustcontains="#item.Version#">V. #item.Version# NON ATTIVO</item>
+  <item name="Element.Draft" mustcontains="#item.Version#">V.  #item.Version#  BOZZA</item>
+  <item name="HYPpreview.Text">Anteprima</item>
+  <item name="DisplayMandatoryMissing">ATTENZIONE: non è stato specificato un modello per un elemento obbligatorio, impossibile continuare con il salvataggio dei dati.</item>
+  <item name="DisplayMandatoryMissing.n" mustcontains="{0}" placeholder="true">ATTENZIONE: non è stato specificato un modello per {0} elementi obbligatori, impossibile continuare con il salvataggio dei dati.</item>
+  <item name="Group.Portal">Di piattaforma:</item>
+  <item name="Group.Organization">Di organizzazione:</item>
+  <item name="Group.Removed">Rimossi:</item>
+  <item name="Group.Community">Di comunità:</item>
+  <item name="Group.Object">Dell'oggetto:</item>
+  <item name="DisplaySavingErrors">ATTENZIONE: le impostazioni NON sono state salvate</item>
+
+  <item name="SavedSettings.notSaved.0.0.0"></item>
+  <item name="SavedSettings.notSaved.0.0.1">ATTENZIONE: non è stato specificato un modello per un elemento obbligatorio</item>
+  <item name="SavedSettings.notSaved.0.0.n" mustcontains="{0}" placeholder="true">ATTENZIONE: non è stato specificato un modello per {0} elementi obbligatori</item>
+  <item name="SavedSettings.notSaved.0.1.0">Le impostazioni relative ad un azione NON sono state salvate correttamente.</item>
+  <item name="SavedSettings.notSaved.0.1.1">Le impostazioni relative ad un azione NON sono state salvate correttamente e NON è stato specificato un modello per un elemento obbligatorio.</item>
+  <item name="SavedSettings.notSaved.0.1.n" mustcontains="{0}" placeholder="true">Le impostazioni relative ad un azione NON sono state salvate correttamente e NON è stato specificato un modello per {0} elementi obbligatori</item>
+  <item name="SavedSettings.notSaved.0.n.0" mustcontains="{0}" placeholder="true">Le impostazioni relative ad {0} azioni NON sono state salvate correttamente.</item>
+  <item name="SavedSettings.notSaved.0.n.1" mustcontains="{0}" placeholder="true">Le impostazioni relative ad {0} azioni NON sono state salvate correttamente e NON è stato specificato un modello per un elemento obbligatorio</item>
+  <item name="SavedSettings.notSaved.0.n.n" mustcontains="{0}|{1}" placeholder="true">Le impostazioni relative ad {0} azioni NON sono state salvate correttamente e NON è stato specificato un modello per {1} elementi obbligatori</item>
+  <item name="SavedSettings.notSaved.1.0.0">NON è stato scelto un modello per un azione.</item>
+  <item name="SavedSettings.notSaved.1.0.1">NON è stato scelto un modello per un azione e NON è stato specificato un modello per un elemento obbligatorio.</item>
+  <item name="SavedSettings.notSaved.1.0.n" mustcontains="{0}" placeholder="true">NON è stato scelto un modello per un azione e NON è stato specificato un modello per {0} elementi obbligatori</item>
+  <item name="SavedSettings.notSaved.1.1.0">NON è stato scelto un modello per un azione e le impostazioni relative ad un altra NON sono state salvate correttamente.</item>
+  <item name="SavedSettings.notSaved.1.1.1">NON è stato scelto un modello per un azione e le impostazioni relative ad un altra NON sono state salvate correttamente e NON è stato specificato un modello per un elemento obbligatorio.</item>
+  <item name="SavedSettings.notSaved.1.1.n" mustcontains="{0}" placeholder="true">NON è stato scelto un modello per un azione, le impostazioni relative ad un altra NON sono state salvate correttamente, infine NON è stato specificato un modello per {0} elementi obbligatori</item>
+  <item name="SavedSettings.notSaved.1.n.0" mustcontains="{0}" placeholder="true">NON è stato scelto un modello per un azione e le impostazioni relative a altre {0} NON sono state salvate correttamente.</item>
+  <item name="SavedSettings.notSaved.1.n.1" mustcontains="{0}" placeholder="true">NON è stato scelto un modello per un azione, le impostazioni relative a altre {0} NON sono state salvate correttamente, infine NON è stato specificato un modello per un elemento obbligatorio.</item>
+  <item name="SavedSettings.notSaved.1.n.n" mustcontains="{0}|{1}" placeholder="true">NON è stato scelto un modello per un azione, le impostazioni relative a altre {0} NON sono state salvate correttamente, infine NON è stato specificato un modello per {1} elementi obbligatori</item>
+  <item name="SavedSettings.notSaved.n.0.0" mustcontains="{0}" placeholder="true">NON è stato scelto un modello per {0} azioni.</item>
+  <item name="SavedSettings.notSaved.n.0.1" mustcontains="{0}" placeholder="true">NON è stato scelto un modello per {0} azioni e NON è stato specificato un modello per un elemento obbligatorio.</item>
+  <item name="SavedSettings.notSaved.n.0.n" mustcontains="{0}" placeholder="true">NON è stato scelto un modello per {0} azioni e  NON è stato specificato un modello per {0} elementi obbligatori</item>
+  <item name="SavedSettings.notSaved.n.1.0" mustcontains="{0}" placeholder="true">NON è stato scelto un modello per {0} azioni e le impostazioni relative ad un altra NON sono state salvate correttamente.</item>
+  <item name="SavedSettings.notSaved.n.1.1" mustcontains="{0}" placeholder="true">NON è stato scelto un modello per {0} azioni, le impostazioni relative ad un altra NON sono state salvate correttamente, infine NON è stato specificato un modello per un elemento obbligatorio.</item>
+  <item name="SavedSettings.notSaved.n.1.n" mustcontains="{0}|{1}" placeholder="true">NON è stato scelto un modello per {0} azioni, le impostazioni relative ad un altra NON sono state salvate correttamente, infine NON è stato specificato un modello per {1} elementi obbligatori</item>
+  <item name="SavedSettings.notSaved.n.n.0" mustcontains="{0}|{1}" placeholder="true">NON è stato scelto un modello per {0} azioni e le impostazioni relative a altre {1} NON sono state salvate correttamente.</item>
+  <item name="SavedSettings.notSaved.n.n.1" mustcontains="{0}|{1}" placeholder="true">NON è stato scelto un modello per {0} azioni, le impostazioni relative a altre {1} NON sono state salvate correttamente, infine NON è stato specificato un modello per un elemento obbligatorio.</item>
+  <item name="SavedSettings.notSaved.n.n.n" mustcontains="{0}|{1}|{2}" placeholder="true">NON è stato scelto un modello per {0} azioni, le impostazioni relative a altre {1} NON sono state salvate correttamente, infine NON è stato specificato un modello per {2} elementi obbligatori</item>
+
+  <item name="SavedSettings.savedItems.1.0.0">Impostazioni salvate correttamente.</item>
+  <item name="SavedSettings.savedItems.1.0.1">Impostazioni salvate correttamente, ma NON è stato specificato un modello per un elemento obbligatorio.</item>
+  <item name="SavedSettings.savedItems.1.0.n" mustcontains="{0}" placeholder="true">Impostazioni salvate correttamente, ma NON è stato specificato un modello per {0} elementi obbligatori</item>
+  <item name="SavedSettings.savedItems.1.1.0">Un impostazione è stata salvata correttamente, un altra NO.</item>
+  <item name="SavedSettings.savedItems.1.1.1">Un impostazione è stata salvata correttamente, un altra NO, infine NON è stato specificato un modello per un elemento obbligatorio.</item>
+  <item name="SavedSettings.savedItems.1.1.n" mustcontains="{0}" placeholder="true">Un impostazione è stata salvata correttamente, un altra NO, infine NON è stato specificato un modello per {0} elementi obbligatori</item>
+  <item name="SavedSettings.savedItems.1.n.0" mustcontains="{0}" placeholder="true">Un impostazione è stata salvata correttamente, altre {0} NO.</item>
+  <item name="SavedSettings.savedItems.1.n.1">Un impostazione è stata salvata correttamente, altre {0} NO, infine NON è stato specificato un modello per un elemento obbligatorio.</item>
+  <item name="SavedSettings.savedItems.1.n.n" mustcontains="{0}|{1}" placeholder="true">Un impostazione è stata salvata correttamente, altre {0} NO, infine NON è stato specificato un modello per {1} elementi obbligatori</item>
+  <item name="SavedSettings.savedItems.n.0.0" mustcontains="{0}" placeholder="true">{0} impostazioni sono state salvate correttamente.</item>
+  <item name="SavedSettings.savedItems.n.0.1" mustcontains="{0}" placeholder="true">{0} impostazioni sono state salvate correttamente, infine NON è stato specificato un modello per un elemento obbligatorio.</item>
+  <item name="SavedSettings.savedItems.n.0.n" mustcontains="{0}|{1}" placeholder="true">{0} impostazioni sono state salvate correttamente, infine NON è stato specificato un modello per {1} elementi obbligatori</item>
+  <item name="SavedSettings.savedItems.n.1.0" mustcontains="{0}" placeholder="true">{0} impostazioni sono state salvate correttamente, un altra NO.</item>
+  <item name="SavedSettings.savedItems.n.1.1" mustcontains="{0}" placeholder="true">{0} impostazioni sono state salvate correttamente, un altra NO, infine NON è stato specificato un modello per un elemento obbligatorio.</item>
+  <item name="SavedSettings.savedItems.n.1.n" mustcontains="{0}|{1}" placeholder="true">{0} impostazioni sono state salvate correttamente, un altra NO, infine NON è stato specificato un modello per {1} elementi obbligatori</item>
+  <item name="SavedSettings.savedItems.n.n.0" mustcontains="{0}|{1}" placeholder="true">{0} impostazioni sono state salvate correttamente, altre {1} NO.</item>
+  <item name="SavedSettings.savedItems.n.n.1" mustcontains="{0}|{1}" placeholder="true">{0} impostazioni sono state salvate correttamente, altre {1} NO, infine NON è stato specificato un modello per un elemento obbligatorio.</item>
+  <item name="SavedSettings.savedItems.n.n.n" mustcontains="{0}|{1}|{2}" placeholder="true">{0} impostazioni sono state salvate correttamente, altre {1} NO, infine NON è stato specificato un modello per {2} elementi obbligatori</item>
+  <item name="HYPpreview.ToolTip">Anteprima modello</item>
+</Resource>

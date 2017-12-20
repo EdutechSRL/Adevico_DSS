@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="lm.Comol.Core.DomainModel.DocTemplateVers.Domain.DTO.ServiceExport.DTO_Element">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DocTemplateVers\Domain\DTO_ServiceExport\DTO_Element.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="lm.Comol.Core.DomainModel.DocTemplateVers.Domain.DTO.ServiceExport.DTO_Template">
+    <Position X="0.5" Y="0.5" Width="1.75" />
+    <AssociationLine Name="Signatures" Type="lm.Comol.Core.DomainModel.DocTemplateVers.Domain.DTO.ServiceExport.DTO_Signature">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-1.057" Y="0.154" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>BEACAAAAAAAAAAABAAABAAQQAAIAAAAAgAAAAAAAAAA=</HashCode>
+      <FileName>DocTemplateVers\Domain\DTO_ServiceExport\DTO_Template.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Settings" />
+      <Property Name="Header" />
+      <Property Name="Footer" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="Modules" />
+      <Property Name="Signatures" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="lm.Comol.Core.DomainModel.DocTemplateVers.Domain.DTO.ServiceExport.DTO_ElementImage">
+    <Position X="6.25" Y="5.25" Width="2" />
+    <InheritanceLine Type="lm.Comol.Core.DomainModel.DocTemplateVers.Domain.DTO.ServiceExport.DTO_Element" FixedToPoint="true">
+      <Path>
+        <Point X="6.5" Y="1.796" />
+        <Point X="6.5" Y="1.937" />
+        <Point X="8" Y="1.937" />
+        <Point X="8" Y="5.25" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAAAAIAAAAAAEAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DocTemplateVers\Domain\DTO_ServiceExport\DTO_ElementImage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="lm.Comol.Core.DomainModel.DocTemplateVers.Domain.DTO.ServiceExport.DTO_ElementImageMulti">
+    <Position X="6.25" Y="3.75" Width="1.5" />
+    <InheritanceLine Type="lm.Comol.Core.DomainModel.DocTemplateVers.Domain.DTO.ServiceExport.DTO_Element" ManuallyRouted="true">
+      <Path>
+        <Point X="6.5" Y="1.796" />
+        <Point X="6.5" Y="1.937" />
+        <Point X="7.969" Y="1.937" />
+        <Point X="7.969" Y="3.656" />
+        <Point X="7" Y="3.656" />
+        <Point X="7" Y="3.75" />
+      </Path>
+    </InheritanceLine>
+    <AssociationLine Name="ImgElements" Type="lm.Comol.Core.DomainModel.DocTemplateVers.Domain.DTO.ServiceExport.DTO_ElementImage">
+      <MemberNameLabel ManuallyPlaced="true" ManuallySized="true">
+        <Position X="-1.179" Y="0.028" Height="0.182" Width="1.111" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DocTemplateVers\Domain\DTO_ServiceExport\DTO_ElementImageMulti.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="ImgElements" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="lm.Comol.Core.DomainModel.DocTemplateVers.Domain.DTO.ServiceExport.DTO_ElementText">
+    <Position X="6.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAACAAAAAA=</HashCode>
+      <FileName>DocTemplateVers\Domain\DTO_ServiceExport\DTO_ElementText.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="lm.Comol.Core.DomainModel.DocTemplateVers.Domain.DTO.ServiceExport.DTO_HeaderFooter">
+    <Position X="3.25" Y="0.5" Width="1.5" />
+    <AssociationLine Name="Center" Type="lm.Comol.Core.DomainModel.DocTemplateVers.Domain.DTO.ServiceExport.DTO_Element" FixedFromPoint="true">
+      <Path>
+        <Point X="4.75" Y="1.25" />
+        <Point X="5.75" Y="1.25" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACACAAAAIAAA=</HashCode>
+      <FileName>DocTemplateVers\Domain\DTO_ServiceExport\DTO_Header.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Left" />
+      <Property Name="Center" />
+      <Property Name="Right" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="lm.Comol.Core.DomainModel.DocTemplateVers.Domain.DTO.ServiceExport.DTO_Modules">
+    <Position X="3.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAEAAAAAAAAAAAAAACAAAAAQAAAAA=</HashCode>
+      <FileName>DocTemplateVers\Domain\DTO_ServiceExport\DTO_Modules.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="lm.Comol.Core.DomainModel.DocTemplateVers.Domain.DTO.ServiceExport.DTO_Settings">
+    <Position X="3.25" Y="4" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>IAACAAAEBIAggkAAkIAAAMAAAAhQAAACEAgACAAAgAA=</HashCode>
+      <FileName>DocTemplateVers\Domain\DTO_ServiceExport\DTO_Settings.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="lm.Comol.Core.DomainModel.DocTemplateVers.Domain.DTO.ServiceExport.DTO_Signature">
+    <Position X="1.25" Y="4" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAECAAAABAAAAAIhAAAAAEIAIIAAAAAAAgAACAAAAAA=</HashCode>
+      <FileName>DocTemplateVers\Domain\DTO_ServiceExport\DTO_Signature.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

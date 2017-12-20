@@ -1,0 +1,127 @@
+/* @group Common */
+
+.BoxGenericBorder {
+	/*border-color: #ccc;
+    border-style: solid;
+    border-width: 1px;*/
+    border: none;
+}
+
+.BoxLabel {
+	background-color: #666;
+	color: #fff;
+	font-size: 1.2em;
+	font-weight: bold;
+	text-align: left;
+	padding: 4px 6px !important;
+	border: 1px solid #eee;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	text-shadow: 0 1px 0 #333;
+}
+
+.CatHeader.BoxLabel {
+	border: none;
+	-moz-border-radius: 0;
+	-webkit-border-radius: 0;
+	border-radius: 0;
+	display: block;
+	margin: 1em 0;
+	line-height: 2em;
+}
+
+form#form0 div.BoxLabel {
+	background-color: transparent;
+	color: #888;
+}
+
+div.RightColumnInner {
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	background-color: #e6e9ed;
+	border: 1px solid #ccc;
+	*border-bottom: 2px;
+	-moz-box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.5), 1px 1px 1px rgba(0, 0, 0, 0.15);
+	-webkit-box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.5), 1px 1px 1px rgba(0, 0, 0, 0.15);
+	box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.5), 1px 1px 0 rgba(0, 0, 0, 0.15);
+}
+
+div.RightColumnInner div.catlist a.linksmall {
+	color: navy;
+}
+
+div.QuestionAnswer dl.dlfaq dt a {
+	cursor: pointer;
+	color: #333;
+}
+
+/* @end */
+
+/* @group FAQ */
+
+dl.dlfaq dt span {
+	font-weight: normal;
+	font-style: normal;
+}
+
+dl.dlfaq dt strong {
+	background-image: url("images/bullet_toggle_minus.png");
+}
+
+dl.dlfaq dt.contracted strong {
+	background-image: url("images/bullet_toggle_plus.png");
+}
+
+.dlfaq dt {
+	border: 1px solid #ccc;
+	-webkit-border-top-left-radius: 4px;
+	-webkit-border-top-right-radius: 4px;
+	-moz-border-radius-topleft: 4px;
+	-moz-border-radius-topright: 4px;
+	border-top-left-radius: 4px;
+	border-top-right-radius: 4px;
+	margin-bottom: 0 !important;
+	margin-top: 1em !important;
+	padding: 4px 12px 4px 0;
+	background-color: #e6e9ed;
+	-moz-box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.5), 1px 1px 1px rgba(0, 0, 0, 0.15);
+	-webkit-box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.5), 1px 1px 1px rgba(0, 0, 0, 0.15);
+	box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.5), 1px 1px 0 rgba(0, 0, 0, 0.15);
+}
+
+.dlfaq dt.contracted {
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	*border-bottom: 2px solid #ccc;
+}
+
+.dlfaq dt span {
+	color: #888;
+}
+
+.dlfaq dd {
+	margin: 0;
+	padding: 6px 12px 6px 38px;
+	border: 1px solid #ccc;
+	-webkit-border-bottom-right-radius: 4px;
+	-webkit-border-bottom-left-radius: 4px;
+	-moz-border-radius-bottomright: 4px;
+	-moz-border-radius-bottomleft: 4px;
+	border-bottom-right-radius: 4px;
+	border-bottom-left-radius: 4px;
+	border-top: none;
+	*border-bottom: 2px solid #ccc;
+	background-color: #fff;
+	-moz-box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.5), 1px 1px 1px rgba(0, 0, 0, 0.15);
+	-webkit-box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.5), 1px 1px 1px rgba(0, 0, 0, 0.15);
+	box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.5), 1px 1px 0 rgba(0, 0, 0, 0.15);
+}
+
+.dlfaq dd p span {
+	font-size: 1em !Important;
+}
+
+/* @end */

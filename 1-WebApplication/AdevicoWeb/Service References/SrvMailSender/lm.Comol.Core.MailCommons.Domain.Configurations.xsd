@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/lm.Comol.Core.MailCommons.Domain.Configurations" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/lm.Comol.Core.MailCommons.Domain.Configurations" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/lm.Comol.Core.MailCommons.Domain.Messages" />
+  <xs:complexType name="SmtpServiceConfig">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Authentication" nillable="true" type="tns:SmtpAuthenticationConfig" />
+      <xs:element minOccurs="0" name="DefaultHTMLmode" type="xs:boolean" />
+      <xs:element minOccurs="0" name="DefaultSettings" nillable="true" type="tns:ArrayOfSenderSettings" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/lm.Comol.Core.MailCommons.Domain.Messages" minOccurs="0" name="ErrorSender" nillable="true" type="q1:UserMailAddress" />
+      <xs:element minOccurs="0" name="Host" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MaxRecipients" type="xs:int" />
+      <xs:element minOccurs="0" name="Port" type="xs:int" />
+      <xs:element minOccurs="0" name="RelayAllowed" type="xs:boolean" />
+      <xs:element minOccurs="0" name="SendMailError" type="xs:boolean" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/lm.Comol.Core.MailCommons.Domain.Messages" minOccurs="0" name="SystemSender" nillable="true" type="q2:UserMailAddress" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SmtpServiceConfig" nillable="true" type="tns:SmtpServiceConfig" />
+  <xs:complexType name="SmtpAuthenticationConfig">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccountName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AccountPassword" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EnableSsl" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Enabled" type="xs:boolean" />
+      <xs:element minOccurs="0" name="UseDefaultCredentials" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SmtpAuthenticationConfig" nillable="true" type="tns:SmtpAuthenticationConfig" />
+  <xs:complexType name="ArrayOfSenderSettings">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SenderSettings" nillable="true" type="tns:SenderSettings" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSenderSettings" nillable="true" type="tns:ArrayOfSenderSettings" />
+  <xs:complexType name="SenderSettings">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CodeLanguage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdLanguage" type="xs:int" />
+      <xs:element minOccurs="0" name="IsDefault" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsMulti" type="xs:boolean" />
+      <xs:element minOccurs="0" name="NoReplySignature" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Signature" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SubjectForSenderCopy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SubjectPrefix" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SenderSettings" nillable="true" type="tns:SenderSettings" />
+</xs:schema>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="lm.Comol.Core.DomainModel" namespace="lm.Comol.Core.Dashboard.Domain">
+	<class name="smallTile" table="DB_Tile" lazy="false">
+    <id name="Id" column="Id" type="Int64" unsaved-value="0">
+      <generator class="native"/>
+    </id>
+    <property name="Type" type="lm.Comol.Core.Dashboard.Domain.TileType,lm.Comol.Core.DomainModel" column="Type" />
+    <property name="Status" type="lm.Comol.Core.Dashboard.Domain.AvailableStatus,lm.Comol.Core.DomainModel" column="Status" />
+    <property name="Deleted" type="lm.Comol.Core.DomainModel.BaseStatusDeleted,lm.Comol.Core.DomainModel" column="_Deleted" />
+  </class>
+</hibernate-mapping>

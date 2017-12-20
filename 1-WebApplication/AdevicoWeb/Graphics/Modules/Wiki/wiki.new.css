@@ -1,0 +1,336 @@
+﻿body {
+}
+
+.wikicontainer .header
+{
+    /*background:#eee;*/
+    /*border:1px solid #ccc;*/
+
+     /*margin-bottom:0.5em;*/
+
+     /*padding-bottom:0.5em;
+     border-bottom:1px solid #ccc;*/
+}
+
+
+.InfoSezione .sectionintro
+{
+    /*margin:5px;*/
+}
+
+input{
+    border:1px solid black;
+}
+
+.fieldobject .fieldrow label.fieldlabel
+{
+    width:100px;
+    display:inline-block;
+
+}
+
+.fieldobject.wikiadd .fieldrow label.fieldlabel
+{
+    width:120px;
+}
+
+.fieldobject.search .fieldrow label.fieldlabel
+{
+    width:60px;
+}
+
+.DVmenu
+{
+    text-align:right;
+}
+
+.wikicontainer .PulsanteFiltro
+{
+    font-size:0.8em;
+    padding:2px !important;
+    
+}
+
+
+.wikicontainer .navigator{
+    margin-top:1em;
+    border:1px solid #ccc;
+    background-color:#eee;
+    /*border-radius:5px;*/
+}
+
+
+.wikicontainer .navigator .inner{
+    
+    margin:5px;
+    
+}
+
+.wikicontainer .wikicontent{
+    
+}
+
+ul.navigatoritems{
+    margin:0;
+    padding:0;
+    padding-top:5px;
+}
+
+ul.navigatoritems li.navigatoritem{
+    margin:0;
+    padding:0;
+    margin-left:19px;
+    list-style-type:square;
+    
+}
+
+ul.navigatoritems li.navigatoritem.deleted{
+    background-color:#ddd;
+}
+
+ul.navigatoritems li.navigatoritem.deleted a{
+    color:red;
+    text-decoration:line-through;
+    
+}
+
+ul.navigatoritems li.navigatoritem a{
+    text-decoration:none;
+}
+ul.navigatoritems li.navigatoritem a:hover{
+    text-decoration:underline;
+}
+.sectionintro .sectiontitle{
+    padding-bottom:2px;
+    border-bottom:1px solid #ccc;        
+}
+
+div.fieldobject div.fieldrow.description div.descriptioncontent{    
+    margin-left:auto;
+    margin-right:auto;
+    font-style:italic;
+    font-size:0.8em;
+    color:#888;
+}
+
+table.wikitable tr{
+    display:none;
+}
+
+table.wikitable tr.tablerow{
+    display:table-row;
+    *display:inline;
+}
+
+table.wikitable.topics
+{
+    width:100%;
+}
+
+table.wikitable.topics th.initial,
+table.wikitable.topics td.initial{
+    width:20px;
+}
+
+table.wikitable.topics th.spacer,
+table.wikitable.topics td.spacer{
+    width:20px;
+}
+
+table.wikitable.topics th.content,
+table.wikitable.topics td.content{
+    
+}
+
+table.wikitable.topics th.actions,
+table.wikitable.topics td.actions{
+    width:200px;
+}
+
+
+
+
+
+table.wikitable.topics td.actions .onhover{
+   visibility:hidden;
+}
+
+table.wikitable.topics tr.tablerow.topic:hover
+{
+    background-color:#eee;
+}
+
+table.wikitable.topics tr.tablerow.topic:hover .onhover{
+    visibility:visible;
+}
+
+table.wikitable.topics tr.tablerow.topic.deleted,
+table.wikitable.topics tr.tablerow.info.deleted
+{
+    background-color:#ddd;
+}
+
+table.wikitable.topics tr.tablerow.topic.deleted .Titolo_Campo a
+{
+    color:red;
+    text-decoration:line-through;
+}
+
+
+table.wikitable.topics tr.topic td.content{
+    font-weight:bold;
+}
+
+table.wikitable.topics tr.info
+{
+    
+}
+table.wikitable.topics tr.info td
+{
+    padding-top:0.2em;
+    padding-bottom:1em;
+     
+}
+
+table.wikitable.topics tr.info td.details
+{
+    padding-left:1em;
+}
+
+
+table.wikitable.topics tr.info .Testo_Campo{
+    color:#888;
+    font-style:italic;
+    font-size:0.9em !important;
+}
+
+table.fullwidth.wikitable.importtopics th.actions,
+table.fullwidth.wikitable.importtopics td.actions
+{
+    width:28px;
+}
+
+table.fullwidth.wikitable.importtopics th.topic,
+table.fullwidth.wikitable.importtopics td.topic
+{
+    width:250px;
+}
+
+table.fullwidth.wikitable.importtopics th.section,
+table.fullwidth.wikitable.importtopics td.section
+{
+    width:180px;
+}
+
+ul.historyitems
+{
+    padding:0;
+    margin:0;
+}
+
+ul.historyitems li.historyitem{
+    border-bottom:1px solid #ccc;
+}
+
+ul.historyitems li.historyitem div.content div.title .Titolo_Campo{
+ font-weight:bold;
+}
+
+ul.historyitems li.historyitem div.content div.details .Testo_Campo{
+ color:#888;
+ font-style:italic;
+}
+
+.fieldobject.viewtopic{
+
+}
+.fieldobject.viewtopic .fieldrow.header{
+    
+}
+
+.fieldobject.viewtopic .fieldrow.header .title h3{
+    margin-top:0;
+    margin-bottom:0.2em;
+}
+
+
+.fieldobject.viewtopic .fieldrow.header .details{
+    color:#888;
+    font-size:0.9em;
+    font-style:italic;
+    text-align:right;
+}
+
+.fieldobject.viewtopic .fieldrow.content
+{
+    border-top:1px solid #ddd;
+    /*border-bottom:1px solid #ccc;*/
+}
+
+.fieldobject.viewtopic .fieldrow.content .renderedtext
+{
+    
+    margin:5px;
+    margin-top:10px;
+    margin-bottom:10px;
+}
+
+table.wikitable.wikilink
+{
+    font-size:0.9em;
+    text-align:left;
+}
+
+table.wikitable.wikilink th.topic,
+table.wikitable.wikilink td.topic
+{
+    
+}
+
+table.wikitable.wikilink th.section,
+table.wikitable.wikilink td.section
+{
+
+}
+
+table.wikitable.wikilink th.community,
+table.wikitable.wikilink td.community
+{
+
+}
+
+.wikimessage{
+    padding:10px;
+    padding-top:0;
+    border:1px solid #ccc;        
+}
+
+.wikimessage .links{    
+    margin-bottom:1em;
+}
+
+.wikimessage .links .wikilink{
+    display:block;
+}
+
+.fieldobject .fieldrow .fieldlabel{
+    display:inline-block;
+    *display:inline;
+    *zoom:1;
+    min-width:120px;
+}
+
+div.sectiondescription{
+    
+}
+
+.wikilink{
+
+}
+
+.wikilink.missing,
+.missing.Titolo_Campo{
+    color:red !important;
+    text-decoration:line-through;
+    font-style:italic;
+}

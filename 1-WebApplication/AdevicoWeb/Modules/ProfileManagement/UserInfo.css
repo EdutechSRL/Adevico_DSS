@@ -1,0 +1,193 @@
+﻿
+            
+        div.Info_Main
+        {
+            width: 100%;
+            border: 0px;
+            padding: 0px;
+            margin: 0px;
+            }
+
+            
+        div.Info_Main div.TopInfo
+        {
+            width: 100%;
+            vertical-align: top;
+            text-align: left;
+            }
+            
+        div.Info_Main div.TopInfo .TextInfo
+        {
+            display: inline-block;
+            height: 130px; vertical-align: top;
+            
+            }
+        div.Info_Main div.TopInfo .TextInfo .Field_Row
+        {
+            padding: 1em;
+            
+            }
+        div.Info_Main div.TopInfo .ImageInfo
+        {
+            display: inline-block; 
+            vertical-align: bottom;
+            }
+            
+        div.Info_Main .InfoTab
+        {
+            width: 700px;
+            }
+            
+        
+            
+        
+            
+        div.Info_Main .TopInfo .Field_Row .Titolo_Campo
+        {
+            display: inline-block;
+            width: 50px;
+            }
+            
+        div.InfoContent
+        {
+            /* RIMETTERE PER avere una dimensione fissa del contenitore e scollare il contenuto*/
+            /*width: 100%;
+            height: 450px;
+            overflow: scroll;
+            padding: 7px 3px 3px 3px;*/
+        }
+            
+        div.InfoContent .Titolo_Campo
+        {
+            display: inline-block;
+            width: 130px;
+            }
+        
+        div.InfoContent .Testo_Campo
+        {
+            display: inline-block;
+            /*width: 220px;*/
+            }
+        
+        div.InfoContent .Testo_Campo *
+        {
+            padding: 0; margin:0;
+            }
+        
+        div.InfoContent .Testo_Campo li
+        {
+            padding-top: 0.2em; margin:0;
+            }
+
+/* INIZIO TABELLA COMUNITA'
+div.InfoContent ul.Com_List { display: block; }
+div.InfoContent ul.Com_List li { display: block; width: 90%; text-align: left;}
+
+
+
+div.InfoContent ul.Com_List li .Col1 
+{ display: inline-block; width: 340px; }
+div.InfoContent ul.Com_List li .Col2
+{ display: inline-block; font-weight: bold; width: 200px; }
+div.InfoContent ul.Com_List li .Col3
+{ display: inline-block; width: 200px; text-align: left; font-size:small; }
+
+div.InfoContent ul.Com_List li.Header {     background-color: #666666;
+    color: white;
+    font-size: 10px;
+    font-weight: bold;
+    text-align: left; }
+div.InfoContent ul.Com_List li.Header span { text-align: center; }
+    
+div.InfoContent ul.Com_List li.Header .Col1 { width: 340px;    }
+div.InfoContent ul.Com_List li.Header .Col2 { width: 200px;    }
+div.InfoContent ul.Com_List li.Header .Col3 { width: 200px; 
+    background-color: #666666;
+    color: white;
+    font-size: 10px;
+    font-weight: bold;
+    text-align: center; }
+FINE TABELLA COMUNITA' */
+
+div.ComListContainer { text-align: left; width: 700px; padding-top: 0.5em;}
+
+div.Rbl_Tipo { padding: 1em; width: 90%; text-align: right;}
+div.Rbl_Tipo span { padding-right: 1em; }
+
+/* 
+table.ComTable { border: 1px solid #7F7F7F; width: 90%;}
+table.ComTable thead { background-color: #666666;
+    color: white;
+    font-size: 10px;
+    font-weight: bold;
+    text-align: center; 
+    border: 1px solid #7F7F7F;}
+table.ComTable td {     
+    border: 1px solid #7F7F7F;
+}
+
+table.ComTable td span      
+{
+    display: inline-block;
+    padding: 0.2em;
+}
+*/
+
+    .Field_Row
+    {
+        display: block;
+        width: 100%;
+        text-align:left;
+        vertical-align:top;
+        padding: 0.3em;
+    }
+    
+    .Field_Row *
+    {
+        text-align:left;
+        vertical-align:top;
+    }
+
+
+div.ComPage
+{ display: inline-block; width: 50px; text-align: left;}
+
+div.ComPager
+{ display: inline-block; text-align: right; width: 90%;}
+div.ComPager span
+{ padding-right: 50px; }
+
+
+        /* STILI INUTILI - SOLO DI SUPPORTO*/
+   /* div.Fake_Modal
+    {
+        border: 1px solid black;
+        background-color: #f0f0f0;
+        width: 375px;
+        }
+        
+        .Titolo_Campo
+        {
+            font-weight: bold;
+            }
+            
+        div.Tab
+        {
+            background-color: Silver;
+            }
+            
+        div.Tab span
+        {
+            text-align: center;
+            width: 32%;
+            display: inline-block;
+           border: 1px solid black;
+           background-color: Silver;
+           text-decoration: underline;
+            }
+            
+        div.Tab span.Select
+        {
+            background-color: Yellow;
+            font-weight: bold;
+            }*/

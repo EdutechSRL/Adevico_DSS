@@ -1,0 +1,131 @@
+﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="AjaxPopup.master.vb" Inherits="Comunita_OnLine.AjaxPopup" %>
+<%@ Register TagPrefix="FOOTER" TagName="CtrLFooter" Src="UC/UC_PortalFooter.ascx" %><asp:Literal ID="Lit_DocType" runat="server" visible="false"><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"></asp:Literal>
+<html class="no-js lang-<%=IsoCode %>" lang="<%=IsoCode %>">
+<head id="Head1" runat="server">
+    <title id="Title1" runat="server">
+        Comunità On Line
+        <asp:ContentPlaceHolder ID="PageTitleContent" runat="server"></asp:ContentPlaceHolder>
+    </title>  
+    <!-- Col Master -->
+    <link href="~/Styles.css?v=201604071200lm" type="text/css" rel="stylesheet" />
+  
+    <!-- Latex -->
+    <link rel="Stylesheet" href="<%#ResolveUrl("~/Style/New/statistiche.css?v=201604071200lm")%>" />
+    <link rel="Stylesheet" href="~/Style/Latex/Latex.css?v=201604071200lm" />
+    <link rel="Stylesheet" href="~/Style/Latex/Latex.css?v=201604071200lm" media="print" />
+    <script type="text/javascript" src="<%#ResolveUrl("~/Style/Latex/Latex.js") %>"></script>
+    <!-- Localizations-->
+    <script type="text/javascript" src="<%#ResolveUrl("~/Jscript/Modules/Common/Localization/localization." &  Me.PageUtility.LinguaCode  & ".js")%>"></script>
+     <!-- CPH Header -->
+    <asp:ContentPlaceHolder ID="CPHserviceLocalization" runat="server">
+    </asp:ContentPlaceHolder>
+
+   <script type="text/javascript" src="<%#ResolveUrl("~/Jscript/Modules/Common/Localization/localization.helpers.js")%>"></script>
+
+    <!-- JQuery -->
+    <link href="<%#ResolveUrl("~/Content/themes/"& Me.SystemSettings.Style.jqueryTheme &"/jquery-ui-"&Me.SystemSettings.Style.jqueryUIVersion &".css")%>" rel="stylesheet" type="text/css" />
+
+    <script type="text/javascript" src="<%#ResolveUrl("~/scripts/jquery-"&Me.SystemSettings.Style.jqueryVersion &".min.js")%>"></script>
+      <script type="text/javascript" src="<%#ResolveUrl("~/scripts/modernizr-2.8.3.js")%>"></script>
+    <script type="text/javascript" src="<%#ResolveUrl("~/scripts/jquery-migrate-1.2.1.js")%>"></script> <!-- JQuery Migrate -->
+    <script type="text/javascript" src="<%#ResolveUrl("~/Jscript/jquery.validate.min.js")%>"></script>
+    <script type="text/javascript" src="<%#ResolveUrl("~/scripts/jquery-ui-"&Me.SystemSettings.Style.jqueryUIVersion &".min.js")%>"></script>
+    <script type="text/javascript" src="<%#ResolveUrl("~/scripts/jquery.blockUI.min.js")%>"></script>
+    <script type="text/javascript" src="<%#ResolveUrl("~/Jscript/jquery.cookie.js")%>"></script>
+    <script type="text/javascript" src="<%#ResolveUrl("~/Jscript/jquery.tools.126.min.js")%>"></script>
+
+    <link rel="Stylesheet" href="<%#ResolveUrl("~/Graphics/Generics/css/comolTooltip.css?v=201604071200lm")%>" />
+
+    <!-- Altri script servizi globali -->
+    <script type="text/javascript" src="<%#ResolveUrl(Me.SystemSettings.Style.Menu & "jquerycssmenu.js")%>"></script>
+    <script src="<%#ResolveUrl("~/jscript/jquery.notice.js")%>" type="text/javascript"></script>
+    <link rel="Stylesheet" href="<%#ResolveUrl(Me.SystemSettings.Style.Header & "jquery.notice.css?v=201604071200lm")%>" />
+    
+    <!-- Javascript confirmation-->
+    <script type="text/javascript" src="<%#ResolveUrl("~/JScript/Modules/Common/jquery.needConfirm.js")%>"></script>
+    <script type="text/javascript" src="<%#ResolveUrl("~/JScript/Modules/Common/jquery.needConfirm.base.js")%>"></script>
+
+
+    <!-- Stili Skin -->
+    <asp:Literal ID="Lit_Skin" runat="server"></asp:Literal>
+
+    <!-- Stile da _Styles.css, eventualmente importare tutto _Styles.css, SE SERVE -->
+    <link rel="Stylesheet" type="text/css" href="<%#ResolveUrl("~/Graphics/Generics/css/4_UI_Elements.css?v=201604071200lm")%>" />
+    <link rel="Stylesheet" type="text/css" href="<%#ResolveUrl("~/Graphics/Generics/css/PopUpMaster.css?v=201604071200lm")%>" />
+    <link rel="stylesheet" type="text/css" media="print" href="<%#ResolveUrl("~/Graphics/Generics/css/Print.css?v=201604071200lm")%>" />
+
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+        <!-- Mantain dialog open-->
+    <script type="text/javascript" src="<%#ResolveUrl("~/JScript/Modules/Common/autoopendialog.js")%>"></script>
+</head>
+<body style="margin-top: 0px; margin-right: 0px; margin-left: 0px;" id="popup" class="internal_body <%=Me.DocTypeClass %>">
+     <form id="aspnetForm" class="mainForm" runat="server">
+    <asp:ScriptManager ID="SCMmanager" runat="server">
+    </asp:ScriptManager>
+    <script language="javascript" type="text/javascript">
+        function ChiudiMi() {
+            if (window.opener != null && "<%=ReloadOpener %>"=="True")
+                window.opener.location.reload();
+            this.window.close();
+        }
+    </script>
+
+    <div id="header">
+        <!-- branding -->	
+	    <div id="branding" class="page-width">
+	        <asp:Image ID="logo" runat="server" alt="logo" CssClass="logo"/>
+            <asp:Literal ID="Lit_Logo" runat="server"></asp:Literal>
+	    </div>
+	    <!-- end branding -->
+    </div>
+
+    <div class="MainContainer">
+
+<div id="page-box">
+    <div id="container" class="page-width  <%=Me.FullWidthClass %>">
+
+        <div class="header">
+            <div class="title">
+                <asp:Label ID="LBtitolo" runat="server"></asp:Label>
+                <asp:ContentPlaceHolder ID="TitleContent" runat="server"></asp:ContentPlaceHolder>
+            </div>
+            <div class="command">
+                <asp:Button runat="server" ID="BTNcloseWindow" Text="Chiudi" CssClass="LINK_MENU" OnClientClick="return ChiudiMi();">
+                </asp:Button>
+            </div>
+        </div>
+        <div id="content">
+        <asp:MultiView ID="MLVservice" runat="server" ActiveViewIndex="0">
+            <asp:View ID="VIWservice" runat="server">
+
+                <asp:ContentPlaceHolder ID="CPHservice" runat="server">
+
+                </asp:ContentPlaceHolder>
+            </asp:View>
+            <asp:View ID="VIWnoPermission" runat="server">
+                <div id="DVpermessi" align="center">
+                    <div class="permissionMargin">
+                    </div>
+                    <div align="center">
+                        <asp:Label ID="LBNopermessi" runat="server" CssClass="messaggio"></asp:Label>
+                    </div>
+                    <div class="permissionMargin">
+                    </div>
+                </div>
+            </asp:View>
+        </asp:MultiView>
+        </div>
+    </div>
+</div>
+
+        <div id="cFooter">
+	        <div class="container">
+                <FOOTER:CtrLFooter ID="CtrlFooter" runat="server" />
+            </div>    
+        </div>  
+    </div>
+        <input type="hidden" id="HDNwindowopened"  runat="server" class="autoopendialog" />
+    </form>
+</body>
+</html>

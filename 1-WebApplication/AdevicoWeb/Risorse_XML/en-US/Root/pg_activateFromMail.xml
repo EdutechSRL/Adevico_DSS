@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="urn:ComolTranslation">
+  <item name="LBinfoAccesso.-100" html="true" placeholder="false">Sorry, parameters are missing in order to access to the automatic activation/enabling section.&lt;br&gt;For more informations send an email to: &lt;/font&gt;&lt;a href="mailto:%mailAdress%?Subject=%mailSubject%Automatic activation/enabling problems" class="Linkinfo_genericoMedio"&gt;%mailAdress%&lt;/a&gt;</item>
+  <item name="LBinfoAccesso.-101" html="true" placeholder="true" mustcontains="%mailAdress%|%mailSubject%">Sorry, the specified person was not found among the specified community enrollees.&lt;br&gt;For more informations send an email to: &lt;/font&gt;&lt;a href="mailto:%mailAdress%?Subject=%mailSubject%User not enrolled" class="Linkinfo_genericoMedio"&gt;%mailAdress%&lt;/a&gt;</item>
+  <item name="LBinfoAccesso.-102" html="true" placeholder="true" mustcontains="%mailAdress%|%mailSubject%">Sorry, specified registration does not exist.&lt;br&gt;For more informations send an email to: &lt;/font&gt;&lt;a href="mailto:%mailAdress%?Subject=%mailSubject%Not registered user" class="1"&gt;%mailAdress%&lt;/a&gt;</item>
+  <item name="LBinfoAccesso.-103" html="false" placeholder="true" mustcontains="#anagraficautente#|#nomecomunita#">Access to the communty "#nomecomunita#" for the user #anagraficautente# was enabled.</item>
+  <item name="LBinfoAccesso.-104" html="false" placeholder="true" mustcontains="#anagraficautente#|#nomecomunita#">Due to problems with the account activation, user #anagraficautente# is not allowed to access the "#nomecomunita#" community.</item>
+  <item name="LBinfoAccesso.-105" html="true" placeholder="true" mustcontains="%mailAdress%|%mailSubject%">There were some problems with the account activation of the selected user.&lt;br&gt; For more informations send a mail to: &lt;/font&gt;&lt;a href="mailto:%mailAdress%?Subject=%mailSubject%Problemi di attivazione account utente" class="Linkinfo_genericoMedio"&gt;%mailAdress%&lt;/a&gt;.</item>
+  <item name="LBinfoAccesso.-106" html="true" placeholder="true" mustcontains="%mailAdress%|%mailSubject%">Sorry, the specified person was not detected among those, whose account is under evaluation.&lt;br&gt;For more informations send an email to:&lt;/font&gt;&lt;a href="mailto:%mailAdress%?Subject=%mailSubject%Account activation problems" class="Linkinfo_genericoMedio"&gt;%mailAdress%&lt;/a&gt;</item>
+  <item name="LBinfoAccesso.-107" html="false" placeholder="false">Your account was activated, to quickly access the system click "Sign in" or otherwise click "Home" and specify login and password.</item>
+  <item name="LBinfoAccesso.-107.True" html="false" placeholder="false">Your account was activated, to quickly access the system click "Sign in" or otherwise click "Home" and specify login and password.</item>
+  <item name="LBinfoAccesso.-107.False" html="true" placeholder="false">Your account was activated, to quickly access the system click "Sign in" or otherwise click "Home" and specify login and password.&lt;br&gt; Currently the system is under maintenance and signing in is not allowed. Please try again later from the main page.</item>
+  <item name="LBinfoAccesso.-108" html="false" placeholder="false">Your account was already activated. You can sign in the system by inserting login and paswword from the main page.(click "Home").</item>
+  <item name="LBinfoAccesso.-109" html="false" placeholder="true" mustcontains="#anagraficautente#|#nomecomunita#">User #anagraficautente# enrollment was already enabled and she/he can freely access the community "#nomecomunita#".</item>
+  <item name="BTNchiudi.text" html="false" placeholder="false">Close window</item>
+  <item name="BTNchiudi.ToolTip" html="false" placeholder="false">Close window</item>
+  <item name="BTNaccedi.text" html="false" placeholder="false">Sign in</item>
+  <item name="BTNaccedi.ToolTip" html="false" placeholder="false">Sign in</item>
+  <item name="BTNhome.text" html="false" placeholder="false">Home</item>
+  <item name="BTNhome.ToolTip" html="false" placeholder="false">Back to homepage</item>
+  <item name="stato.True" html="false" placeholder="false">Registration request MUST be validated.</item>
+  <item name="stato.False" html="false" placeholder="false">Access allowed to everybody.</item>
+  <item name="stato.image.True" disambiguation="non tradurre" html="false" placeholder="false" hidden="true" mustcontains="lucchetto_closed.gif">lucchetto_closed.gif</item>
+  <item name="stato.image.False" disambiguation="non tradurre" html="false" placeholder="false" hidden="true" mustcontains="lucchetto_open.gif">lucchetto_open.gif</item>
+  <item name="title" html="false" placeholder="false">Registration activation with confirmation</item>
+  <item name="HYPbackHistory.Text" html="false" placeholder="false">Back</item>
+  <item name="HYPbackHistory.Tooltip" html="false" placeholder="false">Back to previous page</item>
+  <item name="HYPbackHistory.AlternateText" html="false" placeholder="false">Back to previous page</item>
+  <item name="HYPbackHistory.Text" html="false" placeholder="false">Indietro</item>
+  <item name="ErroreAccesso.-100" html="true" placeholder="true" mustcontains="{0}|{1}">Sorry, parameters are missing in order to access to the automatic activation/enabling section, verify tha t the url is correct.&lt;br&gt;For more informations send an email to: &lt;/font&gt;&lt;a href="mailto:{0}?Subject={1}Automatic activation/enabling problems" class="Linkinfo_genericoMedio"&gt;{0}&lt;/a&gt;</item>
+  <item name="ErroreAccesso.-102" html="false" placeholder="false">Sorry, the specified registration does not exist anymore</item>
+  <item name="ErroreAccesso.-103" html="false" placeholder="true" mustcontains="{0}|{1}">Access to the communty {1} for the user {0} was enabled.</item>
+  <item name="ErroreAccesso.-104" html="false" placeholder="true" mustcontains="{0}|{1}">Due to problems with the account activation, user {0} is not allowed to access the {1} community</item>
+  <item name="ErroreAccesso.-109" html="false" placeholder="true" mustcontains="{0}|{1}">User {0}enrollment was already enabled and she/he can freely access the community "{1}".</item>
+  <item name="ErroreAccesso.-110" html="false" placeholder="false">Sorry, you do not have permission to perform the operation</item>
+</Resource>

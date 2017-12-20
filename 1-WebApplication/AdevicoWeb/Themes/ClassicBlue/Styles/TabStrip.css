@@ -1,0 +1,78 @@
+/*.TabStripContentStyle
+{
+	padding: 10 10 0 10;
+}
+
+.TabLabelDefaultStyle
+{
+	font-family: Arial, "MS Sans Serif", sans-serif;
+	font-size: 11px;
+	color: #ffffff;
+	cursor:pointer;
+}
+
+
+.TabLabelSelectedStyle
+{
+	font-family: Arial, "MS Sans Serif", sans-serif;
+	font-size: 11px;
+	color: black;
+	cursor:pointer;
+	color:#333333;
+}
+
+.TabLabelSelectedInnerStyle { 
+	padding-top:4px;
+}
+.TabLabelDefaultInnerStyle {
+	padding-top:4px;
+}
+.line {
+	background-image:url(../Images/lineBg.gif);
+	background-repeat:repeat-x;
+	text-align:center;
+}
+*/
+.TabStripContentStyle
+{
+	padding: 10 10 0 10;
+}
+
+.TabLabelDefaultStyle
+{
+	font-size: 11px;
+	cursor: hand;
+	color: #ffffff;
+	font-family: Arial, "MS Sans Serif" , sans-serif;
+}
+
+
+.TabLabelSelectedStyle
+{
+	font-weight: bold;
+	font-size: 11px;
+	cursor: default;
+	color: navy;
+	font-family: Arial, "MS Sans Serif" , sans-serif;
+}
+
+.TabLabelSelectedInnerStyle { 
+	padding-top:4px;
+}
+.TabLabelDefaultInnerStyle {
+	padding-top:4px;
+}
+
+.TabLabelDisabledInnerStyle
+{
+	font-size: 11px;
+	background-image: url(../Images/tabStripeDisabled.gif);
+	color: gray;
+	background-repeat: repeat-x;
+	font-family: Arial, "MS Sans Serif" , sans-serif;
+}
+.line {
+	background-image:url(../Images/lineBg.gif);
+	background-repeat:repeat-x;
+	text-align:center;
+}

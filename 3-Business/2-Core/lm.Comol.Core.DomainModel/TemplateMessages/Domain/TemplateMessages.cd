@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="lm.Comol.Core.TemplateMessages.Domain.dtoDisplayTemplateDefinition" Collapsed="true">
+    <Position X="14.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAAAAAACAAAgEAAAQAAAAAAAEAAQAAAAAAAEA=</HashCode>
+      <FileName>TemplateMessages\Domain\dto\dtoDisplayTemplateDefinition.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="lm.Comol.Core.DomainModel.Languages.ItemObjectTranslation" Collapsed="true">
+    <Position X="14.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgBAAAAABAQAAAAAAIgBAAQAAgAAAAAAAgAAAAIAAAA=</HashCode>
+      <FileName>Domain\Language\ItemObjectTranslation.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="lm.Comol.Core.TemplateMessages.Domain.dtoDisplayTemplateVersion" Collapsed="true">
+    <Position X="16.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAACGAAAAAAAAAEAAgAAAAAAAAAAAAAAIAAAAAAA=</HashCode>
+      <FileName>TemplateMessages\Domain\dto\dtoDisplayTemplateVersion.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="lm.Comol.Core.TemplateMessages.Domain.dtoNotificationConfigurator">
+    <Position X="3.75" Y="14.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAKAAAAAAAAEAEAAgAAAAAAAAgQAEAEAAAAA=</HashCode>
+      <FileName>TemplateMessages\Domain\dto\dtoNotificationConfigurator.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Mode" />
+      <Property Name="Type" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="lm.Comol.Core.TemplateMessages.Domain.TemplateModuleContent">
+    <Position X="8.5" Y="3.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAAAAAAAAEAAAAAAAAgAAAAIAAAAAAQAAAAA=</HashCode>
+      <FileName>TemplateMessages\Domain\Template\TemplateModuleContent.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="lm.Comol.Core.TemplateMessages.Domain.TemplateOwner">
+    <Position X="9" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAIAAAAAAAAAAAAAAAAAAAIEAQBAAQAAAAA=</HashCode>
+      <FileName>TemplateMessages\Domain\Template\TemplateOwner.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="lm.Comol.Core.TemplateMessages.Domain.VersionPermission">
+    <Position X="8.25" Y="7.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAAAABAAAAAAAAAAAAAAAAAACAQAAAAAACBA=</HashCode>
+      <FileName>TemplateMessages\Domain\Permission\VersionPermission.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="lm.Comol.Core.TemplateMessages.Domain.VersionRolePermission">
+    <Position X="5.75" Y="10.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAA=</HashCode>
+      <FileName>TemplateMessages\Domain\Permission\VersionRolePermission.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="lm.Comol.Core.TemplateMessages.Domain.VersionProfileTypePermission" Collapsed="true">
+    <Position X="8.5" Y="10.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAA=</HashCode>
+      <FileName>TemplateMessages\Domain\Permission\VersionProfileTypePermission.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="lm.Comol.Core.TemplateMessages.Domain.VersionPersonPermission" Collapsed="true">
+    <Position X="11.5" Y="10.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAA=</HashCode>
+      <FileName>TemplateMessages\Domain\Permission\VersionPersonPermission.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="lm.Comol.Core.TemplateMessages.Domain.VersionCommunityPermission" Collapsed="true">
+    <Position X="2.75" Y="10.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAA=</HashCode>
+      <FileName>TemplateMessages\Domain\Permission\VersionCommunityPermission.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="lm.Comol.Core.TemplateMessages.Domain.TemplateDefinition">
+    <Position X="4.25" Y="0.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAAAAAAAAAAgEAAAQAAAAAAAEAAQAAAAAAAAA=</HashCode>
+      <FileName>TemplateMessages\Domain\Template\TemplateDefinition.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="OwnerInfo" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="Versions" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="lm.Comol.Core.TemplateMessages.Domain.TemplateDefinitionVersion" BaseTypeListCollapsed="true">
+    <Position X="4.25" Y="3.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>hAgAAACHAGAAiAAKBEAAAAAAAiAAAQAAFAAAIAAAAAA=</HashCode>
+      <FileName>TemplateMessages\Domain\Template\TemplateDefinitionVersion.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Translations" />
+      <Property Name="Permissions" />
+      <Property Name="ModulesForContent" />
+      <Property Name="ActionSettings" />
+    </ShowAsCollectionAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="lm.Comol.Core.TemplateMessages.Domain.TemplateTranslation" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="1" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>IABAAAAAACAIAAACAAgAAAAAAgAgAAAAAAAAAAAEAAA=</HashCode>
+      <FileName>TemplateMessages\Domain\Template\TemplateTranslation.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="lm.Comol.Core.TemplateMessages.Domain.NotificationSettings" Collapsed="true">
+    <Position X="1.25" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAABKAAAAAAAAEAAAAAAwgAAAIAAQAAAQAAAAA=</HashCode>
+      <FileName>TemplateMessages\Domain\Template\NotificationSettings.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Enum Name="lm.Comol.Core.TemplateMessages.Domain.TemplateStatus" Collapsed="true">
+    <Position X="14.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAEAAAAAAAAAAgAAAAAAgAAAAAAAAAAA=</HashCode>
+      <FileName>TemplateMessages\Domain\Enum\TemplateStatus.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="lm.Comol.Core.TemplateMessages.Domain.TemplateType" Collapsed="true">
+    <Position X="16.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAACAEAAAA=</HashCode>
+      <FileName>TemplateMessages\Domain\Enum\TemplateType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="lm.Comol.Core.TemplateMessages.Domain.NotificationMode">
+    <Position X="7.5" Y="15" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAQAAAAAAAAAAAAAAAAAAIAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>TemplateMessages\Domain\Enum\NotificationMode.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="lm.Comol.Core.TemplateMessages.Domain.NotificationType">
+    <Position X="0.5" Y="15" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGAAAACQEAAAA=</HashCode>
+      <FileName>TemplateMessages\Domain\Enum\NotificationType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

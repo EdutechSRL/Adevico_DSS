@@ -1,0 +1,540 @@
+
+
+body {
+	
+}
+
+/*  UC FILE DETAIL  */
+
+/*   UC FILE - MULTILINE ESTESA   */
+
+div.File_MainInfo {
+	word-wrap: break-word;
+	text-align: left;
+	border: 0px solid Black;
+	padding: 0;
+	font-size: 13px;
+	display: inline-block;
+	*display:inline;
+	*zoom: 1;
+}
+
+/*div.File_MainInfo div.File_SMInfo_Actions div.File_Download
+{
+    padding:0.2em 0em 0em 0em;
+    display: inline-block;
+    font-size: smaller;
+}*/
+
+div.File_MainInfo ul.File_Actions {
+	padding: 0;
+	margin: 0;
+	white-space: nowrap;
+	list-style-type: none;
+	display: inline-block;
+	text-align: right;
+	float: right;
+	width: 58px;
+}
+
+div.File_MainInfo ul.File_Actions li {
+	padding: 0px;
+	margin: 0px;
+	border: 0px;
+}
+
+div.File_MainInfo img.File_Img_Action {
+	padding: 0px;
+	margin: 0px;
+	border: 0px;
+}
+
+div.File_MainInfo a.File_ImgLnk {
+	font-size: smaller;
+}
+
+div.FileInfoSmall {
+	width: 230px;
+	max-width: 230px;
+}
+
+/*   UC FILE - MULTILINE COMPRESSA   */
+
+div.File_MainInfo_Normal {
+	word-wrap: break-word;
+	text-align: left;
+	border: 0px solid Black;
+	padding: 0.5em;
+	font-size: 13px;
+}
+
+div.File_MainInfo_Normal div.File_SMInfo_Actions {
+	display: block;
+	height: 28px;
+	min-height: 28px;
+	padding: 0.1em 0em 0.1em 0em;
+}
+
+/*div.File_MainInfo div.File_SMInfo_Actions div.File_Download
+{
+    padding:0.2em 0em 0em 0em;
+    display: inline-block;
+    font-size: smaller;
+}*/
+
+div.File_MainInfo_Normal ul.File_Actions {
+	padding: 0;
+	margin: 0;
+	white-space: nowrap;
+	list-style-type: none;
+	display: inline-block;
+	text-align: right;
+	float: right;
+}
+
+div.File_MainInfo_Normal ul.File_Actions li {
+	padding: 0px;
+	margin: 0px;
+	border: 0px;
+}
+
+div.File_MainInfo_Normal div.File_Detail {
+	padding: 0px;
+	margin: 0px;
+	border: 0px;
+	font-size: smaller;
+}
+
+div.File_MainInfo_Normal img.File_Img_Action {
+	padding: 0px;
+	margin: 0px;
+	border: 0px;
+}
+
+div.File_MainInfo_Normal a.File_ImgLnk {
+	font-size: smaller;
+}
+
+div.File_MainInfo_Normal div.FileInfoSmall {
+	width: 230px;
+	max-width: 230px;
+}
+
+div.File_MainInfo_Normal div.File_NameExt {
+	display: inline-block;
+	width: 15em;
+	max-width: 15em;
+}
+
+/*   UC FILE - SINGLE LINE - HTML CUT (table version)  */
+
+div.File_MainInfo_TinyCut {
+	text-align: left;
+	padding: 0em;
+	border: 0px;
+	display: inline-block;
+}
+
+div.File_MainInfo_TinyCut img {
+	width: 16px;
+	min-width: 16px;
+	height: 16px;
+	min-height: 16px;
+}
+
+/*div.File_MainInfo_TinyCut div.File_SMInfo_Actions { display: inline-block; padding: 0.1em 0em 0.1em 0em; min-width: 53px; vertical-align: top; }*/
+
+div.File_MainInfo_TinyCut div.File_SMInfo_Actions {
+	display: inline-block;
+	padding: 0.1em 0em 0.1em 0em;
+	min-width: 5.5em;
+	vertical-align: top;
+}
+
+div.File_MainInfo_TinyCut div.File_SMInfo_Actions div.File_Download {
+	padding: 0.2em 0em 0em 0em;
+	display: inline-block;
+	font-size: smaller;
+}
+
+div.File_MainInfo_TinyCut ul.File_Actions {
+	float: inherit;
+	padding: 0 0 0 0.3em;
+	margin: 0;
+	white-space: nowrap;
+	list-style-type: none;
+	display: inline-block;
+	text-align: right;
+}
+
+div.File_MainInfo_TinyCut ul.File_Actions li {
+	padding: 0px;
+	margin: 0px;
+	border: 0px;
+}
+
+div.File_MainInfo_TinyCut div.File_Detail {
+	padding: 0px;
+	margin: 0px;
+	border: 0px;
+}
+
+div.File_MainInfo_TinyCut img.File_Img_Action {
+	padding: 0px 0px 0px 3px;
+	margin: 0px;
+	border: 0px;
+}
+
+div.File_MainInfo_TinyCut div.File_NameExt {
+	display: inline-block;
+	min-width: 210px;
+}
+
+/*   UC FILE - SINGLE LINE COMPACT - HTML HIDE - (inner text) Riusato per l'inline nel testo...   */
+
+div.File_MainInfo_InTxt {
+	text-align: left;
+	padding: 0em;
+	border: 0px;
+	display: inline-block;
+}
+
+div.File_MainInfo_InTxt img {
+	width: 16px;
+	min-width: 16px;
+	height: 16px;
+	min-height: 16px;
+}
+
+/*div.File_MainInfo_TinyCut div.File_SMInfo_Actions { display: inline-block; padding: 0.1em 0em 0.1em 0em; min-width: 53px; vertical-align: top; }*/
+
+div.File_MainInfo_InTxt div.File_SMInfo_Actions {
+	display: inline-block;
+	padding: 0.1em 0em 0.1em 0em;
+	vertical-align: top;
+}
+
+div.File_MainInfo_InTxt div.File_SMInfo_Actions div.File_Download {
+	padding: 0.2em 0em 0em 0em;
+	display: inline-block;
+	font-size: smaller;
+}
+
+div.File_MainInfo_InTxt ul.File_Actions {
+	float: inherit;
+	padding: 0 0 0 0.3em;
+	margin: 0;
+	white-space: nowrap;
+	list-style-type: none;
+	display: inline-block;
+	text-align: right;
+}
+
+div.File_MainInfo_InTxt ul.File_Actions li {
+	padding: 0px;
+	margin: 0px;
+	border: 0px;
+}
+
+div.File_MainInfo_InTxt div.File_Detail {
+	padding: 0px;
+	margin: 0px;
+	border: 0px;
+}
+
+div.File_MainInfo_InTxt img.File_Img_Action {
+	padding: 0px 0px 0px 3px;
+	margin: 0px;
+	border: 0px;
+}
+
+div.File_MainInfo_InTxt div.File_NameExt {
+	display: inline-block;
+}
+
+div.File_MainInfo_InTxt div.File_NameExt a.File_Name img {
+	float: none;
+}
+
+/*      OLD
+div.File_MainInfo_InTxt
+{   text-align:left; padding: 0em; 
+    border: 0px; display: inline-block; }
+div.File_MainInfo_InTxt img
+{   width: 13px; min-width: 13px;
+    height: 13px; min-height: 13px; vertical-align: top; }
+div.File_MainInfo_InTxt div.File_SMInfo_Actions { display: inline-block; padding: 0.1em 0em 0.1em 0em; }
+span.DataField { font-weight:bold; }
+div.File_MainInfo_InTxt ul.File_Actions
+{   float: inherit; padding: 0 0 0 0.2em; margin:0; white-space:nowrap;
+    list-style-type:none; display: inline-block; text-align: right; }
+div.File_MainInfo_InTxt ul.File_Actions li { display:inline; padding:0px; margin:0px; border:0px; }
+div.File_MainInfo_InTxt div.File_Detail { padding:0px; margin:0px; border:0px; }
+div.File_MainInfo_InTxt img.File_Img_Action { padding:0px; margin:0px; border:0px; }
+div.File_MainInfo_InTxt div.File_NameExt { display: inline-block; }
+div.File_MainInfo_InTxt div.File_NameExt a.File_Name img { padding: 0.2em; }
+div.File_MainInfo_InTxt div.File_Download { background-color:Red; display:none; }
+div.File_Download { font-size:smaller; }
+*/
+
+#progressBackgroundFilter {
+	position: fixed;
+	top: 0px;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+	overflow: hidden;
+	padding: 0;
+	margin: 0;
+	background-color: #000;
+	filter: alpha(opacity=50);
+	opacity: 0.5;
+	z-index: 1000;
+}
+
+#processMessage {
+	position: fixed;
+	top: 30%;
+	left: 43%;
+	padding: 10px;
+	width: 14%;
+	z-index: 1001;
+	background-color: #fff;
+	border: solid 1px #000;
+}
+
+/* AGGIUNTE NUOVO SISTEMA */
+
+/* contenitore di tutto il blocco*/
+
+div.File_Main {
+	display: inline-block;
+	*display: inline;
+	zoom: 1;
+	width: 72%;
+	/*float: left;*/
+}
+
+div.File_Main span {
+	clear: left;
+	padding-left: 0;
+	display: inline-block;
+	*display:inline;
+	zoom: 1;
+	word-wrap: break-word;
+}
+
+/* float:left; */
+
+div.File_Main span span {
+	clear: none;
+	float: none;
+}
+
+div.File_Main span span.Titolo_campoSmall {
+	padding-left: 3px;
+}
+
+#TBfiles tbody tr.ROW_Normal_Small td a.File_Name.ROW_ItemLink_Small {
+	display: inline-block;
+}
+
+div.File_MainInfo a,
+div.File_MainInfo a span {
+	clear: right;
+	float: left;
+	color: Black;
+	overflow: hidden;
+}
+
+div.File_MainInfo div.File_NameExt a span {
+	clear: right;
+	float: none;
+}
+
+div.File_MainInfo div.File_NameExt span {
+	clear: left;
+	float: left;
+	padding-left: 1px;
+}
+
+div.File_MainInfo div.File_NameExt span span {
+	clear: none;
+	float: none;
+	color: #666;
+}
+
+div.File_SMInfo_Actions {
+	display: inline-block;
+	width: 58px !important;
+	height: 100%;
+	float: right;
+	vertical-align: top;
+	padding-top: 7px;
+	padding-right: 3px;
+}
+
+/* BOTTONI div.File_SMInfo_Actions*/
+
+ul.File_Actions {
+	padding: 0;
+	margin: 0;
+	white-space: nowrap;
+	list-style-type: none;
+	display: inline-block;
+	text-align: right;
+	*display: inline;
+	*zoom: 1;
+}
+
+ul.File_Actions li {
+	padding: 0px;
+	margin: 0px;
+	border: 0px;
+	width: 18px;
+	min-width: 18px;
+}
+
+img.File_Img_Action {
+	padding: 0px;
+	margin: 0px;
+	border: 0px;
+}
+
+a.File_ImgLnk {
+	font-size: smaller;
+}
+
+div.File_MainInfo div.File_SMInfo_Actions {
+	float: right;
+}
+
+/*div.File_MainInfo div.File_Detail { padding:0px; margin:0px; border:0px; font-size:smaller;}*/
+
+div.File_Detail {
+	width: 100%;
+	display: block;
+	vertical-align: bottom;
+	clear: both;
+	font-size: smaller;
+	padding-left: 1em;
+}
+
+/*
+div.File_MainInfo div.File_SMInfo_Actions
+{   display: block; height: 28px;
+    min-height: 28px; padding: 0.1em 0em 0.1em 0em; }
+*/
+
+/* Com diary */
+
+/* div.File_Main span */
+
+li.li_item_files div.File_Main {
+	display: inline-block;
+	width: 250px;
+	min-height: 26px;
+	overflow: auto;
+	vertical-align: top;
+	*display: inline;
+}
+
+li.li_item_files div.File_Main div.File_MainInfo_tinyCut div.File_NameExt span {
+	clear: none;
+	float: none;
+}
+
+li.li_item_files div.File_Main div.File_MainInfo_tinyCut div.File_NameExt img {
+	
+}
+
+li.li_item_files {
+	list-style-type: none !important;
+	display: block;
+	padding: 0;
+	margin: 0;
+	border: 0;
+	overflow: visible;
+}
+
+li.li_item_files div.File_SMInfo_Actions {
+	float: right;
+	display: inline-block;
+	*display: inline;
+	*left: -5px;
+	*top: -25px;
+	*position: relative;
+}
+
+LI.li_item_files DIV.File_SMInfo_Actions div.File_SMInfo_Actions ul.File_Actions,
+div.File_SMInfo_Actions ul.File_Actions {
+	list-style-type: none;
+	padding-top: 10px;
+}
+
+LI.li_item_files DIV.File_SMInfo_Actions div.File_SMInfo_Actions ul.File_Actions li,
+div.File_SMInfo_Actions ul.File_Actions li {
+	list-style-type: none;
+	display: inline-block;
+	*display: inline;
+}
+
+*html div.File_SMInfo_Actions ul.File_Actions li {
+	display: inline;
+}
+
+/* _display: inline;   /* ie6 */
+
+/* *display: inline;   /* ie6 ie7 */
+
+/* display: inline\9;  /* ie8 */
+
+/* display: inline\0/; /* IE8+9  */
+
+/*      Specifici per tabella file  */
+
+table#TBfiles  div.File_Main div.File_MainInfo a {
+	display: block;
+	width: 483px;
+	word-break: break-all;
+	*display: inline;
+	*margin-right: 55px;
+}
+
+div.FolderFiles table#TBfiles   div.File_Main div.File_MainInfo a {
+	display: block;
+	width: 255px !important;
+	word-break: break-all;
+	*display: inline;
+}
+
+table#TBfiles div.File_Main {
+	
+}
+
+table#TBfiles div.File_SMInfo_Actions {
+	_padding: 0px;
+	/* ie6*/
+    *padding: 0px;
+	/* ie6 ie7 */
+    padding: 0px\9;
+	/* ie8 */
+    padding: 0px\0/;
+	/* IE8+9  */
+    
+    /* IE HACK */
+    *display: inline;
+	*left: -5px;
+	*top: -30px;
+	*position: relative;
+}
+
+#TBfiles td {
+	padding: 3px;
+}
+
+table#CPHservice_CBLselectedRole.Testo_campoSmall {
+	display: inline-block;
+	*display:block;
+}
+    

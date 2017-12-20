@@ -1,0 +1,128 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+lm.Comol.Core.Data
+</name>
+</assembly>
+<members>
+<member name="T:lm.Comol.Core.Data.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:lm.Comol.Core.Data.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:lm.Comol.Core.Data.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="M:lm.Comol.Core.Data.LinqExtension.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0})">
+ <summary>
+ It isn't pure functional programming
+ </summary>
+ <typeparam name="T"></typeparam>
+ <param name="source"></param>
+ <param name="act"></param>
+ <returns></returns>
+</member>
+<member name="M:lm.Comol.Core.Data.LinqExtension.ForEachAndStop``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0})">
+ <summary>
+ It isn't pure functional programming
+ </summary>
+ <typeparam name="T"></typeparam>
+ <param name="source"></param>
+ <param name="act"></param>
+</member>
+<member name="P:lm.Comol.Core.Data.Repository`1.IsDirty">
+ <summary>
+ Reports whether this <c>ObjectSpaceServices</c> contain any changes which must be synchronized with the database
+ </summary>
+</member>
+<member name="P:lm.Comol.Core.Data.Repository`1.IsInTransaction">
+ <summary>
+ Reports whether this <c>ObjectSpaceServices</c> is working transactionally
+ </summary>
+</member>
+<member name="M:lm.Comol.Core.Data.Repository`1.Add(`0)">
+ <summary>
+ Adds an object to the repository
+ </summary>
+ <param name="item">The object to add</param>
+</member>
+<member name="M:lm.Comol.Core.Data.Repository`1.Delete(`0)">
+ <summary>
+ Deletes an object from the repository
+ </summary>
+ <param name="item">The object to delete</param>
+</member>
+<member name="M:lm.Comol.Core.Data.Repository`1.Save(`0)">
+ <summary>
+ Saves an object to the repository
+ </summary>
+ <param name="item">The object to save</param>
+</member>
+<member name="M:lm.Comol.Core.Data.Repository`1.BeginTransaction">
+ <summary>
+ Begins a transaction
+ </summary>
+ <exception cref="T:System.InvalidOperationException">Thrown if there is an already active transaction</exception>
+</member>
+<member name="M:lm.Comol.Core.Data.Repository`1.Commit">
+ <summary>
+ Commits the active transaction
+ </summary>
+ <exception cref="T:System.InvalidOperationException">Thrown if there isn't an active transaction</exception>
+</member>
+<member name="M:lm.Comol.Core.Data.Repository`1.Rollback">
+ <summary>
+ Rollbacks the active transaction
+ </summary>
+ <exception cref="T:System.InvalidOperationException">Thrown if there isn't an active transaction</exception>        
+</member>
+<member name="M:lm.Comol.Core.Data.Repository`1.GetAll">
+ <summary>
+ Retrieves all the persisted instances of a given type
+ </summary>
+ <typeparam name="T">The type of the object to retrieve</typeparam>
+ <returns>The list of persistent objects</returns>
+</member>
+<member name="M:lm.Comol.Core.Data.Repository`1.GetAll(System.Int32,System.Int32)">
+ <summary>
+ Retrieves all the persisted instances of a given type
+ </summary>
+ <typeparam name="T">The type of the object to retrieve</typeparam>
+ <param name="pageIndex">The index of the page to retrieve</param>
+ <param name="pageSize">The size of the page to retrieve</param>
+ <returns>The list of persistent objects</returns>
+</member>
+<member name="M:lm.Comol.Core.Data.Repository`1.GetById``1(``0)">
+ <summary>
+ Return the persistent instance of the given entity class with the given identifier, or null if there is no such persistent instance.
+ </summary>
+ <typeparam name="T">The type of the object</typeparam>
+ <param name="id">The identifier of the object</param>
+ <returns>The persistent instance or null</returns>
+</member>
+<member name="M:lm.Comol.Core.Data.Repository`1.GetById(System.Object)">
+ <summary>
+ Return the persistent instance of the given entity class with the given identifier, or null if there is no such persistent instance.
+ </summary>
+ <typeparam name="T">The type of the object</typeparam>
+ <param name="id">The identifier of the object</param>
+ <returns>The persistent instance or null</returns>
+</member>
+<member name="M:lm.Comol.Core.Data.Repository`1.GetCount">
+ <summary>
+ Returns the amount of objects of a given type
+ </summary>
+ <typeparam name="T">The type of the object</typeparam>
+ <returns>The amount of objects</returns>
+</member>
+</members>
+</doc>

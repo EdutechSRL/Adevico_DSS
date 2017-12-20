@@ -1,0 +1,4 @@
+﻿<%@ Control Language="vb" AutoEventWireup="false" CodeBehind="UC_TreeTelerik.ascx.vb" Inherits="Comunita_OnLine.UC_TreeTelerik" %>
+<%@ Register TagPrefix="telerik" Namespace="Telerik.Web.UI" Assembly="Telerik.Web.UI" %>
+<telerik:RadTreeView ID="RDTtree" runat="server" CheckBoxes="false" MultipleSelect="false" CssClass="nestedtree directories tree root"  ></telerik:RadTreeView>
+<asp:Literal ID="LTtemplateFolderNodeUrl" runat="server" Visible="false"><a href="{0}" class="namelink">{1}</a></asp:Literal><asp:Literal ID="LTtemplateFolderNodeText" runat="server" Visible="false"><span class="fileIco folder"></span><span class="name">{0}</span></asp:Literal><asp:Literal ID="LTselectedItemCssClass" runat="server" Visible="false">active</asp:Literal><asp:Literal ID="LTemptyItemCssClass" runat="server" Visible="false">empty</asp:Literal><asp:Literal ID="LTtemplateRecycleBinCssClass" runat="server" Visible="false">specialfolder recyclebin</asp:Literal>

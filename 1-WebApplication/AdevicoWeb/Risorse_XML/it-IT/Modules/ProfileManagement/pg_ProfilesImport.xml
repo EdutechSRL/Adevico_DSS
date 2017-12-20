@@ -1,0 +1,247 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--italian-->
+<Resource xmlns="urn:ComolTranslation">
+  <item name="serviceTitleImportProfile">Importazione profili</item>
+  <item name="serviceImportProfilesNopermission">Non dispone dei permessi per visualizzare le informazioni relative al profilo selezionato</item>
+  <item name="BTNbackBottom.text">Indietro</item>
+  <item name="BTNbackBottom.status">Torna al passo precedente</item>
+  <item name="BTNbackBottom.ToolTip">Torna al passo precedente</item>
+  <item name="BTNbackTop.text">Indietro</item>
+  <item name="BTNbackTop.status">Torna al passo precedente</item>
+  <item name="BTNbackTop.ToolTip">Torna al passo precedente</item>
+  <item name="BTNnextBottom.text">Avanti</item>
+  <item name="BTNnextBottom.status">Vai al prossimo passo</item>
+  <item name="BTNnextBottom.ToolTip">Vai al prossimo passo</item>
+  <item name="BTNnextTop.text">Avanti</item>
+  <item name="BTNnextTop.status">Vai al prossimo passo</item>
+  <item name="BTNnextTop.ToolTip">Vai al prossimo passo</item>
+  <item name="BTNcompleteTop.text">Importa</item>
+  <item name="BTNcompleteTop.status">Importa i dati selezionati e crea i relativi profili</item>
+  <item name="BTNcompleteTop.ToolTip">Importa i dati selezionati e crea i relativi profili</item>
+  <item name="BTNcompleteBottom.text">Importa</item>
+  <item name="BTNcompleteBottom.status">Importa i dati selezionati e crea i relativi profili</item>
+  <item name="BTNcompleteBottom.ToolTip">Importa i dati selezionati e crea i relativi profili</item>
+
+  <item name="HYPbackToManagement.text">Gestione profili</item>
+  <item name="HYPbackToManagement.status">Torna alla gestione dei profili</item>
+  <item name="HYPbackToManagement.ToolTip">Torna alla gestione dei profili</item>
+
+  <item name="ProfileImportStep.SelectSource.Title" placeholder="true" mustcontains="{0}">Passo {0}: scelta origine dati</item>
+  <item name="ProfileImportStep.SelectSource.Description">Selezionare la sorgente da cui recuperare i dati per la creazione del profilo.</item>
+
+  <item name="ProfileImportStep.SourceCSV.Title" placeholder="true" mustcontains="{0}|CSV">Passo {0}: File CSV</item>
+  <item name="ProfileImportStep.SourceCSV.Description" mustcontains="CSV">Definire le impostazioni principali del file CSV da cui recuperare i dati.</item>
+
+  <item name="ProfileImportStep.SourceRequestForMembership.Title" placeholder="true" mustcontains="{0}">Passo {0}: richiesta di adesione</item>
+  <item name="ProfileImportStep.SourceRequestForMembership.Description">Selezionare la richiesta di adesione da cui recuperare i dati.</item>
+
+  <item name="ProfileImportStep.SourceCallForPapers.Title" placeholder="true" mustcontains="{0}">Passo {0}: bando</item>
+  <item name="ProfileImportStep.SourceCallForPapers.Description">Selezionare il bando da cui recuperare i dati.</item>
+  
+  <item name="ProfileImportStep.FieldsMatcher.Title" placeholder="true" mustcontains="{0}">Passo {0}: corrispondenza colonne dati</item>
+  <item name="ProfileImportStep.FieldsMatcher.Description">Indicare per ciascuna colonna dei dati di input la relativa "colonna" del profilo utente.</item>
+
+  <item name="ProfileImportStep.ItemsSelctor.Title" placeholder="true" mustcontains="{0}">Passo {0}: selezione record / gestione conflitti</item>
+  <item name="ProfileImportStep.ItemsSelctor.Description">Selezionare gli utenti da importare.</item>
+  <item name="ProfileImportStep.SelectOrganizations.Title" placeholder="true" mustcontains="{0}">Passo {0}: selezione organizzazioni</item>
+  <item name="ProfileImportStep.SelectOrganizations.Description">Selezionare le organizzazioni a cui associare gli utenti da importare.</item>
+  <item name="ProfileImportStep.SelectCommunities.Title" placeholder="true" mustcontains="{0}">Passo {0}: selezione comunità</item>
+  <item name="ProfileImportStep.SelectCommunities.Description">Selezionare le comunità a cui iscrivere gli utenti.</item>  
+  <item name="ProfileImportStep.MailTemplate.Title" placeholder="true" mustcontains="{0}">Passo {0}: template mail</item>
+  <item name="ProfileImportStep.MailTemplate.Description">Definire il template della mail da inviare al singolo utente iscritto.</item>
+  <item name="ProfileImportStep.SubscriptionsSettings.Title" placeholder="true" mustcontains="{0}">Passo {0}: ruoli nelle comunità</item>
+  <item name="ProfileImportStep.SubscriptionsSettings.Description">Definire il ruolo svolto dagli utenti da importare nel sistema ed iscrivere nelle comunità selezionate.</item>
+  <item name="ProfileImportStep.Summary.Title" placeholder="true" mustcontains="{0}">Passo {0}: conferma finale</item>
+  <item name="ProfileImportStep.Summary.Description">Conferma definitiva delle operazioni da realizzare.</item>
+  <item name="ProfileImportStep.ImportCompleted.Title">Importazione profili CONCLUSA</item>
+  <item name="ProfileImportStep.ImportCompleted.Description"></item>
+  <item name="ProfileImportStep.ImportWithErrors.Title">Importazione profili CONCLUSA con errori</item>
+  <item name="ProfileImportStep.ImportWithErrors.Description">Dettaglio degli errori nelle procedure di importazione in piattaforma:</item>
+
+  <item name="LBemptyMessage.text">Sessione di lavoro scaduta, impossibile continuare</item>
+  <item name="LBsourceSelector_t.text">Sorgente dati:</item>
+  <item name="SourceType.None">- non specificato -</item>
+  <item name="SourceType.FileCSV" placeholder="true" mustcontains="CSV">File CSV</item>
+  <item name="SourceType.RequestForMembership">Richiesta di adesioni</item>
+  <item name="SourceType.FileExcel">File Excel</item>
+  <item name="SourceType.CallForPapers">Bandi</item>
+  <item name="LBsourceFile_t.text">Seleziona il file:</item>
+  <item name="BTNupload.text" disambiguation="carica=upload">Carica</item>
+  <item name="BTNupload.ToolTip" placeholder="true" mustcontains="CSV">Carica il file CSV</item>
+  <item name="LBuploadedFile_t.text" placeholder="true" mustcontains="CSV">File CSV caricato:</item>
+  <item name="LBuploadedFile.text" placeholder="true" mustcontains="{0}|{1}|{2}">{0} il {1} alle {2}.</item>
+  <item name="BTNremoveFile.text"></item>
+  <item name="BTNremoveFile.ToolTip">Cancella il file</item>
+  <item name="LBfirstRowColumnNames_t.text">Nome colonne nella prima riga:</item>
+  <item name="CBXfirstRowColumnNames.text">Si</item>
+  <item name="LBcolumnDelimiter_t.text">Delimitatore di colonna:</item>
+  <item name="LBrowDelimiter_t.text">Delimitatore di riga:</item>
+  <item name="LBrowToSkip_t.text">Righe da ignorare:</item>
+  
+  <item name="TextDelimiter.None">Nessuno</item>
+  <item name="TextDelimiter.Semicolon">Punto e virgola {;}</item>
+  <item name="TextDelimiter.Colon">Due punti {:}</item>
+  <item name="TextDelimiter.Comma">Virgola {,}</item>
+  <item name="TextDelimiter.Tab" placeholder="true" mustcontains="{t}">Tabulazione {t}"</item>
+  <item name="TextDelimiter.VerticalBar" mustcontains="{|}">Barra verticale {|}</item>
+  <item name="TextDelimiter.CrLf" placeholder="true" mustcontains="{CR}{LF}">{CR}{LF}</item>
+  <item name="TextDelimiter.Cr" placeholder="true" mustcontains="{CR}">{CR}</item>
+  <item name="TextDelimiter.Lf" placeholder="true" mustcontains="{LF}">{LF}</item>
+  <item name="BTNpreviewCSV.text">Anteprima</item>
+  <item name="BTNpreviewCSV.ToolTip">Anteprima</item>
+  <item name="Column" placeholder="true" mustcontains="{0}">Colonna {0}"</item>
+  
+  <item name="DisplayProfileUnknown">Utente sconosciuto.</item>
+  <item name="DisplayNoPermissionForProfile">Spiacente, non dispone dei permessi per visualizzare i dettagli relativi al profilo selezionato.</item>
+
+  <item name="LBauthenticationProviders_t.text">Scegli il tipo di autenticazione:</item>
+  <item name="LBallowPWDinsert_t.text">Consenti inserimento password:</item>
+  <item name="CBXallowPWDinsert.text">si</item>
+  <item name="LBdefaultLogin_t.text">Login assegnata  dal sistema:</item>
+  <item name="CBXdefaultLogin.text">si</item>
+  <item name="LBprofileToSelect_t.text">Scegli il tipo profilo:</item>
+  <item name="LBdefaultAgency_t.text">Ente di default (SE non trovato):</item>
+  <item name="LBsourceColumn.text">Colonna sorgente</item>
+  <item name="LBdestinationColumn.text">Campo profilo</item>
+    
+  <item name="ProfileAttributeType.skip">--    Ignora    --</item>
+  <item name="ProfileAttributeType.unknown">Sconosciuto</item>
+  <item name="ProfileAttributeType.externalId">Identificativo login esterna</item>
+  <item name="ProfileAttributeType.name">Nome</item>
+  <item name="ProfileAttributeType.surname">Cognome</item>
+  <item name="ProfileAttributeType.mail">Mail</item>
+  <item name="ProfileAttributeType.telephoneNumber">Telefono</item>
+  <item name="ProfileAttributeType.fax">Fax</item>
+  <item name="ProfileAttributeType.mobile">Cellulare</item>
+  <item name="ProfileAttributeType.taxCode">Codice fiscale</item>
+  <item name="ProfileAttributeType.login">Login</item>
+  <item name="ProfileAttributeType.password">Password</item>
+  <item name="ProfileAttributeType.companyName">Ragione sociale azienda</item>
+  <item name="ProfileAttributeType.companyAddress">Indirizzo azienda</item>
+  <item name="ProfileAttributeType.companyCity">Città azienda</item>
+  <item name="ProfileAttributeType.companyRegion">Regione azienda</item>
+  <item name="ProfileAttributeType.companyTaxCode">Codice fiscale /P.I azienda</item>
+  <item name="ProfileAttributeType.companyReaNumber">Numero R.E.A</item>
+  <item name="ProfileAttributeType.companyAssociations">Associazioni categoria</item>
+  <item name="ProfileAttributeType.matricula">Matricola</item>
+  <item name="ProfileAttributeType.matriculaYear">Anno immatricolazione</item>
+  <item name="ProfileAttributeType.institute">Istituto/Scuola</item>
+  <item name="ProfileAttributeType.classroom">Classe</item>
+  <item name="ProfileAttributeType.matters">Materia</item>
+  <item name="ProfileAttributeType.phdTitle">Dottorato</item>
+  <item name="ProfileAttributeType.externalUserInfo">Dettagli esterno</item>
+  <item name="ProfileAttributeType.jobInfo">Mansione/Ruolo</item>
+  <item name="ProfileAttributeType.address">Indirizzo</item>
+  <item name="ProfileAttributeType.zipCode" disambiguation="codice di avviamento postale">Cap</item>
+  <item name="ProfileAttributeType.city">Città</item>
+  <item name="ProfileAttributeType.autoGeneratedLogin">Login auto generata</item>
+  <item name="ProfileAttributeType.agencyName">Nome ente</item>
+  <item name="ProfileAttributeType.agencyNationalCode">Codice nazionale - Ente</item>
+  <item name="ProfileAttributeType.agencyTaxCode">Codice fiscale / Partita iva - Ente</item>
+  <item name="ProfileAttributeType.agencyExternalCode">Codice esterno - Ente</item>
+  <item name="ProfileAttributeType.agencyInternalCode">Codice piattaforma - Ente</item>
+  <item name="ProfileAttributeType.language">Lingua</item>
+
+    <item name="ProfileAttributeType.job">Mansione</item>
+    <item name="ProfileAttributeType.sector">Settore</item>
+
+    <item name="ProfileAttributeType.birthPlace">Luogo di nascita</item>
+    <item name="ProfileAttributeType.birthDate">Data di nascita</item>
+    
+    <item name="InvalidMatch.None"></item>
+  <item name="InvalidMatch.DuplicatedItem" placeholder="true" mustcontains="{0}">Campo DUPLICATO: {0}</item>
+  <item name="InvalidMatch.DuplicatedItems" placeholder="true" mustcontains="{0}">Campi DUPLICATI: {0}</item>
+  <item name="InvalidMatch.IgnoredRequiredItem" placeholder="true" mustcontains="{0}">Campo RICHIESTO non specificato: {0}</item>
+  <item name="InvalidMatch.IgnoredRequiredItems" placeholder="true" mustcontains="{0}">Campi RICHIESTI NON specificati: {0}</item>
+  <item name="InvalidMatch.IgnoredAllItems">ATTENZIONE: non si può proseguire se tutte le colonne di destinazione sono "ignorate"</item>
+  <item name="InvalidMatch.NoRequiredItems">ATTENZIONE: non si può proseguire in quanto non vi sono campi del profilo da associare</item>
+  <item name="InvalidMatch.GenericError">ATTENZIONE: non si può proseguire, verificare la corrispondenza colonne sorgente/destinazione ed eventuali duplicati</item>
+  <item name="InvalidMatch.IgnoredAlternativeRequiredItem" placeholder="true" mustcontains="{0}">Campo richiesto in alternativa: {0}</item>
+  <item name="InvalidMatch.IgnoredAlternativeRequiredItems" placeholder="true" mustcontains="{0}">Campi RICHIESTI in alternativa: {0}</item>
+
+  <item name="Field.InvalidMatch.None"></item>
+  <item name="Field.InvalidMatch.DuplicatedItem">Colonna duplicata</item>
+  <item name="Field.InvalidMatch.IgnoredRequiredItem">Colonna richiesta NON specificata</item>
+  <item name="Field.InvalidMatch.IgnoredAlternativeRequiredItem">Colonna alternativa richiesta NON specificata</item>
+  
+  <item name="LTselectRow_t.text" disambiguation="S=seleziona (un solo carattere)">S</item>
+  <item name="LTrowInfo_t.text" disambiguation="E=errori (un solo carattere)">E</item>
+  <item name="LBselectedProvider_t.text">Tipo di autenticazione:</item>
+  <item name="LBselectedProfile_t.text">Profilo da creare:</item>
+  <item name="LBattributesInfo.text">Placeholders per i campi del profilo:</item>
+  
+  <item name="Mail.Subject">Iscrizione</item>
+  <item name="Mail.Standard" html="true" placeholder="true" mustcontains="[name]|[surname]|{0}|{1}" >Buongiorno [name] [surname],&lt;br&gt;             Lei è stato iscritto/a alla piattaforma.{0}&lt;br&gt;Per accedere al sistema deve collegarsi all’indirizzo web {1}.&lt;br&gt;&lt;br&gt;</item>
+  <item name="Mail.Login" html="true" placeholder="true" mustcontains="[login]|[password]" >&lt;br&gt;I dati di accesso sono:&lt;br&gt;Login:[login]&lt;br&gt;Password:[password]&lt;br&gt;</item>
+  <item name="InvalidImport.InvalidData" disambiguation="i=dato invalido (uno o due caratteri)" placeholder="true" mustcontains="[|]">[i]</item>
+  <item name="InvalidImport.SourceDuplicatedData" disambiguation="sd=dato sorgente duplicato (uno o due caratteri)" placeholder="true" mustcontains="[|]">[sd]</item>
+  <item name="InvalidImport.AlreadyExist" disambiguation="pp=dati presenti in piattaforma (uno o due caratteri)" placeholder="true" mustcontains="[|]">[pp]</item>
+  <item name="InvalidImport.InvalidData.Description" placeholder="true" mustcontains="[|]" disambiguation="i=dato invalido (uno o due caratteri)">[i] - Dato invalido</item>
+  <item name="InvalidImport.SourceDuplicatedData.Description" placeholder="true" mustcontains="[|]" disambiguation="sd=dato sorgente duplicato (uno o due caratteri)">[sd] - Dato sorgente duplicato</item>
+  <item name="InvalidImport.AlreadyExist.Description" placeholder="true" mustcontains="[|]" disambiguation="pp=dati presenti in piattaforma (uno o due caratteri)">[pp] - Dati presenti in piattaforma</item>
+  <item name="CTRLselectCommunities.DisplayInfo">Elenco di ulteriori comunità a cui iscrivere gli utenti da importare</item>
+  <item name="LBmailSelector_t.text">Invia mail agli utenti:</item>
+  <item name="RBLmailSelector.True">Si</item>
+  <item name="RBLmailSelector.False">No</item>
+  <item name="LBsummarySubscriptions_t.text">Profili da creare:</item>
+  <item name="LBsummaryAuthenticationType_t.text">Tipo autenticazione selezionata:</item>
+  <item name="LBsummaryUserType_t.text">Tipologia di profilo:</item>
+  <item name="LBsummaryPrimaryOrganization_t.text">Organizzazione di appartenenza:</item>
+  <item name="LBsummaryOtherOrganizations_t.text">Altre organizzazioni da associare:</item>
+  <item name="LBsummaryMailSelector_t.text">Invia mail agli utenti:</item>
+  <item name="LBsummaryMailSelector.True">Si</item>
+  <item name="LBsummaryMailSelector.False">No</item>
+  <item name="LBsummarySubscribeTo_t.text">Iscrivi alle comunità:</item>
+  <item name="summarySubscription" placeholder="true" mustcontains="{0}|{1}">{0} - Ruolo: {1}</item>
+  <item name="ProfileImportAction.Create" placeholder="true" mustcontains="{0}">creazione profilo {0}</item>
+  <item name="ProfileImportAction.Create.True" placeholder="true" mustcontains="{0}">creazione profilo {0} avvenuta.</item>
+  <item name="ProfileImportAction.Create.False" placeholder="true" mustcontains="{0}">creazione profilo {0} NON avvenuta</item>
+  <item name="ProfileImportAction.AddToOtherOrganizations.True" placeholder="true" mustcontains="{0}">associazione profili all'organizzazione {0}</item>
+  <item name="ProfileImportAction.AddToOtherOrganizations.False" placeholder="true" mustcontains="{0}">associazione profili all'organizzazione {0} NON avvenuta correttamente.</item>
+  <item name="ProfileImportAction.AddToCommunities.True" placeholder="true" mustcontains="{0}">iscrizione alla comunità {0}</item>
+  <item name="ProfileImportAction.AddToCommunities.False" placeholder="true" mustcontains="{0}">iscrizione alla comunità {0} NON avvenuta correttamente.</item>
+  <item name="ProfileImportAction.SendMail.True" placeholder="true" mustcontains="{0}">invio mail iscrizione a {0}</item>
+  <item name="ProfileImportAction.SendMail.False" placeholder="true" mustcontains="{0}">invio mail iscrizione a {0} NON avvenuta correttamente.</item>
+  <item name="Localization.Uploaded">Avanzamento complessivo</item>
+  <item name="Localization.UploadedFiles">Avanzamento</item>
+  <item name="Localization.CurrentFileName">Azione corrente: </item>
+  <item name="Localization.Total">Completamento</item>
+  <item name="Localization.TotalFiles">Attività totali</item>
+  <item name="Localization.ElapsedTime">Tempo impiegato:</item>
+  <item name="Localization.EstimatedTime">Tempo stimato:</item>
+  <item name="Localization.TransferSpeed">Velocità esecuzione:</item>
+  <item name="Import.Completed.1">Tutte le operazioni di importazione sono state concluse con successo, e' stato creato un profilo in piattaforma.</item>
+  <item name="Import.Completed" placeholder="true" mustcontains="{0}">Tutte le operazioni di importazione sono state concluse con successo, sono stati creati {0} profili in piattaforma.</item>
+  <item name="Import.ImportOther" placeholder="true" mustcontains="{0}">Dalla sorgente dati selezionati risultano disponibili ulteriori {0} profili da creare: per procedere con la loro eventuale importazione premere sul pulsante "Indietro".</item>
+  <item name="Import.ImportOther.1">Dalla sorgente dati selezionati risulta disponibile un ulteriore profilo da creare: per procedere con la sua eventuale importazione premere sul pulsante "Indietro".</item>
+  <item name="ImportError.Completed.1" html="true">Le operazioni di importazione NON sono state concluse con successo, e' stato creato SOLO un profilo in piattaforma.&lt;br&gt;Dettaglio degli errori:</item>
+  <item name="ImportError.Completed" placeholder="true" mustcontains="{0}" html="true">Le operazioni di importazione NON sono state concluse tutte con successo, sono stati creati {0} profili in piattaforma.&lt;br&gt;Dettaglio degli errori:</item>
+
+  <!--UC_IMsourceRFM-->
+  <item name="LTheaderSelect.text" disambiguation="S=seleziona (un solo carattere)">S</item>
+  <item name="LTheaderName.text">Nome</item>
+  <item name="LTheaderDate.text">Data d'inizio</item>
+  <item name="LTheaderSubmittedQuestions.text">Sottomesse</item>
+  <item name="LTheaderIncompletedQuestions.text">Incomplete</item>
+  <item name="LTheaderSelect.text" disambiguation="S=seleziona (un solo carattere)">S</item>
+  
+  <item name="LBnameRFM.text">Nome: </item>
+  <item name="LBstartDate.text">Parte il: </item>
+  <item name="LBsubmittedItems.text">Sottomesse: </item>
+  <item name="LBwaitingItems.text">Incomplete: </item>
+
+  <item name="RBLfilterRFM.0">Tutte</item>
+  <item name="RBLfilterRFM.1">Incomplete</item>
+  <item name="RBLfilterRFM.2">Sottomesse</item>
+  <item name="RBLfilterRFM.4">Rifiutate</item>
+
+  <item name="BTNreturn.text">Torna alla lista</item>
+
+  <item name="True">accettato</item>
+  <item name="False">rifiutato</item>
+
+  <item name="GroupBy.MandatoryCommon">Campi obbligatori comuni</item>
+  <item name="GroupBy.NotMandatoryCommon">Campi NON obbligatori comuni</item>
+  <item name="GroupBy.UserTypeStandard" placeholder="true" mustcontains="{0}">Campi profilo {0}</item>
+  <item name="Details">Dettagli</item>
+</Resource>

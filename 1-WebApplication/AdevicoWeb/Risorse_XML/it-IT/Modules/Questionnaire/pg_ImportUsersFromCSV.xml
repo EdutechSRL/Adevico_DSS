@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Resource xmlns="urn:ComolTranslation">
+  <item name="serviceTitleImport">Importazione utenti invitati</item>
+  <item name="serviceImportNopermission">Non dispone dei permessi per aggiungere degli utenti invitati al questionario.</item>
+  <item name="BTNbackBottom.text">Indietro</item>
+  <item name="BTNbackBottom.status">Torna al passo precedente</item>
+  <item name="BTNbackBottom.ToolTip">Torna al passo precedente</item>
+  <item name="BTNbackTop.text">Indietro</item>
+  <item name="BTNbackTop.status">Torna al passo precedente</item>
+  <item name="BTNbackTop.ToolTip">Torna al passo precedente</item>
+  <item name="BTNnextBottom.text">Avanti</item>
+  <item name="BTNnextBottom.status">Vai al prossimo passo</item>
+  <item name="BTNnextBottom.ToolTip">Vai al prossimo passo</item>
+  <item name="BTNnextTop.text">Avanti</item>
+  <item name="BTNnextTop.status">Vai al prossimo passo</item>
+  <item name="BTNnextTop.ToolTip">Vai al prossimo passo</item>
+  <item name="BTNcompleteTop.text">Importa</item>
+  <item name="BTNcompleteTop.status">Importa i dati selezionati e crea i relativi utenti invitati</item>
+  <item name="BTNcompleteTop.ToolTip">Importa i dati selezionati e crea i relativi utenti invitati</item>
+  <item name="BTNcompleteBottom.text">Importa</item>
+  <item name="BTNcompleteBottom.status">Importa i dati selezionati e crea i relativi utenti invitati</item>
+  <item name="BTNcompleteBottom.ToolTip">Importa i dati selezionati e crea i relativi utenti invitati</item>
+
+  <item name="HYPbackToManagement.text">Gestione utenti invitati</item>
+  <item name="HYPbackToManagement.status">Torna alla gestione degli utenti invitati</item>
+  <item name="HYPbackToManagement.ToolTip">Torna alla gestione degli utenti invitati</item>
+
+  <item name="InvitedUsersImportStep.SourceCSV.Title" placeholder="true" mustcontains="{0}|CSV">Passo {0}: File CSV</item>
+  <item name="InvitedUsersImportStep.SourceCSV.Description" mustcontains="CSV">Definire le impostazioni principali del file CSV da cui recuperare i dati.</item>
+  <item name="InvitedUsersImportStep.FieldsMatcher.Title" placeholder="true" mustcontains="{0}">Passo {0}: corrispondenza colonne dati</item>
+  <item name="InvitedUsersImportStep.FieldsMatcher.Description">Indicare per ciascuna colonna dei dati di input la relativa "colonna" dell'utente invitato.</item>
+  <item name="InvitedUsersImportStep.ItemsSelctor.Title" placeholder="true" mustcontains="{0}">Passo {0}: selezione record / gestione conflitti</item>
+  <item name="InvitedUsersImportStep.ItemsSelctor.Description">Selezionare gli utenti da importare.</item>
+  <item name="InvitedUsersImportStep.Summary.Title" placeholder="true" mustcontains="{0}">Passo {0}: conferma finale</item>
+  <item name="InvitedUsersImportStep.Summary.Description">Conferma definitiva delle operazioni da realizzare.</item>
+  <item name="InvitedUsersImportStep.Completed.Title">Importazione utenti CONCLUSA</item>
+  <item name="InvitedUsersImportStep.Completed.Description"></item>
+  <item name="InvitedUsersImportStep.ImportWithErrors.Title">Importazione utenti CONCLUSA con errori</item>
+  <item name="InvitedUsersImportStep.ImportWithErrors.Description">Dettaglio degli errori nelle procedure di importazione:</item>
+
+  <item name="LBemptyMessage.text">Sessione di lavoro scaduta, impossibile continuare</item>
+  <item name="ImportedUserColumn.skip">--    Ignora    --</item>
+  <item name="ImportedUserColumn.name">Nome</item>
+  <item name="ImportedUserColumn.surname">Cognome</item>
+  <item name="ImportedUserColumn.mail">Mail</item>
+  <item name="ImportedUserColumn.description">Descrizione</item>
+
+  <item name="CurrentOperationText.True" placeholder="true" mustcontains="{0}">importazione utente {0}</item>
+  <item name="CurrentOperationText.False" placeholder="true" mustcontains="{0}">importazione utente {0} NON avvenuta correttamente.</item>
+  <item name="Localization.Uploaded">Avanzamento complessivo</item>
+  <item name="Localization.UploadedFiles">Avanzamento</item>
+  <item name="Localization.CurrentFileName">Azione corrente: </item>
+  <item name="Localization.Total">Completamento</item>
+  <item name="Localization.TotalFiles">Attività totali</item>
+  <item name="Localization.ElapsedTime">Tempo impiegato:</item>
+  <item name="Localization.EstimatedTime">Tempo stimato:</item>
+  <item name="Localization.TransferSpeed">Velocità esecuzione:</item>
+  <item name="Import.Completed.1">Tutte le operazioni di importazione sono state concluse con successo, e' stato creato un profilo in piattaforma.</item>
+  <item name="Import.Completed" placeholder="true" mustcontains="{0}">Tutte le operazioni di importazione sono state concluse con successo, sono stati creati {0} profili in piattaforma.</item>
+  <item name="Import.ImportOther" placeholder="true" mustcontains="{0}">Dalla sorgente dati selezionati risultano disponibili ulteriori {0} profili da creare: per procedere con la loro eventuale importazione premere sul pulsante "Indietro".</item>
+  <item name="Import.ImportOther.1">Dalla sorgente dati selezionati risulta disponibile un ulteriore profilo da creare: per procedere con la sua eventuale importazione premere sul pulsante "Indietro".</item>
+  <item name="ImportError.Completed.1" html="true">Le operazioni di importazione NON sono state concluse con successo, e' stato creato SOLO un profilo in piattaforma.&lt;br&gt;Dettaglio degli errori:</item>
+  <item name="ImportError.Completed" html="true" placeholder="true" mustcontains="{0}">Le operazioni di importazione NON sono state concluse tutte con successo, sono stati creati {0} profili in piattaforma.&lt;br&gt;Dettaglio degli errori:</item>
+  <item name="LBinvitedUsersErrors_t.text">Utenti non importati:</item>
+  <item name="LBsummary.text.0" placeholder="true" mustcontains="{0}">Premendo sul pulsante "Importa" sara' associato al questionario "{0}" un nuovo utente invitato.</item>
+  <item name="LBsummary.text" placeholder="true" mustcontains="{0}|{1}">Premendo sul pulsante "Importa" saranno associati al questionario "{0}" {1} nuovi utenti invitati.</item>
+</Resource>

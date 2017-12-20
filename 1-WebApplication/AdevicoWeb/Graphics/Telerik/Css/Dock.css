@@ -1,0 +1,205 @@
+.RadDock {
+  /* improves drag&drop in mobile browsers */
+  -webkit-transform: rotate3d(0, 0, 1, 0);
+  -webkit-backface-visibility: hidden;
+  -webkit-perspective: 1000;
+  -moz-transform: rotate3d(0, 0, 1, 0);
+  -moz-backface-visibility: hidden;
+  -moz-perspective: 1000;
+  -o-transform: rotate3d(0, 0, 1, 0);
+  -o-backface-visibility: hidden;
+  -o-perspective: 1000;
+  -ie-transform: rotate3d(0, 0, 1, 0);
+  -ie-backface-visibility: hidden;
+  -ie-perspective: 1000;
+  /*nested docks*/
+  /* right-to-left suppot */
+  /* more common settings */
+  /* float clearing */
+  /* IE9 - The height increases height when the horizontal scrollbar is visible*/ }
+  .RadDock .rdTable {
+    width: 100%;
+    height: 100%;
+    table-layout: fixed; }
+  .RadDock .rdTable .rdTop .rdLeft,
+  .RadDock .rdTable .rdTop .rdRight,
+  .RadDock .rdTable .rdMiddle .rdLeft,
+  .RadDock .rdTable .rdMiddle .rdRight,
+  .RadDock .rdTable .rdBottom .rdLeft,
+  .RadDock .rdTable .rdBottom .rdCenter,
+  .RadDock .rdTable .rdBottom .rdRight {
+    font-size: 1px;
+    line-height: 1px; }
+  .RadDock .rdContent {
+    overflow: auto;
+    font: normal 12px "Segoe UI", Arial, Verdana;
+    line-height: 17px; }
+  .RadDock.rdCollapsed {
+    height: 27px !important; }
+  .RadDock.rdCollapsed .rdMiddle, .RadDock.rdCollapsed .rdBottom {
+    display: none; }
+  .RadDock .rdTable,
+  .RadDock .rdTable .rdLeft,
+  .RadDock .rdTable .rdCenter,
+  .RadDock .rdTable .rdRight {
+    border: 0;
+    border-collapse: collapse;
+    padding: 0;
+    margin: 0;
+    vertical-align: top; }
+  .RadDock .rdTop .rdLeft,
+  .RadDock .rdTop .rdRight,
+  .RadDock .rdTop .rdCenter,
+  .RadDock .rdBottom .rdLeft,
+  .RadDock .rdBottom .rdRight,
+  .RadDock .rdBottom .rdCenter {
+    width: 7px;
+    height: 27px;
+    background-repeat: no-repeat; }
+  .RadDock .rdTop td.rdLeft {
+    background-position: 0 -68px; }
+  .RadDock .rdTop td.rdRoundedCorner.rdLeft {
+    background-position: 0 0; }
+  .RadDock .rdTop td.rdRoundedCorner.rdRight {
+    background-position: -7px 0; }
+  .RadDock .rdTop td.rdRight {
+    background-position: -7px -68px; }
+  .RadDock .rdTop .rdCenter {
+    background-position: 0 -27px;
+    background-repeat: repeat-x;
+    width: 100%; }
+  .RadDock .rdMiddle .rdLeft,
+  .RadDock .rdMiddle .rdRight {
+    background-repeat: repeat-y; }
+  .RadDock .rdMiddle .rdLeft {
+    background-position: 0 0; }
+  .RadDock .rdMiddle .rdRight {
+    background-position: -7px 0; }
+  .RadDock .rdMiddle .rdCenter,
+  .RadDock .rdBottom .rdCenter {
+    width: 100%; }
+  .RadDock .rdMiddle .rdCenter {
+    vertical-align: top;
+    height: 100%; }
+  .RadDock .rdMiddle .rdCenter .rdTop .rdCenter {
+    height: 27px; }
+  .RadDock .rdBottom .rdLeft,
+  .RadDock .rdBottom .rdCenter,
+  .RadDock .rdBottom .rdRight {
+    height: 7px; }
+  .RadDock .rdBottom .rdLeft {
+    background-position: 0 -95px; }
+  .RadDock .rdBottom .rdLeft.rdRoundedCorner,
+  .RadDock .rdBottom .rdRoundedCorner.rdLeft {
+    background-position: 0 -54px; }
+  .RadDock .rdBottom .rdRight {
+    background-position: -7px -95px; }
+  .RadDock .rdBottom .rdRight.rdRoundedCorner,
+  .RadDock .rdBottom .rdRoundedCorner.rdRight {
+    background-position: -7px -54px; }
+  .RadDock .rdBottom .rdCenter {
+    background-position: 0 -61px;
+    background-repeat: repeat-x;
+    background-color: transparent; }
+  .RadDock .rdTitleBar em {
+    font: normal normal 12px "Segoe UI", Arial, Sans-serif;
+    float: left;
+    line-height: 27px;
+    padding: 0;
+    margin: 0;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap; }
+  .RadDock .rdCenter .rdCommands {
+    padding: 0;
+    margin: 4px 0 0 0;
+    list-style: none;
+    float: right; }
+  .RadDock .rdCenter .rdCommands li {
+    float: left; }
+  .RadDock .rdCenter .rdCommands a span {
+    _filter: chroma(color=c8d0d4); }
+  .RadDock .rdCenter .rdCommands a {
+    padding: 0 1px; }
+  .RadDock .rdCenter .rdCommands a,
+  .RadDock .rdCenter .rdCommands a span {
+    display: block;
+    width: 19px;
+    height: 19px;
+    text-decoration: none;
+    text-indent: -9999px;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    cursor: default; }
+  .RadDock .rdCollapse {
+    background-position: 0 0; }
+  .RadDock .rdCollapse:hover {
+    background-position: -19px 0; }
+  .RadDock .rdExpand {
+    background-position: 0 -19px; }
+  .RadDock .rdExpand:hover {
+    background-position: -19px -19px; }
+  .RadDock .rdClose {
+    background-position: 0 -76px; }
+  .RadDock .rdClose:hover {
+    background-position: -19px -76px; }
+  .RadDock .rdPin {
+    background-position: 0 -57px; }
+  .RadDock .rdPin:hover {
+    background-position: -19px -57px; }
+  .RadDock .rdUnpin {
+    background-position: 0 -38px; }
+  .RadDock .rdUnpin:hover {
+    background-position: -19px -38px; }
+  .RadDock .rdCustom {
+    background-position: 0 -95px; }
+  .RadDock .rdCustom:hover {
+    background-position: -19px -95px; }
+  .RadDock.rdRtl {
+    direction: ltr;
+    text-align: right;
+    /* we need this in case the BODY has text-aligh:center applied */ }
+    .RadDock.rdRtl .rdContent {
+      direction: rtl; }
+    .RadDock.rdRtl .rdTop .rdCenter {
+      direction: rtl; }
+    .RadDock.rdRtl .rdTop .rdCenter ul.rdCommands {
+      float: left;
+      overflow: hidden;
+      /*Fix scrollbar under Chrome,Safari*/ }
+    .RadDock.rdRtl .rdTitleBar em {
+      float: right; }
+  .RadDock .rdTitleBar {
+    width: 100%;
+    height: 100%; }
+  .RadDock.rdDragHelper {
+    opacity: .5 !important;
+    filter: alpha(opacity=50) !important;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)  !important"; }
+  .RadDock .rdHorizontal .RadDock {
+    float: left; }
+  .RadDock.rdPlaceHolder {
+    border-style: dashed;
+    border-width: 1px; }
+  .RadDock .rdNone .rdLeft,
+  .RadDock .rdNone .rdCenter,
+  .RadDock .rdNone .rdRight {
+    height: 1px !important; }
+  .RadDock .rdGripTop .rdLeft,
+  .RadDock .rdGripTop .rdCenter,
+  .RadDock .rdGripTop .rdRight {
+    height: 10px !important;
+    font-size: 1px;
+    line-height: 1px; }
+  .RadDock .rdzClear {
+    clear: both;
+    height: 1px;
+    margin-bottom: -1px;
+    visibility: hidden; }
+  ._Telerik_IE9 .RadDock .rdContent {
+    margin-top: auto; }
+
+/* IE9 - The height increases height when the horizontal scrollbar is visible*/
+._Telerik_IE9 .RadDock .rdContent {
+  margin-top: auto; }
+

@@ -1,0 +1,203 @@
+﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="ExternalService.master.vb" Inherits="Comunita_OnLine.ExternalService" %>
+<asp:Literal ID="LTdocType" runat="server" visible="false">
+    <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+</asp:Literal>
+<html>
+<head id="Head1" runat="server">
+     <title id="Title1" runat="server">
+        Comunità On Line
+        <asp:ContentPlaceHolder ID="PageTitleContent" runat="server"></asp:ContentPlaceHolder>
+    </title>
+    <!-- Col Master -->
+    <link href="~/Styles.css" type="text/css" rel="stylesheet" />
+    <!-- Latex -->
+    <link rel="Stylesheet" href="<%#ResolveUrl("~/Style/New/statistiche.css") %>" />
+    <link rel="Stylesheet" href="~/Style/Latex/Latex.css" />
+    <link rel="Stylesheet" href="~/Style/Latex/Latex.css" media="print" />
+    <script type="text/javascript" src="<%#ResolveUrl("~/Style/Latex/Latex.js") %>"></script>
+    <!-- JQuery -->
+     <link href="<%#ResolveUrl("~/Content/themes/"& Me.SystemSettings.Style.jqueryTheme &"/jquery-ui-"&Me.SystemSettings.Style.jqueryUIVersion &".css")%>" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="<%#ResolveUrl("~/scripts/jquery-"&Me.SystemSettings.Style.jqueryVersion &".min.js")%>"></script>
+    <script type="text/javascript" src="<%#ResolveUrl("~/scripts/jquery-migrate-1.2.1.js")%>"></script>
+    <script type="text/javascript" src="<%#ResolveUrl("~/Jscript/jquery.validate.min.js")%>"></script>
+    <script type="text/javascript" src="<%#ResolveUrl("~/scripts/jquery-ui-"&Me.SystemSettings.Style.jqueryUIVersion &".min.js")%>"></script>
+    <script type="text/javascript" src="<%#ResolveUrl("~/scripts/jquery.blockUI.min.js")%>"></script>
+    <script type="text/javascript" src="<%#ResolveUrl("~/Jscript/jquery.cookie.js")%>"></script>
+    <script type="text/javascript" src="<%#ResolveUrl("~/Scripts/jquery.tools.126.min.js")%>"></script>
+    <link rel="Stylesheet" href="<%#ResolveUrl("~/Graphics/Generics/css/comolTooltip.css") %>" />
+    <!-- Altri script servizi globali -->
+    <script type="text/javascript" src='<%# ResolveUrl(Me.SystemSettings.Style.Menu & "jquerycssmenu.js")%>'></script>
+    <script src='<%# ResolveUrl("~/jscript/jquery.notice.js")%>' type="text/javascript"></script>
+    <link rel="Stylesheet" href="<%# ResolveUrl(Me.SystemSettings.Style.Header & "jquery.notice.css")%>" />
+    
+    <!-- Stili NEW Menu -->
+        <!--<link rel="stylesheet" href="<%#ResolveUrl("~/Style/Skin/Default/d.css") %>" type="text/css" media="screen"/>-->
+        <!--[if lte IE 7]>
+            <link rel="stylesheet" href="~/Style/NewMenuDemo/css/ie6.css" type="text/css" media="screen">		
+            <script type="text/javascript" src="<%#ResolveUrl("~/Style/NewMenuDemo/js/ie.js") %>"></script>
+        <![endif]-->
+    
+    <!-- CPH Header -->
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server"></asp:ContentPlaceHolder>
+    <!-- <asp:Literal ID="Lit_ToolTip" runat="server"></asp:Literal> -->
+    <asp:Literal ID="LTskin" runat="server"></asp:Literal>
+    <asp:Literal ID="LTtemplate" runat="server"></asp:Literal>
+    <!-- Mantain dialog open-->
+    <script type="text/javascript" src="<%#ResolveUrl("~/JScript/Modules/Common/autoopendialog.js")%>"></script>
+    <!-- Script NEW Menu -->
+    <script type="text/javascript" src='<%# ResolveUrl("~/Style/NewMenuDemo/js/jquery.bgiframe.js") %>'></script>
+    <script type="text/javascript" src='<%# ResolveUrl("~/Style/NewMenuDemo/js/jquery-hoverIntent.js") %>'></script>  
+    <script type="text/javascript" src='<%# ResolveUrl("~/Style/NewMenuDemo/js/d.js")%>'></script>
+    <link rel="Stylesheet" type="text/css" href="<%#ResolveUrl("~/Privacy/PrivacyCookies/css/divascookies_style_dark_bottom.css") %>" />
+	<link rel="Stylesheet" type="text/css" href="<%#ResolveUrl("~/Privacy/css/privacycookie.css?v=201604071200lm")%>" />
+	<script type="text/javascript" src="<%#ResolveUrl("~/Privacy/PrivacyCookies/js/jquery.divascookies-0.3.min.js") %>"></script>
+	<script type="text/javascript" src="<%#ResolveUrl("~/Privacy/js/privacycookie.js") %>"></script>
+    <!-- Stili template -->
+<style type="text/css">
+
+    /*        HEADER         */
+    /* LEFT TOP*/
+    /*div#header .head_left ul,
+    div#header .head_left a,
+    div#header .head_left img,
+    div#header .head_left h1,
+    div#header .head_left span { margin: 0; padding: 0; border: 0; display: inline-block;}
+    
+    
+    
+    /* RIGHT TOP*/
+    div#header .head_right ul,
+    div#header .head_right a,
+    div#header .head_right img  { margin: 0; padding: 0; border: 0; display: inline-block;}
+    div#header .head_right h1,
+    div#header .head_right span  { margin: 0; padding-left: 0; padding-right: 0; border: 0; display: inline-block;}
+    
+    
+    div#header .head_right ul,
+    div#header .head_right a,
+    div#header .head_right img { float: right; text-align: right; }
+    div#header .head_right span,
+    div#header .head_right h1 { float: left; }
+
+
+    /*        FOOTER         */
+    div#cFooter div.chiusura { margin: 0 auto; width: 960px; }
+    
+    div#cFooter div.chiusura * { vertical-align: top; }
+    /* FLOW */
+    div#cFooter .flow * { display: inline; vertical-align:top; text-align:justify; }
+
+    
+   /* 50-50 left*/
+    div#cFooter .half_left, div#cFooter .half_left * { text-align: left;}
+    div#cFooter .half_left ul, 
+    div#cFooter .half_left div.footer_text { margin: 0; padding: 0; border: 0; width: 49%; display: inline-block; float:left;}
+    
+
+    /* LEFT */
+    div#cFooter .left, div#cFooter .left * { text-align: left;}
+    div#cFooter .left ul  { margin: 0; padding: 0; border: 0; display: inline; float:left;}
+
+    /* 50-50 right */
+    div#cFooter .half_right ul, 
+    div#cFooter .half_right div.footer_text { margin: 0; padding: 0; border: 0; width: 49%; display: inline-block;}
+    div#cFooter .half_right ul { float: right; text-align: right; }
+    div#cFooter .half_right div.footer_text { float: left; text-align: right; }
+
+    /* Right */
+    div#cFooter .right ul, 
+    div#cFooter .righ img  { margin: 0; padding: 0; border: 0; display: inline-block;}
+    
+    div#cFooter .right ul, 
+    div#cFooter .right img { float: right; text-align: right; }
+    
+    div#cFooter .right { text-align: right; }
+    div#cFooter .right span {  }
+
+    /* Top */
+    div#cFooter .top ul, 
+    div#cFooter .top span { margin: 0; padding: 0; border: 0; width: 100%; display: inline-block; }
+    div#cFooter .top li { display: inline-block; }
+
+    /* Bottom */
+    /*div#cFooter .bottom ul,
+    div#cFooter .bottom span { margin: 0; padding: 0; border: 0; width: 100%; display: inline-block; clear:both;}
+    div#cFooter .bottom li { display: inline-block; }
+    div#cFooter .bottom ul { position:absolute; bottom:0px; }*/
+    /*.half_bottom span { float: left; clear:both; }*/
+    /*div#cFooter .bottom { position: relative; }*/
+
+</style>
+</head>
+<body id="<%=Me.BodyIdCode() %>" class="<%=Me.BodyCssClass %> internal_body">
+    <form id="aspnetForm" class="mainForm" runat="server">
+
+        <asp:ScriptManager ID="SCMmanager" runat="server" EnablePageMethods="true" EnablePartialRendering="true">
+        </asp:ScriptManager>
+        
+        <asp:ContentPlaceHolder ID="PreHeaderContent" runat="server"></asp:ContentPlaceHolder>
+        
+        <!-- HEADER -->
+<div id="header">
+
+        <!-- toolbar OK: V3.0b8-->
+        <asp:ContentPlaceHolder ID="TopBarContent" runat="server">
+
+        </asp:ContentPlaceHolder>
+        <!-- branding -->	
+        <div id="branding" class="page-width <%#me.HeaderTemplate %>">
+
+            <asp:Literal ID="LTheaderLogo" runat="server">
+                <a href="#"><img class="logo" title="Demo" alt="Demo" src="/Comol_Elle3/Style/Skin/Demo/Demo.png"/></a>
+            </asp:Literal>
+            <h1>
+                <asp:Label ID="LBpageTitle" Runat="server" EnableViewState="false"></asp:Label>
+                <span></span>
+            </h1>
+        </div>
+        <!-- end branding -->
+    
+        <!-- nav main -->
+        <div id="nav-main"><div class="page-width">
+            <asp:Literal ID="LTmenuExternal" runat="server"></asp:Literal>
+        </div></div>
+        
+        <!-- end nav main -->
+
+</div>        <!-- end HAEDER -->
+
+         <div id="page-box">
+            <div id="container" class="page-width">
+                <div id="serviceinfo" class="RigaTitolo serviceinfo">
+                    <asp:Label ID="LBtitolo" runat="server"></asp:Label>
+                    <asp:ContentPlaceHolder ID="TitleContent" runat="server"></asp:ContentPlaceHolder>
+                </div>
+                
+                <div id="content">
+                    <div class="DIV_MP_Content">
+                        <asp:ContentPlaceHolder ID="CPHservice" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </div>
+                </div>
+                <div style="clear:both "></div>
+            </div>
+        </div>
+
+        <div id="cFooter">
+            <div class="container">
+
+                <div align="center" class="chiusura <%#Me.FooterTemplate %>">
+                    <ul class="Logos">
+                        <asp:Literal ID="LTbottomLogos" runat="server"></asp:Literal>
+                    </ul>
+                    <div class="footer_text">
+                        <asp:Literal ID="LTbottomText" runat="server"></asp:Literal>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <input type="hidden" id="HDNwindowopened"  runat="server" class="autoopendialog" />
+    </form>
+</body>
+</html>

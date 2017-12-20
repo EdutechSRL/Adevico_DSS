@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="lm.Comol.Core.DomainModel" namespace="lm.Comol.Core.DomainModel">
+	<class name="ExternalUser" table="ESTERNO" lazy="true">
+		<id name="PersonOwnerID" column="ESTR_PRSN_id" type="Int32">
+			<generator class="native"/>
+		</id>
+		<property name="ExternalUserInfo" type="String" column="ESTR_mansione" />
+  </class>
+</hibernate-mapping>

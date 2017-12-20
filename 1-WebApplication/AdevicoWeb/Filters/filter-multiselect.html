@@ -1,0 +1,11 @@
+﻿<div class="filterinner">
+    <span class="title" ng-show="filter.Label!=''">{{filter.Label}}:</span>
+    <span class="content">
+        <!--<select multiple chosen class="input chzn-select" name="{{filter.Name}}" data-placeholder="{{filter.Placeholder}}" ng-model="filter.SelectedIds" ng-change="setFiltersChange(filter,'select')" ng-options="value.Id as value.Name for value in filter.Values"></select>-->
+        <select multiple chosen class="input chzn-select" name="{{filter.Name}}" data-placeholder="{{filter.Placeholder}}" ng-model="filter.SelectedIds" ng-change="setFiltersChange(filter,'select')" ng-options="value.Name for value in filter.Values track by value.Id"></select>
+        <!--<input type="text" ng-model="filter.SelectedIds" name="{{filter.Name}}_hidden" />-->
+        <!--
+        <tagger tabindex="-1" name="{{filter.Name}}" disable-new ng-model="filter.SelectedItems" options="filter.Values" placeholder="Choose..." on-select="selected"></tagger>
+        -->
+    </span>
+</div>  

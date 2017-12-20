@@ -1,0 +1,2 @@
+﻿<%@ Control Language="vb" AutoEventWireup="false" CodeBehind="UC_TagsSelectorForCommunity.ascx.vb" Inherits="Comunita_OnLine.UC_TagsSelectorForCommunity" %>
+<select id="SLtags" runat="server" class="chzn-select" multiple></select>

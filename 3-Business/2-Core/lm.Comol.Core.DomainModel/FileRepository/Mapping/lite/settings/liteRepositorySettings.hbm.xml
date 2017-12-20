@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="lm.Comol.Core.DomainModel" namespace="lm.Comol.Core.FileRepository.Domain">
+	<class name="liteRepositorySettings" table="FR_Settings" lazy="false" optimistic-lock ="none" mutable="false">
+    <id name="Id" column="Id" type="Int64" unsaved-value="0">
+      <generator class="native"/>
+    </id>
+    <version name="TimeStamp" generated="always" unsaved-value="null" type="BinaryBlob">
+      <column name="_Timestamp" not-null="false" sql-type="timestamp"/>
+    </version>
+    <property name="Type" type="lm.Comol.Core.FileRepository.Domain.SettingsType,lm.Comol.Core.DomainModel" column="SettingsType" />
+    <property name="IdCommunityType" type="Int32" />
+    <property name="IdOrganization" type="Int32" />
+    <property name="IdCommunity" type="Int32" />
+    <property name="IdPerson" type="Int32" />
+    <property name="IdPersonType" type="Int32" />
+    <property name="AutoThumbnailForExtension" type="String" />
+    <property name="AutoThumbnailWidth" type="Int32" />
+    <property name="AutoThumbnailHeight" type="Int32" />
+    <component name="DiskSpace" class="lm.Comol.Core.FileRepository.Domain.DiskSettings" >
+      <property name="AvailableSpace" type="Int64"/>
+      <property name="AdditionalSpace" type="Int64"/>
+      <property name="MaxSpace" type="Int64"/>
+      <property name="MaxAdditionalSpace" type="Int64"/>
+      <property name="MaxUploadFileSize" type="Int64"/>
+      <property name="RepositoryOverflow" type="lm.Comol.Core.FileRepository.Domain.OverflowAction,lm.Comol.Core.DomainModel" />
+      <property name="UploadOverflow" type="lm.Comol.Core.FileRepository.Domain.OverflowAction,lm.Comol.Core.DomainModel" />
+    </component>
+    <property name="Customization" type="lm.Comol.Core.FileRepository.Domain.CustomizationLevel,lm.Comol.Core.DomainModel" />
+    <property name="AllowVersioning" type="Boolean" column="AllowVersioning"/>
+    <property name="DefaultView" type="lm.Comol.Core.FileRepository.Domain.PresetType,lm.Comol.Core.DomainModel" />
+    <bag name="Views" table="FR_ViewSettings" lazy="false" inverse="true" fetch="subselect" cascade="none" >
+      <key column="IdSettings"/>
+      <one-to-many class="lm.Comol.Core.FileRepository.Domain.liteViewSettings,lm.Comol.Core.DomainModel"/>
+    </bag>
+    <bag name="ItemTypes" table="FR_ItemTypeSettings" lazy="false" inverse="true" fetch="subselect" cascade="none">
+      <key column="IdSettings"/>
+      <one-to-many class="lm.Comol.Core.FileRepository.Domain.liteItemTypeSettings,lm.Comol.Core.DomainModel"/>
+    </bag>
+    <property name="Status" type="lm.Comol.Core.FileRepository.Domain.ItemStatus,lm.Comol.Core.DomainModel" />
+    <property name="Deleted" type="lm.Comol.Core.DomainModel.BaseStatusDeleted,lm.Comol.Core.DomainModel" column="_Deleted" />
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="lm.Comol.Core.DomainModel" namespace="lm.Comol.Core.Mail.Messages">
+	<class name="MailAttachment" table="ML_Attachment" lazy="false">
+    <id name="Id" column="Id" type="Int64" unsaved-value="0">
+      <generator class="native"/>
+    </id>
+    <many-to-one name="Message" class="lm.Comol.Core.Mail.Messages.MailMessage" column="IdMessage" foreign-key="IdMessage" cascade="none"  />
+    <many-to-one name="File" class="lm.Comol.Core.DomainModel.BaseCommunityFile" column="IdFile" foreign-key="IdFile" cascade="none" not-found="ignore" />
+    <many-to-one name="Link" class="lm.Comol.Core.DomainModel.ModuleLink" column="IdLink" foreign-key="IdLink" cascade="none" not-found="ignore"  />
+    
+    <property name="DirectFilename" type="String"/>
+    <property name="DirectFullname" type="String"/>
+    <property name="Type" type="lm.Comol.Core.Mail.Messages.MailAttachmentType,lm.Comol.Core.DomainModel" />
+    <property name="DisplayOrder" type="Int32"/>
+    <property name="Deleted" type="lm.Comol.Core.DomainModel.BaseStatusDeleted,lm.Comol.Core.DomainModel" column="_Deleted" />
+  </class>
+</hibernate-mapping>

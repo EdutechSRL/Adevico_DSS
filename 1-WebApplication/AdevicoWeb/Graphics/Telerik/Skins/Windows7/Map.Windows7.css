@@ -1,0 +1,72 @@
+/*$main-sprite: skin-image-url( "Common", "radActionsSprite.png" );
+$main-spriteIE6: skin-image-url( "Common", "radActionsSpriteIE6.png" );*/
+.RadMap_Windows7 {
+  font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  /* Additional styles */
+  /*Buttons*/
+  /* Markers */
+  /* Older IE Fix */ }
+  .RadMap_Windows7 .k-header, .RadMap_Windows7 .k-widget, .RadMap_Windows7 .k-popup {
+    color: #000000; }
+  .RadMap_Windows7 .k-widget, .RadMap_Windows7 .k-header {
+    border-color: #c2cedb; }
+  .RadMap_Windows7 .k-widget {
+    background-color: #ffffff; }
+  .RadMap_Windows7.k-widget.k-tooltip {
+    background-color: #c0cedf;
+    border-color: #c0cedf;
+    background-image: none, linear-gradient(to bottom, #eef4fb 0, #c0cedf 100%);
+    color: #1e395b; }
+  .RadMap_Windows7 .k-tooltip-button {
+    background-color: #0e3d4f; }
+  .RadMap_Windows7 .k-tooltip-button:hover {
+    background-color: #9bc9ff; }
+  .RadMap_Windows7 .k-i-close:before, .RadMap_Windows7 .k-i-close:hover:before {
+    color: #fff; }
+  .RadMap_Windows7 .k-callout-n {
+    border-bottom-color: #c0cedf; }
+  .RadMap_Windows7 .k-callout-e {
+    border-left-color: #c0cedf; }
+  .RadMap_Windows7 .k-callout-s {
+    border-top-color: #c0cedf; }
+  .RadMap_Windows7 .k-callout-w {
+    border-right-color: #c0cedf; }
+  .RadMap_Windows7 .k-header {
+    background-color: #e9f0f8;
+    background-image: none, linear-gradient(to bottom, #f5f8fa 0, #dee9f7 100%); }
+  .RadMap_Windows7 .k-button {
+    background-color: #dde7f5;
+    border-color: #c2cedb;
+    background-image: linear-gradient(#f4f8fa 0, #e9f2fb 50%, #dde7f5 50%, #dde8f7 100%);
+    color: #0e3d4f; }
+  .RadMap_Windows7 .k-button:hover {
+    background-color: #f7f8fb;
+    border-color: #c2dbfb;
+    background-image: linear-gradient(#fcfdfe 0, #f7f8fb 50%, #edf2f9 50%, #e6ecf5 100%);
+    color: #344c6b; }
+  .RadMap_Windows7 .k-button:active, .RadMap_Windows7 .k-button:focus {
+    background-color: #dde7f5;
+    border-color: #9bc9ff;
+    background-image: linear-gradient(#f4f7fa 0, #e9f2fb 50%, #dde7f5 50%, #dde8f7 100%);
+    color: #0e3d4f; }
+  .RadMap_Windows7 div.k-navigator > .k-button:hover {
+    background-image: none, linear-gradient(to bottom, #fcfdfd 0, #e9eef7 100%);
+    background-color: #f7f8fb;
+    border-color: #c2dbfb; }
+  .RadMap_Windows7 div.k-navigator > .k-button:active, .RadMap_Windows7 div.k-navigator > .k-button:focus {
+    background-image: none, linear-gradient(to bottom, #eef4fa 0, #d8e6f7 100%);
+    background-color: #dde7f5;
+    border-color: #9bc9ff; }
+  .RadMap_Windows7 div.k-navigator > .k-button .k-icon:before {
+    color: #0e3d4f; }
+  .RadMap_Windows7 div.k-navigator > .k-button:hover .k-icon:before {
+    color: #344c6b; }
+  .RadMap_Windows7 div.k-navigator > .k-button:active .k-icon:before, .RadMap_Windows7 div.k-navigator > .k-button:focus .k-icon:before {
+    color: #0e3d4f; }
+  .RadMap_Windows7 .k-marker:before {
+    color: #344c6b; }
+  @media \0screen\,screen\9 {
+    .RadMap_Windows7 .k-icon {
+      background-image: url('Common/radActionsSprite.png'); } }
+

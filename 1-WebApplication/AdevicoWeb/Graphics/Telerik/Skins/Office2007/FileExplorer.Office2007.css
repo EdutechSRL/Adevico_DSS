@@ -1,0 +1,39 @@
+/*========================================= Toolbar related CSS ========================*/
+.RadFileExplorer_Office2007 {
+  /* Overwrites padding for better presentation and space saving */
+  /* Thumbnail view */
+  /* Thumbnail filter */ }
+  .RadFileExplorer_Office2007 .RadToolBar .rtbText {
+    background-image: url('FileExplorer/FileExplorerToolbarSprites.png');
+    _background-image: url('FileExplorer/FileExplorerToolbarSpritesIE6.gif') !important;
+    background-repeat: no-repeat; }
+  .RadFileExplorer_Office2007,
+  .RadFileExplorer_Office2007 .rfeAddressBox,
+  .RadFileExplorer_Office2007 .rfeFilterTxt {
+    border-color: #abc1de; }
+  .RadFileExplorer_Office2007 div.selectedFileName {
+    border-top: 1px solid #abc1de; }
+  .RadFileExplorer_Office2007 .RadGrid .rgRow td,
+  .RadFileExplorer_Office2007 .RadGrid .rgAltRow td,
+  .RadFileExplorer_Office2007 .RadGrid .rgEditRow td,
+  .RadFileExplorer_Office2007 .RadGrid .rgFooter td {
+    padding-left: 8px;
+    padding-right: 8px; }
+  .RadFileExplorer_Office2007 .rfeThumbList a:hover,
+  .RadFileExplorer_Office2007 .rfeThumbList .rfeHoveredLink,
+  .RadFileExplorer_Office2007 .rfeThumbList .rfeSelectedLink,
+  .RadFileExplorer_Office2007 .rfeThumbList .rfeSelectedLink:hover {
+    background-image: url('../Common/Gradients/office2007_smoothSprite_20.png');
+    background-color: #ffe27b;
+    border-color: #305090; }
+  .RadFileExplorer_Office2007 .rfeThumbList .rfeSelectedLink,
+  .RadFileExplorer_Office2007 .rfeThumbList .rfeSelectedLink:hover {
+    background-color: #FCDB89; }
+  .RadFileExplorer_Office2007 .rfeFilterContainer {
+    background-image: url('../Common/Gradients/office2007_smoothSprite_20.png');
+    background-color: #ffffff; }
+  .RadFileExplorer_Office2007 .rfeDropZone {
+    background-color: rgba(222, 232, 245, 0.8); }
+  .RadFileExplorer_Office2007 .rfeDropUploadInfoPanel {
+    background-color: #ffffff;
+    color: #333333; }

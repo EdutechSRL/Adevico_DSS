@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Resource xmlns="urn:ComolTranslation">
+	<item name="LogoutMessage">Spiacenti, la sessione è scaduta.Dovrà effettuare nuovamente l'accesso al sistema.</item>
+	<item name="LB_Nome.text">Nome:</item>
+	<item name="LB_tipocomunita.text" disambiguation="singolare">Tipo Comunità:</item>
+	<item name="LBresponsabile_c.text">Responsabile:</item>
+	<item name="LBcreatore_c.text">Creatore:</item>
+	<item name="LBiscrizioni_t.text">Iscrizioni:</item>
+	<item name="LBiscrizioni.0">Iscrizione e de-iscrizione autonome.</item>
+	<item name="LBiscrizioni.1">Iscrizione autonoma, de-iscrizione non consentita.</item>
+	<item name="LBiscrizioni.2">Iscrizione non consentita, de-iscrizione autonoma.</item>
+	<item name="LBiscrizioni.3">Iscrizione e de-iscrizione non consentite.</item>
+	<item name="LBoverIscrizioni.0" disambiguation="relativo a iscrizione">Nessuna</item>
+	<item name="LBoverIscrizioni.1" disambiguation="relativo a iscrizione">Solo un'altra</item>
+	<item name="LBoverIscrizioni.2" disambiguation="relativo a iscrizione" placeholder="true" mustcontains="#%%#">Ulteriori #%%#</item>
+	<item name="LBmaxIscritti_c.text">N° Max iscritti:</item>
+	<item name="LBiscritti_c.text">N° iscritti:</item>
+	<item name="LB_isChiusa.text">Condizione:</item>
+	<item name="LB_apertura.text">Data apertura:</item>
+	<item name="LB_chiusura.text">Chiusura il:</item>
+	<item name="LB_inizioIscrizione.text">Inizio Iscrizione:</item>
+	<item name="LB_fineIscrizione.text">Fine:</item>
+	<item name="LB_codice.text" disambiguation="codice identificativo corso (universitario)">Codice Corso:</item>
+	<item name="LB_ore.text">N° Ore:</item>
+	<item name="LB_anno.text" disambiguation="A.A.=Anno accademico">A.A.:</item>
+	<item name="LB_periodo.text">Periodo:</item>
+	<item name="LB_prerequisiti.text">Prerequisiti:</item>
+	<item name="LB_obbiettivo.text">Obbiettivo:</item>
+	<item name="LB_crediti.text">Crediti:</item>
+	<item name="LB_descrizioneProgramma.text">Programma:</item>
+	<item name="LB_statuto.text">Statuto:</item>
+	<item name="LBtipoCorsoDiStudi_t.text" disambiguation="Cds=Corso di studi">Tipo Cds:</item>
+	<item name="LBisChiusa.True">Chiusa, si accede solo dopo conferma del responsabile.</item>
+	<item name="LBisChiusa.False">Aperta a tutti.</item>
+	<item name="nonDisponibile" disambiguation="n.d.=nessun dato">n.d.</item>
+	<item name="LBmaxIscritti.0">Illimitati</item>
+	<item name="LBiscritti.0">Nessun altro iscritto.</item>
+	<item name="LBiscritti.1" html="true" placeholder="true" mustcontains="#%%#">Iscritti alla comunità: #%%#, di cui:&lt;br&gt;</item>
+	<item name="LBmaxIscritti.1" placeholder="true" mustcontains="#%%#">#%%#&amp;nbsp;(limite superato di un'unità)</item>
+	<item name="LBmaxIscritti.2" placeholder="true" mustcontains="#%%#|%##%">#%%#&amp;nbsp;(limite superato di %##% iscritti)</item>
+	<item name="LBmaxIscritti.3" placeholder="true" mustcontains="#%%#">#%%#&amp;nbsp;(ancora un posto disponibile)</item>
+	<item name="LBmaxIscritti.4" placeholder="true" mustcontains="#%%#|%##%">#%%#&amp;nbsp;(ancora %##% posti disponibili)</item>
+	<item name="LBmaxIscritti.5" placeholder="true" mustcontains="#%%#">#%%#&amp;nbsp;(limite raggiunto)</item>
+	<item name="defaultRole">Ruolo di default con limite iscrizione</item>
+	<item name="Creata">Creata da:</item>
+	<item name="stato.True">Richiesta iscrizione DEVE essere validata.</item>
+	<item name="stato.False">Accesso consentito a tutti.</item>
+	<item name="stato.image.True" hidden="true" disambiguation="non tradurre">lucchetto_closed.gif</item>
+	<item name="stato.image.False" hidden="true" disambiguation="non tradurre">lucchetto_open.gif</item>
+	<item name="LBinfoIscrizione_t.text">Info Iscrizione:</item>
+	<item name="infoIscrizione">Iscrizione consentita se NON iscritti alle seguenti comunità:</item>
+	<item name="infoIscrizione.False">(Non Iscritto)</item>
+	<item name="infoIscrizione.True">(Iscritto)</item>
+	<item name="LBmodalitaEsame_t.text">Modalità Esame:</item>
+	<item name="LBtesti_t.text">Testi Adottati:</item>
+	<item name="ricevimento" placeholder="true" mustcontains="#riceve#">(Ricevimento: #riceve#).</item>
+	<item name="TABprincipale.Text">Info principali</item>
+	<item name="TABprincipale.ToolTip">Info principali</item>
+	<item name="TABdettagli.Text">Dettagli avanzati</item>
+	<item name="TABdettagli.ToolTip">Dettagli avanzati</item>
+	<item name="LBbloccata_t.text">Bloccata:</item>
+	<item name="LBarchiviata_t.text">Archiviata:</item>
+	<item name="bloccata">L'accesso alla comunità è stato bloccato per motivi amministrativi</item>
+	<item name="archiviata">Non è possibile iscriversi autonomamente a questa comunità</item>
+	<item name="LBaccessiSpeciali_t.Text">Accessi speciali:</item>
+	<item name="AccessoCopisteria.True">Accesso copisteria consentito</item>
+	<item name="AccessoCopisteria.False" html="true">Accesso copisteria &lt;b&gt;NON&lt;/b&gt; consentito</item>
+	<item name="AccessoLibero.True" html="true">, accesso dall'esterno &lt;b&gt;consentito&lt;/b&gt;.</item>
+	<item name="AccessoLibero.False">, accesso dall'esterno NON consentito.</item>
+  <item name="LBTitolo.text" disambiguation="singolare">Dettagli comunità</item>
+</Resource>

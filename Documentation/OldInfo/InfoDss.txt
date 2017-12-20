@@ -1,0 +1,38 @@
+Per attivare l'uso dei DSS è sufficente aggiungere nel file di configurazione dell'istanza una voce nell'area "ConfigurationPresenter",
+Ecco quanto inserire:
+ <ConfigurationPresenter>
+  .... elementi pre-esistenti.....
+  <AllowDssUse>True</AllowDssUse>
+
+  Nel DB sono presenti delle tabelle che vanno valorizzate, i dati sono stati presi dagli articoli scientifici del prof.Fedrizzi.
+  Le serie di valutazione sono "internazionali", con valori prefissati. Ovviamente serve un matematico per trovare
+  possibili altre serie + valori.
+  
+  Nel dettaglio:
+  
+  DSS_Method
+  Contiene tutti i metodi DSS supportati, i dati di questa tabella vanno considerati built-in e non modificati.
+  SE si parte da istanza vuota conviene usare i dati presenti direttamente nel DB di test, se l'istanza ha già un suo DB 
+  si consiglia di importare semplicemente il contenuto di questa e delle altre tabelle preservando gli id univoci.
+  
+  DSS_RatingSet
+  Contiene le scale di valore, ossia dei preset di valori che l'utente poi userà nel sistema.
+  I nomi presenti nella tabella sono quelli degli standard internazionali.
+  I recordo presenti in questa tabella vanno inseriti su esclusiva indicazione di un matematico, anche i nomi sono standard
+  quindi il supporto dell'esperto di dominio è indispensabile.
+
+  DSS_RatingValue
+  Data una scala di valori contiene tutti i valori di quella scala, i dati presenti sono basati sulla nomenclatura
+  internazionale. Data una scala ciascun valore ha un nome, un nome breve (predefinito), un valore numerico e/o un valore fuzzy.
+  Chiaramente i dati presenti nella tabella sono strettamente correlati con la scala di valori specifica e definiti a
+  livello internazionale.
+
+  DSS_Translation
+  Consente eventuali traduzioni dei metodi, scale di valori, valori.
+  Va usata solo ed esclusivamente per facilitare gli utenti meno esperti, in sostanza solo per i "Valori testuali" delle scale, più che per i metodi e le scale
+  in quanto questi ultimi sono prerogativa dei matematici che sanno ciò che fanno.
+  I valori "testuali" (es Low,Average,High,Very High,Medium) possono essere oggetto di internazionalizzazione,
+  basta inserire (dato un RatingValue) l'equivalente in Italiano, inglese, ecc.
+  Da tener presente che i valori, o pesi, hanno un significato specifico in inglese e non sempre vi è l'equivalente in italiano,
+  perciò anche per le traduzioni dei valori si consiglia un matematico come riferimento.
+  

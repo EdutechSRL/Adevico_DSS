@@ -1,0 +1,195 @@
+﻿/*IE7*/
+html {
+*overflow:auto;
+}
+td{
+font-size:11px;
+}
+table.contenitore td{
+padding: 0;
+border-spacing: 0;
+border-collapse: collapse;
+}
+table.contenitore td.menu{
+text-align: right;
+width: 900px;
+}
+td.menu div.menubutton{
+/*width: 900px;*/
+/*width:100%;*/
+}
+td.menu div.menubutton table.menutabraccolta,
+td.menu div.menubutton table.menutabgestione{
+width: 100%;
+}
+div.menubutton td.menuradtreeview{
+text-align:left;
+}
+div.menubutton td.menucrea{
+text-align: right;
+}
+div.menubutton td.menumanagefolder{
+vertical-align: middle;
+text-align:left;
+}
+/*IE7*/
+div.menubutton td.menumanagefolder span{
+*vertical-align:super;
+}
+table.contenitore td.content{
+text-align: left;
+}
+td.content td{
+padding: 1px;
+}
+td.content td.notpadded{
+padding:0;
+}
+td.content div.pnlpermessi{
+margin-top:15px;
+}
+div.pnlpermessi td.permessispazio{
+height: 50px;
+}
+td.content div.pnlcontenuto{
+margin-top:15px;
+}
+div.pnlcontenuto table.contentcontainer{
+width: 900px;
+}
+table.tabletab{
+margin-top:1px;
+border:1px solid #ccc;
+width:100%;
+}
+table.tbllistalink td.infospazio{
+width: 40px;
+}
+table.tblcrealink{
+width:600px;
+margin-top:15px; /*DISTANZA TRA BUTTON E TELERIK*/
+}
+
+table.uccontainerdettagli{
+width: 450px;
+}
+table.uccontainerdettagli td,
+table.uccontainerdettagli th{
+padding: 5px;
+}
+table.uccontainerdettagli td.infotitle{
+width: 100px;
+}
+table.uccontainerdettagli td.infotext{
+width:400px;
+}
+table.uccontainergestione table.eliminainfo{
+width:500px;
+}
+table.eliminainfo td.eliminaspazio{
+height: 30px;
+}
+table.uccontainercrea{
+border: 1px solid #ccc;
+width:100%;
+}
+table.uccontainercrea table.tblmodifica{
+width: 100%;
+}
+table.uccontainercrea td.padded{
+padding-left:5px;
+}
+table.tblmodifica td.titolo{
+text-align: center;
+}
+
+table.uccontainerdettagli span.Bookmark_Testo
+table.uccontainerdettagli span.Bookmark_TestoInfo{
+display: inline-block;
+width: 400px;
+}
+table.uccontainerdettagli tr td {
+word-wrap: break-word;
+word-break: break-all;
+}
+table.tblmodifica select.Testo_campoSmall{
+    width:150px;
+    word-wrap:normal;
+   }
+
+table.contenitore input[type="checkbox"],
+table.contenitore input[type="radio"]{
+margin:3px 3px 3px 4px;
+*margin:auto; /*IE7*/
+vertical-align:middle;
+}
+ 
+table.uccontainerimporta,
+table.uccontaineresporta,
+table.uccontainergestione{
+width: 100%;
+}
+table.uccontaineresporta div.pnlesporta,
+table.uccontaineresporta table.pnlesportainner{
+width: 100%;
+}
+table.uccontainerimporta td;
+table.uccontaineresporta td{
+text-align: left;
+}
+div.pnlimporta td.toggletreeview{
+font-size: 10px;
+}
+div.radtreeviewcontainer{
+position: absolute;
+visibility: hidden;
+border: 1px solid #ccc;
+width: 400px;
+background: white;
+height: 250px;
+z-index: 1000;
+}
+img.toggletreeviewicon{
+margin-left: -3px;
+}
+td.avviso{
+text-align: center;
+}
+.centered{
+margin-left: auto;
+margin-right: auto;
+}
+table.tbllistalink td.top.dettagli,
+table.uccontainergestione td.top.infogestione{
+border-left:1px solid #ccc;
+width:500px;
+*height:100px;/*IE7*/
+}
+table.uccontainergestione{
+border-collapse:separate;
+*border-collapse:collapse;/*IE7*/
+}
+
+table.contentcontainer td.teleriklinkcomunita{
+padding-left:0;
+}
+
+table.uccontainerimporta .TreeNodeSelect,
+table.uccontainerimporta .TreeNode,
+table.uccontainerimporta .TreeNodeOver,
+table.uccontaineresporta .TreeNodeSelect,
+table.uccontaineresporta .TreeNode,
+table.uccontaineresporta .TreeNodeOver,
+table.uccontainergestione .TreeNodeSelect,
+table.uccontainergestione .TreeNode,
+table.uccontainergestione .TreeNodeOver,
+table.uccontainercrea label,
+table.uccontainerimporta label{
+vertical-align:middle;
+*vertical-align:auto; /*IE7*/
+}
+
+/*ATTENZIONE*/
+/*Ho modificato (prima era width="250") la width dei radtreeview delle pagine Link_Personali e
+    LinkComunita e UCGestioneBookmark e UCGestioneLink*/
+/*ATTENZIONE*/

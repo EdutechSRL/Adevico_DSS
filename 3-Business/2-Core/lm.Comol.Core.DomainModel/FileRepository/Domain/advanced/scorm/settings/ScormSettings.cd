@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="lm.Comol.Core.FileRepository.Domain.ScormSettings.ScormItemSettings">
+    <Position X="9.25" Y="0.75" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAEEEAAAAAMAAAEAABACAAIAgAgAAABAA=</HashCode>
+      <FileName>FileRepository\Domain\advanced\scorm\settings\ScormItemSettings.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="lm.Comol.Core.FileRepository.Domain.ScormSettings.ScormOrganizationSettings">
+    <Position X="5.5" Y="0.75" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAACAQAAAAAAGEAAAAAAABAAAQgAAAAAAAAAACAAAAA=</HashCode>
+      <FileName>FileRepository\Domain\advanced\scorm\settings\ScormOrganizationSettings.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Items" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="lm.Comol.Core.FileRepository.Domain.ScormSettings.ScormPackageSettings">
+    <Position X="1.25" Y="0.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AQAEEIIQAAAAQAFAAAoAIBAAEAABAAAAIBABAAAABAA=</HashCode>
+      <FileName>FileRepository\Domain\advanced\scorm\settings\ScormPackageSettings.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="EvaluationType" />
+      <Property Name="Repository" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="Organizations" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="lm.Comol.Core.FileRepository.Domain.RepositoryIdentifier">
+    <Position X="3.5" Y="5.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAQIAAAAAAAA=</HashCode>
+      <FileName>FileRepository\Domain\base\RepositoryIdentifier.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="lm.Comol.Core.FileRepository.Domain.ScormSettings.EvaluationType">
+    <Position X="6.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAQAAAAABAAAAAAAAAAAAAAAAACAAAAAAAA=</HashCode>
+      <FileName>FileRepository\Domain\advanced\scorm\settings\EvaluationType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -1,0 +1,247 @@
+body {}
+
+div.DVmenu, div.dv_item_menu {width: 100%; text-align: right;}
+
+div#SkinManagement div.edit_content { border: 1px solid black; border-top: 0; padding: 1em; }
+
+div#SkinManagement div.buttons
+{
+	display: block;
+	padding: 1em;
+	text-align:left;
+	width: 100%;
+	min-width: 100%;
+}
+	
+div#SkinManagement div.tab
+{   display: block;
+	margin: 10px 0px 0px 0px;
+	padding: 0;
+	width: 100%;
+	height: 20px;
+}
+
+
+
+table.SkinTable
+{
+	width: 100%;
+	border: 1px solid black;
+	margin: auto;
+	margin-top: 1em;
+	}
+	
+table.SkinTable td
+{
+	border: 1px solid black;
+	padding: 1em;
+	margin: 0;
+} 
+
+table.SkinTable td.Commands { width:70px; }
+	
+table.SkinTable td.Name {}
+
+table.SkinTable td.Shares { width: 540px; }
+
+table.SkinTable td span.Portal { font-weight: bold; }
+
+table.SkinTable td span.Organization  
+{
+	background-color: #f0f0f0;
+	display: block; }
+
+table.SkinTable td span.Community { }
+
+table.SkinTable td ul.trecol
+{
+	padding-left: 0px;
+	width: 540px;
+	min-width: 540px;
+	max-width: 540px;
+}
+	
+table.SkinTable td ul.trecol li
+{
+	display: inline-block;
+	width: 265px;
+	min-width: 265px;
+	max-width: 540px;
+	
+}
+
+a.Delete
+{
+	line-height: 999px !important;
+overflow: hidden;
+font-size: 0;
+
+	width:16px;
+	display:inline-block;
+	height:16px;
+	background-image:url("./../../images/DefaultCommand/delete16.png");
+	background-repeat:no-repeat;
+}
+
+a.Edit
+{
+   line-height: 999px !important;
+overflow: hidden;
+font-size: 0;
+
+	width:16px;
+	display:inline-block;
+	height:16px;
+	background-image:url("./../../images/DefaultCommand/edit16.png");
+	background-repeat:no-repeat;
+}
+
+a.DeleteSmall
+{
+	line-height: 999px !important;
+overflow: hidden;
+font-size: 0;
+
+	width:13px; height:13px;
+	display:inline-block;
+	background-image:url("./../../images/DefaultCommand/delete13.png");
+	background-repeat:no-repeat;
+}
+
+a.Copy
+{
+	line-height: 999px !important;
+overflow: hidden;
+font-size: 0;
+
+	width:16px; height:16px;
+	display:inline-block;
+	background-image:url("./../../images/DefaultCommand/copy16.png");
+	background-repeat:no-repeat;
+	}
+	
+div.FullCenter
+{
+	width: 100%;
+	text-align: center;
+	}
+	
+div#Content div.Data
+{
+	padding: 1em;
+	}
+	
+div#Content div.Data span.Titolo_Campo
+{
+	display: inline-block;
+	width: 170px;
+	}
+	
+div#Content div.Data input
+{
+	margin-left: 170px;
+}
+
+div#Content div.DataSmall span.Titolo_Campo
+{
+	width: 100px;
+	display: inline-block;
+	padding-bottom: 1em;
+	}
+	
+span.NoImages
+{
+	display: block;
+	padding-bottom: 5em;
+	padding-top: 5em;
+}
+
+span.LoadImage
+{
+	display: block;
+	padding-top: 1em;
+	}
+	
+	/* ASSOCIAZIONI */
+	div.Association div.FixedCol
+	{
+		width: 460px;
+		min-width: 460px;
+		max-width: 460px;
+		
+		display: block;
+		float:left; 
+		}
+		
+	div.Association div.FixedSize
+	{
+		overflow: scroll;
+		min-height: 200px;
+		max-height: 400px;
+	}
+	div.Association ul.UL_Orgn
+	{
+		list-style-type: none;
+		}
+		
+	div.Association ul.UL_Orgn li
+	{
+		padding-bottom: 5px;
+		}
+		
+	div.Association ul.UL_Orgn a
+	{
+		font-size: small;
+		padding-left: 2em;
+		}
+	
+	span.NoData
+	{
+		display: block;
+		font-weight: bold;
+		padding: 5em;
+	}
+	
+div.DIV_MP_Content div#SkinManagement div.test span.Titolo_Campo
+	{
+		display: inline-block;
+		width: 135px;
+	}
+	
+div.DIV_MP_Content div#SkinManagement div.test a.Link_Menu
+	{
+		width: 110px;
+		margin: 0 0px 20px 0;
+		text-align: center;
+		}
+		
+div.DataSmall { vertical-align: top;}
+div.DataSmall div.data_field { display: inline-block; width: 49%; vertical-align: top;}
+
+div.DataSmall div.img_command { text-align: right; }
+div.DataSmall div.img_lang {  }
+div#Content div.DataSmall div.img_lang span { width: auto; }
+div.DataSmall div.img_command {  }
+
+
+div.footer_logos,div.footer_logos div.data_field .DeleteSmall { vertical-align:top; }
+div.footer_logos div.img_lang, div.footer_logos div.img_command { padding-top: 0.5em; padding-bottom: 0.5em; }
+
+div.footer_logos div.img_command { width: 150px; }
+div.footer_logos div.img_lang { width: 730px; }
+div.footer_logos div.img_lang span { vertical-align:middle;  }
+div#Content div.img_data span.Titolo_Campo { width: 150px; padding-top: 0.2em;} /* padding-bottom:0;}*/
+
+
+div#Content div.footer_logos div.img_lang span.Testo_Campo { display:inline-block; padding-top: 0em; width: 600px; text-align: justify; }
+div#Content div.footer_logos div.img_lang span.Titolo_campo { padding:0; width: 125px;}
+div#Content div.footer_logos div.img_lang span.Testo_Campo label { display:inline-block; width: auto; padding-right: 1.5em;}
+/*div.footer_logos div.img_lang ul li { display:inline-block; width: 19%; }*/
+
+
+div.footer_text_info, div.footer_text_button { width: 49%; display: inline-block;}
+div.footer_text_button { float: right; text-align: right;}
+div.footer_text_editor { clear: both; }
+
+/* ADD 01/04/2015 */
+/*div.data_field.img_override { display: inline-block; width: 100%!important;}*/

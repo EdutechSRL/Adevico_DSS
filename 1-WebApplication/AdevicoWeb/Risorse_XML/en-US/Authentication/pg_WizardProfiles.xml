@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="urn:ComolTranslation">
+  <item name="TipoAutenticazione.1" html="false" placeholder="false">Adevico</item>
+  <item name="TipoAutenticazione.2" html="false" placeholder="false">LDAP</item>
+  <item name="TipoAutenticazione.3" html="false" placeholder="false">IOP</item>
+  <item name="mail.infoSubject" html="false" placeholder="false">Notify registration</item>
+  <item name="mail.infoSubject_Bloccata" html="false" placeholder="false">Notify registration and activation </item>
+  <item name="mail.infoBody" html="true" placeholder="true" mustcontains="#Link2#">Platfrom registration successfully performed.&lt;br&gt;&lt;br&gt;To access the system use this link: #Link2# &lt;br&gt;The data that you entered are:</item>
+  <item name="mail.infoBody_Bloccata" html="true" placeholder="true" mustcontains="#Link1#|#Link2#">Iscrizione alla piattaforma avvenuta correttamente.&lt;br&gt;&lt;br&gt;ATTIVARE la propria iscrizione con un semplice clic sull'indirizzo seguente (oppure copiarlo nella barra degli indirizzi di un browser): #Link1# (l'indirizzo deve stare su una sola riga)&lt;br&gt;&lt;br&gt;Dopo aver attivato il suo account potrà accedere al sistema dal seguente link: #Link2# &lt;br&gt;I dati da te inseriti sono:</item>
+  <item name="DescriptionAuthentication.1" html="false" placeholder="false">Internal to the platform</item>
+  <item name="DescriptionAuthentication.2" html="false" placeholder="false">The same as LDAP</item>
+  <item name="DescriptionAuthentication.3" html="false" placeholder="false">ONLY from "Io Provincia" site</item>
+  <item name="LBcompleteInfo.text" html="false" placeholder="false">Questo è lo step finale del processo di creazione, qui sotto sono riassunti i dati del profilo che si sta per creare. Per completare la procedura è sufficiente premere sul pulsante "Crea" posto in basso a destra.</item>
+  <item name="LBlogin_t.text" html="false" placeholder="false">Login:</item>
+  <item name="LBauthenticationType_t.text" html="false" placeholder="false">Authentication type:</item>
+  <item name="LBuserType_t.text" html="false" placeholder="false">Profile type:</item>
+  <item name="LBnome_t.text" html="false" placeholder="false">Name:</item>
+  <item name="LBcognome_t.text" html="false" placeholder="false">Surname:</item>
+  <item name="LBtaxCode_t.text" html="false" placeholder="false">Tax code:</item>
+  <item name="LBlingua_t.text" html="false" placeholder="false">Language:</item>
+  <item name="LBmail_t.text" html="false" placeholder="false">Mail:</item>
+  <item name="LBmatricola_t.text" html="false" placeholder="false">Matriculation number:</item>
+  <item name="LBimmatricolazione_t.text" html="false" placeholder="false">matriculated on:</item>
+  <item name="LBcodice_t.text" html="false" placeholder="false">Code:</item>
+  <item name="LBqualifica_t.text" disambiguation="qualifica=qualifica docenza universitaria" html="false" placeholder="false">Qualification :</item>
+  <item name="LBfascia_t.text" disambiguation="fascia=fascia docenza universitaria" html="false" placeholder="false">Slot:</item>
+  <item name="LBregime_t.text" disambiguation="regime=regime docenza universitaria" html="false" placeholder="false">Regimen:</item>
+  <item name="LBtipoDocente_t.text" html="false" placeholder="false">Type:</item>
+  <item name="LBricevimento_t.text" html="false" placeholder="false">Consultation hours:</item>
+  <item name="LBistitutoSTU_t.text" html="false" placeholder="false">Institute:</item>
+  <item name="LBclasseSezione_t.text" disambiguation="riferito alle scuole superiori" html="false" placeholder="false">Class and section:</item>
+  <item name="LBistituto_t.text" html="false" placeholder="false">Institute:</item>
+  <item name="LBmatters_t.text" html="false" placeholder="false">Subjects:</item>
+  <item name="LBphd_t.text" html="false" placeholder="false">Doctor's degree in:</item>
+  <item name="LBexternalUser_t.text" html="false" placeholder="false">Registration reason / job performed:</item>
+  <item name="LBtechnician_t.text" html="false" placeholder="false">Area/function:</item>
+  <item name="LBorganizationInfo_t.text" html="false" placeholder="false">Organization:</item>
+  <item name="LBotherOrganizations_t.text" html="false" placeholder="false">Other organizations:</item>
+  <item name="LBsendNotification_t.text" html="false" placeholder="false">Notification mail:</item>
+  <item name="CBXnotify.text" html="false" placeholder="false" />
+  <item name="LBuserInfo.text" html="false" placeholder="false">For the user:</item>
+  <item name="LBorganizationInfo.text" html="false" placeholder="false">For this organization:</item>
+  <item name="WaitingStudentID" html="false" placeholder="false">Waiting for Matriculation</item>
+  <item name="LBpwd.text" html="false" placeholder="false">Password:</item>
+  <item name="LBconfirmpwd.text" html="false" placeholder="false">Confirm password:</item>
+  <item name="LBlingua_t.text" html="false" placeholder="false">Lingua:</item>
+  <item name="LBmail_t.text" html="false" placeholder="false">Mail:</item>
+  <item name="CBXshowMail.text" html="false" placeholder="false" />
+  <item name="LBmostraMail.text" html="false" placeholder="false">Show</item>
+  <item name="LBmailInfo.text" html="false" placeholder="false">If the option is enabled, the profile mail address will be visible to all the community users.</item>
+  <item name="LBsubscribeTo.text" html="false" placeholder="false">Enroll in:</item>
+  <item name="LBsubscribeToDefault.text" html="false" placeholder="false">Default organization:</item>
+  <item name="LBsubscribeToAlso.text" html="false" placeholder="false">Enroll also in:</item>
+  <item name="ErroreLDAP.2" html="false" placeholder="false">Connection to LDAP server failed, impossible to register the user</item>
+  <item name="ErroreLDAP.1" html="false" placeholder="false">Connection to LDAP server failed, impossible to register the user</item>
+  <item name="ErroreLDAP.4" html="false" placeholder="false">User authentication failed, impossible to register the user</item>
+  <item name="ErroreLDAP.3" html="false" placeholder="false">Entered login is not registered on LDAP, impossible to register the user</item>
+  <item name="erroreLDAP.-1" html="false" placeholder="false">LDAP registration currently not available</item>
+  <item name="LBdisclaimerTitle.text" html="false" placeholder="false">System registration</item>
+  <item name="LBdisclaimerInfo_t.text" html="false" placeholder="false">Istruzioni per completare il processo di registrazione</item>
+  <item name="LBdisclaimerInfo.text" html="false" placeholder="false">Per completare il processo di registrazione devi selezionare il tuo profilo utente, indicare l'organizzazione di cui farai parte nel sistema, indicare il tipo di autenticazione desiderato ed infine indicare alcune informazioni utili per l'identificazione nel sistema (nome, email, etc.)</item>
+  <item name="LBdisclaimerInfoAutoLogon.text" html="false" placeholder="false">Attualmente nel sistema non esiste un profilo per il suo account, La preghiamo gentilmente di completare il processo di profilazione. In particolare deve selezionare il tipo di profilo, l'organizzazione di cui fa parte, ed infine indicare alcune informazioni utili per l'identificazione nel sistema (nome, email, etc.)</item>
+  <item name="LBdisclaimerLanguage_t.text" html="false" placeholder="false">Select your language:</item>
+  <item name="LBsubscribeToInfo.text" html="false" placeholder="false">Select the organization to which you belong:</item>
+  <item name="HYPreturnToHome.text" html="false" placeholder="false">Back to homepage</item>
+  <item name="HYPreturnToHome.ToolTip" html="false" placeholder="false">Back to homepage</item>
+  <item name="HYPreturnToHome.status" html="false" placeholder="false">Back to homepage</item>
+  <item name="HYPreturnToList.text" html="false" placeholder="false">Back to homepage</item>
+  <item name="HYPreturnToList.ToolTip" html="false" placeholder="false">Back to homepage</item>
+  <item name="HYPreturnToList.status" html="false" placeholder="false">Back to homepage</item>
+  <item name="LBprofileInfo.text" html="false" placeholder="false">Select the profile type you want to create:</item>
+  <item name="StartNextButton.text" html="false" placeholder="false">Next</item>
+  <item name="StartNextButton.ToolTip" html="false" placeholder="false">Go to next step</item>
+  <item name="StepNextButton.text" html="false" placeholder="false">Next</item>
+  <item name="StepNextButton.ToolTip" html="false" placeholder="false">Go to next step</item>
+  <item name="StepPreviousButton.text" html="false" placeholder="false">Back</item>
+  <item name="StepPreviousButton.ToolTip" html="false" placeholder="false">Back to previous step.</item>
+  <item name="FinishPreviousButton.text" html="false" placeholder="false">Back</item>
+  <item name="FinishPreviousButton.ToolTip" html="false" placeholder="false">Back to previous step.</item>
+  <item name="FinishButton.text" html="false" placeholder="false">Create</item>
+  <item name="FinishButton.ToolTip" html="false" placeholder="false">Create user profile</item>
+  <item name="LBselectOrganization.text" html="false" placeholder="false">STEP 2 - Select organization</item>
+  <item name="LBselectUserType.text" html="false" placeholder="false">STEP 3 - Select the profile's type</item>
+  <item name="LBauthenticationType.text" html="false" placeholder="false">STEP 4 - Select type of authentication</item>
+  <item name="LBbaseUserInfo.text" html="false" placeholder="true" mustcontains="{0}">STEP {0} - User info</item>
+  <item name="LBdetailedUserInfo.text" html="false" placeholder="true" mustcontains="{0}">STEP {0} - Advanced details</item>
+  <item name="LBsummary.text" html="false" placeholder="false">FINAL STEP  - Confirm data and create</item>
+  <item name="ErroreRegistrazione.1" html="false" placeholder="false">Insertion correctly performed</item>
+  <item name="ErroreRegistrazione.-1" html="false" placeholder="false">Login already assigned to another user</item>
+  <item name="ErroreRegistrazione.-2" html="false" placeholder="false">Tax code already assigned to another user</item>
+  <item name="ErroreRegistrazione.-3" html="false" placeholder="false">The main mail address has been assigned to another user.</item>
+  <item name="ErroreRegistrazione.-4" html="false" placeholder="false">Insertion performed, notification mail was not sent.</item>
+  <item name="ErroreRegistrazione.-11" html="false" placeholder="false">The secondary email address is already present in the system.</item>
+  <item name="ErroreRegistrazione.-5" html="false" placeholder="false">Insertion failed, please contact a system administrator.</item>
+  <item name="ErroreRegistrazione.-6" html="false" placeholder="false">Insertion failed, please contact a system administrator.</item>
+  <item name="ErroreRegistrazione.-7" html="false" placeholder="false">Insertion failed, please contact a system administrator.</item>
+  <item name="ErroreRegistrazione.-8" html="false" placeholder="false">Insertion failed, you seem to be already rgistered, if it is not so, please contact an administrator.</item>
+  <item name="ErroreRegistrazione.-10" html="true" placeholder="true" mustcontains="%mailAdress%|%mailSubject%">Insertion failed, the entered matricula is already present in the system. For more information, please contact the administrator at the following address: &lt;a href="mailto:%mailAdress%?Subject=%mailSubject%" class="1"&gt;%mailAdress%&lt;/a&gt;.</item>
+  <item name="ErroreRegistrazione.100" html="true" placeholder="false">Insertion correctly performed&lt;br&gt;Click below to login</item>
+  <item name="ErroreRegistrazione.101" html="true" placeholder="false">Insertion successfully performed.The student will have to wait for the faculty manager 's confirmation to access the community.&lt;br&gt;Click below to log into the system</item>
+  <item name="ErroreRegistrazione.2" html="false" placeholder="false">Insertion correctly performed, your account is enable and yuo can access the system.</item>
+  <item name="ErroreRegistrazione.5" html="true" placeholder="false">Registration completed, your account will be activated by the activation mail that has been sent to the email address you entered when subscribing.&lt;br&gt;Mail delivering time will depends on your mail provider.</item>
+  <item name="ErroreRegistrazione.6" html="true" placeholder="false">Registration completed, your account will be activated by the activation mail that has been sent to the email address you entered when subscribing.&lt;br&gt;Mail delivering time will depends on your mail provider.&lt;br&gt;The access to the system must first be evaluated and enabled by the administrator of the organization you are enrolling in.</item>
+  <item name="BTNclose.text" html="false" placeholder="false">Close</item>
+  <item name="BTNclose.ToolTip" html="false" placeholder="false">Close this error message</item>
+  <item name="BTNclose.status" html="false" placeholder="false">Close this error message</item>
+</Resource>

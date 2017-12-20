@@ -1,0 +1,116 @@
+.RadNotification {
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  word-wrap: break-word;
+  z-index: 9001;
+  /* Titlebar */
+  /* Titlebar commands */
+  /* Content */
+  /* Right to left support */
+  /* We need it because of IE9 */ }
+  .RadNotification.rnRoundedCorners {
+    border-radius: 5px; }
+  .RadNotification .rnTitleBar {
+    height: 24px;
+    background-repeat: repeat-x;
+    background-position: 0 0;
+    margin: 0;
+    padding: 0 4px;
+    border-radius: 5px 5px 0 0; }
+  .RadNotification .rnTitleBarIcon {
+    display: block;
+    float: left;
+    width: 16px;
+    height: 16px;
+    margin: 4px 4px 0 0;
+    overflow: hidden; }
+  .RadNotification .rnTitleBarTitle {
+    display: block;
+    float: left;
+    width: 70%;
+    height: 24px;
+    line-height: 24px;
+    overflow: hidden; }
+  .RadNotification .rnCommands {
+    width: auto;
+    height: 19px;
+    line-height: 19px;
+    float: right;
+    list-style: none;
+    margin: 3px 0 0 0;
+    padding: 0; }
+  .RadNotification .rnCommands li {
+    float: left; }
+  .RadNotification .rnCommands a {
+    display: block;
+    width: 19px;
+    height: 19px; }
+  .RadNotification .rnCommands .rnMenuIcon a {
+    background-position: 0 -27px; }
+  .RadNotification .rnCommands .rnMenuIcon a:hover {
+    background-position: 21px -27px; }
+  .RadNotification .rnCommands .rnCloseIcon a {
+    background-position: 0 -47px; }
+  .RadNotification .rnCommands .rnCloseIcon a:hover {
+    background-position: 21px -47px; }
+  .RadNotification .rnCommands a .rnAccessibility {
+    display: none; }
+  .RadNotification div.rnNoTitleBar .rnContentWrapper {
+    border-top: 0; }
+  .RadNotification .rnContentWrapper {
+    padding: 5px;
+    border: 0; }
+  .RadNotification .rnContentIconClipIn {
+    position: relative;
+    float: left;
+    margin: -2px 0 -34px 15px;
+    width: 32px;
+    height: 32px;
+    *margin: 15px 0 -35px 0;
+    _margin: -2px 0 -34px 16px; }
+  .RadNotification .rnContentIconClip {
+    position: absolute;
+    top: -1px;
+    clip: rect(16px 32px 48px 0); }
+  * + html .RadNotification .rnContentIconClip {
+    top: -18px;
+    right: -18px; }
+  .RadNotification .rnContentIconClipIn .rnCustomIcon {
+    clip: auto;
+    margin-top: 12px;
+    *cliptop: 0;
+    _top: 0; }
+  .RadNotification .rnContent {
+    padding: 12px 20px 20px 67px; }
+  .RadNotification .rnContentTemplate,
+  .RadNotification div.rnNoContentIcon .rnContent {
+    padding: 0; }
+  .RadNotification.rnRtl .rnCommands li, .RadNotification.rnRtl .rnTitleBarIcon, .RadNotification.rnRtl .rnTitleBarTitle, .RadNotification.rnRtl .rnContentIconClipIn {
+    float: right; }
+  .RadNotification.rnRtl .rnTitleBarTitle {
+    padding-right: 4px; }
+  .RadNotification.rnRtl .rnCommands {
+    float: left;
+    margin-left: -4;
+    *margin-top: 4px;
+    *margin-right: 55px;
+    _margin-right: 45px;
+    *width: 40px; }
+  .RadNotification.rnRtl .rnTitleBarIcon {
+    direction: ltr;
+    margin: 4px 0 0 0; }
+  .RadNotification.rnRtl .rnContent {
+    padding: 12px 67px 20px 20px; }
+  .RadNotification.rnRtl .rnContentIconClipIn {
+    margin: -2px 15px -34px 0;
+    *margin: 15px 30px -35px 0;
+    _margin: -2px 7px -34px 0;
+    *position: fixed; }
+  .RadNotification.rnRtl .rnContentIconClipIn .rnCustomIcon {
+    _cliptop: 0;
+    _top: 16px; }
+  .RadNotification.rnRtl .rnContentIconClip {
+    _margin-top: 25px; }
+

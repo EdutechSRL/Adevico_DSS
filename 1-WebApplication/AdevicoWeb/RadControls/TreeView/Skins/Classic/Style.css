@@ -1,0 +1,107 @@
+.TreeNode 
+{ 
+	font-family: Tahoma;
+	font-size: 8pt; 
+	color: black;	
+	padding-left: 3px;
+	text-decoration: none;	
+}
+
+.TreeNodeOver 
+{
+	font-family: Tahoma;
+	font-size: 8pt;
+	color: black;
+	text-decoration: underline; 
+	cursor: pointer;
+	cursor: hand;
+	padding-left: 3px;	
+}
+
+.TreeNodeSelect 
+{     
+	font-family: Tahoma; 
+	font-size: 8pt; 
+	color: white; 
+	background: #316AC5; 	
+    cursor: pointer;
+	cursor: hand;
+	margin-left: 3px;
+}
+
+.TreeNodeDisabled
+{ 
+	font-family: Tahoma;
+	font-size: 8pt; 
+	color: gray;	
+	padding-left: 3px;
+	text-decoration: none;
+	cursor: default;
+}
+
+.TreeNodeEdit 
+{
+  border:1px gray solid;
+  font-family: tahoma; 
+  font-size: 8pt;
+  margin-left: 4px;  
+}
+
+.LoadingMessage
+{
+	font-family: Tahoma; 
+	font-size: 8pt; 
+	background:LemonChiffon; 
+	border: solid 1px;
+	padding: 2px;
+}
+
+.LoadingMessageBlue
+{
+	font-family: Tahoma; 
+	font-size: 8pt; 
+	color: Blue;
+	padding: 2px;
+}
+
+
+.TreeContextItem
+{ 
+	font-family: Arial;
+	font-size:10px;
+	cursor: pointer;
+	cursor: hand;
+	padding-left:4px;
+	height:24px;
+	background-color:#fdfdfd;
+	background-image:url(contextMenu.gif); 
+	background-repeat:repeat-y;
+	width:100%; 
+	text-align: left;
+	border-bottom: solid 1px #e3e3e3;
+}
+ 
+.TreeContextItemOver
+{
+	font-family: Arial;
+	font-size:10px;
+	cursor: pointer;
+	cursor: hand;
+	padding-left:4px;
+	height:24px;
+	background-color:#f3f3f3;
+	background-image:url(contextMenu.gif); 
+	background-repeat:repeat-y;
+	width:100%; 
+	text-align: left;
+	border-bottom: solid 1px #d4d4d4;
+}
+ 
+.TreeNodeEdit 
+{
+	border:1px gray solid;
+	font-family: tahoma; 
+	font-size: 8pt;
+	margin-left: 3px;  
+	text-align: left;
+}

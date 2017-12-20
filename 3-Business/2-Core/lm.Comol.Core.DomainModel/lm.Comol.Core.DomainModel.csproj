@@ -1,0 +1,1337 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9B7DA676-5030-47CD-8B2B-A30A09C8D0B5}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>lm.Comol.Core.DomainModel</RootNamespace>
+    <AssemblyName>lm.Comol.Core.DomainModel</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\lm.Comol.Core.DomainModel.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.1.0.39271, Culture=neutral, PublicKeyToken=3a9cab8f8d22bfb7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\9-AdevicoMIT_Library\lm.Comol.MitLibrary\External\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Core, Version=1.1.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\9-AdevicoMIT_Library\lm.Comol.MitLibrary\External\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.DynamicProxy2, Version=2.1.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\9-AdevicoMIT_Library\lm.Comol.MitLibrary\External\Castle.DynamicProxy2.dll</HintPath>
+    </Reference>
+    <Reference Include="CsvHelper, Version=2.0.0.0, Culture=neutral, PublicKeyToken=8c4959082be5c823, processorArchitecture=MSIL">
+      <HintPath>..\..\..\Solution\packages\CsvHelper.2.16.1.0\lib\net40\CsvHelper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="HtmlAgilityPack, Version=1.4.9.5, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <HintPath>..\..\..\Solution\packages\HtmlAgilityPack.1.4.9.5\lib\Net40\HtmlAgilityPack.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Iesi.Collections, Version=1.0.1.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\9-AdevicoMIT_Library\lm.Comol.MitLibrary\External\Iesi.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=3.1.6.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\9-AdevicoMIT_Library\lm.Comol.MitLibrary\External\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp5, Version=5.3.2.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\9-AdevicoMIT_Library\lm.Comol.MitLibrary\External\itextsharp5.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\..\..\9-AdevicoMIT_Library\lm.Comol.MitLibrary\External\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate, Version=2.1.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\9-AdevicoMIT_Library\lm.Comol.MitLibrary\External\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate.ByteCode.Castle, Version=2.1.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\9-AdevicoMIT_Library\lm.Comol.MitLibrary\External\NHibernate.ByteCode.Castle.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate.Linq, Version=1.0.0.4000, Culture=neutral, PublicKeyToken=444cf6a87fdab271, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\9-AdevicoMIT_Library\lm.Comol.MitLibrary\External\NHibernate.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Authentication\Business\UrlMacAuthenticationService.cs" />
+    <Compile Include="Authentication\Business\UrlAuthenticationService.cs" />
+    <Compile Include="Authentication\dto\dtoMacUrlToken.cs" />
+    <Compile Include="Authentication\dto\dtoMacUrlUserAttribute.cs" />
+    <Compile Include="Authentication\dto\dtoMacUrlProviderIdentifier.cs" />
+    <Compile Include="Authentication\Generic\lite\liteGenericEncryption.cs" />
+    <Compile Include="Authentication\Helpers\ValidationHelpers.cs" />
+    <Compile Include="Authentication\Helpers\IpAdressHelpers.cs" />
+    <Compile Include="Authentication\Logon\BaseLoginInfoHistory.cs" />
+    <Compile Include="Authentication\Providers\LogoutMode.cs" />
+    <Compile Include="Authentication\Providers\Mac\CatalogueAttributeItem.cs" />
+    <Compile Include="Authentication\Providers\Mac\CatalogueAttribute.cs" />
+    <Compile Include="Authentication\Providers\Mac\CompositeProfileAttribute.cs" />
+    <Compile Include="Authentication\Providers\Mac\OrganizationAttributeItem.cs" />
+    <Compile Include="Authentication\Providers\Mac\OrganizationAttribute.cs" />
+    <Compile Include="Authentication\Providers\Mac\UserProfileAttribute.cs" />
+    <Compile Include="Authentication\Providers\Mac\TimestampFormat.cs" />
+    <Compile Include="Authentication\Providers\Mac\TimestampAttribute.cs" />
+    <Compile Include="Authentication\Providers\Mac\MacAttribute.cs" />
+    <Compile Include="Authentication\Providers\Mac\MacAttributeType.cs" />
+    <Compile Include="Authentication\Providers\Mac\BaseUrlMacAttribute.cs" />
+    <Compile Include="Authentication\Providers\Mac\UrlMacAuthenticationProvider.cs" />
+    <Compile Include="Catalogue\BaseCatalogueAssignment.cs" />
+    <Compile Include="Catalogue\Catalogue.cs" />
+    <Compile Include="Catalogue\CatalogueItem.cs" />
+    <Compile Include="Catalogue\CatalogueAffiliation.cs" />
+    <Compile Include="Certification\Business\CertificationsService.cs" />
+    <Compile Include="Certification\Domain\Certification.cs" />
+    <Compile Include="Certification\Domain\dtoCertification.cs" />
+    <Compile Include="Certification\Domain\ModuleCertifications.cs" />
+    <Compile Include="Dashboard\Business\ServiceDashboard.Tile.cs" />
+    <Compile Include="Dashboard\Business\ServiceDashboard.Settings.cs" />
+    <Compile Include="Dashboard\Business\ServiceDashboard.cs" />
+    <Compile Include="Dashboard\Domain\CacheKeys.cs" />
+    <Compile Include="Dashboard\Domain\dto\dtoBaseCommunityItem.cs" />
+    <Compile Include="Dashboard\Domain\dto\dtoItemFilter.cs" />
+    <Compile Include="Dashboard\Domain\dto\dtoCommunityItem.cs" />
+    <Compile Include="Dashboard\Domain\dto\dtoSubscriptionItem.cs" />
+    <Compile Include="Dashboard\Domain\dto\dtoLiteTile.cs" />
+    <Compile Include="Dashboard\Domain\dto\dtoTileDisplay.cs" />
+    <Compile Include="Dashboard\Domain\dto\dtoTileItemDisplay.cs" />
+    <Compile Include="DocTemplateVers\Business\DocTemplateVersManagementService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DocTemplateVers\Business\DocTemplateVersService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DocTemplateVers\Business\ImageHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Domain\Base\DomainBaseObjectIdLiteMetaInfo.cs" />
+    <Compile Include="Domain\Modules\ModuleStatus.cs" />
+    <Compile Include="Domain\Community\Lite\liteCommunityDetails.cs" />
+    <Compile Include="Domain\Community\Modules\Lite\liteCommunityModuleAssociation.cs" />
+    <Compile Include="Domain\Community\Modules\Lite\liteModuleDefinition.cs" />
+    <Compile Include="Domain\Community\RoleTypeStandard.cs" />
+    <Compile Include="Domain\Community\Lite\dtoCommunityConstraint.cs" />
+    <Compile Include="Dashboard\Domain\dto\Settings\dtoTileForReorder.cs" />
+    <Compile Include="Dashboard\Domain\dto\Settings\dtoContainerSettings.cs" />
+    <Compile Include="Dashboard\Domain\dto\Settings\dtoDashboardAssignment.cs" />
+    <Compile Include="Dashboard\Domain\dto\Settings\dtoBaseDashboardSettings.cs" />
+    <Compile Include="Dashboard\Domain\dto\Settings\dtoViewSettings.cs" />
+    <Compile Include="Dashboard\Domain\dto\Settings\dtoDashboardSettings.cs" />
+    <Compile Include="Dashboard\Domain\dto\Settings\dtoPageSettings.cs" />
+    <Compile Include="Dashboard\Domain\dto\Settings\dtoPermission.cs" />
+    <Compile Include="Dashboard\Domain\dto\Settings\dtoDashboardStep.cs" />
+    <Compile Include="Dashboard\Domain\Exceptions.cs" />
+    <Compile Include="Dashboard\Domain\lite\Settings\smallDashboardTileAssignment.cs" />
+    <Compile Include="Dashboard\Domain\lite\Settings\liteDashboardTileAssignment.cs" />
+    <Compile Include="Dashboard\Domain\lite\Tile\liteSearchTile.cs" />
+    <Compile Include="Dashboard\Domain\lite\Tile\smallTile.cs" />
+    <Compile Include="Dashboard\Domain\RemoveAction.cs" />
+    <Compile Include="Dashboard\Domain\Settings\DashboardTileAssignment.cs" />
+    <Compile Include="Dashboard\Domain\Settings\UserCurrentSettings.cs" />
+    <Compile Include="Dashboard\Domain\Settings\ISettingsBase.cs" />
+    <Compile Include="Dashboard\Domain\Tile\ITileBaseItem.cs" />
+    <Compile Include="Dashboard\Domain\lite\Settings\liteDashboardAssignment.cs" />
+    <Compile Include="Dashboard\Domain\lite\Settings\liteDashboardSettings.cs" />
+    <Compile Include="Dashboard\Domain\lite\Settings\litePageSettings.cs" />
+    <Compile Include="Dashboard\Domain\lite\Tile\liteTile.cs" />
+    <Compile Include="Dashboard\Domain\lite\Tile\liteTileAssignment.cs" />
+    <Compile Include="Dashboard\Domain\lite\Tile\liteTileItem.cs" />
+    <Compile Include="Dashboard\Domain\lite\Tile\liteTileItemTranslation.cs" />
+    <Compile Include="Dashboard\Domain\lite\Tile\liteTileTagAssociation.cs" />
+    <Compile Include="Dashboard\Domain\lite\Tile\liteTileTranslation.cs" />
+    <Compile Include="Dashboard\Domain\lite\Settings\liteUserDashboardSettings.cs" />
+    <Compile Include="Dashboard\Domain\ModuleDashboard.cs" />
+    <Compile Include="Dashboard\Domain\Settings\RangeSettings.cs" />
+    <Compile Include="Dashboard\Domain\RootObject.cs" />
+    <Compile Include="Dashboard\Domain\Tile\TileTagAssociation.cs" />
+    <Compile Include="Dashboard\Domain\Tile\TileItem.cs" />
+    <Compile Include="Dashboard\Domain\Tile\TileAssignment.cs" />
+    <Compile Include="Dashboard\Domain\Tile\TileItemTranslation.cs" />
+    <Compile Include="Dashboard\Domain\Tile\TileTranslation.cs" />
+    <Compile Include="Domain\Base\BaseMetaInfo.cs" />
+    <Compile Include="Domain\Base\DomainBaseObjectLiteMetaInfo.cs" />
+    <Compile Include="Domain\Community\ConstraintType.cs" />
+    <Compile Include="Domain\Community\CommunityConstraint.cs" />
+    <Compile Include="Domain\Community\Lite\liteCommunityConstraint.cs" />
+    <Compile Include="Domain\Community\Lite\dtoTranslatedCommunityType.cs" />
+    <Compile Include="Domain\Community\Lite\iLiteCommunity.cs" />
+    <Compile Include="Domain\Community\Lite\liteCommunity.cs" />
+    <Compile Include="Domain\Community\Lite\liteCommunityInfo.cs" />
+    <Compile Include="Domain\Community\Lite\liteSubscriptionInfo.cs" />
+    <Compile Include="Domain\Community\CommunityTypeStandard.cs" />
+    <Compile Include="Domain\Community\Lite\liteRoleCommunityTypeTemplate.cs" />
+    <Compile Include="Domain\Community\Subscriptions\liteSubscription.cs" />
+    <Compile Include="Domain\GenericOrderItem.cs" />
+    <Compile Include="Domain\JsonException.cs" />
+    <Compile Include="Domain\Language\TitleDescriptionTranslation.cs" />
+    <Compile Include="Domain\Language\ItemBaseTranslation.cs" />
+    <Compile Include="Domain\Language\TitleDescriptionObjectTranslation.cs" />
+    <Compile Include="Domain\ModuleLink\lite\liteModuleLink.cs" />
+    <Compile Include="Domain\Modules\dto\dtoModulePermission.cs" />
+    <Compile Include="Domain\Person\dto\dtoTranslatedRoleType.cs" />
+    <Compile Include="Domain\Person\dto\dtoTranslatedProfileType.cs" />
+    <Compile Include="Domain\Person\lite\liteAgency.cs" />
+    <Compile Include="Domain\Person\lite\liteAgencyAffiliation.cs" />
+    <Compile Include="Domain\Person\lite\liteOrganizationProfile.cs" />
+    <Compile Include="Domain\Repository\Community\FileOrder.cs" />
+    <Compile Include="Domain\Repository\Lite\liteCommunityFile.cs" />
+    <Compile Include="Domain\Repository\Lite\liteBaseCommunityFile.cs" />
+    <Compile Include="Domain\Repository\Lite\liteModuleGuidInternalFile.cs" />
+    <Compile Include="Domain\Repository\Lite\liteModuleInternalFile.cs" />
+    <Compile Include="Domain\Repository\Lite\liteModuleLongInternalFile.cs" />
+    <Compile Include="Event\Dto\dtoAttachment.cs" />
+    <Compile Include="Event\Dto\dtoAttachmentItem.cs" />
+    <Compile Include="Event\Dto\dtoAttachmentPermission.cs" />
+    <Compile Include="FileRepository\Business\ServiceFileRepository.cs" />
+    <Compile Include="FileRepository\Business\ServiceFileRepository.Facilities.cs" />
+    <Compile Include="FileRepository\Business\ServiceFileRepository.ItemManagement.cs" />
+    <Compile Include="FileRepository\Business\ServiceFileRepository.Modules.cs" />
+    <Compile Include="FileRepository\Business\ServiceFileRepository.Multimedia.cs" />
+    <Compile Include="FileRepository\Business\ServiceFileRepository.Permissions.cs" />
+    <Compile Include="FileRepository\Business\ServiceFileRepository.Player.cs" />
+    <Compile Include="FileRepository\Business\ServiceFileRepository.Scorm.cs" />
+    <Compile Include="FileRepository\Business\ServiceFileRepository.ScormSettings.cs" />
+    <Compile Include="FileRepository\Business\ServiceFileRepository.Settings.cs" />
+    <Compile Include="FileRepository\Business\ServiceFileRepository.Statistics.cs" />
+    <Compile Include="FileRepository\Business\ServiceFileRepository.Transfer.cs" />
+    <Compile Include="FileRepository\Domain\advanced\multimedia\MultimediaFileObject.cs" />
+    <Compile Include="FileRepository\Domain\advanced\scorm\ScormPackageUserEvaluation.cs" />
+    <Compile Include="FileRepository\Domain\advanced\scorm\ScormPackageUserSession.cs" />
+    <Compile Include="FileRepository\Domain\advanced\scorm\settings\EvaluationType.cs" />
+    <Compile Include="FileRepository\Domain\advanced\scorm\settings\ScormItemSettings.cs" />
+    <Compile Include="FileRepository\Domain\advanced\scorm\settings\ScormOrganizationSettings.cs" />
+    <Compile Include="FileRepository\Domain\advanced\scorm\settings\ScormPackageSettings.cs" />
+    <Compile Include="FileRepository\Domain\advanced\scorm\toRemove\ScormPackageRequestForRecalc.cs" />
+    <Compile Include="FileRepository\Domain\advanced\scorm\toRemove\ScormPackageWithVersionToEvaluate.cs" />
+    <Compile Include="FileRepository\Domain\advanced\transfer\FileTransferBase.cs" />
+    <Compile Include="FileRepository\Domain\advanced\transfer\FileTransferMultimedia.cs" />
+    <Compile Include="FileRepository\Domain\advanced\transfer\FileTransferScorm.cs" />
+    <Compile Include="FileRepository\Domain\advanced\transfer\FileTransferType.cs" />
+    <Compile Include="FileRepository\Domain\advanced\transfer\FileTransferVideoStreaming.cs" />
+    <Compile Include="FileRepository\Domain\advanced\transfer\TransferPolicy.cs" />
+    <Compile Include="FileRepository\Domain\advanced\transfer\TransferStatus.cs" />
+    <Compile Include="FileRepository\Domain\base\BaseAssignments.cs" />
+    <Compile Include="FileRepository\Domain\base\BaseItemIdentifiers.cs" />
+    <Compile Include="FileRepository\Domain\base\BaseRepositoryItem.cs" />
+    <Compile Include="FileRepository\Domain\base\CacheKeys.cs" />
+    <Compile Include="FileRepository\Domain\base\enum\AssignmentType.cs" />
+    <Compile Include="FileRepository\Domain\base\enum\DisplayMode.cs" />
+    <Compile Include="FileRepository\Domain\base\enum\FolderType.cs" />
+    <Compile Include="FileRepository\Domain\base\enum\ItemAction.cs" />
+    <Compile Include="FileRepository\Domain\base\enum\ItemAvailability.cs" />
+    <Compile Include="FileRepository\Domain\base\enum\ItemIdentifierType.cs" />
+    <Compile Include="FileRepository\Domain\base\enum\ItemSaving.cs" />
+    <Compile Include="FileRepository\Domain\base\enum\ItemStatus.cs" />
+    <Compile Include="FileRepository\Domain\base\enum\ItemType.cs" />
+    <Compile Include="FileRepository\Domain\base\enum\ItemUploadError.cs" />
+    <Compile Include="FileRepository\Domain\base\enum\OrderBy.cs" />
+    <Compile Include="FileRepository\Domain\base\enum\PermissionsTranslation.cs" />
+    <Compile Include="FileRepository\Domain\base\enum\PlayerPlaceHolders.cs" />
+    <Compile Include="FileRepository\Domain\base\enum\RepositoryType.cs" />
+    <Compile Include="FileRepository\Domain\base\enum\SizeType.cs" />
+    <Compile Include="FileRepository\Domain\base\ItemAssignments.cs" />
+    <Compile Include="FileRepository\Domain\base\ItemModuleSettings.cs" />
+    <Compile Include="FileRepository\Domain\base\ItemPermission.cs" />
+    <Compile Include="FileRepository\Domain\base\ModuleRepository.cs" />
+    <Compile Include="FileRepository\Domain\base\RepositoryFullSize.cs" />
+    <Compile Include="FileRepository\Domain\base\RepositoryIdentifier.cs" />
+    <Compile Include="FileRepository\Domain\base\RepositoryItem.cs" />
+    <Compile Include="FileRepository\Domain\base\RepositoryItemVersion.cs" />
+    <Compile Include="FileRepository\Domain\base\SessionConstants.cs" />
+    <Compile Include="FileRepository\Domain\base\VersionPermission.cs" />
+    <Compile Include="FileRepository\Domain\dto\Advanced\dtoEvaluationLink.cs" />
+    <Compile Include="FileRepository\Domain\dto\Advanced\dtoMultimediaFileObject.cs" />
+    <Compile Include="FileRepository\Domain\dto\Advanced\dtoPackageEvaluation.cs" />
+    <Compile Include="FileRepository\Domain\dto\Advanced\settings\dtoScormActivitySettings.cs" />
+    <Compile Include="FileRepository\Domain\dto\Advanced\settings\dtoScormItemEvaluationSettings.cs" />
+    <Compile Include="FileRepository\Domain\dto\Advanced\settings\dtoScormOrganizationFolder.cs" />
+    <Compile Include="FileRepository\Domain\dto\Advanced\settings\dtoScormOrganizationSettings.cs" />
+    <Compile Include="FileRepository\Domain\dto\Advanced\settings\dtoScormPackageSettings.cs" />
+    <Compile Include="FileRepository\Domain\dto\Advanced\settings\dtoScormSettingsBase.cs" />
+    <Compile Include="FileRepository\Domain\dto\Advanced\settings\dtoScormSettingsEvaluationBase.cs" />
+    <Compile Include="FileRepository\Domain\dto\Advanced\settings\ScormSettingsType.cs" />
+    <Compile Include="FileRepository\Domain\dto\Base\dtoBaseItem.cs" />
+    <Compile Include="FileRepository\Domain\dto\Base\dtoBaseRepositoryItem.cs" />
+    <Compile Include="FileRepository\Domain\dto\Base\dtoContainerQuota.cs" />
+    <Compile Include="FileRepository\Domain\dto\Base\dtoCreatedItem.cs" />
+    <Compile Include="FileRepository\Domain\dto\Base\dtoDisplayAssignment.cs" />
+    <Compile Include="FileRepository\Domain\dto\Base\dtoDisplayRepositoryItem.cs" />
+    <Compile Include="FileRepository\Domain\dto\Base\dtoEditAssignment.cs" />
+    <Compile Include="FileRepository\Domain\dto\Base\dtoFolderItem.cs" />
+    <Compile Include="FileRepository\Domain\dto\Base\dtoFolderName.cs" />
+    <Compile Include="FileRepository\Domain\dto\Base\dtoFolderSize.cs" />
+    <Compile Include="FileRepository\Domain\dto\Base\dtoFolderTreeItem.cs" />
+    <Compile Include="FileRepository\Domain\dto\Base\dtoItemFile.cs" />
+    <Compile Include="FileRepository\Domain\dto\Base\dtoItemIdentifier.cs" />
+    <Compile Include="FileRepository\Domain\dto\Base\dtoItemToAdd.cs" />
+    <Compile Include="FileRepository\Domain\dto\Base\dtoItemToDelete.cs" />
+    <Compile Include="FileRepository\Domain\dto\Base\dtoLinkedItems.cs" />
+    <Compile Include="FileRepository\Domain\dto\Base\dtoLinkedModules.cs" />
+    <Compile Include="FileRepository\Domain\dto\Base\dtoNodeFolderItem.cs" />
+    <Compile Include="FileRepository\Domain\dto\Base\dtoNodeItem.cs" />
+    <Compile Include="FileRepository\Domain\dto\Base\dtoRepositoryItem.cs" />
+    <Compile Include="FileRepository\Domain\dto\Base\dtoRepositoryItemToSelect.cs" />
+    <Compile Include="FileRepository\Domain\dto\Base\dtoRepositoryItemToSelectBase.cs" />
+    <Compile Include="FileRepository\Domain\dto\Base\dtoUploadedItem.cs" />
+    <Compile Include="FileRepository\Domain\dto\Base\dtoUrlItem.cs" />
+    <Compile Include="FileRepository\Domain\dto\Download\DownloadErrorType.cs" />
+    <Compile Include="FileRepository\Domain\dto\Download\dtoDownloadError.cs" />
+    <Compile Include="FileRepository\Domain\dto\Download\QueryKeyNames.cs" />
+    <Compile Include="FileRepository\Domain\link\dtoDisplayObjectRepositoryItem.cs" />
+    <Compile Include="FileRepository\Domain\link\dtoModuleUploadedItem.cs" />
+    <Compile Include="FileRepository\Domain\link\RepositoryAttachmentUploadActions.cs" />
+    <Compile Include="FileRepository\Domain\link\RepositoryItemLink.cs" />
+    <Compile Include="FileRepository\Domain\link\RepositoryItemLinkBase.cs" />
+    <Compile Include="FileRepository\Domain\lite\advanced\multimedia\liteMultimediaFileObject.cs" />
+    <Compile Include="FileRepository\Domain\lite\advanced\transfer\liteFileTransfer.cs" />
+    <Compile Include="FileRepository\Domain\lite\base\liteBaseAssignments.cs" />
+    <Compile Include="FileRepository\Domain\lite\base\liteBaseItemIdentifiers.cs" />
+    <Compile Include="FileRepository\Domain\lite\base\liteBaseRepositoryItem.cs" />
+    <Compile Include="FileRepository\Domain\lite\base\liteItemAssignments.cs" />
+    <Compile Include="FileRepository\Domain\lite\base\liteManageRepositoryItem.cs" />
+    <Compile Include="FileRepository\Domain\lite\base\liteRepositoryItem.cs" />
+    <Compile Include="FileRepository\Domain\lite\base\liteRepositoryItemVersion.cs" />
+    <Compile Include="FileRepository\Domain\lite\base\liteRepositoryTag.cs" />
+    <Compile Include="FileRepository\Domain\lite\settings\liteItemTypeSettings.cs" />
+    <Compile Include="FileRepository\Domain\lite\settings\litePlayerSettings.cs" />
+    <Compile Include="FileRepository\Domain\lite\settings\liteProfileTypeAvailability.cs" />
+    <Compile Include="FileRepository\Domain\lite\settings\liteRepositorySettings.cs" />
+    <Compile Include="FileRepository\Domain\lite\settings\liteViewSettings.cs" />
+    <Compile Include="FileRepository\Domain\RootObject.cs" />
+    <Compile Include="FileRepository\Domain\settings\DiskSettings.cs" />
+    <Compile Include="FileRepository\Domain\settings\enum\CalculationMode.cs" />
+    <Compile Include="FileRepository\Domain\settings\enum\CustomizationLevel.cs" />
+    <Compile Include="FileRepository\Domain\settings\enum\OverflowAction.cs" />
+    <Compile Include="FileRepository\Domain\settings\enum\PresetType.cs" />
+    <Compile Include="FileRepository\Domain\settings\enum\SettingsType.cs" />
+    <Compile Include="FileRepository\Domain\settings\enum\TreeViewOption.cs" />
+    <Compile Include="FileRepository\Domain\settings\enum\ViewOption.cs" />
+    <Compile Include="FileRepository\Domain\settings\ItemTypeSettings.cs" />
+    <Compile Include="FileRepository\Domain\settings\PlayerSettings.cs" />
+    <Compile Include="FileRepository\Domain\settings\ProfileTypeAvailability.cs" />
+    <Compile Include="FileRepository\Domain\settings\RepositoryContextSettings.cs" />
+    <Compile Include="FileRepository\Domain\settings\ViewSettings.cs" />
+    <Compile Include="FileRepository\Domain\statistics\DownloadStatistics.cs" />
+    <Compile Include="FileRepository\Domain\statistics\ItemStatisticType.cs" />
+    <Compile Include="FileRepository\Domain\statistics\PlayStatistics.cs" />
+    <Compile Include="FileRepository\Domain\statistics\StatisticType.cs" />
+    <Compile Include="FileRepository\Domain\toRemove\OldAssignments.cs" />
+    <Compile Include="FileRepository\Domain\toRemove\OldDownloadStatistics.cs" />
+    <Compile Include="FileRepository\Domain\toRemove\OldFileTransfer.cs" />
+    <Compile Include="FileRepository\Domain\toRemove\OldMultimediaObject.cs" />
+    <Compile Include="FileRepository\Domain\toRemove\OldPlayStatistics.cs" />
+    <Compile Include="FileRepository\Domain\toRemove\TransferFromOldTable.cs" />
+    <Compile Include="FileRepository\Domain\toRemove\TransferToNewItemTable.cs" />
+    <Compile Include="FileRepository\Domain\toRemove\TransferVersion.cs" />
+    <Compile Include="Helpers\Export\CommonPlaceHolderData.cs" />
+    <Compile Include="InLineTags\Business\ServiceInLineTags.cs" />
+    <Compile Include="InLineTags\Domain\CacheKeys.cs" />
+    <Compile Include="InLineTags\Domain\dto\dtoTag.cs" />
+    <Compile Include="InLineTags\Domain\InLineTag.cs" />
+    <Compile Include="InLineTags\Domain\lite\liteRepositoryTag.cs" />
+    <Compile Include="InLineTags\Domain\RootObject.cs" />
+    <Compile Include="Helpers\TypeAvailabilityTime.cs" />
+    <Compile Include="Filters\Filter.cs" />
+    <Compile Include="Helpers\HtmlSanitizer.cs" />
+    <Compile Include="Helpers\SearchRange.cs" />
+    <Compile Include="Helpers\Thumbnailer.cs" />
+    <Compile Include="Mail\Messages\Domain\MailAttachmentType.cs" />
+    <Compile Include="ModuleLinks\New\DisplayActionMode.cs" />
+    <Compile Include="ModuleLinks\New\dto\dtoModuleActionControl.cs" />
+    <Compile Include="ModuleLinks\New\dto\dtoObjectRenderInitializer.cs" />
+    <Compile Include="ModuleLinks\New\dto\dtoPlaceHolder.cs" />
+    <Compile Include="ModuleLinks\New\IViewModuleRenderAction.cs" />
+    <Compile Include="ModuleLinks\New\PlaceholderType.cs" />
+    <Compile Include="Msmq\ErrorInfo.cs" />
+    <Compile Include="Notification\Domain\dto\ModuleKeyTranslations.cs" />
+    <Compile Include="Notification\Domain\dto\ModuleTranslationSettings.cs" />
+    <Compile Include="Notification\Domain\TemplateSettings.cs" />
+    <Compile Include="Notification\Domain\GroupSettings.cs" />
+    <Compile Include="Notification\Domain\GroupMessages.cs" />
+    <Compile Include="Notification\Domain\dto\dtoModuleNotificationMessage.cs" />
+    <Compile Include="Notification\Domain\dto\DateTimeFormat.cs" />
+    <Compile Include="Notification\Domain\dto\dtoModuleTranslatedMessage.cs" />
+    <Compile Include="Notification\Domain\dto\TranslatedSettings.cs" />
+    <Compile Include="Notification\Domain\dto\WebSiteSettings.cs" />
+    <Compile Include="Notification\Domain\dto\dtoBaseNotificationMessage.cs" />
+    <Compile Include="Notification\DataContract\ErrorMessage.cs" />
+    <Compile Include="Notification\DataContract\iNotificationsManagerService.cs" />
+    <Compile Include="Notification\Domain\NotificationAction.cs" />
+    <Compile Include="Notification\Domain\iNotifiableService.cs" />
+    <Compile Include="Service References\SrvFileTransfer\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\SrvFileUnzip\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Authentication\Generic\GenericEncryption.cs" />
+    <Compile Include="Tag\Business\ServiceTags.cs" />
+    <Compile Include="Tag\Domain\CacheKeys.cs" />
+    <Compile Include="Tag\Domain\CommunityTag.cs" />
+    <Compile Include="Tag\Domain\dto\dtoFilters.cs" />
+    <Compile Include="Tag\Domain\dto\dtoTag.cs" />
+    <Compile Include="Domain\Language\dto\dtoLanguageItem.cs" />
+    <Compile Include="Tag\Domain\dto\dtoTagSelectItem.cs" />
+    <Compile Include="Tag\Domain\dto\dtoTagItem.cs" />
+    <Compile Include="Tag\Domain\dto\dtoCommunityTags.cs" />
+    <Compile Include="Tag\Domain\dto\dtoPermission.cs" />
+    <Compile Include="Tag\Domain\ITagBaseItem.cs" />
+    <Compile Include="Tag\Domain\lite\liteCommunityTagForEdit.cs" />
+    <Compile Include="Tag\Domain\lite\liteCommunityTag.cs" />
+    <Compile Include="Tag\Domain\lite\liteTag.cs" />
+    <Compile Include="Tag\Domain\lite\liteOrganizationAvailability.cs" />
+    <Compile Include="Tag\Domain\lite\liteTagItem.cs" />
+    <Compile Include="Tag\Domain\lite\liteTagTranslation.cs" />
+    <Compile Include="Tag\Domain\ModuleTags.cs" />
+    <Compile Include="Tag\Domain\OrderTagsBy.cs" />
+    <Compile Include="Tag\Domain\RootObject.cs" />
+    <Compile Include="Tag\Domain\searchFilterType.cs" />
+    <Compile Include="Tag\Domain\TagTranslation.cs" />
+    <Compile Include="Tag\Domain\TagType.cs" />
+    <Compile Include="Tag\Domain\TagItem.cs" />
+    <Compile Include="Dashboard\Domain\Settings\DashboardAssignment.cs" />
+    <Compile Include="Dashboard\Domain\Settings\PageSettings.cs" />
+    <Compile Include="Dashboard\Domain\Settings\ContainerSettings.cs" />
+    <Compile Include="Dashboard\Domain\Settings\DefaultSettings.cs" />
+    <Compile Include="Dashboard\Domain\Settings\DashboardSettings.cs" />
+    <Compile Include="Dashboard\Domain\Enum.cs" />
+    <Compile Include="Dashboard\Domain\Tile\Tile.cs" />
+    <Compile Include="Dashboard\Domain\Settings\UserDashboardSettings.cs" />
+    <Compile Include="DocTemplateVers\Domain\Core\DTO_File.cs" />
+    <Compile Include="DocTemplateVers\Domain\Core\Signature.cs" />
+    <Compile Include="DocTemplateVers\Domain\DTO_Management\DTO_AddServices.cs" />
+    <Compile Include="DocTemplateVers\Domain\DTO_Management\DTO_AddTemplate.cs" />
+    <Compile Include="DocTemplateVers\Domain\DTO_Management\DTO_EditElementPermission.cs" />
+    <Compile Include="DocTemplateVers\Domain\DTO_Management\DTO_EditItem.cs" />
+    <Compile Include="DocTemplateVers\Domain\DTO_Management\DTO_EditPermission.cs" />
+    <Compile Include="DocTemplateVers\Domain\DTO_Management\DTO_ListPermission.cs" />
+    <Compile Include="DocTemplateVers\Domain\DTO_Management\DTO_ListServices.cs" />
+    <Compile Include="DocTemplateVers\Domain\DTO_Management\DTO_ListTemplate.cs" />
+    <Compile Include="DocTemplateVers\Domain\DTO_Management\DTO_ListTemplateVersion.cs" />
+    <Compile Include="DocTemplateVers\Domain\DTO_Management\DTO_EditTemplateVersion.cs" />
+    <Compile Include="DocTemplateVers\Domain\DTO_Management\DTO_ListVersionPermission.cs" />
+    <Compile Include="DocTemplateVers\Domain\DTO_Management\DTO_EditPreviousVersion.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DocTemplateVers\Domain\DTO_Management\EnumList.cs" />
+    <Compile Include="DocTemplateVers\Domain\DTO_ServiceExport\DTO_Element.cs" />
+    <Compile Include="DocTemplateVers\Domain\DTO_ServiceExport\DTO_ElementImage.cs" />
+    <Compile Include="DocTemplateVers\Domain\DTO_ServiceExport\DTO_ElementImageMulti.cs" />
+    <Compile Include="DocTemplateVers\Domain\DTO_ServiceExport\DTO_ElementText.cs" />
+    <Compile Include="DocTemplateVers\Domain\DTO_ServiceExport\DTO_Header.cs" />
+    <Compile Include="DocTemplateVers\Domain\DTO_ServiceExport\DTO_Modules.cs" />
+    <Compile Include="DocTemplateVers\Domain\DTO_ServiceExport\DTO_sServiceContent.cs" />
+    <Compile Include="DocTemplateVers\Domain\DTO_ServiceExport\DTO_Settings.cs" />
+    <Compile Include="DocTemplateVers\Domain\DTO_ServiceExport\DTO_Signature.cs" />
+    <Compile Include="DocTemplateVers\Domain\DTO_ServiceExport\DTO_Template.cs" />
+    <Compile Include="DocTemplateVers\Domain\Core\Enum.cs" />
+    <Compile Include="DocTemplateVers\Domain\Core\ServiceContent.cs" />
+    <Compile Include="DocTemplateVers\Domain\Core\ModuleDocTemplate.cs" />
+    <Compile Include="DocTemplateVers\Domain\Core\PageElement.cs" />
+    <Compile Include="DocTemplateVers\Domain\Core\PageElements\ElementImage.cs" />
+    <Compile Include="DocTemplateVers\Domain\Core\PageElements\ElementText.cs" />
+    <Compile Include="DocTemplateVers\Domain\Core\PageElements\ElementVoid.cs" />
+    <Compile Include="DocTemplateVers\Domain\Core\Settings.cs" />
+    <Compile Include="DocTemplateVers\Domain\Core\Template.cs" />
+    <Compile Include="DocTemplateVers\Domain\Core\TemplateVersion.cs" />
+    <Compile Include="DocTemplateVers\Domain\DTO_ServiceExport\DTO_sTemplate.cs" />
+    <Compile Include="DocTemplateVers\Domain\DTO_ServiceExport\DTO_sTemplateVersion.cs" />
+    <Compile Include="DocTemplateVers\Helpers\Measure.cs" />
+    <Compile Include="DocTemplateVers\Domain\Core\rootObject.cs" />
+    <Compile Include="DocTemplateVers\ModuleContent.cs" />
+    <Compile Include="Domain\Community\SearchCommunityFor.cs" />
+    <Compile Include="Domain\Community\ModuleCommunityManagement.cs" />
+    <Compile Include="Domain\Language\BaseLanguageItem.cs" />
+    <Compile Include="Domain\Language\dto\dtoBaseObjectTranslation.cs" />
+    <Compile Include="Domain\Language\dto\dtoObjectTranslation.cs" />
+    <Compile Include="Domain\Language\ItemDisplayAs.cs" />
+    <Compile Include="Domain\Language\ItemStatus.cs" />
+    <Compile Include="Domain\Language\LanguageItem.cs" />
+    <Compile Include="Domain\Person\IstantMessaging.cs" />
+    <Compile Include="Domain\Person\LazyAffiliation.cs" />
+    <Compile Include="Domain\Person\lite\liteIstantMessaging.cs" />
+    <Compile Include="Domain\Repository\Dto\dtoBaseGenericFile.cs" />
+    <Compile Include="Domain\Repository\Dto\dtoUrl.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Helpers\Alphabet.cs" />
+    <Compile Include="Domain\ItemDisplayOrder.cs" />
+    <Compile Include="Helpers\EnumExtensions.cs" />
+    <Compile Include="Helpers\Export\TemplatePlaceHolder.cs" />
+    <Compile Include="Helpers\Export\ExportCsvBaseHelper.cs" />
+    <Compile Include="Helpers\Export\ExportXmlBaseHelper.cs" />
+    <Compile Include="Helpers\Export\PageHelper.cs" />
+    <Compile Include="Helpers\Export\PdfHelper.cs" />
+    <Compile Include="Helpers\Export\RtfHelper.cs" />
+    <Compile Include="Helpers\Export\TagReplacer.cs" />
+    <Compile Include="Helpers\Export\TemplateCommonPlaceHolders.cs" />
+    <Compile Include="Helpers\Export\ExportPdf5BaseHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Helpers\Export\ExportRtfBaseHelper.cs" />
+    <Compile Include="Helpers\Export\Pdf5PageEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Helpers\Export\Enum.cs" />
+    <Compile Include="Helpers\Export\ExportBaseHelper.cs" />
+    <Compile Include="Domain\Person\AgencyVisibility.cs" />
+    <Compile Include="Domain\Person\dto\dtoOrganizationAffiliation.cs" />
+    <Compile Include="Domain\Person\dto\dtoAgencyAffiliation.cs" />
+    <Compile Include="Authentication\Logon\ExternalUserInfo.cs" />
+    <Compile Include="Domain\Person\AgencyAffiliation.cs" />
+    <Compile Include="Domain\Person\dto\dtoAgency.cs" />
+    <Compile Include="Domain\Person\OrganizationAffiliation.cs" />
+    <Compile Include="Domain\Person\Employee.cs" />
+    <Compile Include="Domain\Person\Agency.cs" />
+    <Compile Include="Domain\Person\AgencyError.cs" />
+    <Compile Include="Helpers\Export\XML\BuilderXmlDocument.cs" />
+    <Compile Include="Helpers\Export\XML\BuilderXmlStyle.cs" />
+    <Compile Include="Helpers\MessageHelper.cs" />
+    <Compile Include="Helpers\NullableDatetimeExtensions.cs" />
+    <Compile Include="Helpers\ProfileImport\ColumnType.cs" />
+    <Compile Include="Helpers\ProfileImport\ExternalProfile.cs" />
+    <Compile Include="Helpers\ProfileImport\ProfileAttributeComputedCell.cs" />
+    <Compile Include="Helpers\ProfileImport\ProfileComputedColumn.cs" />
+    <Compile Include="Helpers\SmartTag\ReplaceIt.cs" />
+    <Compile Include="Helpers\SmartTag\SmartTag.cs" />
+    <Compile Include="Helpers\SmartTag\SmartTags.cs" />
+    <Compile Include="Helpers\StringItem.cs" />
+    <Compile Include="Helpers\dto\ExternalPageContext.cs" />
+    <Compile Include="Helpers\dto\dtoItemSkin.cs" />
+    <Compile Include="Helpers\GenericImport\ImportCostants.cs" />
+    <Compile Include="Mail\Messages\Domain\dto\dtoModuleRecipientMessage.cs" />
+    <Compile Include="Mail\Messages\Domain\dto\dtoTemplateMessageContext.cs" />
+    <Compile Include="Mail\Messages\Domain\dto\dtoModuleMessagesContext.cs" />
+    <Compile Include="Mail\Messages\Business\MailMessagesService.cs" />
+    <Compile Include="Mail\Domain\dto\dtoRecipient.cs" />
+    <Compile Include="Mail\Messages\Domain\dto\dtoGenericModuleMessageRecipient.cs" />
+    <Compile Include="Mail\Messages\Domain\MessageOrder.cs" />
+    <Compile Include="Mail\Messages\Domain\MessageRecipientType.cs" />
+    <Compile Include="Mail\Messages\Domain\MessageTranslation.cs" />
+    <Compile Include="Mail\Messages\Domain\Ownership.cs" />
+    <Compile Include="Mail\Messages\Domain\MailMessage.cs" />
+    <Compile Include="Mail\Messages\Domain\MailRecipient.cs" />
+    <Compile Include="Mail\Messages\Domain\MailTemplate.cs" />
+    <Compile Include="Mail\Messages\Domain\MailTemplateContent.cs" />
+    <Compile Include="Mail\Messages\Domain\OwnershipType.cs" />
+    <Compile Include="Mail\Messages\Domain\RootObject.cs" />
+    <Compile Include="Mail\Messages\Domain\dto\dtoDisplayUserMessage.cs" />
+    <Compile Include="Mail\Messages\Domain\dto\dtoModuleRecipientItem.cs" />
+    <Compile Include="Mail\Messages\Domain\dto\dtoModuleRecipientMessages.cs" />
+    <Compile Include="Mail\Messages\Domain\dto\dtoBaseMessageRecipient.cs" />
+    <Compile Include="Mail\Messages\Domain\dto\dtoMessageRecipient.cs" />
+    <Compile Include="Mail\Messages\Domain\dto\dtoMailTranslatedMessage.cs" />
+    <Compile Include="Mail\Messages\Domain\dto\dtoBaseMailTemplate.cs" />
+    <Compile Include="Mail\Messages\Domain\dto\dtoBaseMailTemplateContent.cs" />
+    <Compile Include="Mail\Messages\Domain\dto\dtoDisplayMessage.cs" />
+    <Compile Include="Mail\Messages\Domain\dto\dtoOwnership.cs" />
+    <Compile Include="Tag\Domain\OrganizationAvailability.cs" />
+    <Compile Include="TemplateMessages\Domain\dto\dtoSelectorContext.cs" />
+    <Compile Include="Notification\Domain\dto\dtoNotificationMessages.cs" />
+    <Compile Include="Notification\Domain\dto\dtoNotificationMessage.cs" />
+    <Compile Include="Mail\Domain\dto\dtoMailMessagePreview.cs" />
+    <Compile Include="ModuleLinks\dto\dtoExternalModuleInitializer.cs" />
+    <Compile Include="ModuleLinks\dto\dtoModuleDisplayActionInitializer.cs" />
+    <Compile Include="ModuleLinks\IView\IExternalModuleDisplayAction.cs" />
+    <Compile Include="ModuleLinks\IView\IGenericModuleDisplayAction.cs" />
+    <Compile Include="Domain\Person\ExternalUser.cs" />
+    <Compile Include="Helpers\dto\dtoLoginCookie.cs" />
+    <Compile Include="Helpers\dto\InputType.cs" />
+    <Compile Include="Helpers\dto\Copy of dtoUnknownAccessUrl.cs" />
+    <Compile Include="Helpers\GenericImport\DestinationItem.cs" />
+    <Compile Include="Helpers\GenericImport\dtoInvalidMatch.cs" />
+    <Compile Include="Helpers\GenericImport\ExternalColumnItem.cs" />
+    <Compile Include="Helpers\GenericImport\ExternalCell.cs" />
+    <Compile Include="Helpers\GenericImport\ExternalColumn.cs" />
+    <Compile Include="Helpers\GenericImport\ExternalRow.cs" />
+    <Compile Include="Helpers\GenericImport\ExternalColumnComparer.cs" />
+    <Compile Include="Helpers\GenericImport\ExternalResource.cs" />
+    <Compile Include="Helpers\GenericImport\InvalidImport.cs" />
+    <Compile Include="Helpers\GenericImport\InvalidMatch.cs" />
+    <Compile Include="Helpers\ProfileImport\ProfileAttributesRow.cs" />
+    <Compile Include="Helpers\ProfileImport\ProfileExternalResource.cs" />
+    <Compile Include="Helpers\ProfileImport\ProfileAttributeColumn.cs" />
+    <Compile Include="Helpers\ProfileImport\ProfileAttributeCell.cs" />
+    <Compile Include="Helpers\RepositoryWebPost.cs" />
+    <Compile Include="Helpers\RemoteWebPost.cs" />
+    <Compile Include="Helpers\dto\dtoExpiredAccessUrl.cs" />
+    <Compile Include="Authentication\dto\dtoUrlToken.cs" />
+    <Compile Include="Authentication\dto\dtoExternalCredentials.cs" />
+    <Compile Include="Authentication\dto\dtoInternalCredentials.cs" />
+    <Compile Include="Authentication\Logon\MailEditingPending.cs" />
+    <Compile Include="Authentication\Logon\WaitingActivationProfile.cs" />
+    <Compile Include="Authentication\Providers\AttributeType.cs" />
+    <Compile Include="Authentication\Providers\AuthenticationProviderType.cs" />
+    <Compile Include="Authentication\Providers\AuthenticationProvider.cs" />
+    <Compile Include="Authentication\Providers\AuthenticationResult.cs" />
+    <Compile Include="Authentication\Business\InternalAuthenticationService.cs" />
+    <Compile Include="Authentication\Business\ExternalAuthenticationService.cs" />
+    <Compile Include="Authentication\Business\CoreAuthenticationsService.cs" />
+    <Compile Include="Authentication\Providers\AuthenticationProviderTranslation.cs" />
+    <Compile Include="Authentication\dto\dtoBaseProfile.cs" />
+    <Compile Include="Authentication\Logon\EditType.cs" />
+    <Compile Include="Authentication\Logon\InternalLoginInfo.cs" />
+    <Compile Include="Authentication\Logon\BaseLoginInfo.cs" />
+    <Compile Include="Authentication\Providers\ProfileAttributeType.cs" />
+    <Compile Include="Authentication\Providers\IdentifierField.cs" />
+    <Compile Include="Authentication\ServiceExceptions.cs" />
+    <Compile Include="Domain\Community\CommunityStatus.cs" />
+    <Compile Include="Domain\Community\_RoleCommunityTypeTemplate.cs" />
+    <Compile Include="Domain\Community\Relation\_OldCommunityRelation.cs" />
+    <Compile Include="Domain\Community\Relation\OldCommunityRelation.cs" />
+    <Compile Include="Domain\Community\Subscriptions\dto\dtoDegreeSubscriptionFilters.cs" />
+    <Compile Include="Domain\Community\Subscriptions\dto\dtoCourseSubscriptionFilters.cs" />
+    <Compile Include="Domain\Community\Subscriptions\dto\dtoBaseSubscription.cs" />
+    <Compile Include="Domain\Community\Subscriptions\dto\dtoSubscriptionFilters.cs" />
+    <Compile Include="Domain\Community\Subscriptions\OrderSubscriptionsBy.cs" />
+    <Compile Include="Domain\Community\Subscriptions\SearchSubscriptionsBy.cs" />
+    <Compile Include="Helpers\LogoutWebPost.cs" />
+    <Compile Include="Helpers\ProfileImport\ColumnComparer.cs" />
+    <Compile Include="Helpers\CSV\TextColumn.cs" />
+    <Compile Include="Helpers\CSV\dtoCSVsettings.cs" />
+    <Compile Include="Helpers\ProfileImport\ProfileColumnComparer.cs" />
+    <Compile Include="Helpers\CSV\CsvFile.cs" />
+    <Compile Include="Helpers\CSV\TextDelimiter.cs" />
+    <Compile Include="Helpers\CSV\TextRow.cs" />
+    <Compile Include="Domain\Person\CompanyInfo.cs" />
+    <Compile Include="Domain\Person\CompanyUser.cs" />
+    <Compile Include="Domain\Person\PersonTranslator.cs" />
+    <Compile Include="Domain\Person\PersonInfo.cs" />
+    <Compile Include="Domain\GenericExceptions.cs" />
+    <Compile Include="Domain\Repository\RepositorySettings.cs" />
+    <Compile Include="Helpers\StringValueAttribute.cs" />
+    <Compile Include="Helpers\IconCommandsHelper.cs" />
+    <Compile Include="Mail\Domain\dto\dtoMailMessage.cs" />
+    <Compile Include="Mail\Domain\dto\dtoRecipients.cs" />
+    <Compile Include="Mail\Domain\MailAction.cs" />
+    <Compile Include="Mail\Business\MailService.cs" />
+    <Compile Include="Mail\Domain\dto\dtoMailContent.cs" />
+    <Compile Include="PersonalInfo\PersonalFieldType.cs" />
+    <Compile Include="PersonalInfo\PolicyType.cs" />
+    <Compile Include="PersonalInfo\DataPolicy.cs" />
+    <Compile Include="Authentication\dto\dtoCreatedProfile.cs" />
+    <Compile Include="Authentication\Helpers\InternalEncryptor.cs" />
+    <Compile Include="Authentication\Providers\InternalAuthenticationProvider.cs" />
+    <Compile Include="Authentication\Providers\LDAPAuthenticationProvider.cs" />
+    <Compile Include="Authentication\Logon\ProfileDefaultCommunity.cs" />
+    <Compile Include="Authentication\ProfilerError.cs" />
+    <Compile Include="Authentication\Providers\UrlProviderResult.cs" />
+    <Compile Include="Authentication\Helpers\EncryptionInfo.cs" />
+    <Compile Include="Authentication\Providers\LoginFormat.cs" />
+    <Compile Include="Authentication\Providers\UrlAuthenticationProvider.cs" />
+    <Compile Include="Authentication\Helpers\dtoUrlUserDateToken.cs" />
+    <Compile Include="Authentication\Providers\UrlUserTokenFormat.cs" />
+    <Compile Include="Authentication\Helpers\CryptoUtils.cs" />
+    <Compile Include="Authentication\Helpers\Decryptor.cs" />
+    <Compile Include="Authentication\Helpers\DecryptTransformer.cs" />
+    <Compile Include="Authentication\Helpers\EncryptionAlgorithm.cs" />
+    <Compile Include="Authentication\Helpers\Encryptor.cs" />
+    <Compile Include="Authentication\Helpers\EncryptTransformer.cs" />
+    <Compile Include="PersonalInfo\UserPolicyInfo.cs" />
+    <Compile Include="Business\BaseCoreServices.cs" />
+    <Compile Include="Business\BaseModuleManager.cs" />
+    <Compile Include="Business\CoreServices.cs" />
+    <Compile Include="Domain\Assignment\AssignmentType.cs" />
+    <Compile Include="Domain\Base\BaseTextItem.cs" />
+    <Compile Include="Domain\Base\ItemPriority.cs" />
+    <Compile Include="Domain\Base\ShowAs.cs" />
+    <Compile Include="Domain\Repository\ItemDescriptionDisplayMode.cs" />
+    <Compile Include="Domain\Repository\ItemAvailableCommand.cs" />
+    <Compile Include="Domain\Repository\ItemDisplayMode.cs" />
+    <Compile Include="Domain\Repository\ItemDisplayView.cs" />
+    <Compile Include="Domain\Repository\NoStandardFiles\MultimediaFileIndex.cs" />
+    <Compile Include="Domain\Repository\Transfer\TransferPolicy.cs" />
+    <Compile Include="Domain\Repository\Transfer\TransferStatus.cs" />
+    <Compile Include="Domain\Repository\Transfer\FileTransferType.cs" />
+    <Compile Include="Domain\Repository\Transfer\MultimediaFileTransfer.cs" />
+    <Compile Include="Domain\Repository\Transfer\FileTransfer.cs" />
+    <Compile Include="Domain\Repository\Transfer\ScormFileTransfer.cs" />
+    <Compile Include="Domain\Repository\RepositoryItemType.cs" />
+    <Compile Include="Event\Business\CoreEventsService.cs" />
+    <Compile Include="Event\Dto\dtoWeekDay.cs" />
+    <Compile Include="Event\Dto\dtoWeekDayRecurrence.cs" />
+    <Compile Include="Event\Exceptions.cs" />
+    <Compile Include="Domain\ModuleLink\AssignedModuleInfo.cs" />
+    <Compile Include="Domain\Base\BaseCommunityTextItem.cs" />
+    <Compile Include="Domain\Base\BaseModuleTextItem.cs" />
+    <Compile Include="Domain\Base\CoreItemPermission.cs" />
+    <Compile Include="Domain\Base\CoreRootObject.cs" />
+    <Compile Include="Domain\Base\DomainBaseObject.cs" />
+    <Compile Include="Domain\Base\DomainBaseObjectMetaInfo.cs" />
+    <Compile Include="Domain\Base\iDomainBaseObject.cs" />
+    <Compile Include="Domain\Base\IDomainBaseObjectMetaInfo.cs" />
+    <Compile Include="Domain\Base\MetaApprovationStatus.cs" />
+    <Compile Include="Domain\Base\Metadata.cs" />
+    <Compile Include="Domain\Base\OldBASE\DomainObject.cs" />
+    <Compile Include="Domain\Community\Community.cs" />
+    <Compile Include="Domain\Community\CommunityType.cs" />
+    <Compile Include="Domain\Community\ExternalCommunityInfo.cs" />
+    <Compile Include="Domain\Community\Subscriptions\LazySubscription.cs" />
+    <Compile Include="Domain\Community\Modules\CommunityModule.cs" />
+    <Compile Include="Domain\Community\Modules\CommunityModuleAssociation.cs" />
+    <Compile Include="Domain\Community\Modules\CommunityRoleModulePermission.cs" />
+    <Compile Include="Domain\Community\Organization.cs" />
+    <Compile Include="Domain\Community\Relation\CommunityRelation.cs" />
+    <Compile Include="Domain\Community\Relation\CommunityRelationType.cs" />
+    <Compile Include="Domain\Community\RoleCommunityTypeTemplate.cs" />
+    <Compile Include="Domain\Community\Subscriptions\Subscription.cs" />
+    <Compile Include="Domain\Community\Subscriptions\SubscriptionStatus.cs" />
+    <Compile Include="Domain\Component\TimeZone.cs" />
+    <Compile Include="Mail\Business\DirectMailSender.cs" />
+    <Compile Include="Domain\dtoMember.cs" />
+    <Compile Include="Event\CommunityEvent.cs" />
+    <Compile Include="Event\CommunityEventItem.cs" />
+    <Compile Include="Event\CommunityEventType.cs" />
+    <Compile Include="Event\DescriptionEventItem.cs" />
+    <Compile Include="Event\EventItemFile.cs" />
+    <Compile Include="Event\StandardEventType.cs" />
+    <Compile Include="Domain\FilterBase.cs" />
+    <Compile Include="Domain\FilterParameter.cs" />
+    <Compile Include="Domain\GenericFilterItem.cs" />
+    <Compile Include="Domain\GenericItemStatus.cs" />
+    <Compile Include="Domain\ItemTraslation.cs" />
+    <Compile Include="Domain\Language\Language.cs" />
+    <Compile Include="Domain\ModuleLink\ModuleTextItem.cs" />
+    <Compile Include="Domain\ModuleLink\Dto\dtoCoreItemFileLink.cs" />
+    <Compile Include="Domain\ModuleLink\Dto\dtoCoreItemFilePermission.cs" />
+    <Compile Include="Domain\ModuleLink\Dto\dtoEvaluation.cs" />
+    <Compile Include="Domain\ModuleLink\Dto\dtoItemEvaluation.cs" />
+    <Compile Include="Domain\ModuleLink\Dto\StandardActionType.cs" />
+    <Compile Include="Domain\ModuleLink\Dto\ModuleItemFileVisibilityStatus.cs" />
+    <Compile Include="Domain\ModuleLink\Dto\StatFileTreeLeaf.cs" />
+    <Compile Include="Domain\ModuleLink\Dto\StatTreeBaseNode.cs" />
+    <Compile Include="Domain\ModuleLink\Dto\StatTreeLeaf.cs" />
+    <Compile Include="Domain\ModuleLink\Dto\StatTreeLeafType.cs" />
+    <Compile Include="Domain\ModuleLink\Dto\StatTreeNode.cs" />
+    <Compile Include="Domain\ModuleLink\Interface\iCoreFilePermission.cs" />
+    <Compile Include="Domain\ModuleLink\Interface\iCoreItemFileLink.cs" />
+    <Compile Include="Domain\ModuleLink\Interface\iCoreItemFileLinkPermission.cs" />
+    <Compile Include="Domain\ModuleLink\Interface\iCoreItemPermission.cs" />
+    <Compile Include="Domain\ModuleLink\Interface\iLinkedNhibernateService.cs" />
+    <Compile Include="Domain\ModuleLink\Interface\iLinkedOldService.cs" />
+    <Compile Include="Domain\ModuleLink\Interface\iLinkedService.cs" />
+    <Compile Include="Domain\ModuleLink\Interface\IManagementFileView.cs" />
+    <Compile Include="Domain\ModuleLink\Interface\iModuleActionLink.cs" />
+    <Compile Include="Domain\ModuleLink\Interface\iModuleActionView.cs" />
+    <Compile Include="Domain\ModuleLink\Interface\iModuleLink.cs" />
+    <Compile Include="Domain\ModuleLink\Interface\iModuleObject.cs" />
+    <Compile Include="Domain\ModuleLink\Interface\iStatBaseTreeNode.cs" />
+    <Compile Include="Domain\ModuleLink\Interface\iStatTreeLeaf.cs" />
+    <Compile Include="Domain\ModuleLink\Interface\IViewAddRepositoryItemToModuleItem.cs" />
+    <Compile Include="Domain\ModuleLink\Interface\IViewOtherModuleLinkRepositoryItems..cs" />
+    <Compile Include="Domain\ModuleLink\Interface\IViewPublishIntoRepositoryFromModuleItem.cs" />
+    <Compile Include="Domain\ModuleLink\ModuleActionLink.cs" />
+    <Compile Include="Domain\ModuleLink\ModuleLink.cs" />
+    <Compile Include="Domain\ModuleLink\ModuleObject.cs" />
+    <Compile Include="Domain\Modules\LazyModulePermissionTemplate.cs" />
+    <Compile Include="Domain\Modules\LazyCommunityModulePermission.cs" />
+    <Compile Include="Domain\Modules\LazyModuleTemplate.cs" />
+    <Compile Include="Domain\Modules\ModuleCommunity.cs" />
+    <Compile Include="Domain\Modules\ModuleCommunityPermission.cs" />
+    <Compile Include="Domain\Modules\ModuleDefinition.cs" />
+    <Compile Include="Domain\Modules\ModulePage.cs" />
+    <Compile Include="Domain\ObjectStatus.cs" />
+    <Compile Include="Domain\Person\dto\dtoMemberContact.cs" />
+    <Compile Include="Domain\Person\dto\MemberContact.cs" />
+    <Compile Include="Domain\Person\dto\MembershipInfo.cs" />
+    <Compile Include="Domain\Person\dto\OrderContact.cs" />
+    <Compile Include="Domain\Person\OrganizationProfiles.cs" />
+    <Compile Include="Domain\Person\Person.cs" />
+    <Compile Include="Domain\Person\Role.cs" />
+    <Compile Include="Domain\Person\UserTypeStandard.cs" />
+    <Compile Include="Domain\Person\WaitingActivationPerson.cs" />
+    <Compile Include="Domain\Presenter\ApplicationContext.cs" />
+    <Compile Include="Domain\Presenter\DomainPresenter.cs" />
+    <Compile Include="Domain\Presenter\DomainView.cs" />
+    <Compile Include="Domain\Presenter\PagerBase.cs" />
+    <Compile Include="Domain\Presenter\UserContext.cs" />
+    <Compile Include="Domain\Repository\Assignment\CommunityFileAssignment.cs" />
+    <Compile Include="Domain\Repository\Assignment\CommunityFileCommunityAssignment.cs" />
+    <Compile Include="Domain\Repository\Assignment\CommunityFilePersonAssignment.cs" />
+    <Compile Include="Domain\Repository\Assignment\CommunityFilePersonTypeAssignment.cs" />
+    <Compile Include="Domain\Repository\Assignment\CommunityFileRoleAssignment.cs" />
+    <Compile Include="Domain\Repository\BaseCommunityFile.cs" />
+    <Compile Include="Domain\Repository\Community\CommunityFile.cs" />
+    <Compile Include="Domain\Repository\FileDownloadInfo.cs" />
+    <Compile Include="Domain\Repository\BaseModuleCommunityRepository.cs" />
+    <Compile Include="Domain\Repository\CoreModuleRepository.cs" />
+    <Compile Include="Domain\Repository\Dto\CoreFilePermission.cs" />
+    <Compile Include="Domain\Repository\Dto\dtoDisplayItemRepository.cs" />
+    <Compile Include="Domain\Repository\Dto\dtoFileExist.cs" />
+    <Compile Include="Domain\Repository\Dto\dtoFileScorm.cs" />
+    <Compile Include="Domain\Repository\Dto\dtoFileToPublish.cs" />
+    <Compile Include="Domain\Repository\Dto\dtoModuleUploadedFile.cs" />
+    <Compile Include="Domain\Repository\Dto\dtoUploadedFile.cs" />
+    <Compile Include="Domain\Repository\Dto\ItemRepositoryStatus.cs" />
+    <Compile Include="Domain\Repository\Dto\ItemRepositoryToCreate.cs" />
+    <Compile Include="Domain\Repository\Dto\MultipleUploadResult.cs" />
+    <Compile Include="Domain\Repository\FileType.cs" />
+    <Compile Include="Domain\Repository\Internal\ModuleGuidInternalFile.cs" />
+    <Compile Include="Domain\Repository\Internal\ModuleInternalFile.cs" />
+    <Compile Include="Domain\Repository\Internal\ModuleLongInternalFile.cs" />
+    <Compile Include="Domain\Repository\Old\BaseFile.cs" />
+    <Compile Include="Domain\Repository\NoStandardFiles\FilePlayInfo.cs" />
+    <Compile Include="Domain\Repository\NoStandardFiles\ScormPackageToEvaluate.cs" />
+    <Compile Include="Helpers\CacheHelper.cs" />
+    <Compile Include="Domain\ContentView.cs" />
+    <Compile Include="Helpers\CacheExpiration.cs" />
+    <Compile Include="Helpers\Impersonate.cs" />
+    <Compile Include="Helpers\XMLrepository.cs" />
+    <Compile Include="Helpers\RandomKeyGenerator.cs" />
+    <Compile Include="Helpers\FactoryBuilder.cs" />
+    <Compile Include="Helpers\PermissionHelper.cs" />
+    <Compile Include="Domain\RepositoryItemPermission.cs" />
+    <Compile Include="Domain\TranslatedItem.cs" />
+    <Compile Include="Helpers\EnumParser.cs" />
+    <Compile Include="Helpers\ItemType.cs" />
+    <Compile Include="Helpers\TimeZoneUtil.cs" />
+    <Compile Include="Helpers\TextUtility.cs" />
+    <Compile Include="Interface\iApplicationContext.cs" />
+    <Compile Include="Interface\iBaseFile.cs" />
+    <Compile Include="Interface\iCommunity.cs" />
+    <Compile Include="Interface\iCommunityModuleAssociation.cs" />
+    <Compile Include="Interface\iCommunityRelation.cs" />
+    <Compile Include="Interface\iCommunityRoleModulePermission.cs" />
+    <Compile Include="Interface\iDataContext.cs" />
+    <Compile Include="Interface\iDomainManager.cs" />
+    <Compile Include="Interface\iDomainObject.cs" />
+    <Compile Include="Interface\iDomainPresenter.cs" />
+    <Compile Include="Interface\iDomainView.cs" />
+    <Compile Include="Interface\iItemStatus.cs" />
+    <Compile Include="Interface\iLanguage.cs" />
+    <Compile Include="Interface\iMetaData.cs" />
+    <Compile Include="Interface\iModuleCommunity.cs" />
+    <Compile Include="Interface\iModuleDefinition.cs" />
+    <Compile Include="Interface\iPerson.cs" />
+    <Compile Include="Interface\iPresenter.cs" />
+    <Compile Include="Interface\iRole.cs" />
+    <Compile Include="Interface\iSubscription.cs" />
+    <Compile Include="Interface\iTimeZone.cs" />
+    <Compile Include="Interface\iUserContext.cs" />
+    <Compile Include="Interface\iView.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TemplateMessages\Business\TemplatesForOtherService.cs" />
+    <Compile Include="TemplateMessages\Business\TemplateMessagesService.cs" />
+    <Compile Include="TemplateMessages\Domain\dto\dtoTemplateNotification.cs" />
+    <Compile Include="TemplateMessages\Domain\dto\dtoTemplateItem.cs" />
+    <Compile Include="TemplateMessages\Domain\dto\dtoVersionItem.cs" />
+    <Compile Include="TemplateMessages\Domain\Enum\TemplateLevel.cs" />
+    <Compile Include="TemplateMessages\Domain\Enum\UserSelection.cs" />
+    <Compile Include="TemplateMessages\Domain\Enum\DisplayTab.cs" />
+    <Compile Include="TemplateMessages\Domain\ExternalModuleRootObject.cs" />
+    <Compile Include="TemplateMessages\Domain\dto\dtoModuleContext.cs" />
+    <Compile Include="Notification\Domain\NotificationActionType.cs" />
+    <Compile Include="TemplateMessages\Domain\Lite\liteChannelSettings.cs" />
+    <Compile Include="TemplateMessages\Domain\Lite\liteTemplateDefinition.cs" />
+    <Compile Include="TemplateMessages\Domain\Lite\liteTemplateDefinitionVersion.cs" />
+    <Compile Include="TemplateMessages\Domain\Lite\liteTemplateModuleContent.cs" />
+    <Compile Include="TemplateMessages\Domain\Lite\liteTemplateTranslation.cs" />
+    <Compile Include="TemplateMessages\Domain\Lite\Permission\liteVersionPermission.cs" />
+    <Compile Include="TemplateMessages\Domain\ModuleGenericTemplateMessages.cs" />
+    <Compile Include="TemplateMessages\Domain\dto\dtoBaseFilters.cs" />
+    <Compile Include="TemplateMessages\Domain\dto\dtoTemplateAssignment.cs" />
+    <Compile Include="TemplateMessages\Domain\dto\dtoBase.cs" />
+    <Compile Include="TemplateMessages\Domain\dto\dtoChannelConfigurator.cs" />
+    <Compile Include="TemplateMessages\Domain\dto\dtoTemplateDisplayItemPermission.cs" />
+    <Compile Include="TemplateMessages\Domain\dto\dtoTemplateStep.cs" />
+    <Compile Include="TemplateMessages\Domain\dto\dtoTemplatePermission.cs" />
+    <Compile Include="TemplateMessages\Domain\dto\dtoBaseTemplateOwner.cs" />
+    <Compile Include="TemplateMessages\Domain\dto\dtoNotificationSettings.cs" />
+    <Compile Include="TemplateMessages\Domain\dto\dtoDisplayTemplateDefinition.cs" />
+    <Compile Include="TemplateMessages\Domain\dto\dtoDisplayTemplateVersion.cs" />
+    <Compile Include="TemplateMessages\Domain\dto\dtoTemplateTranslation.cs" />
+    <Compile Include="TemplateMessages\Domain\dto\dtoVersionPermission.cs" />
+    <Compile Include="TemplateMessages\Domain\Enum\EditingErrors.cs" />
+    <Compile Include="TemplateMessages\Domain\ModuleTemplateMessages.cs" />
+    <Compile Include="TemplateMessages\Domain\Permission\VersionModulePermission.cs" />
+    <Compile Include="TemplateMessages\Domain\Enum\PermissionType.cs" />
+    <Compile Include="TemplateMessages\Domain\Permission\VersionOwnerPermission.cs" />
+    <Compile Include="TemplateMessages\Domain\Permission\VersionPermission.cs" />
+    <Compile Include="TemplateMessages\Domain\Permission\VersionCommunityPermission.cs" />
+    <Compile Include="TemplateMessages\Domain\Permission\VersionPersonPermission.cs" />
+    <Compile Include="TemplateMessages\Domain\Permission\VersionProfileTypePermission.cs" />
+    <Compile Include="TemplateMessages\Domain\Permission\VersionRolePermission.cs" />
+    <Compile Include="Notification\Domain\NotificationChannel.cs" />
+    <Compile Include="Notification\Domain\NotificationMode.cs" />
+    <Compile Include="TemplateMessages\Domain\Enum\OwnerType.cs" />
+    <Compile Include="TemplateMessages\Domain\RootObject.cs" />
+    <Compile Include="TemplateMessages\Domain\BaseTemplatePlaceHolders.cs" />
+    <Compile Include="TemplateMessages\Domain\Template\CommonNotificationSettings.cs" />
+    <Compile Include="TemplateMessages\Domain\Template\NotificationSettings.cs" />
+    <Compile Include="TemplateMessages\Domain\Template\TemplateModuleAssociation.cs" />
+    <Compile Include="TemplateMessages\Domain\Template\TemplateModuleContent.cs" />
+    <Compile Include="Domain\Language\ItemObjectTranslation.cs" />
+    <Compile Include="TemplateMessages\Domain\Template\TemplateOwner.cs" />
+    <Compile Include="TemplateMessages\Domain\Template\TemplateTranslation.cs" />
+    <Compile Include="TemplateMessages\Domain\Template\TemplateDefinitionVersion.cs" />
+    <Compile Include="TemplateMessages\Domain\Template\ChannelSettings.cs" />
+    <Compile Include="TemplateMessages\Domain\Enum\TemplateStatus.cs" />
+    <Compile Include="Mail\Messages\Domain\MailAttachment.cs" />
+    <Compile Include="TemplateMessages\Domain\Template\TemplateDefinition.cs" />
+    <Compile Include="TemplateMessages\Domain\Enum\TemplateType.cs" />
+    <Compile Include="TemplateMessages\Domain\WizardTemplateStep.cs" />
+    <Compile Include="WinService\Config.cs" />
+    <Compile Include="WinService\Configuration.cs" />
+    <Compile Include="Wizard\dtoNavigableWizardItem.cs" />
+    <Compile Include="Wizard\NavigableWizardItemBase.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="InLineTags\Mapping\lite\liteInLineTag.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InLineTags\Mapping\InLineTag.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mapping\Person\liteAgencyAffiliation.hbm.xml" />
+    <EmbeddedResource Include="Mapping\Person\liteAgency.hbm.xml" />
+    <EmbeddedResource Include="Mapping\AuthenticationProvider\liteGenericEncryption.hbm.xml" />
+    <None Include="DocTemplateVers\Documentation\CD_Core.cd" />
+    <None Include="DocTemplateVers\Documentation\CD_Export.cd" />
+    <None Include="DocTemplateVers\Documentation\CD_Management.cd" />
+    <None Include="DocTemplateVers\Documentation\Template Class Diagramm.docx" />
+    <None Include="Documentation\DomainObjectCD.cd" />
+    <None Include="FileRepository\Domain\advanced\scorm\settings\ScormSettings.cd" />
+    <None Include="FileRepository\Domain\NewRepository_Files.cd" />
+    <None Include="FileRepository\Domain\NewRepository_Settings.cd" />
+    <None Include="FileRepository\Domain\NewRepository_TransferItems.cd" />
+    <None Include="packages.config" />
+    <None Include="Service References\SrvFileUnzip\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\SrvFileUnzip\configuration.svcinfo" />
+    <None Include="Service References\SrvFileUnzip\configuration91.svcinfo" />
+    <None Include="Service References\SrvFileTransfer\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\SrvFileTransfer\configuration.svcinfo" />
+    <None Include="Service References\SrvFileTransfer\configuration91.svcinfo" />
+    <EmbeddedResource Include="Mapping\Person\liteSubscription.hbm.xml" />
+    <EmbeddedResource Include="Mapping\Community\liteCommunityModuleAssociation.hbm.xml" />
+    <EmbeddedResource Include="Mapping\Modules\liteModuleDefinition.hbm.xml" />
+    <EmbeddedResource Include="Mapping\Community\liteCommunityDetails.hbm.xml" />
+    <EmbeddedResource Include="Mapping\Community\liteRoleCommunityTypeTemplate.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mapping\Community\CommunityConstraint.hbm.xml" />
+    <EmbeddedResource Include="Mapping\Community\liteCommunityConstraint.hbm.xml" />
+    <EmbeddedResource Include="Tag\Mapping\lite\liteCommunityTagForEdit.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mapping\Person\dtoTranslatedProfileType.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mapping\Person\dtoTranslatedRoleType.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mapping\liteModuleLink.hbm.xml" />
+    <EmbeddedResource Include="Mapping\Community\liteCommunity.hbm.xml" />
+    <EmbeddedResource Include="Mapping\Repository\liteBaseCommunityFile.hbm.xml" />
+    <EmbeddedResource Include="Tag\Mapping\lite\liteOrganizationAvailability.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tag\Mapping\OrganizationAvailability.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tag\Mapping\lite\liteTag.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mapping\Community\dtoTranslatedCommunityType.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mapping\Person\liteOrganizationProfile.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mapping\Community\liteSubscriptionInfo.hbm.xml" />
+    <EmbeddedResource Include="Mapping\Community\liteCommunityInfo.hbm.xml" />
+    <EmbeddedResource Include="Tag\Mapping\lite\liteTagTranslation.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tag\Mapping\lite\liteTagItem.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tag\Mapping\lite\liteCommunityTag.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tag\Mapping\CommunityTag.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tag\Mapping\TagItem.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mapping\Person\liteIstantMessaging.hbm.xml" />
+    <EmbeddedResource Include="Mapping\Person\IstantMessaging.hbm.xml" />
+    <EmbeddedResource Include="Mapping\Person\litePerson.hbm.xml" />
+    <EmbeddedResource Include="Mapping\Person\expPerson.hbm.xml" />
+    <EmbeddedResource Include="Mail\Messages\Mapping\MessageTranslation.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mail\Messages\Mapping\MailMessage.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mail\Messages\Mapping\MailAttachment.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mail\Messages\Mapping\MailTemplateContent.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mail\Messages\Mapping\MailRecipient.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mail\Messages\Mapping\MailTemplate.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tag\Mapping\TagTranslation.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TemplateMessages\Mapping\TemplateModuleAssociation.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TemplateMessages\Mapping\CommonNotificationSettings.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TemplateMessages\Mapping\ChannelSettings.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TemplateMessages\Mapping\VersionPermission.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TemplateMessages\Mapping\TemplateModuleContent.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TemplateMessages\Mapping\TemplateTranslation.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TemplateMessages\Mapping\TemplateDefinitionVersion.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TemplateMessages\Mapping\TemplateDefinition.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mapping\AuthenticationProvider\BaseLoginInfoHistory.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mapping\AuthenticationProvider\CompositeAttributeItem.hbm.xml" />
+    <EmbeddedResource Include="Mapping\Person\LazyAffiliation.hbm.xml" />
+    <EmbeddedResource Include="Certification\Mapping\Certification.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dashboard\Mapping\DashboardSettings.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dashboard\Mapping\UserDashboardSettings.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dashboard\Mapping\DashboardAssignment.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dashboard\Mapping\PageSettings.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dashboard\Mapping\TileAssignment.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dashboard\Mapping\TileTagAssociation.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dashboard\Mapping\TileTranslation.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dashboard\Mapping\TileItemTranslation.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dashboard\Mapping\Tile.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dashboard\Mapping\TileItem.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dashboard\Mapping\lite\liteDashboardAssignment.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dashboard\Mapping\lite\liteDashboardSettings.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dashboard\Mapping\lite\litePageSettings.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dashboard\Mapping\lite\liteTile.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dashboard\Mapping\lite\liteTileAssignment.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dashboard\Mapping\lite\liteTileItem.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dashboard\Mapping\lite\liteTileItemTranslation.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dashboard\Mapping\lite\liteTileTagAssociation.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dashboard\Mapping\lite\liteTileTranslation.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dashboard\Mapping\lite\liteUserDashboardSettings.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dashboard\Mapping\lite\liteDashboardTileAssignment.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dashboard\Mapping\DashboardTileAssignment.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dashboard\Mapping\lite\liteSearchTile.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dashboard\Mapping\Small\smallTile.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dashboard\Mapping\Small\smallDashboardTileAssignment.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Content Include="DocTemplateVers\Domain\Core\Description.txt" />
+    <Content Include="DocTemplateVers\Domain\DTO_ServiceExport\DTO_Template.txt" />
+    <Content Include="DocTemplateVers\Domain\DTO_Management\Description.txt" />
+    <EmbeddedResource Include="Mapping\Catalogue\BaseCatalogueAssignment.hbm.xml" />
+    <EmbeddedResource Include="Mapping\Catalogue\BaseCatalogueItem.hbm.xml" />
+    <EmbeddedResource Include="Mapping\Catalogue\Catalogue.hbm.xml" />
+    <EmbeddedResource Include="DocTemplateVers\Mapping\PageElement.hbm.xml" />
+    <EmbeddedResource Include="DocTemplateVers\Mapping\ServiceContent.hbm.xml" />
+    <EmbeddedResource Include="DocTemplateVers\Mapping\Settings.hbm.xml" />
+    <EmbeddedResource Include="DocTemplateVers\Mapping\Signature.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DocTemplateVers\Mapping\Template.hbm.xml" />
+    <EmbeddedResource Include="DocTemplateVers\Mapping\TemplateVersion.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mapping\AuthenticationProvider\CatalogueAttributeItem.hbm.xml" />
+    <EmbeddedResource Include="Mapping\AuthenticationProvider\OrganizationAttributeItem.hbm.xml" />
+    <EmbeddedResource Include="Mapping\AuthenticationProvider\MacAttributeItem.hbm.xml" />
+    <EmbeddedResource Include="Mapping\AuthenticationProvider\BaseUrlMacAttribute.hbm.xml" />
+    <None Include="app.config" />
+    <None Include="Dashboard\Domain\Settings\DashboardDiagram.cd" />
+    <None Include="Dashboard\Domain\Tile\TileDiagram.cd" />
+    <Content Include="Domain\Repository\Old\BaseFile.vb" />
+    <EmbeddedResource Include="FileRepository\Mapping\advanced\FileTransferBase.hbm.xml" />
+    <EmbeddedResource Include="FileRepository\Mapping\advanced\MultimediaFileObject.hbm.xml" />
+    <EmbeddedResource Include="FileRepository\Mapping\advanced\ScormPackageRequestForRecalc.hbm.xml" />
+    <EmbeddedResource Include="FileRepository\Mapping\advanced\ScormPackageUserEvaluation.hbm.xml" />
+    <EmbeddedResource Include="FileRepository\Mapping\advanced\ScormPackageWithVersionToEvaluate.hbm.xml" />
+    <EmbeddedResource Include="FileRepository\Mapping\advanced\ScormSettings\ScormItemSettings.hbm.xml" />
+    <EmbeddedResource Include="FileRepository\Mapping\advanced\ScormSettings\ScormOrganizationSettings.hbm.xml" />
+    <EmbeddedResource Include="FileRepository\Mapping\advanced\ScormSettings\ScormPackageSettings.hbm.xml" />
+    <EmbeddedResource Include="FileRepository\Mapping\base\ItemAssignments.hbm.xml" />
+    <EmbeddedResource Include="FileRepository\Mapping\base\RepositoryFullSize.hbm.xml" />
+    <EmbeddedResource Include="FileRepository\Mapping\base\RepositoryItem.hbm.xml" />
+    <EmbeddedResource Include="FileRepository\Mapping\base\RepositoryItemVersion.hbm.xml" />
+    <EmbeddedResource Include="FileRepository\Mapping\lite\advanced\liteFileTransfer.hbm.xml" />
+    <EmbeddedResource Include="FileRepository\Mapping\lite\advanced\liteMultimediaFileObject.hbm.xml" />
+    <EmbeddedResource Include="FileRepository\Mapping\lite\base\liteItemAssignments.hbm.xml" />
+    <EmbeddedResource Include="FileRepository\Mapping\lite\base\liteManageRepositoryItem.hbm.xml" />
+    <EmbeddedResource Include="FileRepository\Mapping\lite\base\liteRepositoryItem.hbm.xml" />
+    <EmbeddedResource Include="FileRepository\Mapping\lite\base\liteRepositoryItemVersion.hbm.xml" />
+    <EmbeddedResource Include="FileRepository\Mapping\lite\settings\liteItemTypeSettings.hbm.xml" />
+    <EmbeddedResource Include="FileRepository\Mapping\lite\settings\litePlayerSettings.hbm.xml" />
+    <EmbeddedResource Include="FileRepository\Mapping\lite\settings\liteProfileTypeAvailability.hbm.xml" />
+    <EmbeddedResource Include="FileRepository\Mapping\lite\settings\liteRepositorySettings.hbm.xml" />
+    <EmbeddedResource Include="FileRepository\Mapping\lite\settings\liteViewSettings.hbm.xml" />
+    <EmbeddedResource Include="FileRepository\Mapping\settings\ItemTypeSettings.hbm.xml" />
+    <EmbeddedResource Include="FileRepository\Mapping\settings\PlayerSettings.hbm.xml" />
+    <EmbeddedResource Include="FileRepository\Mapping\settings\ProfileTypeAvailability.hbm.xml" />
+    <EmbeddedResource Include="FileRepository\Mapping\settings\RepositoryContextSettings.hbm.xml" />
+    <EmbeddedResource Include="FileRepository\Mapping\settings\ViewSettings.hbm.xml" />
+    <EmbeddedResource Include="FileRepository\Mapping\statistics\DownloadStatistics.hbm.xml" />
+    <EmbeddedResource Include="FileRepository\Mapping\statistics\PlayStatistics.hbm.xml" />
+    <EmbeddedResource Include="FileRepository\Mapping\toRemove\liteTransferFromOldTable.hbm.xml" />
+    <EmbeddedResource Include="FileRepository\Mapping\toRemove\NewAssignments.hbm.xml" />
+    <EmbeddedResource Include="FileRepository\Mapping\toRemove\NewDownloadStatistics.hbm.xml" />
+    <EmbeddedResource Include="FileRepository\Mapping\toRemove\NewFileTransferBase.hbm.xml" />
+    <EmbeddedResource Include="FileRepository\Mapping\toRemove\NewliteModuleLink.hbm.xml" />
+    <EmbeddedResource Include="FileRepository\Mapping\toRemove\NewMultimediaObject.hbm.xml" />
+    <EmbeddedResource Include="FileRepository\Mapping\toRemove\NewPlayStatistics.hbm.xml" />
+    <EmbeddedResource Include="FileRepository\Mapping\toRemove\OldAssignments.hbm.xml" />
+    <EmbeddedResource Include="FileRepository\Mapping\toRemove\OldDownloadStatistics.hbm.xml" />
+    <EmbeddedResource Include="FileRepository\Mapping\toRemove\OldFileTransfer.hbm.xml" />
+    <EmbeddedResource Include="FileRepository\Mapping\toRemove\OldMultimediaObject.hbm.xml" />
+    <EmbeddedResource Include="FileRepository\Mapping\toRemove\OldPlayStatistics.hbm.xml" />
+    <EmbeddedResource Include="FileRepository\Mapping\toRemove\TransferFromOldTable.hbm.xml" />
+    <EmbeddedResource Include="FileRepository\Mapping\toRemove\TransferToNewItemTable.hbm.xml" />
+    <EmbeddedResource Include="FileRepository\Mapping\toRemove\TransferVersion.hbm.xml" />
+    <Content Include="Helpers\Export\Library\itextsharp.dll" />
+    <Content Include="Helpers\Export\Library\itextsharp5.dll" />
+    <EmbeddedResource Include="Mapping\Catalogue\CatalogueAffiliation.hbm.xml" />
+    <EmbeddedResource Include="Mapping\Person\Agency.hbm.xml" />
+    <EmbeddedResource Include="Mapping\Person\AgencyAffiliation.hbm.xml" />
+    <EmbeddedResource Include="Mapping\Person\ExternalUser.hbm.xml" />
+    <EmbeddedResource Include="Mapping\Person\OrganizationAffiliation.hbm.xml" />
+    <EmbeddedResource Include="Mapping\AuthenticationProvider\ProfileDefaultCommunity.hbm.xml" />
+    <EmbeddedResource Include="Mapping\AuthenticationProvider\MailEditingPending.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mapping\Repository\RepositorySettings.hbm.xml" />
+    <EmbeddedResource Include="Mapping\Community\_RoleCommunityTypeTemplate.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mapping\Community\_OldCommunityRelation.hbm.xml" />
+    <EmbeddedResource Include="Mapping\Community\OldCommunityRelation.hbm.xml" />
+    <EmbeddedResource Include="Mapping\Person\ProfileTypeChanger.hbm.xml" />
+    <EmbeddedResource Include="Mapping\AuthenticationProvider\WaitingActivationProfile.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mapping\AuthenticationProvider\AuthenticationProviderTranslation.hbm.xml" />
+    <EmbeddedResource Include="Mapping\PersonalInfo\UserPolicyInfo.hbm.xml" />
+    <EmbeddedResource Include="Mapping\PersonalInfo\DataPolicy.hbm.xml" />
+    <EmbeddedResource Include="Mapping\Repository\FileTransfer.hbm.xml" />
+    <EmbeddedResource Include="Mapping\Repository\MultimediaFileIndex.hbm.xml" />
+    <EmbeddedResource Include="Mapping\AuthenticationProvider\BaseLoginInfo.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mapping\AuthenticationProvider\LoginFormat.hbm.xml" />
+    <EmbeddedResource Include="Mapping\AuthenticationProvider\AuthenticationProvider.hbm.xml" />
+    <EmbeddedResource Include="Mapping\Modules\ModulePage.hbm.xml" />
+    <EmbeddedResource Include="Mapping\Modules\LazyModulePermissionTemplate.hbm.xml" />
+    <EmbeddedResource Include="Mapping\Modules\LazyModuleTemplate.hbm.xml" />
+    <EmbeddedResource Include="Mapping\Repository\BaseFile.hbm.xml" />
+    <EmbeddedResource Include="Mapping\Community\Community.hbm.xml" />
+    <EmbeddedResource Include="Mapping\Events\CommunityEvent.hbm.xml" />
+    <EmbeddedResource Include="Mapping\Events\CommunityEventItem.hbm.xml" />
+    <EmbeddedResource Include="Mapping\Events\CommunityEventType.hbm.xml" />
+    <EmbeddedResource Include="Mapping\Repository\CommunityFile.hbm.xml" />
+    <EmbeddedResource Include="Mapping\Repository\CommunityFileAssignment.hbm.xml" />
+    <EmbeddedResource Include="Mapping\Community\CommunityModule.hbm.xml" />
+    <EmbeddedResource Include="Mapping\Community\CommunityModuleAssociation.hbm.xml" />
+    <EmbeddedResource Include="Mapping\Community\CommunityRelation.hbm.xml" />
+    <EmbeddedResource Include="Mapping\Community\CommunityRoleModulePermission.hbm.xml" />
+    <EmbeddedResource Include="Mapping\Community\CommunityType.hbm.xml" />
+    <EmbeddedResource Include="Mapping\Events\DescriptionEventItem.hbm.xml" />
+    <EmbeddedResource Include="Mapping\Events\EventItemFile.hbm.xml" />
+    <EmbeddedResource Include="Mapping\Repository\FileDownloadInfo.hbm.xml" />
+    <EmbeddedResource Include="Mapping\Language.hbm.xml" />
+    <EmbeddedResource Include="Mapping\Modules\LazyCommunityModulePermission.hbm.xml" />
+    <EmbeddedResource Include="Mapping\Person\LazySubscription.hbm.xml" />
+    <EmbeddedResource Include="Mapping\Metadata.hbm.xml" />
+    <EmbeddedResource Include="Mapping\Community\ModuleCommunity.hbm.xml" />
+    <EmbeddedResource Include="Mapping\Modules\ModuleDefinition.hbm.xml" />
+    <EmbeddedResource Include="Mapping\ModuleLink.hbm.xml" />
+    <EmbeddedResource Include="Mapping\Person\OrganizationProfiles.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mapping\Community\CommunityOrganization.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mapping\Person\Person.hbm.xml" />
+    <EmbeddedResource Include="Mapping\Role\Role.hbm.xml" />
+    <EmbeddedResource Include="Mapping\Role\RoleCommunityTypeTemplate.hbm.xml" />
+    <EmbeddedResource Include="Mapping\Repository\FilePlayInfo.hbm.xml" />
+    <EmbeddedResource Include="Mapping\Repository\ScormPackageToEvaluate.hbm.xml" />
+    <EmbeddedResource Include="Mapping\Person\Subscription.hbm.xml" />
+    <EmbeddedResource Include="Mapping\Person\WaitingActivationPerson.hbm.xml" />
+    <None Include="Mail\Messages\Domain\CDmessages.cd" />
+    <None Include="Service References\SrvFileTransfer\service.wsdl" />
+    <None Include="Service References\SrvFileTransfer\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SrvFileTransfer\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SrvFileUnzip\service.wsdl" />
+    <None Include="Service References\SrvFileUnzip\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SrvFileUnzip\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Tag\Domain\TagItem.cd" />
+    <None Include="TemplateMessages\Domain\TemplateMessages.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Dashboard\Presentation\IView\" />
+    <Folder Include="Dashboard\Presentation\Presenter\" />
+    <Folder Include="Mail\Messages\dto\" />
+    <Folder Include="TemplateMessages\Presentation\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Authentication\Authentication.cd" />
+    <None Include="Domain\ModuleLink\ModuleLinkCd.cd" />
+    <None Include="Domain\Person\Person.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\SrvFileTransfer\" />
+    <WCFMetadataStorage Include="Service References\SrvFileUnzip\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\lm.Comol.Core.MailCommons\lm.Comol.Core.MailCommons.csproj">
+      <Project>{428243cb-28cd-4d81-8099-74d1448b5e1d}</Project>
+      <Name>lm.Comol.Core.MailCommons</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

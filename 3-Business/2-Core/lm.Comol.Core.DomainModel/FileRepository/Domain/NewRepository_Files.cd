@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="lm.Comol.Core.FileRepository.Domain.RepositoryItem">
+    <Position X="5.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACBAEIAAAACAAAAAAAAAAAQAAACAAUEAABAQCAAAAAA=</HashCode>
+      <FileName>FileRepository\Domain\base\RepositoryItem.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Module" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="Versions" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="lm.Comol.Core.FileRepository.Domain.RepositoryItemVersion">
+    <Position X="9" Y="3.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAQAAAAAAAAEAIAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>FileRepository\Domain\base\RepositoryItemVersion.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="lm.Comol.Core.FileRepository.Domain.ItemAssignments">
+    <Position X="12.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAQAAAAAAAQAAIAAAAAAAAAAAAAEQMAAAEAAAA=</HashCode>
+      <FileName>FileRepository\Domain\base\ItemAssignments.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="lm.Comol.Core.FileRepository.Domain.ItemIdentifiers" Collapsed="true">
+    <Position X="14.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAQAAAAAAAAAAIAAAAAAAAAAAAAABAAAAAAAAA=</HashCode>
+      <FileName>FileRepository\Domain\base\ItemIdentifiers.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="lm.Comol.Core.FileRepository.Domain.ItemModuleSettings">
+    <Position X="2.25" Y="4.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAAAAAAAAEAAAAAAAgAQAAAAAQAAwAAAAA=</HashCode>
+      <FileName>FileRepository\Domain\base\ItemModuleSettings.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="lm.Comol.Core.FileRepository.Domain.BaseRepositoryItem">
+    <Position X="6.5" Y="0.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAACAAAAggAAQAFCAAAAAEAAAAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>FileRepository\Domain\base\BaseRepositoryItem.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="DisplayMode" />
+      <Property Name="Type" />
+    </ShowAsAssociation>
+  </Class>
+  <Enum Name="lm.Comol.Core.FileRepository.Domain.DisplayMode">
+    <Position X="3" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAIAAA=</HashCode>
+      <FileName>FileRepository\Domain\base\enum\DisplayMode.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="lm.Comol.Core.FileRepository.Domain.ItemType">
+    <Position X="10.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAAAAAAAAAABCAAAAAAAAAAAAACIAAAAEABAA=</HashCode>
+      <FileName>FileRepository\Domain\base\enum\ItemType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="lm.Comol.Core.DomainModel"  namespace="lm.Comol.Core.DomainModel">
+  <class name="DescriptionEventItem" table="PROGRAMMA_EVENTO" lazy="true">
+    <id name="Id" column="PREV_ORRI_id" type="Int64">
+      <generator class="assigned"/>
+    </id>
+    <property name="Description" type="String" column="PREV_ProgrammaSvolto" />
+    <property name="DescriptionPlain" type="String" column="DescriptionPlain" />
+  </class>
+</hibernate-mapping>

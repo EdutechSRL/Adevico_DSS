@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="lm.Comol.Core.DomainModel" namespace="lm.Comol.Core.DomainModel">
+	<class name="liteCommunityDetails" table="COMUNITA" lazy="false" where="CMNT_id>0">
+		<id name="Id" column="CMNT_id" type="Int32" unsaved-value="0">
+			<generator class="native"/>
+		</id>
+    <property name="Description" type="String" column="CMNT_statuto"  update="false" insert="false"/>
+  </class>
+</hibernate-mapping>

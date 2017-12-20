@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="urn:ComolTranslation">
+  <item name="LBTitolo.text" html="false" placeholder="false">Invitations management</item>
+  <item name="LibreriaDiDomande" disambiguation="libreria=libreria di domande" html="false" placeholder="false">Libraries</item>
+  <item name="Modello" disambiguation="modello=modello di questionario" html="false" placeholder="false">Models</item>
+  <item name="Autovalutazione" html="false" placeholder="false">Self-assessment test</item>
+  <item name="Sondaggio" html="false" placeholder="false">Polls</item>
+  <item name="Questionari" html="false" placeholder="false">Questionnaires</item>
+  <item name="Meeting" html="false" placeholder="false">Meeting</item>
+  <item name="testoUnico" html="true" placeholder="true" mustcontains="#LINKQUESTIONARIO#|#AUTORE#|#DESTINATARIO#|#DATAFINE#|#DATAINIZIO#|#NOMEQUESTIONARIO#|#DESCRIZIONEQUESTIONARIO#|#DURATA#|#LINKQUESTIONARIO#">From this page you can send custom emails to invite users &lt;br&gt;
+        &lt;br&gt;
+        Emails default templates are available. They can be saved, associated to the user and reused in other communities or questionnaires.&lt;br&gt;
+        From the first panel you can manage templates. Select a template from the drop down menu, click “OK” to load it, or “Delete” to delete it. If you want to reset the template you are editing, click “New Template”.&lt;br&gt;
+        To save a new template, you have to name it and then click “Save template as ” below the preview panel.&lt;br&gt;
+        &lt;br&gt;
+        In the "Recipients" panel you can add users that will receive an invitation by email.&lt;br&gt;
+        &lt;br&gt;
+        TAGS are available either for the email subject or for the email body but they must be manually added   &lt;br&gt;
+        Email body can be customed by clicking the available TAG buttons. Red texted buttons must be added to the email body. &lt;br&gt;
+        All the tags so inserted, can be cutted and pasted in the subject line.&lt;br&gt;
+        &lt;br&gt;
+        Currently available tags:&lt;br&gt;
+        - Link (Tag: #LINKQUESTIONARIO#): redirects to the URL of the questionnaire. It is associated to the single invitation.&lt;br&gt;
+        - Author (Tag: #AUTORE#): name and surname of the creator are added to the email.&lt;br&gt;
+        - Destinatario (Tag: #DESTINATARIO#): name and surname of the recipient are added to the email.&lt;br&gt;
+        - End date (Tag: #DATAFINE#): the end date of the questionnaire is specified in the email.&lt;br&gt;
+        - Start date (Tag: #DATAINIZIO#): the start date of the questionnaire is specified in the email. &lt;br&gt;
+        - Name  of the questionnaire (Tag: #NOMEQUESTIONARIO#): the name of the questionnaire is specified in the email.&lt;br&gt;
+        - Descrizione (Tag: #DESCRIZIONEQUESTIONARIO#): the descritpion is added to the email. &lt;br&gt;
+        - Durata (Tag: #DURATA#): the duration of the questionnaire is specified in the mail.&lt;br&gt;
+        &lt;br&gt;
+        In the preview panel it is possible to view the email, as the recipient will do. (except for the fields customed for every single user, like  #DESTINATARIO# o #LINKQUESTIONARIO#).&lt;br&gt;
+</item>
+</Resource>

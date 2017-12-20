@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="lm.Comol.Core.FileRepository.Domain.ScormPackageWithVersionToEvaluate">
+    <Position X="14" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIBQAAAAAAAAAAIBAAAQAAQAAAAAABIAAAAAAAA=</HashCode>
+      <FileName>FileRepository\Domain\advanced\scorm\ScormPackageWithVersionToEvaluate.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="lm.Comol.Core.FileRepository.Domain.FileTransferBase">
+    <Position X="7.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAABMAAAAQAIAAAKAAAAAEAAAAAAAAAAAAEAAAAA=</HashCode>
+      <FileName>FileRepository\Domain\advanced\transfer\FileTransferBase.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Status" />
+      <Property Name="Policy" />
+      <Property Name="Discriminator" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="lm.Comol.Core.FileRepository.Domain.FileTransferMultimedia">
+    <Position X="8" Y="6.25" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABAAAAAAAAAAAAAAAIAAAAEAAAAAAAEAAAA=</HashCode>
+      <FileName>FileRepository\Domain\advanced\transfer\FileTransferMultimedia.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="DefaultDocument" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="Objects" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="lm.Comol.Core.FileRepository.Domain.FileTransferScorm">
+    <Position X="5.75" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAkAAAA=</HashCode>
+      <FileName>FileRepository\Domain\advanced\transfer\FileTransferScorm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="lm.Comol.Core.FileRepository.Domain.MultimediaFileObject">
+    <Position X="11.75" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIABAAIAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>FileRepository\Domain\advanced\multimedia\MultimediaFileObject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="lm.Comol.Core.FileRepository.Domain.FileTransferType">
+    <Position X="17" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAACACAAAAAAABAAAAAAAAAAAAAA=</HashCode>
+      <FileName>FileRepository\Domain\advanced\transfer\FileTransferType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="lm.Comol.Core.FileRepository.Domain.TransferPolicy">
+    <Position X="4.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAAIAAAAAAAAAAAAAAAAAAACAAAAAAAAAAQ=</HashCode>
+      <FileName>FileRepository\Domain\advanced\transfer\TransferPolicy.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="lm.Comol.Core.FileRepository.Domain.TransferStatus">
+    <Position X="10.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>UAAAAoAAAAAQAQqAAAAQGAAAAAACCIAAAACgAARAAAA=</HashCode>
+      <FileName>FileRepository\Domain\advanced\transfer\TransferStatus.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

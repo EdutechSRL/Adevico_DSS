@@ -1,0 +1,455 @@
+/*  COMOL DEMO VERSION */
+body 
+{   
+    background: #e5e5e5;
+    color: #333;
+    
+    /*
+    Gian DEMO
+    background: #fffefe;
+    color: #fffefe;*/
+    /*end Gian Demo*/
+    
+    font: 75%/140% verdana, arial, helvetica, sans-serif;
+    text-align: center;
+}
+
+.clear { clear: both; } 
+.invisible{ display: none;}
+
+
+/*  Correzioni OLD STYLE  */
+.ui-dialog { text-align: left; }
+
+li 
+{
+    list-style-type: none;
+    list-style: none outside none;
+}
+
+UL LI {
+    list-style-type: none;
+    list-style: none outside none;
+}
+
+UL LI LI {
+    list-style-type: none;
+    list-style: none outside none;
+}
+
+UL LI LI LI {
+    list-style-type: none;
+    list-style: none outside none;
+}
+
+li strong 
+{
+    font-style: inherit;
+    font-weight: inherit;
+    list-style: none outside none;
+}
+    
+#branding
+{
+    background: trasparent;
+    height: 8.5em;
+}
+
+/* =layout
+-------------------------------------------------
+*/
+
+.page-width{
+    margin: 0 auto;
+    max-width: 1400px;
+    min-width: 640px;
+	width: 960px;
+}
+
+#header
+{
+    color: #444;
+    overflow: visible;    
+    /*padding-bottom: 1.87em;*/
+    position: relative;
+    z-index: 10;
+    background-color: #eee; /*url(../img/header-bg.jpg); /*url img aggiunti da Gian*/
+	/* Firefox 3.6+ */ 
+	background: -moz-linear-gradient(100% 100% 90deg, #dadada, #fff); 
+	/* Safari 4-5, Chrome 1-9 */ 
+	/* -webkit-gradient(<type>, <point> [, <radius>]?, <point> [, <radius>]? [, <stop>]*) */ 
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fff), to(#dadada)); 
+	/* Safari 5.1+, Chrome 10+ */ 
+	background: -webkit-linear-gradient(#dadada, #fff); 
+	/* Opera 11.10+ */ 
+	background: -o-linear-gradient(#dadada, #fff); 
+	/*  IE Hack */
+	*background-color: #eee; /* url(../img/header-bg.jpg);*/
+	
+    text-align: center;
+}
+
+#container{
+	background-color: #fff;
+    border-top: 10px solid #fff;
+    margin-bottom: 20px;
+    margin-top: 0;
+	position: relative;
+    text-align: left;
+    -moz-box-shadow: 0 4px 6px #333, 0 4px 6px #333;
+    -webkit-box-shadow: 0 4px 6px #333, 0 4px 6px #333;
+    box-shadow: 0 4px 6px #333, 0 4px 6px #333;
+    z-index: 1;
+    text-align:center;  /*ADD*/
+    padding-bottom: 2em;    /*ADD*/
+    /*  IE Hack */
+    *padding-left: 2.5em;
+}
+
+
+#content { display: inline-block; }
+
+#footer{
+    border-top: 3px solid #2b5b6e;
+    background-color: #dedede;
+    font-size: 0.9em;
+    padding: 20px 0;  
+}
+
+#footer #siteinfo{ margin: 0 20px; }
+
+/* =toolbar
+-------------------------------------------------
+*/
+#toolbar{
+    background-color: #2b5b6e;
+	color: #E1E9ED;
+	font-size: 1em;
+	min-height: 1.7em;
+    text-align: left;
+    margin:0;padding:0;
+}
+
+#toolbar a{
+	color: #E1E9ED;
+    text-decoration: none;
+}
+#toolbar div div { }
+
+#notifications{
+    float: left;
+    display: none;
+}
+
+#notifications ul li{
+	background-color: #2b5b6e;
+	display: block;
+	float: left;	
+	margin-right: 10px;
+	position: relative;
+}
+
+#notifications ul li span{
+    background-color: #000;
+    color: yellow;
+    display: block;
+    float: right;
+    font-size: 0.8em;
+    font-weight: bold;
+    margin: 1px 0 1px 4px;
+    padding: 0 4px; 
+    text-align: center;
+}
+
+#tools
+{
+    padding-top: 0.1em;
+    width: 100%;
+}
+
+#tools ul
+{
+    float: right;
+    margin: 0;
+    padding: 0;
+}
+
+#tools ul li{
+	float: left;  
+    position: relative;
+    z-index: 400;
+}
+
+#tools ul li#greetings
+{
+    padding-right: 30px;
+	color: #bbcddc;
+	font-style: inherit;
+    font-weight: inherit;
+}
+
+#tools ul li a{
+	padding: 0 12px;
+}
+
+#tools ul li .sub{
+    background-color: #2b5b6e;
+    display: none;
+    position: absolute; 
+    top: 1.6em; 
+    left: 0;
+    width: 140px;
+}
+
+#tools ul li li{
+	float: none;
+	padding-right: 0;
+}
+
+#tools ul li li a{
+    margin: 0 8px;
+    padding: 3px 0;
+}
+#tools ul li li.first
+{
+    border-top: 1px solid #c7c7c7;
+    padding-top: 0.1em;
+}
+
+#message{ position: absolute; }
+
+
+/* =branding
+-------------------------------------------------
+*/
+
+#branding{
+    clear: both;
+    text-align: left;
+}
+
+#branding img.logo
+{
+    float: left;
+    padding-bottom: 3px;
+}
+
+#branding h1{
+    font-size: 2em;
+    padding: 30px 30px 30px 330px;
+    text-align: right;
+    color: #c2bfac;
+}
+
+#branding h1 span{
+    display: block;
+    font-size: 0.8em;
+    padding: 3px 0;
+    text-transform: uppercase;
+    font-family: Georgia, "Times New Roman", Times, serif;
+	color: #8a8778;
+}
+  
+/* =nav-main
+-------------------------------------------------
+*/
+
+#nav-main
+{
+    /* fallback */ 
+	background-color: #8C8178; 
+	/* Firefox 3.6+ */ 
+	background: -moz-linear-gradient(100% 100% 90deg, #766456, #A19C97); 
+	/* Safari 4-5, Chrome 1-9 */ 
+	/* -webkit-gradient(<type>, <point> [, <radius>]?, <point> [, <radius>]? [, <stop>]*) */ 
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#A19C97), to(#766456)); 
+	/* Safari 5.1+, Chrome 10+ */ 
+	background: -webkit-linear-gradient(#54661B, #A19C97); 
+	/* Opera 11.10+ */ 
+	background: -o-linear-gradient(#766456, #a19c97); 
+    /*  Hack IE */
+    *background-color: #8C8178;
+  
+    -moz-box-shadow: 0 2px 6px #333;
+    -webkit-box-shadow: 0 2px 6px #333;
+    box-shadow: 0 2px 6px #333;
+    height: 2.2em;
+    
+    /*
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    */
+    position: relative;  
+    /*text-align: left;*/
+    width: 100%;
+    z-index: 200;
+
+    margin: 0; padding: 0;
+}
+ 
+#nav-main ul#top{
+    float:left;
+    line-height: 170%;
+	list-style: none;
+    font-size: 1.2em;
+    text-align: left;
+  
+    margin: 0; padding: 0;
+}
+
+#nav-main ul#top li 
+{
+    float: left;
+    margin: 0; padding: 0;
+    position: relative;
+    z-index: 300;
+}
+
+#nav-main ul#top li a {
+    color: #fff;
+	display: block;
+	padding: 0 14px;
+	text-decoration: none;
+	
+	margin:0;
+}
+
+#nav-main ul#top li .sub {
+    background-color: #fdfefe;
+    border: 1px solid #444;
+    display: none;
+    font-size: 0.8em;
+	line-height: 140%;
+    position: absolute; 
+    top: 1.7em; left: 14px;
+    -moz-box-shadow: 2px 2px 3px #333;
+    -webkit-box-shadow: 2px 2px 3px #333;
+    box-shadow: 2px 2px 3px #333;
+    z-index: 300;
+  
+    padding: 0; margin:0;
+}
+
+#nav-main ul#top li .sub h2
+{
+    margin: 0; padding: 0;
+    
+    background-color: #d2d5cc;
+	font-weight: bold;
+	padding: 4px 8px;
+	font-size:100%;
+}
+
+#nav-main ul#top li .sub .col
+{
+    padding: 0; margin:0;
+    
+	float: left;
+	margin-right: 4px;
+	width: 200px;
+}
+
+#nav-main ul#top li .sub ul
+{
+    padding: 0; margin:0;
+    width: 200px;
+        
+}
+    
+#nav-main ul#top li .sub ul li
+{
+    padding: 0; margin:0;
+    
+	float: none;
+    height: 1%;
+	position: relative;
+}
+#nav-main ul#top li .sub ul li a,
+#nav-main ul#top li .sub ul li span
+{
+    padding: 0; margin:0;
+    
+    color: #000;
+    display: block;
+	padding: 4px 64px 4px 8px;
+}
+
+#nav-main ul#top li .sub ul li span
+{
+    padding: 0; margin:0;
+    
+    color: #b4b4b4;
+}
+
+#nav-main ul#top li .sub ul li a:hover
+{
+    background-color: #e6e9e9;
+}
+
+
+#nav-main ul#top li .sub ul li span.actions
+{
+	position: absolute;
+	height: 16px;
+	padding: 0;
+	right: 4px;
+	top: 4px;
+	width: 66px;
+}
+
+#nav-main ul#top li .sub ul li span.actions a
+{
+    background: transparent url(../img/i-cog.gif) 0 0 no-repeat;
+	height: 16px;
+    float: right;
+	padding: 0;
+	width: 19px;
+	text-indent: -9999px;
+	zoom: 1;
+}
+
+#nav-main ul#top li .sub ul li span.actions a.new{ background-image: url(../img/i-new.gif); }
+#nav-main ul#top li .sub ul li span.actions a.stats{ background-image: url(../img/i-stats.gif); }
+#nav-main ul#top li .sub ul li span.actions a:hover{ background-color: none; }
+
+#top li.admin a { color: #fff8a1 !Important; }
+#nav-main ul#top li.admin .sub,
+#top li.admin div.sub div.col ul li a { color: #000 !important; }
+#nav-main ul#top li.admin .sub h2{ background-color: #ffdd00; }
+#nav-main ul#top li.admin .sub ul li span{ color: #b4b4b4; }
+#nav-main ul#top li.admin .sub ul li a:hover{ background-color: #dfe8d7; }
+#nav-main ul#top li.admin .sub{ left: auto;right: 0; }
+
+#top li.admin div.sub {	background-color: #f4feea !important;margin: 0; padding: 0; }
+
+
+/* =content
+-------------------------------------------------
+*/
+
+/*#content .box{margin: 20px;}
+#content p{margin: 10px 0;}
+#content ul,
+#content ol{margin: 10px 0 10px 2em;}*/
+/*#content ul li{list-style: disc outside;}
+#content ol li{list-style: upper-roman outside;}*/
+
+
+/*  ADD TO FIT FOOTER*/
+#cFooter { height: 135px; }
+
+/*  Add for HOME links*/
+#tools li a.home 
+{
+    background: url(../img/i-home.png) top left no-repeat;
+    padding-left: 22px;
+}
+
+#tools li a.menu 
+{
+    background: url(../img/i-triangle.png) top left no-repeat;
+    padding-left: 22px;
+}
+
+#community-type img { padding-top: 3px; }

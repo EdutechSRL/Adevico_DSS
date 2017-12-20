@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Resource xmlns="urn:ComolTranslation">
+    <item name="LBTitolo.text">Gestione degli inviti</item>
+    <item name="LibreriaDiDomande" disambiguation="libreria=libreria di domande">Librerie</item>
+   <item name="Modello" disambiguation="modello=modello di questionario">Modelli</item>
+    <item name="Autovalutazione">Test di autovalutazione</item>
+    <item name="Sondaggio">Sondaggi</item>
+    <item name="Questionari">Questionari</item>
+    <item name="Meeting">Meeting</item>
+    <item name="testoUnico" html="true"  placeholder="true" mustcontains="#LINKQUESTIONARIO#|#AUTORE#|#DESTINATARIO#|#DATAFINE#|#DATAINIZIO#|#NOMEQUESTIONARIO#|#DESCRIZIONEQUESTIONARIO#|#DURATA#|#LINKQUESTIONARIO#">
+        La pagina consente di generare e-mail personalizzate da inviare ali utenti invitati &lt;br&gt;
+        &lt;br&gt;
+        Le mail possono essere basate su schemi (template) predeterminati ed associati all'utente che li ha creati (possono cioe' essere riutilizzati all'interno di diverse comunità e questionari).&lt;br&gt;
+        Il primo pannello permette la gestione dei template. In particolare dopo aver selezionato il template di proprio interesse dal menu a tendina sara' possibile caricarlo premendo su [OK] od eliminarlo premendo su [Elimina]. Il pulsante [Nuovo Template] permette di svuotare il template che si sta editando in quel momento.&lt;br&gt;
+        Il salvataggio di un nuovo template è invece possibile, dopo avergli dato un nome, cliccando su "Salva template con nome" sotto il pannello di anteprima.&lt;br&gt;
+        &lt;br&gt;
+        Nel pannello "Destinatari" è possibile aggiungere, cliccando gli appositi pulsanti, gli utenti che riceveranno la mail.&lt;br&gt;
+        &lt;br&gt;
+        Nel campo oggetto si dovrà inserire, appunto, l'oggetto della mail. I TAG disponibili per il corpo della mail sono disponibili anche per l'oggetto, ma devono essere inseriti a mano.&lt;br&gt;
+        &lt;br&gt;
+        Il corpo della mail può essere personalizzato cliccando i pulsanti con i TAG disponibili. I pulsanti con il testo in rosso devono essere obbligatoriamente inseriti nel corpo della mail.&lt;br&gt;
+        Tutti i TagG così inseriti possono essere copiati e incollati anche nell'oggetto della mail.&lt;br&gt;
+        &lt;br&gt;
+        Tag attualmente disponibili:&lt;br&gt;
+        - Link (Tag: #LINKQUESTIONARIO#): nella mail viene inserito il link associato al singolo invito per il questionario.&lt;br&gt;
+        - Autore (Tag: #AUTORE#): nella mail vengono inseriti nome e cognome del creatore del questionario.&lt;br&gt;
+        - Destinatario (Tag: #DESTINATARIO#): nella mail vengono inseriti nome e cognome del destinatario dela mail.&lt;br&gt;
+        - Data scadenza (Tag: #DATAFINE#): nella mail viene inserita la data ultima entro la quale compilare il questionario.&lt;br&gt;
+        - Data inizio (Tag: #DATAINIZIO#): nella mail viene inserita la data dalla quale è possibile iniziare la compilazione del questionario. &lt;br&gt;
+        - Nome del questionario (Tag: #NOMEQUESTIONARIO#): nella mail viene inserito il nome del questionario.&lt;br&gt;
+        - Descrizione (Tag: #DESCRIZIONEQUESTIONARIO#): nella mail viene inserita la descrizione del questionario.&lt;br&gt;
+        - Durata (Tag: #DURATA#): nella mail viene inserito il tempo a disposizione per la compilazione del questionario.&lt;br&gt;
+        &lt;br&gt;
+        Nel pannello di anteprima è possibile visualizzare la mail come verra' visualizzata dal destinatario (salvo i campi personalizzati per il singolo destinatario, come #DESTINATARIO# o #LINKQUESTIONARIO#).&lt;br&gt;
+    </item>
+</Resource>

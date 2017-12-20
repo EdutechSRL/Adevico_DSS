@@ -1,0 +1,121 @@
+﻿
+.clear {
+	clear: both;
+}
+
+/* navigazione principale */
+
+.news  .navlist {
+	padding: 3px 0;
+	margin-left: 0;
+	border-bottom: 1px solid #778;
+}
+
+.news .navlist li {
+	list-style: none;
+	margin: 0;
+	display: inline;
+}
+
+.news .navlist li a {
+	padding: 3px 5px;
+	margin-left: 3px;
+	border: 1px solid #778;
+	border-bottom: none;
+	background: #eee;
+	color: #036;
+	text-decoration: none;
+}
+
+.news .navlist li a:hover {
+	color: #fff;
+	background: #036;
+	border-color: #227;
+}
+
+.news .navlist li.current a {
+	color: #fff;
+	background: #036;
+	border-color: #227;
+}
+
+
+/* viste */
+
+.news ul.date li a {
+	text-decoration: none;
+	color: #036;
+}
+
+.news ul.date li a:hover {
+	color: white;
+	background-color: #036; 
+}
+
+.news ul.date li.current {
+	background-color: #036;
+	color: white;
+}
+.news ul.date li.current a {
+	color: white;
+}
+
+.news ul.date li {
+	display: block;
+	list-style: none;
+	float: left;
+	margin-bottom: 10px;	
+	margin-left: 5px;
+	padding: 2px 5px 2px 5px;
+}
+
+
+.news ul.date li {
+	border:1px solid #ccc;
+	text-decoration: none;
+	color: #999;
+}
+
+.news ul.date li.name {
+	width:40px;
+	border:1px solid black;
+	color: #333;
+}
+
+
+.news .event h3 {
+	padding-bottom: 5px;
+	border-bottom: 1px solid #ccc;
+
+}
+.news .event h3 a{
+	padding: 2px 5px;
+	font-size: 16px; 
+	color: black;
+	text-decoration: underline;
+}
+
+.news .event h3 a:hover{
+	background-color: #036;
+	color: white;
+	text-decoration: underline;
+}
+
+.news .event ul li
+{
+    padding-top:5px;
+}
+
+.news .event ul li a{
+	padding: 2px 5px;
+	color: #036;
+	font-weight:bold;
+	text-decoration: underline;
+}
+
+.news .event ul li a:hover{
+	background-color: #036;
+	color: white;
+	font-weight:bold;
+	text-decoration: underline;
+}

@@ -1,0 +1,554 @@
+
+
+
+div#Wizard div.StepData .Titolo_campo {
+
+	min-width: 150px;
+
+	width: 200px;
+
+	vertical-align: top;
+
+}
+
+
+
+/* Step 1 Scelta import */
+
+
+
+div#Wizard div.StepData div.IMsourceSelector span.Fieldrow {
+
+	padding-top: 6em;
+
+}
+
+
+
+/* Step 2b Import Richieste adesione - DA FARE!*/
+
+
+
+/* Step 2b Import CSV*/
+
+
+
+div#Wizard div.StepData div.IMsourceCSV span.Fieldrow {
+
+	padding-top: 1.2em;
+
+}
+
+
+
+div#Wizard div.StepData div.IMsourceCSV span.Fieldrow .Titolo_campo {
+
+	padding: 0;
+
+	width: 210px;
+
+}
+
+
+
+div#Wizard div.StepData div.IMsourceCSV span.Fieldrow span.tbl_wizdata {
+
+	display: block;
+
+	overflow: scroll;
+
+	max-width: 860px;
+
+	width: 860px;
+
+	max-height: 400px;
+	margin: 2em 0;
+	border: 1px solid #ccc;
+
+}
+
+
+
+/* Step 3 Column match */
+
+
+
+div#Wizard div.StepData div.IMfieldsMatcher span.Fieldrow .Titolo_campo {
+
+	padding: 0;
+
+	padding-bottom: 1.2em;
+
+	width: 220px;
+
+}
+
+
+
+div#Wizard div.StepData div.IMfieldsMatcher table .Titolo_campo,
+
+div#Wizard div.StepData div.IMfieldsMatcher table .Testo_Campo {
+
+	width: 91%;
+
+}
+
+
+
+div#Wizard div.StepData div.IMfieldsMatcher span.rbl_MultiElement {
+
+	display: inline-block;
+
+}
+
+
+
+/*div#Wizard div.StepData div.IMfieldsMatcher span.rbl_MultiElement label      { display: inline-block; width: 136px;}
+
+div#Wizard div.StepData div.IMfieldsMatcher span.rbl_MultiElement label,
+
+div#Wizard div.StepData div.IMfieldsMatcher span.rbl_MultiElement input      { vertical-align: top; }
+
+*/
+
+
+
+div#Wizard div.StepData div.IMfieldsMatcher span.Fieldrow span.full {
+
+	width: 100%;
+
+	color: #FF0000;
+
+}
+
+
+
+div#Wizard div.StepData div.IMfieldsMatcher table td.Field {
+
+	text-align: left;
+
+}
+
+
+
+div#Wizard div.StepData div.IMfieldsMatcher table td.Field span {
+
+	color: #ff0000;
+
+}
+
+
+
+/* Step 4 Item Selector */
+
+
+
+div#Wizard div.StepData div.IMitemSelector span.Fieldrow {
+
+	padding-bottom: 0.8em;
+
+}
+
+
+
+div#Wizard div.StepData div.IMitemSelector table {
+
+	width: 100%;
+
+}
+
+
+
+/* Step 5 Organization */
+
+
+
+div#Wizard div.StepData div.IMSelectOrgn div.StepData,
+
+div#Wizard div.StepData div.IMSelectOrgn div.clear {
+
+	display: block;
+
+}
+
+
+
+div#Wizard div.StepData div.IMSelectOrgn .FlotLeft,
+
+div#Wizard div.StepData div.IMSelectOrgn .LeftCol {
+
+	display: inline-block;
+
+	vertical-align: top;
+
+	padding-top: 1em;
+
+	padding-bottom: 0.1em;
+
+}
+
+
+
+div#Wizard div.StepData div.IMSelectOrgn .FlotLeft {
+
+	width: 650px;
+
+}
+
+
+
+div#Wizard div.StepData div.IMSelectOrgn .LeftCol {
+
+	width: 200px;
+
+}
+
+
+
+/* Step 6 Community*/
+
+
+
+div#Wizard div.StepData div.IMSelectCom span.Fieldrow {
+
+	display: inline-block;
+
+}
+
+
+
+div#Wizard div.StepData div.IMSelectCom .btn_link {
+
+	border: 0px;
+
+}
+
+
+
+/* FINESTRA MODALE - FARE ATTENZIONE! */
+
+
+
+/* Bottoni input -> spostare in RESET!!! */
+
+
+
+div.view-modal input[type="submit"] {
+
+	background-color: #DDDDDD;
+
+	border: 1px solid #AAAAAA;
+
+	border-radius: 3px 3px 3px 3px;
+
+	color: #555555;
+
+	display: inline-block !important;
+
+	font-size: 11px !important;
+
+	margin: 2px !important;
+
+	padding: 1px 4px !important;
+
+	text-shadow: 1px 1px 0 #DDDDDD;
+
+}
+
+
+
+div.view-modal select.FiltroCampoSmall {
+
+	
+
+}
+
+
+
+div.view-modal div.FilterRow div {
+
+	display: inline;
+
+}
+
+
+
+div.view-modal div.FilterRow .FiltroVoceSmall {
+
+	width: 120px;
+
+	display: inline-block;
+
+}
+
+
+
+div.view-modal div.FilterRow .FiltroCampoSmall {
+
+	width: 250px;
+
+}
+
+
+
+div.view-modal div.Buttons {
+
+	text-align: right;
+
+}
+
+
+
+div.view-modal div.FilterRow div.FilterLetters {
+
+	display: inline-block;
+
+	width: 80%
+
+}
+
+
+
+div.view-modal div.FilterRow div.FilterUpdate {
+
+	display: inline;
+
+}
+
+
+
+/* Step 7 Role */
+
+
+
+div#Wizard div.StepContent div.IMSubscription .Testo_Campo {
+
+	width: 350px
+
+
+
+;
+
+/*width: 100%;*/
+
+}
+
+
+
+div#Wizard div.StepContent div.IMSubscription tabel#TBfiles {
+
+	padding: 1em 0;
+
+}
+
+
+
+div#Wizard div.StepContent div.IMSubscription .ColRole {
+
+	width: 100px;
+
+}
+
+
+
+/* Step 8 Mail */
+
+
+
+div#Wizard div.StepContent div.IMMail .RowMail {
+
+	padding-top: 0.3em;
+
+	vertical-align: top;
+
+}
+
+
+
+div#Wizard div.StepContent div.IMMail .Titolo_campo,
+
+div#Wizard div.StepContent div.IMMail .RowCellLeft {
+
+	width: 150px;
+
+}
+
+
+
+div#Wizard div.StepContent div.IMMail .RowCellRight {
+
+	
+
+}
+
+
+
+div#Wizard div.StepContent div.IMMail .messageBox {
+
+	min-height: 420px;
+
+}
+
+
+
+div#Wizard div.StepContent div.IMMail .messageBox .contenitoreEditor {
+
+	width: 690px;
+
+}
+
+
+
+div#Wizard div.StepContent div.IMMail .Testo_Campo input {
+
+	margin-left: 0;
+
+}
+
+
+
+div#Wizard div.StepContent div.IMMail .Testo_Campo label {
+
+	margin-left: 0.2em;
+
+	margin-right: 0.5em;
+
+}
+
+
+
+div#Wizard div.StepContent div.IMMail span.rbl_MultiElement_large label {
+
+	display: inline-block;
+
+	width: 315px;
+
+}
+
+
+
+/* Per allineamento "sistema" */
+
+
+
+/* Step 9 Summary */
+
+
+
+div#Wizard div.StepContent div.IMSummary div.Genericrow {
+
+	padding-bottom: 1.2em;
+
+}
+
+
+
+div#Wizard div.StepContent div.IMSummary .Titolo_campo {
+
+	min-width: 250px;
+
+}
+
+
+
+div#Wizard div.StepContent div.IMSummary .Testo_Campo ul {
+
+	display: inline-block;
+
+	margin: 0;
+
+	padding-left: 1.5em;
+
+}
+
+
+
+div#Wizard div.StepContent div.IMSummary .Testo_Campo ul li {
+
+	list-style-type: disc;
+
+}
+
+
+
+/* IE HACK */
+
+
+
+* html div#Wizard div.StepContent div.IMSummary .Testo_Campo ul {
+
+	display: inline;
+
+} /* 6 */
+
+
+
+*+html div#Wizard div.StepContent div.IMSummary .Testo_Campo ul {
+
+	display: inline;
+
+} /* 7 */
+
+
+
+@media \0 screen {
+
+	div#Wizard div.StepContent div.IMSummary .Testo_Campo ul {
+
+	display: inline;
+
+	}
+
+} /* 8 */
+
+
+
+:root div#Wizard div.StepContent div.IMSummary .Testo_Campo ul {
+
+	display: inline\9;
+
+} /* 9 */
+
+
+
+form#aspnetForm.mainForm div#page-box div#container.page-width div#content div.DIV_MP_Content div div div.StepData,
+
+form#aspnetForm.mainForm div#page-box div#container.page-width div#content div.DIV_MP_Content div div div.StepData {
+
+	border: 0;
+
+}
+
+.wiz_content div.StepData div.IMitemSelector table,
+div.CommunitiesTable table {
+	width: 100%;
+	margin: 1em 0;
+}
+
+
+
+div.StepData.IMfieldsMatcher label {
+	margin: 0 10px 5px 2px;
+	display: inline-block;
+}
+
+span.Titolo_Campo {
+
+	margin-bottom: .5em;
+
+	display: inline-block;
+
+}
+
+
+
+.fixedWidth
+
+        {
+
+            overflow: scroll;
+
+            overflow-y:hidden;
+
+        }
+        

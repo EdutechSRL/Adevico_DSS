@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="lm.Comol.Core.DomainModel"  namespace="lm.Comol.Core.FileRepository.Domain">
+	<class name="ScormPackageRequestForRecalc" table="FR_ScormPackageRequestForRecalc" lazy="true">
+		<id name="Id" column="Id" type="Int64">
+			<generator class="native"/>
+		</id>
+    <version name="TimeStamp"
+  generated="always"
+  unsaved-value="null"
+  type="BinaryBlob">
+      <column name="_Timestamp"
+              not-null="false"
+              sql-type="timestamp"/>
+    </version>
+		<property name="IdItem" type="Int64" />
+    <property name="UniqueIdItem" type="Guid" column="UniqueIdItem" />
+    <property name="IdVersion" type="Int64" />
+    <property name="UniqueIdVersion" type="Guid" />
+    <property name="IdSettings" type="Int64" column="IdSettings" />
+    <property name="IsStarted"/>
+    <property name="IsCompleted"/>
+    <property name="StartOn" type="DateTime" />
+    <property name="StartedOn" type="DateTime" not-null="false"/>
+    <property name="CompletedOn" type="DateTime" not-null="false"/>
+    <property name="Deleted" type="lm.Comol.Core.DomainModel.BaseStatusDeleted,lm.Comol.Core.DomainModel" column="_Deleted" />
+    <property name="CreatedOn" type="DateTime" column="_CreatedOn" />
+    <property name="IdCreatedBy" column="_CreatedBy" />
+    <property name="ModifiedOn" column="_ModifiedOn" />
+    <property name="IdModifiedBy" column="_ModifiedBy" />
+    <property name="CreatorProxyIpAddress" type="String" column="_CreatedProxyIPaddress" />
+    <property name="CreatorIpAddress" type="String" column="_CreatedIPaddress" />
+    <property name="ModifiedProxyIpAddress" type="String" column="_ModifiedProxyIPaddress" />
+    <property name="ModifiedIpAddress" type="String" column="_ModifiedIPaddress" />
+	</class>
+</hibernate-mapping>

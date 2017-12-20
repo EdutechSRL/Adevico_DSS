@@ -1,0 +1,137 @@
+<ContextMenus>
+	<Menu Name="entra">
+		<Item Image="./images/0.gif" Text="Entra" PostBack="True" ID="3"/>
+		<Item Text="" PostBack="false"/>
+		<Item Image="./images/12.gif" Text="Dettagli" PostBack="True" ID="2"/>
+	</Menu>
+	<Menu Name="iscrivi">  
+		<Item Image="./images/4.gif" Text="Iscrivi" PostBack="True" ID="4"/>
+		<Item Text="" PostBack="false"/> 
+		<Item Image="./images/12.gif" Text="Dettagli" PostBack="True" ID="2"/>
+	</Menu>
+	<Menu Name="dettagli">
+		<Item Image="./images/12.gif" Text="Dettagli" PostBack="True" ID="2"/>
+	</Menu>
+	<Menu Name="Base">
+		<Item Image="./images/14.gif" Text="Aggiorna" PostBack="True" ID="1" />
+	</Menu>
+	
+	<Menu Name="AdminEntra">
+		<Item Image="./images/12.gif" Text="Dettagli" PostBack="True" ID="2"/>
+		<Item Image="./images/14.gif" Text="Aggiorna" PostBack="True" ID="1" />
+		<Item Text="" PostBack="false"/>
+		<Item Image="./images/0.gif" Text="Entra" PostBack="True" ID="3"/>
+		<Item Image="./images/0.gif" Text="Entra Come ..." PostBack="True" ID="9"/>
+		<Item Image="./images/0.gif" Text="Entra con Ruolo.." PostBack="True" ID="10"/>
+		<Item Text="" PostBack="false"/>
+		<Item Image="./images/11.gif" Text="Modifica" PostBack="True" ID="5" />
+		<Item Image="./images/0.gif" Text="Gest. Servizi" PostBack="True" ID="7"/>
+		<Item Image="./images/15.gif" Text="Gest. utenti" PostBack="True" ID="8"/>
+		<Item Text="" PostBack="false"/>
+		<Item Image="./images/7.gif" Text="Cancella" PostBack="True" ID="6" />
+	</Menu>
+	<Menu Name="AdminIscrivi">
+		<Item Image="./images/12.gif" Text="Dettagli" PostBack="True" ID="2"/>
+		<Item Image="./images/14.gif" Text="Aggiorna" PostBack="True" ID="1" />
+		<Item Text="" PostBack="false"/>
+		<Item Image="./images/4.gif" Text="Iscrivi" PostBack="True" ID="4"/>
+		<Item Image="./images/0.gif" Text="Entra Come ..." PostBack="True" ID="9"/>
+		<Item Image="./images/0.gif" Text="Entra con Ruolo.." PostBack="True" ID="10"/>
+		<Item Text="" PostBack="false"/>
+		<Item Image="./images/11.gif" Text="Modifica" PostBack="True" ID="5" />
+		<Item Image="./images/16.gif" Text="Gest. Servizi" PostBack="True" ID="7"/>
+		<Item Image="./images/15.gif" Text="Gest. utenti" PostBack="True" ID="8"/>
+		<Item Text="" PostBack="false"/>
+		<Item Image="./images/7.gif" Text="Cancella" PostBack="True" ID="6" />
+	</Menu>
+	<Menu Name="Admin">
+		<Item Image="./images/12.gif" Text="Dettagli" PostBack="True" ID="2"/>
+		<Item Image="./images/14.gif" Text="Aggiorna" PostBack="True" ID="1" />
+		<Item Text="" PostBack="false"/>
+		<Item Image="./images/0.gif" Text="Entra Come ..." PostBack="True" ID="9"/>
+		<Item Image="./images/0.gif" Text="Entra con Ruolo.." PostBack="True" ID="10"/>
+		<Item Text="" PostBack="false"/>
+		<Item Image="./images/11.gif" Text="Modifica" PostBack="True" ID="5" />
+		<Item Image="./images/16.gif" Text="Gest. Servizi" PostBack="True" ID="7"/>
+		<Item Image="./images/15.gif" Text="Gest. utenti" PostBack="True" ID="8"/>
+		<Item Text="" PostBack="false"/>
+		<Item Image="./images/7.gif" Text="Cancella" PostBack="True" ID="6" />
+	</Menu>
+	
+	<Menu Name="AdminComunita">
+		<Item Image="./images/12.gif" Text="Dettagli" PostBack="True" ID="2"/>
+		<Item Image="./images/0.gif" Text="Entra" PostBack="True" ID="3"/>
+		<Item Text="" PostBack="false"/>
+		<Item Image="./images/11.gif" Text="Modifica" PostBack="True" ID="5" />
+		<Item Image="./images/8.gif" Text="Associa a" PostBack="True" ID="11"/>
+		<Item Image="./images/16.gif" Text="Gest. Servizi" PostBack="True" ID="7"/>
+		<Item Text="" PostBack="false"/>
+		<Item Image="./images/7.gif" Text="Cancella" PostBack="True" ID="6" />
+	</Menu>
+	<Menu Name="AdminComunita_Iscrivi">
+		<Item Image="./images/12.gif" Text="Dettagli" PostBack="True" ID="2"/>
+		<Item Image="./images/0.gif" Text="Iscrivi" PostBack="True" ID="4"/>
+		<Item Text="" PostBack="false"/>
+		<Item Image="./images/11.gif" Text="Modifica" PostBack="True" ID="5" />
+		<Item Image="./images/16.gif" Text="Gest. Servizi" PostBack="True" ID="7"/>
+		<Item Image="./images/8.gif" Text="Associa a" PostBack="True" ID="11"/>
+		<Item Text="" PostBack="false"/>
+		<Item Image="./images/7.gif" Text="Cancella" PostBack="True" ID="6" />
+	</Menu>
+	<Menu Name="AdminComunitaNoCancel">
+		<Item Image="./images/12.gif" Text="Dettagli" PostBack="True" ID="2"/>
+		<Item Image="./images/0.gif" Text="Entra" PostBack="True" ID="3"/>
+		<Item Text="" PostBack="false"/>
+		<Item Image="./images/11.gif" Text="Modifica" PostBack="True" ID="5" />
+		<Item Image="./images/8.gif" Text="Associa a" PostBack="True" ID="11"/>
+		<Item Image="./images/16.gif" Text="Gest. Servizi" PostBack="True" ID="7"/>
+	</Menu>
+	<Menu Name="AdminComunita_IscriviNoCancel">
+		<Item Image="./images/12.gif" Text="Dettagli" PostBack="True" ID="2"/>
+		<Item Image="./images/0.gif" Text="Iscrivi" PostBack="True" ID="4"/>
+		<Item Text="" PostBack="false"/>
+		<Item Image="./images/11.gif" Text="Modifica" PostBack="True" ID="5" />
+		<Item Image="./images/16.gif" Text="Gest. Servizi" PostBack="True" ID="7"/>
+		<Item Image="./images/8.gif" Text="Associa a" PostBack="True" ID="11"/>
+	</Menu>
+	<Menu Name="AdminComunitaCoordinamento">
+		<Item Image="./images/12.gif" Text="Dettagli" PostBack="True" ID="2"/>
+		<Item Image="./images/0.gif" Text="Entra" PostBack="True" ID="3"/>
+		<Item Text="" PostBack="false"/>
+		<Item Image="./images/11.gif" Text="Modifica" PostBack="True" ID="5" />
+		<Item Image="./images/8.gif" Text="Associa a" PostBack="True" ID="11"/>
+		<Item Image="./images/16.gif" Text="Gest. Servizi" PostBack="True" ID="7"/>
+		<Item Image="./images/16.gif" Text="Coordina.." PostBack="True" ID="12"/>
+		<Item Text="" PostBack="false"/>
+		<Item Image="./images/7.gif" Text="Cancella" PostBack="True" ID="6" />
+	</Menu>
+	<Menu Name="AdminComunitaCoordinamento_Iscrivi">
+		<Item Image="./images/12.gif" Text="Dettagli" PostBack="True" ID="2"/>
+		<Item Image="./images/0.gif" Text="Iscrivi" PostBack="True" ID="4"/>
+		<Item Text="" PostBack="false"/>
+		<Item Image="./images/11.gif" Text="Modifica" PostBack="True" ID="5" />
+		<Item Image="./images/16.gif" Text="Gest. Servizi" PostBack="True" ID="7"/>
+		<Item Image="./images/8.gif" Text="Associa a" PostBack="True" ID="11"/>
+		<Item Image="./images/16.gif" Text="Coordina.." PostBack="True" ID="12"/>
+		<Item Text="" PostBack="false"/>
+		<Item Image="./images/7.gif" Text="Cancella" PostBack="True" ID="6" />
+	</Menu>
+	<Menu Name="AdminComunitaCoordinamentoNoCancel">
+		<Item Image="./images/12.gif" Text="Dettagli" PostBack="True" ID="2"/>
+		<Item Image="./images/0.gif" Text="Entra" PostBack="True" ID="3"/>
+		<Item Text="" PostBack="false"/>
+		<Item Image="./images/11.gif" Text="Modifica" PostBack="True" ID="5" />
+		<Item Image="./images/8.gif" Text="Associa a" PostBack="True" ID="11"/>
+		<Item Image="./images/16.gif" Text="Coordina.." PostBack="True" ID="12"/>
+		<Item Image="./images/16.gif" Text="Gest. Servizi" PostBack="True" ID="7"/>
+	</Menu>
+	<Menu Name="AdminComunitaCoordinamento_IscriviNoCancel">
+		<Item Image="./images/12.gif" Text="Dettagli" PostBack="True" ID="2"/>
+		<Item Image="./images/0.gif" Text="Iscrivi" PostBack="True" ID="4"/>
+		<Item Text="" PostBack="false"/>
+		<Item Image="./images/11.gif" Text="Modifica" PostBack="True" ID="5" />
+		<Item Image="./images/16.gif" Text="Gest. Servizi" PostBack="True" ID="7"/>
+		<Item Image="./images/8.gif" Text="Associa a" PostBack="True" ID="11"/>
+		<Item Image="./images/16.gif" Text="Coordina.." PostBack="True" ID="12"/>
+	</Menu>
+</ContextMenus>

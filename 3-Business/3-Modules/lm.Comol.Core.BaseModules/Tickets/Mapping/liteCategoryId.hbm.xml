@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping
+	xmlns="urn:nhibernate-mapping-2.2"
+	assembly="lm.Comol.Core.BaseModules"
+	namespace="lm.Comol.Core.BaseModules.Tickets.Domain" auto-import="false"
+	>
+
+	<class name="lm.Comol.Core.BaseModules.Tickets.Domain.liteCategoryId" table="TK_Category" >
+
+		<id name="Id" column="Id" type="Int64">
+			<generator class="native"/>
+		</id>
+
+		<property name="FatherId" type="Int64" column="IdFather" />
+
+		<bag name="Childrens" inverse="true" lazy="false">
+			<key column="IdFather"/>
+			<one-to-many class="lm.Comol.Core.BaseModules.Tickets.Domain.liteCategoryId"/>
+		</bag>
+		
+	</class>
+
+</hibernate-mapping>

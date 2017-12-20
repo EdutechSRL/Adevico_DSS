@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="lm.Comol.Core.DomainModel" namespace="lm.Comol.Core.FileRepository.Domain">
+	<class name="litePlayerSettings" table="FR_PlayerSettings" lazy="true" optimistic-lock ="none" mutable="false">
+    <id name="Id" column="Id" type="Int64" unsaved-value="0">
+      <generator class="native"/>
+    </id>
+    <version name="TimeStamp" generated="always" unsaved-value="null" type="BinaryBlob">
+      <column name="_Timestamp" not-null="false" sql-type="timestamp"/>
+    </version>
+    <property name="IdItemTypeSettings" type="Int64"/>
+    <property name="IsDefault" type="Boolean"/>
+    <property name="EnableForPlay" type="Boolean"/>
+    <property name="EnableForUse" type="Boolean"/>
+    <property name="Type" type="lm.Comol.Core.FileRepository.Domain.ItemType,lm.Comol.Core.DomainModel" column="ItemType"/>
+    <property name="PlayUrl" type="String"/>
+    <property name="PlayerRenderUrl" type="String"/>
+    <property name="ModalPlayerRenderUrl" type="String"/>
+    <property name="OverrideSSLsettings" type="Boolean"/>
+    <property name="AutoEvaluate" type="Boolean"/>
+    <property name="RedirectToFilePage" type="Boolean"/>
+    <property name="MappingPath" type="String"/>
+    <property name="DBidentifier" type="String"/>
+    <property name="NoSaveStatParameter" type="String"/>
+    <property name="Deleted" type="lm.Comol.Core.DomainModel.BaseStatusDeleted,lm.Comol.Core.DomainModel" column="_Deleted" />
+  </class>
+</hibernate-mapping>

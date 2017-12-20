@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="lm.Comol.Core.DomainModel" namespace="lm.Comol.Core.PersonalInfo">
+	<class name="UserPolicyInfo" table="AP_UserPolicyInfo" lazy="true">
+    <id name="Id" column="Id" type="Int64" unsaved-value="0">
+      <generator class="native"/>
+    </id>
+    <version name="TimeStamp" generated="always" unsaved-value="null" type="BinaryBlob">
+      <column name="_Timestamp" not-null="false" sql-type="timestamp"/>
+    </version>
+    <property name="Deleted" type="lm.Comol.Core.DomainModel.BaseStatusDeleted,lm.Comol.Core.DomainModel" column="_Deleted" />
+    <property name="CreatedOn" type="DateTime" column="_CreatedOn" />
+    <many-to-one name="CreatedBy" class="lm.Comol.Core.DomainModel.Person" column="_CreatedBy" foreign-key="_CreatedBy" cascade="none" />
+    <property name="ModifiedOn" type="DateTime" column="_ModifiedOn" />
+    <many-to-one name="ModifiedBy" class="lm.Comol.Core.DomainModel.Person" column="_ModifiedBy" foreign-key="_ModifiedBy" cascade="none" />
+    <property name="CreatorProxyIpAddress" type="String" column="_CreatedProxyIPaddress" />
+    <property name="CreatorIpAddress" type="String" column="_CreatedIPaddress" />
+    <property name="ModifiedProxyIpAddress" type="String" column="_ModifiedProxyIPaddress" />
+    <property name="ModifiedIpAddress" type="String" column="_ModifiedIPaddress" />
+
+    <many-to-one name="Owner" class="lm.Comol.Core.DomainModel.Person" column="IdPerson" foreign-key="IdPerson" cascade="none" />
+    <many-to-one name="Policy" class="lm.Comol.Core.PersonalInfo.DataPolicy" column="IdDataPolicy" foreign-key="IdDataPolicy" cascade="none" />
+    <property name="Accepted" type="Boolean" column="Accepted" />
+	</class>
+</hibernate-mapping>

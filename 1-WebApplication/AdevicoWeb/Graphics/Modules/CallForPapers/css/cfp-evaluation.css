@@ -1,0 +1,498 @@
+/* css tabelle di valutazione CfP */
+/* GS: updated 25/02/2014 16:40 */
+
+div.globalwrapper {
+	margin-top: 3em;
+}
+
+.tree_table  {
+	border-collapse: collapse;
+	width: 100%;
+	table-layout: fixed;
+	font-size: .8em;
+	background-color: #fff;
+	margin: 3em 0;
+}
+
+.tree_table.noslide  {
+	table-layout: auto;
+}
+
+table.criterialegend {
+	width: 100%;
+}
+
+table.criterialegend .short {
+	width: 20%;
+}
+
+span#CPHservice_LBcommitteeEvaluationEndOn.commissionname {
+	font-size: .8em;
+	margin-left: 1em;
+}
+
+.tree_table td,
+.tree_table th {
+	border: 1px solid #ccc;
+	font-size: 1em;
+}
+
+div.colslider {
+	display: inline;
+	*display: inline !important;
+	*zoom: 1;
+	margin: 0 1em .3em 1em;
+}
+
+.tree_table th,
+.tree_table thead td,
+td.slidercell {
+	color: #444;
+	padding: 3px;
+	vertical-align: middle;
+	background-color: #e3e6ea;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#eceef1),to(#dbdfe4));
+	background-image: -webkit-linear-gradient(top, #eceef1, #dbdfe4);
+	background-image: -moz-linear-gradient(top, #eceef1, #dbdfe4);
+	background-image: -o-linear-gradient(top, #eceef1, #dbdfe4);
+	background-image: -ms-linear-gradient(top, #eceef1, #dbdfe4);
+	background-image: linear-gradient(top, #eceef1, #dbdfe4);
+}
+
+thead tr.sliderrow .slidercell,
+td.slidercell {
+	text-align: center;
+	font-weight: bold;
+}
+
+.tree_table td.empty,
+.tree_table th.empty {
+	border: none;
+	background: none
+}
+
+
+
+.tree_table tr.criteria {
+	background-color: #eceef1;
+}
+
+.tree_table tr.criteria-head {
+	background-color: #eceef1;
+	font-style: italic;
+}
+
+.tree_table .submittername {
+	width: 150px;
+}
+
+.tree_table .submitternumber {
+	width: 48px;
+	background-color: #e3e6ea;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#eceef1),to(#dbdfe4));
+	background-image: -webkit-linear-gradient(top, #eceef1, #dbdfe4);
+	background-image: -moz-linear-gradient(top, #eceef1, #dbdfe4);
+	background-image: -o-linear-gradient(top, #eceef1, #dbdfe4);
+	background-image: -ms-linear-gradient(top, #eceef1, #dbdfe4);
+	background-image: linear-gradient(top, #eceef1, #dbdfe4);
+}
+
+.tree_table tr.parent .submitternumber {
+	padding-left: 6px;
+}
+
+td.submitternumber a.expander {
+	margin: -6px !important;
+	float: left;
+	clear: both;
+}
+
+.tree_table tr.criteria.last {
+	border-bottom: 2px solid #bbb;
+}
+
+.tree_table tr.parent.expanded {
+	/*	border-top: 2px solid #bbb;
+	border-right: 2px solid #bbb;
+	border-left: 2px solid #bbb;*/
+}
+
+.tree_table tr.criteria {
+	/*	border-right: 2px solid #bbb;
+	border-left: 2px solid #bbb;*/
+}
+
+.tree_table tr.parent.expanded .submitternumber {
+	background: #fff;
+}
+
+.tree_table tr.stats.collapsed {
+	/*	border-bottom: 2px solid #aaa;*/
+}
+
+.tree_table th.submitternumber {
+	padding-left: .3em;
+}
+
+.tree_table th.actions {
+	width: 40px;
+	text-align: center;
+}
+
+.tree_table.evaluation.basic th.actions {
+	width: 48px;
+	text-align: center;
+}
+
+.tree_table.evaluation.basic td.actions {
+	text-align: right;
+}
+
+.tree_table .submittertype {
+	width: 150px;
+}
+
+.tree_table .points {
+	width: 70px;
+	text-align: center;
+}
+
+td.actions {
+	text-align: center;
+}
+
+.tree_table .status {
+	width: 70px;
+	text-align: center;
+}
+
+.tree_table .status span.progressbar {
+	text-align: left;
+	/*	width: 100px;*/
+}
+
+.tree_table .evaluator {
+	text-align: center;
+
+}
+
+.tree_table td.evaluator {
+
+	word-break: break-all;
+	word-wrap: break-word;
+}
+
+
+
+.tree_table .evaluator {
+	width: 75px;
+}
+
+th.commission {
+}
+
+.tree_table .evaluator .progressbar {
+	text-align: left !important;
+}
+
+.tree_table thead tr th.slidercell {
+	width: 430px;
+}
+
+/*.tree_table thead tr th.slidercell * {
+	vertical-align: middle !important;
+}*/
+
+.tree_table .comment {
+	height: 50px;
+	overflow: hidden;
+}
+
+.evaluator {
+	display: hidden;
+}
+
+.tree_table td {
+	padding: 3px;
+}
+
+.tree_table td.empty {
+	border: none;
+	
+}
+
+
+div.colslider {
+	height: 8px;
+	width: 170px !important;
+	vertical-align: middle;
+}
+
+div.colslider a.ui-slider-handle.ui-state-default.ui-corner-all {
+	height: 12px;
+	width: 20px;
+}
+
+.ui-state-default,
+.ui-widget-content .ui-state-default,
+.ui-widget-header .ui-state-default {
+	border: 1px solid #a4abb2;
+	font-weight: normal;
+	color: #555555;
+}
+
+div.colslider {
+	margin-left: 1em;
+}
+
+span.slider.min {
+	margin-left: 1em;
+}
+
+.commentdialog {
+	display: none;
+}
+
+.ui-slider-access .ui-button {
+	width: 16px;
+	height: 16px;
+	margin-right: 2px;
+	vertical-align: bottom;
+}
+
+.tree_table thead tr th.slidercell.commissions span {
+	display: inline-block;
+	*display:inline;
+	*zoom: 1;
+}
+
+.commissionsselect {
+	margin-left: 0;
+	left: 0;
+}
+
+.tree_table {
+	border: 1px solid #ccc;
+}
+
+.tree_table.noslide tr.sliderrow {
+	display: none !important;
+	background-color: red;
+}
+
+.tree_table tr.criteria-head {
+	border-top: 2px solid #bbb;
+	display: none;
+	
+}
+
+.tree_table tr.criteria td.criteria {
+	padding-left: 22px !important;
+	background: url(../../../Generics/Command/img/corner_bottomleft_9.png) no-repeat 8px -2px;
+}
+
+.tree_table tr.stats td.commissionstats {
+	padding-left: 20px !important;
+	background: url('../../../Generics/Command/img/corner_bottomleft_9.png') no-repeat 8px -2px;			
+}
+
+.tree_table tbody tr:hover,
+.tree_table tbody tr:hover td {
+	background-color: #fffad3 !important;
+}
+
+.tree_table tbody tr {
+	border-right: 1px solid #ccc !important;
+}
+
+.tree_table  tr.stats {
+	background-color: #eceef1;
+}
+
+.evaluator .progressbar {
+	width: 70px;
+}
+
+td span.vote,
+td span.icon.status,
+td span.icon.comment {
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
+	border-radius: 2px;
+	color: #222;
+	font-size: 1em;
+	padding: 1px 0;
+}
+
+td span.vote {
+	line-height: 1.2em;
+	-moz-box-shadow: inset 0 1px 4px 0px rgba(0,0,0,0.25);
+	-webkit-box-shadow: inset 0 1px 4px 0px rgba(0,0,0,0.25);
+	box-shadow: inset 0 1px 4px 0px rgba(0,0,0,0.25);
+}
+
+tr.criteria-head td,
+tr.criteria td span.vote {
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	background-color: #ddd;
+	-moz-box-shadow: inset 0 1px 4px 0px rgba(0,0,0,0.1);
+	-webkit-box-shadow: inset 0 1px 4px 0px rgba(0,0,0,0.1);
+	box-shadow: inset 0 1px 4px 0px rgba(0,0,0,0.1);
+}
+
+td span.icon.status {
+	display: inline-block;
+	width: 12px;
+	height: 12px;
+	*border: 1px solid #888;
+	*width: 10px;
+	*height: 10px;
+	margin-top: 3px;
+	background-image: none;
+	-moz-box-shadow: inset 1px 1px 1px rgba(0,0,0,0.5);
+	-webkit-box-shadow: inset 1px 1px 1px rgba(0,0,0,0.5);
+	box-shadow: inset 1px 1px 1px rgba(0,0,0,0.5);
+}
+
+td span.icons {
+	padding: 0 !important;
+}
+
+td span.icon {
+	width: 12px !important;
+	height: 12px;
+	display: inline-block;
+	text-indent: -9999px;
+	*text-indent: 0;
+	*font-size: 0;
+	*line-height: 0;
+	*overflow: hidden;
+}
+
+td.actions span.icon {
+    width: 16px !important;
+    height: 16px;
+}
+
+td span,
+td span span, {
+	vertical-align: middle;
+}
+
+.slidercell span,
+.slidercell div  {
+	vertical-align: middle !important;
+	line-height: 16px;
+}
+
+td span.icons span.icon {
+	margin: 1px;
+}
+
+td span.vote span.icons {
+	display: inline-block;
+	*display:inline;
+	*zoom: 1;
+	float: right;
+	margin-top: -14px;
+}
+
+td span.icon.comment {
+	background-position: -120px -81px;
+	height: 12px !important;
+	width: 15px !important;
+	margin: 1px 0 !important;
+}
+
+td span.vote span.number,
+td span.vote a.number,
+td span.vote span.text,
+td span.vote a.text{
+	display: block;
+	*display: inline-block;
+	*display:inline;
+	*zoom: 1 !important;
+	*width: 70px;
+	padding: 1px 0 0 0;
+	text-decoration: none;
+	font-size: 11px;
+}
+
+
+td span.vote a.number:hover,
+td span.vote a.text:hover {
+	background: rgba(0,0,0,0.07);
+}
+
+td span.vote span.text,
+td span.vote a.text {
+	text-align: center;
+	word-break: normal;
+	word-wrap: break-word;
+	width:66%;
+	padding: 0 16px;
+	*left:-4px;
+	*position: relative;
+}
+
+td span.vote.votestatus {
+	padding: 1px 4px;
+}
+
+td span.vote {
+	display: block;
+	padding: 2px;
+}
+
+tr.commissionglobal {
+	font-weight: bold;	
+}
+
+th.commissionmame {
+	height: 30px;	
+	text-align: center;
+
+}
+
+th.commissionmame.empty {
+	height: 0;	
+	border: none;
+}
+
+td.commissionmame {
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+.noslide th.commissionmame {
+	width: 400px;
+}
+
+.noslide .points {
+	width: 70px !important;
+}
+
+.noslide .evaluator {
+	width: 80px !important;
+}
+
+.commentdialog .ui-dialog-title {
+    font-size: .9em;
+}
+
+table.evaluation.user.detail {
+	margin: 0.5em 0 3em 0;
+	border: none;
+	color: #333;
+}
+
+.tree_table td.evaluator.empty,
+.tree_table th.evaluator.empty {
+	border: 1px solid #ccc;
+	background: #ddd url('../../../Generics/Command/img/stripe_bg_1-3_50.png') repeat;	
+}
+
+
+

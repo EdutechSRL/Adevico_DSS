@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="lm.Comol.Core.DomainModel" namespace="lm.Comol.Core.DomainModel.DocTemplateVers">
+    <class name="Settings" table="DT_Settings" >
+        <id name="Id" column="Id" type="Int64">
+            <generator class="native"/>
+        </id>
+        <version name="TimeStamp"
+            generated="always"
+            unsaved-value="null"
+            type="BinaryBlob">
+            <column name="_Timestamp"
+                    not-null="false"
+                    sql-type="timestamp"/>
+        </version>
+
+        <many-to-one name="TemplateVersion" class="lm.Comol.Core.DomainModel.DocTemplateVers.TemplateVersion, lm.Comol.Core.DomainModel" column="IdTemplateVersion" foreign-key="IdTemplateVersion" cascade="none"/>
+
+
+        <property name="SubVersion" type="Int64" column="SubVersion" />
+        <property name="IsActive" type="Boolean" column="IsActive" />
+        <property name="Title" type="String" column="Title" />
+        <property name="Subject" type="String" column="Subject" />
+        <property name="Author" type="String" column="Author" />
+        <property name="Creator" type="String" column="Creator" />
+        <property name="Producer" type="String" column="Producer" />
+        <property name="Keywords" type="String" column="Keywords" />
+        <!--<property name="HasHeaderOnFirstPage" type="Boolean" column="HasHeaderOnFirstPage" />-->
+        
+        <property name="Width" type="Single" column="Width" />
+        <property name="Height" type="Single" column="Height" />
+        <property name="MarginRight" type="Single" column="MarginRight" />
+        <property name="MarginLeft" type="Single" column="MarginLeft" />
+        <property name="MarginTop" type="Single" column="MarginTop" />
+        <property name="MarginBottom" type="Single" column="MarginBottom" />
+        <property name="BackgroundImagePath" type="String" column="BackgroundImagePath" />
+
+        <property name="BackgroundRed" type="Int16" column="BackGroundRed" />
+        <property name="BackgroundGreen" type="Int16" column="BackGroundGreen" />
+        <property name="BackgroundBlue" type="Int16" column="BackGroundBlue" />
+        <property name="BackgroundAlpha" type="Int16" column="BackGroundAlpha" />
+        <!--<property name="ShowPageNumber" type="Boolean" column="ShowPageNumber" />-->
+
+        <property name="Size" type="lm.Comol.Core.DomainModel.DocTemplateVers.PageSize, lm.Comol.Core.DomainModel" column="PageSize" />
+        <property name="BackGroundImageFormat" type="lm.Comol.Core.DomainModel.DocTemplateVers.BackgrounImagePosition, lm.Comol.Core.DomainModel" column="BackGroundImagePosition" />
+        
+        <!--<property name="PageNumberAlignment" type="lm.Comol.Core.DomainModel.DocTemplateVers.ElementAlignment, lm.Comol.Core.DomainModel" column="PageNumberAlignment" />-->
+
+        <property name="PagePlacingMask" type="Int16" column="PagePlacingMask" />
+        <property name="PagePlacingRange" type="String" column="PagePlacingRange" />
+        
+        <property name="CreatedOn" type="DateTime" column="_CreatedOn" />
+        <many-to-one name="CreatedBy" class="lm.Comol.Core.DomainModel.Person" column="_CreatedBy" foreign-key="_CreatedBy" cascade="none" />
+        <property name="ModifiedOn" type="DateTime" column="_ModifiedOn" />
+        <many-to-one name="ModifiedBy" class="lm.Comol.Core.DomainModel.Person" column="_ModifiedBy" foreign-key="_ModifiedBy" cascade="none" />
+        <property name="CreatorProxyIpAddress" type="String" column="_CreatedProxyIPaddress" />
+        <property name="CreatorIpAddress" type="String" column="_CreatedIPaddress" />
+        <property name="ModifiedProxyIpAddress" type="String" column="_ModifiedProxyIPaddress" />
+        <property name="ModifiedIpAddress" type="String" column="_ModifiedIPaddress" />
+        <property name="Deleted" type="lm.Comol.Core.DomainModel.BaseStatusDeleted,lm.Comol.Core.DomainModel" column="_Deleted" />
+    </class>
+</hibernate-mapping>

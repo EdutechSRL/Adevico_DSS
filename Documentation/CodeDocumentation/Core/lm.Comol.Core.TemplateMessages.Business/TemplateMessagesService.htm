@@ -1,0 +1,907 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+	<!--[if lt IE 9]>
+	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+    <title>TemplateMessagesService - lm.Comol.Core.DomainModel Documentation</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+    <link type="text/css" rel="stylesheet" href="../main.css"/>
+    <script type="text/javascript" src="../js/jquery-1.3.2.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.scrollTo-min.js"></script>
+    <script type="text/javascript" src="../js/navigation.js"></script>
+    <script type="text/javascript" src="../js/example.js"></script>
+  </head>
+  <body>
+  	<header><h1>lm.Comol.Core.DomainModel : API Documentation</h1>
+	</header>
+<nav id="namespaces">
+	<h2 class="fixed">Namespaces</h2>
+	<div class="scroll">
+		<ul>
+			<li>
+          <a href="../lm.Comol.Core.Authentication/index.htm">lm.Comol.Core.Authentication</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.Authentication.Business/index.htm">lm.Comol.Core.Authentication.Business</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.Authentication.Helpers/index.htm">lm.Comol.Core.Authentication.Helpers</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.Business/index.htm">lm.Comol.Core.Business</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.Catalogues/index.htm">lm.Comol.Core.Catalogues</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.Certifications/index.htm">lm.Comol.Core.Certifications</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.Certifications.Business/index.htm">lm.Comol.Core.Certifications.Business</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.Communities/index.htm">lm.Comol.Core.Communities</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.Dashboard.Business/index.htm">lm.Comol.Core.Dashboard.Business</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.Dashboard.Domain/index.htm">lm.Comol.Core.Dashboard.Domain</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.DomainModel/index.htm">lm.Comol.Core.DomainModel</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.DomainModel.Assignment/index.htm">lm.Comol.Core.DomainModel.Assignment</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.DomainModel.Common/index.htm">lm.Comol.Core.DomainModel.Common</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.DomainModel.DocTemplateVers/index.htm">lm.Comol.Core.DomainModel.DocTemplateVers</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.DomainModel.DocTemplateVers.Business/index.htm">lm.Comol.Core.DomainModel.DocTemplateVers.Business</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.DomainModel.DocTemplateVers.Domain.Core/index.htm">lm.Comol.Core.DomainModel.DocTemplateVers.Domain.Core</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.DomainModel.DocTemplateVers.Domain.DTO.Management/index.htm">lm.Comol.Core.DomainModel.DocTemplateVers.Domain.DTO.Management</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.DomainModel.DocTemplateVers.Domain.DTO.ServiceExport/index.htm">lm.Comol.Core.DomainModel.DocTemplateVers.Domain.DTO.ServiceExport</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.DomainModel.DocTemplateVers.Helpers/index.htm">lm.Comol.Core.DomainModel.DocTemplateVers.Helpers</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.DomainModel.Domain/index.htm">lm.Comol.Core.DomainModel.Domain</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.DomainModel.Filters/index.htm">lm.Comol.Core.DomainModel.Filters</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.DomainModel.Helpers/index.htm">lm.Comol.Core.DomainModel.Helpers</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.DomainModel.Helpers.Export/index.htm">lm.Comol.Core.DomainModel.Helpers.Export</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.DomainModel.Helpers.Tags/index.htm">lm.Comol.Core.DomainModel.Helpers.Tags</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.DomainModel.Languages/index.htm">lm.Comol.Core.DomainModel.Languages</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.DomainModel.Repository/index.htm">lm.Comol.Core.DomainModel.Repository</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.DomainModel.SrvFileTransfer/index.htm">lm.Comol.Core.DomainModel.SrvFileTransfer</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.DomainModel.SrvFileUnzip/index.htm">lm.Comol.Core.DomainModel.SrvFileUnzip</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.Event/index.htm">lm.Comol.Core.Event</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.Event.Business/index.htm">lm.Comol.Core.Event.Business</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.Events.Domain/index.htm">lm.Comol.Core.Events.Domain</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.FileRepository.Business/index.htm">lm.Comol.Core.FileRepository.Business</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.FileRepository.Domain/index.htm">lm.Comol.Core.FileRepository.Domain</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.FileRepository.Domain.ScormSettings/index.htm">lm.Comol.Core.FileRepository.Domain.ScormSettings</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.FileRepository.Domain.toRemove/index.htm">lm.Comol.Core.FileRepository.Domain.toRemove</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.InLineTags.Business/index.htm">lm.Comol.Core.InLineTags.Business</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.InLineTags.Domain/index.htm">lm.Comol.Core.InLineTags.Domain</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.Mail/index.htm">lm.Comol.Core.Mail</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.Mail.Messages/index.htm">lm.Comol.Core.Mail.Messages</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.ModuleLinks/index.htm">lm.Comol.Core.ModuleLinks</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.Msmq.DataContract/index.htm">lm.Comol.Core.Msmq.DataContract</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.Notification.DataContract/index.htm">lm.Comol.Core.Notification.DataContract</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.Notification.Domain/index.htm">lm.Comol.Core.Notification.Domain</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.PersonalInfo/index.htm">lm.Comol.Core.PersonalInfo</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.Subscriptions/index.htm">lm.Comol.Core.Subscriptions</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.Tag.Business/index.htm">lm.Comol.Core.Tag.Business</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.Tag.Domain/index.htm">lm.Comol.Core.Tag.Domain</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.TemplateMessages/index.htm">lm.Comol.Core.TemplateMessages</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.TemplateMessages.Business/index.htm" class="current">lm.Comol.Core.TemplateMessages.Business</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.TemplateMessages.Domain/index.htm">lm.Comol.Core.TemplateMessages.Domain</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.WinService.Configurations/index.htm">lm.Comol.Core.WinService.Configurations</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.Wizard/index.htm">lm.Comol.Core.Wizard</a>
+      </li>
+		</ul>
+	</div>
+</nav><nav id="types">
+  <h2 class="fixed">Types in lm.Comol.Core.TemplateMessages.Business</h2>
+	<div class="scroll">
+		<ul>
+				<li>
+            <a href="../lm.Comol.Core.TemplateMessages.Business/TemplateMessagesService.htm" class="current">TemplateMessagesService</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.TemplateMessages.Business/TemplatesForOtherService.htm">TemplatesForOtherService</a>
+        </li>
+		</ul>
+	</div>
+</nav>
+	<article>
+    <header>
+		<p class="class"><strong>Type</strong> TemplateMessagesService</p>
+	</header>
+	<section>
+		<header>
+		<p><strong>Namespace</strong> lm.Comol.Core.TemplateMessages.Business</p>
+		<p><strong>Parent</strong> <a href="../lm.Comol.Core.Business/CoreServices.htm">CoreServices</a></p>
+		</header>
+    <div class="sub-header">
+		
+		
+			<h3 class="section">Methods</h3>
+			<ul>
+				<li><a href="../lm.Comol.Core.TemplateMessages.Business/TemplateMessagesService.htm#AddCommunityAssignment">AddCommunityAssignment</a></li>
+				<li><a href="../lm.Comol.Core.TemplateMessages.Business/TemplateMessagesService.htm#AddPersonAssignments">AddPersonAssignments</a></li>
+				<li><a href="../lm.Comol.Core.TemplateMessages.Business/TemplateMessagesService.htm#AddTemplate">AddTemplate</a></li>
+				<li><a href="../lm.Comol.Core.TemplateMessages.Business/TemplateMessagesService.htm#AddTemplate">AddTemplate</a></li>
+				<li><a href="../lm.Comol.Core.TemplateMessages.Business/TemplateMessagesService.htm#AddTemplateVersion">AddTemplateVersion</a></li>
+				<li><a href="../lm.Comol.Core.TemplateMessages.Business/TemplateMessagesService.htm#AllowAdd">AllowAdd</a></li>
+				<li><a href="../lm.Comol.Core.TemplateMessages.Business/TemplateMessagesService.htm#CloneTemplate">CloneTemplate</a></li>
+				<li><a href="../lm.Comol.Core.TemplateMessages.Business/TemplateMessagesService.htm#DeleteCommunityAssignments">DeleteCommunityAssignments</a></li>
+				<li><a href="../lm.Comol.Core.TemplateMessages.Business/TemplateMessagesService.htm#GetAvailableChannels">GetAvailableChannels</a></li>
+				<li><a href="../lm.Comol.Core.TemplateMessages.Business/TemplateMessagesService.htm#GetAvailableChannels">GetAvailableChannels</a></li>
+				<li><a href="../lm.Comol.Core.TemplateMessages.Business/TemplateMessagesService.htm#GetAvailableSteps">GetAvailableSteps</a></li>
+				<li><a href="../lm.Comol.Core.TemplateMessages.Business/TemplateMessagesService.htm#GetAvailableTemplateDisplay">GetAvailableTemplateDisplay</a></li>
+				<li><a href="../lm.Comol.Core.TemplateMessages.Business/TemplateMessagesService.htm#GetAvalableLanguage">GetAvalableLanguage</a></li>
+				<li><a href="../lm.Comol.Core.TemplateMessages.Business/TemplateMessagesService.htm#GetAvalableLanguages">GetAvalableLanguages</a></li>
+				<li><a href="../lm.Comol.Core.TemplateMessages.Business/TemplateMessagesService.htm#GetChannelSettings">GetChannelSettings</a></li>
+				<li><a href="../lm.Comol.Core.TemplateMessages.Business/TemplateMessagesService.htm#GetChannelSettings">GetChannelSettings</a></li>
+				<li><a href="../lm.Comol.Core.TemplateMessages.Business/TemplateMessagesService.htm#GetCommunityAssignments">GetCommunityAssignments</a></li>
+				<li><a href="../lm.Comol.Core.TemplateMessages.Business/TemplateMessagesService.htm#GetDefaultAssignmentSettings">GetDefaultAssignmentSettings</a></li>
+				<li><a href="../lm.Comol.Core.TemplateMessages.Business/TemplateMessagesService.htm#GetDraftChannelConfigurator">GetDraftChannelConfigurator</a></li>
+				<li><a href="../lm.Comol.Core.TemplateMessages.Business/TemplateMessagesService.htm#GetIdCommunityAssignments">GetIdCommunityAssignments</a></li>
+				<li><a href="../lm.Comol.Core.TemplateMessages.Business/TemplateMessagesService.htm#GetIdUserAssignments">GetIdUserAssignments</a></li>
+				<li><a href="../lm.Comol.Core.TemplateMessages.Business/TemplateMessagesService.htm#GetInUseLanguageItems">GetInUseLanguageItems</a></li>
+				<li><a href="../lm.Comol.Core.TemplateMessages.Business/TemplateMessagesService.htm#GetInUseLanguageItems">GetInUseLanguageItems</a></li>
+				<li><a href="../lm.Comol.Core.TemplateMessages.Business/TemplateMessagesService.htm#GetInUserPlaceHolders">GetInUserPlaceHolders</a></li>
+				<li><a href="../lm.Comol.Core.TemplateMessages.Business/TemplateMessagesService.htm#GetItemPermission">GetItemPermission</a></li>
+				<li><a href="../lm.Comol.Core.TemplateMessages.Business/TemplateMessagesService.htm#GetItemPermission">GetItemPermission</a></li>
+				<li><a href="../lm.Comol.Core.TemplateMessages.Business/TemplateMessagesService.htm#GetLastActiveVersion">GetLastActiveVersion</a></li>
+				<li><a href="../lm.Comol.Core.TemplateMessages.Business/TemplateMessagesService.htm#GetManagementTemplatePermission">GetManagementTemplatePermission</a></li>
+				<li><a href="../lm.Comol.Core.TemplateMessages.Business/TemplateMessagesService.htm#GetPermission">GetPermission</a></li>
+				<li><a href="../lm.Comol.Core.TemplateMessages.Business/TemplateMessagesService.htm#GetPermissionAssignments">GetPermissionAssignments</a></li>
+				<li><a href="../lm.Comol.Core.TemplateMessages.Business/TemplateMessagesService.htm#GetPortalAssignment">GetPortalAssignment</a></li>
+				<li><a href="../lm.Comol.Core.TemplateMessages.Business/TemplateMessagesService.htm#GetTemplateNumber">GetTemplateNumber</a></li>
+				<li><a href="../lm.Comol.Core.TemplateMessages.Business/TemplateMessagesService.htm#GetTemplates">GetTemplates</a></li>
+				<li><a href="../lm.Comol.Core.TemplateMessages.Business/TemplateMessagesService.htm#GetTranslation">GetTranslation</a></li>
+				<li><a href="../lm.Comol.Core.TemplateMessages.Business/TemplateMessagesService.htm#GetVersion">GetVersion</a></li>
+				<li><a href="../lm.Comol.Core.TemplateMessages.Business/TemplateMessagesService.htm#GetVersion">GetVersion</a></li>
+				<li><a href="../lm.Comol.Core.TemplateMessages.Business/TemplateMessagesService.htm#GetVersionModuleContentCodes">GetVersionModuleContentCodes</a></li>
+				<li><a href="../lm.Comol.Core.TemplateMessages.Business/TemplateMessagesService.htm#IsAdministrativeUser">IsAdministrativeUser</a></li>
+				<li><a href="../lm.Comol.Core.TemplateMessages.Business/TemplateMessagesService.htm#IsAdministrativeUser">IsAdministrativeUser</a></li>
+				<li><a href="../lm.Comol.Core.TemplateMessages.Business/TemplateMessagesService.htm#PhisicalDeleteTemplate">PhisicalDeleteTemplate</a></li>
+				<li><a href="../lm.Comol.Core.TemplateMessages.Business/TemplateMessagesService.htm#PhisicalDeleteVersion">PhisicalDeleteVersion</a></li>
+				<li><a href="../lm.Comol.Core.TemplateMessages.Business/TemplateMessagesService.htm#SaveChannelSettings">SaveChannelSettings</a></li>
+				<li><a href="../lm.Comol.Core.TemplateMessages.Business/TemplateMessagesService.htm#SaveChannelSettings">SaveChannelSettings</a></li>
+				<li><a href="../lm.Comol.Core.TemplateMessages.Business/TemplateMessagesService.htm#SaveCommunityPermissions">SaveCommunityPermissions</a></li>
+				<li><a href="../lm.Comol.Core.TemplateMessages.Business/TemplateMessagesService.htm#SaveDefaultTranslation">SaveDefaultTranslation</a></li>
+				<li><a href="../lm.Comol.Core.TemplateMessages.Business/TemplateMessagesService.htm#SaveModuleContentSettings">SaveModuleContentSettings</a></li>
+				<li><a href="../lm.Comol.Core.TemplateMessages.Business/TemplateMessagesService.htm#SavePermissions">SavePermissions</a></li>
+				<li><a href="../lm.Comol.Core.TemplateMessages.Business/TemplateMessagesService.htm#SavePersonPermissions">SavePersonPermissions</a></li>
+				<li><a href="../lm.Comol.Core.TemplateMessages.Business/TemplateMessagesService.htm#SavePortalPermissions">SavePortalPermissions</a></li>
+				<li><a href="../lm.Comol.Core.TemplateMessages.Business/TemplateMessagesService.htm#SaveSettings">SaveSettings</a></li>
+				<li><a href="../lm.Comol.Core.TemplateMessages.Business/TemplateMessagesService.htm#SaveTranslation">SaveTranslation</a></li>
+				<li><a href="../lm.Comol.Core.TemplateMessages.Business/TemplateMessagesService.htm#ServiceModuleID">ServiceModuleID</a></li>
+				<li><a href="../lm.Comol.Core.TemplateMessages.Business/TemplateMessagesService.htm#VirtualDeleteChannelSetting">VirtualDeleteChannelSetting</a></li>
+				<li><a href="../lm.Comol.Core.TemplateMessages.Business/TemplateMessagesService.htm#VirtualDeleteTemplate">VirtualDeleteTemplate</a></li>
+				<li><a href="../lm.Comol.Core.TemplateMessages.Business/TemplateMessagesService.htm#VirtualDeleteTranslation">VirtualDeleteTranslation</a></li>
+				<li><a href="../lm.Comol.Core.TemplateMessages.Business/TemplateMessagesService.htm#VirtualDeleteVersion">VirtualDeleteVersion</a></li>
+			</ul>
+		
+		
+	</div>
+	
+	<h3 class="section">Public instance methods</h3>
+
+	<div id="AddCommunityAssignment" class="method">
+		<h4>
+			<span title="System.bool">bool</span> <strong>AddCommunityAssignment</strong>(<span title="System.long">long</span> idVersion, <span title="System.Collections.Generic.List<int>">List&lt;int&gt;</span> items)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="AddPersonAssignments" class="method">
+		<h4>
+			<span title="System.Collections.Generic.List<VersionPersonPermission>">List&lt;VersionPersonPermission&gt;</span> <strong>AddPersonAssignments</strong>(<span title="System.long">long</span> idVersion, <span title="System.Collections.Generic.List<int>">List&lt;int&gt;</span> users)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="AddTemplate" class="method">
+		<h4>
+			<a href="../lm.Comol.Core.TemplateMessages.Domain/TemplateDefinition.htm">TemplateDefinition</a> <strong>AddTemplate</strong>(<span title="System.string">string</span> name, <a href="../lm.Comol.Core.TemplateMessages.Domain/TemplateType.htm">TemplateType</a> type, <a href="../lm.Comol.Core.TemplateMessages.Domain/dtoBaseTemplateOwner.htm">dtoBaseTemplateOwner</a> ownership, <span title="System.Collections.Generic.List<string>">List&lt;string&gt;</span> contentModules, <span title="System.Collections.Generic.List<dtoChannelConfigurator>">List&lt;dtoChannelConfigurator&gt;</span> items)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="AddTemplate" class="method">
+		<h4>
+			<a href="../lm.Comol.Core.TemplateMessages.Domain/TemplateDefinition.htm">TemplateDefinition</a> <strong>AddTemplate</strong>(<span title="System.string">string</span> name, <a href="../lm.Comol.Core.TemplateMessages.Domain/TemplateType.htm">TemplateType</a> type, <a href="../lm.Comol.Core.TemplateMessages.Domain/dtoBaseTemplateOwner.htm">dtoBaseTemplateOwner</a> ownership, <span title="System.Collections.Generic.List<string>">List&lt;string&gt;</span> contentModules, <span title="System.Collections.Generic.List<dtoTemplateTranslation>">List&lt;dtoTemplateTranslation&gt;</span> translations, <span title="lm.Comol.Core.MailCommons.Domain.Messages.MessageSettings">MessageSettings</span> settings)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="AddTemplateVersion" class="method">
+		<h4>
+			<a href="../lm.Comol.Core.TemplateMessages.Domain/TemplateDefinitionVersion.htm">TemplateDefinitionVersion</a> <strong>AddTemplateVersion</strong>(<span title="System.long">long</span> idTemplate)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="AllowAdd" class="method">
+		<h4>
+			<span title="System.bool">bool</span> <strong>AllowAdd</strong>(<a href="../lm.Comol.Core.TemplateMessages.Domain/dtoBaseTemplateOwner.htm">dtoBaseTemplateOwner</a> info)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="CloneTemplate" class="method">
+		<h4>
+			<a href="../lm.Comol.Core.TemplateMessages.Domain/TemplateDefinition.htm">TemplateDefinition</a> <strong>CloneTemplate</strong>(<span title="System.long">long</span> idTemplate, <span title="System.string">string</span> clonePrefix, <a href="../lm.Comol.Core.TemplateMessages.Domain/dtoModuleContext.htm">dtoModuleContext</a> context)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="DeleteCommunityAssignments" class="method">
+		<h4>
+			<span title="System.bool">bool</span> <strong>DeleteCommunityAssignments</strong>(<span title="System.long">long</span> idVersion, <span title="System.int">int</span> idCommunity, <span title="System.long">long</span> idAssignment)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="GetAvailableChannels" class="method">
+		<h4>
+			<span title="System.Collections.Generic.List<NotificationChannel>">List&lt;NotificationChannel&gt;</span> <strong>GetAvailableChannels</strong>(<a href="../lm.Comol.Core.TemplateMessages.Domain/TemplateType.htm">TemplateType</a> templateType, <span title="System.long">long</span> idVersion)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="GetAvailableChannels" class="method">
+		<h4>
+			<span title="System.Collections.Generic.List<NotificationChannel>">List&lt;NotificationChannel&gt;</span> <strong>GetAvailableChannels</strong>(<a href="../lm.Comol.Core.TemplateMessages.Domain/TemplateType.htm">TemplateType</a> templateType, <a href="../lm.Comol.Core.TemplateMessages.Domain/TemplateDefinitionVersion.htm">TemplateDefinitionVersion</a> version)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="GetAvailableSteps" class="method">
+		<h4>
+			<span title="System.Collections.Generic.List<NavigableWizardItem<dtoTemplateStep>>">List&lt;NavigableWizardItem&lt;dtoTemplateStep&gt;&gt;</span> <strong>GetAvailableSteps</strong>(<span title="System.long">long</span> idVersion, <a href="../lm.Comol.Core.TemplateMessages.Domain/WizardTemplateStep.htm">WizardTemplateStep</a> current, <a href="../lm.Comol.Core.TemplateMessages.Domain/OwnerType.htm">OwnerType</a> type)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="GetAvailableTemplateDisplay" class="method">
+		<h4>
+			<span title="System.Collections.Generic.List<TemplateDisplay>">List&lt;TemplateDisplay&gt;</span> <strong>GetAvailableTemplateDisplay</strong>(<a href="../lm.Comol.Core.TemplateMessages.Domain/TemplateType.htm">TemplateType</a> type, <span title="System.int">int</span> idCommunity, <span title="System.int">int</span> idUser, <span title="System.string">string</span> moduleCode, <span title="System.bool">bool</span> alsoByUser)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="GetAvalableLanguage" class="method">
+		<h4>
+			<span title="System.Collections.Generic.List<BaseLanguageItem>">List&lt;BaseLanguageItem&gt;</span> <strong>GetAvalableLanguage</strong>(<a href="../lm.Comol.Core.TemplateMessages.Domain/TemplateDefinitionVersion.htm">TemplateDefinitionVersion</a> version)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="GetAvalableLanguages" class="method">
+		<h4>
+			<span title="System.Collections.Generic.List<BaseLanguageItem>">List&lt;BaseLanguageItem&gt;</span> <strong>GetAvalableLanguages</strong>()
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="GetChannelSettings" class="method">
+		<h4>
+			<span title="System.Collections.Generic.List<dtoChannelConfigurator>">List&lt;dtoChannelConfigurator&gt;</span> <strong>GetChannelSettings</strong>(<span title="System.long">long</span> idVersion)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="GetChannelSettings" class="method">
+		<h4>
+			<span title="System.Collections.Generic.List<dtoChannelConfigurator>">List&lt;dtoChannelConfigurator&gt;</span> <strong>GetChannelSettings</strong>(<a href="../lm.Comol.Core.TemplateMessages.Domain/TemplateDefinitionVersion.htm">TemplateDefinitionVersion</a> version)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="GetCommunityAssignments" class="method">
+		<h4>
+			<a href="../lm.Comol.Core.TemplateMessages.Domain/dtoCommunityAssignment.htm">dtoCommunityAssignment</a> <strong>GetCommunityAssignments</strong>(<span title="System.long">long</span> idVersion, <span title="System.int">int</span> idCommunity, <span title="System.long">long</span> idAssignment, <span title="System.Collections.Generic.Dictionary<string, string>">Dictionary&lt;string, string&gt;</span> translatedModules, <span title="System.Collections.Generic.Dictionary<int, string>">Dictionary&lt;int, string&gt;</span> translatedRoles)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="GetDefaultAssignmentSettings" class="method">
+		<h4>
+			<a href="../lm.Comol.Core.TemplateMessages.Domain/dtoTemplateAssignment.htm">dtoTemplateAssignment</a> <strong>GetDefaultAssignmentSettings</strong>(<span title="System.long">long</span> idVersion)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="GetDraftChannelConfigurator" class="method">
+		<h4>
+			<a href="../lm.Comol.Core.TemplateMessages.Domain/dtoChannelConfigurator.htm">dtoChannelConfigurator</a> <strong>GetDraftChannelConfigurator</strong>(<a href="../lm.Comol.Core.Notification.Domain/NotificationChannel.htm">NotificationChannel</a> channel, <a href="../lm.Comol.Core.TemplateMessages.Domain/TemplateType.htm">TemplateType</a> templateType, <span title="System.long">long</span> idVersion)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="GetIdCommunityAssignments" class="method">
+		<h4>
+			<span title="System.Collections.Generic.List<int>">List&lt;int&gt;</span> <strong>GetIdCommunityAssignments</strong>(<span title="System.long">long</span> idVersion)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="GetIdUserAssignments" class="method">
+		<h4>
+			<span title="System.Collections.Generic.List<int>">List&lt;int&gt;</span> <strong>GetIdUserAssignments</strong>(<span title="System.long">long</span> idVersion)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="GetInUseLanguageItems" class="method">
+		<h4>
+			<span title="System.Collections.Generic.List<LanguageItem>">List&lt;LanguageItem&gt;</span> <strong>GetInUseLanguageItems</strong>(<span title="System.long">long</span> idVersion)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="GetInUseLanguageItems" class="method">
+		<h4>
+			<span title="System.Collections.Generic.List<LanguageItem>">List&lt;LanguageItem&gt;</span> <strong>GetInUseLanguageItems</strong>(<a href="../lm.Comol.Core.TemplateMessages.Domain/TemplateDefinitionVersion.htm">TemplateDefinitionVersion</a> version)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="GetInUserPlaceHolders" class="method">
+		<h4>
+			<span title="System.Collections.Generic.Dictionary<string, List<string>>">Dictionary&lt;string, List&lt;string&gt;&gt;</span> <strong>GetInUserPlaceHolders</strong>(<a href="../lm.Comol.Core.TemplateMessages.Domain/TemplateDefinitionVersion.htm">TemplateDefinitionVersion</a> version, <span title="System.Collections.Generic.Dictionary<string, List<string>>">Dictionary&lt;string, List&lt;string&gt;&gt;</span> placeHolders)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="GetItemPermission" class="method">
+		<h4>
+			<a href="../lm.Comol.Core.TemplateMessages.Domain/dtoTemplatePermission.htm">dtoTemplatePermission</a> <strong>GetItemPermission</strong>(<span title="System.long">long</span> idVersion)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="GetItemPermission" class="method">
+		<h4>
+			<a href="../lm.Comol.Core.TemplateMessages.Domain/dtoTemplatePermission.htm">dtoTemplatePermission</a> <strong>GetItemPermission</strong>(<a href="../lm.Comol.Core.TemplateMessages.Domain/TemplateDefinitionVersion.htm">TemplateDefinitionVersion</a> version)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="GetLastActiveVersion" class="method">
+		<h4>
+			<a href="../lm.Comol.Core.TemplateMessages.Domain/TemplateDefinitionVersion.htm">TemplateDefinitionVersion</a> <strong>GetLastActiveVersion</strong>(<span title="System.long">long</span> idTemplate)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="GetManagementTemplatePermission" class="method">
+		<h4>
+			<a href="../lm.Comol.Core.TemplateMessages.Domain/dtoTemplatePermission.htm">dtoTemplatePermission</a> <strong>GetManagementTemplatePermission</strong>(<a href="../lm.Comol.Core.TemplateMessages.Domain/TemplateDefinitionVersion.htm">TemplateDefinitionVersion</a> version, <a href="../lm.Comol.Core.TemplateMessages/ModuleGenericTemplateMessages.htm">ModuleGenericTemplateMessages</a> module)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="GetPermission" class="method">
+		<h4>
+			<a href="../lm.Comol.Core.TemplateMessages/ModuleTemplateMessages.htm">ModuleTemplateMessages</a> <strong>GetPermission</strong>(<span title="System.int">int</span> idCommunity, <a href="../lm.Comol.Core.TemplateMessages.Domain/OwnerType.htm">OwnerType</a> type)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="GetPermissionAssignments" class="method">
+		<h4>
+			<span title="System.Collections.Generic.List<dtoTemplateAssignment>">List&lt;dtoTemplateAssignment&gt;</span> <strong>GetPermissionAssignments</strong>(<a href="../lm.Comol.Core.TemplateMessages.Domain/TemplateDefinitionVersion.htm">TemplateDefinitionVersion</a> version, <span title="System.Collections.Generic.Dictionary<string, string>">Dictionary&lt;string, string&gt;</span> translatedModules, <span title="System.Collections.Generic.Dictionary<int, string>">Dictionary&lt;int, string&gt;</span> translatedProfileTypes, <span title="System.Collections.Generic.Dictionary<int, string>">Dictionary&lt;int, string&gt;</span> translatedRoles)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="GetPortalAssignment" class="method">
+		<h4>
+			<a href="../lm.Comol.Core.TemplateMessages.Domain/dtoPortalAssignment.htm">dtoPortalAssignment</a> <strong>GetPortalAssignment</strong>(<span title="System.long">long</span> idVersion, <span title="System.Collections.Generic.Dictionary<int, string>">Dictionary&lt;int, string&gt;</span> translatedProfileTypes)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="GetTemplateNumber" class="method">
+		<h4>
+			<span title="System.long">long</span> <strong>GetTemplateNumber</strong>(<a href="../lm.Comol.Core.TemplateMessages.Domain/dtoBaseTemplateOwner.htm">dtoBaseTemplateOwner</a> info)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="GetTemplates" class="method">
+		<h4>
+			<span title="System.Collections.Generic.List<dtoDisplayTemplateDefinition>">List&lt;dtoDisplayTemplateDefinition&gt;</span> <strong>GetTemplates</strong>(<a href="../lm.Comol.Core.TemplateMessages.Domain/dtoModuleContext.htm">dtoModuleContext</a> context, <a href="../lm.Comol.Core.TemplateMessages.Domain/dtoBaseFilters.htm">dtoBaseFilters</a> filters, <span title="System.string">string</span> unknownUser, <span title="System.int">int</span> idUser, <span title="System.int">int</span> idUserLanguage)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="GetTranslation" class="method">
+		<h4>
+			<a href="../lm.Comol.Core.TemplateMessages.Domain/dtoTemplateTranslation.htm">dtoTemplateTranslation</a> <strong>GetTranslation</strong>(<span title="System.long">long</span> idVersion, <span title="System.int">int</span> idLanguage, <span title="System.string">string</span> codeLanguage)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="GetVersion" class="method">
+		<h4>
+			<a href="../lm.Comol.Core.TemplateMessages.Domain/TemplateDefinitionVersion.htm">TemplateDefinitionVersion</a> <strong>GetVersion</strong>(<span title="System.long">long</span> idTemplate, <span title="System.long">long</span> idVersion)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="GetVersion" class="method">
+		<h4>
+			<a href="../lm.Comol.Core.TemplateMessages.Domain/TemplateDefinitionVersion.htm">TemplateDefinitionVersion</a> <strong>GetVersion</strong>(<span title="System.long">long</span> idVersion)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="GetVersionModuleContentCodes" class="method">
+		<h4>
+			<span title="System.Collections.Generic.List<string>">List&lt;string&gt;</span> <strong>GetVersionModuleContentCodes</strong>(<span title="System.long">long</span> idVersion)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="IsAdministrativeUser" class="method">
+		<h4>
+			<span title="System.bool">bool</span> <strong>IsAdministrativeUser</strong>(<span title="System.int">int</span> idPerson)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="IsAdministrativeUser" class="method">
+		<h4>
+			<span title="System.bool">bool</span> <strong>IsAdministrativeUser</strong>(<a href="../lm.Comol.Core.DomainModel/Person.htm">Person</a> person)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="PhisicalDeleteTemplate" class="method">
+		<h4>
+			<span title="System.bool">bool</span> <strong>PhisicalDeleteTemplate</strong>(<span title="System.long">long</span> idTemplate)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="PhisicalDeleteVersion" class="method">
+		<h4>
+			<span title="System.bool">bool</span> <strong>PhisicalDeleteVersion</strong>(<span title="System.long">long</span> idVersion)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="SaveChannelSettings" class="method">
+		<h4>
+			<span title="System.Collections.Generic.List<ChannelSettings>">List&lt;ChannelSettings&gt;</span> <strong>SaveChannelSettings</strong>(<a href="../lm.Comol.Core.DomainModel/litePerson.htm">litePerson</a> p, <a href="../lm.Comol.Core.TemplateMessages.Domain/TemplateDefinitionVersion.htm">TemplateDefinitionVersion</a> version, <span title="System.Collections.Generic.List<dtoChannelConfigurator>">List&lt;dtoChannelConfigurator&gt;</span> dtoSettings)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="SaveChannelSettings" class="method">
+		<h4>
+			<span title="System.Collections.Generic.List<ChannelSettings>">List&lt;ChannelSettings&gt;</span> <strong>SaveChannelSettings</strong>(<span title="System.long">long</span> idVersion, <span title="System.Collections.Generic.List<dtoChannelConfigurator>">List&lt;dtoChannelConfigurator&gt;</span> dtoSettings)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="SaveCommunityPermissions" class="method">
+		<h4>
+			<span title="System.bool">bool</span> <strong>SaveCommunityPermissions</strong>(<span title="System.long">long</span> idVersion, <span title="System.int">int</span> idCommunity, <span title="System.Collections.Generic.List<dtoRoleAssignment>">List&lt;dtoRoleAssignment&gt;</span> assignments)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="SaveDefaultTranslation" class="method">
+		<h4>
+			<span title="System.bool">bool</span> <strong>SaveDefaultTranslation</strong>(<span title="System.long">long</span> idVersion, <a href="../lm.Comol.Core.TemplateMessages.Domain/dtoTemplateTranslation.htm">dtoTemplateTranslation</a> dto)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="SaveModuleContentSettings" class="method">
+		<h4>
+			<span title="System.bool">bool</span> <strong>SaveModuleContentSettings</strong>(<a href="../lm.Comol.Core.TemplateMessages.Domain/TemplateDefinitionVersion.htm">TemplateDefinitionVersion</a> version, <span title="System.Collections.Generic.List<string>">List&lt;string&gt;</span> contentmodules, <span title="System.Collections.Generic.Dictionary<string, List<string>>">Dictionary&lt;string, List&lt;string&gt;&gt;</span> tagsToRemove)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="SavePermissions" class="method">
+		<h4>
+			<span title="System.bool">bool</span> <strong>SavePermissions</strong>(<span title="System.long">long</span> idVersion, <span title="System.Collections.Generic.List<dtoTemplateAssignment>">List&lt;dtoTemplateAssignment&gt;</span> assignments)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="SavePersonPermissions" class="method">
+		<h4>
+			<span title="System.bool">bool</span> <strong>SavePersonPermissions</strong>(<span title="System.long">long</span> idVersion, <span title="System.Collections.Generic.List<dtoPersonAssignment>">List&lt;dtoPersonAssignment&gt;</span> assignments)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="SavePortalPermissions" class="method">
+		<h4>
+			<span title="System.bool">bool</span> <strong>SavePortalPermissions</strong>(<span title="System.long">long</span> idVersion, <span title="System.Collections.Generic.List<dtoProfileTypeAssignment>">List&lt;dtoProfileTypeAssignment&gt;</span> items)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="SaveSettings" class="method">
+		<h4>
+			<a href="../lm.Comol.Core.TemplateMessages.Domain/TemplateDefinitionVersion.htm">TemplateDefinitionVersion</a> <strong>SaveSettings</strong>(<span title="System.long">long</span> idVersion, <span title="System.string">string</span> name, <span title="System.Collections.Generic.List<string>">List&lt;string&gt;</span> contentmodules, <span title="System.Collections.Generic.List<dtoChannelConfigurator>">List&lt;dtoChannelConfigurator&gt;</span> items, <a href="../lm.Comol.Core.TemplateMessages.Domain/TemplateStatus.htm">TemplateStatus</a> status, <span title="System.Collections.Generic.Dictionary<string, List<string>>">Dictionary&lt;string, List&lt;string&gt;&gt;</span> tagsToRemove)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="SaveTranslation" class="method">
+		<h4>
+			<a href="../lm.Comol.Core.TemplateMessages.Domain/TemplateTranslation.htm">TemplateTranslation</a> <strong>SaveTranslation</strong>(<span title="System.long">long</span> idVersion, <a href="../lm.Comol.Core.TemplateMessages.Domain/dtoTemplateTranslation.htm">dtoTemplateTranslation</a> dto)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="ServiceModuleID" class="method">
+		<h4>
+			<span title="System.int">int</span> <strong>ServiceModuleID</strong>()
+		</h4>
+		<div class="content">Get Service Module Id 
+
+
+
+			<div class="return">
+
+				<h5>Returns</h5>
+				<dl>
+					<dt>
+						<code><span title="System.int">int</span></code>
+					</dt>
+					<dd>Service Module Id 
+					</dd>
+				</dl>
+			</div>
+
+		</div>
+	</div>
+	<div id="VirtualDeleteChannelSetting" class="method">
+		<h4>
+			<span title="System.bool">bool</span> <strong>VirtualDeleteChannelSetting</strong>(<span title="System.long">long</span> idSettings)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="VirtualDeleteTemplate" class="method">
+		<h4>
+			<span title="System.bool">bool</span> <strong>VirtualDeleteTemplate</strong>(<span title="System.long">long</span> idTemplate, <span title="System.bool">bool</span> delete)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="VirtualDeleteTranslation" class="method">
+		<h4>
+			<span title="System.bool">bool</span> <strong>VirtualDeleteTranslation</strong>(<span title="System.long">long</span> idVersion, <span title="System.long">long</span> idTranslation)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="VirtualDeleteVersion" class="method">
+		<h4>
+			<span title="System.bool">bool</span> <strong>VirtualDeleteVersion</strong>(<span title="System.long">long</span> idVersion, <span title="System.bool">bool</span> delete)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	
+	
+	</section>
+	</article><footer>
+	<span id="version">Built from v1.0.0.0 of lm.Comol.Core.DomainModel</span>
+	<span id="docu-link">
+		Generated by <a href="http://docu.jagregory.com">docu</a>
+	</span>
+</footer>
+  </body>
+</html>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="lm.Comol.Core.DomainModel" namespace="lm.Comol.Core.DomainModel">
+	<class name="MetaData" table="GN_METADATA"  lazy="false">
+		<id name="Id" column="MTDT_ID" type="Guid">
+			<generator class="guid"/>
+		</id>
+		<property name="CreatedOn" type="DateTime" column="MTDT_CreatedOn" not-null="false"/>
+		<many-to-one name="CreatedBy" class="Person" column="MTDT_CreatedBy" foreign-key="MTDT_CreatedBy" cascade="none" lazy="false" />
+		<many-to-one name="ModifiedBy" class="Person" column="MTDT_ModifiedBy" foreign-key="MTDT_ModifiedBy" cascade="none" lazy="false"/>
+		<property name="ModifiedOn" type="DateTime" column="MTDT_ModifiedOn" not-null="false"/>
+		<many-to-one name="DeletedBy" class="Person" column="MTDT_DeletedBy" foreign-key="MTDT_DeletedBy" cascade="none" lazy="false" />
+		<property name="DeletedOn" type="DateTime" column="MTDT_DeletedOn" not-null="false"/>
+		<property name="isDeleted" type="Boolean" column="MTDT_isDeleted" />
+		<property name="Approvation" type="lm.Comol.Core.DomainModel.MetaApprovationStatus,lm.Comol.Core.DomainModel" column="MTDT_ApprovationStatus" />
+		<property name="canDelete" type="Boolean" column="MTDT_CanDelete" />
+		<property name="canModify" type="Boolean" column="MTDT_CanModify" />
+		<property name="ApprovedOn" type="DateTime" column="MTDT_ApprovedOn" not-null="false"/>
+		<many-to-one name="ApprovedBy" class="Person" column="MTDT_ApprovedBy" foreign-key="MTDT_ApprovedBy" cascade="none" lazy="false" />
+	</class>
+</hibernate-mapping>

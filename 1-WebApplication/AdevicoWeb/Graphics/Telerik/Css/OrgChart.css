@@ -1,0 +1,401 @@
+/**
+ * Organizational Chart
+ */
+/*----------------------------------------------------------------------------*/
+/** Global wrapper */
+/** Self clearing */
+.RadOrgChart,
+.RadOrgChart .rocViewport,
+.RadOrgChart .rocNodeList,
+.RadOrgChart .rocNode,
+.RadOrgChart .rocGroup,
+.RadOrgChart .rocItemList,
+.RadOrgChart .rocItemWrap,
+.RadOrgChart .rocItem,
+.RadOrgChart .rocItemContent,
+.RadOrgChart .rocItemTemplate {
+  min-height: 0;
+  _zoom: 1; }
+
+.RadOrgChart:after,
+.RadOrgChart .rocViewport:after,
+.RadOrgChart .rocNodeList:after,
+.RadOrgChart .rocNode:after,
+.RadOrgChart .rocGroup:after,
+.RadOrgChart .rocItemList:after,
+.RadOrgChart .rocItemWrap:after,
+.RadOrgChart .rocItem:after,
+.RadOrgChart .rocItemContent:after,
+.RadOrgChart .rocItemTemplate:after {
+  content: "";
+  height: 0;
+  clear: both;
+  display: block; }
+
+/** Viewport */
+.rocViewPort {
+  margin: 0 auto;
+  padding: 1em 0; }
+
+/** NodeList */
+.RadOrgChart .rocNodeList {
+  margin: 50px auto 0;
+  padding: 0;
+  list-style: none;
+  position: relative;
+  z-index: 10; }
+
+/** Node */
+.RadOrgChart .rocNode {
+  margin: 0 5px;
+  float: left;
+  _display: inline;
+  position: relative;
+  z-index: 10; }
+
+.RadOrgChart .rocNode.rocShadowNode {
+  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
+  opacity: .5; }
+
+/** Group */
+.RadOrgChart .rocGroup {
+  margin: 0 auto;
+  padding: 10px;
+  position: relative; }
+
+/** ItemList */
+.RadOrgChart .rocItemList {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  clear: both;
+  position: relative;
+  z-index: 10; }
+
+/** ItemWrap */
+.RadOrgChart .rocItemWrap {
+  margin: 5px;
+  width: 200px;
+  float: left;
+  _display: inline;
+  position: relative;
+  z-index: 10; }
+
+/** Items */
+.RadOrgChart .rocItem {
+  margin: 0 auto;
+  width: 200px;
+  height: 100px;
+  display: block;
+  position: relative; }
+
+.RadOrgChart .rocItemContent,
+.RadOrgChart .rocItemTemplate {
+  padding: 10px;
+  height: 78px;
+  border: 1px solid;
+  background-position: 0 0;
+  background-repeat: repeat-x;
+  overflow: hidden; }
+
+.RadOrgChart .rocItemContent {
+  padding-left: 68px; }
+
+.RadOrgChart .rocNoOwnImage .rocItemContent {
+  padding-left: 10px; }
+
+.RadOrgChart .rocImageWrap {
+  margin: 0 10px 0 -58px;
+  width: 48px;
+  height: 48px;
+  overflow: hidden;
+  float: left;
+  _display: inline; }
+
+.RadOrgChart .rocImageReplacement {
+  width: 48px;
+  height: 48px;
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  display: block; }
+
+.RadOrgChart .rocItem.rocShadowItem {
+  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
+  opacity: .5; }
+
+/** Modifiers */
+.RadOrgChart .rocFirst,
+.RadOrgChart .rocFirstInRow {
+  clear: left;
+  margin-left: 0; }
+
+.RadOrgChart .rocLast,
+.RadOrgChart .rocLastInRow {
+  margin-right: 0; }
+
+.RadOrgChart .rocOnly,
+.RadOrgChart .rocOnlyInRow {
+  margin-left: 0;
+  margin-right: 0;
+  float: none;
+  _display: block; }
+
+/** Node lines */
+.RadOrgChart .rocNodeLines {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1; }
+
+.RadOrgChart .rocLineUp,
+.RadOrgChart .rocLineDown,
+.RadOrgChart .rocLineHorizontal {
+  background-position: 0 0;
+  position: absolute;
+  width: 1px;
+  height: 1px; }
+
+.RadOrgChart .rocLineUp {
+  height: 25px;
+  background-repeat: repeat-y;
+  position: absolute;
+  top: -25px;
+  left: 50%; }
+
+.RadOrgChart .rocLineDown {
+  height: 25px;
+  background-position: 0 1px;
+  background-repeat: repeat-y;
+  position: absolute;
+  top: 100px;
+  left: 50%; }
+
+.RadOrgChart .rocLineHorizontal {
+  padding: 0 5px;
+  width: 100%;
+  background-repeat: repeat-x;
+  top: -25px;
+  left: -6px; }
+
+/** Lines in root node */
+.RadOrgChart .rocRootNode > .rocNodeLines > .rocLineUp,
+.RadOrgChart .rocRootNode > .rocNodeLines > .rocLineHorizontal {
+  display: none; }
+
+/** Lines for first / last node */
+.RadOrgChart .rocFirst > .rocNodeLines > .rocLineHorizontal,
+.RadOrgChart .rocLast > .rocNodeLines > .rocLineHorizontal {
+  width: 50%; }
+
+.RadOrgChart .rocFirst > .rocNodeLines > .rocLineHorizontal {
+  padding-right: 0;
+  left: 50%;
+  right: auto; }
+
+.RadOrgChart .rocLast > .rocNodeLines > .rocLineHorizontal {
+  padding-left: 1px;
+  left: auto;
+  right: 50%; }
+
+.RadOrgChart .rocFirst + .rocLast > .rocNodeLines > .rocLineHorizontal {
+  padding-left: 0; }
+
+/** Lines in only node */
+.RadOrgChart .rocOnly > .rocNodeLines > .rocLineHorizontal {
+  display: none; }
+
+/** Lines and group */
+.RadOrgChart .rocGroup .rocNodeLines {
+  display: none; }
+
+.RadOrgChart .rocGroup + .rocNodeLines .rocLineDown,
+.RadOrgChart .rocGroup + .rocNodeList + .rocNodeLines .rocLineDown {
+  top: 120px; }
+
+/** Drag and Drop */
+.rocDetachedItemContainer,
+.rocDetachedNodeContainer {
+  position: absolute;
+  z-index: 9000;
+  display: none; }
+
+/** Drag ghost */
+.rocDetachedItemContainer .rocGhostItem,
+.rocDetachedNodeContainer .rocGhostNode {
+  padding: 10px 10px 10px 30px;
+  border: 1px solid;
+  background-position: 0 0;
+  background-repeat: repeat-x;
+  overflow: hidden;
+  white-space: nowrap; }
+
+/** Drag Drop Clue */
+.rocDetachedItemContainer .rocDropClue,
+.rocDetachedNodeContainer .rocDropClue {
+  margin-top: -8px;
+  width: 16px;
+  height: 16px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  position: absolute;
+  top: 50%;
+  left: 7px; }
+
+.rocDetachedItemContainer .rocNoDropClue,
+.rocDetachedNodeContainer .rocNoDropClue {
+  background-position: 0 -16px; }
+
+.rocDetachedItemContainer .rocAddClue,
+.rocDetachedNodeContainer .rocAddClue {
+  background-position: 0 -32px; }
+
+.rocDetachedItemContainer .rocAppendClue,
+.rocDetachedNodeContainer .rocAppendClue {
+  background-position: 0 -48px; }
+
+/** Toggle handle */
+/*.RadOrgChart .rocToggleHandle,*/
+.RadOrgChart .rocExpandArrow,
+.RadOrgChart .rocCollapseArrow {
+  margin-left: -6px;
+  width: 11px;
+  height: 11px;
+  border: 1px solid;
+  background-repeat: no-repeat;
+  font: normal normal 12px/1 monospace;
+  text-indent: -999em;
+  overflow: hidden;
+  position: absolute;
+  top: auto;
+  bottom: -6px;
+  left: 50%;
+  cursor: pointer;
+  _cursor: hand; }
+
+/** Group toggle handles */
+.RadOrgChart .rocExpandGroupArrow,
+.RadOrgChart .rocCollapseGroupArrow {
+  width: 11px;
+  height: 11px;
+  border: 1px solid;
+  background-repeat: no-repeat;
+  font: normal normal 12px/1 monospace;
+  text-indent: -999em;
+  float: right;
+  display: inline;
+  cursor: pointer;
+  _cursor: hand;
+  position: relative; }
+
+.RadOrgChart .rocExpandArrow {
+  background-position: 0 0; }
+
+.RadOrgChart .rocCollapseArrow {
+  background-position: 0 -11px; }
+
+.RadOrgChart .rocExpandGroupArrow {
+  background-position: 0 -22px; }
+
+.RadOrgChart .rocCollapseGroupArrow {
+  background-position: 0 -33px; }
+
+/* Loading states */
+.RadOrgChart .rocLoadingNodes .rocExpandArrow,
+.RadOrgChart .rocLoadingNodes .rocCollapseArrow,
+.RadOrgChart .rocLoadingGroups .rocExpandGroupArrow,
+.RadOrgChart .rocLoadingGroups .rocCollapseGroupArrow {
+  padding: 1px;
+  width: 16px;
+  height: 16px;
+  background-position: center center; }
+
+.RadOrgChart .rocLoadingNodes .rocExpandArrow,
+.RadOrgChart .rocLoadingNodes .rocCollapseArrow {
+  margin-left: -10px;
+  bottom: -10px; }
+
+/** Expand / Collapse */
+.RadOrgChart .rocCollapsedNode .rocLineDown {
+  display: none; }
+
+.RadOrgChart .rocCollapsedNode .rocNodeList {
+  display: none; }
+
+.RadOrgChart .rocCollapsedGroup .rocItemWrap {
+  display: none; }
+
+.RadOrgChart .rocCollapsedGroup .rocItemWrap.rocFirst {
+  margin-right: 0;
+  display: inline; }
+
+/** Toolbar */
+ .rocToolbar {
+  padding: 3px;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  background: #fafafa;
+  display: none;
+  position: absolute;
+  z-index: 3000;
+  min-height: 0;
+  _zoom: 1; }
+
+.rocToolbar:after {
+  content: "";
+  height: 0;
+  clear: both;
+  display: block; }
+
+.rocToolbar ul {
+  margin: 0 0 0 -3px;
+  padding: 0;
+  list-style: none;
+  min-height: 0;
+  _zoom: 1; }
+
+.rocToolbar ul:after {
+  content: "";
+  height: 0;
+  clear: both;
+  display: block; }
+
+.rocToolbar li {
+  margin: 0 0 0 3px;
+  float: left;
+  display: inline; }
+
+/** Toolbar button */
+.rocToolbar .rocToolbarButton {
+  width: 16px;
+  height: 16px;
+  border: 1px solid;
+  background-image: url('Common/OrgChart/rocActionsSprite.png');
+  background-repeat: no-repeat;
+  text-indent: -999em;
+  float: left;
+  overflow: hidden; }
+
+.rocToolbar .rocToolbarButton:first-child {
+  margin: 0; }
+
+.rocToolbar .rocToolbarButton {
+  background-position: 0 0; }
+
+.rocToolbar .rocToolbarButton.rocActionGoToParent {
+  background-position: 0 -16px; }
+
+.rocToolbar .rocToolbarButton.rocActionGoToRoot {
+  background-position: 0 -32px; }
+
+/** Visibility */
+.rocToolbar .rocHidden {
+  display: none; }
+
+/** Web service binding */
+.RadOrgChart .rocNode .rocNotLoadedItem,
+.RadOrgChart .rocNotLoadedItem .rocItemContent {
+    height: auto; }

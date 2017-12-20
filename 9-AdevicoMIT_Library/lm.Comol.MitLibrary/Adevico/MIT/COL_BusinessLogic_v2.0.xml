@@ -1,0 +1,343 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+COL_BusinessLogic_v2.0
+</name>
+</assembly>
+<members>
+<member name="T:COL_BusinessLogic_v2.My.Resources.Resource">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:COL_BusinessLogic_v2.My.Resources.Resource.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:COL_BusinessLogic_v2.My.Resources.Resource.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="P:COL_BusinessLogic_v2.My.Resources.Resource.All">
+<summary>
+  Looks up a localized string similar to .
+</summary>
+</member>
+<member name="P:COL_BusinessLogic_v2.My.Resources.Resource.CommunityStatus_All">
+<summary>
+  Looks up a localized string similar to All.
+</summary>
+</member>
+<member name="P:COL_BusinessLogic_v2.My.Resources.Resource.CommunityStatus_Archiviata">
+<summary>
+  Looks up a localized string similar to Archiviata.
+</summary>
+</member>
+<member name="P:COL_BusinessLogic_v2.My.Resources.Resource.CommunityStatus_ClosedByAdministration">
+<summary>
+  Looks up a localized string similar to Closed By Administrator.
+</summary>
+</member>
+<member name="P:COL_BusinessLogic_v2.My.Resources.Resource.CommunityStatus_None">
+<summary>
+  Looks up a localized string similar to Not found..
+</summary>
+</member>
+<member name="P:COL_BusinessLogic_v2.My.Resources.Resource.CommunityStatus_OnlyActivated">
+<summary>
+  Looks up a localized string similar to Only Activated.
+</summary>
+</member>
+<member name="P:COL_BusinessLogic_v2.My.Resources.Resource.Esse3ImportToComol_Error">
+<summary>
+  Looks up a localized string similar to No event is been imported into community &quot;{0}&quot;..
+</summary>
+</member>
+<member name="P:COL_BusinessLogic_v2.My.Resources.Resource.Esse3ImportToComol_OK">
+<summary>
+  Looks up a localized string similar to All events are been imported into community &quot;{0}&quot;..
+</summary>
+</member>
+<member name="P:COL_BusinessLogic_v2.My.Resources.Resource.Esse3ImportToComol_PartialOk">
+<summary>
+  Looks up a localized string similar to Some events are not be imported into community &quot;{0}&quot;, in particular:&lt;br&gt;{1}.
+</summary>
+</member>
+<member name="T:COL_BusinessLogic_v2.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:COL_BusinessLogic_v2.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:COL_BusinessLogic_v2.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="M:COL_BusinessLogic_v2.Comunita.COL_Comunita.GetAllIscrittiComunitaMultipleFiltrate(System.String,System.Int32,System.String,System.String,System.String,System.String,System.String,System.Int32)">
+ <summary>
+    Recupera un elenco di iscritti con i soli dati di interesse per l'elenco mail.
+ </summary>
+ <param name="IdComunita">STRINGA: id delle comunità separati va virgola. Devono cominciare a finire per la stessa, ad esempio ,1, o ,1,2,146,</param>
+ <param name="IdLingua">ID della lingua per l'internazionalizzazione... (non serve, solo per compatibilità e sviluppi futuri)</param>
+ <param name="Nome">Per filtrare la ricerca</param>
+ <param name="Cognome">Per filtrare la ricerca</param>
+ <param name="Matricola">Per filtrare la ricerca</param>
+ <param name="Mail">Per filtrare la ricerca</param>
+ <param name="Login">Per filtrare la ricerca</param>
+ <returns>Lista di oggetti Iscritto</returns>
+ <remarks>La ricerca viene effettuata da dB, poichè il collo di bottiglia sta nel passaggio di dati tra dB e Server Web</remarks>
+</member>
+<member name="T:COL_BusinessLogic_v2.MailingList">
+ <summary>
+ Rappresenta i dati di una lista e contiene le funzioni per salvare e modificare
+ NON contiene nessun metodo per recuperare liste di indirizzi o elenchi di liste
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:COL_BusinessLogic_v2.MailingList.EmptyList">
+ <summary>
+ Svuota nel dB tutti gli indirizzi presenti
+ </summary>
+ <returns></returns>
+ <remarks>
+ Da utilizzare per poter in seguito inserire la lista di tutti i nuovi indirizzi
+ </remarks>
+</member>
+<member name="M:COL_BusinessLogic_v2.MailingList.RemoveList">
+ <summary>
+ Elimina fisicamente da dB la lista corrente e tutti gli indirizzi ad essa associati
+ </summary>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:COL_BusinessLogic_v2.MailingList.AddLista">
+ <summary>
+ Aggiunge una nuova lista di distribuzione, senza inserire gli indirizzi.
+ </summary>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:COL_BusinessLogic_v2.MailingList.RenameLista">
+ <summary>
+ Rinomina una lista di distribuzione
+ </summary>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:COL_BusinessLogic_v2.MailingList.Estrai">
+ <summary>
+   Recupera i dati di una singola lista, partendo dal .Id dell'oggetto
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="T:COL_BusinessLogic_v2.MailingAddress">
+ <summary>
+ Contiene i dati di una singola lista.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:COL_BusinessLogic_v2.MailingAddress.SaveNew">
+ <summary>
+ Aggiunge un singolo indirizzo
+ </summary>
+ <returns></returns>
+ <remarks>
+ Apre e chiude la connessione in maniera autonoma.
+ Per inserire in un colpo solo più indirizzi utilizzare l'apposita funzione,
+ che utilizza una connessione sola per tutti gli indirizzi
+ </remarks>
+</member>
+<member name="M:COL_BusinessLogic_v2.MailingAddress.Update">
+ <summary>
+ Salva i dati di un singolo indirizzo...
+ </summary>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:COL_BusinessLogic_v2.MailingAddress.Delete">
+ <summary>
+ Elimina l'indirizzo corrente
+ </summary>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:COL_BusinessLogic_v2.MailingAddress.Estrai">
+ <summary>
+   Recupera i dati di una singolo Indirizzo, partendo dal .Id dell'oggetto
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="T:COL_BusinessLogic_v2.MailingManager">
+ <summary>
+ Contiene le funzioni shared per recuperare le liste di utenti
+ </summary>
+ <remarks>
+ Eventualmente inserire filtri ed ordinamenti (o vanno nel presenter?!)
+ </remarks>
+</member>
+<member name="M:COL_BusinessLogic_v2.MailingManager.GetListe(System.Int32)">
+ <summary>
+   Restituisce l'elenco delle liste di distribuzione di un singolo utente
+ </summary>
+ <param name="ProprietarioId"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:COL_BusinessLogic_v2.MailingManager.GetIndirizzi(System.Int32)">
+ <summary>
+    Restituisce l'elenco di indirizzi di una specifica lista di distribuzione
+ </summary>
+ <param name="MailingListId"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:COL_BusinessLogic_v2.MailingManager.GetCCNString(System.Int32)">
+ <summary>
+ Stringa da aggiungere al CC o CCN
+ </summary>
+ <param name="MailingListId">
+ ID della lista in questione
+ </param>
+ <returns>
+ Una stringa già formattata da inserire nei campi To: CC: o CCn: di una mail con tutti gli indirizzi e relativi dati (Titolo ed anagrafica)
+ </returns>
+ <remarks>Accede al dB per recuperare i dati della lista</remarks>
+</member>
+<member name="M:COL_BusinessLogic_v2.MailingManager.GetCCNString(System.Collections.Generic.List{COL_BusinessLogic_v2.MailingAddress})">
+ <summary>
+  Da una lista, ricostruisce la stringa di indirizzi da inserire in CCn
+ </summary>
+ <param name="oMailingList"></param>
+ <returns>
+ Una stringa già formattata da inserire nei campi To: CC: o CCn: di una mail con tutti gli indirizzi e relativi dati (Titolo ed anagrafica)
+ </returns>
+ <remarks></remarks>
+</member>
+<member name="M:COL_BusinessLogic_v2.MailingManager.AddMailAddressCollection(System.Int32,System.Net.Mail.MailAddressCollection@,System.Net.Mail.MailAddressCollection@)">
+ <summary>
+  Aggiunge alle liste di MailAddressCollection passate 
+ gli indirizzi di una data liasta.
+ Se il campo A è vuoto il primo elemento viene inserito lì, tutto gli altri in oCC.
+ </summary>
+ <param name="MailingListId"></param>
+ <param name="oTo">
+ Campo A: Solo il primo elemento della lista viene inserito qui.
+ </param>
+ <param name="oCC">
+ Campo CC: Tutti gli altri qui.
+ </param>
+ <remarks>
+ E' possibile giocare in modo da inserire tutti gli indirizzi in A: (passandolo per entrambe i valori (DA PROVARE) o passando CC o CCn dell'oggetto mail a seconda delle esigenze.
+ </remarks>
+</member>
+<member name="M:COL_BusinessLogic_v2.MailingManager.GetListeOrdinate(System.Int32,System.String,System.String)">
+ <summary>
+   Restituisce l'elenco delle liste di distribuzione di un singolo utente correttamente ordinate
+ </summary>
+ <param name="ProprietarioId"></param>
+ <param name="sortDirection"></param>
+ <param name="sortExpression"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:COL_BusinessLogic_v2.MailingManager.GetIndirizziOrdinati(System.Int32,System.String,System.String)">
+ <summary>
+    Restituisce l'elenco di indirizzi di una specifica lista di distribuzione correttamente ordinate
+ </summary>
+ <param name="MailingListId"></param>
+ <param name="sortDirection"></param>
+ <param name="sortExpression"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:COL_BusinessLogic_v2.Localizzazione.ResourceManager.setLiteral(System.Web.UI.WebControls.Literal,System.String@)">
+ <summary>
+ sets the internazionalization of literal control that has control.text.value in xml
+ </summary>
+ <param name="oLiteral"></param>
+ <param name="value"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:COL_BusinessLogic_v2.Localizzazione.ResourceManager.setLinkButtonForName(System.Web.UI.WebControls.LinkButton,System.String,System.Boolean,System.Boolean,System.Boolean,System.Boolean)">
+ <summary>
+ Internazionalizza un linkbutton utilizzando le traduzioni di un altro
+ </summary>
+ <param name="oLinkButton">Controllo da internazionalizzare</param>
+ <param name="nameToSet">Nome del controllo del quale copiare la traduzione</param>
+ <param name="setStatus"></param>
+ <param name="setAlternateText"></param>
+ <param name="setBlockedText"></param>
+ <param name="setConfirmText"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:COL_BusinessLogic_v2.Localizzazione.ResourceManager.setRangeValidator(System.Web.UI.WebControls.RangeValidator,System.Web.UI.WebControls.RangeValidator)">
+ <summary>
+ imposta il validator usando i parametri di oRangeValidatorTranslated
+ </summary>
+ <param name="oRangeValidator">Validator da internazionalizzare</param>
+ <param name="oRangeValidatorTranslated">Controllo del quale utilizzare le traduzioni</param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:COL_BusinessLogic_v2.Localizzazione.ResourceManager.setCompareValidator(System.Web.UI.WebControls.CompareValidator,System.Web.UI.WebControls.CompareValidator)">
+ <summary>
+ imposta il validator usando i parametri di oCompareValidatorTranslated
+ </summary>
+ <param name="oCompareValidator">Validator da internazionalizzare</param>
+ <param name="oCompareValidatorTranslated">Controllo del quale utilizzare le traduzioni</param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:COL_BusinessLogic_v2.Localizzazione.ResourceManager.setButtonByValue(System.Web.UI.WebControls.Button,System.String,System.Boolean,System.Boolean,System.Boolean,System.Boolean)">
+ <summary>
+ 
+ </summary>
+ <param name="oButton"></param>
+ <param name="ValueToSearch">.text.ValueToSearch</param>
+ <param name="setToolTip"></param>
+ <param name="setBlockedText"></param>
+ <param name="setConfirmText"></param>
+ <param name="setStatus"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:COL_BusinessLogic_v2.Localizzazione.ResourceManager.setLabel_To_Value(System.Web.UI.WebControls.Label,System.String)">
+ <summary>
+ Imposta il campo text della label utilizzando il parametro.
+ </summary>
+ <param name="oLabel"></param>
+ <param name="stringaRicerca">parametro di ricerca, nell'xml va impostato senza .text</param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:COL_BusinessLogic_v2.CL_persona.COL_Persona.GetPersonIDForAutoLogin(System.String,System.Int32)">
+ <summary>
+ Controlla se il login è presente nel sistema ed è IOP
+ </summary>
+ <param name="Login"></param>
+ <returns>ID della persona, se presente e se IOP, altrimenti -1</returns>
+ <remarks></remarks>
+</member>
+<member name="M:COL_BusinessLogic_v2.CL_persona.COL_Persona.GetPersonByIOP(System.String)">
+ <summary>
+ Carica i campi dell'oggetto persona,
+ utilizzando la LOGIN
+ degli utenti di IOP!!! (Gli altri non vengono caricati: COL_Peronsa.ID = -1)
+ </summary>
+ <param name="LinguaID"></param>
+ <remarks></remarks>
+</member>
+</members>
+</doc>

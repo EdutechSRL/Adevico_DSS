@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--eng-->
+<Resource xmlns="urn:ComolTranslation">
+
+	<item name="LTpageTitle_t.text">Tickets list</item>
+	<item name="LTcontentTitle_t.text">Tickets list</item>
+	
+	<item name="LBStatus_t.text">Status</item>
+	<item name="LBtitle_t.text">Subject</item>
+	
+	<item name="LBStatus_t.ToolTip">Ticket status</item>
+	<item name="LBtitle_t.ToolTip">Ticket subject</item>
+	
+	<item name="CBXStart.text">after the</item>
+	<item name="CBXend.text">before the </item>
+	<item name="CBXupdatedOnly.text">Show only with news</item>
+	
+	<item name="CBXStart.ToolTip">show only after the</item>
+	<item name="CBXend.ToolTip">show only before the</item>
+	<item name="CBXupdatedOnly">Show only tickets with news</item>
+	
+	<item name="LNBfilter.text">Filter</item>
+	<item name="LNBfilter.ToolTip">Update data with the set values</item>
+	<item name="LNBfilter.status">Update data with the set values</item>
+
+	<item name="LTcode_t.text" description="Limitare il numero caratteri!">Cod.</item>
+	<item name="LTtitle_t.text">Subject</item>
+	<item name="LTcategory_t.text">Category</item>
+	<item name="LTLife_t.text">Age</item>
+	<item name="LTsended_t.text">Sending</item>
+	<item name="LTlastModify_t.text">Created on</item>
+	<item name="LTstatus_t.text">Status</item>
+	<item name="LTaction_t.text">Actions</item>
+
+	<item name="HYPadd.text">New</item>
+	<item name="HYPadd.ToolTip">Open new ticket</item>
+	<item name="HYPadd.status">Open new ticket</item>
+
+	<item name="CBXshowPreview.text">Show ticket preview</item>
+	<item name="CBXshowPreview.ToolTip">Show ticket preview</item>
+	<item name="CBXshowId.text">Show ticket code</item>
+	<item name="CBXshowId.ToolTip">Show ticket code</item>
+	<item name="CBXshowCategory.text">Show category</item>
+	<item name="CBXshowCategory.ToolTip">Show category</item>
+	<item name="CBXshowLastUpd.text">Show last update</item>
+	<item name="CBXshowLastUpd.ToolTip">Show last update</item>
+	
+	<item name="Status.draft">Draft</item>
+	<item name="Status.open">Open</item>
+	<item name="Status.inProcess">In progress</item>
+	<item name="Status.userRequest">Waiting</item>
+	<item name="Status.closeSolved">Closed and resolved</item>
+	<item name="Status.closeUnsolved">Closed and NOT resolved</item>
+	<item name="Status.All">all</item>
+
+	<item name="LBusr_t.text">User: </item>
+	<item name="LBusr_t.alt">User</item>
+	
+	<item name="LBnumTicket_t.text">Ticket: </item>
+	<item name="LBnumTicket_t.alt">Ticket informations</item>
+
+	<item name="LTnumDraft.title">Draft</item>
+	<item name="LTnumOpen.title">Open</item>
+	<item name="LTnumInProg.title">In progress</item>
+	<item name="LTnumRequest.title">User request</item>
+	<item name="LTnumSolved.title">Closed and resolved</item>
+	<item name="LTnumClosed.title">Closed and NOT resolved</item>
+
+	<item name="LTnumDraft.text">Draft</item>
+	<item name="LTnumOpen.text">Open</item>
+	<item name="LTnumInProg.text">In progress</item>
+	<item name="LTnumRequest.text">User request</item>
+	<item name="LTnumSolved.text">Closed and resolved</item>
+	<item name="LTnumClosed.text">Closed and NOT resolved</item>
+	
+	<item name="LTtimeMore.text" description="testo aggiuntivo per data aggiornamento">Updated on:</item>
+
+	<item name="LBlife.text" mustcontains="{day},{hour}">{day} days, {hour} hours</item>
+	<item name="LBlife.alt" mustcontains="{date}">Sent on {date}</item>
+
+	<item name="UserName.System">System</item>
+
+	<item name="HYPmanagement.text">Management</item>
+	<item name="HYPmanagement.ToolTip">Ticket management</item>
+	<item name="HYPmanagement.status">Ticket management</item>
+
+	<!-- Add-On-->
+	<item name="Page.Title.External">Ticket esterni</item>
+
+	<item name="Error.NoAccess">Accesso temporaneamente disabilitato.</item>
+
+	<item name="LTnoAccess.text">L'accesso ai Ticket esterni è momentaneamente disattivato.</item>
+
+	<!--Legend-->
+	<item name="LTleged_t.text">Legenda:</item>
+	<item name="Legend.hasnews.Text">News</item>
+	<item name="Legend.hasnews.Title">Aggiornamenti presenti dall'ultimo accesso</item>
+	<item name="Legend.draft.Text">Bozza</item>
+	<item name="Legend.draft.Title">Ticket in bozza: non ancora inviato</item>
+	<item name="Legend.locked.Text">Bloccato</item>
+	<item name="Legend.locked.Title">Ticket bloccato</item>
+	<item name="Legend.reported.Text">Segnalato</item>
+	<item name="Legend.reported.Title">Ticket segnalato</item>
+	<item name="Legend.deleted.Text">Annullato</item>
+	<item name="Legend.deleted.Title">Ticket annullato</item>
+
+	<!-- 02/12/2014-->
+	<item name="LTempty.text">Nessun ticket trovato con i parametri di ricerca specificati.</item>
+
+	<!-- 15/12/2014-->
+	<item name="HYPadd.ConfirmText">Sono presenti altri Ticket in bozza. Creare un nuovo Ticket?</item>
+
+	<!-- Add 19/01/2015 -->
+
+	<item name="Message.DeleteDraft.none">Ticket cancellato</item>
+	<item name="Message.DeleteDraft.TicketNotFound">Errore cancellazione: Ticket non trovato.</item>
+	<item name="Message.DeleteDraft.TicketNotInDraft">Errore cancellazione: Ticket non in bozza.</item>
+	<item name="Message.DeleteDraft.TicketNotMine">Errore cancellazione: Ticket di un altro utente.</item>
+	<item name="Message.DeleteDraft.FileError">Errore cancellazione: impossibile cancellare alcuni allegati.</item>
+	<item name="Message.DeleteDraft.dBError">Errore cancellazione: errore interno.</item>
+
+	<!-- Add 20/01/2015 -->
+	<item name="TH.Action.Title">Azioni</item>
+
+	<!-- Add 28/01/2015-->
+	<item name="Condition.active">Attivo</item>
+	<item name="Condition.flagged">Segnalato</item>
+	<item name="Condition.blocked">Bloccato</item>
+	<item name="Condition.flaggedNblocked">Segnalato e bloccato</item>
+	<item name="Condition.cancelled">Annullato</item>
+
+	<!-- add 13/03/2015-->
+	<item name="LTbehalft_t.text" description="behalf - titolo colonna">Proprietario</item>
+
+	<item name="LBbehalfOt_t.text" description="behalf - titolo filtro">Per conto di</item>
+	<item name="LBbehalfOt_t.ToolTip" description="behalf - filtro">Cerca per proprietario</item>
+
+	<item name="RBLbehalf.-1" description="behalf - filtro">Tutti</item>
+	<item name="RBLbehalf.0" description="behalf - filtro">Solo i miei</item>
+	<item name="RBLbehalf.1" description="behalf - filtro">Solo per conto di</item>
+
+	<!-- USARE TIPO, nel caso in cui tutto rimanga com'è... -->
+	<item name="LTnumBHDraft.text">In bozza</item>
+	<item name="LTnumBHOpen.text">Aperti</item>
+	<item name="LTnumBHInProg.text">In lavorazione</item>
+	<item name="LTnumBHRequest.text">Richiesta utente</item>
+	<item name="LTnumBHSolved.text">Risolti e chiusi</item>
+	<item name="LTnumBHClosed.text">Chiusi, non risolti</item>
+
+	<item name="LBnumBehalf_t.text" description="behalf - Label numero Ticket">Per conto di:</item>
+	<item name="LBnumBehalf_t.ToolTip" description="behalf - Label numero Ticket">Info sui ticket creati per conto di</item>
+
+	<item name="LInfo.value.draft">In bozza</item>
+	<item name="LInfo.title.draft">In bozza</item>
+	<item name="LInfo.value.open">Aperti</item>
+	<item name="LInfo.title.open">Aperti</item>
+	<item name="LInfo.value.inprogress">In lavorazione</item>
+	<item name="LInfo.title.inprogress">In lavorazione</item>
+	<item name="LInfo.value.request">Richiesta utente</item>
+	<item name="LInfo.title.request">Richiesta utente</item>
+	<item name="LInfo.value.solved">Risolti e chiusi</item>
+	<item name="LInfo.title.solved">Risolti e chiusi</item>
+	<item name="LInfo.value.closed">Chiusi, non risolti</item>
+	<item name="LInfo.title.closed">Chiusi, non risolti</item>
+
+	<!-- Add 05/06/2015 -->
+	<item name="LNBdelete.ToolTip">Cancella bozza</item>
+	<item name="LNBdelete.status">Cancella bozza</item>
+	<item name="LNBdelete.ConfirmText">La bozza verrà cancellata definitivamente. Continuare?</item>
+
+	<item name="LNBorderByIdUp.ToolTip">Ordinamento per Codice crescente</item>
+	<item name="LNBorderByIdDown.ToolTip">Ordinamento per Codice decrescente</item>
+	<item name="LNBorderByTitleUp.ToolTip">Ordinamento per Titolo crescente</item>
+	<item name="LNBorderByTitleDown.ToolTip">Ordinamento per Titolo decrescente</item>
+	<item name="LNBorderByCatUp.ToolTip">Ordinamento per Categoria crescente</item>
+	<item name="LNBorderByCatDown.ToolTip">Ordinamento per Categoria decrescente</item>
+	<item name="LNBorderByBehalfUp.ToolTip">Ordinamento per Proprietario crescente</item>
+	<item name="LNBorderByBehalfDown.ToolTip">Ordinamento per Proprietario decrescente</item>
+	<item name="LNBorderByStatusUp.ToolTip">Ordinamento per Stato crescente</item>
+	<item name="LNBorderByStatusDown.ToolTip">Ordinamento per Stato decrescente</item>
+	<item name="LNBorderByLastModifyUp.ToolTip">Ordinamento per data invio crescente</item>
+	<item name="LNBorderByLastModifyDown.ToolTip">Ordinamento per data invio decrescente</item>
+
+	<item name="LNBorderByIdUp.status">Ordinamento per Codice crescente</item>
+	<item name="LNBorderByIdDown.status">Ordinamento per Codice decrescente</item>
+	<item name="LNBorderByTitleUp.status">Ordinamento per Titolo crescente</item>
+	<item name="LNBorderByTitleDown.status">Ordinamento per Titolo decrescente</item>
+	<item name="LNBorderByCatUp.status">Ordinamento per Categoria crescente</item>
+	<item name="LNBorderByCatDown.status">Ordinamento per Categoria decrescente</item>
+	<item name="LNBorderByBehalfUp.status">Ordinamento per Proprietario crescente</item>
+	<item name="LNBorderByBehalfDown.status">Ordinamento per Proprietario decrescente</item>
+	<item name="LNBorderByStatusUp.status">Ordinamento per Stato crescente</item>
+	<item name="LNBorderByStatusDown.status">Ordinamento per Stato decrescente</item>
+	<item name="LNBorderByLastModifyUp.status">Ordinamento per data invio crescente</item>
+	<item name="LNBorderByLastModifyDown.status">Ordinamento per data invio decrescente</item>
+
+	<!-- add 14/07/2015 -->
+
+	<!--<item name="LBfilterTitle.text">Filtri di ricerca</item>
+	<item name="LBfilterTitle.ToolTip"></item>-->
+	<item name="LTfilterTitle.text">Filtri di ricerca</item>
+
+
+	<item name="LBfiltersShow.text">Clicca per visualizzare</item>
+	<item name="LBfiltersShow.ToolTip">Mostra filtri</item>
+
+	<item name="LBfiltersHide.text">Clicca per nascondere</item>
+	<item name="LBfiltersHide.ToolTip">Nascondi filtri</item>
+
+	<!-- add 15/07/2015 -->
+	<!--<item name="RBLdateField.CreatedOn" description="filtro su data: invio">data invio</item>
+	<item name="RBLdateField.LastModify" description="filtro su data: ultima modifica">ultima modifica</item>-->
+	<item name="DDLdateField.CreatedOn" description="filtro su data: invio">Data invio</item>
+	<item name="DDLdateField.LastModify" description="filtro su data: ultima modifica">Ultima modifica</item>
+
+	<item name="LBdate_t.text">Per data di</item>
+	<item name="LBdate_t.ToolTip">Filtra per data di</item>
+
+	<item name="LBfiltDateStart.text">Dopo il</item>
+	<item name="LBfiltDateStart.ToolTip">Dopo la data indicata</item>
+	<item name="LBfiltDateEnd.text">Prima del</item>
+	<item name="LBfiltDateEnd.ToolTip">Prima della data indicata</item>
+
+	<item name="LBownedBy.text">Proprietario</item>
+	<item name="LBownedBy.ToolTip">Proprietario del Ticket</item>
+</Resource>

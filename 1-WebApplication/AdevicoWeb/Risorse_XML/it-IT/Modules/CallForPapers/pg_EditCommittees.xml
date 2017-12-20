@@ -1,0 +1,849 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--ita-->
+<Resource xmlns="urn:ComolTranslation">
+  <item name="Portalname">Portale / Home</item>
+  <item name="nopermission">Spiacente, non hai i permessi per accedere a questa pagina.</item>
+  <item name="serviceTitle.GeneralSettings" disambiguation="commissione di valutazione di un bando">Gestione commissioni</item>
+  <item name="serviceTitle.GeneralInfo" disambiguation="commissione di valutazione di un bando">Gestione commissioni</item>
+  <item name="serviceTitle.FullManageEvaluators">Gestione valutatori</item>
+  <item name="serviceTitle.ManageEvaluators">Gestione valutatori</item>
+  <item name="serviceTitle.AssignSubmission">Assegnazione valutatori</item>
+  <item name="serviceTitle.MultipleAssignSubmission">Assegnazione valutatori</item>
+  <item name="serviceTitle.ReplaceCommitteeMember">Sostituzione valutatore</item>
+  <item name="serviceTitle.RemoveCommitteeMember">Rimozione valutatore</item>
+  <item name="serviceTitle.ViewEvaluation">Visualizzazione valutazione</item>
+  <item name="serviceTitle.ManageEvaluations">Gestione valutazioni</item>
+
+
+  <item name="LBnoCalls">Bando non trovato</item>
+  <item name="LBnoCalls.CallForBids">Bando non trovato</item>
+  <item name="LBnoCalls.RequestForMembership">Richiesta di adesione non trovata</item>
+  <item name="HYPbackTop.text">Torna ai bandi</item>
+  <item name="HYPbackTop.ToolTip">Torna alla lista dei bandi.</item>
+  <item name="HYPbackTop.status">Torna alla lista dei bandi.</item>
+  <item name="HYPbackBottom.text">Torna ai bandi</item>
+  <item name="HYPbackBottom.ToolTip">Torna alla lista dei bandi.</item>
+  <item name="HYPbackBottom.status">Torna alla lista dei bandi.</item>
+  <item name="BTNsaveCommitteesTop.text">Salva</item>
+  <item name="BTNsaveCommitteesTop.ToolTip">Salva le impostazioni.</item>
+  <item name="BTNsaveCommitteesBottom.text">Salva</item>
+  <item name="BTNsaveCommitteesBottom.ToolTip">Salva le impostazioni.</item>
+
+  <item name="EditSettings.DisplaySettingsError">Le impostazioni NON sono state salvate correttamente</item>
+  <item name="EditSettings.DisplaySettingsSaved">Impostazioni salvate correttamente</item>
+  <item name="DisplaySkippedRequiredSteps" placeholder="true" mustcontains="{0}">Status invalido, alcuni step obbligatori NON sono stati completati correttamente: {0}.</item>
+
+  <item name="EvaluationEditorErrors.NoCommittees" disambiguation="commissione di valutazione di un bando">ATTENZIONE: nessuna commissione definita.</item>
+  <item name="EvaluationEditorErrors.Saving">ATTENZIONE: dati NON salvati correttamente.</item>
+  <item name="EvaluationEditorErrors.AddingCommittee" disambiguation="commissione di valutazione di un bando">ATTENZIONE: la nuova commissione NON è stata aggiunta.</item>
+  <item name="EvaluationEditorErrors.RemovingCommittee" disambiguation="commissione di valutazione di un bando">ATTENZIONE: la commissione NON è stata rimossa.</item>
+  <item name="EvaluationEditorErrors.AddingCriterion">ATTENZIONE: il nuovo criterio NON è stato aggiunto.</item>
+  <item name="EvaluationEditorErrors.RemovingCriterion">ATTENZIONE: il criterio NON è stato rimosso.</item>
+  <item name="EvaluationEditorErrors.AddingOption">ATTENZIONE: l'opzione NON è stata aggiunta correttamente.</item>
+  <item name="EvaluationEditorErrors.RemovingOption">ATTENZIONE: l'opzione NON è stata rimossa correttamente.</item>
+  <item name="EvaluationEditorErrors.EvaluationLinked">ATTENZIONE: all'elemento sono associate delle valutazioni.</item>
+  <item name="EvaluationEditorErrors.NoEvaluators">ATTENZIONE: nessun valutatore assegnato al bando.</item>
+  <item name="EvaluationEditorErrors.AddingEvaluators">ATTENZIONE: il nuovo valutatore/i nuovi valutatori NON e'/sono stato/i assegnato/i al bando.</item>
+  <item name="EvaluationEditorErrors.RemovingEvaluators">ATTENZIONE: il valutatore NON e' stato rimosso correttamente.</item>
+  <item name="EvaluationEditorErrors.UnassignedEvaluators" disambiguation="commissione di valutazione di un bando">ATTENZIONE: uno o piu' valutatori non sono stati assegnati ad alcuna commissione.</item>
+  <item name="EvaluationEditorErrors.CommitteeWithNoEvaluators">ATTENZIONE: una commissione e' priva di valutatori.</item>
+  <item name="EvaluationEditorErrors.MoreEvaluatorAssignment" disambiguation="commissione di valutazione di un bando">ATTENZIONE: uno o più valutatori sono stati assegnati a più di una commissione.</item>
+  <item name="EvaluationEditorErrors.NoEvaluatorsForAssignments"  disambiguation="domanda di partecipazione/domanda di adesione"	>ATTENZIONE: nessun valutatore disponibile per l'assegnazione delle domande.</item>
+  <item name="EvaluationEditorErrors.NoSubmissionToEvaluate"  disambiguation="domanda di partecipazione/domanda di adesione"	>ATTENZIONE: non ci sono al momento domande da poter valutare.</item>
+  <item name="EvaluationEditorErrors.SubmissionEvaluated"  disambiguation="domanda di partecipazione/domanda di adesione"	>ATTENZIONE: ci sono delle domande in valutazione, non si può procedere con modifiche da questa pagina.</item>
+  <item name="EvaluationEditorErrors.SubmissionToAssign"  disambiguation="domanda di partecipazione/domanda di adesione"	>ATTENZIONE: ci sono delle domande non assegnate a dei valutatori.</item>
+  <item name="EvaluationEditorErrors.ReplacingEvaluator"  disambiguation="domanda di partecipazione/domanda di adesione"	>ATTENZIONE: l'operazione di sostituzione del valutatore NON e' andata a buon fine.</item>
+  <item name="EvaluationEditorErrors.RemovingInEvaluationEvaluator" disambiguation="commissione di valutazione di un bando">ATTENZIONE: il valutatore non è stato rimosso dalla commissione.</item>
+  <item name="EvaluationEditorErrors.DssSettings" disambiguation="commissione di valutazione di un bando">ATTENZIONE: le impostazioni di valutazione avanzate NON sono corrette, verificare pesi / metodi /scale.</item>
+
+  <item name="DisplayCommitteesSettingsSaved">Dati salvati correttamente.</item>
+  <item name="DefaultCommitteeName" disambiguation="commissione di valutazione di un bando">Commissione valutatrice </item>
+  <item name="DefaultCommitteeDescription"></item>
+  <item name="LBcriteriaHideTop.text">Nascondi criteri</item>
+  <item name="LBcriteriaShowTop.text">Mostra criteri</item>
+  <item name="LBcollapseAllTop.text">Chiudi tutto</item>
+  <item name="LBexpandAllTop.text">Apri tutto</item>
+  <item name="BTNaddCommitteeTop.text" disambiguation="commissione di valutazione di un bando">Nuova commissione</item>
+  <item name="BTNaddCommitteeTop.ToolTip" disambiguation="commissione di valutazione di un bando">Aggiunge una nuova commissione</item>
+  <item name="LBmoveCommittee.text" disambiguation="commissione di valutazione di un bando">Sposta commissione</item>
+  <item name="LBcommitteeName_t.text" disambiguation="commissione di valutazione di un bando">Commissione:</item>
+  <item name="LTadvancedSubmittersInfo.text">Attiva gestione avanzata partecipanti</item>
+
+  <item name="LBcommitteeSubmitters_t.text">Partecipanti:</item>
+  <item name="SPNcommitteeSubmittersSelectAll.ToolTip">Tutti</item>
+  <item name="SPNattchSelectNone.ToolTip">Nessuno</item>
+  <item name="SPNsubmittersSelecttAll.ToolTip">Tutti</item>
+  <item name="SPNcommitteeSubmittersSelectNone.ToolTip">Nessuno</item>
+
+  <item name="BTNaddCriterion.ToolTip">Aggiungi un nuovo criterio di valutazione</item>
+  <item name="BTNdeleteCommittee.text" hidden="true">X</item>
+  <item name="BTNdeleteCommittee.ToolTip" disambiguation="commissione di valutazione di un bando">Rimuovi commissione</item>
+  <item name="LBcommitteeDescription_t.text">Descrizione:</item>
+  <item name="HYPtoTopCommittee.text"></item>
+  <item name="HYPtoTopCommittee.ToolTip" disambiguation="commissione di valutazione di un bando">Vai alla commissione</item>
+
+  <item name="LBmoveCriterion.text">Sposta criterio</item>
+  <item name="LBcriterionName_t.text">Criterio:</item>
+  <item name="LBcriterionMandatory_t.text">Obbligatorio</item>
+  <item name="BTNdeleteCriterion.text" hidden="true">X</item>
+  <item name="BTNdeleteCriterion.ToolTip">Rimuovi criterio</item>
+
+
+  <!-- EDITING CRITERIA -->
+  <item name="Criterion.CriterionType.Textual">(testuale)</item>
+  <item name="Criterion.CriterionType.IntegerRange">(valore intero)</item>
+  <item name="Criterion.CriterionType.DecimalRange">(valore decimale)</item>
+  <item name="Criterion.CriterionType.StringRange">(scelta opzione testuale con valore decimale)</item>
+  <item name="Criterion.CriterionType.RatingScale">(scala qualitativa)</item>
+  <item name="Criterion.CriterionType.RatingScaleFuzzy">(scala qualitativa fuzzy)</item>
+
+  <item name="LBcriterionDescription_t.text">Descrizione:</item>
+  <item name="LBcommentText.text">Commento:</item>
+  <item name="LBcommentType_t.text">Commenti:</item>
+  <item name="CommentType.None">Nessuno</item>
+  <item name="CommentType.Allowed">Consentito</item>
+  <item name="CommentType.Mandatory">Obbligatorio</item>
+  <item name="RBLcommentType.None">Nessuno</item>
+  <item name="RBLcommentType.Allowed">Consentito</item>
+  <item name="RBLcommentType.Mandatory">Obbligatorio</item>
+  <item name="Help.CommentType.None">Nessuno commento al criterio di valutazione consentito</item>
+  <item name="Help.CommentType.Allowed">E' possibile ma NON è OBBLIGATORIO inserire un commento.</item>
+  <item name="Help.CommentType.Mandatory">E' OBBLIGATORIO inserire un commento.</item>
+  <item name="LBrangeType_t.text">Valori interi:</item>
+  <item name="LBrangeMinValue_t.text">Valore minimo:</item>
+  <item name="LBrangeMaxValue_t.text">Valore massimo:</item>
+  <item name="LBerrorMessageComment.text">E' OBBLIGATORIO inserire un commento !</item>
+  <item name="LBcriterionMaxChar_t.text"  disambiguation="N°=numero;car=caratteri">N° car:</item>
+  <item name="LTmaxCharsComment.text">Caratteri disponibili:</item>
+  <item name="LBcriterionHelp_t.text">Aiuto:</item>
+
+  <item name="LBmultipleChoice_t.text">Consenti risposte multiple</item>
+  <item name="LBminOptions_t.text">Seleziona almeno: </item>
+  <item name="LTminOptionsInfo.text">N° min:</item>
+  <item name="LBmaxOptions_t.text">Seleziona massimo: </item>
+  <item name="LTmaxOptionsInfo.text">N° max:</item>
+  <item name="BTNdeleteOption.text" disambiguation="C=cancella (un solo carattere)">C</item>
+  <item name="BTNdeleteOption.ToolTip">Rimuovi opzione</item>
+  <item name="LToptionsTitle.text">Opzioni:</item>
+  <item name="LBevaluationName_t.text">Valutazione</item>
+  <item name="LBevaluationValue_t.text">Valore</item>
+
+
+  <item name="BTNaddOption.text">Aggiungi</item>
+  <item name="BTNaddOption.ToolTip">Aggiungi una nuova valutazione</item>
+
+  <!-- EDITING CRITERIA -->
+  <item name="LBgenericCriteria.text">Tipologie criteri</item>
+  <item name="CriterionSelctor.CriterionType.Textual">Testuale</item>
+  <item name="CriterionSelctor.CriterionType.IntegerRange">Quantitativo (basato su numeri interi)</item>
+  <item name="CriterionSelctor.CriterionType.DecimalRange">Quantitativo (basato su numeri decimali)</item>
+  <item name="CriterionSelctor.CriterionType.StringRange">Qualitativo (valori testuali associati a valori numerici)</item>
+  <item name="CriterionSelctor.CriterionType.RatingScale">Scala qualitativa NON fuzzy (valori predefiniti)</item>
+  <item name="CriterionSelctor.CriterionType.RatingScaleFuzzy">Scala qualitativa Fuzzy (valori predefiniti fuzzy)</item>
+  
+  <item name="CriterionSelctor.CriterionType.Textual.Text">Criterio testuale</item>
+  <item name="CriterionSelctor.CriterionType.Textual.Description">Esprimi una valutazione testuale.</item>
+  <item name="CriterionSelctor.CriterionType.Textual.Help"></item>
+  <item name="CriterionSelctor.CriterionType.IntegerRange.Text">Quantitativo su intero</item>
+  <item name="CriterionSelctor.CriterionType.IntegerRange.Description"></item>
+  <item name="CriterionSelctor.CriterionType.IntegerRange.Help"></item>
+  <item name="CriterionSelctor.CriterionType.DecimalRange.Text">Quantitativo su decimale</item>
+  <item name="CriterionSelctor.CriterionType.DecimalRange.Description">Esprimi il tuo voto con un numero decimale</item>
+  <item name="CriterionSelctor.CriterionType.DecimalRange.Help"></item>
+  <item name="CriterionSelctor.CriterionType.StringRange.Text">Qualitativo</item>
+  <item name="CriterionSelctor.CriterionType.StringRange.Description">Criterio di valutazione basato su valori testuali associati a valori numerici</item>
+  <item name="CriterionSelctor.CriterionType.StringRange.Description.Min" placeholder="true" mustcontains="{0}">Criterio di valutazione (minimo {0} opzioni/e).</item>
+  <item name="CriterionSelctor.CriterionType.StringRange.Description.Max" placeholder="true" mustcontains="{0}">Criterio di valutazione (massimo {0} opzioni/e).</item>
+  <item name="CriterionSelctor.CriterionType.StringRange.Description.Min.Max" placeholder="true" mustcontains="{0}|{1}">Criterio di valutazione (minimo {0} opzioni/e - massimo {1} opzioni/e).</item>
+  <item name="CriterionSelctor.CriterionType.StringRange.Help"></item>
+  <item name="CriterionSelctor.CriterionType.RatingScale.Text">Qualitativo NON fuzzy</item>
+  <item name="CriterionSelctor.CriterionType.RatingScale.Description">Criterio con valori testuali/numerici predefiniti</item>
+  <item name="CriterionSelctor.CriterionType.RatingScale.Help"></item>
+  <item name="CriterionSelctor.CriterionType.RatingScaleFuzzy.Text">Qualitativo fuzzy</item>
+  <item name="CriterionSelctor.CriterionType.RatingScaleFuzzy.Description">Criterio fuzzy con valori testuali/numerici predefiniti</item>
+  <item name="CriterionSelctor.CriterionType.RatingScaleFuzzy.Help"></item>
+  
+  <item name="CriterionSelctor.CriterionType.Boolean.Text">Criterio booleano</item>
+  <item name="CriterionSelctor.CriterionType.Boolean.Description">Criterio di valutazione Sì/No</item>
+  <item name="CriterionSelctor.CriterionType.Boolean.Help"></item>
+  
+  <item name="CriterionCreator.CriterionType.Textual.Text">Criterio testuale</item>
+  <item name="CriterionCreator.CriterionType.Textual.Description">Esprimi una valutazione testuale.</item>
+  <item name="CriterionCreator.CriterionType.Textual.Help"></item>
+  <item name="CriterionCreator.CriterionType.IntegerRange.Text" placeholder="true" mustcontains="{0}">Criterio {0}</item>
+  <item name="CriterionCreator.CriterionType.IntegerRange.Description">Seleziona uno dei voti disponbili fra le opzioni sottostanti.</item>
+  <item name="CriterionCreator.CriterionType.IntegerRange.Help"></item>
+  <item name="CriterionCreator.CriterionType.DecimalRange.Text" placeholder="true" mustcontains="{0}">Criterio {0}</item>
+  <item name="CriterionCreator.CriterionType.DecimalRange.Description" placeholder="true" mustcontains="{0}|{1}">indica un numero decimale compreso fra {0} e {1}.</item>
+  <item name="CriterionCreator.CriterionType.DecimalRange.Help"></item>
+  <item name="CriterionCreator.CriterionType.StringRange.Text" placeholder="true" mustcontains="{0}">Criterio qualitativo {0}</item>
+  <item name="CriterionCreator.CriterionType.StringRange.Description" placeholder="false">Criterio di valutazione qualitativo</item>
+  <item name="CriterionCreator.CriterionType.StringRange.Description.Min" placeholder="true" mustcontains="{0}">Criterio di valutazione (minimo {0} opzioni/e).</item>
+  <item name="CriterionCreator.CriterionType.StringRange.Description.Max" placeholder="true" mustcontains="{0}">Criterio di valutazione (massimo {0} opzioni/e).</item>
+  <item name="CriterionCreator.CriterionType.StringRange.Description.Min.Max" placeholder="true" mustcontains="{0}|{1}">Criterio di valutazione (minimo {0} opzioni/e - massimo {1} opzioni/e).</item>
+  <item name="CriterionCreator.CriterionType.StringRange.Help"></item>
+  <item name="CriterionCreator.CriterionType.RatingScale.Text" placeholder="true" mustcontains="{0}">Criterio {0}</item>
+  <item name="CriterionCreator.CriterionType.RatingScale.Description" placeholder="false">Criterio di valutazione qualitativo</item>
+  <item name="CriterionCreator.CriterionType.RatingScale.Help"></item>
+  <item name="CriterionCreator.CriterionType.RatingScaleFuzzy.Text" placeholder="true" mustcontains="{0}">Criterio fuzzy{0}</item>
+  <item name="CriterionCreator.CriterionType.RatingScaleFuzzy.Description" placeholder="false">Criterio di valutazione qualitativo fuzzy</item>
+  <item name="CriterionCreator.CriterionType.RatingScaleFuzzy.Help"></item>
+
+  <item name="CriterionCreator.CriterionType.Boolean.Text" placeholder="true" mustcontains="{0}">Criterio booleano</item>
+  <item name="CriterionCreator.CriterionType.Boolean.Description" placeholder="false">Criterio di valutazione Sì/No</item>
+  <item name="CriterionCreator.CriterionType.Boolean.Help">Da usare per indicare se la sottomissione supera o meno il criterio</item>
+  
+  <item name="OptionDefault" placeholder="true" mustcontains="{0}">Opzione {0}</item>
+  <item name="Submitters.data-placeholder">Seleziona tipi partecipante</item>
+  <item name="Preview.CriterionType" placeholder="true" mustcontains="{0}">Anteprima criterio "{0}"</item>
+  <item name="LBcriterionOptions.text" placeholder="true" mustcontains="{0}">Opzioni di creazione criterio "{0}"</item>
+  <item name="LBstandardOptionsDescription.text" disambiguation="commissione di valutazione di un bando">Specificare il numero di criteri da inserire nella commissione prescelta.</item>
+  <item name="LBstandardCriteriaNumber_t.text">Numero criteri:</item>
+  <item name="LBstandardCriteriaNumberHelp.text">Indicare un numero fra 1 e 30.</item>
+  <item name="LBmultipleCriterionOptions.text" placeholder="true" mustcontains="{0}">Opzioni avanzate di creazione criterio "{0}"</item>
+  <item name="LBadvancedCriterionOptionsDescription.text">Nel campo sottostante inserire le opzioni di default da creare, ogni riga un opzione. Nel caso in cui il testo sia vuoto verranno create comunque due opzioni vuote.</item>
+  <item name="LBadvancedCriterionOptionsList.text">Opzioni:</item>
+  <item name="LBadvancedCriterionOptionsListHelp.text">Inserire in ogni riga una opzione, le righe vuote NON saranno inserite.</item>
+
+  <!-- INPUT/RENDER CRITERION-->
+  <item name="LTminOptionsradioButtonlist.text">Min:</item>
+  <item name="LBmaxOptionradioButtonlist.text">Max:</item>
+  <item name="LTminOptionscheckboxlist.text">Min:</item>
+  <item name="LTmaxOptionscheckboxlist.text">Max:</item>
+
+  <item name="BTNcreateCriterion.text">Crea</item>
+  <item name="BTNcreateCriterion.ToolTip">Crea</item>
+  <item name="BTNcloseCreateCriterionWindow.text">Annulla</item>
+  <item name="BTNcloseCreateCriterionWindow.ToolTip">Annulla</item>
+
+
+  <item name="FieldError.None"></item>
+  <item name="FieldError.Mandatory">obbligatorio</item>
+  <item name="FieldError.Invalid">dato invalido</item>
+  <item name="FieldError.InvalidFormat">formato invalido</item>
+  <item name="FieldError.MoreOptions">troppe opzioni</item>
+  <item name="FieldError.LessOptions">selezionare più opzioni</item>
+  <item name="FieldError.InvalidOptions">numero di opzioni invalido</item>
+  <item name="FieldError.Unknown">errore / invalido</item>
+
+
+  <!-- EVALUATORS MANAGE -->
+  <item name="BTNsaveEvaluatorsTop.text">Salva</item>
+  <item name="BTNsaveEvaluatorsTop.ToolTip">Salva le impostazioni</item>
+  <item name="BTNsaveEvaluatorsBottom.text">Salva</item>
+  <item name="BTNsaveEvaluatorsBottom.ToolTip">Salva le impostazioni</item>
+
+  <item name="LBallowMultipleCommittees.text">Consenti ad un valutatore di appartenere a pi&amp;ugrave; commissioni. Nel caso in cui vi sia un'unica commissione l'opzione risulterà disabilitata.</item>
+  <item name="LTevaluator_t.text">Valutatore</item>
+  <item name="LTcommittee_t.text" disambiguation="commissione di valutazione di un bando">Commissione</item>
+  <item name="LTactions_t.text">Azioni</item>
+  <item name="SPNevaluatorsCommitteeSelectAll.ToolTip">Tutti</item>
+  <item name="SPNevaluatorsCommitteeSelectNone.ToolTip">Nessuno</item>
+  <item name="select-committee" disambiguation="commissione di valutazione di un bando">Seleziona commissione</item>
+
+
+  <item name="BTNaddCommitteeMemberTop.text">Aggiungi valutatore</item>
+  <item name="BTNaddCommitteeMemberTop.ToolTip">Aggiungi un nuovo valutatore al bando (da assegnare poi alla relativa commissione).</item>
+  <item name="BTNdeleteMember.text"  hidden="true">X</item>
+  <item name="BTNdeleteMember.ToolTip">Rimuovi valutatore</item>
+  <item name="DialogTitleTranslation.SelectEvaluators">Selezione valutatori</item>
+  <item name="addMemberDescription">Seleziona gli utenti da rendere valutatori:</item>
+
+  <!-- EVALUATORS SINGLE ASSIGNMENTS -->
+  <item name="BTNsaveSingleAssignmentsTop.text">Salva</item>
+  <item name="BTNsaveSingleAssignmentsTop.ToolTip">Salva le impostazioni</item>
+  <item name="BTNsaveSingleAssignmentsBottom.text">Salva</item>
+  <item name="BTNsaveSingleAssignmentsBottom.ToolTip">Salva le impostazioni</item>
+  <item name="BTNassignEvaluatorsToAllSubmissionBottom.text">Assegna a tutte</item>
+  <item name="BTNassignEvaluatorsToAllSubmissionBottom.ToolTip" disambiguation="domanda di partecipazione/domanda di adesione"	>Assegna i valutatori a tutte le domande elencate</item>
+  <item name="BTNassignEvaluatorsToAllSubmissionTop.text">Assegna a tutte</item>
+  <item name="BTNassignEvaluatorsToAllSubmissionTop.ToolTip" disambiguation="domanda di partecipazione/domanda di adesione"	>Assegna i valutatori a tutte le domande elencate</item>
+  <item name="Evaluators.data-placeholder">Seleziona valutatori</item>
+
+
+  <item name="NoAvailableSubmission" placeholder="true" mustcontains="{0}|{1}">Al momento ci sono {0} domande di partecipazione al bando, {1} sono state rifiutate, nessuna e' ancora stata approvata. Di conseguenza non si può procedere con l'assegnazione ai valutatori.</item>
+  <item name="NoAvailableSubmission.1.0">Al momento c'è una sola domanda di partecipazione al bando, nessuna e' ancora stata approvata. Di conseguenza non si può procedere con l'assegnazione ai valutatori.</item>
+  <item name="NoAvailableSubmission.1.1">Al momento c'è una sola domanda di partecipazione al bando ed è stata rifiutate, nessuna e' ancora stata approvata. Di conseguenza non si può procedere con l'assegnazione ai valutatori.</item>
+  <item name="NoAvailableSubmission.1.n" placeholder="true" mustcontains="{0}">Al momento c'è una sola domanda di partecipazione al bando, {0} sono state rifiutate, nessuna e' ancora stata approvata. Di conseguenza non si può procedere con l'assegnazione ai valutatori.</item>
+  <item name="NoAvailableSubmission.n.1" placeholder="true" mustcontains="{0}">Al momento ci sono {0} domande di partecipazione al bando, una è stata rifiutate, nessuna e' ancora stata approvata. Di conseguenza non si può procedere con l'assegnazione ai valutatori.</item>
+  <item name="NoAvailableSubmission.0.0">Al momento non c'è alcuna domanda di partecipazione al bando, di conseguenza non si può procedere con l'assegnazione ai valutatori.</item>
+  <item name="DisplayStartup" placeholder="true" mustcontains="{0}">Al momento ci sono {0} domande di partecipazione al bando</item>
+  <item name="DisplayStartup.1">Al momento c'è una sola domanda di partecipazione al bando</item>
+  <item name="DisplayStartup.0">Al momento NON c'è NESSUNA domanda di partecipazione al bando.</item>
+  <item name="DisplayStartup.Approved.1">una è stata accettata</item>
+  <item name="DisplayStartup.Approved.n" placeholder="true" mustcontains="{0}">{0} sono state accettate</item>
+  <item name="DisplayStartup.Rejected.1">una è stata rifiutata</item>
+  <item name="DisplayStartup.Rejected.n" placeholder="true" mustcontains="{0}">{0} sono state rifiutate</item>
+  <item name="DisplayStartup.End">Nessuna delle accettate è stata assegnata ad alcun valutatore, Le intende:"</item>
+  
+  <item name="RBLsingleAssignmentStartup.True"  disambiguation="domanda di partecipazione/domanda di adesione"	>assegnare i valutatori automaticamente a tutte le domande</item>
+  <item name="RBLsingleAssignmentStartup.False" disambiguation="domanda di partecipazione/domanda di adesione"	>assegnare i valutatori manualmente alle domande</item>
+  <item name="LTsubmittername_t.text"  disambiguation="domanda di partecipazione/domanda di adesione"	>Domanda di</item>
+  <item name="LTsubmitterType_t.text">Tipo</item>
+  <item name="LTevaluators_t.text">Valutatori</item>
+  <item name="SPNsubmissionEvaluatorsSelectAll.ToolTip">Tutti</item>
+  <item name="SPNsubmissionEvaluatorsSelectNone.ToolTip">Nessuno</item>
+
+  <!-- EVALUATORS MULTIPLE ASSIGNMENTS -->
+  <item name="BTNsaveMultipleCommitteeAssignmentsTop.text">Salva</item>
+  <item name="BTNsaveMultipleCommitteeAssignmentsTop.ToolTip">Salva le impostazioni</item>
+  <item name="BTNsaveMultipleCommitteeAssignmentsBottom.text">Salva</item>
+  <item name="BTNsaveMultipleCommitteeAssignmentsBottom.ToolTip">Salva le impostazioni</item>
+  <item name="RBLmultipleAssignmentStartup.True" disambiguation="commissione di valutazione di un bando/domanda di partecipazione/domanda di adesione">assegnare i valutatori automaticamente a tutte le domande per ciascuna commissione</item>
+  <item name="RBLmultipleAssignmentStartup.False" disambiguation="commissione di valutazione di un bando/domanda di partecipazione/domanda di adesione">assegnare i valutatori manualmente commissione per commissione, domanda per domanda</item>
+  <item name="LTpageTop.text">Vai alla pagina:</item>
+  <item name="LTpageBottom.text">Vai alla pagina:</item>
+
+
+  <!-- EVALUATORS VIEW -->
+  <item name="LTevaluatorName_t.text">Valutatore</item>
+  <item name="LTevaluationsStatus_t.text">Statistiche valutazioni</item>
+  <item name="ProgressTooltip.EvaluationStatus.Evaluated" placeholder="true" mustcontains="{0}">Completate: {0}%</item>
+  <item name="ProgressTooltip.EvaluationStatus.Evaluating" placeholder="true" mustcontains="{0}">Iniziate: {0}%</item>
+  <item name="ProgressTooltip.EvaluationStatus.None" placeholder="true" mustcontains="{0}">Non iniziate: {0}%</item>
+  <item name="ProgressTooltip.EvaluationStatus.Confirmed" placeholder="true" mustcontains="{0}">Confermate: {0}%</item>
+  <item name="ProgressTooltip.EvaluationStatus.Invalidated" placeholder="true" mustcontains="{0}">Non piu' valide: {0}%</item>
+  <item name="ProgressTooltip.EvaluationStatus.EvaluatorReplacement" placeholder="true" mustcontains="{0}">Valutatori rimossi da: {0}%</item>
+  <item name="ProgressTooltip.EvaluationStatus.Other" placeholder="true" mustcontains="{0}">Non piu' valide / valutatori rimossi: {0}%</item>
+  <item name="HYPreplaceEvaluator.ToolTip" disambiguation="commissione di valutazione di un bando">Sostituisci questo membro della commissione</item>
+  <item name="HYPdeleteEvaluator.ToolTip" disambiguation="commissione di valutazione di un bando">Cancella membro della commissione</item>
+  <item name="extrainfo.Removed">Rimosso da</item>
+  <item name="extrainfo.Replaced">Sostituito da</item>
+  <item name="extrainfo.Replacing">Sostituisce</item>
+
+  <!-- REPLACE EVALUATOR -->
+
+  <item name="HYPbackToViewBottom.text">Annulla</item>
+  <item name="HYPbackToViewBottom.ToolTip">Annulla l'operazione</item>
+  <item name="HYPbackToViewBottom.status">Annulla l'operazione</item>
+  <item name="HYPbackToViewTop.text">Annulla</item>
+  <item name="HYPbackToViewTop.ToolTip">Annulla l'operazione</item>
+  <item name="HYPbackToViewTop.status">Annulla l'operazione</item>
+  <item name="BTNbackBottom.text">Indietro</item>
+  <item name="BTNbackBottom.ToolTip">Indietro</item>
+  <item name="BTNbackTop.text">Indietro</item>
+  <item name="BTNbackTop.ToolTip">Indietro</item>
+  <item name="BTNcompleteBottom.text">Esegui</item>
+  <item name="BTNcompleteBottom.ToolTip">Esegui l'operazione</item>
+  <item name="BTNcompleteTop.text">Esegui</item>
+  <item name="BTNcompleteTop.ToolTip">Esegui l'operazione</item>
+  <item name="BTNnextBottom.text">Avanti</item>
+  <item name="BTNnextBottom.ToolTip">Avanti</item>
+  <item name="BTNnextTop.text">Avanti</item>
+  <item name="BTNnextTop.ToolTip">Avanti</item>
+  <item name="BTNcloseSelectMemberWindow.text">Annulla</item>
+  <item name="BTNcloseSelectMemberWindow.ToolTip">Annulla la selezione del sostituto</item>
+  <item name="BTNselectMember.text" disambiguation="verbo">Conferma</item>
+  <item name="BTNselectMember.ToolTip">Conferma la selezione del sostituto</item>
+  <item name="LBselectMemberDialgoHeader.text">Selezione del sostituto</item>
+  <item name="selectSubstituteDescription">Selezionare l'utente che deve sostituire il valutatore:</item>
+  
+  <item name="LTsubmitterName_t.text" disambiguation="domanda di partecipazione/domanda di adesione">Domanda</item>
+  <item name="LTevaluationStatus_t.text" disambiguation="status: attivo/chiuso/in corso/valutazione">Stato</item>
+  <item name="DisplayMemberNotFound">Il valutatore da sostituire NON e' stato individuato, impossibile continuare con l'operazione.</item>
+  <item name="DisplayReplaceNotAvailable">Non e' possibile continuare con l'operazione.</item>
+  <item name="DisplayEvaluationsCompleted" placeholder="true" mustcontains="{0}">Il valutatore {0} ha completato tutte le valutazioni, non può essere sostituito.</item>
+  <item name="LBstepTitle.text">Sostituisci valutatore</item>
+  <item name="LBstepDescription.text" disambiguation="domanda di partecipazione/domanda di adesione"	>Step 1: verifica delle domande assegnate</item>
+  <item name="LBevaluationsInfo_t.text">Valutazioni:</item>
+  <item name="replace.Step2"></item>
+  <item name="EvaluationStatus.None">Non iniziate</item>
+  <item name="EvaluationStatus.Evaluating">In corso</item>
+  <item name="EvaluationStatus.Evaluated">Completate</item>
+  <item name="EvaluationStatus.EvaluatorReplacement">Riassegnate</item>
+  <item name="EvaluationStatus.Invalidated">Invalidate</item>
+  <item name="EvaluationStatus.Confirmed">Confermate</item>
+  <item name="LTuserInfo.0">All'utente</item>
+  <item name="LTuserInfo.2"  disambiguation="domanda di partecipazione/domanda di adesione"	>sono state assegnate le seguenti domande.</item>
+  <item name="LTuserStepInfo.0" disambiguation="domanda di partecipazione/domanda di adesione"	>Rivedi le domande e clicca </item>
+  <item name="LTuserStepInfo.2">per procedere o </item>
+  <item name="LTuserStepInfo.4">per cancellare l'operazione.</item>
+  <item name="LBnewEvaluator_t.text">Nuovo valutatore:</item>
+  <item name="BTNselectEvaluator.text">Seleziona valutatore</item>
+  <item name="BTNselectEvaluator.ToolTip">Seleziona il nuovo valutatore</item>
+  <item name="LBreplaceAll.text">Riassegna tutte</item>
+  <item name="LTreplaceAll.text" disambiguation="domanda di partecipazione/domanda di adesione"	>Riassegna tutte domande valutate / non valutate / in valutazione</item>
+  <item name="LBkeepEvaluated.text">Mantieni le valutate</item>
+  <item name="LTkeepEvaluated.text" disambiguation="domanda di partecipazione/domanda di adesione"	>Riassegna solo le domande NON valutate oppure in valutazione, le valutate rimangono associate al vecchio valutatore.</item>
+
+  <!-- REMOVE EVALUATOR -->
+  <item name="LBremoveAll.text">Rimuovi tutte</item>
+  <item name="LTremoveAll.text" disambiguation="domanda di partecipazione/domanda di adesione"	>Rimuovi tutte domande assegnate a questo valutatore, nessuna esclusa.</item>
+  <item name="LBkeepEvaluatedFromRemoving.text">Mantieni le valutate</item>
+  <item name="LTkeepEvaluatedFromRemoving.text" disambiguation="domanda di partecipazione/domanda di adesione">Rimuovi SOLO le domande NON valutate oppure in valutazione, le valutate non saranno eliminate e concorreranno al punteggio finale della domanda di partecipazione al bando.</item>
+  <item name="remove.Step2"></item>
+  <item name="LBstepRemoveTitle.text">Rimuovi il valutatore</item>
+  <item name="LBstepRemoveDescription.text"  disambiguation="domanda di partecipazione/domanda di adesione"	>Step 1: verifica delle domande assegnate</item>
+
+  <item name="WizardEvaluationStep.GeneralSettings">Commissioni e criteri</item>
+  <item name="WizardEvaluationStep.GeneralInfo">Commissioni e criteri</item>
+  <item name="WizardEvaluationStep.FullManageEvaluators">Valutatori</item>
+  <item name="WizardEvaluationStep.ManageEvaluators">Valutatori</item>
+  <item name="WizardEvaluationStep.AssignSubmission">Assegnazione valutatori</item>
+  <item name="WizardEvaluationStep.MultipleAssignSubmission">Assegnazione valutatori</item>
+  <item name="WizardEvaluationStep.ManageEvaluations">Gestione valutazioni</item>
+  <item name="WizardEvaluationStep.AssignSubmissionWithNoEvaluation">Assegnazione valutatori</item>
+  
+  <item name="WizardEvaluationStep.ToolTip.GeneralSettings">Commissioni e criteri</item>
+  <item name="WizardEvaluationStep.ToolTip.GeneralInfo">Commissioni e criteri</item>
+  <item name="WizardEvaluationStep.ToolTip.FullManageEvaluators">Valutatori</item>
+  <item name="WizardEvaluationStep.ToolTip.ManageEvaluators">Valutatori</item>
+  <item name="WizardEvaluationStep.ToolTip.AssignSubmission">Assegnazione valutatori</item>
+  <item name="WizardEvaluationStep.ToolTip.MultipleAssignSubmission">Assegnazione valutatori</item>
+  <item name="WizardEvaluationStep.ToolTip.ManageEvaluations">Gestione valutazioni</item>
+  <item name="WizardEvaluationStep.ToolTip.AssignSubmissionWithNoEvaluation">Assegnazione valutatori a domande sottomesse dopo l'inizio delle valutazioni</item>
+
+
+  <item name="WizardEvaluationStep.GeneralSettings.Message" placeholder="true" mustcontains="{0}">{0} commissioni/e</item>
+  <item name="WizardEvaluationStep.GeneralInfo.Message" placeholder="true" mustcontains="{0}">{0} commissioni/e</item>
+  <item name="WizardEvaluationStep.FullManageEvaluators.Message">{0} valutatori</item>
+  <item name="WizardEvaluationStep.FullManageEvaluators.Message.EditingErrors.NoEvaluators">nessun valutatore</item>
+  <item name="WizardEvaluationStep.FullManageEvaluators.Message.EditingErrors.MoreEvaluatorAssignment" disambiguation="commissione di valutazione di un bando">uno o più valutatori assegnati a più commissioni.</item>
+  <item name="WizardEvaluationStep.FullManageEvaluators.Message.EditingErrors.UnassingedEvaluators" disambiguation="commissione di valutazione di un bando">valutatore/i non assegnato/i ad una commissione</item>
+  <item name="WizardEvaluationStep.FullManageEvaluators.Message.EditingErrors.CommitteeWithNoEvaluators" disambiguation="commissione di valutazione di un bando">commissione senza valutatori.</item>
+  <item name="WizardEvaluationStep.ManageEvaluators.Message" placeholder="true" mustcontains="{0}|{1}" disambiguation="commissione di valutazione di un bando">{0} valutatori in {1} commissioni/e</item>
+  <item name="WizardEvaluationStep.ManageEvaluators.Message.MembershipStatus.Replaced" placeholder="true" mustcontains="{0}">{0} valutatori sostituiti</item>
+  <item name="WizardEvaluationStep.ManageEvaluators.Message.MembershipStatus.Replacing" placeholder="true" mustcontains="{0}">{0} valutatori in sostituzione</item>
+  <item name="WizardEvaluationStep.ManageEvaluators.Message.MembershipStatus.Removed" placeholder="true" mustcontains="{0}">{0} valutatori rimossi</item>
+  <item name="WizardEvaluationStep.ManageEvaluators.Message.EditingErrors.NoEvaluators">nessun valutatore</item>
+  <item name="WizardEvaluationStep.ManageEvaluators.Message.EditingErrors.MoreEvaluatorAssignment" disambiguation="commissione di valutazione di un bando">uno o più valutatori assegnati a più commissioni.</item>
+  <item name="WizardEvaluationStep.ManageEvaluators.Message.EditingErrors.UnassingedEvaluators" disambiguation="commissione di valutazione di un bando">valutatore/i non assegnato/i ad una commissione</item>
+  <item name="WizardEvaluationStep.ManageEvaluators.Message.EditingErrors.CommitteeWithNoEvaluators" disambiguation="commissione di valutazione di un bando">commissione senza valutatori.</item>
+  <item name="WizardEvaluationStep.AssignSubmission.Message" placeholder="true" mustcontains="{0}" disambiguation="domanda di partecipazione/domanda di adesione">{0} domande</item>
+  <item name="WizardEvaluationStep.AssignSubmission.Message.EditingErrors.NoEvaluatorsForAssignments">valutatori non definiti</item>
+  <item name="WizardEvaluationStep.AssignSubmission.Message.EditingErrors.NoSubmissionToEvaluate" disambiguation="domanda di partecipazione/domanda di adesione">nessuna domanda disponibile</item>
+  <item name="WizardEvaluationStep.AssignSubmission.Message.EditingErrors.SubmissionToAssign" disambiguation="domanda di partecipazione/domanda di adesione">domanda/e da assegnare</item>
+  <item name="WizardEvaluationStep.MultipleAssignSubmission.Message" placeholder="true" mustcontains="{0}" disambiguation="domanda di partecipazione/domanda di adesione">{0} domande</item>
+  <item name="WizardEvaluationStep.MultipleAssignSubmission.Message.EditingErrors.NoEvaluatorsForAssignments">valutatori non definiti</item>
+  <item name="WizardEvaluationStep.MultipleAssignSubmission.Message.EditingErrors.NoSubmissionToEvaluate" disambiguation="domanda di partecipazione/domanda di adesione">nessuna domanda disponibile</item>
+  <item name="WizardEvaluationStep.MultipleAssignSubmission.Message.EditingErrors.SubmissionToAssign" disambiguation="domanda di partecipazione/domanda di adesione">domanda/e da assegnare</item>
+  <item name="WizardEvaluationStep.ManageEvaluations.Message">{0} aperte / {1} chiuse</item>
+  <item name="WizardEvaluationStep.AssignSubmissionWithNoEvaluation.Message" placeholder="true" mustcontains="{0}|{1}|{2}|{3}" disambiguation="domanda di partecipazione/domanda di adesione">{0} domande, {1} sottomesse, {2} accettate, {3} rifiutate,</item>
+  <item name="WizardEvaluationStep.AssignSubmissionWithNoEvaluation.Message.EditingErrors.NoEvaluatorsForAssignments">valutatori non definiti</item>
+  <item name="WizardEvaluationStep.AssignSubmissionWithNoEvaluation.Message.EditingErrors.NoSubmissionToEvaluate">nessuna domanda disponibile</item>
+  <item name="DisplayCriterionAssociationsSettingsSaved">Impostazioni salvate correttamente</item>
+  <item name="DisplayCriterionAssociationsSettingsUnSaved">Le impostazioni NON sono salvate correttamente</item>
+  <item name="Select.vote">Seleziona un voto dalla lista sottostante</item>
+
+  <item name="HYPlist.CallForBids.text">Lista bandi</item>
+  <item name="HYPlist.CallForBids.ToolTip">Vai alla pagina con l'elenco dei bandi pubblicati</item>
+  <item name="HYPlist.CallForBids.status">Vai alla pagina con l'elenco dei bandi pubblicati</item>
+  <item name="HYPmanage.CallForBids.text">Gestione bandi</item>
+  <item name="HYPmanage.CallForBids.ToolTip">Vai alla pagina della gestione dei bandi</item>
+  <item name="HYPmanage.CallForBids.status">Vai alla pagina della gestione dei bandi</item>
+  <item name="HYPlist.RequestForMembership.text">Lista richieste</item>
+  <item name="HYPlist.RequestForMembership.ToolTip">Vai alla pagina con l'elenco delle richieste di adesione pubblicate</item>
+  <item name="HYPlist.RequestForMembership.status">Vai alla pagina con l'elenco delle richieste di adesione pubblicate</item>
+  <item name="HYPmanage.RequestForMembership.text">Gestione richieste</item>
+  <item name="HYPmanage.RequestForMembership.ToolTip">Vai alla pagina della gestione delle richieste di adesione</item>
+  <item name="HYPmanage.RequestForMembership.status">Vai alla pagina della gestione delle richieste di adesione</item>
+  <item name="LBevaluationsStatus_t.text" disambiguation="status: attivo/chiuso/in corso/valutazione">Stato delle valutazioni</item>
+  <item name="LBcommitteesInfo_t.text">Dettagli attività</item>
+  <item name="LBdashboardCommitteeName.text" disambiguation="commissione di valutazione di un bando">Commissione:</item>
+  <item name="LBlegendTop.text">Legenda</item>
+  <item name="LBlegendTop.ToolTip" disambiguation="commissione di valutazione di un bando">Legenda criteri commissione</item>
+  <item name="LBlegendBottom.text">Legenda</item>
+  <item name="LBlegendBottom.ToolTip" disambiguation="commissione di valutazione di un bando">Legenda criteri commissione</item>
+  <item name="LBiconLegendTop.ToolTip" disambiguation="commissione di valutazione di un bando">Legenda criteri commissione</item>
+  <item name="LBiconLegendBottom.ToolTip" disambiguation="commissione di valutazione di un bando">Legenda criteri commissione</item>
+  <item name="LTsubmissionPoints_t.text">Punti</item>
+  <item name="CriterionNumber" placeholder="true" mustcontains="{0}" disambiguation="criterio di valutazione">Criterio {0}</item>
+  <item name="AnonymousOwnerName">Utente anonimo</item>
+  <item name="LTshortCriterionName.text">Nome breve</item>
+  <item name="LTlongCriterionName.text">Nome esteso</item>
+  <item name="HYPevaluateSubmission.ToolTip" disambiguation="valutare domanda di partecipazione/domanda di adesione">Valuta domanda</item>
+  <item name="HYPviewEvaluation.ToolTip">Visualizza valutazione</item>
+  <item name="serviceTitle.EvaluationBoard" placeholder="true" mustcontains="{0}">Valutazioni Bando {0}</item>
+  <item name="serviceTitle.EvaluationBoard.ToolTip" placeholder="true" mustcontains="{0}">Valutazioni da completare per il Bando "{0}".</item>
+  <item name="serviceTitle.EvaluationBoard.ToolTip.Deadline" placeholder="true" mustcontains="{0}|{1}">Valutazioni da completare entro il {0} per il Bando "{1}".</item>
+  <item name="DisplayNotEvaluationPermission">NON Le è consentito gestire le valutazioni di questo bando.</item>
+  <item name="DisplayEvaluationUnavailable">NON Le è consentito gestire le valutazioni di questo bando.</item>
+  <item name="Evaluation.Deadline" placeholder="true" mustcontains="{0}|{1}">(valutazioni da concluder entro il {0} alle {1})</item>
+  <item name="LBcommitteeEvaluationEndOn.text" placeholder="true" mustcontains="{0}|{1}">(valutazioni da concludere entro il {0} alle {1})</item>
+  <item name="LNBexportSelfCommitteesStatisticsToXLS.text" mustcontains="XML">Esporta voti commissioni (XML)</item>
+  <item name="LNBexportSelfCommitteesStatisticsToXLS.ToolTip" mustcontains="XML">Esporta tutte le valutazioni in formato XML</item>
+  <item name="LNBexportSelfCommitteesStatisticsToCsv.text" mustcontains="CSV">Esporta voti commissioni (CSV)</item>
+  <item name="LNBexportSelfCommitteesStatisticsToCsv.ToolTip" mustcontains="CSV">Esporta tutte le valutazioni in formato CSV</item>
+  <item name="LNBexportSelfCommitteeStatisticsToXLS.text" mustcontains="XML">Esporta tutto (XML)</item>
+  <item name="LNBexportSelfCommitteeStatisticsToXLS.ToolTip" mustcontains="XML">Esporta le valutazioni della commissione corrente in formato XML</item>
+  <item name="LNBexportSelfCommitteeStatisticsToCsv.text" mustcontains="CSV">Esporta voti commissione (CSV)</item>
+  <item name="LNBexportSelfCommitteeStatisticsToCsv.ToolTip" mustcontains="CSV">Esporta le valutazioni della commissione corrente in formato CSV</item>
+  <item name="LNBexportSelfCommitteeFilteredStatisticsToCsv.text" mustcontains="CSV">Esporta voti visualizzati (CSV)</item>
+  <item name="LNBexportSelfCommitteeFilteredStatisticsToCsv.ToolTip" mustcontains="CSV">Esporta le valutazioni visualizzate della commissione corrente in formato CSV</item>
+  
+  <item name="DisplaySelfCommitteeStatisticsToken.Title">Attendere.</item>
+  <item name="DisplaySelfCommitteeStatisticsToken.Message">Preparazione file in corso...</item>
+  <item name="SelfCommitteeStatisticsFileName" placeholder="true" mustcontains="{0}|{1}|{2}|{3}" disambiguation="commissione di valutazione di un bando">{1}_{2}_{3}_ValutazioniCommissione_{0}</item>
+  <item name="SelfCommitteesStatisticsFileName" placeholder="true" mustcontains="{0}|{1}|{2}|{3}">{1}_{2}_{3}_ValutazioniCommissioniBando_{0}</item>
+
+  <item name="EvaluationTranslations.CallTitle" placeholder="true" mustcontains="{0}">Valutazioni relative al bando {0}</item>
+  <item name="EvaluationTranslations.CallTitleAndEdition" placeholder="true" mustcontains="{0}|{1}">Valutazioni relative al bando {0} edizione {1}</item>
+  <item name="EvaluationTranslations.PrintInfo" placeholder="true" mustcontains="{0}|{1}|{2}">Stampata da {0} il {1} alle {2}</item>
+  <item name="EvaluationTranslations.CommitteeName" placeholder="true" mustcontains="{0}" disambiguation="commissione di valutazione di un bando">Commissione "{0}"</item>
+  <item name="EvaluationTranslations.AnonymousUser">Utente non registrato</item>
+  <item name="EvaluationTranslations.UnknownUser">Utente rimosso</item>
+  <item name="EvaluationTranslations.SubmissionInfo">Domanda di partecipazione di {1} (codice {0}).</item>
+  <item name="EvaluationTranslations.SubmittedByOther" placeholder="true" mustcontains="{0}|{1}|{2}">Sottomessa il {1} alle {2} da {0}.</item>
+  <item name="EvaluationTranslations.SubmittedOn" placeholder="true" mustcontains="{0}|{1}">Sottomessa il {0} alle {1}.</item>
+  <item name="EvaluationTranslations.CellTitleSubmissionOwner" disambiguation="domanda di partecipazione/domanda di adesione">Domanda di</item>
+  <item name="EvaluationTranslations.CellTitleSubmitterType" disambiguation="domanda di partecipazione/domanda di adesione">Tipo domanda</item>
+  <item name="EvaluationTranslations.CellTitleSum">Punti</item>
+  <item name="EvaluationTranslations.CellTitleEvaluationStatus">Avanzamento</item>
+  <item name="EvaluationTranslations.CellTitleCriterion" placeholder="true" mustcontains="{0}">Criterio - {0}</item>
+  <item name="EvaluationTranslations.CellTitleCriterionRangeValue" placeholder="true" mustcontains="{0}">Valore criterio - {0}</item>
+  <item name="EvaluationTranslations.CellTitleCriterionComment" placeholder="true" mustcontains="{0}">Commento criterio - {0}</item>
+  <item name="EvaluationTranslations.CellTitleEvaluationComment">Commento generale</item>
+  <item name="EvaluationTranslations.EmptyItem"> // </item>
+  <item name="EvaluationTranslations.CommunityNameTitle" placeholder="true" mustcontains="{0}" disambiguation="singolare">Comunità {0}</item>
+  <item name="EvaluationTranslations.PortalCommunityName">Portale</item>
+  <item name="EvaluationTranslations.ItemMandatory"> *</item>
+  <item name="EvaluationTranslations.MinOption" placeholder="true" mustcontains="{0}">Almeno {0} opzione/i</item>
+  <item name="EvaluationTranslations.MaxOption" placeholder="true" mustcontains="{0}">Al massimo {0} opzioni/e</item>
+  <item name="EvaluationTranslations.MinOptionMaxOption" placeholder="true" mustcontains="{0}|{1}">Minimo {0} opzioni/e, massimo {1}</item>
+  <item name="EvaluationTranslations.MinMaxValue" placeholder="true" mustcontains="{0}|{1}">( minimo {0} - massimo {1} )</item>
+  <item name="EvaluationTranslations.EvaluationStatus.None">Non iniziata</item>
+  <item name="EvaluationTranslations.EvaluationStatus.Evaluating">In corso</item>
+  <item name="EvaluationTranslations.EvaluationStatus.Evaluated">Completata</item>
+  <item name="EvaluationTranslations.EvaluationStatus.EvaluatorReplacement">Riassegnata</item>
+  <item name="EvaluationTranslations.EvaluationStatus.Invalidated">Invalidata</item>
+  <item name="EvaluationTranslations.EvaluationStatus.Confirmed">Confermata</item>
+  <item name="EvaluationTranslations.CellTitleEvaluationsCount">N. valutazioni</item>
+  <item name="EvaluationTranslations.CellTitleEvaluationsEvaluated">Completate</item>
+  <item name="EvaluationTranslations.CellTitleEvaluationsEvaluating" disambiguation="relativo a richiesta di un bando">In valutazione</item>
+  <item name="EvaluationTranslations.CellTitleEvaluationsInvalidated">Invalidate</item>
+  <item name="EvaluationTranslations.CellTitleEvaluationsEvaluatorReplacement">Valutatore sostituito</item>
+  <item name="EvaluationTranslations.CellTitleEvaluationsNotStarted">Non iniziate</item>
+  <item name="EvaluationTranslations.CellTitleCommitteeName"  placeholder="true" mustcontains="{0}" disambiguation="commissione di valutazione di un bando">Commissione {0}</item>
+  <item name="EvaluationTranslations.CellTitleCommitteeSum">Voto</item>
+  <item name="EvaluationTranslations.EvaluationsSummaryTitle">Elenco valutazioni:</item>
+  <item name="EvaluationTranslations.CellTitleEvaluator">Valutatore</item>
+  <item name="EvaluationTranslations.CellTitleCommittee" disambiguation="commissione di valutazione di un bando">Commissione</item>
+  <item name="EvaluationTranslations.CellTitleGenericCriterion">Criterio</item>
+  <item name="EvaluationTranslations.CellTitleGenericCriterionComment">Commento criterio</item>
+  <item name="EvaluationTranslations.CellTitleGenericCriterionRangeValue">Valore numerico</item>
+  <item name="EvaluationTranslations.CellTitleGenericCriterionUserValue">Valore indicato</item>
+
+
+  <item name="HYPorderByUserUp.ToolTip">Ordinamento crescente</item>
+  <item name="HYPorderByUserDown.ToolTip">Ordinamento decrescente</item>
+  <item name="HYPorderByTypeUp.ToolTip" disambiguation="domanda di partecipazione/domanda di adesione">Ordinamento crescente in base al tipo di domanda</item>
+  <item name="HYPorderByTypeDown.ToolTip" disambiguation="domanda di partecipazione/domanda di adesione">Ordinamento decrescente in base al tipo di domanda</item>
+  <item name="HYPorderByEvaluationPointsUp.ToolTip">Ordinamento crescente in base al punteggio ottenuto</item>
+  <item name="HYPorderByEvaluationPointsDown.ToolTip">Ordinamento decrescente in base al punteggio ottenuto</item>
+  <item name="HYPorderByEvaluationIndexUp.ToolTip">Ordinamento crescente</item>
+  <item name="HYPorderByEvaluationIndexDown.ToolTip">Ordinamento decrescente</item>
+  <item name="HYPorderByEvaluationStatusUp.ToolTip">Ordinamento crescente in base allo stato della valutazione</item>
+  <item name="HYPorderByEvaluationStatusDown.ToolTip">Ordinamento decrescente in base allo stato della valutazione</item>
+  <item name="EvaluationFilterStatus.None">non valutate</item>
+  <item name="EvaluationFilterStatus.Evaluating" disambiguation="relativo a richiesta di un bando">in valutazione</item>
+  <item name="EvaluationFilterStatus.Evaluated">valutate</item>
+  <item name="EvaluationFilterStatus.Invalidated">con rimozione valutatore</item>
+  <item name="EvaluationFilterStatus.EvaluatorReplacement">con sostituzioni valutatore/i</item>
+  <item name="EvaluationFilterStatus.AllValid">le sole valide</item>
+  <item name="EvaluationFilterStatus.All">tutte</item>
+  <item name="LNBexportAllEvaluationsSummaryToXLS.text" mustcontains="XML">Esporta tutte le valutazioni (XML)</item>
+  <item name="LNBexportAllEvaluationsSummaryToXLS.ToolTip" mustcontains="XML">Esporta tutte le valutazioni in formato XML</item>
+  <item name="LNBexportAllEvaluationsSummaryToCsv.text" mustcontains="CSV">Esporta tutte le valutazioni (CSV)</item>
+  <item name="LNBexportAllEvaluationsSummaryToCsv.ToolTip" mustcontains="CSV">Esporta tutte le valutazioni in formato CSV</item>
+  <item name="LNBexportFilteredEvaluationsSummaryToXLS.text" mustcontains="XML">Esporta le valutazioni visualizzate (XML)</item>
+  <item name="LNBexportFilteredEvaluationsSummaryToXLS.ToolTip"  disambiguation="domanda di partecipazione/domanda di adesione"	>Esporta le valutazioni delle domande visibili nella pagina corrente</item>
+  <item name="LNBexportFilteredEvaluationsSummaryToCsv.text" mustcontains="CSV">Esporta le valutazioni visualizzate (CSV)</item>
+  <item name="LNBexportFilteredEvaluationsSummaryToCsv.ToolTip"  disambiguation="domanda di partecipazione/domanda di adesione"	>Esporta le valutazioni delle domande visibili nella pagina corrente</item>
+  <item name="LNBexportAllEvaluationsSummaryData.text" mustcontains="XML">Esporta i dati completi - 1 colonna per criterio (XML)</item>
+  <item name="LNBexportAllEvaluationsSummaryData.ToolTip" mustcontains="XML">Esporta i dati completi di tutte le valutazioni in formato XML</item>
+  <item name="LNBexportAllEvaluationsSummaryDataToCsv.text" mustcontains="CSV">Esporta i dati completi - 1 colonna per criterio (CSV)</item>
+  <item name="LNBexportAllEvaluationsSummaryDataToCsv.ToolTip" mustcontains="CSV">Esporta i dati completi di tutte le valutazioni in formato CSV</item>
+  <item name="LNBexportFullEvaluationsSummaryDataToXml.text" mustcontains="XML">Esporta i dati completi (XML)</item>
+  <item name="LNBexportFullEvaluationsSummaryDataToXml.ToolTip" mustcontains="XML">Esporta i dati completi di tutte le valutazioni in formato XML</item>
+  <item name="LNBexportFullEvaluationsSummaryDataToCsv.text" mustcontains="CSV">Esporta i dati completi (CSV)</item>
+  <item name="LNBexportFullEvaluationsSummaryDataToCsv.ToolTip" mustcontains="CSV">Esporta i dati completi di tutte le valutazioni in formato CSV</item>
+
+  <item name="LNBexportAllCommitteesSummaryToXLS.text" mustcontains="XML">Esporta tutte le valutazioni (XML)</item>
+  <item name="LNBexportAllCommitteesSummaryToXLS.ToolTip" mustcontains="XML" disambiguation="commissione di valutazione di un bando">Esporta le valutazioni per commissione in formato XML</item>
+  <item name="LNBexportAllCommitteesSummaryToCsv.text" mustcontains="CSV">Esporta tutte le valutazioni (CSV)</item>
+  <item name="LNBexportAllCommitteesSummaryToCsv.ToolTip" disambiguation="commissione di valutazione di un bando" mustcontains="CSV">Esporta le valutazioni per commissione in formato CSV</item>
+  <item name="LNBexportFilteredCommitteesSummaryToXLS.text" mustcontains="XML">Esporta le valutazioni visualizzate (XML)</item>
+  <item name="LNBexportFilteredCommitteesSummaryToXLS.ToolTip" mustcontains="XML" disambiguation="commissione di valutazione di un bando/domanda di partecipazione/domanda di adesione">Esporta le valutazioni per commissione delle domande visibili nella pagina corrente in formato XML</item>
+  <item name="LNBexportFilteredCommitteesSummaryToCsv.text" mustcontains="CSV">Esporta le valutazioni visualizzate (CSV)</item>
+  <item name="LNBexportFilteredCommitteesSummaryToCsv.ToolTip" mustcontains="CSV" disambiguation="commissione di valutazione di un bando/domanda di partecipazione/domanda di adesione">Esporta le valutazioni per commissione delle domande visibili nella pagina corrente in formato CSV</item>
+
+  <item name="HYPcloseComments.text">Chiudi i commenti</item>
+  <item name="HYPcloseComments.ToolTip">Chiudi tutti i commenti</item>
+
+  <item name="LNBexportAllCommitteeSummaryToXLS.text" mustcontains="XML">Esporta tutte le valutazioni (XML)</item>
+  <item name="LNBexportAllCommitteeSummaryToXLS.ToolTip" mustcontains="XML" disambiguation="commissione di valutazione di un bando">Esporta le valutazioni per la commissione corrente in formato XML</item>
+  <item name="LNBexportAllCommitteeSummaryToCsv.text" mustcontains="CSV">Esporta tutte le valutazioni (CSV)</item>
+  <item name="LNBexportAllCommitteeSummaryToCsv.ToolTip" mustcontains="CSV" disambiguation="commissione di valutazione di un bando">Esporta le valutazioni per la commissione corrente in formato CSV</item>
+  <item name="LNBexportFilteredCommitteeSummaryToXLS.text">Esporta le valutazioni visualizzate (XML)</item>
+  <item name="LNBexportFilteredCommitteeSummaryToXLS.ToolTip" disambiguation="commissione di valutazione di un bando">Esporta le valutazioni visualizzate per la commissione corrente in formato XML</item>
+  <item name="LNBexportFilteredCommitteeSummaryToCsv.text">Esporta le valutazioni visualizzate (CSV)</item>
+  <item name="LNBexportFilteredCommitteeSummaryToCsv.ToolTip" disambiguation="commissione di valutazione di un bando">Esporta le valutazioni visualizzate per la commissione corrente in formato CSV</item>
+
+  <item name="HYPtoCommitteesSummary.text">Dettagli</item>
+  <item name="HYPtoCommitteesSummary.ToolTip">Dettagli avanzati delle valutazioni</item>
+  <item name="LBsearchEvaluationsFor_t.text">Nome partecipante:</item>
+  <item name="BTNfindEvaluations.text">Trova</item>
+  <item name="BTNfindEvaluations.ToolTip">Trova</item>
+  <item name="LBevaluationStatusFilter_t.text">Mostra:</item>
+
+  
+  <item name="serviceTitle.EvaluationSummary">Valutazioni domanda</item>
+  <item name="serviceTitle.EvaluationsSummary"  placeholder="true" mustcontains="{0}">Valutazioni bando {0}</item>
+  <item name="serviceTitle.EvaluationsSummary.ToolTip"  placeholder="true" mustcontains="{0}">Valutazioni da completare per il bando "{0}".</item>
+  <item name="serviceTitle.EvaluationsSummary.ToolTip.Deadline"  placeholder="true" mustcontains="{0}|{1}">Valutazioni da completare entro il {0} per il bando "{1}".</item>
+  <item name="serviceTitle.CommitteesSummary" placeholder="true" mustcontains="{0}">Dettagli valutazioni bando {0}</item>
+  <item name="serviceTitle.CommitteesSummary.ToolTip" placeholder="true" mustcontains="{0}">Valutazioni per il bando "{0}".</item>
+  <item name="serviceTitle.CommitteesSummary.ToolTip.Deadline" placeholder="true" mustcontains="{0}|{1}">Valutazioni da completare entro il {0} per il bando "{1}".</item>
+  <item name="serviceTitle.CommitteeSummary"  placeholder="true" mustcontains="{0}" disambiguation="commissione di valutazione di un bando">Valutazioni commissione bando {0}</item>
+  <item name="serviceTitle.CommitteeSummary.CommitteeName"  placeholder="true" mustcontains="{0}" disambiguation="commissione di valutazione di un bando">Valutazioni commissione "{0}"</item>
+  <item name="serviceTitle.CommitteeSummary.ToolTip"  placeholder="true" mustcontains="{0}">Valutazioni da completare per il bando "{0}".</item>
+  <item name="serviceTitle.CommitteeSummary.ToolTip.Deadline"  placeholder="true" mustcontains="{0}|{1}">Valutazioni da completare entro il {0} per il bando "{1}".</item>
+
+  <item name="AllEvaluationsSummaryFileName" placeholder="true" mustcontains="{0}|{1}|{2}|{3}">ValutazioniComplessiveBando_{0}_{1}_{2}_{3}</item>
+  <item name="FilteredEvaluationsSummaryFileName" placeholder="true" mustcontains="{0}|{1}|{2}|{3}">ValutazioniFiltrateBando_{0}_{1}_{2}_{3}</item>
+  <item name="EvaluationSummary.DisplayEvaluationUnavailable"  disambiguation="domanda di partecipazione/domanda di adesione"	>Non si dispone dei permessi per la visualizzazione delle statistiche complessive relative alla valutazione delle domande di partecipazione al bando.</item>
+  <item name="DisplayNoEvaluationsFound"  disambiguation="domanda di partecipazione/domanda di adesione">Non sono state individuate valutazioni di domande di partecipazione al bando con i criteri selezionati.</item>
+  <item name="LTsubActions_t.text">Azioni</item>
+
+
+  <item name="HYPviewSubmissionEvaluation.ToolTip" disambiguation="domanda di partecipazione/domanda di adesione">Visualizza valutazione domanda in formato esteso</item>
+  <item name="HYPviewTableSubmissionEvaluation.ToolTip" disambiguation="domanda di partecipazione/domanda di adesione">Visualizza valutazione domanda in formato tabellare</item>
+  <item name="CommitteeNumber" placeholder="true" mustcontains="{0}" disambiguation="commissione di valutazione di un bando">Commissione {0}</item>
+  <item name="HYPbackToSummaryIndex.text">Torna al sommario</item>
+  <item name="HYPbackToSummaryIndex.ToolTip">Torna al sommario delle valutazioni</item>
+  <item name="LTcommitteesSliderTop.text">Scorri le commissioni:</item>
+  <item name="LTcommitteesSliderBottom.text">Scorri le commissioni:</item>
+  <!--<item name="AllCommittees">Tutte</item>-->
+  <item name="LTCommitteeDetailsStatus.text">Stato avanzamento valutazioni</item>
+  <item name="LTevaluatorsSliderTop.text">Scorri i valutatori:</item>
+  <item name="LTevaluatorsSliderBottom.text">Scorri i valutatori:</item>
+  <item name="DisplayCommitteesSummaryToken.Title">Attendere.</item>
+  <item name="DisplayCommitteesSummaryToken.Message">Il file richiesto e' in fase di preparazione, attendere...</item>
+  <item name="DisplayCommitteeSummaryToken.Title">Attendere.</item>
+  <item name="DisplayCommitteeSummaryToken.Message">Il file richiesto e' in fase di preparazione, attendere...</item>
+  <item name="GlobalComment.ToolTip" disambiguation="domanda di partecipazione/domanda di adesione">Visualizza commento domanda</item>
+  <item name="GlobalComment">Commento complessivo</item>
+  <item name="CriterionName" placeholder="true" mustcontains="{0}">Criterio "{0}"</item>
+  <item name="CriterionComment.ToolTip">Visualizza commento criterio</item>
+  <item name="CriterionComment">Commento criterio</item>
+
+  <item name="ExportGenericEvaluations.EvaluationCommittee" placeholder="true" mustcontains="{0}|{1}|{2}">{0}_{1}_{2}_ValutazioneCommissione</item>
+  <item name="ExportGenericEvaluations.EvaluationCommittees" placeholder="true" mustcontains="{0}|{1}|{2}">{0}_{1}_{2}_ValutazioneCommissioni</item>
+  <item name="ExportGenericEvaluations" placeholder="true" mustcontains="{0}|{1}|{2}">{0}_{1}_{2}_ValutazioniBando</item>
+  <item name="Evaluations.All.DisplayData" placeholder="true" mustcontains="{0}|{1}|{2}|{3}">{1}_{2}_{3}_ValutazioniBando_{0}</item>
+  <item name="Evaluations.All.Fulldata" placeholder="true" mustcontains="{0}|{1}|{2}|{3}">{1}_{2}_{3}_ValutazioniCompletePerCriterioBando_{0}</item>
+  <item name="Evaluations.All.FulldataToAnalyze" placeholder="true" mustcontains="{0}|{1}|{2}|{3}">{1}_{2}_{3}_ValutazioniCompleteBando_{0}</item>
+  <item name="Evaluations.Filtered.DisplayData" placeholder="true" mustcontains="{0}|{1}|{2}|{3}">{1}_{2}_{3}_ValutazioniVisualizzateBando_{0}</item>
+  <item name="Evaluations.Filtered.Fulldata" placeholder="true" mustcontains="{0}|{1}|{2}|{3}">{1}_{2}_{3}_ValutazioniFiltrateBando_{0}</item>
+
+  <item name="Committees.All.DisplayData" placeholder="true" mustcontains="{0}|{1}|{2}|{3}">{1}_{2}_{3}_ValutazioniCommissioniBando_{0}</item>
+  <item name="Committees.All.Fulldata" placeholder="true" mustcontains="{0}|{1}|{2}|{3}">{1}_{2}_{3}_ValutazioniCompletePerCriterioBando_{0}</item>
+  <item name="Committees.All.FulldataToAnalyze" placeholder="true" mustcontains="{0}|{1}|{2}|{3}">{1}_{2}_{3}_ValutazioniCompleteBando_{0}</item>
+  <item name="Committees.Filtered.DisplayData" placeholder="true" mustcontains="{0}|{1}|{2}|{3}">{1}_{2}_{3}_ValutazioniCommissioniVisualizzateBando_{0}</item>
+  <item name="Committees.Filtered.Fulldata" placeholder="true" mustcontains="{0}|{1}|{2}|{3}">{1}_{2}_{3}_ValutazioniCommissioniVisualizzateBando_{0}</item>
+
+  <item name="Committee.All.DisplayData" placeholder="true" mustcontains="{0}|{1}|{2}|{3}|{4}" disambiguation="commissione di valutazione di un bando">{2}_{3}_{4}_ValutazioniBando_{1}_Commissione_{0}</item>
+  <item name="Committee.All.Fulldata" placeholder="true" mustcontains="{0}|{1}|{2}|{3}" disambiguation="commissione di valutazione di un bando">{1}_{2}_{3}_ValutazioniComplessivePerCriterioBando_{0}</item>
+  <item name="Committee.All.FulldataToAnalyze" placeholder="true" mustcontains="{0}|{1}|{2}|{3}">{1}_{2}_{3}_ValutazioniCompleteBando_{0}</item>
+  <item name="Committee.Filtered.DisplayData" placeholder="true" mustcontains="{0}|{1}|{2}|{3}|{4}" disambiguation="commissione di valutazione di un bando">{2}_{3}_{4}_ValutazioniVisualizzateBando_{1}_Commissione_{0}</item>
+  <item name="Committee.Filtered.Fulldata" placeholder="true" mustcontains="{0}|{1}|{2}|{3}|{4}" disambiguation="commissione di valutazione di un bando">{2}_{3}_{4}_ValutazioniFiltrateBando_{1}_Commissione_{0}</item>
+
+  <item name="EvaluationCommittee.All" placeholder="true" mustcontains="{0}|{1}|{2}|{3}|{4}|{5}" disambiguation="commissione di valutazione di un bando">{2}_{3}_{4}_Valutazione_{5}_Bando_{1}_Commissione_{0}</item>
+  <item name="EvaluationCommittees.All" placeholder="true" mustcontains="{0}|{1}|{2}|{3}|{4}" disambiguation="commissione di valutazione di un bando">{1}_{2}_{3}_Valutazione_{4}_CommissioniBando_{0}</item>
+
+  <item name="EvaluationCommittee.All" placeholder="true" mustcontains="{0}|{1}|{2}|{3}|{4}|{5}" disambiguation="commissione di valutazione di un bando">{2}_{3}_{4}_Valutazione_{5}_Bando_{1}_Commissione_{0}</item>
+  <item name="EvaluationCommittees.All" placeholder="true" mustcontains="{0}|{1}|{2}|{3}|{4}" disambiguation="commissione di valutazione di un bando">{1}_{2}_{3}_Valutazione_{4}_CommissioniBando_{0}</item>
+  
+  <!-- VIEW EVALUATION-->
+  <item name="ViewEvaluation">Visualizza la valutazione</item>
+  <item name="LBcallName_t.CallForBids">Bando:</item>
+  <item name="LBcallName_t.RequestForMembership">Adesione:</item>
+  <item name="LBowner_t.text">Proprietario:</item>
+  <item name="LBsubmittedOn_t.text">Domanda sottomessa il:</item>
+  <item name="LBsubmittedBy_t.text" disambiguation="da=inteso come azione eseguita dall'utente">da</item>
+  <item name="LBevaluatedBy_t.text" disambiguation="da=inteso come azione eseguita dall'utente">Valutata da:</item>
+  <item name="LBcommitteesInfo.text" mustcontains="{0}" placeholder="true" disambiguation="commissione di valutazione di un bando">(in {0} commissioni)</item>
+  <item name="LTdisplayEvaluationsStatus_t.text.single">Stato valutazione:</item>
+  <item name="LTdisplayEvaluationsStatus_t.text.multiple">Stato valutazioni:</item>
+  <item name="LTinCommittee.text" disambiguation="in=inteso come 'nella commissione di valutazione di un bando'">in</item>
+  <item name="HYPviewSubmission.text" disambiguation="domanda di partecipazione/domanda di adesione">Vedi sottomissione</item>
+  <item name="HYPviewSubmission.ToolTip" disambiguation="domanda di partecipazione/domanda di adesione">Vedi domanda sottomessa</item>
+  <item name="HYPprintEvaluation.text">Stampa</item>
+  <item name="HYPprintEvaluation.ToolTip">Stampa la valutazione</item>
+  <item name="LBevaluationVote_t.text">Valutazione generale:</item>
+  <item name="LBevaluationComment_t.text">Commento:</item>
+  <item name="LBevaluationCriterion_t.text">Criterio:</item>
+  <item name="LBevaluationCriterionComment_t.text">Commento:</item>
+  <item name="LBcommitteeEvaluation.None">Non iniziate</item>
+  <item name="LBcommitteeEvaluation.Evaluating">In corso</item>
+  <item name="LBcommitteeEvaluation.Evaluated">Completate</item>
+  <item name="LBcommitteeEvaluation.EvaluatorReplacement">Riassegnate</item>
+  <item name="LBcommitteeEvaluation.Invalidated">Invalidate</item>
+  <item name="SingleEvaluation.None">Non iniziata</item>
+  <item name="SingleEvaluation.Evaluating">In corso</item>
+  <item name="SingleEvaluation.Evaluated">Completata</item>
+  <item name="SingleEvaluation.EvaluatorReplacement">Riassegnata</item>
+  <item name="SingleEvaluation.Invalidated">Invalidata</item>
+  <item name="SingleEvaluation.Confirmed">Confermata</item>
+  <item name="LTnavigateToComittees.text.single" disambiguation="commissione di valutazione di un bando">Commissione</item>
+  <item name="LTnavigateToComittees.text.multiple" disambiguation="commissione di valutazione di un bando">Commissioni</item>
+  <item name="LTnavigateToEvaluators.text">Valutatori</item>
+  <item name="LTnavigateToCriteria.text">Criteri</item>
+  <item name="HYPnavigateToComments.text">Commenti</item>
+  <item name="LTcommitteeName_t.text">Nome</item>
+  <item name="LTcommitteeEvaluationStatus_t.text">Status</item>
+  <item name="LTcommitteeVote_t.text">Voto</item>
+  <item name="LTevaluationComment_t.text">Commento generale</item>
+  <item name="DisplayNoEvaluationsToView">Non è stata individuata al momento alcuna valutazione da visualizzare</item>
+  <item name="DisplayEvaluationViewUnavailable">Non è possibile visualizzare la valutazione/le valutazioni</item>
+  <item name="DisplayNoPermissionToView">Non si dispone dei permessi per visualizzare questa valutazione</item>
+  <item name="DisplayUnknownCall.CallForBids">Bando sconosciuto.</item>
+  <item name="DisplayUnknownCall.RequestForMembership">Richiesta di adesione sconosciuta.</item>
+  <item name="DisplayUnknownEvaluation">Valutazione NON trovata</item>
+  <item name="DisplayUnknownSubmission">Sottomissione NON trovata</item>
+
+  <!-- MANAGE EVALUATIONS-->
+  <item name="BTNopenCloseEvaluationsTop.text" disambiguation="relativo alle valutazioni di un bando">Blocca/Sblocca</item>
+  <item name="BTNopenCloseEvaluationsTop.ToolTip" disambiguation="relativo alle valutazioni di un bando">Blocca/Sblocca</item>
+  <item name="BTNopenCloseEvaluationsBottom.text" disambiguation="relativo alle valutazioni di un bando">Blocca/Sblocca</item>
+  <item name="BTNopenCloseEvaluationsBottom.ToolTip" disambiguation="relativo alle valutazioni di un bando">Blocca/Sblocca</item>
+  <item name="BTNopenCloseEvaluationsTop.text.open" disambiguation="relativo alle valutazioni di un bando">Sblocca</item>
+  <item name="BTNopenCloseEvaluationsTop.ToolTip.open" disambiguation="relativo alle valutazioni di un bando">Sblocca le valutazioni</item>
+  <item name="BTNopenCloseEvaluationsBottom.text.open" disambiguation="relativo alle valutazioni di un bando">Sblocca</item>
+  <item name="BTNopenCloseEvaluationsBottom.ToolTip.open" disambiguation="relativo alle valutazioni di un bando">Sblocca le valutazioni</item>
+  <item name="BTNopenCloseEvaluationsTop.text.close" disambiguation="relativo alle valutazioni di un bando">Blocca</item>
+  <item name="BTNopenCloseEvaluationsTop.ToolTip.close" disambiguation="relativo alle valutazioni di un bando">Blocca le valutazioni</item>
+  <item name="BTNopenCloseEvaluationsBottom.text.close" disambiguation="relativo alle valutazioni di un bando">Blocca</item>
+  <item name="BTNopenCloseEvaluationsBottom.ToolTip.close" disambiguation="relativo alle valutazioni di un bando">Blocca le valutazioni</item>
+  <item name="LBendEvaluationOn_t.text" disambiguation="relativo alle valutazioni di un bando">Chiusura valutazioni il:</item>
+  <item name="LBopenCloseEvaluations_t.text" disambiguation="sostantivo: inteso come azione da svolgere">Azione:</item>
+  <item name="LNBcloseEvaluations.text" disambiguation="relativo alle valutazioni di un bando">Blocca</item>
+  <item name="LNBcloseEvaluations.ToolTip" disambiguation="relativo alle valutazioni di un bando">Blocca le valutazioni selezionate</item>
+  <item name="LNBopenEvaluations.text" disambiguation="relativo alle valutazioni di un bando">Sblocca</item>
+  <item name="LNBopenEvaluations.ToolTip" disambiguation="relativo alle valutazioni di un bando">Sblocca le valutazioni selezionate</item>
+  <item name="LBopenCloseEvaluationByType_t.text">Seleziona per:</item>
+  <item name="LNBdisplayByEvaluations.text" disambiguation="domanda di partecipazione ad un bando">Domande</item>
+  <item name="LNBdisplayByEvaluations.ToolTip">Seleziona in base alla sottomissione.</item>
+  <item name="LNBdisplayByEvaluators.text" disambiguation="relativo alle valutazioni di un bando">Valutatori</item>
+  <item name="LNBdisplayByEvaluators.ToolTip" disambiguation="relativo alle valutazioni di un bando">Seleziona in base al valutatore</item>
+  <item name="LBsubmissionName_t.text" >Nome:</item>
+  <item name="LBsubmissionType_t.text" disambiguation="relativo al tipo di partecipante">Tipo partecipante:</item>
+  <item name="DDLsubmittersType.-1" >-- Tutti --</item>
+  <item name="BTNupdateManageEvaluationsTable.text">Aggiorna</item>
+  <item name="BTNupdateManageEvaluationsTable.ToolTip">Aggiorna la lista visualizzata.</item>
+  <item name="HYPviewSubmissions.text">Domande</item>
+  <item name="HYPviewSubmissions.ToolTip">Visualizza le domande di partecipazione.</item>
+  <item name="HYPviewCommittees.text">Commissioni</item>
+  <item name="HYPviewCommittees.ToolTip">Visualizza le commissione.</item>
+  <item name="HYPviewEvaluators.text">Valutatori</item>
+  <item name="HYPviewEvaluators.ToolTip">Visualizza i valutatori.</item>
+  <item name="DisplayNoEvaluations.ToManage" disambiguation="domanda di partecipazione/domanda di adesione">Non sono state individuate valutazioni di domande di partecipazione al bando, non è possibile utilizzare le funzionalità di blocco / sblocco in assenza di valutazioni.</item>
+  <item name="DisplayNoEvaluations.ForSelection" disambiguation="domanda di partecipazione/domanda di adesione">Non sono state individuate valutazioni di domande di partecipazione al bando in base alle impostazioni selezionate.</item>
+  <item name="LTnameTableHeader.text">Nome</item>
+  <item name="LTnameTableHeaderbySubmission.text">Nome</item>
+  <item name="LTcommitteNameHeader.text">Commissione</item>
+  <item name="LTsubmissionNameHeader.text" disambiguation="domanda di partecipazione/domanda di adesione">Domanda</item>
+  <item name="BTNupdateEvaluationEndDate.text">Salva</item>
+  <item name="BTNupdateEvaluationEndDate.ToolTip">Salva la modifica della data di termine delle valutazioni del bando.</item>
+  <item name="LNBselectItemsIntoAllPages.text">Seleziona su tutte le pagine</item>
+  <item name="LNBselectItemsIntoAllPages.ToolTip">Seleziona tutti su tutte le pagine</item>
+  <item name="LNBunselectItemsIntoAllPages.text">Deseleziona su tutte le pagine</item>
+  <item name="LNBunselectItemsIntoAllPages.ToolTip">Deseleziona tutti su tutte le pagine</item>
+  <item name="DisplayDateChangingError">La data di termine impostata NON è stata salvata correttamente.</item>
+  <item name="DisplayStatusEditingError">L'operazione non è stata conclusa correttamente</item>
+  <item name="DisplayEndEvaluationDateSaved">La data di termine delle valutazioni è impostata correttamente.</item>
+  <item name="DisplayManageEvaluationsSaved.CloseAll">Tutte le valutazioni selezionate sono state chiuse.</item>
+  <item name="DisplayManageEvaluationsSaved.OpenAll">Tutte le valutazioni selezionate sono state riaperte.</item>
+  <!-- Manage submissions with no evaluations-->
+  <item name="BTNassignToSubmissionsWithNoEvaluationTop.text">Assegna</item>
+  <item name="BTNassignToSubmissionsWithNoEvaluationTop.ToolTip">Assegna i valutatori alle nuove domande.</item>
+  <item name="BTNassignToSubmissionsWithNoEvaluationBottom.text">Assegna</item>
+  <item name="BTNassignToSubmissionsWithNoEvaluationBottom.ToolTip">Assegna i valutatori alle nuove domande.</item>
+  <item name="DisplayStartup.InEvaluations" placeholder="true" mustcontains="{0}">Al momento ci sono {0} domande di partecipazione al bando da quando sono iniziate le attività di valutazione</item>
+  <item name="DisplayStartup.InEvaluations.1">Al momento c'è una sola nuova domanda di partecipazione al bando da quando sono iniziate le attività di valutazione</item>
+  <item name="DisplayStartup.InEvaluations.0">Al momento NON c'è NESSUNA domanda di partecipazione al bando da quando sono iniziate le attività di valutazione.</item>
+  <item name="DisplayStartup.InEvaluations.Approved.1">una è stata accettata</item>
+  <item name="DisplayStartup.InEvaluations.Approved.n" placeholder="true" mustcontains="{0}">{0} sono state accettate</item>
+  <item name="DisplayStartup.InEvaluations.Rejected.1">una è stata rifiutata</item>
+  <item name="DisplayStartup.InEvaluations.Rejected.n" placeholder="true" mustcontains="{0}">{0} sono state rifiutate</item>
+  <item name="BTNcloseConfirmInEvaluationSettings.text">Annulla</item>
+  <item name="BTNcloseConfirmInEvaluationSettings.ToolTip">Annulla il salvataggio dei dati.</item>
+  <item name="BTNconfirmInEvaluationSettings.text">Conferma e salva</item>
+  <item name="BTNconfirmInEvaluationSettings.ToolTip">Conferma e salva definitivamente</item>
+  <item name="ConfirmSettings.MultipleAssignments">Prima di procedere con il salvataggio delle impostazioni è necessario confermare le scelte effettuate in quanto poi non sarà più possibile modificare le impostazioni sui valutatori assegnati alle singole domande.</item>
+  <item name="ConfirmSettings.MultipleAssignments.0"></item>
+  <item name="ConfirmSettings.MultipleAssignments.1">Attualmente c'è una domanda senza alcun valutatore:</item>
+  <item name="ConfirmSettings.MultipleAssignments.n">Attualmente ci sono {0} domande senza alcun valutatore:</item>
+  <item name="LTcommitteeNameHeader_t.text" disambiguation="commissione di valutazione di un bando">Commissione</item>
+  <item name="LTevaluatorsHeader_t.text" disambiguation="riferito a valutatori di un bando/adesione">Assegnati/Disponibili</item>
+  <item name="LTevaluators.text" disambiguation="valutatori assegnati/valutatori disponibili">su</item>
+  <item name="DialogTitleTranslation.ConfirmSubmissionAssignments">Conferma impostazioni</item>
+
+  <item name="LBsubmitterType_t.text" disambiguation="domanda di partecipazione ad un bando">Tipo domanda:</item>
+  <item name="SubmitterType.All" disambiguation="domanda di partecipazione ad un bando">--  qualsiasi  --</item>
+  <item name="UnknownDisplayname" >Utente rimosso</item>
+
+  <item name="NoCommittees" disambiguation="commissione di valutazione di un bando">Nessuna commissione attiva</item>
+  <item name="AllCommittees" disambiguation="commissione di valutazione di un bando">Tutte le commissioni</item>
+  <item name="LBcommitteesList_t.text" disambiguation="commissione di valutazione di un bando">Mostra:</item>
+  <item name="LTsubmissionPointsSingle_t.text">Punti</item>
+  <item name="LTsubmitterEvaluations_t.text">Valutazioni domanda di partecipazione</item>
+  <item name="LNBexportCommitteesEvaluationsToCsv.text" disambiguation="commissione di valutazione di un bando">Esporta voti commissioni</item>
+  <item name="LNBexportCommitteesEvaluationsToCsv.ToolTip" mustcontains="CSV" disambiguation="commissione di valutazione di un bando">Esporta tutte le valutazioni in formato CSV</item>
+  <item name="LNBexportCommitteeEvaluationsToCsv.text" disambiguation="commissione di valutazione di un bando">Esporta voti commissione</item>
+  <item name="LNBexportCommitteeEvaluationsToCsv.ToolTip" mustcontains="CSV" disambiguation="commissione di valutazione di un bando">Esporta i voti alla domanda della commissione visualizzata in formato CSV</item>
+  <item name="LNBexportCommitteesEvaluationsOneColumnToCsv.text" disambiguation="commissione di valutazione di un bando">Esporta voti commissioni - una colonna per criterio</item>
+  <item name="LNBexportCommitteesEvaluationsOneColumnToCsv.ToolTip" mustcontains="CSV" disambiguation="commissione di valutazione di un bando">Esporta tutte le valutazioni in formato CSV</item>
+  <item name="LNBexportCommitteeEvaluationsOneColumnToCsv.text" disambiguation="commissione di valutazione di un bando">Esporta voti commissione - una colonna per criterio</item>
+  <item name="LNBexportCommitteeEvaluationsOneColumnToCsv.ToolTip" mustcontains="CSV" disambiguation="commissione di valutazione di un bando">Esporta i voti alla domanda della commissione visualizzata in formato CSV</item>
+  <item name="HYPviewExtendedEvaluation.text" disambiguation="valutazione di un bando">Valutazione estesa</item>
+  <item name="HYPviewExtendedEvaluation.ToolTip" disambiguation="valutazione di un bando">Visualizza in formato esteso la valutazione della domanda di partecipazione al bando.</item>
+  <item name="HYPviewTableEvaluation.text" disambiguation="valutazione di un bando">Visione tabellare</item>
+  <item name="HYPviewTableEvaluation.ToolTip" disambiguation="valutazione di un bando">Visualizza in formato tabellare la valutazione della domanda di partecipazione al bando.</item>
+  <item name="DisplayEvaluationSummaryToken.Title">Attendere.</item>
+  <item name="DisplayEvaluationSummaryToken.Message">Il file richiesto e' in fase di preparazione, attendere...</item>
+  
+  <!-- DSS -->
+  <item name="CallDssDescription">Selezionare il metodo di aggregazione delle commissioni di valutazione</item>
+  <item name="MethodTitleTranslation">Predefinito:</item>
+  <item name="Call.TranslationWeightsSetTitle">Pesi commissioni bando:</item>
+  <item name="Committee.TranslationWeightsSetTitle">Pesi criteri:</item>
+  <item name="CommitteeDssDescription">Selezionare il metodo di aggregazione dei criteri di valutazione della commissione</item>
+  <item name="CommitteeRatingSetTranslation">Scala di valutazione:</item>
+  <item name="CommitteeSelectRatingTranslation">Seleziona una scala di valutazione</item>
+  <item name="CommitteeInheritsTranslation">Eredita dal bando</item>
+  <item name="CommitteeTranslationWeightTitle">Peso:</item>
+  <item name="CommitteeTranslationWeightChoose">seleziona il peso della commissione</item>
+  <item name="CriterionTranslationWeightTitle">Peso:</item>
+  <item name="CriterionTranslationWeightChoose">seleziona il peso del criterio</item>
+  <item name="LBratingscale.Text">seleziona il peso del criterio</item>
+  <item name="LBratingscalefuzzy.Text">seleziona il peso del criterio</item>
+  <item name="EvaluationEditorErrors.DssSettings" disambiguation="commissione di valutazione di un bando">ATTENZIONE: verificare le impostazioni di valutazione.</item>
+  <item name="WizardEvaluationStep.GeneralSettings.Message" placeholder="true" mustcontains="{0}">{0} commissioni/e</item>
+  <item name="WizardEvaluationStep.GeneralSettings.Message.EditingErrors.CommitteeDssSettings">Errore impostazioni avanzate</item>
+  <item name="WizardEvaluationStep.GeneralInfo.Message" placeholder="true" mustcontains="{0}">{0} commissioni/e</item>
+  <item name="WizardEvaluationStep.GeneralInfo.Message.EditingErrors.CommitteeDssSettings">Errore impostazioni avanzate</item>
+  <item name="DisplayDssErrors">Errore nelle impostazioni avanzate, vanno verificati i seguenti aspetti nelle commissioni:</item>
+  <item name="DisplayDssErrors.1">Errore nelle impostazioni avanzate, vanno verificati i seguenti aspetti nella commissione:</item>
+  <item name="CommiteeDssErrors" placeholder="true" mustcontains="{0}" hidden="true">Commissione "{0}": </item>
+  <item name="CriterionDssErrors" placeholder="true" mustcontains="{0}" hidden="true">Criterio "{0}": </item>
+  <item name="CommiteeDssError.DssError.MissingMethod">metodo di aggregazione mancante</item>
+  <item name="CommiteeDssError.DssError.MissingRatingSet">scala valori mancante</item>
+  <item name="CommiteeDssError.DssError.MissingWeight">peso non definito</item>
+  <item name="CommiteeDssError.DssError.InvalidWeight">peso invalido</item>
+  <item name="CommiteeDssError.DssError.InvalidType">criteri fuzzy con algoritmo di aggregazione NON fuzzy (rimuovere i criteri fuzzy)</item>
+  <item name="CommiteeDssError.DssError.MissingManualWeight">pesi manual NON indicati</item>
+  <item name="CommiteeDssError.DssError.InvalidManualWeight">pesi errati</item>
+  <item name="DssWaitingEvaluations">Voto indicativo - Necessita conclusione attività di valutazione</item>
+  <item name="DssNotcompleted">Necessita conclusione attività di valutazione per avere valore significativo</item>
+  <item name="DssNotcompleted.Evaluator">Il valutatore non ha concluso la sua valutazione, il valore NON è significativo</item>
+  <item name="DisplayDssWarning.NoDate">ATTENZIONE: al momento non sono presenti valutazioni avanzate sulle domande di partecipazione elencate</item>
+  <item name="DisplayDssWarning.Date.isCompleted.True" mustcontains="{0}" placeholder="true">ATTENZIONE: le valutazioni sono state aggiornate in data {0}</item>
+  <item name="DisplayDssWarning.Date.isCompleted.False" mustcontains="{0}" placeholder="true">ATTENZIONE: le valutazioni sono state aggiornate in data {0}, la procedura di valutazione NON è conclusa e di conseguenza i dati visualizzati sono meramente indicativi</item>
+  <item name="EvaluationTranslations.CellTitleDss">Voto</item>
+  <item name="EvaluationTranslations.CellTitleAverage">Media</item>
+  <item name="EvaluationTranslations.CellTitleCriterionFuzzyValue">Valore fuzzy</item>
+  <item name="EvaluationTranslations.CellTitleDssFuzzyValue">Valore fuzzy</item>
+  <item name="EvaluationTranslations.CellTitleDssEvaluation">Ranking valutatore</item>
+  <item name="EvaluationTranslations.CellTitleDssEvaluationFuzzyValue">Ranking fuzzy valutatore</item>
+</Resource>

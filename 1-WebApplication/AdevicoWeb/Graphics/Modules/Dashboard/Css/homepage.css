@@ -1,0 +1,361 @@
+.serviceinfo.hide {
+	display: none;
+}
+
+div#page-box div#container.page-width div.DIV_MP_Content {
+	border-top: 0 !important;
+}
+
+.extrainfo {
+	color: #aaa;
+	font-style: italic;
+	font-size: 11px;
+}
+
+.extrainfo span.label {
+	/*font-style: normal;*/
+    display: none;
+}
+
+.extrainfo span.tags {
+	padding-left: 2px;
+}
+
+.extrainfo span.tags span.sep {
+	color: #bbb;
+}
+
+.collapsable .expander {
+	cursor: pointer;
+}
+
+.extrainfo .tags span.tag {
+	
+}
+
+.extrainfo .tags span.tag.type {
+	background: #aaa;
+	color: #fff;
+	text-shadow: 0 1px 0 #777;
+	padding: 0 4px 1px 4px;
+	border-radius: 3px;
+	font-size: 10px;
+	line-height: 14px;
+}
+
+.sectiontitle .extrainfo {
+	display: inline;
+}
+
+.collapsable .expander .on {
+	display: none;
+}
+
+.collapsable .expander .off {
+	display: inline;
+}
+
+.collapsable.collapsed .expander .off {
+	display: none;
+}
+
+.collapsable.collapsed .expander .on {
+	display: inline;
+}
+
+.collapsable.collapsed .hideme {
+	display: none;
+}
+
+table.table.comlist.subscription {
+	font-size: 12px;
+}
+
+table.table.comlist.subscription th.select,
+table.table.comlist.subscription td.select {
+	width: 15px;
+	text-align: center;
+}
+
+table.table.comlist.subscription th.communityname,
+table.table.comlist.subscription td.communityname {
+	width: auto;
+}
+
+td.communityname span.title {
+	padding-right: 20px;
+	display: inline-block;
+	color: #888;
+}
+
+.subscription td.communityname span.title {
+	font-size: 12px;
+}
+
+table.table.comlist.subscription th.owner,
+table.table.comlist.subscription td.owner {
+	width: 140px;
+	padding-right: 20px;
+}
+
+table.table.comlist.subscription th.year,
+table.table.comlist.subscription td.year {
+	width: 100px;
+}
+
+table.table.comlist.subscription th.period,
+table.table.comlist.subscription td.period {
+	width: 100px;
+}
+
+table.table.comlist.subscription th.seats,
+table.table.comlist.subscription td.seats {
+	width: 60px;
+}
+
+table.table.comlist.subscription th.coursetype,
+table.table.comlist.subscription td.coursetype {
+	width: 140px;
+}
+
+table.table.comlist.subscription th.startdate,
+table.table.comlist.subscription td.startdate {
+	width: 80px;
+}
+
+table.table.comlist.subscription th.info,
+table.table.comlist.subscription td.info {
+	width: 15px;
+	text-align: center;
+}
+
+table.table.comlist span.infowarning,
+table.table.comlist td.infowarning,
+table.table.comlist th.infowarning,
+table.table.comlist.subscription span.infowarning,
+table.table.comlist.subscription td.infowarning,
+table.table.comlist.subscription th.infowarning{
+	width: 15px;
+	text-align: center;
+}
+
+table.table.comlist td.infowarning,
+table.table.comlist td.infowarning,
+table.table.comlist.subscription td.select,
+table.table.comlist.subscription td.infowarning,
+table.table.comlist.subscription th.infowarning{
+	width: 24px;
+	text-align: center;
+	vertical-align: top;
+	padding-top: 4px;
+}
+
+.filtercontainer div.filter,
+.filters .viewbuttons.bottom {
+	margin-bottom: .5em;
+}
+
+table.table.comlist.subscription th.enddate,
+table.table.comlist.subscription td.enddate {
+	width: 80px;
+}
+
+table.table.comlist.subscription th.actions,
+table.table.comlist.subscription td.actions {
+	width: 20px;
+}
+
+table.table.comlist.subscription tr.community.nosubscribe,
+.legend .legenditem .legendicon.nosubscribe {
+	background: #e9e9e9;
+	color: #888;
+}
+
+table.table.comlist.subscription tr.community.nosubscribe a.title {
+	color: #888;
+}
+
+table.table.comlist.subscription tr.community.nosubscribe a.title:hover {
+	border-bottom-color: #ccc;
+}
+
+table.table.comlist.subscription tr.community.nosubscribe td.select input[type='checkbox'] {
+	display: none;
+}
+
+table.table.comlist.subscription tr.community.nosubscribe.reqseats td.seats,
+table.table.comlist.subscription tr.community.nosubscribe.reqenddate td.enddate,
+table.table.comlist.subscription tr.community.nosubscribe.reqstartdate td.startdate,
+.legend .legenditem.reqseats .legendtext,
+.legend .legenditem.reqenddate .legendtext,
+.legend .legenditem.reqstartdate .legendtext {
+	color: #c20;
+}
+
+.groupedselector.nolabel.noactive.nolink {
+	font-size: 0.8em;
+}
+
+.groupedselector.nolabel.noactive.nolink .selectoricon {
+	
+}
+
+.groupedselector.nolabel.noactive.nolink .selectorinner {
+	width: 200px;
+}
+
+.groupedselector.nolabel.noactive.nolink .selectoritems {
+	border-right: 1px solid #ccc;
+}
+
+.groupedselector.nolabel.noactive.nolink .selectoritems.omega {
+	border-right: 0;
+}
+
+.groupedselector.nolabel.noactive.nolink .selectoritems .header {
+	text-align: center;
+	font-weight: bold;
+}
+
+.groupedselector.nolabel.noactive.nolink .selectoritems.should .header {
+	background: rgba(0,255,0,0.2);
+}
+
+.groupedselector.nolabel.noactive.nolink .selectoritems.shouldnt .header {
+	background: rgba(255,0,0,0.2);
+}
+
+.groupedselector.nolabel.noactive.nolink .selectoritem .checked,
+.groupedselector.nolabel.noactive.nolink .selectoritem .notchecked {
+	vertical-align: middle;
+	margin-right: 2px;
+}
+
+.groupedselector.groupedselector.nolabel.noactive.nolink .selectormenu {
+	width: 200px;
+	top: 1.2em;
+}
+
+.tablewrapper.hasbulk.bulkon div.bulk {
+	display: inline-block;
+}
+
+.tablewrapper.hasbulk.bulkoff div.bulk {
+	display: none;
+}
+
+.tablewrapper.hasbulk .bulk .inner {
+	background: #fff;
+	padding: 0;
+	margin: 0;
+	/*    border: 1px solid #ccc;*/
+    min-width: 220px;
+}
+
+div.selectoritems.shouldnt {
+	
+}
+
+.tablewrapper.hasbulk .bulk.top {
+	margin-top: 1em;
+	margin-bottom: 0.5em;
+}
+
+.tablewrapper.hasbulk .bulk.bottom {
+	margin-bottom: 1em;
+	margin-top: 0.5em;
+}
+
+.tablewrapper.hasbulk .bulk .fieldobject .fieldrow.title span.title {
+	font-weight: bold;
+}
+
+.tablewrapper.hasbulk .bulk .fieldobject .fieldrow.title {
+	margin-right: 1em;
+}
+
+.tablewrapper.hasbulk .bulk .fieldobject .fieldrow {
+	
+}
+
+.dlgconfirmsubscription .fieldobject.subscription {
+	
+}
+
+.dlgconfirmsubscription .fieldobject.subscription .messages {
+	margin: 0;
+}
+
+.dlgconfirmsubscription .fieldobject.subscription .seemore .on {
+	display: inline;
+}
+
+.dlgconfirmsubscription .fieldobject.subscription .seemore .off {
+	display: none;
+}
+
+.dlgconfirmsubscription .fieldobject.subscription.expanded .seemore .on {
+	display: none;
+}
+
+.dlgconfirmsubscription .fieldobject.subscription.expanded .seemore .off {
+	display: inline;
+}
+
+.dlgconfirmsubscription .fieldobject.subscription .fieldrow.message {
+	display: none;
+}
+
+.dlgconfirmsubscription .fieldobject.subscription.expanded .fieldrow.message {
+	display: block;
+}
+
+.dlgconfirmsubscription .fieldobject.subscription .messages .message .right {
+	*float: none;
+}
+
+.dlgconfirmsubscription .fieldobject.subscription.expanded .fieldrow.message ul.communities {
+	margin: 0;
+	padding: 0;
+}
+
+.dlgconfirmsubscription .fieldobject.subscription .fieldrow.message ul.communities li.community {
+	
+}
+
+.dlgconfirmsubscription .fieldobject.subscription .fieldrow.message ul.communities li.community .name {
+	vertical-align: middle;
+}
+
+.dlgconfirmsubscription .fieldobject.subscription .fieldrow.message ul.communities li.community .details {
+	color: #666;
+	margin-left: 10px;
+	vertical-align: middle;
+}
+
+.dlgconfirmsubscription .fieldobject.subscription .fieldrow.message ul.communities li.community .inputgroup {
+	color: #666;
+	margin-left: 10px;
+	vertical-align: middle;
+}
+
+.dlgconfirmsubscription .fieldobject.subscription .inputgroup label {
+	vertical-align: middle;
+}
+
+.dlgconfirmsubscription .fieldobject.subscription .inputgroup input {
+	vertical-align: middle;
+}
+
+.nestedtree.communities .item .text{
+	/*background-color: #eee;*/
+	/*display: inline-block;
+	*display: inline;
+	*zoom:1;*/
+}
+
+td span#CPHservice_CTRLlistMyCommunities_RPTcommunities_LBemptyItems {
+	font-size: 16px;
+	line-height: 32px;
+	color: #888;
+}

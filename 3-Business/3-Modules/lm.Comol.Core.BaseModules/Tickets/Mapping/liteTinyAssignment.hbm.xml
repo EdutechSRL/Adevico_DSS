@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping
+	xmlns="urn:nhibernate-mapping-2.2"
+	assembly="lm.Comol.Core.BaseModules"
+	namespace="lm.Comol.Core.BaseModules.Tickets.Domain"
+	>
+
+	<class name="lm.Comol.Core.BaseModules.Tickets.Domain.liteTinyAssignment" table="TK_Assignement" >
+
+		<id name="Id" column="Id" type="Int64">
+			<generator class="native"/>
+		</id>
+
+		<property name="Type" type="lm.Comol.Core.BaseModules.Tickets.Domain.Enums.AssignmentType, lm.Comol.Core.BaseModules" column="Type"/>
+		
+		<property name="TicketId" type="Int64" column="IdTicket" />
+		<property name="CategoryId" type="Int64" column="IdAssignedCategory" />
+		<property name="UserId" type="Int64" column="IdAssignedUser" />
+		
+		<property name="IsCurrent" type="Boolean" column="IsCurrent" />
+
+	</class>
+
+</hibernate-mapping>

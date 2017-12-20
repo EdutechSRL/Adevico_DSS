@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping
+	xmlns="urn:nhibernate-mapping-2.2"
+	assembly="lm.Comol.Core.BaseModules"
+	namespace="lm.Comol.Core.BaseModules.Tickets.Domain">
+
+	<class name="liteMessage" table="TK_Message" >
+
+		<id name="Id" column="Id" type="Int64">
+			<generator class="native"/>
+		</id>
+
+
+		<property name="Type" type="lm.Comol.Core.BaseModules.Tickets.Domain.Enums.MessageType, lm.Comol.Core.BaseModules" column="MessageType"/>
+
+		<many-to-one name="Ticket"
+					 class="lm.Comol.Core.BaseModules.Tickets.Domain.liteTicket"
+					 column="IdTicket" foreign-key="IdTicket" cascade="none" />
+
+		<property name="CreatedOn" type="DateTime" column="_CreatedOn" />
+
+		<property name="Visibility" type="Boolean" column="Visibility" />
+
+		<property name="IsDraft" type="Boolean" column="IsDraft" />
+		
+	</class>
+
+</hibernate-mapping>

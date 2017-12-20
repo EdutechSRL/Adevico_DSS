@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/lm.Comol.Core.DomainModel" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/lm.Comol.Core.DomainModel" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="ModuleObject">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CommunityID" type="xs:int" />
+      <xs:element minOccurs="0" name="FQN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ObjectGuidID" type="ser:guid" />
+      <xs:element minOccurs="0" name="ObjectLongID" type="xs:long" />
+      <xs:element minOccurs="0" name="ObjectTypeID" type="xs:int" />
+      <xs:element minOccurs="0" name="ServiceCode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ModuleObject" nillable="true" type="tns:ModuleObject" />
+  <xs:simpleType name="BaseStatusDeleted">
+    <xs:list>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="None">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">0</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="Manual">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="Automatic">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="Cascade">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">4</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:list>
+  </xs:simpleType>
+  <xs:element name="BaseStatusDeleted" nillable="true" type="tns:BaseStatusDeleted" />
+</xs:schema>

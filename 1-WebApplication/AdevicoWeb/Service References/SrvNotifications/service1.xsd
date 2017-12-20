@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/lm.Comol.Core.Notification.Domain" />
+  <xs:element name="NotifyActionToModule">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="istanceIdentifier" nillable="true" type="xs:string" />
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/lm.Comol.Core.Notification.Domain" minOccurs="0" name="action" nillable="true" type="q1:NotificationAction" />
+        <xs:element minOccurs="0" name="idSenderUser" type="xs:int" />
+        <xs:element minOccurs="0" name="ipAddress" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="proxyIpAddress" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NotifyAction">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="istanceIdentifier" nillable="true" type="xs:string" />
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/lm.Comol.Core.Notification.Domain" minOccurs="0" name="channel" type="q2:NotificationChannel" />
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/lm.Comol.Core.Notification.Domain" minOccurs="0" name="mode" type="q3:NotificationMode" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/lm.Comol.Core.Notification.Domain" minOccurs="0" name="action" nillable="true" type="q4:NotificationAction" />
+        <xs:element minOccurs="0" name="idSenderUser" type="xs:int" />
+        <xs:element minOccurs="0" name="ipAddress" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="proxyIpAddress" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

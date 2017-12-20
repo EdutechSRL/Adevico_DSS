@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="lm.Comol.Core.DomainModel" namespace="lm.Comol.Core.DomainModel">
+	<class name="LazyAffiliation" table="PR_AgencyAffiliation" lazy="true">
+		<id name="Id" column="Id" type="Int64">
+			<generator class="native"/>
+		</id>
+    <version name="TimeStamp" generated="always" unsaved-value="null" type="BinaryBlob">
+      <column name="_Timestamp" not-null="false" sql-type="timestamp"/>
+    </version>
+    <many-to-one name="Agency" class="lm.Comol.Core.DomainModel.Agency, lm.Comol.Core.DomainModel" column="IdAgency" foreign-key="IdAgency" cascade="none" not-found="ignore" />
+    <property name="IdPerson" type="Int32" column="IdPerson"/>
+    <property name="FromDate" type="DateTime" column="FromDate"/>
+    <property name="ToDate" type="DateTime" column="ToDate"/>
+    <property name="IsEnabled" type="Boolean" column="IsEnabled"/>
+
+    <property name="Deleted" type="lm.Comol.Core.DomainModel.BaseStatusDeleted,lm.Comol.Core.DomainModel" column="_Deleted" />
+	</class>
+</hibernate-mapping>

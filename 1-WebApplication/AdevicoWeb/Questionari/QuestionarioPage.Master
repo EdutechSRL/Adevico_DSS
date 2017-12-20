@@ -1,0 +1,42 @@
+﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="QuestionarioPage.master.vb"
+    Inherits="Comunita_OnLine.QuestionarioPage" %>
+
+<%@ Register TagPrefix="FOOTER" TagName="CtrLFooter" Src="../UC/UC_PortalFooter.ascx" %>
+<%@ Register TagPrefix="HEADER" TagName="CtrLHeader" Src="../UC/UC_PortalHeader.ascx" %>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title>Comunità On Line - Questionari</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link href="./../Styles.css?v=201604071200lm" type="text/css" rel="stylesheet" />
+   <link media="screen" href="stile.css?v=201604071200lm" type="text/css" rel="StyleSheet" />
+    <link rel="Stylesheet" href="./../Style/Latex/Latex.css?v=201604071200lm" />
+    <link rel="Stylesheet" href="./../Style/Latex/Latex.css?v=201604071200lm" media="print" />
+    <script type="text/javascript" language="Javascript" src="./../Style/Latex/Latex.js"></script>
+</head>
+<body>
+    <form id="aspnetForm" runat="server">
+    <asp:ScriptManager ID="SCMmanager" runat="server">
+    </asp:ScriptManager>
+    <HEADER:CtrLHeader ID="UC_Header" runat="server" />
+    <div id="page-box">
+        <div id="container" class="page-width">
+            <div id="serviceinfo" class="RigaTitolo serviceinfo">
+                <asp:Label ID="LBTitolo" runat="server" Width="100%" CssClass="RigaTitolo">Questionari</asp:Label>
+            </div>
+            <div id="content">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+            <div style="clear: both">
+            </div>
+        </div>
+    </div>
+    <div id="cFooter">
+        <div class="container">
+             <FOOTER:CtrLFooter ID="CtrlFooter" runat="server" />
+        </div>
+    </div>
+    </form>
+</body>
+</html>

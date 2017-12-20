@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="lm.Comol.Core.DomainModel" namespace="lm.Comol.Core.DomainModel">
+	<class name="LazyModuleTemplate" table="LK_SRVZ_TPCM">
+		<id name="Id" column="LKST_ID" type="Int32">
+			<generator class="native"/>
+		</id>
+		<property name="IdModule" column="LKST_SRVZ_id" type="Int32"/>
+		<property name="IdCommunityType" column="LKST_TPCM_id" type="Int32"/>
+		<property name="IdOrganization" column="LKST_ORGN_id" type="Int32"/>
+		<property name="Enabled" column="LKST_default" type="Boolean"/>
+	</class>
+</hibernate-mapping>

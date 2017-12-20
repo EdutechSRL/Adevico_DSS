@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/lm.Notification.DataContract.Domain" />
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:element name="NotifyToCommunity">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/lm.Notification.DataContract.Domain" minOccurs="0" name="Notification" nillable="true" type="q1:NotificationToCommunity" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NotifyToUsers">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/lm.Notification.DataContract.Domain" minOccurs="0" name="Notification" nillable="true" type="q2:NotificationToPerson" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NotifyForPermission">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/lm.Notification.DataContract.Domain" minOccurs="0" name="Notification" nillable="true" type="q3:NotificationToPermission" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NotifyForRoles">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/lm.Notification.DataContract.Domain" minOccurs="0" name="Notification" nillable="true" type="q4:NotificationToRole" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NotifyForPermissionItemGuid">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/lm.Notification.DataContract.Domain" minOccurs="0" name="Notification" nillable="true" type="q5:NotificationToItemGuid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NotifyForPermissionItemLong">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/lm.Notification.DataContract.Domain" minOccurs="0" name="Notification" nillable="true" type="q6:NotificationToItemLong" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NotifyForPermissionItemInt">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/lm.Notification.DataContract.Domain" minOccurs="0" name="Notification" nillable="true" type="q7:NotificationToItemInt" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveNotification">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="NotificationID" type="q8:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveNotificationForUser">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="NotificationID" type="q9:guid" />
+        <xs:element minOccurs="0" name="PersonID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveUserNotification">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="UserNotificationID" type="q10:guid" />
+        <xs:element minOccurs="0" name="PersonID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadNotification">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="NotificationID" type="q11:guid" />
+        <xs:element minOccurs="0" name="PersonID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadUserNotification">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="UserNotificationID" type="q12:guid" />
+        <xs:element minOccurs="0" name="PersonID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadUserCommunityNotification">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CommunityID" type="xs:int" />
+        <xs:element minOccurs="0" name="PersonID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveUserCommunityNotification">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CommunityID" type="xs:int" />
+        <xs:element minOccurs="0" name="PersonID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

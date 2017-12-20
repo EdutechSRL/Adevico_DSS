@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Resource xmlns="urn:ComolTranslation">
+    <item name="LBtitolo.text">Meeting </item>
+    <item name="ServiceTitle">Meetings</item>
+    <!-- VIWriepilogo-->
+    <item name="LNBEdit.text" disambiguation="verbo">Modifica</item>
+    <item name="LNBEdit.text">Modifica gruppo di giorni</item>
+    <item name="LNBDelete.text">Elimina gruppo di giorni</item>
+    <item name="LNBDelete.ToolTip">Elimina gruppo di giorni</item>
+    <item name="LNBDelete.ConfirmText">Sei sicuro di voler eliminare il gruppo selezionato?</item>
+    <item name="LNBSaveAndUnlock.text">Salva Meeting e sbloccalo</item>
+    <item name="LNBSave.text">Fine</item>
+    <item name="LNBSaveAndUnlock.ToolTip">Salva Meeting e sbloccalo</item>
+    <item name="LNBSave.ToolTip">Va all'elenco dei meeting</item>
+    <item name="MSGRiepilogo">Il meeting verrà visualizzato così:</item>
+    <item name="LNBSaveAndManageMail.text">Salva e gestisci le e-mail</item>
+    <item name="LNBSaveAndManageMail.ToolTip">Salva il meeting e va alla pagina di gestione delle e-mail</item>
+
+    <!-- VIWStep2-->
+    <item name="LBErrorNoSelection.text" html="true">&lt;br&gt;Non è stato selezionato nessun giorno</item>
+    <item name="LBErrorNoQuestion.text" html="true">&lt;br&gt;Non è stata inserita una domanda</item>
+    <item name="LNBDeleteDays.text">Elimina gruppo di giorni</item>
+    <item name="LNBDeleteDays.ToolTip">Elimina gruppo di giorni</item>
+    <item name="LNBDeleteDays.ConfirmText">Sei sicuro di voler eliminare il gruppo selezionato?</item>
+
+    <!-- VIWMessaggi-->
+    <item name="MSGErroreTestoDomanda">La domanda non ha un testo</item>
+    <item name="MSGErroreOpzioni">Verificare le opzioni della domanda</item>
+    <item name="LNBBackToStep2.text" disambiguation="domanda di partecipazione/domanda di adesione">Torna alla domanda</item>
+    <item name="LNBBackToMail.text">Torna alla gestione delle e-mail</item>
+    <item name="MSGNoPermessi">Non si hanno i permessi per visualizzare questa pagina.</item>
+
+    <!-- VIWStep3-->
+    <item name="LBtitoloDestinatari_WQ.text" html="true">Il meeting potra` essere compilato da:&lt;br&gt;</item>
+    <item name="LBmail.text" html="true">Sara` possibile inviare una e-mail di invito a:&lt;br&gt;</item>
+    <item name="LBnoRecipient.text" html="true">Non e` stato selezionato alcun destinatario&lt;br&gt;</item>
+    <item name="LBsubject.text" html="true" placeholder="true" mustcontains="{0}">Oggetto: {0}&lt;br&gt;</item>
+    <item name="LBmessageTitle.text" html="true">Corpo dell'e-mail:&lt;br&gt;</item>    
+    <item name="LBmessageTXBTitle.text" html="true">Testo aggiuntivo:&lt;br&gt;</item>     
+    <item name="LBmessage.text" html="true" placeholder="true" mustcontains="{0}|{1}|{2}">{0} ti invita a partecipare alla programmazione dell'evento {1}.&lt;br&gt; Segui il seguente link per parteciparvi: {2}&lt;br&gt; Si prega di notare come questo link sia personale e non debba essere condiviso con altri.&lt;br&gt;&lt;br&gt;</item>
+    <item name="MSGlink">[link personale]</item>
+    <item name="LNBPreview.text">Anteprima Meeting</item>
+    <item name="LBNome_WQ.text">Inserire il nome che si vuole dare all'appuntamento (obbligatorio)</item>
+    <item name="CUVNome_WQ.ErrorMessage">Esiste gia' un Meeting con questo nome in questa comunità</item>
+    <item name="RFVNome_WQ.ErrorMessage">Nome Obbligatorio</item>
+    <item name="LBDataInizioTitolo_WQ.text">Sarà possibile rispondere dal </item>
+    <item name="LBDataFineTitolo_WQ.text">al </item>
+    <item name="CUVdate_WQ.ErrorMessage">La data di fine deve essere successiva a quella di inizio</item>
+    <item name="CKisBloccato_WQ.text" html="true">La compilazione del meeting è temporaneamente bloccata (barrare la casella se SI)&lt;br&gt;&lt;br&gt;</item>
+    <item name="LBvisualizzazione_WQ.text" html="true">Dopo aver compilato il meeting l'utente registrato potrà:  &lt;br&gt;</item>
+  <item name="LBvisualizzaRisposta_WQ.text" html="true">Visualizzare la risposta (barrare la casella se SI)&lt;br&gt;</item>
+  <item name="LBvisualizzaCorrezione_WQ.text" html="true">Visualizzare la correzione (barrare la casella se SI)&lt;br&gt;</item>
+  <item name="LBvisualizzaSuggerimenti_WQ.text" html="true">Visualizzare suggerimenti (barrare la casella se SI)&lt;br&gt;</item>
+  <item name="LBeditaRisposta_WQ.text">Modificare la risposta data (barrare la casella se SI) </item>
+    <item name="LBOrdineDomandeRandom_WQ.text" html="true">&lt;br&gt;&lt;br&gt;Barrare la casella se si vuole che le domande vengano proposte in ordine casuale </item>
+    <item name="LBavvisoBloccato_WQ.text">ATTENZIONE: premendo su "Crea" il meeting verrà salvato.Una volta terminato l'inserimento andare alla lista dei meeting e cliccare il pulsante rosso (che diventerà verde) a fianco del meeting per abilitarne la compilazione.</item>
+    <item name="LBtitoloS1.text">GENERALE</item>
+    <item name="LBdescrizioneS1.text">Sezione generale, all’interno della quale definire le informazioni basilari sulla richiesta di pianificazione appuntamento.</item>
+    <item name="LBtitoloS2.text">MODALITA’ DI SOMMINISTRAZIONE</item>
+    <item name="LBtitoloS3.text">DESTINATARI</item>
+    <item name="LBdescrizioneS3.text">In questa sezione è possibile definire gli utenti ai quali si desidera riservare la richiesta.</item>
+    <item name="CHKUtentiComunita_WQ.text">Tutti gli utenti della comunità corrente</item>
+    <item name="CHKUtentiNonComunita_WQ.text">Tutti gli utenti di tutte le comunità</item>
+    <item name="CHKUtentiInvitati_WQ.text" html="true">Utenti Invitati&lt;br&gt;</item>
+    <item name="CHKUtentiEsterni_WQ.text">Utenti Esterni</item>
+    <item name="MSGAvanti">Avanti</item>
+    <item name="MSGIndietro">Indietro</item>
+    <item name="LNBAddDays.text">Aggiungi altre giornate</item>
+    <item name="LNBAddDays.ToolTip">Aggiunge una nuova opzione con giorni differenti e diverse fasce orarie</item>
+    <item name="LKBadvanced.text">Opzioni avanzate Mail</item>
+    <item name="LKBadvanced.ToolTip">Gestisci i destinatari, template per le mail...</item>
+    <item name="LKBsendMail.text">Invia mail</item>
+    <item name="LKBsendMail.ToolTip">Invia mail a tutti gli invitati</item>    
+    
+    <item name="LBZone.text">Fasce orarie</item>
+    <item name="LBTestoDomanda.text">Testo Domanda: </item>
+    <item name="LBOptionNumber.text">Seleziona gruppo di giorni da visualizzare: </item>
+    <item name="LBTitoloOpzioni.text" html="true">&lt;br&gt;OPZIONI RISPOSTA: &lt;br&gt;</item>
+    <item name="LBNumeroOpzioni.text">Numero Fasce Orarie: </item>
+    <item name="LBTestoDopoDomanda.text">Testo visualizzato sotto la domanda: </item>
+
+    <item name="GRVElenco.headerCognome.HeaderText">Cognome</item>
+    <item name="GRVElenco.headerNome.HeaderText">Nome</item>
+    <item name="GRVElenco.headerEmail.HeaderText">E-Mail</item>
+    <item name="IMBGestione.AlternateText" disambiguation="verbo">Modifica</item>
+    <item name="IMBElimina.AlternateText">Elimina</item>
+    <item name="LNBaddSysUsers.text">Aggiungi utenti di comunita`</item>
+    <item name="LNBaddSysUsers.ToolTip">Aggiungi utenti iscritti al sistema</item>
+    <item name="LNBaddExternalUser.text">Aggiungi utenti esterni</item>
+    <item name="LNBaddExternalUser.ToolTip">Aggiungi utenti non iscritti al sistema</item>
+
+    <item name="LBTitoloUtente.text">Inserisci dati dell'utente</item>
+    <item name="LBCognome.text">Cognome</item>
+    <item name="LBNome.text">Nome</item>
+    <item name="LBEmail.text">E-Mail</item>
+    <item name="LBDescrizione.text">Descrizione</item>
+    <item name="LNBSaveExternalUser.text">Aggiungi utente</item>
+    <item name="LNBSaveExternalUser.ToolTip">Aggiungi utente</item>
+    <item name="LNBCancelAEU.text">Annulla</item>
+    <item name="LNBCancelAEU.ToolTip">Torna alla lista utenti</item>
+    <item name="LNBCancelIDC.text">Annulla</item>
+    <item name="LNBCancelIDC.ToolTip">Torna alla lista utenti</item>
+    <item name="CampoObbligatorio">Campo obbligatorio</item>
+
+    <!-- viwMail-->
+    <item name="LBErroreNoTag.text">I Tag in rosso devono essere obbligatoriamente inseriti nel corpo della mail.</item>
+    <item name="LBMsgQuestionarioBloccato.text" html="true">Attenzione: il Meeting ha la compilazione bloccata!&lt;br&gt;Per consentire agli utenti invitati di compilarlo attivare la compilazione nella pagina "Gestione Meeting".</item>
+    <item name="LBTitoloTemplate.text">Gestione Template:</item>
+    <item name="BTNElimina.text">Elimina</item>
+    <item name="BTNNuovo.text">Nuovo Template</item>
+    <item name="LBDestinatario.text">Destinatari:</item>
+    <item name="LKBAggiungiTutti.text">Tutti gli utenti della lista</item>
+    <item name="LKBAggiungiNonInvitati.text">Solo gli utenti non ancora invitati</item>
+    <item name="LKBSelezionaUtenti.text">Seleziona Utenti</item>
+    <item name="LKBAggiungiNonCompletati.text">Solo gli utenti che non hanno compilato il Meeting</item>
+    <item name="LBOggetto.text">Oggetto:</item>
+    <item name="LBTestoMessaggio.text">Testo del Messaggio:</item>
+    <item name="LBIntestazione.text">Utente X</item>
+    <item name="LBTags.text">Tags Disponibili</item>
+    <item name="LBAnteprima.text">Anteprima:</item>
+    <item name="BTNSalvaTemplate.text">Salva Template</item>
+    <item name="CHKInoltraMittente.text">Invia una copia al mio indirizzo email.</item>
+    <item name="BTNSalvaTemplateConNome.text">Salva il Template come: </item>
+    <item name="REVTXBIntestazione.ErrorMessage">Ridurre il testo nell'oggetto.</item>
+    <item name="BTNSbloccaInvia.text">SBLOCCA e INVIA MAIL</item>
+    <item name="LBMsgSbloccaInvia.text">Per attivare la compilazione e inviare le mail cliccare su "Sblocca e Invia". </item>
+    <item name="LBMsgInvia.text" html="true">Il Meeting ha la compilazione bloccata!&lt;br&gt;Per inviare comunque le e-mail e attivare la compilazione in un secondo momento cliccare su "Invia Mail". </item>
+    <item name="MSGOggettoObbligatorio">Inserire l'oggetto della mail!</item>
+    <item name="BTNInviaMail.text">INVIA MAIL</item>
+    <item name="TXBUtentiNonInvitati">Tutti gli utenti non ancora invitati</item>
+    <item name="TXBTuttiUtenti">Tutti gli utenti della lista</item>
+    <item name="TXBUtentiNonCompilati" mustcontains="{0}" placeholder="true">Tutti gli utenti che non hanno risposto al {0}</item>
+    <item name="MSGnoPermessi">Non si hanno i permessi per visualizzare questa pagina.</item>
+    <item name="MSGInvioMail" html="true">Invio delle mail completato.&lt;br&gt;</item>
+    <item name="MSGnoInvioMail">Impossibile inviare la mail, selezionare almeno un destinatario.</item>
+    <item name="TXBOggetto.default" hidden="true" description="non tradurre" mustcontains="#NOMEQUESTIONARIO" placeholder="true">#NOMEQUESTIONARIO#</item>
+
+    <item name="Meeting">Meeting</item>
+
+    <!-- Smart Tags-->
+    <item name="link">Link</item>
+    <item name="destinatario">Destinatario</item>
+    <item name="dataFine">Data scadenza</item>
+    <item name="autore">Autore</item>
+    <item name="dataInizio">Data inizio</item>
+    <item name="nomeQuestionario">Nome del questionario</item>
+    <item name="descrizioneQuestionario">Descrizione</item>
+    <item name="durata">Durata</item>
+    <item name="password">Password</item>
+ <item name="Template.Begin" placeholder="true" mustcontains="#sentdate#|#name#">Buongiorno/Buonasera&lt;br&gt;ha inviato il #sentdate# una mail di partecipazione al questionario &lt;i&gt;#name#&lt;/i&gt; con il seguente modello:&lt;br&gt;</item>
+  <item name="Template.Begin.Standard" placeholder="true" mustcontains="#sentdate#|#name#">Buongiorno/Buonasera&lt;br&gt;ha inviato il #sentdate# una mail di partecipazione al questionario &lt;i&gt;#name#&lt;/i&gt; con il seguente modello:&lt;br&gt;</item>
+  <item name="Template.Begin.Poll" placeholder="true" mustcontains="#sentdate#|#name#">Buongiorno/Buonasera&lt;br&gt;ha inviato il #sentdate# una mail di partecipazione al sondaggio &lt;i&gt;#name#&lt;/i&gt; con il seguente modello:&lt;br&gt;</item>
+  <item name="Template.Begin.Random" placeholder="true" mustcontains="#sentdate#|#name#">Buongiorno/Buonasera&lt;br&gt;ha inviato il #sentdate# una mail di partecipazione al questionario a domande casuali &lt;i&gt;#name#&lt;/i&gt; con il seguente modello:&lt;br&gt;</item>
+  <item name="Template.Begin.AutoEvaluation" placeholder="true" mustcontains="#sentdate#|#name#">Buongiorno/Buonasera&lt;br&gt;ha inviato il #sentdate# una mail di partecipazione al questionario di valutazione &lt;i&gt;#name#&lt;/i&gt; con il seguente modello:&lt;br&gt;</item>
+  <item name="Template.Begin.Meeting" placeholder="true" mustcontains="#sentdate#|#name#">Buongiorno/Buonasera&lt;br&gt;ha inviato il #sentdate# una mail di partecipazione al meeting &lt;i&gt;#name#&lt;/i&gt; con il seguente modello:&lt;br&gt;</item>
+  <item name="Template.Begin.RandomMultipleAttempts" placeholder="true" mustcontains="#sentdate#|#name#">Buongiorno/Buonasera&lt;br&gt;ha inviato il #sentdate# una mail di partecipazione al questionario (ricompilabile a più tentativi)&lt;i&gt;#name#&lt;/i&gt; con il seguente modello:&lt;br&gt;</item>
+  <item name="MSGSendedMail">Il messaggio risultante è stato inviato ai seguenti destinatari:</item>
+  <item name="MSGUnSendedMail">The sending to the following recipients has failed:</item>
+</Resource>
+

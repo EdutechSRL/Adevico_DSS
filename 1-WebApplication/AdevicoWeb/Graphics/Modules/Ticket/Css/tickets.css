@@ -1,0 +1,2664 @@
+/* ticket.css */
+
+/* GS: 27/01/2015 15:00 */
+
+
+
+span.rblitem {
+	margin-right: 1em;
+}
+
+.textarea,
+input[type="text"],
+input[type="password"]  {
+    border: 1px solid #ccc;
+    color: #333;
+    margin-left: 0;
+    font-size: inherit;
+}
+
+div.fieldobject div.fieldrow .inputtext[type="text"],
+div.fieldobject div.fieldrow .inputtext[type="password"] {
+    vertical-align: middle;
+    position: relative;
+    margin-top: 0px !important;
+}
+
+div.fieldobject div.fieldrow .inputtext[type="text"],
+div.fieldobject div.fieldrow .inputtext[type="password"] {
+    width: 440px;
+}
+
+div.fieldrow.haslang div.readonlyinput.inline,  
+div.fieldrow.haslang div.readonlytextarea.inline {	
+	 width: 440px;
+}
+
+div.fieldobject div.fieldrow .textarea {
+    width: 445px;
+    vertical-align: top;
+    resize: vertical;
+    overflow: auto;
+    height: 60px;
+}
+
+/* */
+
+div.ticketview.create.clearfix div.fieldobject.fieldgroup div.fieldrow span.title {
+	margin-bottom: 1em;
+	display: block;
+	text-transform: uppercase;
+	font-weight: normal;
+	font-style: normal;
+	color: #999;
+}
+
+.ticketview.create input.fieldinput,
+.ticketview.create .fieldeditor,
+.ticketview.create .dropdown.enabled  {
+	margin: 0;
+	width: 450px;
+	box-shadow: inset 1px 1px 0 rgba(0,0,0,0.1);
+	padding: 2px;
+}
+
+.users .username {
+	width: 200px;
+}
+
+.users .manager,
+.users .resolver {
+	text-align: center;
+}
+
+span#CPHservice_CTRLlanguageSelector_LBusedLanguage_t,
+label.languagelabel,
+span.languagelabel,
+div.fieldrow label.fieldlabel,
+div.fieldrow span.fieldlabel {
+    width: 192px;
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+    vertical-align: baseline;
+}
+
+
+
+div.tablewrapper.users {
+	margin-top: 1em;
+}
+
+div.choseselect label.fieldlabel {
+	vertical-align: top;
+	line-height: 30px;
+}
+
+
+div.tablewrapper table.minimal th {
+	color: #888;
+}
+
+.toolbar .fieldlabel {
+	width: auto !important;
+	vertical-align: baseline !important;
+}
+
+.ticketsettings div.fieldrow label.fieldlabel {
+	width: 182px;
+	vertical-align: top;
+	position:relative;
+	top: 5px;
+}
+
+
+span.languagelabel,
+.languageadd span.languagelabel  {
+	vertical-align: middle;
+}
+
+.languageadd span.languagelabel  {
+	width: auto;
+}
+
+.languageadd   {
+    float: right ;
+}
+
+
+.communitytypermission td.private,
+.communitytypermission td.ticket,
+.communitytypermission td.viewticket,
+.communitytypermission td.public {
+	text-align: center;
+}
+
+.communitytypermission th.permission span.text,
+.communitytypermission th.permission span.icons {
+	text-align: center;
+	float: none;
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+	vertical-align: middle !important;
+}
+
+.communitytypermission th.permission  {
+}
+
+.communitytypermission th.permission span.td {
+ height: 32px;
+}
+
+.communitytypermission th.permission span.text {
+	width: 75%;
+	text-align: left;
+	padding: 2px;
+}
+
+.communitytypermission th.permission span.icons {
+	width: 24%;
+	text-align: right;	
+}
+
+div.fieldobject div.fieldrow.checkboxfieldlabel label.fieldlabel {
+    width: 175px;
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+}
+
+div.ticketview.create div.dropdown.enabled {
+	width: 446px;
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+	background-color: #fff;
+	margin-bottom: 1em;
+}
+
+span.ddselector {
+/*	/*width: 427px !important;*!/
+	display: inline-block;*/
+	text-transform: uppercase;
+}
+
+table td.role span.role {
+	margin-right: 1em;
+}
+
+.buttonwrapper {
+	text-align: right;
+	margin: 1em 0;
+}
+
+.tablewrapper .buttonwrapper a {
+	margin: 0 !important;
+}
+
+ul.tree {
+    margin: 0;
+    padding: 0;
+}
+
+ul.tree li.leaf .handle {
+    display: none;
+}
+
+.fieldrow.availablecategories {
+    margin: 2em 0;
+}
+
+.contentwrapper .fieldrow.availablecategories {
+	margin: 1em 0;
+}
+
+.fieldrow.availablecategories .fieldlabel,
+.fieldrow.availablecategories .details,
+.fieldrow.availablecategories .details .item {
+	vertical-align: baseline;
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+}
+
+.fieldrow.availablecategories .details .item {
+	margin-right: 10px;
+}
+
+div.fieldrow.checkboxfieldlabel {
+	vertical-align: baseline;
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+	margin-right: 1em;
+}
+
+div.fieldrow.checkboxfieldlabel label,
+div.fieldrow.checkboxfieldlabel span,
+div.fieldrow.checkboxfieldlabel input {
+	vertical-align: baseline;
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+	width: auto !important;
+}
+
+.availablecategories .inlinewrapper {
+    display: inline-block;
+    width: 500px;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+.fieldrow .details .item .counter {
+	font-weight: bold;
+	/*display: inline-block;
+	*display: inline;
+	*zoom: 1;*/
+	display: inline;
+	padding: 2px 4px;
+	background-color: #ddd;
+	border-radius: 4px;
+	margin-right: .5em;
+}
+
+a .item  .counter {
+/*	color: #444;*/
+}
+
+.fieldrow .details .item.empty .counter {
+	background-color: transparent;
+}
+
+ul.categories.tree {
+    padding: 0;
+    margin: 0;
+}
+
+span.inputgroup input,
+span.inputgroup label {
+    vertical-align: top;
+    margin: 0;
+}
+
+span.inputgroup input {
+    margin-right: .5em;
+}
+
+.checkboxfieldlabel span,
+.checkboxfieldlabel input,
+.checkboxfieldlabel label {
+    vertical-align: middle;
+    display: inline-block;
+    *display: inline;
+    *zoom: 1
+}
+
+ul.tree.categories li.category span.name:hover {
+    background-color: #ddd;
+    padding: 2px;
+    border-radius: 3px;
+}
+
+ul.tree.categories li.category.selected span.name {
+
+}
+
+ul.tree.categories li.category span.name {
+    vertical-align: top;
+}
+
+table.table.communitytypermission .permission {
+    width: 120px;
+}
+
+table.table.communitytypermission .communitytype {
+    width: auto;
+}
+
+div.fieldobject div.fieldrow.managers div.inlinewrapper,
+div.fieldobject div.fieldrow.resolvers div.inlinewrapper {
+    width: 450px;
+}
+
+.dialog ul.categories.tree {
+	margin: 1em;
+}
+
+.dialog ul.categories.tree .categories {
+	border-top: 1px solid #ddd;
+	padding-top: 2px;
+	
+}
+
+.dialog ul.categories.tree span.name {
+	padding: 2px;
+	display: inline-block;
+}
+
+.dialog ul.categories.tree li.category ul {
+	padding-left: 20px;
+}
+
+.dialog ul.categories.tree li span.name:hover {
+ 	background: none;	
+}
+
+.dialog ul.categories.tree li.autoOpen .handle {
+ 	display: none;
+}
+
+/*
+.ui-selectee
+{
+    cursor: pointer;
+}
+
+ .ui-selectee.ui-selected
+ {
+     background-color: #ddd;
+     padding: 1px;
+     border-radius: 3px;
+     border:1px solid #ccc;
+     font-weight: bold;
+ }
+ */
+
+ul.tree.selectable.enabled .name {
+    cursor: pointer;
+}
+
+ul.tree.selectable .selected {
+    background-color: #ddd;
+    padding: 1px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    font-weight: bold;
+}
+
+.clickable {
+    cursor: pointer;
+}
+
+div.fieldobject.fieldgroup {
+    margin-bottom: 1em;
+    padding-left: 5px;
+    padding: 5px 10px;
+    border: 1px solid #ddd;
+    background-color: #eee;
+    *border-bottom: 2px;
+/*    -moz-box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.2), 1px 1px 1px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.2), 1px 1px 1px rgba(0, 0, 0, 0.3);
+    box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.2), 1px 1px 0 rgba(0, 0, 0, 0.3);*/
+    border-radius: 9px;
+}
+
+div.fieldobject.fieldgroup .title {
+    font-weight: bold;
+	text-transform: uppercase;
+}
+
+div.ticketview.create {
+    /*width: 500px;*/
+    margin: 1em 0;   
+}
+
+table.userrolemap td.resources,
+table.categorymap td.resources {
+	width: 260px;
+}
+
+table.userrolemap tr.category {
+	font-style: italic;
+}
+
+table.userrolemap tr.category td.name {
+	padding-left: 32px !important;
+	background: url(../../../Generics/Command/img/corner_bottomleft_16.png) no-repeat 10px 0;
+}
+
+table.userrolemap tr.parent {
+	background-color: #eee;
+	font-weight: bold;
+	-moz-box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.4);
+	-webkit-box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.4);
+	box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.4);
+	text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+td.name span.icon.viewdetails.showdesc {
+	vertical-align: middle;
+	background: url(../../../Generics/Command/img/jqui_454545_256x240.png) -163px -114px no-repeat;
+	width: 12px;
+	height: 12px;
+	margin-left: 6px;
+	margin-bottom: 2px;
+	border-radius: 14px;	
+	background-color: #ddd;
+	background-color: rgba(0, 0, 0, 0.1);
+	border: 1px solid #ccc;
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	
+/*	-moz-box-shadow: iinset 1px 1px 3px rgba(0, 0, 0, 0.2);
+	-webkit-box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.2);
+	box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.2);*/
+
+	position: relative;
+	top: 1px;
+	float: right;
+}
+
+/*td.name.colexpander span.text:before {
+	content: "";
+	display: inline-block;
+	height: 12px;
+	width: 12px;
+	background-color: red;
+	vertical-align: baseline;
+}
+
+td.name.colexpander.hasexpander span.text:before {
+	display: none;
+}*/
+
+table.userrolemap td.actions {
+	width: 64px;
+	text-align: center;
+}
+
+table.categorymap td.actions {
+	width: 64px;
+	text-align: center;
+}
+
+.dialog .fieldrow.buttons,
+.view-modal .fieldrow.buttons{
+	text-align: right;
+	margin-top: 1em;
+}
+
+.dialog .fieldrow.buttons input,
+.dialog .fieldrow.buttons a {
+
+}
+
+table.users .actions {
+	width: 48px;
+	text-align: center;
+}
+
+/*body li.sortableitem {
+	background: url(../../../Generics/Command/img/vgrid_40.png) 0 0 repeat;
+	margin: 0;
+	padding: 0;
+	border: none;
+}*/
+
+ div.fieldrow.haslang label.fieldlabel.wrap {
+	 position: relative;
+	 top: 2px;
+}
+
+div#CPHservice_PNLtree {
+	padding: 0 28px;
+	border: 1px solid #ddd;
+	margin: 2em 0;
+}
+
+/*.fieldobject.objectheader {
+	margin-bottom: 2em;
+}
+
+span.fieldrow.legend.hor {
+	margin: 2em 0;
+}*/
+
+body ul.sortabletree.root {
+	background: url(../../../Generics/Command/img/vgrid_40.png) 10px 0 repeat #feeeef;
+	padding: 20px 1px;
+	margin: 0;
+	border-color: #fdd5dc;
+}
+
+body li.sortableitem {
+	background: transparent !important;
+}
+
+div.fieldswrapper.fullwidth {
+	margin: 1em 0;
+}
+
+div.languagegroup {
+	margin: 1em 0;
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+}
+
+div.languagegroup.clearfix span.btnswitchgroup {
+	margin: 0;	
+}
+
+.ticketlist {
+    width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.ticketlist div.fieldobject.filters {
+	margin: 1em 0;	
+	padding: 5px 5px 0 5px;
+	border: 1px solid #ccc;
+}
+
+.ticketlist div.fieldobject.filters .fieldrow {
+	margin: .5em 0;
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+	margin-right: 2em;
+}
+
+.ticketlist div.fieldobject.filters .fieldrow.date {
+	margin-right: 1em;
+}
+
+.ticketlist div.fieldobject.filters .fieldrow.date.before {
+	margin-right: 0;
+}
+
+.ticketlist div.fieldobject.filters .fieldrow.filterupdated span {
+	margin-right: 1em;
+}
+
+.ticketlist div.fieldobject.filters .fieldrow.filtercategory {
+	margin: 3px 0 !important;
+	float: left;
+	width: 74%;
+}
+
+.filtercategory .dropdown.enabled .selector.clicked .listwrapper .ddbutton {
+    position: relative;
+    text-decoration: none;
+    padding: 4px;
+    border-bottom: 1px solid #ddd;
+}
+
+.filtercategory .dropdown.enabled .selector.clicked .listwrapper .ddbutton.last {
+    border-bottom: none;
+}
+
+.filtercategory label.fieldlabel {
+    width: auto !important;
+    min-width: 138px;
+}
+
+.ticketlist div.fieldobject.filters .fieldrow.filtercategory .dropdown.enabled {
+	max-width: 90%;
+	vertical-align: middle;
+/*	top: -1px;
+	position: relative;*/
+}
+
+
+
+div.fieldobject.filters span.fieldlabel {
+	min-width: 30px !important;
+	max-width: 100px !important;
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+	text-align: right;
+}
+
+div.fieldrow.filtercategory span.fieldlabel {
+	margin-bottom: 3px;
+}
+
+div.fieldrow.block {
+	display: block !important;
+}
+
+div.fieldrow.block,
+div.fieldrow.block div.fieldrow {
+	margin: 0 !important;
+}
+
+.ticketlist div.fieldobject.filters div.fieldrow.filterupdate {
+	margin: 0;
+	float: right;
+	text-align: right;
+	width: 20%;
+}
+
+.ticketlist div.fieldobject.filters div.fieldrow.filterstatus input {
+	margin-right: 1em;
+}
+
+.ticketlist.ticketlist-user div.commands,
+.ticketlist.ticketlist-path div.commands {
+	margin: 1em 0;
+	margin-bottom: 5px;
+/*	float: left;
+	width: 38%;*/
+}
+
+.ticketlist div.fieldobject.details {
+	margin: 40px 0;
+	display: block;
+}
+
+.ticketlist div.fieldobject.details .fieldlabel {
+	vertical-align: baseline;
+}
+
+span.status.completion {
+	display: inline-block !important;
+	margin-right: 2em !important;	
+}
+
+.status .status.onbehalf span {
+	background: #5bb7da;
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+	line-height: 1em;
+	padding: 3px 5px 2px 5px;
+	margin: auto 1em;
+	color: #fff !important;
+	text-shadow: 0 1px 0 rgba(0,0,0,0.3);
+	border-radius: 3px;
+	box-shadow: inset 3px 3px 5px 2px rgba(0,0,0,0.2);
+}
+
+span.status.completion .fieldlabel {
+	color: #888;
+	margin-bottom: .5em;
+	padding: 2px 4px;
+	width: auto;
+}
+
+span.status div.inlinewrapper {
+	vertical-align: top;
+}
+
+
+.ticketlist.ticketlist-path div.commands span.viewcommunity label {
+	margin-right: 2em;
+}
+
+.ticketlist table.ticketlist tr.community td.name a.expander {
+	font-size: .9em;
+}
+
+table.treetable tr td {
+	font-size: 11px;
+}
+
+table.treetable td.name {
+	padding-left: 22px;
+}
+
+.communitytype.permission {
+	width: 200px;
+}
+
+table th.permission {
+	position: relative;
+}
+
+.ticketlist table.ticketlist {
+	margin: 5px 0;
+/*	table-layout: fixed !important;*/
+}
+
+.ticketlist table.ticketlist tr {
+	height: 24px;
+}
+
+.ticketlist table.ticketlist td {
+	font-size: 11px;
+}
+
+.ticketlist.ticketlist-user div.pager.top,
+.ticketlist.ticketlist-path div.pager.top {
+	float: right;
+	width: 60%;
+	margin-top: 1.5em;
+	text-align:right !important;
+}
+
+.ticketlist.ticketlist-path span.info {
+	margin: 1em 0;
+	display: block;
+}
+
+table.ticketlist .updated {
+	text-align: center !important;
+	width: 40px;
+	font-size: 11px;
+}
+
+table.ticketlist .id,
+table.ticketlist .lang {
+	max-width: 120px;
+	width: 120px ;
+	font-size: 11px;
+	word-break: break-all;
+}
+
+table.ticketlist .lang {
+	width: 80px ;
+	font-size: 11px;
+}
+
+table.ticketlist td.id,
+table.ticketlist td.lang {
+	text-align: center;
+}
+
+span.icon.xs.attacchments {
+	background: url(../../../Generics/Command/img/jqui_454545_256x240.png) -146px -114px no-repeat;
+}
+
+table.ticketlist .check,
+table.ticketlist .bulkcell.bulkcell {
+	text-align: center !important;
+	width: 24px;
+}
+
+span.legenditem span.legendicon.isdraft,
+tr.isdraft {
+	background-color: #e3e2e2;
+	border-radius: 0;
+}
+
+tr.isunread {
+	font-weight: bold;
+}
+
+tr .icon.isnew {
+	display: none;
+}
+
+tr.isunread .icon.isnew {
+	display: inline-block
+}
+
+table.ticketlist span.subject {
+	padding-right: 5px;
+/*	display: block;*/
+	border: none;	
+}
+
+table.ticketlist.manager span.subject {
+	padding-right: 16px;
+	display: block;
+	position: relative;
+	border: none;
+/*	width: 85%;*/
+}
+
+.subject span.icons {
+	position: absolute;
+	right: 0px;
+}
+
+.subject span.icons span.icon {
+	cursor: help;
+}
+
+div.extrainfo.attachments * {
+	vertical-align: baseline !important;
+}
+
+div.extrainfo.attachments .icons {
+	margin: 0 1px;
+}
+
+table.ticketlist .status,
+table.ticketlist .time {
+	width: 130px;
+}
+
+table.ticketlist .category,
+table.ticketlist .assignedto {
+	width: 130px;
+} 
+
+table.ticketlist .status,
+table.ticketlist .time,
+table.ticketlist .category,
+table.ticketlist .community {
+	width: 110px;
+}
+
+table.ticketlist td,
+table.ticketlist .extrainfo {
+	color: inherit;
+}
+
+table.ticketlist .extrainfo.lastupdate,
+table.ticketlist .extrainfo.preview {
+	color: #888;
+}
+
+table.ticketlist.manager .actions {
+	width: 80px !important;
+	text-align: center;
+}
+
+table.ticketlist.manager .actions span.icons {
+	position: relative;
+	width: auto;
+}
+
+table.ticketlist.manager .actions span.icons .icon {
+/*	position: absolute;
+	right: 0;
+	top: -8px;*/
+}
+
+table.ticketlist.manager .actions .icons .assign {
+	left: -76px;
+}
+
+table.ticketlist.manager .actions .icons .edit{
+	left: -58px;
+}
+
+table.ticketlist.manager .actions .icons .reopen,
+table.ticketlist.manager .actions .icons .closesolved  {
+	left: -38px;
+}
+
+table.ticketlist.manager .actions .icons .closeunsolved {
+	left: -18px;
+}
+
+table.ticketlist.manager td.actions {
+	text-align: right;
+}
+
+.ticketlist table.ticketlist td.status.completion {
+	width: 130px;
+	text-align: center;
+}
+
+.ticketlist div.fieldobject.filters div.fieldrow.filterorganization select {
+	width: auto;
+	min-width: 140px;
+}
+
+.ticketlist div.fieldobject.filters .fieldrow span.fieldlabel,
+.ticketlist div.fieldobject.details .fieldrow span.fieldlabel {
+	width: auto;
+	vertical-align: middle;
+	vertical-align: baseline;	
+}
+
+.ticketlist.ticketlist table.ticketlist .timerange,
+.ticketlist.ticketlist-organization table.ticketlist .status,
+.ticketlist.ticketlist-community table.ticketlist .status {
+	font-size: .9em;
+}
+
+.ticketlist.ticketlist-organization table.ticketlist .status,
+.ticketlist.ticketlist-community table.ticketlist .status {
+	width: 220px;
+}
+
+.ticketlist.ticketlist table.ticketlist .timerange {
+	width: 140px;
+}
+
+.ticketlist table.ticketlist thead .actions {
+	width: 60px;
+}
+
+.ticketlist table.ticketlist thead .actions .icon {
+	width: 12px !important;
+}
+
+.ticketlist.ticketlist-user table.ticketlist thead .actions {
+	width: 80px;
+}
+
+.ticketlist div.fieldobject.filters div.fieldrow.filterorganization select {
+	min-width: 140px;
+}
+
+span#CPHservice_LBuserName.Titolo_campo {
+	margin-bottom: 1em;
+	display: inline-block;
+	*display: inline;
+	zoom: 1;
+}
+
+span#CPHservice_LBuserName.Titolo_campo,
+div.fieldobject div.fieldrow span#CPHservice_LBpathName,
+.ticketlist div.fieldobject.details div.fieldrow span.username,
+.left .username {
+	font-size: 1.2em;
+	color: #333;
+	font-weight: bold;
+	padding: 3px 6px;
+	border-radius: 4px;
+	margin-right: 1em ;	
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
+	border-radius: 2px;
+	text-transform: capitalize;
+	border: 1px solid #ccc;
+}
+
+.ticketlist div.fieldobject.details div.fieldrow span.username {
+	font-size: 16px;
+}
+
+.ticketlist .fieldobject.details .fieldrow span.status.details {
+	display: block;
+}
+
+.ticketlist .statuswrapper {
+	margin: 2em 0;
+}
+
+.messageheader .dateinfo,
+.fieldrow.attachments,
+.fieldrow.marksolved,
+.fieldrow.submit,
+.fieldrow.preview  {
+	margin: 0;
+}
+
+.ticketlist div.viewoptions {
+	float: left;
+	/*MIRCO: Comentato perchè spatacca la tabella tella lista TICKET!!!*/
+	width: 84%;
+}
+
+.ticketlist .fieldobject .commands.viewoptions {
+	float: none;
+	display: inline-block;
+	*display:inline;
+	*zoom:1;
+	width: 84%;
+	margin: 0;
+}
+
+.ticketlist .fieldobject div.viewlegend {
+	width: 14%;
+	float: right;
+	text-align: right;
+	*display:inline;
+	*zoom:1;
+	margin: 0;
+}
+
+.ticketlist .viewlegend {
+	 color: #888;
+	 font-size: 11px;
+}
+
+.ticketlist .tablelegend {
+	 padding: 5px;
+}
+
+.messageheader .right span.actions {
+	position: relative;
+	top: -1px;
+}
+
+.messageheader .dateinfo,
+.messageheader .handle,
+.messageheader .preview {
+	display: inline-block;
+	*display: inline;
+	*zoom:1;
+	vertical-align: top;
+}
+
+.dateinfo {
+	font-size: 1em;
+	font-weight: normal;
+	width: 120px;
+}
+
+.notice .dateinfo {
+	padding-right: 20px;
+}
+
+.messageheader .preview {
+	width: 420px;
+	color: #888;
+}
+
+.messageheader .preview::before {
+
+}
+
+.messageheader .text,
+.messageheader .text * {
+	font-size: inherit !important;
+	font-weight: normal !important;
+	font-style: normal !important;
+	color: #888 !important;
+	text-decoration: none !important;
+	display: inline !important;
+}
+
+.messageheader .text img {
+	display: none !important;
+}
+
+.fieldrow.submit {
+	text-align: right;
+}
+
+.noticecontent {
+	font-weight: bold;
+}
+
+.noticecontent strong {
+	font-style: italic;
+}
+
+.closenotice .fieldrow.submit {
+
+}
+
+a.linkMenu.big,
+a.Link_Menu.big,
+A.Link_Menu.big:link,
+#content div.DIV_MP_Content a.linkMenu.big,
+#content div.DIV_MP_Content a.Link_Menu.big {
+    display: inline-block;
+    line-height: 24px;
+    height: 24px !important;
+    margin: 2px;
+    font-size: 11px;
+    padding: 3px 10px;
+}
+
+input.linkMenu.big,
+input.Link_Menu.big,
+input[type="submit"].big,
+input.Pulsante.big,
+a.Link_Menu.big,
+.message a.linkMenu.big {
+	display: inline-block;
+	*display: inline;
+	*zoom:1;
+	position: relative;
+	padding: 8px 8px !important;
+	margin: 2px !important;
+	*margin-bottom: 4px;
+	height: 32px !important;
+	font-size: 16px !important;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+.ddbuttonlist a.ddbutton.linkMenu.big {
+	font-size: 12px !important;
+}
+
+.messagefooter .dateinfo {
+	border-top: 1px solid #ddd;
+}
+
+.message .attachments span.objectRender.file,
+span.renderedfile {
+	color: #888;
+	color: rgba(0,0,0,0.4);
+	
+	margin: 0;
+	margin-bottom: 1px;
+	display: inline-block;
+	*display:inline;
+	*zoom:1;
+	vertical-align: middle;
+}
+
+span.renderedfile,
+.message .attachments span.renderedfile {
+	margin-right: 20px;
+	display: inline-block;
+	*display: inline;
+	*zoom:1;
+	line-height: 16px;
+	padding: 3px 3px 2px 3px;
+	border-radius: 4px;
+	margin-bottom: 5px;
+	border: 1px solid #e9e9e9;
+	background: #f9f9f9 ;
+	margin-right: 5px;
+	
+	border: 1px solid rgba(0,0,0,0.075);
+	background: rgba(0,0,0,0.075);
+	
+}
+
+.create span.renderedfile {
+
+}
+
+.message .attachments span.itemDetails {
+	color: #888;
+	color: rgba(0,0,0,0.4);
+	font-style: italic;
+}
+
+span.renderedfile .icons,
+.message .attachments span.renderedfile .icons {
+	display: inline-block;
+	*display: inline;
+	*zoom:1;
+	vertical-align: top;
+}
+
+.message .attachments span.renderedfile .icons.visibility {
+	margin: 0 3px;
+	position: relative;
+	top: -1px;
+}
+
+.message .attachments span.renderedfile.hidden {
+	color: #888;
+	color: rgba(0,0,0,0.4);
+}
+
+.message .attachments span.renderedfile .icon.show {
+	display: none;
+}
+
+.message .attachments span.renderedfile.hidden .icon.hide {
+	display: none;
+}
+
+.message .attachments span.renderedfile.hidden .icon.show {
+	display: inline-block;
+	*display: inline;
+	*zoom:1;
+}
+
+.reply .messagefooter .status,
+.reply .messagefooter .markhidden {
+	display: inline-block;
+	*display: inline;
+	*zoom:1;
+	float: left;
+	line-height: 32px;
+	margin: 0;
+	margin-right: 20px;
+}
+
+.messagefooter .status .fieldlabel {
+	width: auto;
+}
+
+.message .attachments span.renderedfile.hidden * {
+	color: #888;
+	color: rgba(0,0,0,0.4);
+}
+
+.message .attachments {
+	margin-bottom: -6px;
+}
+
+.fieldobject.advancedsettings .fieldrow span.fieldlabel,
+.fieldobject.advancedsettings .fieldrow label.fieldlabel {
+	display: inline-block;
+	*display:inline;
+	*zoom:1;
+	width: 182px;
+
+	vertical-align: baseline;
+	*vertical-align: top;
+	position: relative;
+	color: #888;
+	text-transform: uppercase;
+
+}
+
+.ui-dialog td.select {
+	width: 20px;
+	font-size: 11px;
+	color: #888 !important;
+}
+
+.ui-dialog td.lastname,
+.ui-dialog td.firstname {
+	width: 160px;
+
+}
+
+label.notificationdisabled {
+	display: inline-block;
+	margin-left: 10px;
+	color: #888;
+	margin: 1em 0;
+	vertical-align: baseline;
+}
+
+.ui-dialog table {
+	margin: 2em 0;
+}
+
+.ui-dialog td.select a {
+	color: #888 !important;
+}
+
+.fieldobject.advancedsettings .fieldrow div.fieldlabel.title {
+	display: block !important;
+	width: auto;
+	font-weight: normal;
+	font-style: normal;
+}
+
+.ticketview.create .fieldobject.fieldgroup .toolbar {
+	position: absolute;
+	right: 10px;
+}
+
+.fieldobject.advancedsettings .fieldrow {
+	min-height: 24px;
+}
+
+.fieldobject.advancedsettings .fieldrow.status {
+	min-height: 32px;
+}
+
+.tickets div.fieldobject.advancedsettings .status .value select {
+	margin: 0;
+}
+
+.fieldobject.advancedsettings .fieldrow.categorygroup .initcategory {
+	margin-bottom: 0;
+}
+
+.tickets div.fieldobject.advancedsettings {
+	padding: 5px 10px;
+}
+
+.tickets div.fieldobject.advancedsettings div.fieldobject {
+	background-color: #fff;
+	padding: 10px;
+}
+
+.tickets div.fieldobject.advancedsettings div.fieldobject.ticketsettings,
+.tickets div.fieldobject.advancedsettings div.fieldobject.ticketinfo {
+	padding: 0;
+}
+
+.fieldobject.ticketsettings .fieldrow .value {
+	display: inline-block;
+	*display:inline;
+	*zoom:1;
+	color: #444;
+	max-width: 450px;
+	border-radius: 4px;
+}
+
+.header div.fieldrow.status {
+	font-size: 12px;
+	color: #888 ;
+	text-transform: uppercase;
+}
+
+div.fieldrow.status span.requestid {
+	margin-right: 1em;
+}
+
+div.fieldrow.status span.status span,
+.header .right span.category span.catname {
+	color:  #333;
+	font-weight: bold;
+}
+
+.ticketsettings .category div.dropdown.enabled {
+	max-width: 500px;
+	padding: 3px;
+	vertical-align: middle;
+}
+
+.header .right span {
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+	vertical-align: top !important;
+}
+
+.header .right .extra .toggler {
+	position: relative;
+	bottom: -2em;
+	font-size: 12px;
+	z-index: 20;
+} 
+
+.header .right .extra .toggler span:hover {
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+div.fieldrow.dateinfo .time {
+	color: #888;
+}
+
+div.fieldrow.dateinfo  {
+	vertical-align: bottom;
+}
+
+.ticketlist table.ticketlist td.name span.text {
+	float: left;
+	display: inline-block;
+	*display: inline;
+	zoom: 1;
+	width: 90%;
+}
+
+.ticketlist table.ticketlist td.name span.icons {
+	float: right;
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+}
+
+.ticketlist table.ticketlist tr.community td.name a.expander {
+	color: #666;
+}
+
+.ticketlist td.name span.icons span.icon.locked_xs,
+.ticketlist td.name span.icons span.icon.unlocked_xs {
+	cursor: default;	
+}
+
+th .extrainfo,
+td .extrainfo {
+	font-size: 10px;
+	font-weight: normal;
+	font-style: normal;
+}
+
+td .extrainfo {
+	color: #888;
+}
+
+.fieldrow.preview,
+td .extrainfo.preview {
+	font-size: inherit;
+	overflow: hidden;
+	white-space: nowrap;
+}	
+
+td.subject .extrainfo.preview {
+	overflow: hidden;
+}
+
+.messageheader .preview {
+	visibility: hidden;
+}
+
+.message.collapsed .messageheader .preview {
+	visibility: visible;
+}
+
+td .extrainfo.category {
+/*	background-color: #ddd;
+	background-color: rgba(0,0,0,0.13);*/
+	padding: 0 3px;
+	line-height: 16px;
+	border-radius: 12px;
+	border:1px solid #ccc;
+	/*float: ;*/
+}
+
+span.statusitem {
+	margin: 0 10px;
+}
+
+span.counter {
+	font-size: 14px;
+	vertical-align: baseline;
+}
+
+span.option,
+div.email.options .innerwrapper span,
+div.commands.viewoptions span.viewextra {
+	margin-bottom: 5px;
+	margin-right: 5px;
+}
+
+span.option.external {
+	border-right: 1px solid #ccc;
+	padding-right: 1em;
+}
+
+span.status span.statusitem,
+span.status span.label {
+	display: inline-block;
+	*display: inline;
+	zoom:1;
+	margin-bottom: .5em;
+	margin-left: 0;
+
+}
+
+th.isbehalf {
+	width: 100px;
+}
+
+span.status.completion.details {
+	color: #444;
+}
+
+span.status.completion.details.empty label {
+	display: none;
+}
+
+.onbehalfwrapper {
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+	
+}
+
+/*span.statusitem span {
+	display: inline-block;
+	*display: inline;
+	*zoom:1;
+	padding: 1px 0;
+	min-width: 10px;
+	padding: 2px;
+	text-align: center;
+	-moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    -moz-box-shadow: inset 1px 1px 3px rgba(255,255,255,0,7);
+    -webkit-box-shadow: inset 1px 1px 3px rgba(0,0,0,0.3);
+    box-shadow: inset 1px 1px 3px rgba(0,0,0,0.3);
+    text-shadow: 0 1px 0 #ddd;
+}*/
+
+span.status span.statusitem.empty,
+span.status span.statusitem.empty span.label {
+	color: #999;
+	display: none;
+}
+
+div.Default.reWrapper.editorcssclass,
+table.reLayoutWrapper {
+	width: 680px !important;
+
+	min-width: 680px !important;
+	max-width: 680px !important;
+}
+
+div.editorloader.loadercssclass.fieldinput.inputtext {
+	display: inline-block;
+	width: 680px !important;
+	vertical-align: top;
+	margin: 1em 0;
+}
+
+.create .fieldrow div.editorloader.loadercssclass.fieldinput.inputtext {
+	margin-top: 0;
+}
+
+.create .fieldrow {
+	margin-bottom: 1em;
+}
+
+.tablebottom .legend .legendicon.hasnews,
+span.legend.hor span.legenditem span.isunread,
+tr.isunread td.subject a:after,
+tr.hasnews td.subject a:after {
+	content:"";
+	display: inline-block;
+	margin-left: 5px;
+	height: 9px;
+	width:  9px;
+	background: #fbd045;
+	border: 1px solid #f2af4f;
+	border-radius: 9px;
+}
+
+td.subject a {
+
+}
+
+.notifications .options span.innerwrapper span  {
+	display: inline-block;
+	margin-left: .5em;
+}
+
+.notifications .options span.notificationdisabled {
+	/*	display: inline-block;
+	*display: inline;
+	*zoom: 1;*/
+	margin: 0 1em ;
+	padding: 5px;
+	color: #fff;
+	text-shadow: 0 1px 0 rgba(0,0,0,0.5);
+	background: #c20;
+	padding: 2px 4px;
+	border-radius: 3px;
+	vertical-align: baseline;
+	text-transform: uppercase;
+	font-size: 11px;
+}
+
+.notifications .options .optionlabel {
+	margin-right: 1em;
+}
+
+tr.isunread td.subject a:after,
+tr.hasnews td.subject a:after {
+	position: relative;
+	top: 2px
+}
+
+.tablebottom .legend .noanswers .legendtext,
+tr.noanswers td.subject a {
+	font-weight: bold;
+	font-style: italic;
+}
+
+td.subject {
+	min-width: 240px;
+}
+
+tr.ismanager td {
+	background-color: #e2e4e6;
+}
+
+tr.mine td {
+	background-color: #f8fcbb;
+}
+
+tr.isassigned td {
+	background-color: #dbf2e0;
+}
+
+.tablebottom .legend .legendicon.ismanager {
+	background-color: #c5c9ce;
+}
+
+
+.tablebottom .legend .legendicon.noanswers {
+	display: none;
+}
+
+.tablebottom .legend .legendicon.mine {
+	background-color: #f3f988;
+}
+
+.tablebottom .legend .legendicon.isassigned {
+	background-color: #bce8c6;
+}
+
+tr td span.mine {
+	font-weight: bold !important;
+}
+
+div.tickets .header  {
+	line-height: 24px;
+	margin-bottom: 2em;
+}
+
+div.tickets .header h2,
+div.tickets .header h3 {
+	margin: 0;
+}
+
+div.tickets .header h2 {
+	font-size: 28px;
+	line-height: 1em;
+}
+
+div.fieldrow.subject{
+}
+
+div.fieldobject.advancedsettings {
+	margin: 2em 0 3em 0;
+	padding: 10px;
+	border: 1px solid #ccc;	
+	/* floating box */
+	/*	position: absolute;
+	z-index: 999;
+	background: #fff;
+	top: 10px;
+	box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.3);
+	*/
+}
+
+div.historywrapper {
+	margin: 1em 0;
+	border: 1px solid #DCE0E5;
+	background-color: #E7EAEE;
+	
+	*border-bottom: 2px;
+	-moz-box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.3), 1px 1px 1px rgba(0, 0, 0, 0.15);
+	-webkit-box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.3), 1px 1px 1px rgba(0, 0, 0, 0.15);
+	box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.3), 1px 1px 0 rgba(0, 0, 0, 0.15);
+	position: relative;
+}
+
+.historywrapper .message  {
+	padding: 10px 15px 10px 10px;
+}
+
+.message .left.column span.userrole,
+.message .left.column span.username {
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+	margin-right: 0;
+	margin-bottom: .5em;
+	border-radius: 5px;
+	border: none;
+}
+
+.message .left.column span.userrole {
+	padding: 0 6px;
+	color: #888;
+	font-size: 11px;
+}
+
+.message .left.column span.extrainfo {
+	padding: 0 6px 6px 6px;
+}
+
+div.viewoptions {
+	 color: #888;
+}
+div.viewoptions .visibilitynav span {
+	 cursor: pointer;
+	 margin-right: 10px;
+}
+
+.historywrapper .viewoptions {
+	 position: absolute;
+	 top: -20px;
+	 display:block;
+	 width: 100%; 
+}
+
+div.fieldobject.toolbar.clearfix {
+	margin-bottom: 3em;
+	padding: 0 10px;
+}
+
+div.DivEpButton.toolbar {
+	color: #888;
+}
+
+.tickets .tickets.tickethistory .fieldobject.advancedsettings div.DivEpButton.toolbar {
+	position: absolute;
+	right: 10px;
+	margin: 0;
+}
+
+div.viewoptions .visibilitynav label,
+div.viewoptions .visibilitynav .expandall,
+div.viewoptions .sort.recentfirst {
+	 margin-right: 10px;
+}
+
+.tickets .header .left {
+	width: 65%;
+}
+
+.expandall:hover,
+.collapseall:hover {
+	text-decoration: underline;
+}
+
+.tickets .header .right {
+	width: 30%;
+	text-align: right;
+	color: #888;
+}
+
+.message div.messageheader,
+.message div.messagecontent,
+.message div.messagefooter {
+	padding: 10px;
+}
+
+.request.message div.messageheader,
+.feedback.message div.messageheader  {
+	padding-bottom: 5px;
+}
+
+.message.closenotice div.messagecontent {
+	padding: 11px 10px
+}
+
+
+
+.message.collapsed div.messagecontent,
+.message.collapsed div.messagefooter,
+.message.collapsed span.userrole {
+	display: none !important;
+}
+
+.message div.messagefooter {
+	border-top: 1px solid #e6e9ed;
+	border-top: 1px solid rgba(0,0,0,0.12);
+	
+}
+
+.message div.messageheader {
+	border-bottom: 1px solid #e6e9ed;
+	border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.message div.messageheader.empty,
+.message div.messagefooter.empty {
+	display: none;
+}
+
+.message.collapsed div.messageheader {
+	border-bottom: none;
+	border-radius: 9px;
+}
+
+/*.message.reply div.messageheader {
+	display: none;
+}*/ 
+
+/* // la dichiarazione sopra DA VERIFICARE */
+
+div.messageheader div.left {
+}
+
+.messagewrapper .right .action .show {
+	display: none;
+}
+
+.internal.feedback {
+
+}
+
+.hidden.feedback .messagewrapper .right .action .show {
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+}
+
+.hidden .messagewrapper .right .action .hide {
+	display: none;
+}
+
+div.messageheader div.right {
+	/*display: ;*/
+}
+
+.reply div.uploader {
+	margin-top: 10px;
+}
+
+div.right.column .messagewrapper span.handle {
+	margin: 0;
+	vertical-align: top;
+	/*position: a;*/
+	left: -2px;
+}
+
+span.userrole {
+	
+}
+
+.message.reply .messagefooter div.marksolved {
+	float: left;
+	width: 75%;
+	font-weight: bold;
+}
+
+.dialog div.description {
+	margin: 1em 0 2em 0;
+}
+
+.fieldobject.createfornewuser div.fieldrow.commands .left {
+}
+
+span.option {
+}
+
+.fieldlabel.title {
+	font-weight: bold;
+}
+
+.advancedsettings div.options label.optionlabel {
+	width: 14%;
+	display: inline-block;
+	vertical-align: top;
+}
+
+.tickets div.fieldobject.advancedsettings div.fieldrow.onbehalf label.optionlabel,
+.tickets div.fieldobject.advancedsettings div.fieldrow.notifications label.optionlabel {
+	display: inline-block;
+	*display:inline;
+	*zoom:1;
+	width: 182px;
+}
+
+.tickets div.fieldobject.advancedsettings div.fieldrow.notifications .inlinewrapper {
+	display: inline-block;
+	*display:inline;
+	*zoom:1;
+	width: 700px;
+}
+
+.notifications div.options span.inlinewrapper {
+	width: 85%;
+	display: inline-block;
+	vertical-align: top;
+}
+
+div.fieldrow .fieldlabel.title {
+	display: block;
+	width: 100%;
+}
+
+.message.reply .messagefooter div.submit {
+	display: inline-block;
+	float: right;
+	width: auto;
+}
+
+.message.notice div.submit {
+	display: none;
+}
+
+.message.closenotice div.submit {
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+}
+
+.message.closenotice .noticecontent {
+
+}
+
+.message.closenotice .noticecontent span {
+
+}
+
+.historywrapper .message .left.column {
+	width: 17%;
+	padding: 0;
+}
+
+/*.historywrapper..historywrapper.message {
+	margin-bottom: 1em;
+}*/
+.historywrapper.historywrapper.message {
+    margin-bottom: 1em;
+}
+
+.messagecontent textarea.fieldeditor {
+	width: 99%;
+	min-height: 100px;
+	margin: 10px 0;
+}
+
+.historywrapper .message .right.column {
+	width: 80%;
+	background-color: #fff;
+	border-radius: 8px;
+	-moz-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+	-webkit-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+	box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.10);
+}
+
+.assignmenthistory .historywrapper .message .right.column {
+	width: 100%;
+}
+
+.assignmenthistory .visibilitynav,
+.assignmenthistory .historywrapper .message .left.column {
+	display: none;
+}
+
+.historywrapper .message.feedback .right.column {
+	background-color: #fefae6;
+}
+
+.historywrapper .message.feedback.hidden .right.column,
+.historywrapper .message.feedback.internal .right.column {
+	background-color: #d0d4d9;
+	color: #888;
+}
+
+.historywrapper .message {
+	position: relative;	
+}
+
+.messagecontent .messages .message {
+	margin-top: -1em;
+}
+
+.historywrapper .message.first {
+	padding-top: 15px;
+}
+
+.historywrapper .message.last {
+	padding-bottom: 15px;
+}
+
+.historywrapper .message.reply  {
+	background-color: #DCE0E5 ;
+	padding: 15px 15px 15px 10px;	
+	border: none;
+	border-top: 1px solid #ccc;
+	-moz-box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.4), 1px 1px 1px rgba(0, 0, 0, 0.15);
+	-webkit-box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.4), 1px 1px 1px rgba(0, 0, 0, 0.15);
+	box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.4), 1px 1px 0 rgba(0, 0, 0, 0.15);
+	
+	-moz-box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.4);
+	-webkit-box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.4);
+	box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+.historywrapper.recentolder .message.reply  {
+	border-top: none;
+}
+
+/*.historywrapper .message.notice .username,*/ 
+.historywrapper .message.notice .right.column {
+	background-color: #d0d4d9;
+	font-weight: bold;
+}
+
+.historywrapper .message.notice .username {
+	color: #888;
+	font-size: 11px;
+	font-weight: normal;
+	font-style: normal;
+}
+
+.historywrapper .message .username {
+	width: 99%;
+	padding: 10px 5px 0;
+	font-size: 12px;
+}
+
+.historywrapper .message.notice .username {
+	padding: 10px 5px;
+}
+
+/*.historywrapper .message.closenotice .username, */
+.historywrapper .message.closenotice .right.column {
+	background-color: #666;
+	color: #fff;
+	text-shadow: 1px 1px 0 rgba(0,0,0,0.75);
+	border: none;
+	
+}
+
+.historywrapper .message.closenotice a.big,
+.historywrapper .message.closenotice input.big {
+	border-color: #666;
+	position: absolute;
+	bottom: 16px;
+	right: 22px;
+}
+
+.notice .messagecontent .noticecontent,
+.notice .fieldrow.dateinfo {
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+	vertical-align: top;
+	margin: 0;	
+	line-height: 22px;
+}
+
+.notice .messagecontent .noticecontent.left {
+	width: 75%;
+}
+
+.notice .messagecontent .right {
+	width: 23%;
+	text-align: right;
+}
+
+.historywrapper .message.closenotice input.big:hover {
+	border-color: #555 !important;
+	color: #333 !important;
+}
+
+.historywrapper .message .column {
+	text-align: left;	
+}
+
+.dialog .contentwrapper,
+.view-modal .contentwrapper,
+.contentwrapper ul.categories.tree {
+	margin: 1em 0;
+}
+
+ul.categories.tree ul,
+ul.categories.tree li {
+	margin: 0;
+	vertical-align: top;
+}
+
+.icons .icon.hide,
+.icons .icon.visible,
+.icons .icon.show,
+.icons .icon.hidden {
+	background-repeat: no-repeat;
+	background-color: #ccc !important;
+	border-radius: 12px;
+}
+
+.icons .icon.show,
+.icons .icon.hidden {
+	/*opacity: ;*/
+}
+
+.deleteoptions {
+	margin: 20px;
+}
+
+.deleteoptions label,
+.deleteoptions input {
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+	vertical-align: top;
+	font-size: 12px;
+	font-weight: bold;
+	/*color: #333px;*/
+    color: #333;
+	margin: 0 10px 0 0
+} 
+
+.deleteoptions label {
+	width: 92%;
+} 
+
+.deleteoptions label .description {
+	color: #888;
+	display: inline-block;
+	margin-top: 3px;
+	font-weight: normal;
+	font-style: normal;
+}
+
+label.description,
+.inlinewrapper .description label {
+	font-size: 11px;
+	color: #888;
+	display: inline-block;
+    *display:inline;
+    *zoom:1;
+	margin-top: 3px;
+	font-weight: normal;
+	font-style: normal;
+}
+
+.deleteoptions div.inlinewrapper,
+.deleteoptions span.inlinewrapper{
+	margin-bottom: 10px;
+}
+
+.dialog .description,
+.view-modal .description,{
+	padding: 10px 0;	
+	margin-bottom: 2em;
+}
+span.inlinewrapper{
+    display: inline-block;
+    *display:inline;
+    *zoom:1;
+}
+
+.newcustom div.fieldrow.tree {
+	margin: 2em 0;
+	padding: 10px;
+	border: 1px solid #ddd;
+	background-color: #f8f8f8;
+	border-radius: 4px;
+}
+
+
+.newcustom .tree span.handle  {
+	vertical-align: middle;
+}
+
+.newcustom .tree ul.root {
+	padding: 0;
+}
+
+.dialog .description.disclaimer,
+.view-modal .description.disclaimer {
+	padding: 10px;	
+	border: 1px solid #ccc;
+	background-color: #eee;
+}
+
+table .reassignedcat {
+	width: 50%;
+}
+
+.reassignmap .tablewrapper {
+	margin: 10px 0 20px 0;
+}
+
+.reassignmap  div.dropdown.enabled {
+	max-width: 75%;
+	vertical-align: top;
+}
+
+.reassignmap .fieldlabel.auto {
+	padding: 2px 0;
+}
+
+td.reassignedcat span.selectoricon {
+	position: absolute;
+	right: 0;
+	bottom:  0;
+}
+
+td.reassignedcat div.dropdown.enabled {
+	width: 95%;
+}
+
+
+div.tickets.extaccess {
+	margin: 1em 0;
+}
+
+div.tickets.extaccess .innerwrapper {
+
+}
+
+.top .description.left {
+	width: 70%;
+}
+
+
+.top .description.right {
+	width: 28%;
+}
+
+.languageselector span.commands a.command {
+	line-height: 14px;
+}
+
+div.fieldobject.maincontent {
+	margin-bottom: 2em ;
+	font-size: 14px;
+}
+
+.extaccess .links  {
+	
+	text-align: center;
+	font-weight: bold;
+}
+
+.extaccess span.text {
+
+}
+
+.extaccess .fieldobject.maincontent {
+	margin: 2em 0;
+	
+	margin: 1em 0;
+	padding: 10px;
+	background-color: #eee;
+	border-radius: 5px;
+	color: #444;
+	margin-left: auto;
+	margin-right: auto;
+	
+	width: 600px;
+}
+
+.extaccess .maincontent .fieldrow {
+	margin: 1em 0;
+}
+
+.extaccess div.captcha div.RadCaptcha {
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+	vertical-align: top;
+	margin-bottom: 0.5em;
+}
+
+.extaccess div.captcha input {
+	margin-left: 125px;
+}
+
+.extaccess .languageselector span.commands .command{
+	vertical-align: baseline;
+}
+
+.RadCaptcha img,
+.RadCaptcha p,
+.RadCaptcha input {
+	display: inline-block !important;
+	margin-right: 10px;;
+	vertical-align: middle;
+	line-height: 1em;
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+.extaccess  .maincontent .fieldrow.captcha,
+.extaccess  .maincontent .fieldrow.submit {
+	margin-bottom: 0;
+}
+
+.extaccess .fieldrow.right.submit input.big {
+	margin: 0 !important;
+}
+
+.extaccess .links a.accesscommands {
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+	background-color: #ddd;
+	padding: 4px 8px;
+	margin: 4px;
+	border-radius: 4px;
+	font-size: 14px;
+	font-style: normal;
+	text-decoration: none;
+	/*	opacity: 0.9;*/
+}
+
+.extaccess .links a.accesscommands:hover {
+	text-decoration: underline;
+	opacity: 1;
+}
+
+.extaccess span.leftwrapper label.fieldlabel {
+	width: 120px;
+}
+
+.extaccess span.leftwrapper input[type="text"].inputtext,
+.extaccess span.leftwrapper input[type="password"].inputtext {
+	width: 280px;
+}
+
+.extaccess .error span.leftwrapper input[type="text"].inputtext,
+.extaccess .error span.leftwrapper input[type="password"].inputtext {
+	border: 1px solid #c20;
+}
+
+.extaccess  span.errormessage {
+	display: none;
+}
+
+.extaccess span.hint {
+	color:  #888;
+}
+
+.extaccess .error span.hint {
+	display: none;
+	color:  #888;
+}
+
+.extaccess .error span.errormessage {
+	font-size: 11px;
+	display: inline-block;
+	*display: inline;
+	*zoom:1;
+	color: #c20;
+	color: #fff;
+	text-shadow: 0 1px 0 rgba(0,0,0,0.5);
+	background: #c20;
+	padding: 2px 4px;
+	border-radius: 3px;
+	vertical-align: baseline;
+}
+
+.extaccess .maincontent .language select {
+	margin: 0 !important;
+	padding: 0 !important;
+	font-size: 14px;
+	width: 275px;
+}
+.sectionheader h3 {
+}
+
+.createdesc input.fieldinput,
+.createname input.fieldinput {
+	width: 300px;
+}
+
+div.fieldrow.assigncategory .actions {
+	margin-left: 18px;
+}
+
+div.fieldrow.createmanager {
+	margin: 1em 0;
+}
+
+div.fieldrow.createmanager table {
+	margin: 1em 0;
+	display: inline-block;
+	width: 300px;
+	vertical-align: baseline;
+}
+
+.globalsettings div.fieldobject {
+	padding: 10px;
+	margin: 2em 0;
+	border: 1px solid #ccc;
+}
+
+.globalsettings .viewedit .fieldrow.option {
+	margin: 1em 0;
+}
+
+.globalsettings .fieldrow {
+	margin-bottom: 2em !important;
+}
+
+.globalsettings .fieldrow .fieldrow {
+	margin-bottom: inherit;
+}
+
+.fieldlabel.title span.desc {
+	font-weight: normal;
+	font-style: normal;
+	text-transform: capitalize;
+}
+
+.globalsettings .fieldrow.description,
+.globalsettings .fieldrow.optiongroup {
+	margin-bottom: 1em;
+}
+
+div.choseselect .right {
+	float: left;
+	margin-left: 1em;
+}
+
+div.fieldrow .choseselect span.fieldlabel,
+div.choseselect .right span.icons {
+	position: relative;
+	top: .5em;
+	vertical-align: top;
+}
+
+.globalsettings  ul.chzn-choices {
+	border: 1px solid #ccc;
+}
+
+.defaultcategory .dropdown.enabled {
+	vertical-align: top;
+	width: 340px !important;
+	line-height: 18px;
+}
+
+.defaultcategory span.item a,
+.defaultcategory span.item input {
+	margin: 0 !important;
+}
+
+.defaultcategory span.item {
+	vertical-align: bottom;
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+}
+
+.defaultcategory .dropdown.enabled span.selectoricon {
+	width: 18px;
+	height: 18px;
+	background-position: -63px -15px !important;
+	background-color: #ddd;
+	border: 1px solid #bbb;
+	border-radius: 2px;
+	position: absolute;
+	right: -24px;
+	bottom: 0;
+}
+
+.limits span.option * {
+	vertical-align: baseline !important;
+}
+
+.defaultcategory label.fieldlabel {
+	vertical-align: top !important;
+
+}
+
+.table.ticketlist.user td.subject .extrainfo.preview {
+    white-space: normal;
+    margin-top: .5em;
+}
+
+div.fieldobject.moderation{
+    padding: 10px;
+    border:1px solid #ccc;
+    margin: 10px;
+}
+
+div.fieldobject.collapsable.collapsed .fieldrow{
+    display: none;
+}
+
+div.fieldobject.collapsable .fieldrow.title {
+    display: block;
+    cursor: pointer;
+	text-transform: uppercase;
+	color: #888;
+	margin: 0;
+}
+
+div.fieldobject.collapsable .fieldrow.title:hover {
+	text-decoration: underline;
+}
+
+.resolverhistory{
+	margin-top: 0.5em;
+}
+
+.resolverhistory ul.resolverlist{
+	margin: 0;
+	padding: 0;
+}
+
+.resolverhistory span.title{
+	font-weight: bold;
+	display: block;
+	margin-bottom: 0.5em;
+}
+
+.resolverhistory ul.resolverlist li.resolver {
+
+}
+
+.resolverhistory ul.resolverlist li.resolver span.details {
+	margin-left: 5px;
+	font-style: italic;
+	color:#aaa;
+}
+
+.ticketlist.ticketlist-user table.ticketlist.user thead th.actions,
+.ticketlist.ticketlist-user table.ticketlist.user tbody td.actions{
+	width: 20px;
+}
+
+table.ticketlist.user th.actions span.actions,
+table.ticketlist.user td.actions span.actions{
+	width: 16px !important;
+}
+
+.sortabletree.categories.root .sortableitem.default .text.default,
+table.categorymap tr.default,
+.legend .legenditem .legendicon.default,
+.legend .legenditem.default .legendtext{
+	background-color: #ebf1f5;
+	cursor: default;
+	color: #4268a4;
+}
+
+table.categorymap tr.deleted,
+.legend .legenditem .legendicon.deleted {
+	background-color: #f5d4d4;
+	color: #c20;
+}
+
+table.categorymap tr.nomanager,
+.legend .legenditem .legendicon.nomanager {
+	background-color: #fff4ba;
+	color: #a67725;
+}
+
+div.fieldrow.usertypes select.chzn-select {
+    width: 500px;
+}
+
+.globalsettings table.minimal thead tr th.actions,
+.globalsettings table.minimal tbody tr td.actions {
+	width: 32px;
+	text-align: center;
+}
+
+.custombycategory {
+	background-color: #eee;
+}
+
+.categories .categorylist .item {
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+	margin: 0 5px 7px 0;
+	padding: 5px;
+	background: #eee;
+	border: 1px solid #ccc;
+	vertical-align: top;
+	border-radius: 4px;
+}
+
+.categories .categorylist .item .icons,
+.categories .categorylist .item .icons. icon {
+
+}
+
+.categories .categorylist .item .name {
+	vertical-align: top;
+	margin-right: 5px;
+	line-height: 16px;
+	cursor: help;
+}
+
+.optiongroup.permissionset {
+	padding: 10px;
+	margin: 1em 0;
+	background-color: #fff;
+	border-radius: 12px;
+}
+
+ul.categorylist.itemwrapper {
+	padding: 10px;
+}
+
+.optiongroup.top {
+	margin-top: 0;
+	padding-top: 0;
+}
+
+.optiongroup.user.notifications {
+	border-top: 1px solid #ddd;
+}
+
+.tickets .create .notifications .commands {
+	text-align: right;
+}
+
+.optiongroup.top .left,
+.optiongroup.top .right {
+	vertical-align: top;
+	line-height: 24px;
+}
+
+.fieldrow.options,
+.fieldrow.optiongroup div.options {
+	margin: 1em 0;
+}
+
+.notifications .options {
+	margin-bottom: 0;
+}
+
+.optiongroup.permissionset.last {
+	border-bottom: none
+}
+.fieldobject .fieldrow.createdby {
+    margin-top:1em;
+}
+.fieldobject .fieldrow.createdby span.description {
+    font-style: italic;
+    color:#444;
+}
+
+.filtercontainer .filter {
+    
+}
+
+.filtercontainer .filter input.input {
+    line-height: 1em;
+    padding: 1px 3px;
+}
+
+.filtercontainer .filter.textselect input {    
+    min-width: 30px !important;
+    width:100px;
+}
+
+.filtercontainer .filter.textselect select {    
+    width:100px !important;
+    min-width: 30px !important;
+}
+
+.filtercontainer .filter.grid_12.textx2select input {    
+    min-width: 30px !important;
+    width:150px;
+}
+
+/*.filtercontainer .filter.grid_12.textx2select [type="checkbox"],
+.filtercontainer .filter.grid_12.textx2select [type="radio"] {    
+    min-width: 0px !important;
+    width: auto !important;
+}*/
+
+.filtercontainer .filter.grid_12 .RadDateTimePicker input {
+	width: 110px !important;
+}
+
+.filtercontainer .filter.grid_12.textx2select select {    
+    max-width:280px !important;
+    min-width: 200px !important;   
+    margin-right:10px !important;
+}
+
+.filtercontainer .filter.grid_12.textx2select .input-group.datetimepicker label.label {
+    margin-left: 32px;
+}
+
+.filtercontainer .filter.grid_12.textx2select .input-group.datetimepicker:nth-of-type(1) label.label,
+.filtercontainer .filter.grid_12.textx2select .input-group.datetimepicker.first label.label {
+    margin-left: 0px;
+}
+
+.filecontainer .iteminfo .name .text {
+    vertical-align: middle;	
+}
+
+.filecontainer .iteminfo .name .text{
+	top: -4px;	
+    position: relative;
+}

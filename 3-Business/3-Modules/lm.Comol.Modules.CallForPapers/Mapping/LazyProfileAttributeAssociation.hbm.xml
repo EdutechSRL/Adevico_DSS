@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="lm.Comol.Modules.CallForPapers" namespace="lm.Comol.Modules.CallForPapers.Domain">
+  <class name="LazyProfileAttributeAssociation" table="CP_FieldDefinitionProfileAttribute" optimistic-lock ="version">
+    <id name="Id" column="Id" type="Int64">
+      <generator class="native"/>
+    </id>
+    <version name="TimeStamp"
+   generated="always"
+   unsaved-value="null"
+   type="BinaryBlob">
+      <column name="_Timestamp"
+              not-null="false"
+              sql-type="timestamp"/>
+    </version>
+    <property name="IdCall" type="Int64" column="IdCall" />
+    <property name="IdField" type="Int64" column="IdFieldDefinition" />
+    <property name="Attribute" type="lm.Comol.Core.Authentication.ProfileAttributeType, lm.Comol.Core.DomainModel" column="IdProfileAttributeType" />
+    <property name="Deleted" type="lm.Comol.Core.DomainModel.BaseStatusDeleted,lm.Comol.Core.DomainModel" column="_Deleted" />
+  </class>
+</hibernate-mapping>

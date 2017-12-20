@@ -1,0 +1,191 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Comment CommentText="M	Mappato&#xD;&#xA;C	Cascade = true&#xD;&#xA;L	Lazy = true">
+    <Position X="3.781" Y="7.104" Height="0.75" Width="1.7" />
+  </Comment>
+  <Comment CommentText="MLC">
+    <Position X="1.927" Y="1.385" Height="0.291" Width="0.7" />
+  </Comment>
+  <Comment CommentText="MLC">
+    <Position X="4.447" Y="1.365" Height="0.291" Width="0.7" />
+  </Comment>
+  <Comment CommentText="MLC">
+    <Position X="7.27" Y="1.406" Height="0.291" Width="0.7" />
+  </Comment>
+  <Comment CommentText="MLC">
+    <Position X="9.552" Y="1.416" Height="0.291" Width="0.7" />
+  </Comment>
+  <Comment CommentText="MLC">
+    <Position X="9.552" Y="3.146" Height="0.291" Width="0.7" />
+  </Comment>
+  <Comment CommentText="MLC">
+    <Position X="9.562" Y="4.292" Height="0.291" Width="0.7" />
+  </Comment>
+  <Comment CommentText="Tiene traccia dgli elementi vuoiti nello storico">
+    <Position X="8.635" Y="4.802" Height="0.541" Width="1.71" />
+  </Comment>
+  <Comment CommentText="MLC">
+    <Position X="9.24" Y="6.167" Height="0.291" Width="0.7" />
+  </Comment>
+  <Comment CommentText="MLC">
+    <Position X="6.99" Y="6.594" Height="0.291" Width="0.7" />
+  </Comment>
+  <Class Name="lm.Comol.Core.DomainModel.DocTemplateVers.PageElement">
+    <Position X="6.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAAAAAAAgECAAIAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DocTemplateVers\Domain\Core\PageElement.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="lm.Comol.Core.DomainModel.DocTemplateVers.TemplateVersion">
+    <Position X="3.5" Y="0.75" Width="1.5" />
+    <AssociationLine Name="Settings" Type="lm.Comol.Core.DomainModel.DocTemplateVers.Settings" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="4.312" Y="2.752" />
+        <Point X="4.312" Y="5.812" />
+        <Point X="7.75" Y="5.812" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.318" Y="0.029" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="Elements" Type="lm.Comol.Core.DomainModel.DocTemplateVers.PageElement">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.152" Y="0.06" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="Signatures" Type="lm.Comol.Core.DomainModel.DocTemplateVers.Signature" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="3.875" Y="2.752" />
+        <Point X="3.875" Y="6.363" />
+        <Point X="5.5" Y="6.363" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>oAAAIAAAAEAAAAAAEBAQAAAAAAIAAAAAgAAAAAAAAAA=</HashCode>
+      <FileName>DocTemplateVers\Domain\Core\TemplateVersion.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Settings" />
+      <Property Name="Elements" />
+      <Property Name="Services" />
+      <Property Name="Signatures" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="lm.Comol.Core.DomainModel.DocTemplateVers.Template">
+    <Position X="1" Y="0.75" Width="1.5" />
+    <AssociationLine Name="Type" Type="lm.Comol.Core.DomainModel.DocTemplateVers.TemplateType" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="1.375" Y="2.752" />
+        <Point X="1.375" Y="3.715" />
+        <Point X="2.25" Y="3.715" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="Versions" Type="lm.Comol.Core.DomainModel.DocTemplateVers.TemplateVersion">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.027" Y="0.06" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABAAAABEAAAAAQAAAAAAAEAAQAAAgAAAAA=</HashCode>
+      <FileName>DocTemplateVers\Domain\Core\Template.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Type" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="Versions" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="lm.Comol.Core.DomainModel.DocTemplateVers.Settings">
+    <Position X="7.75" Y="5.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAEBIAggkAAkIAAIMAAAAhQAAACEAgACAAAgAA=</HashCode>
+      <FileName>DocTemplateVers\Domain\Core\Settings.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="lm.Comol.Core.DomainModel.DocTemplateVers.ModuleDocTemplate">
+    <Position X="0.5" Y="4.5" Width="2.75" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Enum Name="lm.Comol.Core.DomainModel.DocTemplateVers.ModuleDocTemplate.Base2Permission" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>DocTemplateVers\Domain\Core\ModuleDocTemplate.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+      <Enum Name="lm.Comol.Core.DomainModel.DocTemplateVers.ModuleDocTemplate.ActionType" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>DocTemplateVers\Domain\Core\ModuleDocTemplate.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+      <Enum Name="lm.Comol.Core.DomainModel.DocTemplateVers.ModuleDocTemplate.ObjectType" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>DocTemplateVers\Domain\Core\ModuleDocTemplate.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AEAQAAAAABAAACAAAAAAAAAAAAABAAAAAAAAEAIAAAI=</HashCode>
+      <FileName>DocTemplateVers\Domain\Core\ModuleDocTemplate.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="lm.Comol.Core.DomainModel.DocTemplateVers.ServiceContent">
+    <Position X="6.25" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAAAAAAAAEAAAIAAAAAAAAAACAAAAAQAAAAA=</HashCode>
+      <FileName>DocTemplateVers\Domain\Core\ServiceContent.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="lm.Comol.Core.DomainModel.DocTemplateVers.ElementImage">
+    <Position X="8.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAAAAIAAAAAAEAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DocTemplateVers\Domain\Core\PageElements\ElementImage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="lm.Comol.Core.DomainModel.DocTemplateVers.ElementVoid">
+    <Position X="8.5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DocTemplateVers\Domain\Core\PageElements\ElementVoid.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="lm.Comol.Core.DomainModel.DocTemplateVers.ElementText">
+    <Position X="8.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAACAAAAAA=</HashCode>
+      <FileName>DocTemplateVers\Domain\Core\PageElements\ElementText.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="lm.Comol.Core.DomainModel.DocTemplateVers.Business.DocTemplateVersManagementService">
+    <Position X="3.75" Y="10.25" Width="3.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAABIBAABBEaQYRAAgACogKSQgAAAAgAgQRAEBhIg=</HashCode>
+      <FileName>DocTemplateVers\Business\DocTemplateVersManagementService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="lm.Comol.Core.DomainModel.DocTemplateVers.Signature">
+    <Position X="5.5" Y="6" Width="2" />
+    <TypeIdentifier>
+      <HashCode>IAEAAAAABAAAAAIhEAAAIEIAIIAAAAAAAgAACAAAAAA=</HashCode>
+      <FileName>DocTemplateVers\Domain\Core\Signature.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="lm.Comol.Core.DomainModel.DocTemplateVers.Business.DocTemplateVersService">
+    <Position X="0.5" Y="10.25" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAIAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DocTemplateVers\Business\DocTemplateVersService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="lm.Comol.Core.DomainModel.DocTemplateVers.TemplateType">
+    <Position X="2.25" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAAAAAAAAAAAAAIAAAAAAAAAAAAQACAA=</HashCode>
+      <FileName>DocTemplateVers\Domain\Core\Enum.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -1,0 +1,10 @@
+﻿<div class="filterinner">
+    <span class="title" ng-show="filter.Label!=''">{{filter.Label}}:</span>    
+    <span class="content">
+        <!--<select class="input" name="{{filter.Name}}" ng-model="filter.Selected" ng-change="setFiltersChange(filter,'select')" ng-options="value.Id as value.Name for value in filter.Values"></select>
+        <input type="text" ng-model="filter.Selected" name="{{filter.Name}}_hidden" />-->
+
+        <select class="input" name="{{filter.Name}}" ng-model="filter.Selected" ng-change="setFiltersChange(filter,'select')" ng-disabled="value.Disabled" ng-options="value.Name for value in filter.Values track by value.Id"></select>
+        
+    </span>
+</div>  

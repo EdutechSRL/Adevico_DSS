@@ -1,0 +1,713 @@
+/* profile Management stylesheet - updated 22.10.2013 */
+
+/*  Generici */
+
+div.DVmenu {
+	width: 900px;
+	text-align: right;
+	padding-top: 5px;
+	margin: 0px auto;
+}
+
+/* UC */
+
+div.BoxContainer {
+	padding: 5px;
+	display: inline-block;
+	width: 640px;
+}
+
+div.Box80 {
+	float: left;
+	width: 80%
+}
+
+div.Box20 {
+	float: left;
+	width: 19%
+}
+
+.clear {
+	clear: both;
+}
+
+div.TopButton {
+	text-align: right;
+	width: 100%;
+}
+
+.BottomSpacing {
+	padding-bottom: 2em;
+	display: inline-block;
+}
+
+.TopSpacing {
+	padding-top: 4em;
+	display: inline-block;
+}
+
+div#AuthenticationProviders span.Fieldrow {
+	display: block;
+	clear: both;
+}
+
+div#AuthenticationProviders span.Fieldrow .Titolo_campo {
+	display: inline-block;
+	width: 120px;
+	min-width: 120px;
+	padding: 3px;
+}
+
+/*div.StepData*/
+
+span.Fieldrow {
+	display: block;
+	/*width: 890px;*/     padding-top: 3px;
+	text-align: left;
+}
+
+
+/*div.StepData */
+
+span.Fieldrow .Titolo_campo {
+	display: inline-block;
+	width: 165px;
+}
+
+/* Pages ProfileManagement.aspx */
+
+.ProfileManagement {
+	
+}
+
+ProfileManagement.Menu {
+	width: 900px;
+	text-align: right;
+}
+
+.ProfileManagementFilters {
+	
+}
+
+select#CPHservice_DDLorganizations.FiltroCampoSmall.autoblock,
+select#CPHservice_DDLauthenticationType.FiltroCampoSmall {
+	width: 250px;
+}
+
+#DVprofilesTable div.ProfileManagementFilters.blocking div div {
+	display: block;
+}
+
+div#DVprofilesTable {
+	
+}
+
+#progressBackgroundFilter {
+	position: fixed;
+	top: 0px;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+	overflow: hidden;
+	padding: 0;
+	margin: 0;
+	background-color: #000;
+	filter: alpha(opacity=50);
+	opacity: 0.5;
+	z-index: 5000;
+}
+
+#processMessage {
+	position: fixed;
+	top: 30%;
+	left: 43%;
+	padding: 10px;
+	width: 14%;
+	z-index: 5001;
+	background-color: #fff;
+	border: solid 1px #000;
+}
+
+/* Pages DeleteProfile.aspx    #progressBackgroundFilter {   position: fixed; top: 0px; bottom: 0px; left: 0px;     right: 0px; overflow: hidden; padding: 0; margin: 0;     background-color: #000; filter: alpha(opacity=50); opacity: 0.5; z-index: 1000; }          #processMessage {   position: fixed; top: 30%; left: 43%; padding: 10px;     width: 14%; z-index: 1001; background-color: #fff; border: solid 1px #000; } */
+
+div.DeleteProfile_Del {
+	width: 900px;
+	text-align: center;
+	padding-top: 50px;
+	padding-bottom: 150px;
+	margin: 0px auto;
+	font-size: 1.1em;
+	line-height: 1.4em;
+}
+
+span.Testo_campo label {
+	margin: 0 1.5em 0 .5em;
+}
+
+div.DeleteProfile_Update {
+	width: 100%;
+	text-align: center;
+	margin: 1em 0;
+}
+
+
+
+span.middle {
+	vertical-align: middle;
+}
+
+/* aggiunti Gianluca */
+
+form.mainForm div#page-box div#container.page-width div#content div.DIV_MP_Content div#CPHservice_UDPsettings div.TopInfo span.TextInfo span.Field_Row {
+	display: block;
+	margin: 0.5em 0;
+}
+
+form#aspnetForm.mainForm div#page-box div#container.page-width div#content div.DIV_MP_Content div#CPHservice_UDPsettings div.TopInfo {
+	margin-bottom: 1em;
+}
+
+form#aspnetForm.mainForm div#page-box div#container.page-width div#content div.DIV_MP_Content  div div.RadTabStrip {
+	
+}
+
+form#aspnetForm.mainForm div#page-box div#container.page-width div#content div.DIV_MP_Content div div div.StepData {
+	border: 1px solid #000;
+	border-top: none;
+	padding: 1em 1.5em;
+	-moz-border-radius-topleft: 0;
+	-moz-border-radius-topright: 0;
+	-moz-border-radius-bottomright: 6px;
+	-moz-border-radius-bottomleft: 6px;
+	-webkit-border-radius: 0px 0px 6px 6px;
+	border-radius: 0px 0px 6px 6px;
+}
+
+form#aspnetForm.mainForm div#page-box div#container.page-width div#content div.DIV_MP_Content div#CPHservice_UDPsettings div span.Fieldrow {
+	margin-top: 0.5em;
+}
+
+/* aggiunto per layout */
+
+div#content div.DIV_MP_Content div.TopInfo span.ImageInfo {
+	display: inline-block;
+	text-align: center;
+	width: 150px;
+}
+
+form#aspnetForm.mainForm div#page-box div#container.page-width div#content div.DIV_MP_Content div#CPHservice_UDPsettings div.TopInfo span.ImageInfo img {
+	border: 1px solid #ccc;
+	-moz-border-radius-topleft: 6px;
+	-moz-border-radius-topright: 6px;
+	-moz-border-radius-bottomright: 6px;
+	-moz-border-radius-bottomleft: 6px;
+	-webkit-border-radius: 6px 6px 6px 6px;
+	border-radius: 6px 6px 6px 6px;
+}
+
+/* aggiunto per layout */
+
+div#content div.DIV_MP_Content div.TopInfo span.TextInfo {
+	display: inline-block;
+	height: 150px;
+	vertical-align: top;
+}
+
+/* aggiunto per layout */
+
+div#content div.DIV_MP_Content div.TopInfo span.TextInfo span.Field_Row {
+	display: block;
+	padding-bottom: 1em;
+}
+
+/* aggiunto per layout */
+
+div#content div.DIV_MP_Content div.TopInfo span.SaveTop, div#content div.DIV_MP_Content div.SaveBottom {
+	width: 900px;
+	text-align: right;
+	padding-top: 5px;
+	margin: 0px auto;
+	display: block;
+}
+
+form#aspnetForm.mainForm div#page-box div#container.page-width div#content div.DIV_MP_Content div#CPHservice_UDPsettings div.TopInfo span.ImageInfo input#CPHservice_BTNedit {
+	top: -6px;
+	position: relative;
+}
+
+form#aspnetForm.mainForm div#page-box div#container.page-width div#content div.DIV_MP_Content div.change_pwd fieldset {
+	margin-bottom: 1em;
+	border: 1px solid #ccc;
+}
+
+#content div.DIV_MP_Content input[type=submit] {
+	display: inline-block !important;
+	margin: 2px !important;
+	font-size: 11px !important;
+	padding: 1px 4px !important;
+	color: #555;
+	text-shadow: 1px 1px 0px #ddd;
+	border: 1px solid #aaa;
+	background-color: #ddd;
+	-moz-border-radius-topleft: 3px;
+	-moz-border-radius-topright: 3px;
+	-moz-border-radius-bottomright: 3px;
+	-moz-border-radius-bottomleft: 3px;
+	-webkit-border-radius: 3px 3px 3px 3px;
+	border-radius: 3px 3px 3px 3px;
+}
+
+#content div.DIV_MP_Content input[type=submit].img_btn, #content div.DIV_MP_Content input[type=submit].btn_link, #content div.DIV_MP_Content input[type=submit].img_span {
+	background-color: transparent;
+	border: 0px;
+}
+
+#content div.DIV_MP_Content input[type=submit]:hover {
+	outline: none;
+	color: #565656;
+	text-shadow: 1px 1px 0px #ddd;
+	background-color: #bcbcbc;
+}
+
+#content div.DIV_MP_Content input[type=submit]:active {
+	outline: none;
+	border: 1px solid #777 !important;
+	-moz-box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.7);
+	-webkit-box-shadow: inset 0 0 32px rgba(0, 0, 0, 0.7);
+	box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.7);
+}
+
+input.AgencyText {
+	width: 500px !important;
+}
+
+.Fieldrow ul.Testo_Campo.agencylist {
+	padding-left: 0px;
+	margin-left: 170px;
+	display:block;	
+}
+
+.GenericRow {
+	margin-bottom: 0.5em;
+}
+
+table td  {
+	font-size: .9em;
+}
+
+#content table.light tbody tr th.actions,
+#content table.light tbody tr td.actions {
+
+}
+
+#content table.light tbody tr .actions span.icons {
+	display: inline-block;
+	*display: inline;
+	zoom: 1;
+	min-width: 60px;
+	*width: 60px;
+}
+
+div#content div.DIV_MP_Content div.DVmenu a.Link_Menu {
+	height: 14px !important;
+}
+
+#DVprofilesTable div.ProfileManagementFilters.blocking {
+	margin: 1em 0 2em 0;
+	padding: .5em;
+	border: 1px solid #ccc;
+}
+
+table.light td ul {
+	padding-left: 2em;
+	margin: .5em 0;
+}
+
+table.light td div {
+	display: inherit;
+}
+
+table.light td a {
+	display: inline-block;
+	*display:inline;
+	zoom: 1;
+}
+
+div#DVprofilesTable table.light td {
+
+}
+
+div#DVprofilesTable table td.user {
+	width: 50%;
+}
+
+div#DVprofilesTable table td a {
+	font-size: 1em;
+}
+
+div#DVprofilesTable table td.user div.fieldinfo {
+}
+
+div#DVprofilesTable table td.user div.fieldinfo a {
+	font-weight: normal;
+	font-style: normal;
+}
+
+div#DVprofilesTable table td.statusimg {
+	width: 2%;
+}
+
+div#DVprofilesTable table td.status {
+
+}
+
+div#DVprofilesTable table td.authtype {
+
+}
+
+div#DVprofilesTable table td.actions {
+	text-align: right;
+}
+
+
+div#DVprofilesTable table.light td div.fieldcommands {
+	display: block;
+	margin: 4px 0;
+}
+
+div#DVprofilesTable table.light td div.fieldcommands div {
+	display: inline;
+	margin: 0;
+	padding: 0;
+}
+
+div#DVprofilesTable table.light td div.fieldcommands div a {
+
+}
+
+div#DVprofilesTable table.light td div.fieldcommands div a {
+	color: #888;
+}
+
+div#DVprofilesTable table.light td div.fieldcommands * {
+	color: #888;
+}
+
+.Testo_Campo {
+	display: inline-block;
+	*dispay:inline;
+	*zoom: 1;
+	display: -moz-inline-stack;
+	vertical-align: top;
+}
+
+td.actions .icons {
+	text-align: right;
+}
+
+.fieldrow.imtype {
+	margin-bottom: 40px;
+}
+
+.fieldlabel.imtype {
+	display: inline-block;
+	*dispay:inline;
+	*zoom: 1;
+	width: 120px;
+	vertical-align: top;
+}
+
+.imtype span.fielditemswrapper {
+	display: inline-block;
+	*dispay:inline;
+	*zoom: 1;
+	margin: 0 !important;
+	vertical-align: top;
+}
+
+.imtype span.fielditemswrapper ul {
+	padding: 0;
+	margin: 0;
+}
+
+.imtype .spaninputtext,
+.imtype .inputtext,
+.imtype select {
+	display: inline-block;
+	*dispay:inline;
+	*zoom: 1;
+	padding: 2px;
+}
+
+.imtype .header .spaninputtext{
+	font-style: italic;
+	color: #888;
+	font-size: 11px;
+}
+
+.imtype .address,
+.imtype .notes {
+	width: 240px;
+}
+
+.imtype .visibility {
+	width: 140px;
+}
+
+.imtype .default {
+	width: 60px;
+	text-align: center;
+}
+
+.add.last {
+	padding: 5px 90px 5px 17px;
+}
+
+span.fieldlabel.imtype span {
+	display: inline-block;
+	*dispay:inline;
+	*zoom: 1;
+	padding: 3px 6px;
+	border-radius: 4px;
+	background-color: #ddd;
+	box-shadow:  1px 1px 0 rgba(0,0,0,0.15);
+	text-shadow: 1px 1px 0 #eee;
+	font-weight: bold;
+}
+
+.add.last .fielditemcontent {
+
+}
+
+ul.single span.movecfielditem {
+	visibility: hidden;
+}
+
+.fieldobject.info {
+	margin: 2em 0;
+	padding: 5px 10px;
+	border: 1px solid #ccc;
+	background-color: #eee;
+}
+
+dl.legend {
+	margin: 0;
+}
+
+.info dl.legend {
+	padding: 10px;
+	margin-top: 10px;
+	background: #fff;
+}
+
+.fieldobject.info .fieldrow .description {
+	margin-bottom: 1em;
+}
+
+.fieldobject.info .fieldrow .disclaimer {
+	font-weight: bold;
+}
+
+span.toggler {
+	padding: 2px 4px;
+	color: #888;
+	font-size: 11px;
+	line-height: 24px;
+	text-align: center;	
+	color: #666;
+	text-shadow: 1px 1px 0 #eee;	
+	vertical-align: middle;	
+	border: 1px solid #ccc;
+	background-color: #e5e5e5;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#eeeeee),to(#dddddd));
+	background-image: -webkit-linear-gradient(top, #eeeeee, #dddddd);
+	background-image: -moz-linear-gradient(top, #eeeeee, #dddddd);
+	background-image: -o-linear-gradient(top, #eeeeee, #dddddd);
+	background-image: -ms-linear-gradient(top, #eeeeee, #dddddd);
+	background-image: linear-gradient(top, #eeeeee, #dddddd);
+	-webkit-border-radius: 3px;
+	-moz-border-radius   : 3px;
+	border-radius        : 3px;
+	-moz-background-clip   : padding;
+	-webkit-background-clip: padding-box;
+	background-clip        : padding-box;	
+	-webkit-box-shadow: 0 0 2px #ffffff inset, 0 1px 0 rgba(0,0,0,0.05);
+	-moz-box-shadow   : 0 0 2px #ffffff inset, 0 1px 0 rgba(0,0,0,0.05);
+	box-shadow        : 0 0 2px #ffffff inset, 0 1px 0 rgba(0,0,0,0.05);
+	cursor: pointer;
+}
+
+span.toggler:hover {
+	background-color: #e0e0e0;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#e6e6e6),to(#d6d6d6));
+	background-image: -webkit-linear-gradient(top, #e6e6e6, #d6d6d6);
+	background-image: -moz-linear-gradient(top, #e6e6e6, #d6d6d6);
+	background-image: -o-linear-gradient(top, #e6e6e6, #d6d6d6);
+	background-image: -ms-linear-gradient(top, #e6e6e6, #d6d6d6);
+	background-image: linear-gradient(top, #e6e6e6, #d6d6d6);
+	background-image: -webkit-linear-gradient(top, #e6e6e6, #d6d6d6);
+	background-image: linear-gradient(top, #e6e6e6, #d6d6d6);
+}
+
+span.toggler:active {
+	-webkit-box-shadow: inset 0 0 1px rgba(0,0,0,0.1);
+	-moz-box-shadow   : inset 0 0 1px rgba(0,0,0,0.1);
+	box-shadow        : inset 0 0 1px rgba(0,0,0,0.1);
+}
+
+dl.legend dt,
+dl.legend dd {
+	display: inline-block;
+	*display:inline;
+	*zoom:1;
+	margin: 0;
+	text-align: left;
+	color: inherit;
+	margin-bottom: .5em;
+	padding-bottom: .5em;
+	font-size: 11px;
+	vertical-align: top;
+}
+
+dl.legend dt {
+	width: 20%;
+}
+
+dl.legend dd {
+	width: 75%;
+}
+
+.contacts div.fieldobject.filters {
+	margin: 1em 0;
+	border: 1px solid #ccc;
+	padding: 10px;
+}
+
+.contacts div.fieldobject.filters .fieldrow {
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+}
+
+.filters .fieldrow.block {
+	display: block !important;
+}
+
+.contacts div.fieldobject.filters div.fieldrow.filterupdate.right {
+	margin: 0 !important;
+}
+
+.contacts .listwrapper {
+	background: none;
+	border: none;
+	box-shadow: none;
+}
+
+.contacts .listwrapper .row.user {
+	padding: 0;
+	margin: 1em 0;
+	border: 1px solid #ccc;
+}
+
+.contacts .listwrapper .row.user.first {
+	margin-top: 0;
+}
+
+.contacts .listwrapper .row.user.last {
+	margin-bottom: 0;
+}
+
+.contacts .listwrapper div.left.column {
+	padding: 0;
+	width: auto;
+}
+
+.listwrapper .row .right.column {
+	width: auto;
+	float: left;
+	background-color: transparent;
+	border-radius: none;
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	box-shadow: none
+}
+
+.contacts .row .rowheader,
+.contacts .row .rowcontent,
+.contacts .row .rowfooter {
+	padding: 8px 10px;
+}
+
+.contacts .listwrapper .row .left.column span.userpicture {
+	height: 100%;
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+}
+
+.contacts .listwrapper .row .left.column span.userpicture img {
+	width:50%;
+	height:auto;
+}
+
+.contacts .rowheader span.username,
+.contacts .rowheader span.username a {
+	font-weight: bold;
+	margin-right: 10px;
+	font-size: 14px;
+}
+
+.contacts .rowheader span.userrole {
+	color: #888;
+}
+
+.fieldrow.contact.first {
+	margin-top: 0;
+}
+
+.fieldrow.contact.last {
+	margin-bottom: 0;
+}
+
+.fieldrow.contact .fieldlabel,
+.fieldrow.contact .inlinewrapper,
+.fieldrow.contact li.value {
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+	vertical-align: top;
+}
+
+.fieldrow.contact .fieldlabel {
+	min-width: 70px;
+	margin-right: 10px;
+	color: #888;
+}
+
+
+.fieldrow.contact ul.values {
+	margin: 0;
+	padding: 0;
+}
+
+.fieldrow.contact li.value {
+	margin-right: 20px;
+}
+
+.fieldobject .fieldrow .fieldlabel {
+                display: inline-block;
+                *display: inline;
+                *zoom: 1;
+                width: 220px;
+                margin-right: 10px;
+                color: #888;        
+}
+
+.fieldobject .fieldrow .inlinewrapper ul{
+                margin:0;
+                padding:0;
+}
+.fieldobject .fieldrow .inlinewrapper ul li{
+                margin:0;            
+                margin-bottom:0.2em;
+}

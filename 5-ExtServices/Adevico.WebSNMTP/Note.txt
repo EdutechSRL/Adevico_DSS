@@ -1,0 +1,37 @@
+﻿SNMP documentation
+http://www.faqs.org/rfcs/rfc1157.html
+
+Servizio SNMP – Windows
+http://www.poorperformance.com/wiki/Install,_Enable_and_Configure_SNMP_on_Windows
+
+.NET #SNMP library documentation
+https://docs.sharpsnmp.com/en/latest/tutorials/v3-operations.html
+
+Powershell check trap
+https://michelkamp.wordpress.com/2012/07/02/how-to-check-if-a-snmp-trap-is-received/
+
+# register trap
+Register-WmiEvent -Query “SELECT * FROM SnmpNotification” -Namespace ‘root\snmp\localhost’  -sourceIdentifier “SNMPTRAP” -action { Write-Host [Time:] $newEvent.SourceEventArgs.NewEvent.TIME_CREATED [IP:] $newEvent.SourceEventArgs.NewEvent.AgentAddress  [OID:] $newEvent.SourceEventArgs.NewEvent.Identification  }
+
+# use to unregister trap
+Get-EventSubscriber | where {$_.SourceIdentifier  -eq ‘SNMPTRAP’} | % {Unregister-Event $_.SubscriptionID}
+
+
+How To:
+uID:	
+	0.0		potrebbe andare bene, ma è il "minimo"
+
+Object uId:
+	0.0.0	uId variabile, credo sia meglio tenere un sotto-id relativo a uID.
+
+Codifica:
+Importante per codificare la stringa inviata. Da test locali:
+	UTF7				Ok
+	UTF8				Ok
+	UTF32				K.O.
+	ASCII				Ok
+	Unicode				K.O.
+	BigEndianUnicode	K.O.
+	Default				OK?        iso-8859-1  |  Western European (Windows)   |  Windows-1252        By system: meglio evitare
+
+PS: default credo usi impostazioni di sistema: meglio evitare!

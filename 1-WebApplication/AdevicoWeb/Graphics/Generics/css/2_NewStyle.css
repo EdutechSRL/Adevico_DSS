@@ -1,0 +1,172 @@
+
+/* --- updated 15.05.14 --- */
+
+
+a { color: black;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+/* Body */
+
+
+#linkHome a {
+	display: block;
+	width: 100px;
+	height: 60px;
+}
+
+/* Footer */
+
+#cFooter a {
+	color: #666;
+	text-decoration: underline;
+}
+
+#cFooter a:hover {
+	color: red;
+	text-decoration: underline;
+}
+
+/*input,*/
+select, textarea {
+	border: 1px solid #989898;
+}
+
+.DataGrid_Generica {
+	border-color: #666666;
+	border-style: solid;
+	border-width: 1px 2px 1px 2px;
+	width: 850px;
+}
+
+/* OLD HEADER */
+
+/* Spostato nel file relativo */
+
+/* MAIL */
+
+.mailFieldTo {
+	background-color: #ddd;
+}
+
+.fakeFieldset {
+	width: 100%;
+}
+
+.fakeFieldset span.left {
+	display: inline-block;
+	width: 65%;
+}
+
+.fakeFieldset span.right {
+	text-align: right;
+	width: 34%;
+	display: inline-block;
+}
+
+.fakeFieldsetNoticeboard {
+	width: 100%;
+}
+
+.fakeFieldsetNoticeboard  span.left {
+	display: inline-block;
+	width: 230px;
+}
+
+.fakeFieldsetNoticeboard noticeboard span.right {
+	text-align: right;
+	display: inline-block;
+}
+
+.containerQuest {
+	width: 100%;
+	top: 170px;
+	margin-top: 1em;
+	position: relative;
+	clear: both;
+	float: left;
+	z-index: 1;
+	padding: 1px;
+}
+
+.DIVpanelTempo {
+	top: 140px;
+	display: none;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	position: fixed;
+	width: 100%;
+	left: 0px;
+	z-index: 2;
+	border: 0;
+}
+
+.HeaderUICompile {
+	width: 100%;
+	left: 0px;
+	height: 140px;
+	position: fixed;
+	background-color: White;
+	z-index: 2;
+}
+
+.FolderFiles {
+	width: 512px;
+}
+
+.FilesList {
+	width: 890px;
+}
+
+/* Elementi che c'erano nella MasterPage */
+
+.formLayout {
+	background-color: #fff;
+	border: solid 1px #a1a1a1;
+	padding: 10px;
+	width: 300px;
+}
+
+.formLayout legend {
+	font-weight: bold;
+}
+
+.formLayout label, .formLayout input, .formLayout span.label {
+	display: block;
+	float: left;
+	margin-bottom: 10px;
+}
+
+.formLayout input {
+	min-width: 50px;
+	margin-left: 0.5em;
+}
+
+.formLayout label, .formLayout span.label {
+	text-align: right;
+	padding-right: 20px;
+	width: 120px;
+}
+
+.formLayout br {
+	clear: left;
+}
+
+/* Aggiunte recenti */
+
+#ioProvincia {
+	padding-left: 280px;
+}
+
+ul.ruProgress {
+	list-style: none !important;
+}
+
+ul.ruProgress li {
+	list-style: none !important;
+}

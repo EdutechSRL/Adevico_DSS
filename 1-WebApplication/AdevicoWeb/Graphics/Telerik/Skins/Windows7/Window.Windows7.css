@@ -1,0 +1,82 @@
+.RadWindow_Windows7 {
+  font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  /* Window Background */
+  /* Horiznotal */
+  /* Vertical */
+  /* Window Shadows */
+  /* Horiznotal */
+  /* Vertical */
+  /* Shadows End */
+  /* set Window Vista "Aero" look and feel to the window */
+  /* Loading Indicators */
+  /* When ShowContentDuringLoad="true" */
+  /* When ShowContentDuringLoad="false" */
+  /* Shadow Control Buttons */
+  /* ctrl buttons when winodw is minimized */
+  /*.RadWindow.rwMinimizedWindow .rwShadow .rwTitlebar
+	{
+		background-image: url('Window/AeroTitleBarBgr.png') !important;
+		background-position: 0 0 !important;
+	}*/ }
+  .RadWindow_Windows7 .rwTopLeft, .RadWindow_Windows7 .rwTopRight, .RadWindow_Windows7 .rwTitlebar, .RadWindow_Windows7 .rwFooterLeft, .RadWindow_Windows7 .rwFooterRight, .RadWindow_Windows7 .rwFooterCenter, .RadWindow_Windows7 .rwTopResize, .RadWindow_Windows7 .rwStatusbar div, .RadWindow_Windows7 .rwStatusbar, .RadWindow_Windows7 .rwPopupButton, .RadWindow_Windows7 .rwPopupButton span, .RadWindow_Windows7.rwMinimizedWindow .rwCorner {
+    background-image: url('Window/WindowHorizontalSprites.gif'); }
+  .RadWindow_Windows7 .rwBodyLeft, .RadWindow_Windows7 .rwBodyRight, .RadWindow_Windows7 .rwStatusbarRow .rwCorner {
+    background-image: url('Window/WindowVerticalSprites.gif'); }
+  .RadWindow_Windows7 .rwShadow .rwTopLeft, .RadWindow_Windows7 .rwShadow .rwTopRight, .RadWindow_Windows7 .rwShadow .rwTitlebar, .RadWindow_Windows7 .rwShadow .rwFooterLeft, .RadWindow_Windows7 .rwShadow .rwFooterRight, .RadWindow_Windows7 .rwShadow .rwFooterCenter, .RadWindow_Windows7 .rwShadow .rwTopResize, .RadWindow_Windows7 .rwShadow .rwStatusbar div, .RadWindow_Windows7 .rwShadow .rwStatusbar, .RadWindow_Windows7 .rwShadow .rwPopupButton, .RadWindow_Windows7 .rwShadow .rwPopupButton span, .RadWindow_Windows7 .rwShadow .rwBodyLeft, .RadWindow_Windows7 .rwShadow .rwBodyRight, .RadWindow_Windows7 .rwShadow .rwStatusbarRow .rwBodyLeft, .RadWindow_Windows7 .rwShadow .rwStatusbarRow .rwBodyRight {
+    background-image: url('Window/WindowHorizontalSprites.png'); }
+  .RadWindow_Windows7 .rwShadow .rwBodyLeft, .RadWindow_Windows7 .rwShadow .rwBodyRight, .RadWindow_Windows7 .rwShadow .rwStatusbarRow .rwBodyLeft, .RadWindow_Windows7 .rwShadow .rwStatusbarRow .rwBodyRight {
+    background-image: url('Window/WindowVerticalSprites.png'); }
+  .RadWindow_Windows7 .rwStatusbar input {
+    background-color: #f7f3e9; }
+  .RadWindow_Windows7 .rwControlButtons a {
+    background-image: url('Window/CommandButtonSprites.gif'); }
+  .RadWindow_Windows7 a.rwIcon {
+    background-image: url('Window/WindowHorizontalSprites.gif'); }
+  .RadWindow_Windows7 table.rwTitlebarControls em {
+    color: #000000; }
+  .RadWindow_Windows7 input.rwDialogInput {
+    border-top: 1px solid #abadb3;
+    border-right: 1px solid #dbdfe6;
+    border-bottom: 1px solid #e3e9ef;
+    border-left: 1px solid #e2e3ea; }
+  .RadWindow_Windows7 input.rwDialogInput:hover {
+    border-top: 1px solid #5794bf;
+    border-right: 1px solid #b7d5ea;
+    border-bottom: 1px solid #c7e2f1;
+    border-left: 1px solid #c5daed;
+    color: #565656; }
+  .RadWindow_Windows7 tr td.rwWindowContent {
+    background-color: #ffffff; }
+  .RadWindow_Windows7 table tr td.rwLoading {
+    background-color: #e9f1f9; }
+  .RadWindow_Windows7 td.rwWindowContent.rwLoading {
+    background-image: url('Common/loading.gif'); }
+  .RadWindow_Windows7 input.rwLoading {
+    background-image: url('Common/loading_small.gif'); }
+  .RadWindow_Windows7 .rwShadow .rwControlButtons {
+    margin: 5px -2px 0 0; }
+  .RadWindow_Windows7 .rwShadow .rwControlButtons {
+    margin: 5px -1px 0 0\9; }
+  .RadWindow_Windows7.rwMinimizedWindowShadow .rwShadow .rwControlButtons {
+    margin: 9px -8px 0 0; }
+  .RadWindow_Windows7 .rwShadow .rwControlButtons li {
+    float: left;
+    padding: 0; }
+  .RadWindow_Windows7 .rwShadow .rwControlButtons a {
+    width: 30px; }
+  .RadWindow_Windows7.rwInactiveWindow .rwShadow .rwTopLeft, .RadWindow_Windows7.rwInactiveWindow .rwShadow .rwTopRight, .RadWindow_Windows7.rwInactiveWindow .rwShadow .rwTitlebar, .RadWindow_Windows7.rwInactiveWindow .rwShadow .rwFooterLeft, .RadWindow_Windows7.rwInactiveWindow .rwShadow .rwFooterRight, .RadWindow_Windows7.rwInactiveWindow .rwShadow .rwFooterCenter, .RadWindow_Windows7.rwInactiveWindow .rwShadow .rwTopResize, .RadWindow_Windows7.rwInactiveWindow .rwShadow .rwStatusbar div, .RadWindow_Windows7.rwInactiveWindow .rwShadow .rwStatusbar, .RadWindow_Windows7.rwInactiveWindow .rwShadow .rwPopupButton, .RadWindow_Windows7.rwInactiveWindow .rwShadow .rwPopupButton span, .RadWindow_Windows7.rwInactiveWindow .rwShadow.rwMinimizedWindow .rwCorner, .RadWindow_Windows7.rwNoTitleBar.rwInactiveWindow .rwShadow .rwTopLeft, .RadWindow_Windows7.rwNoTitleBar.rwInactiveWindow .rwShadow .rwTitlebar, .RadWindow_Windows7.rwNoTitleBar.rwInactiveWindow .rwShadow .rwTopRight, .RadWindow_Windows7.rwNoTitleBar.rwInactiveWindow .rwShadow .rwFooterLeft, .RadWindow_Windows7.rwNoTitleBar.rwInactiveWindow .rwShadow .rwFooterCenter, .RadWindow_Windows7.rwNoTitleBar.rwInactiveWindow .rwShadow .rwFooterRight {
+    background-image: url('Window/WindowHorizontalSprites.gif') !important; }
+  .RadWindow_Windows7.rwInactiveWindow .rwShadow .rwBodyLeft, .RadWindow_Windows7.rwInactiveWindow .rwShadow .rwBodyRight, .RadWindow_Windows7.rwInactiveWindow .rwShadow .rwStatusbarRow .rwCorner, .RadWindow_Windows7.rwNoTitleBar.rwInactiveWindow .rwShadow .rwBodyLeft, .RadWindow_Windows7.rwNoTitleBar.rwInactiveWindow .rwShadow .rwBodyRight {
+    background-image: url('Window/WindowVerticalSprites.gif') !important; }
+
+div.RadWindow_Windows7 a.rwCancel, div.RadWindow_Windows7 a.rwCancel span {
+  background: none;
+  cursor: pointer; }
+
+div.RadWindow_Windows7 a.rwCancel span span {
+  color: #000000;
+  text-decoration: underline; }
+
+div.RadWindow_Windows7.rwNoTitleBar.rwInactiveWindow table.rwShadow tr.rwTitleRow td.rwTopRight {
+  background-position: -8px -280px !important; }

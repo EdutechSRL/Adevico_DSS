@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="lm.Comol.Modules.CallForPapers.Domain.BaseForPaper">
+    <Position X="0.5" Y="0.5" Width="3" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AACAAAAUCBIkAAMAAAAAAAQgCCAACAAAAUBQQEAgAAA=</HashCode>
+      <FileName>Domain\Base\Call\BaseForPaper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="lm.Comol.Modules.CallForPapers.Domain.FieldDefinition">
+    <Position X="4.25" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAAAQgAAAAAAQAAAwAAAAAAAAAAQAQAIAAAAA=</HashCode>
+      <FileName>Domain\Base\Call\FieldDefinition.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Call" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="lm.Comol.Modules.CallForPapers.Domain.FieldMultipleDefinition">
+    <Position X="7" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAIAABAAAA=</HashCode>
+      <FileName>Domain\Base\Call\FieldMultipleDefinition.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Options" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="lm.Comol.Modules.CallForPapers.Domain.FieldOption">
+    <Position X="10" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAgAAAAgAA=</HashCode>
+      <FileName>Domain\Base\Call\FieldOption.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="lm.Comol.Modules.CallForPapers.Domain.UserSubmission">
+    <Position X="0.5" Y="2.25" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAQBQACEQAJAAAIAAAIAAQAIAEBBAABAgQAAAAEAAIA=</HashCode>
+      <FileName>Domain\Base\Call\UserSubmission.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="lm.Comol.Modules.CallForPapers.Domain.Revision">
+    <Position X="2.5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAABAAAAAEEQAAAEEAAAAEAAQAQAEAAAAAQA=</HashCode>
+      <FileName>Domain\Base\Call\Revision.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="lm.Comol.Modules.CallForPapers.Domain.OriginalRevision">
+    <Position X="0.75" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Domain\Base\Call\Revision.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="lm.Comol.Modules.CallForPapers.Domain.RevisionRequest">
+    <Position X="4.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABEEgKAAAACgAAgAABAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Domain\Base\Call\Revision.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="lm.Comol.Modules.CallForPapers.Domain.RevisionItem">
+    <Position X="6.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAQAAAAAAgAA=</HashCode>
+      <FileName>Domain\Base\Call\Revision.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="lm.Comol.Modules.CallForPapers.Domain.RevisionMode" Collapsed="true">
+    <Position X="10" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAACAAAAAEAAAAAAAAAAAAAAAAAEAEAA=</HashCode>
+      <FileName>Domain\Base\Call\Revision.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="lm.Comol.Modules.CallForPapers.Domain.FieldRevisionType" Collapsed="true">
+    <Position X="8.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Domain\Base\Call\Revision.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="lm.Comol.Modules.CallForPapers.Domain.RevisionStatus" Collapsed="true">
+    <Position X="8.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgACACACEAAAAAAAAAACAAAAAAgAAAAAAAAAEAAAA=</HashCode>
+      <FileName>Domain\Base\Call\Revision.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="lm.Comol.Modules.CallForPapers.Domain.RevisionType" Collapsed="true">
+    <Position X="9.25" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAACEAAAQ=</HashCode>
+      <FileName>Domain\Base\Call\Revision.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="lm.Comol.Modules.CallForPapers.Domain.RevisionOrder" Collapsed="true">
+    <Position X="10" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAAAAAAEAAAAAAQAAAAAAAAAACAEEAEAA=</HashCode>
+      <FileName>Domain\Base\Call\Revision.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="lm.Comol.Core.DomainModel" namespace="lm.Comol.Core.DomainModel">
+	<class name="CommunityRoleModulePermission" table="LK_SERVIZIO_COMUNITA" lazy="true" where="LKSC_ID>0">
+		<id name="Id" column="LKSC_ID" type="Int32" unsaved-value="0">
+			<generator class="native"/>
+		</id>
+		<property name="PermissionString" type="String" column="LKSC_Permessi" />
+		<many-to-one name="Service" class="ModuleDefinition" column="LKSC_SRVZ_id" foreign-key="LKSC_SRVZ_id"/>
+		<many-to-one name="Community" class="Community" column="LKSC_CMNT_id" foreign-key="LKSC_CMNT_id"/>
+		<many-to-one name="Role" class="Role" column="LKSC_TPRL_id" foreign-key="LKSC_TPRL_id"/>
+	</class>
+</hibernate-mapping>

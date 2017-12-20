@@ -1,0 +1,568 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+	<!--[if lt IE 9]>
+	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+    <title>ScormPackageSettings - lm.Comol.Core.DomainModel Documentation</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+    <link type="text/css" rel="stylesheet" href="../main.css"/>
+    <script type="text/javascript" src="../js/jquery-1.3.2.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.scrollTo-min.js"></script>
+    <script type="text/javascript" src="../js/navigation.js"></script>
+    <script type="text/javascript" src="../js/example.js"></script>
+  </head>
+  <body>
+  	<header><h1>lm.Comol.Core.DomainModel : API Documentation</h1>
+	</header>
+<nav id="namespaces">
+	<h2 class="fixed">Namespaces</h2>
+	<div class="scroll">
+		<ul>
+			<li>
+          <a href="../lm.Comol.Core.Authentication/index.htm">lm.Comol.Core.Authentication</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.Authentication.Business/index.htm">lm.Comol.Core.Authentication.Business</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.Authentication.Helpers/index.htm">lm.Comol.Core.Authentication.Helpers</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.Business/index.htm">lm.Comol.Core.Business</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.Catalogues/index.htm">lm.Comol.Core.Catalogues</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.Certifications/index.htm">lm.Comol.Core.Certifications</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.Certifications.Business/index.htm">lm.Comol.Core.Certifications.Business</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.Communities/index.htm">lm.Comol.Core.Communities</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.Dashboard.Business/index.htm">lm.Comol.Core.Dashboard.Business</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.Dashboard.Domain/index.htm">lm.Comol.Core.Dashboard.Domain</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.DomainModel/index.htm">lm.Comol.Core.DomainModel</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.DomainModel.Assignment/index.htm">lm.Comol.Core.DomainModel.Assignment</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.DomainModel.Common/index.htm">lm.Comol.Core.DomainModel.Common</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.DomainModel.DocTemplateVers/index.htm">lm.Comol.Core.DomainModel.DocTemplateVers</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.DomainModel.DocTemplateVers.Business/index.htm">lm.Comol.Core.DomainModel.DocTemplateVers.Business</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.DomainModel.DocTemplateVers.Domain.Core/index.htm">lm.Comol.Core.DomainModel.DocTemplateVers.Domain.Core</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.DomainModel.DocTemplateVers.Domain.DTO.Management/index.htm">lm.Comol.Core.DomainModel.DocTemplateVers.Domain.DTO.Management</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.DomainModel.DocTemplateVers.Domain.DTO.ServiceExport/index.htm">lm.Comol.Core.DomainModel.DocTemplateVers.Domain.DTO.ServiceExport</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.DomainModel.DocTemplateVers.Helpers/index.htm">lm.Comol.Core.DomainModel.DocTemplateVers.Helpers</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.DomainModel.Domain/index.htm">lm.Comol.Core.DomainModel.Domain</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.DomainModel.Filters/index.htm">lm.Comol.Core.DomainModel.Filters</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.DomainModel.Helpers/index.htm">lm.Comol.Core.DomainModel.Helpers</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.DomainModel.Helpers.Export/index.htm">lm.Comol.Core.DomainModel.Helpers.Export</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.DomainModel.Helpers.Tags/index.htm">lm.Comol.Core.DomainModel.Helpers.Tags</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.DomainModel.Languages/index.htm">lm.Comol.Core.DomainModel.Languages</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.DomainModel.Repository/index.htm">lm.Comol.Core.DomainModel.Repository</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.DomainModel.SrvFileTransfer/index.htm">lm.Comol.Core.DomainModel.SrvFileTransfer</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.DomainModel.SrvFileUnzip/index.htm">lm.Comol.Core.DomainModel.SrvFileUnzip</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.Event/index.htm">lm.Comol.Core.Event</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.Event.Business/index.htm">lm.Comol.Core.Event.Business</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.Events.Domain/index.htm">lm.Comol.Core.Events.Domain</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.FileRepository.Business/index.htm">lm.Comol.Core.FileRepository.Business</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.FileRepository.Domain/index.htm">lm.Comol.Core.FileRepository.Domain</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.FileRepository.Domain.ScormSettings/index.htm" class="current">lm.Comol.Core.FileRepository.Domain.ScormSettings</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.FileRepository.Domain.toRemove/index.htm">lm.Comol.Core.FileRepository.Domain.toRemove</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.InLineTags.Business/index.htm">lm.Comol.Core.InLineTags.Business</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.InLineTags.Domain/index.htm">lm.Comol.Core.InLineTags.Domain</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.Mail/index.htm">lm.Comol.Core.Mail</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.Mail.Messages/index.htm">lm.Comol.Core.Mail.Messages</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.ModuleLinks/index.htm">lm.Comol.Core.ModuleLinks</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.Msmq.DataContract/index.htm">lm.Comol.Core.Msmq.DataContract</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.Notification.DataContract/index.htm">lm.Comol.Core.Notification.DataContract</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.Notification.Domain/index.htm">lm.Comol.Core.Notification.Domain</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.PersonalInfo/index.htm">lm.Comol.Core.PersonalInfo</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.Subscriptions/index.htm">lm.Comol.Core.Subscriptions</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.Tag.Business/index.htm">lm.Comol.Core.Tag.Business</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.Tag.Domain/index.htm">lm.Comol.Core.Tag.Domain</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.TemplateMessages/index.htm">lm.Comol.Core.TemplateMessages</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.TemplateMessages.Business/index.htm">lm.Comol.Core.TemplateMessages.Business</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.TemplateMessages.Domain/index.htm">lm.Comol.Core.TemplateMessages.Domain</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.WinService.Configurations/index.htm">lm.Comol.Core.WinService.Configurations</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.Wizard/index.htm">lm.Comol.Core.Wizard</a>
+      </li>
+		</ul>
+	</div>
+</nav><nav id="types">
+  <h2 class="fixed">Types in lm.Comol.Core.FileRepository.Domain.ScormSettings</h2>
+	<div class="scroll">
+		<ul>
+				<li>
+            <a href="../lm.Comol.Core.FileRepository.Domain.ScormSettings/dtoScormActivitySettings.htm">dtoScormActivitySettings</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.FileRepository.Domain.ScormSettings/dtoScormItemEvaluationSettings.htm">dtoScormItemEvaluationSettings</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.FileRepository.Domain.ScormSettings/dtoScormOrganizationFolder.htm">dtoScormOrganizationFolder</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.FileRepository.Domain.ScormSettings/dtoScormOrganizationSettings.htm">dtoScormOrganizationSettings</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.FileRepository.Domain.ScormSettings/dtoScormPackageSettings.htm">dtoScormPackageSettings</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.FileRepository.Domain.ScormSettings/dtoScormSettingsBase.htm">dtoScormSettingsBase</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.FileRepository.Domain.ScormSettings/dtoScormSettingsEvaluationBase.htm">dtoScormSettingsEvaluationBase</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.FileRepository.Domain.ScormSettings/EvaluationType.htm">EvaluationType</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.FileRepository.Domain.ScormSettings/ScormItemSettings.htm">ScormItemSettings</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.FileRepository.Domain.ScormSettings/ScormOrganizationSettings.htm">ScormOrganizationSettings</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.FileRepository.Domain.ScormSettings/ScormPackageSettings.htm" class="current">ScormPackageSettings</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.FileRepository.Domain.ScormSettings/ScormSettingsError.htm">ScormSettingsError</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.FileRepository.Domain.ScormSettings/ScormSettingsType.htm">ScormSettingsType</a>
+        </li>
+		</ul>
+	</div>
+</nav>
+	<article>
+    <header>
+		<p class="class"><strong>Type</strong> ScormPackageSettings</p>
+	</header>
+	<section>
+		<header>
+		<p><strong>Namespace</strong> lm.Comol.Core.FileRepository.Domain.ScormSettings</p>
+		<p><strong>Parent</strong> <a href="../lm.Comol.Core.DomainModel/DomainBaseObjectIdLiteMetaInfo`1.htm">DomainBaseObjectIdLiteMetaInfo&lt;T&gt;</a></p>
+		</header>
+    <div class="sub-header">
+		
+		
+			<h3 class="section">Methods</h3>
+			<ul>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain.ScormSettings/ScormPackageSettings.htm#Copy">Copy</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain.ScormSettings/ScormPackageSettings.htm#Copy">Copy</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain.ScormSettings/ScormPackageSettings.htm#CreateForUpdateSettings">CreateForUpdateSettings</a></li>
+			</ul>
+		
+			<h3 class="section">Properties</h3>
+			<ul>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain.ScormSettings/ScormPackageSettings.htm#ActivityCount">ActivityCount</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain.ScormSettings/ScormPackageSettings.htm#CheckScore">CheckScore</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain.ScormSettings/ScormPackageSettings.htm#CheckScormCompletion">CheckScormCompletion</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain.ScormSettings/ScormPackageSettings.htm#CheckTime">CheckTime</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain.ScormSettings/ScormPackageSettings.htm#CreatedOn">CreatedOn</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain.ScormSettings/ScormPackageSettings.htm#CreatorIpAddress">CreatorIpAddress</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain.ScormSettings/ScormPackageSettings.htm#CreatorProxyIpAddress">CreatorProxyIpAddress</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain.ScormSettings/ScormPackageSettings.htm#Deleted">Deleted</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain.ScormSettings/ScormPackageSettings.htm#EvaluationType">EvaluationType</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain.ScormSettings/ScormPackageSettings.htm#Id">Id</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain.ScormSettings/ScormPackageSettings.htm#IdCreatedBy">IdCreatedBy</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain.ScormSettings/ScormPackageSettings.htm#IdItem">IdItem</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain.ScormSettings/ScormPackageSettings.htm#IdModifiedBy">IdModifiedBy</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain.ScormSettings/ScormPackageSettings.htm#IdVersion">IdVersion</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain.ScormSettings/ScormPackageSettings.htm#IsCurrent">IsCurrent</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain.ScormSettings/ScormPackageSettings.htm#IsValid">IsValid</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain.ScormSettings/ScormPackageSettings.htm#MinScore">MinScore</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain.ScormSettings/ScormPackageSettings.htm#MinTime">MinTime</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain.ScormSettings/ScormPackageSettings.htm#ModifiedIpAddress">ModifiedIpAddress</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain.ScormSettings/ScormPackageSettings.htm#ModifiedOn">ModifiedOn</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain.ScormSettings/ScormPackageSettings.htm#ModifiedProxyIpAddress">ModifiedProxyIpAddress</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain.ScormSettings/ScormPackageSettings.htm#Organizations">Organizations</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain.ScormSettings/ScormPackageSettings.htm#PackageGuid">PackageGuid</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain.ScormSettings/ScormPackageSettings.htm#PackagePath">PackagePath</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain.ScormSettings/ScormPackageSettings.htm#Repository">Repository</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain.ScormSettings/ScormPackageSettings.htm#TimeStamp">TimeStamp</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain.ScormSettings/ScormPackageSettings.htm#UniqueIdItem">UniqueIdItem</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain.ScormSettings/ScormPackageSettings.htm#UniqueIdVersion">UniqueIdVersion</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain.ScormSettings/ScormPackageSettings.htm#UseScoreScaled">UseScoreScaled</a></li>
+				<li><a href="../lm.Comol.Core.FileRepository.Domain.ScormSettings/ScormPackageSettings.htm#ValidUntil">ValidUntil</a></li>
+			</ul>
+		
+	</div>
+	
+	<h3 class="section">Public instance methods</h3>
+
+	<div id="Copy" class="method">
+		<h4>
+			<a href="../lm.Comol.Core.FileRepository.Domain.ScormSettings/ScormPackageSettings.htm">ScormPackageSettings</a> <strong>Copy</strong>(<span title="System.int">int</span> idPerson, <span title="System.string">string</span> ipAddress, <span title="System.string">string</span> proxyIpAddress, <a href="../lm.Comol.Core.FileRepository.Domain/BaseItemIdentifiers.htm">BaseItemIdentifiers</a> itemIdentifiers, <a href="../lm.Comol.Core.FileRepository.Domain/RepositoryIdentifier.htm">RepositoryIdentifier</a> repository, <span title="System.Nullable<DateTime>">Nullable&lt;DateTime&gt;</span> validUntil, <span title="System.string">string</span> packagePath)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="Copy" class="method">
+		<h4>
+			<a href="../lm.Comol.Core.FileRepository.Domain.ScormSettings/ScormPackageSettings.htm">ScormPackageSettings</a> <strong>Copy</strong>(<span title="System.int">int</span> idPerson, <span title="System.string">string</span> ipAddress, <span title="System.string">string</span> proxyIpAddress, <span title="System.long">long</span> idItem, <span title="System.Guid">Guid</span> uniqueId, <span title="System.long">long</span> idVersion, <span title="System.Guid">Guid</span> uniqueIdVersion, <a href="../lm.Comol.Core.FileRepository.Domain/RepositoryIdentifier.htm">RepositoryIdentifier</a> repository, <span title="System.Nullable<DateTime>">Nullable&lt;DateTime&gt;</span> validUntil, <span title="System.string">string</span> packagePath)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="CreateForUpdateSettings" class="method">
+		<h4>
+			<a href="../lm.Comol.Core.FileRepository.Domain.ScormSettings/ScormPackageSettings.htm">ScormPackageSettings</a> <strong>CreateForUpdateSettings</strong>(<span title="System.int">int</span> idPerson, <span title="System.string">string</span> ipAddress, <span title="System.string">string</span> proxyIpAddress, <a href="../lm.Comol.Core.FileRepository.Domain/liteRepositoryItemVersion.htm">liteRepositoryItemVersion</a> version, <a href="../lm.Comol.Core.FileRepository.Domain.ScormSettings/EvaluationType.htm">EvaluationType</a> evaluation, <a href="../lm.Comol.Core.FileRepository.Domain.ScormSettings/dtoScormItemEvaluationSettings.htm">dtoScormItemEvaluationSettings</a> dto)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	
+	
+	<h3 class="section">Public properties</h3>
+
+	<div id="ActivityCount" class="method">
+		<h4>
+			<span title="System.long">long</span> <strong>ActivityCount</strong> get; set;
+		</h4>
+		<div class="content">
+
+		</div>
+	</div>
+	<div id="CheckScore" class="method">
+		<h4>
+			<span title="System.bool">bool</span> <strong>CheckScore</strong> get; set;
+		</h4>
+		<div class="content">
+
+		</div>
+	</div>
+	<div id="CheckScormCompletion" class="method">
+		<h4>
+			<span title="System.bool">bool</span> <strong>CheckScormCompletion</strong> get; set;
+		</h4>
+		<div class="content">
+
+		</div>
+	</div>
+	<div id="CheckTime" class="method">
+		<h4>
+			<span title="System.bool">bool</span> <strong>CheckTime</strong> get; set;
+		</h4>
+		<div class="content">
+
+		</div>
+	</div>
+	<div id="CreatedOn" class="method">
+		<h4>
+			<span title="System.Nullable<DateTime>">Nullable&lt;DateTime&gt;</span> <strong>CreatedOn</strong> get; set;
+		</h4>
+		<div class="content">
+
+		</div>
+	</div>
+	<div id="CreatorIpAddress" class="method">
+		<h4>
+			<span title="System.string">string</span> <strong>CreatorIpAddress</strong> get; set;
+		</h4>
+		<div class="content">
+
+		</div>
+	</div>
+	<div id="CreatorProxyIpAddress" class="method">
+		<h4>
+			<span title="System.string">string</span> <strong>CreatorProxyIpAddress</strong> get; set;
+		</h4>
+		<div class="content">
+
+		</div>
+	</div>
+	<div id="Deleted" class="method">
+		<h4>
+			<a href="../lm.Comol.Core.DomainModel/BaseStatusDeleted.htm">BaseStatusDeleted</a> <strong>Deleted</strong> get; set;
+		</h4>
+		<div class="content">
+
+		</div>
+	</div>
+	<div id="EvaluationType" class="method">
+		<h4>
+			<a href="../lm.Comol.Core.FileRepository.Domain.ScormSettings/EvaluationType.htm">EvaluationType</a> <strong>EvaluationType</strong> get; set;
+		</h4>
+		<div class="content">
+
+		</div>
+	</div>
+	<div id="Id" class="method">
+		<h4>
+			<span title="System.long">long</span> <strong>Id</strong> get; set;
+		</h4>
+		<div class="content">
+
+		</div>
+	</div>
+	<div id="IdCreatedBy" class="method">
+		<h4>
+			<span title="System.int">int</span> <strong>IdCreatedBy</strong> get; set;
+		</h4>
+		<div class="content">
+
+		</div>
+	</div>
+	<div id="IdItem" class="method">
+		<h4>
+			<span title="System.long">long</span> <strong>IdItem</strong> get; set;
+		</h4>
+		<div class="content">
+
+		</div>
+	</div>
+	<div id="IdModifiedBy" class="method">
+		<h4>
+			<span title="System.int">int</span> <strong>IdModifiedBy</strong> get; set;
+		</h4>
+		<div class="content">
+
+		</div>
+	</div>
+	<div id="IdVersion" class="method">
+		<h4>
+			<span title="System.long">long</span> <strong>IdVersion</strong> get; set;
+		</h4>
+		<div class="content">
+
+		</div>
+	</div>
+	<div id="IsCurrent" class="method">
+		<h4>
+			<span title="System.bool">bool</span> <strong>IsCurrent</strong> get; set;
+		</h4>
+		<div class="content">
+
+		</div>
+	</div>
+	<div id="IsValid" class="method">
+		<h4>
+			<span title="System.bool">bool</span> <strong>IsValid</strong> get; set;
+		</h4>
+		<div class="content">
+
+		</div>
+	</div>
+	<div id="MinScore" class="method">
+		<h4>
+			<span title="System.decimal">decimal</span> <strong>MinScore</strong> get; set;
+		</h4>
+		<div class="content">
+
+		</div>
+	</div>
+	<div id="MinTime" class="method">
+		<h4>
+			<span title="System.long">long</span> <strong>MinTime</strong> get; set;
+		</h4>
+		<div class="content">
+
+		</div>
+	</div>
+	<div id="ModifiedIpAddress" class="method">
+		<h4>
+			<span title="System.string">string</span> <strong>ModifiedIpAddress</strong> get; set;
+		</h4>
+		<div class="content">
+
+		</div>
+	</div>
+	<div id="ModifiedOn" class="method">
+		<h4>
+			<span title="System.Nullable<DateTime>">Nullable&lt;DateTime&gt;</span> <strong>ModifiedOn</strong> get; set;
+		</h4>
+		<div class="content">
+
+		</div>
+	</div>
+	<div id="ModifiedProxyIpAddress" class="method">
+		<h4>
+			<span title="System.string">string</span> <strong>ModifiedProxyIpAddress</strong> get; set;
+		</h4>
+		<div class="content">
+
+		</div>
+	</div>
+	<div id="Organizations" class="method">
+		<h4>
+			<span title="System.Collections.Generic.IList<ScormOrganizationSettings>">IList&lt;ScormOrganizationSettings&gt;</span> <strong>Organizations</strong> get; set;
+		</h4>
+		<div class="content">
+
+		</div>
+	</div>
+	<div id="PackageGuid" class="method">
+		<h4>
+			<span title="System.string">string</span> <strong>PackageGuid</strong> get; set;
+		</h4>
+		<div class="content">Stringa con il GUID del pacchetto (per allineamento dati play) 
+
+		</div>
+	</div>
+	<div id="PackagePath" class="method">
+		<h4>
+			<span title="System.string">string</span> <strong>PackagePath</strong> get; set;
+		</h4>
+		<div class="content">
+
+		</div>
+	</div>
+	<div id="Repository" class="method">
+		<h4>
+			<a href="../lm.Comol.Core.FileRepository.Domain/RepositoryIdentifier.htm">RepositoryIdentifier</a> <strong>Repository</strong> get; set;
+		</h4>
+		<div class="content">
+
+		</div>
+	</div>
+	<div id="TimeStamp" class="method">
+		<h4>
+			<span title="System.Byte[]">Byte[]</span> <strong>TimeStamp</strong> get; set;
+		</h4>
+		<div class="content">
+
+		</div>
+	</div>
+	<div id="UniqueIdItem" class="method">
+		<h4>
+			<span title="System.Guid">Guid</span> <strong>UniqueIdItem</strong> get; set;
+		</h4>
+		<div class="content">
+
+		</div>
+	</div>
+	<div id="UniqueIdVersion" class="method">
+		<h4>
+			<span title="System.Guid">Guid</span> <strong>UniqueIdVersion</strong> get; set;
+		</h4>
+		<div class="content">
+
+		</div>
+	</div>
+	<div id="UseScoreScaled" class="method">
+		<h4>
+			<span title="System.bool">bool</span> <strong>UseScoreScaled</strong> get; set;
+		</h4>
+		<div class="content">
+
+		</div>
+	</div>
+	<div id="ValidUntil" class="method">
+		<h4>
+			<span title="System.Nullable<DateTime>">Nullable&lt;DateTime&gt;</span> <strong>ValidUntil</strong> get; set;
+		</h4>
+		<div class="content">
+
+		</div>
+	</div>
+	</section>
+	</article><footer>
+	<span id="version">Built from v1.0.0.0 of lm.Comol.Core.DomainModel</span>
+	<span id="docu-link">
+		Generated by <a href="http://docu.jagregory.com">docu</a>
+	</span>
+</footer>
+  </body>
+</html>

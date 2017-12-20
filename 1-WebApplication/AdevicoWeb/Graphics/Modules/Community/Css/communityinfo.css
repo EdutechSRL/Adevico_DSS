@@ -1,0 +1,353 @@
+﻿div.communityinfo div.profile {
+	max-width: 180px;
+	margin-right: auto;
+	margin-left: auto;
+	text-align: center;
+}
+
+div.communityinfo div.profile .fieldobject.ownerdetails {
+	text-align: left;
+	font-weight: bold;
+}
+
+div.communityinfo div.profile .fieldobject.ownerdetails.owner {
+	/*border: 1px solid #ccc;*/
+    font-weight: bold;
+}
+
+div.communityinfo div.profile .fieldobject.ownerdetails.creator {
+	/*border: 1px solid #ccc;*/
+    border-top: 1px solid #ccc;
+	/*font-weight: normal;*/
+    font-style: italic;
+}
+
+div.communityinfo div.profile .fieldobject.ownerdetails label.fieldlabel {
+	display: block;
+}
+
+div.communityinfo div.profile div.img {
+	height: 180px;
+	border: 1px solid #ccc;
+	margin-bottom: 0.5em;
+	background: #f5f5f5;
+}
+
+div.communityinfo div.profile div.img img {
+	height: 95%;
+	margin-top: 2.5%;
+}
+
+div.communityinfo div.profile div.img.empty {
+	display: none;
+}
+
+.table.communitydetails th.key,
+.table.communitydetails td.key {
+	font-weight: bold;
+	width: 170px;
+	padding-right: 16px;
+}
+
+.table.communitydetails.others td.key,
+.table.communitydetails.others td.value{
+    vertical-align: top;
+}
+
+div.communityinfo .section {
+	margin-top: 1em;
+}
+
+div.communityinfo .section .sectioninner {
+	margin: 10px 15px;
+}
+
+div.communityinfo .section .sectioninner .cisectionheader {
+	margin-top: 0;
+	margin-bottom: 1.3em;
+}
+
+div.communityinfo .section .sectioninner .cisectionheader h3 {
+	margin: 0;
+}
+
+div.communityinfo .section.collapsed .sectioninner .cisectionheader{
+	margin: 0;
+}
+
+div.communityinfo .section .sectioninner .cisectionfooter {
+	margin-top: 0.5em;
+	padding-top: 5px;
+	font-style: italic;
+	color: #666;
+}
+
+div.communityinfo .section.box {
+	background-color: #eee;
+	border: 1px solid #e4e4e4;
+	box-sizing: border-box;
+	*margin-left: -1px;
+	*margin-right: -1px;
+}
+
+.section.box .section.box {
+	background-color: #fff;
+}
+
+div.tablewrapper {
+	background-color: #fff;
+}
+
+div.communityinfo .section.box.requirements {
+	
+}
+
+
+
+div.communityinfo .section.box .right .expander {
+	display: none;
+}
+
+div.communityinfo div.section.box.collapsable.collapsed div.cisectioncontent {
+	display: none;
+}
+
+div.communityinfo div.section.box.collapsable.collapsed div.cisectionfooter {
+	display: none;
+}
+
+div.communityinfo div.section.box.collapsable.expanded div.cisectioncontent {
+	display: block;
+}
+
+div.communityinfo div.section.box.collapsable.expanded div.cisectionfooter {
+	display: block;
+}
+
+div.communityinfo .daterange label.label {
+	font-weight: bold;
+}
+
+div.communityinfo .progressbar {
+	width: 100px;
+	display: inline-block;
+	line-height: 13px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	overflow: hidden;
+	border: 1px solid #aaa;
+	-moz-box-shadow: inset 1px 1px 1px rgba(0,0,0,0.2);
+	-webkit-box-shadow: inset 1px 1px 1px rgba(0,0,0,0.2);
+	box-shadow: inset 1px 1px 1px rgba(0,0,0,0.2);
+}
+
+div.communityinfo .flag .notstarted,
+div.communityinfo .progressbar .available {
+	display: inline-block;
+	width: 100%;
+	background: #cccccc;
+	background: -moz-linear-gradient(top,  #cccccc 0%, #eeeeee 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#cccccc), color-stop(100%,#eeeeee));
+	background: -webkit-linear-gradient(top,  #cccccc 0%,#eeeeee 100%);
+	background: -o-linear-gradient(top,  #cccccc 0%,#eeeeee 100%);
+	background: -ms-linear-gradient(top,  #cccccc 0%,#eeeeee 100%);
+	background: linear-gradient(top,  #cccccc 0%,#eeeeee 100%);
+	-moz-box-shadow: inset 1px 1px 1px rgba(0,0,0,0.2);
+	-webkit-box-shadow: inset 1px 1px 1px rgba(0,0,0,0.2);
+	box-shadow: inset 1px 1px 1px rgba(0,0,0,0.2);
+}
+
+div.communityinfo .flag .notstarted,
+div.communityinfo .progressbar .admins {
+	display: inline-block;
+	width: 100%;
+	background: #666666;
+	background: -moz-linear-gradient(top,  #777777 0%, #555555 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#777777), color-stop(100%,#555555));
+	background: -webkit-linear-gradient(top,  #777777 0%,#555555 100%);
+	background: -o-linear-gradient(top,  #777777 0%,#555555 100%);
+	background: -ms-linear-gradient(top,  #777777 0%,#555555 100%);
+	background: linear-gradient(top,  #777777 0%,#555555 100%);
+	-moz-box-shadow: inset 1px 1px 1px rgba(0,0,0,0.2);
+	-webkit-box-shadow: inset 1px 1px 1px rgba(0,0,0,0.2);
+	box-shadow: inset 1px 1px 1px rgba(0,0,0,0.2);
+}
+
+div.communityinfo .flag .notstarted,
+div.communityinfo .progressbar .admins {
+	display: inline-block;
+	width: 100%;
+	background: #888888;
+	background: -moz-linear-gradient(top,  #999999 0%, #777777 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#999999), color-stop(100%,#777777));
+	background: -webkit-linear-gradient(top,  #999999 0%,#777777 100%);
+	background: -o-linear-gradient(top,  #999999 0%,#777777 100%);
+	background: -ms-linear-gradient(top,  #999999 0%,#777777 100%);
+	background: linear-gradient(top,  #999999 0%,#777777 100%);
+	-moz-box-shadow: inset 1px 1px 1px rgba(0,0,0,0.2);
+	-webkit-box-shadow: inset 1px 1px 1px rgba(0,0,0,0.2);
+	box-shadow: inset 1px 1px 1px rgba(0,0,0,0.2);
+}
+
+div.communityinfo .flag .started,
+div.communityinfo .progressbar .started {
+	display: inline-block;
+	width: 0;
+	background-color: #ffcd40;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#f4e46a),to(#ffcd40));
+	background-image: -webkit-linear-gradient(top, #f4e46a, #ffcd40);
+	background-image: -moz-linear-gradient(top, #f4e46a, #ffcd40);
+	background-image: -o-linear-gradient(top, #f4e46a, #ffcd40);
+	background-image: -ms-linear-gradient(top, #f4e46a, #ffcd40);
+	background-image: linear-gradient(top, #f4e46a, #ffcd40);
+}
+
+div.communityinfo .flag .completed,
+div.communityinfo .progressbar .busy {
+	display: inline-block;
+	width: 0;
+	background-color: #99c74a;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#c3d46a),to(#99c74a));
+	background-image: -webkit-linear-gradient(top, #c3d46a, #99c74a);
+	background-image: -moz-linear-gradient(top, #c3d46a, #99c74a);
+	background-image: -o-linear-gradient(top, #c3d46a, #99c74a);
+	background-image: -ms-linear-gradient(top, #c3d46a, #99c74a);
+	background-image: linear-gradient(top, #c3d46a, #99c74a);
+}
+
+div.communityinfo .flag .notpassed,
+div.communityinfo .progressbar .notpassed,
+div.communityinfo .progressbar .Invalidated,
+div.communityinfo .progressbar .invalidated,
+div.communityinfo .progressbar .EvaluatorReplacement.Invalidated,
+div.communityinfo .progressbar .evaluatorreplacement.invalidated {
+	display: inline-block;
+	width: 0;
+	background: #ff3019;
+	background: -moz-linear-gradient(top,  #ff3019 0%, #cf0404 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ff3019), color-stop(100%,#cf0404));
+	background: -webkit-linear-gradient(top,  #ff3019 0%,#cf0404 100%);
+	background: -o-linear-gradient(top,  #ff3019 0%,#cf0404 100%);
+	background: -ms-linear-gradient(top,  #ff3019 0%,#cf0404 100%);
+	background: linear-gradient(top,  #ff3019 0%,#cf0404 100%);
+}
+
+div.communityinfo .progressbarwrapper {
+	display: block;
+	position: relative;
+}
+
+span.seats.available,
+span.seats.progress {
+	display: inline-block;
+	width: 49%;
+	vertical-align: middle;
+}
+
+span.seats.progress {
+	text-align: right;
+}
+
+div.communityinfo .progressbarwrapper .progressbar {
+	vertical-align: top;
+}
+
+div.communityinfo .subscription.roles {
+	
+}
+
+div.communityinfo .subscription.roles .role {
+	display: inline-block;
+	margin-right: 2px;
+	width: 100%;
+	margin-bottom: .667em;
+}
+
+div.communityinfo .subscription.roles .role .number,
+div.communityinfo .available.seats .number,
+div.communityinfo .total.seats .number {
+	padding: 3px;
+	padding-top: 1px;
+	padding-bottom: 1px;
+	border: 1px solid #ccc;
+	background-color: #eee;
+	border-radius: 5px;
+	min-width: 16px;
+	display: inline-block;
+	text-align: center;
+}
+
+div.communityinfo .subscription.roles .role .waiting {
+	font-style: italic;
+}
+
+div.communityinfo table.requirements th.reason,
+div.communityinfo table.requirements td.reason {
+	
+}
+
+div.communityinfo table.requirements th.info,
+div.communityinfo table.requirements td.info {
+	width: 80px;
+	text-align: center;
+	font-weight: bold;
+}
+
+div.communityinfo table.requirements td.info .passed {
+	
+}
+
+div.communityinfo table.requirements td.info.passed {
+	background-color: #7eaa32;
+	text-shadow: 0 1px 0 rgba(255,255,255,0.5);
+	color: #fff;
+	text-shadow: 0 1px 0 rgba(0,0,0,0.5);
+}
+
+div.communityinfo table.requirements td.info .notpassed {
+	
+}
+
+div.communityinfo table.requirements td.info.notpassed {
+	background-color: #c20;
+	color: #fff;
+	text-shadow: 0 1px 0 rgba(0,0,0,0.5);
+}
+
+div.communityinfo table.requirements td.info .warning {
+	
+}
+
+div.communityinfo table.requirements td.info.warning {
+	background-color: #ffff00;
+}
+
+div.communityinfo table.requirements td.info .waiting {
+	
+}
+
+table.communitydetails td {
+	vertical-align: middle;
+	height: 18px;
+}
+
+.requirements div.messages,
+.requirements div.message {
+	margin-bottom: 0;
+	border-right: 0 !important;
+	border-left: 0 !important;
+}
+
+.requirements div.message{
+	font-size: 14px;
+}
+
+
+.requirements table td {
+	padding: 10px;
+}
+
+div.communityinfo table.requirements td.info.waiting {
+	background-color: #fff;
+}

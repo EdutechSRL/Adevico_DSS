@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Resource xmlns="urn:ComolTranslation">
+  <item name="serviceTitle">Gestione menu</item>
+  <item name="serviceTitleAdd">Creazione nuova barra dei menu</item>
+  <item name="serviceTitleEdit">Modifica barra dei menu</item>
+  <item name="nopermission">Non si dispone dei permessi necessari per accedere alla pagina.</item>
+
+ 
+  <item name="MenuBarType.None">Non definito</item>
+  <item name="MenuBarType.Portal">Portale</item>
+  <item name="MenuBarType.GenericCommunity" disambiguation="singolare"	>Comunità</item>
+  <item name="MenuBarType.PortalAdministration">Amministrazione portale</item>
+  <item name="MenuBarType.ForCommunity">Singole comunità</item>
+  <item name="MenuBarType.ForCommunitiesTemplate">Tipologie comunità</item>
+
+  <item name="ItemStatus.None" hidden="true">Non attivo</item>
+  <item name="ItemStatus.Draft">Bozza</item>
+  <item name="ItemStatus.Active">Attivo</item>
+
+  <item name="HYPaddMenuBar.text">Nuovo</item>
+  <item name="HYPaddMenuBar.ToolTip">Nuova barra dei menu</item>
+  <item name="HYPaddMenuBar.status">Nuova barra dei menu</item>
+
+  <item name="HYPbackToManagement.text">Torna alla lista</item>
+  <item name="HYPbackToManagement.ToolTip">Torna alla lista</item>
+  <item name="HYPbackToManagement.status">Torna alla lista</item>
+
+  <item name="LBname.text">Nome</item>
+  <item name="LBmenubarType.text">Tipo</item>
+  <item name="LBstatus.text" disambiguation="status: attivo/chiuso/in corso/valutazione">Status</item>
+  <item name="LBinfo.text">Ultima modifica</item>
+
+  <item name="HYPeditMenuBar.text" disambiguation="M=modifica (un solo carattere)">M</item>
+  <item name="HYPeditMenuBar.ToolTip">Modifica la barra dei menu</item>
+  <item name="HYPeditMenuBar.status">Modifica la barra dei menu</item>
+  <item name="HYPviewMenuBar.status">Visualizza la barra dei menu</item>
+  <item name="DLBedit.text" disambiguation="M=modifica (un solo carattere)">M</item>
+  <item name="DLBedit.ToolTip">Modifica la barra dei menu</item>
+  <item name="DLBedit.status">Modifica la barra dei menu</item>
+
+  <item name="LNBvirtualDelete.text"></item>
+  <item name="LNBvirtualDelete.ToolTip">Cestina la barra dei menu</item>
+  <item name="LNBvirtualDelete.status">Cestina la barra dei menu</item>
+
+
+  <item name="LNBsetDefault.text" disambiguation="D=default (un solo carattere)">D</item>
+  <item name="LNBsetDefault.ToolTip">Imposta come default</item>
+  <item name="LNBsetDefault.status">Imposta come default</item>
+
+  <item name="LBpagesize.text">Voci per pagina: </item>
+  <item name="LTpage.text">Vai alla pagina: </item>
+  <item name="DLGvirtualDeleteMenuBarTitle">Cancellazione barra dei menu</item>
+  <item name="DLGvirtualDeleteMenuBarText">ATTENZIONE: sei sicuro di voler cestinare la barra dei menu selezionata ?</item>
+
+  <item name="DLGeditActiveMenuBarTitle">Modifica barra dei menu</item>
+  <item name="DLGeditActiveMenuBarText">ATTENZIONE: sei sicuro di voler modificare la barra dei menu selezionata ? E' una barra dei menu attiva nel sistema e proseguendo ne verrà creata una copia per la modifica (quella in linea rimmarrà inalterata)</item>
+
+  <item name="LBnoItems.text">Nessuna barra dei menu individuata</item>
+  <item name="DefaultMenuName" placeholder="true" mustcontains="{0}">Nuova barra dei menu {0}</item>
+
+  <item name="LNBcreate.text">Crea</item>
+  <item name="LNBcreate.ToolTip">Crea la barra dei menu</item>
+  <item name="LNBcreate.status">Crea la barra dei menu</item>
+
+  <item name="HYPbackToManagement.text">Torna alla gestione</item>
+  <item name="HYPbackToManagement.ToolTip">Torna alla gestionea dei menu</item>
+  <item name="HYPbackToManagement.status">Torna alla gestione dei menu</item>
+  <item name="LBmenubarName.text">Nome:</item>
+  <item name="LBcssClass.text">Classe css:</item>
+  <item name="LBmenubarType.text">Tipo barra:</item>
+  <item name="LBdescription.text">Specificando i campi sottostanti il sistema crea un numero di elementi di primo e di secondo livello pari a quelli indicati:</item>
+  <item name="LBtopItemsCount_t.text" mustcontains="10">Elementi 1° livello (MAX 10):</item>
+  <item name="LBsubItemsCount_t.text" mustcontains="30">Elementi 2° livello (MAX 30):</item>
+
+  <item name="BTNaddTopItem.text" mustcontains="+">+ Voce</item>
+  <item name="BTNaddTopItem.ToolTip">Aggiunge una voce di primo livello</item>
+  <item name="BTNaddTopItem.status">Aggiunge una voce di primo livello</item>
+
+  <item name="BTNsaveBottom.text">Salva</item>
+  <item name="BTNsaveBottom.ToolTip">Salva modifiche dell'elemento</item>
+  <item name="BTNsaveBottom.status">Salva modifiche dell'elemento</item>
+
+  <item name="EditActiveMenubar" placeholder="true" mustcontains="{0}">[COPIA] {0}</item>
+  <item name="LNBvirtualUndelete.text"></item>
+  <item name="LNBvirtualUndelete.ToolTip">Recupera dal cestino la barra dei menu</item>
+  <item name="LNBvirtualUndelete.status">Recupera dal cestino la barra dei menu</item>
+
+  <item name="LNBphisicalDelete.text"></item>
+  <item name="LNBphisicalDelete.ToolTip">Elimina definitivamente dal cestino la barra dei menu</item>
+  <item name="LNBphisicalDelete.status">Elimina definitivamente dal cestino la barra dei menu</item>
+
+  <item name="DLGdeleteMenuBarTitle">Cancellazione barra menu</item>
+  <item name="DLGdeleteMenuBarText">ATTENZIONE: sei sicuro di voler cancellare definitivamente la barra dei menu selezionata ?</item>
+
+
+</Resource>

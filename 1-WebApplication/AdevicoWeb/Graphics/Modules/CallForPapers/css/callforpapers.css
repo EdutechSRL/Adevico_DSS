@@ -1,0 +1,6686 @@
+/* CallForPaper stylesheet - updated 25/02/2014 16:40   5 */
+
+/* @group Filetype Render UC * service settings * */
+
+.ui-dialog {
+    font-size: inherit;
+    color: #333;
+}
+
+.ui-dialog input {
+    font-size: .95em;
+}
+
+span.fileIco {
+    margin-right: 3px;
+    position: relative;
+    top: -1px;
+    *top: 4px;
+    *text-indent: 0;
+    *font-size: 0;
+    *line-height: 0;
+    *overflow: hidden;
+}
+
+/* @end */
+
+
+/* @group Icon: handlers */
+
+.handle,
+.movesection,
+.movecfield,
+.movecfielditem,
+.movecfp,
+.icon.orderUp,
+.icon.orderDown,
+div.choseselect .icons .icon.selectall,
+div.choseselect .icons .icon.selectnone {
+    display: inline-block;
+    *display:inline;
+    *zoom:1;
+    background: url(../../../Generics/Command/img/handlers_set_1.png) no-repeat;
+    background-position: -240px 0px;
+    background-repeat: no-repeat !important;
+    text-align: left;
+    text-indent: -9999px;
+    *text-indent: 0;
+    *font-size: 0;
+    *line-height: 0;
+    *overflow: hidden;
+}
+
+.movesection,
+.movecfp {
+    width: 16px;
+    height: 24px;
+    margin-top: 2px;
+}
+
+.movecfield,
+.movecfielditem {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    text-indent: -9999px;
+    cursor: move;
+    *text-indent: 0;
+    *font-size: 0;
+    *line-height: 0;
+    vertical-align: middle;
+    margin-top: 2px;
+}
+
+.movecfield,
+.movecfielditem {
+    background-position: 2px -579px;
+    width: 16px;
+    height: 16px;
+}
+
+.handle {
+    cursor: pointer;
+    background-position: 0px -783px;
+    width: 16px;
+    height: 16px;
+}
+
+.collapsed .handle,
+.handle.collapsed {
+    background-position: 0px -861px;
+}
+
+li.cfield .handle {
+    background-position: 0px -743px;
+    position: relative;
+    top: 2px;
+    *top:2px;
+}
+
+li.cfield .handle.collapsed {
+    background-position: 0px -821px;
+}
+
+.icon.orderUp,
+.icon.orderDown {
+    background: url(../../../Generics/Command/img/handlers_set_1.png) no-repeat !important;
+    width: 8px !important;
+    height: 6px !important;
+}
+
+.icon.orderUp {
+    background-position: 0px -252px !important;
+}
+
+.icon.orderDown {
+    background-position: 0px -124px !important;
+}
+
+.icon.checkbox_no,
+div.choseselect .icons .icon.selectnone {
+    background-position: 0 -348px;
+    width: 16px;
+    height: 16px;
+}
+
+.icon.checkbox_yes,
+div.choseselect .icons .icon.selectall {
+    background-position: 0 -383px;
+    width: 16px;
+    height: 16px;
+}
+
+ul.cfps li.cfp.default .icon.movecfp {
+    display: none;
+}
+
+.descriptionswitch {
+    margin-top: 1em;
+    display: inline-block;
+    *display:inline;
+    cursor: pointer;
+    display: block;
+    width: 16px;
+    height: 16px;
+    background: url(../../../Generics/Command/img/handlers_set_1.png) no-repeat;
+    background-repeat: no-repeat;
+}
+
+.description .descriptionswitch {
+    background-position: 0px -24px;
+}
+
+.description.expanded .descriptionswitch {
+    background-position: 0px -58px;
+}
+
+/* @end */
+
+/* @group Icons: CFP */
+
+td.actions .icons .icon.detail {
+    background-position: -40px -160px !important;
+}
+
+td.actions .icons .icon.separator {
+   display:none !important;
+}
+
+/* @end */
+
+/* @group Icons: status lights */
+
+.submissions .icons .icon.status,
+.contentwrapper.edit .icons .icon.status {
+    width: 12px;
+    height: 12px;
+    *border: 1px solid #888;
+    *width: 10px;
+    *height: 10px;
+    margin-top: 3px;
+    background-color: #cccccc;
+    background-image: none;
+    -moz-box-shadow: inset 1px 1px 1px rgba(0,0,0,0.5);
+    -webkit-box-shadow: inset 1px 1px 1px rgba(0,0,0,0.5);
+    box-shadow: inset 1px 1px 1px rgba(0,0,0,0.5);
+    border-radius: 3px;
+    cursor: default;
+}
+
+.submissions .icons .icon.status {
+    vertical-align: top;
+}
+
+.contentwrapper.edit table .icons .icon.status {
+    margin-top: 0;
+}
+
+.submissions .icons .icon.status.none,
+.contentwrapper.edit .icons .icon.status.none,
+ul.navigation li.navigationitem .icons .icon.status.none  {
+    display: none;
+}
+
+.status .icons .icon.status.completed,
+.submissions .icons .icon.status.valid,
+.icons .icon.status.submission.accepted,
+.icons .icon.status.submission.requestaccepted,
+.icons .icon.status.submission.approved,
+.contentwrapper.edit .icons .icon.status.valid,
+ul.navigation li.navigationitem.valid .icons .icon.status  {
+    background-color: #b4c561;
+    background: -moz-linear-gradient(top,  #a4b357 0%, #75890c 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#a4b357), color-stop(100%,#75890c));
+    background: -webkit-linear-gradient(top,  #a4b357 0%,#75890c 100%);
+    background: -o-linear-gradient(top,  #a4b357 0%,#75890c 100%);
+    background: -ms-linear-gradient(top,  #a4b357 0%,#75890c 100%);
+    background: linear-gradient(top,  #a4b357 0%,#75890c 100%);
+}
+
+.status .icons .icon.status.error,
+.submissions .icons .icon.status.error,
+.icons .icon.status.submission.refused,
+.icons .icon.status.submission.rejected,
+.icons .icon.status.submission.deleted,
+.icons .icon.status.submission.cancelled,
+.contentwrapper.edit .icons .icon.status.error,
+ul.navigation li.navigationitem.error .icons .icon.status {
+    background-color: #da0309;
+    background: -moz-linear-gradient(top,  #ff3019 0%, #cf0404 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ff3019), color-stop(100%,#cf0404));
+    background: -webkit-linear-gradient(top,  #ff3019 0%,#cf0404 100%);
+    background: -o-linear-gradient(top,  #ff3019 0%,#cf0404 100%);
+    background: -ms-linear-gradient(top,  #ff3019 0%,#cf0404 100%);
+    background: linear-gradient(top,  #ff3019 0%,#cf0404 100%);
+    -moz-box-shadow: inset 1px 1px 1px rgba(0,0,0,0.5);
+    -webkit-box-shadow: inset 1px 1px 1px rgba(0,0,0,0.5);
+    box-shadow: inset 1px 1px 1px rgba(0,0,0,0.5);
+}
+
+.status .icons .icon.status.started,
+.submissions .icons .icon.status.warning,
+.contentwrapper.edit .icons .icon.status.warning,
+ul.navigation li.navigationitem.warning .icons .icon.status {
+    background-color: #ffd564;
+    background: #ffd564;
+    -moz-box-shadow: inset 1px 1px 1px rgba(167,143,70,0.8);
+    -webkit-box-shadow: inset 1px 1px 1px rgba(167,143,70,0.8);
+    box-shadow: inset 1px 1px 1px rgba(167,143,70,0.8);
+}
+
+ul.navigation li.navigationitem.disabled .icons .icon.status {
+    background-color: #eee;
+    background: #eee;
+    box-shadow: inset 1px 1px 1px 1px rgba(0,0,0,0.2);
+    cursor: default;
+}
+
+/* @end */
+
+/* @group *** misc commands temp *** */
+
+.exportButtons {
+    float: left;
+    margin-bottom: 1em;
+}
+
+.exportButtons .exportButton {
+    cursor: pointer;
+}
+
+.viewButtons {
+    margin-top: 1em;
+    float: right;
+    padding-right: 20px;
+    display: block;
+    text-align: right;
+    width: 240px
+}
+
+div.cfpTitle {
+    width: 100%;
+    display: inline-block;
+}
+
+div.cfpTitle span.Titolo_campo {
+    font-size: 1em;
+    font-weight: normal;
+    font-style: normal;
+}
+
+div.cfpTitle span.label.inline,
+span#ctl00_CPHservice_LBuserName.Titolo_campo {
+    font-size: 1.2em;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+div.cfpTitle span.objectRender span.itemTitle {
+    font-size: 1em;
+    font-weight: bold;
+    margin: 0 10px;
+}
+
+a.img_link {
+    border: none !important;
+}
+
+a.img_link.ico_export_csv_l {
+    background-color: transparent;
+    background-image: url(../../../Generics/File/img/Filetype_Set-2_32.png);
+    background-position: 0 0px;
+    width: 32px;
+    height: 32px;
+}
+
+a.img_link.ico_export_xml_l {
+    background-color: transparent;
+    background-image: url(../../../Generics/File/img/Filetype_Set-2_32.png);
+    background-position: 0 -82px;
+    width: 32px;
+    height: 32px;
+}
+
+a.img_link.ico_export_pdf_l {
+    background-color: transparent;
+    background-image: url(../../../Generics/File/img/Filetype_Set-1_32.png);
+    background-position: 0 -574px;
+    width: 32px;
+    height: 32px;
+}
+
+.viewButtons .viewButton {
+    cursor: pointer;
+    vertical-align: middle;
+}
+
+.dateFilter {
+    width: 650px;
+    clear: both;
+    float: left;
+    display: block;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    *margin-bottom: 0;
+}
+
+.dateFilter div.DetailLeftItem,
+.dateFilter div.RadPicker,
+.dateFilter div.DetailRightItem.inline {
+    *float: left;
+    *width: auto;
+}
+
+.dateFilter div.DetailLeftItem span.Titolo_campoSmall {
+    *line-height: 2.3em;
+    *padding-right: 8px;
+}
+
+.dateFilter div.DateSelector {
+    *width: 580px;
+}
+
+.dateFilter div.DateEnd {
+    display: block;
+    margin: 1em 0;
+}
+
+.dateFilter div.DetailItem.DateEnd {
+    margin-top: 1em;
+}
+
+.visibilityNav {
+    clear: both;
+}
+
+.dateTime input {
+    width: 30px;
+    margin-right: 0.2em;
+    margin-left: 0.2em;
+}
+
+.dateTime input.date {
+    width: 60px;
+}
+
+.dateTime input[type=button] {
+    width: auto;
+}
+
+/* @end */
+
+/* @group CFP vertical tabs */
+
+.description .body {
+    display: none;
+}
+
+.description.expanded .body {
+    margin-top: 0.75em;
+    padding-top: 0.75em;
+    display: block;
+}
+
+.body {
+    border-top: 1px solid #ddd;
+}
+
+.contentwrapper.edit {
+    width: 900px;
+    width: 920px; /*fix*/
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2em;
+}
+
+.contentwrapper.edit .column.left {
+    float: left;
+    width: 198px;
+    border-right: none;
+    padding-bottom: 10px;
+}
+
+.contentwrapper.edit .column.right {
+    float: right;
+    width: 720px;
+    border: 1px solid #ccc;
+    *border-bottom: 2px solid #ccc;
+    background-color: #fff;
+    -moz-box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.7), 1px 1px 0 rgba(0, 0, 0, 0.2);
+    -webkit-box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.7), 1px 1px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.7), 1px 1px 0 rgba(0, 0, 0, 0.2);
+}
+
+.contentwrapper.edit .column.right .header {
+    margin-bottom: 5px;
+}
+
+.contentwrapper.edit .column.right .footer {
+    margin-top: 5px;
+    padding: .5em 0;
+}
+
+.contentwrapper.edit .column.right .content {
+    min-height: 200px;
+}
+
+.contentwrapper.edit .column.right .rightcontent {
+    text-align: left;
+    padding: 0 10px 0 20px;
+}
+
+div#CPHservice_DVfilter.contentwrapper .left label {
+    margin-bottom: 10px;
+    margin-right: 10px;
+}
+
+ul.navigation {
+    padding: 0;
+    margin: 0;
+}
+
+ul.navigation li.navigationitem {
+    margin-left: 0;
+    list-style: none;
+    position: relative;
+    left: 1px;
+    background-color: #e6e9ed;
+    border-right: 1px solid #ccc;
+    border: 1px solid #ccc;
+    border-top-color: #bcbcbc;
+    border-bottom: none;
+    -moz-box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.5);
+    -webkit-box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.5);
+    box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+ul.navigation li.navigationitem.first {
+    border-top-color: #ccc;
+    -webkit-border-top-left-radius: 4px;
+    -moz-border-radius-topleft: 4px;
+    border-top-left-radius: 4px;
+}
+
+ul.navigation li.navigationitem.last {
+    border-bottom: 2px solid #ccc;
+    margin-bottom: 20px;
+    -webkit-border-bottom-left-radius: 4px;
+    -moz-border-radius-bottomleft: 4px;
+    border-bottom-left-radius: 4px;
+}
+
+ul.navigation li.navigationitem.active {
+    background-color: #fff;
+    border-right: none;
+}
+
+ul.navigation li.navigationitem.active .navigationstep {
+    *border-top: 1px solid #fff;
+    *border-left: 1px solid #fff;
+}
+
+ul.navigation li.navigationitem.disabled {
+    color: #908e89;
+}
+
+ul.navigation li.navigationitem.separator {
+    height: 4px;
+    background-color: #bbc4ce;
+    -moz-box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.3);
+    -webkit-box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.3);
+    box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.3);
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden;
+    display: block;
+    *margin-top: -14px !important;
+}
+
+ul.navigation li.navigationitem.disabled .title {
+    color: #999;
+}
+
+ul.navigation li.navigationitem div.navigationstep {
+    *border-top: 1px solid #eee;
+    *border-left: 1px solid #eee;
+    padding: 5px 5px 7px 7px;
+}
+
+ul.navigation li.navigationitem.disabled div.navigationstep {
+    *border-top: 1px solid #ccc;
+}
+
+ul.navigation li.navigationitem .title {
+    font-size: 1em;
+    font-weight: bold;
+    padding-bottom: 4px;
+    text-shadow: 0 1px 0 #eee;
+}
+
+ul.navigation li.navigationitem.active .title {
+    color: #444;
+}
+
+ul.navigation li.navigationitem .title a {
+    color: #5689ba;
+}
+
+ul.navigation li.navigationitem div.stepinfo {
+    font-size: .75em;
+}
+
+ul.navigation li.navigationitem div.stepinfo span.statustext {
+    padding: 3px 4px 0;
+    display: block;
+    float: left;
+    width: 140px;
+}
+
+ul.navigation li.navigationitem div.stepinfo ul.statusdetails {
+    padding-left: 16px;
+    display: inline-block;
+    *display: block;
+    margin-left: 16px;
+}
+
+ul.navigation li.navigationitem div.stepinfo ul.statusdetails li {
+    padding: 1px 0;
+    width: 120px;
+    padding-right: 0; /*??*/
+}
+
+li.readmore {
+    list-style-type: none;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+.tooLong {
+    position: relative;
+}
+
+div.view .messages .message {
+    margin: 1em 0 2em 0;
+}
+
+div.rightcontent .messages {
+    padding-left: 0px;
+}
+
+.view .messages .message {
+    margin: 0;
+    padding: 10px;
+}
+
+.floatingHeader {
+    position: fixed;
+    top: -1px;
+    background-color: transparent;
+}
+
+div.downarrow {
+    height: 12px;
+    width: 18px;
+    font-size: 1%;
+    text-indent: -9999px;
+    position: absolute;
+    bottom: -12px;
+    right: 5px;
+    z-index: 100;
+    background: transparent url(../img/vertarrow.png) no-repeat 0 0;
+    *display:none !important;
+}
+
+li.active div.downarrow {
+    background-position: right;
+}
+
+li.last div.downarrow {
+    display: none;
+}
+
+
+/* @end */
+
+/* @group CFP Tables */
+
+table.RadEToolbar tbody tr td div {
+    word-break: normal;
+    word-wrap: normal;
+    overflow: hidden;
+}
+
+table.cfp {
+    margin: 0.5em 0;
+    width: 100%;
+}
+
+table.cfp thead {
+    font-size: 0.9em;
+    font-weight: normal;
+    font-style: normal;
+}
+
+table.cfp tfoot {
+    display: none;
+}
+
+table.cfp td a.expander {
+    *float: left;
+    *width: 18px;
+    *height: 14px;
+    *margin-right: 0 !important;
+    *padding: 0 !important;
+}
+
+table.cfp tr {
+}
+
+table.cfp thead tr {
+    border-bottom: none;
+}
+
+table.cfp tr.cfp,
+table.cfp tr.cfp:hover,
+table.cfp tr.cfp span.itemdetail {
+    background-color: #888;
+    color: #fff;
+    text-shadow: #222 0px 1px 0px;
+}
+
+table.cfp tr.cfp span.name {
+    font-size: 1.3em;
+}
+
+table.cfp tr.section {
+    background-color: #ddd;
+    border-top: 1px double #888;
+    font-weight: bold;
+}
+
+table.cfp tr.section.expanded {
+    border-top: 1px double #888;
+}
+
+table.cfp tr.cfp + tr.section {
+    border-top: none !important;
+}
+
+table.cfp tr.section td {
+    border: 1px solid #ccc;
+    border-top: none;
+    border-bottom: none;
+}
+
+table.cfp tr.cfield {
+    background-color: #eee;
+    border-left: 1px solid #444;
+    border-right: 1px solid #444;
+    border-bottom: 1px solid #ccc;
+    font-size: 0.9em;
+}
+
+table.cfp tr.cfield.expanded {
+    border-bottom: 1px solid #ddd;
+}
+
+table.cfp tr.subcfield {
+    background-color: #fff;
+    border-left: 1px solid #444;
+    border-right: 1px solid #444;
+    border-bottom: 1px solid #ddd;
+    color: #888;
+}
+
+tr.section + tr.subcfield,
+tr.section + tr.subcfield ~ tr.subcfield {
+    color: #222;
+    font-size: 0.9em;
+}
+
+table.cfp tr.cfp td.description {
+    padding-left: 0.5em;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+table.cfp tr.cfp td.description span.itemdetail {
+    padding-left: 0.5em;
+    text-transform: none;
+    font-weight: normal;
+    font-style: normal;
+}
+
+table.cfp tbody tr:hover {
+    background-color: #fff8dc;
+}
+
+table.cfp tr.section td.description {
+    padding-left: 1.5em;
+}
+
+table.cfp tr.cfield td.description {
+    padding-left: 2.8em !important;
+}
+
+table.cfp tr.subcfield td.description {
+    padding-left: 3em !important;
+}
+
+table.cfp tr.hiddencfield {
+    display: none;
+}
+
+table.cfp tr.single {
+    background-color: #eee;
+    color: #222;
+}
+
+table.cfp th.description {
+    width: auto;
+}
+
+table.cfp th.completedpassed {
+    width: 80px;
+}
+
+table.cfp th.started {
+    width: 80px;
+}
+
+table.cfp th.notstarted {
+    width: 80px;
+}
+
+table.cfp .status {
+    width: 120px;
+    text-align: left;
+}
+
+table.cfp.user .status {
+    width: 160px;
+    text-align: center;
+}
+
+table.cfp.user .status .hidden {
+    display:none !important;
+}
+
+table.cfp td.partecipanttype {
+    width: 140px;
+    text-align: left;
+}
+
+table.cfp td.submittedon {
+    width: 140px;
+    text-align: center;
+}
+
+table.cfp td.submissionstatus {
+    width: 140px;
+    text-align: left;
+}
+
+table.cfp td.submissionstatus {
+    vertical-align: top;
+}
+table.cfp td.submissionstatus .icons .icon {
+    margin-left: 2px;
+    margin-top: 2px;
+}
+
+table.cfp td.submissionstatus .icons span,
+table.cfp td.submissionstatus .icons span,
+table.cfp td.submissionstatus label,
+table.cfp td.submissionstatus input {
+    vertical-align: baseline !important;
+}
+
+table td.actions {
+    width: 60px;
+    text-align: right;
+}
+
+table.evaluation td.actions {
+    text-align: center;
+}
+
+table.cfp.submissions td.actions {
+    width: 100px !important;
+}
+
+
+table.cfp td.started,
+table.cfp td.notstarted,
+table.cfp td.completedpassed {
+    text-align: center;
+}
+
+table.cfp .iteminfo {
+    width: 88%;
+    display: inline-block;
+    *display: inline;
+    *float: left;
+    *line-height: 1.2em;
+}
+
+table.cfp.user tr.cfp .iteminfo {
+    margin-top: 1px;
+}
+
+table.cfp tr.subcfield span.iteminfo {
+    width: 85%;
+    text-indent: -20px;
+    padding-left: 20px;
+}
+
+table.cfp tr.section span.iteminfo {
+    *width: 360px;
+}
+
+table.cfp tr.cfield span.iteminfo {
+    *width: 340px;
+}
+
+table.cfp tr.subcfield span.iteminfo {
+    *width: 320px;
+}
+
+table.cfp .timecompletion {
+    width: 20%;
+}
+
+table.cfp.users .status {
+    width: 120px;
+}
+
+/* @group table action icons *** check *** */
+
+table.cfp .icons.right {
+    float: right;
+}
+
+table.cfp tr .icons.right {
+    width: 38px;
+    text-align: right;
+}
+
+table.cfp .actionbuttons.right {
+    float: right;
+}
+
+table.cfp .play {
+    background-image: url(../../../Generics/File/img/Filetype_Set-1_16.png);
+    background-position: 0 -1320px;
+}
+
+table.cfp .quiz {
+    background-image: url(../../../Generics/File/img/Filetype_Set-1_16.png);
+    background-position: 0 -66px;
+}
+
+table.cfp .forum {
+    background-image: url(../../../Generics/File/img/Filetype_Set-1_16.png);
+    background-position: 0 0;
+}
+
+table.cfp tr.cfp .icons.right {
+    width: 13px;
+    background-color: #eee;
+    padding: 2px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+}
+
+table.cfp.user tr.cfp .icons.right {
+    width: 36px;
+    *width: 40px;
+    text-align: center;
+    -moz-box-shadow: inset 0 0 0 rgba(0, 0, 0, 0.2);
+    -webkit-box-shadow: inset 0 0 0 rgba(0, 0, 0, 0.2);
+    box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+table.cfp .icon.mandatory {
+    background-image: url(../../../Generics/Command/img/common_icons_set1_16.png);
+    background-position: 0 -686px;
+    width: 16px;
+    height: 16px;
+}
+
+table.cfp.user tr.cfp .icon.mandatory {
+    background-image: url(../../../Generics/Command/img/common_icons_set1_16.png);
+    background-position: -82px -65px;
+    width: 16px;
+    height: 16px;
+    margin-right: 2px;
+}
+
+table.cfp .icon.file_zip {
+    background-image: url(../../../Generics/File/img/Filetype_Set-1_16.png);
+    width: 16px;
+    height: 16px;
+    background-position: 0 -1188px;
+}
+
+/* @end */
+
+div.visibilityNav {
+    margin: 2em 0 .5em 0;
+    display: block;
+    width: 600px;
+}
+
+div.visibilityNav a {
+    font-size: .9em;
+    color: #888;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+div.visibilityNav a:hover {
+    color: #333;
+    text-decoration: underline;
+}
+
+ul.expandbuttons {
+    margin: 0;
+    padding: 0;
+    display: inline;
+}
+
+ul.expandbuttons li.expandbutton {
+    cursor: pointer;
+    display: inline;
+    color: #888;
+    font-size: .95em;
+}
+
+ul.expandbuttons li.expandbutton.switchsubcfieldVis:hover,
+ul.expandbuttons li.expandbutton.switchcfieldVIs:hover,
+ul.expandbuttons li.expandbutton.switchsectionVus:hover {
+    color: #444
+}
+
+ul.expandbuttons li.expandbutton.switchsectionVus,
+ul.expandbuttons li.expandbutton.switchcfieldVis,
+ul.expandbuttons li.expandbutton.switchsubcfieldVis {
+    display: inline;
+    float: none;
+}
+
+/* @group Flag */
+
+.flag,
+.progressbar {
+    width: 100px;
+    display: inline-block;
+    line-height: 13px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    overflow: hidden;
+    border: 1px solid #aaa;
+    -moz-box-shadow: inset 1px 1px 1px rgba(0,0,0,0.2);
+    -webkit-box-shadow: inset 1px 1px 1px rgba(0,0,0,0.2);
+    box-shadow: inset 1px 1px 1px rgba(0,0,0,0.2);
+}
+
+.flag {
+    *margin-top: -2px
+}
+
+tr.cfp .flag,
+tr.cfp .progressbar {
+    height: 18px;
+    border: 1px solid #666;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+}
+
+table.evaluators .flag,
+table.evaluators .progressbar,
+table.evaluation .flag,
+table.evaluation .progressbar {
+    height: 8px;
+}
+
+table.evaluation .progressbar {
+    height: 6px;
+    margin: 3px 0;
+    width: 90%;
+}
+
+table.evaluation td.status .progressbar.evaluationstats {
+    width: 60px;
+}
+
+table.evaluation td.evaluator .progressbar.commissionstats {
+    width: 70px;
+}
+
+.commission .evaluationfilter {
+    margin: .5em 0;
+}
+
+
+table.treeTable tr span.flag span,
+table.treeTable tr span.progressbar span {
+    height: 100%;
+}
+
+tr.cfield .flag,
+tr.cfield .progressbar {
+    height: 10px;
+}
+
+tr.subcfield .flag,
+tr.subcfield .progressbar {
+    height: 6px;
+}
+
+tr.section .flag,
+tr.section .progressbar {
+    height: 12px;
+}
+
+.flag .notstarted,
+.progressbar .notstarted {
+    display: inline-block;
+    width: 100%;
+    background: #cccccc;
+    background: -moz-linear-gradient(top,  #cccccc 0%, #eeeeee 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#cccccc), color-stop(100%,#eeeeee));
+    background: -webkit-linear-gradient(top,  #cccccc 0%,#eeeeee 100%);
+    background: -o-linear-gradient(top,  #cccccc 0%,#eeeeee 100%);
+    background: -ms-linear-gradient(top,  #cccccc 0%,#eeeeee 100%);
+    background: linear-gradient(top,  #cccccc 0%,#eeeeee 100%);
+    -moz-box-shadow: inset 1px 1px 1px rgba(0,0,0,0.2);
+    -webkit-box-shadow: inset 1px 1px 1px rgba(0,0,0,0.2);
+    box-shadow: inset 1px 1px 1px rgba(0,0,0,0.2);
+}
+
+.flag .started,
+.progressbar .started {
+    display: inline-block;
+    width: 0;
+    background-color: #ffcd40;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#f4e46a),to(#ffcd40));
+    background-image: -webkit-linear-gradient(top, #f4e46a, #ffcd40);
+    background-image: -moz-linear-gradient(top, #f4e46a, #ffcd40);
+    background-image: -o-linear-gradient(top, #f4e46a, #ffcd40);
+    background-image: -ms-linear-gradient(top, #f4e46a, #ffcd40);
+    background-image: linear-gradient(top, #f4e46a, #ffcd40);
+}
+
+.flag .completed,
+.progressbar .completed {
+    display: inline-block;
+    width: 0;
+
+    background-color: #99c74a;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#c3d46a),to(#99c74a));
+    background-image: -webkit-linear-gradient(top, #c3d46a, #99c74a);
+    background-image: -moz-linear-gradient(top, #c3d46a, #99c74a);
+    background-image: -o-linear-gradient(top, #c3d46a, #99c74a);
+    background-image: -ms-linear-gradient(top, #c3d46a, #99c74a);
+    background-image: linear-gradient(top, #c3d46a, #99c74a);
+}
+
+.flag .notpassed,
+.progressbar .notpassed,
+.progressbar .Invalidated,
+.progressbar .invalidated,
+.progressbar .EvaluatorReplacement.Invalidated,
+.progressbar .evaluatorreplacement.invalidated {
+    display: inline-block;
+    width: 0;
+    background: #ff3019;
+    background: -moz-linear-gradient(top,  #ff3019 0%, #cf0404 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ff3019), color-stop(100%,#cf0404));
+    background: -webkit-linear-gradient(top,  #ff3019 0%,#cf0404 100%);
+    background: -o-linear-gradient(top,  #ff3019 0%,#cf0404 100%);
+    background: -ms-linear-gradient(top,  #ff3019 0%,#cf0404 100%);
+    background: linear-gradient(top,  #ff3019 0%,#cf0404 100%);
+}
+
+
+.progressbar .EvaluatorReplacement,
+.progressbar .evaluatorreplacement {
+    display: inline-block;
+    width: 0;
+
+    background: #f95be4;
+    background: -webkit-gradient(linear, left top, left bottom, from(#ff78cb),to(#f33ffd));
+    background: -webkit-linear-gradient(top, #ff78cb, #f33ffd);
+    background: -moz-linear-gradient(top, #ff78cb, #f33ffd);
+    background: -o-linear-gradient(top, #ff78cb, #f33ffd);
+    background: -ms-linear-gradient(top, #ff78cb, #f33ffd);
+    background: linear-gradient(top, #ff78cb, #f33ffd);
+}
+
+
+.timecompletion span.flag,
+.timecompletion span.progressbar {
+    box-shadow: none;
+    -moz-border-radius: 30px;
+    -webkit-border-radius: 30px;
+    border-radius: 30px;
+    border: 1px solid;
+    display: inline;
+    padding: 0 6px;
+    float: right;
+    width: auto;
+    height: 12px;
+    font-size: 1px;
+    display: inline-block;
+    clear: both;
+}
+
+*html .timecompletion span.flag,
+*+html .timecompletion span.flag,
+*html .timecompletion span.progressbar,
+*+html .timecompletion span.progressbar {
+    float: none;
+}
+
+.timecompletion span.flag.yes,
+.timecompletion span.progressbar.yes {
+    border-color: #828e44;
+    background: #a4b357;
+    background: -moz-linear-gradient(top,  #a4b357 0%, #75890c 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#a4b357), color-stop(100%,#75890c));
+    background: -webkit-linear-gradient(top,  #a4b357 0%,#75890c 100%);
+    background: -o-linear-gradient(top,  #a4b357 0%,#75890c 100%);
+    background: -ms-linear-gradient(top,  #a4b357 0%,#75890c 100%);
+    background: linear-gradient(top,  #a4b357 0%,#75890c 100%);
+}
+
+tr.cfp .timecompletion span.flag.yes {
+    border: 2px solid #fff;
+    -moz-box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2);
+    -webkit-box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 -1px 1 1px rgba(0, 0, 0, 0.2);
+}
+
+.timecompletion span.flag.no,
+.timecompletion span.progressbar.no {
+    border-color: #a61a09;
+    background: #ff3019;
+    background: -moz-linear-gradient(top,  #ff3019 0%, #cf0404 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ff3019), color-stop(100%,#cf0404));
+    background: -webkit-linear-gradient(top,  #ff3019 0%,#cf0404 100%);
+    background: -o-linear-gradient(top,  #ff3019 0%,#cf0404 100%);
+    background: -ms-linear-gradient(top,  #ff3019 0%,#cf0404 100%);
+    background: linear-gradient(top,  #ff3019 0%,#cf0404 100%);
+}
+
+span.flag.hidden {
+    display: none;
+}
+
+.status span.item {
+    color: #222;
+    text-shadow: none;
+    display: block;
+    padding: 3px;
+    font-size: 11px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+}
+
+.cfp .status span.item {
+    border: 1px solid #777;
+    border-color: #888 #777 #666;
+    -moz-box-shadow: inset 0 1px 0 1px rgba(255, 255, 255, 0.2);
+    -webkit-box-shadow: inset 0 1px 0 1px rgba(255, 255, 255, 0.2);
+    box-shadow: inset 0 1px 0 1px rgba(255, 255, 255, 0.2);
+}
+
+span.item.started {
+    background-color: #ebdf00;
+    background: -webkit-gradient(linear, left top, left bottom, from(#ebdf00),to(#ffbb00));
+    background: -webkit-linear-gradient(top, #ebdf00, #ffbb00);
+    background: -moz-linear-gradient(top, #ebdf00, #ffbb00);
+    background: -o-linear-gradient(top, #ebdf00, #ffbb00);
+    background: -ms-linear-gradient(top, #ebdf00, #ffbb00);
+    background: linear-gradient(top, #ebdf00, #ffbb00);
+}
+
+span.item.notstarted {
+    background: #d4d6d7;
+}
+
+span.item.completed,
+span.item.completedpassed {
+    background-color: #a8b85a;
+    background: -moz-linear-gradient(top,  #b6c661 0%,#a4b357 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#b6c661), color-stop(100%,#a4b357));
+    background: -webkit-linear-gradient(top,  #b6c661 0%,#a4b357 100%);
+    background: -o-linear-gradient(top,  #b6c661 0%,#a4b357 100%);
+    background: -ms-linear-gradient(top,  #b6c661 0%,#a4b357 100%);
+    background: linear-gradient(top,  #b6c661 0%,#a4b357 100%);
+}
+
+span.item.notpassed {
+    background-color: #fca8ad;
+}
+
+/* @end */
+
+table.cfp .itemtitle {
+    vertical-align: text-bottom;
+    background-position: left center;
+    background-repeat: no-repeat;
+    padding-left: 20px;
+}
+
+table.cfp .itemtitle.play {
+    background-image: url(../../../Generics/File/img/Filetype_Set-1_16.png);
+    background-position: 0 -1320px;
+    width: 16px;
+    height: 16px;
+}
+
+.itemdetail,
+.itemDetails {
+    font-style: italic;
+    color: #777;
+    margin-left: 1em;
+    font-size: .9em;
+}
+
+table.cfp .subcfield span.objectRender {
+    display: inline-block;
+    width: 380px;
+    *float: left;
+    *width: 370px;
+}
+
+table.cfp span.objectRender span.leftDetail {
+    display: inline;
+}
+
+table.cfp span.objectRender span.leftDetail span.itemTitle {
+    display: inline-block;
+    text-indent: 0;
+    padding: 0;
+}
+
+table.cfp span.objectRender span.itemDetails,
+table.cfp span.itemdetail span,
+table.cfp span.duration {
+    font-size: .9em !important;
+    margin-left: 8px;
+    font-style: italic;
+    display: inline-block;
+    *display: inline;
+}
+
+table.cfp span.duration {
+    margin-left: 18px;
+}
+
+table.cfp tr.cfp span.itemdetail span {
+    font-size: 1.1em !important;
+    font-style: normal;
+}
+
+/* @end */
+
+/* @group CFP List */
+
+div.viewbuttons.clearfix {
+    text-align: right;
+    margin: 1em 0;
+    width: 100%;
+}
+
+ul.cfps {
+    padding: 0;
+    margin: 0;
+    margin-top: 3em;
+}
+
+ul.cfps li.cfp {
+    list-style: none;
+    margin-bottom: 2em;
+}
+
+ul.cfps li.cfp.default {
+    margin-bottom: 4em;
+}
+
+ul.cfps li.cfp div.cfpcontainer {
+    background-color: #e6e9ed;
+    float: left;
+    width: 869px;
+    *width: 859px;
+    border: 1px solid #ccc;
+    *border-bottom: 2px;
+    -moz-box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.5), 1px 1px 1px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.5), 1px 1px 1px rgba(0, 0, 0, 0.3);
+    box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.5), 1px 1px 0 rgba(0, 0, 0, 0.15);
+}
+
+ul.cfps li.cfp.locked div.cfpcontainer {
+    color: #9e9d97 !important;
+}
+
+ul.cfps li.cfp div.cfpcontainer div.cfpheader,
+ul.cfps li.cfp div.cfpcontainer div.cfpdesc,
+ul.cfps li.cfp div.cfpcontainer div.cfpfooter {
+    padding: 5px 10px 5px 10px;
+}
+
+ul.cfps li.cfp div.cfpcontainer div.cfpdesc div.description.left div.intro p {
+    margin: 0;
+    margin-top: 1em;
+}
+
+ul.cfps.view li.cfp div.cfpcontainer div.cfpdesc a.icon.img_link.ico_playmmd_m {
+    background-color: transparent;
+    background-image: url(../../../Generics/File/img/Filetype_Set-1_32.png);
+    background-position: 0 -1640px;
+    width: 32px;
+    height: 32px;
+}
+
+ul.cfps.view li.cfp div.cfpcontainer div.cfpdesc a.icon.img_link.ico_playmmd_m {
+    background-color: transparent;
+    background-image: url(../../../Generics/File/img/Filetype_Set-1_32.png);
+    background-position: 0 -1640px;
+    width: 32px;
+    height: 32px;
+}
+
+ul.cfps.view li.cfp div.cfpcontainer div.cfpheader {
+    padding: 6px 10px 4px 10px;
+}
+
+ul.cfps li.cfp div.cfpcontainer div.cfpheader {
+    border-bottom: 1px solid #ccc;
+}
+
+ul.cfps li.cfp div.cfpcontainer div.cfpheader .icons .icon {
+    margin-left: 2px;
+
+}
+
+ul.cfps li.cfp div.cfpcontainer div.cfpdesc {
+    background-color: #fff;
+    min-height: 20px;
+    padding-top: 1em;
+}
+
+ul.cfps li.cfp div.cfpcontainer div.cfpfooter,
+ul.cfps.view li.cfp.blocked div.cfpcontainer div.cfpdesc {
+    border-top: 1px solid #ccc;
+    box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.7);
+    -webkit-border-bottom-right-radius: 4px;
+    -webkit-border-bottom-left-radius: 4px;
+    -moz-border-radius-bottomright: 4px;
+    -moz-border-radius-bottomleft: 4px;
+    border-bottom-right-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+
+ul.cfps li.cfp div.cfpcontainer div.cfpfooter div.left {
+    float: left;
+    width: 49%;
+}
+
+ul.cfps li.cfp div.cfpcontainer div.cfpfooter div.left ul {
+    display: inline-block;
+    *display: block;
+    *float:left;
+    *width: 300px;
+    margin: 0;
+    padding: 0;
+    vertical-align: top;
+    list-style: none;
+}
+
+ul.cfps li.cfp div.cfpcontainer div.cfpfooter div.right {
+    float: right;
+    width: 49%;
+}
+
+ul.cfps li.cfp div.cfpcontainer div.cfpfooter div.right a {
+    display: inline-block;
+    width: 100px;
+    text-align: left;
+}
+
+ul.cfps li.cfp div.cfpcontainer div.cfpfooter div.right span.label {
+    display: inline-block;
+    width: 120px;
+    padding-right: 1em;
+}
+
+ul.cfps.view li.cfp div.cfpcontainer div.cfpdesc.empty div.right {
+    margin-top: 1.2em;
+}
+
+ul.cfps.view li.cfp.blocked div.cfpcontainer div.cfpdesc {
+    background-color: #e6e9ed;
+    border-top: none;
+    color: #9e9d97;
+}
+
+ul.cfps.view li.cfp.blocked div.cfpcontainer div.cfpdesc div.description a {
+    color: #888 !important;
+    text-decoration: underline !important;
+}
+
+ul.cfps.view li.cfp.blocked div.cfpcontainer div.cfpdesc div.description a:hover {
+    color: #444 !important;
+}
+
+ul.cfps.view li.cfp.blocked div.cfpcontainer div.cfpdesc div.description span {
+    color: #9e9d97
+}
+
+ul.cfps.view li.cfp.blocked div.cfpcontainer div.cfpheader span.Details_titolo {
+    color: #9e9d97;
+    background: none;
+    font-size: 1em;
+}
+
+ul.cfps li.cfp div.cfpcontainer div.cfpheader .left {
+    display: block;
+    width: 75%;
+    float: left;
+}
+
+ul.cfps li.cfp div.cfpcontainer div.cfpdesc .left {
+    display: block;
+    width: 100%;
+    float: left;
+    margin-bottom: -1em;
+    *margin-bottom: 0;
+}
+
+ul.cfps li.cfp div.cfpcontainer div.cfpheader .right {
+    display: block;
+    width: 24%;
+    float: right;
+}
+
+ul.cfps li.cfp div.cfpcontainer div.cfpheader span.titlecont {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+ul.cfps li.cfp div.cfpcontainer div.cfpheader span.titlecont .icon {
+    position: relative;
+    top: 1px;
+}
+
+ul.cfps li.cfp div.cfpcontainer div.cfpheader span.titlecont span.title {
+    display: inline;
+    text-shadow: 0 1px 0 #fff;
+}
+
+ul.cfps li.cfp div.cfpcontainer div.cfpheader span.titlecont span.title a {
+    font-size: 1em;
+}
+
+ul.cfps li.cfp.default div.cfpcontainer div.cfpheader span.titlecont span.title {
+    text-transform: uppercase;
+}
+
+ul.cfps li.cfp div.cfpcontainer a {
+    color: #5689ba;
+}
+.externalright {
+    float: right;
+    margin-right: -24px;
+    width: 20px;
+}
+
+ul.cfps.manage div.cfpcontainer div.cfpdesc div.description.left,
+ul.cfps.view li.blocked div.cfpcontainer div.cfpdesc div.description.left {
+    margin-bottom: .667em;
+}
+
+div.cfpcontainer div.cfpdesc div.description.left ul,
+div.cfpcontainer div.cfpdesc div.description.left ol {
+    margin: .5em 0;
+    padding-left: 24px;
+}
+
+div.cfpcontainer div.cfpdesc div.description.left ul,
+div.cfpcontainer div.cfpdesc div.description.left ul li {
+    list-style-position: outside;
+    list-style-type: square;
+}
+
+div.cfpcontainer div.cfpdesc div.description.left ol,
+div.cfpcontainer div.cfpdesc div.description.left ol li {
+    list-style-position: outside;
+    list-style-type: decimal;
+}
+
+ul.cfps div.cfpfooter span.label {
+    width: 80px;
+    display: inline-block;
+}
+
+ul.cfps div.cfpfooter div.left span.label {
+    *display: block;
+    *float: left;
+}
+
+ul.cfps div.cfpfooter span,
+ul.cfps div.cfpfooter  a {
+    font-size: .9em;
+    font-weight: bold;
+}
+
+ul.cfps div.cfpfooter span.Label,
+ul.cfps div.cfpfooter span.label {
+    display: inline-block;
+    *display:inline;
+    *zoom: 1;
+    width: 80px;
+    margin-right: 10px;
+    font-weight: normal;
+    font-style: normal;
+}
+
+ul.cfps div.cfpfooter div.cfpstatus ul {
+    display: inline-block;
+    *display: inline !important;
+    *float: none !important;
+    *zoom: 1;
+}
+
+ul.cfps div.cfpfooter span.link_separator {
+    border-left: 1px solid #888;
+    margin-left: 5px;
+    margin-right:2px;
+}
+
+ul.cfps div.cfpfooter div.expiredate {
+    margin-bottom: 2px;
+}
+
+div.cfpcontainer div.cfpheader span.left span.titlecont .icons a.icon,
+div.cfpcontainer div.cfpheader span.right .icons {
+    position: relative;
+    top: 2px;
+}
+
+/* @end */
+
+/* @group CFP Ext Enrollment form list (lista adesioni esterna) */
+
+ul.cfps.externallist li.cfp div.cfpcontainer div.cfpheader .left {
+    display: block;
+    width: 100%;
+    float: none;
+}
+
+ul.cfps.externallist div.cfpcontainer div.cfpheader.clearfix span.left span.titlecont span.title {
+    float: left;
+    width: 90%;
+}
+
+ul.cfps.externallist div.cfpcontainer div.cfpheader.clearfix span.left span.titlecont span.icons {
+    float: right;
+    width: 8%;
+}
+
+ul.cfps.externallist div.cfpcontainer div.cfpheader.clearfix span.left span.titlecont span.icons .icon {
+    float: right;
+    margin: 2px;
+}
+
+ul.cfps.externallist li.cfp div.cfpcontainer div.cfpdesc .left {
+    display: block;
+    width: 100%;
+    float: left;
+    margin-bottom: 0;
+}
+
+ul.cfps.externallist div.cfpcontainer div.cfpfooter.clearfix div.right span.item a {
+    width: auto !important;
+    font-size: 1em;
+    font-weight: bold;
+    margin-left: 1em;
+}
+
+ul.cfps.externallist li.cfp div.cfpcontainer {
+    background: transparent;
+    border: none;
+    moz-box-shadow: none;
+    webkit-box-shadow:none;
+    box-shadow: none;
+}
+
+ul.cfps.externallist li.cfp div.cfpcontainer div.cfpheader {
+    padding-left: 0;
+}
+
+ul.cfps.externallist li.cfp div.cfpcontainer div.cfpdesc {
+    background-color: #fff;
+    min-height: 20px;
+    padding-top: .5em;
+}
+
+ul.cfps.externallist li.cfp div.cfpcontainer div.cfpheader,
+ul.cfps.externallist li.cfp div.cfpcontainer div.cfpdesc,
+ul.cfps.externallist li.cfp div.cfpcontainer div.cfpfooter {
+    padding: 0.3em 0;
+}
+
+ul.cfps.externallist li.cfp {
+    margin-bottom: 3em;
+}
+
+/* @end */
+
+/* @group CFP Mgmt items */
+
+div.treetop {
+    margin: 0;
+    margin-bottom: 1em;
+    padding: 0;
+}
+
+div.treetop div.visibilitynav,
+div.treetop div.left  {
+    float: left;
+    width: 60%;
+}
+
+div.treetop div.visibilitynav  {
+    position: relative;
+    top: 10px;
+    height: 2em;
+    font-size: .9em;
+}
+
+div.treetop .DivEpButton {
+    margin-bottom: 0;
+    padding: 0;
+    *padding: 4px;
+    float: right;
+    width: 39%;
+}
+
+div.visibilitynav span {
+    color: #888;
+    margin: 0 .3em;
+    padding: 0 .3em;
+    padding-left: .7em;
+    border-left: 1px solid #ccc;
+    display: inline-block;
+    float: left;
+    clear: right;
+    cursor: pointer;
+}
+
+div.visibilitynav span:hover {
+    color: #222;
+}
+
+div.visibilitynav span.fieldsHide {
+    border-left: none;
+}
+
+ul.sections {
+    width: 700px;
+    padding: 0;
+    margin-left: -10px;
+    list-style-position: outside;
+}
+
+li.invisible,
+ul.sections li.section,
+ul.sections li.cfield,
+ul.sections li.subcfield {
+    list-style: none;
+}
+
+li.invisible {
+    width: 10px;
+    height: 10px;
+    padding: 0;
+    margin: 0;
+    margin-bottom: -10px;
+    font-size: 1%;
+    background-color: transparent;
+    clear: both;
+    overflow: hidden;
+}
+
+ul.sections li.section {
+    margin: 0 0 1em 0;
+}
+
+div.sectioncontent,
+ul.templates li.template,
+ul.userselections li.userselection,
+ul.templatemedia li.templatemedium,
+div.sectionclonecontent {
+    color: #666;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    background-color: #e6e9ed;
+    padding: 5px;
+    float: left;
+    width: 640px;
+    width: 670px; /*fix */
+    border: 1px solid #ccc;
+    *border-bottom: 2px;
+    -moz-box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.5), 1px 1px 1px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.5), 1px 1px 1px rgba(0, 0, 0, 0.3);
+    box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.5), 1px 1px 0 rgba(0, 0, 0, 0.15);
+}
+
+ul.sections.addfile div.sectioncontent,
+ul.templates li.template.edit,
+ul.sections.wizard div.sectioncontent {
+    background-color: #fff;
+}
+
+ul.sections.addfile div.sectioncontent input#ctl00_CPHservice_BTNuploadAttachments {
+    float: right;
+    margin-top: 100px;
+    margin-bottom: -10px;
+    left: 20px;}
+
+ul.templates li.template,
+ul.userselections li.userselection,
+ul.templatemedia li.templatemedium {
+    list-style: none;
+    margin-bottom: 1em;
+}
+
+ul.sections.addfile div.sectioncontent div.fieldcontent {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border: none;
+    width: 640px;
+}
+
+ul.sections li.section li.cfield.note div.fieldcontent .internal {
+    border-bottom: none;
+}
+
+.externalleft {
+    margin-top: 4px;
+    width: 16px;
+    float: left;
+    display: block;
+}
+
+li.cfield .externalleft {
+    margin-top: 7px;
+}
+
+ul.sections li.section div.sectioncontent div.innerwrapper {
+    float: left;
+    width: 645px;
+    *width: 635px;
+    *margin-left: 5px;
+}
+
+ul.sections.submitters li.section div.sectioncontent div.innerwrapper {
+     width: 666px;
+    *width: 656px;
+}
+
+ul.sections li.section div.sectioncontent.fileupload div.innerwrapper {
+    width: 661px;
+    *width: 651px;
+}
+
+ul.sections.submitters .internal,
+ul.sections.attachedfiles .internal {
+    margin-bottom: 1em;
+}
+
+span.filename {
+    font-weight: bold;
+}
+
+ul.sections li.section.note .internal {
+    margin-left: 0;
+    border-bottom: none;
+}
+
+ul.sections li.section .left {
+    float: left;
+    width: 525px;
+}
+
+ul.sections li.section.note .right {
+    width: 60px;
+}
+
+ul.sections li.section .right {
+    float: right;
+    width: 95px;
+}
+
+ul.sections li.section .right .icons {
+    position: relative;
+}
+
+ul.sections li.section li.cfield .right .icons {
+    top: 0;
+}
+
+div.lastcfield div.fieldcontent div.cfielddetails {
+    border-top: none;
+}
+
+ul.sections li.section .description {
+    clear: both;
+    margin: .5em 0 1em 0;
+}
+
+ul.sections li.section.collapsed .description {
+    clear: both;
+    margin: .5em 0 .5em 0;
+}
+
+ul.sections li.section div.sectionrules {
+    margin: 5px 0;
+}
+
+ul.sections li.section ul.fields {
+    padding: 0;
+    margin: 0;
+    margin-left: -4px;
+    clear: left;
+}
+
+ul.sections li.section ul.fields li.cfield .left {
+    display: inline-block;
+    width: 400px;
+    padding: 0;
+    margin: 0;
+}
+
+ul.sections li.section ul.fields.criteria li.cfield .left {
+    width: 540px;
+}
+
+div.sectioncontent ul.fields.filesatteched li.cfield.fileattached div.fieldcontent div.internal span.left {
+    display: inline-block;
+    *display:inline;
+    *zoom: 1;
+    margin-bottom: 1em;
+}
+
+ul.fields.filesatteched li.cfield.fileattached div.fieldcontent div.internal span.right div.fieldrow.submit button {
+    margin: 0 !important;
+}
+
+ul.sections li.section .left input.itemname {
+    width: 390px;
+    font-weight: bold;
+    font-size: 1em;
+}
+
+ul.sections li.section input,
+ul.sections li.section textarea {
+    color: #000;
+}
+
+ul.sections li.section input.inputtext {
+    width: 450px;
+}
+
+ul.sections li.section input.inputtext.activator {
+    width: auto;
+}
+
+ul.sections li.section li.cfield .left input.itemname {
+    width: 45%;
+    background-color: #fff;
+}
+
+ul.sections li.section ul.fields.criteria li.cfield .left input.itemname {
+    width: 40%;
+    background-color: #fff;
+}
+
+ul.sections li.section input.inputchar {
+    width: 40px;
+}
+
+ul.sections li.section div.fieldcontent span.left input[type=text],
+ul.sections li.section input.inputchar {
+    margin-bottom: 0 10px;
+}
+
+ul.sections li.section .description {
+    margin: .5em 0 1em 0;
+    border-top: 1px solid #ccc;
+    padding-top: .5em;
+    -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7);
+    -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7);
+}
+
+ul.sections li.section .description.empty {
+    padding-top: 0;
+    *margin: 5px;
+    height: 1px;
+    *height: 1%;
+    *font-size: 0%;
+    overflow: hidden;
+    -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7);
+    -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7);
+}
+
+ul.sections li.section.collapsed .description {
+    margin: .5em 0 .5em 0;
+}
+
+ul.sections li.section.collapsed div.description.empty {
+    margin: 0;
+    border: none;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+ul.sections li.section li.cfield .description {
+    margin: .5em 0 1em 0;
+    border-top: 1px solid #ccc;
+    padding-top: .5em;
+    -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5);
+    -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+ul.sections li.section li.cfield div.description.empty {
+    margin: 0;
+    margin-top: .5em;
+    *margin-top: .5em;
+    padding-top: .5em;
+    height: 1px;
+    *height: 1%;
+    *font-size: 0%;
+    overflow: hidden;
+    -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7);
+    -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7);
+}
+
+ul.sections li.section li.cfield.single .description,
+ul.sections li.section li.collapsed .description {
+    margin: .5em 0 .5em 0;
+}
+
+ul.sections li.section li.cfield.single .description.empty,
+ul.sections li.section li.collapsed.cfield .description.empty {
+    margin-top: 0;
+}
+
+ul.sections li.section li.cfield.single div.description.epmty,
+ul.sections li.section li.collapsed div.description.empty {
+    border-top: none;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+div.sectioncontent div.internal span.left div.notecontent ul,
+div.sectioncontent div.internal span.left div.notecontent ol {
+    margin: .5em 0;
+    padding-left: 24px;
+}
+
+div.sectioncontent div.innerwrapper div.sectiondetails div.description ul,
+div.sectioncontent div.internal span.left div.notecontent ul,
+ul.sections li.section ul.fields li.cfield.note .left .notecontent ul {
+    list-style-position: outside;
+    list-style-type: square;
+}
+
+div.sectioncontent div.internal span.left div.notecontent ol,
+ul.sections li.section ul.fields li.cfield.note .left .notecontent ol {
+    list-style-position: outside;
+    list-style-type: decimal;
+}
+
+ul.sections li.section ul.fields li.cfield,
+ul.sections li.section ul.fields li.sectiondesc {
+    margin: .5em 0 1em 0;
+    *margin: 5px 0 7px 0;
+}
+
+ul.sections.attachedfiles.addfile li.section div.sectioncontent ul.fields.filesatteched li.cfield.fileattached {
+    margin: 0;
+}
+
+div#ctl00_CPHservice_CTRLmoduleUpload_DVfile0 div {
+    width: 100%;
+    text-align: left;
+}
+
+div.fieldcontent,
+li.fieldclone div.fieldobject {
+    float: left;
+    width: 632px;
+    *width: 631px;
+    padding: 4px 8px;
+    padding-bottom: 5px;
+    border: 1px solid #fff;
+    *border-color: #fff #ccc #ccc #fff;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    background-color: #fff;
+    -moz-box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.15);
+    -webkit-box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.15);
+    box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.15);
+}
+
+ul.sections.wizard li.section div.sectioncontent div.fieldcontent,
+li.sectiondesc div.fieldcontent {
+    border: none;
+    border-radius: 4px;
+    background-color: transparent;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    float: left;
+    width: 648px;
+    *width: 643px;
+    padding: 4px 0;
+}
+
+div.lastcfield div.fieldcontent {
+    border: none;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    background-color: #fff;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    float: left;
+    width: 100%;
+    padding: 4px;
+}
+
+div.lastcfield {
+    border: 1px solid #c7d0da;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    background-color: #fff;
+    -moz-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 1px 1px 1px  rgba(0, 0, 0, 0.3);
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+    width: 835px;
+    padding: 20px;
+    margin: 0;
+    margin-left: 15px;
+    margin-top: 1em;
+}
+
+div.lastcfield span.statuslight {
+    margin: 2px 10px
+}
+
+.tooLong {
+    position: relative;
+}
+
+.invisible {
+    height: 5px;
+}
+
+ul.sections li.section ul.fields li.cfield.note div.fieldcontent {
+    border: 1px solid #e6e9ed;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    background-color: transparent;
+    background: url(../img/text-note.png) no-repeat -2px 2px;
+    padding-left: 24px;
+    padding-bottom: .667em;
+}
+
+ul.sections li.section.note div.notecontent {
+    background: url(../img/text-note.png) no-repeat -3px -3px;
+    padding-left: 24px;
+    padding-bottom: .667em;
+    line-height: 1.2em;
+}
+
+ul.sections li.section ul.fields li.cfield .internal {
+    display: block;
+    padding: 0;
+    padding-bottom: 1px;
+    *padding: 0;
+}
+
+ul.sections.attachedfiles li.section ul.fields li.cfield div.fieldcontent div.internal {
+    padding-bottom: 3px;
+    margin-bottom: 1em;
+    margin-top: 3px;
+}
+
+ul.sections li.section ul.fields li.cfield .title {
+    line-height: 1.2em;
+    /*width: 79px; NON USARE AGGIUNGERE CLASSI SPECIFICHE*/
+}
+
+ul.sections li.section ul.submitters .left span.title input {
+    width: 180px;
+}
+
+div.fieldcontent div.fielddetails {
+    margin-top: 7px;
+    padding-top: 10px;
+    border-top: 1px solid #e6e9ed;
+}
+
+li.sectiondesc div.fieldcontent div.fielddetails {
+    margin-top: 7px;
+    padding-top: 0;
+    border-top: none;
+}
+
+ul.sections li.section ul.fields li.cfield ul.subfields {
+    padding-left: 20px;
+    *padding-left: 7px;
+    margin: 0;
+}
+
+ul.sections li.section ul.fields li.cfield ul.subfields li.subcfield {
+    margin-top: 0.5em;
+    padding: 0.2em;
+}
+
+ul.sections li.section ul.fields li.cfield ul.subfields li.subcfield .title {
+    font-size: 0.9em;
+    color: #999;
+    border-bottom: 0;
+}
+
+ul.sections li.cfield .internal {
+    margin-bottom: -2px;
+    *margin-bottom: 0;
+}
+
+ul.fields .internal {
+    margin-left: 0px;
+}
+
+ul.fields li.cfield .right {
+    float: right;
+    width: 190px;
+    *width: 185px;
+    position: relative;
+    top: .1em;
+}
+
+ul.fields.criteria li.cfield .right {
+    width: 40px;
+    *width: 35px;
+}
+
+ul.fields li.note .right {
+    float: right;
+    width: 60px;
+}
+
+li.template hr {
+    display: none;
+}
+
+li.template.edit div.fieldobject {
+    margin-top: 5px;
+    border-top: 1px solid #ccc;
+}
+
+div.wiz_content span.Fieldrow,
+div.fieldobject div.fieldrow {
+    margin-top: 1em;
+}
+
+/*div.fieldobject div.fieldrow:first-child {
+    margin-top: 0;
+}*/
+
+div.fieldrow.long {
+    margin-top: 1.5em;
+}
+
+div.fieldobject div.fieldrow.short,
+div.fieldobject div.fieldrow.long {
+    margin-top: 1.5em;
+}
+
+div.fieldobject div.fieldrow.fieldendtime {
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+}
+
+li.submitter div.fieldobject div.fieldrow,
+.view div.fieldobject div.fieldrow {
+    margin-top: 0;
+}
+
+.view .innerwrapper div.fieldobject div.fieldrow {
+    margin-bottom: 1em;
+}
+
+div.RowMail {
+    margin: 1em 0;
+    clear: both;
+}
+
+.right div.RowCellLeft {
+    float: left;
+    width: 100px;
+    margin-right: .5em;
+}
+
+.right div.RowCellRight {
+    float: left;
+    width: 540px;
+    text-align: left;
+}
+
+.right li.template div.RowCellRight span {
+    display: inline-block;
+    *display:inline;
+    *zoom: 1;
+    margin-right: 0.5em;
+    margin-bottom: 0.5em
+}
+
+.right li.template div.RowCellRight .RadEditor span {
+   margin-bottom: 0;
+}
+
+.right li.template div.RowCellRight input[type="text"] {
+    display: inline-block;
+    *display:inline;
+    width: 350px;
+    *zoom: 1;
+    margin-right: 0.5em;
+}
+
+div.contenitoreEditor {
+    margin-top: 0.5em;
+}
+
+.right div.RowCellLeft label,
+.right div.RowCellRight label,
+.right div.RowCellLeft input,
+.right div.RowCellRight input {
+    vertical-align: baseline;
+}
+
+span#ctl00_CPHservice_CTRLtemplate_LBpreSubject {
+    margin-right: .5em;
+}
+
+div.fieldobject div.submit {
+    text-align: right;
+}
+
+li.sectiondesc div.fieldobject div.fieldrow {
+    margin-bottom: 0;
+}
+
+div.fieldobject div.fieldrow span.Titolo_Campo,
+div.fieldobject div.fieldrow span.Titolo_campo,
+div.fieldobject div.fieldrow label.Titolo_campo,
+div.fieldobject div.fieldrow label.Titolo_Campo,
+div.fieldfooter div.choseselect div.left label.fieldlabel, div.fieldfooter div.choseselect div.left span.fieldlabel
+div.fieldfooter div.choseselect div.left label.fieldlabel, div.fieldobject div.fieldrow span.fieldlabel,
+div.fieldobject div.fieldrow label.fieldlabel,
+label.fieldlabel,
+span.fieldlabel {
+    color: #222;
+    width: 95px;
+    *width: 100px;
+
+    width: 118px;
+    *width: 123px;
+
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    font-size: inherit;
+    margin-right: 5px;
+    font-weight: normal;
+
+}
+
+div.fieldobject div.fieldrow span.Titolo_Campo,
+div.fieldobject div.fieldrow span.Titolo_campo,
+div.fieldobject div.fieldrow label.Titolo_campo,
+div.fieldobject div.fieldrow label.Titolo_Campo,
+div.fieldfooter div.choseselect div.left label.fieldlabel,
+div.fieldfooter div.choseselect div.left span.fieldlabel,
+div.fieldfooter div.choseselect div.left label.fieldlabel,
+div.fieldobject div.fieldrow span.fieldlabel,
+div.fieldobject div.fieldrow label.fieldlabel {
+    width: 118px;
+    *width: 123px;
+    vertical-align: top;
+}
+
+
+div.fielddescription span.fieldlabel {
+    margin-left: 10px;
+    width: 95px;
+    *width: 100px;
+}
+
+span.moduleskinobject select.Testo_Campo {
+    vertical-align: top;
+}
+
+div#ctl00_CPHservice_DVmoduleSkin.fieldrow * {
+    vertical-align: middle;
+}
+
+div#ctl00_CPHservice_DVmoduleSkin.fieldrow {
+    margin: 1em 0;
+}
+
+div.fieldobject div.fieldrow label.long,
+div.fieldobject div.fieldrow span.Testo_campo label,
+div.fieldobject div.fieldrow label.Testo_campo {
+    display: inline;
+    line-height: 2em;
+}
+
+div.fieldrow li.attachedfile {
+    display: block;
+    margin-bottom: 0.5em;
+    padding-bottom: 0.5em;
+    vertical-align: top;
+    border-bottom: 1px solid #ddd;
+}
+
+div.fieldrow li.attachedfile.last {
+    border-bottom: none;
+}
+
+div.fieldrow li.attachedfile div.itemrow span.description {
+    margin-bottom: 0;
+}
+
+div.content div.fieldrow label.alignr {
+    width: auto;
+    margin: 0 .5em;
+}
+
+div.content div.fieldrow label.alignr.first {
+    margin-left: 0;
+}
+
+div.content div.fieldrow span.group {
+    display: inline-block;
+}
+
+div.content .description label {
+    vertical-align: baseline;
+}
+
+div.content .description label.alignr.first {
+    margin-left: 1em;
+}
+
+div.content .description select {
+    margin-right: 1em !important;
+}
+
+div.fieldrow.fieldendtime select.testo_campoSmall {
+    margin-right: 0 !important;
+}
+
+div.fieldrow.fieldendtime span.description label.alignr {
+    margin: 0 !important;
+}
+
+div.fieldrow span.Testo_campo {
+    display: inline-block;
+    *display:inline;
+    *zoom: 1;
+    vertical-align: top;
+}
+
+div.fieldrow span.Testo_campo input {
+    vertical-align: middle;
+}
+
+div.content div.fieldrow .inputtext[type=text],
+div.content div.fieldrow select {
+    margin-right: 2em;
+}
+
+div.content div.fieldrow select#CPHservice_CTRLmoduleSkin_DDLskin.Testo_Campo  {
+    width: 470px;
+}
+
+div.fieldobject div.fieldrow .inputtext[type=text] {
+    vertical-align: middle;
+}
+
+div.fieldobject div.fieldrow.fieldtitle .inputtext[type=text],
+div.fieldobject div.fieldrow.fieldedition .inputtext[type=text] {
+    width: 450px;
+}
+
+div.fieldobject div.fieldrow .textarea {
+    width: 450px;
+    vertical-align: top;
+    resize: vertical;
+    overflow: auto;
+    height: 60px;
+}
+
+div.fieldobject div.fieldrow .textarea.small {
+    height: 1.4em;
+}
+
+ul.sections li.section.collapsed .left input.itemname {
+    background-color: #f2f3f3;
+}
+
+li.cfield div.fieldobject div.fieldrow .textarea {
+    background-color: #fff;
+}
+
+div.fieldobject div.fieldrow.fieldmaxchar a.linkMenu.advanced {
+    float: right;
+    clear: left;
+    *float:none;
+    *margin-left: 420px
+}
+
+div.fieldobject.disclaimer div.fieldrow.fieldtext .textarea {
+    height: 100px;
+}
+
+div.fieldobject div.fieldrow.fieldmaxchar .inputtext {
+    width: 50px;
+}
+
+div.fieldfooter div.choseselect {
+    border-top: 1px solid #e6e9ed;
+    margin-top: 0.5em;
+    padding-top: 0.5em;
+}
+
+div.fieldfooter div.choseselect div.left {
+    width: 92% !important;
+}
+
+div.fieldfooter div.choseselect div.right {
+    width: 8% !important;
+}
+
+div.fieldfooter div.choseselect .icon {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+}
+
+div.choseselect .icons .icon {
+    background-position: 0 0;
+}
+
+.partecipants,
+.chzn-container {
+    vertical-align: middle;
+}
+
+div.chzn-container {
+    font-size: 1em;
+    width: 448px !important;
+    *width: 448px !important;
+}
+
+table div.chzn-container,
+table div.chzn-container-multi {
+    width: 390px !important;
+    *width:370px !important;
+}
+
+fieldset .left div.chzn-container,
+fieldset .left div.chzn-container-multi {
+    width: 438px !important;
+    *width: 438px !important;
+}
+
+fieldset div.choseselect {
+    margin-bottom: .5em;
+}
+
+table div.chzn-container div.chzn-drop,
+table div.chzn-container div.chzn-drop div.chzn-results {
+    width: 389px !important;
+    *width:369px !important;
+}
+
+table div.chzn-container.chzn-container-single {
+    width: 402px !important;
+}
+
+table div.chzn-container.chzn-container-single a.chzn-default {
+border-color: #ccc;}
+
+table .chzn-container-multi .chzn-choices,
+table div.chzn-container ul.choices {
+  border: none !important;
+  background-image: none !important;
+}
+
+table .chzn-container.chzn-container-multi.chzn-container-active {
+    border: 1px solid #ccc !important;
+}
+
+ul.chzn-choices li.search-field input.default {
+    padding-top: 0;
+    padding-bottom: 0;
+    *padding: 4px;
+}
+
+ul.chzn-choices li.search-field input.default {
+    width: 180px !important;
+}
+
+ul.chzn-choices li.search-field {
+    overflow: visible !important;
+}
+
+div.chzn-container div.chzn-drop,
+div.chzn-container div.chzn-drop div.chzn-results {
+    width: 446px !important;
+}
+
+.textarea,
+input[type="text"],
+div.chzn-container-multi .chzn-choices,
+ul.submitters li.submitter div.fieldobject textarea {
+    border: 1px solid #ccc;
+    color: #333;
+    margin-left: 0;
+    font-size: inherit;
+}
+
+textarea {
+    vertical-align: middle;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+    border: none !important;
+}
+
+ul.fields li.subcfield {
+    border-bottom: 1px solid #e9e9e9;
+}
+
+ul.fields li.subcfield {
+    text-indent: -13px;
+    margin-left: 12px;
+}
+
+div.subfieldcontent {
+    padding-bottom: 2px;
+}
+
+ul.fields li.subcfield.last {
+    border-bottom: none;
+    margin-bottom: .5em;
+}
+
+span.description {
+    display: block;
+    line-height: 1.6em;
+    margin: 1em 0;
+}
+
+li.cfield.fileattached div.fieldrow span.description {
+    padding: .5em 0;
+    border-top: 1px solid #e6e9ed;
+}
+
+.switchsection,
+.switchcfield {
+    margin-right: 5px;
+    display: block;
+    float: left;
+}
+
+.switchsection {
+    margin-top: 2px;
+    *margin-top: 2px;
+}
+
+fieldset legend .switchsection {
+    display: none;
+}
+
+fieldset.collapsable legend .switchsection {
+    float: none;
+    display: inline-block;
+    *display:inline;
+    *zoom: 1;
+    margin: 0;
+    padding: 0;
+}
+
+.switchcfield {
+    margin-top: 1px;
+}
+
+.expiration {
+    width: 200px;
+    display: inline-block;
+    font-size: 0.8em;
+    padding-top: .3em;
+}
+
+table.cfp .icon.locked {
+    width: 13px;
+    height: 13px;
+}
+
+.lockUnlock {
+    vertical-align: top;
+    display: inline-block;
+    background-color: transparent;
+    font-size: 0;
+    line-height: 16px;
+}
+
+li.section .lockUnlock {
+    width: 16px;
+    height: 16px;
+}
+
+li.cfield .lockUnlock {
+    width: 13px;
+    height: 13px;
+    margin-left: 2px;
+}
+
+span.objectRender span.leftDetail {
+    vertical-align: top;
+    padding-bottom: 4px;
+}
+
+li.cfield.single span.objectRender span.leftDetail {
+    *display: inline-block;
+}
+
+span.objectRender ul span.itemTitle {
+    max-width: 700px;
+    display: inline-block;
+    text-indent: -20px;
+    padding: 0;
+    padding-left: 20px;
+}
+
+ul.sections span.leftDetail span.itemTitle span.textAction,
+ul.sections span.leftDetail span.itemTitle span.fileIco,
+ul.sections span.leftDetail span.itemTitle span.actionIco {
+    position: relative;
+    top: -1px;
+}
+
+td.title a.expander:after,
+div.RowMail:after,
+.clearfix:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+
+td.title a.expander,
+.clearfix {
+    display: block;
+    *display: inline-block;
+    margin: 0;
+    padding: 0;
+}
+
+html[xmlns] td.title a.expander,
+html[xmlns] .clearfix {
+    display: block;
+}
+
+* html td.title a.expander,
+* html .clearfix {
+    height: 1%;
+    font-size: 0;
+}
+
+.clearer:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+
+.clearer {
+    display: inline-block;
+    height: 1%;
+    font-size: 0;
+}
+
+span.expiration {
+    float: left;
+}
+
+.icons {
+    top: 0;
+}
+
+.right .icons {
+    margin: 0 5px;
+}
+
+a.icon,
+.submissions .icons span,
+.right .icons span,
+.right  label,
+.right  input {
+    vertical-align: middle !important;
+
+}
+
+span.icons .more.icon.help {
+    margin: 0 !important
+}
+
+.right label {
+    margin-right: .5em;
+    vertical-align: middle;
+    display: inline-block;
+
+}
+
+legend.inlinelegend label,
+.right label.inline,
+.right legend label {
+    margin:  0;
+    margin: 0 .5em;
+    width: auto;
+}
+
+legend.inlinelegend {
+    margin-left: -1.2em;
+    padding: 2px;
+}
+
+legend.inlinelegend input{
+    margin:  0 1em;
+}
+
+fieldset.light.expandable legend {
+    margin-left: -1em;
+}
+
+fieldset.light.expandable .left label {
+    width: auto;
+}
+
+label#ctl00_CPHservice_LBsubmissionClosed.inline {
+    display: inline-block;
+    width: 170px !important;
+    margin-right: 0;
+}
+
+label.inline {
+    display: inline-block !important;
+    width: auto !important;
+}
+
+span.labelinput {
+    display: inline-block !important;
+    width: auto !important;
+}
+
+.left span.type,
+span.fieldinfo {
+    font-size: .9em;
+    vertical-align: middle;
+    font-style: italic;
+    color: #666;
+}
+
+.right  {
+    text-align: right;
+}
+
+li.section.locked .sectioncontent {
+    color: #9e9d97;
+}
+
+li.section.locked .fieldcontent,
+li.cfield.locked .fieldcontent,
+li.section.locked .subfieldcontent {
+    background-color: #e6e9ed;
+    border-color: #cacaca;
+    color: #9e9d97;
+}
+
+li.cfield.locked .fieldcontent {
+    border-color: #cacaca;
+    background-color: #e6e9ed;
+}
+
+li.section.locked .fieldcontent,
+li.cfield.locked .fieldcontent {
+    -moz-box-shadow: 1px 1px 0 rgba(255, 255, 255, 0.7), inset 1px 1px 0 rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 1px 1px 0 rgba(255, 255, 255, 0.7), inset 1px 1px 0 rgba(0, 0, 0, 0.1);
+    box-shadow: 1px 1px 0 rgba(255, 255, 255, 0.7), inset 1px 1px 0 rgba(0, 0, 0, 0.07);
+}
+
+li.section.locked span.duration,
+li.cfield.locked .fieldcontent span.duration {
+    color: #9e9d97 !important;
+}
+
+li.cfield.single div.cfielddetails,
+li.cfield.empty div.cfielddetails,
+li.cfield.collapsed div.cfielddetails {
+    border: 0;
+}
+
+.ui-state-highlightHelper {
+    background: none;
+    border: 3px dashed #aaa;
+    margin-bottom: 1em;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    margin-left: 0;
+    padding: 0;
+    width: 675px; /* fix +30px */
+    position: relative;
+    left: 16px;
+    list-style-type: none;
+    max-height: 50px;
+    *height: 50px;
+}
+
+ul.sections li.section ul.fields li.ui-state-highlightHelper {
+    width: 643px !important;
+    *width: 643px !important;
+    margin: 1em 0;
+    max-height: 40px;
+    *height: 40px;
+}
+
+ul.sections li.section ul.fielditems li.ui-state-highlightHelper {
+    width: 90% !important;
+    *width:200px !important;
+    height: auto;
+    border: 1px dashed #aaa;
+}
+
+div.content fieldset,
+fieldset.commission,
+div.globalwrapper {
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin: 1em 0;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    color: #333;
+}
+
+div.globalwrapper {
+    background-color: #e6e9ed;
+    border: 1px solid #ccc;
+    *border-bottom: 2px;
+    -moz-box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.5), 1px 1px 1px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.5), 1px 1px 1px rgba(0, 0, 0, 0.3);
+    box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.5), 1px 1px 0 rgba(0, 0, 0, 0.15);
+}
+
+div.content fieldset.light {
+    padding: 4px;
+}
+
+fieldset.disabled,
+fieldset.disabled * {
+    color: #888 !important;
+}
+
+fieldset.disabled legend,
+fieldset.disabled .messages .message {
+    color: #222 !important;
+}
+
+fieldset.expandable.hideall.disabled {
+    border: none;
+    margin-bottom: 0;
+    margin-left: 1px;
+    padding-bottom: 0;
+}
+
+fieldset.expandable.hideall.disabled * {
+    display: none;
+}
+
+fieldset.expandable.hideall.disabled legend,
+fieldset.expandable.hideall.disabled legend * {
+    display: inline;
+}
+
+/* @group Typography */
+
+ul.sections li.section .title {
+    font-size: 1.2em;
+    margin-right: .5em;
+    display: inline-block;
+    vertical-align: middle;
+    text-transform: uppercase;
+    /*width: 99px; NON USARE AGGIUNGERE CLASSI SPECIFICHE*/
+}
+
+ul.sections li.section .left span.itemname {
+    vertical-align: middle;
+}
+
+
+div.commission div.title {
+    font-size: 1.2em;
+    margin-bottom: 1em;
+}
+
+.iteminfo span {
+    vertical-align: baseline;
+    *vertical-align: middle;
+    font-size: .9em;
+    margin-right: .5em;
+    color: #333;
+    text-decoration: none !important;
+    border-bottom: none;
+    top: 0;
+    *top: 0;
+}
+
+.filecontainer .iteminfo a,
+.filecontainer .iteminfo a .text {
+   color: #5689ba !important;
+}
+
+span.inputgroup,
+span.inputgroup .item,
+span.inputgroup label,
+span.inputgroup input {
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+}
+
+
+span.inputgroup .item,
+span.inputgroup label,
+span.inputgroup input {
+	margin-right: .5em;
+	vertical-align: top;
+	line-height: 1.5em;
+}
+
+.filecontainer .iteminfo span.name span {
+   font-size: 13px !important;
+   vertical-align: top;
+}
+
+span#CPHservice_LBlegendTop,
+span#CPHservice_LBlegendBottom {
+    top: -5px;
+    position: relative;
+}
+
+.title span#CPHservice_LBcommitteeName.commissionname {
+    font-weight: bold;
+}
+
+ul.sections.wizard li.section div.sectioncontent div.innerwrapper span.left span.title,
+ul.sections.wizard li.section div.sectioncontent div.innerwrapper div.sectiondetails {
+    color: #444;
+}
+
+ul.sections.wizard li.section div.sectioncontent div.innerwrapper div.sectiondetails {
+    margin: 0 0 1em 0;
+}
+
+ul.sections li.section li.cfield .title {
+    font-size: 1em;
+    text-transform: none;
+}
+
+ul.sections li.section ul.fields li.cfield .itemTitle a {
+    color: #5689ba;
+}
+
+div.fieldrow.fielddescription span {
+    display: inline-block;
+    margin: .5em 0;
+}
+
+ul.sections li.section span.leftDetail,
+ul.sections li.section span.leftDetail a {
+    font-size: 11px;
+}
+
+ul.sections span.duration,
+ul.sections span.itemDetails,
+ul.sections li.subcfield span.itemDetails {
+    font-size: 10px;
+    color: #888;
+    display: inline-block;
+    margin-left: 1.5em;
+}
+
+ul.sections li.fileattached span.itemTitle a {
+    font-weight: bold;
+}
+
+ul.sections div.fileattached span.left.uploaders {
+    float: none;
+}
+
+ul.sections div.fileattached span.left.uploaders div {
+    width: 580px;
+    padding-top: 0 !important;
+}
+
+ul.sections div.fileattached span.left.uploaders div div div span.Testo_campoSmall {
+    display: inline-block;
+    *display:inline;
+    *zoom: 1;
+}
+
+ul.sections div.fileattached span.left.uploaders div div div {
+    margin-bottom: 0;
+}
+
+ul.sections div.fileattached span.left.uploaders input[type="file"] {
+    width: 200px;
+}
+
+@-moz-document url-prefix() {
+    ul.sections div.fileattached span.left.uploaders input[type="file"] {
+    width: 100%;
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+    }
+}
+
+@-moz-document url-prefix() {
+    ul.sections div.fileattached span.left.uploaders div div div span.Testo_campoSmall {
+    margin-left: -10px;
+    }
+}
+
+ div.sectioncontent div.fileattached div.fieldcontent div.fieldrow.submit {
+    text-align: right;
+    padding: .5em 0;
+}
+
+ul.sections span.duration {
+    *margin-top: 4px
+}
+
+div.sectionfooter {
+    padding: 0 5px;
+    height: 16px;
+    display: block;
+    margin-top: -5px;
+}
+
+li.collapsed div.sectionfooter {
+    display:none !important;
+}
+
+div.sectionfooter a.ui-icon.ui-icon-circle-arrow-n {
+    display: inline-block;
+    *display:inline;
+    *zoom: 1;
+    text-align: left;
+    text-indent: -9999px;
+    *text-indent: 0;
+    *font-size: 0;
+    *line-height: 0;
+    *overflow: hidden;
+
+    float:right;
+    margin: 0;
+    padding: 0;
+
+/*  background: url(../../../Generics/Command/img/jqui_888888_256x240.png) !important;
+    background-position: -20px 0px !important;
+    background-repeat: no-repeat !important;*/
+
+}
+
+/* @end */
+
+
+
+/* @group Dragging & NoDragging */
+
+li.dragging {
+    clear: both;
+    position: relative;
+    margin-left: auto;
+}
+
+ul.dragging li.cfp.dragging div.cfpcontainer,
+li.dragging  div.sectioncontent,
+li.cfield.dragging div.fieldcontent {
+    -moz-box-shadow: 0 0 15px rgba(0,0,0,0.20);
+    -webkit-box-shadow: 0 0 15px rgba(0,0,0,0.25);
+    box-shadow: 0 0 15px rgba(0,0,0,0.25);
+    *border: 1px solid #999;
+    background: #ecf0f6;
+}
+
+li.cfield.dragging div.fieldcontent {
+    *width: 631px !important;
+}
+
+ul.dragging li.cfp.blocked div.cfpcontainer div.cfpdesc {
+    background: #ecf0f6;
+}
+
+ul.sections li.section.dragging ul.fields li.cfield.note div.fieldcontent {
+    border-color: #ecf0f6;
+}
+
+li.locked.dragging  li.cfield div.fieldcontent,
+li.dragging  li.cfield.locked div.fieldcontent {
+    background: #ecf0f6;
+}
+
+li.cfield.dragging div.fieldcontent {
+    background: #fff;
+    margin: 0;
+}
+
+li.cfield.dragging div.subfieldcontent {
+    background: #fff;
+}
+
+ul.sections li.section div.sectioncontent ul.fields li.cfield.note.dragging div.fieldcontent {
+    -moz-box-shadow: 0 0 15px rgba(0,0,0,0.25);
+    -webkit-box-shadow: 0 0 15px rgba(0,0,0,0.25);
+    box-shadow: 0 0 15px rgba(0,0,0,0.25);
+    *border: 1px solid #ecf0f6;
+    background-color: #ecf0f6;
+}
+
+ul.sections.dragging .movesection {
+    background-position: -9999px -9999px;
+}
+
+ul.sections.dragging li.dragging .movesection {
+    background-position: -6px -619px;
+}
+
+ul.fields.dragging .movecfield {
+    background-position: -9999px -9999px;
+}
+
+ul.fields.dragging li.dragging .movecfield {
+    background-position: 0 0;
+}
+
+li.nodragging {
+    border: none;
+}
+
+li.nodragging div.sectioncontent,
+ul.dragging li.cfp.nodragging div.cfpcontainer {
+    background-color: #eee;
+    color: #bbb !important;
+    border-color: #ddd;
+}
+
+li.nodragging li.cfield div.fieldcontent {
+    background-color: #f6f6f6 !important;
+    border-color: #eee !important;
+}
+
+li.nodragging li.note div.fieldcontent {
+    border-color: #eee !important;
+    background-color: #eee !important;
+}
+
+li.nodragging li.locked div.fieldcontent,
+li.nodragging.cfield.locked .fieldcontent,
+li.nodragging li.locked div.subfieldcontent,
+li.nodragging.section.locked .fieldcontent,
+li.nodragging.cfield.locked .fieldcontent,
+li.nodragging.section.locked .subfieldcontent {
+    background-color: #eee !important;
+}
+
+li.nodragging li.locked div.fieldcontent,
+li.nodragging.section.locked .fieldcontent,
+li.nodragging.cfield.locked .fieldcontent,
+li.nodragging.section.locked .subfieldcontent {
+    border-color: #ddd !important;
+}
+
+li.nodragging div.cfpcontainer a,
+li.nodragging div.sectioncontent a,
+li.nodragging .expiration,
+li.nodragging .itemDetails,
+li.nodragging .duration {
+    color: #bbb !important;
+}
+
+li.nodragging .movecfield,
+li.nodragging .movesection {
+    background-image: none;
+}
+
+/* @end */
+
+/* @group Buttons */
+
+.statuslight {
+    margin-top: 6px;
+    vertical-align: top;
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    *width: 8px;
+    *height: 8px;
+    background-color: white;
+    *border: 1px solid #888;
+    line-height: 16px;
+    text-indent: -9999px;
+    *text-indent: 0;
+    font-size: 0;
+    *font-size: 0;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    -moz-box-shadow: inset 1px 1px 3px rgba(0,0,0,0.5);
+    -webkit-box-shadow: inset 1px 1px 3px rgba(0,0,0,0.5);
+    box-shadow: inset 1px 1px 3px rgba(0,0,0,0.5);
+}
+
+li.cfield .statuslight {
+    margin-top: 2px;
+}
+
+.statuslight.green {
+    background-color: #99c74a
+}
+
+.statuslight.gray {
+    background-color: #ccc;
+}
+
+.statuslight.yellow {
+    background-color: #ffcd40;
+}
+
+.statuslight.red {
+    background-color: #FF1717;
+}
+
+.statuslight.hidden {
+    width: 8px;
+    height: 8px;
+    background-color: transparent;
+    border: 0;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    -moz-box-shadow: 0px 0px 0px #444;
+    -webkit-box-shadow: 0px 0px 0px #444;
+    box-shadow: 0px 0px 0px #444;
+    display: none;
+}
+
+.DivEpButton {
+    padding: 5px 0;
+    text-align: right;
+    margin-bottom: 1em;
+}
+
+.DivEpButton.big {
+    text-align: center;
+    padding: 1em 0;
+    margin: 1em 0;
+    /*border-top: 1px solid #ccc;*/
+}
+
+.view .DivEpButton.big a.linkMenu,
+.view .DivEpButton.big input[type="submit"],
+.CFPBox a.linkMenu,
+.CFPBox input[type="submit"] {
+    line-height: 1.2em;
+    display: inline;
+    font-size: 1.2em;
+    padding: 7px 18px;
+    height: auto;
+}
+
+div.viewType {
+    float: left;
+    width: 400px;
+    text-align: left;
+}
+
+div.viewType span,
+div.viewType a {
+    vertical-align: middle;
+    margin-right: .5em;
+    border: none !important;
+}
+
+a.img_link {
+    text-indent: -9999px;
+    font-size: 1%;
+    line-height: 0.1em;
+    text-decoration: none;
+    font-weight: normal;
+    font-style: normal;
+}
+
+div.viewType a#ctl00_CPHservice_HYPcfpStat.img_link.ico_stat_l {
+    margin-top: 2px;
+    margin-left: 4px;
+}
+
+li.section.empty div.sectioncontent div.innerwrapper div.sectiondetails {
+    border: 0;
+}
+
+.spacer {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    text-indent: -9999px;
+    *text-indent: 0;
+    *font-size: 0;
+    cursor: default;
+}
+
+a.linkMenu.advanced {
+    line-height: 12px;
+    height: 1.2em;
+    margin: 2px;
+    font-size: 1em;
+    text-decoration: none !important;
+    padding: .1em .3em;
+    color: #555;
+    text-shadow: 1px 1px 0px #ddd;
+    border: 1px solid #aaa;
+    border-bottom-color: #999;
+    border-right-color: #999;
+    background-color: #ddd;
+    /*-moz-box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 1px 1px 0  rgba(0, 0, 0, 0.3);
+    box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.3);*/
+    -moz-border-radius-topleft: 3px;
+    -moz-border-radius-topright: 3px;
+    -moz-border-radius-bottomright: 3px;
+    -moz-border-radius-bottomleft: 3px;
+    -webkit-border-radius: 3px 3px 3px 3px;
+    border-radius: 3px 3px 3px 3px;
+}
+
+a.linkMenu.advanced:hover {
+    outline: none;
+    color: #565656;
+    text-shadow: 1px 1px 0px #ddd;
+    background-color: #ccc;
+    font-weight: normal;
+    font-style: normal;
+    text-decoration: none;
+}
+
+a.linkMenu.advanced:active {
+    outline: none;
+    border: 1px solid #777 !important;
+    -moz-box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.7);
+    -webkit-box-shadow: inset 0 0 32px rgba(0, 0, 0, 0.7);
+    box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.7);
+}
+
+.section input.error,
+.section textarea.error,
+div.view .error input,
+div.view .error textarea {
+    border-color: #c20 !important;
+}
+
+.section div.error {
+    border-color: #c20 !important;
+    margin-bottom: 0;
+}
+
+.view .section div.error {
+    border-color: #fee !important;
+    background: #fee !important;
+    margin-bottom: 0;
+}
+
+.view .section .fieldrow.error {
+    padding: 5px 10px;
+}
+
+.section label.error,
+.section span.error,
+div.view .error label.fieldlabel,
+div.view .error span.fieldinfo,
+div.view .fieldrow.error label,
+div.view .fieldobject.error label
+ {
+    color: #c20 !important;
+}
+
+.fieldobject.error span.error {
+    font-weight: bold;
+}
+
+/* @end */
+
+/* @end*/
+
+/* @group CFP View & Preview */
+
+div.view ul.sumbmissiondetails {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    display: block;
+    width: 100% !important;
+}
+
+div.view ul.sumbmissiondetails li {
+    margin-bottom: .2em;
+}
+
+div.view ul.sumbmissiondetails.revisionrequest li.status {
+    margin-bottom: .5em;
+}
+
+div.view ul.sumbmissiondetails li span {
+    font-weight: bold;
+    background-repeat: no-repeat;
+}
+
+div.view ul.sumbmissiondetails li span.submittedby {
+    font-weight: normal;
+}
+
+div.view div.fieldrow label,
+div.view div.fieldrow label.fieldlabel,
+div.view div.fieldrow span.fieldlabel {
+    font-weight: bold;
+    display: block;
+    width: auto;
+    margin-bottom: .3em;
+}
+
+
+div.view div.fieldrow span.inputradiobuttonlist label,
+div.view div.fieldrow span.inputcheckboxlist label,
+div.view div.fieldrow span.checkboxlist label {
+    display: inline !important;
+    font-weight: normal;
+    font-style: normal;
+    margin: 0 .5em;
+    line-height: 1.3em;
+}
+
+div.view div.fieldrow li.status label,
+div.view div.fieldrow li.status label.fieldlabel,
+div.view div.fieldrow li.status span.fieldlabel {
+    display: inline !important;
+    margin-right: 1em;
+}
+
+div.view div.disclaimerwrapper div.disclaimerinput label.disclaimerlabel {
+    font-weight: normal;
+    float: none;
+    display: inline;
+    margin-left: .8em;
+    margin-right: .2em;
+    display: inline-block;
+    line-height: 1.4em;
+}
+
+div.view fieldset.section .sectiondescription {
+    margin: .5em 0 1em 0;
+    *padding-top: .5em;
+}
+
+.inlinetooltip {
+    display: none;
+}
+
+div.view .fieldobject {
+    margin-bottom: 1px;
+    *margin-bottom: 0;
+    padding: 5px 10px 5px 10px;
+    background-color: #fff;
+    border: 1px solid #fff;
+    *border-color: #fff #ccc #ccc #fff;
+    -moz-box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.15);
+    -webkit-box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.15);
+    box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.15);
+}
+
+div.clone .fieldobject {
+    padding: 5px 0;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    background: transparent;
+    border: none;
+}
+
+div.clone .fieldobject label.fieldlabel {
+    width: auto !important;
+    margin-right: 1em;
+}
+
+div.fieldsclone *,
+div.fieldsclone label {
+    width: auto !important;
+    vertical-align: middle !important;
+}
+
+ul.sectionsclone {
+    padding: 0;
+}
+
+ul.sectionsclone li label {
+/*  font-weight: bold;*/
+}
+
+li.sectionclone {
+    margin-bottom: 1em;
+}
+
+ul.fieldsclone li label {
+    font-weight: normal;
+}
+
+ul.fieldsclone {
+    padding: 0;
+/*  padding-left: 24px;*/
+}
+
+div.sectionclonecontent {
+    padding: 5px 10px 10px 10px;
+    float: none;
+    width: inherit !important;
+}
+
+li.fieldclone div.fieldobject {
+    padding: 5px 12px 5px 5px;
+    float: none !important;
+    width: inherit !important;
+    margin-bottom: 1px;
+    border: none;
+}
+
+div.submissionsclone table {
+    width: 100%;
+}
+
+div.submissionsclone td.mark {
+    width: 160px;
+}
+
+div.submissionsclone td.date {
+    width: 160px;
+    font-size: .9em;
+}
+
+div.submissionsclone .check {
+    width: 50px;
+    text-align: center;
+}
+
+div.sectionclonecontent div.fieldobject span.left label.fieldlabel {
+    text-transform: uppercase;
+}
+
+div.fieldclonecontent div.fieldobject span.left label.fieldlabel {
+    text-transform: none;
+}
+
+div.clone div.fieldobject.clearfix span.right label {
+    font-size: .9em;
+}
+
+ div.view.clone div.fieldsclone div.fieldobject.all {
+    text-transform: uppercase;
+}
+
+div.view fieldset.section:first-child  .fieldobject {
+    *margin-top: 1em;
+}
+
+div.view .objectgroup .fieldobject.revision {
+    margin-top: -20px;
+    *margin-top: 0px;
+}
+
+div.criteriatabs .fieldobject {
+    background-color: #fff;
+    border: 1px solid #fff;
+    *border-color: #fff #ccc #ccc #fff;
+    -moz-box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.15);
+    -webkit-box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.15);
+    box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.15);
+}
+
+div.view .fieldobject .fielddescription .description {
+    font-size: .9em;
+    margin-bottom: 1em;
+    display: block;
+}
+
+div.view span.fieldinfo {
+    margin: 0.5em 0;
+    display: inline-block;
+    *display:inline;
+    *zoom: 1;
+    color: #777;
+}
+
+div.view .fieldobject .fieldrow .disclaimerinput label.disclaimerlabel,
+div.view .fieldobject .fieldrow .disclaimerinput span.disclaimerlabel label {
+    width: 50px;
+    display: inline;
+    margin-right: 1em;
+    margin-left: 3px;
+}
+
+div.view .fieldobject .fieldrow .disclaimerinput,
+div.view .fieldobject .fieldrow .disclaimerinput span.disclaimerlabel input {
+    text-align: right;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+div.view .fieldobject .fieldrow .disclaimerinput .fieldinfo  .minmax {
+
+}
+
+
+div.view div.fieldobject div.fieldrow .textarea {
+    background-color: #fff;
+    width: 80%;
+}
+
+div.view div.fieldobject div.fieldrow .inputtext {
+    background-color: #fff;
+    min-width: 300px
+}
+
+div.view .fieldobject .fieldrow .disclaimertext {
+    border:1px solid #ccc;
+    padding: .4em;
+    /*height: 150px;*/
+    min-height: 80px;
+    overflow: auto;
+    overflow-x: hidden;
+    font-size: .9em;
+    line-height: 1.4em;
+    color: #777;
+    margin-bottom: 0.2em;
+}
+
+div.view .fieldobject .fieldrow div.disclaimerwrapper {
+    width: 80%;
+}
+
+div.view .fieldobject .fieldrow.fieldinput .inlinetooltip.visible {
+    font-size: .9em;
+    color: #000;
+    background-color: #ffff99;
+    border:1px solid yellow;
+    padding-left: 0.3em;
+    padding-right: 0.3em;
+    margin-left: 1em;
+    display: inline-block;
+    *display: inline;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    line-height: 1.2em;
+}
+
+div.view fieldset.section,
+div.view.preview div.partecipants,
+div.view.preview fieldset.section.partecipants {
+    padding: 10px;
+    position: relative;
+    margin: 1em 0;
+    margin-bottom: 1px;
+    *margin-top: 1em;
+    border: 1px solid #ccc;
+    *border: none;
+    -moz-box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.5), 1px 1px 1px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.5), 1px 1px 1px rgba(0, 0, 0, 0.3);
+    box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.5), 1px 1px 0 rgba(0, 0, 0, 0.15);
+    background-color: #e6e9ed;
+}
+
+div.view fieldset.section.collapsed {
+    padding-bottom: 0;
+    *padding-bottom: 10px;
+}
+
+div.view fieldset.section legend {
+    font-weight: bold;
+    font-size: 1.2em;
+    border: 1px solid #ccc;
+    *border-color: #fff #ccc #ccc #fff;
+    background-color: #fff;
+    width: 720px;
+    padding: 0 4px;
+    line-height: 1.6em;
+    *margin-left: -5px;
+    -moz-box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.5), 1px 1px 1px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.5), 1px 1px 1px rgba(0, 0, 0, 0.3);
+    box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.5), 1px 1px 0 rgba(0, 0, 0, 0.15);
+    text-transform: uppercase;
+    word-wrap: normal;
+    white-space: normal;
+    display: block;
+}
+
+div.view fieldset.section legend * {
+    vertical-align: middle;
+}
+
+div.view fieldset.section legend span.title {
+    display: inline-block;
+    *display:inline;
+    *zoom: 1;
+    *margin: 4px 0;
+    margin: 0;
+    padding: 0;
+    padding-bottom: 2px;
+}
+
+div.view fieldset.section.collapsable legend,
+div.view fieldset.section.collapsed legend {
+    background-color: #fff;
+    padding-right: 4px;
+    cursor:pointer;
+}
+
+div.view div.cfpdescription {
+    margin-bottom: 2em;
+    *margin-bottom: 1.5em;
+    *padding-top: 2em;
+}
+
+div.view fieldset.cfpintro div.cfpdescription {
+    margin-top: 1em;
+}
+
+div.view div.cfpdescription .textwrapper {
+    padding-bottom: .5em;
+    border-bottom: 1px solid #ccc;
+}
+
+div.view li.attachedfile div.cfpdescription {
+    font-size: .9em;
+    margin-top: .5em;
+    margin-bottom: 0;
+    padding: 0;
+    padding-left: 20px;
+    color: #777;
+}
+
+div.view div.fieldmaincontent.clearfix {
+    margin-bottom: -10px;
+    *margin-bottom: 0;
+}
+
+ul.submittedfiles,
+div.view ul.attachedfiles {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+div.view ul.attachedfiles {
+    margin: .5em 0;
+}
+
+div.filerevisionscontainer {
+    color: #666;
+    font-size: .85em;
+    margin-top: .2em;
+    padding: 5px 0 5px 5px;
+    background-color: #f1f4f8;
+    *background-color: transparent;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+}
+
+li.submittedfile {
+    padding-bottom: .5em;
+    margin-bottom: .5em;
+    border-bottom: 1px solid #ccc;
+}
+
+ul.filerevisions {
+    margin: .5em 0 0 0;
+    padding-left: 18px;
+}
+
+li.filerevision {
+    list-style-position: outside;
+    list-style-type: circle;
+    vertical-align: middle !important;
+}
+
+li.submittedfile div.submittedfilemain,
+li.filerevision div.filerevisioncontent {
+    padding: 2px;
+}
+
+li.submittedfile div.submittedfilemain span.fileIco,
+li.submittedfile div.submittedfilemain .icon,
+li.filerevision div.filerevisioncontent span.fileIco,
+li.filerevision div.filerevisioncontent .icon {
+    vertical-align: middle !important;
+}
+
+li.submittedfile div.submittedfilemain:hover,
+li.filerevision div.filerevisioncontent:hover {
+    background-color: #ddd !important;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+}
+
+li.filerevision.addfile div.filerevisioncontent:hover {
+    background-color: transparent !important;
+}
+
+li.filerevision.addfile {
+    list-style-type: none;
+    margin-top: .3em;
+    padding-top: .3em;
+}
+
+li.submittedfile.last {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+div.cfpdetail,
+div.cfpdetails {
+    padding: 10px;
+    background-color: #fff;
+    font-weight: bold;
+}
+
+div.cfpdetail span,
+div.cfpdetail span span {
+    font-size: 1em !important;
+    line-height: inherit;
+    display: inline !important;
+    width: auto !important;
+    margin: 0;
+    padding: 0;
+}
+
+div.view div.cfpdetail span.expiration,
+div.view div.cfpdetails span.expiration {
+    float: none;
+    width: auto;
+    margin-right: 1em;
+    font-size: 1em;
+}
+
+.readonlyinput {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    border: 1px solid #ccc;
+    padding: 0.7em;
+    margin: .5em 0;
+
+}
+
+.textoption .input.inputtext,
+.textoption .readonlyinput {
+    display: inline;
+    padding: 2px 5px;
+    margin: 0;
+    vertical-align: middle;
+    height: 2px;
+}
+
+.readonlytextarea {
+    display: block;
+    border:1px solid #ccc;
+    padding: 0.7em;
+    margin: .5em 0;
+}
+
+.readonlyinput.empty,
+.readonlytextarea.empty {
+    border-color: #ccc;
+}
+
+.readonlyinput.empty {
+    width: 200px;
+}
+
+.readonlytextarea.empty {
+    width: 400px;
+    height: 50px;
+}
+
+.time .readonlyinput.empty,
+.date .readonlyinput.empty,
+.datetime .readonlyinput.empty {
+    width: 40px;
+}
+
+.rbldl {
+    display: block;
+}
+
+.rbldl * {
+    vertical-align: top;
+}
+
+div.view .rbldl label {
+    margin-left: .5em;
+}
+
+div.view .rbldl label {
+    display: inline !important;
+}
+
+.rbldl label dl {
+    display: inline-block;
+    *display:inline;
+    *zoom: 1;
+    width: 90%;
+    margin: 0;
+    margin-bottom: 1em;
+    padding: 0;
+}
+
+.rbldl label dl dt {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    font-weight: bold;
+}
+
+.rbldl label dl dd.hidden {
+    display: none;
+}
+
+.rbldl label dl dd {
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+    font-size: .9em;
+}
+
+.rbldl label.checked dl dd {
+    display: inline-block;
+    *display: block;
+    outline: none;
+}
+
+table.submissions td.partecipant {
+    padding-left: 4px;
+}
+
+table.submissions tr.revision td.partecipant {
+    padding-left: 32px !important;
+    background: url(../../../Generics/Command/img/corner_bottomleft_16.png) no-repeat 10px 0;
+}
+
+table.submissions tr.revision {
+    background-color: #e6e9ed;
+    -moz-box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.5);
+    -webkit-box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.5);
+    box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+table.submissions tr.revision.first {
+    border-top: 1px solid #aaa;
+}
+
+tr.revision.last {
+    border-bottom: 1px solid #aaa;
+}
+
+table.submissions td.partecipant span.revisionby {
+    color: #666;
+    font-style: italic;
+    margin-left: 1em;
+}
+
+table.cfp.submissions td.partecipant a.expander,
+table.cfp.submissions tr.expanded td.partecipant a.expander {
+    float:right;
+    width: 16px !important;
+    height: 16px !important;
+    display: inline-block;
+    *display:inline;
+    *zoom: 1;
+    padding: 0 !important;
+    margin: 2px 4px 0 0 !important;
+    vertical-align: top !important;
+}
+
+div.viewoptions span.Testo_Campo label {
+    margin-right: 1em;
+}
+
+#content div.DIV_MP_Content div.view.preview div.innerwrapper.clearfix div.left span.partecipantselect {
+    margin: 1em 0;
+}
+
+/* @end */
+
+/* @group CFP Revisions */
+
+.revisionsettings.hidden,
+.revisionfield.hidden {
+    display: none;
+}
+
+.revisionfield {
+    display: inline-block;
+    *display: inline;
+    -moz-border-radius-topleft: 2px;
+    -moz-border-radius-topright: 2px;
+    -moz-border-radius-bottomright: 2px;
+    -moz-border-radius-bottomleft: 2px;
+    -webkit-border-radius: 2px 2px 2px 2px;
+    border-radius: 2px 2px 2px 2px;
+    margin-right: 0.4em;
+}
+
+.revisionfield.revisioned {
+    padding: 0.3em 0.4em 0.1em 0.4em;
+    background: #ff3019;
+    background: -moz-linear-gradient(top,  #ff3019 0%, #cf0404 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ff3019), color-stop(100%,#cf0404));
+    background: -webkit-linear-gradient(top,  #ff3019 0%,#cf0404 100%);
+    background: -o-linear-gradient(top,  #ff3019 0%,#cf0404 100%);
+    background: -ms-linear-gradient(top,  #ff3019 0%,#cf0404 100%);
+    background: linear-gradient(to bottom,  #ff3019 0%,#cf0404 100%);
+    border: 1px solid #cf0404;
+}
+
+.revisionfield label,
+.revisionfield input,
+span.revisionfield.revisioned {
+    display: inline-block !important;
+    *display: inline;
+    text-transform: uppercase;
+    font-size: 0.8em;
+    color: #cf0404;
+    vertical-align: middle;
+    margin: 0;
+}
+
+.revisionfield input {
+    margin: -2px 3px 0 0;
+    background: #c20;
+    border: 1px solid #c20;
+}
+
+.revisionfield.revisioned label,
+.revisionfield.revisioned input {
+    color: #fff;
+    text-shadow: #921000 0 1px 0;
+}
+
+td.partecipant span.revisionfield.revisioned {
+    padding: 0.2em 0.3em 0.2em 0.3em;
+    margin: 1px 0 0 0 ;
+    background: transparent;
+    border-radius:2px
+}
+
+td.partecipant span.revisionfield.revisioned label,
+td.partecipant span.revisionfield.revisioned input {
+    font-size: 0.75em;
+    color: #cf0404;
+    text-shadow: none;
+}
+
+.revisionfield + label {
+    display: inline-block !important;
+    *display: inline;
+}
+
+.revisionalert,
+.revisionconfirm {
+    text-align: center;
+    font-size: 12px !important;
+}
+
+.revisionalert *,
+.revisionconfirm *{
+    font-size: 1em !important;
+}
+
+.revisionalert .DivEpButton.big,
+.revisionconfirm .DivEpButton.big {
+    padding: 0;
+}
+
+.revisionalert .revisionneeded,
+.revisionconfirm {
+    display: block;
+}
+
+.revisionalert .revisionneeded .revisionapplicant,
+.revisionconfirm .revisionmessage .revisionapplicant {
+    margin-top: 0.5em;
+    font-style: normal;
+}
+
+.revisionalert .revisionneeded .revisionapplicant .name,
+.revisionconfirm .revisionmessage .revisionapplicant .name {
+    font-weight: bold;
+}
+
+.revisionalert .revisionmsg {
+    display: block;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #fff;
+    padding: .7em .5em;
+    border: 1px solid #ccc;
+    margin-top: 0.2em;
+    margin-bottom: 0.5em;
+    font-style: italic;
+    line-height: 1.4em;
+    font-size: 0.9em;
+    color: #222;
+}
+
+.revisionalert .revisiondeadline {
+    color: #c00;
+    font-style: normal;
+}
+
+.revisionalert .revisionaction {
+    display: block;
+    margin: 1em 0;
+    text-align: center;
+}
+
+.revisionalert .revisiondeadline .date,
+.revisionconfirm .revisiondate .date {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.revisionconfirm span {
+    font-size: 1em !important;
+}
+
+/* @end */
+
+/* @group CFP Input types */
+
+input[type="file"] {
+    background-color: #fff;
+}
+
+div.fieldrow a.linkMenu {
+    display: inline-block;
+}
+
+span.inputradiobuttonlist,
+span.inputcheckboxlist,
+span.checkboxlist {
+    display: inline-block;
+    *display:inline;
+    *zoom: 1;
+    vertical-align: top;
+}
+
+.error span.inputradiobuttonlist,
+.error span.inputcheckboxlist,
+.error span.checkboxlist {
+    border: 1px solid #c20;
+    padding:  0 5px;
+    /*  margin-left: -5px;*/
+}
+
+.view span.inputcheckboxlist span.group,
+.view span.checkboxlist span.group {
+    display: block;
+}
+
+span.inputradiobuttonlist input,
+div.view fieldset.section span.inputradiobuttonlist input,
+span.inputcheckboxlist input,
+div.view fieldset.section span.inputcheckboxlist input,
+div.view fieldset.section span.checkboxlist input {
+    font-weight: normal;
+    font-style: normal;
+    display: inline;
+    margin-bottom: .5em;
+}
+
+.textoption .fieldinfo,
+.textoption input {
+    margin:  0 !important;
+}
+
+span.inputradiobuttonlist label,
+div.view fieldset.section span.inputradiobuttonlist label,
+span.inputcheckboxlist label,
+div.view fieldset.section span.inputcheckboxlist label,
+div.view fieldset.section span.checkboxlist label {
+    font-weight: normal;
+    font-style: normal;
+    display: inline;
+}
+
+div.optionlist {
+    display: inline-block;
+    *display: inline;
+    width: 440px;
+    border: 1px solid #ccc;
+    padding: 5px;
+    vertical-align: middle;
+    margin: 1em 0;
+    margin-left: 105px !important;
+}
+
+div.optionlist label {
+    line-height: 1.4em;
+    margin-bottom: 4px;
+    display: inline-block;
+    width: 350px;
+    margin-left: 8px;
+    vertical-align: top;
+    padding-top: 2px;
+}
+
+div.optionlist input {
+    vertical-align: top;
+}
+
+div.optionlist div.right {
+    width: 450px !important;
+}
+
+table.optionbuilder {
+    margin-left: 105px !important;
+    width: 450px;
+}
+
+div.varbuttons {
+    margin: 1em 0;
+    margin-left: 125px !important;
+    width: 453px;
+}
+
+div.varbuttons * {
+    vertical-align: middle;
+}
+
+div.varbuttons a.varbutton.linkMenu {
+    font-size: .95em;
+}
+
+table.optionbuilder,
+table.optionbuilder td {
+    border: 1px solid #ccc;
+    padding: 2px;
+    margin: 1em 0;
+    border-collapse: collapse;
+}
+
+table.optionbuilder tfoot tr {
+    background-color: #eee;
+}
+
+div.fileinputs {
+    position: relative;
+    display: inline-block;
+    margin: 0;
+}
+
+div.fakefile {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+    padding: 0;
+}
+
+ul.urllist {
+    padding: 0;
+    padding-bottom:1em;
+}
+
+ul.urllist li {
+    list-style: none;
+    list-style-type: none;
+    margin:1em 0;
+}
+
+ul.urllist div.description {
+    padding: 0;
+    margin: 0 0 .5em 0;
+}
+
+ul.urllist .url {
+    margin-left: 0;
+    margin-bottom: .5em;
+    font-size: .9em;
+    display: block;
+}
+
+ul.urllist div.url span.left,
+ul.urllist div.url span.right {
+    display: inline-block !important;
+    *display:inline;
+    **zoom: 1;
+}
+
+ul.urllist div.url span.left {
+    float: left;
+    word-break: break-all;
+    padding: 3px;
+    color: #666;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    margin-bottom: 3px;
+}
+
+ul.urllist .url span.right {
+    overflow: hidden;
+    float: right;
+}
+
+ul.urllist .description  {
+    margin-left: 0;
+    margin-bottom: 2em;
+}
+
+
+div.fakefile input {
+    margin: 0;
+    border: 1px solid #ccc;
+}
+
+div.fakefile label {
+    text-align: center;
+    line-height: 12px;
+    *line-height: 14px;
+    text-decoration: none !important;
+    padding: .2em .6em;
+    color: #555;
+    text-shadow: 1px 1px 0px #ddd;
+    border: 1px solid #aaa;
+    border-bottom-color: #999;
+    border-right-color: #999;
+    background-color: #ddd;
+    -moz-box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 1px 1px 0  rgba(0, 0, 0, 0.1);
+    box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.1);
+    -moz-border-radius-topleft: 3px;
+    -moz-border-radius-topright: 3px;
+    -moz-border-radius-bottomright: 3px;
+    -moz-border-radius-bottomleft: 3px;
+    -webkit-border-radius: 3px 3px 3px 3px;
+    border-radius: 3px 3px 3px 3px;
+}
+
+input.file {
+    position: relative;
+    text-align: right;
+    -moz-opacity:0.5 ;
+    filter:alpha(opacity: 0);
+    opacity: 0;
+    z-index: 2;
+    text-indent: -9999px;
+}
+
+input.icon,
+input.icon:active,
+input.icon:hover {
+    border: none !important;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    outline: none;
+    padding: 0 !important;
+    margin: 0;
+    background-color: transparent;
+    line-height: 1em;
+    height: 16px;
+    width: 16px;
+    cursor: pointer;
+    vertical-align: top;
+}
+
+.fielditems .icon.checked,
+.fielditems .icon.notchecked {
+    display: inline-block;
+    *display:inline;
+    *zoom: 1;
+    background: transparent url(../../../Generics/Command/img/handlers_set_1.png) no-repeat -240px 0px !important;
+    text-align: left;
+    text-indent: -9999px;
+    *text-indent: 0;
+    *font-size: 0;
+    *line-height: 0;
+    *overflow: hidden;
+    opacity: 0.70;
+}
+
+.fielditems .icon.notchecked {
+    background-position: 0 -938px !important;
+}
+
+.fielditems .icon.checked {
+    background-position: 0 -899px !important;
+}
+
+div.fieldobject.fileupload .icons {
+    margin-left: 1em;
+    position: relative;
+    top: -1px;
+}
+
+/* @end */
+
+/* @group CFP Submitters */
+
+ul.submitters li.submitter .fieldobject .fieldrow label {
+}
+
+ul.submitters li.submitter span.titledetail {
+    display: inline-block;
+    *display:inline;
+    *zoom: 1;
+}
+
+ul.submitters li.submitter span.titledetail label {
+    width: auto;
+}
+
+ul.submitters li.submitter .left {
+    width: 570px !important;
+}
+
+ul.submitters li.submitter .right {
+    width: 60px;
+}
+
+ul.submitters li.submitter div.fieldobject textarea {
+    vertical-align: top;
+}
+
+.fieldsubmitters .submitters {
+    padding: 0;
+}
+
+.fieldsubmitters .submitters .submitter {
+    list-style: none;
+    margin-bottom: 1em;
+    border-bottom: 1px solid #ddd;
+    padding: 5px;
+}
+
+.fieldsubmitters .submitters .submitter.new {
+    background-color: #eee;
+    border: 1px solid #ddd;
+}
+
+.fieldsubmitters .submitters .submitter .itemrow .submissions label {
+    width: auto;
+}
+
+.fieldsubmitters .submitters .submitter .itemrow .submissions label.long {
+    width: 130px;
+}
+
+.fieldsubmitters .submitters .submitter input.inputchar {
+    width: 40px !important;
+}
+
+/* @end */
+
+/* @group CFP Add new field */
+
+.fieldtype:hover {
+    background-color: #b9b9b9;
+}
+
+.addnewfield {
+    overflow: hidden !important;
+}
+
+.addnewfield .title,
+.addnewcriteria .title {
+    margin-top:-1px;
+    display: block;
+    color: #333;
+    border-bottom: 1px solid #ccc;
+    border-top: 1px solid #b9b9b9;
+    padding: 5px;
+    background-color: #e6e9ed;
+    -moz-box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.5);
+    -webkit-box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.5);
+    box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+.addnewfield .dialogcontent,
+.addnewcriteria .dialogcontent {
+    border:1px solid #b9b9b9;
+    padding: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: #f4f5f5;
+    width: 761px !important;
+}
+
+.addnewfield .dialogcontent {
+    padding: 0px;
+    width: 771px !important;
+}
+
+.addnewfield .dialogheader,
+.addnewfield .dialogfooter,
+.addnewcriteria .dialogheader,
+.addnewcriteria .dialogfooter{
+    clear: both;
+    width: 100%;
+    margin-bottom: 5px;
+    text-align: right;
+}
+
+.addnewfield .leftfield {
+    width: 220px;
+    float:left;
+    border-right:1px solid #b9b9b9;
+}
+
+.addnewfield .rightfield {
+    width: 548px;
+    text-align: left;
+    float:left;
+    margin-bottom: 0;
+    /*padding-bottom: 5px;*/
+    border-left:1px solid #b9b9b9;
+    margin-left: -1px;
+}
+
+.rightfield div.fieldobject {
+    padding: 10px;
+    width: auto;
+}
+
+.rightfield div.fieldobject .fieldinput {
+    margin-top: 0;
+}
+
+.rightfield div.fieldobject .fieldinput label {
+    font-weight: bold;
+}
+
+.rightfield div.fieldobject .fieldinput label.description,
+.rightfield div.fieldrow.fieldinput span.inputcheckboxlist label,
+.rightfield div.fieldrow.fieldinput span.inputradiobuttonlist label {
+    font-weight: normal;
+}
+
+.rightfield div.fieldrow.fieldinput span.inputcheckboxlist,
+.rightfield div.fieldrow.fieldinput span.inputradiobuttonlist {
+    display: block;
+}
+
+ul.fieldtypes {
+    padding: .5em 0;
+    *padding-left: 0;
+    margin: 0;
+}
+
+ul.fieldtypes li.fieldtype {
+    list-style: none;
+    padding: 0 2px 0 4px;
+    margin-bottom: 2px;
+}
+
+.dialog.addnewfield {
+    font-size: 11px;
+}
+
+.dialogcontent li.fieldtype label {
+    display: inline-block;
+    *display:inline;
+    *zoom: 1;
+    width: 85%;
+    vertical-align: top;
+    margin-bottom: .5em;
+}
+
+.dialog div.view .fieldobject {
+    margin-bottom: 0;
+    padding: 10px;
+    border: none;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.dialog div.view div.fieldobject .fieldrow.fielddescription,
+.dialog div.view span.description  {
+    margin: 0 ;
+}
+
+/* @end */
+
+/* @group CFP Templates */
+
+ul.templates,
+ul.userselections,
+ul.templatemedia {
+    margin: 0;
+    padding: 0;
+}
+
+ul.templates li.template .templatetitle,
+ul.userselections li.userselection .templatetitle,
+ul.templatemedia li.templatemedium .templatetitle
+{
+    margin-bottom: 0.5em;
+}
+
+ul.templates li.template .templatefooter,
+ul.userselections li.userselection .templatefooter,
+ul.templatemedia li.templatemedium .templatefooter
+{
+    width: 93%;
+}
+
+span.fielditemswrapper {
+    display: inline-block;
+    *display:inline;
+    vertical-align: top;
+}
+
+ul.fielditems {
+    padding: 6px 6px 2px 6px;
+    margin-bottom: .5em;
+    border: 1px solid #ccc;
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    width: 442px;
+}
+
+ul.fielditems li.fielditem {
+    list-style-image: none;
+    list-style-type: none;
+}
+
+ul.templates li.template div.templatecontent div.title div.left *,
+ul.userselections li.userselection div.userselectioncontent div.title div.left * ,
+ul.templatemedia li.templatemedium div.templatemediumcontent div.title div.left *
+{
+    vertical-align: middle ;
+}
+
+ul.templates li.template div.templatecontent div.title div.left span,
+ul.userselections li.userselection div.userselectioncontent div.title div.left span,
+ul.templatemedia li.templatemedium div.templatemediumcontent div.title div.left span
+{
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    width: 520px;
+    vertical-align: top;
+}
+
+span.input {
+    width: auto !important;
+}
+
+
+ul.templates li.template div.templatecontent div.title,
+ul.userselections li.userselection div.userselectioncontent  div.title,
+ul.templatemedia li.templatemedium div.templatemediumcontent  div.title
+{
+    margin-bottom: 1em;
+}
+
+ul.templates li.template div.templatecontent div.RowMail div.RowCellRight * {
+}
+
+ul.templates li.template div.templatecontent div.RowMail div.RowCellRight input.Testo_Campo {
+    margin-top: -4px;
+}
+
+ul.fielditems li.fielditem div.fielditemcontent {
+    margin: 2px 0;
+}
+
+ul.fielditems li.fielditem div.fielditemcontent .inputtext,
+ul.fielditems li.fielditem div.fielditemcontent .spaninputtext,
+ul.fielditems li.fielditem div.fielditemcontent .inputchar,
+ul.fielditems li.fielditem div.fielditemcontent .spaninputchar {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    margin-right: .5em;
+}
+
+.fielditems.ui-sortable .fielditem a.icon.checked,
+.fielditems.ui-sortable .fielditem a.icon.notchecked {
+    margin-right: 10px;
+}
+
+ul.fielditems li.fielditem div.fielditemcontent .spaninputtext {
+    width: 196px;
+}
+
+ul.fielditems li.fielditem div.fielditemcontent .inputtext {
+    width: 200px;
+}
+
+ul.fielditems li.fielditem div.fielditemcontent .spaninputchar {
+    width: 46px;
+}
+
+ul.fielditems li.fielditem div.fielditemcontent .inputchar {
+    width: 50px;
+}
+
+ul.fielditems li.fielditem div.fielditemcontent .spaninputtext,
+ul.fielditems li.fielditem div.fielditemcontent .spaninputchar {
+    font-weight: bold;
+    padding: 2px;
+    vertical-align: middle;
+}
+
+ul.fielditems li.fielditem.footer div.fielditemcontent {
+    padding: 3px 0;
+    border-top: 1px solid #ccc;
+}
+
+ul.fielditems li.fielditem.footer {
+    padding: 0 !important ;
+}
+
+ul.fielditems li.fielditem.header div.fielditemcontent,
+ul.fielditems li.fielditem.footer div.fielditemcontent {
+    margin: 0;
+}
+
+/* @end */
+
+/* @group CFP Evaluation mgmt */
+
+ul.fielditems.critera {
+    margin-bottom: 1em;
+}
+
+ul.fielditems.critera li.fielditem span.spaninputtext,
+ul.fielditems.critera li.fielditem input.inputtext {
+    width: 200px;
+    margin-right: 20px;
+}
+
+ul.fielditems.critera li.fielditem span.spaninputchar,
+ul.fielditems.critera li.fielditem input.inputchar {
+    width: 50px;
+    margin-right: 0;
+}
+
+ul.sections li.section ul.fielditems.critera li.ui-state-highlightHelper {
+    width: 305px !important;
+    *width: 305px !important;
+    height: auto;
+    border: 1px dashed #aaa;
+}
+
+ul.fielditems.critera li.fielditem span.spaninputtext,
+ul.fielditems.critera li.fielditem span.spaninputchar {
+    display: inline-block;
+    padding: 2px;
+    font-weight: bold;
+}
+
+ul.partecipantlist {
+    padding: 0;
+    text-align: center;
+}
+
+ul.partecipantlist li.partecipantitem  a {
+    display: inline-block;
+    width: 80%;
+    vertical-align: middle !important ;
+    text-align: center;
+    text-decoration: none !important;
+    padding: 10px;
+}
+
+#content div.DIV_MP_Content div.view div.DivEpButton.big a.Link_Menu:hover,
+.view .DivEpButton.big input[type="submit"]:hover,
+.view .DivEpButton.big a.linkMenu:hover,
+ul.partecipantlist li.partecipantitem  a:hover,
+.CFPBox a.linkMenu:hover,
+.CFPBox input[type="submit"]:hover {
+    background-color: #ccc;
+}
+
+#content div.DIV_MP_Content div.view div.DivEpButton.big a.Link_Menu:active,
+.view .DivEpButton.big input[type="submit"]:active,
+.view .DivEpButton.big a.linkMenu:active,
+ul.partecipantlist li.partecipantitem  a:active,
+.CFPBox a.linkMenu:active,
+.CFPBox input[type="submit"]:active {
+    background-color: #ccc;
+    outline: none;
+    border: 1px solid #777 !important;
+    -moz-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
+    -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.view ul.partecipantlist li.partecipantitem {
+    display: inline-block;
+    *display: inline;
+    **zoom: 1;
+    width: 30%;
+    margin: 10px;
+    vertical-align: middle !important ;
+}
+
+.CFPBoxes .CFPBox {
+    text-align: center;
+    width: 46%;
+    padding: 1em;
+    min-height: 110px;
+    *height: 120px;
+    border: 1px solid #ccc;
+    margin-bottom: 0.5em;
+}
+
+.CFPBoxes .CFPBox .cfpdescription {
+    text-align: justify;
+    margin: 1em 0;
+}
+
+.evaluators td.actions {
+    vertical-align: middle;
+}
+
+.evaluators .actions {
+    width: 60px;
+    text-align: right;
+}
+
+.evaluators th.actions {
+    text-align: left;
+}
+
+.evaluators td.status {
+    width: 120px;
+}
+
+ul.evaluators {
+  padding: 0;
+}
+
+.rightcontent div.contentouter div.content div.fieldobject span.options {
+    margin: 1em 0;
+    display: block;
+}
+
+.rightcontent div.fieldobject span.options input,
+.rightcontent div.fieldobject span.options label {
+    display: inline-block;
+    width: auto;
+    margin: 0 1em 1em 0;
+    vertical-align: top;
+}
+
+div.left.evaluatordetails {
+    width: 150px;
+}
+
+li.evaluator {
+    list-style: none;
+    margin: 0;
+    margin-bottom: 1em;
+    padding-bottom: 0.5em;
+    border-bottom: 1px solid #ccc;
+}
+
+.evaluationbar,
+.topbar {
+    z-index: 50;
+    margin: 1em 0;
+    width: 920px;
+}
+
+div.infobar,
+.evaluationbar .innerwrapper,
+.topbar .innerwrapper {
+    padding: .5em;
+    border: 1px solid #ccc;
+    background-color: #e6e9ed;
+    -moz-box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.5), 1px 1px 1px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.5), 1px 1px 1px rgba(0, 0, 0, 0.3);
+    box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.5), 1px 1px 0 rgba(0, 0, 0, 0.15);
+}
+
+.topbar .innerwrapper {
+    padding: 15px 10px;
+}
+
+.evaluationbar .innerwrapper .left {
+    width: 59%;
+    padding: 5px 0;
+}
+
+.evaluationbar .innerwrapper .left .extrainfo {
+    display: inline-block;
+    *display:inline;
+    **zoom: 1;
+}
+
+.evaluationbar .innerwrapper .right {
+    width: 40%;
+    padding: 5px 0;
+}
+
+.evaluationbar.floatingHeader,
+.topbar.floatingHeader {
+    margin-top: 2px;
+    margin:0;
+}
+
+.persist-area.hasFloating .evaluationbar .innerwrapper,
+.persist-area.hasFloating .topbar .innerwrapper {
+    -moz-box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.5), 0 10px 1px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: inset 1px 1px 10px rgba(255, 255, 255, 0.5), 0 10px 10px rgba(0, 0, 0, 0.3);
+    box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.5), 0 10px 10px rgba(0, 0, 0, 0.15);
+    *border-bottom: 4px solid #ccc;
+}
+
+.persist-area.hasFloating .evaluationbar .innerwrapper,
+.persist-area.hasFloating .topbar .innerwrapper {
+    -moz-box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.5), 0 10px 1px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: inset 1px 1px 10px rgba(255, 255, 255, 0.5), 0 10px 10px rgba(0, 0, 0, 0.3);
+    box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.5), 0 10px 10px rgba(0, 0, 0, 0.15);
+    *border-bottom: 4px solid #ccc;
+}
+
+.persist-area.hasFloating div.topbar.tooLong div.innerwrapper,
+.persist-area.hasFloating div.evaluationbar.tooLong div.innerwrapper {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    margin-top: -2em;
+    margin-bottom: 1em;
+}
+
+.persist-area.hasFloating {
+    padding-top: 500px; /*Don't ASK!!!*/
+}
+
+div.contentwrapper.edit.persist-area.hasFloating {
+    padding-top: 0;
+}
+
+span.progressbar.global {
+    display: inline-block;
+    *display:inline;
+    *zoom: 1;
+    width: 740px;
+    margin-top: .5em;
+    margin-bottom: .5em;
+/*  margin-left: auto;
+    margin-right: auto;*/
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+
+    vertical-align: middle;
+    vertical-align: baseline;
+}
+
+div.commissionwrapper {
+    margin: 2em 0;
+}
+
+div.commissionwrapper .tree_table {
+    margin: 1em 0;
+}
+
+div.progressbarwrapper {
+    /*  background-color: #eceef1;*/
+/*  -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    border-top-color: #ddd;
+    border-left-color: #ddd;
+    *border-bottom: 2px;*/
+    margin-bottom: 10px;
+}
+
+div.progressbarwrapper span.label {
+    margin: .5em 0;
+    display: inline-block;
+    *display:inline;
+    *zoom: 1;
+    margin-right: 1em;
+}
+
+.progressbar.commission {
+    width: 350px;
+}
+
+ul.commissions {
+    padding: 0;
+    margin: 1em  0;
+    padding-left: .5em;
+    list-style-type: none;
+    font-size: .9em;
+}
+
+ul.commissions li.commission {
+    margin-bottom: .2em;
+}
+
+/* @end */
+
+/* @group CFP Evalutaion mgmt tables */
+
+table.match {
+    margin: 1em 0;
+    width: 100%;
+}
+
+table .submitternumber {
+    text-align: center;
+}
+
+table.evaluation th.submitternumber,
+table.match th.submitternumber {
+    width: 30px;
+}
+
+table.match th.submittername {
+    width: 120px;
+}
+
+table.match th.submittedon {
+    width: 120px;
+}
+
+table.match th.evaluators {
+    width: 470px;
+}
+
+table.match .submitterdetail span.detail.date {
+    color: #888;
+    float: right;
+    font-style: italic;
+}
+
+table.matchingtable {
+    width: 100%;
+    table-layout: fixed;
+}
+
+table.matchingtable td,
+table.matchingtable th {
+    padding: 0.2em;
+}
+
+div.fieldcontent table.evaluators,
+div.fieldcontent table.matchingtable {
+    width: 98%;
+    margin-top: 0;
+}
+
+table.evaluators {
+    margin: 1em 0;
+}
+
+table.evaluators tr.last td {
+    border-bottom: none;
+}
+
+tr.replaced {
+    background-color: #e3e6ea;
+    color: #999;
+}
+
+tr.replaced {
+    background-color: #e3e6ea;
+    color: #999;
+}
+
+tr.removed {
+    background-color: #e3e6ea;
+    color: #999;
+}
+
+table.evaluators td.evaluator {
+    min-width: 120px;
+    max-width: 160px;
+}
+
+tr.replaced td.evaluator {
+    background: url(../../../Generics/Command/img/corner_bottomleft_9.png) no-repeat 8px 0px;
+    padding-left: 24px !important;
+}
+
+tr.removed td.evaluator {
+    padding-left: 24px !important;
+}
+
+tr td.evaluator span.extrainfo {
+    font-size: .9em;
+    font-style: italic;
+    margin-left: .5em;
+    vertical-align: baseline;
+}
+
+table.evaluators td.commission {
+    width: 445px;
+}
+
+table.evaluators.weights{
+    width: 100%;
+}
+
+table.evaluators th.commission.short,
+table.evaluators td.commission.short {
+    width: auto;
+}
+
+table.evaluators td.commission .left,
+table.evaluators td.commission .right {
+    vertical-align: middle;
+    display: inline-block;
+    *display:inline;
+    *zoom: 1;
+    float: none;
+}
+
+table.evaluators div.chzn-container div.chzn-drop,
+table.evaluators div.chzn-container div.chzn-drop div.chzn-results {
+    width: 400px !important;
+}
+
+/* @end */
+
+/* @group CFP Horizontal tabs */
+
+.criteriatabs.ui-widget {
+    font-size: 12px;
+    margin-bottom: 0.5em;
+    border: none;
+    padding: 0;
+    background: transparent;
+}
+
+.criteriatabs.ui-widget .ui-widget-header {
+    background: #e6e9ed;
+    border-left: 0;
+    border-top: 0;
+    border-right: 0;
+    border-radius: 0;
+    padding: 0;
+    border-color: #bcbcbc !important;
+}
+
+.criteriatabs.ui-widget ul li {
+    margin-top: -3px;
+    position: relative;
+    top: 2px;
+    border: 1px solid #bcbcbc;
+}
+
+.criteriatabs.ui-widget ul li.ui-state-default {
+    border-bottom: 1px solid #bcbcbc !important;
+    background: #dce0e5;
+    -moz-box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.3);
+    -webkit-box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.3);
+    box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.criteriatabs.ui-widget ul li.ui-state-active {
+    border-bottom: 1px solid #fff !important;
+    background: #fff !important;
+}
+
+.ui-tabs .ui-tabs-nav li.ui-tabs-selected {
+    margin-bottom: 1px;
+    padding-bottom: 1px;
+}
+
+.ui-state-hover,
+.ui-widget-content .ui-state-hover,
+.ui-widget-header .ui-state-hover,
+.ui-state-focus,
+.ui-widget-content .ui-state-focus, .ui-widget-header .ui-state-focus {
+    background: #d0d5dd !important;
+}
+
+.criteriatabs.ui-widget ul li a {
+    padding: 5px 7px;
+    font-size: 0.8em;
+}
+
+.criteriatabs.ui-widget .statuslight {
+    margin: 0;
+    margin-bottom: 1px;
+    padding: 0;
+    vertical-align: text-bottom;
+    margin-right: 4px
+}
+
+.noselectedtab {
+    line-height: 1.6em;
+    display: block;
+    
+    text-align: center;
+    padding: 10px !important;
+    margin-top: 1px;
+}
+
+div.ui-tabs-panel.ui-widget-content.ui-corner-bottom {
+    padding: 0 ;
+    border-top: 1px solid #ccc;
+    margin-top: 1px;
+}
+
+a.tabcloser {
+    width: 14px;
+    height: 14px;
+    background: url(../../../Generics/Command/img/handlers_set_1.png) no-repeat !important;
+    background-position: 4px -214px !important;
+    background-repeat: no-repeat;
+    text-indent: -9999px;
+    *font-size: 0;
+    *line-height: 0;
+    display: inline-block;
+    *display:inline;
+    *zoom: 1;
+    cursor: pointer;
+    border: none;    
+}
+
+div.criteriatabswrapper li a.tabcloser {
+    padding: 4px !important;
+}
+
+div.criteriatabswrapper .icons {
+    float: right !important;
+    padding: 0 3px !important;
+}
+
+/* @end */
+
+
+/* @group Dialogs */
+
+.commentdialog {
+    font-size: 12px;
+}
+
+.commentdialogtitle {
+   background-color: #eee;
+    padding:0.3em;
+    border: 1px solid #ccc;
+    font-size: .9em;
+    margin-bottom: 0.5em;
+    font-weight: bold;
+}
+
+.commentdialogtitle .submitter {
+    float:left;
+}
+
+.commentdialogtitle .evaluator {
+/*    float:right;*/
+}
+
+ .commentdialogtitle .criteria {
+     float: left;
+     clear: both;
+    display: block;
+}
+
+.ui-resizable-handle {
+    background: none !important;
+}
+
+div.ui-dialog {
+    box-shadow: 2px 2px 12px rgba(0,0,0,0.4);
+    font-family: inherit;
+}
+
+div.ui-dialog div.column.w70 {
+    display: inline-block;
+    width: 100%;
+    text-align: left;
+}
+
+div.ui-dialog div.column input.Link_Menu {
+    float: right;
+}
+
+div.ui-dialog div.column span.Titolo_campoSmall {
+    margin: 1em 0;
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    float: left;
+}
+
+div.ui-dialog div.column #CPHservice_RDPconfirmEndDay_wrapper {
+    float: left;
+    width: auto;
+}
+
+.rightcontent div.wiz_content span.Fieldrow table tr td.status {
+    width: 140px;
+}
+
+.rightcontent div.wiz_content span.Fieldrow table tr td.status * {
+
+}
+
+/* @end */
+
+/* @group UI elements */
+
+dl dt,
+dl dd {
+    color: #222;
+}
+
+
+/* @end */
+
+div.fieldobject div.fieldrow dl.options {
+    margin: 0;
+    padding: 0;
+}
+
+div.fieldobject div.fieldrow dl.options dt,
+div.fieldobject div.fieldrow dl.options dd {
+    display: block;
+    text-align: left;
+}
+
+div.fieldobject div.fieldrow dl.options dt input[type="radio"] {
+    width: 24px;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+}
+
+div.fieldobject div.fieldrow dl dd {
+    margin-left: 24px;
+    margin-bottom: 1em;
+}
+
+div.column.right #Wizard div.wiz_header div.wiz_top_info {
+    width: 450px;
+
+}
+
+div.column.right #Wizard div.wiz_header div.wiz_top_info h3 {
+    margin: 0;
+    font-size: 1.5em;
+}
+
+.wiz_content div.evaluatorselector {
+    margin-bottom: 2em;
+}
+
+span.fullname {
+    font-weight: bold;
+}
+
+div.evaluatorselector div.fieldobject div.fieldrow span.fullname {
+    margin-right: 2em;
+}
+
+span.status span.statusitem span.label {
+    margin-right: 1em;
+}
+
+td .gray,
+td .yellow,
+td .green,
+span.status span.statusitem span.gray,
+span.status span.statusitem span.yellow,
+span.status span.statusitem span.green,
+td.status.completed span,
+td.status.started span,
+td.status.notstarted span,
+td.title span.right span.status {
+    display: inline-block;
+    *display: inline;
+    zoom:1;
+    text-align: center;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    -moz-box-shadow: inset 1px 1px 3px rgba(0,0,0,0.3);
+    -webkit-box-shadow: inset 1px 1px 3px rgba(0,0,0,0.3);
+    box-shadow: inset 1px 1px 3px rgba(0,0,0,0.3);
+    text-shadow: 0 1px 0 rgba(255,255,255,0.5);
+}
+
+
+div.StepData span.Fieldrow table.minimal {
+    width: 100%;
+}
+
+span.status span.statusitem span.gray,
+span.status span.statusitem span.yellow,
+span.status span.statusitem span.green {
+    width: auto;
+    font-weight: bold;
+    font-size: 1.2em;
+    padding: 1px 3px;
+    min-width: 20px;
+}
+
+td .gray,
+td .yellow,
+td .green {
+    font-size: 1em;
+}
+
+div.globalwrapper span.status span.statusitem span.gray,
+div.globalwrapper span.status span.statusitem span.yellow,
+div.globalwrapper span.status span.statusitem span.green,
+td.title span.right span.status {
+    font-size: 1em;
+    padding: 1px 3px;
+    min-width: 24px;
+    padding: 1px 3px 1px 3px;
+    text-transform: none;
+    text-decoration: none;
+}
+
+div.globalwrapper span.iteminfo, {
+    margin: 0 0 10px 5px;
+    display: inline-block;
+    *display:inline;
+    *zoom: 1;
+}
+
+div.globalwrapper span.commissionname {
+    margin-right: 1em;
+    min-width: 130px;
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+}
+
+.active span.commissionname {
+    font-weight: bold;
+}
+
+div.globalwrapper li.commission {
+    margin-bottom: .5em;
+}
+
+td .green,
+td.completed span,
+span.statusitem span.green,
+span.status.completed,
+span.status.green {
+    background-color: #99c74a;
+/*  background-image: -webkit-gradient(linear, left top, left bottom, from(#cfe16e),to(#99c74a));
+    background-image: -webkit-linear-gradient(top, #cfe16e, #99c74a);
+    background-image: -moz-linear-gradient(top, #cfe16e, #99c74a);
+    background-image: -o-linear-gradient(top, #cfe16e, #99c74a);
+    background-image: -ms-linear-gradient(top, #cfe16e, #99c74a);
+    background-image: linear-gradient(top, #cfe16e, #99c74a);*/
+}
+
+td .gray,
+td.notstarted span,
+span.statusitem span.gray,
+span.status.notstarted,
+span.status.gray {
+    background: #ccc;
+/*    background-image: -webkit-gradient(linear, left top, left bottom, from(#d4d6d7),to(#ccc));
+    background-image: -webkit-linear-gradient(top, #d4d6d7, #ccc);
+    background-image: -moz-linear-gradient(top, #d4d6d7, #ccc);
+    background-image: -o-linear-gradient(top, #d4d6d7, #ccc);
+    background-image: -ms-linear-gradient(top, #d4d6d7, #ccc);
+    background-image: linear-gradient(top, #d4d6d7, #ccc);*/
+}
+
+td .yellow,
+td.started span,
+span.statusitem span.yellow,
+span.status.started,
+span.status.yellow {
+    background-color: #ffcd40;
+/*    background-image: -webkit-gradient(linear, left top, left bottom, from(#ecdd64),to(#ffcd40));
+    background-image: -webkit-linear-gradient(top, #ecdd64, #ffcd40);
+    background-image: -moz-linear-gradient(top, #ecdd64, #ffcd40);
+    background-image: -o-linear-gradient(top, #ecdd64, #ffcd40);
+    background-image: -ms-linear-gradient(top, #ecdd64, #ffcd40);
+    background-image: linear-gradient(top, #ecdd64, #ffcd40);*/
+
+}
+
+td .red,
+span.statusitem span.red {
+    background-color: #fdacad;
+/*  background-image: -webkit-gradient(linear, left top, left bottom, from(#ffb1ae),to(#fca8ad));
+    background-image: -webkit-linear-gradient(top, #ffb1ae, #fca8ad);
+    background-image: -moz-linear-gradient(top, #ffb1ae, #fca8ad);
+    background-image: -o-linear-gradient(top, #ffb1ae, #fca8ad);
+    background-image: -ms-linear-gradient(top, #ffb1ae, #fca8ad);
+    background-image: linear-gradient(top, #ffb1ae, #fca8ad);*/
+}
+
+div.infobar {
+    padding: 1em 1em;
+    border: 1px solid #ccc;
+    margin-bottom: 1em;
+}
+
+div.infobar h2,
+div.infobar h3,
+div.infobar h4 {
+    margin-top: 0;
+    margin-bottom: .5em;
+}
+
+#contenent div.contentwrapper.edit.clearfix div.view.evaluation div.evaluation dl.criterias span.commissionname {
+
+}
+
+div.commissionname h3 {
+    margin-top: 2em;
+}
+
+div.infobar div.fieldobject div.fieldrow span.fieldlabel {
+    font-weight: normal;
+    font-style: normal;
+    float: left;
+    padding: 1px 0;
+    margin-right: 1em;
+}
+
+span#ctl00_CPHservice_LBnotstarted.yellow {
+
+}
+
+div.infobar div.fieldobject div.fieldrow span.status.completion {
+    float: left;
+    display: inline-block;
+    *display:inline;
+    *zoom: 1;
+    width: 740px;
+}
+
+div.infobar div.fieldobject div.fieldrow span.status.completion span.statusitem {
+    margin-bottom: .5em;
+    display: inline-block;
+    *display:inline;
+    *zoom: 1;
+}
+
+div.infobar div.fieldobject div.fieldrow.clearfix span.status.completion span.statusitem {
+    margin-right: 2em;
+}
+
+div.infobar div.fieldobject div.fieldrow span.status.completion span.statusitem span {
+    font-size: 1em;
+    font-weight: normal;
+    font-style: normal;
+}
+
+div.infobar div.fieldobject {
+    border: none;
+    webkit-box-shadow:none;
+    moz-box-shadow:none;
+    box-shadow: none;
+}
+
+div.infobar div.fieldobject div.fieldrow span.fieldtext span.extrainfo {
+    font-style: italic;
+    font-weight: normal;
+    margin-left: 1em;
+}
+
+div.infobar div.fieldobject div.fieldrow.clearfix span.status.completion span.statusitem span.label span.name {
+    font-weight: bold;
+}
+
+div.infobar div.fieldobject div.fieldrow {
+    margin: .5em 0;
+}
+
+div.infobar div.fieldrow.buttons {
+    margin: .5em 0 -.5em 0;
+    text-align: right;
+}
+
+div.infobar div.fieldobject div.fieldrow label.fieldlabel {
+    width: auto;
+    display: inline-block;
+    font-weight: normal;
+    font-style: normal;
+}
+
+div.infobar div.fieldobject div.fieldrow span.fieldtext {
+    margin-right: 1em;
+    font-weight: bold;
+}
+
+dl.criterias {
+    padding: 0;
+    margin: 0;
+}
+
+dl.criterias dt.criteriatitle {
+    text-align: left;
+    padding: 0.2em;
+    padding-bottom: 0.5em;
+}
+
+dl.criterias dd.criteriacomment {
+    margin: 0;
+    padding-left: 1em;
+    margin-bottom: 1.5em;
+    border-bottom: 1px solid #ccc;
+    font-size: 0.9em;
+    color: #666;
+}
+
+/*td.vote span.criteriavote,*/
+dl.criterias dt.criteriatitle span.criteriavote {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    width: auto;
+    height: 20px;
+    text-align: center;
+    padding: 1px 6px;
+    line-height: 1.2em;
+    font-size: 1.4em;
+    color: #333;
+}
+
+dl.criterias dt.criteriatitle span.criteriavote {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    width: auto;
+    height: 20px;
+    text-align: center;
+    color: #333;
+}
+
+dl.criterias dt.criteriatitle span.criteriavote {
+    padding: 1px 6px;
+    line-height: 1.2em;
+    font-size: 1.4em;
+}
+
+/*tr.expanded.criteria td.vote span.criteriavote {
+    padding: 0 4px;
+    font-size: 1em;
+    line-height: 1.4em;
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    width: auto;
+    text-align: center;
+    color: #333;
+}*/
+
+/*td.vote span.criteriavote.text {
+    padding: 0 4px;
+    font-size: .9em !important;
+    line-height: 1.5em;
+}*/
+
+dl.criterias dt.criteriatitle span.criteriavote.notcompleted {
+    font-size: 1.1em;
+    line-height: 1.5em;
+    font-weight: normal;
+    font-style: normal;
+    color: #c20;
+    border-color: #c20;
+    border: none;
+}
+
+td span.criteriavote.notcompleted,
+tr.expanded.criteria td.vote span.criteriavote.notcompleted {
+    font-weight: normal;
+    font-style: normal;
+    color: #c20;
+    border-color: #c20;
+    line-height: 1.2em;
+}
+
+tr.expanded.criteria td.vote span.criteriavote.notcompleted {
+    line-height: 1.3em;
+}
+
+div.view.evaluation div.evaluation dl.criterias dt.criteriatitle * {
+    vertical-align: baseline;
+    *vertical-align: bottom;
+}
+
+table.evaluations {
+    width: 100%;
+}
+
+table.evaluations th {
+   font-size: .85em;
+}
+
+table.evaluations .expander {
+    margin-left: 0px !important;
+}
+
+table.evaluations .comment.hidden {
+    display: none;
+}
+
+table.evaluations tr.commission {
+    background-color: #e3e6ea;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#eceef1),to(#dbdfe4));
+    background-image: -webkit-linear-gradient(top, #eceef1, #dbdfe4);
+    background-image: -moz-linear-gradient(top, #eceef1, #dbdfe4);
+    background-image: -o-linear-gradient(top, #eceef1, #dbdfe4);
+    background-image: -ms-linear-gradient(top, #eceef1, #dbdfe4);
+    background-image: linear-gradient(top, #eceef1, #dbdfe4);
+    vertical-align: middle;
+    -moz-box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.4s);
+    -webkit-box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.4);
+    box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.4);
+    text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+table.evaluations tr.commission td.title {
+    text-transform: uppercase;
+}
+
+table.evaluations tr td.title span.left  {
+    display: inline-block;
+    *display: block;
+    width: 75%;
+
+}
+
+table.evaluations tr.commission td.title span.left  {
+    text-transform: uppercase;
+    font-weight: bold;
+    line-height: 18px;
+    color: #444;
+}
+
+table.evaluations tr.evaluator td.title span.left  {
+    font-weight: bold;
+    line-height: 18px;
+    color: #444;
+}
+
+table.evaluations tr td.title span.right  {
+    display: inline-block;
+    *display: block;
+    width: 24%;
+}
+
+table.evaluations tr td.title a.expander {
+    display: block;
+}
+
+table.evaluations tr.evaluator {
+    background-color: #eceef1;
+}
+
+table.evaluations tr.general td,
+table.evaluations tr.criteria.expanded td {
+    border-bottom: none; !important;
+    border-right: none; !important;
+    border-left: none; !important;
+}
+
+table.evaluations tr.general td,
+table.evaluations tr.criteria.expanded td.vote {
+    border-right: 1px solid #ccc;
+}
+
+table.evaluations td.status {
+    margin-left: 0;
+    width: 200px;
+}
+
+table.evaluations th.title {
+    width: 720px;
+}
+
+table.evaluations td.status {
+    width: 80px;
+    text-align: center;
+}
+
+tr.evaluator td.title span.right span.status,
+table.evaluations td.status span {
+    display: inline-block;
+    *display:inline;
+    *zoom: 1;
+}
+
+table.evaluations tr td.status span {
+    width: 100%;
+}
+
+table.evaluations tr.criteria td.status span {
+    display: inline-block;
+    *display:inline;
+    *zoom: 1;
+    text-indent: -9999px;
+    *text-indent: 0;
+    *font-size: 0;
+    *line-height: 0;
+    *overflow: hidden;
+    width: 12px !important;
+    height: 12px;
+    padding: 0;
+}
+
+table.evaluations tr td.title  span.right span.status {
+    margin: 0 3px;
+    width: 66%;
+}
+
+table.evaluations tr.evaluator td.title a.expander span.right span.status {
+    min-width: 0;
+    display: inline-block;
+    *display:inline;
+    *zoom: 1;
+    text-indent: -9999px;
+    *text-indent: 0;
+    *font-size: 0;
+    *line-height: 0;
+    *overflow: hidden;
+    width: 1.1em !important;
+    height: 1.1em;
+    padding: 0;
+    position: relative;
+    top: 0.1em
+}
+
+table.evaluations tr td.comment {
+    border-top: none !important;
+    padding-top: 4px;
+    padding-bottom: 10px;
+    font-size: 11px;
+    padding-right: 340px;
+}
+
+
+table.evaluations tr td.comment span.wrapper {
+    border-top: 1px solid #ccc !important;
+    padding-top: 3px;
+    display: inline-block;
+    *display:inline;
+    *zoom: 1;
+    line-height:16px ;
+}
+
+table.evaluations tr td.comment span.wrapper::before {
+    content: "";
+    display: inline-block;
+    *display:inline;
+    *zoom: 1;
+    background-image: url(../../../Generics/Command/img/common_icons_set1_16.png);
+    background-position: -120px -81px;
+    height: 14px !important;
+    width: 16px !important;
+    margin-right: 2px !important;
+    vertical-align: middle;
+
+}
+
+table.evaluations td.vote {
+    text-align: center;
+    width: 120px;
+}
+
+table.evaluations td.vote span.criteriavote {
+    font-weight: bold;
+}
+
+table.evaluations td.vote span.criteriavote.notcompleted,
+table.evaluations td.vote span.criteriavote.text {
+    font-size: .9em;
+}
+
+.fieldobject.checkboxlist .disabled input,
+.fieldobject.radiobuttonlist .disabled input,
+.fieldobject.checkboxlist .textoption.disabled input,
+.fieldobject.radiobuttonlist .textoption.disabled input {
+    background-color: #eee !important;
+    color: #888 !important;
+}
+
+/* Temp */
+
+.fieldobject .fieldrow.inline {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+}
+
+.table.managesubmission .expander {
+    margin-left: 0px !important;
+}
+
+.table.managesubmission th.select,
+.table.managesubmission td.select {
+    width: 20px;
+}
+
+table.msgeditusers tr.parent,
+table.table.managesubmission.byevaluator  tr.commission {
+    background-color: #e3e6ea;
+}
+
+table.table.managesubmission.byevaluator tr.evaluator {
+    background-color: #ffffff;
+}
+
+table.table.managesubmission.bysubmission tr.submission {
+    background-color: #e3e6ea;
+}
+
+table.table.managesubmission.bysubmission tr.commission {
+    background-color: #eceef1;
+}
+
+table.table.managesubmission.byevaluator tr.evaluator {
+    background-color: #ffffff;
+}
+
+.table.managesubmission tbody tr:hover {
+    background-color: #ddd !important;
+}
+
+.fieldobject.selectioninfo .fieldrow .text {
+    color:#777;
+}
+
+.fieldobject.selectioninfo .fieldrow .number {
+    font-weight: bold;
+    color: #000;
+}
+
+.templatecontent .title,
+.userselectioncontent .title{
+    padding-bottom: 3px;
+    border-bottom: 1px solid #e6e9ed;
+}
+
+.templatecontent .templatetitle,
+.userselectioncontent .userselectiontitle{
+    font-weight: bold;
+    font-size: 1.24em;
+}
+
+/* End temp */
+
+ul.userselections li.userselection ul.communityroles {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    width: 530px;
+    vertical-align: top;
+}
+
+ul.userselections li.userselection ul.communityroles li.communityrole {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    margin-right: .5em;
+}
+
+
+span.icons span.icon.unavailable {
+    opacity: .3 !important;
+    cursor: default;
+    display: none;
+}
+
+.contentwrapper .column.right ul.userselections li.userselection div.userselectioncontent .footer,
+.contentwrapper .column.right ul.templatemedia li.templatemedium div.templatemediumcontent .footer
+{
+    margin-top: 0px;
+    padding: 0;
+}
+
+.contentwrapper .column.right ul.userselections li.userselection.usersummary div.userselectioncontent .footer {
+    margin-top: 10px;
+}
+
+span.skinselector span  {
+    display: inline-block;
+    *display:inline;
+    *zoom:1;
+    width: 500px;
+}
+
+td.numberview span.number,
+.name span.info {
+    display: inline-block;
+    *display:inline;
+    *zoom:1;
+    text-align: center;
+    margin: 0 .5em;
+    padding: 0px 4px;
+     background-color: #ddd;
+    background-color: rgba(0,0,0,0.15);
+    color: #444;
+    font-size: 10px;
+    line-height: 14px;
+    text-shadow: 1px 1px 0 rgba(255,255,255,0.35);
+    border-radius: 2px;
+    box-shadow: inset 1px 1px 2px rgba(0,0,0,0.25);
+    /*  float: right;
+        *float:none;
+    */
+}
+
+td.numberview span.number,
+.name span.info {
+    display: inline-block;
+    *display:inline;
+    *zoom:1;
+    text-align: center;
+    margin: 0 .5em;
+    padding: 2px 5px;
+    background-color: #aaa;
+    color: #fff;
+    font-size: 11px;
+    line-height: 12px;
+    text-shadow: 1px 1px 0 rgba(0,0,0,0.2);
+    border-radius: 3px;
+    box-shadow: inset 1px 1px 2px rgba(0,0,0,0.25);
+    font-weight: bold;
+}
+
+label.alignr {
+    margin: 0 .5em;
+}
+
+.name span.info .separator {
+    display: none;
+}
+
+/* End stylesheet */
+
+/* Temp:  skin manager */
+.moduleskinobject {
+    display: block;
+    margin-bottom: 1em;
+}
+
+.moduleskinobject span.Titolo_Campo {
+    vertical-align: middle !important;
+}
+
+.moduleskinobject .moduleskinlabel {
+    display: inline-block;
+}
+
+.moduleskinobject .moduleskinselector {
+    width: 450px;
+}
+
+.moduleskinobject .moduleskinselector select,
+.moduleskinobject .moduleskinselector .Testo_Campo {
+    width: 440px;
+    margin: 0;
+}
+
+.moduleskinobject .moduleskinicons {
+    display: inline-block;
+}
+
+.dialog .communityname {
+    display: block;
+    margin-bottom: 1em;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.dialog table.radiobuttontable {
+    width: 100%;
+    border: none;
+    margin: 1em 0;
+    border-collapse: separate;
+    border-spacing: 5px;
+    *border-collapse: expression('separate', cellSpacing = '5px');
+    /*TEMP: hide empty cells*/
+    empty-cells: hide;
+
+}
+
+.dialog table.radiobuttontable td {
+    width: 33%;
+    border-radius: 4px;
+    padding: 3px;
+    vertical-align: top;
+    border: 1px solid #ccc;
+}
+
+.dialog table.radiobuttontable td input {
+    margin: 0;
+    margin-right: 5px;
+    vertical-align: top;
+}
+
+.dialog table.radiobuttontable td label {
+    display: inline-block;
+    *display:inline;
+    *zoom:1;
+    width: 85%;
+}
+
+.dialog table.light {
+    margin: 1em 0;
+}
+
+.treetop .DivEpButton .ddbuttonlist {
+    margin-top: 2em;
+}
+
+table.msgeditusers .expander {
+    margin: 0 !important;
+}
+
+table.msgeditusers td span.left {
+    display: inline-block;
+    *display:inline;
+    *zoom:1;
+    width: 80%;
+}
+
+table.msgeditusers td span.right {
+    display: inline-block;
+    *display:inline;
+    *zoom:1;
+    width: 18%;
+}
+
+table.msgeditusers .numberview {
+    text-align: center;
+    width: 60px;
+}
+
+table tr.template .createdon,
+table tr.template .actions {
+    width: 80px;
+}
+
+table tr.template .createdon {
+    width: 80px;
+}
+
+table tr.template .createdby,
+table tr.template .templatename {
+    width: 330px;
+}
+
+table tr.template .templateservice,
+table tr.template .templatetype {
+    width: 100px;
+}
+
+.evaluatormatch .submittername {
+    width: 200px;
+}
+
+.evaluators.match .submittername,
+.evaluators.match .submittedtype {
+    width: 200px;
+}
+
+.evaluators.match .evaluators {
+    width: 100px;
+}
+
+.ui-dialog .fieldobject.fielddescription {
+    margin: 2em 0;
+}
+
+.evaluatormatch tr.submitter {
+    background-color: #e3e6ea;
+}
+
+.evaluatormatch .commission .submittername {
+    width: 190px;
+    padding-left: 28px !important;
+}
+
+.evaluatormatch tr.head td {
+    font-style: italic;
+    color: #888;
+    font-size: .9em !important;
+}
+
+.evaluatormatch .submittertype {
+    width: 450px ;
+}
+
+ul.templatemedia li.templatemedium div.templatemediumcontent div.fieldobject.fieldoptions {
+   background-color: #fff;
+   border: none;
+}
+
+.fuzzyaggregationdescriptor .options .option.skill .level{
+    color:#666;
+    font-style: italic;
+}
+
+.weekcalendar.enabled,
+.coveredradio.enabled,
+.coveredcheck.enabled {
+}
+
+.weekcalendar.enabled .wclist,
+.coveredradio.enabled .wclist,
+.coveredcheck.enabled .wclist {
+    display: none;
+}
+
+.weekcalendar.enabled.readonly *,
+.coveredradio.enabled.readonly *,
+.coveredcheck.enabled.readonly * {
+    cursor: default;
+}
+
+.weekcalendar.disabled .btnswitchgroup,
+.coveredradio.disabled .btnswitchgroup,
+.coveredcheck.disabled .btnswitchgroup {
+    display: none;
+}
+
+.weekcalendar.enabled  .btnswitchgroup .btnswitch.active,
+.coveredradio.enabled  .btnswitchgroup .btnswitch.active,
+.coveredcheck.enabled  .btnswitchgroup .btnswitch.active {
+
+}
+
+.fuzzyinput .coveredradio {
+    display: inline-block;
+    *display:inline;
+    *zoom:1;
+}
+
+.fuzzyinput .inlinewrapper{
+    display: inline-block;
+    *display:inline;
+    *zoom:1;
+}
+
+.fuzzyinput .inputtype{
+    display: none;
+}
+
+.fuzzyinput[data-value="simple"] .inputtype.simple{
+    display: inline-block;
+    *display:inline;
+    *zoom:1;
+}
+
+.fuzzyinput[data-value="extended"] .inputtype.extended{
+    display: inline-block;
+    *display:inline;
+    *zoom:1;
+}
+
+.fuzzyinput[data-value="intermediate"] .inputtype.intermediate{
+    display: inline-block;
+    *display:inline;
+    *zoom:1;
+}
+
+.fuzzyaggregator select,
+span.editable.fuzzy select{
+    margin-right: 0.5em !important;
+}
+span.editable.fuzzy select{
+    margin-left: 0.5em;
+}
+
+span.editable.fuzzy{
+    vertical-align: top;
+    background-color: transparent;
+}
+
+span.editable.fuzzy .description{
+    font-style: italic;
+}
+
+span.editable {
+  display: inline-block;
+  cursor: pointer;
+
+}
+
+span.editable.disabled {
+    cursor: default;
+}
+
+span.editable.viewmode {
+    display: inline-block;
+    vertical-align: top;
+}
+
+td span.editable.viewmode {
+    display: inline-block;
+    vertical-align: top;
+}
+
+span.editable.viewmode .view {
+    display: inline-block;
+    border-bottom: 1px dotted #657ea3;
+    display: inline-block !important;
+}
+
+span.editable.viewmode.disabled .view {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    border-bottom: 1px dotted transparent;
+}
+
+span.editable.viewmode .edit {
+    display: none;
+}
+
+span.editable.editmode {
+
+}
+
+span.editable.editmode input{
+    position: relative;
+ }
+
+span.editable.editmode .view {
+    display: none;
+}
+
+span.editable.editmode .edit {
+    display: inline-block;
+}
+
+span.editable input {
+    padding: 0 2px;
+    margin: 0;
+}
+
+span.editable .edit.fuzzyedit{
+    text-align: center;
+}
+
+span.editable .fuzzytabs{
+    text-align: left;
+    font-size: 12px;
+    border:0;
+
+}
+span.editable .ui-widget-header{
+    background-color: #fff !important;
+}
+
+span.editable .fuzzytabs .tablink{
+    padding:4px;
+
+}
+span.editable .fuzzytabs .tablink.commands{
+    padding-bottom:0px;
+    border:0;
+}
+
+span.editable .ui-tabs .ui-tabs-nav{
+    padding:0;
+
+}
+
+span.editable div.ui-tabs-panel.ui-widget-content.ui-corner-bottom{
+    border-top:1px solid #ccc;
+    padding:3px;
+}
+
+span.editable span.edit span.icon.cancel,
+span.editable span.edit span.icon.ok {
+    display: inline-block;
+}
+
+span.editable.fuzzy .description{
+    border-top: 0 !important;
+}
+
+
+/*span.editable span.edit span.icon.cancel,
+span.editable span.edit span.icon.ok {
+    display: none;
+}*/
+
+
+/*
+.dialog.addnewfield .leftfield .columnblock.compressed ul {
+    display: none;
+}
+
+.dialog.addnewfield .leftfield .columnblock .title {
+    cursor: pointer;
+}
+
+.dialog.addnewfield .leftfield .columnblock.expanded .title {
+    padding-left: 20px;
+    background: #e6e9ed url(../../../Generics/Command/img/handlers_set_1.png) 6px -114px no-repeat !important;
+    cursor: default;
+}
+
+.dialog.addnewfield .leftfield .columnblock.compressed .title:hover {
+    background-color: #ddd !important;
+}
+
+.dialog.addnewfield .leftfield .columnblock.compressed .title {
+    padding-left: 20px;
+        background: #e6e9ed url(../../../Generics/Command/img/handlers_set_1.png) 8px -179px no-repeat !important;
+}*/
+
+
+.fieldobject.fuzzyaggregator.commissionslevel div.fieldrow.fuzzydescription  div.fuzzydescription
+{
+    color:#666;
+    text-align: justify;
+}
+              
+
+.fieldobject.fuzzyaggregator{
+    /*padding:5px;
+    
+    border:1px solid #ddd;
+    border-radius: 3px;*/
+}
+
+.fieldobject.fuzzyaggregator label.fieldlabel{
+    width:200px !important;
+}
+
+.fieldobject.fuzzyweights label.fieldlabel{
+    width:200px !important;
+}
+
+table.table.tablescales{
+    
+}
+
+table.table.tablescales th.name,
+table.table.tablescales td.name{
+    
+}
+
+table.table.tablescales th.values,
+table.table.tablescales td.values{
+    width: 200px;
+}
+
+table.table.tablescales th.values,
+table.table.tablescales td.values{
+    width: 200px;
+}
+
+table.table.tablescales td.values select{
+    width: 100%;
+}
+
+table.table.tablescales td.number{
+    width:90px;
+}
+
+table.table.tablescales td.number input[type='text']{
+    width: 70px;
+}
+
+
+
+.fuzzynumber {
+    position: relative;    
+}
+
+.fuzzynumber span.info{
+    position: absolute;
+
+   
+
+    border:1px solid #bbb;
+    background-color: #fff;
+    padding:0.5em;
+    border-radius: 5px;
+    box-shadow: 2px 2px 1px #ccc;
+    width:300px;
+    padding-top:2px;
+    z-index: 3000;
+
+    font-size:11px;
+    text-align: left;
+}
+
+span.info span.items{
+    float:left;
+    width:190px;
+    line-height: 1.5em;
+}
+
+span.info span.items span.item{
+    display: block;
+    margin-bottom: 0.2em;
+}
+
+span.info span.items span.item span.label{
+    display: inline-block;
+    *display:inline;
+    *zoom:1;            
+    color:#444;
+    font-weight: normal;
+}
+span.info span.items span.item span.title{
+    display: inline-block;
+    *display:inline;
+    *zoom:1;
+    width:100%;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 0.5em;
+}
+span.info span.items span.item span.value{
+    display: inline-block;
+    *display:inline;
+    *zoom:1;
+    float:right;
+    color:#333;
+    font-weight: bold;
+}
+
+span.info div.graph{
+
+    float:right;
+    margin-top:0.2em;
+    width: 100px;
+
+    padding:3px;
+    border:1px solid #ddd;
+    background-color: #fff;
+
+    margin-left: auto;
+    margin-right: auto;
+}
+
+div.smallgraph{    
+    vertical-align: top;
+    margin-left: 2px;
+    width: 1em;    
+     display: inline-block;
+    *display:inline;
+    *zoom:1;    
+}

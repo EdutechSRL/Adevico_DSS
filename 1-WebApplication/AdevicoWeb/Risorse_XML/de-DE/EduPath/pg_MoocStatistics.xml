@@ -1,0 +1,352 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="urn:ComolTranslation">
+  <item name="CHBshowall.text" html="false" placeholder="false">Zeigen Sie die ausgeblendeten Teilnehmer an</item>
+  <item name="EvaluateSubAct" html="false" placeholder="false">Bewertung der Unteraktivitäten</item>
+  <item name="LNBcsv.text" html="false" placeholder="false" mustcontains="Excel">Exportieren Sie in Excel</item>
+  <item name="LNBcsv.ToolTip" html="false" placeholder="false" mustcontains="Excel">Exportieren Sie in Excel</item>
+  <item name="LNBpdf.text" html="false" placeholder="false" mustcontains="Pdf">Exportieren Sie in Pdf</item>
+  <item name="LNBpdf.ToolTip" html="false" placeholder="false" mustcontains="Pdf">Exportieren Sie in Pdf</item>
+  <item name="LNBxml.text" html="false" placeholder="false" mustcontains="Xml">Exportieren Sie in Xml</item>
+  <item name="LNBxml.ToolTip" html="false" placeholder="false" mustcontains="Xml">Exportieren Sie in Xml</item>
+  <item name="HYPuserStat.text" html="false" placeholder="false">Benutzerstatistiken</item>
+  <item name="HYPuserStat.ToolTip" html="false" placeholder="false">Benutzerstatistiken</item>
+  <item name="HYPpathStat.text" html="false" placeholder="false">Statistiken des Ausbildungspfades</item>
+  <item name="HYPpathStat.ToolTip" html="false" placeholder="false">Statistiken des Ausbildungspfades</item>
+  <item name="UserEpStat" html="false" placeholder="false">Benutzerstatistiken im Ausbildungspfad</item>
+  <item name="UsersEpStat" html="false" placeholder="false">Benutzerstatistiken </item>
+  <item name="GlobalEpStat" html="false" placeholder="false">Globale Statistiken der Benutzer im Ausbildungspfad</item>
+  <item name="UserActivityStat" html="false" placeholder="false">Benutzerstatistiken in der Aktivität: </item>
+  <item name="Path" html="false" placeholder="false">Ausbildungspfad</item>
+  <item name="Unit" disambiguation="singolare" html="false" placeholder="false">Einheit</item>
+  <item name="Activity" disambiguation="singolare" html="false" placeholder="false">Aktivität</item>
+  <item name="SubActivity" disambiguation="singolare" html="false" placeholder="false">Unteraktivität</item>
+  <item name="ExportStatistics" html="false" placeholder="false">Exportieren Sie Statistiken</item>
+  <item name="ViewStatistics" html="false" placeholder="false">Statistiken</item>
+  <item name="StatusStatistic.None" html="false" placeholder="false">Nicht begonnen</item>
+  <item name="StatusStatistic.Browsed" html="false" placeholder="false">Besucht</item>
+  <item name="StatusStatistic.Started" html="false" placeholder="false">Begonnen</item>
+  <item name="StatusStatistic.Completed" html="false" placeholder="false">Vollständig ausgeführt</item>
+  <item name="StatusStatistic.Passed" html="false" placeholder="false">Bestanden</item>
+  <item name="StatusStatistic.CompletedPassed" html="false" placeholder="false">Vollständig ausgeführt und bestanden</item>
+  <item name="StatusStatistic.NotPassed" html="false" placeholder="false">Nicht bestanden</item>
+  <item name="LBnameTit.text" html="false" placeholder="false">Name</item>
+  <item name="LBmandatoryTit.text" html="false" placeholder="false">Obligatorische Elemente</item>
+  <item name="LBToDoTit.text" html="false" placeholder="false">Durchzuführende Elemente</item>
+  <item name="LBallTit.text" html="false" placeholder="false">Alle Elemente</item>
+  <item name="LBbarTit.text" html="false" placeholder="false">Durchlaufender Balken</item>
+  <item name="LBcompletionTit.percent.text" html="false" placeholder="false">% vollständiger Ausführung</item>
+  <item name="LBcompletionTit.time.text" html="false" placeholder="false">Durchführungszeit</item>
+  <item name="LBtypeTit.text" html="false" placeholder="false">Inhaltstyp</item>
+  <item name="LBstatusTit.text" disambiguation="status: attivo/chiuso/in corso/valutazione" html="false" placeholder="false">Status</item>
+  <item name="LBactionsTit.text" html="false" placeholder="false">Aktionen</item>
+  <item name="PassedCompleted.Item" html="false" placeholder="false">Anz. bestandener Elemente: </item>
+  <item name="NotStarted.Item" html="false" placeholder="false">Anz. nicht begonnener Elemente: </item>
+  <item name="Started.Item" html="false" placeholder="false">Anz. begonnener Elemente: </item>
+  <item name="HYPdetail.ToolTip" html="false" placeholder="false">Zeigen Sie Details an</item>
+  <item name="HYPquizstats.ToolTip" html="false" placeholder="false">Quizstatistiken</item>
+  <item name="HYPstats.ToolTip" html="false" placeholder="false">Statistiken</item>
+  <item name="HYPcertificates.Text" html="false" placeholder="false">Zertifikate</item>
+  <item name="HYPcertificates.ToolTip" html="false" placeholder="false">Zertifikate</item>
+  <item name="HYPinfo.ToolTip" html="false" placeholder="false">Details</item>
+  <item name="HYPeditMetadata.ToolTip" html="false" placeholder="false">Editieren Sie die Metadaten</item>
+  <item name="HYPdetail.text" html="false" placeholder="false">Details</item>
+  <item name="Error.Generic" html="false" placeholder="false">Systemfehler</item>
+  <item name="Error.NotPermission" html="false" placeholder="false">Keine Berechtigung, um den Vorgang durchzuführen</item>
+  <item name="Error.Url" html="false" placeholder="false">Fehlerhafte Adresse</item>
+  <item name="Error.Data" html="false" placeholder="false">Fehler beim Sichern der Daten</item>
+  <item name="Error.EmptyActivities">Es ist nicht möglich, die Sicht zu ändern. Es gibt leere Aktivitäten !</item>
+  <item name="Error.PathTimeNotEqualToActivities">The hours recognized for Mooc does not correspond to those recognized for the activities, you can not unlock.</item>
+  <item name="Error.PathNotFind">Mooc nicht gefunden</item>
+  <item name="Error.NotManageable" html="false" placeholder="false">Mooc gesperrt</item>
+  <item name="SubActivityType.Quiz" html="false" placeholder="false">Fragebogen</item>
+  <item name="SubActivityType.Forum" html="false" placeholder="false">Forum</item>
+  <item name="SubActivityType.File" description="materiale inteso come file/materiale didattico" disambiguation="materiale=file" html="false" placeholder="false">Material</item>
+  <item name="SubActivityType.Wiki" html="false" placeholder="false">Wiki</item>
+  <item name="SubActivityType.Text" html="false" placeholder="false">Text</item>
+  <item name="LBnoSubAct.text" html="false" placeholder="false">Keine Unteraktivität vorhanden!</item>
+  <item name="LbTotMandAct.text" html="false" placeholder="false">Gesamte obligatorische Unteraktivitäten: </item>
+  <item name="LbTotMandUnit.text" html="false" placeholder="false">Gesamte Mussaktivitäten: </item>
+  <item name="LbTotMandPath.text" html="false" placeholder="false">Gesamte obligatorische Einheiten: </item>
+  <item name="LbOnlyCompAct.text" html="false" placeholder="false">Obligatorische Unteraktivitäten vollständig ausgeführt: </item>
+  <item name="LbOnlyCompUnit.text" html="false" placeholder="false">Mussaktivitäten abgeschlossen: </item>
+  <item name="LbOnlyCompPath.text" html="false" placeholder="false">Obligatorische Einheiten vollständig ausgeführt: </item>
+  <item name="LbOnlyPassAct.text" html="false" placeholder="false">Obligatorische Unteraktivitäten bestanden: </item>
+  <item name="LbOnlyPassUnit.text" html="false" placeholder="false">Mussaktivitäten bestanden: </item>
+  <item name="LbOnlyPassPath.text" html="false" placeholder="false">Obligatorische Einheiten bestanden: </item>
+  <item name="LbPassComplAct.text" html="false" placeholder="false">Obligatorische Unteraktivitäten vollständig ausgeführt und bestanden: </item>
+  <item name="LbPassComplUnit.text" html="false" placeholder="false">Mussaktivitäten vollständig ausgeführt und bestanden: </item>
+  <item name="LbPassComplPath.text" html="false" placeholder="false">Obligatorische Einheiten vollständig ausgeführt und bestanden: </item>
+  <item name="IMGmandatory.AlternateText" html="false" placeholder="false">Das Objekt ist obligatorisch</item>
+  <item name="LBmarkTit.text" html="false" placeholder="false">% der Punktzahl</item>
+  <item name="LbDialogActivity.text" html="false" placeholder="false">Fortschritt der Unteraktivitäten von</item>
+  <item name="LbDialogUnit.text" html="false" placeholder="false">Fortschritt der Aktivitäten von</item>
+  <item name="LbDialogPath.text" html="false" placeholder="false">Fortschritt der Einheiten von</item>
+  <item name="HYPeduPathView.text" html="false" placeholder="false">Zeigen Sie den Pfad an</item>
+  <item name="HYPeduPathView.ToolTip" html="false" placeholder="false">Zeigen Sie den Ausbildungspfad an</item>
+  <item name="HYPeduPathList.text" html="false" placeholder="false">Zeigen Sie die Liste an</item>
+  <item name="HYPeduPathList.ToolTip" html="false" placeholder="false">Zeigen Sie die Liste der Ausbildungspfade an</item>
+  <item name="HYPback.text" html="false" placeholder="false">Zurück</item>
+  <item name="HYPback.ToolTip" html="false" placeholder="false">Zurückkehren</item>
+  <item name="HYPerror.text" html="false" placeholder="false">Liste der Pfade</item>
+  <item name="HYPerror.ToolTip" html="false" placeholder="false">Gehen Sie zur Liste der Ausbildungspfade</item>
+  <item name="LBmarkSubActTit.text" html="false" placeholder="false">% der Punktzahl</item>
+  <item name="LBcompletionSubActTit.text" html="false" placeholder="false">% vollständiger Ausführung</item>
+  <item name="IMGSubActMand.AlternateText" html="false" placeholder="false">Obligatorische Unteraktivität</item>
+  <item name="IMGmandatory.AlternateText" html="false" placeholder="false">L'oggetto è obbligatorio</item>
+  <item name="FileCreate" html="false" placeholder="false">Ausbildungspfad</item>
+  <item name="DisplayMessageToken" html="false" placeholder="false">Die gewünschte Datei ist in Vorbereitung, warten Sie einige Sekunden auf den Download.</item>
+  <item name="Blocked.True" html="false" placeholder="false">Gesperrt</item>
+  <item name="Blocked.False" html="false" placeholder="false">Nicht gesperrt</item>
+  <item name="LBnoPartecipant.text" html="false" placeholder="false">Kein anzuzeigender Teilnehmer</item>
+  <item name="LKBblocked.text" html="false" placeholder="false">Sperren/Entsperren</item>
+  <item name="LKBblocked.ToolTip" html="false" placeholder="false">Sperren/Entsperren</item>
+  <item name="BTNevaluate.text" html="false" placeholder="false">Sichern Sie Noten</item>
+  <item name="BTNevaluate.ToolTip" html="false" placeholder="false">Sichern Sie Noten</item>
+  <item name="LKBeduPathView.text" html="false" placeholder="false">Zeigen Sie den Ausbildungspfad an</item>
+  <item name="LKBeduPathView.ToolTip" html="false" placeholder="false">Zeigen Sie den Ausbildungspfad an</item>
+  <item name="LKBupdateList.text" html="false" placeholder="false">Aktualisieren  Sie die Teilnehmerliste</item>
+  <item name="LKBupdateList.ToolTip" html="false" placeholder="false">Aktualisieren  Sie die Teilnehmerliste</item>
+  <item name="LBsaveVote.text" html="false" placeholder="false">Möchten Sie die vergebenen Noten aktualisieren?</item>
+  <item name="BTNsave.text" html="false" placeholder="false">Sichern </item>
+  <item name="BTNsave.ToolTip" html="false" placeholder="false">Sichern </item>
+  <item name="BTNnoSave.text" html="false" placeholder="false">Nicht sichern</item>
+  <item name="BTNnoSave.ToolTip" html="false" placeholder="false">Nicht sichern</item>
+  <item name="EduPathTranslations.Path" html="false" placeholder="false">Ausbildungspfad</item>
+  <item name="EduPathTranslations.Unit" disambiguation="singolare" html="false" placeholder="false">Einheit</item>
+  <item name="EduPathTranslations.Activity" disambiguation="singolare" html="false" placeholder="false">Aktivität</item>
+  <item name="EduPathTranslations.SubActivity" html="false" placeholder="false">Unteraktivität</item>
+  <item name="EduPathTranslations.SurnameAndName" html="false" placeholder="false">Nach- und Vorname</item>
+  <item name="EduPathTranslations.Completion" html="false" placeholder="false">% vollständiger Ausführung</item>
+  <item name="EduPathTranslations.MinCompletion" html="false" placeholder="false">Mindest-% vollständiger Ausführung</item>
+  <item name="EduPathTranslations.Mark" html="false" placeholder="false">% der Punktzahl</item>
+  <item name="EduPathTranslations.MinMark" html="false" placeholder="false">% der Mindestpunktzahl</item>
+  <item name="EduPathTranslations.Status" disambiguation="status: attivo/chiuso/in corso/valutazione" html="false" placeholder="false">Status</item>
+  <item name="EduPathTranslations.Name" html="false" placeholder="false">Name</item>
+  <item name="EduPathTranslations.CompletedPassed" html="false" placeholder="false">Vollständig ausgeführt und bestanden</item>
+  <item name="EduPathTranslations.Completed" html="false" placeholder="false">Vollständig ausgeführt</item>
+  <item name="EduPathTranslations.Passed" html="false" placeholder="false">Bestanden</item>
+  <item name="EduPathTranslations.Started" html="false" placeholder="false">Begonnen</item>
+  <item name="EduPathTranslations.NotStarted" html="false" placeholder="false">Nicht begonnen</item>
+  <item name="EduPathTranslations.ContentType" html="false" placeholder="false">Inhaltstyp</item>
+  <item name="EduPathTranslations.Quiz" html="false" placeholder="false">Quiz</item>
+  <item name="EduPathTranslations.Forum" html="false" placeholder="false">Forum</item>
+  <item name="EduPathTranslations.File" html="false" placeholder="false">Datei</item>
+  <item name="EduPathTranslations.Wiki" html="false" placeholder="false">Wiki</item>
+  <item name="EduPathTranslations.Mandatory" html="false" placeholder="false">Obligatorisch</item>
+  <item name="EduPathTranslations.Type" html="false" placeholder="false">Objekttyp</item>
+  <item name="EduPathTranslations.LevelType" html="false" placeholder="false">Objektlevel</item>
+  <item name="EduPathTranslations.PartecipantNumber" html="false" placeholder="false">Anz. Teilnehmer</item>
+  <item name="EduPathTranslations.Weight" html="false" placeholder="false">Gewichtung</item>
+  <item name="EduPathTranslations.Time" html="false" placeholder="false">Zeit</item>
+  <item name="EduPathTranslations.MinTime" html="false" placeholder="false">Mindestzeit</item>
+  <item name="EduPathTranslations.Certification" html="false" placeholder="false">Zertifikat</item>
+  <item name="EduPathTranslations.ParticipantNumber" html="false" placeholder="false">Anz. Benutzer</item>
+  <item name="EduPathTranslations.FileCreationError" html="false" placeholder="false">Fehler bei der Erstellung der Datei</item>
+  <item name="EduPathTranslations.YesOption" html="false" placeholder="false">Ja</item>
+  <item name="EduPathTranslations.NoOption" html="false" placeholder="false">Nicht</item>
+  <item name="EduPathTranslations.StatisticsInfo" html="false" placeholder="true" mustcontains="{0}">Statistiken bis zum {0}</item>
+  <item name="EduPathTranslations.CellTitleViewedOn" html="false" placeholder="false">Anzeigedatum</item>
+  <item name="EduPathTranslations.CellTitleCompletedOn" html="false" placeholder="false">Ausführungsdatum</item>
+  <item name="EduPathTranslations.CellTitleLastActionOn" html="false" placeholder="false">Letzte Aktion am</item>
+  <item name="EduPathTranslations.CellTitlePathName" html="false" placeholder="false">Pfad</item>
+  <item name="EduPathTranslations.CellTitleCommunityName" disambiguation="singolare" html="false" placeholder="false">Community</item>
+  <item name="EduPathTranslations.CellTitlePathAvailableFrom" html="false" placeholder="false">Verfügbar ab</item>
+  <item name="EduPathTranslations.CellTitlePathAvailableTo" html="false" placeholder="false">Verfügbar am</item>
+  <item name="EduPathTranslations.CellTitleQuizName" html="false" placeholder="false">Fragebogen</item>
+  <item name="EduPathTranslations.CellTitleQuizType" html="false" placeholder="false">Fragebogentyp</item>
+  <item name="EduPathTranslations.CellTitleQuizAttemptsNumber" html="false" placeholder="false">Maximale Anzahl Versuche</item>
+  <item name="EduPathTranslations.CellTitleQuizAttemptNumber" html="false" placeholder="false">Versuch Nr.</item>
+  <item name="EduPathTranslations.CellTitleQuizAttemptDate" html="false" placeholder="false">Sicherungsdatum</item>
+  <item name="EduPathTranslations.CellTitleQuizQuestionsSkipped" description="D. = domande" html="false" placeholder="false">Übersprungene Fragen</item>
+  <item name="EduPathTranslations.CellTitleQuizQuestionsCount" html="false" placeholder="false">Anz. Fragen</item>
+  <item name="EduPathTranslations.CellTitleQuizCorrectAnswers" description="D. = domande" html="false" placeholder="false">Korrekte Fragen</item>
+  <item name="EduPathTranslations.CellTitleQuizWrongAnswers" description="D. = domande" html="false" placeholder="false">Fehlerhafte Fragen</item>
+  <item name="EduPathTranslations.CellTitleQuizUngradedAnswers" description="D. = domande" html="false" placeholder="false">Fragen nicht bewertet</item>
+  <item name="EduPathTranslations.CellTitleQuizSemiCorrectAnswers" description="D. = domande" html="false" placeholder="false">Teilweise korrekte Fragen</item>
+  <item name="EduPathTranslations.CellTitleQuizAnswersCount" description="D. = domande" html="false" placeholder="false">Beantwortete Fragen</item>
+  <item name="EduPathTranslations.CellTitleMinScore" html="false" placeholder="false">Mindestpunktzahl</item>
+  <item name="EduPathTranslations.CellTitleMaxScore" html="false" placeholder="false">Höchstpunktzahl</item>
+  <item name="EduPathTranslations.CellTitleAttemptScore" html="false" placeholder="false">Punktzahl erzielt</item>
+  <item name="EduPathTranslations.QuestionnaireAttemptsNoLimits" html="false" placeholder="false">Kein Grenzwert</item>
+  <item name="EduPathTranslations.DeletedCommunity" description="cod = codice" html="false" placeholder="true" mustcontains="{0}">gelöscht (Kennz. {0})</item>
+  <item name="EduPathTranslations.DeletedUser" description="cod = codice" html="false" placeholder="true" mustcontains="{0}">gelöscht (Kennz. {0})</item>
+  <item name="EduPathTranslations.DisplayUserInfo" html="false" placeholder="false">Fortgeschrittene Benutzerstatistiken:</item>
+  <item name="EduPathTranslations.DisplayPathsInfos" html="false" placeholder="false">Ausbildungspfade:</item>
+  <item name="EduPathTranslations.DisplayStartedPathsInfos" html="false" placeholder="false">Begonnen</item>
+  <item name="EduPathTranslations.DisplayCompletedPathsInfos" html="false" placeholder="false">Vollständig ausgeführt</item>
+  <item name="EduPathTranslations.DisplayNotStartedPathsInfos" html="false" placeholder="false">Nicht begonnen</item>
+  <item name="EduPathTranslations.AnonymousUser" html="false" placeholder="false">Benutzer unbekannt</item>
+  <item name="EduPathTranslations.CellTitleStartAgencyName" html="false" placeholder="false">Beginn mit Einrichtung</item>
+  <item name="EduPathTranslations.CellTitleEndAgencyName" html="false" placeholder="false">Vollständig ausgeführt mit Einrichtung</item>
+  <item name="EduPathTranslations.CellTitleCurrentAgencyName" html="false" placeholder="false">Aktuelle Einrichtung</item>
+  <item name="EduPathTranslations.DisplayUserAgencyInfo" html="false" placeholder="true" mustcontains="{0}|{1}|{2}">Einrichtung {0} vom {1} bis {2}.</item>
+  <item name="EduPathTranslations.DisplayCurrentUserAgencyInfo" html="false" placeholder="true" mustcontains="{0}|{1}">Einrichtung {0} vom {1} bis heute. </item>
+  <item name="EduPathTranslations.CellTitleIdUser" html="false" placeholder="false">Benutzer-ID</item>
+  <item name="EduPathTranslations.CellTitleIdCommunity" html="false" placeholder="false">Community-ID</item>
+  <item name="EduPathTranslations.CellTitleIdPath" html="false" placeholder="false">Pfad-ID</item>
+  <item name="EduPathTranslations.CellTitleIdStartAgency" html="false" placeholder="false">Einrichtung-ID</item>
+  <item name="EduPathTranslations.CellTitleIdEndAgency" html="false" placeholder="false">Einrichtung-ID</item>
+  <item name="EduPathTranslations.CellTitleIdCurrentAgency" html="false" placeholder="false">Einrichtung-ID</item>
+  <item name="EduPathTranslations.CellTitleTaxCode" html="false" placeholder="false">Steuernummer</item>
+  <item name="EduPathTranslations.DisplayPathNameInfo" html="false" placeholder="false">Name des Pfades:</item>
+  <item name="EduPathTranslations.DisplayPathMinCompletionInfo" html="false" placeholder="false">Mindest-% vollständiger Ausführung</item>
+  <item name="EduPathTranslations.DisplayPathMinMarkInfo" html="false" placeholder="false">Mindestpunktzahl:</item>
+  <item name="EduPathTranslations.DisplayPathTimeInfo" html="false" placeholder="false">Dauer des Pfades:</item>
+  <item name="EduPathTranslations.DisplayPathStatisticInfos" html="false" placeholder="false">Pfadstatistiken:</item>
+  <item name="EduPathTranslations.DisplayPathUsersCompleted" html="false" placeholder="false">Vollständig ausgeführt von:</item>
+  <item name="EduPathTranslations.DisplayPathUsersStarted" html="false" placeholder="false">Begonnen von:</item>
+  <item name="EduPathTranslations.DisplayPathUsersNotStarted" html="false" placeholder="false">NICHT begonnen von:</item>
+  <item name="EduPathTranslations.GenericTextAction" html="false" placeholder="false">Manuelle Aktivität</item>
+  <item name="EduPathTranslations.CellTitleActivityNumber" disambiguation="singolare" html="false" placeholder="true" mustcontains="{0}">Aktivität {0}</item>
+  <item name="EduPathTranslations.CellTitleSubActivityNumber" disambiguation="singolare" html="false" placeholder="true" mustcontains="{0}">Unteraktivitäten {0}</item>
+  <item name="EduPathTranslations.CompletedPassedChar" disambiguation="C=completetato/passato (un solo carattere)" html="false" placeholder="false">V</item>
+  <item name="EduPathTranslations.PassedChar" disambiguation="P=passato (un solo carattere)" html="false" placeholder="false">B</item>
+  <item name="EduPathTranslations.CompletedChar" disambiguation="C=completetato (un solo carattere)" html="false" placeholder="false">V</item>
+  <item name="EduPathTranslations.StartedChar" disambiguation="I=iniziato (un solo carattere)" html="false" placeholder="false">B</item>
+  <item name="EduPathTranslations.NotStartedChar" disambiguation="N=non iniziato (un solo carattere)" html="false" placeholder="false">N</item>
+  <item name="EduPathTranslations.CellTitleCompletion" html="false" placeholder="false">Gesamte vollständige Ausführung</item>
+  <item name="EduPathTranslations.CellTitleMinCompletion" html="false" placeholder="false">Mindest-% vollständiger Ausführung</item>
+  <item name="EduPathTranslations.CellTitleTotalTime" html="false" placeholder="false">In Anspruch genommene Stunden</item>
+  <item name="EduPathTranslations.CellTitleTotalMark" html="false" placeholder="false">Punkzahlen erzielt</item>
+  <item name="EduPathTranslations.TitleUserInfo" html="false" placeholder="false">Benutzer</item>
+  <item name="EduPathTranslations.TitleUserInfoTaxCode" html="false" placeholder="false">Steuernummer</item>
+  <item name="EduPathTranslations.TitleStatisticsDate" html="false" placeholder="false">Statistiken am</item>
+  <item name="EduPathTranslations.CompletedPassedCharInfo" html="false" placeholder="true" mustcontains="{0}">{0} vollständig ausgeführt und bestanden</item>
+  <item name="EduPathTranslations.PassedCharInfo" html="false" placeholder="true" mustcontains="{0}">{0} bestanden</item>
+  <item name="EduPathTranslations.CompletedCharInfo" html="false" placeholder="true" mustcontains="{0}">{0} vollständig ausgeführt</item>
+  <item name="EduPathTranslations.StartedCharInfo" html="false" placeholder="true" mustcontains="{0}">{0} begonnen</item>
+  <item name="EduPathTranslations.NotStartedCharInfo" html="false" placeholder="true" mustcontains="{0}">{0} NICHT begonnen</item>
+  <item name="EduPathTranslations.CellTitleIdRole" html="false" placeholder="false">Rolle-ID</item>
+  <item name="EduPathTranslations.CellTitleIdUnit" html="false" placeholder="false">Einheit-ID</item>
+  <item name="EduPathTranslations.CellTitleIdActivity" html="false" placeholder="false">Aktivität-ID</item>
+  <item name="EduPathTranslations.CellTitleIdSubActivity" html="false" placeholder="false">Aktion-ID</item>
+  <item name="EduPathTranslations.CellTitleIdRole" html="false" placeholder="false">Id ruolo</item>
+  <item name="EduPathTranslations.TitleUserInfoRole" html="false" placeholder="false">Rolle:</item>
+  <item name="EduPathTranslations.CellTitleIdOrganization" html="false" placeholder="false">Organisation-ID</item>
+  <item name="EduPathTranslations.CellTitleOrganizationName" html="false" placeholder="false">Organisation-ID</item>
+  <item name="EduPathTranslations.CellTitleStartedOn" html="false" placeholder="false">Begonnen am</item>
+  <item name="ExecutedWeight" html="false" placeholder="false">Punktzahl erreicht: </item>
+  <item name="Min" html="false" placeholder="false"> (Mindest-)</item>
+  <item name="EvaluationFilter.Evaluated" html="false" placeholder="false">Benutzer bewertet</item>
+  <item name="EvaluationFilter.NotEvaluated" html="false" placeholder="false">Zu bewertende Benutzer</item>
+  <item name="EpError.EmptyActivities" html="true" placeholder="false">&lt;script language="javascript" type="text/javascript"&gt;alert('Es ist nicht möglich, die Sicht zu ändern. Es gibt leere Aktivitäten !');&lt;/script&gt;</item>
+  <item name="MSGalert" html="true" placeholder="false">&lt;script language="javascript" type="text/javascript"&gt;alert('Die für den Pfad vorgesehenen Stunden entsprechen den für Aktivitaten vorgesehenen Stunden nicht, das Entsperren ist nicht möglich.');&lt;/script&gt;</item>
+  <item name="LNBexportCertification.ToolTip" html="false" placeholder="false">Zeigen Sie den Beleg an</item>
+  <item name="LNBexportCertification.text" html="false" placeholder="false" hidden="true" />
+  <item name="NONE" html="false" placeholder="false" hidden="true">---</item>
+  <item name="LBpathNameTitle.text" html="false" placeholder="false">Pfad</item>
+  <item name="BTNupdateFilter.text" html="false" placeholder="false">Aktualisieren </item>
+  <item name="LBuserfilterTitle.text" html="false" placeholder="false">Vorname / Nachname</item>
+  <item name="LBcommunityRoleTitle.text" html="false" placeholder="false">Community-Rolle</item>
+  <item name="LBnameheader.text" html="false" placeholder="false">Benutzer / Pfad</item>
+  <item name="LBpathheader.text" html="false" placeholder="false">Pfad</item>
+  <item name="LBuserheader.text" html="false" placeholder="false">Benutzer</item>
+  <item name="LBstatusheader.text" disambiguation="status: attivo/chiuso/in corso/valutazione" html="false" placeholder="false">Status</item>
+  <item name="LBcompletionheader.text" html="false" placeholder="false">Vollständige Ausführung</item>
+  <item name="LBstartdateheader.text" html="false" placeholder="false">Startdatum</item>
+  <item name="LBenddateheader.text" html="false" placeholder="false">Endedatum</item>
+  <item name="LBdeadlineheader.text" html="false" placeholder="false">Ablauf</item>
+  <item name="LBactionheader.text" html="false" placeholder="false">Aktionen</item>
+  <item name="LBservice.text" html="false" placeholder="false">Zusammenfassung Pfade</item>
+  <item name="LTpageBottom.text" html="false" placeholder="false">Gehen Sie zur Seite:</item>
+  <item name="LTpageTop.text" html="false" placeholder="false">Gehen Sie zur Seite:</item>
+  <item name="HYPlistEduPath.text" html="false" placeholder="false">Zeigen Sie die Liste der Ausbildungspfade an</item>
+  <item name="LBnotstarted.tooltip" html="false" placeholder="false">Nicht begonnen</item>
+  <item name="LBstarted.tooltip" html="false" placeholder="false">Begonnen</item>
+  <item name="LBcompleted.tooltip" html="false" placeholder="false">Vollständig ausgeführt</item>
+  <item name="Aclearit.text" html="false" placeholder="false">Entleeren</item>
+  <item name="LBcommunitynameTitle.text" disambiguation="singolare" html="false" placeholder="false">Community</item>
+  <item name="LBstatusTitle.text" disambiguation="status: attivo/chiuso/in corso/valutazione" html="false" placeholder="false">Status</item>
+  <item name="LBlegend.text" html="false" placeholder="false">Legende</item>
+  <item name="Export.Filename.PathStatistics" html="false" placeholder="true" mustcontains="{0}|{1}|{2}">Pfadstatistiken_{0}_{1}_{2}</item>
+  <item name="DisplayMessageToken.PathStatistics" html="false" placeholder="false">Die gewünschte Datei ist in Vorbereitung, warten Sie einige Sekunden auf den Download.</item>
+  <item name="DisplayTitleToken.PathStatistics" html="false" placeholder="false">Globale Statistiken</item>
+  <item name="Export.Filename.UsersStatistics" html="false" placeholder="true" mustcontains="{0}|{1}|{2}">Benutzerstatistiken_{0}_{1}_{2}</item>
+  <item name="DisplayMessageToken.UsersStatistics" html="false" placeholder="false">Die gewünschte Datei ist in Vorbereitung, warten Sie einige Sekunden auf den Download.</item>
+  <item name="DisplayTitleToken.UsersStatistics" html="false" placeholder="false">Benutzerstatistiken</item>
+  <item name="DisplayMessageToken.UserStatistics" html="false" placeholder="false">Die gewünschte Datei ist in Vorbereitung, warten Sie einige Sekunden auf den Download.</item>
+  <item name="DisplayTitleToken.UserStatistics" html="false" placeholder="false">Benutzerstatistiken</item>
+  <item name="Export.Filename.SubActivityStatistics" html="false" placeholder="true" mustcontains="{0}|{1}|{2}">StatistikenAktion_{0}_{1}_{2}</item>
+  <item name="Export.Filename.UserStatistics" html="false" placeholder="true" mustcontains="{0}|{1}|{2}">Benutzerstatistiken_am_{0}_{1}_{2}</item>
+  <item name="Export.Filename.UserSubActivityStatistics" html="false" placeholder="true" mustcontains="{0}|{1}|{2}">StatistikenAktionBenutzer_am_{0}_{1}_{2}</item>
+  <item name="LNBexportPSstandardToCsv.text" html="false" placeholder="false" mustcontains="CSV">Exportieren Sie die angezeigten Daten in CSV</item>
+  <item name="LNBexportPSstandardToCsv.ToolTip" html="false" placeholder="false" mustcontains="CSV">Exportieren Sie die angezeigten Daten in CSV</item>
+  <item name="LNBexportPSfullToCsv.text" html="false" placeholder="false" mustcontains="CSV">Exportieren Sie vollständige Daten in CSV</item>
+  <item name="LNBexportPSfullToCsv.ToolTip" html="false" placeholder="false" mustcontains="CSV">Exportieren Sie vollständige Daten in CSV</item>
+  <item name="LNBexportPSfullCertificationToCsv.text" html="false" placeholder="false" mustcontains="CSV">Exportieren Sie die Zertifikatsdaten in CSV</item>
+  <item name="LNBexportPSfullCertificationToCsv.ToolTip" html="false" placeholder="false" mustcontains="CSV">Exportieren Sie die für das Zertifikat gültigen Daten in CSV</item>
+  <item name="LNBexportPSstandardToXml.text" html="false" placeholder="false" mustcontains="XML">Exportieren Sie die angezeigten Daten in XML</item>
+  <item name="LNBexportPSstandardToXml.ToolTip" html="false" placeholder="false" mustcontains="XML">Exportieren Sie die angezeigten Daten in XML</item>
+  <item name="LNBexportPSfullToXml.text" html="false" placeholder="false" mustcontains="XML">Exportieren Sie vollständige Daten in XML</item>
+  <item name="LNBexportPSfullToXml.ToolTip" html="false" placeholder="false" mustcontains="XML">Exportieren Sie vollständige Daten in XML</item>
+  <item name="LNBexportPSfullCertificationToXml.text" html="false" placeholder="false" mustcontains="XML">Exportieren Sie die Zertifikatsdaten in XML</item>
+  <item name="LNBexportPSfullCertificationToXml.ToolTip" html="false" placeholder="false" mustcontains="XML">Exportieren Sie die für das Zertifikat gültigen Daten in XML</item>
+  <item name="LNBexportPSstandardToPdf.text" html="false" placeholder="false" mustcontains="PDF">Exportieren Sie die angezeigten Daten in PDF</item>
+  <item name="LNBexportPSstandardToPdf.ToolTip" html="false" placeholder="false" mustcontains="PDF">Exportieren Sie die angezeigten Daten in PDF</item>
+  <item name="Export.Filename.FullPathData.True" html="false" placeholder="true" mustcontains="{0}|{1}|{2}|{3}">Pfad_{0}_ZertifikatStatistiken_{1}_{2}_{3}</item>
+  <item name="Export.Filename.FullPathData.False" html="false" placeholder="true" mustcontains="{0}|{1}|{2}|{3}">Pfad_{0}_VollständigeStatistiken_{1}_{2}_{3}</item>
+  <item name="LNBexportUsersStatisticToCsv.text" html="false" placeholder="false" mustcontains="CSV">Exportieren Sie Benutzerstatistiken in CSV</item>
+  <item name="LNBexportUsersStatisticToCsv.ToolTip" html="false" placeholder="false" mustcontains="CSV">Exportieren Sie Benutzerstatistiken in CSV</item>
+  <item name="LNBexportUsersStatisticToXml.text" html="false" placeholder="false" mustcontains="XML">Exportieren Sie Benutzerstatistiken in XML</item>
+  <item name="LNBexportUsersStatisticToXml.ToolTip" html="false" placeholder="false" mustcontains="XML">Exportieren Sie Benutzerstatistiken in XML</item>
+  <item name="LNBexportUsersStatisticToPdf.text" html="false" placeholder="false" mustcontains="PDF">Exportieren Sie Benutzerstatistiken in PDF</item>
+  <item name="LNBexportUsersStatisticToPdf.ToolTip" html="false" placeholder="false" mustcontains="PDF">Exportieren Sie Benutzerstatistiken in PDF</item>
+  <item name="Export.Filename.UserFullPathData.True" html="false" placeholder="true" mustcontains="{0}|{1}|{2}|{3}">Pfad_{0}_BenutzerZertifikatStatistiken_{1}_{2}_{3}</item>
+  <item name="Export.Filename.UserFullPathData.False" html="false" placeholder="true" mustcontains="{0}|{1}|{2}|{3}">Pfad_{0}_VollständigeBenutzerStatistiken_{1}_{2}_{3}</item>
+  <item name="LNBexportUserStatisticToCsv.text" html="false" placeholder="false" mustcontains="CSV">Exportieren Sie die angezeigten Daten in CSV</item>
+  <item name="LNBexportUserStatisticToCsv.ToolTip" html="false" placeholder="false" mustcontains="CSV">Exportieren Sie die angezeigten Daten in CSV</item>
+  <item name="LNBexportUserStatisticToXml.text" html="false" placeholder="false" mustcontains="XML">Exportieren Sie die angezeigten Daten in XML</item>
+  <item name="LNBexportUserStatisticToXml.ToolTip" html="false" placeholder="false" mustcontains="XML">Exportieren Sie die angezeigten Daten in XML</item>
+  <item name="LNBexportUserStatisticToPdf.text" html="false" placeholder="false" mustcontains="PDF">Exportieren Sie die angezeigten Daten in PDF</item>
+  <item name="LNBexportUserStatisticToPdf.ToolTip" html="false" placeholder="false" mustcontains="PDF">Exportieren Sie die angezeigten Daten in PDF</item>
+  <item name="LNBexportUserStatisticfullToXml.text" html="false" placeholder="false" mustcontains="XML">Exportieren Sie vollständige Daten in XML</item>
+  <item name="LNBexportUserStatisticfullToXml.ToolTip" html="false" placeholder="false" mustcontains="XML">Exportieren Sie vollständige Daten in XML</item>
+  <item name="LNBexportUserStatisticfullCertificationToXml.text" html="false" placeholder="false" mustcontains="XML">Exportieren Sie die Zertifikatsdaten in XML</item>
+  <item name="LNBexportUserStatisticfullCertificationToXml.ToolTip" html="false" placeholder="false" mustcontains="XML">Exportieren Sie die für das Zertifikat gültigen Daten in XML</item>
+  <item name="LNBexportUserStatisticfullToCsv.text" html="false" placeholder="false" mustcontains="CSV">Exportieren Sie vollständige Daten in CSV</item>
+  <item name="LNBexportUserStatisticfullToCsv.ToolTip" html="false" placeholder="false" mustcontains="CSV">Exportieren Sie vollständige Daten in CSV</item>
+  <item name="LNBexportUserStatisticfullCertificationToCsv.text" html="false" placeholder="false" mustcontains="CSV">Exportieren Sie die Zertifikatsdaten in CSV</item>
+  <item name="LNBexportUserStatisticfullCertificationToCsv.ToolTip" html="false" placeholder="false" mustcontains="CSV">Exportieren Sie die für das Zertifikat gültigen Daten in CSV</item>
+
+  <item name="CertificationError.None.savingRequired.False.saved.False">Bescheinigung erfolgreich erzeugt</item>
+  <item name="CertificationError.None.savingRequired.False.saved.True">Bescheinigung erfolgreich erzeugt</item>
+  <item name="CertificationError.None.savingRequired.True.saved.False">Bescheinigung erfolgreich erzeugt, eine Kopie wurde auf dem Web-Server nicht gesichert</item>
+  <item name="CertificationError.None.savingRequired.True.saved.True">Bescheinigung erfolgreich erzeugt: eine Kopie wurde auf dem Web-Server gesichert</item>
+  <item name="CertificationError.Unknown.savingRequired.False.saved.False">Unbekannter Fehler bei der Bescheinigungserzeugung</item>
+  <item name="CertificationError.Unknown.savingRequired.False.saved.True">Unbekannter Fehler bei der Bescheinigungserzeugung</item>
+  <item name="CertificationError.Unknown.savingRequired.True.saved.False">Unbekannter Fehler bei der Bescheinigungserzeugung, es war NICHT möglich, eine Kopie der Bescheinigung auf dem Web-Server zu sichern</item>
+  <item name="CertificationError.Unknown.savingRequired.True.saved.True">Unbekannter Fehler bei der Bescheinigungserzeugung</item>
+  <item name="CertificationError.RepositoryError.savingRequired.False.saved.False">Fehler auf dem Web-Server</item>
+  <item name="CertificationError.RepositoryError.savingRequired.False.saved.True">Fehler auf dem Web-Server</item>
+  <item name="CertificationError.RepositoryError.savingRequired.True.saved.False">Fehler auf dem Web-Server: es ist nicht möglich, die Datei zu speichern</item>
+  <item name="CertificationError.RepositoryError.savingRequired.True.saved.True">Fehler auf dem Web-Server: es ist nicht möglich, die Datei zu speichern</item>
+  <item name="CertificationError.SavingFile.savingRequired.False.saved.False">Fehler beim vorläufigen Speichern der Bescheinigung auf dem Web-Server, um anschließend den Download vornehmen zu können</item>
+  <item name="CertificationError.SavingFile.savingRequired.False.saved.True">Fehler beim vorläufigen Speichern der Bescheinigung auf dem Web-Server, um anschließend den Download vornehmen zu können</item>
+  <item name="CertificationError.SavingFile.savingRequired.True.saved.False">Fehler beim Speichern der Bescheinigung auf dem Web-Server</item>
+  <item name="CertificationError.SavingFile.savingRequired.True.saved.True">Fehler beim Speichern der Bescheinigung auf dem Web-Server</item>
+  <item name="CertificationError.TransmittingFile.savingRequired.False.saved.False">Fehler beim Download der Bescheinigung</item>
+  <item name="CertificationError.TransmittingFile.savingRequired.False.saved.True">Fehler beim Download der Bescheinigung</item>
+  <item name="CertificationError.TransmittingFile.savingRequired.True.saved.False">Fehler beim Download der Bescheinigung, die entsprechende Datei wurde auf dem Web-Server NICHT angelegt</item>
+  <item name="CertificationError.TransmittingFile.savingRequired.True.saved.True">Fehler beim Download der Bescheinigung, die entsprechende Datei wurde jedoch auf dem Web-Server angelegt</item>
+  <item name="CertificationError.ParsingTemplate.savingRequired.False.saved.False">Fehler bei der Erzeugung des Bescheinigungsinhalts</item>
+  <item name="CertificationError.ParsingTemplate.savingRequired.False.saved.True">Fehler bei der Erzeugung des Bescheinigungsinhalts</item>
+  <item name="CertificationError.ParsingTemplate.savingRequired.True.saved.False">Fehler bei der Erzeugung des Bescheinigungsinhalts</item>
+  <item name="CertificationError.ParsingTemplate.savingRequired.True.saved.True">Fehler bei der Erzeugung des Bescheinigungsinhalts: eine Kopie der Bescheinigung (jedoch unleserlich) wurde auf dem Web-Server angelegt</item>
+  <item name="CertificationError.EmptyTemplateItem.savingRequired.False.saved.False">Ein in der Bescheinigung vorhandenes Feld wurde nicht ausgefüllt, es ist nicht möglich, die Bescheinigung zu sichern</item>
+  <item name="CertificationError.EmptyTemplateItem.savingRequired.False.saved.True">Ein in der Bescheinigung vorhandenes Feld wurde nicht ausgefüllt, es ist nicht möglich, die Bescheinigung zu sichern</item>
+  <item name="CertificationError.EmptyTemplateItem.savingRequired.True.saved.False">Ein in der Bescheinigung vorhandenes Feld wurde nicht ausgefüllt, es ist nicht möglich, die Bescheinigung zu sichern</item>
+  <item name="CertificationError.EmptyTemplateItem.savingRequired.True.saved.True">Ein in der Bescheinigung vorhandenes Feld wurde nicht ausgefüllt, die Bescheinigung wurde jedoch im PDF-Format auf dem Web-Server  gesichert</item>
+  <item name="CertificationError.EmptyTemplateItems.savingRequired.False.saved.False">Einige in der Bescheinigung vorhandene Felder sind NICHT ausgefüllt</item>
+  <item name="CertificationError.EmptyTemplateItems.savingRequired.False.saved.True">Einige in der Bescheinigung vorhandene Felder sind NICHT ausgefüllt</item>
+  <item name="CertificationError.EmptyTemplateItems.savingRequired.True.saved.False">Einige in der Bescheinigung vorhandene Felder sind NICHT ausgefüllt</item>
+  <item name="CertificationError.EmptyTemplateItems.savingRequired.True.saved.True">Einige in der Bescheinigung vorhandene Felder sind NICHT ausgefüllt, die Bescheinigung wurde jedoch im PDF-Format auf dem Web-Server  gesichert</item>
+  <item name="HYPcertificate.ToolTip">Führen Sie den Download der Bescheinigung durch.</item>
+  <item name="LNBrefreshCertificate.ToolTip">Erzeugen Sie den Beleg neu</item>
+  <item name="LNBrefreshCertificate.text" hidden="true"> </item>
+  <item name="HYPrefreshCertificate.ToolTip">Erzeugen Sie den Beleg neu</item>
+  <item name="HYPrefreshCertificate.text" hidden="true"> </item>
+  <item name="EduPath.ModuleStatus.DisableForCommunity">VORSICHT: der Dienst ist für diese Community deaktiviert.</item>
+  <item name="EduPath.ModuleStatus.DisableForSystem"> VORSICHT: der Dienst ist für die Plattform deaktiviert.</item>
+  <item name="EduPath.ModuleStatus.DisableForCommunityAvailableForAdmin"> VORSICHT: der Dienst ist für diese Community deaktiviert. Ihr Verwaltungszustand erlaubt Ihnen den Zugang zu dem Community.</item>
+  <item name="EduPath.ModuleStatus.DisableForSystemAvailableForAdmin"> VORSICHT: der Dienst ist für die Plattform deaktiviert. Ihr Verwaltungszustand erlaubt Ihnen den Zugang zu der Plattform.</item>
+</Resource>

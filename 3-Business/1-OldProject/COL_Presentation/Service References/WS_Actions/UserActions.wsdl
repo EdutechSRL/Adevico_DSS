@@ -1,0 +1,474 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s1="http://microsoft.com/wsdl/types/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:import namespace="http://microsoft.com/wsdl/types/" />
+      <s:element name="CreateWorkingSession">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="WorkingID" type="s1:guid" />
+            <s:element minOccurs="1" maxOccurs="1" name="PersonID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateWorkingSessionResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="DeleteWorkingSession">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="WorkingID" type="s1:guid" />
+            <s:element minOccurs="1" maxOccurs="1" name="PersonID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="EndDate" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteWorkingSessionResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="AddBrowserInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="oBrowser" type="tns:BrowserInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="BrowserInfo">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ActiveXControls" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="ClientIPAdress" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ProxyIPAdress" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CanInitiateVoiceCall" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="Cookies" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="Frames" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsMobileDevice" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="JavaApplets" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="JScriptVersion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Language" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="PersonID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="PersonTypeID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Platform" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ScreenCharactersWidth" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ScreenPixelsHeight" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Tables" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Version" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="W3CDomVersion" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="WorkingSessionID" type="s1:guid" />
+          <s:element minOccurs="0" maxOccurs="1" name="BrowserType" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AddBrowserInfoResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="OpenWorkingSession">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="oAction" type="tns:UserAction" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="UserAction">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="ActionDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="CommunityID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Interaction" type="tns:InteractionType" />
+          <s:element minOccurs="1" maxOccurs="1" name="ModuleID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ObjectActions" type="tns:ArrayOfObjectAction" />
+          <s:element minOccurs="1" maxOccurs="1" name="PersonID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Type" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="WorkingSessionID" type="s1:guid" />
+          <s:element minOccurs="0" maxOccurs="1" name="ClientIPadress" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ProxyIPadress" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="PersonRoleID" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="InteractionType">
+        <s:restriction base="s:string">
+          <s:enumeration value="None" />
+          <s:enumeration value="UserWithUser" />
+          <s:enumeration value="UserWithCommunityAdministrator" />
+          <s:enumeration value="UserWithLearningObject" />
+          <s:enumeration value="Generic" />
+          <s:enumeration value="SystemToSystem" />
+          <s:enumeration value="SystemToUser" />
+          <s:enumeration value="SystemToModule" />
+          <s:enumeration value="ModuleToSystem" />
+          <s:enumeration value="ModuleToModule" />
+        </s:restriction>
+      </s:simpleType>
+      <s:complexType name="ArrayOfObjectAction">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ObjectAction" nillable="true" type="tns:ObjectAction" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ObjectAction">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ModuleID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ObjectTypeId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ValueID" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="OpenWorkingSessionResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="CloseWorkingSession">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="oAction" type="tns:UserAction" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CloseWorkingSessionResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="AddAction">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="oAction" type="tns:UserAction" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddActionResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="ClearCache">
+        <s:complexType />
+      </s:element>
+      <s:element name="ClearCacheResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="LoginLogoutTest">
+        <s:complexType />
+      </s:element>
+      <s:element name="LoginLogoutTestResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="Test">
+        <s:complexType />
+      </s:element>
+      <s:element name="TestResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="TestMultiplo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="num" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TestMultiploResponse">
+        <s:complexType />
+      </s:element>
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://microsoft.com/wsdl/types/">
+      <s:simpleType name="guid">
+        <s:restriction base="s:string">
+          <s:pattern value="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}" />
+        </s:restriction>
+      </s:simpleType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="CreateWorkingSessionSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateWorkingSession" />
+  </wsdl:message>
+  <wsdl:message name="CreateWorkingSessionSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateWorkingSessionResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteWorkingSessionSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteWorkingSession" />
+  </wsdl:message>
+  <wsdl:message name="DeleteWorkingSessionSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteWorkingSessionResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddBrowserInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:AddBrowserInfo" />
+  </wsdl:message>
+  <wsdl:message name="AddBrowserInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:AddBrowserInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="OpenWorkingSessionSoapIn">
+    <wsdl:part name="parameters" element="tns:OpenWorkingSession" />
+  </wsdl:message>
+  <wsdl:message name="OpenWorkingSessionSoapOut">
+    <wsdl:part name="parameters" element="tns:OpenWorkingSessionResponse" />
+  </wsdl:message>
+  <wsdl:message name="CloseWorkingSessionSoapIn">
+    <wsdl:part name="parameters" element="tns:CloseWorkingSession" />
+  </wsdl:message>
+  <wsdl:message name="CloseWorkingSessionSoapOut">
+    <wsdl:part name="parameters" element="tns:CloseWorkingSessionResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddActionSoapIn">
+    <wsdl:part name="parameters" element="tns:AddAction" />
+  </wsdl:message>
+  <wsdl:message name="AddActionSoapOut">
+    <wsdl:part name="parameters" element="tns:AddActionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ClearCacheSoapIn">
+    <wsdl:part name="parameters" element="tns:ClearCache" />
+  </wsdl:message>
+  <wsdl:message name="ClearCacheSoapOut">
+    <wsdl:part name="parameters" element="tns:ClearCacheResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoginLogoutTestSoapIn">
+    <wsdl:part name="parameters" element="tns:LoginLogoutTest" />
+  </wsdl:message>
+  <wsdl:message name="LoginLogoutTestSoapOut">
+    <wsdl:part name="parameters" element="tns:LoginLogoutTestResponse" />
+  </wsdl:message>
+  <wsdl:message name="TestSoapIn">
+    <wsdl:part name="parameters" element="tns:Test" />
+  </wsdl:message>
+  <wsdl:message name="TestSoapOut">
+    <wsdl:part name="parameters" element="tns:TestResponse" />
+  </wsdl:message>
+  <wsdl:message name="TestMultiploSoapIn">
+    <wsdl:part name="parameters" element="tns:TestMultiplo" />
+  </wsdl:message>
+  <wsdl:message name="TestMultiploSoapOut">
+    <wsdl:part name="parameters" element="tns:TestMultiploResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WSuserActionsSoap">
+    <wsdl:operation name="CreateWorkingSession">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Create User working session</wsdl:documentation>
+      <wsdl:input message="tns:CreateWorkingSessionSoapIn" />
+      <wsdl:output message="tns:CreateWorkingSessionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteWorkingSession">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Close User working session</wsdl:documentation>
+      <wsdl:input message="tns:DeleteWorkingSessionSoapIn" />
+      <wsdl:output message="tns:DeleteWorkingSessionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddBrowserInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Aggiunge dati browser</wsdl:documentation>
+      <wsdl:input message="tns:AddBrowserInfoSoapIn" />
+      <wsdl:output message="tns:AddBrowserInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OpenWorkingSession">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Create User working session</wsdl:documentation>
+      <wsdl:input message="tns:OpenWorkingSessionSoapIn" />
+      <wsdl:output message="tns:OpenWorkingSessionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CloseWorkingSession">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Close User working session</wsdl:documentation>
+      <wsdl:input message="tns:CloseWorkingSessionSoapIn" />
+      <wsdl:output message="tns:CloseWorkingSessionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddAction">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Aggiunge un'azione</wsdl:documentation>
+      <wsdl:input message="tns:AddActionSoapIn" />
+      <wsdl:output message="tns:AddActionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ClearCache">
+      <wsdl:input message="tns:ClearCacheSoapIn" />
+      <wsdl:output message="tns:ClearCacheSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LoginLogoutTest">
+      <wsdl:input message="tns:LoginLogoutTestSoapIn" />
+      <wsdl:output message="tns:LoginLogoutTestSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Test">
+      <wsdl:input message="tns:TestSoapIn" />
+      <wsdl:output message="tns:TestSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TestMultiplo">
+      <wsdl:input message="tns:TestMultiploSoapIn" />
+      <wsdl:output message="tns:TestMultiploSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WSuserActionsSoap" type="tns:WSuserActionsSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CreateWorkingSession">
+      <soap:operation soapAction="http://tempuri.org/CreateWorkingSession" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteWorkingSession">
+      <soap:operation soapAction="http://tempuri.org/DeleteWorkingSession" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddBrowserInfo">
+      <soap:operation soapAction="http://tempuri.org/AddBrowserInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OpenWorkingSession">
+      <soap:operation soapAction="http://tempuri.org/OpenWorkingSession" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CloseWorkingSession">
+      <soap:operation soapAction="http://tempuri.org/CloseWorkingSession" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddAction">
+      <soap:operation soapAction="http://tempuri.org/AddAction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ClearCache">
+      <soap:operation soapAction="http://tempuri.org/ClearCache" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoginLogoutTest">
+      <soap:operation soapAction="http://tempuri.org/LoginLogoutTest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Test">
+      <soap:operation soapAction="http://tempuri.org/Test" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TestMultiplo">
+      <soap:operation soapAction="http://tempuri.org/TestMultiplo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WSuserActionsSoap12" type="tns:WSuserActionsSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CreateWorkingSession">
+      <soap12:operation soapAction="http://tempuri.org/CreateWorkingSession" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteWorkingSession">
+      <soap12:operation soapAction="http://tempuri.org/DeleteWorkingSession" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddBrowserInfo">
+      <soap12:operation soapAction="http://tempuri.org/AddBrowserInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OpenWorkingSession">
+      <soap12:operation soapAction="http://tempuri.org/OpenWorkingSession" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CloseWorkingSession">
+      <soap12:operation soapAction="http://tempuri.org/CloseWorkingSession" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddAction">
+      <soap12:operation soapAction="http://tempuri.org/AddAction" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ClearCache">
+      <soap12:operation soapAction="http://tempuri.org/ClearCache" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoginLogoutTest">
+      <soap12:operation soapAction="http://tempuri.org/LoginLogoutTest" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Test">
+      <soap12:operation soapAction="http://tempuri.org/Test" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TestMultiplo">
+      <soap12:operation soapAction="http://tempuri.org/TestMultiplo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WSuserActions">
+    <wsdl:port name="WSuserActionsSoap" binding="tns:WSuserActionsSoap">
+      <soap:address location="http://localhost/WS_Action/UserActions.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WSuserActionsSoap12" binding="tns:WSuserActionsSoap12">
+      <soap12:address location="http://localhost/WS_Action/UserActions.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

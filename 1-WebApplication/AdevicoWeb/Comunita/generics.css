@@ -1,0 +1,330 @@
+﻿/*
+POSIZIONAMENTO
+*/
+.elementoGiu01{
+    position: relative;
+    top: 0.1em;
+}
+
+.elementoGiu02{
+    position: relative;
+    top: 0.2em;
+}
+
+.elementoGiu04{
+    position: relative;
+    top: 0.4em;
+}
+
+.elementoGiu06{
+    position: relative;
+    top: 0.6em;
+}
+
+.elementoSu02{
+    position: relative;
+    bottom: 0.2em;
+}
+
+.elementoSu04{
+    position: relative;
+    bottom: 0.4em;
+}
+
+.elementoSu06{
+    position: relative;
+    bottom: 0.6em;
+}
+
+.bold{
+    font-weight: bold;
+}
+
+.fLeft{
+    float: left;    
+}
+
+.fRight{
+    float: right;
+}
+
+.clear{
+    clear: both;    
+}
+
+.mTop{
+    margin-top: 2em;
+}
+
+.mBottom{
+    margin-bottom: 2em;
+}
+
+/*
+TESTO
+*/
+
+.tLeft{
+    text-align: left;
+}
+    
+.tRight{
+    text-align: right;
+}
+    
+.tCenter{
+    text-align: center;
+}
+
+/*
+BORDI
+*/
+
+.bordoNero{
+    border: 1px #333333 solid;
+}
+
+.bordoBianco{
+    border: 1px #ffffff solid;
+}
+
+/*
+ELEMENTI ASP.NET
+*/
+
+/*
+LINKBUTTON
+*/
+
+.linkButtonN{
+    font-family: Verdana;
+    font-size: small;
+    font-weight: bold;
+    
+    text-decoration: none;
+    color: #333333;
+}
+
+.linkButtonB{
+    font-family: Verdana;
+    font-size: small;
+    font-weight: bold;
+    
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.linkButtonA{
+    font-family: Verdana;
+    font-size: small;
+    font-weight: bold;
+    
+    text-decoration: none;
+    color: #336699;
+}
+
+.linkButtonNUnder{
+    font-family: Verdana;
+    font-size: small;
+    
+    color: #333333;
+}
+
+.linkButtonBUnder{
+    font-family: Verdana;
+    font-size: small;
+    
+    color: #ffffff;
+}
+
+.linkButtonAUnder{
+    font-family: Verdana;
+    font-size: small;
+    
+    color: #336699;
+}
+
+/*
+DROPDOWNLIST
+*/
+
+.dropDownList{
+    font-family: Verdana;
+    font-size: small;
+    color: #333333;
+    background-color: #ffffff;
+    height: 2em;
+    text-transform: capitalize;
+    width: 10em;
+}
+
+/*
+BOTTONI
+*/
+
+.button{
+    font-family: Verdana;
+    font-size: x-small;
+    color: #333333;
+    height: 25px;
+    line-height: 20px;
+    text-transform: uppercase;
+}
+
+.buttonB{
+    font-family: Verdana;
+    font-size: x-small;
+    color: #333333;
+    height: 25px;
+    line-height: 20px;
+    text-transform: uppercase;
+    border: 1px #333333 solid;
+    background-color: #ffffff;
+}
+
+.buttonA{
+    font-family: Verdana;
+    font-size: x-small;
+    color: #ffffff;
+    height: 25px;
+    line-height: 20px;
+    text-transform: uppercase;
+    border: 1px #ffffff solid;
+    background-color: #336699;
+}
+
+.buttonN{
+    font-family: Verdana;
+    font-size: x-small;
+    color: #ffffff;
+    height: 25px;
+    line-height: 20px;
+    text-transform: uppercase;
+    border: 1px #ffffff solid;
+    background-color: #333333;
+}
+
+/*
+TEXTBOX
+*/
+
+.textBox{
+    font-family: Verdana;
+    font-size: small;
+    color: #336699;
+    height: 1.2em;
+    border: 1px #336699 solid;
+}
+
+.textBoxB{
+    font-family: Verdana;
+    font-size: small;
+    color: #333333;
+    height: 1.2em;
+    border: 1px #333333 solid;
+    background-color: #ffffff;
+}
+
+.textBoxA{
+    font-family: Verdana;
+    font-size: small;
+    color: #ffffff;
+    height: 1.2em;
+    border: 1px #ffffff solid;
+    background-color: #336699;
+}
+
+.textBoxN{
+    font-family: Verdana;
+    font-size: small;
+    color: #ffffff;
+    height: 1.2em;
+    border: 1px #ffffff solid;
+    background-color: #333333;
+}
+
+.textBoxDotted{
+    font-family: Verdana;
+    font-size: small;
+    color: #336699;
+    height: 1.2em;
+    border: 1px #336699 dotted;
+    background-color: #ffffff;
+}
+
+.textBoxBDotted{
+    font-family: Verdana;
+    font-size: small;
+    color: #333333;
+    height: 1.2em;
+    border: 1px #333333 dotted;
+    background-color: #ffffff;
+}
+
+.textBoxADotted{
+    font-family: Verdana;
+    font-size: small;
+    color: #ffffff;
+    height: 1.2em;
+    border: 1px #ffffff dotted;
+    background-color: #336699;
+}
+
+.textBoxNDotted{
+    font-family: Verdana;
+    font-size: small;
+    color: #ffffff;
+    height: 1.2em;
+    border: 1px #ffffff dotted;
+    background-color: #333333;
+}
+
+/* Elementi pagine contenuto generali */
+
+.paginaContenuto{
+    position: absolute;
+    left: 0px;
+    right: 0em; 
+}
+
+.barraComunita{
+    height: 2em;
+    line-height: 2em;
+    
+    margin-left: 2em;
+    margin-right: 2em;
+     
+    border-bottom: 1px #ffffff solid;   
+    border-right: 1px #ffffff solid;
+    border-left: 1px #ffffff solid;
+}
+
+.barraPagina{
+    width: 100%;
+    min-width: 62em;
+    
+    height: 3em;
+    line-height: 3em;
+    
+    margin-top: 0.5em;
+    
+    border-top: 1px #ffffff solid;
+    border-bottom: 1px #ffffff solid;
+}
+
+.spanBarraComunita{
+    margin-left: 1em;
+}
+
+.spanBarraPagina{
+    margin-left: 1em;
+}
+
+.helpPagina{
+    margin-right: 1em;
+}
+
+.margineSotto{
+    height: 2em;
+    clear: both;
+}

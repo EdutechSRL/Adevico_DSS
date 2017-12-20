@@ -1,0 +1,306 @@
+div.newItem, div.buttoncontainer
+{
+	border-bottom: 1px solid #B4B4B4;
+	padding-bottom: 1em;
+	padding-top: 1em;
+    text-align: left;
+}
+
+div.roomcontainer div.fieldrow {
+    display: inline-block;
+    width: 450px;
+}
+
+div.roomcontainer div.fieldrow label {
+    display: inline-block;
+    width: 30%;
+}
+div.roomcontainer div.fieldrow input {
+    display: inline-block;
+    width: 65%;
+    
+}
+
+
+div.roomcontainer  div.usersselector 
+{
+    width: 100%;
+	/*border: 1px solid #B4B4B4;*/
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 1px 1px 0 rgba(255, 255, 255, 0.5) inset, 1px 1px 0 rgba(0, 0, 0, 0.15);
+
+}
+
+div.usersHeader {
+    background: #c7d0da none repeat scroll 0 0;
+
+    font-weight: bold;
+    padding: 0.3em;
+    padding-left: 1em;
+    font-size: 1.2em;
+}
+
+div.userscontainer {
+    padding: 0.7em 1em 1em 3em;
+}
+
+div.usersselector div.users
+{
+	display: inline-block;
+	width: 230px;
+}
+
+div.usersselector div.users div.username
+{
+	display: inline-block;
+	width: 200px;
+	min-width: 200px;
+}
+
+
+
+div.fieldlongtext label {
+    display: inline-block;
+    width: 200px;
+}
+
+div.fieldlongtext input.inputtext {
+    width: 300px;
+}
+
+
+
+/* Field Info - start */
+
+
+ div.statuswrapper {
+    margin: 2em 0;
+}
+
+div.statuswrapper
+.details .fieldlabel {
+    vertical-align: baseline;
+    color: #888;
+
+    margin-bottom: 0.5em;
+    padding: 2px 4px;
+    width: auto;
+
+    font-size: 1.2em;
+
+}
+
+
+
+
+
+span.status span.statusitem, span.status span.label {
+    display: inline-block;
+    margin-bottom: 0.5em;
+    margin-left: 0;
+}
+
+.fieldrow .details .item .counter {
+    border: 1px solid #ddd;
+    /*background-color: #ddd;*/
+    border-radius: 4px;
+    display: inline;
+    font-weight: bold;
+    margin-right: 0.5em;
+    padding: 2px 4px;
+}
+
+a .item .counter {
+}
+
+span.counter {
+    font-size: 14px;
+    vertical-align: baseline;
+}
+
+
+span.status span.statusitem, span.status span.label {
+    display: inline-block;
+    margin-bottom: 0.5em;
+    margin-left: 0;
+}
+span.statusitem {
+    margin: 0 10px;
+}
+
+span.status div.inlinewrapper {
+    vertical-align: top;
+}
+
+
+.ticketlist div.fieldobject.details .fieldlabel {
+    vertical-align: baseline;
+}
+
+span.status.completion .fieldlabel {
+    color: #888;
+    margin-bottom: 0.5em;
+    padding: 2px 4px;
+    width: auto;
+}
+
+.fieldobject.details .fieldrow span.status.details {
+    display: block;
+}
+
+span.status.completion.details {
+    color: #444;
+}
+
+span.status.completion {
+    display: inline-block !important;
+    margin-right: 2em !important;
+}
+
+
+span.status span.statusitem, span.status span.label {
+    display: inline-block;
+    margin-bottom: 0.5em;
+    margin-left: 0;
+}
+
+.fieldrow .statuswrapper .details a {
+    text-decoration: none;
+}
+
+.fieldrow .statuswrapper .details a.disabled {
+    text-decoration: none;
+    color: #888;
+}
+
+.fieldrow .statuswrapper .details a.selected {
+    color: #000 !important;
+}
+
+
+/* COLORI stato */
+
+.fieldrow .details .item .draft,
+table.sessionList td.status span.icons .gray {
+    background-color: #ddd;
+}
+
+.fieldrow .details .item .scheduled,
+ table.sessionList td.status span.icons .green  {
+    background-color: #99c74a;
+}
+
+.fieldrow .details .item .started,
+table.sessionList td.status span.icons .yellow {
+    background-color: #FB9F0F;
+}
+
+.fieldrow .details .item .ended
+{
+    background-color: #FFA1A1; /*ff1717*/
+}
+table.sessionList td.status span.icons .red {
+    background-color: #ff1717;
+}
+
+.fieldrow .details .item .total {
+    background-color: #ddd;
+}
+
+
+ /* Field Info - end */
+
+div.listItems {
+    padding-top: 1em;
+}
+
+
+div.listItems table.sessionList tr {
+    height: 35px;
+}
+
+
+div.listItems table.sessionList .infowarning {
+    width: 20px;
+}
+
+div.listItems table.sessionList td.status span.icons {
+    padding-left: 0.4em;
+}
+
+div.listItems table.sessionList td.sessionstart {
+    width: 160px;
+}
+
+div.listItems table.sessionList td.sessionname {
+    width: 400px;
+}
+
+
+/*div.userscontainer {
+    margin-top: 2em;
+    border: 1px solid;
+}*/
+
+div.editsession div.userscontainer {
+    margin-top: 2em;
+    padding-top: 1em;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 1px 1px 0 rgba(255, 255, 255, 0.5) inset, 1px 1px 0 rgba(0, 0, 0, 0.15);
+}
+
+div.editsession div.UserFilters {
+    /*border: 1px solid;*/
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+table.minimal th span {
+    display: inline-block;
+}
+
+.webex .statuswrapper .status {
+    display: inline-block;
+    clear: none;
+}
+
+
+div.filters 
+{
+   border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 1px 1px 0 rgba(255, 255, 255, 0.5) inset, 1px 1px 0 rgba(0, 0, 0, 0.15);
+    margin-top: 2em;
+    padding: 1em;
+
+}
+
+div.filters div.fieldrow {
+    /*width: 44%;*/
+    display: inline-block;
+}
+
+
+div.filters div.fieldbutton {
+    display: inline-block;
+    width: 10%;
+}
+
+
+.fieldobject .hidden {
+    display: none;
+}
+
+.fieldobject .fieldrow .fieldlabel {
+    vertical-align: top;
+}
+
+
+.fieldobject .fieldrow .infoncontainer {
+    display: inline-block;
+    width: 700px;
+}
+
+ 

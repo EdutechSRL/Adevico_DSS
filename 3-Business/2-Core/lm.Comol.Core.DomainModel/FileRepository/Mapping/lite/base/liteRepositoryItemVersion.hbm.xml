@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="lm.Comol.Core.DomainModel" namespace="lm.Comol.Core.FileRepository.Domain">
+	<class name="liteRepositoryItemVersion" table="FR_Version" lazy="false" optimistic-lock ="none">
+    <id name="Id" column="Id" type="Int64" unsaved-value="0">
+      <generator class="native"/>
+    </id>
+    <version name="TimeStamp" generated="always" unsaved-value="null" type="BinaryBlob">
+      <column name="_Timestamp" not-null="false" sql-type="timestamp"/>
+    </version>
+    <property name="IdOwner" type="Int32" column="IdPerson" update="false" />
+    <property name="Size" type="Int64" />
+    <property name="IdCommunity" type="Int32" />
+    
+    <property name="Description" type="String" />
+    <property name="Downloaded" type="Int64" />
+    <property name="Type" type="lm.Comol.Core.FileRepository.Domain.ItemType,lm.Comol.Core.DomainModel" column="ItemType" />
+    <property name="DisplayMode" type="lm.Comol.Core.FileRepository.Domain.DisplayMode,lm.Comol.Core.DomainModel" />
+    <property name="Status" type="lm.Comol.Core.FileRepository.Domain.ItemStatus,lm.Comol.Core.DomainModel" />
+    <property name="Availability" type="lm.Comol.Core.FileRepository.Domain.ItemAvailability,lm.Comol.Core.DomainModel" />
+    <property name="Thumbnail" type="String" />
+    <property name="AutoThumbnail" />
+    <property name="PreviewTime" type="Int64" />
+    <property name="Time" type="Int64" />
+    <property name="Number" type="Int64" />
+   
+    <property name="IsActive" type="Boolean" />
+    <property name="IdPlayer" type="Int64" />
+    <property name="IdItem" type="Int64" />
+    <property name="UniqueIdItem" type="Guid" />
+    <property name="UniqueIdVersion" type="Guid" />
+    <property name="Name" type="String" />
+    <property name="Extension" type="String" />
+    <property name="Url" type="String" />
+    <property name="ContentType" type="String" />
+    
+    <property name="Deleted" type="lm.Comol.Core.DomainModel.BaseStatusDeleted,lm.Comol.Core.DomainModel" column="_Deleted" />
+    <property name="IdModifiedBy" type="Int32" column="_ModifiedBy" />
+    <property name="CreatedOn" type="DateTime" column="_CreatedOn" />
+    <property name="ModifiedOn" type="DateTime" column="_ModifiedOn" />
+    <property name="IdCreatedBy" type="Int32" column="_CreatedBy" />
+    <property name="CreatorProxyIpAddress" type="String" column="_CreatedProxyIPaddress" />
+    <property name="CreatorIpAddress" type="String" column="_CreatedIPaddress" />
+    <property name="ModifiedProxyIpAddress" type="String" column="_ModifiedProxyIPaddress" />
+    <property name="ModifiedIpAddress" type="String" column="_ModifiedIPaddress" />
+    <component name="Repository" class="lm.Comol.Core.FileRepository.Domain.RepositoryIdentifier,lm.Comol.Core.DomainModel">
+      <property name="IdCommunity" type="Int32" column="repositoryIdCommunity"/>
+      <property name="IdPerson" type="Int32" column="repositoryIdPerson"/>
+      <property name="Type" type="lm.Comol.Core.FileRepository.Domain.RepositoryType,lm.Comol.Core.DomainModel" column="repositoryType" />
+    </component>
+  </class>
+</hibernate-mapping>

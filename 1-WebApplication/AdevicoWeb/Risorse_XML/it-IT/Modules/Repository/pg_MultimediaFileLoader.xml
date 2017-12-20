@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Resource xmlns="urn:ComolTranslation">
+  <item name="LoadFileNotExist">Il file richiesto NON esiste.</item>
+  <item name="LoadFileNoPermission">Non hai i permessi per visualizzare questo materiale</item>
+  <item name="InvalidType.FileStandard">Il file richiesto non è disponibile per il play ma solo per lo scaricamento.</item>
+  <item name="InvalidType.ScormPackage">Il file richiesto non è disponibile per il play ma solo per lo scaricamento.</item>
+  <item name="InvalidType.Folder">Il file richiesto non è disponibile per il play ma solo per lo scaricamento.</item>
+  <item name="InvalidType.VideoStreaming">Il file richiesto non è disponibile per il play ma solo per lo scaricamento.</item>
+  <item name="InvalidType.Multimedia">Il file richiesto non è disponibile per il play ma solo per lo scaricamento.</item>
+
+  <item name="NoReadyToPlay.FileStandard">Il file richiesto non è disponibile per il play.</item>
+  <item name="NoReadyToPlay.ScormPackage">Il file richiesto non è disponibile per il play.</item>
+  <item name="NoReadyToPlay.Folder">Il file richiesto non è disponibile per il play.</item>
+  <item name="NoReadyToPlay.VideoStreaming">Il file richiesto non è disponibile per il play.</item>
+  <item name="NoReadyToPlay.Multimedia">Il file richiesto non è ancora disponibile per la visualizzazione.</item>
+
+  <item name="TransferStatus.Multimedia_AnalyzeError" placeholder="true" mustcontains="{0}">(ERRORE: analisi pacchetto multimediale - codice errore:{0}).</item>
+  <item name="TransferStatus.Scorm_AnalyzeError" placeholder="true" mustcontains="{0}">(ERRORE: analisi pacchetto SCORM - codice errore:{0})."</item>
+  <item name="TransferStatus.FileTypeError" placeholder="true" mustcontains="{0}">(ERRORE: file non in formato corretto - codice errore:{0})."</item>
+  <item name="TransferStatus.UnableToUnzip" placeholder="true" mustcontains="{0}">(ERRORE: impossibile scompattare il file - codice errore:{0})."</item>
+  <item name="TransferStatus.ReadyForTransfer" placeholder="true" mustcontains="{0}">(file pronto per il trasferimento al media server - codice:{0})."</item>
+  <item name="TransferStatus.Copying" placeholder="true" mustcontains="{0}">(file in fase di trasferimento al media server - codice:{0})."</item>
+  <item name="TransferStatus.ReadyToUnzip" placeholder="true" mustcontains="{0}">(file pronto per essere scompattato - codice:{0})."</item>
+  <item name="TransferStatus.Unzipping" placeholder="true" mustcontains="{0}">(file in fase di decompressione - codice:{0})."</item>
+  <item name="TransferStatus.Unzipped" placeholder="true" mustcontains="{0}">(file trasferito e scompattato - codice:{0})."</item>
+  <item name="TransferStatus.ReadyToDelete" placeholder="true" mustcontains="{0}">(file sul media server pronto per la cancellazione - codice:{0})."</item>
+  <item name="TransferStatus.Deleted" placeholder="true" mustcontains="{0}">(file cancellato sul media server - codice:{0})."</item>
+  <item name="TransferStatus.Deleting" placeholder="true" mustcontains="{0}">(file in cancellazione sul media server - codice:{0})."</item>
+  <item name="TransferStatus.ReadyToAnalyze" placeholder="true" mustcontains="{0}">(file pronto per l'analisi - codice:{0})."</item>
+  <item name="TransferStatus.Analyzed" placeholder="true" mustcontains="{0}">(analisi della correttezza del file completata - codice:{0})."</item>
+  <item name="TransferStatus.UnzipFileNotFound" placeholder="true" mustcontains="{0}">(ERRORE: file trasferito sul media server NON individuato - codice errore:{0})."</item>
+  <item name="TransferStatus.UnableToDeleteAfterUnzip" placeholder="true" mustcontains="{0}">(ERRORE: file zip trasferito sul media server NON cancellato - codice errore:{0})."</item>
+  <item name="TransferStatus.UnzipFileNotFound" placeholder="true" mustcontains="{0}">(ERRORE: file scompattato sul media server NON è stato individuato - codice errore:{0})."</item>
+  <item name="TransferStatus.UploadFileNotFound" placeholder="true" mustcontains="{0}">(ERRORE: il file da trasferire sul media server NON è stato individuato - codice errore:{0})."</item>
+  <item name="TransferStatus.Error" placeholder="true" mustcontains="{0}">(ERRORE: errore generico - codice errore:{0})."</item>
+   
+
+  <item name="HYPback.text">Torna alla pagina precedente</item>
+  <item name="HYPback.ToolTip">Torna alla pagina precedente</item>
+  <item name="HYPback.status">Torna alla pagina precedente</item>
+
+  <item name="BTNsetDefault.text">Imposta default</item>
+  <item name="BTNsetDefault.ToolTip">Imposta il file da caricare di default nel player</item>
+  <item name="BTNsetDefault.status">Imposta il file da caricare di default nel player</item>
+  <item name="LTmultimediaInfo.text">Nessun file da caricare individuato nel pacchetto selezionato.</item>
+  <item name="serviceSettings_Title">Pacchetto multimediale - Scelta file principale del player</item>
+  <item name="ServiceSettings_NoPermission">Non hai i permessi per accedere a questa pagina</item>
+  <item name="LoadFileNoPermission">Nessun permesso per gestire il file, spiacente contattare l'amministratore di comunità o di sistema.</item>
+  <item name="LoadFileNotExist">ATTENZIONE: il file richiesto non è stato individuato.</item>
+  <item name="LoadFileWithoutIndex" html="true" placeholder="true" mustcontains="{0}|{1}|{2}">Il file &lt;img src="{1}"/&gt; {0} ({2}) non ha alcun documento di default da impostare.</item>
+  <item name="LoadInvalidFileType" html="true" placeholder="true" mustcontains="{0}|{1}|{2}">Il file &lt;img src="{1}"/&gt; {0} ({2}) non ha alcun documento di default da impostare.</item>
+  <item name="LTinfo.text">ATTENZIONE: una voce dell'albero a sinistra per selezionare il file da caricare di default all'apertura del pacchetto multimediale.</item>
+  
+</Resource>

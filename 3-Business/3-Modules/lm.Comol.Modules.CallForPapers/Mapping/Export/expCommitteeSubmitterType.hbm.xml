@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="lm.Comol.Modules.CallForPapers" namespace="lm.Comol.Modules.CallForPapers.Domain.Evaluation.Export">
+	<class name="expCommitteeSubmitterType" table="CP_CommitteeAssignedSubmitterType">
+		<id name="Id" column="Id" type="Int64">
+			<generator class="native"/>
+		</id>
+    <property name="IdSubmitterType" type="Int64" column="IdSubmitterType" />
+    <property name="Deleted" type="lm.Comol.Core.DomainModel.BaseStatusDeleted,lm.Comol.Core.DomainModel" column="_Deleted" />
+    <!--<many-to-one name="SubmitterType" class="lm.Comol.Modules.CallForPapers.Domain.SubmitterType" column="IdSubmitterType" foreign-key="IdSubmitterType" cascade="none" not-found="ignore" />-->
+  </class>
+</hibernate-mapping>

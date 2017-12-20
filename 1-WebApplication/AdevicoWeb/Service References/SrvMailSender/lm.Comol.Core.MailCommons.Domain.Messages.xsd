@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/lm.Comol.Core.MailCommons.Domain.Messages" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/lm.Comol.Core.MailCommons.Domain.Messages" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/lm.Comol.Core.MailCommons.Domain" />
+  <xs:complexType name="Message">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Attachments" nillable="true" type="q1:ArrayOfstring" />
+      <xs:element minOccurs="0" name="Body" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FatherUniqueIdentifier" type="ser:guid" />
+      <xs:element minOccurs="0" name="IdLanguage" type="xs:int" />
+      <xs:element minOccurs="0" name="PlainBody" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Recipients" nillable="true" type="tns:ArrayOfRecipient" />
+      <xs:element minOccurs="0" name="Settings" nillable="true" type="tns:MessageSettings" />
+      <xs:element minOccurs="0" name="Subject" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UniqueIdentifier" type="ser:guid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Message" nillable="true" type="tns:Message" />
+  <xs:complexType name="ArrayOfRecipient">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Recipient" nillable="true" type="tns:Recipient" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRecipient" nillable="true" type="tns:ArrayOfRecipient" />
+  <xs:complexType name="Recipient">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:UserMailAddress">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="IdCommunity" type="xs:int" />
+          <xs:element minOccurs="0" name="IdLanguage" type="xs:int" />
+          <xs:element minOccurs="0" name="IdModuleObject" type="xs:long" />
+          <xs:element minOccurs="0" name="IdModuleType" type="xs:int" />
+          <xs:element minOccurs="0" name="IdPerson" type="xs:int" />
+          <xs:element minOccurs="0" name="IdRole" type="xs:int" />
+          <xs:element minOccurs="0" name="IdUserModule" type="xs:long" />
+          <xs:element minOccurs="0" name="LanguageCode" nillable="true" type="xs:string" />
+          <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/lm.Comol.Core.MailCommons.Domain" minOccurs="0" name="Status" type="q2:RecipientStatus" />
+          <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/lm.Comol.Core.MailCommons.Domain" minOccurs="0" name="Type" type="q3:RecipientType" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Recipient" nillable="true" type="tns:Recipient" />
+  <xs:complexType name="UserMailAddress">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Address" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DisplayName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UserMailAddress" nillable="true" type="tns:UserMailAddress" />
+  <xs:complexType name="MessageSettings">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CopyToSender" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IdSkin" type="xs:long" />
+      <xs:element minOccurs="0" name="IsBodyHtml" type="xs:boolean" />
+      <xs:element minOccurs="0" name="NotifyToSender" type="xs:boolean" />
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/lm.Comol.Core.MailCommons.Domain" minOccurs="0" name="PrefixType" type="q4:SubjectPrefixType" />
+      <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/lm.Comol.Core.MailCommons.Domain" minOccurs="0" name="SenderType" type="q5:SenderUserType" />
+      <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/lm.Comol.Core.MailCommons.Domain" minOccurs="0" name="Signature" type="q6:Signature" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MessageSettings" nillable="true" type="tns:MessageSettings" />
+</xs:schema>

@@ -1,0 +1,1147 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--de version-->
+<Resource xmlns="urn:ComolTranslation">
+  <!-- WIZARD -->
+  <item name="WizardProjectStep.Settings">Impostazioni</item>
+  <item name="WizardProjectStep.Settings.ToolTip">Impostazioni</item>
+  <item name="WizardProjectStepMessage.Settings.Draft">In bozza</item>
+  <item name="WizardProjectStepMessage.Settings.Active">Attivo</item>
+  <item name="WizardProjectStepMessage.Settings.Closed">Chiuso</item>
+  <item name="WizardProjectStepMessage.Settings.Suspended">Sospeso</item>
+  <item name="WizardProjectStep.ProjectUsers">Risorse</item>
+  <item name="WizardProjectStep.ProjectUsers.ToolTip">Risorse di progetto</item>
+  <item name="WizardProjectStep.Calendars">Calendario</item>
+  <item name="WizardProjectStep.Calendars.ToolTip">Calendario date esclusioni</item>
+  <item name="WizardProjectStep.Calendars.n">Calendari</item>
+  <item name="WizardProjectStep.Calendars.n.ToolTip">Calendari date esclusioni</item>
+  <item name="WizardProjectStep.Documents">Allegati</item>
+  <item name="WizardProjectStep.Documents.ToolTip">Allegati</item>
+  <item name="WizardProjectStepMessage.ProjectUsers.NoResource">Nessuna risorsa.</item>
+  <item name="WizardProjectStepMessage.ProjectUsers.0.1">Un manager.</item>
+  <item name="WizardProjectStepMessage.ProjectUsers.0.n" mustcontains="{0}" placeholder="true">{0} manager.</item>
+  <item name="WizardProjectStepMessage.ProjectUsers.1.0" >Una risorsa.</item>
+  <item name="WizardProjectStepMessage.ProjectUsers.1.1" >Una risorsa ed un manager.</item>
+  <item name="WizardProjectStepMessage.ProjectUsers.1.n" mustcontains="{0}" placeholder="true">Una risorsa e {0} manager.</item>
+  <item name="WizardProjectStepMessage.ProjectUsers.n.0" mustcontains="{0}" placeholder="true">{0} risorse.</item>
+  <item name="WizardProjectStepMessage.ProjectUsers.n.1" mustcontains="{0}" placeholder="true">{0} risorse ed un manager.</item>
+  <item name="WizardProjectStepMessage.ProjectUsers.n.n" mustcontains="{0}|{0}" placeholder="true">{0} risorse; {1} manager.</item>
+  <item name="WizardProjectStepMessage.Calendars.NoCalendars">Nessun calendario definito</item>
+  <item name="WizardProjectStepMessage.Calendars.0.0">Nessuna.</item>
+  <item name="WizardProjectStepMessage.Calendars.0.1">Una data presente.</item>
+  <item name="WizardProjectStepMessage.Calendars.0.n" mustcontains="{0}" placeholder="true">{0} date presenti.</item>
+  <item name="WizardProjectStepMessage.Calendars.1.1">Una data presente.</item>
+  <item name="WizardProjectStepMessage.Calendars.1.n" mustcontains="{0}" placeholder="true">{0} date presenti.</item>
+  <item name="WizardProjectStepMessage.Calendars.n.0" mustcontains="{0}" placeholder="true">{0} calendari</item>
+  <item name="WizardProjectStepMessage.Calendars.n.1" mustcontains="{0}" placeholder="true">{0} calendari, una data presente.</item>
+  <item name="WizardProjectStepMessage.Calendars.n.n" mustcontains="{0}|{1}" placeholder="true">{0} calendari, {1} date presenti.</item>
+
+  <item name="HYPbackToProjectsBottom.text">Torna alla lista</item>
+  <item name="HYPbackToProjectsBottom.ToolTip">Torna alla lista dei progetto</item>
+  <item name="HYPbackToProjectsTop.text">Torna alla lista</item>
+  <item name="HYPbackToProjectsTop.ToolTip">Torna alla lista dei progetto</item>
+
+  <!-- SETTINGS STEP-->
+  <item name="ServiceTitle.AddProject">Creazione nuovo progetto</item>
+  <item name="ServiceTitle.AddProject.ToolTip">Creazione nuovo progetto</item>
+  <item name="ServiceTitle.EditProject">Modifica progetto</item>
+  <item name="ServiceTitle.EditProject.ToolTip">Modifica progetto</item>
+  <item name="BTNaddProjectTop.text">Crea</item>
+  <item name="BTNaddProjectTop.ToolTip">Crea il progetto in modalità bozza</item>
+  <item name="BTNaddProjectBottom.text">Crea</item>
+  <item name="BTNaddProjectBottom.ToolTip">Crea il progetto in modalità bozza</item>
+
+  <item name="DisplayNotAvailableComunity">Non è possibile creare un progetto in una comunità non esistente in piattaforma.</item>
+  <item name="DisplayNotAvailableForAddCommunityProject">Non le è consentito di creare un progetto di comunità.</item>
+  <item name="DisplayNotAvailableForAddPersonalProject">Non le è consentito di creare un progetto personale.</item>
+  <item name="DisplayNotAvailableForAddPortalProject">Non le è consentito di creare un progetto di portale.</item>
+  <item name="DisplayProjectAddError">IMPOSSIBILE creare il progetto desiderato.</item>
+  <item name="DisplayProjectAddError.StartDate.FlagDayOfWeek">IMPOSSIBILE creare il progetto desiderato, indicare la data di inizio ed i giorni lavorativi.</item>
+  <item name="DisplayProjectAddError.FlagDayOfWeek">IMPOSSIBILE creare il progetto desiderato, è necessario indicare almeno un giorno lavorativo settimanale.</item >
+  <item name="DisplayProjectAddError.StartDate">IMPOSSIBILE creare il progetto desiderato, è necessario indicare la data di inizio del progetto</item>
+
+  <item name="GetDefaultProjectName">Nuovo progetto - </item>
+  <item name="GetDefaultCalendarName">Calendario principale</item>
+  <item name="GetDefaultActivityName">Attività -</item>
+  <item name="GetCalendarName">Calendario -</item>
+  <item name="GetTranslateLastDateError">La data di FINE progetto NON può essere antecedente a quella di INIZIO </item>
+  <item name="GetTranslateDeadlineDateError">La data LIMITE per la conclusione del progetto NON può essere antecedente a quella di INIZIO </item>
+
+  <item name="LBprojectName_t.text">*Nome:</item>
+  <item name="LBprojectIsPersonal.text">(progetto personale)</item>
+  <item name="LBprojectActivitiesToAdd_t.text">Crea:</item>
+  <item name="LBprojectActivitiesToAdd.text">attività insieme al progetto.</item>
+  <item name="RNVactivitiesToAdd.ErrorMessage">(indicare un valore fra 0 e 500)</item>
+
+
+  <item name="LBprojectDescription_t.text">Descrizione:</item>
+  <item name="LBstartdate_t.text">*Inizio:</item>
+  <item name="LBendDate_t.text">Fine:</item>
+  <item name="CSVstartEndDate.ErrorMessage">La data di fine progetto deve essere maggiore della data di inizio.</item>
+  <item name="LBdeadline_t.text">Data limite:</item>
+  <item name="LBdeadline.text">entro la quale il progetto DEVE essere completato.</item>
+  <item name="CSVdeadline.ErrorMessage">La data limite progetto NON può essere antecedente alla data di inizio.</item>
+  <item name="LBduration_t.text">Durata:</item>
+  <item name="LBweekcalendar_t.text">Calendario:</item>
+  <item name="HYPmonday.text">Lun</item>
+  <item name="HYPmonday.ToolTip">Lunedì</item>
+  <item name="HYPmonday.status">Lunedì</item>
+  <item name="HYPtuesday.text">Mar</item>
+  <item name="HYPtuesday.ToolTip">Martedì</item>
+  <item name="HYPtuesday.status">Martedì</item>
+  <item name="HYPwednesday.text">Mer</item>
+  <item name="HYPwednesday.ToolTip">Mercoledì</item>
+  <item name="HYPwednesday.status">Mercoledì</item>
+  <item name="HYPthursday.text">Gio</item>
+  <item name="HYPthursday.ToolTip">Giovedì</item>
+  <item name="HYPthursday.status">Giovedì</item>
+  <item name="HYPfriday.text">Ven</item>
+  <item name="HYPfriday.ToolTip">Venerdì</item>
+  <item name="HYPfriday.status">Venerdì</item>
+  <item name="HYPsaturday.text">Sab</item>
+  <item name="HYPsaturday.ToolTip">Sabato</item>
+  <item name="HYPsaturday.status">Sabato</item>
+  <item name="HYPsunday.text">Dom</item>
+  <item name="HYPsunday.ToolTip">Domenica</item>
+  <item name="HYPsunday.status">Domenica</item>
+  <item name="CBLweekcalendar.Monday">Lun</item>
+  <item name="CBLweekcalendar.Tuesday">Mar</item>
+  <item name="CBLweekcalendar.Wednesday">Mer</item>
+  <item name="CBLweekcalendar.Thursday">Gio</item>
+  <item name="CBLweekcalendar.Friday">Ven</item>
+  <item name="CBLweekcalendar.Saturday">Sab</item>
+  <item name="CBLweekcalendar.Sunday">Dom</item>
+
+
+
+  <item name="HYPmanageCalendars.text">Calendario date escluse</item>
+  <item name="HYPmanageCalendars.ToolTip">Visualizza il calendario con la lista delle date escluse dalle attività di progetto.</item>
+  <item name="manageCalendarsText.0.0">Gestione calendario</item>
+  <item name="manageCalendarsToolTip.0.0">Visualizza la pagina per la gestione del calendario con la lista delle date escluse dalle attività di progetto.</item>
+  <item name="manageCalendarsText.0.1">Gestione calendario (una eccezione presente)</item>
+  <item name="manageCalendarsToolTip.0.1">Visualizza la pagina per la gestione del calendario con la lista delle date escluse dalle attività di progetto.</item>
+  <item name="manageCalendarsText.0.n" mustcontains="{0}" placeholder="true">Gestione calendario ({0} presenti)</item>
+  <item name="manageCalendarsToolTip.0.n">Visualizza la pagina per la gestione del calendario con la lista delle date escluse dalle attività di progetto.</item>
+  <item name="manageCalendarsText.1.0">Calendario date escluse</item>
+  <item name="manageCalendarsToolTip.1.0">Visualizza il calendario con la lista delle date escluse dalle attività di progetto.</item>
+  <item name="manageCalendarsText.1.1">Gestione calendario (una eccezione presente)</item>
+  <item name="manageCalendarsToolTip.1.1">Visualizza la pagina per la gestione del calendario con la lista delle date escluse dalle attività di progetto.</item>
+  <item name="manageCalendarsText.1.n" mustcontains="{0}" placeholder="true">Gestione calendario ({0} presenti)</item>
+  <item name="manageCalendarsToolTip.1.n">Visualizza la pagina per la gestione del calendario con la lista delle date escluse dalle attività di progetto.</item>
+  <item name="manageCalendarsText.n.0" mustcontains="{0}" placeholder="true">Gestione calendari ({0} presenti)</item>
+  <item name="manageCalendarsToolTip.n.0" >Visualizza la pagina per la gestione dei calendari con la lista delle date escluse dalle attività di progetto.</item>
+  <item name="manageCalendarsText.n.1" mustcontains="{0}" placeholder="true">Gestione calendari ({0} presenti, una data esclusa)</item>
+  <item name="manageCalendarsToolTip.n.1" >Visualizza la pagina per la gestione dei calendari con la lista delle date escluse dalle attività di progetto.</item>
+  <item name="manageCalendarsText.n.n" mustcontains="{0}|{1}" placeholder="true">Gestione calendari ({0} presenti, {1} date escluse)</item>
+  <item name="manageCalendarsToolTip.n.n" >Visualizza la pagina per la gestione dei calendari con la lista delle date escluse dalle attività di progetto.</item>
+  <item name="LBprojectOwner_t.text">Proprietario:</item>
+  <item name="LNBselectOwnerFromResources.text">Seleziona fra le risorse</item>
+  <item name="LNBselectOwnerFromResources.ToolTip">Seleziona il proprietario dalle risorse di progetto.</item>
+  <item name="LNBselectOwnerFromCommunity.text">Seleziona dalla comunità</item>
+  <item name="LNBselectOwnerFromCommunity.ToolTip">Seleziona il proprietario dagli utenti della comunità del progetto.</item>
+  <item name="LBprojectDefaultResourceForActivity_t.text">Risorse predefinite:</item>
+  <item name="LBdefaultResourceForActivity.text">imposta</item>
+
+  <item name="LBdefaultResourceForActivityDescription.text">Indica le risorse da assegnare in automatico quando si crea una nuova attività di progetto.</item>
+  <item name="LBselectDefaultResources_t.text">Seleziona le risorse:</item>
+  <item name="DefaulResources.data-placeholder">Nessuna risorsa selezionata</item>
+  <item name="LBprojectAvailability_t.text">Progetto:</item>
+  <item name="RBLavailability.Draft">In bozza</item>
+  <item name="RBLavailability.Active">Attivo</item>
+  <item name="RBLavailability.Closed">Chiuso</item>
+  <item name="RBLavailability.Suspended">Temporanemanente sospeso</item>
+  <item name="LBcompletion_t.text">Completamento:</item>
+  <item name="LBcompletion.text" mustcontains="{0}" placeholder="true">{0}%</item>
+
+  <item name="LBprojectStatus_t.text" disambiguation="status: attivo/chiuso/in corso/valutazione">Status:</item>
+  <item name="Project.Select.ProjectItemStatus.suspended">sospeso</item>
+  <item name="Project.Select.ProjectItemStatus.started">iniziato</item>
+  <item name="Project.Select.ProjectItemStatus.completed">completato</item>
+  <item name="Project.Select.ProjectItemStatus.notstarted">non iniziato</item>
+  <item name="LBprojectAllowMilestones_t.text">Milestone:</item>
+  <item name="LBprojectAllowMilestones.text">consenti</item>
+  <item name="LBprojectAllowMilestonesDescription.text">Consente l'inserimento di attività di tipo "Milestone", ossia di attività di durata 0.</item>
+  <item name="LBprojectVisibility_t.text">Visibilità progetto:</item>
+  <item name="LBprojectVisibility.text">completa</item>
+  <item name="LBprojectVisibilityDescription.text">Imposta la visibilità del progetto per le risorse coinvolte. La visibilità può essere limitata alle sole attività assegnate all'utente a titolo di risorsa, oppure completa.</item>
+  <item name="LBprojectConfirmCompletion_t.text">Completamento attività:</item>
+  <item name="LBprojectConfirmCompletion.text">confermata da un manager</item>
+  <item name="LBprojectConfirmCompletionDescription.text">Imposta se le attività verranno impostate automaticamente come completate quando tutte le risorse assegnate indicheranno un completamento del 100%, oppure se necessiteranno di una verifica da parte del gestore del progetto o di uno degli eventuali manager.</item>
+  <item name="LBprojectDateCalculationByCpm_t.text">Date attività:</item>
+  <item name="LBprojectDateCalculationByCpm.text">automatiche tramite CPM:</item>
+  <item name="LBprojectDateCalculationByCpmDescription.text">Consente di stabilire se le date delle singole attività verranno gestite in automatico dal sistema in base alla durata ed eventuali predecessori, oppure se verranno gestite manualmente dall'utente.</item>
+  <item name="LBallowEstimatedDuration_t.text">Durate stimate:</item>
+  <item name="LBallowEstimatedDuration.text">consenti</item>
+  <item name="LBallowEstimatedDurationDescription.text">Impostazione  che consente di stabilire se sia o meno possibile inserire nel progetto delle attività di durata non ancora definita e quindi stimata. Ad esempio, una attività con durata "6?g" è una attività con durata stimata di 6 giorni.</item>
+  <item name="LBprojectSummaryActivities_t.text">Attività riepilogo:</item>
+  <item name="LBprojectSummaryActivities.text">consenti</item>
+  <item name="LBprojectSummaryActivitiesDescription.text">Impostazione che consente di stabilire se sia o meno possibile inserire nel progetto delle attività di riepilogo. Nel caso in cui si utilizzi la CPM NON sarà possibile creare delle dipendenze da e verso attività di riepilogo.</item>
+
+  <!-- Edit SETTINGS Wizard Step-->
+
+  <item name="ConfirmSettingsDialogTitleTranslation">Conferma le impostazioni di progetto</item>
+  <item name="SelectOwnerFromCommunityDialogTitleTranslation">Selezione proprietario da comunità</item>
+  <item name="SelectOwnerFromMyCommunitiesDialogTitleTranslation">Selezione proprietario dalle mie comunità</item>
+  <item name="SelectOwnerFromPortalDialogTitleTranslation">Selezione proprietario dal portale</item>
+  <item name="SelectOwnerFromProjectResourceslDialogTitleTranslation">Selezione proprietario dalle risorse di progetto</item>
+
+  <item name="BTNsaveProjectSettingsBottom.text">Salva</item>
+  <item name="BTNsaveProjectSettingsBottom.ToolTip">Salva le impostazioni di progetto</item>
+  <item name="BTNsaveProjectSettingsTop.text">Salva</item>
+  <item name="BTNsaveProjectSettingsTop.ToolTip">Salva le impostazioni di progetto</item>
+  <item name="DisplayUnknownProject.Settings">Progetto non individuato, impossibile visualizzarne le impostazioni.</item>
+  <item name="DisplayAddedInfo">Il progetto è stato creato correttamente in modalità bozza, è ora possibile modificarne le impostazioni, aggiungere le risorse, creare le attività, ecc.</item>
+  <item name="DisplayAddedInfo.1">Il progetto è stato creato correttamente in modalità bozza ed è stata creata già una attività predefinita. Da questo momento è possibile modificarne le impostazioni, aggiungere le risorse, creare le attività, ecc.</item>
+  <item name="DisplayAddedInfo.n" placeholder="true" mustcontains="{0}">Il progetto è stato creato correttamente in modalità bozza e sono state create {0} attività associate. Da questo momento è possibile modificarne le impostazioni, aggiungere le risorse, creare le attività, ecc.</item>
+  <item name="DisplayAddedInfo.error.0">Il progetto è stato creato correttamente in modalità bozza ma non è stata creata alcuna attività predefinita. Da questo momento è possibile modificarne le impostazioni, aggiungere le risorse, creare le attività, ecc.</item>
+  <item name="DisplayAddedInfo.error.1" placeholder="true" mustcontains="{0}">Il progetto è stato creato correttamente in modalità bozza ma è stata creata solo una attività predefinita su {0} richieste. Da questo momento è possibile modificarne le impostazioni, aggiungere le risorse, creare le attività, ecc.</item>
+  <item name="DisplayAddedInfo.error.n" placeholder="true" mustcontains="{0}|{1}">Il progetto è stato creato correttamente in modalità bozza ma sono state create solo {0} attività associate su {1} richieste. Da questo momento è possibile modificarne le impostazioni, aggiungere le risorse, creare le attività, ecc.</item>
+  <item name="SelectOwnerFromCommunity.Description">Selezionare l'utente da aggiungere come proprietario del progetto:</item>
+  <item name="SelectOwnerFromProject.Description">Selezionare la risorsa interna da rendere proprietaria del progetto:</item>
+
+  <item name="BTNcancelSelectResourceOwner.text">Annulla</item>
+  <item name="BTNcancelSelectResourceOwner.ToolTip">Annulla la selezione di un nuovo proprietario del progetto.</item>
+  <item name="BTNselectResourceOwner.text">Conferma</item>
+  <item name="BTNselectResourceOwner.ToolTip">Conferma la selezione del nuovo proprietario</item>
+  <item name="DefaulOwnerResources.data-placeholder">Seleziona il proprietario</item>
+
+  <item name="DisplayOwnerChanged" placeholder="true" mustcontains="{0}">Il proprietario del progetto è ora {0}</item>
+  <item name="DisplayUnableToChangeOwner">Non è stato possibile modificare il proprietario del progetto</item>
+  <item name="DisplayProjectSavingError">Non è stato possibile salvare le impostazioni di progetto</item>
+  <item name="DisplayProjectSavingError">IMPOSSIBILE salvare le impostazioni di progetto</item>
+  <item name="DisplayProjectSavingError.StartDate.FlagDayOfWeek">IMPOSSIBILE salvare le impostazioni di progetto, indicare la data di inizio ed i giorni lavorativi.</item>
+  <item name="DisplayProjectSavingError.FlagDayOfWeek">IMPOSSIBILE salvare le impostazioni di progetto, è necessario indicare almeno un giorno lavorativo settimanale.</item >
+  <item name="DisplayProjectSavingError.StartDate">IMPOSSIBILE salvare le impostazioni di progetto, è necessario indicare la data di inizio del progetto</item>
+  <item name="DisplayProjectSaved" >Impostazioni salvate correttamente.</item>
+
+  <!-- Confirm Settings-->
+
+  <item name="IViewConfirmSettingsToApply.DisplaySessionTimeout">Sessione di lavoro conclusa, impossibile procedere con il salvataggio delle impostazioni.</item>
+  <item name="IViewConfirmSettingsToApply.DisplayNoPermissionToApply">Sessione di lavoro conclusa, NON disponi attualmente dei permessi di modificare le impostazioni di progetto.</item>
+  <item name="BTNcancelSettingsActions.text">Chiudi</item>
+  <item name="BTNcancelSettingsActions.ToolTip">Chiudi la finestra e modifica le impostazioni</item>
+  <item name="BTNapplySettingsActions.text">Conferma</item>
+  <item name="BTNapplySettingsActions.ToolTip">Conferma le azioni prescelte</item>
+
+  <item name="ConfirmActions.manualactions.Apply.name">Applica</item>
+  <item name="ConfirmActions.manualactions.Apply.description">Il progetto verrà trasformato da progetto con date inserite manualmente a date calcolate in automatico tramite CPM;</item>
+  <item name="ConfirmActions.manualactions.Hold.name">Mantieni l'attuale</item>
+  <item name="ConfirmActions.manualactions.Hold.description">Il progetto rimane con l'attuale calcolo delle date, ossia MANUALE;</item>
+
+  <item name="ConfirmActions.cpmactions.Apply.name">Applica</item>
+  <item name="ConfirmActions.cpmactions.Apply.description">Il progetto verrà trasformato da progetto con date calcolate tramite CPM a date gestite MANUALMENTE;</item>
+  <item name="ConfirmActions.cpmactions.Hold.name">Mantieni l'attuale</item>
+  <item name="ConfirmActions.cpmactions.Hold.description">Il progetto rimane con l'attuale calcolo delle date, ossia AUTOMATICO;</item>
+
+  <item name="ConfirmActions.estimatedactions.Apply.name">Applica</item>
+  <item name="ConfirmActions.estimatedactions.Apply.description">Il progetto NON consentirà più l'inserimento di date stimate, tutte le attuali date stimate diventeranno effettive;</item>
+  <item name="ConfirmActions.estimatedactions.Hold.name">Mantieni l'attuale</item>
+  <item name="ConfirmActions.estimatedactions.Hold.description">Il progetto rimane con l'attuale gestione delle date stimate, ossia saranno CONSENTITE;</item>
+
+  <item name="ConfirmActions.milestonesactions.Apply.name">Applica</item>
+  <item name="ConfirmActions.milestonesactions.Apply.description">Il progetto NON consentirà più l'inserimento di milestones (ossia attività con durata pari a 0), tutte le attuali milestones diventeranno attività di durata 1 giorno;</item>
+  <item name="ConfirmActions.milestonesactions.Hold.name">Mantieni l'attuale</item>
+  <item name="ConfirmActions.milestonesactions.Hold.description">Il progetto rimane con l'attuale gestione delle milestones, ossia saranno CONSENTITE;</item>
+
+  <item name="ConfirmActions.summariesations.Apply.name">Applica</item>
+  <item name="ConfirmActions.summariesations.Apply.description">Il progetto NON consentirà più l'inserimento di attività di riepilogo, tutte le attuali attività di riepilogo saranno eliminate;</item>
+  <item name="ConfirmActions.summariesations.Hold.name">Mantieni l'attuale</item>
+  <item name="ConfirmActions.summariesations.Hold.description">Il progetto rimane con l'attuale gestione delle attività di riepilogo, ossia saranno CONSENTITE;</item>
+
+  <item name="ConfirmActions.dateactions.Apply.name">Applica</item>
+  <item name="ConfirmActions.dateactions.Apply.description">La data di inizio progetto sarà modificata e saranno ricalcolate data di fine e durata;</item>
+  <item name="ConfirmActions.dateactions.Hold.name">Mantieni l'attuale</item>
+  <item name="ConfirmActions.dateactions.Hold.description">La data di inizio progetto NON sarà modificata;</item>
+
+  <item name="LBdateactionsInfo_t.text" placeholder="true" mustcontains="{0}|{1}">La data attuale di inizio progetto è {0}, la nuova data sarà {1}:</item>
+  <item name="LBcpmactionsInfo_t.n" placeholder="true" mustcontains="{0}">Passaggio al sistema di calcolo delle date tramite CPM, attualmente nel progetto esistono {0} attività:</item>
+  <item name="LBcpmactionsInfo_t.text">Passaggio al sistema di calcolo delle date tramite CPM, attualmente nel progetto esiste una sola attività:</item>
+  <item name="LBmanualactionsInfo_t.n" placeholder="true" mustcontains="{0}">Passaggio al sistema di calcolo delle date MANUALE, attualmente nel progetto esistono {0} attività:</item>
+  <item name="LBmanualactionsInfo_t.text">Passaggio al sistema di calcolo delle date MANUALE, attualmente nel progetto esiste una sola attività:</item>
+  <item name="LBmilestonesactionsInfo_t.n" placeholder="true" mustcontains="{0}">Disabilitare le milestones (attività durata 0), attualmente nel progetto ne esistono {0}:</item>
+  <item name="LBmilestonesactionsInfo_t.text">Rimozione della possibilità di utilizzare milestones (attività durata 0), attualmente nel progetto ne esiste una sola:</item>
+  <item name="LBsummariesactionsInfo_t.n" placeholder="true" mustcontains="{0}">Disabilitare le attività di riepilogo, attualmente nel progetto ne esistono {0}:</item>
+  <item name="LBsummariesactionsInfo_t.text">Rimozione della possibilità di utilizzare attività di riepilogo, attualmente nel progetto ne esiste una sola:</item>
+  <item name="LBestimatedactionsInfo_t.n" placeholder="true" mustcontains="{0}">Disabilitare la durata stimata delle attività, attualmente nel progetto ne esistono {0}:</item>
+  <item name="LBestimatedactionsInfo_t.text">Disabilitare la durata stimata delle attività, attualmente nel progetto ne esiste una sola:</item>
+
+
+
+
+  <!-- Resource Wizard Step-->
+  <item name="ServiceTitle.ProjectResources">Gestione risorse progetto</item>
+  <item name="ServiceTitle.ProjectResources.ToolTip">Gestione risorse progetto</item>
+  <item name="ExternalDialogTitleTranslation">Aggiunta risorse esterne alla piattaforma</item>
+  <item name="InternalDialogTitleTranslation">Aggiunta risorse dalla comunità</item>
+  <item name="RemoveResourceDialogTitleTranslation">Conferma rimozione risorsa</item>
+
+  <item name="UnknownUser">Utente rimosso</item>
+  <item name="DisplayUnknownProject.Resources">Progetto non individuato, impossibile visualizzarne le risorse.</item>
+
+
+
+  <item name="BTNsaveResourcesTop.text">Salva impostazioni</item>
+  <item name="BTNsaveResourcesBottom.text">Salva impostazioni</item>
+  <item name="BTNsaveResourcesBottom.ToolTip">Salva impostazioni sulle risorse di progetto</item>
+  <item name="BTNsaveResourcesTop.text">Salva impostazioni</item>
+  <item name="BTNsaveResourcesTop.ToolTip">Salva impostazioni sulle risorse di progetto</item>
+  <item name="LNBaddUsersFromCommunity.text">Aggiungi da comunità</item>
+  <item name="LNBaddUsersFromCommunity.ToolTip">Aggiungi risorse da comunità</item>
+  <item name="LNBaddCustomUsers.text">Aggiungi esterni</item>
+  <item name="LNBaddCustomUsers.ToolTip">Aggiungi risorse esterne alla piattaforma</item>
+  <item name="LNBaddCustomUser.text">Aggiungi esterno</item>
+  <item name="LNBaddCustomUser.ToolTip">Aggiungi risorsa esterna alla piattaforma</item>
+  <item name="SelectResourcesFromCommunity.Description">Selezionare gli utenti da aggiungere come risorse del progetto:</item>
+  <item name="AddExternalResource.Description">Specificare le risorse esterne da aggiungere al progetto:</item>
+  <item name="RemoveResource.Description" mustcontains="{0}" placeholder="true">Selezionare le azioni da compiere per rimuovere la risorsa {0} dal progetto:</item>
+
+  <item name="BTNsaveProjectResources.text">Salva</item>
+  <item name="BTNsaveProjectResources.ToolTip">Salva le impostazioni specificate</item>
+  <item name="BTNcancelSaveProjectResources.text">Chiudi</item>
+  <item name="BTNcancelSaveProjectResources.ToolTip">Chiudi la finestra senza salvare le modifiche</item>
+  <item name="LBresourceListTitle.text">Risorse di progetto</item>
+  <item name="LTlongName_t.text">Nome</item>
+  <item name="LTshortName_t.text">Abbreviazione</item>
+  <item name="LTprojectVisibility.text">Visione mappa</item>
+  <item name="LTprojectRole_t.text">Ruolo</item>
+  <item name="LTaction_t.text">Azione</item>
+  <item name="LBprojectRole.text">Manager</item>
+  <item name="LBprojectRole.Owner">Proprietario</item>
+  <item name="LBprojectVisibility.text">Completa</item>
+  <item name="BTNdelete.ToolTip">Rimuovi la risorsa selezionata</item>
+  <item name="LBshowextraUserItems.text" mustcontains="{0}" placeholder="true">Mostra tutte ({0}  risorse)</item>
+  <item name="LBhideextraUserItems.text" mustcontains="{0}" placeholder="true">Comprimi la tabella (mostra le prime {0} risorse)</item>
+  <item name="LBshowextraUserItems.ToolTip">Espandi la tabella delle risorse.</item>
+  <item name="LBhideextraUserItems.ToolTip">Comprimi la tabella delle risorse.</item>
+
+  <item name="DisplayNoResources">Nessuna risorsa presente nel progetto</item>
+  <item name="DisplaySavedSettings">Impostazioni sulle risorse salvate correttamente</item>
+
+  <item name="DisplayUnableToAddExternalResource">NON è stato possibile aggiungere una risorsa esterna</item>
+  <item name="DisplayUnableToAddExternalResources">NON è stato possibile aggiungere le risorse esterne</item>
+  <item name="DisplayUnableToSaveResources">NON è stato possibile salvare le impostazioni sulle risorse visualizzate</item>
+  <item name="DisplayUnableToAddInternalResource">NON è stato possibile aggiungere la risorsa interna selezionata</item>
+  <item name="DisplayUnableToAddInternalResources">NON è stato possibile aggiungere le risorse interne selezionate</item>
+  <item name="DisplayUnableToRemoveResource" mustcontains="{0}" placeholder="true">NON è stato possibile rimuovere la risorsa "{0}"</item>
+  <item name="DisplayRemovedResource" mustcontains="{0}" placeholder="true">La risorsa "{0}" è stata rimossa dal progetto</item>
+  <item name="DisplayResourceAdded.1">La risorsa è stata aggiunta al progetto correttamente.</item>
+  <item name="DisplayResourceAdded.n" mustcontains="{0}" placeholder="true">Le {0} risorse sono state aggiunte al progetto correttamente.</item>
+  <item name="DisplayErrors.0.1">E' presente nella lista una risorsa con nome breve duplicato.</item>
+  <item name="DisplayErrors.0.n">Sono presenti nella lista {0} risorse con nome breve duplicato.</item>
+  <item name="DisplayErrors.1.0">E' presente nella lista una risorsa con nome lungo duplicato.</item>
+  <item name="DisplayErrors.1.1">Sono presenti nella lista una risorsa con nome lungo ed una con nome breve.</item>
+  <item name="DisplayErrors.1.n" mustcontains="{0}" placeholder="true">E' presente nella lista una risorsa con nome lungo duplicato e {0} con nome breve.</item>
+  <item name="DisplayErrors.n.0" mustcontains="{0}" placeholder="true">Sono presenti nella lista {0} risorse con nome lungo duplicato.</item>
+  <item name="DisplayErrors.n.1">Sono presenti nella lista {0} risorse con nome lungo duplicato e una con nome breve</item>
+  <item name="DisplayErrors.n.n" mustcontains="{0}|{1}" placeholder="true">Sono presenti nella lista nomi duplicati: {0} risorse con nome lungo e {1} con nome breve.</item>
+
+  <item name="LBexternalResourcesListTitle.text">Risorse esterne:</item>
+  <item name="LTmail_t.text">Mail</item>
+  <item name="BTNaddExternalResources.text">Aggiungi</item>
+  <item name="BTNaddExternalResources.ToolTip">Aggiungi le risorse esterne alla piattaforma indicate nella lista.</item>
+  <item name="BTNcancelExternalResources.text">Annulla</item>
+  <item name="BTNcancelExternalResources.ToolTip">Annulla l'inserimento di risorse esterne alla piattaforma.</item>
+  <item name="BTNapplyRemoveResource.text">Conferma</item>
+  <item name="BTNapplyRemoveResource.ToolTip">Conferma l'azione da compiere</item>
+  <item name="BTNcancelRemoveResource.text">Annulla</item>
+  <item name="BTNcancelRemoveResource.ToolTip">Annulla la rimozione della risorsa.</item>
+  <item name="name.RemoveAction.None"></item>
+  <item name="name.RemoveAction.FromNotCompletedAssignments">Rimuovi dalle attività non completate</item>
+  <item name="name.RemoveAction.FromNotStartedAssignments">Rimuovi dalle attività non iniziate</item>
+  <item name="name.RemoveAction.FromAllAndRecalculateCompletion">Rimuovi e ricalcola il completamento</item>
+  <item name="name.RemoveAction.FromNotCompletedAssignmentsAndRecalculateCompletion">Rimuovi dalle attività non completate e ricalcola</item>
+  <item name="name.RemoveAction.FromAllAssignments">Rimuovi da tutto</item>
+  <item name="description.RemoveAction.None"></item>
+  <item name="description.RemoveAction.FromNotCompletedAssignments">Rimuovi SOLO l'assegnazione dalle attività non completate ed annulla la rimozione dalle risorse di progetto.</item>
+  <item name="description.RemoveAction.FromAllAndRecalculateCompletion">Rimuovi dalle risorse di progetto ed effettua il ricalcolo del completamento su tutte le attività assegnate.</item>
+  <item name="description.RemoveAction.FromNotStartedAssignments">Rimuovi SOLO l'assegnazione dalle attività non iniziate ed annulla la rimozione dalle risorse di progetto.</item>
+  <item name="description.RemoveAction.FromNotCompletedAssignmentsAndRecalculateCompletion">Rimuovi SOLO l'assegnazione dalle attività non iniziate ricalcolandone il completamento.</item>
+  <item name="description.RemoveAction.FromAllAssignments">Rimuovi dalle risorse di progetto e da tutte le attività assegnate.</item>
+
+  <item name="IViewConfirmResourceToRemove.NoPermissionToRemoveResource" mustcontains="{0}" placeholder="true">Non disponi dei permessi per rimuovere la risorsa &lt;span class="resource"&gt;"{0}"&lt;/span&gt; da questo progetto.</item>
+  <item name="IViewConfirmResourceToRemove.DisplaySessionTimeout">Sessione di lavoro terminata, impossibile continuare con l'azione richiesta.</item>
+  <item name="IViewConfirmResourceToRemove.DisplayUnknownResource">Spiacente, non è stata trovata nel progetto la risorsa che si desidera rimuovere</item>
+  <item name="IViewConfirmResourceToRemove.DisplayUnknownResource.Name" mustcontains="{0}" placeholder="true">Spiacente, non è stata trovata nel progetto la risorsa {0}</item>
+  <item name="LBdescriptionAssignedTasks.0.0"></item>
+  <item name="LBdescriptionAssignedTasks.0.1">(una attività completata)</item>
+  <item name="LBdescriptionAssignedTasks.0.n">({0} attività completate)</item>
+  <item name="LBdescriptionAssignedTasks.1.0">(una attività assegnata)</item>
+  <item name="LBdescriptionAssignedTasks.1.1">(una attività assegnata e una completata)</item>
+  <item name="LBdescriptionAssignedTasks.1.n">(una attività assegnata e {0} completate)</item>
+  <item name="LBdescriptionAssignedTasks.n.0">({0} attività assegnate)</item>
+  <item name="LBdescriptionAssignedTasks.n.1">({0} attività assegnate e una completata)</item>
+  <item name="LBdescriptionAssignedTasks.n.n">({0} attività assegnate e {0} completate)</item>
+
+  <!-- PROJECT MAP - SELECT RESOURCE-->
+  <item name="LBselectResources_t.text">Risorse:</item>
+  <item name="SelectResources.data-placeholder">Nessuna risorsa selezionata</item>
+
+
+  <!-- PROJECT MAP - EDITING-->
+  <item name="ServiceTitle.ProjectMap">Mappa di progetto</item>
+  <item name="ServiceTitle.ProjectMap.ToolTip">Mappa di progetto</item>
+  <item name="ProjectResourcesDialogTitleTranslation">Gestione risorse di progetto</item>
+  <item name="DisplayUnknownProject.ProjectMap">Progetto non individuato, impossibile visualizzarne la mappa.</item>
+  <item name="DisplayErrorGetActivitiesFromDB">ATTENZIONE: errore nella fase di caricamento della mappa di progetto, provare a ricaricare la pagina o contattare l'helpdesk.</item>
+  <item name="OnLoadingTranslation">Caricamento dati in corso, attendere prego.</item>
+
+  <item name="LNBmanageProjectResources.text">Gestione risorse</item>
+  <item name="LNBmanageProjectResources.ToolTip">Gestione risorse di progetto</item>
+  <item name="LNBaddActivityTop.text">Aggiungi attività</item>
+  <item name="LNBaddActivityTop.ToolTip">Aggiungi una nuova attività</item>
+  <item name="LNBaddActivityBottom.text">Aggiungi attività</item>
+  <item name="LNBaddActivityBottom.ToolTip">Aggiungi una nuova attività</item>
+  <item name="BTNsaveProjectResources.Text">Salva</item>
+  <item name="BTNsaveProjectMapBottom.ToolTip">Salva le impostazioni specificate nella mappa di progetto</item>
+  <item name="BTNsaveProjectMapTop.text">Salva</item>
+  <item name="BTNsaveProjectMapTop.ToolTip">Salva le impostazioni specificate nella mappa di progetto</item>
+  <item name="ManageResourceFromProjectMap">Gestione risorse di progetto:</item>
+
+  <item name="LBprojectStartDate_t.text">Data inizio:</item>
+  <item name="LBprojectEndDate_t.text">Data fine:</item>
+  <item name="LBprojectDeadline_t.text">Data limite:</item>
+  <item name="LBprojectType_t.text">Tipo progetto:</item>
+  <item name="projectType.community.True">personale</item>
+  <item name="projectType.community.False">di comunità</item>
+  <item name="projectType.portal.True">personale</item>
+  <item name="projectType.portal.False">di portale</item>
+
+  <item name="LNBshowResourcesColumn.text">Risorse</item>
+  <item name="LNBshowResourcesColumn.ToolTip">Visualizza la colonna delle risorse</item>
+  <item name="LNBhideResourcesColumn.text">Nascondi</item>
+  <item name="LNBhideResourcesColumn.ToolTip">Nascondi la colonna delle risorse</item>
+  <item name="LNBshowDateColumns.text">Date</item>
+  <item name="LNBshowDateColumns.ToolTip">Visualizza le colonne con le date</item>
+  <item name="LNBhideDateColumns.text">Nascondi</item>
+  <item name="LNBhideDateColumns.ToolTip">Nascondi le colonne con le date</item>
+  <item name="LNBshowPredecessorsColumn.text">Predecessori</item>
+  <item name="LNBshowPredecessorsColumn.ToolTip">Visualizza la colonna con i predecessori</item>
+  <item name="LNBhidePredecessorsColumn.text">Nascondi</item>
+  <item name="LNBhidePredecessorsColumn.ToolTip">Nascondi la colonna con i predecessori</item>
+  <item name="HYPprojectMap.text">Vista lineare</item>
+  <item name="HYPprojectMap.ToolTip">Visualizzazione lineare della mappa di progetto</item>
+  <item name="HYPprojectMapReorder.text">Vista ad albero</item>
+  <item name="HYPprojectMapReorder.ToolTip">Visualizzazione ad albero delle attività di progetto per il riordino</item>
+  <item name="HYPprojectMapBulkEdit.text">Modifiche multiple</item>
+  <item name="HYPprojectMapBulkEdit.ToolTip">Modifiche facilitate</item>
+  <item name="HYPprojectGantt.text">Gantt</item>
+  <item name="HYPprojectGantt.ToolTip">Visualizza il Gantt del progetto.</item>
+  <item name="LBthDisplayOrder.text">ID</item>
+  <item name="LBthName.text">Nome</item>
+  <item name="LBthDuration.text">Durata (g)</item>
+  <item name="LBthPredecessors.text">Predecessori</item>
+  <item name="LBthPredecessorsLegend.text">Legend</item>
+  <item name="LBthStartDate.text">Data inizio</item>
+  <item name="LBthEndDate.text">Data fine</item>
+  <item name="LBthResources.text">Risorse</item>
+
+  <item name="LNBexpandNodes.text">Espandi le attività</item>
+  <item name="LNBexpandNodes.ToolTip">Espandi le attività</item>
+  <item name="LNBcompressNodes.text">Comprimi le attività</item>
+  <item name="LNBcompressNodes.ToolTip">Comprimi le attività</item>
+  <item name="LNBwideview.text">Visione estesa</item>
+  <item name="LNBwideview.ToolTip">Visione estesa della tabella</item>
+  <item name="LNBnarrowview.text">Visione compatta</item>
+  <item name="LNBnarrowview.ToolTip">Visione compatta della tabella</item>
+  <item name="LNBtoggleresources.text">Visualizza risorse</item>
+  <item name="LNBtoggleresources.ToolTip">Visualizza i nomi completi delle risorse</item>
+  <item name="LNBrestoreview.text">Ripristina</item>
+  <item name="LNBrestoreview.ToolTip">Ripristina la visualizzazione della tabella ai valori predefiniti</item>
+
+
+  <item name="LBgroupAddSummary.text" mustcontains="{0}" placeholder="true">Aggiungi un riepilogo con {0} attività figlie:</item>
+  <item name="LBgroupAddLinkedActivities.text" mustcontains="{0}" placeholder="true">Aggiungi {0} attività correlate:</item>
+  <item name="LBgroupAddActivities.text" mustcontains="{0}" placeholder="true">Aggiungi {0} attività:</item>
+  <item name="LNBaddActivityToMap.text">Aggiungi attività</item>
+  <item name="LNBaddActivityToMap.ToolTip">Aggiungi una nuova attività in coda al progetto.</item>
+
+  <item name="PredecessorsHelperDialogTitleTranslation">Aiuto sui predecessori</item>
+  <item name="LTpredecessorsHelpLinkTypes.text">Tipi di legame disponibili:</item>
+  <item name="LBpredecessorsHelpLink_t.text">[id][tipo][+/-numero intero]</item>
+  <item name="LBpredecessorsHelpLink.text">formato del legame</item>
+  <item name="LBpredecessorsHelpActivityId_t.text">[id]</item>
+  <item name="LBpredecessorsHelpActivityId.text">identificativo dell'attività</item>
+  <item name="LBpredecessorsHelpType_t.text">[tipo]</item>
+  <item name="LBpredecessorsHelpType.text">FS - SS - FF - SF</item>
+  <item name="LBpredecessorsHelpFS_t.text">FS</item>
+  <item name="LBpredecessorsHelpFS.text">Fine-Inizio</item>
+  <item name="LBpredecessorsHelpSS_t.text">SS</item>
+  <item name="LBpredecessorsHelpSS.text">Inizio-Inizio</item>
+  <item name="LBpredecessorsHelpFF_t.text">FF</item>
+  <item name="LBpredecessorsHelpFF.text">Fine-Fine</item>
+  <item name="LBpredecessorsHelpSF_t.text">SF</item>
+  <item name="LBpredecessorsHelpSF.text">Inizio-Fine</item>
+  <item name="LBpredecessorsHelpLead_t.text">[+/-numero intero]</item>
+  <item name="LBpredecessorsHelpLead.text">un numero maggiore di zero indica un ritardo, un numero inferiore a zero indica un anticipo.Il valore predefinito è zero</item>
+
+  <item name="LBlegendLabel.text">Legend</item>
+  <item name="GetStatusToolTip.notstarted">non iniziato/a</item>
+  <item name="GetStatusToolTip.started">iniziato/a</item>
+  <item name="GetStatusToolTip.completed">completato</item>
+  <item name="GetStatusToolTip.recalc">ricalcolato</item>
+  <item name="GetStatusToolTip.updated">aggiornato</item>
+  <item name="GetStatusToolTip.error">errore/da rivedere</item>
+  <item name="LBlegendtextcompleted.text">completato/a</item>
+  <item name="LBlegendtextstarted.text">iniziato</item>
+  <item name="LBlegendtextnotstarted.text">non iniziato</item>
+  <item name="LBlegendtextrecalc.text">ricalcolato</item>
+  <item name="LBlegendtextupdated.text">aggiornato</item>
+  <item name="LBlegendtexterror.text">errore/da rivedere</item>
+
+  <item name="LNBeditActivity.text">Modifica</item>
+  <item name="LNBeditActivity.ToolTip">Modifica l'attività selezionata</item>
+  <item name="LNBindentActivityToLeft.text">Indenta a sinistra</item>
+  <item name="LNBindentActivityToLeft.ToolTip">Modifica l'attività selezionata</item>
+  <item name="LNBindentActivityToRight.text">Indenta a destra</item>
+  <item name="LNBindentActivityToRight.ToolTip">Imposta come sotto attività</item>
+  <item name="LBgroupAddLinkedChildren.text" mustcontains="{0}" placeholder="true">Aggiungi {0} attività figlie correlate:</item>
+  <item name="LBgroupAddChildren.text" mustcontains="{0}" placeholder="true">Aggiungi {0} attività figlie:</item>
+  <item name="LBgroupAddAfter.text" mustcontains="{0}" placeholder="true">Aggiungi {0} attività dopo:</item>
+  <item name="LBgroupAddBefore.text" mustcontains="{0}" placeholder="true">Aggiungi {0} attività prima:</item>
+  <item name="LBgroupAddLinkedAfter.text" mustcontains="{0}" placeholder="true">Aggiungi {0} attività correlate dopo:</item>
+  <item name="LNBvirtualDeleteActivity.text">Elimina</item>
+  <item name="LNBvirtualDeleteActivity.ToolTip">Elimina l'attività selezionata</item>
+  <item name="LNBvirtualDeleteActivityWithChildren.text">Elimina</item>
+  <item name="LNBvirtualDeleteActivityWithChildren.ToolTip">Elimina l'attività selezionata e le relative sotto-attività</item>
+
+  <item name="DisplayActivityMoved">Attività spostata correttamente.</item>
+  <item name="DisplayActivityMoved.verifyLinks">ATTENZIONE: alcuni legami fra le attività creano dei cicli o sono invalidi, correggere le impostazioni.</item>
+  <item name="DisplayActivityMoved.True.False.False">ATTENZIONE: vi sono legami fra le attività che creano dei cicli oppure sono invalidi. E' necessario correggere le impostazioni.</item>
+  <item name="DisplayActivityMoved.True.True.False">ATTENZIONE: vi sono legami fra le attività creano dei cicli e vi sono alcuni legami NON consentiti fra attività padri ed attività figlie. E' necessario correggere le impostazioni.</item>
+  <item name="DisplayActivityMoved.True.True.True">ATTENZIONE: vi sono legami NON consentiti fra attività con padre-figlia, verso attività di riepilogo, ed infine ciclici.  E' necessario correggere le impostazioni.</item>
+  <item name="DisplayActivityMoved.False.True.True">ATTENZIONE: vi sono legami non consentiti fra attività padri ed attività figlie e vi sono legami non consentiti verso attività di riepilogo.  E' necessario correggere le impostazioni.</item>
+  <item name="DisplayActivityMoved.True.False.True">ATTENZIONE: vi sono legami che creano dei cicli e vi sono legami NON consentiti verso attività di riepilogo.  E' necessario correggere le impostazioni.</item>
+  <item name="DisplayActivityMoved.False.False.True">ATTENZIONE: vi sono legami NON consentiti verso attività di riepilogo. E' necessario correggere le impostazioni.</item>
+  <item name="DisplayActivityMoved.False.True.False">ATTENZIONE: vi sono legami NON consentiti fra attività padri ed attività figlie. E' necessario correggere le impostazioni.</item>
+
+
+  <item name="DisplaySavedActivities.verifyLinks">ATTENZIONE: alcuni legami fra le attività creano dei cicli o sono invalidi, correggere le impostazioni.</item>
+  <item name="DisplaySavedActivities">Attività salvate correttamente.</item>
+  <item name="DisplaySavedActivities.True.False.False">ATTENZIONE: vi sono legami fra le attività che creano dei cicli o sono invalidi. E' necessario correggere le impostazioni.</item>
+  <item name="DisplaySavedActivities.True.True.False">ATTENZIONE: vi sono legami fra le attività creano dei cicli e vi sono alcuni legami NON consentiti fra attività padri ed attività figlie. E' necessario correggere le impostazioni.</item>
+  <item name="DisplaySavedActivities.True.True.True">ATTENZIONE: vi sono legami NON consentiti fra attività con padre-figlia, verso attività di riepilogo, ed infine ciclici.  E' necessario correggere le impostazioni.</item>
+  <item name="DisplaySavedActivities.False.True.True">ATTENZIONE: vi sono legami non consentiti fra attività padri ed attività figlie e vi sono legami non consentiti verso attività di riepilogo.  E' necessario correggere le impostazioni.</item>
+  <item name="DisplaySavedActivities.True.False.True">ATTENZIONE: vi sono legami che creano dei cicli e vi sono legami NON consentiti verso attività di riepilogo.  E' necessario correggere le impostazioni.</item>
+  <item name="DisplaySavedActivities.False.False.True">ATTENZIONE: vi sono legami NON consentiti verso attività di riepilogo. E' necessario correggere le impostazioni.</item>
+  <item name="DisplaySavedActivities.False.True.False">ATTENZIONE: vi sono legami NON consentiti fra attività padri ed attività figlie. E' necessario correggere le impostazioni.</item>
+  <item name="DisplaySavingActivitiesErrors">Modifiche apportate alle attività NON salvate correttamente.</item>
+  <item name="DisplaySavingActivitiesErrors.1.0">Non è stato possibile salvare le modifiche apportate all'attività modificata.</item>
+  <item name="DisplaySavingActivitiesErrors.n.0" mustcontains="{0}" placeholder="true">Non è stato possibile salvare le modifiche apportate alle {0} attività modificate.</item>
+  <item name="DisplaySavingActivitiesErrors.n.n" mustcontains="{0}|{1}" placeholder="true">Non è stato possibile salvare le modifiche apportate a {0} attività su {1}.</item>
+  <item name="DisplaySavingActivitiesErrors.alreadyModified.1">Una attività risulta modificata in precedenza da un altro utente.</item>
+  <item name="DisplaySavingActivitiesErrors.alreadyModified.n" mustcontains="{0}" placeholder="true">{0} attività risultano modificate in precedenza da un altro utente.</item>
+
+  <item name="DisplayActivitiesAdded">Attività aggiunte correttamente.</item>
+  <item name="DisplayUnableToAddActivities">Non è stato possibile aggiungere nuove attività al progetto.</item>
+  <item name="DisplayActivityRemoved">Attività rimossa dal progetto.</item>
+  <item name="DisplayActivityRemoved.0">Attività rimossa dal progetto.</item>
+  <item name="DisplayActivityRemoved.1">Attività rimossa dal progetto insieme alla sua attività figlia.</item>
+  <item name="DisplayActivityRemoved.n" mustcontains="{0}" placeholder="true">Attività rimossa dal progetto insieme le sue {0} attività figlie.</item>
+  <item name="DisplayActivityRemoved.0.Name" mustcontains="{0}" placeholder="true">Attività "{0}" rimossa dal progetto.</item>
+  <item name="DisplayActivityRemoved.1.Name" mustcontains="{0}" placeholder="true">Attività "{0}" rimossa dal progetto con la sua attività figlia.</item>
+  <item name="DisplayActivityRemoved.n.Name" mustcontains="{0}|{1}" placeholder="true">Attività "{1}" rimossa dal progetto con le sue {0} attività figlie.</item>
+  <item name="DisplayUnableToRemoveActivity">Non è stato possibile rimuovere l'attività dal progetto.</item>
+  <item name="DisplayUnableToRemoveActivity.0">Non è stato possibile rimuovere l'attività dal progetto.</item>
+  <item name="DisplayUnableToRemoveActivity.1">Non è stato possibile rimuovere l'attività dal progetto insieme alla sua attività figlia.</item>
+  <item name="DisplayUnableToRemoveActivity.n" mustcontains="{0}" placeholder="true">Non è stato possibile rimuovere l'attività dal progetto insieme alle sue {0} attività figlie.</item>
+  <item name="DisplayUnableToRemoveActivity.0.Name" mustcontains="{0}" placeholder="true">Non è stato possibile rimuovere l'attività "{0}" dal progetto.</item>
+  <item name="DisplayUnableToRemoveActivity.1.Name" mustcontains="{0}" placeholder="true">Non è stato possibile rimuovere l'attività "{0}" dal progetto insieme la sua attività figlia.</item>
+  <item name="DisplayUnableToRemoveActivity.n.Name" mustcontains="{0}|{1}" placeholder="true">Non è stato possibile rimuovere l'attività "{1}" dal progetto insieme alle sue {0} attività figlie.</item>
+
+  <item name="DisplaySavedActivityResources">Risorse assegnate correttamente all'attività.</item>
+  <item name="DisplaySavedActivityResources.0">Nessuna risorsa assegnata all'attività.</item>
+  <item name="DisplaySavedActivityResources.1">Una risorsa assegnata all'attività.</item>
+  <item name="DisplaySavedActivityResources.n" mustcontains="{0}" placeholder="true">{0} risorse assegnate all'attività.</item>
+  <item name="DisplaySavedActivityResources.0.Name" mustcontains="{0}" placeholder="true">Nessuna risorsa assegnata all'attività "{0}".</item>
+  <item name="DisplaySavedActivityResources.1.Name" mustcontains="{0}" placeholder="true">Una risorsa risorsa assegnata all'attività "{0}".</item>
+  <item name="DisplaySavedActivityResources.n.Name" mustcontains="{0}|{1}" placeholder="true">{0} risorse assegnate all'attività "{1}".</item>
+
+
+  <item name="DisplayActivitySaved.None">Attività salvata correttamente.</item>
+  <item name="DisplayActivitySaved.Name" mustcontains="{0}" placeholder="true">L'attività '{0}' è stata salvata correttamente.</item>
+  <item name="DisplayUnableToMoveActivity">Non è stato possibile spostare l'attività.</item>
+  <item name="DVselectResources.Title">Selezione risorse attività</item>
+  <item name="LBactivity_t.text">Attività:</item>
+  <item name="LNBcloseSelectActivityResources.text">Chiudi</item>
+  <item name="LNBcloseSelectActivityResources.Tooltip">Chiudi</item>
+  <item name="BTNselectActivityResources.text">Salva</item>
+  <item name="BTNselectActivityResources.Tooltip">Salva le impostazioni relative alle risorse dell'attività.</item>
+  <item name="NoResource.LongName">Nessuna risorsa</item>
+  <item name="NoResource.ShortName">Nessuna risorsa</item>
+
+
+  <!-- EDIT ACTIVITY -->
+  <item name="IViewEditActivity.DisplaySessionTimeout">Sessione di lavoro conclusa, impossibile procedere con le modifiche all'attività.</item>
+  <item name="DisplayUnknownActivity">Attività sconosciuta.</item>
+  <item name="DisplayRemovedActivity">Attività rimossa, si consiglia di ricaricare la pagina per avere dati aggiornati.</item>
+  <item name="EditActivityDialogTitleTranslation">Modifica attività</item>
+  <item name="BTNdeleteCurrentActivity.text">Cancella attività</item>
+  <item name="BTNdeleteCurrentActivity.Tooltip">Cancella l'attività corrente e le sue eventuali figlie.</item>
+  <item name="BTNsaveCurrentActivity.text">Salva impostazioni</item>
+  <item name="BTNsaveCurrentActivity.Tooltip">Salva tutte le impostazioni dell'attività corrente.</item>
+  <item name="LNBcloseCurrentActivity.text">Chiudi</item>
+  <item name="LNBcloseCurrentActivity.Tooltip">Chiudi la finestra di modifica.</item>
+  <item name="LTeditSettings.text">Generale</item>
+  <item name="LTeditLinks.text">Predecessori</item>
+  <item name="LTeditResources.text">Risorse</item>
+  <item name="LTeditCompletion.text">Completamento</item>
+  <item name="LBactivityStartDate_t.text">Inizio:</item>
+  <item name="LBactivityEndDate_t.text">Fine:</item>
+  <item name="LBactivityName_t.text">Nome:</item>
+  <item name="LBactivityDuration_t.text">Durata:</item>
+  <item name="LBactivityDeadLine_t.text">Data limite:</item>
+  <item name="LBactivityDescription_t.text">Descrizione:</item>
+  <item name="LBactivityNote_t.text">Note:</item>
+  <item name="LBactivityNewPredecessor_t.text">Nuovo legame:</item>
+  <item name="SelectActivity.data-placeholder">Seleziona una attività</item>
+  <item name="LBactivityPredecessor_t.text">Legami:</item>
+  <item name="LTlinkIdActivity_t.text">Id</item>
+  <item name="LTlinkActivityName_t.text">Nome</item>
+  <item name="LTlinkType_t.text">Tipo legame</item>
+  <item name="LTlinkLeadlag.text">Anticipo/Ritardo</item>
+  <item name="LNBvirtualDeletePredecessor.Tooltip">Rimuovi legame</item>
+  <item name="LNBaddPredecessorToActivity.text">Aggiungi</item>
+  <item name="LNBaddPredecessorToActivity.Tooltip">Aggiungi dipendenza</item>
+  <item name="IViewEditActivity.DisplayLinkAdded.1">Legame aggiunto correttamente</item>
+  <item name="IViewEditActivity.DisplayLinkAdded.n">Legame aggiunto correttamente</item>
+  <item name="IViewEditActivity.DisplayLinkRemoved">Legame rimosso correttamente</item>
+  <item name="IViewEditActivity.DisplayUnableToAddLink">Impossibile aggiungere nuovi legami</item>
+  <item name="IViewEditActivity.DisplayUnableToRemoveLink">Impossibile rimuovere il legame desiderato</item>
+  <item name="IViewEditActivity.DisplayUnableToSaveActivity">Impossibile memorizzare le modifiche apportate all'attività</item>
+
+  <item name="Translation.FinishStart">Fine-Inizio (FS)</item>
+  <item name="Translation.FinishFinish">Fine-Fine (FF)</item>
+  <item name="Translation.StartStart">Inizio-Inizio (SS)</item>
+  <item name="Translation.StartFinish">Inizio-Fine (SF)</item>
+  <item name="LBactivityCompletionStartDate_t.text">Inizio:</item>
+  <item name="LBactivityCompletionEndDate_t.text">Fine:</item>
+  <item name="LBactivityCompletion_t.text">Completamento:</item>
+  <item name="LNBconfirmActivityCompletion.text">Imposta come completata</item>
+  <item name="LNBconfirmActivityCompletion.ToolTip">Imposta come completata</item>
+  <item name="LNBconfirmActivityCompletion.summary.text">Imposta come completata</item>
+  <item name="LNBconfirmActivityCompletion.summary.ToolTip">Imposta come completata insieme a tutte le sotto attività</item>
+  <item name="LBactivityCompletionStatus_t.text" disambiguation="Relativo ad una attività di un progetto">Stato:</item>
+  <item name="LBactivityCompletionResources_t.text">Risorse:</item>
+  <item name="LTactivityResourceAssigned_t.text">Risorsa</item>
+  <item name="LTactivityResourceCompletion_t.text">Completamento</item>
+  <item name="LNBvirtualDeleteAssignment.Tooltip">Rimuovi risorsa</item>
+  <item name="Translation.ProjectItemStatus.suspended">Sospesa</item>
+  <item name="Translation.ProjectItemStatus.started">Iniziata</item>
+  <item name="Translation.ProjectItemStatus.completed">Completata</item>
+  <item name="Translation.ProjectItemStatus.notstarted">Non iniziata</item>
+
+  <!-- GANTT PAGE -->
+  <item name="ServiceTitle.ProjectGantt">Diagramma di Gantt</item>
+  <item name="ServiceTitle.ProjectGantt.ToolTip">Diagramma di Gantt</item>
+  <item name="DisplayUnknownProject.ProjectGantt">Progetto non individuato, impossibile visualizzarne il GANTT.</item>
+  <item name="BTNsaveProjectDateInfoTop.text">Salva date progetto</item>
+  <item name="BTNsaveProjectDateInfoTop.Tooltip">Salva le impostazioni relative alle date</item>
+  <item name="HYPreloadMapTop.text">Ricarica</item>
+  <item name="HYPreloadMapTop.Tooltip">Ricarica il diagramma</item>
+  <item name="HYPreloadMapBottom.text">Ricarica</item>
+  <item name="HYPreloadMapBottom.Tooltip">Ricarica il diagramma</item>
+  <item name="HYPbackToProjectTop.text">Al progetto</item>
+  <item name="HYPbackToProjectTop.Tooltip">Torna al progetto</item>
+  <item name="HYPbackToProjectBottom.text">Al progetto</item>
+  <item name="HYPbackToProjectBottom.Tooltip">Torna al progetto</item>
+  <item name="LTganttGoToStartDateBottom.text">Vai all'inizio</item>
+  <item name="LTganttGoToStartDateTop.text">Vai all'inizio</item>
+  <item name="LTganttGoToTodayBottom.text">Oggi</item>
+  <item name="LTganttGoToTodayTop.text">Oggi</item>
+  <item name="GetErrorDrawingGantt">Errore nella generazione del diagramma di Gantt</item>
+  <item name="IViewProjectGantt.DisplayErrorSavingDates">Errore nel salvataggio delle date di progetto.</item>
+  <item name="IViewProjectGantt.DisplaySavedDates">Date di progetto salvate correttamente.</item>
+  <item name="SPNcritical.title">Critica</item>
+  <item name="LBganttCriticalLegend.text">Critica</item>
+  <item name="SPNactivity.title">Attività</item>
+  <item name="LBganttActivityLegend.text">Attività</item>
+  <item name="SPNsummary.title">Attività di riepilogo</item>
+  <item name="LBganttSummaryLegend.text">Riepilogo</item>
+  <item name="LBganttActivityLinksLegend.text">Legami:</item>
+  <item name="SPNfinishStart.title">Fine-Inizio</item>
+  <item name="LBganttFinishStartLegend.text">Fine-Inizio</item>
+  <item name="SPNfinishFinish.title">Fine-Fine</item>
+  <item name="LBganttFinishFinishLegend.text">Fine-Fine</item>
+  <item name="SPNstartFinish.title">Inizio-Fine</item>
+  <item name="LBganttStartFinishLegend.text">Inizio-Fine</item>
+  <item name="SPNstartStart.title">Critica</item>
+  <item name="LBganttStartStartLegend.text">Inizio-Inizio</item>
+  <item name="SPNtoday.title">Oggi</item>
+  <item name="LBganttTodayLegend.text">Oggi</item>
+  <item name="SPNdeadline.title">Data limite</item>
+  <item name="LBganttDeadLineLegend.text">Data limite</item>
+
+  <!-- MAP REORDER PAGE -->
+  <item name="ServiceTitle.MapReorder">Visione ad albero</item>
+  <item name="ServiceTitle.MapReorder.ToolTip">Visione ad albero</item>
+  <item name="IViewMapReorder.DisplayErrorSavingDates">Errore nel salvataggio delle date di progetto.</item>
+  <item name="IViewMapReorder.DisplaySavedDates">Date di progetto salvate correttamente.</item>
+
+  <!-- UC TOP-->
+  <item name="LBfilterItemsBy_t.text">Filtra per:</item>
+  <item name="LBfilterItemsBy_t.ProjectsList">Filtra per:</item>
+  <item name="LBfilterItemsBy_t.Dashboard">Filtra per:</item>
+  <item name="LBcurrentCommunityFilter_t.text">Comunità:</item>
+  <item name="Portalname">Portale / Home</item>
+  <item name="ProjectFilterBy.ProjectsList.All">Tutti</item>
+  <item name="ProjectFilterBy.ProjectsList.CurrentCommunity">Di questa comunità</item>
+  <item name="ProjectFilterBy.ProjectsList.AllPersonal">Solo i personali</item>
+  <item name="ProjectFilterBy.ProjectsList.AllPersonalFromCurrentCommunity">I personali di questa comunità</item>
+  <item name="ProjectFilterBy.ProjectsList.FromPortal">Di portale</item>
+  <item name="ProjectFilterBy.Dashboard.All">Di qualsiasi progetto</item>
+  <item name="ProjectFilterBy.Dashboard.CurrentCommunity">Dei progetti di questa comunità</item>
+  <item name="ProjectFilterBy.Dashboard.AllPersonal">Dei progetti personali</item>
+  <item name="ProjectFilterBy.Dashboard.AllPersonalFromCurrentCommunity">Dei progetti personali di questa comunità</item>
+  <item name="ProjectFilterBy.Dashboard.FromPortal">Dei progetti di portale</item>
+  <item name="LBgroupBy_t.text">Raggruppa per:</item>
+  <item name="LBfilterByProjectFilterStatus_t.text">Mostra:</item>
+  <item name="LBfilterByProjectFilterStatus_t.ProjectsList">Progetti:</item>
+  <item name="LBfilterByProjectFilterStatus_t.Dashboard">Mostra attività:</item>
+  
+  <item name="ItemListStatus.ProjectsList.All">Tutti</item>
+  <item name="ItemListStatus.ProjectsList.Active">Attivi</item>
+  <item name="ItemListStatus.ProjectsList.Completed">Completati</item>
+  <item name="ItemListStatus.ProjectsList.Future">Futuri</item>
+  <item name="ItemListStatus.ProjectsList.Deleted">Cancellati</item>
+  <item name="ItemListStatus.ProjectsList.Draft">In bozza</item>
+  <item name="ItemListStatus.ProjectsList.DueForCompletion">In scadenza</item>
+  <item name="ItemListStatus.ProjectsList.Late">Scaduti</item>
+  <item name="ItemListStatus.Dashboard.All">Tutte</item>
+  <item name="ItemListStatus.Dashboard.Active">Attive</item>
+  <item name="ItemListStatus.Dashboard.Completed">Completate</item>
+  <item name="ItemListStatus.Dashboard.Future">Future</item>
+  <item name="ItemListStatus.Dashboard.Deleted">Cancellate</item>
+  <item name="ItemListStatus.Dashboard.Draft">In bozza</item>
+  <item name="ItemListStatus.Dashboard.DueForCompletion">In scadenza</item>
+  <item name="ItemListStatus.Dashboard.Late">Scadute</item>
+  <item name="ItemListStatus.ProjectDashboard.All">Tutte</item>
+  <item name="ItemListStatus.ProjectDashboard.Active">Attive</item>
+  <item name="ItemListStatus.ProjectDashboard.Completed">Completate</item>
+  <item name="ItemListStatus.ProjectDashboard.Future">Future</item>
+  <item name="ItemListStatus.ProjectDashboard.Deleted">Cancellate</item>
+  <item name="ItemListStatus.ProjectDashboard.Draft">In bozza</item>
+  <item name="ItemListStatus.ProjectDashboard.DueForCompletion">In scadenza</item>
+  <item name="ItemListStatus.ProjectDashboard.Late">Scadute</item>
+  
+  
+  <item name="ItemsGroupBy.Community">Comunità</item>
+  <item name="ItemsGroupBy.DeadLine">Data limite</item>
+  <item name="ItemsGroupBy.EndDate">Data fine</item>
+  <item name="ItemsGroupBy.Plain">Lista</item>
+  <item name="ItemsGroupBy.Project">Progetto</item>
+  <item name="ItemsGroupBy.CommunityProject">Comunità/Progetto</item>
+
+
+  <!-- UC _Summary -->
+  <item name="LTsummaryTitle.text">Sommario attività</item>
+  <item name="LBsummaryActivitiesnumber_t.text">Attività</item>
+  <item name="LBsummaryResourceActivities_t.text">come risorsa</item>
+  <item name="LBsummaryManageActivities_t.text">da gestire</item>
+  <item name="LBcloseSummary.ToolTip">Comprimi</item>
+  <item name="SummaryDisplay.All">Generale</item>
+  <item name="SummaryDisplay.Filtered">Contestuale</item>
+  <item name="SummaryDisplay.Project">Progetto corrente</item>
+
+  <item name="SummaryTimeLine.Today">Oggi</item>
+  <item name="SummaryTimeLine.Week">Settimana</item>
+  <item name="SummaryTimeLine.Month">Mese</item>
+  <item name="SummaryTimeLine.Quarter">Quadrimestre</item>
+  <item name="SummaryTimeLine.HalfYear">Semestre</item>
+  <item name="SummaryTimeLine.Year">Anno</item>
+  <item name="LBsummaryInfo_t.DashboardManager">come manager</item>
+  <item name="LBsummaryInfo_t.DashboardResource">come risorsa</item>
+  <item name="LNBactivitiesToDo.Status.ToDo">da svolgere</item>
+  <item name="LNBactivitiesToDo.Status.Starting">da iniziare</item>
+  <item name="LNBactivitiesToDo.Status.Expired">scadute fino a</item>
+  <item name="LNBactivitiesToDo.Status.Expiring">in scadenza</item>
+  <item name="LNBactivitiesToDo.SummaryTimeLine.Today">oggi</item>
+  <item name="LNBactivitiesToDo.SummaryTimeLine.Week">questa settimana</item>
+  <item name="LNBactivitiesToDo.SummaryTimeLine.Month">questo mese</item>
+  <item name="LNBactivitiesToDo.SummaryTimeLine.Quarter">questo quadrimestre</item>
+  <item name="LNBactivitiesToDo.SummaryTimeLine.HalfYear">questo semestre</item>
+  <item name="LNBactivitiesToDo.SummaryTimeLine.Year">quest'anno</item>
+
+  <!-- Manager List -->
+  <item name="TabListItem.Resource">Risorsa</item>
+  <item name="TabListItem.Manager">Manager</item>
+  <item name="TabListItem.Administration">Amministrazione</item>
+  <item name="ServiceTitle.ListManager">Progetti</item>
+  <item name="ServiceTitle.ListManager.ToolTip">Lista dei progetti</item>
+  <item name="HYPnewPersonalProjectTop.forPortal.text">Nuovo personale</item>
+  <item name="HYPnewPersonalProjectTop.forPortal.ToolTip">Nuovo progetto personale</item>
+  <item name="HYPnewPersonalProjectTop.forCommunity.text">Nuovo personale</item>
+  <item name="HYPnewPersonalProjectTop.forCommunity.ToolTip">Nuovo progetto personale per la comunità corrente</item>
+  <item name="HYPnewProjectTop.forPortal.text">Nuovo progetto</item>
+  <item name="HYPnewProjectTop.forPortal.ToolTip">Nuovo progetto di portale</item>
+  <item name="HYPnewProjectTop.forCommunity.text">Nuovo progetto</item>
+  <item name="HYPnewProjectTop.forCommunity.ToolTip">Nuovo progetto di comunità</item>
+  <!-- Administrator list -->
+  <item name="ServiceTitle.ListAdministrator">Progetti da amministrare</item>
+  <item name="ServiceTitle.ListAdministrator.ToolTip">Lista dei progetti di cui si è manager</item>
+
+  <!-- Administrator list -->
+  <item name="ServiceTitle.ListResource">Progetti a cui si sta partecipando</item>
+  <item name="ServiceTitle.ListResource.ToolTip">Lista dei progetti a cui si sta partecipando</item>
+
+  <!-- ProgressBarItem -->
+  <item name="ProgressBarItem.PercentageTranslation.confirmed" disambiguation="riferito ad attività di un progetto/task">Confermate</item>
+  <item name="ProgressBarItem.PercentageTranslation.completed" disambiguation="riferito ad attività di un progetto/task">Completate</item>
+  <item name="ProgressBarItem.PercentageTranslation.started" disambiguation="riferito ad attività di un progetto/task">Iniziate</item>
+  <item name="ProgressBarItem.PercentageTranslation.late" disambiguation="riferito ad attività di un progetto/task">In ritardo</item>
+  <item name="ProgressBarItem.PercentageTranslation.notstarted" disambiguation="riferito ad attività di un progetto/task">Non iniziate</item>
+  <item name="ProgressBarItem.ValueTranslation">Attività</item>
+
+  <!-- PLAIN LIST-->
+  <item name="LTprojectName_t.text">Nome progetto</item>
+  <item name="LTprojectStatus_t.text">Stato progetto</item>
+  <item name="LTprojectDeadline_t.text">Data limite</item>
+  <item name="LTprojectCompletion_t.text">Completamento progetto</item>
+
+  <item name="LTprojectRoles_t.text">I miei ruoli</item>
+  <item name="LTmyCompletion_t.text">Il mio completamento</item>
+  <item name="LBprojectActions_t.ToolTip">Azioni</item>
+  <item name="HYPeditProjectMap.ToolTip">Modifica attività</item>
+  <item name="HYPviewProjectMap.ToolTip">Visualizza mappa</item>
+  <item name="HYPeditProjectResources.ToolTip">Modifica risorse</item>
+  <item name="HYPeditProject.ToolTip">Modifica progetto</item>
+  <item name="HYPdeleteProject.ToolTip">Cancella definitivamente il progetto</item>
+  <item name="LNBvirtualDeleteProject.ToolTip">Cestina il progetto</item>
+  <item name="LNBvirtualUnDeleteProject.ToolTip">Recupera il progetto dal cestino</item>
+  <item name="LNBtoggleProjectStatus.text">Mostra avanzamento progetto</item>
+  <item name="LNBtoggleProjectStatus.ToolTip">Mostra lo stato di avanzamento progetto</item>
+  <item name="LNBtoggleProjectRoles.text">Mostra ruoli estesi</item>
+  <item name="LNBtoggleProjectRoles.ToolTip">Mostra ruoli estesi</item>
+  <item name="LNBtoggleProjectCommunity.text">Mostra comunità</item>
+  <item name="LNBtoggleProjectCommunity.ToolTip">Mostra la comunità del progetto</item>
+  <item name="LTpageBottom.text">Vai alla pagina:</item>
+  <item name="RoleTranslations.ProjectOwner">Proprietario</item>
+  <item name="RoleTranslations.Manager">Manager</item>
+  <item name="RoleTranslations.Resource">Risorsa</item>
+  <item name="RoleTranslations.Visitor">Ospite</item>
+  <item name="RoleTranslations.None"> </item>
+  <item name="NoProjectsForSelection">Nessun progetto individuato.</item>
+  <item name="ProjectContainer.Portal">Portale</item>
+  <item name="ProjectContainer.UnknownCommunity">Comunità rimossa</item>
+  <item name="Project.List.ProjectItemStatus.suspended">sospeso</item>
+  <item name="Project.List.ProjectItemStatus.started">iniziato</item>
+  <item name="Project.List.ProjectItemStatus.completed">completato</item>
+  <item name="Project.List.ProjectItemStatus.notstarted">non iniziato</item>
+
+  <item name="LNBorderByNameUp.ToolTip">Ordinamento crescente in base al nome del progetto</item>
+  <item name="LNBorderByNameDown.ToolTip">Ordinamento decrescente in base al nome del progetto</item>
+  <item name="LNBorderByCompletionUp.ToolTip">Ordinamento crescente in base allo stato di completamento del progetto</item>
+  <item name="LNBorderByCompletionDown.ToolTip">Ordinamento decrescente in base allo stato di completamento del progetto</item>
+  <item name="LNBorderByDeadlineUp.ToolTip">Ordinamento crescente in base alla data limite/di fine del progetto</item>
+  <item name="LNBorderByDeadlineDown.ToolTip">Ordinamento decrescente in base alla data limite/di fine del progetto</item>
+
+  <!-- TREE LIST-->
+  <item name="LNBcontinueFromPreviousRow.text">continua dalla pagina precedente</item>
+  <item name="LNBcontinueFromPreviousRow.ToolTip">continua dalla pagina precedente</item>
+  <item name="LNBcontinueToNextRow.text">continua nella pagina successiva</item>
+  <item name="LNBcontinueToNextRow.ToolTip">continua nella pagina successiva</item>
+
+  <item name="TimeGroup.PreviousYears" mustcontains="{0}" placeholder="true">Anni precedenti al {0}</item>
+  <item name="TimeGroup.PreviousYear" mustcontains="{0}" placeholder="true">Nella prima parte del {0}</item>
+  <item name="TimeGroup.PreviousDaysInHalfYear">Nel mesi del semestre attuale</item>
+  <item name="TimeGroup.PreviousHalfYear" mustcontains="{0}|{1}" placeholder="true">Nel semestre precedente (dal {0} al {1})</item>
+  <item name="TimeGroup.PreviousQuarter" mustcontains="{0}|{1}" placeholder="true">Nel trimestre precedente (dal {0} al {1})</item>
+  <item name="TimeGroup.PreviousDaysInQuarter">Nei mesi precedenti del trimestre attuale</item>
+  <item name="TimeGroup.PreviousMonth" mustcontains="{0}">Nel mese precedente {0}</item>
+  <item name="TimeGroup.PreviousWeeks" mustcontains="{0}|{1}" placeholder="true">Nelle settimane precedenti del mese (dal {0} al {1})</item>
+  <item name="TimeGroup.PreviousWeek" mustcontains="{0}|{1}" placeholder="true">Nel settimana precedente (dal {0} al {1})</item>
+  <item name="TimeGroup.PreviousDays" mustcontains="{0}|{1}" placeholder="true">Nei giorni precedenti (dal {0} al {1})</item>
+  <item name="TimeGroup.Today" mustcontains="{0}" placeholder="true">Oggi - {0}</item>
+  <item name="TimeGroup.ThisWeek" mustcontains="{0}" placeholder="true">Nei prossimi giorni (fino al {0})</item>
+  <item name="TimeGroup.NextWeek" mustcontains="{0}|{1}" placeholder="true">Prossima settimana (dal {0} al {1})</item>
+  <item name="TimeGroup.ThisMonth" mustcontains="{0}" placeholder="true">Mese corrente ({0})</item>
+  <item name="TimeGroup.NextMonth" mustcontains="{0}" placeholder="true">Prossimo mese ({0})</item>
+  <item name="TimeGroup.NextQuarter" mustcontains="{0}|{1}" placeholder="true" >Prossimo trimestre (dal {0} al {1})</item>
+  <item name="TimeGroup.ThisQuarter" mustcontains="{0}" placeholder="true">Trimestre corrente (fino al {0})</item>
+  <item name="TimeGroup.ThisHalfYear" mustcontains="{0}" placeholder="true">Semestre corrente (fino al {0})</item>
+  <item name="TimeGroup.NextHalfYear" mustcontains="{0}|{1}" placeholder="true">Prossimo semestre (dal {0} al {1})</item>
+  <item name="TimeGroup.ThisYear" mustcontains="{0}" placeholder="true">Fino a fine {0}</item>
+  <item name="TimeGroup.NextYears" mustcontains="{0}" placeholder="true">Oltre il {0}</item>
+  
+  <!-- INIZIO PARTE DA INTERNAZIONALIZZARE DOPO IL 13/05/2014-->
+  <!-- Dashboard -->
+  <item name="HYPprojectListResourceBottom.text">Lista progetti</item>
+  <item name="HYPprojectListResourceBottom.ToolTip">Vai alla lista dei progetti.</item>
+  <item name="HYPprojectListResourceTop.text">Lista progetti</item>
+  <item name="HYPprojectListResourceTop.ToolTip">Vai alla lista dei progetti.</item>
+  <item name="HYPprojectListManagerBottom.text">Lista progetti</item>
+  <item name="HYPprojectListManagerBottom.ToolTip">Vai alla lista dei progetti da gestire.</item>
+  <item name="HYPprojectListManagerTop.text">Lista progetti</item>
+  <item name="HYPprojectListManagerTop.ToolTip">Vai alla lista dei progetti da gestire.</item>
+  
+  <!-- Manager Dashboard -->
+  <item name="ServiceTitle.Dashboard.ListManager">Attività da gestire</item>
+  <item name="ServiceTitle.Dashboard.ListManager.ToolTip">Lista delle attività da gestire come manager</item>
+
+  <!-- Resource Dashboard -->
+  <item name="ServiceTitle.Dashboard.Resource">Attività da svolgere</item>
+  <item name="ServiceTitle.Dashboard.Resource.ToolTip">Lista delle attività da svolgere come risorsa</item>
+
+  <!-- COMMON LIST-->
+  <item name="LNBtoggleTaskStatus.text">Mostra/Nascondi avanzamento</item>
+  <item name="LNBtoggleTaskStatus.ToolTip">Mostra/Nascondi avanzamento dell'attività</item>
+  <item name="LTtaskName_t.text">Attività</item>
+  <item name="LTtaskProjectName_t.text">Progetto</item>
+  <item name="LTtaskStatus_t.text" disambiguation="Relativo ad una attività di un progetto">Stato</item>
+  <item name="LTtaskDeadline_t.text">Data limite</item>
+  <item name="LTtaskCompletion_t.text">Completamento</item>
+  <item name="LTtaskMyCompletion_t.text">Il mio completamento</item>
+  <item name="NoTasksForSelection">Nessuna attività individuata.</item>
+  <item name="Activity.ProjectItemStatus.suspended">sospesa</item>
+  <item name="Activity.ProjectItemStatus.started">iniziata</item>
+  <item name="Activity.ProjectItemStatus.completed">completata</item>
+  <item name="Activity.ProjectItemStatus.notstarted">non iniziata</item>
+  <item name="Activity.ItemListStatus.Active">attiva</item>
+  <item name="Activity.ItemListStatus.Completed">completata</item>
+  <item name="Activity.ItemListStatus.Future">futura</item>
+  <item name="Activity.ItemListStatus.Late">in ritardo</item>
+  <item name="Activity.ItemListStatus.DueForCompletion">in scadenza</item>
+  <item name="GetMyCompletenessTranslation">Completamento personale</item>
+  
+  <!-- PLAIN LIST-->
+  <item name="LNBorderByTaskNameUp.ToolTip">Ordinamento crescente in base al nome dell'attività</item>
+  <item name="LNBorderByTaskNameDown.ToolTip">Ordinamento decrescente in base al nome dell'attività</item>
+  <item name="LNBorderByProjectNameUp.ToolTip">Ordinamento crescente in base al nome del progetto</item>
+  <item name="LNBorderByProjectNameDown.ToolTip">Ordinamento decrescente in base al nome del progetto</item>
+  <item name="LNBorderByTaskCompletionUp.ToolTip">Ordinamento crescente in base allo stato di completamento dell'attività</item>
+  <item name="LNBorderByTaskCompletionDown.ToolTip">Ordinamento decrescente in base allo stato di completamento dell'attività</item>
+  <item name="LNBorderByTaskDeadlineUp.ToolTip">Ordinamento crescente in base alla data limite/di fine dell'attività</item>
+  <item name="LNBorderByTaskDeadlineDown.ToolTip">Ordinamento decrescente in base alla data limite/di fine dell'attività</item>
+  <!-- FINE PARTE DA INTERNAZIONALIZZARE DOPO IL 13/05/2014-->
+  <!-- INIZIO PARTE DA INTERNAZIONALIZZARE DOPO IL 16/05/2014-->
+  <item name="IViewTaskInfo.DisplaySessionTimeout">Sessione di lavoro conclusa, impossibile procedere con la visualizzazione dei dati dell'attività.</item>
+  <item name="DisplayUnknownTask">Attività sconosciuta</item>
+  <item name="LTtaskAttachments.text">Allegati</item>
+  <item name="LTtaskGeneralSettings.text">Dettagli attività</item>
+  <item name="IViewTaskInfo.GetDialogTitle" disambiguation="singolare">Attività</item>
+  <item name="LBmyActivityCompletion_t.text">Completamento personale:</item>
+  <item name="BTNsaveTaskDialogSettings.text">Salva</item>
+  <item name="BTNsaveTaskDialogSettings.Tooltip">Salva le impostazioni</item>
+  <item name="HYPcloseTaskDialog.text">Chiudi</item>
+  <item name="HYPcloseTaskDialog.Tooltip">Chiudi la finestra di dettaglio</item>
+  <item name="BTNconfirmTaskCompletion.text">Imposta al 100% e chiudi</item>
+  <item name="BTNconfirmTaskCompletion.Tooltip">Imposta al 100% e chiudi</item>
+  <item name="Dashboard.DashboardManager.CompletionSaved.True" mustcontains="{0}" placeholder="true">Lo stato di avanzamento dell'attività "{0}" sono state salvate correttamente.</item>
+  <item name="Dashboard.DashboardManager.CompletionSaved.False" mustcontains="{0}" placeholder="true">Lo stato di avanzamento dell'attività "{0}" NON sono state salvate correttamente.</item>
+  <item name="Dashboard.DashboardResource.CompletionSaved.True" mustcontains="{0}" placeholder="true">Lo stato di avanzamento dell'attività "{0}" è stato salvato correttamente.</item>
+  <item name="Dashboard.DashboardResource.CompletionSaved.False" mustcontains="{0}" placeholder="true">Lo stato di avanzamento dell'attività "{0}" è stato salvato correttamente.</item>
+  <item name="Dashboard.DashboardResource.CompletionSaved.0.0">Non vi è alcuno stato di avanzamento delle attività da salvare.</item>
+  <item name="Dashboard.DashboardResource.CompletionSaved.0.1">Non è stato possibile salvare lo stato di avanzamento dell'attività.</item>
+  <item name="Dashboard.DashboardResource.CompletionSaved.0.n" mustcontains="{0}" placeholder="true">Non è stato possibile salvare lo stato di avanzamento delle {0} attività.</item>
+  <item name="Dashboard.DashboardResource.CompletionSaved.1.0">Lo stato di avanzamento è stato salvato correttamente.</item>
+  <item name="Dashboard.DashboardResource.CompletionSaved.1.1">Lo stato di avanzamento è stato salvato SOLO per una delle due attività in modifica.</item>
+  <item name="Dashboard.DashboardResource.CompletionSaved.1.n" mustcontains="{0}" placeholder="true">Lo stato di avanzamento NON è stato salvato per {0} attività in modifica (ad eccezione di una attualmente in modifica).</item>
+  <item name="Dashboard.DashboardResource.CompletionSaved.n.0" mustcontains="{0}" placeholder="true">Lo stato di avanzamento è stato salvato correttamente per tutte e {0} le attività.</item>
+  <item name="Dashboard.DashboardResource.CompletionSaved.n.1" mustcontains="{0}" placeholder="true">Lo stato di avanzamento è stato salvato per {0} attività (ad eccezione di una attualmente in modifica).</item>
+  <item name="Dashboard.DashboardResource.CompletionSaved.n.n" mustcontains="{0}|{1}" placeholder="true">Lo stato di avanzamento è stato salvato correttamente solo per {0} attività su {1}</item>
+  <item name="ProjectDashboard.ProjectDashboardManager.CompletionSaved.True" mustcontains="{0}" placeholder="true">Lo stato di avanzamento dell'attività "{0}" sono state salvate correttamente.</item>
+  <item name="ProjectDashboard.ProjectDashboardManager.CompletionSaved.False" mustcontains="{0}" placeholder="true">Lo stato di avanzamento dell'attività "{0}" NON sono state salvate correttamente.</item>
+  <item name="ProjectDashboard.ProjectDashboardResource.CompletionSaved.True" mustcontains="{0}" placeholder="true">Lo stato di avanzamento dell'attività "{0}" è stato salvato correttamente.</item>
+  <item name="ProjectDashboard.ProjectDashboardResource.CompletionSaved.False" mustcontains="{0}" placeholder="true">Lo stato di avanzamento dell'attività "{0}" è stato salvato correttamente.</item>
+  <item name="ProjectDashboard.ProjectDashboardResource.CompletionSaved.0.0">Non vi è alcuno stato di avanzamento delle attività da salvare.</item>
+  <item name="ProjectDashboard.ProjectDashboardResource.CompletionSaved.0.1">Non è stato possibile salvare lo stato di avanzamento dell'attività.</item>
+  <item name="ProjectDashboard.ProjectDashboardResource.CompletionSaved.0.n" mustcontains="{0}" placeholder="true">Non è stato possibile salvare lo stato di avanzamento delle {0} attività.</item>
+  <item name="ProjectDashboard.ProjectDashboardResource.CompletionSaved.1.0">Lo stato di avanzamento è stato salvato correttamente.</item>
+  <item name="ProjectDashboard.ProjectDashboardResource.CompletionSaved.1.1">Lo stato di avanzamento è stato salvato SOLO per una delle due attività in modifica.</item>
+  <item name="ProjectDashboard.ProjectDashboardResource.CompletionSaved.1.n" mustcontains="{0}" placeholder="true">Lo stato di avanzamento NON è stato salvato per {0} attività (ad eccezione di una attualmente in modifica).</item>
+  <item name="ProjectDashboard.ProjectDashboardResource.CompletionSaved.n.0" mustcontains="{0}" placeholder="true">Lo stato di avanzamento è stato salvato correttamente per tutte e {0} le attività.</item>
+  <item name="ProjectDashboard.ProjectDashboardResource.CompletionSaved.n.1" mustcontains="{0}" placeholder="true">Lo stato di avanzamento è stato salvato per {0} attività (ad eccezione di una attualmente in modifica).</item>
+  <item name="ProjectDashboard.ProjectDashboardResource.CompletionSaved.n.n" mustcontains="{0}|{1}" placeholder="true">Lo stato di avanzamento è stato salvato correttamente solo per {0} attività su {1}</item>
+  <item name="BTNsaveMyCompletenessTop.text">Salva</item>
+  <item name="BTNsaveMyCompletenessTop.Tooltip">Salva le percentuali di avanzamento delle attività</item>
+  <item name="BTNsaveMyCompletenessBottom.text">Salva</item>
+  <item name="BTNsaveMyCompletenessBottom.Tooltip">Salva le percentuali di avanzamento delle attività</item>
+  <item name="LBdashboardProjectName_t.text">Progetto:</item>
+  <item name="LBattachments.Tooltip">Visualizza gli allegati</item>
+  <item name="LBattachments.ToolTip.0">Nessun allegato</item>
+  <item name="LBattachments.ToolTip.1">Un allegato</item>
+  <item name="LBattachments.ToolTip.n" mustcontains="{0}" placeholder="true">{0} allegati</item>
+  <item name="HYPdashboardResourceBottom.text">Lista attività</item>
+  <item name="HYPdashboardResourceBottom.ToolTip">Vai alla lista delle attività.</item>
+  <item name="HYPdashboardResourceTop.text">Lista attività</item>
+  <item name="HYPdashboardResourceTop.ToolTip">Vai alla lista delle attività.</item>
+  <item name="HYPdashboardManagerBottom.text">Lista attività</item>
+  <item name="HYPdashboardManagerBottom.ToolTip">Vai alla lista delle attività da gestire.</item>
+  <item name="HYPdashboardManagerTop.text">Lista attività</item>
+  <item name="HYPdashboardManagerTop.ToolTip">Vai alla lista delle attività da gestire.</item>
+  <item name="ServiceTitle.ProjectDashboard.Resource">Progetto - Attività da svolgere</item>
+  <item name="ServiceTitle.ProjectDashboard.Resource.ToolTip">Lista delle attività da svolgere come risorsa nel progetto</item>
+  <item name="ServiceTitle.ProjectDashboard.ListManager">Progetto - Attività da gestire</item>
+  <item name="ServiceTitle.ProjectDashboard.ListManager.ToolTip">Lista delle attività da gestire nel progetto</item>
+  <!-- BACK URL COMMON-->
+  <item name="HYPgoToEditProjectMapTop.text">Modifica attività</item>
+  <item name="HYPgoToEditProjectMapTop.ToolTip">Modifica le attività di progetto.</item>
+  <item name="HYPgoToEditProjectMapBottom.text">Modifica attività</item>
+  <item name="HYPgoToEditProjectMapBottom.ToolTip">Modifica le attività di progetto.</item>
+  <item name="HYPgoToProjectMapTop.text">Mappa di progetto</item>
+  <item name="HYPgoToProjectMapTop.ToolTip">Vai alla mappa di progetto.</item>
+  <item name="HYPgoToProjectMapBottom.text">Mappa di progetto</item>
+  <item name="HYPgoToProjectMapBottom.ToolTip">Vai alla mappa di progetto.</item>
+  <item name="HYPbackToResourceDashboardTop.text">Lista attività</item>
+  <item name="HYPbackToResourceDashboardTop.ToolTip">Vai alla lista delle attività da svolgere.</item>
+  <item name="HYPbackToResourceDashboardBottom.text">Lista attività</item>
+  <item name="HYPbackToResourceDashboardBottom.ToolTip">Vai alla lista delle attività da svolgere.</item>
+  <item name="HYPbackToManagerDashboardTop.text">Lista attività</item>
+  <item name="HYPbackToManagerDashboardTop.ToolTip">Vai alla lista delle attività da gestire.</item>
+  <item name="HYPbackToManagerDashboardBottom.text">Lista attività</item>
+  <item name="HYPbackToManagerDashboardBottom.ToolTip">Vai alla lista delle attività da gestire.</item>
+  <item name="HYPgoToProjectEditTop.text">Impostazioni progetto</item>
+  <item name="HYPgoToProjectEditTop.ToolTip">Vai alle impostazioni generali del progetto.</item>
+  <item name="HYPgoToProjectEditBottom.text">Impostazioni progetto</item>
+  <item name="HYPgoToProjectEditBottom.ToolTip">Vai alle impostazioni generali del progetto.</item>
+  <!-- FINE PARTE DA INTERNAZIONALIZZARE DOPO IL 16/05/2014-->
+  <!-- INIZIO PARTE DA INTERNAZIONALIZZARE DOPO IL 26/05/2014-->
+  <item name="IViewViewProjectMap.DisplayNoActivities">Nessuna attività disponibile</item>
+  <item name="DisplayUnknownProject.Calendars">Progetto non individuato, impossibile visualizzarne il calendario.</item>
+  <item name="BTNsaveProjectDateInfoBottom.text">Salva date progetto</item>
+  <item name="BTNsaveProjectDateInfoBottom.Tooltip">Salva le impostazioni relative alle date</item>
+  <!-- MAP REORDER URL COMMON-->
+  <item name="LTreorderMessageDescription.text">Indicare le impostazioni predefinite per il riordino delle attività del progetto: nel caso in cui vengano rilevati dei conflitti verrà comunque richiesta una ulteriore conferma al momento del salvataggio dei dati.</item>
+  <item name="LTmapReorderIstructions.text">Seleziona l'attività da spostare e trascinala dalla posizione attuale a quella desiderata</item>
+  <item name="ReorderAction.DisableReorder">Non consentire il riordino</item>
+  <item name="ReorderAction.RemoveAllPredecessors">Rimuovi tutti i predecessori</item>
+  <item name="ReorderAction.RemoveConflictPredecessors">Rimuovi SOLO i predecessori che generano conflitti</item>
+  <item name="ReorderAction.AskAlways">Chiedi prima di procedere</item>
+  <item name="ReorderAction.ReloadProjectMap">Ricarica la mappa di progetto</item>
+  <item name="ReorderAction.ReloadProjectMapWithReorderedItems">Ricarica la mappa di progetto mantenendo, se possibile, l'ordinamento desiderato.</item>
+  <item name="BTNsaveProjectReorderTop.text">Salva ordinamento</item>
+  <item name="BTNsaveProjectReorderTop.Tooltip">Applica le modifiche all'ordinamento delle attività di progetto</item>
+  <item name="BTNsaveProjectReorderBottom.text">Salva ordinamento</item>
+  <item name="BTNsaveProjectReorderBottom.Tooltip">Applica le modifiche all'ordinamento delle attività di progetto</item>
+  <item name="BTNconfirmReorderAction.text">Applica</item>
+  <item name="BTNconfirmReorderAction.Tooltip">Applica l'azione selezionata</item>
+  <item name="LNBcloseConfirmReorderAction.text">Annulla</item>
+  <item name="LNBcloseConfirmReorderAction.Tooltip">Annulla e chiudi la finestra</item>
+  <item name="DVconfirmReorder.Title">Conferma operazioni di riordinamento</item>
+  <item name="IViewMapReorder.DisplayReorderCompleted">Riordinamento delle attività completato correttamente.</item>
+  <item name="IViewMapReorder.DisplayNoActivitiesToReorder">Al momento NON risultano attività di progetto da poter riordinare.</item>
+  <item name="IViewMapReorder.DisplayUnableToReorder">Non è stato possibile salvare correttamente il nuovo ordinamento delle attività di progetto.</item>
+  <item name="LTconfirmOption.ReorderAction.Ignore">Ignora riordino</item>
+  <item name="LTconfirmOption.ReorderAction.DisableReorder">Disattiva il riordino</item>
+  <item name="LTconfirmOption.ReorderAction.RemoveAllPredecessors">Rimuovi TUTTI i predecessori</item>
+  <item name="LTconfirmOption.ReorderAction.RemoveConflictPredecessors">Rimuovi i predecessori in CONFLITTO</item>
+  <item name="LTconfirmOption.ReorderAction.ReloadProjectMap">Ricarica la mappa</item>
+  <item name="LTconfirmOption.ReorderAction.ReloadProjectMapWithReorderedItems">Ricarica la mappa e mantieni il tuo ordinamento</item>
+  <item name="LBconfirmOptionDescription.ReorderAction.Ignore">Ignora l'ordinamento delle attività effettuato e ricarica le attività di progetto.</item>
+  <item name="LBconfirmOptionDescription.ReorderAction.DisableReorder">Disattiva l'ordinamento delle attività e ricarica la pagina.</item>
+  <item name="LBconfirmOptionDescription.ReorderAction.RemoveAllPredecessors">Rimuovi TUTTI i predecessori impostati sulle attività.</item>
+  <item name="LBconfirmOptionDescription.ReorderAction.RemoveConflictPredecessors">Rimuovi SOLO i predecessori che generano dei cicli, lascia invariati gli altri</item>
+  <item name="LBconfirmOptionDescription.ReorderAction.ReloadProjectMap">Ricarica la lista delle attività di progetto.</item>
+  <item name="LBconfirmOptionDescription.ReorderAction.ReloadProjectMapWithReorderedItems">Ricarica la lista delle attività di progetto cercanto di mantenere l'ordine specificato al momento del salvataggio dei dati.</item>
+  <item name="LTconfirmReorderAction.ReorderError.None">Nessun errore individuato, desideri procedere con il salvataggio dei dati ?</item>
+  <item name="LTconfirmReorderAction.ReorderError.InConflictPredecessorsFound">Individuati dei legami che generano dei cicli, non è stato possibile procedere con le attività di salvataggio dei dati.</item>
+  <item name="LTconfirmReorderAction.ReorderError.SummaryWithLinks">Individuati dei legami NON consentiti su attività di riepilogo, non è stato possibile procedere con il salvataggio dei dati.</item>
+  <item name="LTconfirmReorderAction.ReorderError.SummaryWithInvalidLinks">Individuati dei legami NON consentiti su attività di riepilogo, non è stato possibile procedere con il salvataggio dei dati.</item>
+  <item name="LTconfirmReorderAction.ReorderError.DataAccess">Errore nel salvataggio dei dati, non è stato possibile procedere con le modifiche di ordinamento delle attività desiderate.</item>
+  <item name="LTconfirmReorderAction.ReorderError.ProjectMapChanged">Le attività di progetto sono state modificate, non è stato possibile procedere con il salvataggio dei dati in quanto alcune delle attività presenti in questa pagina potrebbero essere state rimosse/modificate/spostate o ne potrebbero essere state aggiunte di ulteriori.</item>
+
+  <item name="WizardProjectStepMessage.Documents.NoDocuments">Nessun allegato disponibile.</item>
+  <item name="WizardProjectStepMessage.Documents.0.0">Nessun allegato disponibile.</item>
+  <item name="WizardProjectStepMessage.Documents.0.1">Un allegato sulle attività.</item>
+  <item name="WizardProjectStepMessage.Documents.0.n" mustcontains="{0}" placeholder="true">{0} allegati sulle attività.</item>
+  <item name="WizardProjectStepMessage.Documents.1.0">Un allegato di progetto.</item>
+  <item name="WizardProjectStepMessage.Documents.1.1">Un allegato di progetto e uno sulle attività</item>
+  <item name="WizardProjectStepMessage.Documents.1.n" mustcontains="{0}" placeholder="true">Un allegato di progetto e {0} sulle attività.</item>
+  <item name="WizardProjectStepMessage.Documents.n.0" mustcontains="{0}" placeholder="true">{0} allegati di progetto.</item>
+  <item name="WizardProjectStepMessage.Documents.n.1" mustcontains="{0}" placeholder="true">{0} allegati di progetto e uno sulle attività.</item>
+  <item name="WizardProjectStepMessage.Documents.n.n" mustcontains="{0}|{1}" placeholder="true">{0} allegati di progetto e {1} sulle attività.</item>
+  
+  <!-- ATTACHMENTS-->
+  <item name="ServiceTitle.ProjectAttachments">Allegati</item>
+  <item name="ServiceTitle.ProjectAttachments.ToolTip">Allegati al progetto</item>
+  <item name="DisplayUnknownProject.ProjectAttachments">Progetto non individuato, impossibile visualizzarne gli allegati.</item>
+  <item name="LTprojectAttacments.text">Allegati al progetto</item>
+  <item name="LTattachmentnameHeader.text">Nome</item>
+  <item name="LTattachmenttypeHeader.text">Tipo</item>
+  <item name="LTattachmentactionsHeader.text">Azioni</item>
+  <item name="dialogTitle.RepositoryAttachmentUploadActions.uploadtomoduleitem">Carica allegati</item>
+  <item name="dialogTitle.RepositoryAttachmentUploadActions.uploadtomoduleitemandcommunity">Carica allegati in comunità</item>
+  <item name="dialogTitle.RepositoryAttachmentUploadActions.linkfromcommunity">Seleziona elementi dalla comunità</item>
+  <item name="dialogTitle.RepositoryAttachmentUploadActions.addurltomoduleitem">Aggiungi url</item>
+  <item name="dialogTitle.RepositoryAttachmentUploadActions.addurltomoduleitemandcommunity">Aggiungi url</item>
+  <item name="dialogDescription.Project.uploadtomoduleitem">Selezionare i file da allegare al progetto:</item>
+  <item name="dialogDescription.Project.uploadtomoduleitemandcommunity">Selezionare i file da allegare al progetto e da caricare nel materiale della comunità:</item>
+  <item name="dialogDescription.Project.linkfromcommunity">Seleziona elementi dalla comunità</item>
+  <item name="dialogDescription.Project.addurltomoduleitem">Indicare negli appositi campi gli indirizzi web da inserire:</item>
+  <item name="dialogDescription.Project.addurltomoduleitemandcommunity"></item>
+  <item name="BTNaddAttachment.text.uploadtomoduleitem">Carica</item>
+  <item name="BTNaddAttachment.ToolTip.uploadtomoduleitem">Carica i file selezionati</item>
+  <item name="BTNaddAttachment.text.uploadtomoduleitemandcommunity">Carica</item>
+  <item name="BTNaddAttachment.ToolTip.uploadtomoduleitemandcommunity">Carica i file selezionati</item>
+  <item name="BTNaddAttachment.text.linkfromcommunity">Aggiungi</item>
+  <item name="BTNaddAttachment.ToolTip.linkfromcommunity">Aggiungi i file selezionati</item>
+  <item name="BTNaddAttachment.text.addurltomoduleitem">Aggiungi</item>
+  <item name="BTNaddAttachment.ToolTip.addurltomoduleitem">Aggiungi gli indirizzi specificati</item>
+  <item name="BTNaddAttachment.text.addurltomoduleitemandcommunity">Aggiungi</item>
+  <item name="BTNaddAttachment.ToolTip.addurltomoduleitemandcommunity">Aggiungi gli indirizzi specificati</item>
+  <item name="LNBcloseAttachmentWindow.text">Annulla</item>
+  <item name="LNBcloseAttachmentWindow.ToolTip">Annulla l'operazione richiesta</item>
+
+  <item name="ItemsAdded.Project.RepositoryAttachmentUploadActions.uploadtomoduleitem">File caricati correttamente nel progetto.</item>
+  <item name="ItemsAdded.Project.RepositoryAttachmentUploadActions.uploadtomoduleitemandcommunity">File caricati correttamente in comunità ed associati al progetto.</item>
+  <item name="ItemsAdded.Project.RepositoryAttachmentUploadActions.linkfromcommunity">I file selezionati dalla comunità sono stati aggiunti correttamente al progetto.</item>
+  <item name="ItemsAdded.Project.RepositoryAttachmentUploadActions.addurltomoduleitem">Gli indirizzi internet specificati sono stati aggiunti correttamente al progetto.</item>
+  <item name="ItemsAdded.Project.RepositoryAttachmentUploadActions.addurltomoduleitemandcommunity"></item>
+  <item name="ItemsNotAdded.Project.RepositoryAttachmentUploadActions.uploadtomoduleitem">I file non sono stati caricati correttamente nel progetto.</item>
+  <item name="ItemsNotAdded.Project.RepositoryAttachmentUploadActions.uploadtomoduleitemandcommunity">I file non sono stati caricati correttamente nel progetto.</item>
+  <item name="ItemsNotAdded.Project.RepositoryAttachmentUploadActions.linkfromcommunity">I file selezionati dalla comunità NON sono stati aggiunti correttamente al progetto.</item>
+  <item name="ItemsNotAdded.Project.RepositoryAttachmentUploadActions.addurltomoduleitem">Gli indirizzi internet specificati NON sono stati aggiunti al progetto</item>
+  <item name="ItemsNotAdded.Project.RepositoryAttachmentUploadActions.addurltomoduleitemandcommunity"></item>
+  <item name="NoFilesToAdd.Project.RepositoryAttachmentUploadActions.uploadtomoduleitem">Nessun file da caricare nel progetto.</item>
+  <item name="NoFilesToAdd.Project.RepositoryAttachmentUploadActions.uploadtomoduleitemandcommunity">Nessun file da caricare nella comunità e nel progetto.</item>
+  <item name="NoFilesToAdd.Project.RepositoryAttachmentUploadActions.linkfromcommunity">Nessun file selezionato.</item>
+  <item name="NoFilesToAdd.Project.RepositoryAttachmentUploadActions.addurltomoduleitem">Nessun indirizzo specificato.</item>
+  <item name="NoFilesToAdd.Project.RepositoryAttachmentUploadActions.addurltomoduleitemandcommunity"></item>
+
+  <item name="LNBeditUrl.ToolTip">Modifica l'indirizzo</item>
+  <item name="LNBvirtualDeleteAttachment.ToolTip">Cestina l'elemento selezionato</item>
+  <item name="LTattachmentType.AttachmentType.file">File</item>
+  <item name="LTattachmentType.AttachmentType.url">Indirizzo web</item>
+  <item name="LBprojectAttachmentsEmptyItems.text">Nessun elemento allegato direttamente al progetto.</item>
+  <item name="IViewAttachments.LoadingAttachmentsError">Errore nel recupero degli allegati del progetto, provare a ricaricare la pagina.</item>
+  <item name="settings.ItemType.File"></item>
+  <item name="settings.ItemType.ScormPackage">Visualizza/Modifica i metadata del pacchetto scorm</item>
+  <item name="settings.ItemType.VideoStreaming">Imposta il documento di default da visualizzare all'avvio</item>
+  <item name="settings.ItemType.Multimedia">Imposta il documento di default da visualizzare all'avvio</item>
+  <item name="statistic.ItemType.File">Visualizza le statistiche di scaricamento</item>
+  <item name="statistic.ItemType.ScormPackage">Visualizza le statistiche d'uso del pacchetto scorm</item>
+  <item name="statistic.ItemType.VideoStreaming">Visualizza le statistiche</item>
+  <item name="statistic.ItemType.Multimedia">Visualizza le statistiche</item>
+  <item name="BTNexportToCommunityFolder.text">Importa nel materiale di comunità</item>
+  <item name="BTNexportToCommunityFolder.ToolTip">Importa gli elementi selezionati nel materiale di comunità</item>
+  <item name="BTNvirtualDeleteSelectedAttacchments.text">Cestina i selezionati</item>
+  <item name="BTNvirtualDeleteSelectedAttacchments.ToolTip">Cestina gli elementi selezionati</item>
+
+  <item name="DisplayUrlRemoved">L'indirizzo internet che si intende modificare NON è più presente.</item>
+  <item name="DisplayDeletedItems.0">Non è stato cancellato alcun allegato.</item>
+  <item name="DisplayDeletedItems.1">L'allegato è stato cancellato correttamente.</item>
+  <item name="DisplayDeletedItems.n">Sono stati cancellati {0} allegati.</item>
+  <item name="DisplayNoPermissionToDeleteItems.0">Non disponi dei permessi per cancellare l'eventuale allegato selezionato.</item>
+  <item name="DisplayNoPermissionToDeleteItems.1">Non disponi dei permessi per cancellare l'allegato selezionato.</item>
+  <item name="DisplayNoPermissionToDeleteItems.n">Non disponi dei permessi per cancellare i {0} allegati selezionati.</item>
+  <item name="DisplayUnableToDeleteItems.0">Nessun allegato da cancellare.</item>
+  <item name="DisplayUnableToDeleteItems.1">Non è sato possibile cancellare l'allegato selezionato.</item>
+  <item name="DisplayUnableToDeleteItems.n">Non è sato possibile cancellare i {0} allegati selezionati.</item>
+  <item name="DisplayNoPermissionToEditUrl">Non disponi dei permessi per modificare l'url selezionata.</item>
+
+  <item name="DisplayUnableToSaveEmptyUrl">Non disponi dei permessi per modificare l'url selezionata.</item>
+  <item name="DisplayUnableToSaveEmptyUrl.Url">Non disponi dei permessi per modificare l'url {0}.</item>
+  <item name="DisplayUnableToSaveEmptyUrl.Name">Non disponi dei permessi per modificare l'url {0}.</item>
+  <item name="DisplayUnableToSaveEmptyUrl.Url.Name">Non disponi dei permessi per modificare l'url {1} -{0}.</item>
+  <item name="DisplayUnableToSaveUrl">Non è stato possibile salvare le modifiche all'url selezionato.</item>
+  <item name="DisplayUnableToSaveUrl.Url">Non disponi dei permessi per modificare l'url selezionata.</item>
+  <item name="DisplayUnableToSaveUrl.Name">Non disponi dei permessi per modificare l'url selezionata.</item>
+  <item name="DisplayUnableToSaveUrl.Url.Name">Non disponi dei permessi per modificare l'url selezionata.</item>
+  <item name="DisplaySavedUrl">L'url selezionata è stata modificata.</item>
+  <item name="DisplaySavedUrl.Url">L'url {0} è stata modificata.</item>
+  <item name="DisplaySavedUrl.Name">L'url {0} è stata modificata.</item>
+  <item name="DisplaySavedUrl.Url.Name">L'url {1} - {0} è stata modificata.</item>
+  <item name="DisplayUrlForEditing.Title">Modifica dell'indirizzo</item>
+  <item name="UnknownUserTranslation">Utente rimosso</item>
+  
+  <!-- FINE PARTE DA INTERNAZIONALIZZARE DOPO IL 26/05/2014-->
+  <item name="DialogTitle.ProjectAttachments">Allegati al progetto</item> 
+</Resource>

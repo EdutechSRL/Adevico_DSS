@@ -1,0 +1,27 @@
+<ContextMenus>
+	<Menu Name="Cartella">
+		<Item Image="./images/12.gif" Text="Dettagli" PostBack="True" ID="5"/>
+		<Item Image="./images/11.gif" Text="Modifica" PostBack="True" ID="4"/>
+		<Item Text="" PostBack="false"/>
+		<Item Image="./images/6.gif" Text="Crea Sotto Cartella " PostBack="True" ID="1" />
+		<Item Image="./images/10.gif" Text="Crea Link"  PostBack="True" ID="2"/>
+		<Item Text="" PostBack="false"/>
+		<Item Image="./images/7.gif" Text="Cancella" PostBack="True" ID="3"/>
+	</Menu>
+	<Menu Name="Link">
+		<Item Image="./images/12.gif" Text="Dettagli " PostBack="True" ID="5"/>
+		<Item Image="./images/11.gif" Text="Modifica " PostBack="True" ID="4"/>
+		<Item Text="" PostBack="false"/>
+		<Item Image="./images/7.gif" Text="Cancella" PostBack="True" ID="3"/>
+	</Menu>
+	<Menu Name="BaseWithFigli">
+		<Item Image="./images/6.gif" Text="Crea Sotto Cartella " PostBack="True" ID="1" />
+		<Item Image="./images/10.gif" Text="Crea Link"  PostBack="True" ID="2"/>
+		<Item Text="" PostBack="false"/>
+		<Item Image="./images/7.gif" Text="Cancella tutti" PostBack="True" ID="15"/>
+	</Menu>
+	<Menu Name="Base">
+		<Item Image="./images/6.gif" Text="Crea Sotto Cartella " PostBack="True" ID="1" />
+		<Item Image="./images/10.gif" Text="Crea Link "  PostBack="True" ID="2"/>
+	</Menu>
+</ContextMenus>

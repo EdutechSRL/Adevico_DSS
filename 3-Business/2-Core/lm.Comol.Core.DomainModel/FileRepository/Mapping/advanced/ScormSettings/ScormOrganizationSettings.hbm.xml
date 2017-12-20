@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="lm.Comol.Core.DomainModel"  namespace="lm.Comol.Core.FileRepository.Domain.ScormSettings">
+	<class name="ScormOrganizationSettings" table="FR_ScormOrganizationSettings" >
+		<id name="Id" column="Id" type="Int64">
+			<generator class="native"/>
+		</id>
+		<property name="IdPackage" type="Int64" column="IdScormPackageSettings" />
+		<bag name="Items" table="FR_ScormItemSettings" fetch="subselect" cascade="all-delete-orphan" lazy="false">
+			<key column="IdScormOrganizationSettings" foreign-key="Id"/>
+			<one-to-many class="ScormItemSettings"/>
+		</bag>
+		<property name="IsDefault" type="Boolean" column="IsDefault" />
+		<property name="IsVisible" type="Boolean" column="IsVisible" />
+		<property name="SchemaVersion" type="String" column="SchemaVersion" />
+		<property name="StructureType" type="String" column="StructureType" />
+		<property name="Title" type="String" column="Title" />
+		<property name="OrganizationId" type="String" column="OrganizationId" />
+	</class>
+</hibernate-mapping>

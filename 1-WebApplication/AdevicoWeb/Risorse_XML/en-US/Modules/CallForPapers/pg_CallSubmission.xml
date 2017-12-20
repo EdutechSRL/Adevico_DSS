@@ -1,0 +1,570 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--eng-->
+<Resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="urn:ComolTranslation">
+  <item name="serviceTitle.Preview.CallForBids" html="false" placeholder="true" mustcontains="{0}">Call "{0}" preview</item>
+  <item name="serviceTitle.Preview.RequestForMembership" html="false" placeholder="true" mustcontains="{0}">Accession preview {0}</item>
+  <item name="serviceTitle.Community.Preview.CallForBids" html="false" placeholder="true" mustcontains="{0}">Call preview for  "{0}" community</item>
+  <item name="serviceTitle.Community.Preview.RequestForMembership" html="false" placeholder="true" mustcontains="{0}">Accession preview for  "{0}" community</item>
+  <item name="serviceTitle.Submit.CallForBids" html="false" placeholder="true" mustcontains="{0}">"{0}" call participation</item>
+  <item name="serviceTitle.Submit.RequestForMembership" html="false" placeholder="true" mustcontains="{0}">{0}</item>
+  <item name="serviceTitle.Community.Submit.CallForBids" html="false" placeholder="true" mustcontains="{0}">Call participation for "{0}" community</item>
+  <item name="serviceTitle.Community.Submit.RequestForMembership" html="false" placeholder="true" mustcontains="{0}">{0}</item>
+  <item name="serviceTitle.Review" html="false" placeholder="false">Revision</item>
+  <item name="serviceTitle.Review.CallForBids" html="false" placeholder="true" mustcontains="{0}">Revision of the request for participation to the "{0}" call</item>
+  <item name="serviceTitle.Review.RequestForMembership" html="false" placeholder="true" mustcontains="{0}">Revision of accession {0}</item>
+  <item name="serviceTitle.ManageRevision" html="false" placeholder="false">Revision management</item>
+  <item name="LTsaveBottomExplanation.text" disambiguation="domanda di partecipazione/domanda di adesione" html="false" placeholder="false">Save submission draft. You will be able to continue later. The call is not submitted till you press "Submit".</item>
+  <item name="LTsaveAndSubmitBottomExplanation.text" disambiguation="domanda di partecipazione/domanda di adesione" html="false" placeholder="false">Submit form. A submitted form can not be modified and will pass to the evaluation phase</item>
+  <item name="LBcallDescriptionTitle.text" html="false" placeholder="false">Description</item>
+  <item name="LTsubmitterTypesTitle.CallForBids.text" html="false" placeholder="false">Submit as</item>
+  <item name="LTsubmitterTypesTitle.RequestForMembership.text" html="false" placeholder="false">Subscribe as</item>
+  <item name="LTattachmentsTitle.text" html="false" placeholder="false">Attachments</item>
+  <item name="LTrequiredFilesTitle.text" html="false" placeholder="false">Requested documents</item>
+  <item name="LTrequiredFilesDescription.text" disambiguation="domanda di partecipazione/domanda di adesione" html="false" placeholder="false">Attachments list  (only the attachments signed with an * are mandatory !).</item>
+  <item name="serviceTitleCommunity" disambiguation="singolare" html="true" placeholder="true" mustcontains="{0}">Community &lt;span tooltip="{0}" &gt;{1} &lt;span/&gt;</item>
+  <item name="nopermission" html="false" placeholder="false">Sorry, you do not have permission to view this page.</item>
+  <item name="ServiceViewSubmissionTitle" disambiguation="domanda di partecipazione/domanda di adesione" html="false" placeholder="false">Request submitted</item>
+  <item name="ServiceViewSubmissionNopermission" html="false" placeholder="false">Sorry, you do not have permission to view this page.</item>
+  <item name="ServiceReviewSubmissionNopermission" html="false" placeholder="false">Sorry, you do not have permission to revise a submission</item>
+  <item name="HYPlist.text" html="false" placeholder="false">List</item>
+  <item name="HYPlist.status" html="false" placeholder="false">Back to list</item>
+  <item name="HYPlist.ToolTip" html="false" placeholder="false">Back to list</item>
+  <item name="LNBdelete.text" disambiguation="domanda di partecipazione/domanda di adesione" html="false" placeholder="false">Delete submission</item>
+  <item name="LNBdelete.status" html="false" placeholder="false">Delete request for participation</item>
+  <item name="LNBdelete.ToolTip" html="false" placeholder="false">Delete request for participation</item>
+  <item name="LNBsave.text" html="false" placeholder="false">Save</item>
+  <item name="LNBsave.status" html="false" placeholder="false">Save request for participation</item>
+  <item name="LNBsave.ToolTip" html="false" placeholder="false">Save request for participation</item>
+  <item name="LNBsaveAndSubmit.text" html="false" placeholder="false">Submit</item>
+  <item name="LNBsaveAndSubmit.status" html="false" placeholder="false">Submit the request for participation</item>
+  <item name="LNBsaveAndSubmit.ToolTip" html="false" placeholder="false">Submit the request for participation</item>
+  <item name="LTdisplayTitle.text" html="false" placeholder="false">Submit documents:</item>
+  <item name="LTdescriptionTitle.text" html="false" placeholder="false">Description:</item>
+  <item name="LTfileAttachments.text" html="false" placeholder="false">To know more:</item>
+  <item name="LTendDateTitle.text" html="false" placeholder="false">Expiry date:</item>
+  <item name="LTawardDateTitle.text" html="false" placeholder="false">Final prize-giving:</item>
+  <item name="LTsubmitterTypeSelection.text" html="false" placeholder="false">STARTS SUBMISSION PROCEDURE</item>
+  <item name="LTrequestedFiles.text" html="false" placeholder="false">Attachments</item>
+  <item name="LNBsaveBottom.text" html="false" placeholder="false">Save</item>
+  <item name="LNBsaveBottom.status" html="false" placeholder="false">Save request for participation</item>
+  <item name="LNBsaveBottom.ToolTip" html="false" placeholder="false">Save request for participation</item>
+  <item name="LNBsaveAndSubmitBottom.text" html="false" placeholder="false">Submit</item>
+  <item name="LNBsaveAndSubmitBottom.status" html="false" placeholder="false">Submit the request for participation</item>
+  <item name="LNBsaveAndSubmitBottom.ToolTip" html="false" placeholder="false">Submit the request for participation</item>
+  <item name="SubmitAs.CallForBids" html="false" placeholder="true" mustcontains="{0}">Call- Participate as "{0}"</item>
+  <item name="SubmitAs.RequestForMembership" html="false" placeholder="true" mustcontains="{0}">Submit as "{0}"</item>
+  <item name="SubmitAs.CallForBids.Generic" html="false" placeholder="false">Call- Participate</item>
+  <item name="SubmitAs.RequestForMembership.Generic" html="false" placeholder="false">Submit</item>
+  <item name="NotificationMessage.CallForBids.SubmissionStatus.accepted.Subject" html="false" placeholder="false">Automatic notification about call participation: Submission APPROVED</item>
+  <item name="NotificationMessage.CallForBids.SubmissionStatus.accepted.Body" html="false" placeholder="true" mustcontains="{0}|{1}|[SubmitterSurname]|[SubmitterName]|[CallName]|[LinkUrl]">Dear [SubmitterSurname] [SubmitterName],&lt;br/&gt;      on {0} at {1} your request for participation to the call "[CallName]" has been &lt;b/&gt;accepted&lt;/b&gt;.&lt;br/&gt; You can view your submission at this link: [LinkUrl].&lt;br/&gt;&lt;br/&gt;</item>
+  <item name="NotificationMessage.RequestForMembership.SubmissionStatus.accepted.Subject" html="false" placeholder="false">Automatic notification about call participation: Submission REJECTED</item>
+  <item name="NotificationMessage.RequestForMembership.SubmissionStatus.accepted.Body" html="false" placeholder="true" mustcontains="{0}|{1}|[SubmitterSurname]|[SubmitterName]|[CallName]|[LinkUrl]">Dear [SubmitterSurname] [SubmitterName], &lt;br/&gt;      on {0} at {1} your request for participation to the call "[CallName]" has been &lt;b/&gt;rejected&lt;/b&gt;&lt;br/&gt;You can view your submission at this link: [LinkUrl].&lt;br/&gt;&lt;br/&gt;</item>
+  <item name="NotificationMessage.CallForBids.SubmissionStatus.rejected.Subject" html="false" placeholder="false">Automatic notification about call participation: Submission APPROVED</item>
+  <item name="NotificationMessage.CallForBids.SubmissionStatus.rejected.Body" html="false" placeholder="true" mustcontains="{0}|{1}|[SubmitterSurname]|[SubmitterName]|[CallName]|[LinkUrl]">Dear [SubmitterSurname] [SubmitterName], &lt;br/&gt;      on {0} at {1} your request for accession/pre-accession to "[CallName]" was successfully  &lt;b/&gt;submitted&lt;/b&gt; &lt;br/&gt;You can view your submission at this link: [LinkUrl].&lt;br/&gt;&lt;br/&gt;</item>
+  <item name="NotificationMessage.RequestForMembership.SubmissionStatus.rejected.Subject" html="false" placeholder="false">Automatic notification about call participation: Submission REJECTED</item>
+  <item name="NotificationMessage.RequestForMembership.SubmissionStatus.rejected.Body" html="false" placeholder="true" mustcontains="{0}|{1}|[SubmitterSurname]|[SubmitterName]|[CallName]|[LinkUrl]">Gentile [SubmitterSurname] [SubmitterName], &lt;br/&gt;      il {0} alle {1} è stata &lt;b/&gt;rifiutata&lt;/b&gt; la sua domanda di partecipazione all'adesione/alla pre-adesione "[CallName]".&lt;br/&gt;&lt;br/&gt;You can view your submission at this link: [LinkUrl].&lt;br/&gt;&lt;br/&gt;</item>
+  <item name="LBtimeValidity_t.text" html="false" placeholder="false">Validity:</item>
+  <item name="LBsubmitterSelector_t.text" html="false" placeholder="false">Submitter type:</item>
+  <item name="SubmitterSelect" html="false" placeholder="false">-- Select type --</item>
+  <item name="LTpreviewSubmittersMessage.text" html="true" placeholder="false">On preview the submitter type list is disabled.&lt;br/&gt; Select a submitter type from the menu above to display the preview.</item>
+  <item name="LTsubmittersSelectorMessage.text" html="false" placeholder="false">Select a submitter type</item>
+  <item name="LBstartDate.text" html="false" placeholder="true" mustcontains="{0}|{1}">{0} hours {1}</item>
+  <item name="LBendDate.text" html="false" placeholder="true" mustcontains="{0}|{1}">{0} hours {1}</item>
+  <item name="NoExpirationDate" html="false" placeholder="false">No expiry date</item>
+  <item name="DescriptionTitle.CallForBids" html="false" placeholder="true" mustcontains="{0}">Call "{0}"</item>
+  <item name="DescriptionTitle.CallForBids.ToolTip" html="false" placeholder="true" mustcontains="{0}">Call description "{0}"</item>
+  <item name="DescriptionTitle.RequestForMembership" html="false" placeholder="true" mustcontains="{0}">Request for membership {0}</item>
+  <item name="DescriptionTitle.RequestForMembership.ToolTip" html="false" placeholder="true" mustcontains="{0}">Accession description {0}</item>
+  <item name="SubmissionErrorView.CallForBids.InvalidFields" html="false" placeholder="false">To confirm submission it is necessary to verify the highlighted fields</item>
+  <item name="SubmissionErrorView.CallForBids.RequiredItems" html="false" placeholder="false">To confirm submission it is necessary to fill the mandatory fields in</item>
+  <item name="SubmissionErrorView.CallForBids.SubmissionDeleted" html="false" placeholder="false">Error while deleting request for participation.</item>
+  <item name="SubmissionErrorView.CallForBids.SubmissionsClosed" html="false" placeholder="true" mustcontains="{0}|{1}">The deadline for the submission has expired. Delivery time ended on {0} at {1}.</item>
+  <item name="SubmissionErrorView.CallForBids.GenericError" html="false" placeholder="false">Error while saving data. Retry later.</item>
+  <item name="SubmissionErrorView.CallForBids.SubmissionValueSaving" html="false" placeholder="false">Error while saving some submission fields. The operation was not successfully performed.</item>
+  <item name="SubmissionErrorView.CallForBids.SubmissionFileSaving" html="false" placeholder="false">Error while uploading submission attachments. The operation was not successfully performed.</item>
+  <item name="SubmissionErrorView.CallForBids.SubmissionTimeExpired" html="false" placeholder="false">ATTENTION ! The delivery terms of the request for call participation have expired on {0} at {1} !</item>
+  <item name="SubmissionErrorView.CallForBids.SubmissionTimeExpired.None" html="false" placeholder="false">ATTENTION ! The delivery terms of the request for call participation have expired !</item>
+  <item name="SubmissionErrorView.CallForBids.SubmissionEarlyTime" html="false" placeholder="false">ATTENTION ! Call submissions opens on {0} at {1} !</item>
+  <item name="SubmissionErrorView.CallForBids.UnavailableCall" html="false" placeholder="false">ATTENTION ! Call submissions are closed</item>
+  <item name="SubmissionErrorView.RequestForMembership.InvalidFields" html="false" placeholder="false">To confirm the submission it is necessary to verify the highlighted fields</item>
+  <item name="SubmissionErrorView.RequestForMembership.RequiredItems" html="false" placeholder="false">To confirm the submission it is necessary to fill the mandatory fields in</item>
+  <item name="SubmissionErrorView.RequestForMembership.SubmissionDeleted" html="false" placeholder="false">Error while deleting request for participation.</item>
+  <item name="SubmissionErrorView.RequestForMembership.SubmissionsClosed" html="false" placeholder="true" mustcontains="{0}|{1}">The deadline for the submission has expired. Delivery time ended on {0} at {1}.</item>
+  <item name="SubmissionErrorView.RequestForMembership.GenericError" html="false" placeholder="false">Error while saving data. Retry later.</item>
+  <item name="SubmissionErrorView.RequestForMembership.SubmissionValueSaving" html="false" placeholder="false">Error while saving some submission fields. The operation was not successfully performed.</item>
+  <item name="SubmissionErrorView.RequestForMembership.SubmissionFileSaving" html="false" placeholder="false">Error while uploading submission attachments. The operation was not successfully performed.</item>
+  <item name="SubmissionErrorView.RequestForMembership.SubmissionTimeExpired" html="false" placeholder="false">ATTENTION ! The compilation terms have expired on {0} at {1} !</item>
+  <item name="SubmissionErrorView.RequestForMembership.SubmissionTimeExpired.None" html="false" placeholder="false">ATTENTION ! The compilation terms have expired!</item>
+  <item name="SubmissionErrorView.RequestForMembership.SubmissionEarlyTime" html="false" placeholder="false">ATTENTION ! The revision terms of the accession have expired on {0} at {1} !</item>
+  <item name="SubmissionErrorView.RequestForMembership.UnavailableCall" html="false" placeholder="false">ATTENTION ! Submissions are closed</item>
+  <item name="DisplayCallUnavailableForPublic.CallForBids" html="false" placeholder="false">Call participation needs the platform subscription</item>
+  <item name="DisplayCallUnavailableForPublic.RequestForMembership" html="false" placeholder="false">Participation needs the platform subscription</item>
+  <item name="DisplayCallUnavailable.CallForBids">Requested call is currently NOT available.</item>
+  <item name="DisplayCallUnavailable.CallForBids.CallForPaperStatus.Draft">You can not participate in the call because at the moment is in "draft".</item>
+  <item name="DisplayCallUnavailable.CallForBids.CallForPaperStatus.Published">Requested call was published but the manager did not open the submissions.</item>
+  <item name="DisplayCallUnavailable.CallForBids.CallForPaperStatus.SubmissionOpened">The terms of submission to the requested call are expired.</item>
+  <item name="DisplayCallUnavailable.CallForBids.CallForPaperStatus.SubmissionClosed">You can not participate in the requested call, the manager has blocked the submissions.</item>
+  <item name="DisplayCallUnavailable.CallForBids.CallForPaperStatus.SubmissionsLimitReached">Reached the limit of the available places, it is NOT possible to create additional submissions.</item>
+  <item name="DisplayCallUnavailable.RequestForMembership">The selected request for accession is not currently available.</item>
+  <item name="DisplayCallUnavailable.RequestForMembership.CallForPaperStatus.Draft">You can not participate in the request for accession because at the moment is in "draft".</item>
+  <item name="DisplayCallUnavailable.RequestForMembership.CallForPaperStatus.Published">The selected request for accession was published but the manager did not open the submissions.</item>
+  <item name="DisplayCallUnavailable.RequestForMembership.CallForPaperStatus.SubmissionOpened">The terms of submission to the selected request for accession are expired.</item>
+  <item name="DisplayCallUnavailable.RequestForMembership.CallForPaperStatus.SubmissionClosed">You can not participate in the selected request for accession, the manager has blocked the submissions.</item>
+  <item name="DisplayCallUnavailable.RequestForMembership.CallForPaperStatus.SubmissionsLimitReached">Reached the limit of the available places, it is NOT possible to create additional submissions.</item>
+  
+  <item name="maxCharToInsert" html="false" placeholder="true" mustcontains="{0}">(max {0} characters, spaces included)</item>
+  <item name="LTremainingChars.text" html="false" placeholder="false">Remaining characters</item>
+  <item name="LTfieldMandatory.text" html="true" placeholder="false" hidden="true">
+    &lt;span class='mandatory'&gt;(*)&lt;/span&gt;&gt;
+  </item>
+  <item name="SubmissionErrorView.RequiredItems" html="false" placeholder="false">To confirm the revision it is necessary to fill the following fields in:</item>
+  <item name="SubmissionErrorView.SubmissionDeleted" html="false" placeholder="false" />
+  <item name="SubmissionErrorView.SubmissionsClosed" html="false" placeholder="true" mustcontains="{0}|{1}">The deadline for the submission has expired. Delivery time ended on {0} at {1}.</item>
+  <item name="SubmissionErrorView.GenericError" html="false" placeholder="false">Error while saving data. Retry later.</item>
+  <item name="SubmissionErrorView.SubmissionValueSaving" html="false" placeholder="false">Error while saving some submission fields. The operation was not successfully performed.</item>
+  <item name="SubmissionErrorView.SubmissionFileSaving" html="false" placeholder="false">Error while uploading submission attachments. The operation was not successfully performed.</item>
+  <item name="SubmissionErrorView.SubmissionTimeExpired" html="false" placeholder="false">ATTENTION ! The delivery terms have expired!</item>
+  <item name="HYPlistFromMessage.text" html="false" placeholder="false">List</item>
+  <item name="HYPlistFromMessage.status" html="false" placeholder="false">Back to list</item>
+  <item name="HYPlistFromMessage.ToolTip" html="false" placeholder="false">Back to list</item>
+  <item name="HYPmanage.text" html="false" placeholder="false">Back to call</item>
+  <item name="HYPmanage.status" html="false" placeholder="false">Back to call</item>
+  <item name="HYPmanage.ToolTip" html="false" placeholder="false">Back to call</item>
+  <item name="HYPsubmissionsList.text" html="false" placeholder="false">Back to list</item>
+  <item name="HYPsubmissionsList.status" disambiguation="domanda di partecipazione/domanda di adesione" html="false" placeholder="false">Back to request list</item>
+  <item name="HYPsubmissionsList.ToolTip" disambiguation="domanda di partecipazione/domanda di adesione" html="false" placeholder="false">Back to request list</item>
+  <item name="LNBretry.text" disambiguation="domanda di partecipazione/domanda di adesione" html="false" placeholder="false">Back to reauest</item>
+  <item name="LNBretry.status" disambiguation="domanda di partecipazione/domanda di adesione" html="false" placeholder="false">Back to reauest</item>
+  <item name="LNBretry.ToolTip" disambiguation="domanda di partecipazione/domanda di adesione" html="false" placeholder="false">Back to reauest</item>
+  <item name="HYPlistFromMessageBottom.text" html="false" placeholder="false">List</item>
+  <item name="HYPlistFromMessageBottom.status" html="false" placeholder="false">Back to list</item>
+  <item name="HYPlistFromMessageBottom.ToolTip" html="false" placeholder="false">Back to list</item>
+  <item name="LNBretryBottom.text" disambiguation="domanda di partecipazione/domanda di adesione" html="false" placeholder="false">Back to reauest</item>
+  <item name="LNBretryBottom.status" disambiguation="domanda di partecipazione/domanda di adesione" html="false" placeholder="false">Back to reauest</item>
+  <item name="LNBretryBottom.ToolTip" disambiguation="domanda di partecipazione/domanda di adesione" html="false" placeholder="false">Back to reauest</item>
+  <item name="LTuserMessage.text" html="false" placeholder="false">Messages
+Messages/errors</item>
+  <item name="LTemptyFields.text" html="false" placeholder="false">Missing mandatory fields:</item>
+  <item name="LTemptyFiles.text" html="false" placeholder="false">Missing mandatory files:</item>
+  <item name="CompleteSubmissionMessage" html="false" placeholder="false">The request for participation was successfully submitted.</item>
+  <item name="ServiceTitle" html="false" placeholder="false">Request submission</item>
+  <item name="ServiceNopermission" html="false" placeholder="false">Sorry, you do not have permission to view this page.</item>
+  <item name="LNBremoveFile.text" html="false" placeholder="false" hidden="true">&lt;img src="{0}" ToolTip="{1}"&gt;</item>
+  <item name="LNBremoveFile.ToolTip" html="false" placeholder="false">Remove document</item>
+  <item name="LNBremoveFile.status" html="false" placeholder="false">Remove document</item>
+  <item name="Portalname" html="false" placeholder="false">Portal / Home</item>
+  <item name="LTsubmitterSection.text" disambiguation="domanda di partecipazione/domanda di adesione" html="false" placeholder="false">Submission general info</item>
+  <item name="LTsubmitterTypeTitle.text" disambiguation="domanda di partecipazione/domanda di adesione" html="false" placeholder="false">Submission type:</item>
+  <item name="LTstatusTitle.text" disambiguation="domanda di partecipazione/domanda di adesione" html="false" placeholder="false">Submission status:</item>
+  <item name="SubmissionStatus.none" disambiguation="domanda di partecipazione/domanda di adesione" html="false" placeholder="false">Request not submitted</item>
+  <item name="SubmissionStatus.draft" disambiguation="domanda di partecipazione/domanda di adesione" html="false" placeholder="false">Submission on compilation</item>
+  <item name="SubmissionStatus.submitted" disambiguation="domanda di partecipazione/domanda di adesione" html="false" placeholder="false">Request submitted</item>
+  <item name="SubmissionStatus.accepted" disambiguation="domanda di partecipazione/domanda di adesione" html="false" placeholder="false">Submission approved</item>
+  <item name="SubmissionStatus.rejected" disambiguation="domanda di partecipazione/domanda di adesione" html="false" placeholder="false">Submission rejected</item>
+  <item name="SubmissionStatus.waitingValuation" disambiguation="domanda di partecipazione/domanda di adesione" html="false" placeholder="false">Submission not evaluated</item>
+  <item name="SubmissionStatus.valuating" disambiguation="domanda di partecipazione/domanda di adesione" html="false" placeholder="false">Submission on evaluation</item>
+  <item name="SubmissionStatus.valuated" disambiguation="domanda di partecipazione/domanda di adesione" html="false" placeholder="false">Submission evaluated</item>
+  <item name="SubmissionStatus.deleted" disambiguation="domanda di partecipazione/domanda di adesione" html="false" placeholder="false">Deleted submission</item>
+  <item name="SubmissionStatus.tosubmit" disambiguation="domanda di partecipazione/domanda di adesione" html="false" placeholder="false">Request to submit</item>
+  <item name="Closed.SubmissionStatus.draft" html="false" placeholder="false">Draft not submitted</item>
+  <item name="LNBstatus.submitted" disambiguation="domanda di partecipazione/domanda di adesione" html="false" placeholder="false">Submit form</item>
+  <item name="LNBstatus.accepted" disambiguation="domanda di partecipazione/domanda di adesione" html="false" placeholder="false">Accept submission</item>
+  <item name="LNBstatus.rejected" disambiguation="domanda di partecipazione/domanda di adesione" html="false" placeholder="false">Reject submission</item>
+  <item name="submissionConfirm.Subject" html="false" placeholder="false">Automatic notification call submission</item>
+  <item name="submissionConfirm.Body" html="false" placeholder="true" mustcontains="{0}|{1}|{2}|{3}|{4}">on {0} at {1} user {2} submitted  the request for participation to the call {3} expiring on {4}.</item>
+  <item name="UnknowSubmission" html="false" placeholder="false">Unknown request for participation, back to calls list.</item>
+  <item name="UnavailableSubmission" html="false" placeholder="false">The request for participation is not available as you do not have permission to view it.</item>
+  <item name="RfM_submissionConfirm.Body" html="false" placeholder="true" mustcontains="{0}|{1}|{2}|{3}|{4}">on {0} at {1} user {2} submitted  the request for participation to the call {3} expiring on {4}.</item>
+  <item name="ServiceEvaluateSubmissionTitle" disambiguation="domanda di partecipazione/domanda di adesione" html="false" placeholder="false">Request submitted waiting for evaluation</item>
+  <item name="ServiceEvaluateSubmissionNopermission" disambiguation="domanda di partecipazione/domanda di adesione" html="false" placeholder="false">Sorry, you do not have permission to evaluate a submission</item>
+  <item name="LNBsaveEvaluation.text" html="false" placeholder="false">Save draft</item>
+  <item name="LNBsaveEvaluation.status" html="false" placeholder="false">Save evaluation data</item>
+  <item name="LNBsaveEvaluation.ToolTip" html="false" placeholder="false">Save evaluation data</item>
+  <item name="LNBevaluationComplete.text" html="false" placeholder="false">Complete evaluation</item>
+  <item name="LNBevaluationComplete.status" html="false" placeholder="false">Save evaluation data</item>
+  <item name="LNBevaluationComplete.ToolTip" html="false" placeholder="false">Save evaluation data</item>
+  <item name="DefaulCriterionValue" html="false" placeholder="false">-- Not evaluated --</item>
+  <item name="LBcomment.text" html="false" placeholder="false">Comments:</item>
+  <item name="LTevaluation.text" html="false" placeholder="false">Evaluation:</item>
+  <item name="EvaluationStarted" html="false" placeholder="true" mustcontains="{0}|{1}">Evaluation started on {0} at {1}:</item>
+  <item name="EvaluationCompleted" html="false" placeholder="true" mustcontains="{0}|{1}">Evaluation concluded on {0} at {1}:</item>
+  <item name="DLGconfirmEvaluationTitle" html="false" placeholder="false">Confirm evaluation</item>
+  <item name="DLGconfirmEvaluationText" html="false" placeholder="false">ATTENTION: once defined all of the criteria and confirmed the evaluation, it will not be possible to perform any change.</item>
+  <item name="view.evaluationError" html="false" placeholder="false">Error while saving data</item>
+  <item name="LBevaluationErrorInfo.text" html="false" placeholder="false">Encountered errors:</item>
+  <item name="BTNretry.text" html="false" placeholder="false">Back</item>
+  <item name="BTNretry.status" html="false" placeholder="false">Back to evaluation page</item>
+  <item name="BTNretry.ToolTip" html="false" placeholder="false">Back to evaluation page</item>
+  <item name="CriterionEvaluationError" html="false" placeholder="false">It was not possible to successfully save data related to the following criteria:</item>
+  <item name="CriterionError" html="false" placeholder="true" mustcontains="{0}|{1}">{0} (Unsaved value: {1})</item>
+  <item name="CriterionErrorEmpty" html="false" placeholder="true" mustcontains="{0}">{0} ("Not evaluated")</item>
+  <item name="EvaluationCompleteError" html="false" placeholder="true" mustcontains="{0}">It is not possible to conclude the evaluation as {0} criteria are still not evaluated.</item>
+  <item name="EvaluationError" html="false" placeholder="false">Error while saving evaluation, retry later or contact the administrators</item>
+  <item name="LTsubmitterNameTitle.text" html="false" placeholder="false">Submitted by:</item>
+  <item name="submitterNameOwner" html="false" placeholder="true" mustcontains="{0}|{1}">{0} the {1}.</item>
+  <item name="submitterName" html="false" placeholder="true" mustcontains="{0}|{1}|{2}">{0} the {1} on behalf of {2}.</item>
+  <item name="ToolTipDownloadZip" html="false" placeholder="false">Downlaod materials attached to the request</item>
+  <item name="DescriptionAfter" html="false" placeholder="false">Complete materials attached to the request for participation</item>
+  <item name="UnknowEvaluation" html="false" placeholder="false">The request you want to evaluate was NOT assigned. Sorry but you can not continue.</item>
+  <item name="submitterNameOwner" html="false" placeholder="true" mustcontains="{0}|{1}">{0} il {1}.</item>
+  <item name="SubmissionTranslations.CallTitle" html="false" placeholder="true" mustcontains="{0}">Request for participation to {0} call </item>
+  <item name="SubmissionTranslations.CallTitleAndEdition" html="false" placeholder="true" mustcontains="{0}|{1}">Request for participation to {0} call, edition {1}</item>
+  <item name="SubmissionTranslations.PrintInfo" html="false" placeholder="true" mustcontains="{0}|{1}|{2}">Printed by {0} on {1} at {2}</item>
+  <item name="SubmissionTranslations.SubmittedByTitle" html="false" placeholder="false">Submitted by:</item>
+  <item name="SubmissionTranslations.SubmittedByInfo" html="false" placeholder="true" mustcontains="{0}|{1}|{2}">{0} the {1} at {2}</item>
+  <item name="SubmissionTranslations.SubmittedForInfo" html="false" placeholder="true" mustcontains="{0}|{1}|{2}|{3}">{0} on behalf of  {1} the {2} at {3}</item>
+  <item name="SubmissionTranslations.SubmittedTypeTitle" disambiguation="domanda di partecipazione/domanda di adesione" html="false" placeholder="false">Submission type</item>
+  <item name="SubmissionTranslations.SubmissionStatusTitle" disambiguation="status: attivo/chiuso/in corso/valutazione" html="false" placeholder="false">Status:</item>
+  <item name="SubmissionTranslations.SubmissionStatus" html="false" placeholder="false" hidden="true">- </item>
+  <item name="SubmissionTranslations.EmptyItem" html="false" placeholder="false" hidden="true"> // </item>
+  <item name="SubmissionTranslations.SubmittedFilesTitle" html="false" placeholder="false">Attachments:</item>
+  <item name="SubmissionTranslations.SubmissionInfo" html="false" placeholder="false">Basic info</item>
+  <item name="SubmissionTranslations.CommunityNameTitle" disambiguation="singolare" html="false" placeholder="true" mustcontains="{0}">Community {0}</item>
+  <item name="SubmissionTranslations.PortalCommunityName" html="false" placeholder="false">Portal</item>
+  <item name="SubmissionTranslations.CreatedByInfo" html="false" placeholder="true" mustcontains="{0}|{1}|{2}">{0} the {1} at {2}</item>
+  <item name="SubmissionTranslations.FileSubmitted" html="false" placeholder="false">submitted </item>
+  <item name="SubmissionTranslations.FileNotSubmitted" html="false" placeholder="false">NOT submitted</item>
+  <item name="SubmissionTranslations.StatusAccepted" html="false" placeholder="false">Accepted</item>
+  <item name="SubmissionTranslations.StatusDraft" html="false" placeholder="false">Draft</item>
+  <item name="SubmissionTranslations.StatusRejected" html="false" placeholder="false">Rejected</item>
+  <item name="SubmissionTranslations.StatusSubmitted" html="false" placeholder="false">Submitted</item>
+  <item name="SubmissionTranslations.StatusValuated" html="false" placeholder="false">Evaluated</item>
+  <item name="SubmissionTranslations.StatusValuating" html="false" placeholder="false">On evaluation</item>
+  <item name="SubmissionTranslations.StatusWaitingValuation" html="false" placeholder="false">Pending evaluation </item>
+  <item name="SubmissionTranslations.ItemMandatory" disambiguation="non tradurre" html="false" placeholder="false" hidden="true"> *</item>
+  <item name="SubmissionTranslations.MaxCharInfo" html="false" placeholder="true" mustcontains="{0}">(max {0} characters, spaces included)</item>
+  <item name="SubmissionTranslations.DisclaimerAccept" html="false" placeholder="false">Accept</item>
+  <item name="SubmissionTranslations.DisclaimerReject" html="false" placeholder="false"> Cancel</item>
+  <item name="SubmissionTranslations.FileCreationError" html="false" placeholder="false">Error while creating file.</item>
+  <item name="SubmissionTranslations.Pager" html="false" placeholder="false">Pag.</item>
+  <item name="SubmissionTranslations.FilesSubmitted" html="false" placeholder="false">Attachments</item>
+  <item name="SubmissionTranslations.SubmissionCallFileName" html="false" placeholder="true" mustcontains="{0}">SubmittedRequest_{0}</item>
+  <item name="SubmissionTranslations.SubmissionRequestFileName" html="false" placeholder="true" mustcontains="{0}">ParticipationRequest_{0}</item>
+  <item name="SubmissionTranslations.AnonymousUser" html="false" placeholder="false">Anonymous user</item>
+  <item name="SubmissionTranslations.MinOption" html="false" placeholder="true" mustcontains="{0}">At least {0} option/s</item>
+  <item name="SubmissionTranslations.MaxOption" html="false" placeholder="true" mustcontains="{0}">Maximum {0} option/s</item>
+  <item name="SubmissionTranslations.MinOptionMaxOption" html="false" placeholder="true" mustcontains="{0}|{1}">Minimum {0} option/s, maximum {1}</item>
+  <item name="SubmissionTranslations.RequestTitle" html="false" placeholder="true" mustcontains="{0}">Request for accession to "{0}"</item>
+  <item name="SubmissionTranslations.SubmitToCallFileName" html="false" placeholder="true" mustcontains="{0}">Callrequest_{0}</item>
+  <item name="SubmissionTranslations.SubmitToRequestFileName" html="false" placeholder="true" mustcontains="{0}">AccessionRequest_{0}</item>
+  <item name="SubmissionTranslations.DisclaimerRead" html="false" placeholder="false">Read</item>
+  <item name="SubmissionTranslations.OtherOption" html="false" placeholder="false">Other:</item>
+  <item name="SubmissionTranslations.OtherOptionValue" html="false" placeholder="true" mustcontains="{0}|{1}">{0}:{1}</item>
+  <item name="DisplayMessageToken" html="false" placeholder="false" mustcontains="RTF/PDF">The requested RTF/PDF file is almost ready, please wait few seconds.</item>
+  <item name="LNBpdf.text" html="false" placeholder="false" />
+  <item name="LNBpdf.status" html="false" placeholder="false" mustcontains="pdf">Export request in PDF format</item>
+  <item name="LNBpdf.ToolTip" html="false" placeholder="false" mustcontains="pdf">Export request in PDF format</item>
+  <item name="LNBrtf.text" html="false" placeholder="false" />
+  <item name="LNBrtf.status" html="false" placeholder="false" mustcontains="rtf">Export request in RTF format</item>
+  <item name="LNBrtf.ToolTip" html="false" placeholder="false" mustcontains="rtf">Export request in RTF format</item>
+  <item name="ExportFileName" disambiguation="domanda di partecipazione/domanda di adesione" html="false" placeholder="true" mustcontains="{0}">Submission {0}</item>
+  <item name="EvaluationSaved" html="false" placeholder="false">Evaluation was correctly saved.</item>
+  <item name="LTstartDateTitle" html="false" placeholder="false">Start:</item>
+  <item name="HYPlistBottom.CallForBids.text" html="false" placeholder="false">Back to list</item>
+  <item name="HYPlistBottom.CallForBids.ToolTip" html="false" placeholder="false">Back to call list</item>
+  <item name="HYPlistBottom.RequestForMembership.text" html="false" placeholder="false">Back to list</item>
+  <item name="HYPlistBottom.RequestForMembership.ToolTip" html="false" placeholder="false">Back to accession list</item>
+  <item name="HYPlistTop.CallForBids.text" html="false" placeholder="false">Back to list</item>
+  <item name="HYPlistTop.CallForBids.ToolTip" html="false" placeholder="false">Back to call list</item>
+  <item name="HYPlistTop.RequestForMembership.text" html="false" placeholder="false">Back to list</item>
+  <item name="HYPlistTop.RequestForMembership.ToolTip" html="false" placeholder="false">Back to accession list</item>
+  <item name="HYPviewSubmissionTop.CallForBids.text" disambiguation="domanda di partecipazione/domanda di adesione" html="false" placeholder="false">View request</item>
+  <item name="HYPviewSubmissionTop.CallForBids.ToolTip" disambiguation="domanda di partecipazione/domanda di adesione" html="false" placeholder="false">View submitted request for participation</item>
+  <item name="HYPviewSubmissionBottom.CallForBids.text" disambiguation="domanda di partecipazione/domanda di adesione" html="false" placeholder="false">View request</item>
+  <item name="HYPviewSubmissionBottom.CallForBids.ToolTip" disambiguation="domanda di partecipazione/domanda di adesione" html="false" placeholder="false">View submitted request for participation</item>
+  <item name="HYPviewSubmissionTop.RequestForMembership.text" html="false" placeholder="false">View accession</item>
+  <item name="HYPviewSubmissionTop.RequestForMembership.ToolTip" disambiguation="domanda di partecipazione/domanda di adesione" html="false" placeholder="false">View submitted request for accession</item>
+  <item name="HYPviewSubmissionBottom.RequestForMembership.text" html="false" placeholder="false">View accession</item>
+  <item name="HYPviewSubmissionBottom.RequestForMembership.ToolTip" disambiguation="domanda di partecipazione/domanda di adesione" html="false" placeholder="false">View submitted request for accession</item>
+  <item name="DefaultMessage.CallForBids" html="false" placeholder="false">The request for participation was successfully submitted.</item>
+  <item name="DefaultMessage.RequestForMembership" html="false" placeholder="false">The request for accession was successfully set.</item>
+  <item name="DisplayUnknowSubmission.CallForBids" html="false" placeholder="false">The request for participation was not found</item>
+  <item name="DisplayUnknowSubmission.RequestForMembership" html="false" placeholder="false">The request for accession was not found</item>
+  <item name="BTNstartCompile.text.CallForBids" html="false" placeholder="false">Next</item>
+  <item name="BTNstartCompile.ToolTip.CallForBids" html="false" placeholder="false">Start submission of the request for participation to the call</item>
+  <item name="BTNstartCompile.text.RequestForMembership" html="false" placeholder="false">Next</item>
+  <item name="BTNstartCompile.ToolTip.RequestForMembership" html="false" placeholder="false">Start submission of the request for accession</item>
+  <item name="BTNgoToFirstStep.text" html="false" placeholder="false">Back</item>
+  <item name="BTNgoToFirstStep.ToolTip" html="false" placeholder="false">Back to previous step</item>
+  <item name="BTNgoToFirstStepTop.text" html="false" placeholder="false">Back</item>
+  <item name="BTNgoToFirstStepTop.ToolTip" html="false" placeholder="false">Back to previous step</item>
+  <item name="BTNsubmitRequest.text" html="false" placeholder="false">Next</item>
+  <item name="BTNsubmitRequest.ToolTip" html="false" placeholder="false">Go to next step</item>
+  <item name="BTNgoToCompileStep.text" html="false" placeholder="false">Back</item>
+  <item name="BTNgoToCompileStep.ToolTip" html="false" placeholder="false">Back to previous step</item>
+  <item name="BTNsubmitRequestTop.text" html="false" placeholder="false">Next</item>
+  <item name="BTNsubmitRequestTop.ToolTip" html="false" placeholder="false">Go to next step</item>
+  <item name="HYPdownloadzip.text" html="false" placeholder="false" hidden="false" />
+  <item name="HYPdownloadzip.ToolTip" html="false" placeholder="false">Download attachments</item>
+  <item name="BTNdownloadzip.text" html="false" placeholder="false" hidden="false" />
+  <item name="BTNdownloadzip.ToolTip" html="false" placeholder="false">Download attachments</item>
+  <item name="HYPdownloadrtf.text" html="false" placeholder="false" hidden="false" />
+  <item name="HYPdownloadrtf.ToolTip" html="false" placeholder="false">Export request in RTF</item>
+  <item name="BTNdownloadrtf.text" html="false" placeholder="false" hidden="false" />
+  <item name="BTNdownloadrtf.ToolTip" html="false" placeholder="false">Export request in RTF</item>
+  <item name="HTPdownloadpdf.text" html="false" placeholder="false" hidden="false" />
+  <item name="HTPdownloadpdf.ToolTip" html="false" placeholder="false">Export request in PDF</item>
+  <item name="BTNdownloadpdf.text" html="false" placeholder="false" hidden="false" />
+  <item name="BTNdownloadpdf.ToolTip" html="false" placeholder="false">Export request in PDF</item>
+  <item name="HYPexportEvaluations.text" html="false" placeholder="false" hidden="false" />
+  <item name="HYPexportEvaluations.ToolTip" html="false" placeholder="false">Downlaod submissions evaluations</item>
+  <item name="BTNexportEvaluations.text" html="false" placeholder="false" hidden="false" />
+  <item name="BTNexportEvaluations.ToolTip" html="false" placeholder="false">Downlaod submissions evaluations</item>
+  <item name="BTNaccept.text" html="false" placeholder="false" />
+  <item name="BTNaccept.ToolTip" html="false" placeholder="false">Accept submission</item>
+  <item name="BTNrefuse.text" html="false" placeholder="false" />
+  <item name="BTNrefuse.ToolTip" html="false" placeholder="false">Reject submission</item>
+  <item name="BTNsubmitForUser.text" html="false" placeholder="false" />
+  <item name="BTNsubmitForUser.ToolTip" html="false" placeholder="false">Submit form on behalf of the user</item>
+  <item name="LTowner_t.text" html="false" placeholder="false">Owner:</item>
+  <item name="LTsubmitterType_t.text" html="false" placeholder="false">Submitter type:</item>
+  <item name="LTsubmissionStatus_t.text" html="false" placeholder="false">Submission status:</item>
+  <item name="LTsubmittedOn_t.text" html="false" placeholder="false">Request submitted on:</item>
+  <item name="LTsubmittedBy_t.text" disambiguation="da=inteso come azione eseguita dall'utente" html="false" placeholder="false">by</item>
+  <item name="LTrevisionListTitle_t.text" html="false" placeholder="false">Revisions:</item>
+  <item name="Revision.Original" html="false" placeholder="true" mustcontains="{0}|{1}">Original ({0} {1})</item>
+  <item name="Revision.Item" html="false" placeholder="true" mustcontains="{0}|{1}|{2}">Version {0} ({1} {2})</item>
+  <item name="LBdeadline_t.text" html="false" placeholder="false">To end within:</item>
+  <item name="LBrequestReason_t.text" html="false" placeholder="false">Explanation:</item>
+  <item name="LBreasonHelp.text" html="false" placeholder="false" />
+  <item name="DisplayRevisionUnavailable.CallForBids" html="false" placeholder="false">Revision of the request for participation not available </item>
+  <item name="DisplayRevisionUnavailable.RequestForMembership" html="false" placeholder="false">Revision of the request for accession not available</item>
+  <item name="DisplayRevisionUnknown.CallForBids" html="false" placeholder="false">Revision of the request for participation missing </item>
+  <item name="DisplayRevisionUnknown.RequestForMembership" html="false" placeholder="false">Revision of the request for accession missing </item>
+  <item name="BTNaddRequest.text" disambiguation="verbo" html="false" placeholder="false">Confirm</item>
+  <item name="BTNaddRequest.ToolTip" html="false" placeholder="false">Confirm request for revision</item>
+  <item name="BTNundoRequest.text" html="false" placeholder="false">Cancel</item>
+  <item name="BTNundoRequest.ToolTip" html="false" placeholder="false">Cancel</item>
+  <item name="BTNreview.text.UserRequired" html="false" placeholder="false">Revision</item>
+  <item name="BTNreview.ToolTip.UserRequired" html="false" placeholder="false">Request a revision to the manager</item>
+  <item name="BTNreview.text.Manager" html="false" placeholder="false">Revision</item>
+  <item name="BTNreview.ToolTip.Manager" html="false" placeholder="false">Request a revision to the participant</item>
+  <item name="TXBreason.UserRequired" html="false" placeholder="false">Please, explain the reason you're asking for a revision of your request for participation.</item>
+  <item name="TXBreason.Manager" html="false" placeholder="false">Please, explain the reason you're asking for an integration of user request for participation/accession. It is MANADTORY to enter a deadline</item>
+  <item name="LBrequiredRevision_t.DisplaySelfPendingRequest.Request" html="false" placeholder="false">Your request for revision has NOT been accepted yet. Do you want to cancel it.</item>
+  <item name="LBrequiredRevision_t.DisplaySelfPendingRequest.RequestAccepted" html="false" placeholder="false">Your request for revision has been accepted. You can go on with the revision.</item>
+  <item name="LBrequiredRevision_t.DisplaySelfPendingRequest.Submitted" html="false" placeholder="false">Revision submitted, waiting for manager approval.</item>
+  <item name="LBrequiredRevision_t.DisplaySelfPendingRequest.Approved" html="false" placeholder="false">Revision approved by manager</item>
+  <item name="LBrequiredRevision_t.DisplaySelfPendingRequest.Refused" html="false" placeholder="false">Revision rejected by manager</item>
+  <item name="LBrequiredRevision_t.DisplaySelfPendingRequest.Cancelled" html="false" placeholder="false">Revision deleted.</item>
+  <item name="LBrequiredRevision_t.DisplayUserPendingRequest.Request" html="false" placeholder="false">A revision has been requested</item>
+  <item name="LBrequiredRevision_t.DisplayUserPendingRequest.RequestAccepted" html="false" placeholder="false">Request for revision accepted</item>
+  <item name="LBrequiredRevision_t.DisplayUserPendingRequest.Submitted" html="false" placeholder="false">Revision submitted</item>
+  <item name="LBrequiredRevision_t.DisplayUserPendingRequest.Approved" html="false" placeholder="false">Revision approved</item>
+  <item name="LBrequiredRevision_t.DisplayUserPendingRequest.Refused" html="false" placeholder="false">Revision rejected</item>
+  <item name="LBrequiredRevision_t.DisplayUserPendingRequest.Cancelled" html="false" placeholder="false">Revision deleted</item>
+  <item name="HTPreviewUserSubmission.text" html="false" placeholder="false">Go to</item>
+  <item name="HTPreviewUserSubmission.ToolTip" html="false" placeholder="false">Revision of submission</item>
+  <item name="HTPviewUserRequest.text" html="false" placeholder="false">Go to</item>
+  <item name="HTPviewUserRequest.ToolTip" html="false" placeholder="false">Display requests for accession</item>
+  <item name="BTNcancelUserRequest.text" html="false" placeholder="false">Delete</item>
+  <item name="BTNcancelUserRequest.ToolTip" html="false" placeholder="false">Delete request for revision</item>
+  <item name="BTNrefuseUserRequest.text" html="false" placeholder="false">Reject</item>
+  <item name="BTNrefuseUserRequest.ToolTip" html="false" placeholder="false">Reject revision request</item>
+  <item name="BTNacceptUserRequest.text" html="false" placeholder="false">Accept</item>
+  <item name="BTNacceptUserRequest.ToolTip" html="false" placeholder="false">Accept request of revision</item>
+  <item name="BTNcancelManagerRequest.text" html="false" placeholder="false">Delete</item>
+  <item name="BTNcancelManagerRequest.ToolTip" html="false" placeholder="false">Delete request for revision</item>
+  <item name="BTNrefuseRevision.text" html="false" placeholder="false">Reject</item>
+  <item name="BTNrefuseRevision.ToolTip" html="false" placeholder="false">Reject revision</item>
+  <item name="BTNacceptRevision.text" html="false" placeholder="false">Accept</item>
+  <item name="BTNacceptRevision.ToolTip" html="false" placeholder="false">Accept revision</item>
+  <item name="BTNcancelUserRevisionRequest.text" html="false" placeholder="false">Cancel request</item>
+  <item name="BTNcancelUserRevisionRequest.ToolTip" html="false" placeholder="false">Reject revision user request</item>
+  <item name="BTNsaveRevisionSettings.text" html="false" placeholder="false">Save</item>
+  <item name="BTNsaveRevisionSettings.ToolTip" html="false" placeholder="false">Save revision deadline settings</item>
+  <item name="LBstatusInfo_t.text" html="false" placeholder="false">Revisions current status:</item>
+  <item name="LBfeedbackHelp.text" html="false" placeholder="false" />
+  <item name="LBfeedback_t.text" html="false" placeholder="false">Users feedback:</item>
+  <item name="LTrevisionDate.text" html="false" placeholder="false">Last activity performed on: </item>
+  <item name="LTrevisionBy_t.text" disambiguation="da=inteso come azione eseguita dall'utente" html="false" placeholder="false">by</item>
+  <item name="LTrevisionRequired_t.text" html="false" placeholder="false">A revision has been requested</item>
+  <item name="LTrevisionRequiredBy_t.text" disambiguation="da=inteso come azione eseguita dall'utente" html="false" placeholder="false">by</item>
+  <item name="LTdeadline_t.text" html="false" placeholder="false">To end within</item>
+  <item name="HTPreviewManagerSubmission.text" html="false" placeholder="false">Go to</item>
+  <item name="HTPreviewManagerSubmission.ToolTip" html="false" placeholder="false">Display requests for accession</item>
+  <item name="BTNcancelManagerReview.text" html="false" placeholder="false">Delete</item>
+  <item name="BTNcancelManagerReview.ToolTip" html="false" placeholder="false">Delete request for revision</item>
+  <item name="LTrevisionRequiredInfo_t.text" html="false" placeholder="false">Revision required</item>
+  <item name="LTrevisionRequiredByInfo_t.text" disambiguation="da=inteso come azione eseguita dall'utente" html="false" placeholder="false">by</item>
+  <item name="LTrevisionManagedByInfo_t.text" disambiguation="da=inteso come azione eseguita dall'utente" html="false" placeholder="false">by</item>
+  <item name="LTrevisionDate_t.text" disambiguation="il=inteso come il giorno" html="false" placeholder="false">on</item>
+  <item name="RevisionStatus.None" html="false" placeholder="false" />
+  <item name="RevisionStatus.Request" disambiguation="relativo a status revisione di un bando" html="false" placeholder="false">Requested by the participant</item>
+  <item name="RevisionStatus.RequestAccepted" disambiguation="relativo a status revisione di un bando" html="false" placeholder="false">Required approved</item>
+  <item name="RevisionStatus.Required" disambiguation="relativo a status revisione di un bando" html="false" placeholder="false">Required by manager</item>
+  <item name="RevisionStatus.Submitted" disambiguation="relativo a status revisione di un bando" html="false" placeholder="false">Submitted</item>
+  <item name="RevisionStatus.Approved" disambiguation="relativo a status revisione di un bando" html="false" placeholder="false">Approved</item>
+  <item name="RevisionStatus.Refused" disambiguation="relativo a status revisione di un bando" html="false" placeholder="false">Rejected</item>
+  <item name="RevisionStatus.Cancelled" disambiguation="relativo a status revisione di un bando" html="false" placeholder="false">Removed</item>
+  <item name="AskForRevision.CallForBids.Subject" html="false" placeholder="false">Submission revision request</item>
+  <item name="AskForRevision.CallForBids.Body" html="true" placeholder="true" mustcontains="[RequiredBy]|[RequestOn]|[RequestTime]|[LinkUrl]|[CallName]|[Reason]">Dear Mr/Mrs,&lt;br/&gt;[RequiredBy] requested on [RequestOn] at [RequestTime] a revison to the submission ([LinkUrl]) to the call [CallName] for the following reasons:&lt;br/&gt;&lt;br/&gt;[Reason]&lt;br/&gt;&lt;br/&gt;</item>
+  <item name="RequireRevision.CallForBids.Subject" html="false" placeholder="false">Submission revision request</item>
+  <item name="RequireRevision.CallForBids.Body" html="true" placeholder="true" mustcontains="[RequiredBy]|[RequestOn]|[RequestTime]|[LinkUrl]|[CallName]|[Reason]|[DeadlineOn]|[DeadlineTime]">Dear Mr/Mrs,&lt;br/&gt;[RequiredBy] requested on [RequestOn] at [RequestTime] a revison to the submission ([LinkUrl]) to the call [CallName] strictly within [DeadlineOn] at [DeadlineTime] for the following reasons:&lt;br/&gt;&lt;br/&gt;[Reason]&lt;br/&gt;&lt;br/&gt;</item>
+  <item name="RemoveSelfRequest.CallForBids.Subject" html="false" placeholder="false">DELETION of the submission revision</item>
+  <item name="RemoveSelfRequest.CallForBids.Body" html="true" placeholder="true" mustcontains="[RequiredBy]|[RequestOn]|[RequestTime]|[LinkUrl]|[CallName]">Dear Mr/Mrs,&lt;br/&gt;[RequiredBy] requested on [RequestOn] at [RequestTime] to delete the request for revision ([LinkUrl]) for the participation to the call [CallName].&lt;br/&gt;&lt;br/&gt;</item>
+  <item name="RemoveManagerRequest.CallForBids.Subject" html="false" placeholder="false">DELETION of the submission revision</item>
+  <item name="RemoveManagerRequest.CallForBids.Body" html="true" placeholder="true" mustcontains="[RequiredBy]|[RequestOn]|[RequestTime]|[LinkUrl]">Dear Mr/Mrs,&lt;br/&gt;[RequiredBy] rejected your request for a revision ([LinkUrl]) on [RequestOn] at [RequestTime].&lt;br/&gt;&lt;br/&gt;</item>
+  <item name="RemoveManagerRequest.CallForBids.Body.Reason" html="true" placeholder="true" mustcontains="[RequiredBy]|[RequestOn]|[RequestTime]|[LinkUrl]|[Reason]">Dear Mr/Mrs,&lt;br/&gt;[RequiredBy] rejected your request for a revision ([LinkUrl]) on [RequestOn] at [RequestTime] for the following reasons:&lt;br/&gt;&lt;br/&gt;[Reason]&lt;br/&gt;&lt;br/&gt;</item>
+  <item name="RemoveUserRequest.CallForBids.Subject" html="false" placeholder="false">DELETION of the submission revision</item>
+  <item name="RemoveUserRequest.CallForBids.Body" html="true" placeholder="true" mustcontains="[SubmitterSurname]|[SubmitterName]|[LinkUrl]|[RequestOn]|[RequestTime]">Dear Mr/Mrs,&lt;br/&gt;[SubmitterSurname] [SubmitterName] deleted your request for revision ([LinkUrl]) on [RequestOn] at [RequestTime].&lt;br/&gt;&lt;br/&gt;</item>
+  <item name="RemoveUserRequest.CallForBids.Body.Reason" html="true" placeholder="true" mustcontains="[SubmitterSurname]|[SubmitterName]|[LinkUrl]|[RequestOn]|[RequestTime]|[Reason]">Dear Mr/Mrs,&lt;br/&gt;[SubmitterSurname] [SubmitterName]  deleted your request for revision ([LinkUrl]) on [RequestOn] at [RequestTime] for the following reasons:&lt;br/&gt;&lt;br/&gt;[Reason]&lt;br/&gt;&lt;br/&gt;</item>
+  <item name="SaveSettings.CallForBids.Subject" html="false" placeholder="false">Modify revision date / Fields to revise</item>
+  <item name="SaveSettings.CallForBids.Body" html="true" placeholder="true" mustcontains="[SubmitterSurname]|[SubmitterName]|[DeadlineOn]|[DeadlineTime]|[Fields]">Dear Mr/Mrs,&lt;br/&gt;[SubmitterSurname] [SubmitterName] modified some terms of the revision. In particular the revison deadline is on &lt;b&gt;[DeadlineOn]&lt;b/&gt; at &lt;b&gt;[DeadlineTime]&lt;b/&gt; for the fields:&lt;br/&gt;[Fields]&lt;br/&gt;&lt;br/&gt;</item>
+  <item name="AcceptUserRequest.CallForBids.Subject" html="false" placeholder="false">Request for revision accepted</item>
+  <item name="AcceptUserRequest.CallForBids.Body" html="true" placeholder="true" mustcontains="[RequiredBy]|[RequestOn]|[RequestTime]|[LinkUrl]">Dear Mr/Mrs,&lt;br/&gt;[RequiredBy] on [RequestOn] at [RequestTime] accepted your request for revision of the submission ([LinkUrl]).&lt;br/&gt;&lt;br/&gt;</item>
+  <item name="RefuseUserRequest.CallForBids.Subject" html="false" placeholder="false">Submission revision reject</item>
+  <item name="RefuseUserRequest.CallForBids.Body" html="true" placeholder="true" mustcontains="[RequiredBy]|[RequestOn]|[LinkUrl]|[RequestTime]|[Reason]">Dear Mr/Mrs,&lt;br/&gt;[RequiredBy] rejected your request for revision ([LinkUrl]) on [RequestOn] at [RequestTime] for the following reasons:[Reason]&lt;br/&gt;&lt;br/&gt;</item>
+  <item name="SubmitRevision.CallForBids.Subject" html="false" placeholder="false">Request revision submission</item>
+  <item name="SubmitRevision.CallForBids.Body" html="true" placeholder="true" mustcontains="[SubmitterSurname]|[SubmitterName]|[CallName]|[LinkUrl]">Dear Mr/Mrs,&lt;br/&gt;[SubmitterSurname] [SubmitterName] has compiled a revision of the submission to [CallName].&lt;br/&gt;You can verify the revision at this link: [LinkUrl].&lt;br/&gt;&lt;br/&gt;</item>
+  <item name="AcceptUserRevision.CallForBids.Subject" html="false" placeholder="false">Revision confirmed</item>
+  <item name="AcceptUserRevision.CallForBids.Body" html="true" placeholder="true" mustcontains="[SubmitterSurname]|[SubmitterName]|[LinkUrl]">Dear [SubmitterSurname] [SubmitterName],&lt;br/&gt;Your revision has been accepted.&lt;br/&gt;You can verify the submission final version at this link: [LinkUrl].&lt;br/&gt;&lt;br/&gt; [LinkUrl].&lt;br/&gt;&lt;br/&gt;</item>
+  <item name="RefuseUserRevision.CallForBids.Subject" html="false" placeholder="false">Revision NOT confirmed</item>
+  <item name="RefuseUserRevision.CallForBids.Body" html="true" placeholder="true" mustcontains="[SubmitterSurname]|[SubmitterName]|[LinkUrl]">Dear Mr/Mrs,&lt;br/&gt;[SubmitterSurname] [SubmitterName] Your revision has NOT been accepted.&lt;br/&gt;You can verify the submission final version at this link:[LinkUrl].&lt;br/&gt;&lt;br/&gt;</item>
+  <item name="AskForRevision.RequestForMembership.Subject" html="false" placeholder="false">Accession revision request</item>
+  <item name="AskForRevision.RequestForMembership.Body" html="true" placeholder="true" mustcontains="[RequiredBy]|[RequestOn]|[RequestTime]|[LinkUrl]|[CallName]|[Reason]">Dear Mr/Mrs,&lt;br/&gt;[RequiredBy] requested on [RequestOn] at [RequestTime] a revison to the submission ([LinkUrl]) to the accession [CallName] ,strictly within [DeadlineOn] at [DeadlineTime] for the following reasons:&lt;br/&gt;&lt;br/&gt;[Reason]&lt;br/&gt;&lt;br/&gt;</item>
+  <item name="RequireRevision.RequestForMembership.Subject" html="false" placeholder="false">Accession revision request</item>
+  <item name="RequireRevision.RequestForMembership.Body" html="true" placeholder="true" mustcontains="[RequiredBy]|[RequestOn]|[RequestTime]|[LinkUrl]|[LinkUrl]|[Reason]|[DeadlineOn]|[DeadlineTime]">Dear Mr/Mrs,&lt;br/&gt;[RequiredBy] requested on [RequestOn] at [RequestTime] a revison to the submission ([LinkUrl]) ,strictly within [DeadlineOn] at [DeadlineTime] for the following reasons:&lt;br/&gt;&lt;br/&gt;[Reason]&lt;br/&gt;&lt;br/&gt;</item>
+  <item name="RemoveSelfRequest.RequestForMembership.Subject" html="false" placeholder="false"> DELETION of the accession revision</item>
+  <item name="RemoveSelfRequest.RequestForMembership.Body" html="true" placeholder="true" mustcontains="[RequiredBy]|[RequestOn]|[RequestTime]|[LinkUrl]|[CallName]">Dear Mr/Mrs,&lt;br/&gt;[RequiredBy] requested on [RequestOn] at [RequestTime] to delete the request for revision ([LinkUrl]) for the accession [CallName].&lt;br/&gt;&lt;br/&gt;</item>
+  <item name="RemoveManagerRequest.RequestForMembership.Subject" html="false" placeholder="false"> DELETION of the accession revision</item>
+  <item name="RemoveManagerRequest.RequestForMembership.Body" html="true" placeholder="true" mustcontains="[RequiredBy]|[RequestOn]|[RequestTime]|[LinkUrl]">Dear Mr/Mrs,&lt;br/&gt;[RequiredBy] rejected your request for a revision ([LinkUrl]) on [RequestOn] at [RequestTime].&lt;br/&gt;&lt;br/&gt;</item>
+  <item name="RemoveManagerRequest.RequestForMembership.Body.Reason" html="true" placeholder="true" mustcontains="[RequiredBy]|[RequestOn]|[RequestTime]|[LinkUrl]|[Reason]">Dear Mr/Mrs,&lt;br/&gt;[RequiredBy] rejected your request for a revision ([LinkUrl]) on [RequestOn] at [RequestTime] for the following reasons:&lt;br/&gt;&lt;br/&gt;[Reason]&lt;br/&gt;&lt;br/&gt;</item>
+  <item name="RemoveUserRequest.RequestForMembership.Subject" html="false" placeholder="false"> DELETION of the accession revision</item>
+  <item name="RemoveUserRequest.RequestForMembership.Body" html="true" placeholder="true" mustcontains="[SubmitterSurname]|[SubmitterName]|[LinkUrl]|[RequestOn]|[RequestTime]">Dear Mr/Mrs,&lt;br/&gt;[SubmitterSurname] [SubmitterName] deleted your request for revision ([LinkUrl]) on [RequestOn] at [RequestTime].&lt;br/&gt;&lt;br/&gt;</item>
+  <item name="RemoveUserRequest.RequestForMembership.Body.Reason" html="true" placeholder="true" mustcontains="[SubmitterSurname]|[SubmitterName]|[LinkUrl]|[RequestOn]|[RequestTime]|[Reason]">Buongiorno,&lt;br/&gt;[SubmitterSurname] [SubmitterName] rejected your request for revision ([LinkUrl]) on [RequestOn] at [RequestTime] for the following reasons:&lt;br/&gt;&lt;br/&gt;[Reason]&lt;br/&gt;&lt;br/&gt;</item>
+  <item name="SaveSettings.RequestForMembership.Subject" html="false" placeholder="false">Modify revision date / Fields to revise</item>
+  <item name="SaveSettings.RequestForMembership.Body" html="true" placeholder="true" mustcontains="[SubmitterSurname]|[SubmitterName]|[DeadlineOn]|[DeadlineTime]|[Fields]">Dear Mr/Mrs,&lt;br/&gt;[SubmitterSurname] [SubmitterName] modified some terms of the revision. In particular the revison deadline is on &lt;b&gt;[DeadlineOn]&lt;b/&gt; at &lt;b&gt;[DeadlineTime]&lt;b/&gt; for the fields:&lt;br/&gt;[Fields]&lt;br/&gt;&lt;br/&gt;</item>
+  <item name="AcceptUserRequest.RequestForMembership.Subject" html="false" placeholder="false">Request for revision accepted</item>
+  <item name="AcceptUserRequest.RequestForMembership.Body" html="true" placeholder="true" mustcontains="[RequiredBy]|[RequestOn]|[RequestTime]|[LinkUrl]">Dear Mr/Mrs,&lt;br/&gt;[RequiredBy] on [RequestOn] at [RequestTime] accepted your request for revision of the submission ([LinkUrl]).&lt;br/&gt;&lt;br/&gt;</item>
+  <item name="RefuseUserRequest.RequestForMembership.Subject" html="false" placeholder="false">Accession revision reject</item>
+  <item name="RefuseUserRequest.RequestForMembership.Body" html="true" placeholder="true" mustcontains="[RequiredBy]|[RequestOn]|[LinkUrl]|[RequestTime]|[Reason]">Dear Mr/Mrs,&lt;br/&gt;[RequiredBy] rejected your request for revision ([LinkUrl]) on [RequestOn] at [RequestTime] for the following reasons:[Reason]&lt;br/&gt;&lt;br/&gt;</item>
+  <item name="SubmitRevision.RequestForMembership.Subject" html="false" placeholder="false">Accession revision submission</item>
+  <item name="SubmitRevision.RequestForMembership.Body" html="true" placeholder="true" mustcontains="[SubmitterSurname]|[SubmitterName]|[CallName]|[LinkUrl]">Dear Mr/Mrs,&lt;br/&gt;[SubmitterSurname] [SubmitterName] has submitted a revision of the submission to "[CallName]".&lt;br/&gt;You can verify the revision at this link: [LinkUrl].&lt;br/&gt;&lt;br/&gt;</item>
+  <item name="AcceptUserRevision.RequestForMembership.Subject" html="false" placeholder="false">Revision confirmed</item>
+  <item name="AcceptUserRevision.RequestForMembership.Body" html="true" placeholder="true" mustcontains="[SubmitterSurname]|[SubmitterName]|[LinkUrl]">Dear Mr/Mrs,&lt;br/&gt;[SubmitterSurname] [SubmitterName] Your revision has been accepted.&lt;br/&gt;You can verify the submission final version at this link: [LinkUrl].&lt;br/&gt;&lt;br/&gt;</item>
+  <item name="RefuseUserRevision.RequestForMembership.Subject" html="false" placeholder="false">Revision NOT confirmed</item>
+  <item name="RefuseUserRevision.RequestForMembership.Body" html="true" placeholder="true" mustcontains="[SubmitterSurname]|[SubmitterName]|[LinkUrl]">Dear Mr/Mrs,&lt;br/&gt;[SubmitterSurname] [SubmitterName] Your revision has NOT been accepted.&lt;br/&gt;You can verify the submission final version at this link: [LinkUrl].&lt;br/&gt;&lt;br/&gt;</item>
+  <item name="AnonymousOwnerName" html="false" placeholder="false">Anonymous user</item>
+  <item name="DisplayCallUnavailableForPublic.View.CallForBids" html="false" placeholder="false">In order to view the request for participation to the call, you have to log into the platform first.</item>
+  <item name="DisplayCallUnavailableForPublic.View.RequestForMembership" html="false" placeholder="false">In order to view the request for accession to the call, you have to log into the platform first.</item>
+  <item name="DisplayCallUnavailable.View.CallForBids" html="false" placeholder="false">Requested call is currently NOT available.</item>
+  <item name="DisplayCallUnavailable.View.RequestForMembership" html="false" placeholder="false">The selected request for accession is not currently available.</item>
+  <item name="DisplaySubmissionUnavailable.View.CallForBids" html="false" placeholder="false">It is currently impossible to view the request for participation to the call.</item>
+  <item name="DisplaySubmissionUnavailable.View.RequestForMembership" html="false" placeholder="false">It is currently impossible to view the request for accession to the call.</item>
+  <item name="DisplayUnknownCall.CallForBids" html="false" placeholder="false">Call unknown</item>
+  <item name="DisplayUnknownCall.RequestForMembership" html="false" placeholder="false">Request for accession unknown</item>
+  <item name="DisplayUnknownSubmission.CallForBids" html="false" placeholder="false">Request for participation missing or not found</item>
+  <item name="DisplayUnknownSubmission.RequestForMembership" html="false" placeholder="false">Deleted or missing request for membership </item>
+  <item name="DisplayMessageToken.Title" html="false" placeholder="false">Wait.</item>
+  <item name="DisplayMessageToken.pdf" html="false" placeholder="false">The requested PDF file is almost ready, please wait few seconds.</item>
+  <item name="DisplayMessageToken.rtf" html="false" placeholder="false">The requested RTF file is almost ready, please wait few seconds.</item>
+  <item name="DisplayMessageToken.zip" html="false" placeholder="false">The zip file with all the attachments of the submission is almost ready, please wait few seconds.</item>
+  <item name="DisplayMessageToken.xml" html="false" placeholder="false">The requested XML file is almost ready, please wait few seconds.</item>
+  <item name="DisplayMessageToken.xls" html="false" placeholder="false">The requested XLS file is almost ready, please wait few seconds.</item>
+  <item name="DisplayMessageToken.csv" html="false" placeholder="false">The requested CSV file is almost ready, please wait few seconds.</item>
+  <item name="BTNsaveRevisionTop.text" html="false" placeholder="false">Save revision</item>
+  <item name="BTNsaveRevisionTop.ToolTip" html="false" placeholder="false">Save revision</item>
+  <item name="BTNsaveRevisionBottom.text" html="false" placeholder="false">Save revision</item>
+  <item name="BTNsaveRevisionBottom.ToolTip" html="false" placeholder="false">Save revision</item>
+  <item name="BTNsubmitRevisionTop.text" html="false" placeholder="false">Submit</item>
+  <item name="BTNsubmitRevisionTop.ToolTip" html="false" placeholder="false">Submit the revision</item>
+  <item name="BTNsubmitRevisionBottom.text" html="false" placeholder="false">Submit</item>
+  <item name="BTNsubmitRevisionBottom.ToolTip" html="false" placeholder="false">Submit the revision</item>
+  <item name="LTsaveBottomRevisionExplanation.text" html="false" placeholder="false">
+    Save revision draft. You will be able to continue later. The revision is not submitted till you press "Submit"</item>
+  <item name="LTsaveAndSubmitBottomRevisionExplanation.text" html="false" placeholder="false">
+    Submit revision. A submitted revision can not be modified and will pass to the evaluation phase
+  </item>
+  <item name="HYPrevisions.text" html="false" placeholder="false">Back to list</item>
+  <item name="HYPrevisions.ToolTip" html="false" placeholder="false">Back to revision list</item>
+  
+  <item name="RevisionErrorView.CallForBids.InvalidFields" html="false" placeholder="false">To confirm the revision it is necessary to verify the highlighted fields</item>
+  <item name="RevisionErrorView.CallForBids.RequiredItems" html="false" placeholder="false">To confirm the revision it is necessary to fill the mandatory fields in</item>
+  <item name="RevisionErrorView.CallForBids.Deleted" html="false" placeholder="false">Error while deleting revision.</item>
+  <item name="RevisionErrorView.CallForBids.Unknown" html="false" placeholder="false">Revision missing, back to call list</item>
+  <item name="RevisionErrorView.CallForBids.GenericError" html="false" placeholder="false">Error while saving data. Retry later.</item>
+  <item name="RevisionErrorView.CallForBids.StringValueSaving" html="false" placeholder="false">Error while saving some revision fields. The operation was not successfully performed.</item>
+  <item name="RevisionErrorView.CallForBids.FileSaving" html="false" placeholder="false">Error while uploading files. The operation was not successfully performed.</item>
+  <item name="RevisionErrorView.CallForBids.TimeExpired" html="false" placeholder="false">ATTENTION ! The revision terms of the request for call participation have expired on {0} at {1} !</item>
+  <item name="RevisionErrorView.CallForBids.Unavailable" html="false" placeholder="false">Revision currently not available</item>
+  <item name="RevisionErrorView.RequestForMembership.InvalidFields" html="false" placeholder="false">To confirm the revision it is necessary to verify the highlighted fields</item>
+  <item name="RevisionErrorView.RequestForMembership.RequiredItems" html="false" placeholder="false">To confirm the revision it is necessary to fill the mandatory fields in</item>
+  <item name="RevisionErrorView.RequestForMembership.Deleted" html="false" placeholder="false">Error while deleting revision.</item>
+  <item name="RevisionErrorView.RequestForMembership.Unknown" html="false" placeholder="false">Revision missing, back to accession list</item>
+  <item name="RevisionErrorView.RequestForMembership.GenericError" html="false" placeholder="false">Error while saving data. Retry later.</item>
+  <item name="RevisionErrorView.RequestForMembership.StringValueSaving" html="false" placeholder="false">Error while saving some revision fields. The operation was not successfully performed.</item>
+  <item name="RevisionErrorView.RequestForMembership.FileSaving" html="false" placeholder="false">Error while uploading files. The operation was not successfully performed.</item>
+  <item name="RevisionErrorView.RequestForMembership.TimeExpired" html="false" placeholder="false">ATTENTION ! The revision terms of the accession have expired !</item>
+  <item name="RevisionErrorView.RequestForMembership.Unavailable" html="false" placeholder="false">Revision currently not available</item>
+  
+  <item name="RevisionAction.UserRequired" html="false" placeholder="false">Revision request sent to</item>
+  <item name="RevisionAction.Manager" html="false" placeholder="false">Revision required</item>
+  <item name="LTrevisionActionBy_t.text" disambiguation="da=inteso come azione eseguita dall'utente" html="false" placeholder="false">by</item>
+  <item name="LTrevisionActionDeadline_t.text" html="false" placeholder="false">to submit within the</item>
+  <item name="revisionActionDeadline" html="false" placeholder="false">A submission date still has not been set.</item>
+  <item name="LTrevisionStatus.Request" html="false" placeholder="false" />
+  <item name="LTrevisionStatus.RequestAccepted" disambiguation="relativo a status revisione di un bando" html="false" placeholder="false">Required approved</item>
+  <item name="LTrevisionStatus.Submitted" html="false" placeholder="false">Revision submitted</item>
+  <item name="LTrevisionStatus.Approved" html="false" placeholder="false">Revision approved</item>
+  <item name="LTrevisionStatus.Refused" html="false" placeholder="false">Revision NOT approved</item>
+  <item name="LTrevisionStatus.Cancelled" html="false" placeholder="false">Revision deleted</item>
+  <item name="LTrevisionActionSubmittedOn.text" html="false" placeholder="true" mustcontains="{0}|{1}">on {0} at {1}</item>
+  <item name="LTrevisionActionManagedBy_t.text" disambiguation="da=inteso come azione eseguita dall'utente" html="false" placeholder="false">by</item>
+  <item name="LBrevisionExpectedAction.text" disambiguation="relativo a status revisione di un bando" html="false" placeholder="false">(apporval pending)</item>
+  
+  <item name="LoadUnknowCall.none" html="false" placeholder="false">No item found</item>
+  <item name="LoadUnknowCall.CallForBids" html="false" placeholder="false">Call not found.</item>
+  <item name="LoadUnknowCall.RequestForMembership" html="false" placeholder="false">Request for membership not found</item>
+  
+  <!-- EVALUATE-->
+  <item name="Evaluate.Title" disambiguation="domanda di partecipazione/domanda di adesione" html="false" placeholder="true" mustcontains="{0}">Request evaluation of {0}</item>
+  <item name="Evaluate.Tooltip" html="false" placeholder="true" mustcontains="{0}|{1}|{2}">Type {0} - Submitted by {1} - Call "{2}"</item>
+  <item name="GeneralTabName" html="false" placeholder="false">General</item>
+  <item name="LBcriterionSelect_t.text" html="false" placeholder="false">Select a criteria</item>
+  <item name="LBcommentEvaluation_t.text" html="false" placeholder="false">Overall comment:</item>
+  <item name="LBcommentHelp.text" html="false" placeholder="false" />
+  <item name="LTmaxCharsComment.text" html="false" placeholder="false">Available characters:</item>
+  <item name="LBerrorMessageComment.text" html="false" placeholder="false">Mandatory comment</item>
+  <item name="ServiceEvaluateNopermission" html="false" placeholder="false">You do not have permission to evaluate the request for call participation</item>
+  <item name="DisplayEvaluationUnavailable" html="false" placeholder="false">It is not possible to evaluate this request: you are not an assigned evaluator</item>
+  <item name="DisplayNotEvaluationPermission" html="false" placeholder="false">You do not have permission to evaluate the request for call participation</item>
+  <item name="DisplayUnknownEvaluation" html="false" placeholder="false">Evaluation missing, close the window and reload the evaluations list page.</item>
+  <item name="BTNsaveEvaluation.text" html="false" placeholder="false">Save draft</item>
+  <item name="BTNsaveEvaluation.Tooltip" html="false" placeholder="false">Save evaluations, allowing further changes</item>
+  <item name="BTNcompleteEvaluation.text" html="false" placeholder="false">Submit </item>
+  <item name="BTNcompleteEvaluation.Tooltip" html="false" placeholder="false">Save the evaluation  </item>
+  <item name="DisplayEvaluationSaved" html="false" placeholder="false">Evaluation correctly saved</item>
+  <item name="EvaluationEditorErrors.SavingEvaluation" html="false" placeholder="false">ATTENTION: evaluation data NOT correctly saved</item>
+  <item name="EvaluationEditorErrors.SavingEvaluationCompleted" html="false" placeholder="false">ATTENTION: it was not possible to save correctly the evaluation</item>
+  <item name="EvaluationEditorErrors.SavingEvaluation.Count" html="false" placeholder="true" mustcontains="{0}">ATTENTION: evaluation data NOT correctly saved ({0} not evaluated criteria/incorrect data).</item>
+  <item name="EvaluationEditorErrors.SavingEvaluationCompleted.Count" html="false" placeholder="true" mustcontains="{0}">ATTENTION: it was not possible to save correctly the evaluation ({0} not evaluated criteria/incorrect data).</item>
+  <item name="EvaluationInfo.Evaluated" html="false" placeholder="false">Evaluation started on {0} and ended on {1}.</item>
+  <item name="EvaluationInfo.EvaluatorReplacement.True" html="false" placeholder="true" mustcontains="{0}|{1}|{2}">Evaluator SUBSTITUTED on {1} (evaluation started on {0} and ended on {2}).</item>
+  <item name="EvaluationInfo.EvaluatorReplacement.False" html="false" placeholder="true" mustcontains="{0}|{1}">Evaluator SUBSTITUTED on {1} (evaluation started on {0}).</item>
+  <item name="EvaluationInfo.Invalidated.True" html="false" placeholder="true" mustcontains="{0}|{1}|{2}">Evaluation deleted on {1} (evaluation started on {0} and ended on {2}).</item>
+  <item name="EvaluationInfo.Invalidated.False" html="false" placeholder="true" mustcontains="{0}|{1}">Evaluation deleted on {1} (evaluation started on {0}).</item>
+  <item name="EvaluationInfo.Evaluating" html="false" placeholder="true" mustcontains="{0}|{1}">Evaluation in progress, started on {0} and last changed on {1}.</item>
+  <item name="UnknownDisplayname" html="false" placeholder="false">Removed user</item>
+
+    <item name="BTNvirtualDeleteSubmission.text" html="false" placeholder="false">Delete</item>
+    <item name="BTNvirtualDeleteSubmission.Tooltip" html="false" placeholder="false">Delete</item>
+
+    <item name="BTNsaveSubmissionTop.text" html="false" placeholder="false">Save draft</item>
+    <item name="BTNsaveSubmissionTop.Tooltip" html="false" placeholder="false">Save draft</item>
+
+    <item name="BTNsubmitSubmissionTop.text" html="false" placeholder="false">Submit</item>
+    <item name="BTNsubmitSubmissionTop.Tooltip" html="false" placeholder="false">Submit</item>
+
+    <item name="BTNsaveSubmissionBottom.text" html="false" placeholder="false">Save draft</item>
+    <item name="BTNsaveSubmissionBottom.Tooltip" html="false" placeholder="false">Save draft</item>
+
+    <item name="BTNsubmitSubmissionBottom.text" html="false" placeholder="false">Submit</item>
+    <item name="BTNsubmitSubmissionBottom.Tooltip" html="false" placeholder="false">Submit</item>
+    <item name="Closed.RequestForMembership.SubmissionStatus.draft">Draft not submitted</item>
+    <item name="Closed.CallForBids.SubmissionStatus.draft">Draft not submitted</item>
+    <item name="Closed.RequestForMembership.SubmissionStatus.draft.n">Other drafts not submitted</item>
+    <item name="Closed.CallForBids.SubmissionStatus.draft.n">Other drafts not submitted</item>
+    <item name="Closed.RequestForMembership.SubmissionStatus.draft.1">Other draft not submitted</item>
+    <item name="Closed.CallForBids.SubmissionStatus.draft.1">Other draft not submitted</item>
+</Resource>

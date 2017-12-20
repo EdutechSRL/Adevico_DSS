@@ -1,0 +1,615 @@
+/* Last update 13.11.2013 */
+
+
+body {
+	word-wrap: break-word;
+}
+
+ul.ScormList {
+	padding-bottom: 0;
+	padding-left: 0 !important;
+	*padding: 0 !important;
+	padding-right: 0 !important;
+	padding-top: 0;
+	margin-left: 0 !important;
+	*margin-left: 0;
+	font-size: 11px;
+}
+
+li.scst_Node {
+	margin: 0;
+	padding-bottom: 0;
+	padding-left: 0;
+	padding-right: 0;
+	padding-top: 0.2em;
+}
+
+table.DataGrid_Generica td div.Completition {
+
+}
+
+.ItemGreen {
+	background-color: #99c74a !important;
+	text-align: center;
+	padding: 0px 15px;
+}
+
+.ItemYellow {
+	background-color: #ffcd40 !important;
+	text-align: center;
+	padding: 0px 15px;
+}
+
+.ItemRed {
+	background-color: #FF9999 !important;
+	text-align: center;
+	padding: 0px 15px;
+}
+
+.ItemSelected {
+	background-color: #ccc;
+}
+
+/*          NEW -> allineamenti dati package   */
+
+.scst_Head {
+	
+}
+
+.scst_Bordered {
+	border: 1px solid #888;
+	margin: 1px;
+}
+
+.scst_TopRight {
+	margin: 1px 0px 10px 0px;
+}
+
+.scst_LeftCol {
+	display: inline-block;
+	width: 49%;
+	vertical-align: top;
+	padding: 0;
+	float: left;
+}
+
+.scst_RightCol {
+	display: inline-block;
+	width: 49%;
+	top: 0px;
+	vertical-align: top;
+	padding: 0;
+	float: right;
+}
+
+.scst_Bold {
+	font-weight: bold;
+}
+
+/*          END -> allineamenti dati package   */
+
+/*   -->   Per la modifica dei parametri del Package   <--  
+	
+	div.scst_PackageTree
+	{
+		display:inline-block; 
+		width:45%; 
+		min-width:45%;
+		vertical-align: top;
+	}
+	
+	div.scst_Setting
+	{
+		display:inline-block; 
+		width:300px; 
+		min-width:300px;
+	}
+
+	div.scst_ItemSetting
+	{
+		display:inline-block; 
+		border-width: 1px;
+		border-style: solid;
+		width: 100%;
+		min-width: 100%;
+	}
+	
+	ul.scst_checkBox
+	{
+		padding-top: 0px;
+		border-top: 0px;
+		margin-top: 0px;
+	}
+	
+	.scst_radiobutton
+	{
+		padding: 0px;
+		margin: 0px;
+		border: 0px;
+	}
+	
+	.scst_DivGlobal
+	{
+		border: 1px, solid;
+		}
+		
+	li.scst_Leaf
+	{
+		margin:0;
+		padding-bottom:0;
+		padding-left:0;
+		padding-right:0;
+		padding-top:0.2em;
+	}
+		
+	li.scst_Node
+	{
+		margin:0;
+		padding-bottom: 0;
+		padding-left: 0;
+		padding-right: 0;
+		padding-top: 0.2em;
+	}
+	*/
+
+div#DVmenu {
+	width: 900px;
+	text-align: right;
+	padding-top: 5px;
+	margin: 0px auto;
+	padding-bottom: 5px;
+}
+
+div#DVmenu div.col_right {
+	float: left;
+	text-align: left;
+	width: 355px;
+}
+
+div#DVmenu div.col_left {
+	float: left;
+	text-align: right;
+	width: 545px;
+}
+
+/*  Stat Temp */
+
+div.stat_content {
+	display: block;
+	padding-top: 1em;
+}
+
+div.stat_content div.stat_filter {
+	border: 1px solid #000;
+	border-bottom: 0;
+	margin: 1em 0 0 0;
+	padding: 1em;
+}
+
+div.stat_content div.stat_filter div.filt_left {
+	display: inline-block;
+	width: 50%;
+}
+
+div.stat_content div.stat_filter div.filt_center {
+	display: inline-block;
+	width: 30%;
+}
+
+div.stat_content div.stat_filter div.filt_right {
+	display: inline-block;
+	width: 17%;
+	text-align: right;
+}
+
+div.stat_content div.stat_stat {
+	border: 1px solid #000;
+	margin: 0 0 1em 0;
+	padding: 1em;
+}
+
+div.stat_content span.element {
+	display: block;
+	height: 36px;
+}
+
+div.stat_content div.stat_filter div.filt_center span.element span.Titolo_campo {
+	display: inline-block;
+	width: 65px;
+}
+
+div.stat_content div.stat_filter div.filt_left span.element {
+	vertical-align: top;
+}
+
+table.table_data {
+	border: 0;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+}
+
+table.table_data td {
+	border: 1px solid black;
+	margin: 0;
+	padding: 0;
+	border-right: 0;
+	border-bottom: 0;
+	padding: 0.3em;
+	text-align: center;
+	height: 35px;
+}
+
+table.table_data td.last_right {
+	border-right: 1px solid black;
+	text-align: center;
+}
+
+table.table_data tr.last_row td {
+	text-align: center;
+	border-bottom: 1px solid black;
+	padding: 0.3em;
+}
+
+/*  Statistiche temporali */
+
+div.info {
+	border-top: 0 none;
+	display: block;
+	height: 50px;
+	margin-top: 18px;
+	text-align: right;
+}
+
+div.info img {
+	float: left;
+}
+
+table.DataGrid_Generica,
+table.DataGrid_Genericat td {
+	width: 100%;
+}
+
+div.IW_StatUser div,
+div.IW_StatFile div {
+	margin: 0 !important;
+}
+
+table#CPHservice_Ctrl_FileSelect_GRVfile th,
+table#CPHservice_Ctrl_UserSelect_CTRL_SearchUser_GRVuser th,
+table.DataGrid_Generica td.name_column,
+table.DataGrid_Generica td.filter_column,
+table.DataGrid_Generica td.act_column,
+table.DataGrid_Generica td.play_column,
+table.DataGrid_Generica td.time_column, 
+table.DataGrid_Generica td.score_column,
+table.DataGrid_Generica td.compl_column,
+table.DataGrid_Generica td.detail_column,
+table#CPHService_Ctrl_FileSelect_GRVfile th {
+	font-size: .95em;
+	color: #444;
+	padding: 3px;
+	background-color: #e3e6ea;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#eceef1),to(#dbdfe4));
+	background-image: -webkit-linear-gradient(top, #eceef1, #dbdfe4);
+	background-image: -moz-linear-gradient(top, #eceef1, #dbdfe4);
+	background-image: -o-linear-gradient(top, #eceef1, #dbdfe4);
+	background-image: -ms-linear-gradient(top, #eceef1, #dbdfe4);
+	background-image: linear-gradient(top, #eceef1, #dbdfe4);
+	vertical-align: middle;
+	-moz-box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.4s);
+	-webkit-box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.4);
+	box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.4);
+	text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+table#CPHservice_Ctrl_FileSelect_GRVfile,
+table#CPHservice_Ctrl_FileSelect_GRVfile td,
+table#CPHservice_Ctrl_UserSelect_CTRL_SearchUser_GRVuser td,
+table#CPHservice_Ctrl_UserSelect_CTRL_SearchUser_GRVuser th,
+table.DataGrid_Generica,
+table.DataGrid_Generica td,
+table#CPHService_Ctrl_FileSelect_GRVfile th {
+	border: 1px solid #ccc;
+	font-size: .95em;
+}
+
+
+/* Datagrid statistiche - larghezze */
+
+table.DataGrid_Generica td.name_column {
+	min-width: 150px;
+}
+
+table.DataGrid_Generica td.filter_column {
+	min-width: 100px;
+}
+
+table.DataGrid_Generica tr td:first-child {
+	text-align: left;
+	font-size: 1em;
+}
+
+div#CPHservice_Ctrl_UserSelect_CTRL_SearchUser_DIVricerca {
+
+}
+
+span.Filtro_RecordPaginazione {
+	display: inline-block;
+	margin: 1em 0;
+}
+
+table#CPHservice_Ctrl_UserSelect_CTRL_SearchUser_GRVuser {
+	*margin-top: 1em;
+}
+
+table.DataGrid_Generica td.act_column {
+	min-width: 50px;
+}
+
+table.DataGrid_Generica td.play_column {
+	min-width: 50px;
+}
+
+table.DataGrid_Generica td.time_column {
+	min-width: 100px;
+}
+
+table.DataGrid_Generica td.score_column {
+	min-width: 80px;
+}
+
+table.DataGrid_Generica td.compl_column {
+	min-width: 75px;
+}
+
+table.DataGrid_Generica td.detail_column {
+	min-width: 75px;
+}
+
+/* Dettagli */
+
+.Pnl_Detail div.Field_Row {
+	width: auto;
+	margin: 1em 0;
+}
+
+.Pnl_Detail div.General span.Field_data {
+	display: inline-block;
+	*display:inline;
+	*zoom: 1;
+	width: 30%;
+}
+
+ .Pnl_Detail div.Field_Row.General {
+ 	border-bottom: 1px solid #ccc;
+ 	padding-bottom: 1em;
+ 	margin-bottom: 1em,;
+}
+
+.Pnl_Detail div.Detail span.Field_data {
+	display: inline-block;
+	*display:inline;
+	*zoom: 1;
+	padding-right: 2em;
+}
+
+.Pnl_Detail div.Detail span.Field_data .Titolo_campo {
+	display: block;
+	margin-bottom: 5px;
+
+}
+
+.Pnl_Detail div.Detail span.Field_data .Testo_campo {
+	display: block;
+	margin-bottom: 5px;
+	text-align: center;
+}
+
+.Pnl_Detail div.Detail span.Field_data .Titolo_campo {
+	display: block;
+	margin-bottom: 5px;
+
+}
+
+.Pnl_Detail div.Field_Row .Completition,
+.Pnl_Detail div.Child .Completition {
+	width: 100px;
+	display: inline-block;
+	text-align: center;
+}
+
+* html .Pnl_Detail div.Field_Row .Completition {
+	display: inline;
+	width: 120px;
+}
+
+*+html .Pnl_Detail div.Field_Row .Completition {
+	display: inline;
+	width: 120px;
+}
+
+:root .Pnl_Detail div.Field_Row .Completition {
+	display: inline\9;
+	width: 120px\9;
+}
+
+* html .Pnl_Detail div.Child .Completition {
+	display: inline;
+}
+
+*+html .Pnl_Detail div.Child .Completition {
+	display: inline;
+}
+
+:root .Pnl_Detail div.Child .Completition {
+	display: inline\9;
+}
+
+.Pnl_Detail ul.ScormList li.scst_Node div.Child {
+	vertical-align: middle;
+	padding: 3px;
+}
+
+.Pnl_Detail ul.ScormList li.scst_Node span  {
+	padding: 2px;
+	font-size: 11px;
+}
+
+
+
+.Pnl_Detail ul.ScormList li.scst_Node span.Testo_campo {
+	text-align: left !important;
+}
+
+.Pnl_Detail ul.ScormList li.scst_Node span.ActivityName {
+	display: inline-block;
+	width: 120px;
+	vertical-align: middle;
+}
+
+.Pnl_Detail ul.ScormList li.scst_Node span.Time_t {
+	display: inline-block;
+	width: 65px;
+}
+
+.Pnl_Detail ul.ScormList li.scst_Node span.Time {
+	display: inline-block;
+	width: 65px;
+	text-align: center;
+	width: 140px;
+}
+
+.Pnl_Detail ul.ScormList li.scst_Node span.Score_t {
+	display: inline-block;
+	width: 70px;
+}
+
+.Pnl_Detail ul.ScormList li.scst_Node span.Raw_t {
+	display: inline-block;
+	width: 65px;
+}
+
+.Pnl_Detail ul.ScormList li.scst_Node span.Scaled_t {
+	display: inline-block;
+	width: 65px;
+}
+
+.Pnl_Detail ul.ScormList li.scst_Node span.Score {
+	display: inline-block;
+	width: 40px;
+}
+
+.Pnl_Detail ul.ScormList li.scst_Node span.Completition {
+	display: inline-block;
+	width: 150px;
+	padding: 0;
+}
+
+/* wizard */
+
+div#Wizard div.TopDescription,
+div#Wizard div.TopDescription * {
+	vertical-align: middle;
+}
+
+div#Wizard div.TopDescription div.Top_Img {
+	display: inline-block;
+}
+
+div#Wizard div.TopDescription div.Top_Text {
+	display: inline-block;
+	padding-left: 1em;
+}
+
+div#Wizard div.TopDescription div.Top_Right {
+	float: right;
+	padding-right: 1em;
+	padding-top: 1em;
+}
+
+div#Wizard div.TopDescription div.Top_Right span {
+	display: inline;
+}
+
+div#Wizard div.TopDescription H1 {
+	font-size: 16px;
+}
+
+div#Wizard div.TopDescription img {
+	padding: 0.2em 0 0 2em;
+}
+
+div#Wizard div.TopDescription span {
+	padding: 0;
+}
+
+div#Wizard div.TopDescription span.Testo_Campo {
+	
+}
+
+.time_filter {
+	width: 100%;
+	text-align: right;
+}
+
+/* Dimensioni colonne */
+
+/* Nome file, nome utente */
+
+div.IW_StatUser tr.ROW_Normal_Small td span.field_filename, 
+div.IW_StatFile tr.ROW_Normal_Small td span.field_username,
+div.IW_StatUser tr.ROW_Alternate_Small td span.field_filename, 
+div.IW_StatFile tr.ROW_Alternate_Small td span.field_username {
+	max-width: 200px;
+	word-wrap: break-word;
+	display: block;
+	text-transform: capitalize;
+}
+
+/*div.Completition*/
+
+/* NOTA: non riesco a centrarlo! Intanto così... */
+
+.ItemGreen,
+.ItemRed,
+.ItemYellow  {
+/*	height: 100%;
+	width: 95px;
+	max-width: 95px;*/
+	display: block;
+	vertical-align: middle;
+	padding: 3px !important;
+	
+	-moz-box-shadow: inset 1px 1px 1px rgba(0,0,0,0.2);
+	-webkit-box-shadow: inset 1px 1px 1px rgba(0,0,0,0.2);
+	box-shadow: inset 1px 1px 1px rgba(0,0,0,0.2);
+	border-radius: 3px;
+	margin: 0 2px !important;
+}
+
+.Pnl_Detail ul.ScormList li.scst_Node div.Child .ItemGreen,
+.Pnl_Detail ul.ScormList li.scst_Node div.Child .ItemRed,
+.Pnl_Detail ul.ScormList li.scst_Node div.Child .ItemYellow {
+	border: 1px solid #ccc;
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	padding: 1px !important;
+	vertical-align: baseline;
+}
+
+div.IW_StatFile div.Completition span, div.IW_StatUser div.Completition span {
+	vertical-align: middle
+}
+
+div.time_filter {
+	margin: 1em 0;
+}
+
+div.IW_StatFile div .Titolo_Campo,
+div.IW_StatFile div .Testo_Campo,
+div.IW_StatUser div .Titolo_Campo,
+div.IW_StatUser div .Testo_Campo {
+	font-size: 1.2em;
+}

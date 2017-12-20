@@ -1,0 +1,666 @@
+﻿
+
+table.stats {
+	width: 900px;
+	border-collapse: collapse;
+	border: 2px solid #444;
+	border-top-width: 1px;
+}
+
+table.stats td {
+	padding: 3px;
+	vertical-align: middle;
+	border: 1px solid #ddd;
+	border-top: none;
+}
+
+table.stats thead {
+	background-color: #444;
+	color: #fff;
+	font-size: 0.8em;
+}
+
+table.stats thead tr th,
+table.stats tr.path td {
+	border: 1px solid #a9a9a9;
+	border-top: none;
+	border-bottom: none;
+}
+
+table.stats tfoot {
+	background-color: #444;
+	color: #fff;
+	text-align: center;
+	display: none;
+}
+
+table.stats tbody {
+	color: #333;
+}
+
+table.stats td a.expander {
+	
+}
+
+table.stats tr {
+	
+}
+
+table.stats thead tr {
+	border-bottom: none;
+}
+
+table.stats tr.path,
+table.stats tr.path:hover {
+	background-color: #888;
+	color: #fff;
+	text-shadow: #222 0px 1px 0px;
+}
+
+table.stats tr.path span.name {
+	font-size: 1.3em;
+}
+
+table.stats tr.unit {
+	background-color: #ddd;
+	border-top: 1px double #888;
+	font-weight: bold;
+}
+
+table.stats tr.unit.expanded {
+	border-top: 1px double #888;
+}
+
+table.stats tr.path + tr.unit {
+	border-top: none !important;
+}
+
+table.stats tr.unit td {
+	border: 1px solid #ccc;
+	border-top: none;
+	border-bottom: none;
+}
+
+table.stats tr.activity {
+	background-color: #eee;
+	border-left: 2px solid #444;
+	border-right: 2px solid #444;
+	border-bottom: 1px solid #ccc;
+	font-size: 0.9em;
+}
+
+table.stats tr.activity.expanded {
+	border-bottom: 1px solid #ddd;
+}
+
+table.stats tr.subactivity {
+	background-color: #fff;
+	border-left: 2px solid #444;
+	border-right: 2px solid #444;
+	border-bottom: 1px solid #ddd;
+	color: #888;
+}
+
+tr.unit + tr.subactivity,
+tr.unit + tr.subactivity ~ tr.subactivity {
+	color: #222;
+	font-size: 0.9em;
+}
+
+table.stats tr.path td.description {
+	padding-left: 0.5em;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+table.stats tr.path td.description span.itemdetail {
+	padding-left: 0.5em;
+	text-transform: none;
+	font-weight: normal;
+	font-style: normal;
+}
+
+table.stats tbody tr:hover {
+	background-color: #fff8dc;
+}
+
+table.stats tr td.description {
+	
+}
+
+table.stats tr.unit td.description {
+	padding-left: 1.5em;
+}
+
+table.stats tr.activity td.description {
+	padding-left: 2.8em !important;
+}
+
+table.stats.users tr.activity td.description {
+	padding-left: 0.5em !important;
+}
+
+
+table.stats tr.subactivity td.description {
+	padding-left: 3em !important;
+}
+
+table.stats th.description {
+	width: auto;
+}
+
+table.stats th.completedpassed {
+	width: 80px;
+}
+
+table.stats th.timecompletion {
+	width: 140px;
+}
+
+table.stats th.started {
+	width: 80px;
+}
+
+table.stats th.notstarted {
+	width: 80px;
+}
+
+table.stats th.status {
+	width: 110px;
+}
+
+table.stats td.status {
+	width: 100px;
+	text-align: center;
+}
+
+table.stats th.actions {
+	width: 70px;
+}
+
+table.stats.user .status,
+table.stats.users .status {
+	width: 180px;
+}
+
+table.stats td.started, 
+table.stats td.notstarted,
+table.stats td.completedpassed {
+	text-align: center;
+}
+
+table.stats .iteminfo {
+	width: 88%;
+	display: inline-block;
+	float: left;
+	*line-height: 1.2em;
+	*display: inline;
+	display: inline\0/;
+}
+
+tr.subactivity span.iteminfo {
+	width: 80%;
+	text-indent: -20px;
+	padding-left: 20px;
+}
+
+table.stats .actionbuttons {
+	
+}
+
+table.stats .actionbuttons.right {
+	float: right;
+}
+
+table.stats .actionbuttons .actionbutton {
+	display: inline-block;
+	width: 17px;
+	height: 17px;
+	cursor: pointer;
+	text-align: center;
+	vertical-align: text-bottom;
+	background-position: center center;
+	background-repeat: no-repeat;
+}
+
+table.stats .actionbuttons .actionbutton:hover {
+	
+}
+
+table.stats .actionbutton {
+	background-image: url(http://www.iconfinder.com/ajax/download/png/?id=36354&s=16);
+}
+
+table.stats .actionbutton.details {
+	background-image: url(http://demo.comunitaonline.unitn.it/images/DefaultCommand/info16.png);
+}
+
+table.stats .actionbutton.stats {
+	background-image: url(http://demo.comunitaonline.unitn.it/images/DefaultCommand/stat16.png);
+}
+
+table.stats .actionbutton.evaluate {
+	background-image: url(http://www.iconfinder.com/ajax/download/png/?id=22643&s=16);
+}
+
+table.stats .actionbutton.play {
+	background-image: url(http://demo.comunitaonline.unitn.it/images/DefaultCommand/playScorm16.png);
+}
+
+table.stats .actionbutton.quiz {
+	background-image: url(http://www.iconfinder.com/ajax/download/png/?id=9069&s=16);
+}
+
+table.stats .actionbutton.forum {
+	background-image: url(http://www.iconfinder.com/ajax/download/png/?id=1242&s=16);
+}
+
+table.stats .icons {
+	
+}
+
+table.stats .icons.right {
+	text-align: right;
+	float: right;
+	width: 42px;
+}
+
+table.stats .path .icons.right {
+	text-align: center;
+	width: 18px;
+}
+
+table.stats tr.path span.icons.right {
+	float: right;
+	background-color: #eee;
+	padding: 2px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+}
+
+table.stats .icon {
+	display: inline-block;
+	width: 17px;
+	height: 17px;
+	text-align: center;
+	vertical-align: text-bottom;
+	background-position: center center;
+	background-repeat: no-repeat;
+}
+
+table.stats .icons .icon {
+	display: inline-block;
+	width: 17px;
+	height: 17px;
+	text-align: center;
+	vertical-align: text-bottom;
+	background-position: center center;
+	background-repeat: no-repeat;
+}
+
+table.stats .icon.unlocked {
+	background-image: url(http://comunitaonline.unitn.it//Modules/EduPath/img/unlocked16.png);
+}
+
+table.stats .icon.locked {
+	background-image: url(http://comunitaonline.unitn.it/Modules/EduPath/img/locked16.png);
+}
+
+table.stats .icon.mandatory {
+	background-image: url(http://comunitaonline.unitn.it/Modules/EduPath/img/mandatory_small.png);
+}
+
+table.stats .icon.file_zip {
+	background-image: url(http://comunitaonline.unitn.it/Modules/EduPath/img/mandatory_small.png);
+}
+
+div.expandbuttons {
+	margin: 1em 0 0 0;
+}
+
+ul.expandbuttons {
+	margin: 0;
+	padding: 0;
+	display: inline;
+}
+
+ul.expandbuttons li.expandbutton {
+	cursor: pointer;
+	display: inline;
+}
+
+/* @group Flag */
+
+.flag {
+	width: 100px;
+	display: inline-block;
+	line-height: 13px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	overflow: hidden;
+	border: 1px solid #888;
+	-moz-box-shadow: inset 0 0 3px #222;
+	-webkit-box-shadow: inset 0 0 3px #222;
+	box-shadow: inset 0 0 3px #222;
+}
+
+tr.path .flag {
+	border: 1px solid #666;
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	border-radius: 6px;
+}
+
+tr.path .flag {
+	height: 18px;
+}
+
+tr span.flag span {
+	height: 18px;
+}
+
+tr.activity .flag {
+	height: 10px;
+}
+
+tr.subactivity .flag {
+	height: 6px;
+}
+
+tr.unit .flag {
+	height: 12px;
+}
+
+.flag .notstarted {
+	display: inline-block;
+	width: 25px;
+	background: #cccccc;
+	background: -moz-linear-gradient(top,  #cccccc 0%, #eeeeee 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#cccccc), color-stop(100%,#eeeeee));
+	background: -webkit-linear-gradient(top,  #cccccc 0%,#eeeeee 100%);
+	background: -o-linear-gradient(top,  #cccccc 0%,#eeeeee 100%);
+	background: -ms-linear-gradient(top,  #cccccc 0%,#eeeeee 100%);
+	background: linear-gradient(top,  #cccccc 0%,#eeeeee 100%);
+	-moz-box-shadow: inset 1px 1px 1px rgba(0,0,0,0.2);
+	-webkit-box-shadow: inset 1px 1px 1px rgba(0,0,0,0.2);
+	box-shadow: inset 1px 1px 1px rgba(0,0,0,0.2);
+}
+
+.flag .started {
+	display: inline-block;
+	width: 25px;
+	background: #ebdf00;
+	background: -webkit-gradient(linear, left top, left bottom, from(#ebdf00),to(#ffbb00));
+	background: -webkit-linear-gradient(top, #ebdf00, #ffbb00);
+	background: -moz-linear-gradient(top, #ebdf00, #ffbb00);
+	background: -o-linear-gradient(top, #ebdf00, #ffbb00);
+	background: -ms-linear-gradient(top, #ebdf00, #ffbb00);
+	background: linear-gradient(top, #ebdf00, #ffbb00);
+}
+
+.flag .completed {
+	display: inline-block;
+	width: 25px;
+	background: #a4b357;
+	background: -moz-linear-gradient(top,  #a4b357 0%, #75890c 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#a4b357), color-stop(100%,#75890c));
+	background: -webkit-linear-gradient(top,  #a4b357 0%,#75890c 100%);
+	background: -o-linear-gradient(top,  #a4b357 0%,#75890c 100%);
+	background: -ms-linear-gradient(top,  #a4b357 0%,#75890c 100%);
+	background: linear-gradient(top,  #a4b357 0%,#75890c 100%);
+}
+
+.flag .notpassed {
+	display: inline-block;
+	width: 25px;
+	background: #ff3019;
+	background: -moz-linear-gradient(top,  #ff3019 0%, #cf0404 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ff3019), color-stop(100%,#cf0404));
+	background: -webkit-linear-gradient(top,  #ff3019 0%,#cf0404 100%);
+	background: -o-linear-gradient(top,  #ff3019 0%,#cf0404 100%);
+	background: -ms-linear-gradient(top,  #ff3019 0%,#cf0404 100%);
+	background: linear-gradient(top,  #ff3019 0%,#cf0404 100%);
+}
+
+/* @end */
+
+.timecompletion span.flag {
+	box-shadow: none;	
+	-moz-border-radius: 30px;
+	-webkit-border-radius: 30px;
+	border-radius: 30px;
+	border: 1px solid;
+	display: inline;
+	padding: 0 6px;
+	float: right;
+	width: auto;
+	height: 12px;
+	font-size: 1px;
+	display:inline-block;
+	clear: both;
+	/*float: none\0/;*/
+}
+
+*html .timecompletion span.flag,
+*+html .timecompletion span.flag {
+	float: none;
+}
+
+.timecompletion span.flag.yes {
+	border-color: #828e44;
+	background: #a4b357;
+	background: -moz-linear-gradient(top,  #a4b357 0%, #75890c 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#a4b357), color-stop(100%,#75890c));
+	background: -webkit-linear-gradient(top,  #a4b357 0%,#75890c 100%);
+	background: -o-linear-gradient(top,  #a4b357 0%,#75890c 100%);
+	background: -ms-linear-gradient(top,  #a4b357 0%,#75890c 100%);
+	background: linear-gradient(top,  #a4b357 0%,#75890c 100%);
+}
+
+.timecompletion span.flag.no {
+	border-color: #a61a09;
+	background: #ff3019;
+	background: -moz-linear-gradient(top,  #ff3019 0%, #cf0404 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ff3019), color-stop(100%,#cf0404));
+	background: -webkit-linear-gradient(top,  #ff3019 0%,#cf0404 100%);
+	background: -o-linear-gradient(top,  #ff3019 0%,#cf0404 100%);
+	background: -ms-linear-gradient(top,  #ff3019 0%,#cf0404 100%);
+	background: linear-gradient(top,  #ff3019 0%,#cf0404 100%);
+}
+
+.status span.item {
+	color: #222;
+	text-shadow: none;
+	display: block;
+	padding: 4px;
+	font-size: 11px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;	
+}
+
+.path .status span.item {
+	border: 1px solid #666;
+}
+
+span.item.started {
+	background-color: #ebdf00;
+	background: -webkit-gradient(linear, left top, left bottom, from(#ebdf00),to(#ffbb00));
+	background: -webkit-linear-gradient(top, #ebdf00, #ffbb00);
+	background: -moz-linear-gradient(top, #ebdf00, #ffbb00);
+	background: -o-linear-gradient(top, #ebdf00, #ffbb00);
+	background: -ms-linear-gradient(top, #ebdf00, #ffbb00);
+	background: linear-gradient(top, #ebdf00, #ffbb00);
+}
+
+span.item.notstarted {
+	color: #222;
+	text-shadow: none;
+	display: block;
+	padding: 4px;
+	background: #c0c1c1;
+}
+
+span.item.completed {
+	color: #222;
+	text-shadow: none;
+	display: block;
+	padding: 4px;
+	background-color: #b6c661;
+}
+
+span.item.notpassed {
+	background-color: #fca8ad;
+}
+
+
+/* @group Temporanei */
+
+table.stats {
+	font: 80% "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+	margin: 1em 0;
+}
+
+#path-1 .flag .completed {
+	width: 50px;
+}
+
+#path-1 .flag .notpassed {
+	width: 0px
+}
+
+#path-1 .flag .started {
+	width: 25px
+}
+
+#path-1 .flag .notstarted {
+	width: 25px
+}
+
+#activity-1 .flag .completed, #subactivity-1 .flag .completed {
+	width: 66px
+}
+
+#activity-1 .flag .notpassed, #subactivity-1 .flag .notpassed {
+	width: 0px
+}
+
+#activity-1 .flag .started, #subactivity-1 .flag .started {
+	width: 1px
+}
+
+#activity-1 .flag .notstarted, #subactivity-1 .flag .notstarted {
+	width: 33px
+}
+
+#activity-2 .flag .completed, #subactivity-4 .flag .completed {
+	width: 63px
+}
+
+#activity-2 .flag .notpassed, #subactivity-4 .flag .notpassed {
+	width: 0px
+}
+
+#activity-2 .flag .started, #subactivity-4 .flag .started {
+	width: 1px
+}
+
+#activity-2 .flag .notstarted, #subactivity-4 .flag .notstarted {
+	width: 36px
+}
+
+#activity-3 .flag .completed, #subactivity-7 .flag .completed {
+	width: 67px
+}
+
+#activity-3 .flag .notpassed, #subactivity-7 .flag .notpassed {
+	width: 0px
+}
+
+#activity-3 .flag .started, #subactivity-7 .flag .started {
+	width: 0px
+}
+
+#activity-3 .flag .notstarted, #subactivity-7 .flag .notstarted {
+	width: 33px
+}
+
+#activity-4 .flag .completed, #subactivity-10 .flag .completed {
+	width: 66px
+}
+
+#activity-4 .flag .notpassed, #subactivity-10 .flag .notpassed {
+	width: 0px
+}
+
+#activity-4 .flag .started, #subactivity-10 .flag .started {
+	width: 3px
+}
+
+#activity-4 .flag .notstarted, #subactivity-10 .flag .notstarted {
+	width: 31px
+}
+
+#activity-5 .flag .completed, #subactivity-11 .flag .completed {
+	width: 66px
+}
+
+#activity-5 .flag .notpassed, #subactivity-11 .flag .notpassed {
+	width: 0px
+}
+
+#activity-5 .flag .started, #subactivity-11 .flag .started {
+	width: 1px
+}
+
+#activity-5 .flag .notstarted, #subactivity-11 .flag .notstarted {
+	width: 33px
+}
+
+#activity-6 .flag .completed, #subactivity-12 .flag .completed {
+	width: 65px
+}
+
+#activity-6 .flag .notpassed, #subactivity-12 .flag .notpassed {
+	width: 0px
+}
+
+#activity-6 .flag .started, #subactivity-12 .flag .started {
+	width: 3px
+}
+
+#activity-6 .flag .notstarted, #subactivity-12 .flag .notstarted {
+	width: 32px
+}
+
+#activity-12 .flag .completed, #subactivity-18 .flag .completed {
+	width: 55px
+}
+
+#activity-12 .flag .notpassed, #subactivity-18 .flag .notpassed {
+	width: 0px
+}
+
+#activity-12 .flag .started, #subactivity-18 .flag .started {
+	width: 0px
+}
+
+#activity-12 .flag .notstarted, #subactivity-18 .flag .notstarted {
+	width: 45px
+}
+
+div.expandbuttons {
+	font-size: .9em;
+	font-family: "Lucida Grande", Lucida, Verdana, sans-serif;
+}
+
+span#CPHservice_LBuserName.Titolo_campo {
+	font-size: 1.2em;
+	margin: 1em 0;
+	font-family: "Lucida Grande", Lucida, Verdana, sans-serif;
+	display: block;
+}
+
+/* @end */

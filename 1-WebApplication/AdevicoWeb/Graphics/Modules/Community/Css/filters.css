@@ -1,0 +1,24 @@
+.collapsable .expander .on {
+   display: none;
+}
+
+.collapsable .expander .off {
+   display: inline;
+}
+
+.collapsable.collapsed .expander .off {
+   display: none;
+}
+
+.collapsable.collapsed .expander .on {
+   display: inline;
+}
+
+.collapsable.collapsed .hideme {
+   display: none;
+}
+.collapsable .extrainfo {
+  color: #aaa;
+  font-style: italic;
+  font-size: 11px;
+}

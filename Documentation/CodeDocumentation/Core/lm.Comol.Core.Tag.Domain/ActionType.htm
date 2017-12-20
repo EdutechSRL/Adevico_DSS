@@ -1,0 +1,757 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+	<!--[if lt IE 9]>
+	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+    <title>ActionType - lm.Comol.Core.DomainModel Documentation</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+    <link type="text/css" rel="stylesheet" href="../main.css"/>
+    <script type="text/javascript" src="../js/jquery-1.3.2.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.scrollTo-min.js"></script>
+    <script type="text/javascript" src="../js/navigation.js"></script>
+    <script type="text/javascript" src="../js/example.js"></script>
+  </head>
+  <body>
+  	<header><h1>lm.Comol.Core.DomainModel : API Documentation</h1>
+	</header>
+<nav id="namespaces">
+	<h2 class="fixed">Namespaces</h2>
+	<div class="scroll">
+		<ul>
+			<li>
+          <a href="../lm.Comol.Core.Authentication/index.htm">lm.Comol.Core.Authentication</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.Authentication.Business/index.htm">lm.Comol.Core.Authentication.Business</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.Authentication.Helpers/index.htm">lm.Comol.Core.Authentication.Helpers</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.Business/index.htm">lm.Comol.Core.Business</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.Catalogues/index.htm">lm.Comol.Core.Catalogues</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.Certifications/index.htm">lm.Comol.Core.Certifications</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.Certifications.Business/index.htm">lm.Comol.Core.Certifications.Business</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.Communities/index.htm">lm.Comol.Core.Communities</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.Dashboard.Business/index.htm">lm.Comol.Core.Dashboard.Business</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.Dashboard.Domain/index.htm">lm.Comol.Core.Dashboard.Domain</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.DomainModel/index.htm">lm.Comol.Core.DomainModel</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.DomainModel.Assignment/index.htm">lm.Comol.Core.DomainModel.Assignment</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.DomainModel.Common/index.htm">lm.Comol.Core.DomainModel.Common</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.DomainModel.DocTemplateVers/index.htm">lm.Comol.Core.DomainModel.DocTemplateVers</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.DomainModel.DocTemplateVers.Business/index.htm">lm.Comol.Core.DomainModel.DocTemplateVers.Business</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.DomainModel.DocTemplateVers.Domain.Core/index.htm">lm.Comol.Core.DomainModel.DocTemplateVers.Domain.Core</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.DomainModel.DocTemplateVers.Domain.DTO.Management/index.htm">lm.Comol.Core.DomainModel.DocTemplateVers.Domain.DTO.Management</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.DomainModel.DocTemplateVers.Domain.DTO.ServiceExport/index.htm">lm.Comol.Core.DomainModel.DocTemplateVers.Domain.DTO.ServiceExport</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.DomainModel.DocTemplateVers.Helpers/index.htm">lm.Comol.Core.DomainModel.DocTemplateVers.Helpers</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.DomainModel.Domain/index.htm">lm.Comol.Core.DomainModel.Domain</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.DomainModel.Filters/index.htm">lm.Comol.Core.DomainModel.Filters</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.DomainModel.Helpers/index.htm">lm.Comol.Core.DomainModel.Helpers</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.DomainModel.Helpers.Export/index.htm">lm.Comol.Core.DomainModel.Helpers.Export</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.DomainModel.Helpers.Tags/index.htm">lm.Comol.Core.DomainModel.Helpers.Tags</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.DomainModel.Languages/index.htm">lm.Comol.Core.DomainModel.Languages</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.DomainModel.Repository/index.htm">lm.Comol.Core.DomainModel.Repository</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.DomainModel.SrvFileTransfer/index.htm">lm.Comol.Core.DomainModel.SrvFileTransfer</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.DomainModel.SrvFileUnzip/index.htm">lm.Comol.Core.DomainModel.SrvFileUnzip</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.Event/index.htm">lm.Comol.Core.Event</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.Event.Business/index.htm">lm.Comol.Core.Event.Business</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.Events.Domain/index.htm">lm.Comol.Core.Events.Domain</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.FileRepository.Business/index.htm">lm.Comol.Core.FileRepository.Business</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.FileRepository.Domain/index.htm">lm.Comol.Core.FileRepository.Domain</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.FileRepository.Domain.ScormSettings/index.htm">lm.Comol.Core.FileRepository.Domain.ScormSettings</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.FileRepository.Domain.toRemove/index.htm">lm.Comol.Core.FileRepository.Domain.toRemove</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.InLineTags.Business/index.htm">lm.Comol.Core.InLineTags.Business</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.InLineTags.Domain/index.htm">lm.Comol.Core.InLineTags.Domain</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.Mail/index.htm">lm.Comol.Core.Mail</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.Mail.Messages/index.htm">lm.Comol.Core.Mail.Messages</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.ModuleLinks/index.htm">lm.Comol.Core.ModuleLinks</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.Msmq.DataContract/index.htm">lm.Comol.Core.Msmq.DataContract</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.Notification.DataContract/index.htm">lm.Comol.Core.Notification.DataContract</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.Notification.Domain/index.htm">lm.Comol.Core.Notification.Domain</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.PersonalInfo/index.htm">lm.Comol.Core.PersonalInfo</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.Subscriptions/index.htm">lm.Comol.Core.Subscriptions</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.Tag.Business/index.htm">lm.Comol.Core.Tag.Business</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.Tag.Domain/index.htm" class="current">lm.Comol.Core.Tag.Domain</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.TemplateMessages/index.htm">lm.Comol.Core.TemplateMessages</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.TemplateMessages.Business/index.htm">lm.Comol.Core.TemplateMessages.Business</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.TemplateMessages.Domain/index.htm">lm.Comol.Core.TemplateMessages.Domain</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.WinService.Configurations/index.htm">lm.Comol.Core.WinService.Configurations</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.Wizard/index.htm">lm.Comol.Core.Wizard</a>
+      </li>
+		</ul>
+	</div>
+</nav><nav id="types">
+  <h2 class="fixed">Types in lm.Comol.Core.Tag.Domain</h2>
+	<div class="scroll">
+		<ul>
+				<li>
+            <a href="../lm.Comol.Core.Tag.Domain/ActionType.htm" class="current">ActionType</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Tag.Domain/Base2Permission.htm">Base2Permission</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Tag.Domain/CacheKeys.htm">CacheKeys</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Tag.Domain/CommunityTag.htm">CommunityTag</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Tag.Domain/dtoCommunityTags.htm">dtoCommunityTags</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Tag.Domain/dtoFilters.htm">dtoFilters</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Tag.Domain/dtoPermission.htm">dtoPermission</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Tag.Domain/dtoTag.htm">dtoTag</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Tag.Domain/dtoTagApply.htm">dtoTagApply</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Tag.Domain/dtoTagItem.htm">dtoTagItem</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Tag.Domain/dtoTagSelectItem.htm">dtoTagSelectItem</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Tag.Domain/dtoTranslation.htm">dtoTranslation</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Tag.Domain/ITagBaseItem.htm">ITagBaseItem</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Tag.Domain/liteCommunityTag.htm">liteCommunityTag</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Tag.Domain/liteCommunityTagForEdit.htm">liteCommunityTagForEdit</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Tag.Domain/liteOrganizationAvailability.htm">liteOrganizationAvailability</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Tag.Domain/liteTag.htm">liteTag</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Tag.Domain/liteTagItem.htm">liteTagItem</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Tag.Domain/liteTagTranslation.htm">liteTagTranslation</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Tag.Domain/ModuleTags.htm">ModuleTags</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Tag.Domain/ObjectType.htm">ObjectType</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Tag.Domain/OrderTagsBy.htm">OrderTagsBy</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Tag.Domain/OrganizationAvailability.htm">OrganizationAvailability</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Tag.Domain/RootObject.htm">RootObject</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Tag.Domain/searchFilterType.htm">searchFilterType</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Tag.Domain/TagItem.htm">TagItem</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Tag.Domain/TagTranslation.htm">TagTranslation</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Tag.Domain/TagType.htm">TagType</a>
+        </li>
+		</ul>
+	</div>
+</nav>
+	<article>
+    <header>
+		<p class="class"><strong>Type</strong> ActionType</p>
+	</header>
+	<section>
+		<header>
+		<p><strong>Namespace</strong> lm.Comol.Core.Tag.Domain</p>
+		<p><strong>Parent</strong> <span title="System.Enum">Enum</span></p>
+		</header>
+    <div class="sub-header">
+		
+		
+		
+		
+			<h3 class="section">Fields</h3>
+			<ul>
+				<li><a href="../lm.Comol.Core.Tag.Domain/ActionType.htm#value__">value__</a></li>
+				<li><a href="../lm.Comol.Core.Tag.Domain/ActionType.htm#None">None</a></li>
+				<li><a href="../lm.Comol.Core.Tag.Domain/ActionType.htm#NoPermission">NoPermission</a></li>
+				<li><a href="../lm.Comol.Core.Tag.Domain/ActionType.htm#GenericError">GenericError</a></li>
+				<li><a href="../lm.Comol.Core.Tag.Domain/ActionType.htm#SessionTimeout">SessionTimeout</a></li>
+				<li><a href="../lm.Comol.Core.Tag.Domain/ActionType.htm#MalformedUrl">MalformedUrl</a></li>
+				<li><a href="../lm.Comol.Core.Tag.Domain/ActionType.htm#PortalListTags">PortalListTags</a></li>
+				<li><a href="../lm.Comol.Core.Tag.Domain/ActionType.htm#OrganizationListTags">OrganizationListTags</a></li>
+				<li><a href="../lm.Comol.Core.Tag.Domain/ActionType.htm#UnknownTag">UnknownTag</a></li>
+				<li><a href="../lm.Comol.Core.Tag.Domain/ActionType.htm#PortalStartAddNewTag">PortalStartAddNewTag</a></li>
+				<li><a href="../lm.Comol.Core.Tag.Domain/ActionType.htm#OrganizationStartAddNewTag">OrganizationStartAddNewTag</a></li>
+				<li><a href="../lm.Comol.Core.Tag.Domain/ActionType.htm#EnableTag">EnableTag</a></li>
+				<li><a href="../lm.Comol.Core.Tag.Domain/ActionType.htm#DisableTag">DisableTag</a></li>
+				<li><a href="../lm.Comol.Core.Tag.Domain/ActionType.htm#UnableToEnableTag">UnableToEnableTag</a></li>
+				<li><a href="../lm.Comol.Core.Tag.Domain/ActionType.htm#UnableToDisableTag">UnableToDisableTag</a></li>
+				<li><a href="../lm.Comol.Core.Tag.Domain/ActionType.htm#VirtualDelete">VirtualDelete</a></li>
+				<li><a href="../lm.Comol.Core.Tag.Domain/ActionType.htm#VirtualUndelete">VirtualUndelete</a></li>
+				<li><a href="../lm.Comol.Core.Tag.Domain/ActionType.htm#UnableToDelete">UnableToDelete</a></li>
+				<li><a href="../lm.Comol.Core.Tag.Domain/ActionType.htm#UnableToUndelete">UnableToUndelete</a></li>
+				<li><a href="../lm.Comol.Core.Tag.Domain/ActionType.htm#UnableToAddBulkTagsToPortal">UnableToAddBulkTagsToPortal</a></li>
+				<li><a href="../lm.Comol.Core.Tag.Domain/ActionType.htm#UnableToAddBulkTagsToOrganization">UnableToAddBulkTagsToOrganization</a></li>
+				<li><a href="../lm.Comol.Core.Tag.Domain/ActionType.htm#AddedBulkTagsToPortal">AddedBulkTagsToPortal</a></li>
+				<li><a href="../lm.Comol.Core.Tag.Domain/ActionType.htm#AddedBulkTagsToOrganization">AddedBulkTagsToOrganization</a></li>
+				<li><a href="../lm.Comol.Core.Tag.Domain/ActionType.htm#AddedBulkTagsToPortalWithDuplicates">AddedBulkTagsToPortalWithDuplicates</a></li>
+				<li><a href="../lm.Comol.Core.Tag.Domain/ActionType.htm#AddedBulkTagsToOrganizationWithDuplicates">AddedBulkTagsToOrganizationWithDuplicates</a></li>
+				<li><a href="../lm.Comol.Core.Tag.Domain/ActionType.htm#BulkTagsAssignLoad">BulkTagsAssignLoad</a></li>
+				<li><a href="../lm.Comol.Core.Tag.Domain/ActionType.htm#NoPermissionForBulkTagsAssign">NoPermissionForBulkTagsAssign</a></li>
+				<li><a href="../lm.Comol.Core.Tag.Domain/ActionType.htm#BulkTagsAssignToCommunities">BulkTagsAssignToCommunities</a></li>
+				<li><a href="../lm.Comol.Core.Tag.Domain/ActionType.htm#BulkTagsAssignApplyFilters">BulkTagsAssignApplyFilters</a></li>
+				<li><a href="../lm.Comol.Core.Tag.Domain/ActionType.htm#BulkTagsAssignChangePage">BulkTagsAssignChangePage</a></li>
+				<li><a href="../lm.Comol.Core.Tag.Domain/ActionType.htm#BulkTagsAssigned">BulkTagsAssigned</a></li>
+				<li><a href="../lm.Comol.Core.Tag.Domain/ActionType.htm#BulkTagsUnasigned">BulkTagsUnasigned</a></li>
+				<li><a href="../lm.Comol.Core.Tag.Domain/ActionType.htm#BulkTagsNoSelection">BulkTagsNoSelection</a></li>
+				<li><a href="../lm.Comol.Core.Tag.Domain/ActionType.htm#BulkTagsUpdateListAferTagsAssignment">BulkTagsUpdateListAferTagsAssignment</a></li>
+				<li><a href="../lm.Comol.Core.Tag.Domain/ActionType.htm#BulkTagsNoCommunitiesFound">BulkTagsNoCommunitiesFound</a></li>
+			</ul>
+	</div>
+	
+	
+	
+  <h3 class="section">Public fields</h3>
+
+  <div id="value__" class="method">
+    <h4>int <strong>value__</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <span title="System.int">int</span></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="None" class="method">
+    <h4>ActionType <strong>None</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.Tag.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="NoPermission" class="method">
+    <h4>ActionType <strong>NoPermission</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.Tag.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="GenericError" class="method">
+    <h4>ActionType <strong>GenericError</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.Tag.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="SessionTimeout" class="method">
+    <h4>ActionType <strong>SessionTimeout</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.Tag.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="MalformedUrl" class="method">
+    <h4>ActionType <strong>MalformedUrl</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.Tag.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="PortalListTags" class="method">
+    <h4>ActionType <strong>PortalListTags</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.Tag.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="OrganizationListTags" class="method">
+    <h4>ActionType <strong>OrganizationListTags</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.Tag.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="UnknownTag" class="method">
+    <h4>ActionType <strong>UnknownTag</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.Tag.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="PortalStartAddNewTag" class="method">
+    <h4>ActionType <strong>PortalStartAddNewTag</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.Tag.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="OrganizationStartAddNewTag" class="method">
+    <h4>ActionType <strong>OrganizationStartAddNewTag</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.Tag.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="EnableTag" class="method">
+    <h4>ActionType <strong>EnableTag</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.Tag.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="DisableTag" class="method">
+    <h4>ActionType <strong>DisableTag</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.Tag.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="UnableToEnableTag" class="method">
+    <h4>ActionType <strong>UnableToEnableTag</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.Tag.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="UnableToDisableTag" class="method">
+    <h4>ActionType <strong>UnableToDisableTag</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.Tag.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="VirtualDelete" class="method">
+    <h4>ActionType <strong>VirtualDelete</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.Tag.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="VirtualUndelete" class="method">
+    <h4>ActionType <strong>VirtualUndelete</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.Tag.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="UnableToDelete" class="method">
+    <h4>ActionType <strong>UnableToDelete</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.Tag.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="UnableToUndelete" class="method">
+    <h4>ActionType <strong>UnableToUndelete</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.Tag.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="UnableToAddBulkTagsToPortal" class="method">
+    <h4>ActionType <strong>UnableToAddBulkTagsToPortal</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.Tag.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="UnableToAddBulkTagsToOrganization" class="method">
+    <h4>ActionType <strong>UnableToAddBulkTagsToOrganization</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.Tag.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="AddedBulkTagsToPortal" class="method">
+    <h4>ActionType <strong>AddedBulkTagsToPortal</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.Tag.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="AddedBulkTagsToOrganization" class="method">
+    <h4>ActionType <strong>AddedBulkTagsToOrganization</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.Tag.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="AddedBulkTagsToPortalWithDuplicates" class="method">
+    <h4>ActionType <strong>AddedBulkTagsToPortalWithDuplicates</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.Tag.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="AddedBulkTagsToOrganizationWithDuplicates" class="method">
+    <h4>ActionType <strong>AddedBulkTagsToOrganizationWithDuplicates</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.Tag.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="BulkTagsAssignLoad" class="method">
+    <h4>ActionType <strong>BulkTagsAssignLoad</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.Tag.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="NoPermissionForBulkTagsAssign" class="method">
+    <h4>ActionType <strong>NoPermissionForBulkTagsAssign</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.Tag.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="BulkTagsAssignToCommunities" class="method">
+    <h4>ActionType <strong>BulkTagsAssignToCommunities</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.Tag.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="BulkTagsAssignApplyFilters" class="method">
+    <h4>ActionType <strong>BulkTagsAssignApplyFilters</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.Tag.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="BulkTagsAssignChangePage" class="method">
+    <h4>ActionType <strong>BulkTagsAssignChangePage</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.Tag.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="BulkTagsAssigned" class="method">
+    <h4>ActionType <strong>BulkTagsAssigned</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.Tag.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="BulkTagsUnasigned" class="method">
+    <h4>ActionType <strong>BulkTagsUnasigned</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.Tag.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="BulkTagsNoSelection" class="method">
+    <h4>ActionType <strong>BulkTagsNoSelection</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.Tag.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="BulkTagsUpdateListAferTagsAssignment" class="method">
+    <h4>ActionType <strong>BulkTagsUpdateListAferTagsAssignment</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.Tag.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="BulkTagsNoCommunitiesFound" class="method">
+    <h4>ActionType <strong>BulkTagsNoCommunitiesFound</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../lm.Comol.Core.Tag.Domain/ActionType.htm">ActionType</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+	</section>
+	</article><footer>
+	<span id="version">Built from v1.0.0.0 of lm.Comol.Core.DomainModel</span>
+	<span id="docu-link">
+		Generated by <a href="http://docu.jagregory.com">docu</a>
+	</span>
+</footer>
+  </body>
+</html>

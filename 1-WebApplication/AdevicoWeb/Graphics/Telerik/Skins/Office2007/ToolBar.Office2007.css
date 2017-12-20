@@ -1,0 +1,108 @@
+.RadToolBar_Office2007 {
+  color: #00156e;
+  background-color: #d2e1f4;
+  font-size: 12px;
+  line-height: 20px;
+  font-family: "Segoe UI", Arial, Helvetica, sans-serif; }
+  .RadToolBar_Office2007 .rtbOuter {
+    border-color: #a7bedb;
+    background-color: #d2e1f4;
+    box-shadow: inset 0 0 0 1px #f6f7f9; }
+  .RadToolBar_Office2007 .rtbWrap {
+    *color: #00156e; }
+  .RadToolBar_Office2007 .rtbChoiceArrow {
+    background-image: url('ToolBar/rtbDropArrows.png'); }
+  .RadToolBar_Office2007 .rtbItemHovered .rtbWrap,
+  .RadToolBar_Office2007 .rtbItemHovered .rtbOut,
+  .RadToolBar_Office2007 .rtbItemHovered .rtbMid,
+  .RadToolBar_Office2007 .rtbItemHovered .rtbIn {
+    color: #000000;
+    background-image: url('ToolBar/rtbHoverBg.png'); }
+  .RadToolBar_Office2007 .rtbItemFocused .rtbWrap,
+  .RadToolBar_Office2007 .rtbItemFocused .rtbOut,
+  .RadToolBar_Office2007 .rtbItemFocused .rtbMid,
+  .RadToolBar_Office2007 .rtbItemFocused .rtbIn {
+    color: #000000;
+    background-image: url('ToolBar/rtbHoverBg.png'); }
+  .RadToolBar_Office2007 .rtbItemClicked .rtbWrap,
+  .RadToolBar_Office2007 .rtbItemClicked .rtbOut,
+  .RadToolBar_Office2007 .rtbItemClicked .rtbMid,
+  .RadToolBar_Office2007 .rtbItemClicked .rtbIn {
+    color: #000000;
+    background-image: url('ToolBar/rtbClickedBg.png'); }
+  .RadToolBar_Office2007 .rtbSplBtnExpanded .rtbWrap,
+  .RadToolBar_Office2007 .rtbSplBtnExpanded .rtbOut,
+  .RadToolBar_Office2007 .rtbSplBtnExpanded .rtbMid,
+  .RadToolBar_Office2007 .rtbSplBtnExpanded .rtbIn,
+  .RadToolBar_Office2007 .rtbDropDownExpanded .rtbWrap,
+  .RadToolBar_Office2007 .rtbDropDownExpanded .rtbOut,
+  .RadToolBar_Office2007 .rtbDropDownExpanded .rtbMid,
+  .RadToolBar_Office2007 .rtbDropDownExpanded .rtbIn,
+  .RadToolBar_Office2007 .rtbChecked .rtbWrap,
+  .RadToolBar_Office2007 .rtbChecked .rtbOut,
+  .RadToolBar_Office2007 .rtbChecked .rtbMid,
+  .RadToolBar_Office2007 .rtbChecked .rtbIn {
+    color: #000000;
+    background-image: url('ToolBar/rtbActiveBg.png'); }
+  .RadToolBar_Office2007 .rtbSeparator {
+    border-color: #80ace6;
+    background-color: #ffffff; }
+
+.RadToolBar_Office2007_Horizontal .rtbOuter {
+  background-image: url('ToolBar/rtbControlBg.png'); }
+
+.RadToolBar_Office2007_Vertical .rtbOuter {
+  background-image: url('ToolBar/rtbVerticalControlBg.png'); }
+
+.RadToolBarDropDown_Office2007 {
+  font-size: 12px;
+  font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+  color: #00156e;
+  border-color: #9eb6ce;
+  background-color: #ffffff;
+  background-image: url('ToolBar/rtbDropDownBg.png'); }
+  .RadToolBarDropDown_Office2007 .rtbTopFix,
+  .RadToolBarDropDown_Office2007 .rtbBottomFix,
+  .RadToolBarDropDown_Office2007 .rtbRoundedCorners .rtbGroup {
+    background-image: url('ToolBar/rtbDropDownBg.png');
+    background-color: #ffffff; }
+  .RadToolBarDropDown_Office2007 .rtbBottomLeft,
+  .RadToolBarDropDown_Office2007 .rtbRoundedCorners {
+    background-image: url('ToolBar/rtbRoundedLeft.png'); }
+  .RadToolBarDropDown_Office2007 .rtbTopRight,
+  .RadToolBarDropDown_Office2007 .rtbBottomRight {
+    background-image: url('ToolBar/rtbRoundedRight.png'); }
+  .RadToolBarDropDown_Office2007 .rtbTopFix,
+  .RadToolBarDropDown_Office2007 .rtbBottomFix {
+    border-color: #9eb6ce; }
+  .RadToolBarDropDown_Office2007 .rtbWrap {
+    border-radius: 3px;
+    *color: #00156e;
+    background-image: url('Common/radGradientListSprite.png') \9; }
+  .RadToolBarDropDown_Office2007 .rtbItemHovered .rtbWrap {
+    border-color: #d8ca95;
+    color: #00156e;
+    background-color: #ffe28e;
+    background-image: linear-gradient(#fffdeb, #ffedb3 50%, #ffd563 50%, #ffe28e); }
+  .RadToolBarDropDown_Office2007 .rtbItemClicked .rtbWrap {
+    border-color: #8f8267;
+    color: #000000;
+    background-color: #fde79a;
+    background-image: linear-gradient(#fdd3a7, #faad60 50%, #f99631 50%, #fde79a); }
+  .RadToolBarDropDown_Office2007 .rtbSeparator {
+    border-color: #c5c5c5;
+    background-color: #ffffff; }
+
+.RadToolBarDropDown_Office2007_rtl .rtbBottomLeft,
+.RadToolBarDropDown_Office2007_rtl .rtbRoundedCorners {
+  background-image: url('ToolBar/rtbRoundedLeft_rtl.png'); }
+
+.RadToolBarDropDown_Office2007_rtl .rtbTopRight,
+.RadToolBarDropDown_Office2007_rtl .rtbBottomRight {
+  background-image: url('ToolBar/rtbRoundedRight_rtl.png'); }
+
+.RadToolBarDropDown_Office2007_rtl .rtbTopFix,
+.RadToolBarDropDown_Office2007_rtl .rtbBottomFix,
+.RadToolBarDropDown_Office2007_rtl .rtbGroup,
+.RadToolBarDropDown_Office2007_rtl .rtbShadows .rtbGroup {
+  background-position: 101% 0; }

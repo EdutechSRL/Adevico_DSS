@@ -1,0 +1,37 @@
+    .RowMail
+    {
+        clear:both; 
+    }
+    .RowCellLeft
+    {
+        float: left;
+        text-align:left;
+        vertical-align:top;
+        width: 120px;
+    }  
+    .RowCellRight
+    {
+        float: left;
+        text-align:justify;
+        width: 700px;
+    }  
+    
+    .preview
+    {
+        float: left;
+        width: 700px;
+        border: 1px solid #7E7E7E;
+        max-height: 450px;
+        overflow:scroll;
+        }
+    
+    .RowCellRight input.addTextTelerik,
+    .RowCellRight input.addTextTextarea
+    {
+        margin-bottom: 0.3em;
+    }
+    
+    .RowCellRight .required
+    {
+        color: #ff0000;
+    }

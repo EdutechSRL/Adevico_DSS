@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="lm.Comol.Core.DomainModel" namespace="lm.Comol.Core.Authentication">
+	<class name="liteGenericEncryption" table="AP_GenericEncryption" lazy="false">
+    <id name="Id" column="Id" type="Int64" unsaved-value="0">
+      <generator class="native"/>
+    </id>
+    <version name="TimeStamp" generated="always" unsaved-value="null" type="BinaryBlob">
+      <column name="_Timestamp" not-null="false" sql-type="timestamp"/>
+    </version>
+    <property name="Deleted" type="lm.Comol.Core.DomainModel.BaseStatusDeleted,lm.Comol.Core.DomainModel" column="_Deleted" />
+    <property name="Name" type="String" column="Name" />
+    <property name="Type" type="lm.Comol.Core.Authentication.MacType,lm.Comol.Core.DomainModel" column="MacType" />
+    <property name="VerifyTimeout" type="Boolean" column="VerifyTimeout" />
+  
+    <component name="EncryptionInfo">
+      <property name="Key" type="String" column="EncryptionKey"/>
+      <property name="InitializationVector" type="String" column="EncryptionVector"/>
+      <property name="EncryptionAlgorithm" type="lm.Comol.Core.Authentication.Helpers.EncryptionAlgorithm,lm.Comol.Core.DomainModel" column="EncryptionAlgorithm" />
+    </component>
+  </class>
+</hibernate-mapping>

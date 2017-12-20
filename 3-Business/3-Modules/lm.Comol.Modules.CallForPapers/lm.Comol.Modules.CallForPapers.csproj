@@ -1,0 +1,633 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{86AC380F-16E0-4E8F-AF84-555E13EA456E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>lm.Comol.Modules.CallForPapers</RootNamespace>
+    <AssemblyName>lm.Comol.Modules.CallForPapers</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\lm.Comol.Modules.CallForPapers.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.1.0.39271, Culture=neutral, PublicKeyToken=3a9cab8f8d22bfb7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\9-AdevicoMIT_Library\lm.Comol.MitLibrary\External\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Core, Version=1.1.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\9-AdevicoMIT_Library\lm.Comol.MitLibrary\External\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.DynamicProxy2, Version=2.1.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\9-AdevicoMIT_Library\lm.Comol.MitLibrary\External\Castle.DynamicProxy2.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.86.0.518, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\9-AdevicoMIT_Library\lm.Comol.MitLibrary\External\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Iesi.Collections, Version=1.0.1.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\9-AdevicoMIT_Library\lm.Comol.MitLibrary\External\Iesi.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=3.1.6.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\9-AdevicoMIT_Library\lm.Comol.MitLibrary\External\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp5, Version=5.3.2.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\9-AdevicoMIT_Library\lm.Comol.MitLibrary\External\itextsharp5.dll</HintPath>
+    </Reference>
+    <Reference Include="LM.MathLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\9-AdevicoMIT_Library\lm.Comol.MitLibrary\Adevico\DSS\LM.MathLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\9-AdevicoMIT_Library\lm.Comol.MitLibrary\External\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate, Version=2.1.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\9-AdevicoMIT_Library\lm.Comol.MitLibrary\External\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate.ByteCode.Castle, Version=2.1.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\9-AdevicoMIT_Library\lm.Comol.MitLibrary\External\NHibernate.ByteCode.Castle.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate.Linq, Version=1.0.0.4000, Culture=neutral, PublicKeyToken=444cf6a87fdab271, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\9-AdevicoMIT_Library\lm.Comol.MitLibrary\External\NHibernate.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Advanced\Domain\AdvCommission.cs" />
+    <Compile Include="Advanced\Domain\AdvEvalComment.cs" />
+    <Compile Include="Advanced\Domain\AdvEvalIntegration.cs" />
+    <Compile Include="Advanced\Domain\AdvMember.cs" />
+    <Compile Include="Advanced\Domain\AdvOldMember.cs" />
+    <Compile Include="Advanced\Domain\AdvStep.cs" />
+    <Compile Include="Advanced\Domain\AdvSubmissionToStep.cs" />
+    <Compile Include="Advanced\Domain\AdvTagHelper.cs" />
+    <Compile Include="Advanced\dto\dtoAdvComment.cs" />
+    <Compile Include="Advanced\dto\dtoAdvCommissionContainer.cs" />
+    <Compile Include="Advanced\dto\dtoAdvStepContainer.cs" />
+    <Compile Include="Advanced\dto\dtoCommEvalInfo.cs" />
+    <Compile Include="Advanced\dto\dtoCommissionEdit.cs" />
+    <Compile Include="Advanced\dto\dtoCommToreport.cs" />
+    <Compile Include="Advanced\dto\dtoIntegration.cs" />
+    <Compile Include="Advanced\dto\dtoIntegrationItem.cs" />
+    <Compile Include="Advanced\dto\dtoStepsEdit.cs" />
+    <Compile Include="Advanced\dto\dtoStepSummary.cs" />
+    <Compile Include="Advanced\dto\dtoStepSummarySubmission.cs" />
+    <Compile Include="Advanced\dto\dtoStepSummaryItem.cs" />
+    <Compile Include="Advanced\dto\dtoTag.cs" />
+    <Compile Include="Advanced\dto\dtoWizStep.cs" />
+    <Compile Include="Advanced\Enums.cs" />
+    <Compile Include="Advanced\Helpers\CommissionHTMLExpHelper.cs" />
+    <Compile Include="Advanced\Helpers\CommissionSummaryHTMLexpHelper.cs" />
+    <Compile Include="Advanced\Presentation\AdvCallStepsPresenter.cs" />
+    <Compile Include="Advanced\Presentation\AdvComEditPresenter.cs" />
+    <Compile Include="Advanced\Presentation\AdvStepSummaryPresenter.cs" />
+    <Compile Include="Advanced\Presentation\AdvUcCommentsPresenter.cs" />
+    <Compile Include="Advanced\Presentation\AdvUcIntegrationPresenter.cs" />
+    <Compile Include="Advanced\Presentation\iView\iViewAdvCallSteps.cs" />
+    <Compile Include="Advanced\Presentation\iView\iViewUcAdvComments.cs" />
+    <Compile Include="Advanced\Presentation\iView\iViewAdvCommissionEdit.cs" />
+    <Compile Include="Advanced\Presentation\iView\iViewAdvStepSummary.cs" />
+    <Compile Include="Advanced\Presentation\iView\iViewUcIntegration.cs" />
+    <Compile Include="Advanced\TrapHelpers\Enums.cs" />
+    <Compile Include="AdvEconomic\Domain\EconomicEvaluation.cs" />
+    <Compile Include="AdvEconomic\Domain\EconomicItem.cs" />
+    <Compile Include="AdvEconomic\Domain\EconomicTable.cs" />
+    <Compile Include="AdvEconomic\dto\dtoEcoEvaluation.cs" />
+    <Compile Include="AdvEconomic\dto\dtoEcoEvlItem.cs" />
+    <Compile Include="AdvEconomic\dto\dtoEcoSummary.cs" />
+    <Compile Include="AdvEconomic\dto\dtoEcoEvTable.cs" />
+    <Compile Include="AdvEconomic\dto\dtoEcoSummaryContainer.cs" />
+    <Compile Include="AdvEconomic\Enums.cs" />
+    <Compile Include="AdvEconomic\Helpers\EconomicSummaryHTMLexpHelper.cs" />
+    <Compile Include="AdvEconomic\Presentation\AdvEcoEvaluationPresenter.cs" />
+    <Compile Include="AdvEconomic\Presentation\AdvEcoSummaryPresenter.cs" />
+    <Compile Include="AdvEconomic\Presentation\View\iViewEcoEvaluation.cs" />
+    <Compile Include="AdvEconomic\Presentation\View\iViewEcoSummary.cs" />
+    <Compile Include="Business\BaseService.cs" />
+    <Compile Include="Business\CallTableHelper.cs" />
+    <Compile Include="Business\ServiceCallOfPapers.adv.cs" />
+    <Compile Include="Business\ServiceCallOfPapers.Print.cs" />
+    <Compile Include="Business\ServiceCallOfPeapers.Economic.cs" />
+    <Compile Include="Business\ServiceEvaluation.Dss.cs" />
+    <Compile Include="Business\HelperExportToCsv.cs" />
+    <Compile Include="Business\ServiceEvaluation.cs" />
+    <Compile Include="Business\HelperExportToXML.cs" />
+    <Compile Include="Business\HelperExportToPDF.cs" />
+    <Compile Include="Business\HelperExportToRTF.cs" />
+    <Compile Include="Business\ExportHelper.cs" />
+    <Compile Include="Business\RequestForMembership\ManagerRequestForMemebership.cs" />
+    <Compile Include="Business\RequestForMembership\ServiceRequestForMembership.cs" />
+    <Compile Include="Business\ServiceCallOfPapers.cs" />
+    <Compile Include="Business\ManagerCallOfPapers.cs" />
+    <Compile Include="Business\TemplateCallForPeaperPlaceHolders.cs" />
+    <Compile Include="Domain\Base\Call\AttachmentAssignment.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Domain\Base\Call\AccessTypeFilter.cs" />
+    <Compile Include="Domain\Base\Call\FieldDisclaimerDefinition.cs" />
+    <Compile Include="Domain\Base\Call\DisclaimerType.cs" />
+    <Compile Include="Domain\Base\Call\UserByMessagesOrder.cs" />
+    <Compile Include="Domain\Base\dto\new\dtoCallCommunityContext.cs" />
+    <Compile Include="Domain\Base\dto\new\dtoCallMessageRecipient.cs" />
+    <Compile Include="Domain\Base\dto\new\dtoGetUsersByMessageFilters.cs" />
+    <Compile Include="Domain\Base\Evaluation\DssRankingGroup.cs" />
+    <Compile Include="Domain\Base\Evaluation\DssCallEvaluation.cs" />
+    <Compile Include="Domain\Base\Evaluation\dto\dtoDssRating.cs" />
+    <Compile Include="Domain\Base\Evaluation\dto\dtoDssEvaluationResultItem.cs" />
+    <Compile Include="Domain\Base\Export\expCommitteeMember.cs" />
+    <Compile Include="Domain\Base\Export\expCommitteeSubmitterType.cs" />
+    <Compile Include="Domain\Base\Export\expCriterionEvaluated.cs" />
+    <Compile Include="Domain\Base\Export\expEvaluator.cs" />
+    <Compile Include="Domain\Base\Export\extCriterion.cs" />
+    <Compile Include="Domain\Base\Export\expCommittee.cs" />
+    <Compile Include="Domain\Base\Export\expEvaluation.cs" />
+    <Compile Include="Domain\Base\Export\expSubmitterType.cs" />
+    <Compile Include="Domain\Base\Export\expSubmission.cs" />
+    <Compile Include="Domain\Base\Export\expRevision.cs" />
+    <Compile Include="Domain\CallForPaper\CallPrintSettings.cs" />
+    <Compile Include="Domain\CallForPaper\CFPSignLink.cs" />
+    <Compile Include="Domain\CallForPaper\dto\dtoSummaryTableReport.cs" />
+    <Compile Include="Presentation\Base\Controls\ColumnMessageGrid.cs" />
+    <Compile Include="Domain\Base\Call\SubmissionsOrder.cs" />
+    <Compile Include="Domain\Base\Call\SubmissionFilterStatus.cs" />
+    <Compile Include="Domain\Base\Call\Revision.cs" />
+    <Compile Include="Domain\Base\Call\SubmissionFieldStringValue.cs" />
+    <Compile Include="Domain\Base\Call\SubmissionFieldFileValue.cs" />
+    <Compile Include="Domain\Base\Call\SubmissionFieldBaseValue.cs" />
+    <Compile Include="Domain\Base\Call\SubmissionTranslations.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Domain\Base\Call\TemplateAssignment.cs" />
+    <Compile Include="Domain\Base\Call\LazyProfileAttributeAssociation.cs" />
+    <Compile Include="Domain\Base\Call\ProfileAttributeAssociation.cs" />
+    <Compile Include="Domain\Base\Call\TemplatePlaceHolders.cs" />
+    <Compile Include="Domain\Base\Call\TemplateMail.cs" />
+    <Compile Include="Domain\Base\Call\FieldMultipleDefinition.cs" />
+    <Compile Include="Domain\Base\dto\new\check\0_dtoBaseLazySubmission.cs" />
+    <Compile Include="Domain\Base\dto\new\check\1_dtoLazySubmission.cs" />
+    <Compile Include="Domain\Base\dto\new\check\dtoBaseSubmissionRevision.cs" />
+    <Compile Include="Domain\Base\dto\new\dtoSubmissionItemsFilters.cs" />
+    <Compile Include="Domain\Base\dto\new\dtoSubmissionDisplayItem.cs" />
+    <Compile Include="Domain\Base\dto\new\dtoSelectItem.cs" />
+    <Compile Include="Domain\Base\dto\new\dtoCallInfo.cs" />
+    <Compile Include="Domain\Base\dto\new\dtoAttachmentFilePermission.cs" />
+    <Compile Include="Domain\Base\dto\new\dtoBaseSubmitterType.cs" />
+    <Compile Include="Domain\Base\dto\new\dtoSubmissionDisplay.cs" />
+    <Compile Include="Domain\Base\dto\new\dtoSubmissionDisplayPermission.cs" />
+    <Compile Include="Domain\Base\dto\new\dtoSubmissionDisplayItemPermission.cs" />
+    <Compile Include="Domain\Base\dto\new\dtoSubmissionFilters.cs" />
+    <Compile Include="Domain\Base\dto\new\dtoBaseCallPermission.cs" />
+    <Compile Include="Domain\Base\dto\new\dtoRevisionFilters.cs" />
+    <Compile Include="Domain\Base\dto\new\dtoRevisionDisplayItemPermission.cs" />
+    <Compile Include="Domain\Base\dto\new\dtoFieldAssociation.cs" />
+    <Compile Include="Domain\Base\dto\new\dtoExportSubmission.cs" />
+    <Compile Include="Domain\Base\dto\new\dtoSubmissionAttachment.cs" />
+    <Compile Include="Domain\Base\dto\new\check\dtoSubmissionRevision.cs" />
+    <Compile Include="Domain\Base\dto\new\dtoSubmissionFileValueField.cs" />
+    <Compile Include="Domain\Base\dto\new\dtoRequestedFileUpload.cs" />
+    <Compile Include="Domain\Base\dto\new\dtoSubmission.cs" />
+    <Compile Include="Domain\Base\dto\new\check\2_dtoBaseSubmission.cs" />
+    <Compile Include="Domain\Base\dto\new\dtoCallSubmissionFile.cs" />
+    <Compile Include="Domain\Base\dto\new\dtoCallRequestedFile.cs" />
+    <Compile Include="Domain\Base\dto\new\dtoRequestedFilePermission.cs" />
+    <Compile Include="Domain\Base\dto\new\dtoSubmissionValueField.cs" />
+    <Compile Include="Domain\Base\dto\new\dtoCallField.cs" />
+    <Compile Include="Domain\Base\dto\new\dtoCallSection.cs" />
+    <Compile Include="Domain\Base\dto\new\dtoBaseForPaperAssignment.cs" />
+    <Compile Include="Domain\Base\dto\new\dtoRevision.cs" />
+    <Compile Include="Domain\Base\dto\new\dtoSubmittedFile.cs" />
+    <Compile Include="Domain\Base\Evaluation\BaseCriterion.cs" />
+    <Compile Include="Domain\Base\Evaluation\CommitteeAssignedSubmitterType.cs" />
+    <Compile Include="Domain\Base\Evaluation\CommitteeMember.cs" />
+    <Compile Include="Domain\Base\Evaluation\CallEvaluator.cs" />
+    <Compile Include="Domain\Base\Evaluation\DisplayEvaluations.cs" />
+    <Compile Include="Domain\Base\Evaluation\dto\dtoBasicCommitteeItem.cs" />
+    <Compile Include="Domain\Base\Evaluation\dto\dtoCommitteeEvaluation.cs" />
+    <Compile Include="Domain\Base\Evaluation\dto\dtoCommitteeEvaluationInfo.cs" />
+    <Compile Include="Domain\Base\Evaluation\ExportObject.cs" />
+    <Compile Include="Domain\Base\Evaluation\SummaryType.cs" />
+    <Compile Include="Domain\Base\Evaluation\DisplayCriterionType.cs" />
+    <Compile Include="Domain\Base\Evaluation\dto\dtoEvaluatorCommitteeStatistic.cs" />
+    <Compile Include="Domain\Base\Evaluation\dto\dtoCommitteeEvaluationsInfo.cs" />
+    <Compile Include="Domain\Base\Evaluation\dto\dtoCriterionForEvaluation.cs" />
+    <Compile Include="Domain\Base\Evaluation\dto\dtoBaseCommitteeMember.cs" />
+    <Compile Include="Domain\Base\Evaluation\dto\dtoEvaluatorBaseStatistics.cs" />
+    <Compile Include="Domain\Base\Evaluation\dto\dtoCommitteeEvaluators.cs" />
+    <Compile Include="Domain\Base\Evaluation\dto\dtoEvaluationsFilters.cs" />
+    <Compile Include="Domain\Base\Evaluation\dto\dtoEvaluationDisplayItem.cs" />
+    <Compile Include="Domain\Base\Evaluation\dto\dtoSubmissionMultipleAssignment.cs" />
+    <Compile Include="Domain\Base\Evaluation\dto\dtoSubmissionAssignment.cs" />
+    <Compile Include="Domain\Base\Evaluation\dto\dtoCommitteeMember.cs" />
+    <Compile Include="Domain\Base\Evaluation\dto\dtoBaseCommittee.cs" />
+    <Compile Include="Domain\Base\Evaluation\dto\dtoEvaluationStep.cs" />
+    <Compile Include="Domain\Base\Evaluation\dto\dtoCriterionEvaluated.cs" />
+    <Compile Include="Domain\Base\Evaluation\dto\dtoBaseEvaluation.cs" />
+    <Compile Include="Domain\Base\Evaluation\EditingErrors.cs" />
+    <Compile Include="Domain\Base\Evaluation\CriterionEvaluated.cs" />
+    <Compile Include="Domain\Base\Evaluation\Evaluation.cs" />
+    <Compile Include="Domain\Base\Evaluation\dto\dtoCriterionOption.cs" />
+    <Compile Include="Domain\Base\Evaluation\dto\dtoCriterion.cs" />
+    <Compile Include="Domain\Base\Evaluation\dto\dtoCommittee.cs" />
+    <Compile Include="Domain\Base\Evaluation\EvaluationEditorErrors.cs" />
+    <Compile Include="Domain\Base\Evaluation\EvaluationCommittee.cs" />
+    <Compile Include="Domain\Base\Evaluation\EvaluationTranslations.cs" />
+    <Compile Include="Domain\Base\Evaluation\WizardEvaluationStep.cs" />
+    <Compile Include="Domain\Base\Presenter\ManageEvaluationsAction.cs" />
+    <Compile Include="Domain\Base\Presenter\FieldError.cs" />
+    <Compile Include="Domain\Base\Presenter\DisplayFieldType.cs" />
+    <Compile Include="Domain\Base\Presenter\EditorErrors.cs" />
+    <Compile Include="Domain\Base\Presenter\SubmitterTypeError.cs" />
+    <Compile Include="Domain\CallForPaper\dto\dtoEvaluationSettings.cs" />
+    <Compile Include="Domain\Base\dto\new\dtoSubmitterType.cs" />
+    <Compile Include="Domain\Base\dto\dtoItemPermission.cs" />
+    <Compile Include="Domain\Base\dto\new\check\dtoSubmissionDisplayInfo.cs" />
+    <Compile Include="Domain\Base\Presenter\WizardCallStep.cs" />
+    <Compile Include="Domain\CallForPaper\dto\dtoCallItemPermission.cs" />
+    <Compile Include="Domain\Base\dto\new\dtoBaseForPaper.cs" />
+    <Compile Include="Domain\Base\dto\new\dtoRevisionRequestPermission.cs" />
+    <Compile Include="Domain\Base\dto\new\dtoFieldTag.cs" />
+    <Compile Include="Domain\Base\dto\new\dtoTemplateMail.cs" />
+    <Compile Include="Domain\Base\dto\new\dtoFieldOption.cs" />
+    <Compile Include="Domain\Base\Presenter\CallStandardAction.cs" />
+    <Compile Include="Domain\CallForPaper\dto\dtoCall.cs" />
+    <Compile Include="Domain\CallForPaper\dto\dtoCallPermission.cs" />
+    <Compile Include="Domain\Base\dto\dtoAnonymousSubmission.cs" />
+    <Compile Include="Domain\Base\dto\new\dtoCallToFind.cs" />
+    <Compile Include="Domain\CallForPaper\DisplayEvaluationStatus.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Domain\RequestForMembership\dto\dtoRequesItemPermission.cs" />
+    <Compile Include="Domain\RequestForMembership\dto\dtoRequest.cs" />
+    <Compile Include="Domain\Old\EvaluationType.cs" />
+    <Compile Include="Domain\Base\Call\BaseForPaper.cs" />
+    <Compile Include="Domain\RequestForMembership\ModuleRequestForMembership.cs" />
+    <Compile Include="Domain\Base\Call\FieldOption.cs" />
+    <Compile Include="Domain\RequestForMembership\RequestForMembership.cs" />
+    <Compile Include="Domain\Base\Presenter\SubmissionsListTranslations.cs" />
+    <Compile Include="Domain\Base\Assignment\BaseForPaperAssignment.cs" />
+    <Compile Include="Domain\Base\Assignment\BaseForPaperCommunityAssignment.cs" />
+    <Compile Include="Domain\Base\Assignment\BaseForPaperPersonAssignment.cs" />
+    <Compile Include="Domain\Base\Assignment\BaseForPaperPersonTypeAssignment.cs" />
+    <Compile Include="Domain\Base\Assignment\BaseForPaperRoleAssignment.cs" />
+    <Compile Include="Domain\Base\Call\LazyUserSubmission.cs" />
+    <Compile Include="Domain\Base\dto\dtoRequestedFileAssignmentPermission.cs" />
+    <Compile Include="Domain\Base\dto\dtoRequestedFileAssignment.cs" />
+    <Compile Include="Domain\Base\dto\new\dtoGenericPermission.cs" />
+    <Compile Include="Domain\Base\dto\new\dtoSubmitterTypePermission.cs" />
+    <Compile Include="Domain\Base\Presenter\FilterCallVisibility.cs" />
+    <Compile Include="Domain\CallForPaper\dto\dtoCallForPaperAvailable.cs" />
+    <Compile Include="Domain\Base\RootObject.cs" />
+    <Compile Include="Domain\CallForPaper\CallForPaper.cs" />
+    <Compile Include="Domain\Base\Call\CallForPaperType.cs" />
+    <Compile Include="Domain\Base\dto\new\dtoBase.cs" />
+    <Compile Include="Domain\Base\dto\new\dtoBaseFile.cs" />
+    <Compile Include="Domain\Base\dto\dtoRequestedFile.cs" />
+    <Compile Include="Domain\Base\dto\new\dtoAttachmentFile.cs" />
+    <Compile Include="Domain\CallForPaper\dto\dtoCallForPaper.cs" />
+    <Compile Include="Domain\CallForPaper\ModuleCallForPaper.cs" />
+    <Compile Include="Domain\Base\Call\RequestedFileAssignment.cs" />
+    <Compile Include="Domain\Base\Call\RequestedFile.cs" />
+    <Compile Include="Domain\Base\Call\FieldsSection.cs" />
+    <Compile Include="Domain\Base\Call\FieldDefinition.cs" />
+    <Compile Include="Domain\Base\Call\FieldType.cs" />
+    <Compile Include="Domain\Base\Call\FieldAssignment.cs" />
+    <Compile Include="Domain\Base\Call\AttachmentFile.cs" />
+    <Compile Include="Domain\Base\ServiceExceptions.cs" />
+    <Compile Include="Domain\Base\Call\SubmissionStatus.cs" />
+    <Compile Include="Domain\Base\Presenter\CallStatusForSubmitters.cs" />
+    <Compile Include="Presentation\Base\Controls\AddFieldPresenter.cs" />
+    <Compile Include="Presentation\Base\Controls\IView\IViewPrintDraft.cs" />
+    <Compile Include="Presentation\Base\Controls\PrintDraftPresenter.cs" />
+    <Compile Include="Presentation\Base\Controls\SelectUsersForMessageService.cs" />
+    <Compile Include="Presentation\Base\Controls\IView\IViewSelectUsersForMessageService.cs" />
+    <Compile Include="Presentation\Base\Controls\SelectUsersFromCallPresenter.cs" />
+    <Compile Include="Presentation\Base\Controls\IView\IViewSelectUsersFromCall.cs" />
+    <Compile Include="Presentation\Base\Edit\IView\UC\IViewAddCallAttachment.cs" />
+    <Compile Include="Presentation\Base\Edit\UC\AddCallAttachmentPresenter.cs" />
+    <Compile Include="Presentation\Base\Submission\SubmissionsListPresenter.cs" />
+    <Compile Include="Presentation\Base\Submission\IView\IViewSubmissionsList.cs" />
+    <Compile Include="Presentation\Base\IView\IViewBasePublicCallList.cs" />
+    <Compile Include="Presentation\Base\Submission\IView\IViewRevisionList.cs" />
+    <Compile Include="Presentation\Base\Submission\ManageReviewPresenter.cs" />
+    <Compile Include="Presentation\Base\Submission\IView\IViewManageReview.cs" />
+    <Compile Include="Presentation\Base\RevisionErrorView.cs" />
+    <Compile Include="Presentation\Base\Submission\IView\IViewReviewSubmission.cs" />
+    <Compile Include="Presentation\Base\Submission\ReviewSubmissionPresenter.cs" />
+    <Compile Include="Presentation\Base\Submission\RevisionListPresenter.cs" />
+    <Compile Include="Presentation\Base\SubmissionErrorView.cs" />
+    <Compile Include="Presentation\Base\Submission\ViewPublicSubmissionPresenter.cs" />
+    <Compile Include="Presentation\Base\Submission\IView\IViewViewPublicSubmission.cs" />
+    <Compile Include="Presentation\Base\Submission\IView\IViewViewSubmission.cs" />
+    <Compile Include="Presentation\Base\Submission\SubmissionExportPresenter.cs" />
+    <Compile Include="Presentation\Base\Submission\IView\IViewSubmissionExport.cs" />
+    <Compile Include="Presentation\Base\Controls\RenderFieldPresenter.cs" />
+    <Compile Include="Presentation\Base\Controls\InputRequiredFilePresenter.cs" />
+    <Compile Include="Presentation\Base\Edit\EditNotificationMailPresenter.cs" />
+    <Compile Include="Presentation\Base\Controls\InputFieldPresenter.cs" />
+    <Compile Include="Presentation\Base\Edit\EditFileToSubmitPresenter.cs" />
+    <Compile Include="Presentation\Base\Edit\EditFieldAssociationsPresenter.cs" />
+    <Compile Include="Presentation\Base\Edit\EditCallEditorPresenter.cs" />
+    <Compile Include="Presentation\Base\Edit\EditSubmittersMailPresenter.cs" />
+    <Compile Include="Presentation\Base\Edit\EditAttachmentsPresenter.cs" />
+    <Compile Include="Presentation\Base\Edit\EditSubmittersPresenter.cs" />
+    <Compile Include="Presentation\Base\Edit\EditCallMessagePresenter.cs" />
+    <Compile Include="Presentation\Base\Edit\EditCallAvailabilityPresenter.cs" />
+    <Compile Include="Presentation\Base\Edit\EditCallSettingsPresenter.cs" />
+    <Compile Include="Presentation\Base\Controls\IView\IViewRenderField.cs" />
+    <Compile Include="Presentation\Base\Submission\IView\IViewViewBaseSubmission.cs" />
+    <Compile Include="Presentation\Base\Edit\IView\IViewFinalMessage.cs" />
+    <Compile Include="Presentation\Base\IView\IViewBaseSubmission.cs" />
+    <Compile Include="Presentation\Base\IView\IViewBaseSubmitCall.cs" />
+    <Compile Include="Presentation\Base\Controls\IView\IViewInputRequiredFile.cs" />
+    <Compile Include="Presentation\Base\IView\IViewPreviewBaseForPaper.cs" />
+    <Compile Include="Presentation\Base\Edit\IView\IViewEditNotificationMail.cs" />
+    <Compile Include="Presentation\Base\Controls\IView\IViewInputField.cs" />
+    <Compile Include="Presentation\Base\Controls\IView\IViewAddField.cs" />
+    <Compile Include="Presentation\Base\Edit\IView\IViewEditFileToSubmit.cs" />
+    <Compile Include="Presentation\Base\Edit\IView\IViewEditFieldAssociations.cs" />
+    <Compile Include="Presentation\Base\Edit\IView\IViewEditSubmittersMail.cs" />
+    <Compile Include="Presentation\Base\Edit\IView\IViewCallEditor.cs" />
+    <Compile Include="Presentation\Base\Edit\IView\IViewEditAttachments.cs" />
+    <Compile Include="Presentation\Base\Edit\IView\IViewEditSubmittersType.cs" />
+    <Compile Include="Presentation\Base\Edit\IView\IViewBaseEditCall.cs" />
+    <Compile Include="Presentation\Base\Edit\IView\IViewEditCallMessages.cs" />
+    <Compile Include="Presentation\Base\Edit\IView\IViewEditCallAvailability.cs" />
+    <Compile Include="Presentation\Base\Edit\IView\IViewEditCall.cs" />
+    <Compile Include="Presentation\Base\Edit\IView\IViewEditCallSettings.cs" />
+    <Compile Include="Presentation\Base\Edit\FinalMessagePresenter.cs" />
+    <Compile Include="Presentation\Base\Submission\ViewSubmissionPresenter.cs" />
+    <Compile Include="Presentation\Call\CallPreviewPresenter.cs" />
+    <Compile Include="Presentation\Call\CallPrintSettingsPresenter.cs" />
+    <Compile Include="Presentation\Call\IView\IViewCallPrintSettings.cs" />
+    <Compile Include="Presentation\Call\IView\IViewPublicCallsList.cs" />
+    <Compile Include="Presentation\Call\PublicCallsListPresenter.cs" />
+    <Compile Include="Presentation\Call\SubmitCallPresenter.cs" />
+    <Compile Include="Presentation\Call\IView\IViewSubmitCall.cs" />
+    <Compile Include="Presentation\Call\IView\IViewCallsList.cs" />
+    <Compile Include="Presentation\Base\IView\IViewBase.cs" />
+    <Compile Include="Presentation\Base\IView\IViewBaseCallList.cs" />
+    <Compile Include="Presentation\Call\CallsListPresenter.cs" />
+    <Compile Include="Presentation\Call\IView\IViewPreviewCall.cs" />
+    <Compile Include="Presentation\Evaluation\Edit\AddCriterionPresenter.cs" />
+    <Compile Include="Presentation\Evaluation\Edit\CommitteeSubmissionAssignmentsPresenter.cs" />
+    <Compile Include="Presentation\Evaluation\Edit\CommitteesSubmissionAssignmentsPresenter.cs" />
+    <Compile Include="Presentation\Evaluation\Edit\AssignSubmissionsInCallWithEvaluationStartedPresenter.cs" />
+    <Compile Include="Presentation\Evaluation\Edit\ManageEvaluationsPresenter.cs" />
+    <Compile Include="Presentation\Evaluation\Edit\DeleteInEvaluationMembershipPresenter.cs" />
+    <Compile Include="Presentation\Evaluation\Edit\ReplaceInEvaluationMembershipPresenter.cs" />
+    <Compile Include="Presentation\Evaluation\Edit\ViewEvaluatorsPresenter.cs" />
+    <Compile Include="Presentation\Evaluation\Edit\ManageEvaluatorsPresenter.cs" />
+    <Compile Include="Presentation\Evaluation\Edit\EvaluationCommitteesEditorPresenter.cs" />
+    <Compile Include="Presentation\Evaluation\Edit\InputCriterionPresenter.cs" />
+    <Compile Include="Presentation\Evaluation\Edit\RenderCriterionPresenter.cs" />
+    <Compile Include="Presentation\Evaluation\Edit\View\IViewAssignSubmissionsInCallWithEvaluationStarted.cs" />
+    <Compile Include="Presentation\Evaluation\Edit\View\IViewManageEvaluations.cs" />
+    <Compile Include="Presentation\Evaluation\Edit\View\IViewDeleteInEvaluationMembership.cs" />
+    <Compile Include="Presentation\Evaluation\Edit\View\IViewReplaceInEvaluationMembership.cs" />
+    <Compile Include="Presentation\Evaluation\Edit\View\IViewViewEvaluators.cs" />
+    <Compile Include="Presentation\Evaluation\Edit\View\IViewCommitteesSubmissionAssignments.cs" />
+    <Compile Include="Presentation\Evaluation\Edit\View\IViewCommitteSubmissionAssignments.cs" />
+    <Compile Include="Presentation\Evaluation\Edit\View\IViewManageEvaluators.cs" />
+    <Compile Include="Presentation\Evaluation\Edit\View\IViewAddCriterion.cs" />
+    <Compile Include="Presentation\Evaluation\Edit\View\IViewBaseEditEvaluationSettings.cs" />
+    <Compile Include="Presentation\Evaluation\Edit\View\IViewEvaluationCommitteesEditor.cs" />
+    <Compile Include="Presentation\Evaluation\Edit\View\IViewInputCriterion.cs" />
+    <Compile Include="Presentation\Evaluation\Edit\View\IViewRenderCriterion.cs" />
+    <Compile Include="Presentation\Evaluation\Evaluate\CommitteesSummaryPresenter.cs" />
+    <Compile Include="Presentation\Evaluation\Evaluate\CommitteeSummaryPresenter.cs" />
+    <Compile Include="Presentation\Evaluation\Evaluate\ViewEvaluationSummaryPresenter.cs" />
+    <Compile Include="Presentation\Evaluation\Evaluate\IView\IViewEvaluationSummary.cs" />
+    <Compile Include="Presentation\Evaluation\Evaluate\ViewEvaluationPresenter.cs" />
+    <Compile Include="Presentation\Evaluation\Evaluate\EvaluationsSummaryPresenter.cs" />
+    <Compile Include="Presentation\Evaluation\Evaluate\IView\IViewViewEvaluation.cs" />
+    <Compile Include="Presentation\Evaluation\Evaluate\IView\IViewBaseSummary.cs" />
+    <Compile Include="Presentation\Evaluation\Evaluate\IView\IViewCommitteeSummary.cs" />
+    <Compile Include="Presentation\Evaluation\Evaluate\IView\IViewCommitteesSummary.cs" />
+    <Compile Include="Presentation\Evaluation\Evaluate\IView\IViewEvaluationsSummary.cs" />
+    <Compile Include="Presentation\Evaluation\Evaluate\SubmissionsToEvaluatePresenter.cs" />
+    <Compile Include="Presentation\Evaluation\Evaluate\IView\IViewSubmissionsToEvaluate.cs" />
+    <Compile Include="Presentation\Evaluation\Evaluate\IView\IViewEvaluateSubmission.cs" />
+    <Compile Include="Presentation\Evaluation\Evaluate\EvaluateSubmissionPresenter.cs" />
+    <Compile Include="Presentation\Base\Controls\CallFinderPresenter.cs" />
+    <Compile Include="Presentation\Base\Controls\IView\IViewCallFinder.cs" />
+    <Compile Include="Presentation\Request\PublicRequestsListPresenter.cs" />
+    <Compile Include="Presentation\Request\IView\IViewPublicRequestsList.cs" />
+    <Compile Include="Presentation\Request\IView\IViewSubmitRequest.cs" />
+    <Compile Include="Presentation\Request\RequestPreviewPresenter.cs" />
+    <Compile Include="Presentation\Request\IView\IViewPreviewRequest.cs" />
+    <Compile Include="Presentation\Request\RequestsListPresenter.cs" />
+    <Compile Include="Presentation\Request\IView\IViewRequestsList.cs" />
+    <Compile Include="Presentation\Request\SubmitRequestPresenter.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Domain\Base\Call\CallForPaperStatus.cs" />
+    <Compile Include="Domain\Base\Call\SubmittedFile.cs" />
+    <Compile Include="Domain\Base\Call\SubmitterType.cs" />
+    <Compile Include="Domain\Base\Call\UserSubmission.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Advanced\Documentazione\dto.cd" />
+    <None Include="Advanced\Documentazione\Trap Bandi_Definizioni.xlsx" />
+    <None Include="Advanced\Documentazione\CP_AdvanceEvaluation.cd" />
+    <None Include="AdvEconomic\Diagrams\EconomicDomain.cd" />
+    <None Include="AdvEconomic\Diagrams\EconomicDto.cd" />
+    <None Include="Diagrams\Assignments.cd" />
+    <None Include="Diagrams\Attachments.cd" />
+    <None Include="Diagrams\Call.cd" />
+    <None Include="Diagrams\ClassDiagram1.cd" />
+    <None Include="Diagrams\ClassDiagram2.cd" />
+    <None Include="Diagrams\EvaluationADV.cd" />
+    <None Include="Diagrams\Structure.cd" />
+    <None Include="Diagrams\CallForPapers.cd" />
+    <EmbeddedResource Include="Mapping\FieldOption.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Mapping\BaseForPaper.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Mapping\FieldDefinition.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Mapping\FieldsSection.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Mapping\SubmitterType.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Mapping\AttachmentFile.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Mapping\FieldAssignment.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Mapping\RequestedFile.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Mapping\SubmittedFile.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Mapping\UserSubmission.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Mapping\RequestedFileAssignment.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Mapping\BaseForPaperAssignment.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Mapping\LazyUserSubmission.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Advanced\Mapping\AdvCommission.hbm.xml" />
+    <EmbeddedResource Include="Advanced\Mapping\AdvMember.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Advanced\Mapping\AdvStep.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Advanced\Mapping\AdvSubmissionToStep.hbm.xml" />
+    <EmbeddedResource Include="AdvEconomic\Mapping\EconomicEvaluation.hbm.xml" />
+    <EmbeddedResource Include="AdvEconomic\Mapping\EconomicItem.hbm.xml" />
+    <EmbeddedResource Include="AdvEconomic\Mapping\EconomicTable.hbm.xml" />
+    <EmbeddedResource Include="Advanced\Mapping\AdvEvalIntegration.hbm.xml" />
+    <EmbeddedResource Include="Advanced\Mapping\AdvOldMember.hbm.xml" />
+    <Content Include="Advanced\Documentazione\EsportazioneMassiva.sql" />
+    <Content Include="Business\ICSharpCode.SharpZipLib.dll" />
+    <EmbeddedResource Include="Mapping\CFPSignLink.hbm.xml" />
+    <EmbeddedResource Include="Mapping\CallPrintSettings.hbm.xml" />
+    <EmbeddedResource Include="Mapping\DssCallEvaluation.hbm.xml" />
+    <EmbeddedResource Include="Mapping\Export\expCommitteeMember.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mapping\Export\expRevision.hbm.xml" />
+    <EmbeddedResource Include="Mapping\Export\expCommitteeSubmitterType.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mapping\Export\expSubmission.hbm.xml" />
+    <EmbeddedResource Include="Mapping\Export\expSubmitterType.hbm.xml" />
+    <EmbeddedResource Include="Mapping\Export\expCommittee.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mapping\Export\expEvaluation.hbm.xml" />
+    <EmbeddedResource Include="Mapping\Export\expCriterionOption.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mapping\Export\expCriterionEvaluated.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mapping\Export\expEvaluator.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mapping\Export\extCriterion.hbm.xml" />
+    <EmbeddedResource Include="Mapping\CriterionEvaluated.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mapping\Evaluation.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mapping\CallEvaluator.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mapping\CommitteeMember.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mapping\CriterionOption.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mapping\BaseCriterion.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mapping\CommitteeAssignedSubmitterType.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mapping\EvaluationCommittee.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mapping\RevisionItem.hbm.xml" />
+    <EmbeddedResource Include="Mapping\Revision.hbm.xml" />
+    <EmbeddedResource Include="Mapping\SubmissionFieldBaseValue.hbm.xml" />
+    <EmbeddedResource Include="Mapping\TemplateAssignment.hbm.xml" />
+    <EmbeddedResource Include="Mapping\AttachmentAssignment.hbm.xml" />
+    <EmbeddedResource Include="Mapping\LazyProfileAttributeAssociation.hbm.xml" />
+    <EmbeddedResource Include="Mapping\ProfileAttributeAssociation.hbm.xml" />
+    <EmbeddedResource Include="Mapping\TemplateMail.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\2-Core\lm.Comol.Core.File\lm.Comol.Core.File.csproj">
+      <Project>{FFA417B0-A44B-441A-921B-FEB57C5FD7DA}</Project>
+      <Name>lm.Comol.Core.File</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\2-Core\lm.Comol.Core.DomainModel\lm.Comol.Core.DomainModel.csproj">
+      <Project>{9B7DA676-5030-47CD-8B2B-A30A09C8D0B5}</Project>
+      <Name>lm.Comol.Core.DomainModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\2-Core\lm.Comol.Core.MailCommons\lm.Comol.Core.MailCommons.csproj">
+      <Project>{428243cb-28cd-4d81-8099-74d1448b5e1d}</Project>
+      <Name>lm.Comol.Core.MailCommons</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\lm.Comol.Core.BaseModules\lm.Comol.Core.BaseModules.csproj">
+      <Project>{7fae537e-6acf-4c65-9d68-e22aec839eea}</Project>
+      <Name>lm.Comol.Core.BaseModules</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\lm.Comol.Core.Dss\lm.Comol.Core.Dss.csproj">
+      <Project>{5d1def77-9bef-4912-a93b-0633186c69d2}</Project>
+      <Name>lm.Comol.Core.Dss</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Domain\Dto\" />
+    <Folder Include="Mapping\RequestForMembership\" />
+    <Folder Include="Presentation\Base\Evaluate\IView\" />
+    <Folder Include="Presentation\OLD\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

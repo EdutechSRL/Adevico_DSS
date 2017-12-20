@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="urn:ComolTranslation">
+  <item name="LBnome_t.text" html="false" placeholder="false">Profile name:&amp;nbsp;</item>
+  <item name="LBdescrizione_t.text" html="false" placeholder="false">Description:&amp;nbsp;</item>
+  <item name="LBtipoComunita_t.text" html="false" placeholder="false">Community type:&amp;nbsp;</item>
+  <item name="LBcreatore_t.text" html="false" placeholder="false">Created by:&amp;nbsp;</item>
+  <item name="LBcreatore.text" html="false" placeholder="true" mustcontains="#nome#|#data#">#nome# on #data#.</item>
+  <item name="LBultimaModifica_t.text" html="false" placeholder="false">Modified by:&amp;nbsp;</item>
+  <item name="LBultimaModifica.text" description="non tradurre" html="false" placeholder="true" hidden="true" mustcontains="#nome#|#data#">#nome# (#data#).</item>
+  <item name="LBruoloDefault_t.text" html="false" placeholder="false">Default role:&amp;nbsp;</item>
+  <item name="LBruoliNonDisattivabili_t.text" html="false" placeholder="false">Mandatory roles:&amp;nbsp;</item>
+  <item name="LBtipiRuolo_t.text" html="false" placeholder="false">Other associated roles:&amp;nbsp;</item>
+  <item name="LBinfoRuoli.text" html="true" placeholder="false">ATTENZIONE: &lt;br&gt;1) il ruolo di default NON può essere escluso;&lt;br&gt;2) i ruoli di amministrazione NON possono essere esclusi;&lt;br&gt;3) i ruoli esclusi saranno comunque disponibili nel caso in cui vi siano degli utenti iscritti alle comunità con tali ruoli;&lt;br&gt;</item>
+  <item name="DGServizi.page" html="false" placeholder="true" mustcontains="#%%#">Page &lt;#%%#&gt;</item>
+  <item name="DGServizi.ordinamento.0.status" html="false" placeholder="true" mustcontains="#%%#">Ascending order by &lt;#%%#&gt;</item>
+  <item name="DGServizi.ordinamento.1.status" html="false" placeholder="true" mustcontains="#%%#">Descending order by &lt;#%%#&gt;</item>
+  <item name="DGServizi.ordinamento.2.status" html="false" placeholder="true" mustcontains="#%%#">Order by &lt;#%%#&gt;</item>
+  <item name="DGServizi.nome.HeaderText" html="false" placeholder="false">Service</item>
+  <item name="DGServizi.attivatoDefault.HeaderText" html="false" placeholder="false">Activated:</item>
+  <item name="NONattivato" html="false" placeholder="false">Service not enabled.</item>
+  <item name="NONdisattivabile" html="false" placeholder="false">Service can not be disabled.</item>
+  <item name="LBinfoServizi.text" html="false" placeholder="false">ATTENTION: some services are NOT deactivable, because they guarantee the correct working of the system.</item>
+  <item name="LBserviziAttivi_t.text" html="false" placeholder="false">Services:</item>
+  <item name="LBnoRecord.text" html="true" placeholder="false">&lt;br&gt;No service found&lt;br&gt;</item>
+  <item name="LBserviziPermessi_t.text" html="false" placeholder="false">Services:</item>
+</Resource>

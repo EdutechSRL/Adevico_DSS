@@ -1,0 +1,6 @@
+﻿<div class="filterinner">
+    <span class="title" ng-show="filter.Label!=''">{{filter.Label}}:</span>    
+    <span class="content">
+        <input class="input" ng-change="setFiltersChange(filter,'text')" ng-model-onblur name="{{filter.Name}}" type="text" ng-model="filter.Value" />
+    </span>
+</div>  

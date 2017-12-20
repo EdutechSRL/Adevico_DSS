@@ -1,0 +1,231 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="lm.Comol.Modules.CallForPapers.Domain.Evaluation.CommitteeMember">
+    <Position X="3.5" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAoEAAAAAAAAAAAAAAAAAAABAAAAAAAIACQAAAA=</HashCode>
+      <FileName>Domain\Base\Evaluation\CommitteeMember.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Committee" />
+      <Property Name="Evaluator" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="lm.Comol.Modules.CallForPapers.Domain.Evaluation.CallEvaluator">
+    <Position X="7" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAQAAAAAAAAAAAAgAAAAAAAAAAAAAABAAAAAAAAAA=</HashCode>
+      <FileName>Domain\Base\Evaluation\CallEvaluator.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Call" />
+      <Property Name="Person" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="Memberships" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="lm.Comol.Modules.CallForPapers.Domain.BaseForPaper" Collapsed="true">
+    <Position X="11.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACQABAEGBokAQMgAAgAhAQgCKAACEAAAUDQQEAgBAA=</HashCode>
+      <FileName>Domain\Base\Call\BaseForPaper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="lm.Comol.Modules.CallForPapers.Domain.Evaluation.EvaluationCommittee">
+    <Position X="2.75" Y="3.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAQECAQAAgAAEBAIAACAQAAAAAAAAAAAAEAAAACAA=</HashCode>
+      <FileName>Domain\Base\Evaluation\EvaluationCommittee.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Criteria" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="lm.Comol.Modules.CallForPapers.Advanced.Domain.AdvMember">
+    <Position X="9" Y="3.75" Width="2" />
+    <AssociationLine Name="Member" Type="lm.Comol.Core.DomainModel.litePerson" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="9" Y="4.201" />
+        <Point X="7.75" Y="4.201" />
+        <Point X="7.75" Y="3.441" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAAAAAAAAAAAAAAAAAIAAABAAAAAAAAAAA=</HashCode>
+      <FileName>Advanced\Domain\AdvMember.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Commission" />
+      <Property Name="Member" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="lm.Comol.Core.DomainModel.litePerson" Collapsed="true">
+    <Position X="7" Y="2.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="lm.Comol.Modules.CallForPapers.Domain.Evaluation.BaseCriterion">
+    <Position X="12" Y="6.25" Width="2" />
+    <AssociationLine Name="Committee" Type="lm.Comol.Modules.CallForPapers.Domain.Evaluation.EvaluationCommittee" FixedFromPoint="true">
+      <Path>
+        <Point X="12" Y="6.562" />
+        <Point X="6.086" Y="6.562" Type="JumpStart" />
+        <Point X="5.792" Y="6.562" Type="JumpEnd" />
+        <Point X="5.595" Y="6.562" Type="JumpStart" />
+        <Point X="5.429" Y="6.562" Type="JumpEnd" />
+        <Point X="5" Y="6.562" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="AdvCommitee" Type="lm.Comol.Modules.CallForPapers.Advanced.Domain.AdvCommission" FixedFromPoint="true">
+      <Path>
+        <Point X="13.562" Y="6.25" />
+        <Point X="13.562" Y="5.579" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAQAgAQAAgAAEBAIAACIQAAAAAQAAAAQAACAAACAA=</HashCode>
+      <FileName>Domain\Base\Evaluation\BaseCriterion.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Committee" />
+      <Property Name="AdvCommitee" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="lm.Comol.Modules.CallForPapers.Domain.Evaluation.Evaluation">
+    <Position X="6.25" Y="7" Width="1.75" />
+    <AssociationLine Name="Committee" Type="lm.Comol.Modules.CallForPapers.Domain.Evaluation.EvaluationCommittee" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="6.25" Y="9.688" />
+        <Point X="5.388" Y="9.688" />
+        <Point X="5.388" Y="7.25" />
+        <Point X="5" Y="7.25" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="Evaluator" Type="lm.Comol.Modules.CallForPapers.Domain.Evaluation.CallEvaluator" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="6.25" Y="7.438" />
+        <Point X="5.875" Y="7.438" />
+        <Point X="5.875" Y="1.791" />
+        <Point X="7" Y="1.791" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="AdvCommission" Type="lm.Comol.Modules.CallForPapers.Advanced.Domain.AdvCommission" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="6.25" Y="9.625" />
+        <Point X="5.512" Y="9.625" />
+        <Point X="5.512" Y="5.194" />
+        <Point X="5.792" Y="5.194" Type="JumpStart" />
+        <Point X="6.086" Y="5.194" Type="JumpEnd" />
+        <Point X="12.25" Y="5.194" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="AdvEvaluator" Type="lm.Comol.Modules.CallForPapers.Advanced.Domain.AdvMember" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="6.25" Y="7.375" />
+        <Point X="6.003" Y="7.375" />
+        <Point X="6.003" Y="4.505" />
+        <Point X="9" Y="4.505" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="Call" Type="lm.Comol.Modules.CallForPapers.Domain.BaseForPaper" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="8" Y="10.688" />
+        <Point X="17.39" Y="10.688" />
+        <Point X="17.39" Y="0.75" />
+        <Point X="13" Y="0.75" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>CEAAQAgEAIIAAEAAAAUAFgABAAAAACAAACAAACAACAA=</HashCode>
+      <FileName>Domain\Base\Evaluation\Evaluation.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Committee" />
+      <Property Name="Evaluator" />
+      <Property Name="AdvCommission" />
+      <Property Name="AdvEvaluator" />
+      <Property Name="Call" />
+      <Property Name="Submission" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="lm.Comol.Modules.CallForPapers.Advanced.Domain.AdvStep">
+    <Position X="14.5" Y="3" Width="1.5" />
+    <AssociationLine Name="Call" Type="lm.Comol.Modules.CallForPapers.Domain.BaseForPaper" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="15.125" Y="3" />
+        <Point X="15.125" Y="1.002" />
+        <Point X="13" Y="1.002" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAEAQAAEAAAAAAAAAAAAAAQACAAAAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>Advanced\Domain\AdvStep.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Call" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="lm.Comol.Modules.CallForPapers.Domain.UserSubmission" Collapsed="true">
+    <Position X="9.25" Y="11.25" Width="1.5" />
+    <AssociationLine Name="Call" Type="lm.Comol.Modules.CallForPapers.Domain.BaseForPaper" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="10.75" Y="11.596" />
+        <Point X="18.476" Y="11.596" />
+        <Point X="18.476" Y="0.562" />
+        <Point X="13" Y="0.562" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAQBQACEQAJAAAIAAAIAAQAIAEBBAABAgQAAAAEAAIA=</HashCode>
+      <FileName>Domain\Base\Call\UserSubmission.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Call" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="lm.Comol.Modules.CallForPapers.Advanced.Domain.AdvCommission">
+    <Position X="12.25" Y="3" Width="1.5" />
+    <AssociationLine Name="Criteria" Type="lm.Comol.Modules.CallForPapers.Domain.Evaluation.BaseCriterion" FixedToPoint="true">
+      <Path>
+        <Point X="13.312" Y="5.579" />
+        <Point X="13.312" Y="6.25" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAQEAFAAAgAAAAAAAAAAQgAAAAAAAAIAAEAAAAAAA=</HashCode>
+      <FileName>Advanced\Domain\AdvCommission.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Step" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="Criteria" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="lm.Comol.Modules.CallForPapers.Domain.Evaluation.CriterionEvaluated">
+    <Position X="9" Y="7" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAwAAEEAAAAAAAAEQAGAAAAAAAgBAgAAAAAAAAAAA=</HashCode>
+      <FileName>Domain\Base\Evaluation\CriterionEvaluated.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Criterion" />
+      <Property Name="Evaluation" />
+    </ShowAsAssociation>
+  </Class>
+  <Enum Name="lm.Comol.Modules.CallForPapers.Domain.Evaluation.MembershipStatus">
+    <Position X="16.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAEAAAAAAIAAAgIAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Domain\Base\Evaluation\CommitteeMember.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="lm.Comol.Modules.CallForPapers.Domain.Evaluation.EvaluationStatus">
+    <Position X="16.25" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAAAAAAAAACAgAAAAAAAAAAAAQAAAEAAAA=</HashCode>
+      <FileName>Domain\Base\Evaluation\Evaluation.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

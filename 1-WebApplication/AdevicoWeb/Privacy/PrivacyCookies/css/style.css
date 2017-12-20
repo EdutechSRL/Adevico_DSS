@@ -1,0 +1,71 @@
+/*_______________________________________________________________________________________
+
+Theme Name: Divas Cookies
+Theme URI: http://codingdivas.net/divascookies
+Author: Michela Chiucini - Federica Sibella
+Author URI: http://colazionedamichy.it http://musings.it
+Version: 1.0
+Tags: light, white, black, light blue, map, flexible-width
+
+  _______________________________________________________________________________________
+*/
+
+::-ms-clear{ display: none; width:0; height: 0; }	
+html { font-size: 62.5%; }
+body { margin: 0; padding: 0; color: #636363; font-size: 16px; font-size: 1rem; font-family: 'Source Sans Pro'; font-weight: 400; }
+.clearfix:after { content: ""; display: table; clear: both; }
+
+h1 { font-size: 48px; font-size: 4.8rem; line-height: 1; font-weight: 300; padding-bottom: 0.5em; text-align: center; }
+h2 { font-size: 36px; font-size: 3.6rem; font-weight: 300; padding-bottom: 0.5em; }
+a { color: #50b9db; text-decoration: none;}
+header > div, 
+section > div,
+footer p{ margin: 0 auto; max-width: 1200px; padding: 0 30px;}
+
+header { background: #50b9db; color: #fff; padding: 7.7em 0 7.3em; }
+header a { color: #ffffff; text-decoration: none;}
+section{ padding: 8em 0; }
+section p{color: #898989; font-size: 1.8rem; line-height: 1.333; padding-bottom: 1em;}
+
+footer{ padding: 2.4em 0; font-size: 1.5em;  background: #636363; color: #fff; }
+footer p{ line-height: 42px; text-align: center; }
+
+section.instructions h2 {
+	font-size: 3.8em;
+	font-weight: 300;
+	text-align: center;
+	color: #50b9db;
+	padding-top: 1.5em;
+}
+
+section.instructions h3 {
+	font-size: 2.5em;
+	font-weight: normal;
+	padding-top: 1em;
+}
+
+section.instructions h3 span.variable_type {
+	font-style: italic;
+}
+
+section.instructions p, section.instructions li {
+	font-size: 2.2em;
+	margin-bottom: 0.7em;
+}
+
+section.instructions p.up {
+	font-size: 4em;
+	cursor: pointer;
+	text-align: right;
+	margin-bottom: 0;
+}
+
+section.instructions p.up:hover {
+	color: #50b9db;
+}
+
+section.instructions pre {
+	font-size: 1.6em;
+	border: 1px solid #ccc;
+	white-space:normal;
+}

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="lm.Comol.Core.DomainModel" namespace="lm.Comol.Core.DomainModel.Repository">
+	<class name="FileDownloadInfo" table="FR_FileDownloadInfo" lazy="true">
+		<id name="Id" column="Id" type="Int64">
+			<generator class="native"/>
+		</id>
+		<many-to-one name="File" class="lm.Comol.Core.DomainModel.BaseCommunityFile, lm.Comol.Core.DomainModel" column="IdFile"
+					 foreign-key="IdFile" cascade="none"/>
+		<many-to-one name="CommunityOwner" class="lm.Comol.Core.DomainModel.Community, lm.Comol.Core.DomainModel" column="IdCommunity"
+					 foreign-key="IdCommunity" cascade="none"/>
+		<many-to-one name="Downloader" class="lm.Comol.Core.DomainModel.Person, lm.Comol.Core.DomainModel" column="IdPerson" foreign-key="IdPerson" cascade="none"/>
+		<property name="CreatedOn" type="DateTime" column="CreatedOn"/>
+		<property name="RepositoryItemType" type="lm.Comol.Core.DomainModel.Repository.RepositoryItemType,lm.Comol.Core.DomainModel" column="IdRepositoryItemType" />
+		<property name="UniqueID" type="Guid" column="UniqueID" />
+    <property name="ServiceCode" type="String" column="ServiceCode" />
+    <many-to-one name="Link" class="lm.Comol.Core.DomainModel.ModuleLink" column="IdLink" foreign-key="IdLink" cascade="none"  />
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="urn:ComolTranslation">
+  <item name="LBemptyMessage.text" html="false" placeholder="false">Session abgelaufen, es ist nicht möglich, fortzufahren</item>
+  <item name="LBsourceFile_t.text" html="false" placeholder="false">Wählen Sie die Datei aus:</item>
+  <item name="BTNupload.text" disambiguation="carica=upload" html="false" placeholder="false">Laden</item>
+  <item name="BTNupload.ToolTip" disambiguation="carica=upload" html="false" placeholder="false" mustcontains="csv">Laden Sie die csv. Datei</item>
+  <item name="LBuploadedFile_t.text" html="false" placeholder="false">CSV-Datei geladen:</item>
+  <item name="LBuploadedFile.text" html="false" placeholder="true" mustcontains="{0}|{1}|{2}">{0} am {1} um {2}.</item>
+  <item name="BTNremoveFile.text" html="false" placeholder="false" />
+  <item name="BTNremoveFile.ToolTip" html="false" placeholder="false">Löschen Sie die Datei</item>
+  <item name="LBfirstRowColumnNames_t.text" html="false" placeholder="false">Name der Spalten in der ersten Zeile:</item>
+  <item name="CBXfirstRowColumnNames.text" html="false" placeholder="false">Ja</item>
+  <item name="LBcolumnDelimiter_t.text" html="false" placeholder="false">Spaltentrennzeichen:</item>
+  <item name="LBrowDelimiter_t.text" html="false" placeholder="false">Zeilentrennzeichen:</item>
+  <item name="LBrowToSkip_t.text" html="false" placeholder="false">Zu ignorierende Zeilen:</item>
+  <item name="TextDelimiter.None" html="false" placeholder="false">Nicht vorhanden</item>
+  <item name="TextDelimiter.Semicolon" html="false" placeholder="false">Semikolon {;}</item>
+  <item name="TextDelimiter.Colon" html="false" placeholder="false">Doppelpunkt {:}</item>
+  <item name="TextDelimiter.Comma" html="false" placeholder="false">Komma {,}</item>
+  <item name="TextDelimiter.Tab" html="false" placeholder="true" mustcontains="{t}">Tabellierung {t}</item>
+  <item name="TextDelimiter.VerticalBar" html="false" placeholder="false" mustcontains="{|}">Senkrechter Balken {|}</item>
+  <item name="TextDelimiter.CrLf" html="false" placeholder="true" mustcontains="{CR}{LF}">{CR}{LF}</item>
+  <item name="TextDelimiter.Cr" html="false" placeholder="true" mustcontains="{CR}">{CR}</item>
+  <item name="TextDelimiter.Lf" html="false" placeholder="true" mustcontains="{LF}">{LF}</item>
+  <item name="BTNpreviewCSV.text" html="false" placeholder="false">Vorschau</item>
+  <item name="BTNpreviewCSV.ToolTip" html="false" placeholder="false">Vorschau</item>
+  <item name="Column" html="false" placeholder="true" mustcontains="{0}">Spalte {0}</item>
+  <item name="LBsourceColumn.text" html="false" placeholder="false">Quellspalte</item>
+  <item name="LBdestinationColumn.text" html="false" placeholder="false">Feld des eingeladenen Benutzers</item>
+  <item name="ImportedUserColumn.skip" html="false" placeholder="false">--    Ignorieren    --</item>
+  <item name="ImportedUserColumn.name" html="false" placeholder="false">Name</item>
+  <item name="ImportedUserColumn.surname" html="false" placeholder="false">Nachname</item>
+  <item name="ImportedUserColumn.mail" html="false" placeholder="false">E-Mail</item>
+  <item name="ImportedUserColumn.description" html="false" placeholder="false">Beschreibung</item>
+  <item name="InvalidMatch.None" html="false" placeholder="false" />
+  <item name="InvalidMatch.DuplicatedItem" html="false" placeholder="true" mustcontains="{0}">DUPLIZIERTES Feld: {0}"</item>
+  <item name="InvalidMatch.DuplicatedItems" html="false" placeholder="true" mustcontains="{0}">DUPLIZIERTE Felder: {0}"</item>
+  <item name="InvalidMatch.IgnoredRequiredItem" html="false" placeholder="true" mustcontains="{0}">GEWÜNSCHTES Feld nicht angegeben: {0}"</item>
+  <item name="InvalidMatch.IgnoredRequiredItems" html="false" placeholder="true" mustcontains="{0}">GEWÜNSCHTE Felder NICHT angegeben: {0}</item>
+  <item name="InvalidMatch.IgnoredAllItems" html="false" placeholder="false">ACHTUNG: Sie können nicht fortfahren, wenn alle Zielspalten "ignoriert" werden</item>
+  <item name="InvalidMatch.NoRequiredItems" html="false" placeholder="false">ACHTUNG: Sie können nicht fortfahren, da es keine zu verknüpfenden Felder gibt</item>
+  <item name="InvalidMatch.GenericError" html="false" placeholder="false">ACHTUNG: Sie können nicht fortfahren, überprüfen Sie die Übereinstimmung zwichen Quell-/Zielspalten und eventuellen Duplikaten</item>
+  <item name="InvalidMatch.IgnoredAlternativeRequiredItem" html="false" placeholder="true" mustcontains="{0}">Alternativ gewünschtes Feld: {0}</item>
+  <item name="InvalidMatch.IgnoredAlternativeRequiredItems" html="false" placeholder="true" mustcontains="{0}">Alternativ GEWÜNSCHTE Felder: {0}</item>
+  <item name="Field.InvalidMatch.None" html="false" placeholder="false" />
+  <item name="Field.InvalidMatch.DuplicatedItem" html="false" placeholder="false">Duplizierte Spalte</item>
+  <item name="Field.InvalidMatch.IgnoredRequiredItem" html="false" placeholder="false">Gewünschte Spalte NICHT angegeben</item>
+  <item name="Field.InvalidMatch.IgnoredAlternativeRequiredItem" html="false" placeholder="false">Gewünschte alternative Spalte NICHT angegeben</item>
+  <item name="LTselectRow_t.text" disambiguation="S=seleziona (un solo carattere)" html="false" placeholder="false">A</item>
+  <item name="LTrowInfo_t.text" disambiguation="E=errori (un solo carattere)" html="false" placeholder="false">F</item>
+  <item name="InvalidImport.InvalidData" disambiguation="i=dato invalido (uno o due caratteri)" html="false" placeholder="true" mustcontains="[|]">[ug]</item>
+  <item name="InvalidImport.SourceDuplicatedData" disambiguation="sd=dato sorgente duplicato (uno o due caratteri)" html="false" placeholder="true" mustcontains="[|]">[dQ]</item>
+  <item name="InvalidImport.AlreadyExist" disambiguation="pp=dati presenti fra gli utenti invitati (uno o due caratteri)" html="false" placeholder="true" mustcontains="[|]">[BD]</item>
+  <item name="InvalidImport.InvalidData.Description" disambiguation="i=dato invalido (uno o due caratteri)" html="false" placeholder="true" mustcontains="[|]">[ug] - Information ungültig"</item>
+  <item name="InvalidImport.SourceDuplicatedData.Description" disambiguation="sd=dato sorgente duplicato (uno o due caratteri)" html="false" placeholder="true" mustcontains="[|]">[dQ] - duplizierte Quelldaten</item>
+  <item name="InvalidImport.AlreadyExist.Description" disambiguation="pp=dati presenti fra gli utenti invitati (uno o due caratteri)" html="false" placeholder="false">[BD] - Daten, die die eingeladenen Benutzer betreffen</item>
+</Resource>

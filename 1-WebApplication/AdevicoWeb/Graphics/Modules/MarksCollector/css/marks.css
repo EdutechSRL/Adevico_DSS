@@ -1,0 +1,374 @@
+﻿/* @override http://demo.comunitaonline.unitn.it/Graphics/Modules/MarksCollector/css/marks.css */
+
+/* update 29/11/2012 - 17:15 */
+
+/* @group Actions ico */
+
+.icons .icon {
+    background-color: transparent !Important;
+}
+
+.icons .icon.evaluate {
+   	background-position: -80px -200px !important;
+}
+
+.actions span.icons a.icon.view,
+.actions span.icons a.icon.viewmarks {
+	background: url(../../../Generics/Command/img/common_icons_set1_16.png) 0px -200px;
+}
+
+/* @end */
+
+div.topbar {
+	margin: 1em 0;
+}
+
+table.light tr:hover,
+table.minimal tr:hover {
+	background-color: #eee;
+}
+
+table.light thead tr:hover,
+table.minimal thead tr:hover {
+	background-color: inherit;
+}
+
+table.marks  {
+	width: 100%;
+}
+
+table.marks tr.error {
+	background-color: #efd1ca;
+}
+
+li.error label {
+	color: #c20 !important;
+}
+
+/*li.error input,
+li.error textarea,
+li textarea.error,
+li input.error, {
+	 border-color: #c20 !important;
+
+}*/
+
+.error span#CPHservice_LBmodules_warning {
+	color: #c20 !important;
+}
+
+table.marks.minimal th {
+	font-size: .95em;
+	color: #444;
+	padding: 3px 6px;
+	background-color: #e3e6ea;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#eceef1),to(#dbdfe4));
+	background-image: -webkit-linear-gradient(top, #eceef1, #dbdfe4);
+	background-image: -moz-linear-gradient(top, #eceef1, #dbdfe4);
+	background-image: -o-linear-gradient(top, #eceef1, #dbdfe4);
+	background-image: -ms-linear-gradient(top, #eceef1, #dbdfe4);
+	background-image: linear-gradient(top, #eceef1, #dbdfe4);
+	border: 1px solid #ccc;
+}
+
+
+
+table.marks.markbysubject,
+table.marks.editsubjectmark,
+table.marks.editsinglestudent {
+	width: auto;
+}
+
+
+
+table td {
+	overflow: hidden;
+	text-align: left;
+}
+
+table td span {
+	display: inline-block;
+	*display: inline;
+	zoom: 1;
+}
+
+table td input[type="text"] {
+	margin-right: 10px;
+}
+
+table .courseyear,
+table .coursemodules {
+	width: 60px;
+}
+
+table.marks th.coursehours,
+table.marks td.coursehours{
+	width:60px;
+}
+table.marks td.coursehours input{
+	width:50px;
+}
+table.marks td.coursehours{
+text-align:center;
+}
+
+table.managesubject.minimal .visibleto {
+	text-align: left;
+}
+
+table.managesubject.minimal td.visibleto {
+}
+
+table th.visibleto {
+	width: 200px;
+}
+
+span.visibleto label {
+	margin-right: 5px;
+}
+
+table.marks .actions {
+	width: 60px;
+	*width: 70px;
+	text-align: center;
+}
+
+table.marks .actions span.icons {
+	text-align: right;
+	width: 100%;
+}
+
+table.marks th.actions {
+	text-align: center;
+}
+
+table .modulemark {
+	width: 130px;
+}
+
+table .studentname {
+	width: 250px;
+}
+
+table .coursemodules {
+	width: 50px;
+}
+
+table.markbystudent td,
+table.markbysubject td {
+	font-size: .8em;
+}
+
+table td.coursesubject,
+table td.studentname  {
+	font-size: 1em;
+}
+
+table.marks.managesubject td.coursesubject,
+table.marks.managesubject td.courseteachers,
+table.marks.managesubject td.courseyear,
+table.marks.managesubject td.coursemodules,
+table.marks.managesubject td.visibleto {
+}
+
+table.marks.managesubject td.coursesubject,
+table.marks.managesubject td.courseteachers {
+	width: 140px;
+}
+
+table.marks.managesubject td.coursesubject, input[type="text"] {
+	width: 200px;
+	margin-right: 0 !important;
+}
+
+table.marks.managesubject td.courseyear,
+table.marks.managesubject td.coursemodules {
+	text-align: center !Important;
+	width: 70px;	
+}
+
+table.marks.managesubject .courseyear input[type="text"],
+table.marks.managesubject .coursemodules input[type="text"] {
+	width: 50px;	
+}
+
+table.marks span.datetimeevalue {
+	display: block;
+	font-size: .9em;
+	color: #888;
+	font-weight: normal;
+	font-style: normal;
+}
+
+table.marks span span.votoevalue {
+	font-size: 1.1em;
+}
+
+table.marks span.datetimeevalue span.brackets {
+	display: none;
+}
+
+table.marks td.studentname a,
+table.marks td.coursesubject a {
+	text-decoration: none;
+	/*border-bottom: 1px dotted #888;*/
+	line-height: 2em
+}
+
+table.marks td.studentname a:hover,
+table.marks td.coursesubject a:hover {
+	border-bottom: 1px solid #888;
+}
+
+ul li#LIname,
+ul li#LIyear,
+ul li#LImodules,
+ul li#LIvisibility {
+	margin-bottom: .5em;
+}
+
+ul li span label.Titolo_campo {
+	display: inline-block;
+	*display:inline;
+	zoom: 1;
+	min-width: 80px;
+	max-width: 120px;
+	*width: 90px;
+}
+	
+table.marks.managetimespan th.timespanshortname,
+table.marks.managetimespan td.timespanshortname{
+	width:100px;
+	
+}
+
+table.marks.managetimespan th.timespanlongname,
+table.marks.managetimespan td.timespanlongname{
+
+}
+
+table.marks.managetimespan td.timespanlongname input[type="text"]{
+	width:100%;
+}
+
+span.editable {
+  display: inline-block;
+  cursor: pointer;
+
+}
+
+span.editable.disabled {
+    cursor: default;  
+}
+
+td span.editable .icons{
+ display:none;
+
+}
+
+span.editable.viewmode {
+	display: inline-block;
+	vertical-align: top;
+}
+
+td span.editable.viewmode {
+	display: inline-block;
+	vertical-align: top;
+}
+span.editable.viewmode .view{
+	display: inline-block;
+    *display: inline;
+    *zoom: 1;
+	border-bottom: 1px dotted #444;
+}
+
+span.editable.viewmode.disabled .view {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+	border-bottom: 1px dotted transparent;
+}
+
+span.editable.viewmode .edit {
+    display: none;
+}
+
+span.editable.editmode {
+
+}
+
+span.editable.editmode input{
+    position: relative;
+ }
+
+span.editable.editmode .view {
+    display: none;
+}
+
+span.editable.editmode .edit {
+    display: inline-block;
+}
+
+td.timespanabsence span.editable input {
+    width: 90%;
+}
+span.editable input {
+    padding: 0 2px;
+    margin: 0;
+}
+
+table.marks.markbysubject,
+table.marks.absencebysubject{
+	width:100%;
+}
+
+table.marks.markbysubject th.timespanabsence,
+table.marks.markbysubject td.timespanabsence,
+table.marks.absencebysubject  th.timespanabsence,
+table.marks.absencebysubject  td.timespanabsence{
+	width:70px;
+}
+
+table.marks.markbysubject th.absenceshours,
+table.marks.markbysubject td.absenceshours,
+table.marks.absencebysubject  th.absenceshours,
+table.marks.absencebysubject  td.absenceshours{
+	width:100px;
+}
+
+table.marks.markbysubject th.absencespercentage,
+table.marks.markbysubject td.absencespercentage,
+table.marks.absencebysubject  th.absencespercentage,
+table.marks.absencebysubject  td.absencespercentage{
+	width:80px;
+}
+
+table.marks td{
+height:19px;
+}
+
+table.marks td.timespanabsence.updated{
+}
+
+table.marks td.recalc,
+.legend .legenditem .legendicon.recalc {
+  background: #F6CECE;
+}
+
+table.marks td.updated,
+.legend .legenditem .legendicon.updated {
+    background: #c2c2e5;
+}
+
+table.marks td.error,
+.legend .legenditem .legendicon.error,
+table.marks td.error input,
+table.marks td.linkserror,
+table.marks td.linkserror input {
+  color: #cc0000;
+}
+
+.legend .legenditem .legendicon.error {
+  background-color: #cc0000;
+/*  color:#fff;*/
+}

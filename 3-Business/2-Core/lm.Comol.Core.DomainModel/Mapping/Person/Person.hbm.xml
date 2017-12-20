@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="lm.Comol.Core.DomainModel" namespace="lm.Comol.Core.DomainModel">
+  <class name="Person" table="PERSONA" lazy="true"  discriminator-value="0">
+    <id name="Id" column="PRSN_id" type="Int32">
+      <generator class="native"/>
+    </id>
+    <discriminator column="Discriminator" not-null="true" insert ="true" type="Int32"/>
+    <property name="Login" type="String" column="PRSN_login" />
+    <property name="Name" type="String" column="PRSN_nome"/>
+    <property name="Surname" type="String" column="PRSN_cognome" />
+    <property name="Password" type="String" column="PRSN_pwd" />
+    <property name="Mail" type="String" column="PRSN_mail" />
+    <property name="isDisabled" type="Boolean" column="PRSN_invisible" />
+    <property name="TypeID" type="Int32" column="PRSN_TPPR_ID" />
+    <property name="AuthenticationTypeID" type="Int32" column="PRSN_AUTN_Id" />
+    <property name="TaxCode" type="String" column="PRSN_codFiscale" />
+    <property name="LanguageID" type="Int32" column="PRSN_LNGU_id" />
+    <property name="LastAccessOn" type="DateTime" column="PRSN_ultimoCollegamento" not-null="false"/>
+    <property name="PreviousAccess" type="DateTime" column="PreviousAccess"/>
+    <property name="IdDefaultProvider" type="Int64" column="IdDefaultProvider" />
+    <property name="FirstLetter" type="String" column="FirstLetter" />
+    <property name="FotoPath" type="String" column="PRSN_fotoPath" />
+    <property name="AcceptPolicy" type="Boolean" column="AcceptPolicy" />
+    <property name="AcceptPolicyOn" type="DateTime" column="AcceptPolicyOn" not-null="false" />
+    <property name="CreatedOn" type="DateTime" column="PRSN_dataInserimento"/>
+
+    <property name="Sector" type="String" column="PRSN_Sector" />
+    <property name="Job" type="String" column="PRSN_Job" />
+
+      <component name="PersonInfo" class="PersonInfo">
+          <property name="RemoteUniqueID" type="String" column="PRSN_AUTN_RemoteUniqueID"/>
+          <property name="BirthDate" type="DateTime" column="PRSN_dataNascita"/>
+          <property name="Note" type="String" column="PRSN_note"/>
+          <property name="IdIstitution" type="Int32" column="PRSN_ISTT_id" />
+          <property name="IdProvince" type="Int32" column="PRSN_PRVN_id" />
+          <property name="IdNation" type="Int32" column="PRSN_STTO_id" />
+          <property name="SecondaryMail" type="String" column="PRSN_MailSecondaria"/>
+          <property name="DefaultShowMailAddress" type="Boolean" column="PRSN_mostraMail" />
+          <property name="isInternalProfile" type="Boolean" column="PRSN_intEst" />
+          <property name="BirthPlace" type="String" column="PRSN_luogoNascita" />
+          <property name="IsMale" type="Boolean" column="PRSN_sesso" />
+          <property name="Address" type="String" column="PRSN_indirizzo" />
+          <property name="PostCode" type="String" column="PRSN_cap" />
+          <property name="City" type="String" column="PRSN_citta" />
+          <property name="OfficePhone" type="String" column="PRSN_telefono1" />
+          <property name="HomePhone" type="String" column="PRSN_telefono2" />
+          <property name="Mobile" type="String" column="PRSN_cellulare" />
+          <property name="Fax" type="String" column="PRSN_fax" />
+          <property name="Homepage" type="String" column="PRSN_homePage" />
+
+      </component>
+      
+    <!--<property name="SurnameAndName" type="String" formula="CONCAT(PRSN_cognome, ' ',PRSN_nome)" update="false" insert="false"/>-->
+    <subclass discriminator-value="20" name="CompanyUser" extends="Person">
+
+      <component name="CompanyInfo" class="CompanyInfo">
+        <property name="Name" type="String" column="CompanyName" />
+        <property name="Address" type="String" column="CompanyAddress" />
+        <property name="City" type="String" column="CompanyCity" />
+        <property name="Region" type="String" column="CompanyRegion" />
+        <property name="TaxCode" type="String" column="CompanyTaxCode" />
+        <property name="ReaNumber" type="String" column="CompanyReaNumber" />
+        <property name="AssociationCategories" type="String" column="CompanyAssociationCategories" />
+      </component>
+    </subclass>
+    <subclass discriminator-value="22" name="Employee" extends="Person">
+      <bag name="Affiliations" table="PR_AgencyAffiliation" lazy="true" inverse="true" fetch="subselect" cascade="all-delete-orphan">
+        <key column="IdPerson" foreign-key="Id"/>
+        <one-to-many class="AgencyAffiliation"/>
+      </bag>
+    </subclass>
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="lm.Comol.Modules.CallForPapers.Domain.FieldDefinition">
+    <Position X="8.75" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAAAQgAAAAAAQAAAwAAAAAAAAAAQAQAIAAAAA=</HashCode>
+      <FileName>Domain\Base\Call\FieldDefinition.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Type" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="lm.Comol.Modules.CallForPapers.Domain.FieldsSection">
+    <Position X="4.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAAAAgAAAAAAAAAAQAAAAAAAAAAAAAAAAAgAA=</HashCode>
+      <FileName>Domain\Base\Call\FieldsSection.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Fields" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="lm.Comol.Modules.CallForPapers.Domain.CallForPaper">
+    <Position X="0.5" Y="0.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAAAAAAAAAhAAAAAQAAIAAAAAAAAAAAA=</HashCode>
+      <FileName>Domain\CallForPaper\CallForPaper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="lm.Comol.Modules.CallForPapers.Domain.SubmitterType">
+    <Position X="3.25" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAAEAggAAAAABAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Domain\Base\Call\SubmitterType.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="lm.Comol.Modules.CallForPapers.Domain.RequestedFileAssignment">
+    <Position X="13.25" Y="4.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Domain\Base\Call\RequestedFileAssignment.cs</FileName>
+      <NewMemberFileName>Domain\FieldAssignment.cs</NewMemberFileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="lm.Comol.Modules.CallForPapers.Domain.UserSubmission">
+    <Position X="5.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQBQACEQAJAAAIAAAIAAQAIAEBBAABAgQAAAAEAAIA=</HashCode>
+      <FileName>Domain\Base\Call\UserSubmission.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Type" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="lm.Comol.Modules.CallForPapers.Domain.FieldValue">
+    <Position X="8.75" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAgAAAAgAA=</HashCode>
+      <FileName>Domain\Base\Call\FieldValue.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Field" />
+      <Property Name="Submission" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="lm.Comol.Modules.CallForPapers.Domain.AttachmentFile">
+    <Position X="13.25" Y="1" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAAAAhAAAAAAAAAAAAAAAEAAAAAAAAQAAAAAA=</HashCode>
+      <FileName>Domain\Base\Call\AttachmentFile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="lm.Comol.Modules.CallForPapers.Domain.RequestedFile">
+    <Position X="0.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAAAAgAAAAAAQAAAQAAAAAAAAAAAAAIAAAAAA=</HashCode>
+      <FileName>Domain\Base\Call\RequestedFile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="lm.Comol.Modules.CallForPapers.Domain.SubmittedFile">
+    <Position X="3.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAgAQAAAAAAAAEAAAAAAAAQAAAAAg=</HashCode>
+      <FileName>Domain\Base\Call\SubmittedFile.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Submission" />
+      <Property Name="SubmittedAs" />
+    </ShowAsAssociation>
+  </Class>
+  <Enum Name="lm.Comol.Modules.CallForPapers.Domain.FieldType">
+    <Position X="11.25" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAAAQAAAhABABAAQIBABAAAQFAAAQAQFAAQg=</HashCode>
+      <FileName>Domain\Base\Call\FieldType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="lm.Comol.Modules.CallForPapers.Domain.CallForPaperStatus">
+    <Position X="11" Y="6.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAEAQCAAAAAAACAAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>Domain\Base\Call\CallForPaperStatus.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

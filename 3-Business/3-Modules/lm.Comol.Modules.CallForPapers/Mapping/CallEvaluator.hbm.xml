@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="lm.Comol.Modules.CallForPapers" namespace="lm.Comol.Modules.CallForPapers.Domain.Evaluation">
+	<class name="CallEvaluator" table="CP_CallEvaluator" optimistic-lock ="version">
+		<id name="Id" column="Id" type="Int64">
+			<generator class="native"/>
+		</id>
+    <version name="TimeStamp"
+   generated="always"
+   unsaved-value="null"
+   type="BinaryBlob">
+      <column name="_Timestamp"
+              not-null="false"
+              sql-type="timestamp"/>
+    </version>
+    <many-to-one name="Person" class="lm.Comol.Core.DomainModel.litePerson" column="IdPerson" foreign-key="IdPerson" cascade="none" not-found="ignore" />
+    <many-to-one name="Call" class="lm.Comol.Modules.CallForPapers.Domain.BaseForPaper" column="IdCall" foreign-key="IdCall" cascade="none" not-found="ignore" />
+    <bag name="Memberships" table="CP_CommitteeMember" lazy="false" fetch="subselect" cascade="all-delete-orphan">
+      <key column="IdCallEvaluator" foreign-key="Id"/>
+      <one-to-many  class="lm.Comol.Modules.CallForPapers.Domain.Evaluation.CommitteeMember, lm.Comol.Modules.CallForPapers" />
+    </bag>
+    <bag name="Evaluations" table="CP_Evaluation" lazy="false" fetch="subselect" cascade="all-delete-orphan">
+      <key column="IdCallEvaluator" foreign-key="Id"/>
+      <one-to-many  class="lm.Comol.Modules.CallForPapers.Domain.Evaluation.Evaluation, lm.Comol.Modules.CallForPapers" />
+    </bag>
+
+    <property name="CreatedOn" type="DateTime" column="_CreatedOn" />
+    <many-to-one name="CreatedBy" class="lm.Comol.Core.DomainModel.litePerson" column="_CreatedBy" foreign-key="_CreatedBy" cascade="none" not-found="ignore" />
+    <property name="ModifiedOn" type="DateTime" column="_ModifiedOn" />
+    <many-to-one name="ModifiedBy" class="lm.Comol.Core.DomainModel.litePerson" column="_ModifiedBy" foreign-key="_ModifiedBy" cascade="none" not-found="ignore"/>
+    <property name="CreatorProxyIpAddress" type="String" column="_CreatedProxyIPaddress" />
+    <property name="CreatorIpAddress" type="String" column="_CreatedIPaddress" />
+    <property name="ModifiedProxyIpAddress" type="String" column="_ModifiedProxyIPaddress" />
+    <property name="ModifiedIpAddress" type="String" column="_ModifiedIPaddress" />
+    <property name="Deleted" type="lm.Comol.Core.DomainModel.BaseStatusDeleted,lm.Comol.Core.DomainModel" column="_Deleted" />
+  </class>
+</hibernate-mapping>

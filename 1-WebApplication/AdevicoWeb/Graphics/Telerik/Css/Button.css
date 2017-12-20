@@ -1,0 +1,755 @@
+.RadButton,
+.rbDecorated {
+  font-size: 12px;
+  font-family: "Segoe UI" , Arial, Helvetica, sans-serif; }
+
+.RadButton img {
+  border: 0; }
+
+.rbSkinnedButton {
+  display: inline-block;
+  position: relative;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  border: 0 none;
+  height: 22px;
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+  background-position: left -525px;
+  padding-left: 4px;
+  /* this value is hacked for webkit */
+  vertical-align: top; }
+
+/* accessibility requierment */
+.rbSkinnedButton:focus {
+  outline: 1px dotted #666 !important; }
+
+/* Fixing RadbUtton position in Firefox when it is next to a textbox */
+x:-moz-any-link, .rbSkinnedButton {
+  vertical-align: top; }
+
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  .rbSkinnedButton {
+    vertical-align: text-top; } }
+.rbDecorated {
+  display: block;
+  *display: inline;
+  zoom: 1;
+  height: 22px;
+  padding-left: 6px;
+  *padding-left: 8px;
+  padding-right: 10px;
+  border: 0;
+  text-align: center;
+  background-position: right -88px;
+  overflow: visible;
+  background-color: transparent;
+  outline: none;
+  cursor: pointer;
+  -webkit-border-radius: 0;
+  /* set default border-radius to 0 in mobile safari */
+  *line-height: 22px; }
+
+.rbSkinnedButton:hover {
+  background-position: left -547px; }
+
+.rbSkinnedButton:hover .rbDecorated {
+  background-position: right -110px; }
+
+.rbSkinnedButton:focus,
+.rbSkinnedButton:active,
+.rbSkinnedButtonChecked,
+.rbSkinnedButtonChecked:hover {
+  background-position: left -569px; }
+
+.rbSkinnedButton:focus .rbDecorated,
+.rbSkinnedButton:active .rbDecorated,
+.rbSkinnedButtonChecked .rbDecorated,
+.rbSkinnedButtonChecked:hover .rbDecorated {
+  background-position: right -132px; }
+
+/* IE and Opera Focus and Active state fix with additional class, should be used !important */
+.rbPressedButton {
+  background-position: left -569px !important; }
+
+.rbPressedButton .rbDecorated {
+  background-position: right -132px !important; }
+
+/* IE8 Onclickg filckering Bug fix */
+.rbSkinnedButton.rbPressedIE8 .rbDecorated,
+.rbSkinnedButton.rbPressedIE8Rtl .rbDecorated {
+  -ms-background-position-x: right !important;
+  -ms-background-position-y: -132px !important; }
+
+.rbSkinnedButton.rbPressedIE8Rtl .rbDecorated {
+  -ms-background-position-x: -1px !important; }
+
+.rbSkinnedButton.rbPressedIE8,
+.rbSkinnedButton.rbPressedIE8Rtl {
+  background-position: left -569px !important; }
+
+/* fix end */
+.RadButton input.rbDecorated:focus,
+.RadButton input.rbDecorated::-moz-focus-inner,
+.RadButton.rbToggleButton,
+.RadButton.rbLinkButton,
+.RadButton.rbImageButton,
+.RadButton:active,
+.RadButton:focus,
+.RadButton.rbSkinnedButton.rbDisabled {
+  border: 0 none;
+  outline: 0 none; }
+
+.RadButton .rbPrimary {
+  padding-left: 25px; }
+
+.rbPrimaryIconOnly {
+  padding: 0 9px; }
+
+.RadButton .rbSecondary {
+  padding-right: 25px; }
+
+.rbPrimarySecondaryIcon {
+  padding: 0 15px; }
+
+.rbPrimaryIcon,
+.rbSecondaryIcon {
+  position: absolute;
+  display: block;
+  width: 16px;
+  height: 16px;
+  overflow: hidden;
+  background-repeat: no-repeat;
+  cursor: default; }
+
+.RadButton,
+.RadButton .rbPrimaryIcon,
+.RadButton .rbSecondaryIcon {
+  cursor: pointer; }
+
+.rbPrimaryIcon {
+  top: 3px;
+  left: 4px; }
+
+.rbSecondaryIcon {
+  top: 3px;
+  right: 4px; }
+
+.rbPrimaryIcon.rbToggleRadio,
+.rbSecondaryIcon.rbToggleRadio,
+.rbPrimaryIcon.rbToggleCheckbox,
+.rbSecondaryIcon.rbToggleCheckbox,
+.rbPrimaryIcon.rbToggleRadioChecked,
+.rbSecondaryIcon.rbToggleRadioChecked,
+.rbPrimaryIcon.rbToggleCheckboxChecked,
+.rbSecondaryIcon.rbToggleCheckboxChecked,
+.rbPrimaryIcon.rbToggleCheckboxFilled,
+.rbSecondaryIcon.rbToggleCheckboxFilled {
+  top: 2px;
+  top: 1px\9;
+  *top: 1px; }
+
+.rbText {
+  display: inline-block; }
+
+.rbImageButton {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center; }
+
+.rbLinkButton {
+  display: inline-block;
+  height: 20px;
+  line-height: 20px;
+  position: relative;
+  border: 1px solid;
+  padding: 0 4px;
+  cursor: pointer;
+  vertical-align: bottom;
+  text-decoration: none; }
+
+.rbLinkButton.rbRounded {
+  border-radius: 4px; }
+
+/* Vertical Buttons */
+.rbVerticalButton {
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+  position: relative;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  border: 0 none;
+  height: 65px;
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+  background-position: -5px -525px;
+  padding-left: 4px; }
+
+.rbVerticalButton:focus {
+  outline: 1px dotted #666 !important; }
+
+.rbVerticalButton .rbDecorated {
+  display: block;
+  height: 65px;
+  padding-left: 6px;
+  padding-right: 10px;
+  border: 0;
+  text-align: center;
+  vertical-align: bottom;
+  background-position: right -200px;
+  *line-height: 65px; }
+
+.rbVerticalButton:hover {
+  background-position: -10px -525px; }
+
+.rbVerticalButton:hover .rbDecorated {
+  background-position: right -265px; }
+
+.rbVerticalButton:focus,
+.rbVerticalButton:active,
+.rbVerticalButtonChecked,
+.rbVerticalButtonChecked:hover {
+  background-position: -15px -525px; }
+
+.rbVerticalButton:focus .rbDecorated,
+.rbVerticalButton:active .rbDecorated,
+.rbVerticalButtonChecked .rbDecorated,
+.rbVerticalButtonChecked:hover .rbDecorated {
+  background-position: right -330px; }
+
+/* IE and Opera Focus and Active state fix with additional class, should be used !important */
+.rbVerticalButton.rbPressedButton {
+  background-position: -15px -525px !important; }
+
+.rbVerticalButton.rbPressedButton .rbDecorated {
+  background-position: right -330px !important; }
+
+/* IE8 Onclickg filckering Bug fix */
+.rbVerticalButton.rbPressedIE8 .rbDecorated,
+.rbVerticalButton.rbPressedIE8Rtl .rbDecorated {
+  -ms-background-position-x: right !important;
+  -ms-background-position-y: -330px !important; }
+
+.rbVerticalButton.rbPressedIE8Rtl .rbDecorated {
+  -ms-background-position-x: -1px !important; }
+
+.rbVerticalButton.rbPressedIE8,
+.rbVerticalButton.rbPressedIE8Rtl {
+  background-position: -15px -525px !important; }
+
+/* fix end */
+x:-moz-any-link, .rbVerticalButton {
+  vertical-align: middle; }
+
+.rbVerticalButton .rbPrimary {
+  padding-left: 40px; }
+
+.rbVerticalButton .rbSecondary {
+  padding-right: 40px; }
+
+.rbVerticalButton .rbPrimaryIcon {
+  top: 20px;
+  left: 14px; }
+
+.rbVerticalButton .rbSecondaryIcon {
+  top: 20px;
+  right: 14px; }
+
+/* Toggle Buttons Style */
+.rbToggleButton {
+  position: relative;
+  display: inline-block;
+  min-height: 20px;
+  cursor: default;
+  text-decoration: none;
+  padding-left: 20px; }
+
+.rbToggleButtonIcon {
+  display: block;
+  position: absolute;
+  top: 5px;
+  left: 3px;
+  width: 15px;
+  height: 15px; }
+
+.rbToggleCheckbox {
+  background-position: 0 0; }
+
+.rbToggleCheckbox:hover,
+.rbToggleButton:hover .rbToggleCheckbox,
+.rbSkinnedButton .rbToggleCheckbox:hover,
+.rbLinkButton .rbToggleCheckbox:hover {
+  background-position: -40px 0; }
+
+.rbToggleCheckboxChecked {
+  background-position: 0 -40px; }
+
+.rbToggleCheckboxChecked:hover,
+.rbToggleButton:hover .rbToggleCheckboxChecked,
+.rbSkinnedButton .rbToggleCheckboxChecked:hover,
+.rbLinkButton .rbToggleCheckboxChecked:hover {
+  background-position: -40px -40px; }
+
+.rbToggleCheckboxFilled {
+  background-position: 0 -80px; }
+
+.rbToggleCheckbox:hover,
+.rbToggleButton:hover .rbToggleCheckboxFilled,
+.rbSkinnedButton .rbToggleCheckboxFilled:hover,
+.rbLinkButton .rbToggleCheckboxFilled:hover {
+  background-position: -40px -80px; }
+
+.rbToggleRadio {
+  background-position: -80px 0; }
+
+.rbToggleRadio:hover,
+.rbToggleButton:hover .rbToggleRadio {
+  background-position: -120px 0; }
+
+.rbToggleRadioChecked {
+  background-position: -80px -40px; }
+
+.rbToggleRadioChecked:hover,
+.rbToggleButton:hover .rbToggleRadioChecked {
+  background-position: -120px -40px; }
+
+.rbTextButton {
+  padding: 0; }
+
+/* Toggle check and radio top position fixed */
+.rbSkinnedButton .rbPrimaryIcon.rbToggleCheckbox,
+.rbSkinnedButton .rbPrimaryIcon.rbToggleCheckboxChecked,
+.rbSkinnedButton .rbPrimaryIcon.rbToggleRadio,
+.rbSkinnedButton .rbPrimaryIcon.rbToggleRadioChecked,
+.rbSkinnedButton .rbPrimaryIcon.rbToggleCheckboxFilled,
+.rbSkinnedButton .rbSecondaryIcon.rbToggleCheckbox,
+.rbSkinnedButton .rbSecondaryIcon.rbToggleCheckboxChecked,
+.rbSkinnedButton .rbSecondaryIcon.rbToggleRadio,
+.rbSkinnedButton .rbSecondaryIcon.rbToggleRadioChecked,
+.rbSkinnedButton .rbSecondaryIcon.rbToggleCheckboxFilled,
+.rbLinkButton .rbPrimaryIcon.rbToggleCheckbox,
+.rbLinkButton .rbPrimaryIcon.rbToggleCheckboxChecked,
+.rbLinkButton .rbPrimaryIcon.rbToggleRadio,
+.rbLinkButton .rbPrimaryIcon.rbToggleRadioChecked,
+.rbLinkButton .rbPrimaryIcon.rbToggleCheckboxFilled,
+.rbLinkButton .rbSecondaryIcon.rbToggleCheckbox,
+.rbLinkButton .rbSecondaryIcon.rbToggleCheckboxChecked,
+.rbLinkButton .rbSecondaryIcon.rbToggleRadio,
+.rbLinkButton .rbSecondaryIcon.rbToggleRadioChecked,
+.rbLinkButton .rbSecondaryIcon.rbToggleCheckboxFilled {
+  top: 4px; }
+
+/* Split Button Styles */
+.rbSplitRight,
+.rbSplitLeft {
+  display: block;
+  position: absolute;
+  width: 18px;
+  height: 100%;
+  top: 0; }
+
+.rbLinkButton .rbSplitRight,
+.rbLinkButton .rbSplitLeft {
+  width: 16px; }
+
+.rbSplitRight,
+.rbDisabled .rbSplitRight:hover,
+.rbDisabled .rbSplitRight:active,
+.rbDisabled .rbSplitRight:focus {
+  right: 0;
+  background-position: -18px -176px; }
+
+.rbSplitRight:hover {
+  background-position: -54px -176px; }
+
+.rbSplitRight:focus,
+.rbSplitRight:active {
+  background-position: -90px -176px; }
+
+.rbSplitLeft,
+.rbDisabled .rbSplitLeft:hover,
+.rbDisabled .rbSplitLeft:active,
+.rbDisabled .rbSplitLeft:focus {
+  left: 0;
+  background-position: 0 -176px; }
+
+.rbSplitLeft:hover {
+  background-position: -36px -176px; }
+
+.rbSplitLeft:focus,
+.rbSplitLeft:active {
+  background-position: -72px -176px; }
+
+/* Split Button Link Button */
+.rbLinkButton .rbSplitRight,
+.rbLinkButton .rbSplitRight:hover,
+.rbLinkButton .rbSplitRight:active,
+.rbLinkButton .rbSplitRight:focus,
+.rbLinkButton .rbSplitLeft,
+.rbLinkButton .rbSplitLeft:hover,
+.rbLinkButton .rbSplitLeft:active,
+.rbLinkButton .rbSplitLeft:focus {
+  background-position: -307px -176px; }
+
+.RadButton.rbLinkButton.rbDisabled .rbSplitLeft,
+.RadButton.rbLinkButton.rbDisabled .rbSplitLeft:hover,
+.RadButton.rbLinkButton.rbDisabled .rbSplitLeft:active,
+.RadButton.rbLinkButton.rbDisabled .rbSplitLeft:focus,
+.RadButton.rbLinkButton.rbDisabled .rbSplitRight,
+.RadButton.rbLinkButton.rbDisabled .rbSplitRight:hover,
+.RadButton.rbLinkButton.rbDisabled .rbSplitRight:active,
+.RadButton.rbLinkButton.rbDisabled .rbSplitRight:focus,
+.RadButton.rbLinkButton.rbDisabled:hover .rbSplitRight,
+.RadButton.rbLinkButton.rbDisabled:hover .rbSplitLeft,
+.rbLinkButton.rbDisabled .rbSplitRight,
+.rbLinkButton.rbDisabled .rbSplitRight:hover,
+.rbLinkButton.rbDisabled .rbSplitRight:focus,
+.rbLinkButton.rbDisabled .rbSplitRight:active,
+.rbLinkButton.rbDisabled .rbSplitLeft,
+.rbLinkButton.rbDisabled .rbSplitLeft:hover,
+.rbLinkButton.rbDisabled .rbSplitLeft:focus,
+.rbLinkButton.rbDisabled .rbSplitLeft:active {
+  background-color: inherit;
+  background-position: -307px -176px; }
+
+/* Disabled states */
+.rbDisabled {
+  opacity: .6;
+  filter: alpha(opacity=60); }
+
+.rbLinkButton.rbDisabled {
+  opacity: .9;
+  filter: alpha(opacity=90); }
+
+.RadButton.rbSkinnedButton.rbDisabled {
+  outline: none !important; }
+
+/* Disabled split buttons */
+/* End disabled split buttons */
+/* Disabled Curosr */
+.RadButton.rbDisabled,
+.RadButton.rbDisabled .rbPrimaryIcon,
+.RadButton.rbDisabled .rbSecondaryIcon,
+.RadButton.rbDisabled .rbDecorated,
+.rbPrimaryIcon.rbToggleRadio,
+.rbPrimaryIcon.rbToggleCheckbox,
+.rbSecondaryIcon.rbToggleRadio,
+.rbSecondaryIcon.rbToggleCheckbox,
+.rbPrimaryIcon.rbToggleRadioChecked,
+.rbPrimaryIcon.rbToggleCheckboxChecked,
+.rbSecondaryIcon.rbToggleRadioChecked,
+.rbSecondaryIcon.rbToggleCheckboxChecked,
+.rbPrimaryIcon.rbToggleCheckboxFilled,
+.rbSecondaryIcon.rbToggleCheckboxFilled {
+  cursor: default; }
+
+/* End Disabled Curosr */
+/* Normal buttons disabled */
+span.rbDisabled:hover,
+span.rbDisabled:focus,
+span.rbDisabled:active {
+  background-position: left -525px; }
+
+span.rbDisabled:hover .rbDecorated,
+span.rbDisabled:focus .rbDecorated,
+span.rbDisabled:active .rbDecorated {
+  background-position: right -88px; }
+
+span.rbVerticalButton.rbDisabled:hover,
+span.rbVerticalButton.rbDisabled:focus,
+span.rbVerticalButton.rbDisabled:active {
+  background-position: -5px -525px; }
+
+span.rbVerticalButton.rbDisabled:hover .rbDecorated,
+span.rbVerticalButton.rbDisabled:focus .rbDecorated,
+span.rbVerticalButton.rbDisabled:active .rbDecorated {
+  background-position: right -200px; }
+
+/* Toggle checkboxes disabled */
+.rbDisabled .rbToggleCheckbox:hover,
+.rbDisabled:hover .rbToggleCheckbox {
+  background-position: 0 0; }
+
+.rbDisabled .rbToggleCheckboxChecked:hover,
+.rbDisabled:hover .rbToggleCheckboxChecked {
+  background-position: 0 -40px; }
+
+.rbDisabled .rbToggleCheckboxFilled:hover,
+.rbDisabled.rbToggleButton:hover .rbToggleCheckboxFilled {
+  background-position: 0 -80px; }
+
+.RadButton.rbDisabled,
+.RadButton.rbDisabled:hover {
+  _border: 0;
+  _background-color: transparent; }
+
+/* Toggle radio disabled */
+.rbDisabled .rbToggleRadio:hover,
+.rbDisabled:hover .rbToggleRadio {
+  background-position: -80px 0; }
+
+.rbDisabled .rbToggleRadioChecked:hover,
+.rbDisabled:hover .rbToggleRadioChecked {
+  background-position: -80px -40px; }
+
+.rbDisabled .rbToggleCheckbox,
+.rbDisabled .rbToggleCheckboxChecked,
+.rbDisabled .rbToggleRadio,
+.rbDisabled .rbToggleRadioChecked,
+.rbDisabled .rbToggleCheckboxFilled {
+  opacity: .5;
+  filter: alpha(opacity=50); }
+
+/* Disabled Splits and Icons for IE */
+.rbDisabled .rbPrimaryIcon,
+.rbDisabled .rbSecondaryIcon,
+.rbDisabled .rbSplitLeft,
+.rbDisabled .rbSplitRight {
+  filter: alpha(opacity=50); }
+
+.rbImageButton.rbDisabled:hover {
+  background-position: 0 0; }
+
+/* Native Button */
+/* should use !important to override skin specific selector */
+.rbNativeButton {
+  background-image: none !important;
+  background-color: transparent !important;
+  padding-right: 0 !important;
+  border: 0 !important;
+  height: auto; }
+
+/* Hide element styles the !important is necessary to prevent overriding */
+.rbHideElement {
+  display: none;
+  width: 0 !important;
+  height: 0 !important;
+  overflow: hidden !important; }
+
+.RadButton .rbHiddenImages {
+  position: absolute;
+  top: -9999px;
+  visibility: hidden; }
+
+/* -web kit hacks */
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  .rbSkinnedButton,
+  .rbVerticalButton {
+    padding-left: 2px; }
+
+  .rbPrimaryIcon {
+    left: 5px; }
+
+  .rbDecorated {
+    padding-left: 8px;
+    padding-right: 12px; } }
+/* -web kit hacks end */
+/* Predefined Embedded Icons */
+/* Basic 16x16 */
+.rbAdd,
+.rbRemove,
+.rbOk,
+.rbCancel,
+.rbPrevious,
+.rbNext,
+.rbSave,
+.rbConfig,
+.rbRefresh,
+.rbEdit {
+  background-image: url('Common/Button/rbBasicIcons16x16.png') !important; }
+
+.rbAdd {
+  background-position: 0 0 !important; }
+
+.rbRemove {
+  background-position: -20px 0 !important; }
+
+.rbOk {
+  background-position: -40px 0 !important; }
+
+.rbCancel {
+  background-position: -60px 0 !important; }
+
+.rbPrevious {
+  background-position: -80px 0 !important; }
+
+.rbNext {
+  background-position: -100px 0 !important; }
+
+.rbSave {
+  background-position: -120px 0 !important; }
+
+.rbConfig {
+  background-position: -140px 0 !important; }
+
+.rbRefresh {
+  background-position: -160px 0 !important; }
+
+.rbEdit {
+  background-position: -180px 0 !important; }
+
+/* Extended 16x16 */
+.rbUpload,
+.rbDownload,
+.rbOpen,
+.rbAttach,
+.rbPrint,
+.rbSearch,
+.rbHelp,
+.rbCart,
+.rbRSS,
+.rbMail,
+.rbFB,
+.rbTwitter {
+  background-image: url('Common/Button/rbExtendedIcons16x16.png') !important; }
+
+.rbUpload {
+  background-position: 0 0 !important; }
+
+.rbDownload {
+  background-position: -20px 0 !important; }
+
+.rbOpen {
+  background-position: -40px 0 !important; }
+
+.rbAttach {
+  background-position: -60px 0 !important; }
+
+.rbPrint {
+  background-position: -80px 0 !important; }
+
+.rbSearch {
+  background-position: -100px 0 !important; }
+
+.rbHelp {
+  background-position: -120px 0 !important; }
+
+.rbCart {
+  background-position: -140px 0 !important; }
+
+.rbRSS {
+  background-position: -160px 0 !important; }
+
+.rbMail {
+  background-position: -180px 0 !important; }
+
+.rbFB {
+  background-position: -200px 0 !important; }
+
+.rbTwitter {
+  background-position: -220px 0 !important; }
+
+/* Basic 24x24 */
+.rbAdd24,
+.rbRemove24,
+.rbOk24,
+.rbCancel24,
+.rbPrevious24,
+.rbNext24,
+.rbSave24,
+.rbConfig24,
+.rbRefresh24,
+.rbEdit24 {
+  background-image: url('Common/Button/rbBasicIcons24x24.png') !important;
+  width: 24px;
+  height: 24px; }
+
+.rbAdd24 {
+  background-position: 0 0 !important; }
+
+.rbRemove24 {
+  background-position: -30px 0 !important; }
+
+.rbOk24 {
+  background-position: -60px 0 !important; }
+
+.rbCancel24 {
+  background-position: -90px 0 !important; }
+
+.rbPrevious24 {
+  background-position: -120px 0 !important; }
+
+.rbNext24 {
+  background-position: -150px 0 !important; }
+
+.rbSave24 {
+  background-position: -180px 0 !important; }
+
+.rbConfig24 {
+  background-position: -210px 0 !important; }
+
+.rbRefresh24 {
+  background-position: -240px 0 !important; }
+
+.rbEdit24 {
+  background-position: -270px 0 !important; }
+
+/* Extended 24x24 */
+.rbUpload24,
+.rbDownload24,
+.rbOpen24,
+.rbAttach24,
+.rbPrint24,
+.rbSearch24,
+.rbHelp24,
+.rbCart24,
+.rbRSS24,
+.rbMail24,
+.rbFB24,
+.rbTwitter24 {
+  background-image: url('Common/Button/rbExtendedIcons24x24.png') !important;
+  width: 24px;
+  height: 24px; }
+
+.rbUpload24 {
+  background-position: 0 0 !important; }
+
+.rbDownload24 {
+  background-position: -30px 0 !important; }
+
+.rbOpen24 {
+  background-position: -60px 0 !important; }
+
+.rbAttach24 {
+  background-position: -90px 0 !important; }
+
+.rbPrint24 {
+  background-position: -120px 0 !important; }
+
+.rbSearch24 {
+  background-position: -150px 0 !important; }
+
+.rbHelp24 {
+  background-position: -180px 0 !important; }
+
+.rbCart24 {
+  background-position: -210px 0 !important; }
+
+.rbRSS24 {
+  background-position: -240px 0 !important; }
+
+.rbMail24 {
+  background-position: -270px 0 !important; }
+
+.rbFB24 {
+  background-position: -300px 0 !important; }
+
+.rbTwitter24 {
+  background-position: -330px 0 !important; }
+
+/* Radio and Checkboxes Right to Left Support */
+.rbToggleButton.rbRtl {
+  padding: 0 20px 0 0; }
+
+.rbRtl .rbPrimaryIcon.rbToggleCheckbox,
+.rbRtl .rbPrimaryIcon.rbToggleCheckboxChecked,
+.rbRtl .rbPrimaryIcon.rbToggleRadio,
+.rbRtl .rbPrimaryIcon.rbToggleRadioChecked {
+  right: 0;
+  top: 4px; }
+

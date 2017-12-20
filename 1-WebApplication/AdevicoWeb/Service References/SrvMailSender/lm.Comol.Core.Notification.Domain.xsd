@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/lm.Comol.Core.Notification.Domain" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/lm.Comol.Core.Notification.Domain" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/lm.Comol.Core.DomainModel" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/lm.Comol.Core.MailCommons.Domain.Messages" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/lm.Comol.Core.DomainModel.Languages" />
+  <xs:complexType name="dtoModuleNotificationMessage">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:dtoBaseNotificationMessage">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AttachmentPath" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="AttachmentSavedPath" nillable="true" type="xs:string" />
+          <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Attachments" nillable="true" type="q1:ArrayOfstring" />
+          <xs:element minOccurs="0" name="Channel" type="tns:NotificationChannel" />
+          <xs:element minOccurs="0" name="FatherUniqueIdentifier" type="ser:guid" />
+          <xs:element minOccurs="0" name="IdCommunity" type="xs:int" />
+          <xs:element minOccurs="0" name="IdLanguage" type="xs:int" />
+          <xs:element minOccurs="0" name="LanguageCode" nillable="true" type="xs:string" />
+          <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/lm.Comol.Core.DomainModel" minOccurs="0" name="ObjectOwner" nillable="true" type="q2:ModuleObject" />
+          <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/lm.Comol.Core.MailCommons.Domain.Messages" minOccurs="0" name="Recipients" nillable="true" type="q3:ArrayOfRecipient" />
+          <xs:element minOccurs="0" name="Save" type="xs:boolean" />
+          <xs:element minOccurs="0" name="UniqueIdentifier" type="ser:guid" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="dtoModuleNotificationMessage" nillable="true" type="tns:dtoModuleNotificationMessage" />
+  <xs:complexType name="dtoBaseNotificationMessage">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IdTemplate" type="xs:long" />
+      <xs:element minOccurs="0" name="IdVersion" type="xs:long" />
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/lm.Comol.Core.MailCommons.Domain.Messages" minOccurs="0" name="MailSettings" nillable="true" type="q4:MessageSettings" />
+      <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/lm.Comol.Core.DomainModel.Languages" minOccurs="0" name="Translation" nillable="true" type="q5:ItemObjectTranslation" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="dtoBaseNotificationMessage" nillable="true" type="tns:dtoBaseNotificationMessage" />
+  <xs:complexType name="dtoNotificationMessage">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:dtoBaseNotificationMessage">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Channel" type="tns:NotificationChannel" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="dtoNotificationMessage" nillable="true" type="tns:dtoNotificationMessage" />
+  <xs:simpleType name="NotificationChannel">
+    <xs:list>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="None">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">0</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="Mail">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="CommunityNews">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="PersonalNews">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">4</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="Memo">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">8</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:list>
+  </xs:simpleType>
+  <xs:element name="NotificationChannel" nillable="true" type="tns:NotificationChannel" />
+  <xs:complexType name="GroupMessages">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Channel" type="tns:NotificationChannel" />
+      <xs:element minOccurs="0" name="IdCommunity" type="xs:int" />
+      <xs:element minOccurs="0" name="Messages" nillable="true" type="tns:ArrayOfdtoModuleTranslatedMessage" />
+      <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/lm.Comol.Core.DomainModel" minOccurs="0" name="ObjectOwner" nillable="true" type="q6:ModuleObject" />
+      <xs:element minOccurs="0" name="Settings" nillable="true" type="tns:GroupSettings" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GroupMessages" nillable="true" type="tns:GroupMessages" />
+  <xs:complexType name="ArrayOfdtoModuleTranslatedMessage">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="dtoModuleTranslatedMessage" nillable="true" type="tns:dtoModuleTranslatedMessage" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfdtoModuleTranslatedMessage" nillable="true" type="tns:ArrayOfdtoModuleTranslatedMessage" />
+  <xs:complexType name="dtoModuleTranslatedMessage">
+    <xs:sequence>
+      <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/lm.Comol.Core.MailCommons.Domain.Messages" minOccurs="0" name="Recipients" nillable="true" type="q7:ArrayOfRecipient" />
+      <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/lm.Comol.Core.DomainModel.Languages" minOccurs="0" name="Translation" nillable="true" type="q8:ItemObjectTranslation" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="dtoModuleTranslatedMessage" nillable="true" type="tns:dtoModuleTranslatedMessage" />
+  <xs:complexType name="GroupSettings">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AttachmentPath" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AttachmentSavedPath" nillable="true" type="xs:string" />
+      <xs:element xmlns:q9="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Attachments" nillable="true" type="q9:ArrayOfstring" />
+      <xs:element minOccurs="0" name="FatherUniqueIdentifier" type="ser:guid" />
+      <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/lm.Comol.Core.MailCommons.Domain.Messages" minOccurs="0" name="Mail" nillable="true" type="q10:MessageSettings" />
+      <xs:element minOccurs="0" name="Save" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Template" nillable="true" type="tns:TemplateSettings" />
+      <xs:element minOccurs="0" name="UniqueIdentifier" type="ser:guid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GroupSettings" nillable="true" type="tns:GroupSettings" />
+  <xs:complexType name="TemplateSettings">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IdTemplate" type="xs:long" />
+      <xs:element minOccurs="0" name="IdVersion" type="xs:long" />
+      <xs:element minOccurs="0" name="IsCompliant" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TemplateSettings" nillable="true" type="tns:TemplateSettings" />
+</xs:schema>

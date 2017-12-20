@@ -1,0 +1,3361 @@
+/* @group Edupath Stats */
+
+/* Mooc Edupath stylesheet - updated 01/06/2016 */
+
+table.stats {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+table.stats td,
+table.stats th {
+	padding: 3px;
+	vertical-align: middle;
+	border: 1px solid #ccc;
+}
+
+table.stats thead {
+	color: #444;
+	padding: 3px 6px;
+	background-color: #e3e6ea;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#eceef1),to(#dbdfe4));
+	background-image: -webkit-linear-gradient(top, #eceef1, #dbdfe4);
+	background-image: -moz-linear-gradient(top, #eceef1, #dbdfe4);
+	background-image: -o-linear-gradient(top, #eceef1, #dbdfe4);
+	background-image: -ms-linear-gradient(top, #eceef1, #dbdfe4);
+	background-image: linear-gradient(top, #eceef1, #dbdfe4);
+	vertical-align: middle;
+}
+
+table.stats thead tr th,
+table.stats tr.path td {
+	vertical-align: middle;
+	padding: 4px 3px;
+}
+
+table.stats thead tr th {
+	text-align: center;
+}
+
+table.stats tfoot {
+	background-color: #444;
+	color: #fff;
+	text-align: center;
+	display: none;
+}
+
+table.stats tbody {
+	color: #333;
+}
+
+table.stats td a.expander {
+	*float: left;
+	*width: 18px;
+	*height: 14px;
+	*margin-right: 0 !important;
+	*padding: 0 !important;
+}
+
+table.stats thead tr {
+	border-bottom: none;
+}
+
+table.stats tr.path,
+table.stats tr.path:hover,
+table.stats tr.path span.itemdetail {
+	background-color: #888;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#888),to(#666));
+	background-image: -webkit-linear-gradient(top, #888, #666);
+	background-image: -moz-linear-gradient(top, #888, #666);
+	background-image: -o-linear-gradient(top, #888, #666);
+	background-image: -ms-linear-gradient(top, #888, #666);
+	background-image: linear-gradient(top, #888, #666);
+	color: #fff;
+	text-shadow: 0px 1px 0px rgba(0,0,0,0.5);
+}
+
+table.stats tr.path span.name {
+	font-size: 1.1em;
+}
+
+table.stats tr.unit {
+	background-color: #e3e6ea;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#eceef1),to(#dbdfe4));
+	background-image: -webkit-linear-gradient(top, #eceef1, #dbdfe4);
+	background-image: -moz-linear-gradient(top, #eceef1, #dbdfe4);
+	background-image: -o-linear-gradient(top, #eceef1, #dbdfe4);
+	background-image: -ms-linear-gradient(top, #eceef1, #dbdfe4);
+	background-image: linear-gradient(top, #eceef1, #dbdfe4);
+	border-top: 1px double #aaa;
+	font-weight: bold;
+}
+
+table.stats tr.unit.expanded {
+	border-top: 1px double #aaa;
+}
+
+table.stats tr.path + tr.unit {
+	border-top: none !important;
+}
+
+table.stats tr.unit td {
+	border: 1px solid #ccc;
+	border-top: none;
+	border-bottom: none;
+}
+
+table.stats tr.activity {
+	background-color: #eee;
+	border-left: 1px solid #ccc;
+	border-right: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	font-size: 0.9em;
+}
+
+table.stats tr.activity.expanded {
+	border-bottom: 1px solid #ddd;
+}
+
+table.stats tr.subactivity {
+	background-color: #fff;
+	border-left: 1px solid #ccc;
+	border-right: 1px solid #ccc;
+	border-bottom: 1px solid #ddd;
+	color: #888;
+}
+
+tr.unit + tr.subactivity,
+tr.unit + tr.subactivity ~ tr.subactivity {
+	color: #222;
+	font-size: 0.9em;
+}
+
+table.stats tr.path td.description {
+	padding-left: 0.5em;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+table.stats tr.path td.description span.itemdetail {
+	padding-left: 0.5em;
+	text-transform: none;
+	font-weight: normal;
+	font-style: normal;
+}
+
+table.stats tbody tr:hover {
+	background-color: #fff8dc;
+}
+
+table.stats tr.activity td.description {
+	padding-left: 1.5em !important;
+}
+
+table.stats tr.subactivity td.description {
+	padding-left: 3em !important;
+}
+
+table.stats tr.hiddenActivity {
+	display: none;
+}
+
+table.stats tr.single {
+	background-color: #eee;
+	color: #222;
+}
+
+table.stats th.completedpassed {
+	width: 80px;
+}
+
+table.stats th.started {
+	width: 80px;
+}
+
+table.stats th.notstarted {
+	width: 80px;
+}
+
+table.stats td.completedpassed,
+table.stats td.started,
+table.stats td.notstarted,
+table.stats td.passed,
+table.stats td.completed {
+	text-align: center;
+	font-size: 1.1em;
+}
+
+table.stats .status {
+	width: 100px;
+	text-align: center;
+}
+
+table.stats.user .status {
+	width: 120px;
+	text-align: center;
+}
+
+table.stats.user .status .hidden {
+	display: none !important;
+}
+
+table.stats .actions {
+	width: 60px;
+}
+
+table.stats td.started,
+table.stats td.notstarted,
+table.stats td.completedpassed {
+	text-align: center;
+}
+
+table.stats .iteminfo {
+	width: 82%;
+	display: inline-block;
+	*display: inline;
+	*float: left;
+	*line-height: 1.2em;
+}
+
+table.stats.user tr.path .iteminfo {
+	margin-top: 1px;
+}
+
+table.stats tr.subactivity span.iteminfo {
+	width:auto;
+	text-indent: -20px;
+	padding-left: 20px;
+}
+
+table.stats tr.unit span.iteminfo {
+	*width: 360px;
+}
+
+table.stats tr.activity span.iteminfo {
+	*width: 340px;
+}
+
+table.stats tr.subactivity span.iteminfo {
+	*width: 320px;
+}
+
+table.stats .mark,
+table.stats .timecompletion {
+	width: 12%;
+	text-align: center;
+	font-size: 1em;
+}
+
+table.stats.users .timecompletion {
+	width: 18%;
+}
+
+table.stats.user td.timecompletion {
+	width: 16%;
+	font-size: 11px;
+}
+
+table.stats.user td.timecompletion span {
+	*float: left;
+}
+
+table.stats.user td.timecompletion span.flag {
+	*float: right;
+}
+
+table.stats.users .status {
+	width: 120px;
+}
+
+table.stats .actionbuttons.right {
+	float: right;
+}
+
+table.stats .actionbuttons .actionbutton {
+	display: inline-block;
+	cursor: pointer;
+	text-align: center;
+	vertical-align: text-bottom;
+	background-color: transparent;
+	background-image: url(../img/PF_tree_icons.png);
+	background-position: -82px -594px;
+	width: 16px;
+	height: 16px;
+	margin-left: 1px;
+	*margin-left: 2px;
+}
+
+table.stats .actionbuttons .actionbutton.details {
+	background-position: -82px 0px;
+	width: 16px;
+	height: 16px;
+}
+
+table.stats .actionbuttons .actionbutton.stats {
+	background-position: -82px -792px;
+	width: 16px;
+	height: 16px;
+}
+
+table.stats .actionbuttons .actionbutton.editmetadata {
+	background-position: -82px -660px;
+	width: 16px;
+	height: 16px;
+}
+
+table.stats .actionbuttons .actionbutton.evaluate {
+	background-position: -82px -858px;
+	width: 16px;
+	height: 16px;
+}
+
+table.stats .actionbuttons .actionbutton.charts {
+	background-position: -82px -528px;
+	width: 16px;
+	height: 16px;
+}
+
+table.stats .actionbuttons .actionbutton.certificate {
+	background-image: url(../../../Generics/Command/img/common_icons_set1_16.png);
+	background-position: -120px -240px !important;
+    width: 16px;
+	height: 16px;
+}
+
+table.stats .actionbuttons .actionbutton.refresh {
+	background-image: url(../../../Generics/Command/img/common_icons_set1_16.png);
+	background-position: -160px -240px !important;
+	width: 16px;
+	height: 16px;
+}
+
+table.stats .actionbuttons .actionbutton.play {
+	background-image: url(../../../Generics/File/img/Filetype_Set-1_16.png);
+	background-position: 0 -1320px;
+}
+
+table.stats .actionbuttons .actionbutton.quiz {
+	background-image: url(../../../Generics/File/img/Filetype_Set-1_16.png);
+	background-position: 0 -66px;
+}
+
+table.stats .actionbuttons .actionbutton.forum {
+	background-image: url(../../../Generics/File/img/Filetype_Set-1_16.png);
+	background-position: 0 0;
+}
+
+table.stats .icons.right {
+	float: right;
+}
+
+table.stats tr span.icons.right {
+	width: auto;
+	text-align: right;
+}
+
+table.stats tr.path span.icons.right {
+	width: auto;
+	background-color: #eee;
+	padding: 2px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+}
+
+table.stats.user tr.path span.icons.right {
+/*	width: 40px;
+    *width: 44px;*/
+    text-align: center;
+	-moz-box-shadow: inset 0 0 0 rgba(0, 0, 0, 0.2);
+	-webkit-box-shadow: inset 0 0 0 rgba(0, 0, 0, 0.2);
+	box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.hideDetail {
+	display: none;
+}
+
+table.stats .icon {
+	display: inline-block;
+	width: 17px;
+	height: 17px;
+	text-align: center;
+	vertical-align: text-bottom;
+	background-position: center center;
+	background-repeat: no-repeat;
+}
+
+table.stats .icons .icon {
+	display: inline-block;
+	width: 17px;
+	height: 17px;
+	text-align: center;
+	vertical-align: text-bottom;
+	background-position: center center;
+	background-repeat: no-repeat;
+}
+
+table.stats td.description span.icon {
+	vertical-align: top;
+}
+
+table.stats td.description span.icon {
+	cursor: default;
+}
+
+table.stats .icon.unlocked {
+	background-position: -121px -282px;
+	width: 13px;
+	height: 13px;
+}
+
+table.stats.user tr.path .icon.unlocked {
+	background-position: -40px -280px;
+	width: 16px;
+	height: 16px;
+}
+
+table.stats.user tr.path .icon.locked {
+	background-position: 0px -280px;
+	width: 16px;
+	height: 16px;
+}
+
+table.stats .icon.locked {
+	background-position: -81px -282px;
+	width: 13px;
+	height: 13px;
+}
+
+table.stats .icon.mandatory {
+	background-position: 0px -480px;
+	width: 16px;
+	height: 16px;
+}
+
+table.stats.user tr.path .icon.mandatory {
+	background-position: -120px -440px;
+	width: 16px;
+	height: 16px;
+	cursor: pointer;
+}
+
+div.DialogDetail.DialogDetailPath.ui-dialog-content table thead {
+	font-weight: bold;
+	border-bottom: 1px solid #ccc;
+}
+
+div.DialogDetail.DialogDetailPath.ui-dialog-content table span.infoDetail {
+	font-weight: bold;
+	background-color: #ddd;
+	padding: 1px 3px;
+	min-width: 24px !important;
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+	text-align: center;
+	border-radius: 3px;
+	-moz-box-shadow: inset 0px 1px 0 rgba(0, 0, 0, 0.1);
+	-webkit-box-shadow: inset 0px 1px 0  rgba(0, 0, 0, 0.1);
+	box-shadow: inset 0px 1px 0 rgba(0, 0, 0, 0.1);
+}
+
+div.DialogDetail.DialogDetailPath.ui-dialog-content table td {
+	padding: 3px 0 !important;
+}
+
+div.DialogDetail.DialogDetailPath.ui-dialog-content table thead .ItemName {
+	
+}
+
+table.stats .icon.file_zip {
+	background-image: url(../../../Generics/File/img/Filetype_Set-1_16.png);
+	width: 16px;
+	height: 16px;
+	background-position: 0 -1188px;
+}
+
+div.visibilityNav {
+	margin: .5em 0;
+	display: block;
+	width: 600px;
+}
+
+ul.expandbuttons {
+	margin: 0;
+	padding: 0;
+	display: inline;
+}
+
+ul.expandbuttons li.expandbutton {
+	cursor: pointer;
+	display: inline;
+	color: #888;
+	font-size: .95em;
+}
+
+ul.expandbuttons li.expandbutton.switchsubactivityVis:hover,
+ul.expandbuttons li.expandbutton.switchactivityVIs:hover,
+ul.expandbuttons li.expandbutton.switchunitVus:hover {
+	color: #444
+}
+
+ul.expandbuttons li.expandbutton.switchunitVus,
+ul.expandbuttons li.expandbutton.switchactivityVis,
+ul.expandbuttons li.expandbutton.switchsubactivityVis {
+	display: inline;
+	float: none;
+}
+
+/* @group Flag */
+
+.flag,
+.progressbar {
+	width: 100px;
+	display: inline-block;
+	line-height: 13px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	overflow: hidden;
+	border: 1px solid #aaa;
+	-moz-box-shadow: inset 0 0 3px #222;
+	-webkit-box-shadow: inset 0 0 3px #222;
+	box-shadow: inset 0 0 3px #222;
+}
+
+.flag {
+	*margin-top: -2px
+}
+
+tr.path .flag,
+tr.path .progressbar {
+	height: 18px;
+	border: 1px solid #666;
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	border-radius: 6px;
+	margin: 0!important;
+}
+
+tr span.flag span,
+tr span.progressbar span {
+	height: 18px;
+}
+
+table.treeTable tr span.flag span,
+table.treeTable tr span.progressbar span {
+	height: 100%;
+}
+
+tr.activity .flag,
+tr.activity .progressbar {
+	height: 10px;
+}
+
+tr.subactivity .flag,
+tr.subactivity .progressbar {
+	height: 6px;
+}
+
+tr.unit .flag,
+tr.unit .progressbar {
+	height: 12px;
+}
+
+.flag .notstarted,
+.progressbar .notstarted {
+	display: inline-block;
+	width: 100%;
+	background: #cccccc;
+	background: -moz-linear-gradient(top,  #cccccc 0%, #eeeeee 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#cccccc), color-stop(100%,#eeeeee));
+	background: -webkit-linear-gradient(top,  #cccccc 0%,#eeeeee 100%);
+	background: -o-linear-gradient(top,  #cccccc 0%,#eeeeee 100%);
+	background: -ms-linear-gradient(top,  #cccccc 0%,#eeeeee 100%);
+	background: linear-gradient(top,  #cccccc 0%,#eeeeee 100%);
+	-moz-box-shadow: inset 1px 1px 1px rgba(0,0,0,0.2);
+	-webkit-box-shadow: inset 1px 1px 1px rgba(0,0,0,0.2);
+	box-shadow: inset 1px 1px 1px rgba(0,0,0,0.2);
+}
+
+.flag .started,
+.progressbar .started {
+	display: inline-block;
+	width: 0;
+	background: #ebdf00;
+	background: -webkit-gradient(linear, left top, left bottom, from(#ebdf00),to(#ffbb00));
+	background: -webkit-linear-gradient(top, #ebdf00, #ffbb00);
+	background: -moz-linear-gradient(top, #ebdf00, #ffbb00);
+	background: -o-linear-gradient(top, #ebdf00, #ffbb00);
+	background: -ms-linear-gradient(top, #ebdf00, #ffbb00);
+	background: linear-gradient(top, #ebdf00, #ffbb00);
+}
+
+.flag .completed,
+.progressbar .completed {
+	display: inline-block;
+	width: 0;
+	background: #a4b357;
+	background: -moz-linear-gradient(top,  #a4b357 0%, #75890c 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#a4b357), color-stop(100%,#75890c));
+	background: -webkit-linear-gradient(top,  #a4b357 0%,#75890c 100%);
+	background: -o-linear-gradient(top,  #a4b357 0%,#75890c 100%);
+	background: -ms-linear-gradient(top,  #a4b357 0%,#75890c 100%);
+	background: linear-gradient(top,  #a4b357 0%,#75890c 100%);
+}
+
+.flag .notpassed,
+.progressbar .notpassed {
+	display: inline-block;
+	width: 0;
+	background: #ff3019;
+	background: -moz-linear-gradient(top,  #ff3019 0%, #cf0404 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ff3019), color-stop(100%,#cf0404));
+	background: -webkit-linear-gradient(top,  #ff3019 0%,#cf0404 100%);
+	background: -o-linear-gradient(top,  #ff3019 0%,#cf0404 100%);
+	background: -ms-linear-gradient(top,  #ff3019 0%,#cf0404 100%);
+	background: linear-gradient(top,  #ff3019 0%,#cf0404 100%);
+}
+
+.timecompletion span.flag,
+.timecompletion span.progressbar {
+	box-shadow: none;
+	-moz-border-radius: 30px;
+	-webkit-border-radius: 30px;
+	border-radius: 30px;
+	border: 1px solid;
+	display: inline;
+	padding: 0 6px;
+	float: right;
+	width: auto;
+	height: 12px;
+	font-size: 1px;
+	display: inline-block;
+	clear: both;
+	margin: 0 1px;
+}
+
+html* .timecompletion span.flag,
+html* .timecompletion span.progressbar {
+	float: none;
+}
+
+.timecompletion span.flag.yes,
+.timecompletion span.progressbar.yes {
+	border-color: #828e44;
+	background: #a4b357;
+	background: -moz-linear-gradient(top,  #a4b357 0%, #75890c 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#a4b357), color-stop(100%,#75890c));
+	background: -webkit-linear-gradient(top,  #a4b357 0%,#75890c 100%);
+	background: -o-linear-gradient(top,  #a4b357 0%,#75890c 100%);
+	background: -ms-linear-gradient(top,  #a4b357 0%,#75890c 100%);
+	background: linear-gradient(top,  #a4b357 0%,#75890c 100%);
+}
+
+tr.path .timecompletion span.flag.yes {
+	border: 2px solid #fff;
+	-moz-box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2);
+	-webkit-box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2);
+	box-shadow: 0 -1px 1 1px rgba(0, 0, 0, 0.2);
+}
+
+.timecompletion span.flag.no,
+.timecompletion span.progressbar.no {
+	border-color: #a61a09;
+	background: #ff3019;
+	background: -moz-linear-gradient(top,  #ff3019 0%, #cf0404 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ff3019), color-stop(100%,#cf0404));
+	background: -webkit-linear-gradient(top,  #ff3019 0%,#cf0404 100%);
+	background: -o-linear-gradient(top,  #ff3019 0%,#cf0404 100%);
+	background: -ms-linear-gradient(top,  #ff3019 0%,#cf0404 100%);
+	background: linear-gradient(top,  #ff3019 0%,#cf0404 100%);
+}
+
+span.flag.hidden {
+	display: none;
+}
+
+.status span.item {
+	color: #222;
+	text-shadow: none;
+	display: block;
+	padding: 3px;
+	font-size: 11px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	-moz-box-shadow: inset 1px 1px 3px rgba(0,0,0,0.3);
+	-webkit-box-shadow: inset 1px 1px 3px rgba(0,0,0,0.3);
+	box-shadow: inset 1px 1px 3px rgba(0,0,0,0.3);
+	text-shadow: 0 1px 0 rgba(255,255,255,0.4)
+}
+
+span.item.started {
+	background-color: #ebdf00;
+	background: -webkit-gradient(linear, left top, left bottom, from(#ebdf00),to(#ffbb00));
+	background: -webkit-linear-gradient(top, #ebdf00, #ffbb00);
+	background: -moz-linear-gradient(top, #ebdf00, #ffbb00);
+	background: -o-linear-gradient(top, #ebdf00, #ffbb00);
+	background: -ms-linear-gradient(top, #ebdf00, #ffbb00);
+	background: linear-gradient(top, #ebdf00, #ffbb00);
+}
+
+span.item.notstarted {
+	background: #d4d6d7;
+}
+
+span.item.completed,
+span.item.completedpassed {
+	background-color: #a8b85a;
+	background: -moz-linear-gradient(top,  #b6c661 0%,#a4b357 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#b6c661), color-stop(100%,#a4b357));
+	background: -webkit-linear-gradient(top,  #b6c661 0%,#a4b357 100%);
+	background: -o-linear-gradient(top,  #b6c661 0%,#a4b357 100%);
+	background: -ms-linear-gradient(top,  #b6c661 0%,#a4b357 100%);
+	background: linear-gradient(top,  #b6c661 0%,#a4b357 100%);
+}
+
+span.item.notpassed {
+	background-color: #fca8ad;
+}
+
+/* @end */
+
+table.stats .itemtitle {
+	vertical-align: text-bottom;
+	background-position: left center;
+	background-repeat: no-repeat;
+	padding-left: 20px;
+}
+
+table.stats .itemtitle.play {
+	background-image: url(../../../Generics/File/img/Filetype_Set-1_16.png);
+	background-position: 0 -1320px;
+	width: 16px;
+	height: 16px;
+}
+
+.itemdetail {
+	font-style: italic;
+	color: #444;
+}
+
+table.stats .subactivity span.objectRender {
+	display: inline-block;
+	width: 320px;
+	*float: left;
+	*width: 350px;
+}
+
+table.stats.user .subactivity span.objectRender {
+	width: 400px;
+	*width: 430px;
+}
+
+table.stats span.objectRender span.leftDetail {
+	display: inline;
+}
+
+table.stats span.objectRender span.leftDetail span.itemTitle {
+	display: inline-block;
+	text-indent: 0;
+	padding: 0;
+}
+
+table.stats span.objectRender span.itemDetails,
+table.stats span.itemdetail span,
+table.stats span.duration {
+	font-size: .9em !important;
+	margin-left: 8px;
+	font-style: italic;
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+}
+
+table.stats span.duration {
+	margin-left: 18px;
+}
+
+table.stats tr.path span.itemdetail span {
+	font-size: 1.1em !important;
+	font-style: normal;
+}
+
+/*@end */
+
+/* @group Edupath Stats Temp */
+
+table.stats {
+	font: 80% "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+	margin: 1em 0;
+}
+
+.exportButtons {
+	float: left;
+	margin-bottom: 1em;
+}
+
+.exportButtons .exportButton {
+	cursor: pointer;
+}
+
+.viewButtons {
+	margin-top: 1em;
+	float: right;
+	padding-right: 20px;
+	display: block;
+	text-align: right;
+	width: 240px
+}
+
+div.pathTitle {
+	width: 100%;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+div.pathTitle span.Titolo_campo {
+	font-size: 1em;
+	font-weight: normal;
+	font-style: normal;
+}
+
+div.pathTitle span.label.inline,
+span#ctl00_CPHservice_LBuserName.Titolo_campo {
+	font-size: 1.2em;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+div.pathTitle span.objectRender span.itemTitle {
+	font-size: 1em;
+	font-weight: bold;
+	margin: 0 10px;
+}
+
+a.img_link {
+	border: none !important;
+}
+
+a.img_link.ico_export_csv_l {
+	background-color: transparent;
+	background-image: url(../../../Generics/File/img/Filetype_Set-2_32.png);
+	background-position: 0 0px;
+	width: 32px;
+	height: 32px;
+}
+
+a.img_link.ico_export_xml_l {
+	background-color: transparent;
+	background-image: url(../../../Generics/File/img/Filetype_Set-2_32.png);
+	background-position: 0 -82px;
+	width: 32px;
+	height: 32px;
+}
+
+a.img_link.ico_export_pdf_l {
+	background-color: transparent;
+	background-image: url(../../../Generics/File/img/Filetype_Set-1_32.png);
+	background-position: 0 -574px;
+	width: 32px;
+	height: 32px;
+}
+
+.viewButtons .viewButton {
+	cursor: pointer;
+	vertical-align: middle;
+}
+
+.dateFilter {
+	width: 650px;
+	clear: both;
+	float: left;
+	display: block;
+	margin-top: 1em;
+	margin-bottom: 2em;
+	*margin-bottom: 0;
+}
+
+.dateFilter span, .dateFilter div {
+	float: none;
+	display: inline-block;
+	*display: inline;
+}
+
+.dateFilter td.riCell input {
+	width: 30px;
+}
+
+.dateFilter td.riCell {
+	width: auto;
+}
+
+.dateFilter div.DetailLeftItem,
+.dateFilter div.RadPicker,
+.dateFilter div.DetailRightItem.inline {
+	*float: left;
+	*width: auto;
+}
+
+.dateFilter div.DetailLeftItem span.Titolo_campoSmall {
+	*line-height: 2.3em;
+	*padding-right: 8px;
+}
+
+.dateFilter div.DateSelector {
+	*width: 580px;
+}
+
+.dateFilter div.DateEnd {
+	display: block;
+	margin: 1em 0;
+}
+
+.dateFilter div.DetailItem.DateEnd {
+	margin-top: 1em;
+}
+
+.visibilityNav {
+	clear: both;
+}
+
+.dateTime input {
+	width: 30px;
+	margin-right: 0.2em;
+	margin-left: 0.2em;
+}
+
+.dateTime input.date {
+	width: 60px;
+}
+
+.dateTime input[type=button] {
+	width: auto;
+}
+
+/* @end */
+
+/* @group Edupath List */
+
+ul.paths {
+	padding: 0;
+	margin: 0;
+	margin-top: 3em;
+}
+
+ul.paths li.path {
+	list-style: none;
+	margin-bottom: 2em;
+}
+
+ul.paths.manage li.path {
+	list-style: none;
+	margin-bottom: 15px !important;
+}
+
+ul.paths li.path div.pathcontainer {
+	float: left;
+	width: 869px;
+	*width: 859px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	background-color: #e6e9ed;
+	border: 1px solid #ccc;
+	*border-bottom: 2px;
+	/*-moz-box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.5), 1px 1px 1px rgba(0, 0, 0, 0.15);
+	-webkit-box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.5), 1px 1px 1px rgba(0, 0, 0, 0.15);
+	box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.5), 1px 1px 0 rgba(0, 0, 0, 0.15);*/
+
+}
+
+ul.paths li.path.locked div.pathcontainer {
+	color: #9e9d97 !important;
+}
+
+ul.paths li.path div.pathcontainer div.pathheader,
+ul.paths li.path div.pathcontainer div.pathdesc,
+ul.paths li.path div.pathcontainer div.pathfooter {
+	padding: 5px 10px 5px 10px;
+}
+
+ul.paths.view li.path div.pathcontainer div.pathdesc a.icon.img_link.ico_playmmd_m {
+	background-color: transparent;
+	background-image: url(../../../Generics/File/img/Filetype_Set-1_32.png);
+	background-position: 0 -1640px;
+	width: 32px;
+	height: 32px;
+}
+
+ul.paths.view li.path div.pathcontainer div.pathdesc a.icon.img_link.ico_playmmd_m {
+	background-color: transparent;
+	background-image: url(../../../Generics/File/img/Filetype_Set-1_32.png);
+	background-position: -1px -1643px;
+	width: 28px	!important;
+	height: 28px !important;
+}
+
+ul.paths.view li.path div.pathcontainer div.pathheader {
+	padding: 6px 10px 6px 10px;
+	background: transparent !important;
+	padding-top: 20px;
+}
+
+ul.paths.view li.path div.pathcontainer div.pathheader .title {
+
+
+}
+
+li.path {
+	margin-bottom: 10px !important;
+}
+
+li.pathcontainer {
+	box-shadow: none !important;
+	border: 1px solid #ccc !important;
+}
+
+.blocked div.pathdesc {
+	background: transparent !important;
+
+}
+
+ul.paths.view li.path div.pathcontainer div.pathheader, 
+ul.paths.view li.path div.pathcontainer div.pathcontainer, 
+ul.paths.view li.path div.pathcontainer div.pathfooter,
+ul.paths.view li.path div.pathcontainer div.pathdesc {
+	border: none !important;
+	box-shadow: none !important;
+}
+
+ul.paths.view li.path div.pathcontainer div.pathdesc .description * {
+	font-size: .95em !important;
+	line-height: inherit !important;
+	color: #888 !important;
+}
+
+ul.paths.view li.path div.pathcontainer div.pathheader span.titlecont span.title span.Details_titolo,ul.paths.view li.path div.pathcontainer div.pathheader span.titlecont span.title {
+	font-size: 1.1em;
+	font-weight: normal !important;
+	font-style: normal !important;
+	text-decoration: none !important;
+	line-height: 1.3em;
+	text-transform: none !important;
+}
+
+div.pathcontainer {
+	background: #fff !important;
+	border: 1px solid #ccc !important;
+	border-radius: 0 !important;
+}
+
+div.pathdesc.clearfix.empty {
+	display: none !important;
+}
+
+ul.paths.view li.path div.pathcontainer div.pathheader span.titlecont span.title a {
+	font-size: 1.1em;
+	color: #5689ba !important;
+	font-weight: normal;
+	font-style: normal;
+	text-decoration: none !important;
+}
+
+ul.paths.view li.path div.pathcontainer div.pathheader span.titlecont span.title a:hover {
+	background: none !important;
+	text-decoration: underline !important;
+}
+
+ul.paths li.path div.pathcontainer div.pathheader {
+	border-bottom: 1px solid #ccc;
+}
+
+ul.paths li.path div.pathcontainer div.pathdesc {
+	background-color: #fff;
+	min-height: 20px;
+	border-bottom: 1px solid #ccc !important;
+}
+
+ul.paths li.path div.pathcontainer div.pathfooter,
+ul.paths.view li.path.blocked div.pathcontainer div.pathdesc {
+	border-top: 1px solid #ccc;
+	box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.7);
+	-webkit-border-bottom-right-radius: 4px;
+	-webkit-border-bottom-left-radius: 4px;
+	-moz-border-radius-bottomright: 4px;
+	-moz-border-radius-bottomleft: 4px;
+	border-bottom-right-radius: 4px;
+	border-bottom-left-radius: 4px;
+		border-top: none;
+}
+
+ul.paths.view li.path div.pathcontainer div.pathdesc.empty div.right {
+	margin-top: 1.2em;
+}
+
+ul.paths.view li.path.blocked div.pathcontainer div.pathdesc {
+	background-color: #e6e9ed;
+	border-top: none;
+	color: #9e9d97
+}
+
+ul.paths.view li.path.blocked div.pathcontainer div.pathdesc div.description a {
+	color: #888 !important;
+	text-decoration: underline !important;
+}
+
+ul.paths.view li.path.blocked div.pathcontainer div.pathdesc div.description a:hover {
+	color: #444 !important;
+}
+
+ul.paths.view li.path.blocked div.pathcontainer div.pathdesc div.description span {
+	color: #9e9d97
+}
+
+ul.paths.view li.path.blocked div.pathcontainer div.pathheader span.Details_titolo {
+	color: #9e9d97;
+	background: none;
+	font-size: 1em;
+}
+
+ul.paths li.path div.pathcontainer div.pathheader .left {
+	display: block;
+	width: 75%;
+	float: left;
+}
+
+ul.paths li.path div.pathcontainer div.pathheader .right {
+	display: block;
+	width: 24%;
+	float: right;
+}
+
+ul.paths li.path div.pathcontainer div.pathheader span.titlecont {
+	font-weight: bold;
+	font-size: 1.1em;
+}
+
+ul.paths li.path div.pathcontainer div.pathheader span.titlecont span.title {
+	display: inline;
+	text-shadow: 0 1px 0 #fff;
+}
+
+ul.paths li.path div.pathcontainer div.pathheader span.titlecont span.title a {
+	font-size: 1em;
+}
+
+ul.paths li.path.default div.pathcontainer div.pathheader span.titlecont span.title {
+	text-transform: uppercase;
+}
+
+ul.paths li.path div.pathcontainer a {
+	color: #5689ba;
+	text-decoration: none;
+}
+
+ul.paths li.path div.pathcontainer a:hover {
+	color: #5689ba;
+	text-decoration: underline;
+}
+
+ul.paths li.path div.pathcontainer .title a:hover {
+
+	background: none !important;
+}
+
+ul.paths li.path div.pathcontainer a:hover {
+/*	background: none !important;
+	text-decoration: underline !important;*/
+}
+
+.externalright {
+	float: right;
+	margin-right: -24px;
+	width: 20px;
+}
+
+ul.paths.manage div.pathcontainer div.pathdesc div.description.left,
+ul.paths.view li.blocked div.pathcontainer div.pathdesc div.description.left {
+	margin-bottom: .667em;
+}
+
+div.pathcontainer div.pathdesc div.description.left ul,
+div.pathcontainer div.pathdesc div.description.left ol {
+	margin: .5em 0;
+	padding-left: 24px;
+}
+
+div.pathcontainer div.pathdesc div.description.left ul,
+div.pathcontainer div.pathdesc div.description.left ul li {
+	list-style-position: outside;
+	list-style-type: square;
+}
+
+div.pathcontainer div.pathdesc div.description.left ol,
+div.pathcontainer div.pathdesc div.description.left ol li {
+	list-style-position: outside;
+	list-style-type: decimal;
+	background-color: inherit;
+}
+
+div.pathcontainer div.pathdesc div.description.left ul li span,
+div.pathcontainer div.pathdesc div.description.left ol li span {
+	background-color: inherit !important;
+}
+
+ul.paths div.pathfooter span.label {
+	width: 80px;
+	display: inline-block;
+}
+
+ul.paths div.pathfooter span,
+ul.paths div.pathfooter  a {
+	font-size: .9em;
+}
+
+ul.paths div.pathfooter span.link_separator {
+	border-left: 1px solid #888;
+	margin-left: 5px;
+	margin-right: 2px;
+}
+
+ul.paths div.pathfooter div.manageunits {
+	margin-bottom: 2px;
+}
+
+ul.paths div.pathcontainer div.pathfooter div.left {
+	width: 75%;
+	float: left;
+}
+
+ul.paths div.pathcontainer div.pathfooter div.right {
+	width: 24%;
+	float: right;
+}
+
+ul.paths div.pathcontainer div.pathfooter div.right input.resetstats {
+	margin-top: 1em;
+}
+
+ul.paths.view div.pathcontainer div.pathfooter div.right input.resetstats {
+	display: none;
+}
+
+div.pathcontainer div.pathheader span.left span.titlecont span.icons a.icon,
+div.pathcontainer div.pathheader span.right span.icons {
+	position: relative;
+	top: 2px;
+}
+
+div.pathcontainer div.pathheader span.left span.titlecont span.icons span.icon.default,
+div.pathcontainer div.pathheader span.left span.titlecont span.icons a.icon.makedefault {
+	margin: 0 5px;
+}
+
+.icon.movepath {
+	margin-top: 3px;
+}
+
+ul.paths li.path.default .icon.movepath {
+	display: none;
+}
+
+span.right span.resetstats,
+span.right input.resetstats,
+div.right input[type="submit"] {
+	margin: 0;
+	text-decoration: none !important;
+	padding: 1px 3px;
+	color: #555;
+	text-shadow: 1px 1px 0px #ddd;
+	border: 1px solid #aaa;
+	background-color: #ddd;
+	-moz-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+	-webkit-box-shadow: 1px 1px 1px  rgba(0, 0, 0, 0.3);
+	box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+	-moz-border-radius-topleft: 3px;
+	-moz-border-radius-topright: 3px;
+	-moz-border-radius-bottomright: 3px;
+	-moz-border-radius-bottomleft: 3px;
+	-webkit-border-radius: 3px 3px 3px 3px;
+	border-radius: 3px 3px 3px 3px;
+}
+
+span.right span.resetstats {
+	line-height: 12px;
+	height: 12px;
+	margin: 0;
+	text-decoration: none !important;
+	padding: 1px 3px;
+	*display: inline-block;
+}
+
+span.right input.resetstats,
+div.right input {
+	margin-top: 2px;
+	text-decoration: none !important;
+	padding: 1px 3px;
+	position: relative;
+	top: -2px;
+}
+
+span.right span.resetstats:hover,
+span.right input.resetstats:hover,
+div.right input[type="submit"]:hover {
+	outline: none;
+	color: #565656;
+	text-shadow: 1px 1px 0px #ddd;
+	background-color: #ccc;
+	font-weight: normal;
+	font-style: normal;
+	text-decoration: none;
+}
+
+span.right span.resetstats:active,
+span.right input.resetstats:active,
+div.right input[type="submit"]:active {
+	outline: none;
+	border: 1px solid #777 !important;
+	-moz-box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.7);
+	-webkit-box-shadow: inset 0 0 32px rgba(0, 0, 0, 0.7);
+	box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.7);
+}
+
+/* @end */
+
+/* @group Edupath Play */
+
+
+
+
+ul.units {
+	width: 100%;
+	padding: 0;
+	margin-left: 0;
+	list-style-position: outside;
+}
+
+ul.units li.unit,
+ul.units li.activity,
+ul.units li.subactivity {
+	list-style: none;
+}
+
+ul.units li.unit {
+	margin: 15px 0;
+}
+
+div.unitcontent {
+	padding: 20px 5px;
+	float: left;
+	width: 874px;
+	*width: 854px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 0;
+	background-color: #f5fbff;
+	border: 1px solid #ddd;
+	*border-bottom: 2px;
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none);
+	box-shadow: none;
+	border-radius: 7px;
+}
+
+ul.units li.unit li.activity.note div.activitycontent .internal {
+	border-bottom: none;
+}
+
+.externalleft {
+	margin-top: 3px;
+	width: 16px;
+	float: left;
+	display: block;
+}
+
+li.activity .externalleft {
+	margin-top: 6px;
+}
+
+ul.units li.unit div.unitcontent div.innerwrapper {
+	float: left;
+	width: 838px;
+	*width: 828px;
+	*margin-left: 5px;
+}
+
+ul.units .internal {
+	
+}
+
+ul.units li.unit.note .internal {
+	margin-left: 0;
+	border-bottom: none;
+}
+
+ul.units li.unit .left {
+	float: left;
+	width: 540px;
+	*width: 530px;
+}
+
+ul.units li.unit.note .right {
+	width: 60px;
+}
+
+ul.units li.unit.note .left {
+	width: 740px;
+}
+
+ul.units li.unit .right {
+	float: right;
+	width: 290px;
+}
+
+div.lastActivity div.activitycontent div.activitydetails {
+	border-top: none;
+}
+
+ul.units li.unit .description {
+	clear: both;
+	margin: .5em 0 1em 0;
+}
+
+ul.units li.unit.collapsed .description {
+	clear: both;
+	margin: .5em 0 .5em 0;
+}
+
+ul.units li.unit div.unitrules {
+	margin: 5px 0;
+}
+
+ul.units li.unit ul.activities {
+	padding: 0;
+	margin: 0;
+	clear: left;
+}
+
+ul.units li.unit ul.activities li.activity .left {
+	display: inline-block;
+	width: 518px;
+	*width: 508px;
+}
+
+div.tree {
+	
+}
+
+ul.units li.unit ul.activities li.activity span.itemTitle span.wrapper {
+	max-width: 600px !important;
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+	vertical-align: top;
+}
+
+ul.units li.unit ul.activities li.activity span.itemTitle a {
+	max-width: 480px !important;
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+}
+
+ul.units li.unit ul.activities li.activity.nodateconstraint .left {
+	display: inline-block;
+	width: 738px;
+	*width: 708px;
+}
+
+ul.units li.unit .description {
+	margin: .5em 0 1em 20px;
+	border-top: 1px solid #ccc;
+	padding-top: .5em;
+	-moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7);
+	-webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7);
+	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7);
+}
+
+ul.units li.unit .description.empty {
+	padding-top: 0;
+	*margin: 5px;
+	height: 1px;
+	*height: 1%;
+	*font-size: 0%;
+	overflow: hidden;
+	-moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7);
+	-webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7);
+	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7);
+}
+
+ul.units li.unit.collapsed .description {
+	margin: .5em 0 .5em 20px;
+}
+
+ul.units li.unit.collapsed div.description.empty {
+	margin: 0;
+	border: none;
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+
+ul.units li.unit li.activity .description {
+	margin: .5em 0 1em 0;
+	border-top: 1px solid #ccc;
+	padding-top: .5em;
+	/*	padding-left: 20px;*/
+	-moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5);
+	-webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5);
+	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+ul.units li.unit li.activity div.description.empty {
+	margin: 0;
+	margin-top: .5em;
+	*margin-top: .5em;
+	padding-top: .5em;
+	height: 1px;
+	*height: 1%;
+	*font-size: 0%;
+	overflow: hidden;
+	-moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7);
+	-webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7);
+	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7);
+}
+
+ul.units li.unit li.activity.single .description,
+ul.units li.unit li.collapsed .description {
+	margin: .5em 0 .5em 0;
+}
+
+ul.units li.unit li.activity.single .description.empty,
+ul.units li.unit li.collapsed.activity .description.empty {
+	margin-top: 0;
+}
+
+ul.units li.unit li.activity.single div.description.epmty,
+ul.units li.unit li.collapsed div.description.empty {
+	border-top: none;
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	padding: 1px;
+}
+
+ul.units li.unit ul.activities li.activity.note .left {
+	display: inline-block;
+	width: 740px;
+	*width: 730px;
+}
+
+div.unitcontent div.internal span.left div.notecontent ul,
+div.unitcontent div.internal span.left div.notecontent ol {
+	margin: .5em 0;
+	padding-left: 24px;
+}
+
+div.unitcontent div.innerwrapper div.unitdetails div.description ul,
+div.unitcontent div.internal span.left div.notecontent ul,
+ul.units li.unit ul.activities li.activity.note .left .notecontent ul {
+	list-style-position: outside;
+	list-style-type: square;
+}
+
+div.unitcontent div.internal span.left div.notecontent ol,
+ul.units li.unit ul.activities li.activity.note .left .notecontent ol {
+	list-style-position: outside;
+	list-style-type: decimal;
+}
+
+ul.units li.unit ul.activities li.activity {
+	margin: .5em 0 1em 0;
+}
+
+div.activitycontent {
+	float: left;
+	width: 832px;
+	*width: 822px;
+	padding: 8px 4px 2px 4px;
+	*margin-left: 3px;
+	border: 1px solid #ececec;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 0;
+	background-color: #fff;
+	background: rgba(255, 255, 255, .75);
+	border: none;
+/*	box-shadow: inset 0 1px 1px rgba(0,0,0,0.15);
+	border-radius: 3px;
+	border: 1px solid rgba(0,0,0,0.15);
+	border-bottom: 1px solid rgba(255, 255, 255, 0.5);*/	
+}
+
+div.unitdetails .description .renderedtext p {
+	font-size: 1.1em !important;
+	line-height: 1.667em !important;
+}
+
+div.lastActivity div.activitycontent {
+	border: none;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	background-color: #fff;
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	float: left;
+	width: 100%;
+	padding: 4px;
+
+}
+
+div.lastActivity {
+	border: 1px solid #ddd;
+	border-radius: 0;
+	background-color: #f5fcff;
+	box-shadow: none;
+	width: 845px;
+	padding: 20px;
+	margin: 0;
+	margin-left: 15px;
+	margin-top: 1em;
+	border-radius: 7px;
+}
+
+
+
+ul.units li.unit ul.activities li.activity.note div.activitycontent {
+	border: 1px solid #e6e9ed;
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	background-color: transparent;
+	background: url(../img/text-note.png) no-repeat 2px 5px;
+	width: 808px;
+	*width: 798px;
+	padding-left: 30px;
+	padding-bottom: .667em;
+}
+
+.note div.activitycontent p {
+	font-size: 1.1em !important;
+	line-height: 1.667em !important;
+}
+
+ul.units li.unit.note div.notecontent {
+	background: url(../img/text-note.png) no-repeat -3px -3px;
+	padding-left: 24px;
+	padding-bottom: .667em;
+	line-height: 1.2em;
+}
+
+ul.units li.unit ul.activities li.activity .internal {
+	display: block;
+	*margin-bottom: 4px;
+	padding: 1px 0;
+}
+
+ul.units li.unit ul.activities li.activity .title {
+	line-height: 1em;
+}
+
+div.activitycontent div.activitydetails {
+	margin-left: 20px;
+}
+
+ul.units li.unit ul.activities li.activity ul.subactivities {
+	padding-left: 20px;
+	/*	*padding-left: 7px; */
+    margin: 0;
+	width: 790px;
+	*width: 780px;
+}
+
+ul.units li.unit ul.activities li.activity ul.subactivities li.subactivity {
+	margin-top: 0.5em;
+	padding: 0.2em;
+}
+
+ul.units li.unit ul.activities li.activity ul.subactivities li.subactivity .title {
+	font-size: 0.9em;
+	color: #999;
+	border-bottom: 0;
+}
+
+ul.units li.activity .internal {
+	margin-bottom: -2px;
+}
+
+ul.activities .internal {
+	margin-left: 0px;
+}
+
+ul.activities li.activity .right {
+	float: right;
+	width: 280px;
+}
+
+ul.activities li.activity.nodateconstraint .right {
+	float: right;
+	width: 60px;
+}
+
+ul.activities li.note .right {
+	float: right;
+	width: 60px;
+}
+
+ul.activities li.subactivity {
+	border-bottom: 1px solid #e9e9e9;
+}
+
+ul.activities li.subactivity {
+	/*	text-indent: -13px;
+    margin-left: 12px;*/
+    margin-left: 0;
+	padding-left: 1px !important;
+}
+
+div.subactivitycontent {
+	padding-bottom: 2px;
+}
+
+ul.units li.unit ul.activities li.activity .title {
+	text-indent: -13px;
+	font-size: 1em !important;
+	letter-spacing: 0;
+	margin-left: 0px;
+}
+
+ul.activities li.subactivity.last {
+	border-bottom: none;
+	margin-bottom: .5em;
+}
+
+.moveactivity {
+	*margin-left: 3px;
+}
+
+.switchunit,
+.switchactivity {
+	margin-right: 5px;
+	display: block;
+	float: left;
+}
+
+.switchunit {
+	margin-top: 2px;
+}
+
+li.activity .switchunit {
+	margin-top: 0;
+}
+
+.expiration {
+	width: 200px;
+	display: inline-block;
+	font-size: 0.8em;
+/*	padding-top: .3em;*/
+}
+
+table.stats .icon.locked {
+	background-image: url(../img/PF_tree_icons.png);
+	background-position: 0 -557px;
+	width: 13px;
+	height: 13px;
+}
+
+.lockUnlock {
+	vertical-align: top;
+	display: inline-block;
+	background-color: transparent;
+	font-size: 0;
+	line-height: 16px;
+}
+
+li.unit .lockUnlock {
+	background-image: url(../img/PF_tree_icons.png);
+	background-position: 0 -620px;
+	width: 16px;
+	height: 16px;
+}
+
+li.activity .lockUnlock {
+	background-image: url(../img/PF_tree_icons.png);
+	background-position: 0 -557px;
+	width: 13px;
+	height: 13px;
+	margin-left: 2px;
+}
+
+span.objectRender span.leftDetail {
+	vertical-align: top;
+	padding-bottom: 4px;
+}
+
+li.activity.single span.objectRender span.leftDetail {
+	*display: inline-block;
+}
+
+span.objectRender ul span.itemTitle {
+	max-width: 700px;
+	display: inline-block;
+	text-indent: -20px;
+	padding: 0;
+	padding-left: 20px;
+}
+
+ul.units span.leftDetail span.itemTitle span.textAction,
+ul.units span.leftDetail span.itemTitle span.fileIco,
+ul.units span.leftDetail span.itemTitle span.actionIco {
+	position: relative;
+	top: -1px;
+}
+
+span.textAction {
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+	width: 16px;
+	height: 16px;
+	text-align: left;
+	text-indent: -9999px;
+	*text-indent: 0;
+	*font-size: 0;
+	*line-height: 0;
+	*overflow: hidden;
+	outline: 0;
+	margin: 0;
+	background: url(../../../Generics/Command/img/common_icons_set1_16.png) no-repeat 0 -160px;
+}
+
+li.unit li.activity .icons .icon.mandatory {
+	margin-top: 0;
+}
+
+.clearfix:after {
+	content: ".";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	line-height: 0;
+	height: 0;
+}
+
+.clearfix {
+	display: block;
+	*display: inline-block;
+	margin: 0;
+	padding: 0;
+}
+
+html[xmlns] .clearfix {
+	display: block;
+}
+
+* html .clearfix {
+	height: 1%;
+	font-size: 0;
+}
+
+.clearer:after {
+	content: ".";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	line-height: 0;
+	height: 0;
+}
+
+.clearer {
+	display: inline-block;
+	height: 1%;
+	font-size: 0;
+}
+
+span.expiration {
+	float: left;
+}
+
+span.icons {
+	top: 0;
+}
+
+.right span.icons,
+.right span.resetstats {
+	margin: 0 5px;
+}
+
+.right {
+	text-align: right;
+}
+
+li.unit.locked .unitcontent {
+	color: #9e9d97;
+}
+
+li.unit.locked .activitycontent,
+li.activity.locked .activitycontent,
+li.unit.locked .subactivitycontent {
+	background-color: #e6e9ed;
+	border-color: #d4d3d4;
+	color: #9e9d97;
+}
+
+li.activity.locked .activitycontent {
+	border-color: #cacaca;
+	background-color: #e6e9ed;
+}
+
+li.unit.locked .activitycontent,
+li.activity.locked .activitycontent {
+	-moz-box-shadow: 1px 1px 0 rgba(255, 255, 255, 0.7), inset 0 1px 0 rgba(0, 0, 0, 0.1);
+	-webkit-box-shadow: 1px 1px 0 rgba(255, 255, 255, 0.7), inset 0 1px 0 rgba(0, 0, 0, 0.1);
+	box-shadow: 1px 1px 0 rgba(255, 255, 255, 0.7), inset 0 1px 0 rgba(0, 0, 0, 0.1);
+}
+
+li.unit.locked span.duration,
+li.activity.locked .activitycontent span.duration {
+	color: #9e9d97 !important;
+}
+
+li.activity.single div.activitydetails,
+li.activity.empty div.activitydetails,
+li.activity.collapsed div.activitydetails {
+	border: 0;
+}
+
+.ui-state-highlightHelper {
+	background: none;
+	border: 3px dashed #aaa;
+	margin-bottom: 1em;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	margin-left: 0;
+	padding: 0;
+	width: 864px;
+	*width: 860px;
+	position: relative;
+	left: 16px;
+	list-style-type: none;
+	max-height: 50px;
+	*height: 50px;
+}
+
+ul.units li.unit ul.activities li.ui-state-highlightHelper {
+	width: 832px !important;
+	*width: 826px !important;
+}
+
+/* @group Typography */
+
+ul.paths,
+ul.units,
+ul.units a {
+	font-size: 14px;
+	line-height: 18px;
+	color: #222;
+	text-decoration: none !important;
+	color: #444;
+}
+
+ul.units a:hover {
+	text-decoration: underline !important;
+	background: none;
+}
+
+
+
+ul.units li.unit .title {
+	font-size: 1.5em !important;
+	letter-spacing: -1px;
+}
+
+ul.units a span,
+ul.units li.unit ul.activities li.activity .itemTitle a {
+	color: #5689ba;
+}
+
+ul.units li.unit div.innerwrapper div.internal.clearfix span.left {
+	
+}
+
+ul.units li.unit span.leftDetail,
+ul.units li.unit span.leftDetail a {
+	font-size: inherit !important;
+}
+
+ul.units span.duration,
+ul.units span.itemDetails,
+ul.units li.subactivity span.itemDetails {
+	font-size: 10px;
+	color: #888;
+	display: inline-block;
+	margin-left: 1.5em;
+}
+
+ul.units span.duration {
+	*margin-top: 4px
+}
+
+ul.units .expiration {
+	font-size: 10px;
+	color: #888;
+}
+
+/* @end */
+
+/* @group Dragging & NoDragging */
+
+li.dragging {
+	clear: both;
+	position: relative;
+	margin-left: auto;
+}
+
+ul.units li.unit.dragging ul.activities li.activity.note div.activitycontent {
+	border-color: #ecf0f6;
+}
+
+li.locked.dragging  li.activity div.activitycontent,
+li.dragging  li.activity.locked div.activitycontent {
+	background: #ecf0f6;
+}
+
+li.activity.dragging div.activitycontent {
+	background: #fff;
+	margin: 0;
+}
+
+li.activity.dragging div.subactivitycontent {
+	background: #fff;
+}
+
+ul.units li.unit div.unitcontent ul.activities li.activity.note.dragging div.activitycontent {
+	-moz-box-shadow: 0 0 15px rgba(0,0,0,0.25);
+	-webkit-box-shadow: 0 0 15px rgba(0,0,0,0.25);
+	box-shadow: 0 0 15px rgba(0,0,0,0.25);
+	*border: 1px solid #ecf0f6;
+	background-color: #ecf0f6;
+}
+
+ul.units.dragging .moveunit {
+	background-position: -9999px -9999px;
+}
+
+ul.units.dragging li.dragging .moveunit {
+	background-position: -6px -66px;
+}
+
+ul.activities.dragging .moveactivity {
+	background-position: -9999px -9999px;
+}
+
+ul.activities.dragging li.dragging .moveactivity {
+	background-position: 0 0;
+}
+
+li.nodragging {
+	border: none;
+}
+
+li.nodragging div.unitcontent,
+ul.dragging li.path.nodragging div.pathcontainer {
+	background-color: #eee;
+	color: #bbb !important;
+	border-color: #ddd;
+}
+
+li.nodragging li.activity div.activitycontent {
+	background-color: #f6f6f6 !important;
+	border-color: #eee !important;
+}
+
+li.nodragging li.note div.activitycontent {
+	border-color: #eee !important;
+	background-color: #eee !important;
+}
+
+li.nodragging li.locked div.activitycontent,
+li.nodragging.activity.locked .activitycontent,
+li.nodragging li.locked div.subactivitycontent,
+li.nodragging.unit.locked .activitycontent,
+li.nodragging.activity.locked .activitycontent,
+li.nodragging.unit.locked .subactivitycontent {
+	background-color: #eee !important;
+}
+
+li.nodragging li.locked div.activitycontent,
+li.nodragging.unit.locked .activitycontent,
+li.nodragging.activity.locked .activitycontent,
+li.nodragging.unit.locked .subactivitycontent {
+	border-color: #ddd !important;
+}
+
+li.nodragging div.pathcontainer a,
+li.nodragging div.unitcontent a,
+li.nodragging .expiration,
+li.nodragging .itemDetails,
+li.nodragging .duration {
+	color: #bbb !important;
+}
+
+li.nodragging .moveactivity,
+li.nodragging .moveunit {
+	background-image: none;
+}
+
+/* @end */
+
+/* @end*/
+
+/* @group PF play Temp */
+
+.statuslight {
+	margin-top: 6px;
+	vertical-align: baseline;
+	*vertical-align: top;
+	display: inline-block;
+	width: 10px;
+	height: 10px;
+	*width: 8px;
+	*height: 8px;
+	background-color: white;
+	*border: 1px solid #888;
+	line-height: 16px;
+	text-indent: -9999px;
+	*text-indent: 0;
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
+	border-radius: 2px;
+	-moz-box-shadow: inset 1px 1px 3px rgba(0,0,0,0.5);
+	-webkit-box-shadow: inset 1px 1px 3px rgba(0,0,0,0.5);
+	box-shadow: inset 1px 1px 3px rgba(0,0,0,0.5);
+}
+
+.statuslight {
+/*	position: absolute !important;
+	height: 100%;
+	top: 0px !important;
+	left: 0px !important;*/
+/*	margin: 0 !important;*/
+	border: none;
+	box-shadow: none;
+
+}
+
+div.lastActivity span.statuslight,
+.subactivity .statuslight {
+/*	position: static !important;
+	width: 9px !important;
+	height: 9px !important;
+	*width: 6px;
+	*height: 6px;
+	*margin: 2px;
+	-moz-border-radius: 9px;
+	-webkit-border-radius: 9px;
+	border-radius: 9px;
+	margin-left: 1px !important;
+	margin-top: 4px !important;*/
+}
+
+div.lastActivity span.statuslight {
+	top: -5px !important;
+	margin: 0 10px !important;
+	position: relative!important;
+	width: 16px !important;
+	height: 16px !important;
+}
+
+span.statusbox {
+	vertical-align: baseline;
+	*vertical-align: top;
+	display: inline-block;
+	*display: inline;
+	padding: 2px 4px;
+	background-color: white;
+	*border: 1px solid #888;
+	color: #333;
+	text-shadow: 0 1px 0 #ccc;
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
+	border-radius: 2px;
+	-moz-box-shadow: inset 1px 1px 3px rgba(0,0,0,0.5);
+	-webkit-box-shadow: inset 1px 1px 3px rgba(0,0,0,0.5);
+	box-shadow: inset 1px 1px 3px rgba(0,0,0,0.5);
+}
+
+li.activity .statuslight {
+	margin-top: 3px;
+	vertical-align: top;
+		display: none;
+	position: absolute;
+	float: left;
+	left: 39px;
+	width: 8px;
+	cursor: help;
+	
+}
+li.activity .subactivity .statuslight {
+	display: inline-block;
+	*display: inline;
+	position: static;
+	float: none;
+	width: 10px;
+}
+
+span.switchactivity.spacer {
+	display: none;
+}
+
+.epsummary .green,
+div.pathsummary .green,
+.statusbox.green,
+.statuslight.green {
+	background-color: #99c74a
+}
+
+.epsummary .gray,
+div.pathsummary .gray,
+.statusbox.grey,
+.statuslight.grey,
+.statusbox.gray,
+.statuslight.gray {
+	background-color: #ccc;
+}
+
+.epsummary .yellow,
+div.pathsummary .yellow,
+.statusbox.yellow,
+.statuslight.yellow {
+	background-color: #ffcd40;
+}
+
+.yellow div.activitycontent {
+	border-left:  10px solid #ffcd40;
+	width: 823px;
+	*width: 813px;
+}
+
+.green div.activitycontent {
+	border-left:  10px solid #99c74a;
+	width: 823px;
+	*width: 813px;
+}
+
+.gray div.activitycontent {
+	border-left:  10px solid #ccc;
+	width: 823px;
+	*width: 813px;
+}
+
+
+.statuslight.hidden {
+	width: 8px;
+	height: 8px;
+	background-color: transparent;
+	border: 0;
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
+	border-radius: 2px;
+	-moz-box-shadow: 0px 0px 0px #444;
+	-webkit-box-shadow: 0px 0px 0px #444;
+	box-shadow: 0px 0px 0px #444;
+	display: none;
+}
+
+.DivEpButton {
+	padding: 5px 0;
+	text-align: right;
+	margin-bottom: 1em;
+}
+
+div.viewType {
+	float: left;
+	width: 400px;
+	text-align: left;
+}
+
+div.viewType span,
+div.viewType a {
+	vertical-align: middle;
+	margin-right: .5em;
+	border: none !important;
+}
+
+a.img_link {
+	text-indent: -9999px;
+	font-size: 1%;
+	line-height: 0.1em;
+	text-decoration: none;
+	font-weight: normal;
+	font-style: normal;
+}
+
+div.viewType a#ctl00_CPHservice_HYPpathStat.img_link.ico_stat_l {
+	margin-top: 2px;
+	margin-left: 4px;
+}
+
+li.unit.empty div.unitcontent div.innerwrapper div.unitdetails {
+	border: 0;
+}
+
+.spacer {
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	text-indent: -9999px;
+	*text-indent: 0;
+	*font-size: 0;
+	cursor: default;
+}
+
+a.linkMenu.taskDone {
+	display: inline-block !important;
+	*display: inline;
+	*zoom: 1;
+	line-height: inherit;
+	height: 12px;
+	margin: 2px 10px;
+	padding: 2px 10px !important;
+	text-indent: 0 !important;
+	text-align: center;
+}
+
+li.activity.single a.linkMenu.taskDone {
+
+	display: inline !important;
+	position: relative;
+	top: -1px;
+	
+}
+
+li.activity.single a.linkMenu.taskDone:hover {
+
+}
+
+a.linkMenu.taskDone:hover {
+
+}
+
+li.activity.single a.linkMenu.taskDone:hover {
+	color: #444 !important;
+	border: 1px solid #444 !important;
+}
+
+a.linkMenu.taskDone:active {
+	outline: 0;
+	border: 1px solid #777 !important;
+	-moz-box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.7);
+	-webkit-box-shadow: inset 0 0 32px rgba(0, 0, 0, 0.7);
+	box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.7);
+}
+
+/* @end */
+
+/* @group File Render UC temp */
+
+span.fileIco {
+	margin-right: 8px;
+	position: relative;
+	top: -1px;
+}
+
+span.actionIco {
+	display: inline-block;
+	background-color: transparent;
+	background-image: url(../../../Generics/File/img/Filetype_Set-1_16.png);
+	width: 16px;
+	height: 16px;
+}
+
+span.fileIco,
+span.actionIco,
+span.textAction {
+	vertical-align: top;
+	top: 1px !important;
+}
+
+span.actionbuttons {
+	width: 22px !important;
+}
+
+/* @end */
+
+/* @group Pathsummary & Certificates */
+
+ul.paths.view li.path.onlystats div.pathcontainer div.pathheader span.Details_titolo {
+	color: #00567c;
+	background: none;
+	font-size: 1em;
+}
+
+table.quizzes td.mandatory,
+table.quizzes td.visible {
+	text-align: center;
+}
+
+div.fieldobject div.fieldrow label.fieldlabel,
+label.fieldlabel,
+span.fieldlabel {
+	color: #222;
+	width: 120px;
+	*width: 125px;
+	display: inline-block;
+	*display: inline;
+	zoom: 1;
+	font-size: inherit;
+	margin-right: 5px;
+	font-weight: bold;
+}
+
+div.fieldobject.legend {
+	padding: .5em;
+	border: 1px solid #ddd;
+	background-color: #eff1f8;
+}
+
+.fieldrow table span.icons span.icon.yes {
+	cursor: default !important;
+}
+
+.expander {
+	margin-left: 0px !important;
+}
+
+tr.subheader {
+	font-size: 0.8em;
+	line-height: 0.8em;
+}
+
+tr.subheader td,
+td.cellheader {
+	background-color: #ddd;
+	color: #444;
+	padding: 3px 6px;
+	background-color: #e3e6ea;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#eceef1),to(#dbdfe4));
+	background-image: -webkit-linear-gradient(top, #eceef1, #dbdfe4);
+	background-image: -moz-linear-gradient(top, #eceef1, #dbdfe4);
+	background-image: -o-linear-gradient(top, #eceef1, #dbdfe4);
+	background-image: -ms-linear-gradient(top, #eceef1, #dbdfe4);
+	background-image: linear-gradient(top, #eceef1, #dbdfe4);
+}
+
+.cellheader.activities {
+	padding-left: 15px;
+}
+
+div.pathsummary .expander {
+	margin-left: 0px !important;
+}
+
+.epsummary span.completion {
+	display: inline-block;
+	*display: block;
+	zoom: 1;
+	margin-top: 1em;
+}
+
+.epsummary td.completion span,
+.epsummary span.completion span,
+div.pathsummary td.status span,
+div.pathsummary span.status span {
+	display: inline-block;
+	*display: inline;
+	zoom: 1;
+	padding: 1px 0;
+	min-width: 20px;
+	text-align: center;
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
+	border-radius: 2px;
+	-moz-box-shadow: inset 1px 1px 3px rgba(255,255,255,0,7);
+	-webkit-box-shadow: inset 1px 1px 3px rgba(0,0,0,0.3);
+	box-shadow: inset 1px 1px 3px rgba(0,0,0,0.3);
+	text-shadow: 0 1px 0 #ddd;
+}
+
+.epsummary .details div.fieldrow span.status.completion span.fieldlabel {
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+
+div.epsummary td.completion span {
+	min-width: 0;
+	width: 30%;
+	font-size: .9em;
+	padding: 2px 0;
+}
+
+div.epsummary td.completion span.big {
+	width: 95%;
+	font-size: .9em;
+	padding: 2px 0;
+}
+
+.epsummary span.status span.statusitem,
+.epsummary span.status span.label,
+div.pathsummary span.status span.statusitem,
+div.pathsummary span.status span.label {
+	display: inline-block;
+	*display: inline;
+	zoom: 1;
+	width: auto;
+	text-align: center;
+	-moz-border-radius: 0;
+	-webkit-border-radius: 0;
+	border-radius: 0;
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	text-shadow: none;
+}
+
+.epsummary span.status span.statusitem,
+div.pathsummary span.status span.statusitem {
+	margin-right: 1em;
+	font-size: .9em;
+}
+
+div.epsummary div.fieldobject.details div.fieldrow span.status span.statusitem {
+	font-weight: bold;
+}
+
+.epsummary .details span.status span.statusitem span.gray, 
+.epsummary .details span.status span.statusitem span.yellow,
+.epsummary .details span.status span.statusitem span.green,
+div.pathsummary .details span.status span.statusitem span.gray, 
+div.pathsummary .details span.status span.statusitem span.yellow,
+div.pathsummary .details span.status span.statusitem span.green {
+	font-weight: bold;
+	font-size: 1.4em;
+	text-shadow: 0 1px 0 rgba(255,255,255,0.3);
+	padding: 1px 2px;
+	min-width: 16px;
+}
+
+div.pathsummary .big {
+	width: 100%;
+}
+
+div.pathsummary tr.subheader {
+	font-size: 0.8em;
+	line-height: 0.8em;
+}
+
+div.pathsummary tr.subheader td,
+div.pathsummary td.cellheader {
+	background-color: #ddd;
+	color: #444;
+	padding: 3px 6px;
+	background-color: #e3e6ea;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#eceef1),to(#dbdfe4));
+	background-image: -webkit-linear-gradient(top, #eceef1, #dbdfe4);
+	background-image: -moz-linear-gradient(top, #eceef1, #dbdfe4);
+	background-image: -o-linear-gradient(top, #eceef1, #dbdfe4);
+	background-image: -ms-linear-gradient(top, #eceef1, #dbdfe4);
+	background-image: linear-gradient(top, #eceef1, #dbdfe4);
+}
+
+div.pathsummary .cellheader.activities {
+	padding-left: 15px;
+}
+
+div.pathsummary table.light {
+	width: 100%;
+}
+
+table.light {
+	margin: 1em 0;
+}
+
+table.table.light.epsummary {
+	margin-bottom: 1em;
+}
+
+div#CPHservice_DVpagerTop.pager.top,
+div.pager.top {
+	margin-bottom: -0.5em;
+}
+
+div#CPHservice_DVpagerBottom.pager.bottom,
+div.pager.bottom {
+	margin-top: -0.5em;
+}
+
+div.pathsummary tr th.name,
+
+div.pathsummary tr.user td.name {
+	width: 360px;
+	padding-left: 0px !important;
+	font-size: 1em;
+}
+
+div.pathsummary tr.user.unique td.name {
+	padding-left: 4px !important;
+}
+
+div.pathsummary tr.nopath.user td.name {
+	width: 340px;
+	padding-left: 20px !important;
+	font-size: 1em;
+}
+
+div.pathsummary tr.path td.startdate,
+div.pathsummary tr.path td.enddate,
+div.pathsummary tr.path td.completion,
+div.pathsummary tr.path td.deadline {
+	font-size: .8em;
+	color: #444;
+}
+
+div.pathsummary tr.path td.startdate,
+div.pathsummary tr.path td.enddate,
+div.pathsummary tr.path td.deadline {
+	
+}
+
+div.pathsummary tr.user td.startdate,
+div.pathsummary tr.user td.enddate,
+div.pathsummary tr.user td.completion,
+div.pathsummary tr.user td.deadline,
+div.pathsummary tr.user td.actions {
+	color: #444;
+}
+
+div.pathsummary tr th.startdate,
+div.pathsummary tr th.enddate,
+div.pathsummary tr th.completion,
+div.pathsummary tr th.deadline,
+div.pathsummary tr th.actions {
+	text-align: center;
+}
+
+div.pathsummary tr.user,
+.epsummary tr.community {
+	background-color: #edeff4;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#f2f4f8),to(#e9eaf1));
+	background-image: -webkit-linear-gradient(top, #f2f4f8, #e9eaf1);
+	background-image: -moz-linear-gradient(top, #f2f4f8, #e9eaf1);
+	background-image: -o-linear-gradient(top, #f2f4f8, #e9eaf1);
+	background-image: -ms-linear-gradient(top, #f2f4f8, #e9eaf1);
+	background-image: linear-gradient(top, #f2f4f8, #e9eaf1);
+}
+
+div.pathsummary tr.nopath.user td {
+	color: #888;
+}
+
+div.pathsummary tr.nopath.user span.gray,
+div.pathsummary tr.nopath.user span.green,
+div.pathsummary tr.nopath.user span.yellow {
+	background-color: #ddd;
+	color: #ddd;
+	-moz-box-shadow: inset 1px 1px 3px rgba(0,0,0,0.3);
+	-webkit-box-shadow: inset 1px 1px 3px rgba(0,0,0,0.3);
+	box-shadow: inset 1px 1px 3px rgba(0,0,0,0.3);
+	text-shadow: 0 1px 0 rgba(255,255,255,0,3);
+}
+
+div.pathsummary tr.path td.name,
+.epsummary tr.path td.name {
+	background: url(../../../Generics/Command/img/corner_bottomleft_16.png) no-repeat 8px 0px;
+	padding-left: 28px !important;
+}
+
+div#CPHservice_DIVinfo.fieldobject.info {
+	margin: 2em 0 1em 0;
+}
+
+div.pathsummary tr.path td.name {
+	height: 2em;
+}
+
+div.pathsummary.userpathsummary tr.path td.name {
+	padding-left: 4px !important;
+	background: none;
+	font-size: 1em;
+}
+
+div.pathsummary.userpathsummary div.fieldobject.details {
+	margin: 1em 0;
+}
+
+div.pathsummary.userpathsummary div.fieldobject.details div.fieldrow {
+	margin: .5em 0;
+	display: inline-block;
+}
+
+div.pathsummary.userpathsummary div.fieldobject.details div.fieldrow {
+	margin: .5em 0;
+	display: inline-block;
+}
+
+div.pathsummary tr th,
+div.pathsummary tr th.name {
+	padding: 4px 4px!important;
+}
+
+div.pathsummary tr td {
+	font-size: .9em;
+}
+
+div.pathsummary table.treetable .status {
+	text-align: center;
+	width: 68px;
+}
+
+div.pathsummary table.treetable td.status span.big {
+	width: 68px;
+}
+
+div.pathsummary td.completion {
+	width: 100px;
+}
+
+div.pathsummary td.startdate,
+div.pathsummary td.enddate,
+div.pathsummary td.deadline {
+	width: 70px;
+}
+
+div.pathcertification table td.actions,
+div.pathsummary table .actions {
+	text-align: center;
+	width: 40px;
+}
+
+.pathcertification {
+	width: 900px;
+}
+
+div.pathsummary div.fieldobject.filters {
+	margin: 1em 0;
+}
+
+div.pathsummary div.fieldobject.filters a#ctl00_CPHservice_Aclearit.clearIt.Link_Menu {
+	background: #fff url(../../../Generics/Command/img/delete13.png) no-repeat 3px center;
+	padding-left: 19px !important;
+	-moz-box-shadow: none !important;
+	-webkit-box-shadow: none !important;
+	box-shadow: none !important;
+	border: none !important;
+	cursor: pointer;
+	text-shadow: none !important;
+	color: #888 !important;
+}
+
+div.pathsummary div.fieldobject.filters a#ctl00_CPHservice_Aclearit.clearIt.Link_Menu:hover {
+	color: #444 !important;
+}
+
+div.pathsummary div.fieldobject.filters div.fieldrow,
+div.pathsummary.userpathsummary div.fieldobject.details div.fieldrow {
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+	margin-right: 20px
+}
+
+div.pathsummary div.fieldobject.filters div.fieldrow a.Link_Menu {
+	line-height: 1em;
+	padding: 0;
+}
+
+div.pathsummary div.fieldobject.filters div.fieldrow a#CPHservice_Aclearit.clearIt.Link_Menu {
+	padding: 3px 4px;
+}
+
+div.pathsummary div.fieldobject.filters div.fieldrow label,
+div.pathsummary div.fieldobject.filters div.fieldrow span.fieldlabel,
+div.pathsummary div.fieldobject.details div.fieldrow label,
+div.pathsummary div.fieldobject.details div.fieldrow span.fieldlabel {
+	width: auto !important;
+}
+
+ul.certificates {
+	padding: 0;
+	padding-left: 20px;
+}
+
+ul.certificates li.certificate {
+	list-style: none;
+	margin-bottom: 0.5em;
+	padding-bottom: 0.5em;
+}
+
+ul.certificates li.certificate.collapsed {
+	list-style: none;
+	margin-bottom: 0.3em;
+}
+
+ul.certificates li.certificate .handle {
+	margin-left: -20px;
+	vertical-align: middle;
+}
+
+ul.certificates li.certificate .certificatetitle {
+	vertical-align: middle;
+}
+
+table.certificatetable {
+	width: 100%;
+}
+
+table.certificatetable th {
+	text-align: left;
+}
+
+table.certificatetable td.person,
+table.certificatetable th.person,
+table.certificatetable td.certificate,
+table.certificatetable th.certificate {
+	width: 70%;
+}
+
+table.certificatetable td.date,
+table.certificatetable th.date {
+	width: 20%;
+}
+
+.certificatetitle {
+	display: block;
+	font-weight: bold;
+	color: #444;
+	font-size: 1.2em;
+	margin: 1em 0;
+}
+
+/* @end */
+
+/* @group EpSummary */
+
+.epsummary {
+	width: 900px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.epsummary.epsummary-index {
+	margin-top: 40px;
+	margin-bottom: 1em;
+	padding: 0;
+	border: 1px solid #ccc;
+	-moz-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
+	-webkit-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
+	box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.15);
+}
+
+.epsummary.epsummary-index ul.ballots {
+	padding: 1em 0 0 0;
+	margin: 0;
+}
+
+.epsummary.epsummary-index div.description {
+	padding: 10px;
+	padding-top: 20px;
+	border-bottom: 1px solid #ccc;
+	background-color: #e6e9ed;
+	-moz-box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.5);
+	-webkit-box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.5);
+	box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+.epsummary.epsummary-index ul.ballots li.ballot {
+	display: inline-block;
+	*display: inline;
+	zoom: 1;
+	width: 49%;
+	margin: 0em;
+	margin-bottom: 1em;
+	vertical-align: top;
+}
+
+.epsummary.epsummary-index ul.ballots li.ballot div.ballotcontent {
+	padding: 10px 20px;
+}
+
+.epsummary.epsummary-index ul.ballots li.ballot div.ballotcontent .ballottext {
+	vertical-align: middle;
+	font-size: 1.6em;
+	display: inline-block;
+	*display: inline;
+	zoom: 1;
+}
+
+.epsummary.epsummary-index ul.ballots li.ballot div.ballotcontent a,
+.epsummary.epsummary-index ul.ballots li.ballot div.ballotcontent .ballottext a {
+	color: #444;
+	text-decoration: none;
+}
+
+.epsummary.epsummary-index ul.ballots li.ballot div.ballotcontent a *,
+.epsummary.epsummary-index ul.ballots li.ballot div.ballotcontent .ballottext a * {
+	cursor: pointer;
+}
+
+.epsummary.epsummary-index ul.ballots li.ballot div.ballotcontent a:hover .ballottext,
+.epsummary.epsummary-index ul.ballots li.ballot div.ballotcontent .ballottext a:hover {
+	text-decoration: underline;
+}
+
+.epsummary.epsummary-index ul.ballots li.ballot div.ballotcontent .balloticon {
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+	width: 64px;
+	height: 64px;
+	vertical-align: middle;
+	background-color: transparent;
+	background-image: none;
+	background-position: 0 0;
+	background-repeat: no-repeat !important;
+	text-align: left;
+	text-indent: -9999px;
+	*text-indent: 0;
+	*font-size: 0;
+	*line-height: 0;
+	*overflow: hidden;
+	margin-right: 1em;
+	border-radius: 8px;
+}
+
+.epsummary.epsummary-index ul.ballots li.ballot div.ballotcontent span.balloticon.organization {
+	background-image: url(../../../Generics/Command/img/large/organization_64.png);
+}
+
+.epsummary.epsummary-index ul.ballots li.ballot div.ballotcontent span.balloticon.community {
+	background-image: url(../../../Generics/Command/img/large/users_64.png);
+}
+
+.epsummary.epsummary-index ul.ballots li.ballot div.ballotcontent span.balloticon.user {
+	background-image: url(../../../Generics/Command/img/large/user_male_64.png);
+}
+
+.epsummary.epsummary-index ul.ballots li.ballot div.ballotcontent span.balloticon.path {
+	background-image: url(../../../Generics/Command/img/large/board_64.png);
+}
+
+.epsummary.epsummary-index ul.ballots li.ballot div.ballotcontent span.balloticon.organization {
+	background-image: url(../../../Generics/Command/img/large/organization_64.png);
+}
+
+.epsummary.epsummary-index ul.ballots li.ballot div.ballotcontent .ballotdescription {
+	display: block;
+	margin: .5em 0;
+	font-size: .9em;
+}
+
+.epsummary div.fieldobject.filters {
+	margin: 1em 0;
+}
+
+.epsummary div.fieldobject.filters .fieldrow {
+	margin: .5em 0;
+	display: inline-block;
+	*display: inline;
+	zoom: 1;
+	margin-right: 2em;
+}
+
+.epsummary div.fieldobject.filters div.fieldrow.filterstatus input {
+	margin-right: 1em;
+}
+
+.epsummary.epsummary-user div.commands,
+.epsummary.epsummary-path div.commands {
+	margin: 1em 0;
+	margin-bottom: 5px;
+	float: left;
+	width: 38%;
+}
+
+.epsummary div.fieldobject.details {
+	margin: 1em 0 1em 0;
+}
+
+.epsummary.epsummary-path div.commands span.viewcommunity label {
+	margin-right: 2em;
+}
+
+.epsummary table.epsummary .name span.extrainfo {
+	font-size: .9em;
+	font-weight: normal;
+	font-style: normal;
+}
+
+.epsummary table.epsummary td.name span.extrainfo,
+.epsummary table.epsummary tr.community td.name a.expander {
+	color: #777;
+}
+
+.epsummary table.epsummary tr.community td.name a.expander {
+	font-size: .9em;
+}
+
+.epsummary table.epsummary {
+	margin: 5px 0;
+}
+
+.epsummary.epsummary-user div.pager.top,
+.epsummary.epsummary-path div.pager.top {
+	float: right;
+	width: 60%;
+	margin-top: 1.5em;
+	text-align: right !important;
+}
+
+.epsummary.epsummary-path span.info {
+	margin: 1em 0;
+	display: block;
+}
+
+.epsummary table.epsummary td.status.completion {
+	width: 130px;
+	text-align: center;
+}
+
+.epsummary div.fieldobject.filters div.fieldrow.filterorganization select {
+	width: auto;
+	min-width: 140px;
+}
+
+.epsummary div.fieldobject.filters .fieldrow span.fieldlabel,
+.epsummary div.fieldobject.details .fieldrow span.fieldlabel {
+	width: auto;
+}
+
+.epsummary.epsummary table.epsummary .timerange,
+.epsummary.epsummary-organization table.epsummary .status,
+.epsummary.epsummary-community table.epsummary .status {
+	font-size: .9em;
+}
+
+.epsummary.epsummary-organization table.epsummary .status,
+.epsummary.epsummary-community table.epsummary .status {
+	width: 220px;
+}
+
+.epsummary.epsummary table.epsummary .timerange {
+	width: 140px;
+}
+
+.epsummary table.epsummary thead .actions {
+	width: 60px;
+}
+
+.epsummary.epsummary-user table.epsummary thead .actions {
+	width: 80px;
+}
+
+.epsummary div.fieldobject.filters div.fieldrow.filterorganization select {
+	min-width: 140px;
+}
+
+span#CPHservice_LBuserName.Titolo_campo {
+	margin-bottom: 1em;
+	display: inline-block;
+	*display: inline;
+	zoom: 1;
+}
+
+span#CPHservice_LBuserName.Titolo_campo,
+div.fieldobject div.fieldrow span#CPHservice_LBpathName,
+.epsummary div.fieldobject.details div.fieldrow span.username {
+	font-size: 1.2em;
+	color: #333;
+	font-weight: bold;
+	padding: 3px 6px;
+	border-radius: 4px;
+	margin-right: 1em;
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
+	border-radius: 2px;
+	text-transform: capitalize;
+	border: 1px solid #ccc;
+}
+
+.epsummary table.epsummary td.name span.text {
+	float: left;
+	display: inline-block;
+	*display: inline;
+	zoom: 1;
+	width: 90%;
+}
+
+.epsummary table.epsummary td.name span.icons {
+	float: right;
+	display: inline-block;
+	*display: inline;
+	zoom: 1;
+}
+
+.epsummary table.epsummary tr.community td.name a.expander {
+	color: #666;
+}
+
+.epsummary td.name span.icons span.icon.locked_xs,
+.epsummary td.name span.icons span.icon.unlocked_xs {
+	cursor: default;
+}
+
+/* @end */
+
+span.to,
+span.from {
+	display: inline-block;
+	*display: inline;
+	zoom: 1;
+	padding: 1px !important;
+}
+
+span.from span.icon,
+span.to span.icon {
+	display: inline-block;
+	*display: inline;
+	zoom: 1;
+	width: 8px;
+	height: 8px;
+	vertical-align: baseline;
+	background-color: transparent;
+	background: transparent url('../../../Generics/Command/img/jqui_454545_256x240.png');
+	background-position: -9999px -9999px;
+	background-repeat: no-repeat !important;
+	text-align: left;
+	text-indent: -9999px;
+	*text-indent: 0;
+	*font-size: 0;
+	*line-height: 0;
+	*overflow: hidden;
+	margin-right: 2px;
+}
+
+span.from span.icon {
+	background-position: -212px -72px !important;
+}
+
+span.to span.icon {
+	background-position: -212px -52px !important;
+}
+
+span.empty span.icon {
+	display: none !important;
+}
+
+div.certificatewrapper div.DetailItem {
+	margin-bottom: .5em 0;
+}
+
+div.certificatewrapper div.DetailRightItem {
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+}
+
+div.certificatewrapper div.DetailItem div.DetailItemInfo {
+	display: inline-block;
+	*display: inline;
+	zoom: 1;
+	font-size: .9em;
+	font-style: italic;
+	max-width: 680px;
+	*width: 680px;
+}
+
+div.certificatewrapper div.DetailLeftItem {
+	width: 150px;
+	display: inline-block;
+	*display: inline;
+	zoom: 1;
+}
+
+div.certificatewrapper div.DetailLeftItem,
+div.certificatewrapper div.DetailRightItem,
+div.certificatewrapper div.DetailItemInfo {
+	font-size: 1em;
+}
+
+div.certificatewrapper div.DetailItem input {
+	vertical-align: top;
+}
+
+div.DetailItem table.table.light.tablecheckboxes {
+	margin: .5em 0;
+	text-align: center;
+}
+
+div.DetailItem table.table.light.tablecheckboxes th {
+	font-size: .9em !important;
+}
+
+ul.optionlists {
+	margin: 1em 0 1em 0;
+	display: none;
+}
+
+ul.optionlists li.optionitem {
+	list-style: decimal;
+	margin-bottom: 3px;
+}
+
+.commandoptions {
+	margin-top: 2em;
+}
+
+.commandoptions .commandoption {
+	width: 49%;
+	text-align: center;
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+	/*	margin:-1px;*/   
+	border: 1px solid #ccc;
+	background: #eee;
+	padding-top: 1em;
+	padding-bottom: 1em;
+	min-height: 180px;
+}
+
+.commandoptions .commandoption .commandbutton {
+	display: block;
+	height: 60px;
+	min-width: 130px;
+	margin: 0;
+	margin-left: auto;
+	margin-right: auto;
+	top: 0;
+	margin-bottom: 1em;
+	font-size: 1.2em;
+}
+
+.commandoptions .commandoption .commanddescription {
+	margin: 15px;
+	display: block;
+	text-align: justify;
+}
+
+span.switchunit.handle,
+span.switchactivity.handle {
+	display: none !important;
+}
+
+span.switchunity.handle.collapsed.title,
+span.switchactivity.handle.collapsed.title {
+	background: url(../../../Generics/Command/img/arrowright_1616_999999.png) 0px 0 no-repeat !important;
+}
+
+span.title.switchunity.handle,
+span.title.switchactivity.handle {
+    display: inline-block !important;
+    *display: inline !important;
+    *zoom: 1;
+    width: auto !important;
+    height: auto !important;
+    min-height: 16px !important;
+    text-indent: 0 !important;
+    zoom: 1 !important;
+    font-size: inherit !important;
+    line-height: inherit !important;
+    margin-right: 0 !important;
+    padding-left: 22px !important;
+    margin-left: 5px;
+    border-radius: 0 !important;
+    background: url(../../../Generics/Command/img/arrowdown_1616_999999.png) 0px 0 no-repeat transparent;
+}
+
+div#container.page-width {
+/*	background: transparent;
+	box-shadow: none;
+	border: none;*/
+}
+
+span#LBtitolo {
+	font-size: 1.4em;
+	text-transform: capitalize;
+	color: #333;
+}
+
+
+.handle.title:hover {
+	color: #5689ba !important;
+}
+
+.path.blocked div.pathcontainer {
+	background: #fcfcee !important;
+}
+
+.blocked div.pathheader, 
+.blocked div.pathcontainer, 
+.blocked div.pathfooter,
+.blocked div.pathdesc {
+	box-shadow: none !important;
+	
+}
+
+div#ctl00_CPHservice_CTRLprogressBar_RDpathBar.RadChart img {
+	margin-left: 14px !important;
+}
+
+#CPHservice_divProgressBar {
+	margin: 20px 0;
+}
+
+div.RadChart {
+	width: 100% !important;
+	height: auto !important;
+	
+}
+
+div.RadChart img {
+	max-width: 100%;
+	height: auto;
+	width: auto\9;
+	margin-left: auto !important;
+	margin-right: auto !important;
+	display: inherit;
+	
+	margin-bottom: 1em;
+}
+
+div#ctl00_CPHservice_CTRLprogressBar_RDpathBar.RadChart img {
+	margin-bottom: 1em;
+	margin: 1em auto !important;
+}
+
+.unitcontent
+{
+    position:relative;
+    box-shadow:0 1px 4px rgba(0, 0, 0, 0.2), 0 0 20px rgba(0, 0, 0, 0.067) inset !important;
+    
+    background-color: #f5fbff;  
+    background: #efede3 !important;
+}
+
+.unitcontent:before, .unitcontent:after
+{
+	content:"";
+    position:absolute; 
+    z-index:-1;
+    box-shadow:-1px -10px 20px rgba(0,0,0,0.1);
+    top:20px;
+    /*bottom:10px;*/
+    bottom:0px;
+    left:0;
+    right:0;
+    /*border-radius:100px / 10px;*/
+    
+} 
+.unitcontent:after
+{
+    right:10px; 
+    left:auto; 
+    transform:skew(8deg) rotate(3deg);
+}

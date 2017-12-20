@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping
+    xmlns="urn:nhibernate-mapping-2.2"
+    assembly="lm.Comol.Modules.CallForPapers"
+    namespace="lm.Comol.Modules.CallForPapers.AdvEconomic.Domain">
+
+    <class name="EconomicItem" table="CP_Adv_EcoItem" optimistic-lock ="version">
+
+        <id name="Id" column="Id" type="Int64">
+          <generator class="native"/>
+        </id>
+
+        <version name="TimeStamp"
+            generated="always"
+            unsaved-value="null"
+            type="BinaryBlob">
+          <column name="_Timestamp"
+              not-null="false"
+              sql-type="timestamp"/>
+        </version>
+
+        <property name="InfoValue" type="String" column="InfoValue" />
+
+      <property name="RequestQuantity" type="Double" column="ReqQuantity" />
+      <property name="RequestUnitPrice" type="Double" column="ReqUnitPrice" />
+
+      <property name="AdmitQuantity" type="Double" column="AdmitQuantity" />
+      <property name="AdmitTotal" type="Double" column="AdmitTotal" />
+      
+
+      <property name="IsAdmit" type="Boolean" column="IsAdmit" />
+
+      <property name="Comment" type="String" column="Comment" />
+
+      <many-to-one name="Table" class="lm.Comol.Modules.CallForPapers.AdvEconomic.Domain.EconomicTable" column="EcoTableId" foreign-key="EcoTableId" cascade="all-delete-orphan" />
+
+
+
+      <property name="CreatedOn" type="DateTime" column="_CreatedOn" />
+        <many-to-one name="CreatedBy" class="lm.Comol.Core.DomainModel.litePerson" column="_CreatedBy"
+                     foreign-key="_CreatedBy" cascade="none" not-found="ignore" />
+        <property name="CreatorProxyIpAddress" type="String" column="_CreatedProxyIPaddress" />
+        <property name="CreatorIpAddress" type="String" column="_CreatedIPaddress" />
+
+        <property name="ModifiedOn" type="DateTime" column="_ModifiedOn" />
+        <many-to-one name="ModifiedBy" class="lm.Comol.Core.DomainModel.litePerson" column="_ModifiedBy"
+                     foreign-key="_ModifiedBy" cascade="none" not-found="ignore"/>
+        <property name="ModifiedProxyIpAddress" type="String" column="_ModifiedProxyIPaddress" />
+        <property name="ModifiedIpAddress" type="String" column="_ModifiedIPaddress" />
+
+        <property name="Deleted" type="lm.Comol.Core.DomainModel.BaseStatusDeleted,lm.Comol.Core.DomainModel" column="_Deleted" />
+    </class>
+
+</hibernate-mapping>

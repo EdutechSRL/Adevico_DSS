@@ -1,0 +1,231 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--en-->
+<Resource xmlns="urn:ComolTranslation">
+  <item name="HYPstat.text" html="false" placeholder="false">User statistics </item>
+  <item name="HYPstat.ToolTip" html="false" placeholder="false">View user statistics</item>
+  <item name="LKBvisibSubAct.text" html="false" placeholder="false">Change action visibililty</item>
+  <item name="LKBvisibSubAct.ToolTip" html="false" placeholder="false">Change action visibililty</item>
+  <item name="LBdescriptionTitle.text" html="false" placeholder="false">Description:</item>
+  <item name="LBdateTitle.text" html="false" placeholder="false">Date:</item>
+  <item name="Before" html="false" placeholder="false">Before the</item>
+  <item name="After" html="false" placeholder="false">After the</item>
+  <item name="Between" html="false" placeholder="true" mustcontains="{0}|{1}">Between the {0} and the {1}</item>
+  <item name="SubActivityType.Quiz" html="false" placeholder="false">Questionnaire</item>
+  <item name="SubActivityType.Forum" html="false" placeholder="false">Forum</item>
+  <item name="SubActivityType.File" description="materiale inteso come file/materiale didattico" disambiguation="materiale=file" html="false" placeholder="false">Materials</item>
+  <item name="SubActivityType.Wiki" html="false" placeholder="false">Wiki</item>
+  <item name="SubActivityType.Text" html="false" placeholder="false">Text</item>
+  <item name="SubActivityType.Certificate" html="false" placeholder="false">Certificate</item>
+  <item name="LBdetail.text" html="false" placeholder="false">Details</item>
+  <item name="LBcompletionTitle.text" html="false" placeholder="false">% of completion</item>
+  <item name="LBstatusTitle.text" disambiguation="status: attivo/chiuso/in corso/valutazione" html="false" placeholder="false">Status</item>
+  <item name="HYPupdateSubAct.text" disambiguation="verbo" html="false" placeholder="false">Modify</item>
+  <item name="HYPupdateSubAct.ToolTip" html="false" placeholder="false">Modify action</item>
+  <item name="LKBdeleteSubAct.text" html="false" placeholder="false">Delete action</item>
+  <item name="LKBdeleteSubAct.ToolTip" html="false" placeholder="false">Delete action</item>
+  <item name="LKBeditSubAct.text" html="false" placeholder="false">Modify Activity</item>
+  <item name="LKBeditSubAct.ToolTip" html="false" placeholder="false">Modify Activity</item>
+  <item name="HYPupdateAct.text" disambiguation="verbo" html="false" placeholder="false">Modify</item>
+  <item name="HYPupdateAct.ToolTip" html="false" placeholder="false">Modify activity</item>
+  <item name="LNBnewSubAct.text" html="false" placeholder="false">Add action</item>
+  <item name="LNBnewSubAct.ToolTip" html="false" placeholder="false">Add action</item>
+  <item name="LKBeduPathView.text" html="false" placeholder="false">Display educational path</item>
+  <item name="LKBeduPathView.ToolTip" html="false" placeholder="false">Display educational path</item>
+  <item name="LKBdeleteAct.text" html="false" placeholder="false">Delete activity</item>
+  <item name="LKBdeleteAct.ToolTip" html="false" placeholder="false">Delete activity</item>
+  <item name="LKBupdateWeight.text" html="false" placeholder="false">Save points</item>
+  <item name="LKBupdateWeight.ToolTip" html="false" placeholder="false">Refesh score of the subactivities</item>
+  <item name="LKBsetMandatory.text" html="false" placeholder="false">Set/Remove obligatoriness</item>
+  <item name="LKBsetMandatory.ToolTip" html="false" placeholder="false">Set/Remove obligatoriness</item>
+  <item name="HYPpreviousAct.text" html="false" placeholder="false">Previous activity</item>
+  <item name="HYPpreviousAct.ToolTip" html="false" placeholder="false">Go to previous activity</item>
+  <item name="HYPnextAct.text" html="false" placeholder="false">Next activity</item>
+  <item name="HYPnextAct.ToolTip" html="false" placeholder="false">Next activity</item>
+  <item name="LKBdown.text" html="false" placeholder="false">Move down</item>
+  <item name="LKBdown.ToolTip" html="false" placeholder="false">Move down</item>
+  <item name="LKBdown.ConfirmText" html="false" placeholder="false">Move down</item>
+  <item name="LKBup.text" html="false" placeholder="false">Move up</item>
+  <item name="LKBup.ToolTip" html="false" placeholder="false">Move up</item>
+  <item name="LKBup.ConfirmText" html="false" placeholder="false">Move up</item>
+  <item name="ActivityMandatory" html="false" placeholder="false">Activity is mandatory</item>
+  <item name="SubActivityMandatory" html="false" placeholder="false">Action is mandatory</item>
+ <item name="Error.Generic" html="false" placeholder="false">System error</item>
+  <item name="Error.NotPermission" html="false" placeholder="false">No permissions to perform the operation</item>
+  <item name="Error.Url" html="false" placeholder="false">Wrong address</item>
+  <item name="Error.Data">Error while saving data</item>
+  <item name="Error.EmptyActivities">Impossible to edit visibility. There are empty activities</item>
+  <item name="Error.PathTimeNotEqualToActivities">The hours recognized for Path does not correspond to those recognized for the activities, you can not unlock.</item>
+  <item name="Error.PathNotFind">Educational path NOT found</item>
+  <item name="Error.NotManageable">Path blocked</item>
+  <item name="HYPerror.text" html="false" placeholder="false">View educational path</item>
+  <item name="HYPerror.ToolTip" html="false" placeholder="false">View educational path</item>
+  <item name="StatusStatistic.Browsed" html="false" placeholder="false">Not started</item>
+  <item name="StatusStatistic.Started" html="false" placeholder="false">Started</item>
+  <item name="StatusStatistic.CompletedPassed" html="false" placeholder="false">Completed and passed</item>
+  <item name="Visible" html="false" placeholder="false">Action is visible</item>
+  <item name="NotVisible" html="false" placeholder="false">Action is not visible</item>
+  <item name="MSGstarted" html="true" placeholder="false">&lt;br&gt;ATTENZIONE: It is not possible to edit this activity: path is not stopped, or it has been compiled by some users.&lt;br&gt;&lt;br&gt;</item>
+  <item name="Points" html="false" placeholder="false"> points)</item>
+  <item name="MSGConfirmUPDweight" html="false" placeholder="false">Updated score.</item>
+  <item name="MSGnotSaved" html="false" placeholder="false">ERROR: Score not updated!</item>
+  <item name="LBsubActRepository.text" html="false" placeholder="false">Adds one or more actions to the community files</item>
+  <item name="LBsubActQuiz.text" html="false" placeholder="false">Create a test action</item>
+  <item name="LBsubActText.text" html="false" placeholder="false">Create a text action</item>
+  <item name="HYPaddSubText.text" html="false" placeholder="false">Add text</item>
+  <item name="HYPaddSubText.ToolTip" html="false" placeholder="false">Create a text action</item>
+  <item name="BTNaddQuestionario.text" html="false" placeholder="false">Add a test</item>
+  <item name="BTNaddQuestionario.ToolTip" html="false" placeholder="false">Create a test action</item>
+  <item name="BTNaddRepositoryActivity.text" html="false" placeholder="false">Add file</item>
+  <item name="BTNaddRepositoryActivity.ToolTip" html="false" placeholder="false">Adds one or more action on the community files</item>
+  <item name="BTNundoQuizAction.text" html="false" placeholder="false">Change action</item>
+  <item name="BTNundoQuizAction.ToolTip" html="false" placeholder="false">Change action</item>
+  <item name="LKBexecute.text" html="false" placeholder="false">Performed</item>
+  <item name="LKBexecute.ToolTip" html="false" placeholder="false">action performed </item>
+  <item name="Blocked.True" html="false" placeholder="false">Blocked</item>
+  <item name="Blocked.False" html="false" placeholder="false">Not blocked</item>
+  <item name="LBnoSubAct.Manage" html="false" placeholder="false">No action found. To add actions click "Add action"</item>
+  <item name="LBnoSubAct.View" html="false" placeholder="false">Currently there is no action in this activity. To go back to the path click "View educational path"</item>
+  <item name="LBsubActCertification.text" html="false" placeholder="false">Adds an action that produces a certificate of participation/attendance</item>
+  <item name="BTNaddTextAction.text" html="false" placeholder="false">Add textual action</item>
+  <item name="BTNaddTextAction.ToolTip" html="false" placeholder="false">Add textual action</item>
+  <item name="BTNaddCertificationAction.text" html="false" placeholder="false">Add certification</item>
+  <item name="BTNaddCertificationAction.ToolTip" html="false" placeholder="false">Add certification</item>
+  <item name="BTNcloseAddActionWindowBottom.text" html="false" placeholder="false">Close window</item>
+  <item name="BTNcloseAddActionWindowBottom.ToolTip" html="false" placeholder="false">Close window</item>
+  <item name="BTNcloseAddActionWindowTop.text" html="false" placeholder="false">Close window</item>
+  <item name="BTNcloseAddActionWindowTop.ToolTip" html="false" placeholder="false">Close window</item>
+  <item name="BTNselectActionBottom.text" html="false" placeholder="false">Change action</item>
+  <item name="BTNselectActionBottom.ToolTip" html="false" placeholder="false">Change action</item>
+  <item name="BTNselectActionTop.text" html="false" placeholder="false">Change action</item>
+  <item name="BTNselectActionTop.ToolTip" html="false" placeholder="false">Change action</item>
+  <item name="BTNcreateActionBottom.text" html="false" placeholder="false">Create action</item>
+  <item name="BTNcreateActionBottom.ToolTip" html="false" placeholder="false">Create action</item>
+  <item name="BTNcreateActionTop.text" html="false" placeholder="false">Create action</item>
+  <item name="BTNcreateActionTop.ToolTip" html="false" placeholder="false">Create action</item>
+  <item name="LTcurrentAction.text" html="false" placeholder="false">Select the action you want to add</item>
+  <item name="Selected.TextAction" html="false" placeholder="false">Action of textual type</item>
+  <item name="Selected.Certification" html="false" placeholder="false">Generation of the certification document</item>
+  <item name="CertificationError.None.savingRequired.False.saved.False" html="false" placeholder="false">Certificate correctly created</item>
+  <item name="CertificationError.None.savingRequired.False.saved.True" html="false" placeholder="false">Certificate correctly created</item>
+  <item name="CertificationError.None.savingRequired.True.saved.False" html="false" placeholder="false">Certificate correctly created, no copy on the web server has been saved</item>
+  <item name="CertificationError.None.savingRequired.True.saved.True" html="false" placeholder="false">Certificate correctly created: a copy on the web server has been saved</item>
+  <item name="CertificationError.Unknown.savingRequired.False.saved.False" html="false" placeholder="false">Unknown error in generating the certificate</item>
+  <item name="CertificationError.Unknown.savingRequired.False.saved.True" html="false" placeholder="false">Unknown error in generating the certificate</item>
+  <item name="CertificationError.Unknown.savingRequired.True.saved.False" html="false" placeholder="false">Unknown error in generating the certificate, saving a copy on the web server was NOT possible</item>
+  <item name="CertificationError.Unknown.savingRequired.True.saved.True" html="false" placeholder="false">Unknown error in generating the certificate</item>
+  <item name="CertificationError.RepositoryError.savingRequired.False.saved.False" html="false" placeholder="false">Error on the web server</item>
+  <item name="CertificationError.RepositoryError.savingRequired.False.saved.True" html="false" placeholder="false">Error on the web server</item>
+  <item name="CertificationError.RepositoryError.savingRequired.True.saved.False" html="false" placeholder="false">Error on the web server: impossible to proceed with the file saving</item>
+  <item name="CertificationError.RepositoryError.savingRequired.True.saved.True" html="false" placeholder="false">Error on the web server: impossible to proceed with the file saving</item>
+  <item name="CertificationError.SavingFile.savingRequired.False.saved.False" html="false" placeholder="false">Error in temporary saving of the certificate on the web server to permit download</item>
+  <item name="CertificationError.SavingFile.savingRequired.False.saved.True" html="false" placeholder="false">Error in temporary saving of the certificate on the web server to permit download</item>
+  <item name="CertificationError.SavingFile.savingRequired.True.saved.False" html="false" placeholder="false">Error in saving the certificate on the web server</item>
+  <item name="CertificationError.SavingFile.savingRequired.True.saved.True" html="false" placeholder="false">Error in saving the certificate on the web server</item>
+  <item name="CertificationError.TransmittingFile.savingRequired.False.saved.False" html="false" placeholder="false">Error while downloading the certificate</item>
+  <item name="CertificationError.TransmittingFile.savingRequired.False.saved.True" html="false" placeholder="false">Error while downloading the certificate</item>
+  <item name="CertificationError.TransmittingFile.savingRequired.True.saved.False" html="false" placeholder="false">Error while downloading the certificate, the relative file on the web server has NOT been created</item>
+  <item name="CertificationError.TransmittingFile.savingRequired.True.saved.True" html="false" placeholder="false">Error while downloading the certificate, the relative file on the web server has been created anyway</item>
+  <item name="CertificationError.ParsingTemplate.savingRequired.False.saved.False" html="false" placeholder="false">Error in generating the certificate text content</item>
+  <item name="CertificationError.ParsingTemplate.savingRequired.False.saved.True" html="false" placeholder="false">Error in generating the certificate text content</item>
+  <item name="CertificationError.ParsingTemplate.savingRequired.True.saved.False" html="false" placeholder="false">Error in generating the certificate text content</item>
+  <item name="CertificationError.ParsingTemplate.savingRequired.True.saved.True" html="false" placeholder="false">Error in generating the certificate text content: a copy on the web server has been created (corrupted)</item>
+  <item name="CertificationError.EmptyTemplateItem.savingRequired.False.saved.False" html="false" placeholder="false">A field present on the certificate was not filled, impossible to save the certificate</item>
+  <item name="CertificationError.EmptyTemplateItem.savingRequired.False.saved.True" html="false" placeholder="false">A field present on the certificate was not filled, impossible to save the certificate</item>
+  <item name="CertificationError.EmptyTemplateItem.savingRequired.True.saved.False" html="false" placeholder="false">A field present on the certificate was not filled, impossible to save the certificate</item>
+  <item name="CertificationError.EmptyTemplateItem.savingRequired.True.saved.True" html="false" placeholder="false">A field present on the certificate was not filled, the certificate is saved in pdf format on the web server anyway</item>
+  <item name="CertificationError.EmptyTemplateItems.savingRequired.False.saved.False" html="false" placeholder="false">Some fields of the certificate are NOT completed</item>
+  <item name="CertificationError.EmptyTemplateItems.savingRequired.False.saved.True" html="false" placeholder="false">Some fields of the certificate are NOT completed</item>
+  <item name="CertificationError.EmptyTemplateItems.savingRequired.True.saved.False" html="false" placeholder="false">Some fields of the certificate are NOT completed</item>
+  <item name="CertificationError.EmptyTemplateItems.savingRequired.True.saved.True" html="false" placeholder="false">Some fields of the certificate are NOT completed, however the certificate is saved in pdf format in the web server</item>
+  <item name="LNBcertificate.ToolTip" html="false" placeholder="false">Download certification</item>
+  <item name="HYPcertificate.ToolTip" html="false" placeholder="false">Download certification</item>
+  <item name="LNBrefreshCertificate.ToolTip" html="false" placeholder="false">Regenerate the certificate</item>
+  <item name="LNBrefreshCertificate.text" html="false" placeholder="false" hidden="true" />
+  <item name="HYPrefreshCertificate.ToolTip" html="false" placeholder="false">Regenerate the certificate</item>
+  <item name="HYPrefreshCertificate.text" html="false" placeholder="false" hidden="true" />
+  <item name="DisplayMessageToken.ViewCertificate" html="false" placeholder="false">The required file is under preparation, please wait a few seconds to download it.</item>
+  <item name="DisplayTitleToken.ViewCertificate" html="false" placeholder="false">Download certificate</item>
+  <item name="EduPath.ModuleStatus.DisableForCommunity" html="false" placeholder="false">WARNING: the service is disabled for this community.</item>
+  <item name="EduPath.ModuleStatus.DisableForSystem" html="false" placeholder="false">WARNING: the service is disabled for the platform.</item>
+  <item name="EduPath.ModuleStatus.DisableForCommunityAvailableForAdmin" html="false" placeholder="false">WARNING: the service is disabled for this community; as administrator you are allowed to access.</item>
+  <item name="EduPath.ModuleStatus.DisableForSystemAvailableForAdmin" html="false" placeholder="false"> ATTENTION: the service is disabled for the platform; as administrator you are allowed to access.</item>
+  <item name="GetFileBlockUiMessage" html="false" placeholder="false">Please, wait file download</item>
+  <item name="Error.PathAvailability.Available.IsMooc.True" html="false" placeholder="false">Warning: the mooc is NOT blocked, modifications to the sub-activities are NOT permitted.</item>
+  <item name="Error.PathAvailability.Available.IsMooc.False" html="false" placeholder="false">Warning: the path is NOT blocked, modifications to the sub-activities are NOT permitted.</item>
+  <item name="Error.PathAvailability.WithOtherUserStatistics.IsMooc.True" html="false" placeholder="false">Warning: some statistics are recorded for this mooc. </item>
+  <item name="Error.PathAvailability.WithOtherUserStatistics.IsMooc.False" html="false" placeholder="false">Warning: some statistics are recorded for this path. </item>
+  <item name="Error.PathAvailability.WithMyStatistics.IsMooc.True" html="false" placeholder="false">Warning: you have some statistics recorded for this mooc.</item>
+  <item name="Error.PathAvailability.WithMyStatistics.IsMooc.False" html="false" placeholder="false">Warning: you have some statistics recorded for this path.</item>
+  <item name="Error.PathAvailability.Available.WithOtherUserStatistics.IsMooc.True" html="false" placeholder="false">Warning: the mooc is NOT blocked and some statistics are recorded, modifications to the sub-activities are NOT permitted.</item>
+  <item name="Error.PathAvailability.Available.WithOtherUserStatistics.IsMooc.False" html="false" placeholder="false">Warning: the path is NOT blocked and some statistics are recorded, modifications to the sub-activities are NOT permitted.</item>
+  <item name="Error.PathAvailability.Available.WithMyStatistics.IsMooc.True" html="false" placeholder="false">Warning: the mooc is NOT blocked and you have some statistics recorded, modifications to the sub-activities are NOT permitted.</item>
+  <item name="Error.PathAvailability.Available.WithMyStatistics.IsMooc.False" html="false" placeholder="false">Warning: the path is NOT blocked and you have some statistics recorded, modifications to the sub-activities are NOT permitted.</item>
+  <item name="LKBeduPathView.IsMooc.True.text" html="false" placeholder="false">Display mooc</item>
+  <item name="LKBeduPathView.IsMooc.True.ToolTip" html="false" placeholder="false">Display mooc</item>
+  <item name="HYPerror.IsMooc.True.text" html="false" placeholder="false">Torna al mooc</item>
+  <item name="HYPerror.IsMooc.True.ToolTip" html="false" placeholder="false">Torna al mooc</item>
+  <item name="LBnoSubAct.View.IsMooc.True" html="false" placeholder="false">No action is present in this Activity at the moment. To get back to the mooc, click "Display mooc"</item>
+
+
+  <!-- add repository action-->
+  <item name="DisplayRepositoryAction.ButtonText.none"></item>
+  <item name="DisplayRepositoryAction.ToolTip.none"></item>
+  <item name="DisplayRepositoryAction.Description.none"></item>
+  <item name="DisplayRepositoryAction.ActionTitle.none"></item>
+  <item name="DisplayRepositoryAction.ActionTitle.select">Azioni disponibili sul materiale</item>
+  <item name="DisplayRepositoryAction.ButtonText.downloadItem">Scarica file</item>
+  <item name="DisplayRepositoryAction.ToolTip.downloadItem">Scarica file</item>
+  <item name="DisplayRepositoryAction.Description.downloadItem">Aggiunge una o piu' azioni di scaricamento file dal materiale della comunità.</item>
+  <item name="DisplayRepositoryAction.ActionTitle.downloadItem">Selezionare il/i materiale/i da scaricare</item>
+  <item name="DisplayRepositoryAction.ButtonText.playScormPackage">Visualizza scorm</item>
+  <item name="DisplayRepositoryAction.ToolTip.playScormPackage">Visualizza scorm</item>
+  <item name="DisplayRepositoryAction.Description.playScormPackage">Aggiunge una o piu' azioni per la visione di materiale scorm presente nel materiale di comunità.</item>
+  <item name="DisplayRepositoryAction.ActionTitle.playScormPackage">Selezionare il/i materiale/i da visualizzare</item>
+  <item name="DisplayRepositoryAction.ButtonText.playMultimedia">Visualizza multimediale</item>
+  <item name="DisplayRepositoryAction.ToolTip.playMultimedia">Visualizza multimediale</item>
+  <item name="DisplayRepositoryAction.Description.playMultimedia">Aggiunge una o piu' azioni per la visione di pacchetti multimediali presenti nel materiale di comunità.</item>
+  <item name="DisplayRepositoryAction.ActionTitle.playMultimedia">Selezionare il/i materiale/i da visualizzare</item>
+  <item name="DisplayRepositoryAction.ButtonText.internalDownloadOrPlay">Nuovo materiale interno</item>
+  <item name="DisplayRepositoryAction.ToolTip.internalDownloadOrPlay">Nuovo materiale interno</item>
+  <item name="DisplayRepositoryAction.Description.internalDownloadOrPlay">Aggiunge uno o piu' materiali all'interno dell'oggetto. In automatico in base al tipo di materiale caricato il partecipante potrà effettuarne lo scaricamento o visionarlo in piattaforma.</item>
+  <item name="DisplayRepositoryAction.ActionTitle.internalDownloadOrPlay">Selezionare il materiale da caricare ed associare all'oggetto</item>
+  <item name="DisplayRepositoryAction.ButtonText.repositoryDownloadOrPlay">Nuovo materiale comunità</item>
+  <item name="DisplayRepositoryAction.ToolTip.repositoryDownloadOrPlay">Nuovo materiale comunità</item>
+  <item name="DisplayRepositoryAction.Description.repositoryDownloadOrPlay">Aggiunge uno o piu' materiali all'interno del materiale di comunità e li associa all'oggetto. In automatico in base al tipo di materiale caricato il partecipante potrà effettuarne lo scaricamento o visionarlo in piattaforma.</item>
+  <item name="DisplayRepositoryAction.ActionTitle.repositoryDownloadOrPlay">Selezionare il materiale da caricare ed associare all'oggetto</item>
+  <item name="BTNcloseAddActionWindowBottom.text">Chiudi finestra</item>
+  <item name="BTNcloseAddActionWindowBottom.ToolTip">Chiudi finestra</item>
+  <item name="BTNcloseAddActionWindowTop.text">Chiudi finestra</item>
+  <item name="BTNcloseAddActionWindowTop.ToolTip">Chiudi finestra</item>
+  <item name="BTNselectActionBottom.text">Cambia azione</item>
+  <item name="BTNselectActionBottom.ToolTip">Cambia azione</item>
+  <item name="BTNselectActionTop.text">Cambia azione</item>
+  <item name="BTNselectActionTop.ToolTip">Cambia azione</item>
+  <item name="LTuploadToCommunity_t.text">Aggiungi il file nel repository di comunità</item>
+  <item name="BTNaddCommunityFileTop.text" disambiguation="carica=upload">Carica</item>
+  <item name="BTNaddCommunityFileTop.ToolTip">Aggiunge il file che deve essere scaricato.</item>
+  <item name="BTNaddCommunityFileTop.status">Aggiunge il file che deve essere scaricato.</item>
+  <item name="BTNaddCommunityFileBottom.text" disambiguation="carica=upload">Carica</item>
+  <item name="BTNaddCommunityFileBottom.ToolTip">Aggiunge il file che deve essere scaricato.</item>
+  <item name="BTNaddCommunityFileBottom.status">Aggiunge il file che deve essere scaricato.</item>
+  <item name="LTuploadToItem_t.text">Aggiungi un file NON disponbile nel repository di comunità</item>
+  <item name="BTNaddInternalToItemTop.text" disambiguation="carica=upload">Carica</item>
+  <item name="BTNaddInternalToItemTop.ToolTip">Aggiunge il file che deve essere scaricato.</item>
+  <item name="BTNaddInternalToItemTop.status">Aggiunge il file che deve essere scaricato.</item>
+  <item name="BTNaddInternalToItemBottom.text" disambiguation="carica=upload">Carica</item>
+  <item name="BTNaddInternalToItemBottom.ToolTip">Aggiunge il file che deve essere scaricato.</item>
+  <item name="BTNaddInternalToItemBottom.status">Aggiunge il file che deve essere scaricato.</item>
+  <item name="LTselectFromCommunity_t.text">Seleziona il file/i file dal repository di comunità</item>
+  <item name="BTNLinkToModuleBottom.text">Crea azione</item>
+  <item name="BTNLinkToModuleBottom.ToolTip">Crea l'azione di download sul file/sui file selezionato/i</item>
+  <item name="BTNLinkToModuleBottom.status">Crea l'azione di download sul file/sui file selezionato/i</item>
+  <item name="BTNLinkToModuleTop.text">Crea azione</item>
+  <item name="BTNLinkToModuleTop.ToolTip">Crea l'azione di download sul file/sui file selezionato/i</item>
+  <item name="BTNLinkToModuleTop.status">Crea l'azione di download sul file/sui file selezionato/i</item>
+  <item name="UnknownUserTranslation">Utente rimosso</item>
+  <item name="VersionErrors.unavailableItem">Il file a cui vuoi aggiungere una nuova versone non è accessibile (è stato rimosso oppure non hai i permessi per accedervi)</item>
+  <item name="VersionErrors.nopermission">Non disponi dei permessi necessari per aggiungere una nuova versione del file</item>
+  <item name="VersionErrors.unabletoadd">Impossibile aggiungere una nuova versione al file</item>
+  <item name="LNBaddVersion.ToolTip">Aggiungi una nuova versione al file</item>
+  <item name="HYPeditMetadata.ToolTip">Impostazioni pacchetto</item>
+</Resource>

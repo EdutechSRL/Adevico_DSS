@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping
+    xmlns="urn:nhibernate-mapping-2.2"
+    assembly="lm.Comol.Core.BaseModules"
+    namespace="lm.Comol.Core.BaseModules.Tickets.Domain">
+
+    <class name="SettingsPortal" table="TK_SettingsPortal" >
+
+        <id name="Id" column="Id" type="Int64">
+            <generator class="native"/>
+        </id>
+
+        <version name="TimeStamp"
+            generated="always"
+            unsaved-value="null"
+            type="BinaryBlob">
+            <column name="_Timestamp"
+                not-null="false"
+                sql-type="timestamp"/>
+        </version>
+
+        <property name="HasExternalLimitation" type="Boolean" column="HasExternalLimitation" />
+        <property name="HasInternalLimitation" type="Boolean" column="HasInternalLimitation" />
+        <property name="HasDraftLimitation" type="Boolean" column="HasDraftLimitation" />
+        <property name="ExternalLimitation" type="Int32" column="ExternalLimitation" />
+        <property name="InternalLimitation" type="Int32" column="InternalLimitation" />
+        <property name="DraftLimitation" type="Int32" column="DraftLimitation" />
+        
+        <property name="CanCreateCategory" type="Boolean" column="CanCreateCategory" />
+        <property name="CanShowTicket" type="Boolean" column="CanShowTicket" />
+        <property name="CanEditTicket" type="Boolean" column="CanEditTicket" />
+        <property name="CanBehalf" type="Boolean" column="CanBehalf" />
+        
+        <!--<property name="MailSettings" type="lm.Comol.Core.BaseModules.Tickets.Domain.Enums.MailSettings, lm.Comol.Core.BaseModules" column="MailUserSettings"/>-->
+
+        <property name="IsNotificationUserActive" type="Boolean" column="IsNotificationUserActive" />
+        <property name="MailSettingsUser" type="lm.Comol.Core.BaseModules.Tickets.Domain.Enums.MailSettings, lm.Comol.Core.BaseModules" column="MailUserSettings"/>
+        <property name="IsNotificationManActive" type="Boolean" column="IsNotificationManActive" />
+        <property name="MailSettingsManager" type="lm.Comol.Core.BaseModules.Tickets.Domain.Enums.MailSettings, lm.Comol.Core.BaseModules" column="MailManagerSettings"/>
+        
+
+
+        <property name="CreatedOn" type="DateTime" column="_CreatedOn" />
+        <many-to-one name="CreatedBy" class="lm.Comol.Core.DomainModel.Person" column="_CreatedBy" foreign-key="_CreatedBy" cascade="none" />
+        <property name="ModifiedOn" type="DateTime" column="_ModifiedOn" />
+        <many-to-one name="ModifiedBy" class="lm.Comol.Core.DomainModel.Person" column="_ModifiedBy" foreign-key="_ModifiedBy" cascade="none" />
+        <property name="CreatorProxyIpAddress" type="String" column="_CreatedProxyIPaddress" />
+        <property name="CreatorIpAddress" type="String" column="_CreatedIPaddress" />
+        <property name="ModifiedProxyIpAddress" type="String" column="_ModifiedProxyIPaddress" />
+        <property name="ModifiedIpAddress" type="String" column="_ModifiedIPaddress" />
+        <property name="Deleted" type="lm.Comol.Core.DomainModel.BaseStatusDeleted,lm.Comol.Core.DomainModel" column="_Deleted" />
+
+    </class>
+
+</hibernate-mapping>

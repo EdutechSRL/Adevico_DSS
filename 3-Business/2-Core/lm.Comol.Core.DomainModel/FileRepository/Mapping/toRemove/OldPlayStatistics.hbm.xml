@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="lm.Comol.Core.DomainModel" namespace="lm.Comol.Core.FileRepository.Domain.toRemove">
+	<class name="OldPlayStatistics" table="FR_FilePlayInfo">
+    <id name="Id" column="Id" type="Int64" unsaved-value="0">
+      <generator class="native"/>
+    </id>
+    <property name="IdPerson" type="Int32" update="false" insert="false"/>
+    <property name="IdCommunity" type="Int32" update="false" insert="false"/>
+    <property name="CreatedOn" update="false" insert="false"/>
+    <property name="IdFile" update="false" insert="false"/>
+    <property name="FileUniqueID" update="false" insert="false"/>
+    <property name="IdRepositoryItemType" update="false" insert="false"/>
+    <property name="DateZone" update="false" insert="false"/>
+    <property name="IdAction" update="false" insert="false"/>
+    <property name="WorkingSessionID" update="false" insert="false"/>
+    <property name="Transferred"/>
+    <property name="Removed"/>
+  </class>
+</hibernate-mapping>

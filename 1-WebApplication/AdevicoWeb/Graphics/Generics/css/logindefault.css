@@ -1,0 +1,1106 @@
+/* Graphics/Generics/logindefault.css */
+/* updated 16/07/13 */
+
+@import url("3_COL_Reset.css");
+
+/* @import url("./././Template/Wizard/css/wizard.css"); */
+
+/* @group Login Screen */
+
+	/* @group Page layout */
+
+/*body.internal_body * {
+  font: 98% "Lucida Grande", Lucida, Verdana, sans-serif;	
+}*/
+
+body.internal_body {
+   font: 13px "Lucida Grande", Lucida, Verdana, sans-serif;		
+}
+
+div#page-box {
+	background-color: #fff;
+}
+
+div#container {
+	width: 100%;
+	max-width: 100%;
+	text-align: left;
+	padding: 0;
+	margin-bottom: 0;
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	border: none;
+	top: 0;
+}
+
+#header {	
+	height: auto;
+}
+
+#header img#logo {
+	margin-top: 12px;
+}
+
+#branding img.logo {
+	margin-top: 10px;
+	height: 80px;
+	border: none;
+	outline: 0 !important;
+}
+
+#header #toolbar {
+    display: none;
+}
+
+#branding h1 {
+	display: none;
+}
+
+div#nav-main {
+	display: none;
+}
+
+div.section {
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 1400px;
+	min-width: 640px;
+	width: 960px;
+	padding: 0;
+}
+
+div#top-content {
+	background-color: #ccc;
+}
+
+div#middle-content {
+	background-color: #ddd;
+}
+
+div#bottom-content {
+	background-color: #fff;
+}
+
+#content li {
+	list-style: none;
+}
+
+.clearer {
+	clear: both;
+}
+
+.left {
+	float: left;
+}
+
+.right {
+	float: right;
+}
+
+	/* @end */
+
+	/* @group Tools */
+
+div#tools {
+	background-color: #transparent;
+	color: #666;
+	font-size: 1em;
+	font-weight: bold;
+	text-align: left;
+	line-height: 1em;
+	height: 36px;
+	padding: 0;
+	width: 960px;
+}
+
+div#tools a {
+	color: #3b5679;
+	text-decoration: none;
+	font-weight: normal;
+	font-style: normal;
+	line-height: 1.4em;
+}
+
+div#tools a:hover {
+	text-decoration: underline;
+}
+
+div#tools ul {
+	margin: 0;
+	margin-top: 0.5em;
+	padding: 0;
+}
+
+div#tools ul.left {
+	float: left;
+}
+
+div#tools ul.right {
+	float: right;
+}
+
+div#tools ul li {
+	background-color: #c7c7c7;
+	margin-left: 8px;
+	margin-right: 8px;
+	padding: 0;
+	list-style: none;
+	background-color: transparent;
+	float: left;
+	position: relative;
+	z-index: 400;
+}
+
+div#tools ul li a {
+	display: block;
+	padding: 3px 10px;
+	margin-left: 0;
+}
+
+div#tools div {
+	float: left;
+}
+
+div#tools li a.menu {
+	background-image: url(./img/i-triangle_login.png) !important;
+	background-position: right 0.4em !important;
+	padding-right: 15px;
+	padding-left: 0;
+}
+
+div#tools li a.help {
+	background: url(./img/help_login.png) no-repeat left center;
+	padding-left: 24px;
+	padding-top: 3px;
+}
+
+
+div#tools li#Top_Lang {
+	background: url(./img/globe_login.png) no-repeat left center;
+	padding-left: 24px;
+}
+
+div#tools li#Top_Lang a {
+	background-image: url(./img/i-triangle-sprite.png);
+	background-position: right -174px;
+	padding-right: 15px;
+	text-decoration: none;
+	cursor: default;
+}
+
+div#tools li#Top_Lang ul.sub li a {
+	background-image: none;
+	padding-left: 0;
+	cursor: pointer;
+}
+
+div#tools ul li ul.sub {
+	background-color: #c7c7c7;
+	display: none;
+	position: absolute;
+	top: 23px;
+	left: 0;
+	width: 100px !important;
+	font-weight: normal;
+	font-style: normal;
+	padding-left: 0;
+	padding-bottom: 4px;
+	border-top: none;
+}
+
+div#tools ul li ul.sub li {
+	float: none;
+	height: 1%;
+	padding: 0;
+	margin: 0;
+}
+
+div#tools ul li ul.sub li a {
+	display: block;
+	margin: 0 !important;
+	padding: 3px;
+}
+
+div#tools ul li#Top_Lang ul.sub li a {
+	padding-left: 24px;
+}
+
+div#tools ul li ul.sub li a:hover {
+	color: #fff;
+	background-color: #3b5679;
+}
+
+div#tools ul li li.first a {
+	border-top: 1px solid #c7c7c7;
+}
+
+/* icons */
+
+div#tools li a.home {
+	background: url(./img/i-home.png) top left no-repeat;
+}
+
+div#tools li a.menu {
+	background: url(./img/i-triangle.png) top left no-repeat;
+}
+
+	/* @end */
+
+
+	/* @group Form */
+
+div#form {
+	width: 820px;
+	padding: 10px 70px 20px 70px;
+}
+
+div#form:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+
+div#form.section {
+	min-height: 200px;
+	display: block;
+}
+
+div#form.section.auth-type {
+	min-height: 300px;
+	background-image: none;
+}
+
+div#form  h2 {
+	color: #444;
+	font-size: 1.2em;
+	margin: 1em 0;
+	text-align: left;
+	text-transform: uppercase;
+	font-weight: normal;
+	font-style: normal;
+}
+
+div#form div#submit-feedback {
+	margin: auto;
+	text-align: center;
+	padding: 0;
+	height: 80px;
+}
+
+div#form div#submit-feedback span {
+	font-size: 0.9em;
+	line-height: 1.6em;
+	display: block;
+	margin: 0;
+	padding: 1.2em;
+	color: #56493f;
+	background-color: #fff3b7;
+	border: 1px solid #797669;
+}
+
+div#form div#submit-feedback span.invisible {
+	display: none;
+}
+
+div#form div#submit-feedback a,
+div#form div#submit-feedback a:visited {
+	font-weight: bold;
+	color: #56493f !important;
+	text-decoration: underline;
+}
+
+div#form.auth-type div.full {
+    text-align: left;
+	padding: 10px;
+	margin-bottom: 0.5em;
+	overflow: visible;
+	width: 798px;
+	height: 90px;
+	_margin-bottom: 10px !important;   /* ie6 */
+    *margin-bottom: 10px !important;   /* ie6 ie7 */
+    margin-bottom: 10px\9 !important;  /* ie8 */
+    margin-bottom: 10px\0/ !important; /* IE8+9  */
+}
+
+	/* @end */
+
+	/* @group Form inputs */
+
+div#form input,
+div#form span.submit {
+	display: inline-block;
+}
+
+div#form input,
+div#form span.submit a {
+	width: 250px;
+	height: 32px;
+	font-size: 16px;
+	vertical-align: top;
+}
+
+div#form span.submit.alt {
+	
+}
+
+div#form input {
+	margin: 18px 20px 18px 0;
+}
+
+*+html div#form input {
+	margin: 18px 18px 18px 0;
+}
+
+div#form input.submit {
+	margin: 18px 0 18px 0;
+}
+
+div#form input {
+	line-height: 2em;
+	padding-left: 6px;
+	color: #52606d;
+	background-color: #e6e9ed;
+	border: 1px solid #565656;
+	vertical-align: bottom;
+}
+
+div#form input.jq_watermark {
+	line-height: 2em;
+	padding-left: 6px;
+	color: #52606d;
+	background-color: #e6e9ed;
+	border: 1px solid #565656;
+	vertical-align: bottom;
+	-webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+
+div#form .info-label {
+	display: block;
+	text-align: left;
+	color: #444;
+	font-size: 0.9em;
+	margin: 1em 0;
+	vertical-align: top;
+}
+
+div#form .info-text {
+	display: inline-block;
+	text-align: left;
+	color: #444;
+	font-size: 0.9em;
+	margin: 0.5em	 0;
+	vertical-align: top;
+}
+
+*+html div#form input.jq_watermark,
+*+html div#form input.textbox {
+	line-height: 1.6em;
+	font-size: 1.2em;
+	border: 1px solid #3b5679;
+	color: #2f3c4c;
+	height: 30px;
+	vertical-align:middle;
+}
+
+*+html div#form input.jq_watermark.hack,
+*+html div#form input.textbox.hack {
+	left:-4px;
+	position: relative;
+}
+
+div#form span.jq_watermark,
+div#form span.textbox  {
+	padding: 0 !important;
+	margin-top: 0!important;
+}
+
+div#form input:focus{	
+	color: #3b5679;
+	background-color: #fff;
+	outline: 0 !important;
+}
+
+input::-webkit-input-placeholder {
+	color: #fff;
+	text-indent: -9999px;
+}	
+
+div#form input[type="submit"],
+div#form input.submit {	
+	height: 36px;
+	text-align: center;
+	color: #fff;
+	text-shadow: none;
+	padding: 2px !important;
+	border: 1px solid #565656;
+	background: #354d6d;
+	cursor: pointer;
+	-webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+
+div#form span.submit a {	
+	display: inline-block;
+	width: 100%;
+	color: #fff;
+	padding: 2px !important;
+	border: 1px solid #565656;
+	background: #354d6d;
+	cursor: pointer;
+	text-decoration: none !important;
+}
+
+*+html div#form input.submit {
+	border: none;
+	line-height: 1.9em;
+	height: 34px;
+}
+
+div#form input#lgn {
+	margin-left: 0;
+}
+
+div#form input#sbmt {
+	margin-right: 0;
+}
+
+div#form input[type="submit"]:hover,
+div#form input.submit:hover,
+div#form span.submit a:hover {
+	background-color: #3b5679;
+}
+
+div#form input[type="submit"]:active,
+div#form input.submit:active,
+div#form span.submit a:active {
+	background-color: #3b5679;
+	outline: 0 !important;
+}
+
+/* @group Alt version buttons */
+
+div#form.auth-type input,
+div#form.auth-type span.submit a {
+	height: auto !important;
+	width: 320px;
+	margin: 0;
+	margin-bottom: 1em;
+	text-align: center;
+	padding: 0.6em 0 !important;
+}
+
+div#form.auth-type span.submit.alt a {
+	height: auto !important;
+	width: 260px;
+	margin: 0;
+	margin-bottom: 1em;
+	text-align: left;
+	padding: 0.6em 2em !important;
+}
+
+div#form.auth-type input a {
+	color: #fff;
+	margin-bottom: 0 !important;
+}
+
+div#form.auth-type div.box {
+	text-align: center;
+	width: 360px;	
+	height: 230px;
+	padding: 15px 20px 0 20px;
+	margin-bottom: 2em;
+	overflow: visible; 
+}
+
+div#form.auth-type div.box:after {
+	content: ".";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	line-height: 0;
+	height: 0;
+}
+
+div#form.auth-type div.box.full {
+ 	padding-bottom: 0;
+}
+
+div#form.auth-type div.box.full ul {
+
+}
+
+*+html div#form.auth-type div.box {
+	border: 1px solid #ccc;
+	margin-bottom: 0;
+}
+
+* html div#form.auth-type div.box {
+	border: 1px solid #ccc;
+	margin-bottom: 0;
+}
+
+div#form.auth-type div.box {
+	border: 1px solid #ccc\0/;
+}
+
+:root div#form.auth-type div.box /* IE9 + IE10pp4 */ {
+	border: none \0/IE9;
+}
+
+div#page-box div#container.page-width div#middle-content div#form.section div.box ul.info-text.Manuali li {
+
+}
+
+div#page-box div#container.page-width div#middle-content div#form.section div.box ul.info-text.Manuali li a {
+	color: #3b5679;
+	text-transform: uppercase;
+	padding: 0 2px;
+}
+
+div#page-box div#container.page-width div#middle-content div#form.section div.box ul.info-text.Manuali li a:hover {
+	text-decoration: underline;
+}
+
+div#form.auth-type div.box ul,
+div#form.auth-type div.box ol,
+div#form.auth-type div.box dl,
+div#form.auth-type div.box span {
+	text-align: left;
+}
+
+div#form.auth-type div.box ul,
+div#form.auth-type div.box dl {
+	padding-left: 10px;
+	margin-left: 0;
+}
+
+div#form.auth-type div.box li {
+	padding-left: 1em;
+	margin-bottom: 1em;
+}
+
+div#form.auth-type div.box dd {
+	color: #666;
+	margin: 0;
+	margin-bottom: 1em;
+	font-style: italic;
+}
+
+div#form .submit.alt a {
+	background: #383838;
+	cursor: pointer;
+}
+
+div#form span.submit.alt span {
+	text-indent: -9999px !important;
+	font-size: 0.01em |important;
+	display: none;
+}
+
+div#form .submit.alt a:hover {
+	background: #383838;
+	border: 1px solid #565656;
+	outline: 0 !important;
+}
+
+div#form .submit.alt a:active {
+	background: #383838;
+	outline: 0 !important;
+}
+
+/* @end */
+		
+div#form table {
+	margin: 1em auto;
+}
+
+div#form table span {
+	font-size: 1em;
+	line-height: 1.6em;
+}
+
+div#form div#CPHcontent_PNLInfo table td {
+	text-align: left;
+}
+
+	/* @end */
+
+	/* @group Info */
+
+div#info {
+	color: #666;
+	text-align: center;
+	background-color: transparent;
+	padding: 24px 0 24px 0;
+}
+
+div#info fieldset {
+	margin-left: auto;
+	margin-right: auto;
+	width: 800px;
+	font-size: 0.9em;
+	background-color: inherit;
+	border: 1px solid #ccc;
+	padding: 10px 10px;
+	text-align: left;
+}
+
+div#info fieldset p,
+div#info fieldset span {
+	margin: 12px 0;
+}
+
+div#info legend {
+	color: #666;
+	background-color: inherit;
+	font-weight: bold;
+}
+
+	/* @end */
+
+	/* @group Footer */
+
+#footer {
+	margin-top: 0;
+	padding-top: 0.7em;
+	font-size: 0.9em;
+	line-height: 2em !important;
+	color: #666;
+	background-color: #e5e5e5;
+}
+
+	/* @group #cFooter IE hacks */
+
+* html #footer {
+	background: #e5e5e5;
+	background-image: none;
+	background-repeat: repeat-x;
+	background-position: 0 top;
+	height: 150px;
+}
+
+*+html #footer {
+	background: #e5e5e5;
+	background-image: none;
+	background-repeat: repeat-x;
+	background-position: 0 top;
+	height: 150px;
+}
+
+		/* @end */
+
+#footer a {
+	color: #ae0000;
+	text-decoration: none;
+}
+
+#footer a:hover {
+	color: #ae0000;
+	text-decoration: underline !important;
+}
+
+	/* @end */
+
+	/* @group PreLogin Wizard */
+
+/* DA WIZARD INTERNAL PROFILE e WIZARD ADD PROFILE*/
+div#Wizard {
+	color:#333;	
+	text-align: left;
+	width: 950px;
+	max-width: 950px;
+	min-height: 300px;
+	border: 1px solid black;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 15px;
+	padding-top: 12px;
+	background-color: #fff;
+	-moz-box-shadow: 0 4px 6px #888;
+	-webkit-box-shadow: 0 4px 6px #888;
+	box-shadow: 0 4px 6px #888;
+	border: 1px solid #ccc;
+	border-top: none;
+	z-index: 1;    
+}  
+  
+div#form.section.Wizard {
+	height: 60px;
+	min-height: 60px;
+	background-image: none;
+	width: 950px;
+	max-width: 950px;
+}
+      
+div#data_content {
+    padding-bottom: 3em;
+    background-color: #fff;
+}
+
+div#data_content .Titolo_Campo {
+    font-weight: bold;
+}
+
+div.StepButton {
+    width: 949px;
+    text-align: right;
+}
+
+div.PrivacyBox {
+    width: 850px;
+    height: 150px;
+    max-height: 850px;
+    height: 150px;
+    overflow: auto;
+    font-size: smaller;
+    border: 1px solid #ccc;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+div.PrivacyBox ol {
+    padding-left: 2em;
+}
+
+div.PrivacyBox ol li {
+    list-style-type: decimal;
+    padding-left: 0em;
+}
+
+div#form.Wizard {
+    padding: 10px 0px 20px 0px !important;
+    padding-bottom: 0px !important;
+}
+
+div.StepData {
+    border: 1px solid #ccc;
+    margin: 5px;
+    padding: 5px;
+}
+
+div.StepData span.Titolo_Campo {
+    width: 12em;
+    display: inline-block;
+}
+
+div.StepData input.Testo_Campo {
+    width: 300px;
+    display: inline-block;
+}
+
+div.StepData select.Testo_Campo {
+    width: 300px;
+    display: inline-block;
+}
+
+div.StepData span.Fieldrow {
+    display: block;
+    padding: 0.2em;
+}
+
+/* BEGIN Step Organizzazione */
+
+div.StepOrgn div.clear {
+	clear: both;
+}
+
+div.StepOrgn div.FlotLeft {
+	float: left;
+}
+
+div.StepOrgn div.LeftCol {
+	width: 140px;
+}
+
+/* END Step Organizzazione */        
+
+
+/* BEGIN WizardAddProfile */
+div.StepContent span.LIT_Error { 
+  padding-top: 8em;
+  padding-bottom: 8em;
+}
+
+/*END WizardAddProfile */
+
+div#Wizard div.StepButton input {
+	display: inline-block !important;
+	line-height: 14px !important;
+	height: 2em !important;
+	margin: 2px !important;
+	font-size: 11px !important;
+	padding: 3px 4px !important;
+	color: #555;
+	text-shadow: 1px 1px 0px #ddd;
+	border: 1px solid #aaa !important;
+	background-color: #ddd;
+	-moz-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+	-webkit-box-shadow: 1px 1px 1px  rgba(0, 0, 0, 0.3);
+	box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+	-moz-border-radius-topleft: 3px;
+	-moz-border-radius-topright: 3px;
+	-moz-border-radius-bottomright: 3px;
+	-moz-border-radius-bottomleft: 3px;
+	-webkit-border-radius: 3px 3px 3px 3px;
+	border-radius: 3px 3px 3px 3px;
+}
+
+div#Wizard div.StepButton input:hover {
+	outline: 0 !important;
+	color: #565656;
+	text-shadow: 1px 1px 0px #ddd;
+	background-color: #bcbcbc;
+}
+
+div#Wizard div.StepButton input:active {
+	outline: 0 !important;
+	border: 1px solid #777 !important;
+	-moz-box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.7);
+	-webkit-box-shadow: inset 0 0 32px rgba(0, 0, 0, 0.7);
+	box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.7);
+}
+   
+div#Wizard div.StepData   {
+	border: 1px solid #ccc;
+	font-size: 0.9em;
+}
+
+#CPHcontent_CTRLprofileInfo_LBmailDuplicate,
+div#Wizard div.StepData .Validatori {
+	color: #c00;
+	font-weight: bold;
+	font-size: 1.2em;
+}
+
+#Wizard div.StepContent div.TopDescription {
+	margin-bottom: 1em;
+}
+
+div#Wizard div.StepData input.Testo_Campo {
+} 
+
+div#Wizard div.StepData input.Testo_Campo:focus {
+	color: #333;
+	background-color: #e6e9ed;
+} 
+   
+div#Wizard div.StepContent span.Fieldrow {
+	margin-bottom: 0.5em;
+}  
+        
+div#Wizard div.StepContent span.Fieldrow label.Titolo_campo,
+div#Wizard div.StepContent span.Fieldrow span.Titolo_campo {
+	width: 200px;
+	display: inline-block;
+	text-align: right;
+	color: #333;
+	font-weight: normal;
+	font-style: normal;
+	margin-right: 6px;
+}
+
+div#Wizard div.StepContent span.Fieldrow label#CPHcontent_CTRLunknownProfile_LBlanguage_t.Titolo_campo {
+	text-align: left;
+}
+
+div#Wizard div.StepContent span.Fieldrow 
+label#CPHcontent_CTRLunknownProfile_LBunknownUser_t.Titolo_campo {
+	text-align: left;
+	width: 100%;
+}
+
+div#Wizard div.StepContent span.Fieldrow input {
+	margin-right: 10px;
+}
+
+div#Wizard div.StepContent span.Fieldrow span#CPHcontent_CTRLunknownProfile_RBLlanguages input,
+div#Wizard div.StepContent span.Fieldrow span#CPHcontent_CTRLunknownProfile_RBLunknownUser input {
+	*border: none;
+	border: none\0/
+}
+	
+div#Wizard div.StepContent span.Fieldrow #CPHcontent_CTRLunknownProfile_RBLunknownUser input {
+	float: left !important;
+	margin-right: 10px;
+	display: block;
+}
+
+div#Wizard div.StepContent span.Fieldrow #CPHcontent_CTRLunknownProfile_RBLunknownUser label {
+	margin-bottom: 10px;
+	display: inline-block;
+	width: 90%;
+	clear: both;
+}
+
+#CPHcontent_CTRLprofileTypes_RBLuserTypes label {
+	text-transform: capitalize;
+}
+
+span#CPHcontent_CTRLprivacy_CTRLpolicy_RPTpolicyInfo_LBname_0 {
+	margin-bottom: 1em;
+}
+
+div.PrivacyBox {
+	margin: 10px;
+	padding: 2px;
+	line-height: 1.4em;
+	color: #666;
+}
+
+div#Wizard div.StepContent span.Fieldrow input.Testo_Campo_obbligatorioSmall {
+	height: 2em;
+	width: 550px;
+}
+
+span.Fieldrow span.testo_campoSmall input,
+span.Fieldrow span.Testo_Campo input {
+	*border: none;
+	border: none\0/;
+}
+
+span#CPHcontent_LBstepDescription.Testo_Campo {
+	width: 92%;
+	display: inline-block;
+}
+
+.description {   
+    padding-top: 1em;
+}
+        
+.half {
+    width: 432px;
+    height: 130px;
+    display: inline-block;
+    vertical-align: top;
+    border: 1px solid #ccc;
+    background-color: #EEEEEE;
+    padding: 2em 5px 1em 5px;
+    margin: 0 5px 15px 5px;
+    text-align: justify;
+    margin
+}
+    
+.Cbx_Title {
+    font-weight: bold;
+    font-size: 13px;
+    width: 340px !important;
+    height: 34px;
+    padding-left: 3em;
+    display: inline-block;
+}
+        
+.OldProfile {
+    background-repeat: no-repeat;
+    background-image:url("./Images/permessiutenti32.png");
+}
+            
+.NewProfile {
+    background-repeat: no-repeat;
+    background-image:url("./Images/IsNew32.png");
+}
+
+.Cbx_Description {
+    font-weight: normal;
+    font-size: 11px;
+    padding-left: 2.3em;
+}
+    
+.MyUnitn {
+    padding-left: 115px;
+    height: 45px;
+    display: block;
+    background-repeat: no-repeat;
+    background-image:url("./Images/logo-myunitn.png");  
+}
+ 
+/* END WIZARD */
+
+/* @end */
+	
+/* @end */
+
+/* @group Vari hack */
+
+div#form.auth-type div.full /*box_full*/ {
+    text-align: left;
+	padding: 10px;
+	margin-bottom: 0.5em;
+	overflow: visible;
+	width: 798px; height: 90px;
+	_margin-bottom: 20px;   /* ie6 */
+    *margin-bottom: 20px;   /* ie6 ie7 */
+    margin-bottom: 20px\9;  /* ie8 */
+    margin-bottom: 20px\0/; /* IE8+9  */
+    }
+
+.ui-autocomplete {
+	text-align: left !important;
+}
+
+input.AgencyText {
+	width: 500px !important;
+}
+
+.Fieldrow ul.Testo_Campo.agencylist {
+	padding-left: 0px;
+	margin-left: 170px;
+}
+
+#loaderImage {
+    background-image: url(../img/loadersprite32.gif);
+    background-repeat: no-repeat;
+    height: 32px;
+    width: 32px;
+	display:inline-block;
+	*display:inline;
+	zoom:1;
+	vertical-align: middle;
+}
+
+.loaderinfo .text {
+	vertical-align: middle;
+	font-size: 1em;
+	color:#888;
+	font-weight:bold;
+	display: inline;
+}
+
+.loaderinfo span#ctl00_CPHcontent_LBvalidationInfo_t.text {
+	font-size: 1.3em;
+}
+
+.loaderinfo {
+	margin: 2em 0;
+	padding: 2em 1em;	
+}
+
+div#form div.loaderinfo {
+	font-size: .85em;
+	line-height: 2em;
+	display: block;
+	margin: 2em 0;
+	padding: 1.2em;
+	color: #888;
+
+	background: #fff;
+	border: 1px solid #bbb;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	-moz-box-shadow: 0px 1px 0px rgba(255,255,255,0.2),
+	inset 1px 1px 1px rgba(0,0,0,0.2);
+	-webkit-box-shadow: 0px 1px 0px rgba(255,255,255,0.2),
+	inset 1px 1px 1px rgba(0,0,0,0.2);
+	box-shadow: 0px 1px 0px rgba(255,255,255,0.2),
+	inset 1px 1px 1px rgba(0,0,0,0.2);
+}
+
+
+/* @end */

@@ -1,0 +1,84 @@
+/**
+ * Organizational Chart Windows7 Skin
+ */
+/*----------------------------------------------------------------------------*/
+/** Global wrapper */
+.RadOrgChart_Windows7 {
+  color: #4c607a;
+  font: normal 12px/22px "Segoe UI", Arial, sans-serif; }
+
+/** Viewport */
+/** NodeList */
+/** Node */
+/** Group */
+.RadOrgChart_Windows7 .rocGroup {
+  border-radius: 10px;
+  background-color: #e5e5e5;
+  background-color: rgba(0, 0, 0, 0.1);
+  *background-color: #e5e5e5; }
+
+/** ItemList */
+/** ItemWrap */
+/** Items */
+.RadOrgChart_Windows7 .rocItemContent,
+.RadOrgChart_Windows7 .rocItemTemplate {
+  border-color: #c2cedb;
+  border-radius: 5px;
+  background-color: #e1eaf3;
+  background-image: url('../Common/OrgChart/rocItemTileLight.png'); }
+
+/** Toggle handle */
+/*.RadOrgChart_Windows7 .rocToggleHandle,*/
+.RadOrgChart_Windows7 .rocExpandArrow,
+.RadOrgChart_Windows7 .rocCollapseArrow,
+.RadOrgChart_Windows7 .rocExpandGroupArrow,
+.RadOrgChart_Windows7 .rocCollapseGroupArrow {
+  border-color: #c2cedb;
+  border-radius: 3px;
+  background-color: #e1eaf3;
+  background-image: url('../Common/Actions/actionExpandCollapseDark.png'); }
+
+/* Loading states */
+.RadOrgChart_Windows7 .rocLoadingNodes .rocExpandArrow,
+.RadOrgChart_Windows7 .rocLoadingNodes .rocCollapseArrow,
+.RadOrgChart_Windows7 .rocLoadingGroups .rocExpandGroupArrow,
+.RadOrgChart_Windows7 .rocLoadingGroups .rocCollapseGroupArrow {
+  background-image: url('Common/loading_small.gif'); }
+
+/** Node lines */
+.RadOrgChart_Windows7 .rocLineUp,
+.RadOrgChart_Windows7 .rocLineDown,
+.RadOrgChart_Windows7 .rocLineHorizontal {
+  background-image: url('../Common/OrgChart/rocLinesDark.png'); }
+
+/** Drag and Drop */
+/** Drag ghost */
+.rocDetachedItemContainer.RadOrgChart_Windows7 .rocGhostItem,
+.rocDetachedNodeContainer.RadOrgChart_Windows7 .rocGhostNode {
+  border-color: #c2cedb;
+  border-radius: 5px;
+  background-color: #e1eaf3;
+  background-image: url('../Common/OrgChart/rocItemTileLight.png'); }
+
+/** Drag Drop Clue */
+.rocDetachedItemContainer.RadOrgChart_Windows7 .rocDropClue,
+.rocDetachedNodeContainer.RadOrgChart_Windows7 .rocDropClue {
+  background-image: url('../Common/Actions/actionDragDropDark.png'); }
+
+/** Toolbar */
+.rocToolbar_Windows7 {
+  padding: 4px;
+  border: 0;
+  border-radius: 5px;
+  background-color: #e5e5e5;
+  background-color: rgba(0, 0, 0, 0.1);
+  *background-color: #e5e5e5; }
+
+/** Toolbar button */
+.rocToolbar_Windows7 .rocToolbarButton {
+  border-color: #c2cedb;
+  border-radius: 3px;
+  background-color: #e1eaf3;
+  text-indent: -999em;
+  float: left;
+  overflow: hidden; }

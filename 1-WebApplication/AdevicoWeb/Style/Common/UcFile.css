@@ -1,0 +1,145 @@
+﻿ul.list
+{
+    padding: 0;
+    margin: 0;
+}
+table.table
+{
+    border: 1px solid black;
+    width: 900px;
+    border-collapse: collapse;
+}
+table.table th,table.table td
+{
+    border:1px solid black;
+}
+table.table tr:hover
+{
+    background-color: yellow;
+}
+span
+{
+
+}
+
+.fileRender
+{
+    display: inline-block;
+    border: 1px dashed #999;
+    width: 700px;
+    margin: 2px;
+}
+.fileRender:hover
+{
+    background-color: yellow;
+}
+.itemTitle
+{
+    display: inline-block;
+    background-position: left center;
+    background-repeat: no-repeat;
+
+    border: 1px dashed green;
+    margin: 2px;
+}
+
+.leftFloat
+{
+    float:left;
+}
+
+.leftDetail
+{
+    float: left;
+    border: 1px dashed red;
+    margin: 4px;
+    width: 75%;
+    display: block;
+
+}
+
+.itemDetails
+{
+    border: 1px dashed red;
+    margin: 2px;
+}
+.zipFile
+{
+    background-image: url(http://www.iconfinder.com/ajax/download/png/?id=8454&s=16);
+    padding-left: 20px;
+}
+.itemActions
+{
+    display: block;
+    float: right;
+    border: 1px dashed blue;
+    margin: 2px;
+    width: 100px;
+    text-align: right;
+}
+.action
+{
+    display: inline-block;
+    border: 1px solid black;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+.icon
+{
+    display: inline-block;
+    border: 1px solid gray;
+    width: 20px;
+    height: 20px;
+
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.otherDetail
+{
+    float: right;
+    border: 1px dashed blue;
+    margin: 2px;
+}
+
+
+
+.mandatory
+{
+    background-image: url(http://www.iconfinder.com/ajax/download/png/?id=8635&s=4);
+}
+
+.locked
+{
+    background-image: url(http://www.iconfinder.com/ajax/download/png/?id=3239&s=16);
+}
+
+.generic
+{
+    background-image: url(http://www.iconfinder.com/ajax/download/png/?id=16413&s=16);
+}
+
+.clearfix:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+
+.clearfix {
+    display: inline-block;
+}
+
+html[xmlns] .clearfix {
+    display: block;
+}
+
+* html .clearfix {
+    height: 1%;
+}

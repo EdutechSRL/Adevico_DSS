@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="lm.Comol.Core.DomainModel" namespace="lm.Comol.Core.FileRepository.Domain.toRemove">
+  <class name="OldFileTransfer" table="FR_FileTransfer" >
+    <id name="Id" column="Id" type="Int64">
+    </id>
+    <property name="IdFile" type="Int64" update="false" insert="false"/>
+    <property name="FileUniqueID" type="Guid" update="false" insert="false"/>
+    <property name="CloneId" update="false" insert="false"/>
+    <property name="Info" update="false" insert="false"/>
+    <property name="Path" update="false" insert="false"/>
+    <property name="Filename" update="false" insert="false"/>
+    <property name="ModifiedOn" update="false" insert="false"/>
+    <property name="Decompress" update="false" insert="false"/>
+    <property name="TransferPolicy" update="false" insert="false"/>
+    <property name="Discriminator" update="false" insert="false"/>
+    <property name="IdTransferStatus" update="false" insert="false"/>
+    <property name="TotalActivity" update="false" insert="false"/>
+    <property name="DefaultDocumentPath" update="false" insert="false"/>
+    <property name="Transferred"/>
+    <property name="Removed"/>
+    <property name="IdDefaultDocument" update="false" insert="false"/>
+  </class>
+</hibernate-mapping>

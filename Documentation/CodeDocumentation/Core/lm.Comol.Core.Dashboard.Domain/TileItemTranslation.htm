@@ -1,0 +1,620 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+	<!--[if lt IE 9]>
+	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+    <title>TileItemTranslation - lm.Comol.Core.DomainModel Documentation</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+    <link type="text/css" rel="stylesheet" href="../main.css"/>
+    <script type="text/javascript" src="../js/jquery-1.3.2.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.scrollTo-min.js"></script>
+    <script type="text/javascript" src="../js/navigation.js"></script>
+    <script type="text/javascript" src="../js/example.js"></script>
+  </head>
+  <body>
+  	<header><h1>lm.Comol.Core.DomainModel : API Documentation</h1>
+	</header>
+<nav id="namespaces">
+	<h2 class="fixed">Namespaces</h2>
+	<div class="scroll">
+		<ul>
+			<li>
+          <a href="../lm.Comol.Core.Authentication/index.htm">lm.Comol.Core.Authentication</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.Authentication.Business/index.htm">lm.Comol.Core.Authentication.Business</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.Authentication.Helpers/index.htm">lm.Comol.Core.Authentication.Helpers</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.Business/index.htm">lm.Comol.Core.Business</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.Catalogues/index.htm">lm.Comol.Core.Catalogues</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.Certifications/index.htm">lm.Comol.Core.Certifications</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.Certifications.Business/index.htm">lm.Comol.Core.Certifications.Business</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.Communities/index.htm">lm.Comol.Core.Communities</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.Dashboard.Business/index.htm">lm.Comol.Core.Dashboard.Business</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.Dashboard.Domain/index.htm" class="current">lm.Comol.Core.Dashboard.Domain</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.DomainModel/index.htm">lm.Comol.Core.DomainModel</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.DomainModel.Assignment/index.htm">lm.Comol.Core.DomainModel.Assignment</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.DomainModel.Common/index.htm">lm.Comol.Core.DomainModel.Common</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.DomainModel.DocTemplateVers/index.htm">lm.Comol.Core.DomainModel.DocTemplateVers</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.DomainModel.DocTemplateVers.Business/index.htm">lm.Comol.Core.DomainModel.DocTemplateVers.Business</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.DomainModel.DocTemplateVers.Domain.Core/index.htm">lm.Comol.Core.DomainModel.DocTemplateVers.Domain.Core</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.DomainModel.DocTemplateVers.Domain.DTO.Management/index.htm">lm.Comol.Core.DomainModel.DocTemplateVers.Domain.DTO.Management</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.DomainModel.DocTemplateVers.Domain.DTO.ServiceExport/index.htm">lm.Comol.Core.DomainModel.DocTemplateVers.Domain.DTO.ServiceExport</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.DomainModel.DocTemplateVers.Helpers/index.htm">lm.Comol.Core.DomainModel.DocTemplateVers.Helpers</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.DomainModel.Domain/index.htm">lm.Comol.Core.DomainModel.Domain</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.DomainModel.Filters/index.htm">lm.Comol.Core.DomainModel.Filters</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.DomainModel.Helpers/index.htm">lm.Comol.Core.DomainModel.Helpers</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.DomainModel.Helpers.Export/index.htm">lm.Comol.Core.DomainModel.Helpers.Export</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.DomainModel.Helpers.Tags/index.htm">lm.Comol.Core.DomainModel.Helpers.Tags</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.DomainModel.Languages/index.htm">lm.Comol.Core.DomainModel.Languages</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.DomainModel.Repository/index.htm">lm.Comol.Core.DomainModel.Repository</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.DomainModel.SrvFileTransfer/index.htm">lm.Comol.Core.DomainModel.SrvFileTransfer</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.DomainModel.SrvFileUnzip/index.htm">lm.Comol.Core.DomainModel.SrvFileUnzip</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.Event/index.htm">lm.Comol.Core.Event</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.Event.Business/index.htm">lm.Comol.Core.Event.Business</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.Events.Domain/index.htm">lm.Comol.Core.Events.Domain</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.FileRepository.Business/index.htm">lm.Comol.Core.FileRepository.Business</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.FileRepository.Domain/index.htm">lm.Comol.Core.FileRepository.Domain</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.FileRepository.Domain.ScormSettings/index.htm">lm.Comol.Core.FileRepository.Domain.ScormSettings</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.FileRepository.Domain.toRemove/index.htm">lm.Comol.Core.FileRepository.Domain.toRemove</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.InLineTags.Business/index.htm">lm.Comol.Core.InLineTags.Business</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.InLineTags.Domain/index.htm">lm.Comol.Core.InLineTags.Domain</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.Mail/index.htm">lm.Comol.Core.Mail</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.Mail.Messages/index.htm">lm.Comol.Core.Mail.Messages</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.ModuleLinks/index.htm">lm.Comol.Core.ModuleLinks</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.Msmq.DataContract/index.htm">lm.Comol.Core.Msmq.DataContract</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.Notification.DataContract/index.htm">lm.Comol.Core.Notification.DataContract</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.Notification.Domain/index.htm">lm.Comol.Core.Notification.Domain</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.PersonalInfo/index.htm">lm.Comol.Core.PersonalInfo</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.Subscriptions/index.htm">lm.Comol.Core.Subscriptions</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.Tag.Business/index.htm">lm.Comol.Core.Tag.Business</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.Tag.Domain/index.htm">lm.Comol.Core.Tag.Domain</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.TemplateMessages/index.htm">lm.Comol.Core.TemplateMessages</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.TemplateMessages.Business/index.htm">lm.Comol.Core.TemplateMessages.Business</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.TemplateMessages.Domain/index.htm">lm.Comol.Core.TemplateMessages.Domain</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.WinService.Configurations/index.htm">lm.Comol.Core.WinService.Configurations</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.Wizard/index.htm">lm.Comol.Core.Wizard</a>
+      </li>
+		</ul>
+	</div>
+</nav><nav id="types">
+  <h2 class="fixed">Types in lm.Comol.Core.Dashboard.Domain</h2>
+	<div class="scroll">
+		<ul>
+				<li>
+            <a href="../lm.Comol.Core.Dashboard.Domain/ActionType.htm">ActionType</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Dashboard.Domain/AvailableStatus.htm">AvailableStatus</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Dashboard.Domain/Base2Permission.htm">Base2Permission</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Dashboard.Domain/CacheKeys.htm">CacheKeys</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Dashboard.Domain/ContainerSettings.htm">ContainerSettings</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Dashboard.Domain/DashboardAssignment.htm">DashboardAssignment</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Dashboard.Domain/DashboardAssignmentType.htm">DashboardAssignmentType</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Dashboard.Domain/DashboardErrorType.htm">DashboardErrorType</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Dashboard.Domain/DashboardException.htm">DashboardException</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Dashboard.Domain/DashboardSettings.htm">DashboardSettings</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Dashboard.Domain/DashboardTileAssignment.htm">DashboardTileAssignment</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Dashboard.Domain/DashboardType.htm">DashboardType</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Dashboard.Domain/DashboardViewType.htm">DashboardViewType</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Dashboard.Domain/DefaultSettings.htm">DefaultSettings</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Dashboard.Domain/DisplayMoreItems.htm">DisplayMoreItems</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Dashboard.Domain/DisplayNoticeboard.htm">DisplayNoticeboard</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Dashboard.Domain/DisplaySearchItems.htm">DisplaySearchItems</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Dashboard.Domain/dtoBaseCommunityItem.htm">dtoBaseCommunityItem</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Dashboard.Domain/dtoBaseDashboardSettings.htm">dtoBaseDashboardSettings</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Dashboard.Domain/dtoCommunityItem.htm">dtoCommunityItem</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Dashboard.Domain/dtoContainerSettings.htm">dtoContainerSettings</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Dashboard.Domain/dtoDashboardAssignment.htm">dtoDashboardAssignment</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Dashboard.Domain/dtoDashboardSettings.htm">dtoDashboardSettings</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Dashboard.Domain/dtoDashboardStep.htm">dtoDashboardStep</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Dashboard.Domain/dtoHomeSettingsStep.htm">dtoHomeSettingsStep</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Dashboard.Domain/dtoItemFilter`1.htm">dtoItemFilter&lt;T&gt;</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Dashboard.Domain/dtoLiteTile.htm">dtoLiteTile</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Dashboard.Domain/dtoPageSettings.htm">dtoPageSettings</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Dashboard.Domain/dtoPermission.htm">dtoPermission</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Dashboard.Domain/dtoSettingsStep.htm">dtoSettingsStep</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Dashboard.Domain/dtoSubscriptionItem.htm">dtoSubscriptionItem</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Dashboard.Domain/dtoTileDisplay.htm">dtoTileDisplay</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Dashboard.Domain/dtoTileForReorder.htm">dtoTileForReorder</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Dashboard.Domain/dtoTileItemDisplay.htm">dtoTileItemDisplay</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Dashboard.Domain/dtoTileStep.htm">dtoTileStep</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Dashboard.Domain/dtoViewSettings.htm">dtoViewSettings</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Dashboard.Domain/EditingErrors.htm">EditingErrors</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Dashboard.Domain/GroupItemsBy.htm">GroupItemsBy</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Dashboard.Domain/ISettingsBase.htm">ISettingsBase</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Dashboard.Domain/ITileBaseItem.htm">ITileBaseItem</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Dashboard.Domain/liteDashboardAssignment.htm">liteDashboardAssignment</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Dashboard.Domain/liteDashboardSettings.htm">liteDashboardSettings</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Dashboard.Domain/liteDashboardTileAssignment.htm">liteDashboardTileAssignment</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Dashboard.Domain/litePageSettings.htm">litePageSettings</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Dashboard.Domain/liteSearchTile.htm">liteSearchTile</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Dashboard.Domain/liteTile.htm">liteTile</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Dashboard.Domain/liteTileAssignment.htm">liteTileAssignment</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Dashboard.Domain/liteTileItem.htm">liteTileItem</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Dashboard.Domain/liteTileItemTranslation.htm">liteTileItemTranslation</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Dashboard.Domain/liteTileTagAssociation.htm">liteTileTagAssociation</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Dashboard.Domain/liteTileTranslation.htm">liteTileTranslation</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Dashboard.Domain/liteUserDashboardSettings.htm">liteUserDashboardSettings</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Dashboard.Domain/ModuleDashboard.htm">ModuleDashboard</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Dashboard.Domain/ObjectType.htm">ObjectType</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Dashboard.Domain/OnLoadSettings.htm">OnLoadSettings</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Dashboard.Domain/OrderItemsBy.htm">OrderItemsBy</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Dashboard.Domain/OrderItemsToSubscribeBy.htm">OrderItemsToSubscribeBy</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Dashboard.Domain/OrderSettingsBy.htm">OrderSettingsBy</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Dashboard.Domain/PageSettings.htm">PageSettings</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Dashboard.Domain/PlainLayout.htm">PlainLayout</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Dashboard.Domain/RangeSettings.htm">RangeSettings</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Dashboard.Domain/RemoveAction.htm">RemoveAction</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Dashboard.Domain/RootObject.htm">RootObject</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Dashboard.Domain/smallDashboardTileAssignment.htm">smallDashboardTileAssignment</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Dashboard.Domain/smallTile.htm">smallTile</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Dashboard.Domain/Tile.htm">Tile</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Dashboard.Domain/TileAssignment.htm">TileAssignment</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Dashboard.Domain/TileItem.htm">TileItem</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Dashboard.Domain/TileItemTranslation.htm" class="current">TileItemTranslation</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Dashboard.Domain/TileItemType.htm">TileItemType</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Dashboard.Domain/TileLayout.htm">TileLayout</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Dashboard.Domain/TileTagAssociation.htm">TileTagAssociation</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Dashboard.Domain/TileTranslation.htm">TileTranslation</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Dashboard.Domain/TileType.htm">TileType</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Dashboard.Domain/UserCurrentSettings.htm">UserCurrentSettings</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Dashboard.Domain/UserDashboardSettings.htm">UserDashboardSettings</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Dashboard.Domain/WizardDashboardStep.htm">WizardDashboardStep</a>
+        </li>
+		</ul>
+	</div>
+</nav>
+	<article>
+    <header>
+		<p class="class"><strong>Type</strong> TileItemTranslation</p>
+	</header>
+	<section>
+		<header>
+		<p><strong>Namespace</strong> lm.Comol.Core.Dashboard.Domain</p>
+		<p><strong>Parent</strong> <a href="../lm.Comol.Core.DomainModel/DomainBaseObjectLiteMetaInfo`1.htm">DomainBaseObjectLiteMetaInfo&lt;T&gt;</a></p>
+		<p><strong>Interfaces</strong> <span title="System.IDisposable">IDisposable</span>, <a href="../lm.Comol.Core.Dashboard.Domain/ITileBaseItem.htm">ITileBaseItem</a></p>
+		</header>
+    <div class="sub-header">
+		
+		
+			<h3 class="section">Methods</h3>
+			<ul>
+				<li><a href="../lm.Comol.Core.Dashboard.Domain/TileItemTranslation.htm#Copy">Copy</a></li>
+			</ul>
+		
+			<h3 class="section">Properties</h3>
+			<ul>
+				<li><a href="../lm.Comol.Core.Dashboard.Domain/TileItemTranslation.htm#CreatedBy">CreatedBy</a></li>
+				<li><a href="../lm.Comol.Core.Dashboard.Domain/TileItemTranslation.htm#CreatedOn">CreatedOn</a></li>
+				<li><a href="../lm.Comol.Core.Dashboard.Domain/TileItemTranslation.htm#CreatorIpAddress">CreatorIpAddress</a></li>
+				<li><a href="../lm.Comol.Core.Dashboard.Domain/TileItemTranslation.htm#CreatorProxyIpAddress">CreatorProxyIpAddress</a></li>
+				<li><a href="../lm.Comol.Core.Dashboard.Domain/TileItemTranslation.htm#Deleted">Deleted</a></li>
+				<li><a href="../lm.Comol.Core.Dashboard.Domain/TileItemTranslation.htm#Id">Id</a></li>
+				<li><a href="../lm.Comol.Core.Dashboard.Domain/TileItemTranslation.htm#IdLanguage">IdLanguage</a></li>
+				<li><a href="../lm.Comol.Core.Dashboard.Domain/TileItemTranslation.htm#ItemOwner">ItemOwner</a></li>
+				<li><a href="../lm.Comol.Core.Dashboard.Domain/TileItemTranslation.htm#LanguageCode">LanguageCode</a></li>
+				<li><a href="../lm.Comol.Core.Dashboard.Domain/TileItemTranslation.htm#LanguageName">LanguageName</a></li>
+				<li><a href="../lm.Comol.Core.Dashboard.Domain/TileItemTranslation.htm#ModifiedBy">ModifiedBy</a></li>
+				<li><a href="../lm.Comol.Core.Dashboard.Domain/TileItemTranslation.htm#ModifiedIpAddress">ModifiedIpAddress</a></li>
+				<li><a href="../lm.Comol.Core.Dashboard.Domain/TileItemTranslation.htm#ModifiedOn">ModifiedOn</a></li>
+				<li><a href="../lm.Comol.Core.Dashboard.Domain/TileItemTranslation.htm#ModifiedProxyIpAddress">ModifiedProxyIpAddress</a></li>
+				<li><a href="../lm.Comol.Core.Dashboard.Domain/TileItemTranslation.htm#Tile">Tile</a></li>
+				<li><a href="../lm.Comol.Core.Dashboard.Domain/TileItemTranslation.htm#TimeStamp">TimeStamp</a></li>
+				<li><a href="../lm.Comol.Core.Dashboard.Domain/TileItemTranslation.htm#ToolTip">ToolTip</a></li>
+			</ul>
+		
+	</div>
+	
+	<h3 class="section">Public instance methods</h3>
+
+	<div id="Copy" class="method">
+		<h4>
+			<a href="../lm.Comol.Core.Dashboard.Domain/TileItemTranslation.htm">TileItemTranslation</a> <strong>Copy</strong>(<a href="../lm.Comol.Core.Dashboard.Domain/Tile.htm">Tile</a> tile, <a href="../lm.Comol.Core.Dashboard.Domain/TileItem.htm">TileItem</a> owner, <a href="../lm.Comol.Core.DomainModel/litePerson.htm">litePerson</a> person, <span title="System.string">string</span> ipAddress, <span title="System.string">string</span> ipProxyAddress, <span title="System.Nullable<DateTime>">Nullable&lt;DateTime&gt;</span> createdOn)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	
+	
+	<h3 class="section">Public properties</h3>
+
+	<div id="CreatedBy" class="method">
+		<h4>
+			<a href="../lm.Comol.Core.DomainModel/litePerson.htm">litePerson</a> <strong>CreatedBy</strong> get; set;
+		</h4>
+		<div class="content">
+
+		</div>
+	</div>
+	<div id="CreatedOn" class="method">
+		<h4>
+			<span title="System.Nullable<DateTime>">Nullable&lt;DateTime&gt;</span> <strong>CreatedOn</strong> get; set;
+		</h4>
+		<div class="content">
+
+		</div>
+	</div>
+	<div id="CreatorIpAddress" class="method">
+		<h4>
+			<span title="System.string">string</span> <strong>CreatorIpAddress</strong> get; set;
+		</h4>
+		<div class="content">
+
+		</div>
+	</div>
+	<div id="CreatorProxyIpAddress" class="method">
+		<h4>
+			<span title="System.string">string</span> <strong>CreatorProxyIpAddress</strong> get; set;
+		</h4>
+		<div class="content">
+
+		</div>
+	</div>
+	<div id="Deleted" class="method">
+		<h4>
+			<a href="../lm.Comol.Core.DomainModel/BaseStatusDeleted.htm">BaseStatusDeleted</a> <strong>Deleted</strong> get; set;
+		</h4>
+		<div class="content">
+
+		</div>
+	</div>
+	<div id="Id" class="method">
+		<h4>
+			<span title="System.long">long</span> <strong>Id</strong> get; set;
+		</h4>
+		<div class="content">
+
+		</div>
+	</div>
+	<div id="IdLanguage" class="method">
+		<h4>
+			<span title="System.int">int</span> <strong>IdLanguage</strong> get; set;
+		</h4>
+		<div class="content">
+
+		</div>
+	</div>
+	<div id="ItemOwner" class="method">
+		<h4>
+			<a href="../lm.Comol.Core.Dashboard.Domain/TileItem.htm">TileItem</a> <strong>ItemOwner</strong> get; set;
+		</h4>
+		<div class="content">
+
+		</div>
+	</div>
+	<div id="LanguageCode" class="method">
+		<h4>
+			<span title="System.string">string</span> <strong>LanguageCode</strong> get; set;
+		</h4>
+		<div class="content">
+
+		</div>
+	</div>
+	<div id="LanguageName" class="method">
+		<h4>
+			<span title="System.string">string</span> <strong>LanguageName</strong> get; set;
+		</h4>
+		<div class="content">
+
+		</div>
+	</div>
+	<div id="ModifiedBy" class="method">
+		<h4>
+			<a href="../lm.Comol.Core.DomainModel/litePerson.htm">litePerson</a> <strong>ModifiedBy</strong> get; set;
+		</h4>
+		<div class="content">
+
+		</div>
+	</div>
+	<div id="ModifiedIpAddress" class="method">
+		<h4>
+			<span title="System.string">string</span> <strong>ModifiedIpAddress</strong> get; set;
+		</h4>
+		<div class="content">
+
+		</div>
+	</div>
+	<div id="ModifiedOn" class="method">
+		<h4>
+			<span title="System.Nullable<DateTime>">Nullable&lt;DateTime&gt;</span> <strong>ModifiedOn</strong> get; set;
+		</h4>
+		<div class="content">
+
+		</div>
+	</div>
+	<div id="ModifiedProxyIpAddress" class="method">
+		<h4>
+			<span title="System.string">string</span> <strong>ModifiedProxyIpAddress</strong> get; set;
+		</h4>
+		<div class="content">
+
+		</div>
+	</div>
+	<div id="Tile" class="method">
+		<h4>
+			<a href="../lm.Comol.Core.Dashboard.Domain/Tile.htm">Tile</a> <strong>Tile</strong> get; set;
+		</h4>
+		<div class="content">
+
+		</div>
+	</div>
+	<div id="TimeStamp" class="method">
+		<h4>
+			<span title="System.Byte[]">Byte[]</span> <strong>TimeStamp</strong> get; set;
+		</h4>
+		<div class="content">
+
+		</div>
+	</div>
+	<div id="ToolTip" class="method">
+		<h4>
+			<span title="System.string">string</span> <strong>ToolTip</strong> get; set;
+		</h4>
+		<div class="content">
+
+		</div>
+	</div>
+	</section>
+	</article><footer>
+	<span id="version">Built from v1.0.0.0 of lm.Comol.Core.DomainModel</span>
+	<span id="docu-link">
+		Generated by <a href="http://docu.jagregory.com">docu</a>
+	</span>
+</footer>
+  </body>
+</html>

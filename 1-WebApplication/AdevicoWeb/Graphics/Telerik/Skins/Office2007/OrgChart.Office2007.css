@@ -1,0 +1,84 @@
+/**
+ * Organizational Chart Office2007 Skin
+ */
+/*----------------------------------------------------------------------------*/
+/** Global wrapper */
+.RadOrgChart_Office2007 {
+  color: #000000;
+  font: normal 12px/22px "Segoe UI", Arial, sans-serif; }
+
+/** Viewport */
+/** NodeList */
+/** Node */
+/** Group */
+.RadOrgChart_Office2007 .rocGroup {
+  border-radius: 10px;
+  background-color: #e5e5e5;
+  background-color: rgba(0, 0, 0, 0.1);
+  *background-color: #e5e5e5; }
+
+/** ItemList */
+/** ItemWrap */
+/** Items */
+.RadOrgChart_Office2007 .rocItemContent,
+.RadOrgChart_Office2007 .rocItemTemplate {
+  border-color: #688caf;
+  border-radius: 5px;
+  background-color: #d6e5f3;
+  background-image: url('../Common/OrgChart/rocItemTileLight.png'); }
+
+/** Toggle handle */
+/*.RadOrgChart_Office2007 .rocToggleHandle,*/
+.RadOrgChart_Office2007 .rocExpandArrow,
+.RadOrgChart_Office2007 .rocCollapseArrow,
+.RadOrgChart_Office2007 .rocExpandGroupArrow,
+.RadOrgChart_Office2007 .rocCollapseGroupArrow {
+  border-color: #688caf;
+  border-radius: 3px;
+  background-color: #d6e5f3;
+  background-image: url('../Common/Actions/actionExpandCollapseDark.png'); }
+
+/* Loading states */
+.RadOrgChart_Office2007 .rocLoadingNodes .rocExpandArrow,
+.RadOrgChart_Office2007 .rocLoadingNodes .rocCollapseArrow,
+.RadOrgChart_Office2007 .rocLoadingGroups .rocExpandGroupArrow,
+.RadOrgChart_Office2007 .rocLoadingGroups .rocCollapseGroupArrow {
+  background-image: url('Common/loading_small.gif'); }
+
+/** Node lines */
+.RadOrgChart_Office2007 .rocLineUp,
+.RadOrgChart_Office2007 .rocLineDown,
+.RadOrgChart_Office2007 .rocLineHorizontal {
+  background-image: url('../Common/OrgChart/rocLinesDark.png'); }
+
+/** Drag and Drop */
+/** Drag ghost */
+.rocDetachedItemContainer.RadOrgChart_Office2007 .rocGhostItem,
+.rocDetachedNodeContainer.RadOrgChart_Office2007 .rocGhostNode {
+  border-color: #688caf;
+  border-radius: 5px;
+  background-color: #d6e5f3;
+  background-image: url('../Common/OrgChart/rocItemTileLight.png'); }
+
+/** Drag Drop Clue */
+.rocDetachedItemContainer.RadOrgChart_Office2007 .rocDropClue,
+.rocDetachedNodeContainer.RadOrgChart_Office2007 .rocDropClue {
+  background-image: url('../Common/Actions/actionDragDropDark.png'); }
+
+/** Toolbar */
+.rocToolbar_Office2007 {
+  padding: 4px;
+  border: 0;
+  border-radius: 5px;
+  background-color: #e5e5e5;
+  background-color: rgba(0, 0, 0, 0.1);
+  *background-color: #e5e5e5; }
+
+/** Toolbar button */
+.rocToolbar_Office2007 .rocToolbarButton {
+  border-color: #688caf;
+  border-radius: 3px;
+  background-color: #d6e5f3;
+  text-indent: -999em;
+  float: left;
+  overflow: hidden; }

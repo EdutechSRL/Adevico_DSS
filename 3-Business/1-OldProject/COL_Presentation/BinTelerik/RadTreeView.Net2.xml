@@ -1,0 +1,2609 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>RadTreeView.Net2</name>
+    </assembly>
+    <members>
+        <member name="P:Telerik.WebControls.RadTreeNodeBinding.DataMember">
+            <summary>Gets or sets the data member to bind to a menu item.</summary>
+            <remarks>
+            	<para>
+                    When creating a
+                    <a href="T_System_Web_UI_WebControls_MenuItemBinding.htm">RadMenuItemBinding</a>
+                    object, you must specify the criteria for binding. The criteria indicate when a
+                    data item should be bound to a menu item. You can specify the
+                    <see cref="P:Telerik.WebControls.RadTreeNodeBinding.Depth">Depth</see> property, the <b>DataMember</b> property, or
+                    both.
+                </para>
+            	<para>
+                    When the data source contains multiple elements or tables, use the
+                    <b>DataMember</b> property to specify the element or table to bind to a menu
+                    item. A data member specifies the type of the data item in the underlying data
+                    source, but can represent different information depending on the data source.
+                    Each data item in a hierarchical data source <font color="black">exposes a
+                    IHierarchyData.Type property, which specifies the type of the data item. For
+                    example, the data member for an XML element specifies the name of the element.
+                    The following <b>RadMenuItemBinding</b> declaration binds the</font>
+            		<code inline="true">
+            			<font color="black"><font color="black">&lt;Book&gt;</font></font>
+            		</code>elements of an
+                    <a href="T_System_Web_UI_WebControls_XmlDataSource.htm">XmlDataSource</a>
+                    control to all the menu items in the menu, regardless of the location in the
+                    hierarchy:
+                </para>
+            	<pre>
+            &lt;asp:RadMenuItemBinding DataMember="Book" TextField="Title" ValueField= "ISBN"&gt;
+            </pre>
+            	<para>
+                    Sometimes you might need to create a menu item binding that specifies both a
+                    depth and a data member. This is often used when the data source contains items
+                    at different levels that have the same data member value. For example, you can
+                    have 
+                    <code inline="true">
+            			<font color="black">&lt;Item&gt;</font>
+            		</code>elements that appear at different levels within an XML file. The
+                    following <b>RadMenuItemBinding</b> declarations show how to specify menu item
+                    bindings that apply to identical data members at different menu depths:
+                </para>
+            	<para>
+            		<code inline="true">
+            			<font color="black">&lt;asp:RadMenuItemBinding DataMember="Item" Depth="1" TextField="Title"&gt;</font>
+            		</code>
+            	</para>
+            	<para>
+            		<code inline="true">
+            			<font color="black">&lt;asp:RadMenuItemBinding DataMember="Item" Depth="2" TextField="ISBN"&gt;</font>
+            		</code>
+            	</para>
+            	<para>If a menu item binding is defined without a depth or a data member, the menu
+                item binding is applied to all menu items within the menu. This is commonly used
+                when all data items have the same properties and should be displayed identically,
+                regardless of the menu depth.</para>
+            	<para>After the binding criteria are established, you can then bind a property of a
+                RadMenuItem object that can be
+                bound to a value. You can bind to a field of a data item or to a static value. When
+                bound to a static value, all <b>RadMenuItem</b> objects to which the
+                <b>RadMenuItemBinding</b> object is applied share the same value. Properties bound to
+                fields contain the values of the field from the data source.</para>
+            	<para>If conflicting <b>RadMenuItemBinding</b> objects are defined, the Menu control
+                applies the menu item bindings in the following order of precedence:</para>
+            	<list type="number">
+            		<item>
+            			<para>The <b>RadMenuItemBinding</b> object that defines and matches both a
+                        depth and a data member.</para>
+            		</item>
+            		<item>
+            			<para>The <b>RadMenuItemBinding</b> object that defines and matches the data
+                        member only.</para>
+            		</item>
+            		<item>
+            			<para>The <b>RadMenuItemBinding</b> object that defines and matches the depth
+                        only.</para>
+            		</item>
+            		<item>
+            			<para>The <b>RadMenuItemBinding</b> object that defines neither the depth nor
+                        the data member. (This type of menu item binding is applied to all menu
+                        items in the menu.)</para>
+            		</item>
+            		<item>
+            			<para>
+                            The <b>RadMenuItemBinding</b> object that does not have a match in the
+                            data source. In this case, the value returned by the <b>ToString()</b>
+                            method of the data item is then bound to the
+                            <see cref="P:Telerik.WebControls.RadTreeNodeBinding.Text">Text</see> and <see cref="P:Telerik.WebControls.RadTreeNodeBinding.Value">Value</see>
+                            properties of the menu items to which the <b>RadMenuItemBinding</b> object
+                            is applied.
+                        </para>
+            		</item>
+            	</list>
+            </remarks>
+        </member>
+        <member name="P:Telerik.WebControls.RadTreeNodeBinding.Text">
+            <summary>Gets or sets the text caption for the item.</summary>
+            <value>The text of the item. The default value is empty string.</value>
+            <example>
+                This example demonstrates how to set the text of the item using the
+                <strong>Text</strong> property. 
+                <para>
+            		<para class="sourcecode">&lt;radM:RadMenu ID="RadMenu1"
+                    runat="server"&gt;<br/>
+                    &lt;Items&gt;<br/>
+                    &lt;radM:RadMenuItem <strong>Text="News"</strong> /&gt;<br/>
+                    &lt;radM:RadMenuItem <strong>Text="News"</strong> /&gt;<br/>
+                    &lt;/Items&gt;<br/>
+                    &lt;/radM:RadMenu&gt;</para>
+            	</para>
+            </example>
+            <remarks>
+            Specifying <strong>Text</strong> or
+            <strong><see cref="P:Telerik.WebControls.RadTreeNodeBinding.TextField"><strong>TextField</strong></see> will override the values
+            populated from the
+            <strong><see cref="!:RadMenu.DataTextField"><strong>DataTextField</strong></see>
+            property.</strong></strong>
+            </remarks>
+        </member>
+        <member name="P:Telerik.WebControls.RadTreeNodeBinding.TextField">
+            <summary>
+                Gets or sets the name of the field from the data source to bind to the
+                <see cref="!:RadMenuItem.Text">Text</see> property of a
+                <see cref="!:RadMenuItem">RadMenuItem</see> object 
+                to which the RadMenuItemBinding object is applied.
+            </summary>
+            <value>
+            The name of the field from the data source to bind to the <see cref="!:RadMenuItem.Text">Text</see> of a
+            <see cref="!:RadMenuItem">RadMenuItem</see> to which the RadMenuItemBinding is applied. The default is an empty
+            string (""), which indicates that this property is not set.
+            </value>
+            <remarks>
+            Specifying <strong><see cref="P:Telerik.WebControls.RadTreeNodeBinding.Text"><strong>Text</strong></see> or
+            <strong>TextField</strong> will override the values populated from the
+            <strong><see cref="!:RadMenu.DataTextField"><strong>DataTextField</strong></see>
+            property.</strong></strong>
+            </remarks>
+        </member>
+        <member name="P:Telerik.WebControls.RadTreeNodeBinding.Value">
+            <summary>Gets or sets the value associated with the item.</summary>
+            <value>The value associated with the item. The default value is empty string.</value>
+            <remarks>
+            	<para>Use the <b>Value</b> property to specify or determine the value associated
+                with the item.</para>
+            	<para>Specifying <strong>Value</strong> or <strong>ValueField</strong> will
+                override the values populated from the
+                <strong><see cref="!:RadMenu.DataValueField"><strong>DataValueField</strong></see>
+                property.</strong></para>
+            </remarks>
+        </member>
+        <member name="P:Telerik.WebControls.RadTreeNodeBinding.ValueField">
+            <summary>
+                Gets or sets the name of the field from the data source to bind to the
+                <see cref="!:RadMenuItem.Value">Value</see> property of a
+                <see cref="!:RadMenuItem">RadMenuItem</see> object 
+                to which the RadMenuItemBinding object is applied.
+            </summary>
+            <value>
+            The name of the field from the data source to bind to the <see cref="!:RadMenuItem.Value">Value</see> of a
+            <see cref="!:RadMenuItem">RadMenuItem</see> to which the RadMenuItemBinding is applied. The default is an empty
+            string (""), which indicates that this property is not set.
+            </value>
+            <remarks>
+            	<para>Specifying <strong>Value</strong> or <strong>ValueField</strong> will
+                override the values populated from the
+                <strong><see cref="!:RadMenu.DataValueField"><strong>DataValueField</strong></see>
+                property.</strong></para>
+            </remarks>
+        </member>
+        <member name="P:Telerik.WebControls.RadTreeNodeBinding.NavigateUrl">
+            <summary>Gets or sets the URL to link to when the item is clicked.</summary>
+            <value>
+            The URL to link to when the item is clicked. The default value is empty
+            string.
+            </value>
+            <example>
+                The following example demonstrates how to use the <strong>NavigateUrl</strong>
+                property 
+                <para>
+            		<para class="sourcecode">&lt;radM:RadMenu id="RadMenu1"
+                    runat="server"&gt;<br/>
+                    &lt;Items&gt;<br/>
+                    &lt;radM:RadMenuItem Text="News" <strong>NavigateUrl="~/News.aspx"</strong>
+                    /&gt;<br/>
+                    &lt;radM:RadMenuItem Text="External URL"
+                    <strong>NavigateUrl="http://www.example.com"</strong> /&gt;<br/>
+                    &lt;/Items&gt;<br/>
+                    &lt;/radM:RadMenu&gt;</para>
+            	</para>
+            </example>
+            <remarks>
+            	<para>Use the <strong>NavigateUrl</strong> property to specify the URL to link to
+                when the item is clicked. Use "~" (tilde) in front of an URL within the same
+                ASP.NET application. When specifying external URL do not forget the protocol (e.g.
+                "http://").</para>
+            	<para>Specifying <strong>NavigateUrl</strong> or
+                <strong><see cref="P:Telerik.WebControls.RadTreeNodeBinding.NavigateUrlField"><strong>NavigateUrlField</strong></see> will
+                override the values populated from the
+                <strong><see cref="!:RadMenu.DataNavigateUrlField"><strong>DataNavigateUrlField</strong></see>
+                property.</strong></strong></para>
+            </remarks>
+        </member>
+        <member name="P:Telerik.WebControls.RadTreeNodeBinding.NavigateUrlField">
+            <summary>
+                Gets or sets the name of the field from the data source to bind to the
+                <see cref="!:RadMenuItem.NavigateUrl">NavigateUrl</see> property of a
+                <see cref="!:RadMenuItem">RadMenuItem</see> object 
+                to which the RadMenuItemBinding object is applied.
+            </summary>
+            <value>
+            The name of the field from the data source to bind to the <see cref="!:RadMenuItem.NavigateUrl">NavigateUrl</see> of a
+            <see cref="!:RadMenuItem">RadMenuItem</see> to which the RadMenuItemBinding is applied. The default is an empty
+            string (""), which indicates that this property is not set.
+            </value>
+            <remarks>
+            	<para>Specifying %<strong>NavigateUrl</strong>:NavigateUrl% or
+                <strong>NavigateUrlField</strong> will override the values populated from the
+                <strong><see cref="!:RadMenu.DataNavigateUrlField"><strong>DataNavigateUrlField</strong></see>
+                property.</strong></para>
+            </remarks>
+        </member>
+        <member name="P:Telerik.WebControls.RadTreeNodeBinding.ToolTip">
+            <summary>
+            Gets or sets the ToolTip text for a menu item to which the
+            RadMenuItemBinding object is applied.
+            </summary>
+            <value>
+            The ToolTip text for a menu item to which the RadMenuItemBinding is applied.
+            The default is an empty string (""), which indicates that this property is not
+            set.
+            </value>
+        </member>
+        <member name="P:Telerik.WebControls.RadTreeNodeBinding.ToolTipField">
+            <summary>
+                Gets or sets the name of the field from the data source to bind to the
+                <see cref="!:RadMenuItem.ToolTip">ToolTip</see> property of a
+                <see cref="!:RadMenuItem">RadMenuItem</see> object 
+                to which the RadMenuItemBinding object is applied.
+            </summary>
+            <value>
+            The name of the field from the data source to bind to the <see cref="!:RadMenuItem.ToolTip">ToolTip</see> of a
+            <see cref="!:RadMenuItem">RadMenuItem</see> to which the RadMenuItemBinding is applied. The default is an empty
+            string (""), which indicates that this property is not set.
+            </value>
+        </member>
+        <member name="P:Telerik.WebControls.RadTreeNodeBinding.ImageUrl">
+            <summary>
+            Gets or sets the URL to an image that is displayed next to the text of a menu
+            item to which the RadMenuItemBinding object is applied.
+            </summary>
+            <value>
+            The URL to an image that is displayed next to the text of a menu item to which
+            the RadMenuItemBinding is applied. The default is an empty string (""), which
+            indicates that this property is not set.
+            </value>
+            <remarks>
+            	<para>
+                    This image is shared with all <see cref="!:RadMenuItem">RadMenuItem</see> objects to
+                    which the RadMenuItemBinding object is applied.
+              </para>
+            	<para><strong>NOTE:</strong> You can override the image for an individual menu item
+              by setting its <b>ImageUrl</b> property directly.</para>
+            	<para>Instead of using this property to display the same image in each menu item,
+              you can also use the
+              <see cref="!:RadMenuItem.ImageUrlField">ImageUrlField</see>
+              property to bind the <b>ImageUrl</b> property of a <b>RadMenuItem</b> object to a
+              field of a data source. When rendered, the <b>ImageUrl</b> property of each menu
+              item to which the <b>RadMenuItemBinding</b> object is applied contains the
+              corresponding value from the field.</para>
+              <para>
+                  <strong>NOTE:</strong> If the <b>ImageUrl</b> and <b>ImageUrlField</b>
+                  properties are both set, the <b>ImageUrlField</b> property takes precedence.
+              </para>
+            </remarks>
+            <notes>
+            	<para>You can override the image for an individual menu item by setting its
+                <b>ImageUrl</b> property directly.</para>
+            </notes>
+        </member>
+        <member name="P:Telerik.WebControls.RadTreeNodeBinding.ImageUrlField">
+            <summary>
+                Gets or sets the name of the field from the data source to bind to the
+                <see cref="!:RadMenuItem.ImageUrl">ImageUrl</see> property of a
+                <see cref="!:RadMenuItem">RadMenuItem</see> object 
+                to which the RadMenuItemBinding object is applied.
+            </summary>
+            <value>
+            The name of the field from the data source to bind to the <see cref="!:RadMenuItem.ImageUrl">ImageUrl</see> of a
+            <see cref="!:RadMenuItem">RadMenuItem</see> to which the RadMenuItemBinding is applied. The default is an empty
+            string (""), which indicates that this property is not set.
+            </value>
+            <remarks>
+            	<para>
+                    If the data source contains multiple tables or attributes, you must first
+                    establish the binding criteria by setting the <see cref="P:Telerik.WebControls.RadTreeNodeBinding.Depth">Depth</see>
+                    property, the <see cref="P:Telerik.WebControls.RadTreeNodeBinding.DataMember">DataMember</see> property, or both.
+                </para>
+            	<para>
+                    Instead of using this property to bind the <b>ImageUrl</b> property of a
+                    <b>RadMenuItem</b> object to a field, you can also bind it to a static value by
+                    setting the <see cref="P:Telerik.WebControls.RadTreeNodeBinding.ImageUrl">RadMenuItemBinding.ImageUrl</see> property. This
+                    allows you to display the same image in each menu item to which the
+                    <b>RadMenuItemBinding</b> object is applied.
+                </para>
+            	<para><strong>NOTE:</strong></para>
+            	<para>If the <strong>ImageUrl</strong> and <strong>ImageUrlField</strong>
+                properties are both set, the <strong>ImageUrlField</strong> property takes
+                precedence.</para>
+            </remarks>
+        </member>
+        <member name="P:Telerik.WebControls.RadTreeNodeBinding.ImageExpandedUrl">
+            <summary>
+            Gets or sets the path to an image to display for the item when the user moves the
+            mouse over the item.
+            </summary>
+            <value>
+            The path to the image to display when the user moves the mouse over the item. The
+            default value is empty string.
+            </value>
+            <example>
+            	<para class="sourcecode">&lt;radm:RadMenu id="RadMenu1" runat="server"&gt;<br/>
+                &lt;Items&gt;<br/>
+                &lt;radm:RadMenuItem ImageUrl="~/Img/inbox.gif"
+                <strong>ImageExpandedUrl="~/Img/inboxOver.gif"</strong> Text="Index" /&gt;<br/>
+                &lt;radm:RadMenuItem ImageUrl="~/Img/outbox.gif"
+                <strong>ImageExpandedUrl="~/Img/outboxOver.gif"</strong> Text="Outbox" /&gt;<br/>
+                &lt;/Items&gt;<br/>
+                &lt;/radm:RadMenu&gt;</para>
+            </example>
+            <remarks>
+            Use the <strong>ImageExpandedUrl</strong> property to specify the image that will be
+            used when the user moves the mouse over the item. If the <strong>ImageExpandedUrl</strong>
+            property is set to empty string the image specified by the <strong>ImageUrl</strong>
+            property will be used. Use "~" (tilde) when referring to images within the current
+            ASP.NET application.
+            </remarks>
+        </member>
+        <member name="P:Telerik.WebControls.RadTreeNodeBinding.ImageExpandedUrlField">
+            <summary>
+                Gets or sets the name of the field from the data source to bind to the
+                <see cref="!:RadMenuItem.ImageExpandedUrl">ImageExpandedUrl</see> property of a
+                <see cref="!:RadMenuItem">RadMenuItem</see> object 
+                to which the RadMenuItemBinding object is applied.
+            </summary>
+            <value>
+            The name of the field from the data source to bind to the <see cref="!:RadMenuItem.ImageExpandedUrl">ImageExpandedUrl</see> of a
+            <see cref="!:RadMenuItem">RadMenuItem</see> to which the RadMenuItemBinding is applied. The default is an empty
+            string (""), which indicates that this property is not set.
+            </value>
+        </member>
+        <member name="P:Telerik.WebControls.RadTreeNodeBinding.Target">
+            <summary>
+            Gets or sets the target window or frame to display the Web page content linked to
+            when the menu item is clicked.
+            </summary>
+            <value>
+            	<para>The target window or frame to load the Web page linked to when the Item is
+                selected. Values must begin with a letter in the range of a through z (case
+                insensitive), except for the following special values, which begin with an
+                underscore:</para>
+            	<para>
+            		<list type="Itemle">
+            			<item>
+            				<term>_blank</term>
+            				<description>Renders the content in a new window without
+                            frames.</description>
+            			</item>
+            			<item>
+            				<term>_parent</term>
+            				<description>Renders the content in the immediate frameset
+                            parent.</description>
+            			</item>
+            			<item>
+            				<term>_self</term>
+            				<description>Renders the content in the frame with focus.</description>
+            			</item>
+            			<item>
+            				<term>_top</term>
+            				<description>Renders the content in the full window without
+                            frames.</description>
+            			</item>
+            		</list>
+            	</para>The default value is empty string.
+            </value>
+            <remarks>
+            	<para>
+                    Use the <b>Target</b> property to specify the frame or window that displays the
+                    Web page linked to when the menu item is clicked. The Web page is specified by
+                    setting the <see cref="P:Telerik.WebControls.RadTreeNodeBinding.NavigateUrl">NavigateUrl</see> property.
+                </para>
+            	<para>If this property is not set, the Web page specified by the
+                <strong>NavigateUrl</strong> property is loaded in the current window.</para>
+            </remarks>
+            <example>
+            	<para>The following example demonstrates how to use the <strong>Target</strong>
+                property</para>
+            	<para>ASPX:</para>
+            	<para>&lt;radM:RadMenu runat="server" ID="RadMenu1"&gt;</para>
+            	<para>&lt;Items&gt;</para>
+            	<para>&lt;radM:RadMenuItem <strong>Target="_blank"</strong>
+                NavigateUrl="http://www.google.com" /&gt;</para>
+            	<para>&lt;/Items&gt;</para>
+            	<para>&lt;/radM:RadMenu&gt;</para>
+            </example>
+        </member>
+        <member name="P:Telerik.WebControls.RadTreeNodeBinding.TargetField">
+            <summary>
+                Gets or sets the name of the field from the data source to bind to the
+                <see cref="!:RadMenuItem.Target">Target</see> property of a
+                <see cref="!:RadMenuItem">RadMenuItem</see> object 
+                to which the RadMenuItemBinding object is applied.
+            </summary>
+            <value>
+            The name of the field from the data source to bind to the <see cref="!:RadMenuItem.Target">Target</see> of a
+            <see cref="!:RadMenuItem">RadMenuItem</see> to which the RadMenuItemBinding is applied. The default is an empty
+            string (""), which indicates that this property is not set.
+            </value>
+        </member>
+        <member name="P:Telerik.WebControls.RadTreeNodeBinding.Enabled">
+            <summary>Gets or sets a value indicating whether the menu item is enabled.</summary>
+            <remarks>
+            	<para>Use the <b>Enabled</b> property to specify or determine whether a menu item
+                is functional. When set to <b>false</b>, the item appears dimmed.</para>
+            </remarks>
+        </member>
+        <member name="P:Telerik.WebControls.RadTreeNodeBinding.EnabledField">
+            <summary>
+                Gets or sets the name of the field from the data source to bind to the
+                <see cref="!:RadMenuItem.Enabled">Enabled</see> property of a
+                <see cref="!:RadMenuItem">RadMenuItem</see> object 
+                to which the RadMenuItemBinding object is applied.
+            </summary>
+            <value>
+            The name of the field from the data source to bind to the <see cref="!:RadMenuItem.Enabled">Enabled</see> of a
+            <see cref="!:RadMenuItem">RadMenuItem</see> to which the RadMenuItemBinding is applied. The default is an empty
+            string (""), which indicates that this property is not set.
+            </value>
+        </member>
+        <member name="P:Telerik.WebControls.RadTreeNodeBinding.Depth">
+            <summary>
+            	<para>Gets or sets the menu depth to which the
+                RadMenuItemBinding object is applied.</para>
+            </summary>
+            <remarks>
+            	<para>
+                    When creating a <b>RadMenuItemBinding</b> object, you must specify the criteria
+                    for binding. The criteria indicate when a data item should be bound to a menu
+                    item. You can specify the <b>Depth</b> property, the
+                    <see cref="P:Telerik.WebControls.RadTreeNodeBinding.DataMember">DataMember</see> property, or both.
+                </para>
+            	<para>
+                    Use the <b>Depth</b> property to specify the menu depth at which to apply the
+                    <b>RadMenuItemBinding</b> object. For example, the following
+                    <b>RadMenuItemBinding</b> declaration binds the Name and ID fields of the data
+                    source to the <see cref="P:Telerik.WebControls.RadTreeNodeBinding.Text">Text</see> and <see cref="P:Telerik.WebControls.RadTreeNodeBinding.Value">Value</see>
+                    properties, respectively, of all menu items with a depth of 0:
+                </para>
+            	<pre>
+            &lt;asp:RadMenuItemBinding Depth="0" TextField="Name" ValueField="ID"&gt;
+            </pre>
+            	<para>Sometimes you might need to create a menu item binding that specifies both a
+                depth and a data member. This is often used when the data source contains items at
+                different levels that have the same data member value. For example, you can
+                have<br/>
+                &lt;Item&gt; elements that appear at different levels within an XML file. The
+                following RadMenuItemBinding declarations show how to specify menu item bindings that
+                apply to identical data members at different menu depths:</para>
+            	<pre>
+            		<code inline="true">
+            			<font color="black">&lt;asp:RadMenuItemBinding DataMember="Item" Depth="1" TextField="Title"&gt;</font>
+            		</code>
+            	</pre>
+            	<pre>
+            		<code inline="true">
+            			<font color="black">&lt;asp:RadMenuItemBinding DataMember="Item" Depth="2" TextField="ISBN"&gt;</font>
+            		</code>
+            	</pre>
+            	<para>If a menu item binding is defined without a depth and a data member, the menu
+                item binding is applied to all menu items within the menu. This is commonly used
+                when all data items have the same properties and should be displayed identically,
+                regardless of the menu depth.</para>
+            	<para>After the binding criteria are established, you can then bind a property of a
+                <a href="T_System_Web_UI_WebControls_MenuItem.htm">RadMenuItem</a> object that can be
+                bound to a value. You can bind to a field of a data item or to a static value. When
+                bound to a static value, all RadMenuItem objects to which the RadMenuItemBinding object
+                is applied share the same value. Properties bound to fields contain the values of
+                the field from the data source.</para>
+            	<para>If conflicting RadMenuItemBinding objects are defined, the
+                <a href="T_System_Web_UI_WebControls_Menu.htm">Menu</a> control applies the menu
+                item bindings in the following order of precedence:</para>
+            	<para class="xmldocnumberedlist"></para>
+            	<list type="number">
+            		<item>
+            			<para>The <b>RadMenuItemBinding</b> object that defines and matches both a
+                        depth and a data member.</para>
+            		</item>
+            		<item>
+            			<para>The <b>RadMenuItemBinding</b> object that defines and matches the data
+                        member only.</para>
+            		</item>
+            		<item>
+            			<para>The <b>RadMenuItemBinding</b> object that defines and matches the depth
+                        only.</para>
+            		</item>
+            		<item>
+            			<para>The <b>RadMenuItemBinding</b> object that defines neither the depth nor
+                        the data member. (This type of menu item binding is applied to all menu
+                        items in the menu.)</para>
+            		</item>
+            		<item>
+            			<para>The <b>RadMenuItemBinding</b> object that does not have a match in the
+                        data source. In this case, the value returned by the <b>ToString()</b>
+                        method of the data item is then bound to the <b>Text</b> and <b>Value</b>
+                        properties of the menu items to which the <b>RadMenuItemBinding</b> object is
+                        applied.</para>
+            		</item>
+            	</list>
+            </remarks>
+        </member>
+        <member name="P:Telerik.WebControls.RadTreeNodeBinding.FormatString">
+            <summary>
+            Gets or sets the string that specifies the display format for the text of a menu
+            item to which the
+            RadMenuItemBinding object is
+            applied.
+            </summary>
+        </member>
+        <member name="T:Telerik.WebControls.RadTreeView">
+            <summary>
+            RadTreeView
+            </summary>
+        </member>
+        <member name="P:Telerik.RadTreeviewUtils.RadControl.Version">
+            <summary>Gets the component's current version.</summary>
+        </member>
+        <member name="P:Telerik.RadTreeviewUtils.RadControl.UseEmbeddedScripts">
+            <summary>
+            Gets or sets a value indicating whether to use the embedded JavaScript files or not.
+            </summary>
+            <value>
+            	<strong>True</strong> if embedded JavaScript files are to be used; otherwise
+            <strong>false</strong>. The default value is <strong>true</strong>.
+            </value>
+            <remarks>
+            Use this property for debugging purposes or to apply any modifications to the
+            JavaScript files.
+            </remarks>
+        </member>
+        <member name="T:Telerik.WebControls.IRadTreeNodeContainer">
+            <summary>
+                Defines properties that menu item containers (<see cref="T:Telerik.WebControls.RadTreeView">RadTreeView</see>,
+                <see cref="T:Telerik.WebControls.RadTreeNode">RadTreeNode</see>) should implement
+            </summary>
+        </member>
+        <member name="P:Telerik.WebControls.IRadTreeNodeContainer.Owner">
+            <summary>Gets the parent <see cref="T:Telerik.WebControls.IRadTreeNodeContainer">IMenuItemContainer</see>.</summary>
+        </member>
+        <member name="P:Telerik.WebControls.IRadTreeNodeContainer.Nodes">
+            <summary>Gets the collection of child items.</summary>
+            <value>
+                A <see cref="T:Telerik.WebControls.RadTreeNodeCollection">RadTreeNodeCollection</see> that represents the child
+                items.
+            </value>
+            <remarks>
+            Use this property to retrieve the child items. You can also use it to
+            programmatically add or remove items.
+            </remarks>
+        </member>
+        <member name="M:Telerik.WebControls.RadTreeView.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:Telerik.WebControls.RadTreeView.System#Web#UI#IPostBackDataHandler#LoadPostData(System.String,System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            Internal method. Should not be invoked directly.
+            </summary>		
+        </member>
+        <member name="M:Telerik.WebControls.RadTreeView.System#Web#UI#IPostBackDataHandler#RaisePostDataChangedEvent">
+            <summary>
+            Internal method. Should not be invoked directly.
+            </summary>
+        </member>
+        <member name="F:Telerik.WebControls.RadTreeView.ExpandedNodeId">
+            <summary>
+            Internal method. Should not be invoked directly.
+            </summary>
+        </member>
+        <member name="M:Telerik.WebControls.RadTreeView.GetXml">
+            <summary>
+            Gets the current state of RadTreeView as XML string.
+            </summary>
+            <returns>XML String</returns>
+        </member>
+        <member name="M:Telerik.WebControls.RadTreeView.GetContextMenusXml">
+            <summary>
+            Gets the current state of RadTreeView's context menus as XML string.
+            </summary>
+            <returns>XML String</returns>
+        </member>
+        <member name="M:Telerik.WebControls.RadTreeView.LoadXmlString(System.String)">
+            <summary>
+            Populates RadTreeView from XML String.
+            </summary>
+            <param name="s">The string</param>
+        </member>
+        <member name="M:Telerik.WebControls.RadTreeView.LoadContextMenusXmlString(System.String)">
+            <summary>
+            Populates ContextMenus from XML String
+            </summary>
+            <param name="s">The string</param>
+        </member>
+        <member name="M:Telerik.WebControls.RadTreeView.LoadContentFile(System.String)">
+            <summary>
+            Populates RadTreeView from XML content File at runtime.
+            </summary>
+            <param name="path">The location of the file.</param>
+        </member>
+        <member name="M:Telerik.WebControls.RadTreeView.OnInit(System.EventArgs)">
+            <summary>
+            Inherited from WebControl.
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:Telerik.WebControls.RadTreeView.OnPreRender(System.EventArgs)">
+            <summary>
+            Inherited from WebControl
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:Telerik.WebControls.RadTreeView.Render(System.Web.UI.HtmlTextWriter)">
+            <summary>
+            Inherited from WebControl
+            </summary>
+            <param name="output"></param>
+        </member>
+        <member name="M:Telerik.WebControls.RadTreeView.FindNodeByValue(System.String)">
+            <summary>
+            Returns the first instance of the node (RadTreeNode) with the specified Value or null if no node is found.
+            </summary>
+            <param name="valueField"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.WebControls.RadTreeView.FindNodeByText(System.String)">
+            <summary>
+            Returns the first instance of the node (RadTreeNode) with the specified Text or null if no node is found.
+            </summary>
+            <param name="text"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.WebControls.RadTreeView.ClearSelectedNodes">
+            <summary>
+            This methods clears the selected nodes of the current RadTreeView instance. Useful when you need to clear node selection after postback.
+            </summary>
+        </member>
+        <member name="M:Telerik.WebControls.RadTreeView.ClearCheckedNodes">
+            <summary>
+            This methods clears the checked nodes of the current RadTreeView instance. Useful when you need to clear check selection after postback.
+            </summary>
+        </member>
+        <member name="M:Telerik.WebControls.RadTreeView.ExpandAllNodes">
+            <summary>
+            Expands all nodes in the tree.
+            </summary>
+        </member>
+        <member name="M:Telerik.WebControls.RadTreeView.CollapseAllNodes">
+            <summary>
+            Collapses all nodes in the tree.
+            </summary>
+        </member>
+        <member name="M:Telerik.WebControls.RadTreeView.GetAllNodes">
+            <summary>
+            Gets a linear ArrayList of ALL nodes in the current treeview instance.
+            </summary>
+            <returns>ArrayList of ALL Nodes</returns>
+        </member>
+        <member name="P:Telerik.WebControls.RadTreeView.Nodes">
+            <summary>
+            	<para>Gets a collection of RadTreeNode objects that represents the root nodes in
+                the RadTreeView control.</para>
+            </summary>
+            <remarks>
+            	<para>Use the Nodes property to get a RadTreeNodeCollection object that contains
+                all the root nodes in the tree. This collection is commonly used to quickly iterate
+                through all the root nodes, or to access a specific root node in the tree.</para>
+            	<para><strong>Note:<br/></strong>A typical tree structure has only one root node;
+                however, you can add multiple root nodes to the TreeView control.</para>
+            	<para>The Nodes property can also be used to manage the root nodes in the tree
+                programmatically. You can add, insert, remove, and retrieve RadTreeNode objects
+                from the collection. Any updates to the collection are automatically reflected in
+                the RadTreeView control after the next round trip to the server.</para>
+            	<para>To access the child nodes of a root node, use the Nodes property of the node.
+                Use the ChildNodes property of each subsequent parent-level node to navigate down
+                the node levels.</para>
+            </remarks>
+        </member>
+        <member name="E:Telerik.WebControls.RadTreeView.NodeClick">
+            <summary>eThe event that fires upon node click.</summary>
+        </member>
+        <member name="E:Telerik.WebControls.RadTreeView.NodeDrop">
+            <summary>
+            The event that fires upon node drag and drop.
+            </summary>
+        </member>
+        <member name="E:Telerik.WebControls.RadTreeView.NodeContextClick">
+            <summary>
+            The event that fires upon treeview context click
+            </summary>
+        </member>
+        <member name="E:Telerik.WebControls.RadTreeView.NodeBound">
+            <summary>
+            The event that is fired upon Node binding.
+            </summary>
+        </member>
+        <member name="E:Telerik.WebControls.RadTreeView.NodeCreated">
+            <summary>
+            The event that is fired upon Node creating.
+            </summary>
+        </member>
+        <member name="E:Telerik.WebControls.RadTreeView.NodeExpand">
+            <summary>
+            The event that fires upon node expanding.
+            </summary>
+        </member>
+        <member name="E:Telerik.WebControls.RadTreeView.NodeCollapse">
+            <summary>
+            The event that fires upon node collapsing. Fires only for server-side load on demand (ExpandMode = ExpandMode.ServerSide)
+            </summary>
+        </member>
+        <member name="E:Telerik.WebControls.RadTreeView.NodeEdit">
+            <summary>
+            The event that fires when a node text has been edited (and changed) client-side.
+            </summary>
+        </member>
+        <member name="E:Telerik.WebControls.RadTreeView.NodeCheck">
+            <summary>
+            The event that fires when a node text has been checked.
+            </summary>
+        </member>
+        <member name="P:Telerik.WebControls.RadTreeView.CheckedNodes">
+            <summary>
+            Gets a collection of RadTreeNode objects that represent the nodes in the control
+            that display a selected check box.
+            </summary>
+            <returns>An ArrayList collection of the checked nodes.</returns>
+            <remarks>
+            	<para>
+                    When check boxes are displayed in the RadTreeView control (by setting the
+                    <see cref="P:Telerik.WebControls.RadTreeView.CheckBoxes">CheckBoxes</see> property to true), use the CheckedNodes
+                    property to determine which nodes display a selected check box. This collection
+                    is commonly used to iterate through all the nodes that have a selected check
+                    box in the tree.
+                </para>
+            	<para>
+                    If the <see cref="P:Telerik.WebControls.RadTreeView.AutoPostBackOnCheck">AutoPostBackOnCheck</see> property of
+                    the tree is set to true, the <see cref="E:Telerik.WebControls.RadTreeView.NodeCheck">NodeCheck</see> event is
+                    raised when the check boxes of the RadTreeView control change state between
+                    posts to the server. This allows you to provide an event-handling method that
+                    performs a custom routine, such as updating a database or the displayed
+                    content, whenever this event occurs.
+                </para>
+            	<para><strong>Note:</strong><br/>
+                The CheckedNodes collection is populated using a depth-first traversal of the tree
+                structure: each parent node is processed down to its child nodes before the next
+                parent node is populated.</para>
+            </remarks>
+            <example>
+            	<code lang="VB" title="[New Example]">
+            Protected Sub ShowCheckedNodes(ByVal sender As Object, ByVal e As System.EventArgs)
+                Dim message As String = String.Empty
+                Dim nodeCollection As ArrayList = RadTree1.CheckedNodes
+                Dim node As RadTreeNode
+                For Each node In nodeCollection
+                    message += node.FullPath
+                Next node
+                nodes.Text = message
+            End Sub
+                </code>
+            	<code lang="CS" title="[New Example]">
+            protected void ShowCheckedNodes(object sender, System.EventArgs e)
+            {
+                string message = string.Empty;
+                ArrayList nodeCollection = RadTree1.CheckedNodes;
+                foreach (RadTreeNode node in nodeCollection)
+                {
+                    message += node.FullPath + "&lt;br/&gt;";
+                }
+                nodes.Text = message;        
+            }
+                </code>
+            </example>
+        </member>
+        <member name="P:Telerik.WebControls.RadTreeView.SelectedNodes">
+            <summary>
+            Gets a collection of RadTreeNode objects that represent the nodes in the control
+            that are currently selected.
+            </summary>
+            <returns>An ArrayList collection of the selected nodes.</returns>
+            <remarks>
+            	<para>This collection is commonly used to iterate through all the nodes that have
+                been selected in the tree.</para>
+            	<para>
+                    If the <see cref="P:Telerik.WebControls.RadTreeView.AutoPostBack">AutoPostBack</see> property is set to true, the
+                    <see cref="E:Telerik.WebControls.RadTreeView.NodeClick">NodeClick</see> event is raised when end-users select a
+                    node in the RadTreeView control. This allows you to provide an event-handling
+                    method that performs a custom routine, such as updating a database or the
+                    displayed content, whenever this event occurs.
+                </para>
+            	<para><strong>Note:<br/></strong>The SelectedNodes collection is populated using a
+                depth-first traversal of the tree structure: each parent node is processed down to
+                its child nodes before the next parent node is populated.</para>
+            </remarks>
+        </member>
+        <member name="P:Telerik.WebControls.RadTreeView.SelectedNode">
+            <summary>
+            Gets a RadTreeNode object that represents the selected node in the RadTreeView
+            control.
+            </summary>
+            <remarks>
+            	<para>
+                    The text of a node in the RadTreeView control can be in one of three modes:
+                    default (none), selection (postback) mode and navigation mode. To put a node
+                    into navigation mode, set the Href property for the node to a value other than
+                    an empty string (""). To put a node into selection mode, set the
+                    <see cref="P:Telerik.WebControls.RadTreeView.AutoPostBack">AutoPostBack</see> of the treeview to true (sets
+                    postback mode for all tree nodes) or set the PostBack property of any node to
+                    true.
+                </para>
+            	<para>When a node is in selection mode, the user can select a node by clicking on
+                the text in the node. Use the SelectedNode property to determine which node is
+                selected in the TreeView control.</para>
+            	<para><strong>Note:</strong><br/>
+                A node cannot be selected when the TreeView control displays hyperlinks. When
+                hyperlinks are displayed, the SelectedNode property always returns a null reference
+                (Nothing in Visual Basic).</para>
+            	<para>
+                    When the user selects a different node in the RadTreeView control by clicking
+                    the text in the new node, the <see cref="E:Telerik.WebControls.RadTreeView.NodeClick">NodeClick</see> event is
+                    raised, by default. If you set the
+                    <see cref="P:Telerik.WebControls.RadTreeView.MultipleSelect">MultipleSelect</see> property of the treeview to
+                    true, end-users can select multiple nodes by holding the Ctrl / Shift keys
+                    while selecting.
+                </para>
+            </remarks>
+            <example>
+            	<code lang="VB" title="[New Example]">
+            &lt;radT:RadTreeView
+                ID="RadTree1"
+                runat="server"
+                AutoPostBack="True"
+                OnNodeClick="NodeClick"
+            /&gt;
+             
+            Protected Sub NodeClick(ByVal sender As Object, ByVal NodeEventArgs As RadTreeNodeEventArgs)
+                info.Text = String.Empty
+                Dim NodeClicked As RadTreeNode = NodeEventArgs.NodeClicked
+                info.Text = NodeClicked.Text
+            End Sub
+                </code>
+            	<code lang="CS" title="[New Example]">
+            &lt;radT:RadTreeView
+                ID="RadTree1"
+                runat="server"
+                AutoPostBack="True"
+                OnNodeClick="NodeClick"
+            /&gt;
+             
+            protected void NodeClick(object sender, RadTreeNodeEventArgs NodeEventArgs)
+            {
+                info.Text = string.Empty;
+                RadTreeNode NodeClicked = NodeEventArgs.NodeClicked;
+                info.Text = NodeClicked.Text;
+            }
+                </code>
+            </example>
+        </member>
+        <member name="P:Telerik.WebControls.RadTreeView.IsEmpty">
+            <summary>Gets a value indicating whether the RadTreeView control has no nodes.</summary>
+        </member>
+        <member name="P:Telerik.WebControls.RadTreeView.DataSource">
+            <summary>
+            	<para>Gets or sets the object from which the data-bound control retrieves its list
+                of data items.</para>
+            </summary>
+            <remarks>
+            	<para>
+                    RadTreeView fully supports binding to IList datasources (DataSet, DataTable),
+                    so you can easily populate your treeview instance with only a few lines of
+                    code. The built-in data binding supports auto-binding from a a single
+                    self-referencing table with ID -&gt; ParentID relation.<br/>
+            		<br/>
+                    Properties and methods related to data binding:<br/>
+            		<br/>
+                    DataSource - (mandatory) object. Set to an instance of a DataSet or a
+                    DataTable<br/>
+            		<see cref="P:Telerik.WebControls.RadTreeView.DataMember">DataMember</see> - (optional) string. If the DataSource
+                    is a DataSet and DataMember is set, then r.a.d.treeview assumes the DataTable
+                    with the respective name in the DataSet. Otherwise the first DataTable in the
+                    DataSet is used.<br/>
+            		<see cref="P:Telerik.WebControls.RadTreeView.DataFieldID">DataFieldID</see> - (mandatory) string. The name of the
+                    DataColumn holding the ID value;<br/>
+            		<see cref="P:Telerik.WebControls.RadTreeView.DataFieldParentID">DataFieldParentID</see> - (mandatory) string. The
+                    name of the DataColumn holding the ParentID value;
+                </para>
+            	<para>
+            		<see cref="P:Telerik.WebControls.RadTreeView.DataTextField">DataTextField</see> (optional) - Gets or sets the
+                    field name from a data source to bind to the RadTreeNode Text property.
+                </para>
+            	<para>
+            		<see cref="P:Telerik.WebControls.RadTreeView.DataValueField">DataValueField</see> (optional) - Gets or sets the
+                    field name from a data source to bind to the RadTreeNode Value property.<br/>
+                    DataBind() - (mandatory) menthod. Call this method after you've set the
+                    aforementioned properties per your scenario.
+                </para>
+            </remarks>
+            <example>
+            	<code lang="VB" title="[New Example]">
+            Dim dbCon As New OleDbConnection("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + Server.MapPath("~/TreeView/Data/Tree.mdb"))
+            dbCon.Open()
+             
+            Dim adapter As New OleDbDataAdapter("SELECT * FROM Links", dbCon)
+            Dim ds As New DataSet()
+            adapter.Fill(ds)
+             
+            RadTree1.DataTextField = "TextColumn"
+            RadTree1.DataValueField = "ValueColumn"
+            RadTree1.DataFieldID = "ID"
+            RadTree1.DataFieldParentID = "ParentID"
+             
+            RadTree1.DataSource = ds
+            RadTree1.DataBind()
+                </code>
+            	<code lang="CS" title="[New Example]">
+            OleDbConnection dbCon = new OleDbConnection ("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + Server.MapPath("~/TreeView/Data/Tree.mdb"));
+            dbCon.Open();
+             
+            OleDbDataAdapter adapter = new OleDbDataAdapter("SELECT * FROM Links", dbCon);
+            DataSet ds = new DataSet();
+            adapter.Fill(ds);
+             
+            RadTree1.DataTextField = "TextColumn"
+            RadTree1.DataValueField = "ValueColumn"
+            RadTree1.DataFieldID = "ID";
+            RadTree1.DataFieldParentID = "ParentID";
+             
+            RadTree1.DataSource = ds;            
+            RadTree1.DataBind();
+            RadTree1.ExpandAllNodes();
+                </code>
+            </example>
+        </member>
+        <member name="P:Telerik.WebControls.RadTreeView.DataMember">
+            <remarks>
+            	<para>
+                    RadTreeView fully supports binding to IList datasources (DataSet, DataTable),
+                    so you can easily populate your treeview instance with only a few lines of
+                    code. The built-in data binding supports auto-binding from a a single
+                    self-referencing table with ID -&gt; ParentID relation.<br/>
+            		<br/>
+                    Properties and methods related to data binding:<br/>
+            		<br/>
+                    DataSource - (mandatory) object. Set to an instance of a DataSet or a
+                    DataTable<br/>
+            		<see cref="P:Telerik.WebControls.RadTreeView.DataMember">DataMember</see> - (optional) string. If the DataSource
+                    is a DataSet and DataMember is set, then r.a.d.treeview assumes the DataTable
+                    with the respective name in the DataSet. Otherwise the first DataTable in the
+                    DataSet is used.<br/>
+            		<see cref="P:Telerik.WebControls.RadTreeView.DataFieldID">DataFieldID</see> - (mandatory) string. The name of the
+                    DataColumn holding the ID value;<br/>
+            		<see cref="P:Telerik.WebControls.RadTreeView.DataFieldParentID">DataFieldParentID</see> - (mandatory) string. The
+                    name of the DataColumn holding the ParentID value;
+                </para>
+            	<para>
+            		<see cref="P:Telerik.WebControls.RadTreeView.DataTextField">DataTextField</see> (optional) - Gets or sets the
+                    field name from a data source to bind to the RadTreeNode Text property.
+                </para>
+            	<para>
+            		<see cref="P:Telerik.WebControls.RadTreeView.DataValueField">DataValueField</see> (optional) - Gets or sets the
+                    field name from a data source to bind to the RadTreeNode Value property.<br/>
+                    DataBind() - (mandatory) menthod. Call this method after you've set the
+                    aforementioned properties per your scenario.
+                </para>
+            </remarks>
+            <summary>
+            	<para>Gets or sets the specific data member in a multimember data source to bind to
+                a data listing control.</para>
+            </summary>
+            <example>
+            	<code lang="VB" title="[New Example]">
+            Dim dbCon As New OleDbConnection("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + Server.MapPath("~/TreeView/Data/Tree.mdb"))
+            dbCon.Open()
+             
+            Dim adapter As New OleDbDataAdapter("SELECT * FROM Links", dbCon)
+            Dim ds As New DataSet()
+            adapter.Fill(ds)
+             
+            RadTree1.DataTextField = "TextColumn"
+            RadTree1.DataValueField = "ValueColumn"
+            RadTree1.DataFieldID = "ID"
+            RadTree1.DataFieldParentID = "ParentID"
+             
+            RadTree1.DataSource = ds
+            RadTree1.DataBind()
+                </code>
+            	<code lang="CS" title="[New Example]">
+            OleDbConnection dbCon = new OleDbConnection ("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + Server.MapPath("~/TreeView/Data/Tree.mdb"));
+            dbCon.Open();
+             
+            OleDbDataAdapter adapter = new OleDbDataAdapter("SELECT * FROM Links", dbCon);
+            DataSet ds = new DataSet();
+            adapter.Fill(ds);
+             
+            RadTree1.DataTextField = "TextColumn"
+            RadTree1.DataValueField = "ValueColumn"
+            RadTree1.DataFieldID = "ID";
+            RadTree1.DataFieldParentID = "ParentID";
+             
+            RadTree1.DataSource = ds;            
+            RadTree1.DataBind();
+            RadTree1.ExpandAllNodes();
+                </code>
+            </example>
+        </member>
+        <member name="P:Telerik.WebControls.RadTreeView.DataTextField">
+            <summary>
+            	<para>Gets or sets the field name from a data source to bind to the RadTreeNode
+                Text property.</para>
+            </summary>
+            <remarks>
+            	<para>
+                    RadTreeView fully supports binding to IList datasources (DataSet, DataTable),
+                    so you can easily populate your treeview instance with only a few lines of
+                    code. The built-in data binding supports auto-binding from a a single
+                    self-referencing table with ID -&gt; ParentID relation.<br/>
+            		<br/>
+                    Properties and methods related to data binding:<br/>
+            		<br/>
+                    DataSource - (mandatory) object. Set to an instance of a DataSet or a
+                    DataTable<br/>
+            		<see cref="P:Telerik.WebControls.RadTreeView.DataMember">DataMember</see> - (optional) string. If the DataSource
+                    is a DataSet and DataMember is set, then r.a.d.treeview assumes the DataTable
+                    with the respective name in the DataSet. Otherwise the first DataTable in the
+                    DataSet is used.<br/>
+            		<see cref="P:Telerik.WebControls.RadTreeView.DataFieldID">DataFieldID</see> - (mandatory) string. The name of the
+                    DataColumn holding the ID value;<br/>
+            		<see cref="P:Telerik.WebControls.RadTreeView.DataFieldParentID">DataFieldParentID</see> - (mandatory) string. The
+                    name of the DataColumn holding the ParentID value;
+                </para>
+            	<para>
+            		<see cref="P:Telerik.WebControls.RadTreeView.DataTextField">DataTextField</see> (optional) - Gets or sets the
+                    field name from a data source to bind to the RadTreeNode Text property.
+                </para>
+            	<para>
+            		<see cref="P:Telerik.WebControls.RadTreeView.DataValueField">DataValueField</see> (optional) - Gets or sets the
+                    field name from a data source to bind to the RadTreeNode Value property.<br/>
+                    DataBind() - (mandatory) menthod. Call this method after you've set the
+                    aforementioned properties per your scenario.
+                </para>
+            </remarks>
+            <example>
+            	<code lang="VB" title="[New Example]">
+            Dim dbCon As New OleDbConnection("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + Server.MapPath("~/TreeView/Data/Tree.mdb"))
+            dbCon.Open()
+             
+            Dim adapter As New OleDbDataAdapter("SELECT * FROM Links", dbCon)
+            Dim ds As New DataSet()
+            adapter.Fill(ds)
+             
+            RadTree1.DataTextField = "TextColumn"
+            RadTree1.DataValueField = "ValueColumn"
+            RadTree1.DataFieldID = "ID"
+            RadTree1.DataFieldParentID = "ParentID"
+             
+            RadTree1.DataSource = ds
+            RadTree1.DataBind()
+                </code>
+            	<code lang="CS" title="[New Example]">
+            OleDbConnection dbCon = new OleDbConnection ("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + Server.MapPath("~/TreeView/Data/Tree.mdb"));
+            dbCon.Open();
+             
+            OleDbDataAdapter adapter = new OleDbDataAdapter("SELECT * FROM Links", dbCon);
+            DataSet ds = new DataSet();
+            adapter.Fill(ds);
+             
+            RadTree1.DataTextField = "TextColumn"
+            RadTree1.DataValueField = "ValueColumn"
+            RadTree1.DataFieldID = "ID";
+            RadTree1.DataFieldParentID = "ParentID";
+             
+            RadTree1.DataSource = ds;            
+            RadTree1.DataBind();
+            RadTree1.ExpandAllNodes();
+                </code>
+            </example>
+        </member>
+        <member name="P:Telerik.WebControls.RadTreeView.DataValueField">
+            <summary>
+            	<para>Gets or sets the field name from a data source to bind to the RadTreeNode
+                Value property.</para>
+            </summary>
+            <remarks>
+            	<para>
+                    RadTreeView fully supports binding to IList datasources (DataSet, DataTable),
+                    so you can easily populate your treeview instance with only a few lines of
+                    code. The built-in data binding supports auto-binding from a a single
+                    self-referencing table with ID -&gt; ParentID relation.<br/>
+            		<br/>
+                    Properties and methods related to data binding:<br/>
+            		<br/>
+                    DataSource - (mandatory) object. Set to an instance of a DataSet or a
+                    DataTable<br/>
+            		<see cref="P:Telerik.WebControls.RadTreeView.DataMember">DataMember</see> - (optional) string. If the DataSource
+                    is a DataSet and DataMember is set, then r.a.d.treeview assumes the DataTable
+                    with the respective name in the DataSet. Otherwise the first DataTable in the
+                    DataSet is used.<br/>
+            		<see cref="P:Telerik.WebControls.RadTreeView.DataFieldID">DataFieldID</see> - (mandatory) string. The name of the
+                    DataColumn holding the ID value;<br/>
+            		<see cref="P:Telerik.WebControls.RadTreeView.DataFieldParentID">DataFieldParentID</see> - (mandatory) string. The
+                    name of the DataColumn holding the ParentID value;
+                </para>
+            	<para>
+            		<see cref="P:Telerik.WebControls.RadTreeView.DataTextField">DataTextField</see> (optional) - Gets or sets the
+                    field name from a data source to bind to the RadTreeNode Text property.
+                </para>
+            	<para>
+            		<see cref="P:Telerik.WebControls.RadTreeView.DataValueField">DataValueField</see> (optional) - Gets or sets the
+                    field name from a data source to bind to the RadTreeNode Value property.<br/>
+                    DataBind() - (mandatory) menthod. Call this method after you've set the
+                    aforementioned properties per your scenario.
+                </para>
+            </remarks>
+            <example>
+            	<code lang="VB" title="[New Example]">
+            Dim dbCon As New OleDbConnection("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + Server.MapPath("~/TreeView/Data/Tree.mdb"))
+            dbCon.Open()
+             
+            Dim adapter As New OleDbDataAdapter("SELECT * FROM Links", dbCon)
+            Dim ds As New DataSet()
+            adapter.Fill(ds)
+             
+            RadTree1.DataTextField = "TextColumn"
+            RadTree1.DataValueField = "ValueColumn"
+            RadTree1.DataFieldID = "ID"
+            RadTree1.DataFieldParentID = "ParentID"
+             
+            RadTree1.DataSource = ds
+            RadTree1.DataBind()
+                </code>
+            	<code lang="CS" title="[New Example]">
+            OleDbConnection dbCon = new OleDbConnection ("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + Server.MapPath("~/TreeView/Data/Tree.mdb"));
+            dbCon.Open();
+             
+            OleDbDataAdapter adapter = new OleDbDataAdapter("SELECT * FROM Links", dbCon);
+            DataSet ds = new DataSet();
+            adapter.Fill(ds);
+             
+            RadTree1.DataTextField = "TextColumn"
+            RadTree1.DataValueField = "ValueColumn"
+            RadTree1.DataFieldID = "ID";
+            RadTree1.DataFieldParentID = "ParentID";
+             
+            RadTree1.DataSource = ds;            
+            RadTree1.DataBind();
+            RadTree1.ExpandAllNodes();
+                </code>
+            </example>
+        </member>
+        <member name="P:Telerik.WebControls.RadTreeView.DataFieldID">
+            <summary>
+            	<para>Gets or sets the field name from a data source to determine the ID of the
+                nodes to bind.</para>
+            </summary>
+            <remarks>
+            	<para>
+                    RadTreeView fully supports binding to IList datasources (DataSet, DataTable),
+                    so you can easily populate your treeview instance with only a few lines of
+                    code. The built-in data binding supports auto-binding from a a single
+                    self-referencing table with ID -&gt; ParentID relation.<br/>
+            		<br/>
+                    Properties and methods related to data binding:<br/>
+            		<br/>
+                    DataSource - (mandatory) object. Set to an instance of a DataSet or a
+                    DataTable<br/>
+            		<see cref="P:Telerik.WebControls.RadTreeView.DataMember">DataMember</see> - (optional) string. If the DataSource
+                    is a DataSet and DataMember is set, then r.a.d.treeview assumes the DataTable
+                    with the respective name in the DataSet. Otherwise the first DataTable in the
+                    DataSet is used.<br/>
+            		<see cref="P:Telerik.WebControls.RadTreeView.DataFieldID">DataFieldID</see> - (mandatory) string. The name of the
+                    DataColumn holding the ID value;<br/>
+            		<see cref="P:Telerik.WebControls.RadTreeView.DataFieldParentID">DataFieldParentID</see> - (mandatory) string. The
+                    name of the DataColumn holding the ParentID value;
+                </para>
+            	<para>
+            		<see cref="P:Telerik.WebControls.RadTreeView.DataTextField">DataTextField</see> (optional) - Gets or sets the
+                    field name from a data source to bind to the RadTreeNode Text property.
+                </para>
+            	<para>
+            		<see cref="P:Telerik.WebControls.RadTreeView.DataValueField">DataValueField</see> (optional) - Gets or sets the
+                    field name from a data source to bind to the RadTreeNode Value property.<br/>
+                    DataBind() - (mandatory) menthod. Call this method after you've set the
+                    aforementioned properties per your scenario.
+                </para>
+            </remarks>
+            <example>
+            	<code lang="VB" title="[New Example]">
+            Dim dbCon As New OleDbConnection("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + Server.MapPath("~/TreeView/Data/Tree.mdb"))
+            dbCon.Open()
+             
+            Dim adapter As New OleDbDataAdapter("SELECT * FROM Links", dbCon)
+            Dim ds As New DataSet()
+            adapter.Fill(ds)
+             
+            RadTree1.DataTextField = "TextColumn"
+            RadTree1.DataValueField = "ValueColumn"
+            RadTree1.DataFieldID = "ID"
+            RadTree1.DataFieldParentID = "ParentID"
+             
+            RadTree1.DataSource = ds
+            RadTree1.DataBind()
+                </code>
+            	<code lang="CS" title="[New Example]">
+            OleDbConnection dbCon = new OleDbConnection ("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + Server.MapPath("~/TreeView/Data/Tree.mdb"));
+            dbCon.Open();
+             
+            OleDbDataAdapter adapter = new OleDbDataAdapter("SELECT * FROM Links", dbCon);
+            DataSet ds = new DataSet();
+            adapter.Fill(ds);
+             
+            RadTree1.DataTextField = "TextColumn"
+            RadTree1.DataValueField = "ValueColumn"
+            RadTree1.DataFieldID = "ID";
+            RadTree1.DataFieldParentID = "ParentID";
+             
+            RadTree1.DataSource = ds;            
+            RadTree1.DataBind();
+            RadTree1.ExpandAllNodes();
+                </code>
+            </example>
+        </member>
+        <member name="P:Telerik.WebControls.RadTreeView.DataFieldParentID">
+            <summary>
+            	<para>Gets or sets the field name from a data source to determine the parent ID of
+                the nodes to bind.</para>
+            </summary>
+            <remarks>
+            	<para>
+                    RadTreeView fully supports binding to IList datasources (DataSet, DataTable),
+                    so you can easily populate your treeview instance with only a few lines of
+                    code. The built-in data binding supports auto-binding from a a single
+                    self-referencing table with ID -&gt; ParentID relation.<br/>
+            		<br/>
+                    Properties and methods related to data binding:<br/>
+            		<br/>
+                    DataSource - (mandatory) object. Set to an instance of a DataSet or a
+                    DataTable<br/>
+            		<see cref="P:Telerik.WebControls.RadTreeView.DataMember">DataMember</see> - (optional) string. If the DataSource
+                    is a DataSet and DataMember is set, then r.a.d.treeview assumes the DataTable
+                    with the respective name in the DataSet. Otherwise the first DataTable in the
+                    DataSet is used.<br/>
+            		<see cref="P:Telerik.WebControls.RadTreeView.DataFieldID">DataFieldID</see> - (mandatory) string. The name of the
+                    DataColumn holding the ID value;<br/>
+            		<see cref="P:Telerik.WebControls.RadTreeView.DataFieldParentID">DataFieldParentID</see> - (mandatory) string. The
+                    name of the DataColumn holding the ParentID value;
+                </para>
+            	<para>
+            		<see cref="P:Telerik.WebControls.RadTreeView.DataTextField">DataTextField</see> (optional) - Gets or sets the
+                    field name from a data source to bind to the RadTreeNode Text property.
+                </para>
+            	<para>
+            		<see cref="P:Telerik.WebControls.RadTreeView.DataValueField">DataValueField</see> (optional) - Gets or sets the
+                    field name from a data source to bind to the RadTreeNode Value property.<br/>
+                    DataBind() - (mandatory) menthod. Call this method after you've set the
+                    aforementioned properties per your scenario.
+                </para>
+            </remarks>
+            <example>
+            	<code lang="VB" title="[New Example]">
+            Dim dbCon As New OleDbConnection("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + Server.MapPath("~/TreeView/Data/Tree.mdb"))
+            dbCon.Open()
+             
+            Dim adapter As New OleDbDataAdapter("SELECT * FROM Links", dbCon)
+            Dim ds As New DataSet()
+            adapter.Fill(ds)
+             
+            RadTree1.DataTextField = "TextColumn"
+            RadTree1.DataValueField = "ValueColumn"
+            RadTree1.DataFieldID = "ID"
+            RadTree1.DataFieldParentID = "ParentID"
+             
+            RadTree1.DataSource = ds
+            RadTree1.DataBind()
+                </code>
+            	<code lang="CS" title="[New Example]">
+            OleDbConnection dbCon = new OleDbConnection ("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + Server.MapPath("~/TreeView/Data/Tree.mdb"));
+            dbCon.Open();
+             
+            OleDbDataAdapter adapter = new OleDbDataAdapter("SELECT * FROM Links", dbCon);
+            DataSet ds = new DataSet();
+            adapter.Fill(ds);
+             
+            RadTree1.DataTextField = "TextColumn"
+            RadTree1.DataValueField = "ValueColumn"
+            RadTree1.DataFieldID = "ID";
+            RadTree1.DataFieldParentID = "ParentID";
+             
+            RadTree1.DataSource = ds;            
+            RadTree1.DataBind();
+            RadTree1.ExpandAllNodes();
+                </code>
+            </example>
+        </member>
+        <member name="P:Telerik.WebControls.RadTreeView.LoadingMessage">
+            <summary>
+            Gets or sets the loading message that is displayed when child nodes are retrieved
+            on AJAX calls.
+            </summary>
+            <remarks>
+            This property can be used for localization purposes (e.g. "Loading..." in
+            different languages).
+            </remarks>
+            <example>
+            	<code lang="VB" title="[New Example]">
+            Protected Sub LoadingMessagePositionChanged(ByVal sender As Object, ByVal e As System.EventArgs)
+                Select Case LoadingMessagePos.SelectedItem.Value
+                    Case "Before"
+                        RadTree1.LoadingMessagePosition = LoadingMessagePosition.BeforeNodeText
+                        RadTree1.LoadingMessageCssClass = "LoadingMessageBlue"
+                        RadTree1.LoadingMessage = "(loading ..)"
+                    Case "After"
+                        RadTree1.LoadingMessagePosition = LoadingMessagePosition.AfterNodeText
+                        RadTree1.LoadingMessageCssClass = "LoadingMessageBlue"
+                        RadTree1.LoadingMessage = "(loading ...)"
+                    Case "Below"
+                        RadTree1.LoadingMessagePosition = LoadingMessagePosition.BelowNodeText
+                        RadTree1.LoadingMessageCssClass = "LoadingMessage"
+                        RadTree1.LoadingMessage = "(loading ...)"
+                    Case "None"
+                        RadTree1.LoadingMessagePosition = LoadingMessagePosition.None
+                End Select
+            End Sub
+                </code>
+            	<code lang="CS" title="[New Example]">
+            protected void LoadingMessagePositionChanged(object sender, System.EventArgs e) 
+            {
+                switch (LoadingMessagePos.SelectedItem.Value)
+                {
+                    case "Before" : 
+                        RadTree1.LoadingMessagePosition = LoadingMessagePosition.BeforeNodeText; 
+                        RadTree1.LoadingMessageCssClass = "LoadingMessageBlue";
+                        RadTree1.LoadingMessage = "(loading ..)";
+                        break;
+                    case "After" :    
+                        RadTree1.LoadingMessagePosition = LoadingMessagePosition.AfterNodeText;
+                        RadTree1.LoadingMessageCssClass = "LoadingMessageBlue";
+                        RadTree1.LoadingMessage = "(loading ...)";
+                        break;
+                    case "Below" :    
+                        RadTree1.LoadingMessagePosition = LoadingMessagePosition.BelowNodeText; 
+                        RadTree1.LoadingMessageCssClass = "LoadingMessage";
+                        RadTree1.LoadingMessage = "(loading ...)";
+                        break;
+                    case "None" :                        
+                        RadTree1.LoadingMessagePosition = LoadingMessagePosition.None; 
+                        break;
+                }
+            }
+                </code>
+            </example>
+        </member>
+        <member name="P:Telerik.WebControls.RadTreeView.LoadingMessageCssClass">
+            <summary>
+            Gets or sets the Css class name that is applied to the loading message when child
+            nodes are retrieved on AJAX calls.
+            </summary>
+            <example>
+            	<code lang="VB" title="[New Example]">
+            Protected Sub LoadingMessagePositionChanged(ByVal sender As Object, ByVal e As System.EventArgs)
+                Select Case LoadingMessagePos.SelectedItem.Value
+                    Case "Before"
+                        RadTree1.LoadingMessagePosition = LoadingMessagePosition.BeforeNodeText
+                        RadTree1.LoadingMessageCssClass = "LoadingMessageBlue"
+                        RadTree1.LoadingMessage = "(loading ..)"
+                    Case "After"
+                        RadTree1.LoadingMessagePosition = LoadingMessagePosition.AfterNodeText
+                        RadTree1.LoadingMessageCssClass = "LoadingMessageBlue"
+                        RadTree1.LoadingMessage = "(loading ...)"
+                    Case "Below"
+                        RadTree1.LoadingMessagePosition = LoadingMessagePosition.BelowNodeText
+                        RadTree1.LoadingMessageCssClass = "LoadingMessage"
+                        RadTree1.LoadingMessage = "(loading ...)"
+                    Case "None"
+                        RadTree1.LoadingMessagePosition = LoadingMessagePosition.None
+                End Select
+            End Sub
+                </code>
+            	<code lang="CS" title="[New Example]">
+            protected void LoadingMessagePositionChanged(object sender, System.EventArgs e) 
+            {
+                switch (LoadingMessagePos.SelectedItem.Value)
+                {
+                    case "Before" : 
+                        RadTree1.LoadingMessagePosition = LoadingMessagePosition.BeforeNodeText; 
+                        RadTree1.LoadingMessageCssClass = "LoadingMessageBlue";
+                        RadTree1.LoadingMessage = "(loading ..)";
+                        break;
+                    case "After" :    
+                        RadTree1.LoadingMessagePosition = LoadingMessagePosition.AfterNodeText;
+                        RadTree1.LoadingMessageCssClass = "LoadingMessageBlue";
+                        RadTree1.LoadingMessage = "(loading ...)";
+                        break;
+                    case "Below" :    
+                        RadTree1.LoadingMessagePosition = LoadingMessagePosition.BelowNodeText; 
+                        RadTree1.LoadingMessageCssClass = "LoadingMessage";
+                        RadTree1.LoadingMessage = "(loading ...)";
+                        break;
+                    case "None" :                        
+                        RadTree1.LoadingMessagePosition = LoadingMessagePosition.None; 
+                        break;
+                }
+            }
+                </code>
+            </example>
+        </member>
+        <member name="P:Telerik.WebControls.RadTreeView.LoadingMessagePosition">
+            <summary>
+            Gets or sets the position of the loading message when child nodes are retrieved
+            on AJAX calls.
+            </summary>
+            <example>
+            	<code lang="VB" title="[New Example]">
+            Protected Sub LoadingMessagePositionChanged(ByVal sender As Object, ByVal e As System.EventArgs)
+                Select Case LoadingMessagePos.SelectedItem.Value
+                    Case "Before"
+                        RadTree1.LoadingMessagePosition = LoadingMessagePosition.BeforeNodeText
+                        RadTree1.LoadingMessageCssClass = "LoadingMessageBlue"
+                        RadTree1.LoadingMessage = "(loading ..)"
+                    Case "After"
+                        RadTree1.LoadingMessagePosition = LoadingMessagePosition.AfterNodeText
+                        RadTree1.LoadingMessageCssClass = "LoadingMessageBlue"
+                        RadTree1.LoadingMessage = "(loading ...)"
+                    Case "Below"
+                        RadTree1.LoadingMessagePosition = LoadingMessagePosition.BelowNodeText
+                        RadTree1.LoadingMessageCssClass = "LoadingMessage"
+                        RadTree1.LoadingMessage = "(loading ...)"
+                    Case "None"
+                        RadTree1.LoadingMessagePosition = LoadingMessagePosition.None
+                End Select
+            End Sub
+                </code>
+            	<code lang="CS" title="[New Example]">
+            protected void LoadingMessagePositionChanged(object sender, System.EventArgs e) 
+            {
+                switch (LoadingMessagePos.SelectedItem.Value)
+                {
+                    case "Before" : 
+                        RadTree1.LoadingMessagePosition = LoadingMessagePosition.BeforeNodeText; 
+                        RadTree1.LoadingMessageCssClass = "LoadingMessageBlue";
+                        RadTree1.LoadingMessage = "(loading ..)";
+                        break;
+                    case "After" :    
+                        RadTree1.LoadingMessagePosition = LoadingMessagePosition.AfterNodeText;
+                        RadTree1.LoadingMessageCssClass = "LoadingMessageBlue";
+                        RadTree1.LoadingMessage = "(loading ...)";
+                        break;
+                    case "Below" :    
+                        RadTree1.LoadingMessagePosition = LoadingMessagePosition.BelowNodeText; 
+                        RadTree1.LoadingMessageCssClass = "LoadingMessage";
+                        RadTree1.LoadingMessage = "(loading ...)";
+                        break;
+                    case "None" :                        
+                        RadTree1.LoadingMessagePosition = LoadingMessagePosition.None; 
+                        break;
+                }
+            }
+                </code>
+            </example>
+        </member>
+        <member name="P:Telerik.WebControls.RadTreeView.Sort">
+            <summary>Gets or sets the sort order of the tree nodes in RadTreeView.</summary>
+            <remarks>
+            	<para>RadTreeView supports node sorting. The only thing you need to do is to set
+                the Sort property of RadTreeView to one of the following values:<br/>
+                 - Ascending<br/>
+                 - Descending<br/>
+                 - None</para>
+            	<para><br/>
+                Please, take into account that the treeview sorts the nodes just prior to content
+                rendering on screen, not upon node adding / removing from the collection.</para>
+            </remarks>
+            <example>
+            	<code lang="VB" title="[New Example]">
+            Protected Sub SortOrderChanged(ByVal sender As Object, ByVal e As System.EventArgs)
+                Select Case SortOrder.SelectedItem.Value
+                    Case "Ascending"
+                        RadTree1.Sort = RadTreeViewSort.Ascending
+                    Case "Descending"
+                        RadTree1.Sort = RadTreeViewSort.Descending
+                    Case Else
+                        RadTree1.Sort = RadTreeViewSort.None
+                End Select
+            End Sub
+                </code>
+            	<code lang="CS" title="[New Example]">
+            protected void SortOrderChanged(object sender, System.EventArgs e) 
+            {
+                switch (SortOrder.SelectedItem.Value)
+                {
+                    case "Ascending" : 
+                            RadTree1.Sort = RadTreeViewSort.Ascending; 
+                            break;
+                    case "Descending" : 
+                            RadTree1.Sort = RadTreeViewSort.Descending; 
+                            break;
+                    default: 
+                            RadTree1.Sort = RadTreeViewSort.None; 
+                            break;
+                }
+            }
+                </code>
+            </example>
+        </member>
+        <member name="P:Telerik.WebControls.RadTreeView.AllowNodeEditing">
+            <summary>
+            Gets a value indicating whether the text of the tree nodes are editable in the
+            browser.
+            </summary>
+            <remarks>
+            	<para>End-users can edit the text of tree-nodes by pressing F2 when the node is
+                selected or by clicking on a node that is already selected (slow double
+                click).</para>
+            	<para>
+                    You can disable / enable node editing for specific tree nodes by setting the
+                    <see cref="P:Telerik.WebControls.RadTreeNode.EditEnabled">EditEnabled</see> property of the specific
+                    RadTreeNode.
+                </para>
+            	<para>
+            		<br/>
+                    After node editing, RadTreeView fires the <see cref="E:Telerik.WebControls.RadTreeView.NodeEdit">NodeEdit</see>
+                    event and you can change the text of the node - the RadTreeNode instance is
+                    contained in the NodeEdited property of the event arguments and the new text is
+                    in the NewText property of the event arguments.
+                </para>
+            </remarks>
+            <example>
+            	<code lang="VB" title="[New Example]">
+            &lt;radT:RadTreeView
+                ID="RadTree1"
+                Runat="server"
+                AllowNodeEditing="True"
+                OnNodeEdit="HandleNodeEdit"
+            /&gt;
+             
+            Protected Sub HandleNodeEdit(ByVal sender As Object, ByVal NodeEvents As RadTreeNodeEventArgs)
+                Dim nodeEdited As RadTreeNode = NodeEvents.NodeEdited
+                Dim newText As String = NodeEvents.NewText
+             
+                nodeEdited.Text = newText
+            End Sub
+                </code>
+            	<code lang="CS" title="[New Example]">
+            &lt;radT:RadTreeView
+                ID="RadTree1"
+                Runat="server"
+                AllowNodeEditing="True"
+                OnNodeEdit="HandleNodeEdit"
+            /&gt;
+             
+            protected void HandleNodeEdit(object sender, RadTreeNodeEventArgs NodeEvents)
+            {            
+                RadTreeNode nodeEdited = NodeEvents.NodeEdited;
+                string newText = NodeEvents.NewText;
+             
+                nodeEdited.Text = newText;
+            }
+                </code>
+            </example>
+        </member>
+        <member name="P:Telerik.WebControls.RadTreeView.ExpandDelay">
+            <summary>
+            Gets or sets the value controlling the duration of the expand animation effect on
+            collapse / expand.
+            </summary>
+            <remarks>
+            The default value is 2. Set the property to 0 to disable the animation effect on
+            expand / collapse.
+            </remarks>
+        </member>
+        <member name="P:Telerik.WebControls.RadTreeView.ShowLineImages">
+            <summary>
+            Gets a value indicating whether the dotted lines indenting the nodes should be
+            displayed or not.
+            </summary>
+        </member>
+        <member name="P:Telerik.WebControls.RadTreeView.SingleExpandPath">
+            <summary>
+            Gets a value indicating whether only the current branch of the treeview is
+            expanded.
+            </summary>
+            <remarks>
+            The property closes all nodes that are not parents of the last expanded node.
+            This property is only effective on the client browser - in postback modes you need to
+            handle the logic yourself.
+            </remarks>
+        </member>
+        <member name="P:Telerik.WebControls.RadTreeView.ContentFile">
+            <summary>
+            The full location (path + filename) of the XML content file used to populate the menu.
+            </summary>
+        </member>
+        <member name="P:Telerik.WebControls.RadTreeView.AjaxUrl">
+            <summary>
+            Gets or sets the base URL which the AJAX calls will be made to.
+            </summary>
+            <value>
+            the base URL which the AJAX calls will be made to. 
+            </value>
+            <remarks>
+            	<para>The AjaxUrl might need to be different on different usage scenarios. For example
+            	it is good to set it to Request.CurrentExecutionFilePath when using a Server.Transfer().</para>
+            </remarks>
+        </member>
+        <member name="P:Telerik.WebControls.RadTreeView.ContextMenuContentFile">
+            <summary>
+            The full location (path + filename) of the XML content file used to populate the menu.
+            </summary>
+        </member>
+        <member name="P:Telerik.WebControls.RadTreeView.ImagesBaseDir">
+            <summary>
+            The directory where image files used in the treeview reside (path relative to application root)
+            </summary>
+        </member>
+        <member name="P:Telerik.WebControls.RadTreeView.AutoPostBack">
+            <summary>
+            When set to true all treenodes automatically generate server-event (postback).
+            </summary>
+        </member>
+        <member name="P:Telerik.WebControls.RadTreeView.AutoPostBackOnCheck">
+            <summary>
+            When set to true all the checkboxes generate server-event (postback) upon click.
+            </summary>
+        </member>
+        <member name="P:Telerik.WebControls.RadTreeView.CheckBoxes">
+            <summary>
+            When set to true displays a checkbox next to each treenode.
+            </summary>
+        </member>
+        <member name="P:Telerik.WebControls.RadTreeView.MultipleSelect">
+            <summary>
+            When set to true the treeview allows multiple node selection (by holding down ctrl key while selecting nodes)
+            </summary>
+        </member>
+        <member name="P:Telerik.WebControls.RadTreeView.DragAndDrop">
+            <summary>
+            When set to true enables drag-and-drop functionality
+            </summary>
+        </member>
+        <member name="P:Telerik.WebControls.RadTreeView.DragAndDropBetweenNodes">
+            <summary>
+            When set to true enables drag-and-drop visual clue (underline) between nodes while draggin
+            </summary>
+        </member>
+        <member name="P:Telerik.WebControls.RadTreeView.CausesValidation">
+            <summary>
+            Triggers both client and server side validation before posting back and firing user event-handlers.
+            </summary>
+        </member>
+        <member name="P:Telerik.WebControls.RadTreeView.AfterClientFocus">
+            <summary>
+            The name of the Javascript function the will be called upon focus on the treeview. The function must accept
+            one parameter - the instance of the treeview that receives the focus.
+            </summary>	
+        </member>
+        <member name="P:Telerik.WebControls.RadTreeView.BeforeClientContextMenu">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.WebControls.RadTreeView.BeforeClientClick">
+            <summary>
+            The name of the Javascript function that will be called upon click on a treenode. The function must accept a single parameter which is the instance of the node clicked.
+            For example if you define OnClientClick="ProcessClientClick", you must define a javascript function defined in the following way (example):<br/><br/>
+            function ProcessClientClick(node)
+            {
+            	alert("You clicked on: " + node.Text);
+            }
+            </summary>
+        </member>
+        <member name="P:Telerik.WebControls.RadTreeView.BeforeClientHighlight">
+            <summary>
+            The name of the Javascript function that will be called when the user highlights a treenode. Accepts a single parameter - the instance of the node highlighted.
+            </summary>
+        </member>
+        <member name="P:Telerik.WebControls.RadTreeView.BeforeClientDoubleClick">
+            <summary>
+            The name of the Javascript function that will be called when the user double clicks on a node.
+            </summary>
+        </member>
+        <member name="P:Telerik.WebControls.RadTreeView.AfterClientHighlight">
+            <summary>
+            The name of the Javascript function that will be called after the user highlights a treenode. Accepts a single parameter - the instance of the node highlighted.
+            </summary>
+        </member>
+        <member name="P:Telerik.WebControls.RadTreeView.AfterClientEdit">
+            <summary>
+            The name of the Javascript function that will be called after the user edits a node 
+            Accepts three parameters, 
+            </summary>
+        </member>
+        <member name="P:Telerik.WebControls.RadTreeView.BeforeClientToggle">
+            <summary>
+            The name of the Javascript function that will be called when the user toggles (expand/collapse) a treenode.. The function must accept a single parameter which is the instance of the node clicked.
+            For example if you define OnClientToggle="ProcessClientToggle", you must define a javascript function defined in the following way (example):<br/><br/>
+            function ProcessClientToggle(node)
+            {
+            	alert("You toggled: " + node.Text);
+            }
+            </summary>
+        </member>
+        <member name="P:Telerik.WebControls.RadTreeView.AfterClientToggle">
+            <summary>
+            The name of the Javascript function that will be called when the user toggles (expand/collapse) a treenode. Receives a single parameter - the instance of the toggled node.
+            </summary>
+        </member>
+        <member name="P:Telerik.WebControls.RadTreeView.BeforeClientDrop">
+            <summary>
+            The name of the Javascript function that will be called when the user drops a node onto another node. The function must accept two parameters - instances of source and destination nodes.
+            For example if you define BeforeClientDrop="ProcessClientDrop", you must define a javascript function defined in the following way (example):<br/><br/>
+            function ProcessClientDrop(sourceNode, destNode)
+            {
+            	alert("You dropped " + sourceNode.Text + " onto " + destNode.Text);
+            }
+            </summary>
+        </member>
+        <member name="P:Telerik.WebControls.RadTreeView.AfterClientDrop">
+            <summary>
+            The name of the Javascript function that will be called after the user drops a node onto another node. The function must accept two parameters - instances of source and destination nodes.
+            For example if you define AfterClientDrop="ProcessClientDrop", you must define a javascript function defined in the following way (example):<br/><br/>
+            function ProcessClientDrop(sourceNode, destNode)
+            {
+            	alert("You dropped " + sourceNode.Text + " onto " + destNode.Text);
+            }
+            </summary>
+        </member>
+        <member name="P:Telerik.WebControls.RadTreeView.BeforeClientDrag">
+            <summary>
+            The name of the Javascript function that will be called before the user starts dragging a node. The function must accept one parameters - instance of the node being dragged.
+            The function must return true if the action should be performed or false if you want to cancel dragging of this node.
+            
+            function ProcessClientDrag(sourceNode)
+            {
+            	alert("You started dragging ");
+            }
+            </summary>
+        </member>
+        <member name="P:Telerik.WebControls.RadTreeView.BeforeClientContextClick">
+            <summary>
+            The name of the Javascript function that will be called when the before the user clicks on a context menu item.
+            The custom javascript function must accept two parameter - the instance of the node for which a context menu was displayed and the text of the context menu item that was selected.
+            
+            function ContextMenuClick(node, itemText)
+            {
+            	status = "Context Menu Item " +itemText + " clicked for node "+ node.Text;	
+            }
+            </summary>
+        </member>
+        <member name="P:Telerik.WebControls.RadTreeView.BeforeClientCheck">
+            <summary>
+            The name of the Javascript function that will be called when the before the user checks (checkbox) a treenode.
+            </summary>
+        </member>
+        <member name="P:Telerik.WebControls.RadTreeView.AfterClientCheck">
+            <summary>
+            The name of the Javascript function that will be called when the after the user checks (checkbox) a treenode.
+            </summary>
+        </member>
+        <member name="P:Telerik.WebControls.RadTreeView.AfterClientMove">
+            <summary>
+            The name of the Javascript function that will be called when the user moves a mouse while dragging a node. Receives two parements - the instance of the node being dragged, and client-side browser events.
+            </summary>
+        </member>
+        <member name="P:Telerik.WebControls.RadTreeView.SkinsPath">
+            <summary>
+            Gets or sets the relative path of the folder containing the skins.
+            </summary>
+            <example>
+            If the skin folder is located in the project root and is named "Skins" the
+            SkinsPath property should be set to: "~/Skins". Then you can create subfolders for
+            individual skins e.g. Skins/Gold, Skins/Classic etc.
+            </example>
+            <value>
+            A string specifying the relative path to the folder which contains
+            r.a.d.<strong>treeview</strong> skins. The default value is
+            "~/RadControls/TreeView/Skins".
+            </value>
+            <remarks>
+            r.a.d.<strong>input</strong> ships with a set of predefined skins which are ready
+            to use. They are located in RadControls/TreeView/Skins.
+            </remarks>
+        </member>
+        <member name="P:Telerik.WebControls.RadTreeView.RetainScrollPosition">
+            <summary>
+            Instructs the treeview to auto-scroll to the selected node after postback
+            </summary>
+        </member>
+        <member name="P:Telerik.WebControls.RadTreeView.ValidationGroup">
+            <summary>
+             <para><font color="red">Note: This property is new in the .NET Framework version
+                2.0.</font></para>
+             <para>Gets or sets the name of the validation group to which this validation
+                control belongs.</para>
+            </summary>
+            <value>
+            The name of the validation group to which this validation control belongs. The
+            default is an empty string (""), which indicates that this property is not set.
+            </value>
+            <remarks>
+                This property works only when <see cref="P:Telerik.WebControls.RadTreeView.CausesValidation">CausesValidation</see>
+                is set to true.
+            </remarks>
+            
+        </member>
+        <member name="P:Telerik.WebControls.RadTreeView.PostBackUrl">
+            <summary>
+             <para>Gets or sets the URL of the page to post to from the current page when a tab
+                from the tabstrip is clicked.</para>
+            </summary>
+            <value>
+            The URL of the Web page to post to from the current page when a tab from the
+            tabstrip control is clicked. The default value is an empty string (""), which causes
+            the page to post back to itself.
+            </value>
+        </member>
+        <member name="P:Telerik.WebControls.RadTreeView.IsCallBack">
+            <summary>
+            Gets a value indicating whether the page request is the result of a TreeView
+            callback.
+            </summary>
+            <example>
+            	<code lang="CS" title="IsCallBackExample">
+            if (!Page.IsPostBack &amp;&amp; !RadTreeView1.IsCallBack)
+            {
+              // your init code here
+            }
+                </code>
+            	<code lang="VB" title="IsCallBackExampleVB">
+            If Not Page.IsPostBack AndAlso RadTreeView1.IsCallBack
+               'your init code here
+            End If
+                </code>
+            </example>
+            <remarks>
+            	<strong><em>IsCallBack</em></strong> can be used to skip heavy initialization
+            code. On TreeView callback, Page.IsPostBack is false and code inside <strong><em>If Not
+            Page.IsPostBack</em></strong> block gets executed too. You can skip that by adding the
+            <strong><em>RadTreeView.IsCallBack</em></strong> check.
+            </remarks>
+        </member>
+        <member name="P:Telerik.WebControls.RadTreeView.BorderColor">
+            <excludetoc/>
+            <exclude/>
+        </member>
+        <member name="P:Telerik.WebControls.RadTreeView.BorderStyle">
+            <excludetoc/>
+            <exclude/>
+        </member>
+        <member name="P:Telerik.WebControls.RadTreeView.BorderWidth">
+            <excludetoc/>
+            <exclude/>
+        </member>
+        <member name="P:Telerik.WebControls.RadTreeView.CssClass">
+            <excludetoc/>
+            <exclude/>
+        </member>
+        <member name="P:Telerik.WebControls.RadTreeView.ToolTip">
+            <excludetoc/>
+            <exclude/>
+        </member>
+        <member name="P:Telerik.WebControls.RadTreeView.Font">
+            <excludetoc/>
+            <exclude/>
+        </member>
+        <member name="P:Telerik.WebControls.RadTreeView.ForeColor">
+            <exclude/>
+            <excludetoc/>
+        </member>
+        <member name="P:Telerik.WebControls.RadTreeView.BackColor">
+            <excludetoc/>
+            <exclude/>
+        </member>
+        <member name="T:Telerik.WebControls.RadTreeView.RadTreeViewEventHandler">
+            <summary>
+            The delegate defining all RadTreeView Events.
+            </summary>
+        </member>
+        <member name="T:Telerik.WebControls.Design.Treeview.ControlBuilderForm">
+            <summary>
+            Summary description for ControlBuilderForm.
+            </summary>
+        </member>
+        <member name="M:Telerik.WebControls.Design.Treeview.ControlBuilderForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:Telerik.WebControls.Design.Treeview.ControlBuilderForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Telerik.WebControls.Design.RadTreeViewEditor">
+            <summary>
+            The editor for the RadTreeView items.
+            </summary>
+        </member>
+        <member name="T:Telerik.WebControls.Design.RadTreeViewEditorForm">
+            <summary>
+            The Windows form that hosts the RadTreeView editor.
+            </summary>
+        </member>
+        <member name="T:Telerik.WebControls.ExpandMode">
+            <summary>
+            This enumeration controls the expand behaviour of the nodes.	
+            </summary>
+        </member>
+        <member name="F:Telerik.WebControls.ExpandMode.ClientSide">
+            <summary>
+            The default behaviour - all nodes are loaded in the intial request and expand is performed on the client, without server interaction
+            </summary>
+        </member>
+        <member name="F:Telerik.WebControls.ExpandMode.ServerSide">
+            <summary>
+            Forces firing of the NodeExpand event - a postback occurs and developers can populate the node with its children in server side event handler
+            </summary>
+        </member>
+        <member name="F:Telerik.WebControls.ExpandMode.ServerSideCallBack">
+            <summary>
+            Forces firing of the NodeExpand event asyncronously from the client without postback - the NodeExpand event fires and child nodes added to the node collection are automatically transferred to the client without postback.
+            </summary>
+        </member>
+        <member name="T:Telerik.WebControls.LoadingMessagePosition">
+            <summary>
+            Specifies where the loading message is shown when Client-side load on demand is used.
+            </summary>
+        </member>
+        <member name="F:Telerik.WebControls.LoadingMessagePosition.BeforeNodeText">
+            <summary>
+            If the node text is "Some Text", the text is changed to "(loading ...) Some Text" when child nodes are being loaded (Assuming the LoadingMessage property has been set to "(loading...)";
+            </summary>
+        </member>
+        <member name="F:Telerik.WebControls.LoadingMessagePosition.AfterNodeText">
+            <summary>
+            If the node text is "Some Text", the text is changed to "Some Text (loading ...)" when child nodes are being loaded (Assuming the LoadingMessage property has been set to "(loading...)";
+            </summary>
+        </member>
+        <member name="F:Telerik.WebControls.LoadingMessagePosition.BelowNodeText">
+            <summary>
+            The text is not changed and (loading ...)" when child nodes are being loaded (Assuming the LoadingMessage property has been set to "(loading...)";
+            </summary>
+        </member>
+        <member name="F:Telerik.WebControls.LoadingMessagePosition.None">
+            <summary>
+            No loading text is displayed at all.
+            </summary>
+        </member>
+        <member name="T:Telerik.WebControls.RadTreeViewSort">
+            <summary>
+            The Telerik.WebControls.RadTreeViewSort enumeration supports three values - None, Ascending, Descending. Default is None.
+            </summary>
+        </member>
+        <member name="F:Telerik.WebControls.RadTreeViewSort.None">
+            <summary>
+            Nodes are not sorted at all.
+            </summary>
+        </member>
+        <member name="F:Telerik.WebControls.RadTreeViewSort.Ascending">
+            <summary>
+            Nodes are sorted in ascending order (min to max)
+            </summary>
+        </member>
+        <member name="F:Telerik.WebControls.RadTreeViewSort.Descending">
+            <summary>
+            Nodes are sorted in descending order (max to min)
+            </summary>
+        </member>
+        <member name="T:Telerik.WebControls.Ide.Common.RadTreeview.ProjectManagement">
+            <summary>
+            Utility class for Design - Time VisualStudio.NET project management.
+            </summary>
+        </member>
+        <member name="T:Telerik.RadTreeviewUtils.PropertyCategory">
+            <summary>
+            Defines the common property categories' names
+            </summary>
+        </member>
+        <member name="T:Telerik.WebControls.RadTreeViewContextMenu.ContextMenu">
+            <summary>
+            Summary description for ContextMenu.
+            </summary>
+        </member>
+        <member name="F:Telerik.WebControls.RadTreeViewContextMenu.ContextMenu.Items">
+            <summary>
+            Collection containing all items (of type ContextMenuItem) for the particular ContextMenu instance
+            </summary>
+        </member>
+        <member name="M:Telerik.WebControls.RadTreeViewContextMenu.ContextMenu.#ctor">
+            <summary>
+            Constructor.
+            </summary>
+        </member>
+        <member name="P:Telerik.WebControls.RadTreeViewContextMenu.ContextMenu.Name">
+            <summary>
+            The name of the ContextMenu - this uniquely identifies the menu and you can assign ContextMenus to different tree nodes by setting the ContextMenuName property of the node to the name of the ContextMenu.
+            </summary>
+        </member>
+        <member name="P:Telerik.WebControls.RadTreeViewContextMenu.ContextMenu.Width">
+            <summary>
+            You can explicitly set width for the ContextMenu.
+            </summary>
+        </member>
+        <member name="T:Telerik.WebControls.RadTreeViewContextMenu.ContextMenuItem">
+            <summary>
+            Summary description for RadTreeNodeContextMenuItem.
+            </summary>
+        </member>
+        <member name="M:Telerik.WebControls.RadTreeViewContextMenu.ContextMenuItem.#ctor">
+            <summary>
+            Constructor.
+            </summary>
+        </member>
+        <member name="M:Telerik.WebControls.RadTreeViewContextMenu.ContextMenuItem.#ctor(System.String)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="text">The text of the Context Menu item.</param>
+        </member>
+        <member name="P:Telerik.WebControls.RadTreeViewContextMenu.ContextMenuItem.Text">
+            <summary>
+            Text of the item. The value of Text is displayed in the browser.
+            </summary>
+        </member>
+        <member name="P:Telerik.WebControls.RadTreeViewContextMenu.ContextMenuItem.Image">
+            <summary>
+            Left-side image if you want images in your context menu.
+            </summary>
+        </member>
+        <member name="P:Telerik.WebControls.RadTreeViewContextMenu.ContextMenuItem.PostBack">
+            <summary>
+            If set to true, fire a postback, firing the ContextMenuItemClick event. If false (default) no postback will occur.
+            </summary>
+        </member>
+        <member name="P:Telerik.WebControls.RadTreeViewContextMenu.ContextMenuItem.ID">
+            <summary>
+            ID of the value - this might be helpful in some scenarios, for example multi-lingual context menus, where the item cannot be uniquely identified by its name.
+            </summary>
+        </member>
+        <member name="T:Telerik.WebControls.RadTreeNode">
+            <summary>Represents a single item in the RadTreeView class.</summary>
+            <remarks>
+            	<para>
+                    The <strong>RadTreeView</strong> control is made up of a hierarchy of menu items
+                    represented by <b>RadTreeNode</b> objects. Menu items at the top level (level 0)
+                    that do not have a parent menu item are called root or top-level menu items. A
+                    menu item that has a parent menu item is called a submenu item. All root menu
+                    items are stored in the <see cref="!:RadTreeView.Items">Items</see> collection of the
+                    menu. Submenu items are stored in a parent menu item's
+                    <see cref="!:Items">Items</see> collection. You can access a menu item's parent
+                    menu item by using the <see cref="P:Telerik.WebControls.RadTreeNode.Owner">Owner</see> property.
+                </para>
+            	<para>To create the menu items for a <b>RadTreeView</b> control, use one of the
+                following methods:</para>
+            	<list type="bullet">
+            		<item>Use declarative syntax to create static menu items.</item>
+            		<item>Use a constructor to dynamically create new instances of the
+                    <b>RadTreeNode</b> class. These <b>RadTreeNode</b> objects can then be added to the
+                    <b>Items</b> collection of their owner.</item>
+            		<item>Bind the <b>Menu</b> control to a data source.</item>
+            	</list>
+            	<para>
+                    When the user clicks a menu item, the <b>Menu</b> control can either navigate
+                    to a linked Web page or simply post back to the server. If the
+                    <see cref="P:Telerik.WebControls.RadTreeNode.NavigateUrl">NavigateUrl</see> property of a menu item is set, the
+                    <b>RadTreeView</b> control navigates to the linked page. By default, a linked page
+                    is displayed in the same window or frame as the <strong>RadTreeView</strong>
+                    control. To display the linked content in a different window or frame, use the
+                    <see cref="P:Telerik.WebControls.RadTreeNode.Target">Target</see> property.
+                </para>
+            	<para>
+                    Each menu item has a <see cref="P:Telerik.WebControls.RadTreeNode.Text">Text</see> and a
+                    <see cref="P:Telerik.WebControls.RadTreeNode.Value">Value</see> property. The value of the <b>Text</b> property
+                    is displayed in the <b>RadTreeView</b> control, while the <b>Value</b> property is
+                    used to store any additional data about the menu item.
+                </para>
+            </remarks>
+        </member>
+        <member name="M:Telerik.WebControls.RadTreeNode.Toggle">
+            <summary>
+            Toggles Expand/Collapse state of the node.
+            </summary>
+        </member>
+        <member name="M:Telerik.WebControls.RadTreeNode.ExpandChildNodes">
+            <summary>
+            Expands  all child nodes of the node.
+            </summary>
+        </member>
+        <member name="M:Telerik.WebControls.RadTreeNode.ExpandParentNodes">
+            <summary>
+            Expands  all parent nodes of the node.
+            </summary>
+        </member>
+        <member name="M:Telerik.WebControls.RadTreeNode.CollapseChildNodes">
+            <summary>
+            Collapses recursively all child nodes of the node.
+            </summary>
+        </member>
+        <member name="M:Telerik.WebControls.RadTreeNode.CollapseParentNodes">
+            <summary>
+            Expands  all parent nodes of the node.
+            </summary>
+        </member>
+        <member name="M:Telerik.WebControls.RadTreeNode.GetFullPath(System.String)">
+            <summary>
+            Returns the full path (location) of the node delimited by the specified character.
+            </summary>
+            <param name="delimiter">The character to use as a delimiter</param>
+            <returns>Returns the full path of the node delimited by the specified character.</returns>
+        </member>
+        <member name="P:Telerik.WebControls.RadTreeNode.Parent">
+            <summary>
+            The parent RadTreeNode. Null if there's no parent (root node).
+            </summary>		
+        </member>
+        <member name="P:Telerik.WebControls.RadTreeNode.CssClass">
+            <summary>
+            Custom CSS class applied only on the current node. Overrides NodeCssClass from the parent RadTreeView.
+            </summary>		
+        </member>
+        <member name="P:Telerik.WebControls.RadTreeNode.CssClassOver">
+            <summary>
+            Custom CSS class applied only on the current node when the mouse hovers the node. Overrides NodeCssClassOver from the parent RadTreeView.
+            </summary>		
+        </member>
+        <member name="P:Telerik.WebControls.RadTreeNode.CssClassSelect">
+            <summary>
+            Custom CSS class applied only on the current node. Overrides NodeCssClassSelect from the parent RadTreeView.
+            </summary>		
+        </member>
+        <member name="P:Telerik.WebControls.RadTreeNode.Text">
+            <summary>
+            The text the the node displays on screen.
+            </summary>
+            
+        </member>
+        <member name="P:Telerik.WebControls.RadTreeNode.Value">
+            <summary>
+            Can be used to store information that is available both on client and server side.
+            </summary>
+        </member>
+        <member name="P:Telerik.WebControls.RadTreeNode.Category">
+            <summary>
+            Can be used to distinguish between different categories of nodes. For example some nodes may belong to category "Country", others to "Continent", etc.
+            Using the property makes it easier to find which category the current node belongs to on both client and server side.
+            </summary>
+        </member>
+        <member name="P:Telerik.WebControls.RadTreeNode.ToolTip">
+            <summary>
+            Displays a hint popup information when the user points the node with the mouse. If WindowsXP Narrator is turned on, it will read the text on the tooltip which is an importat requirement of Section 508 (government requirement for building software that can be used by people with disabilities)
+            </summary>
+        </member>
+        <member name="P:Telerik.WebControls.RadTreeNode.ImageUrl">
+            <summary>
+            Optional image that is displayed before the text of the node.
+            </summary>
+        </member>
+        <member name="P:Telerik.WebControls.RadTreeNode.ImageExpandedUrl">
+            <summary>
+            Optional. Should be used only when <seealso cref="P:Telerik.WebControls.RadTreeNode.Image"/> is specified. The image displayed when the node is expanded.		
+            </summary>
+        </member>
+        <member name="P:Telerik.WebControls.RadTreeNode.ID">
+            <summary>
+            This property is being used internally by the <strong>RadTreeView</strong> control.
+            Setting it may lead to unpredictable results.
+            </summary>
+            <remarks>
+                The <strong>ID</strong> property is used internally. Use the
+                <see cref="P:Telerik.WebControls.RadTreeNode.Value">Value</see> property to store any item related data.
+            </remarks>
+        </member>
+        <member name="P:Telerik.WebControls.RadTreeNode.Level">
+            <summary>
+            Manages the item level of a particular Item instance. This property allows easy
+            implementation/separation of the menu items in levels.
+            </summary>
+        </member>
+        <member name="P:Telerik.WebControls.RadTreeNode.NavigateUrl">
+            <summary>
+            The URL the user is redirected to when he/she clicks on the node. Remember to add "http://" in front of links that lead outside your website.
+            </summary>
+        </member>
+        <member name="P:Telerik.WebControls.RadTreeNode.Target">
+            <summary>
+            Specifies the name of the target frame for Href redirection. Supports "blank" for opening the specified Href in a new window.
+            </summary>
+        </member>
+        <member name="P:Telerik.WebControls.RadTreeNode.Expanded">
+            <summary>
+            Sets the expanded/collapsed state of a tree-node that contains child nodes.
+            </summary>
+        </member>
+        <member name="P:Telerik.WebControls.RadTreeNode.Enabled">
+            <exclude/>
+            <excludetoc/>
+        </member>
+        <member name="P:Telerik.WebControls.RadTreeNode.Visible">
+            <excludetoc/>
+            <exclude/>
+        </member>
+        <member name="P:Telerik.WebControls.RadTreeNode.Checked">
+            <summary>
+            If checkbox mode is turned on, this property shows whether the node is checked or not.
+            </summary>
+        </member>
+        <member name="P:Telerik.WebControls.RadTreeNode.Checkable">
+            <summary>
+            If the parent RadTreeView has its CheckBoxes property set to true, RadTreeView automatically displays a checkbox next to each node. You can set this property to false for nodes that do not need to display a checkbox.
+            </summary>
+        </member>
+        <member name="P:Telerik.WebControls.RadTreeNode.Selected">
+            <summary>
+            If the current node is selected. By default, only one node can be selected, however you can enable multiple node selection by setting the MultipleSelect attribute of the parent RadTreeView to true.
+            </summary>
+        </member>
+        <member name="P:Telerik.WebControls.RadTreeNode.DragEnabled">
+            <summary>
+            Enables / disabled the ability to drag this node.
+            </summary>
+        </member>
+        <member name="P:Telerik.WebControls.RadTreeNode.DropEnabled">
+            <summary>
+            Enables / disabled the ability to drop nodes over this node.
+            </summary>
+        </member>
+        <member name="P:Telerik.WebControls.RadTreeNode.EditEnabled">
+            <summary>
+            Enables / disabled the ability to edit a node.
+            </summary>
+        </member>
+        <member name="P:Telerik.WebControls.RadTreeNode.ContextMenuName">
+            <summary>
+            The context menu name that will be opened when end-users right-click the node.
+            </summary>
+        </member>
+        <member name="P:Telerik.WebControls.RadTreeNode.ExpandMode">
+            <summary>
+            When set the ExpandMode.ServerSide will fire a server event (NodeExpand) so you can populate the node on demand.
+            </summary>
+        </member>
+        <member name="P:Telerik.WebControls.RadTreeNode.LongDesc">
+            <summary>
+            A Section 508 element - applied
+            </summary>
+        </member>
+        <member name="P:Telerik.WebControls.RadTreeNode.Prev">
+            <summary>
+            Gets the previous node sibling in the tree structure or returns null if this is the first node in the respective node group.
+            </summary>
+        </member>
+        <member name="P:Telerik.WebControls.RadTreeNode.Next">
+            <summary>
+            Gets the next node sibling in the tree structure or returns null if this is the last node in the respective node group.
+            </summary>
+        </member>
+        <member name="P:Telerik.WebControls.RadTreeNode.FullPath">
+            <summary>
+            Returns the full path (location) of the node delimited with slashes. For example if the current node has
+            a Text attribute "Houston", its parent node has a Text attribute "Texas" and its parent (root) node has a 
+            Text attribute "U.S.A", FullPath will return "U.S.A/Texas/Houston"
+            </summary>
+        </member>
+        <member name="T:Telerik.WebControls.RadTreeNodeCollection">
+            <summary>
+                A collection of <see cref="T:Telerik.WebControls.RadTreeNode">RadTreeNode</see> objects in a
+                <see cref="T:Telerik.WebControls.RadTreeView">RadTreeView</see> control.
+            </summary>
+            <remarks>
+            	<para>The <strong>RadTreeNodeCollection</strong> class represents a collection of
+                <strong>RadTreeNode</strong> objects. The <strong>RadTreeNode</strong> objects in turn represent 
+                menu items within a <strong>RadTreeView</strong> control.</para>
+            	<list type="bullet">
+            		<item>
+                        Use the <see cref="P:Telerik.WebControls.RadTreeNodeCollection.Item(System.Int32)">indexer</see> to programmatically retrieve a
+                        single RadTreeNode from the collection, using array notation.
+                    </item>
+            		<item>
+                        Use the <strong>Count</strong> property to determine the total
+                        number of menu items in the collection.
+                    </item>
+            		<item>
+                        Use the <see cref="M:Telerik.WebControls.RadTreeNodeCollection.Add(Telerik.WebControls.RadTreeNode)">Add</see> method to add menu items in the collection.
+                    </item>
+            		<item>
+                        Use the <see cref="M:Telerik.WebControls.RadTreeNodeCollection.Remove(Telerik.WebControls.RadTreeNode)">Remove</see> method to remove menu items from the
+                        collection.
+                    </item>
+            	</list>
+            </remarks>
+            <moduleiscollection/>
+        </member>
+        <member name="M:Telerik.WebControls.RadTreeNodeCollection.#ctor(Telerik.WebControls.IRadTreeNodeContainer)">
+            <summary>Initializes a new instance of the <strong>RadTreeNodeCollection</strong> class.</summary>
+            <remarks>Use the constructor to create a new <strong>RadTreeNodeCollection</strong> class.</remarks>
+            <param name="owner">The owner of the collection.</param>
+        </member>
+        <member name="M:Telerik.WebControls.RadTreeNodeCollection.Add(Telerik.WebControls.RadTreeNode)">
+            <summary>Appends a <see cref="T:Telerik.WebControls.RadTreeNode">RadTreeNode</see> to the end of the collection.</summary>
+            <example>
+            	<para>The following example demonstrates how to programmatically add items in a
+                <strong>RadTreeView</strong> control.</para>
+            	<code lang="CS">
+            RadTreeNode newsItem = new RadTreeNode("News");
+             
+            RadTreeView1.Nodes.Add(newsItem);
+                </code>
+            	<code lang="VB">
+            Dim newsItem As RadTreeNode = New RadTreeNode("News")
+             
+            RadTreeView1.Nodes.Add(newsItem)
+                </code>
+            </example>
+        </member>
+        <member name="M:Telerik.WebControls.RadTreeNodeCollection.AddRange(Telerik.WebControls.RadTreeNode[])">
+            <summary>Adds the items in an array of <see cref="T:Telerik.WebControls.RadTreeNode">RadTreeNode</see> objects to the collection.</summary>
+            <remarks>
+            	<para>
+                    Use the <b>AddRange</b> method to add the items in the array of
+                    <see cref="T:Telerik.WebControls.RadTreeNode">RadTreeNode</see> objects specified by the <i>items</i> parameter. This
+                    allows you to add multiple <b>RadTreeNode</b> objects to the collection in a single
+                    step.
+                </para>
+            </remarks>
+            <example>
+                The following example demonstrates how to use the <strong>AddRange</strong> method
+                to add multiple items in a single step. 
+                <code lang="CS">
+            void Page_Load(object sender, EventArgs e)
+            {
+                if (!Page.IsPostBack)
+                {
+                    RadTreeNode[] items = new RadTreeNode[] { new RadTreeNode("First"), new RadTreeNode("Second"), new RadTreeNode("Third") };
+                    RadTreeView1.Nodes.AddRange(items);
+                }
+            }
+                </code>
+            	<code lang="VB">
+            Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+                If Not Page.IsPostBack Then
+                    Dim items() As RadTreeNode = {New RadTreeNode("First"), New RadTreeNode("Second"), New RadTreeNode("Third")}
+                    RadTreeView1.Nodes.AddRange(items)
+                End If
+            End Sub
+                </code>
+            </example>
+        </member>
+        <member name="M:Telerik.WebControls.RadTreeNodeCollection.Insert(System.Int32,Telerik.WebControls.RadTreeNode)">
+            <summary>
+                Inserts the specified <see cref="T:Telerik.WebControls.RadTreeNode">RadTreeNode</see> in the collection at the specified
+                index location.
+            </summary>
+            <remarks>
+            Use the <b>Insert</b> method to add a <strong>RadTreeNode</strong> to the collection at
+            the index specified by the <i>index</i> parameter.
+            </remarks>
+            <param name="index">The location in the collection to insert the <strong>RadTreeNode</strong>.</param>
+            <param name="item">The <strong>RadTreeNode</strong> to add to the collection.</param>
+        </member>
+        <member name="M:Telerik.WebControls.RadTreeNodeCollection.IndexOf(Telerik.WebControls.RadTreeNode)">
+            <summary>
+                Determines the index value that represents the position of the specified
+                <paramref name="item">RadTreeNode</paramref> in the collection.
+            </summary>
+            <returns>
+            The zero-based index position of the specified <strong>RadTreeNode</strong> in the
+            collection.
+            </returns>
+            <remarks>
+            Use the <b>IndexOf</b> method to determine the index value of the
+            <strong>RadTreeNode</strong> specified by the <i>item</i> parameter in the collection. If an item
+            with this criteria is not found in the collection, -1 is returned.
+            </remarks>
+            <param name="item">A <strong>RadTreeNode</strong> to search for in the collection.</param>
+        </member>
+        <member name="M:Telerik.WebControls.RadTreeNodeCollection.Contains(Telerik.WebControls.RadTreeNode)">
+            <summary>
+                Determines whether the collection contains the specified
+                <paramref name="item">RadTreeNode</paramref>.
+            </summary>
+            <returns>
+            	<strong>true</strong> if the collection contains the specified item; otherwise,
+            <b>false</b>.
+            </returns>
+            <remarks>
+            Use the <b>Contains</b> method to determine whether the <strong>RadTreeNode</strong>
+            specified by the <i>item</i> parameter is in the collection.
+            </remarks>
+            <param name="item">A RadTreeNode to search for in the collection.</param>
+        </member>
+        <member name="M:Telerik.WebControls.RadTreeNodeCollection.Remove(Telerik.WebControls.RadTreeNode)">
+            <summary>Removes the specified <paramref name="item">RadTreeNode</paramref> from the collection.</summary>
+            <remarks>
+            Use the <b>Remove</b> method to remove a <strong>RadTreeNode</strong> from the
+            collection.
+            </remarks>
+            <example>
+                The following example demonstrates how to programmatically remove a RadTreeNode from a
+                <strong>RadTreeView</strong> control. 
+                <code lang="CS">
+            RadTreeNode newsItem = RadTreeView1FindTabByText("News");
+            if (newsItem != null)
+            {
+                RadTreeView1.Nodes.Remove(newsItem);
+            }
+                </code>
+            	<code lang="VB">
+            Dim newsItem As RadTreeNode = RadTreeView1FindTabByText("News")
+            If Not newsItem Is Nothing Then
+                RadTreeView1.Nodes.Remove(newsItem)
+            End If
+                </code>
+            </example>
+        </member>
+        <member name="M:Telerik.WebControls.RadTreeNodeCollection.RemoveAt(System.Int32)">
+            <summary>Removes the <see cref="T:Telerik.WebControls.RadTreeNode">RadTreeNode</see> at the specified index from the collection.</summary>
+            <remarks>
+            	<para>Use the <b>RemoveAt</b> method to remove the <strong>RadTreeNode</strong> at the
+                specified index from the collection.</para>
+            </remarks>
+            <param name="index">The index of the <strong>RadTreeNode</strong> to remove.</param>
+        </member>
+        <member name="M:Telerik.WebControls.RadTreeNodeCollection.Clear">
+            <summary>Removes all items from the collection.</summary>
+            <remarks>
+                Use the <strong>Clear</strong> method to remove all items from the collection. The
+                <strong>Count</strong> property is set to 0.
+            </remarks>
+        </member>
+        <member name="M:Telerik.WebControls.RadTreeNodeCollection.FindNodeByText(System.String)">
+            <summary>
+                Searches the <strong>RadTreeNodeCollection</strong> for the first
+                <see cref="T:Telerik.WebControls.RadTreeNode">RadTreeNode</see> with a <see cref="P:Telerik.WebControls.RadTreeNode.Text">Text</see> property equal to
+                the specified value.
+            </summary>
+            <returns>
+                A <see cref="T:Telerik.WebControls.RadTreeNode">RadTreeNode</see> whose <see cref="P:Telerik.WebControls.RadTreeNode.Text">Text</see> property is equal
+                to the specified value.
+            </returns>
+            <remarks>
+            The method returns the first item matching the search criteria. If no item is
+            matching then <strong>null</strong> (<strong>Nothing</strong> in VB.NET) is
+            returned.
+            </remarks>
+            <param name="text">The value to search for.</param>
+        </member>
+        <member name="M:Telerik.WebControls.RadTreeNodeCollection.FindNodeByValue(System.String)">
+            <summary>
+                Searches the <strong>RadTreeNodeCollection</strong> for the first
+                <see cref="T:Telerik.WebControls.RadTreeNode">RadTreeNode</see> with a <see cref="P:Telerik.WebControls.RadTreeNode.Value">Value</see> property equal
+                to the specified value.
+            </summary>
+            <returns>
+                A <see cref="T:Telerik.WebControls.RadTreeNode">RadTreeNode</see> whose <see cref="P:Telerik.WebControls.RadTreeNode.Value">Value</see> property is
+                equal to the specified value.
+            </returns>
+            <remarks>
+            The method returns the first item matching the search criteria. If no item is
+            matching then <strong>null</strong> (<strong>Nothing</strong> in VB.NET) is
+            returned.
+            </remarks>
+            <param name="value">The value to search for.</param>
+        </member>
+        <member name="M:Telerik.WebControls.RadTreeNodeCollection.FindNodeByUrl(System.String)">
+            <summary>
+                Searches the <strong>RadTreeNodeCollection</strong> for the first
+                <see cref="T:Telerik.WebControls.RadTreeNode">Item</see> with a <see cref="P:Telerik.WebControls.RadTreeNode.NavigateUrl">NavigateUrl</see>
+                property equal to the specified value.
+            </summary>
+            <returns>
+                A <see cref="T:Telerik.WebControls.RadTreeNode">Item</see> whose <see cref="P:Telerik.WebControls.RadTreeNode.NavigateUrl">NavigateUrl</see>
+                property is equal to the specified value.
+            </returns>
+            <remarks>
+            The method returns the first Item matching the search criteria. If no Item is
+            matching then <strong>null</strong> (<strong>Nothing</strong> in VB.NET) is
+            returned.
+            </remarks>
+            <param name="url">The value to search for.</param>
+        </member>
+        <member name="P:Telerik.WebControls.RadTreeNodeCollection.Item(System.Int32)">
+            <summary>
+            	<para>
+                    Gets a <see cref="T:Telerik.WebControls.RadTreeNode">RadTreeNode</see> at the specified index in the collection.
+                </para>
+            </summary>
+            <remarks>
+            	<para>Use this indexer to get a <strong>RadTreeNode</strong> from the collection at the
+                specified index, using array notation.</para>
+            </remarks>
+            <param name="index">
+            The zero-based index of the <strong>RadTreeNode</strong> to retrieve from the
+            collection.
+            </param>		
+        </member>
+        <member name="T:Telerik.WebControls.RadTreeNodeEventArgs">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Telerik.WebControls.RadTreeNodeEventArgs.NodeClicked">
+            <summary>
+            Used to retrieve the node that was clicked in the browser and generated the postback. Typically used in user event handlers that handle the NodeClick event.
+            </summary>
+        </member>
+        <member name="F:Telerik.WebControls.RadTreeNodeEventArgs.SourceDragNode">
+            <summary>
+            Used to retrieve the source node of the NodeDrop event.
+            </summary>
+        </member>
+        <member name="F:Telerik.WebControls.RadTreeNodeEventArgs.DestDragNode">
+            <summary>
+            Used to retrieve the destination node of the NodeDrop event.
+            </summary>
+        </member>
+        <member name="F:Telerik.WebControls.RadTreeNodeEventArgs.DropPosition">
+            <summary>
+            The drop position of the source node regarding the destination node - over (default), above, below.
+            </summary>
+        </member>
+        <member name="F:Telerik.WebControls.RadTreeNodeEventArgs.NodeBound">
+            <summary>
+            Used to retrieve the last node that has been bound.
+            </summary>
+        </member>
+        <member name="F:Telerik.WebControls.RadTreeNodeEventArgs.NodeCreated">
+            <summary>
+            Used to retrieve the currently created item;
+            </summary>
+        </member>
+        <member name="F:Telerik.WebControls.RadTreeNodeEventArgs.NodeEdited">
+            <summary>
+            Used to retrieve the the node that has been edited;
+            </summary>
+        </member>
+        <member name="F:Telerik.WebControls.RadTreeNodeEventArgs.NodeChecked">
+            <summary>
+            Used to retrieve the the node that has been checked.
+            </summary>
+        </member>
+        <member name="F:Telerik.WebControls.RadTreeNodeEventArgs.NewText">
+            <summary>
+            Used to retrieve the the new text of the edited node;
+            </summary>
+        </member>
+        <member name="F:Telerik.WebControls.RadTreeNodeEventArgs.ContextMenuItemText">
+            <summary>
+            The text of the context menu item that was clicked
+            </summary>
+        </member>
+        <member name="F:Telerik.WebControls.RadTreeNodeEventArgs.ContextMenuItemID">
+            <summary>
+            The ID of the context menu item that was clicked
+            </summary>
+        </member>
+        <member name="F:Telerik.WebControls.RadTreeNodeEventArgs.HtmlElementID">
+            <summary>
+            The ID of the Html element the node was dropped over.
+            </summary>
+        </member>
+        <member name="F:Telerik.WebControls.RadTreeNodeEventArgs.NodeBoundDataRow">
+            <summary>
+            The DataRow corresponding to the Node being bound.
+            </summary>
+        </member>
+        <member name="M:Telerik.WebControls.RadTreeNodeEventArgs.#ctor">
+            <summary>
+            Constructor.
+            </summary>
+        </member>
+        <member name="M:Telerik.WebControls.RadTreeNodeEventArgs.#ctor(Telerik.WebControls.RadTreeNode)">
+            <summary>
+            Constructor.
+            </summary>		
+        </member>
+        <member name="T:Telerik.WebControls.RadTreeViewImages">
+            <summary>
+            Summary description for RadTreeViewImages.
+            </summary>
+        </member>
+        <member name="T:Telerik.WebControls.RadTreeViewXmlParser">
+            <summary>
+            Summary description for XmlParser.
+            </summary>
+        </member>
+    </members>
+</doc>

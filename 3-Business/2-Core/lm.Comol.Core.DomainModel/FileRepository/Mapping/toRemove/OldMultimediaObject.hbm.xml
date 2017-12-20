@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="lm.Comol.Core.DomainModel" namespace="lm.Comol.Core.FileRepository.Domain.toRemove">
+  <class name="OldMultimediaObject" table="FR_MultimediaFileIndex" >
+    <id name="Id" column="Id" type="Int64">
+    </id>
+    <property name="IdMultimediaFileTransfer" update="false" insert="false"/>
+    <property name="Fullname" update="false" insert="false"/>
+    <property name="IsDefaultDocument" update="false" insert="false"/>
+    <property name="Probability" update="false" insert="false"/>
+    <property name="Transferred"/>
+  </class>
+</hibernate-mapping>

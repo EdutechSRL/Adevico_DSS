@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="lm.Comol.Core.BaseModules.Tickets.Domain.liteAssignment">
+    <Position X="4.75" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAACAAAAAAAAAAACAAAAAQABAAAAACA=</HashCode>
+      <FileName>Tickets\Domain\MappedDTO\liteAssignment.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="AssignedTo" />
+      <Property Name="AssignedCategory" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="lm.Comol.Core.BaseModules.Tickets.Domain.liteUser">
+    <Position X="4.75" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIACAAAAAAAAAAAAAAAAAAQABAAAAAAAIAAAAAAAAAA=</HashCode>
+      <FileName>Tickets\Domain\MappedDTO\liteUser.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Person" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="lm.Comol.Core.BaseModules.Tickets.Domain.liteCategory">
+    <Position X="6.75" Y="1.5" Width="1.5" />
+    <AssociationLine Name="Translations" Type="lm.Comol.Core.BaseModules.Tickets.Domain.liteTranslation" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="8.25" Y="2.073" />
+        <Point X="8.812" Y="2.073" />
+        <Point X="8.812" Y="3.75" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-1.181" Y="0.137" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAACAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Tickets\Domain\MappedDTO\liteCategory.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Translations" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="lm.Comol.Core.BaseModules.Tickets.Domain.liteCommunity">
+    <Position X="8.5" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Tickets\Domain\MappedDTO\liteCommunity.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="lm.Comol.Core.BaseModules.Tickets.Domain.liteMessage">
+    <Position X="6.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAACAAAAAAAAAAACAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>Tickets\Domain\MappedDTO\liteMessage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="lm.Comol.Core.BaseModules.Tickets.Domain.litePerson">
+    <Position X="4.75" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAQABAAAAAAAIAAAAAAAAAA=</HashCode>
+      <FileName>Tickets\Domain\MappedDTO\litePerson.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="lm.Comol.Core.BaseModules.Tickets.Domain.liteTicket">
+    <Position X="6.75" Y="4.75" Width="1.5" />
+    <AssociationLine Name="Community" Type="lm.Comol.Core.BaseModules.Tickets.Domain.liteCommunity" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="8.25" Y="5.875" />
+        <Point X="8.688" Y="5.875" />
+        <Point X="8.688" Y="6.75" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true" ManuallySized="true">
+        <Position X="-1.126" Y="0.115" Height="0.16" Width="0.937" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="LastAssignment" Type="lm.Comol.Core.BaseModules.Tickets.Domain.liteAssignment" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="7.398" Y="4.75" />
+        <Point X="7.398" Y="3.812" />
+        <Point X="6.25" Y="3.812" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="Assignments" Type="lm.Comol.Core.BaseModules.Tickets.Domain.liteAssignment" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="7.062" Y="4.75" />
+        <Point X="7.062" Y="4.312" />
+        <Point X="6.25" Y="4.312" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAKCAEBEAAIAAEAAAAAACAAAAAAACAEAAAAAAQAEAAA=</HashCode>
+      <FileName>Tickets\Domain\MappedDTO\liteTicket.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Community" />
+      <Property Name="LastAssignment" />
+      <Property Name="CreationCategory" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="Messages" />
+      <Property Name="Assignments" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="lm.Comol.Core.BaseModules.Tickets.Domain.liteTranslation">
+    <Position X="8.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAQAAgAAAAAAAAAAAAAECAA=</HashCode>
+      <FileName>Tickets\Domain\MappedDTO\liteTranslation.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Tahoma" Size="8.25" />
+</ClassDiagram>

@@ -1,0 +1,121 @@
+.RadDock {
+  /*position: absolute;*/
+  font-family: "Segoe UI",Arial,Helvetica,sans-serif;
+  font-size: 12px;
+  word-wrap: break-word;
+  border-width: 1px;
+  border-style: solid;
+  /* Collapsed dock */
+  /* Right to Left mode */ }
+  .RadDock.rdRoundedCorner {
+    border-radius: 5px; }
+  .RadDock .rdShadow {
+    box-shadow: 2px 3px 4px #828282; }
+  .RadDock.RadDock_Pinned {
+    /*position: fixed;*/ }
+  .RadDock .rdTitleWrapper {
+    position: relative;
+    height: 17px;
+    padding: 4px 10px;
+    border-bottom: 1px solid; }
+  .RadDock div.rdGripTop .rdTitleWrapper {
+    height: 0; }
+  .RadDock div.rdNone .rdTitleWrapper {
+    height: 0;
+    padding: 0;
+    border-bottom: 0; }
+  .RadDock .rdTitleWrapper:hover {
+    cursor: move; }
+  .RadDock.rdRoundedCorner .rdTitleWrapper {
+    border-radius: 5px 5px 0 0; }
+  .RadDock .rdTitle {
+    margin: 0;
+    padding: 0;
+    font-size: 12px;
+    font-weight: normal;
+    display: inline-block;
+    *zoom: 1;
+    *display: inline;
+    width: 60%;
+    line-height: 17px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden; }
+  .RadDock .rdCommands {
+    position: absolute;
+    top: 5px;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    list-style: none; }
+  .RadDock .rdCommands:hover {
+    cursor: auto; }
+  .RadDock .rdListItem {
+    display: inline-block;
+    *zoom: 1;
+    *display: inline;
+    margin-right: 8px; }
+  .RadDock .rdListItem button {
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: 0;
+    display: inline-block;
+    *zoom: 1;
+    *display: block;
+    width: 19px;
+    height: 19px;
+    text-indent: -9999px;
+    *font-size: 0;
+    *line-height: 0; }
+  .RadDock .rdListItem button:hover {
+    cursor: pointer; }
+  .RadDock .rdExpand {
+    background-position: -2px -622px; }
+  .RadDock .rdExpand:hover {
+    background-position: -22px -622px; }
+  .RadDock .rdCollapse {
+    background-position: -2px -662px; }
+  .RadDock .rdCollapse:hover {
+    background-position: -22px -662px; }
+  .RadDock button,
+  .RadDock .rdCustom {
+    background-position: -2px -962px; }
+  .RadDock button:hover,
+  .RadDock .rdCustom:hover {
+    background-position: -22px -962px; }
+  .RadDock .rdClose {
+    background-position: -2px -762px; }
+  .RadDock .rdClose:hover {
+    background-position: -22px -762px; }
+  .RadDock .rdPin {
+    background-position: -2px -482px; }
+  .RadDock .rdPin:hover {
+    background-position: -22px -482px; }
+  .RadDock .rdUnpin {
+    background-position: -2px -502px; }
+  .RadDock .rdUnpin:hover {
+    background-position: -22px -502px; }
+  .RadDock .rdContentWrapper {
+    padding: 5px 10px; }
+  .RadDock.rdRoundedCorner .rdContentWrapper {
+    border-radius: 0 0 5px 5px; }
+  .RadDock.rdNone .rdContentWrapper {
+    border-radius: 5px; }
+  .RadDock.rdCollapsed {
+    height: 25px !important;
+    overflow: hidden; }
+  .RadDock.rdCollapsed.rdRoundedCorner, .RadDock.rdCollapsed.rdRoundedCorner .rdTitleWrapper {
+    border-radius: 5px 5px 0 0; }
+  .RadDock.rdCollapsed .rdTitleWrapper {
+    *height: 25px; }
+  .RadDock.RadDock_Rtl .rdCommands {
+    left: 10px;
+    right: auto; }
+
+.RadDockZone {
+  min-width: 100px;
+  min-height: 50px;
+  padding: 5px;
+  border-width: 1px;
+  border-style: solid; }
+

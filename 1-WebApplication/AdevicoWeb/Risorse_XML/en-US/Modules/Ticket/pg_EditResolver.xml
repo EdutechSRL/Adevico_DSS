@@ -1,0 +1,292 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--eng-->
+<Resource xmlns="urn:ComolTranslation">
+
+	<item name="LTpageTitle_t.text">Ticket management</item>
+	<item name="LTcontentTitle_t.text">Ticket management</item>
+
+	<item name="LTrequest_t.text">Request code</item>
+	<item name="LTstatus_t.text">Status</item>
+	<item name="LTcategory_t.text">Category</item>
+	<item name="LTreqSet_Show.text">Show details</item>
+	<item name="LTreqSet_Hide.text">Hide details</item>
+
+	<item name="LBstatus_t.text">Status</item>
+	<item name="LBcommunity_t.text">Community</item>
+	<item name="LBcategoryInit_t.text">Category creation</item>
+	<item name="LBcategoryCur_t.text">Current category</item>
+	
+	<item name="LNBchangeStatus.text">Change status</item>
+	<item name="LNBchangeStatus.ToolTip">Change status</item>
+	<item name="LNBchangeStatus.status">Change status</item>
+
+	<item name="LNBreassign.text">Assign Resolver</item>
+	<item name="LNBreassign.ToolTip">Assign Resolver</item>
+	<item name="LNBreassign.status">Assign Resolver</item>
+
+	<item name="LNBreassignCom.text">Assign commnuity user</item>
+	<item name="LNBreassignCom.ToolTip">Assign community user</item>
+	<item name="LNBreassignCom.status">Assign community user</item>
+
+	<item name="LNBshowAll.text">All</item>
+	<item name="LNBshowAll.ToolTip">All</item>
+	<item name="LNBshowAll.status">All</item>
+
+	<item name="LNBshowMsg.text">Only messages</item>
+	<item name="LNBshowMsg.ToolTip">Show user messages only</item>
+	<item name="LNBshowMsg.status">Show user messages only</item>
+
+	<item name="LNBshowSys.text">Notifications only</item>
+	<item name="LNBshowSys.status">Show system messages only</item>
+	<item name="LNBshowSys.ToolTip">Show system messages only</item>
+
+	<item name="LNBorderRecent.text">Recents on top</item>
+	<item name="LNBorderRecent.ToolTip">Sort tickets putting the recent ones on top</item>
+	<item name="LNBorderRecent.status">Sort tickets by putting the recent ones on top</item>
+
+	<item name="LNBorderOlder.text">Recents on bottom</item>
+	<item name="LNBorderOlder.ToolTip">Sort tickets putting the recent ones at the bottom</item>
+	<item name="LNBorderOlder.status">Sort tickets putting the recent ones at the bottom</item>
+
+	<item name="LBucMessage_t.text">Message text</item>
+	<item name="LBucMessage_t.ToolTip">Message text</item>
+	<item name="LBucStatus_t.text">Status</item>
+	<item name="LBucStatus_t.ToolTip">modify status</item>
+
+	<item name="LNBucSubmit.text">Send</item>
+	<item name="LNBucSubmit.ToolTip">Send</item>
+	<item name="LNBucSubmit.status">Send</item>
+
+	<item name="LNBreopen.text">Reopen</item>
+	<item name="LNBreopen.ToolTip">Reopen Ticket</item>
+	<item name="LNBreopen.status">Reopen Ticket</item>
+	<item name="LNBreopen.ConfirmText">Ticket will be reopened, do you want to continue?</item>
+
+	<item name="LNBhide.text">Hide</item>
+	<item name="LNBhide.ToolTip">Hide message to the user</item>
+	<item name="LNBhide.status">Hide message to the user</item>
+
+	<item name="LNBshow.text">Show</item>
+	<item name="LNBshow.ToolTip">Show message to the user</item>
+	<item name="LNBshow.status">Show message to the user</item>
+
+	<item name="CBXucShowToUser.text">Hide message to the user</item>
+	<item name="CBXucShowToUser.ToolTip">Hide message to the user</item>
+
+	<item name="Status.open">Open</item>
+	<item name="Status.inProcess">In progress</item>
+	<item name="Status.userRequest">Waiting for user feedback</item>
+	<item name="Status.closeSolved">Closed and resolved</item>
+	<item name="Status.closeUnsolved">Closed and NOT resolved</item>
+
+	<item name="UserType.Partecipant">Participant</item>
+	<item name="UserType.Manager">Manager</item>
+	<item name="UserType.Resolver">Resolver</item>
+	<item name="UserType.Category">Category</item>
+	<item name="UserType.CategoryManager">Manager Catagory</item>
+	<item name="UserType.CategoryResolver">Resolver Category</item>
+	<item name="UserType.System">System</item>
+
+	<item name="HYPedit.text">Modify</item>
+	<item name="HYPedit.ToolTip">Modify</item>
+	<item name="HYPedit.status">Modify</item>
+
+	<item name="UserName.System">System</item>
+	<item name="Assignment.none">- none -</item>
+
+	<item name="Category.select">Select</item>
+	<item name="ChangeStatus.message" mustcontains="{newstatus}"  placeholder="true">Status changed in '{newstatus}'.</item>
+
+	<item name="SysMessage.filesAdded" placeholder="true">Some files were added to the ticket by {user} on {date}</item>
+	<item name="SysMessage.riassignedToCategory" placeholder="true">The ticket was reassigned to {ToCategory} category by {user} on {date}</item>
+	<item name="SysMessage.riassignedToUser" placeholder="true">The ticket was reassigned to {ToUser} by {user} on {date}</item>
+	<item name="SysMessage.statusChanged" placeholder="true">Ticket {toStatus} by {user} on {date}</item>
+
+	<item name="ToStatus.open" description="Sostituisce il placeholder toStatus di SysMessage.*">has been reopened</item>
+	<item name="ToStatus.inProcess" description="Sostituisce il placeholder toStatus di SysMessage.*">is in progress</item>
+	<item name="ToStatus.userRequest" description="Sostituisce il placeholder toStatus di SysMessage.*">is waiting for user's feedback</item>
+	<item name="ToStatus.closeSolved" description="Sostituisce il placeholder toStatus di SysMessage.*">has been closed and resolved</item>
+	<item name="ToStatus.closeUnsolved" description="Sostituisce il placeholder toStatus di SysMessage.*">has been closed and not resolved</item>
+
+	<item name="Errors.NoPermission">You do not have the permission to perform this action.</item>
+	<item name="Errors.NotFound">Ticket does not exist.</item>
+	<item name="Errors.IsDraft">Ticket draft. As long as the user does not send it, the ticket can not be managed.</item>
+
+	<item name="Message.ChangeCategory">Reassigned to a different category.</item>
+	<item name="Message.ChangeUser">Reassigned to a different user.</item>
+	<item name="Message.ChangeStatus" placeholder="true" mustcontains="{newstatus}">Status was modified in {newstatus}</item>
+
+	<item name="Error.Reassign.Category">Category assigment error.</item>
+	<item name="Error.Reassign.User">User assigment error.</item>
+	<item name="Error.Reopen">Error while reopening the ticket.</item>
+	<item name="Error.Send.NoMessage">Sending error: no message.</item>
+	<item name="Error.Send.TicketNotFound">Sending error: Ticket not found.</item>
+	<item name="Error.Send.TicketClosed">Sending error: Ticket closed.</item>
+	<item name="Error.Send.DraftTicket">Sending error: Ticket draft.</item>
+	<item name="Error.Send.NoPermission">Sending error: No permission.</item>
+
+	<item name="Community.Portal">Portal</item>
+
+	<item name="Modal.InternalUsers.Title">Assign Ticket</item>
+	<item name="Modal.InternalUsers.Description">Select the user to whom assign the ticket.</item>
+
+	<!-- Add-on -->
+	<item name="BTNaddAttachment.text">Aggiungi</item>
+	<item name="BTNaddAttachment.ToolTip">Carica i file selezionati</item>
+	<item name="BTNaddAttachment.status">Carica i file selezionati</item>
+
+	<item name="LNBcloseAttachmentWindow.text">Chiudi</item>
+	<item name="LNBcloseAttachmentWindow.ToolTip">Chiudi finestra</item>
+	<item name="LNBcloseAttachmentWindow.status">Chiudi finestra</item>
+
+	<item name="LTdescription.text" description="Testo mostrato come aiuto nella finestra di upload dei file">Seleziona i file da allegare al messaggio.</item>
+
+	<item name="dialogTitle.RepositoryAttachmentUploadActions.uploadtomoduleitem">Carica allegati</item>
+	<item name="dialogTitle.RepositoryAttachmentUploadActions.uploadtomoduleitemandcommunity">Carica allegati in comunità</item>
+	<item name="dialogTitle.RepositoryAttachmentUploadActions.linkfromcommunity">Seleziona elementi dalla comunità</item>
+	<item name="dialogTitle.RepositoryAttachmentUploadActions.addurltomoduleitem">Aggiungi url</item>
+	<item name="dialogTitle.RepositoryAttachmentUploadActions.addurltomoduleitemandcommunity">Aggiungi url</item>
+	<item name="dialogDescription.Project.uploadtomoduleitem">Selezionare i file da allegare al messaggio:</item>
+	<item name="dialogDescription.Project.uploadtomoduleitemandcommunity">Selezionare i file da allegare al messaggio e da caricare nel materiale della comunità:</item>
+	<item name="dialogDescription.Project.linkfromcommunity">Seleziona elementi dalla comunità</item>
+	<item name="dialogDescription.Project.addurltomoduleitem">Indicare negli appositi campi gli indirizzi web da inserire:</item>
+	<item name="dialogDescription.Project.addurltomoduleitemandcommunity"></item>
+
+	<item name="Message.EmptyMessage">Non è possibile inviare un messaggio vuoto.</item>
+
+	<item name="LTmessagesExpCol.Expand">Espandi</item>
+	<item name="LTmessagesExpCol.Collapse">Comprimi</item>
+
+    <!--Aggiunte 01/12/2014-->
+    <item name="LTmoderationTitle_t.text">Moderazione</item>
+    <item name="LNBreport.text">Segnala</item>
+    <item name="LNBreport.ToolTip">Segnala</item>
+    <item name="LNBreport.status">Segnala</item>
+
+    <item name="LNBunreport.text">Revoca segnalazione</item>
+    <item name="LNBunreport.ToolTip">Revoca segnalazione</item>
+    <item name="LNBunreport.status">Revoca segnalazione</item>
+
+    <item name="LNBblock.text">Blocca</item>
+    <item name="LNBblock.ToolTip">Blocca</item>
+    <item name="LNBblock.status">Blocca</item>
+    <item name="LNBblock.ConfirmText">Sicuro di vole bloccare il Ticket? L'utente non avrà più la possibilità di aggiungere commenti.</item>
+
+    <item name="LNBunblock.text">Sblocca</item>
+    <item name="LNBunblock.ToolTip">Sblocca</item>
+    <item name="LNBunblock.status">Sblocca</item>
+
+    <item name="LNBdelete.text">Annulla</item>
+    <item name="LNBdelete.ToolTip">Annulla il Ticket corrente</item>
+    <item name="LNBdelete.status">Annulla il Ticket corrente</item>
+    <item name="LNBdelete.ConfirmText">Sicuro di vole annullare il Ticket? Il ticket potrà solo essere visualizzato...</item>
+
+    <!--Aggiunte 02/12/2014-->
+	<item name="Message.ChangeCondition" placeholder="true" mustcontains="{newcondition}" description="{newcondition} = ToCondition.">Il ticket è stato {newcondition}</item>
+
+	<item name="Condition.active" disambiguation="aggettivo: ticket attivo">attivo</item>
+	<item name="Condition.flagged" disambiguation="aggettivo: ticket attivo">segnalato</item>
+	<item name="Condition.blocked" disambiguation="aggettivo: ticket attivo">bloccato</item>
+    <item name="Condition.flaggedNblocked" disambiguation="aggettivo: ticket attivo">segnalato e bloccato</item>
+    <item name="Condition.cancelled" disambiguation="aggettivo: ticket attivo">cancellato</item>
+
+	<item name="ToCondition.active" disambiguation="forma verbale: è stato attivato">attivato</item>
+	<item name="ToCondition.flagged" disambiguation="forma verbale: è stato attivato">segnalato</item>
+	<item name="ToCondition.blocked" disambiguation="forma verbale: è stato attivato">bloccato</item>
+    <item name="ToCondition.flaggedNblocked" disambiguation="aggettivo: ticket attivo">segnalato e bloccato</item>
+    <item name="ToCondition.cancelled" disambiguation="forma verbale: è stato attivato">cancellato</item>
+
+	<item name="SysMessage.conditionChanged" placeholder="true" description="Es: Ticket bloccato da Tizio Caio il 02/12/2014 15:03">Ticket {toCondition} da {user} il {date}</item>
+
+	<item name="Message.Reassign.noChange">Categoria già assegnata. Nassuna modifica.</item>
+	<item name="Message.Reassign.noPermission">Non si dispone dei permessi per accedere alla pagina.</item>
+	<item name="Message.Reassign.invalidTicket">Errore: Ticket non trovato.</item>
+	<item name="Message.Reassign.CategoryNotFound">Errore: Categoria non trovata.</item>
+	<item name="Message.Reassign.error">Errore interno.</item>
+
+	<!-- Add 13/02/2015 -->
+
+	<item name="LNBassignMe.text">Prendi in carico</item>
+	<item name="LNBassignMe.ToolTip">Prendi in carico</item>
+	<item name="LNBassignMe.status">Prendi in carico</item>
+
+	<!-- Add 16/03/2015 -->
+	<item name="SysMessage.behalfMessage_OLD" placeholder="true" description="DEPRECATO: Behalf, creato per conto di... Es: Ticket creato da Utente Test">Messaggio creato da {user}</item>
+
+	<item name="SysMessage.behalfSet" placeholder="true" description="Behalf, creato per conto di... Es: Ticket creato da Utente Test">Proprietario Ticket modificato da {user}</item>
+	<item name="SysMessage.behalfRemove" placeholder="true" description="Behalf, creato per conto di... Es: Messaggio creato da Utente Test">Proprietario Ticket rimosso da {user}</item>
+
+	<item name="HYPtoUserViewTop.text">Vista utente</item>
+	<item name="HYPtoUserViewTop.ToolTip">Visualizza il Ticket come lo vede l'utente</item>
+	<item name="HYPtoUserViewTop.status">Visualizza il Ticket come lo vede l'utente</item>
+
+	<item name="LBsort_t.text">Ordina</item>
+	<item name="LBsort_t.ToolTip">Modifica l'ordine dei messaggi</item>
+	<item name="LBswhow_t.text">Mostra</item>
+	<item name="LBswhow_t.ToolTip">Mostra solo determinati tipi di messaggio</item>
+
+	<!-- Add 12/05/2015 - Notification settings -->
+	<item name="LBnotification_t.text">Impostazioni notifica</item>
+	<item name="LBnotification_t.ToolTip">Visualizza e modifica le impostazioni di notifica a livello di Ticket</item>
+
+	<item name="LBalternate.text">Notifiche disabilitate. Per abilitarle, disattivare "Default".</item>
+	<item name="LBalternate.ToolTip">Di base le notifiche vengono inviate solamente ai diretti interessati, ovvero l'assegnatario corrente oppure i manager/resolver della categoria corrente. Per modificare tale impostazione, disabilitare "default" ed attivare le notifiche che interessano. In questo modo le notifiche indicate saranno sempre inviate per il ticket corrente.</item>
+
+	<!-- Add precedenti... -->
+	<item name="Error.NoAccess">Accesso temporaneamente disabilitato.</item>
+	<item name="Errors.EditDisabledSystem">Modifica temporaneamente disabilitata.</item>
+
+	<!-- add 22/05/1979-->
+	<item name="LNBsaveMailSet.text">Salva</item>
+	<item name="LNBsaveMailSet.ToolTip">Salva impostazioni mail</item>
+	<item name="LNBsaveMailSet.status">Salva impostazioni mail</item>
+
+	<!-- Add 17/06/2015-->
+	<item name="LTmessagesExpCol.Expand.ToolTip">Espandi tutti i messaggi utente</item>
+	<item name="LTmessagesExpCol.Collapse.ToolTip">Comprimi tutti i messaggi utente</item>
+	<item name="LTmessagesExpCol.Text">Messaggi:</item>
+
+	<item name="LTsettingsHideShow.Collapse">Nascondi dettagli</item>
+	<item name="LTsettingsHideShow.Collapse.ToolTip">Nasconde il pannello dei dettagli</item>
+	<item name="LTsettingsHideShow.Expand">Mostra dettagli</item>
+	<item name="LTsettingsHideShow.Expand.ToolTip">Mostra il pannello dei dettagli</item>
+	<item name="LTsettingsHideShow.Text">Messaggi:</item>
+
+	<item name="Message.Category.Changed">Categoria modificata correttamente</item>
+
+	<item name="ExpandCollapse.title">Comprimi/Espandi messaggio</item>
+
+	<item name="LTmessagesHider_t.Text">Messaggi:</item>
+
+	<!-- Add 03/08/2015-->
+	<item name="CatModify.Title">Assegna categoria</item>
+	<item name="CatModify.Description">Il Ticket verrà assegnato ad una nuova categoria. I gestori delle categorie precedenti manterranno l'accesso al ticket.</item>
+
+	<item name="LNBassCateUndo.text">Annulla</item>
+	<item name="LNBassCateUndo.ToolTip">Annulla e torna al Ticket</item>
+	<item name="LNBassCateUndo.status">Annulla e torna al Ticket</item>
+
+	<item name="HYPcateOpen.text">Assegna categoria</item>
+	<item name="HYPcateOpen.ToolTip">Aggiungi categoria al Ticket</item>
+	<item name="HYPcateOpen.status">Aggiungi categoria al Ticket</item>
+
+	<item name="HYPbackTop.text">Lista gestione</item>
+	<item name="HYPbackTop.ToolTip">Lista gestione</item>
+	<item name="HYPbackTop.status">Lista gestione</item>
+	<item name="HYPbackBottom.text">Lista gestione</item>
+	<item name="HYPbackBottom.ToolTip">Lista gestione</item>
+	<item name="HYPbackBottom.status">Lista gestione</item>
+
+	<item name="LNBassCate.text">Conferma</item>
+	<item name="LNBassCate.ToolTip">Conferma assegnazione categoria</item>
+	<item name="LNBassCate.status">Conferma assegnazione categoria</item>
+
+	<!-- Add 04/08/2015-->
+
+	<item name="Message.AssUser.Changed">Assegnazione affettuata correttamente.</item>
+	<item name="Message.AssUser.notChange">Utente già assegnato al Ticket.</item>
+	<item name="LTnotification_t.text">Impostazioni notifica</item>
+
+	<item name="LBassignTo_t.text">In carico a</item>
+
+</Resource>

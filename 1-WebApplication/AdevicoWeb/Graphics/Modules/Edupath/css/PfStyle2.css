@@ -1,0 +1,522 @@
+/* @group Temporanei */
+
+.timeConstraint
+{
+    color:#808080 ! important;
+}
+.DivEpButton
+{
+    padding: 5px;
+    text-align: right;
+}
+.clear {
+	clear: both;
+}
+
+.clearer {
+     font-size: 0.01em !important;
+     line-height: 0.01 !important;
+	 clear: both;
+	 overflow: hidden !important;
+	 height: 1px !important;
+}
+
+.spacer {
+	/*	
+	height: 1px !important;
+	display: block;*/
+	overflow: hidden !important;
+	line-height: 0 !important;
+	font-size: 0 !important;
+}
+
+.imgSize
+{
+    width:16px;
+    height:16px;
+}
+
+.hidden {
+	display: none;
+}
+
+div#tree-container {
+	width: 900px;
+	margin-left: auto !important;
+	margin-right: auto !important;
+	margin-top: 20px !important;
+}
+
+div#content h1 {
+	color: #777;
+	font-size: 1.4em;
+	margin-top: 0;
+	border-bottom: 1px solid silver;
+}
+
+div#content {
+	font: 95%/140% helvetica, arial, sans-serif;
+	color: #222;
+}
+
+/*
+
+@end */
+
+/* @group JS sliders */
+
+span.switch {
+	display: inline;
+}
+
+.autoOpen {
+	
+}
+
+span.switch:hover {
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+span.switch {
+	padding-left: 12px;
+	color: #09547e;
+	cursor: pointer;
+}
+
+span.fixed {
+	padding-left: 24px;
+}
+
+span.switch.close {
+	background: url(legacy_img/menu-collapsed.gif) no-repeat 0 center;
+}
+
+span.switch.open {
+	background: url(legacy_img/menu-expanded.gif) no-repeat 0 center;
+}
+
+/*
+
+ @end */
+
+/* @group PF view list 2 */
+
+div#edupath-container {
+	color: #222;
+}
+
+div#edupath-container div#last-activity,
+div#edupath-container div#progress-bar {
+	margin-left: 40px;
+	margin-top: 12px;
+
+}
+
+div#edupath-container div#last-activity h4 {
+	margin: 6px 0;
+	font-size: 1em;
+	font-weight: bold;
+	margin-top: 0;
+}
+
+div#edupath-container div#last-activity a {
+	color: #09547e;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+div#edupath-container div#last-activity a:hover {
+	color: #09547e;
+	text-decoration: underline;
+}
+
+div#edupath-container div#last-activity p {
+	margin-bottom: 0;
+}
+
+div#edupath-container div#progress-bar {
+	height: 100px;
+	background-color: #none;	
+}
+
+div#edupath-container span.title,
+div#edupath-container span.row {
+	*float:left
+}
+
+div#edupath-container span.title.right,
+div#edupath-container span.row.right {
+	float: right;
+	clear: both;
+	*float: right;
+	*clear: both;
+}
+
+
+div#edupath-container span.clearer {
+	text-indent: -9999px;
+	clear: both;
+	font-size: 0.01em;
+	display: inline-block;
+}
+
+div#edupath-container ul.units li.unit span.switch {
+	width: 12px;
+	*width: 24px;
+	overflow: hidden;
+	float: left;
+}
+
+div#edupath-container ul.units li.unit span.switch span {
+	text-indent: -9999px;
+	display: inline-block;
+}
+
+div#edupath-container ul.units li.unit span.switch.open {
+	background: url(legacy_img/bullet_toggle_minus.png) no-repeat right center;
+}
+
+
+div#edupath-container ul.units li.unit span.switch.close {
+	background: url(legacy_img/bullet_toggle_plus.png) no-repeat right center;
+}
+
+
+div#edupath-container ul.units li.unit a,
+div#edupath-container div#last-activity a {
+	color: #09547e;
+	text-decoration: none;
+}
+
+div#edupath-container ul.units li.unit a:hover,
+div#edupath-container div#last-activity a:hover {
+	color: #09547e;
+	text-decoration: underline;
+}
+
+div#edupath-container ul.units li.unit,
+div#edupath-container div#last-activity {
+	padding: 6px 12px 12px 6px;
+}
+
+div#edupath-container ul.units li.note {
+	padding: 6px 12px 6px 6px;
+}
+
+div#edupath-container ul.units li.note span {
+	padding-bottom: 6px ;
+	padding-top: 6px;
+}
+
+div#edupath-container ul.units li.unit div.description {
+}
+
+div#edupath-container ul.units li.unit li div.description {
+}
+
+
+div#edupath-container ul.units li.unit,
+div#edupath-container ul.units li.note {
+	background-color: #e6e9ed;
+	background-image: -moz-linear-gradient(top, #e6e9ed 0%, #dfe2e6 100%);
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e6e9ed), color-stop(100%,#dfe2e6));
+	background-image: -webkit-linear-gradient(top, #e6e9ed 0%,#dfe2e6 100%);
+	background-image: -o-linear-gradient(top, #e6e9ed 0%,#dfe2e6 100%);
+	background-image: -ms-linear-gradient(top, #e6e9ed 0%,#dfe2e6 100%);
+	background-image: linear-gradient(top, #e6e9ed 0%,#dfe2e6 100%);	
+}
+
+div#edupath-container ul.units li.unit,
+div#edupath-container ul.units li.note,
+div#edupath-container div#last-activity {
+	border: 1px solid #ccc;
+	-moz-box-shadow: inset 0 1px 1px #fff;
+	-webkit-box-shadow: inset 0 1px 1px #fff;
+	box-shadow: inset 0 1px 1px #fff;
+	margin-bottom: 10px;
+}
+
+div#edupath-container ul.units li.unit,
+div#edupath-container ul.units li.note, 
+div#edupath-container ul.units li.unit li.activity, 
+div#edupath-container div#last-activity {
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;	
+}
+
+
+div#edupath-container ul.units div.heading { 
+	border-bottom: 1px solid #ccc;
+	padding-bottom: 2px;
+}
+
+
+div#edupath-container ul.units .rules { 	
+	font-size: 0.9em;
+	font-style: italic;
+}
+
+div#edupath-container ul.units ul.rules {
+	margin-top: 10px;
+	padding: 0;
+}
+
+div#edupath-container ul.units ul.rules li {
+	margin: 0;
+	padding: 0;
+}
+
+div#edupath-container ul.units li.unit h3 {
+	display: inline;
+	line-height: 1.4em;
+	font-size: 1.1em;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+div#edupath-container ul.units li.activity div.heading {
+	border-bottom: 1px solid #ccc;
+	padding-bottom: 6px;
+}
+
+
+div#edupath-container span.img-set {
+	font-size: 9px;
+	vertical-align: text-bottom;
+	top: 5px;
+	position: relative;
+}
+
+img.File_Ext {
+	top: 3px;
+	position: relative;
+	
+}
+
+div#edupath-container span.img-set span {
+	display: inline-block;
+}
+
+div#edupath-container span.img-set.small span {
+	width: 16px;
+	height: 16px;
+}
+
+div#edupath-container span.img-set.small span img {
+	width: 16px;
+	height: 16px;
+}
+
+div#edupath-container span.img-set.medium span {
+	width: 24px;
+	height: 24px;
+}
+
+div#edupath-container span.locked,
+div#edupath-container span.locked_s {
+}
+
+div#edupath-container span.status,
+div#edupath-container span.status_s {
+
+}
+
+div#edupath-container ul.units li.unit span.title {
+	
+}
+
+div#edupath-container ul.units li.unit span.expireDate {
+	width: auto;
+	font-size: 0.9em;
+	/*border-left: 1px solid #ccc;
+	border-right: 1px solid #ccc;*/
+	padding: 3px 6px;
+	*display: inline;
+}
+
+div#edupath-container ul.units li.unit ul.activities {
+	margin-left: 60px;
+	padding-left: 0;
+	margin-top: 10px;
+}
+
+div#edupath-container ul.units li,
+div#edupath-container ul.units .description {
+	margin-top: 10px;
+}
+
+div#edupath-container ul.units li.unit ul li.activity {
+	padding: 6px 12px 10px 12px;
+	background-color: #fff;
+	-moz-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+	-webkit-box-shadow: 1px 1px 1px  rgba(0, 0, 0, 0.3);
+	box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+}
+
+div#edupath-container ul.units li.unit ul li.activity ul {
+	padding-left: 24px;
+}
+
+div#edupath-container ul.units li.unit ul li.single.activity {
+	padding: 4px 12px 6px 12px;
+}
+
+div#edupath-container ul.units li.unit ul li.single.activity div.File_MainInfo_InTxt div.File_NameExt {
+	font-weight: bold;
+}
+
+div#edupath-container ul.units li.unit ul li.single.activity  a.ROW_ItemLink_Small {
+	font-weight: bold;
+}
+
+div#edupath-container ul.units li.unit ul li.single.activity  a.ROW_ItemLink_Small {
+	font-weight: bold;
+}
+
+div#edupath-container ul.units li.unit ul li.single.activity div.File_MainInfo_InTxt div.File_NameExt {
+	float: left;
+}
+
+
+
+/* @group hack IE per heading activity */
+
+*html div#edupath-container ul.units li.unit ul li.activity div.heading span.title {
+		display: block;	
+
+}
+
+*html div#edupath-container ul.units li.unit ul li.activity div.heading span.title.left {
+	width: 460px;
+}
+
+*html div#edupath-container ul.units li.unit ul li.activity div.heading span.title.right  {
+	width: auto;
+
+}
+
+*html div#edupath-container ul.units li.unit ul li.activity div.heading span.title.left span {
+	display: block;
+	float: left;
+	width: auto;
+}
+
+*html div#edupath-container ul.units li.unit ul li.activity div.heading span.title.left span {
+	display: block;
+}
+
+*html div#edupath-container ul.units li.unit ul li.activity div.heading span.title.left span.img-set {
+	width: 40px;
+	float: left;
+}
+
+*html div#edupath-container ul.units li.unit ul li.activity div.heading span.title.left h4 {
+	width: auto;
+	float: left;
+}
+
+*html div#edupath-container ul.units li.unit ul li.activity div.heading span.title.left span.duration {
+	width: 50px;
+	float: left;
+	padding-left: 6px;
+}
+
+/* @end */
+
+
+div#edupath-container ul.units li.unit ul li.activity div.heading span.title span.expireDate span.dettagli_CampoSmall {
+	font-size: 0.9em;
+}
+
+div#edupath-container ul.units li.unit ul li.activity div.heading div.clearer {
+
+}
+
+div#edupath-container ul.units li.unit li.locked {
+	color: #888;	
+}
+
+/* aggiunto per mettere l'iconcina anche in fondo - Mirco  */
+div#edupath-container ul.units li.note span {
+    background: transparent url("legacy_img/text-note.png") no-repeat -3px -2px;
+    display: inline-block;
+    padding-left: 30px;
+}
+
+div#edupath-container ul.units li.unit ul.activities li.note span {
+	    background: url("legacy_img/text-note.png") no-repeat transparent;
+
+}
+
+div#edupath-container ul.units li.unit ul.activities li.note {
+	padding: 0;
+	padding-left: 36px;
+	margin-left: -36px;
+	background-color: transparent;
+	background-image: none;
+	border: none;
+	box-shadow: none;
+}
+
+div#edupath-container ul.units li.unit ul li.activity h4 {
+	display: inline;
+	font-size: 1.1em;
+	font-weight: bold;
+}
+
+
+
+div#edupath-container ul.units li.unit ul li.activity div.heading span.title {
+	
+}
+
+div#edupath-container ul.units li.unit ul li.subactivity span.dettagli_CampoSmall {
+
+
+}
+
+
+div#edupath-container ul.units li.unit ul li.subactivity {
+	padding-bottom: 4px;
+	*width: 98%;
+}
+
+div#edupath-container ul.units li.unit ul li.subactivity a {
+	font-weight: bold;
+}
+
+div#edupath-container ul.units li.unit ul li.subactivity a span.img {
+	margin: 0 8px;
+}
+
+
+
+/* @end */
+
+
+
+
+/*Auto invisibility dialogs*/
+.dialog {
+    display:none;
+}
+/*end invisibility*/
+
+.hidePlayer {
+     display:none;
+}
+    
+        /* AGGIUNTE PER SISTEMARE AL VOLO su IE - M.B.*/
+    *html li.subactivity span.left *
+    { float:left; display:inline;}
+    
+    *html li.subactivity span.left .File_Name
+    { float:none; }
+    
+    *html div#edupath-container span.img-set span {
+	    display: inline-block;
+	    display: inline;
+    }
+    

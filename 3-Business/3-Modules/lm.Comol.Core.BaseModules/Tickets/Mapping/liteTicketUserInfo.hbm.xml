@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping
+	xmlns="urn:nhibernate-mapping-2.2"
+	assembly="lm.Comol.Core.BaseModules"
+	namespace="lm.Comol.Core.BaseModules.Tickets.Domain">
+
+	<class name="liteTicketUserInfo" table="TK_Ticket" >
+
+		<id name="Id" column="Id" type="Int64">
+			<generator class="native"/>
+		</id>
+
+		<property name="Status" type="lm.Comol.Core.BaseModules.Tickets.Domain.Enums.TicketStatus, lm.Comol.Core.BaseModules" column="Status"/>
+
+		<property name="OwnerId" type="Int64" column="IdCreator" />
+		<property name="_CreatedById" type="Int64" column="_CreatedBy" />
+
+		<property name="IsBehalf" type="Boolean" column="IsBehalf" />
+		<property name="IsHide" type="Boolean" column="IsHideToOwner" />
+		<property name="IsDraft" type="Boolean" column="IsDraft" />
+		
+	</class>
+
+
+</hibernate-mapping>

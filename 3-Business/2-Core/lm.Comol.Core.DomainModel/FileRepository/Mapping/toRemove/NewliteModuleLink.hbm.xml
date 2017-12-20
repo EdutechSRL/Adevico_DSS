@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="lm.Comol.Core.DomainModel" namespace="lm.Comol.Core.FileRepository.Domain.toRemove">
+  <class name="NewliteModuleLink" table="ModuleLink" lazy="true">
+    <id name="Id" column="Id" type="Int64" unsaved-value="0">
+      <generator class="native"/>
+    </id>
+    <property name="Deleted" type="lm.Comol.Core.DomainModel.BaseStatusDeleted,lm.Comol.Core.DomainModel" column="_Deleted" />
+    <property name="IdAction" type="Int32" column="Action" />
+    <property name="Permission" type="Int64" column="Permission" />
+    <property name="AutoEvaluable" type="Boolean" column="AutoEvaluable" />
+    <property name="NotifyExecution" type="Boolean" column="NotifyExecution" />
+    <property name="SourceModule" type="String" column="SRC_serviceOwner"/>
+    <property name="DestinationModule" type="String" column="DES_serviceOwner"/>
+    <property name="FullName" type="String" column=" DES_ownerFullyQualifiedName"/>
+    <property name="IdObjectype" type="Int32" column="DES_objectTypeID"/>
+    <property name="IdObject" type="Int64" column="DES_ownerLongID"/>
+    <property name="IdObjectVersion" type="Int64" column="DES_ownerIdVersion"/>
+    
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="lm.Comol.Core.DomainModel" namespace="lm.Comol.Core.FileRepository.Domain">
+  <class name="liteMultimediaFileObject" table="FR_ItemMultimediaFileObject">
+    <id name="Id" column="Id" type="Int64">
+      <generator class="native"/>
+    </id>
+    <property name="IdItem" type="Int64" />
+    <property name="UniqueIdItem" type="Guid" column="UniqueIdItem" />
+    <property name="IdVersion" type="Int64" />
+    <property name="UniqueIdVersion" type="Guid" />
+    <property name="IdItemTransfer" type="Int64" />
+    <property name="Fullname" type="String" />
+    <property name="IsDefaultDocument" type="Boolean" />
+    <property name="Probability" type="Single" />
+    <property name="Deleted" type="lm.Comol.Core.DomainModel.BaseStatusDeleted,lm.Comol.Core.DomainModel" column="_Deleted" />
+  </class>
+</hibernate-mapping>

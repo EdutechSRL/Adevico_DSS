@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="urn:ComolTranslation">
+  <item name="HYPshibbolethLogon.text" html="true" placeholder="false">I have an &lt;span&gt;Shibboleth &lt;/span&gt; account</item>
+  <item name="HYPshibbolethLogon.status" html="false" placeholder="false">I have an Shibboleth  account</item>
+  <item name="HYPshibbolethLogon.ToolTip" html="false" placeholder="false">I have an Shibboleth  account</item>
+  <item name="LTshibbolethInfo.text" html="true" placeholder="false">
+      Select this type of authentication if you own an Shibboleth  account, for ex.:&lt;dl&gt;&lt;dt&gt;Professors, tutors, staff,
+ partners&lt;dt&gt;&lt;dd&gt;nome.cognome@unitn.it	&lt;/dd&gt;&lt;dt&gt;Studenti&lt;/dt&gt;&lt;dd&gt;nome.cognome@studenti.unitn.it	&lt;/dd&gt;&lt;dt&gt;Ospiti&lt;/dt&gt;&lt;dd&gt;nome.cognome@guest.unitn.it	&lt;/dd&gt;&lt;/dl&gt;</item>
+  <item name="HYPinternalLogon.text" html="false" placeholder="false">I do NOT have an Shibboleth  account</item>
+  <item name="HYPinternalLogon.status" html="false" placeholder="false">I do NOT have an Shibboleth  account</item>
+  <item name="HYPinternalLogon.ToolTip" html="false" placeholder="false">I do NOT have an Shibboleth  account</item>
+  <item name="LTinternalInfo.text" html="true" placeholder="false">Select this type of authentication if you do NOT own an Shibboleth  account.&lt;ul&gt;&lt;li&gt;External users&lt;/li&gt;&lt;li&gt;Users, already registered in the platform but currently not provided with an Shibboleth  account&lt;/li&gt;&lt;li&gt;New registrations&lt;/li&gt;&lt;/ul&gt;</item>
+  <item name="HYPiscrivimi.text" html="false" placeholder="false">Administrators access to the platform</item>
+  <item name="HYPiscrivimi.status" html="false" placeholder="false">Access link to the platform ONLY for administrtors</item>
+  <item name="HYPiscrivimi.ToolTip" html="false" placeholder="false">Access link to the platform ONLY for administrtors</item>
+  <item name="LBnoAccess.text" html="false" placeholder="false">ATTENTION: We are updating the system, access is allowed only to administrators</item>
+  <item name="LToutOfOrderBeforeLink.text" html="true" placeholder="false">&lt;h2&gt;ATTENTION&lt;/h2&gt; system is currently updating, access is allowed only to system administrators by the following link: </item>
+  <item name="HYPiscrivimi.text" html="false" placeholder="false">accesso amministratori piattaforma</item>
+  <item name="HYPiscrivimi.status" html="false" placeholder="false">Link di accesso alla piattaforma SOLO per gli utenti amministratori</item>
+  <item name="HYPiscrivimi.ToolTip" html="false" placeholder="false">Link di accesso alla piattaforma SOLO per gli utenti amministratori</item>
+  <item name="LToutOfOrderAfterLink.text" html="false" placeholder="false" hidden="true">.</item>
+  <item name="HYPhelp.text" html="false" placeholder="false">Help</item>
+  <item name="HYPhelp.status" html="false" placeholder="false">Help</item>
+  <item name="HYPhelp.ToolTip" html="false" placeholder="false">Help</item>
+  <item name="LTinternalLoginPage.text" html="true" placeholder="true" mustcontains="{0}">&lt;li&gt;&lt;a class="pwd-retrive" title="Accedi con account interno alla piattaforma" href="{0}"&gt; Sign in with internal account&lt;/a&gt;&lt;/li&gt;</item>
+  <item name="LTstartPage.text" html="true" placeholder="true" mustcontains="{0}">&lt;li&gt;&lt;a class="pwd-retrive" href="{0}"&gt;Go to next page&lt;/a&gt;&lt;/li&gt;</item>
+  <item name="LTbackToLoginPage.text" html="true" placeholder="true" mustcontains="{0}">&lt;li&gt;&lt;a class="pwd-retrive" href="{0}"&gt;Back to the login page&lt;/a&gt;&lt;/li&gt;</item>
+  <item name="LTretrievePassword.text" html="true" placeholder="true" mustcontains="{0}">&lt;li&gt;&lt;a class="pwd-retrive" href="{0}"&gt;Recover login credentials&lt;/a&gt;&lt;/li&gt;</item>
+  <item name="LTshibbolethLogon.text" html="true" placeholder="true" mustcontains="{0}">&lt;li&gt;&lt;a class="account-type" href="{0}"&gt;Sign in  with Shibboleth account &lt;/a&gt;&lt;/li&gt;</item>
+  <item name="LTexternalWebLogon.text" html="true" placeholder="true" mustcontains="{0}">&lt;li&gt;&lt;a class="account-type" href="{0}"&gt;Sign in from the company website&lt;/a&gt;&lt;/li&gt;</item>
+  <item name="LTsubscription.text" html="true" placeholder="true" mustcontains="{0}">&lt;li&gt;&lt;a class="sign-in" href="{0}"&gt;Platform registration&lt;/a&gt;&lt;/li&gt;</item>
+  <item name="LTtitleInternalLogin.text" html="false" placeholder="false">Access to the system</item>
+  <item name="TXBlogin.text" html="false" placeholder="false">Login</item>
+  <item name="TXBpassword.text" html="false" placeholder="false">Password</item>
+  <item name="BTNlogin.text" html="false" placeholder="false">Access</item>
+  <item name="BTNlogin.status" html="false" placeholder="false">Access platform</item>
+  <item name="BTNlogin.ToolTip" html="false" placeholder="false">Access platform</item>
+  <item name="LTloginError.text" html="false" placeholder="false">The inserted login or password is incorrect.</item>
+  <item name="LTloginErrorRetrieve.text" html="true" placeholder="true" mustcontains="{0}">Do you want to recover your &lt;a href="{0}"&gt;login credentials &lt;/a&gt;?</item>
+  <item name="LTloginErrorShibbolethAccount.text" html="true" placeholder="true" mustcontains="{0}">Oppure disponi di un &lt;a href="{0}"&gt;account Shibboleth&lt;/a&gt; (ad es. nome.cognome@unitn.it) ?</item>
+  <item name="DisplayAccountDisabled" html="true" placeholder="true" mustcontains="{0}|{1}">Your account seems currently disabled, please contact an administrator &lt;a href="mailto:{0}"&gt;{1}&lt;/a&gt;</item>
+  <item name="LTtitleInternalLoginRetrieve.text" html="false" placeholder="false">Recover login credentials</item>
+  <item name="LTmailInfo.text" html="false" placeholder="false">Enter the email you are registered into the system with.</item>
+  <item name="TXBloginForRetrieve.text" html="false" placeholder="false">Login</item>
+  <item name="BTNretrievePassword.text" disambiguation="relativo a credenziali di accesso" html="false" placeholder="false">Request</item>
+  <item name="BTNretrievePassword.status" html="false" placeholder="false">Request for login credentials.</item>
+  <item name="BTNretrievePassword.ToolTip" html="false" placeholder="false">Request for login credentials.</item>
+  <item name="LTretrieveError.text" html="false" placeholder="false">The inserted mail is not associated to an existing profile</item>
+  <item name="LTretrieveErrorSubscription.text" html="true" placeholder="true" mustcontains="{0}">Wanto to login and create a &lt;a href="{0}"&gt;new profile&lt;/a&gt;?</item>
+  <item name="LTretrieveErrorShibbolethAccount.text" html="true" placeholder="true" mustcontains="{0}">Oppure disponi di un &lt;a href="{0}"&gt;account Shibboleth&lt;/a&gt; (ad es. nome.cognome@unitn.it) ?</item>
+  <item name="RetrievePasswordError" html="false" placeholder="false">Error while sending mail with the access data, please contact an administrator.</item>
+  <item name="LTtitleSystemOutOforder.text" html="false" placeholder="false">Access temporarely not available</item>
+  <item name="LToutOfOrderInfo.text" html="false" placeholder="false">Platform is currently under maintenance. Access will be soon restored.</item>
+  <item name="LTaccess.text" html="false" placeholder="true" mustcontains="{0}">System administrators can access by &lt;a href="{0}"&gt;internal&lt;/a&gt; authentication</item>
+  <item name="LTaccessShibboleth.text" html="true" placeholder="true" mustcontains="{0}">oppure tramite autenticazione Shibboleth (ad es. nome.cognome@Shibboleth.it).</item>
+  <item name="LTsupportInfo.text" html="true" placeholder="true" mustcontains="{0}|{1}">Per informazioni e supporto: Edutech</item>
+  <item name="LTtitlePolicy.text" html="false" placeholder="false" />
+  <item name="BTNsavePolicy.text" html="false" placeholder="false">Save</item>
+  <item name="BTNsavePolicy.status" html="false" placeholder="false">Save.</item>
+  <item name="BTNsavePolicy.ToolTip" html="false" placeholder="false">Save.</item>
+  <item name="LTtitleActivateUserProfile.text" html="false" placeholder="false">User account activation</item>
+  <item name="DisplayActivationInfo" html="false" placeholder="false">Your account was already activated, use the menu above to access the platform.</item>
+  <item name="DisplayAlreadyActivatedInfo" html="false" placeholder="false">Your account was already activated, use the menu above to access the platform.</item>
+  <item name="DisplayUnknownUser" html="false" placeholder="false">Url parameters are incorrect or account was deleted.</item>
+  <item name="DisplayDisabledAccount" html="false" placeholder="true" mustcontains="{0}">Sorry{0}, your account is currently blocked.</item>
+  <item name="DisplayNotActivatedAccount" html="false" placeholder="true" mustcontains="{0}">Sorry {0}, your account has not been activated. When signing up you should have received a message with a link to activate your account.</item>
+  <item name="newPasswordmailSubject" html="false" placeholder="false">Enter credentials</item>
+  <item name="newPasswordmailBody" html="true" placeholder="true" mustcontains="{0}|{1}|{2}|{3}">Dear {0}, as you requested, here are the login credentials to access the web address {3} :&lt;br&gt;Login: {1}&lt;br&gt;Password: {2}&lt;br&gt; .&lt;br&gt;&lt;br&gt;</item>
+  <item name="accountActivationMailSubject" html="false" placeholder="false">Confirm account activation</item>
+  <item name="accountActivationMailBody" html="true" placeholder="true" mustcontains="{0}|{1}|{2}|{3}">Dear {0} {1},&lt;br&gt; your system profile has been activated on {2} at {3}: now you can access the platform.&lt;br&gt;&lt;br&gt;Kind regards&lt;br&gt;&lt;br&gt; P.s: this message is an automatic system reply, please do not answer it. &lt;br&gt;&lt;br&gt;</item>
+  <item name="LTtitleInvalidToken.text" html="false" placeholder="false">Access problems</item>
+  <item name="username.UrlProviderResult.InternalError" html="false" placeholder="true" mustcontains="{0}">{0} access to the platform failed.</item>
+  <item name="username.UrlProviderResult.ValidToken" html="false" placeholder="true" mustcontains="{0}">{0} the access to the platform succeeded.</item>
+  <item name="username.UrlProviderResult.InvalidToken" html="false" placeholder="true" mustcontains="{0}">{0} the access to the platform failed.</item>
+  <item name="username.UrlProviderResult.ExpiredToken" html="false" placeholder="true" mustcontains="{0}">{0} timeout error while accessing the platform.</item>
+  <item name="username.UrlProviderResult.NotEvaluatedToken" html="false" placeholder="true" mustcontains="{0}">{0} error while retriving the access url.</item>
+  <item name="username.UrlProviderResult.UnknowToken" html="false" placeholder="true" mustcontains="{0}">{0} error in the access url.</item>
+  <item name="UrlProviderResult.InternalError" html="false" placeholder="false">Error </item>
+  <item name="UrlProviderResult.ValidToken" html="false" placeholder="false" />
+  <item name="UrlProviderResult.InvalidToken" html="false" placeholder="false">Access not valid.</item>
+  <item name="UrlProviderResult.ExpiredToken" html="false" placeholder="false">Access timeout error.</item>
+  <item name="UrlProviderResult.NotEvaluatedToken" html="false" placeholder="false">Error in the access url.</item>
+  <item name="UrlProviderResult.UnknowToken" html="false" placeholder="false">Error in the access url.</item>
+  <item name="UrlProviderResult.InvalidIpAddress" html="false" placeholder="false">Access NOT allowed from the current location.</item>
+  <item name="UrlProviderResult.url" html="true" placeholder="true" mustcontains="{0}">If it does not happen, access the site from this link:&lt;a href="{0}"&gt;{0}&lt;/a&gt;</item>
+  <item name="LTtokenSupportInfo.text" html="false" placeholder="false">Youo will be automatically redirect to the access page in 5 seconds</item>
+  <item name="LTtitleTokenValidation.text" html="false" placeholder="false">Access to the platform</item>
+  <item name="LBvalidationInfo_t.text" html="false" placeholder="false">ATTENTION !</item>
+  <item name="LBvalidationInfo.text" html="false" placeholder="false">System is loggin you in, please wait and not refresh the page.</item>
+  <item name="FirstAccess" html="false" placeholder="false">This is the first time you access the platform, please wait a few minutes for the initialization procedure to be performed.</item>
+  <item name="DisplayProviderNotFound" html="true" placeholder="true" mustcontains="{0}">Access not allowed, unknown authentication provider.&lt;br/&gt;Contact your system administrator or reload login page&lt;a href="{0}"&gt;{0}&lt;/a&gt;</item>
+  <item name="DisplayUrlAuthenticationUnavailable" html="true" placeholder="true" mustcontains="{0}">Automatic access to the platform was disabled.&lt;br/&gt;Contact the administrator of your company sit &lt;a href="{0}"&gt;{0}&lt;/a&gt;</item>
+  <item name="LBcalculatedMac_t.text" html="false" placeholder="false">Mac calculated:</item>
+  <item name="LBtokenResult_t.text" html="false" placeholder="false">Validation:</item>
+  <item name="ValidToken" html="false" placeholder="false">Validation ok</item>
+  <item name="LBstartValidationOn_t.text" html="false" placeholder="false">Operations start:</item>
+  <item name="LBendValidationOn_t.text" html="false" placeholder="false">End operations:</item>
+  <item name="DisplayNoToken" html="false" placeholder="false">Token missing, impossible to access the platform</item>
+  <item name="DisplayTaxCodeAlreadyPresent" html="true" placeholder="false">Tax code already present in the system&lt;/br&gt;</item>
+  <item name="DisplayAutoEnrollmentFailed" html="true" placeholder="false">Access mode incorrect, it is impossible to perform the automatic registration to the platform.&lt;/br&gt;</item>
+  <item name="BTNcloseWindow.text">Close</item>
+  <item name="BTNcloseWindow.status">Close this window</item>
+  <item name="BTNcloseWindow.ToolTip">Close this window</item>
+  <item name="BTNprintItems.text">Print</item>
+  <item name="BTNprintItems.status">Print</item>
+  <item name="BTNprintItems.ToolTip">Print</item>
+</Resource>

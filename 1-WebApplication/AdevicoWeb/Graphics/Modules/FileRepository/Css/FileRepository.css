@@ -1,0 +1,3164 @@
+﻿.filerepository {
+
+}
+
+.fieldobject.box.off .fieldobject {
+	display: none;
+}
+
+.fieldobject.box.off .fieldobject.objectheader {
+	display: block;
+}
+
+.filerepository .boxheader {
+
+}
+
+.filerepository .content {
+
+}
+
+.filerepository .footer {
+
+}
+
+.filerepository .section {
+	margin-bottom: 0.5em;
+	margin-top: 0.2em;
+}
+
+.filerepository .section.box {
+	/*	box-sizing: border-box;
+        *margin-left: -1px;
+        *margin-right: -1px;
+        border-right: 1px solid #ccc;*/
+	/*	box-sizing: border-box;
+	*margin-left: -1px;
+	*margin-right: -1px;
+	border-right: 1px solid #ccc;*/
+}
+
+.filerepository .section.box.footer {
+	border: none;
+	border-top: 1px solid #ccc;
+	margin-top: 2em;
+	padding-top: 1em;
+}
+
+.filerepository .section.box.tree {
+	overflow: auto;
+	padding-bottom: 15px;
+	/*  overflow-y: hidden;*/
+}
+
+.filerepository .section.box.files::before {
+	display: block;
+	content: "";
+	height: auto;
+	width: 10px;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: -3.96%;
+	right: 0;
+	background: transparent;
+	box-shadow: inset -5px 0px 5px #fff;
+}
+
+.notree.filerepository .section.box.files::before {
+	display: none !important;
+}
+
+.filerepository .section.box.files {
+	border: none;
+	/*	overflow-y: hidden;*/
+}
+
+.filerepository .section.box .sectionfooter {
+	background-color: #eee;
+	float: left;
+	bottom: 0px;
+	width: 100%;
+	height: 20px;
+	border-top: 1px solid #ddd;
+}
+
+.filerepository.mainview .table.files th {
+	color: #888;
+}
+
+.filerepository .section.box.height .sectioninner {
+
+}
+
+.filerepository .section.box .sectioninner {
+	margin: 5px;
+}
+
+.filerepository .section.box.bottom {
+	color: #888;
+	margin-top: 2em;
+}
+
+.filerepository .progressbar {
+	display: inline-block;
+	line-height: 13px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	overflow: hidden;
+	border: 1px solid #ccc;
+	-moz-box-shadow: inset 1px 1px 1px rgba(0,0,0,0.2);
+	-webkit-box-shadow: inset 1px 1px 1px rgba(0,0,0,0.2);
+	box-shadow: inset 1px 1px 1px rgba(0,0,0,0.2);
+}
+
+.filerepository .freespace {
+
+}
+
+.filerepository .freespace .progressbar {
+	margin-bottom: 1em;
+	width: 850px;
+	width: 99.6%;
+	background: #cccccc;
+	background: -moz-linear-gradient(top,  #cccccc 0%, #eeeeee 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#cccccc), color-stop(100%,#eeeeee));
+	background: -webkit-linear-gradient(top,  #cccccc 0%,#eeeeee 100%);
+	background: -o-linear-gradient(top,  #cccccc 0%,#eeeeee 100%);
+	background: -ms-linear-gradient(top,  #cccccc 0%,#eeeeee 100%);
+	background: linear-gradient(top,  #cccccc 0%,#eeeeee 100%);
+	-moz-box-shadow: inset 1px 1px 1px rgba(0,0,0,0.2);
+	-webkit-box-shadow: inset 1px 1px 1px rgba(0,0,0,0.2);
+	box-shadow: inset 1px 1px 1px rgba(0,0,0,0.2);
+}
+
+.filerepository .flag .notstarted,
+.filerepository .progressbar .available {
+	display: inline-block;
+	width: 100%;
+	background: #cccccc;
+	background: -moz-linear-gradient(top,  #cccccc 0%, #eeeeee 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#cccccc), color-stop(100%,#eeeeee));
+	background: -webkit-linear-gradient(top,  #cccccc 0%,#eeeeee 100%);
+	background: -o-linear-gradient(top,  #cccccc 0%,#eeeeee 100%);
+	background: -ms-linear-gradient(top,  #cccccc 0%,#eeeeee 100%);
+	background: linear-gradient(top,  #cccccc 0%,#eeeeee 100%);
+	-moz-box-shadow: inset 1px 1px 1px rgba(0,0,0,0.2);
+	-webkit-box-shadow: inset 1px 1px 1px rgba(0,0,0,0.2);
+	box-shadow: inset 1px 1px 1px rgba(0,0,0,0.2);
+}
+
+.filerepository .flag .notstarted,
+.filerepository .progressbar .admins {
+	display: inline-block;
+	width: 100%;
+	background: #666666;
+	background: -moz-linear-gradient(top,  #777777 0%, #555555 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#777777), color-stop(100%,#555555));
+	background: -webkit-linear-gradient(top,  #777777 0%,#555555 100%);
+	background: -o-linear-gradient(top,  #777777 0%,#555555 100%);
+	background: -ms-linear-gradient(top,  #777777 0%,#555555 100%);
+	background: linear-gradient(top,  #777777 0%,#555555 100%);
+	-moz-box-shadow: inset 1px 1px 1px rgba(0,0,0,0.2);
+	-webkit-box-shadow: inset 1px 1px 1px rgba(0,0,0,0.2);
+	box-shadow: inset 1px 1px 1px rgba(0,0,0,0.2);
+}
+
+.filerepository .flag .notstarted,
+.filerepository .progressbar .admins {
+	display: inline-block;
+	width: 100%;
+	background: #888888;
+	background: -moz-linear-gradient(top,  #999999 0%, #777777 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#999999), color-stop(100%,#777777));
+	background: -webkit-linear-gradient(top,  #999999 0%,#777777 100%);
+	background: -o-linear-gradient(top,  #999999 0%,#777777 100%);
+	background: -ms-linear-gradient(top,  #999999 0%,#777777 100%);
+	background: linear-gradient(top,  #999999 0%,#777777 100%);
+	-moz-box-shadow: inset 1px 1px 1px rgba(0,0,0,0.2);
+	-webkit-box-shadow: inset 1px 1px 1px rgba(0,0,0,0.2);
+	box-shadow: inset 1px 1px 1px rgba(0,0,0,0.2);
+}
+
+.filerepository .flag .started,
+.filerepository .progressbar .started {
+	display: inline-block;
+	width: 0;
+	background-color: #ffcd40;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#f4e46a),to(#ffcd40));
+	background-image: -webkit-linear-gradient(top, #f4e46a, #ffcd40);
+	background-image: -moz-linear-gradient(top, #f4e46a, #ffcd40);
+	background-image: -o-linear-gradient(top, #f4e46a, #ffcd40);
+	background-image: -ms-linear-gradient(top, #f4e46a, #ffcd40);
+	background-image: linear-gradient(top, #f4e46a, #ffcd40);
+}
+
+.filerepository .flag .completed,
+.filerepository .progressbar .busy {
+	display: inline-block;
+	width: 0;
+	background-color: #99c74a;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#c3d46a),to(#99c74a));
+	background-image: -webkit-linear-gradient(top, #c3d46a, #99c74a);
+	background-image: -moz-linear-gradient(top, #c3d46a, #99c74a);
+	background-image: -o-linear-gradient(top, #c3d46a, #99c74a);
+	background-image: -ms-linear-gradient(top, #c3d46a, #99c74a);
+	background-image: linear-gradient(top, #c3d46a, #99c74a);
+}
+
+.filerepository .flag .notpassed,
+.filerepository .progressbar .notpassed,
+.filerepository .progressbar .Invalidated,
+.filerepository .progressbar .invalidated,
+.filerepository .progressbar .EvaluatorReplacement.Invalidated,
+.filerepository .progressbar .evaluatorreplacement.invalidated {
+	display: inline-block;
+	width: 0;
+	background: #ff3019;
+	background: -moz-linear-gradient(top,  #ff3019 0%, #cf0404 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ff3019), color-stop(100%,#cf0404));
+	background: -webkit-linear-gradient(top,  #ff3019 0%,#cf0404 100%);
+	background: -o-linear-gradient(top,  #ff3019 0%,#cf0404 100%);
+	background: -ms-linear-gradient(top,  #ff3019 0%,#cf0404 100%);
+	background: linear-gradient(top,  #ff3019 0%,#cf0404 100%);
+}
+
+ul.directories.root,
+ul.directories.files {
+	margin: 0;
+	padding: 0;
+}
+
+ul.directories.root {
+
+}
+
+div.treewrapper {
+	padding-left: 3px;
+}
+
+ul.directories {
+	margin: 0;
+	padding-left: 20px;
+}
+
+ul.directories li.directory,
+ul.directories li.file {
+	padding-left: 0px;
+}
+
+ul.directories li.directory .groupedselector .selectormenu,
+table.files tr.file .groupedselector .selectormenu {
+	right: -5px;
+}
+
+ul.directories li.directory a,
+ul.directories li.directory a:hover {
+	text-decoration: none !important;
+}
+
+ul.directories li.directory a:hover .name {
+	text-decoration: underline;
+}
+
+.groupedselector.nolabel.noactive.nolink {
+	font-size: 0.8em;
+}
+
+.groupedselector.nolabel.noactive.nolink .selectoricon {
+
+}
+
+.groupedselector.nolabel.noactive.nolink .selectorinner {
+	width: 200px;
+}
+
+.groupedselector.nolabel.noactive.nolink .selectoritems {
+	border-right: 1px solid #ccc;
+}
+
+.groupedselector.nolabel.noactive.nolink .selectoritems.omega {
+	border-right: 0;
+}
+
+.groupedselector.nolabel.noactive.nolink .selectoritems .header {
+	text-align: center;
+	font-weight: bold;
+}
+
+.groupedselector.nolabel.noactive.nolink .selectoritems.should .header {
+	background: rgba(0,255,0,0.2);
+}
+
+.groupedselector.nolabel.noactive.nolink .selectoritems.shouldnt .header {
+	background: rgba(255,0,0,0.2);
+}
+
+.groupedselector.nolabel.noactive.nolink .selectoritem .checked,
+.groupedselector.nolabel.noactive.nolink .selectoritem .notchecked {
+	vertical-align: middle;
+	margin-right: 2px;
+}
+
+.commands .groupedselector .selectormenu {
+	top: 20px;
+}
+
+.filerepository .toolbar span.icons span.icon,
+.filerepository .toolbar span.icons span.separator {
+	vertical-align: middle;
+	margin: 0 2px;
+}
+
+.filerepository .toolbar span.icons a {
+	padding: 2px;
+	background: #eee;
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+	border: 1px solid #ccc;
+	border-radius: 6px;
+}
+
+.filerepository .toolbar span.icons a:hover {
+	background: #ddd;
+}
+
+.filerepository .toolbar span.icons span.separator {
+	color: #ccc;
+}
+
+.filerepository ul.nestedtree .treenode span {
+	vertical-align: middle;
+}
+
+.filerepository ul.nestedtree .treenode span a.namelink span.img_span {
+	vertical-align: top;
+	position: relative;
+	top: 1px;
+}
+
+.filerepository ul.nestedtree .treenode .header {
+	white-space: nowrap;
+	margin-right: 10px;
+	vertical-align: top;
+}
+
+.filerepository ul.nestedtree .treenode .item {
+	white-space: nowrap;
+	vertical-align: middle;
+}
+
+.filerepository ul.nestedtree .treenode .text {
+	vertical-align: middle;
+}
+
+.filerepository ul.nestedtree .treenode .text .extension {
+	vertical-align: top;
+}
+
+.filerepository ul.nestedtree .treenode .text .extension .dot {
+	vertical-align: top;
+}
+
+.filerepository ul.nestedtree .treenode .item .name {
+
+}
+
+.filerepository ul.nestedtree .treenode .selection input[type='checkbox'] {
+	vertical-align: top;
+}
+
+.filerepository ul.nestedtree .treenode.separator {
+	border-bottom: 1px solid #ccc;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	margin-right: 20px;
+}
+
+.filerepository ul.nestedtree .treenode.specialfolder {
+
+}
+
+.filerepository ul.nestedtree .treenode.specialfolder.links {
+
+}
+
+.filerepository ul.nestedtree .treenode.specialfolder.recyclebin {
+
+}
+
+.filerepository ul.nestedtree .treenode.specialfolder .text {
+
+}
+
+.filerepository ul.nestedtree .treenode.specialfolder .img_span {
+
+}
+
+.filerepository ul.nestedtree .treenode.specialfolder .name {
+	font-weight: bold;
+	/* font-style: italic */
+}
+
+/*.filerepository ul.nestedtree .treenode.specialfolder .name:before {
+    content:"[ ";
+}
+
+.filerepository ul.nestedtree .treenode.specialfolder .name:after {
+    content:" ]";
+}*/
+
+.filerepository ul.nestedtree .treenode.specialfolder.empty .name {
+	color: #aaa;
+	font-weight: normal;
+}
+
+/*.treenode.directory .handle.folder{
+    background: url("../img/folder-minus.png") no-repeat;
+    width:16px;
+    height: 16px;
+}
+
+.treenode.directory.collapsed .handle.folder{
+    background: url("../img/folder-plus.png");
+}*/
+
+table.files {
+	table-layout: fixed;
+	width: 100% !important;
+}
+
+table.table.files th.actions {
+	text-align: center;
+	vertical-align: middle;
+}
+
+table.table.files td.indicators span.icons span.icon {
+
+}
+
+table.table.files th.indicators,
+table.table.files td.indicators {
+	width: 40px;
+	text-align: center;
+	line-height: 18px;
+	opacity: .6;
+}
+
+table.table.files th.actions,
+table.table.files td.actions {
+	width: 28px;
+}
+
+table.table.files th.sorting,
+table.table.files td.sorting {
+	width: 30px;
+	font-size: 8px;
+	text-align: center;
+	color: #888;
+}
+
+table.table.files td.sorting {
+	line-height: 17px;
+}
+
+table.table.files th.stats,
+table.table.files td.stats {
+	width: 40px;
+}
+
+table.table.files th.author,
+table.table.files td.author {
+	width: 150px;
+}
+
+table.table.files th.date,
+table.table.files td.date {
+	width: 100px;
+	font-size: .9em;
+}
+
+table.table.files tbody td {
+	height: 20px;
+	line-height: 1.2em;
+}
+
+table.table.files tbody tr {
+	transition: background-color 0.3s ease;
+}
+
+table.table.files tbody tr {
+	line-height: 1.4em;
+}
+
+table.table.files tbody tr span.icons {
+	vertical-align: top;
+}
+
+table.table.files td {
+	vertical-align: top;
+	padding-top: 10px;
+	line-height: 14px;
+}
+
+table.ultralight td {
+	height: 1px;
+	padding: 3px 2px !important;
+	line-height: 1em;
+}
+
+table.files th.name {
+	width: 100%;
+}
+
+table.files td.name {
+	padding-right: 1em;
+}
+
+table.table.files.minimal tr.file.expandedinfo,
+table.table.files.minimal tr.file.expandedinfo td {
+	border: none !important;
+}
+
+.expandedinfo div.extrainfo {
+	display: none;
+}
+
+table.table.files tbody tr.file.hoverselected {
+	background-color: #eee;
+}
+
+.filerepository table.table.files tbody tr td.actions span.icons {
+	visibility: hidden;
+	opacity: 0;
+	transition: opacity 0.5s linear;
+	/*	top: -6px;
+        right: -5px;*/
+	top: -2px;
+	position: relative;
+}
+
+.filerepository table.table.files tbody tr.hoverselected td.actions span.icons,
+.filerepository table.table.files tbody tr.expandedinfo td.actions span.icons {
+	visibility: visible;
+	opacity: 1;
+}
+
+table.table.files th.selection,
+table.table.files td.selection {
+	width: 20px;
+	text-align: center;
+}
+
+table.table.files td.selection input {
+	margin: 2px;
+	*margin: -2px !important;
+}
+
+table.table.files td.selection,
+table.table.files td.sorting {
+
+}
+
+.extrainfo {
+	margin: .5em 0 .2em 0;
+	padding: 0 1em 0 0;
+	font-style: italic;
+	color: #aaa;
+}
+
+.extrainfo.tags {
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+}
+
+.extrainfo.author {
+	font-style: normal;
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+	font-weight: bold;
+}
+
+/*.extrainfo.tags + .extrainfo.author :before{
+    content: " - "
+}*/
+
+div.cisectionfooter {
+	margin: 1em 0;
+}
+
+div.cisectionfooter div.extrainfo {
+	margin: 1em 0;
+}
+
+.filedetails td.value input[type="text"] {
+	width: 90%;
+	padding: 3px;
+}
+
+table.table.minimal.fullwidth.filedetails tr {
+	height: 28px;
+}
+
+table.table.minimal.fullwidth.filedetails tr td.key {
+	width: 200px;
+}
+
+span#CPHservice_CTRLitemDetails_LBitemExtension {
+	color: #888;
+}
+
+table.filedetails input#CPHservice_CTRLitemDetails_TXBitemName:focus {
+	background: #f0f5fb;
+}
+
+.extrainfo .tags span.tag.type {
+	background: #aaa;
+	color: #fff;
+	text-shadow: 0 1px 0 #777;
+	padding: 1px 4px;
+	border-radius: 3px;
+	font-size: 10px;
+	line-height: 12px;
+	display: inline-block;
+}
+
+/*tr.file.scormpackage.witherrors .extrainfo .tags span.tag.type {
+	background: #ee9898;
+}*/
+
+.filerepository .file .name .iteminfo .name {
+
+	/*	font-weight: bold;*/
+	font-size: 14px;
+	line-height: 1.2em;
+	display: inline;
+}
+
+div.directoryinfo {
+	color: #888;
+}
+
+div.directoryinfo.current {
+	border-top: 1px solid #ececec;
+	padding-top: .5em;
+}
+
+div.directoryinfo.first {
+	margin-top: 0.5em;
+}
+
+div.directoryinfo span.info {
+	margin-right: .5em;
+	display: inline-block;
+	margin-bottom: .5em;
+	vertical-align: baseline;
+}
+
+#content .files .trinfo .tooltip .divinfo .alpha.omega a {
+	margin-right: .5em;
+	margin-left: .5em;
+
+}
+
+div.directoryinfo span.info.title {
+	text-align: left;
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+	width: 100px;
+	color: #444;
+}
+
+div.directoryinfo span.info span.number {
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+	padding: 2px 6px;
+	vertical-align: middle;
+	margin: 0 2px;
+	color: #333;
+	text-shadow: 0 1px 0 #fff;
+	background-color: #eee;
+	border-radius: 4px;
+	box-shadow: inset 0px 3px 5px rgba(0,0,0,0.15);
+	min-width: 16px;
+	text-align: center;
+}
+
+/*
+div.fieldobject.moveitems {
+	margin-top: 2em;
+}*/
+
+.ui-dialog .fieldrow.title {
+	margin-bottom: 2em;
+	margin-top: 2em;
+}
+
+.page-width .filerepository a.wide {
+	display: inline-block !important;
+	*display: inline !important;
+	*zoom: 1 !important;
+}
+
+.filerepository a.narrow {
+	display: none !important;
+}
+
+.page-width.fullwidth .filerepository a.narrow {
+	display: inline-block !important;
+	*display: inline !important;
+	*zoom: 1 !important;
+}
+
+.page-width.fullwidth .filerepository a.wide {
+	display: none !important;
+}
+
+.page-width.fullwidth .DivEpButton {
+
+}
+
+.mainview .filerepository td.name {
+	padding-left: 20px;
+}
+
+.filerepository .iteminfo {
+	cursor: pointer;
+	/*	vertical-align: top;
+        line-height: 1.6em;*/
+	/*	vertical-align: top;
+        line-height: 1.6em;*/
+}
+
+.hiddenfile span.fileIco {
+	opacity: 0.4;
+}
+
+.mainview .filerepository .iteminfo .name .actionbuttons {
+	margin-left: -20px;
+}
+
+.mainview .filerepository .iteminfo .name span.actionbuttons span.fileIco {
+	margin: 0;
+}
+
+.mainview .filerepository .iteminfo .name .actionbuttons,
+.mainview .filerepository .iteminfo .name .text,
+.mainview .filerepository .iteminfo .name .iteminfo {
+	vertical-align: top;
+}
+
+.filerepository div.description {
+	color: #444;
+	margin: .5em 0;
+	line-height: 18px;
+	color: #888;
+	font-weight: normal;
+	font-style: normal;
+}
+
+
+.itemdetail,
+.iteminfo span.name span,
+.iteminfo span.name span span {
+	vertical-align: top;
+	display: inline-block;
+	line-height: 1.4em ;
+}
+
+li.treenode a.namelink,
+.filerepository .iteminfo .name .text {
+	word-break: break-all;
+	color: #5689ba;
+}
+
+.filerepository .iteminfo .name {
+	position: relative;
+	/*	top: -1px;*/
+}
+
+.filerepository .iteminfo .name .text {
+	white-space: pre-wrap;
+	word-break: break-all;
+	-ms-word-wrap: break-word;
+	word-wrap: break-word;
+	vertical-align: top;
+	position: relative;
+	top: -1px;
+}
+
+.iteminfo .name .text /*
+span.extension,
+span.filenameonly */{
+	display: inline !important;
+}
+
+.filerepository .name .extrainfo.description {
+	margin: 0;
+	border-bottom: 1px dotted #ddd;
+	border-bottom: 1px dotted rgba(0,0,0,0.12);
+}
+
+.filerepository .iteminfo.truncated .name .text .extension .dot {
+
+}
+
+.section.toolbar span.commands {
+
+}
+
+@-moz-document url-prefix() {
+	.filerepository .iteminfo .name .text {
+		white-space: -moz-pre-wrap;
+		white-space: pre-wrap;
+	}
+}
+
+.filerepository .iteminfo * {
+	vertical-align: top;
+	/*	line-height: 2em;*/
+}
+
+span.actionbuttons {
+
+}
+
+.filerepository .iteminfo .name .text:hover {
+	/*text-decoration: underline;*/
+}
+
+.filerepository .iteminfo a,
+.filerepository .iteminfo a:hover {
+	text-decoration: none;
+}
+
+.filerepository table.files tr.file .groupedselector,
+.filerepository ul.directories li.directory .groupedselector {
+	visibility: hidden;
+	vertical-align: top;
+	position: relative;
+	top: -1px;
+}
+
+td.name div.selectorgroup {
+	position: absolute;
+	top: 0;
+
+}
+
+td.name div.groupedselector .selectormenu {
+	position: absolute;
+	right: -30px !important;
+}
+
+#folder-recyclebin span.fileIco.folder,
+#folder-tags span.fileIco.folder {
+	background: transparent url(../../../Generics/Command/img/common_icons_set1_16.png) !important;
+}
+
+#folder-recyclebin span.fileIco.folder {
+	background-position: -80px -80px !important;
+}
+
+#folder-links span.fileIco.folder {
+	background-position: 0 -1454px;
+}
+
+#folder-tags span.fileIco.folder {
+	background-position: -80px -480px;
+	background-position: -120px -480px !important;
+}
+
+.filerepository table.files tr.file .groupedselector .selectorgroup .selectoricon.actions {
+	position: relative;
+	top: 1px;
+}
+
+.filerepository table.files tr.file.hoverselected .groupedselector,
+.filerepository ul.directories li.directory .header:hover .groupedselector {
+	visibility: visible;
+	opacity: 1;
+}
+
+div.filerepository.mainview ul.directories li.directory .header.active {
+	background-color: #eee;
+	padding: 0px 3px;
+	margin-left: -4px;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	display: inline-block;
+}
+
+/*div.filerepository.mainview ul.directories li.directory .header.active  {
+	background-color: #eee;
+	padding: 2px 3px 4px 3px;
+	margin-left: -4px;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	width: 100%;
+}*/
+
+ul.directories li.directory span.item.active span.text .namelink .name {
+
+}
+
+li.treenode.directory.autoOpen div.content div.header.active {
+	white-space: nowrap;
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+}
+
+div.toolbar.grouped {
+	color: #888;
+}
+
+div.toolbar.grouped .title {
+	position: relative;
+	top: 1px;
+}
+
+div.toolbar.grouped span.icons {
+	border-right: 1px solid #ccc;
+	padding-right: 6px;
+	margin-right: 6px;
+	vertical-align: middle;
+}
+
+div.toolbar.grouped span.icons.last {
+	border-right: 0;
+	margin-right: 0;
+}
+
+.filerepository table.files.noextrainfo tr.file .extrainfo {
+	display: none;
+}
+
+.filerepository table.files.noauthor .extrainfo.author,
+.filerepository table.files.noauthor .extrainfo.author {
+	display: none;
+}
+
+.filerepository table.files.noactions td.actions,
+.filerepository table.files.noactions th.actions {
+	display: none;
+}
+
+.filerepository table.files.nostats td.stats,
+.filerepository table.files.nostats th.stats {
+	display: none;
+}
+
+.filerepository table.files.nodate td.date,
+.filerepository table.files.nodate th.date {
+	display: none;
+}
+
+.mainview .filerepository table.files tr.file.folder .img_span,
+.mainview div.filerepository.order .img_span {
+	vertical-align: bottom;
+}
+
+.commands .command.switch.on .on {
+	display: none;
+}
+
+.commands .command.switch.off .off {
+	display: none;
+}
+
+.itemdetail {
+	font-style: italic;
+	color: #aaa;
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+	vertical-align: baseline;
+	font-size: .9em;
+	line-height: 1.667em !important;
+}
+
+.name .itemdetail::before {
+	content: " - ";
+}
+
+.folder .name .itemdetail::before,
+.link .name .itemdetail::before {
+	content: "";
+}
+
+.witherror .fileIco {
+
+}
+
+div.filerepository.order .iteminfo {
+	cursor: move;
+}
+
+div.filerepository.order .iteminfo *,
+div.filerepository.order .iteminfo .itemdetail {
+	text-decoration: none !important;
+}
+
+div.filerepository.order span.text {
+	vertical-align: middle !important;
+	padding: 3px 10px 0 10px !important;
+	line-height: 18px !important;
+}
+
+div.filerepository.order .text .text {
+	border: none;
+	padding: 0 !important;
+}
+
+.fieldobject .fieldrow label.fieldlabel,
+.fieldobject .fieldrow span.fieldlabel {
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+	width: 100px;
+	font-weight: bold;
+}
+
+.fieldobject.scormsettings .fieldrow label.fieldlabel,
+.fieldobject.scormsettings .fieldrow span.fieldlabel {
+	width: 220px !important;
+}
+
+
+div.fieldrow.time {
+	display: inline-block;
+}
+
+.time span.timeinput .ui-widget-content.ui-corner-all {
+	border-color: #ececec;
+	padding: 3px;
+}
+
+.ui-dialog .fieldobject .fieldrow label.fieldlabel,
+.ui-dialog .fieldobject .fieldrow span.fieldlabel {
+	width: 160px;
+	font-weight: bold;
+	vertical-align: top;
+}
+
+.ui-dialog .description span span.name {
+	font-weight: bold;
+	font-size: 14px;
+	margin: 0 5px;
+}
+
+
+.itemdetail,
+.iteminfo span.name span,
+.iteminfo span.name span span {
+	vertical-align: top !important;
+
+	display: inline-block !important;
+	line-height: 1.4em ;
+}
+
+div.fieldobject.upload div.fieldrow.title div.messages div.message.alert {
+	zoom: 1.2;
+}
+
+.dialog .upload .title .iteminfo span.fileIco {
+	zoom: 1.2;
+}
+
+.ui-dialog .description span span.name .fileico {
+	top: 0 !important;
+}
+
+.moveitems .path div.dropdown {
+	width: 350px;
+	vertical-align: top;
+}
+
+.moveitems .path div.dropdown.enabled .selector.clicked .listwrapper{
+	width:350px;
+}
+
+span.inputgroup span.item,
+span.inputgroup span.aspNetDisabled {
+	display: inline-block;
+	margin: 3px .5em 3px 0em;
+}
+
+span.inputgroup span,
+span.inputgroup input,
+span.inputgroup label {
+	vertical-align: middle;
+	margin-left: 5px;
+	display: inline-block;
+}
+
+.fieldrow.files .temp {
+	height: 250px;
+	background-color: #ffffaa;
+}
+
+#content .filerepository div.section.box.boxheader {
+	border: none;
+}
+
+#content .filerepository div.section.box.boxheader div.sectioninner {
+	margin: 0;
+}
+
+/* breadcrumb */
+
+.filerepository div.breadcrumb,
+.filerepository .breadcrumb span.item,
+.filerepository .breadcrumb span.item .text,
+.filerepository .breadcrumb .separator,
+.filerepository .breadcrumb .separator:after,
+.filerepository .breadcrumb .item.hidden .ellipsis:before {
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+}
+
+.filerepository div.breadcrumbwrapper {
+	/*	border: 1px solid #ccc;*/
+	border-left: none;
+	background: #f5f5f5;
+	margin-top: 2em;
+	margin-bottom: 1em;
+	border: 1px solid #ccc;
+}
+
+.filerepository div.breadcrumb {
+	color: #444;
+	text-shadow: 0 1px 0 #fff;
+	padding: 0;
+	width: 100%;
+	max-width: 100%;
+	max-height: 50px;
+}
+
+.filerepository .breadcrumb span.item {
+	/*	border-right: 1px solid #ccc;*/
+	padding: 5px 4px 5px 14px;
+	background-color: #fff;
+ 	/*	border-bottom: 1px solid #ccc;*/
+}
+
+.filerepository .breadcrumb label {
+	color: #888;
+	display: none;
+}
+
+.filerepository .breadcrumb span.item.last {
+	border-right: 1px solid #ccc;
+}
+
+.filerepository .breadcrumb span.root.first {
+	/*	border-left: 1px solid #ccc;*/
+	background-color: #eee;
+	/*	padding: 5px;*/
+	padding-left: 5px;
+}
+
+.filerepository .breadcrumb span.separator.root.first {
+	background-color: transparent;
+}
+
+.filerepository .breadcrumb span.item.hidden {
+
+}
+
+.filerepository .breadcrumb span.item .text {
+	width: auto;
+	height: 16px;
+	line-height: 16px;
+	vertical-align: middle;
+	overflow: hidden;
+}
+
+.filerepository .breadcrumb span.item.root .text {
+	background: transparent url(../../../Generics/Command/img/jqui_454545_256x240.png) 0 -113px no-repeat;
+	width: 16px;
+	height: 16px;
+	vertical-align: middle;
+	position: relative;
+	overflow: hidden;
+	text-align: left;
+	text-indent: -9999px;
+	*text-indent: 0;
+	*font-size: 0;
+	*line-height: 0;
+	*overflow: hidden;
+	outline: 0;
+	cursor: pointer;
+	border: none;
+	left: 2px;
+}
+
+div.breadcrumb.single {
+	display: block;
+	border-left: 0;
+}
+
+div.breadcrumb.single .root {
+	border: 0;
+}
+
+div.breadcrumb.single .separator.last {
+
+}
+
+div.breadcrumb.single .item {
+	border: 0;
+	border-right: 1px solid #ccc;
+}
+
+div.breadcrumb.single.links .item.last .text,
+div.breadcrumb.single.recyclebin .item.last .text {
+	font-weight: bold;
+}
+
+.filerepository .breadcrumb .item .text.ellipsis {
+	display: none;
+}
+
+.filerepository .breadcrumb .item.hidden .text {
+	width: 20px;
+}
+
+.filerepository .breadcrumb .item.hidden .ellipsis {
+	display: inline;
+	position: relative;
+}
+
+.filerepository .breadcrumb .item.hidden div.groupedselector {
+	display: none;
+}
+
+.filerepository .breadcrumb .item.hidden .ellipsis:before {
+	content: "";
+	width: 12px;
+	height: 18px;
+	vertical-align: middle;
+	position: absolute;
+	right: 12px;
+	top: 0;
+	cursor: default;
+	background-image: -webkit-gradient(linear, left center, right center, from(rgba(255, 255, 255, 0.00)),to(rgba(255, 255, 255, 1.00)));
+	background-image: -webkit-linear-gradient(left, rgba(255, 255, 255, 0.00), rgba(255, 255, 255, 1.00));
+	background-image: -moz-linear-gradient(left, rgba(255, 255, 255, 0.00), rgba(255, 255, 255, 1.00));
+	background-image: -o-linear-gradient(left, rgba(255, 255, 255, 0.00), rgba(255, 255, 255, 1.00));
+	background-image: -ms-linear-gradient(left, rgba(255, 255, 255, 0.00), rgba(255, 255, 255, 1.00));
+	background-image: linear-gradient(left, rgba(255, 255, 255, 0.00), rgba(255, 255, 255, 1.00));
+}
+
+.filerepository .breadcrumb span.item.first.root div.selectorgroup {
+	display: none;
+}
+
+.filerepository .breadcrumb .separator {
+	width: 26px;
+	height: 26px;
+	vertical-align: middle;
+	position: relative;
+	overflow: hidden;
+	text-align: left;
+	text-indent: -9999px;
+	*text-indent: 0;
+	*font-size: 0;
+	*line-height: 0;
+	*overflow: hidden;
+	outline: 0;
+	cursor: pointer;
+	border: none;
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	-ms-transform: scaleX(0.5);
+	-webkit-transform: scaleX(0.5);
+	transform: scaleX(0.5);
+	margin-right: -14px;
+	margin-left: -14px;
+	border: none;
+	top: 0px;
+	padding: 0;
+}
+
+
+.filerepository .breadcrumb .separator:after {
+	content: "";
+	width: 48px;
+	height: 48px;
+	vertical-align: middle;
+	position: absolute;
+	-ms-transform: rotate(45deg);
+	-webkit-transform: rotate(45deg);
+	transform: rotate(45deg);
+	top: -12px;
+	left: -34px;
+	border: 1px solid #ccc;
+	cursor: default;
+	background: #fff;
+}
+
+
+.filerepository .breadcrumb span.item.first.root + span.separator:after { 
+    background-color: #eee;
+}
+
+
+.filerepository .breadcrumb span.separator.last,
+.filerepository .breadcrumb.single span.separator.last:after {
+	display: none;
+}
+
+.breadcrumb.root span.separator.last {
+	display: none;
+}
+
+.breadcrumb .groupedselector .selectormenu,
+.breadcrumb .groupedselector .selectorinner,
+.breadcrumb .groupedselector .selectorinner .selectoritems {
+	min-width: 0;
+}
+
+.breadcrumb .groupedselector.clicked .selectormenu {
+	top: 19px;
+	right: -4px;
+	bottom: 0;
+}
+
+.breadcrumb div.selectormenu .selectorinner {
+	/*	padding: 5px 5px 5px 5px;*/
+	border: none;
+	background-color: transparent;
+	background: red;
+	background: rgba(0,0,0,0);
+	box-shadow: none;
+	width: 400px;
+	right: 0;
+	left: 0;
+	top: 0;
+	bottom: 0;
+}
+
+.breadcrumb div.selectormenu .selectorinner .selectoritems {
+	/*  padding: 5px 5px 5px 5px;*/
+	border: 1px solid #ddd;
+	background: #fff;
+	box-shadow: 0px 3px 5px rgba(0,0,0,0.15);
+	display: inline-block;
+	right: 0;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	min-width: 80px;
+}
+
+.breadcrumb div.selectormenu .selectorinner .selectoritem {
+	border-bottom: 1px solid #ddd;
+}
+
+.breadcrumb div.selectormenu .selectorinner .selectoritem.last {
+	border-bottom: none;
+}
+
+/* END of Breadrcrumb */
+
+div.selectormenu .selectoritem a,
+div.selectormenu .selectoritem a:hover,
+div.selectormenu .selectoritem .selectorlabel {
+	color: #444;
+}
+
+.groupedselector span.selectorlabel {
+
+}
+
+.commands .command {
+	-webkit-border-radius: 24px;
+	-moz-border-radius: 24px;
+	border-radius: 24px;
+	padding: 1px 6px;
+	height: 16px;
+	line-height: 16px;
+}
+
+table.files td.actions span.td {
+	position: relative;
+}
+
+th.actions,
+td.actions {
+	text-align: center;
+}
+
+td span.td span.icons {
+	position: absolute;
+	display: inline !important;
+	padding: 5px;
+	background: #fff;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	top: 0;
+	left: -12px;
+	text-align: center;
+	z-index: 99999;
+}
+
+.filerepository table.table.files tbody tr td.actions span.td span.icons:before {
+	content: "";
+	display: inline-block;
+	width: 7px;
+	height: 7px;
+	position: absolute;
+	left: -5px;
+	top: 9px;
+	background-color: #fff;
+	-ms-transform: rotate(45deg);
+	/* IE 9 *!/*/
+	-webkit-transform: rotate(45deg);
+	/* Safari and Chrome *!/*/
+	transform: rotate(45deg);
+	border-bottom: 1px solid #bcbcbc;
+	border-left: 1px solid #bcbcbc;
+}
+
+td span.td span.icons span.icon {
+	margin-bottom: 3px;
+	z-index: 99999;
+}
+
+td span.td span.icons span.icon.last {
+	margin-bottom: 0;
+}
+
+.commands .command.active {
+	border: 1px solid #aaa;
+	background-color: #b5b5b5;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#cccccc),to(#bbbbbb));
+	background-image: -webkit-linear-gradient(top, #cccccc, #bbbbbb);
+	background-image: -moz-linear-gradient(top, #cccccc, #bbbbbb);
+	background-image: -o-linear-gradient(top, #cccccc, #bbbbbb);
+	background-image: -ms-linear-gradient(top, #cccccc, #bbbbbb);
+	background-image: linear-gradient(top, #cccccc, #bbbbbb);
+	background: #fff;
+	border: 1px solid #ddd;
+}
+
+.infosection th.info,
+.infosection td.info {
+	display: none;
+}
+
+.section.box .title {
+	margin: 0;
+	text-align: center;
+}
+
+div.popupwrapper {
+	position: absolute;
+	width: 100%;
+	background: red;
+	top: 20px;
+}
+
+tr.trinfo td.tdinfo div.divinfo .content {
+
+}
+
+tr.trinfo td.tdinfo div.divinfo .content .preview {
+	margin-top: 5px;
+	position: relative;
+	padding: 5px;
+	text-align: right;
+}
+
+tr.trinfo td.tdinfo div.divinfo .content .preview:after {
+
+}
+
+tr.trinfo td.tdinfo div.divinfo .content .preview img {
+	border: 1px solid #ccc;
+	max-width: 100%;
+	*width: 50%;
+	height: 120px;
+}
+
+div.tooltips {
+	position: relative;
+	display: inline;
+}
+
+td.tdinfo div.tooltips {
+	top: -6px;
+}
+
+td.tdinfo {
+	padding-left: 48px !important;
+}
+
+div.tooltips div.tooltip {
+	position: relative;
+	background: #f5f5f5;
+	border: 1px solid #e5e5e5;
+	visibility: hidden;
+	border-radius: 6px;
+	padding: 10px;
+	color: #888;
+	display: block;
+	width: auto;
+	font-size: inherit;
+}
+
+div.tooltips div.tooltip:before {
+	content: '';
+	position: absolute;
+	bottom: 100%;
+	right: 2px;
+	margin-left: -12px;
+	width: 0;
+	height: 0;
+	border-bottom: 12px solid #e0e0e0;
+	border-right: 12px solid transparent;
+	border-left: 12px solid transparent;
+}
+
+div.tooltips div.tooltip:after {
+	content: '';
+	position: absolute;
+	bottom: 100%;
+	right: 3px;
+	margin-left: -11px;
+	width: 0;
+	height: 0;
+	border-bottom: 11px solid #f5f5f5;
+	border-right: 11px solid transparent;
+	border-left: 11px solid transparent;
+}
+
+div.tooltips div.tooltip {
+	visibility: visible;
+	opacity: 1;
+	z-index: 999;
+}
+
+div.divinfo .description {
+	font-style: italic;
+	margin: 1em 0;
+}
+
+div.divinfo .description span.title {
+	font-style: normal;
+	font-weight: bold;
+	display: block;
+	text-align: left;
+}
+
+div.divinfo .infodetails .detailtitle {
+	margin: 0;
+	margin-bottom: 0.5em;
+	font-size: 1.5em;
+}
+
+table.files table.ultralight td {
+	height: auto;
+	line-height: 1.4em;
+}
+
+div.divinfo div.extrainfo.tags {
+	padding-top: 1em;
+	margin-top: 1em;
+	border-top: 1px solid #ccc;
+}
+
+.divinfo table.table.infodetails {
+	margin-bottom: 1em;
+}
+
+table.table.infodetails tr td.key {
+	font-weight: bold;
+	width: 140px;
+}
+
+table.table.infodetails {
+	margin-bottom: 0.5em
+}
+
+.filerepository table table.infodetails div.description {
+	margin: 1em 0;
+}
+
+table.table.infodetails.permissions tr td.key {
+	font-weight: normal;
+}
+
+.divinfo .tags {
+	margin-top: 0.5em;
+}
+
+.collapsable .expander {
+	cursor: pointer;
+}
+
+.toolbar a.command.narrow .text,
+.toolbar a.command.wide	.text {
+	margin-left: 14px;
+}
+
+.toolbar .command span.off,
+.toolbar .command span.on {
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+	width: 12px;
+	vertical-align: middle;
+!important;
+	height: 12px !important;
+	width: 12px !important;
+	text-align: left;
+	text-indent: -9999px;
+	*text-indent: 0;
+	*font-size: 0;
+	*line-height: 0;
+	*overflow: hidden;
+	outline: 0;
+	cursor: default;
+	border: none;
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+
+.toolbar .command span.off {
+	background: transparent url(../../../Generics/Command/img/jqui_888888_256x240.png) !important;
+	background-position: -66px -147px !important;
+}
+
+.collapsable .expander .on {
+	display: none;
+}
+
+.collapsable .expander .off {
+	display: inline;
+}
+
+.collapsable.collapsed .expander .off {
+	display: none;
+}
+
+.collapsable.collapsed .expander .on {
+	display: inline;
+}
+
+.collapsable.collapsed .hideme {
+	display: none;
+}
+
+div.fileinfo div.section.box.collapsable.collapsed div.cisectioncontent {
+	display: none !important;
+}
+
+div.fileinfo div.section.box.collapsable.collapsed div.cisectionfooter {
+	display: none !important;
+}
+
+div.fileinfo div.section.box.collapsable.expanded div.cisectioncontent {
+	display: block;
+}
+
+div.fileinfo div.section.box.collapsable.expanded div.cisectionfooter {
+	display: block;
+}
+
+.collapsable .expander.extrainfo {
+	color: #aaa;
+	font-style: italic;
+	font-size: 11px;
+}
+
+.cisectionheader h3 {
+	margin: 0;
+	margin-bottom: 0.2em;
+}
+
+div.fileinfo .inputgroup {
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+}
+
+td.value span.inputgroup .item {
+	width: 100%;
+}
+
+
+
+div.fileinfo .inputgroup label {
+	display: inline;
+	vertical-align: middle;
+}
+
+div.fileinfo .inputgroup input[type="checkbox"] {
+	display: inline;
+	width: auto;
+	vertical-align: middle;
+	margin-left: 0;
+}
+
+table th.userrole,
+table td.userrole {
+	width: 150px;
+}
+
+div.fileinfo table.table.permissions th.permission,
+div.fileinfo table.table.permissions td.permission {
+	width: 300px;
+}
+
+div.fileinfo table.table.permissions th.actions,
+div.fileinfo table.table.permissions td.actions {
+	width: 40px;
+}
+
+div.fileinfo table.table.permissions td.permission span.checkboxlist,
+div.fileinfo table.table.permissions td.permission span.readonly {
+	display: block;
+}
+
+div.fileinfo table.table.quota th.userrole,
+div.fileinfo table.table.quota td.userrole {
+
+}
+
+div.fileinfo table.table.quota th.override,
+div.fileinfo table.table.quota td.override {
+	width: 400px;
+}
+
+div.fileinfo table.table.quota th.actions,
+div.fileinfo table.table.quota td.actions {
+	width: 20px;
+	text-align: center;
+}
+
+div.fileinfo table.table.versions tr.version {
+	background-color: transparent;
+	height: 30px ;
+}
+
+a.commandlight {
+	font-size: 14px;
+	border: 1px solid #5689ba;
+	padding: 5px;
+	text-decoration: none;
+	border-radius: 4px;
+}
+
+a.commandlight:hover {
+	font-size: 14px;
+	border: 1px solid #888;
+	padding: 5px;
+	text-decoration: none;
+	border-radius: 4px;
+	color: #888;
+
+}
+
+
+
+input#CPHservice_CTRLitemDetails_TXBitemName {
+
+}
+
+div.fileinfo table.table.versions tr.version.current {
+	background-color: #eee;
+}
+
+div.fileinfo table.table.versions tr.version td.name {
+	padding-left: 10px;
+}
+
+
+div.fileinfo table.table.versions tr.version.current td.name {
+	font-weight: bold;
+}
+
+div.fileinfo table.table.versions th.name,
+div.fileinfo table.table.versions td.name {
+
+}
+
+div.fileinfo table.table.versions th.date,
+div.fileinfo table.table.versions td.date {
+	width: 120px;
+}
+
+table th.actions,
+table td.actions {
+	width: 60px;
+	text-align: center;
+}
+
+span.checkboxlist .item {
+	white-space: nowrap;
+	margin: .5em 1em .5em 0;
+	display: inline-block;
+}
+
+div#CPHservice_CTRLitemPermissions_DVselectUsers.dialog.permissionusersdlg.ui-dialog-content.ui-widget-content {
+	height: 600px !important;
+}
+
+span.checkboxlist .item input,
+span.checkboxlist .item label {
+	vertical-align: middle;
+}
+
+.toolbar .commands .groupedselector .selectoritem {
+	padding: 0 5px;
+	border-radius: 0;
+}
+
+.toolbar .commands .groupedselector .selectoritem .command {
+	height: auto;
+	line-height: 16px;
+	border: 0;
+	background: none;
+	text-align: left;
+	padding: 5px 0;
+	text-shadow: none;
+	border-radius: 0;
+	box-shadow: none;
+	min-width: 160px;
+}
+
+.toolbar .commands .groupedselector .selectoritem .command.on span.text {
+	display: inline-block;
+	width: 80%;
+	vertical-align: top;
+}
+
+.toolbar .commands .groupedselector .selectoritem .command.on span.off,
+.toolbar .commands .groupedselector .selectoritem .command.on span.on {
+
+}
+
+.commands .groupedselector .selectoritem .command.off {
+
+}
+
+.commands .groupedselector .selectormenu {
+	margin-top: 3px;
+}
+
+.commands .groupedselector .selectoritem.first {
+
+}
+
+.commands .groupedselector .selectoritems hr {
+	border: none;
+	margin: 0;
+	height: 1px;
+	background-color: #eee;
+}
+
+.commands .groupedselector .selectoritem.first {
+
+}
+
+.commands div.groupedselector {
+
+}
+
+.commands .command.groupedselector {
+	vertical-align: top;
+}
+
+.commands .command.groupedselector .selectorgroup {
+	position: relative;
+	top: -1px;
+}
+
+.tree::-webkit-scrollbar {
+	width: 14px;
+	height: 16px;
+}
+
+.tree::-webkit-scrollbar-thumb {
+	height: 6px;
+	border: 4px solid rgba(0, 0, 0, 0);
+	background-clip: padding-box;
+	-webkit-border-radius: 7px;
+	background-color: rgba(0, 0, 0, 0.15);
+	-webkit-box-shadow: inset -1px -1px 0px rgba(0, 0, 0, 0.05), inset 1px 1px 0px rgba(0, 0, 0, 0.05);
+}
+
+.tree::-webkit-scrollbar-button {
+	width: 0;
+	height: 0;
+	display: none;
+}
+
+.tree::-webkit-scrollbar-corner {
+	background-color: transparent;
+}
+
+.commands.light {
+	margin-top: 1em;
+	display: inline-block;
+}
+
+.commands.light a.commandlight {
+	margin-right: 2px;
+}
+
+.cisectionfooter .commands.light a.commandlight {
+	margin-right: 1em;
+}
+
+a#CPHservice_CTRLitemDetails_HYPdownloadItem.commandlight {
+	min-width: 200px;
+	display: inline-block;
+	text-align: center;
+	font-size: 18px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+div.cisectionheader {
+	margin-bottom: 1em;
+}
+
+.collapsed div.cisectionheader,
+.collapsed div.cisectionheader h3 {
+	margin: 0;
+}
+
+.section.box .preview div.img {
+	margin-left: auto;
+	margin-right: auto;
+	border: 1px solid #ddd;
+}
+
+.section.box .preview div.img img {
+	width: 100%;
+	height: auto;
+}
+
+.section.box div.img img {
+	width: 100%;
+	height: auto;
+	background: #f5f5f5;
+}
+
+.filedetails.others th.key,
+.filedetails.others td.key {
+	width: 200px;
+	vertical-align: top;
+}
+
+.filedetails.others th.value,
+.filedetails.others td.value {
+	vertical-align: top;
+}
+
+ul.sortabletree.categories.root {
+	padding: 10px;
+	background-color: #eee;
+	border: 1px solid #ccc;
+	border-radius: 10px;
+}
+
+textarea.description {
+	width: 883px;
+	height: 200px
+}
+
+div.fieldobject.quotamanager label.fieldlabel {
+	width: 200px;
+}
+
+/*.icons .icon {
+	background: transparent url('testicons_sprite.png') !important;
+}*/
+
+.defaultservicecontainer.collapsable .itemheader .status {
+	display: none;
+}
+
+.defaultservicecontainer.collapsable.collapsed .itemheader .status {
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+}
+
+.defaultservicecontainer.collapsable.collapsed .itemcontent {
+	display: none;
+}
+
+ul.communities {
+	padding: 0;
+}
+
+ul.communities li.community {
+	margin: 1em 0;
+}
+
+ul.communities li.community .innerwrapper {
+	padding: 10px;
+	background: #f5f5f5;
+	border: 1px solid #e5e5e5;
+	border-radius: 4px;
+}
+
+ul.communities li.community .innerwrapper .innerwrapper {
+	padding: 10px;
+	background: #fff;
+	border: none;
+	border-radius: 4px;
+}
+
+.selectedsize {
+	font-style: italic;
+	color: #444;
+	font-size: 11px;
+	margin-right: 5px;
+}
+
+.selectedsize.error {
+	color: red;
+	font-weight: bold;
+}
+
+.selectedsize.top,
+.selectedsize.bottom {
+	font-size: 12px;
+}
+
+.defaultservicecontainer.collapsable .itemheader h4 {
+	margin: 0;
+	margin-bottom: 0.5em;
+}
+
+.defaultservicecontainer.collapsable.collapsed .itemheader h4 {
+	margin: 0;
+}
+
+.defaultservicecontainer.collapsable ul.nestedtree.root {
+	margin-left: 1em;
+}
+
+.filerepository .progressbar span {
+	display: inline-block;
+	width: 0;
+}
+
+.filerepository .progressbar .file {
+	display: inline-block;
+	width: 0;
+	background-color: #99c74a;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#c3d46a),to(#99c74a));
+	background-image: -webkit-linear-gradient(top, #c3d46a, #99c74a);
+	background-image: -moz-linear-gradient(top, #c3d46a, #99c74a);
+	background-image: -o-linear-gradient(top, #c3d46a, #99c74a);
+	background-image: -ms-linear-gradient(top, #c3d46a, #99c74a);
+	background-image: linear-gradient(top, #c3d46a, #99c74a);
+}
+
+.filerepository .progressbar .version {
+	display: inline-block;
+	width: 0;
+	background-color: #ffcd40;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#f4e46a),to(#ffcd40));
+	background-image: -webkit-linear-gradient(top, #f4e46a, #ffcd40);
+	background-image: -moz-linear-gradient(top, #f4e46a, #ffcd40);
+	background-image: -o-linear-gradient(top, #f4e46a, #ffcd40);
+	background-image: -ms-linear-gradient(top, #f4e46a, #ffcd40);
+	background-image: linear-gradient(top, #f4e46a, #ffcd40);
+}
+
+.filerepository .progressbar .deleted {
+	display: inline-block;
+	width: 0;
+	background: #ff3019;
+	background: -moz-linear-gradient(top,  #ff3019 0%, #cf0404 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ff3019), color-stop(100%,#cf0404));
+	background: -webkit-linear-gradient(top,  #ff3019 0%,#cf0404 100%);
+	background: -o-linear-gradient(top,  #ff3019 0%,#cf0404 100%);
+	background: -ms-linear-gradient(top,  #ff3019 0%,#cf0404 100%);
+	background: linear-gradient(top,  #ff3019 0%,#cf0404 100%);
+}
+
+.filerepository .progressbar .overflow {
+	display: inline-block;
+	width: 0;
+	background: #ffaaaa;
+}
+
+.filerepository .progressbar .unavailableItems {
+	display: inline-block;
+	width: 0;
+	background: #aaaaff;
+}
+
+.filerepository .progressbar .freespace {
+	display: inline-block;
+	width: 0;
+	background: #cccccc;
+	background: -moz-linear-gradient(top,  #cccccc 0%, #eeeeee 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#cccccc), color-stop(100%,#eeeeee));
+	background: -webkit-linear-gradient(top,  #cccccc 0%,#eeeeee 100%);
+	background: -o-linear-gradient(top,  #cccccc 0%,#eeeeee 100%);
+	background: -ms-linear-gradient(top,  #cccccc 0%,#eeeeee 100%);
+	background: linear-gradient(top,  #cccccc 0%,#eeeeee 100%);
+	background: #eee;
+	-moz-box-shadow: inset 0 1px 1px rgba(0,0,0,0.1);
+	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.1);
+	box-shadow: inset 0 1px 1px rgba(0,0,0,0.1);
+}
+
+.filerepository.settings .fieldobject .fieldrow label.fieldlabel {
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+	width: 180px;
+}
+
+.filerepository .inlinewrapper {
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+	width: 500px;
+	margin-top: -2px;
+}
+
+.filerepository.settings .inlinewrapper {
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+	width: 400px;
+	margin-top: -2px;
+}
+
+.filerepository .inputgroup .option {
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+	margin-bottom: .5em;
+	margin-right: .5em;
+}
+
+.filerepository .inputgroup .option label,
+.filerepository .inputgroup .option input {
+	vertical-align: bottom;
+	margin-left: 0;
+}
+
+.filerepository.settings .fieldobject .fieldrow.repositoryoverflow label.fieldlabel,
+.filerepository.settings .fieldobject .fieldrow.uploadoverflow label.fieldlabel {
+	vertical-align: top;
+}
+
+.fieldobject span.title {
+	font-weight: bold;
+}
+
+.fieldobject div.fieldgroup {
+	display: block;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	margin-left: -5px;
+	padding-left: 5px;
+}
+
+.fieldobject div.fieldgroup.border {
+	border: 1px solid #ccc;
+	border-radius: 3px;
+}
+
+.fieldobject div.fieldgroup.first {
+	margin-top: 0;
+}
+
+.fieldobject div.fieldgroup.last {
+	margin-bottom: 0;
+}
+
+.fieldobject .fieldrow.textslider input[type='text'] {
+	width: 30px;
+}
+
+.fieldobject .fieldrow.textslider div.slider {
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+	width: 200px;
+	margin-right: 10px;
+}
+
+.fieldobject.box {
+	padding: 10px;
+	margin: 2em 0;
+	border: 1px solid #ccc;
+}
+
+.fieldobject.box.off span.desc span.value span.on {
+	display: none;
+}
+
+.fieldobject.box.on span.desc span.value span.off {
+	display: none;
+}
+
+.fieldobject.box .fieldobject.settings {
+	margin-top: 1em;
+	padding: 1em;
+	border: 1px solid #ccc;
+	margin-bottom: 0;
+}
+
+.fieldobject .fieldrow {
+	margin-bottom: 1em;
+}
+
+.fieldobject.upload .fieldrow {
+	margin: .5em 0 !important;
+}
+
+span.ruFileWrap.ruStyled,
+span.ruFileWrap.ruStyled span {
+	font-size: 13px !important;
+	
+}
+
+.weekcalendar.enabled,
+.coveredradio.enabled,
+.coveredcheck.enabled {
+
+}
+
+.weekcalendar.enabled .wclist,
+.coveredradio.enabled .wclist,
+.coveredcheck.enabled .wclist {
+	display: none;
+}
+
+.weekcalendar.enabled.readonly *,
+.coveredradio.enabled.readonly *,
+.coveredcheck.enabled.readonly * {
+	cursor: default;
+}
+
+.weekcalendar.disabled .btnswitchgroup,
+.coveredradio.disabled .btnswitchgroup,
+.coveredcheck.disabled .btnswitchgroup {
+	display: none;
+}
+
+.weekcalendar.enabled  .btnswitchgroup .btnswitch.active,
+.coveredradio.enabled  .btnswitchgroup .btnswitch.active,
+.coveredcheck.enabled  .btnswitchgroup .btnswitch.active {
+
+}
+
+tr.hiddenfile {
+	background: #f2f2f6;
+}
+
+table.table.files tbody tr.hiddenfile.file.hoverselected {
+	background-color: #ddd;
+}
+
+tr.hiddenfile a .text,
+tr.hiddenfile td {
+	color: #aaa !important;
+}
+
+tr.hiddenfile a .text {
+	font-style: italic;
+}
+
+tr.file.witherrors span.name span.text {
+	color: #e14717 !important;
+	font-style: italic;
+}
+
+tr.file.pending span.name span.text {
+	color: #aaa !important;
+	font-style: italic;
+}
+
+.dropdown.enabled .selector.clicked .listwrapper {
+	max-height: 100px;
+	overflow: auto
+}
+
+.newlinkinput input.inputtext {
+	width: 500px;
+}
+
+.newfolderinput input.inputtext {
+	width: 500px;
+}
+
+.dialog .inlinewrapper {
+	width: 560px;
+}
+
+.dialog .upload .inlinewrapper {
+	width: auto;
+}
+
+.createnewlink div.fieldobject div.fieldgroup {
+	margin-bottom: 1.5em;
+}
+
+.dialog .fieldlabel {
+	min-width: 160px;
+	margin-bottom: .5em;
+	vertical-align: top;
+}
+
+div.filedropzone {
+	margin: 1em 0;
+	padding: 1em;
+	border: 2px dashed #ccc;
+	color: #888;
+	font-size: 18px;
+	text-align: center;
+}
+
+input.folderapply {
+	display: none;
+}
+
+.dialog div.fieldrow {
+	margin: 2em 0;
+}
+
+.dialog div.fieldrow.commands {
+	padding: 1em 0;
+	/*	border-top: 1px solid #ececec;*/
+}
+
+.dialog .fieldrow.title div.description {
+	margin: 2em 0;
+	padding: 1em 0;
+	line-height: 1.5em;
+}
+
+.dialog .fieldobject.upload label.fieldlabel,
+.dialog .fieldobject.upload input.inputtext {
+	font-weight: normal;
+	font-style: normal;
+	vertical-align: middle;
+}
+
+.createnewfolder div.fieldobject.upload,
+.dialog .fieldobject.upload .fieldgroup {
+	border: 1px solid #ddd;
+	padding: 10px;
+	background: #f5f5f5;
+	border-radius: 5px;
+}
+
+.dialog .fieldobject.upload .fieldrow.path,
+.dialog .fieldobject.upload .fieldgroup .fieldrow
+	/*.dialog .fieldobject.upload .fieldrow*/ {
+	margin: 0;
+}
+
+.dialog .fieldobject.upload .fieldrow.path {
+	margin: 1em 0;
+}
+
+.dialog .fieldobject.upload .fieldrow.path span.label,
+.dialog .fieldobject.upload .fieldrow.path span.text {
+	display: inline-block;
+}
+
+.dialog .fieldobject.upload .fieldrow.path span.text {
+	color: #777;
+	padding: .5em;
+	border: 1px solid #ddd;
+}
+
+.dialog .fieldrow.title,
+.dialog .fieldrow.title div.description {
+	margin: 0;
+}
+
+.dialog span.inputgroup .item {
+	margin: .5em 0;
+}
+
+.dialog span.inputgroup label {
+	margin: 0 .5em;
+}
+
+.dialog .inlinewrapper .inputgroup input,
+.dialog .inlinewrapper .inputgroup label {
+	/*	display: inline-block;
+        vertical-align: top;*/
+}
+
+.dialog .inlinewrapper .inputgroup input[type="checkbox"] {
+	width: 12px;
+}
+
+.dialog .description .text {
+	margin: 1em 0;
+	display: inline-block;
+}
+
+.dialog .description .name .text {
+	margin: 0;
+	display: inline;
+	vertical-align: top;
+}
+
+.section.box.settings {
+	border-right: none;
+}
+
+.scormsettings .section.box.treefile .sectioninner {
+	overflow: scroll;
+	overflow-y: hidden;
+	overflow-x: auto;
+	border: 1px solid #ccc;
+}
+
+.fieldobject.multimediasettings {
+	border: 1px solid #ccc;
+	padding: 3px;
+}
+
+.fieldobject.multimediasettings .treefile,
+.fieldobject.scormsettings .treefile {
+	border: 0;
+}
+
+div.block {
+	border: 1px solid #ccc;
+	margin-bottom: 1em;
+}
+
+div.block div.title {
+	margin-bottom: 2px;
+	background-color: #eee;
+	border-bottom: 1px solid #ccc;
+	color: #444;
+	font-weight: bold;
+	padding: 3px;
+}
+
+div.block div.title {
+
+}
+
+div.block .coveredradio {
+	text-align: center;
+}
+
+div.block div.blockinner {
+	padding: 10px;
+}
+
+.treefile ::-webkit-scrollbar {
+	width: 14px;
+	height: 16px;
+}
+
+.treefile ::-webkit-scrollbar-thumb {
+	height: 6px;
+	border: 4px solid rgba(0, 0, 0, 0);
+	background-clip: padding-box;
+	-webkit-border-radius: 7px;
+	background-color: rgba(0, 0, 0, 0.15);
+	-webkit-box-shadow: inset -1px -1px 0px rgba(0, 0, 0, 0.05), inset 1px 1px 0px rgba(0, 0, 0, 0.05);
+}
+
+.treefile ::-webkit-scrollbar-button {
+	width: 0;
+	height: 0;
+	display: none;
+}
+
+.treefile ::-webkit-scrollbar-corner {
+	background-color: transparent;
+}
+
+div.block .fieldobject .fieldrow label.fieldlabel,
+div.block .fieldobject .fieldrow input,
+div.block .fieldobject .fieldrow span,
+div.block .fieldobject .fieldrow select {
+	vertical-align: middle;
+}
+
+div.block.blockmessage {
+	width: 99.9%;
+	margin: 0;
+	border: 0px;
+}
+
+.section.box.settings .block.packagesettings,
+.section.box.settings .block.activitysettings {
+	display: none;
+}
+
+.section.box.settings.package .block.packagesettings {
+	display: block;
+}
+
+.section.box.settings.activity .block.activitysettings {
+	display: block;
+}
+
+.section.box.settings.activity .block.activitysettings.hidden {
+	display: none;
+}
+
+.container_12 .container_12 .omega {
+	float: right;
+}
+
+.container_12 .container_12 .alpha.omega {
+	float: left;
+}
+
+.container_12 .container_12 .alpha.omega.grid_12 {
+	width: 99.9%;
+}
+
+.checkchange.changed {
+
+}
+
+.fieldrow.changed,
+.fieldrow.changed_by_checkbox,
+.fieldrow.changed_by_checkbox_completeness,
+.fieldrow.changed_by_checkbox_time,
+.fieldrow.changed_by_checkbox_mark,
+.fieldrow.changed_by_spinner,
+.fieldrow.changed_by_radio,
+.fieldrow.changed_by_text {
+	background-color: #ffffb4;
+	/*	border:1px solid red;*/
+}
+
+.fieldobject.changed,
+.fieldobject.changed_by_checkbox,
+.fieldobject.changed_by_checkbox_completeness,
+.fieldobject.changed_by_checkbox_time,
+.fieldobject.changed_by_checkbox_mark,
+.fieldobject.changed_by_spinner,
+.fieldobject.changed_by_radio,
+.fieldobject.changed_by_text {
+
+}
+
+.block.changed,
+.block.changed_by_checkbox,
+.block.changed_by_checkbox_completeness,
+.block.changed_by_checkbox_time,
+.block.changed_by_checkbox_mark,
+.block.changed_by_spinner,
+.block.changed_by_radio,
+.block.changed_by_text {
+	border: 1px solid #ffbf00;
+}
+
+.onlychanged {
+	display: none;
+}
+
+.block.changed .onlychanged,
+.block.changed_by_checkbox .onlychanged,
+.block.changed_by_checkbox_completeness .onlychanged,
+.block.changed_by_checkbox_time .onlychanged,
+.block.changed_by_checkbox_mark .onlychanged,
+.block.changed_by_spinner .onlychanged,
+.block.changed_by_radio .onlychanged,
+.block.changed_by_text .onlychanged {
+	display: inline;
+}
+
+.cisectionheader .left {
+
+}
+
+.cisectionheader .messages {
+
+}
+
+.section.box .icons.warning {
+	display: none;
+}
+
+.section.box.warning .icons.warning {
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+	vertical-align: middle;
+}
+
+.multimediasettings .directory .namelink {
+	cursor: default;
+	text-decoration: none !important;
+}
+
+.multimediasettings .file .namelink {
+	cursor: pointer;
+	text-decoration: underline;
+}
+
+.multimediasettings .filerepository .header.active .iteminfo .name .text {
+	white-space: inherit;
+}
+
+.scormstat.wizard {
+	margin: 0;
+	margin-top: 1em;
+	padding: 0;
+}
+
+/*.scormstat.ballout .statheader,
+.scormstat.ballout .statcontent,
+.scormstat.ballout .statfooter{
+}*/
+
+.scormstat.wizard .statheader {
+	border: 1px solid #ccc;
+	margin-bottom: -1px;
+	background: #ddd;
+	position: relative;
+}
+
+.scormstat.wizard .statcontent {
+	border: 1px solid #ccc;
+	/*	padding-top:1em;*/
+}
+
+.scormstat.wizard .statfooter {
+	border: 1px solid #ccc;
+	margin-top: -1px;
+	background: #ddd;
+}
+
+.scormstat.wizard .inner {
+	margin: 3px;
+}
+
+.scormstat .box {
+	border: 1px solid #ccc;
+	min-height: 100px;
+	margin-bottom: 1em;
+	background: #efefef;
+}
+
+.scormstat.ballout .box span.icons span.icon.big {
+	width: 100px;
+	height: 100px;
+	vertical-align: middle;
+}
+
+.scormstat.ballout .box img.big {
+	width: 100px;
+	height: 100px;
+	vertical-align: middle;
+}
+
+.scormstat.ballout .box span.text {
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+	margin-left: 2px;
+	max-width: 73%;
+	vertical-align: middle;
+	text-align: justify;
+}
+
+.scormstat.ballout .box a.fullbox {
+	text-decoration: none;
+	color: #000;
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+	width: 100%;
+}
+
+.scormstat.wizard .statheader .title {
+
+}
+
+.scormstat.wizard .statheader .title h1,
+.scormstat.wizard .statheader .title h2,
+.scormstat.wizard .statheader .title h3,
+.scormstat.wizard .statheader .title h4 {
+	margin: 0;
+	margin-top: 0.5em
+}
+
+.scormstat.wizard .statheader .side,
+.scormstat.wizard .statfooter .side {
+	text-align: right;
+}
+
+.scormstat.wizard .statheader .side .commands {
+	margin-bottom: 1em;
+}
+
+.scormstat.wizard .statheader .side a,
+.scormstat.wizard .statfooter .side a {
+	margin-right: 0px !important;
+}
+
+.scormstat.wizard.fileselect .fileselector .box {
+	border: 0;
+}
+
+table.table.fileselectortable th.checkbox,
+table.table.fileselectortable td.checkbox {
+	width: 20px;
+	vertical-align: top;
+}
+
+table.table.fileselectortable th.filename,
+table.table.fileselectortable td.filename {
+	width: auto;
+	vertical-align: bottom;
+}
+
+table.table.fileselectortable td.filename div.extrainfo {
+
+}
+
+table.table.fileselectortable th.plays,
+table.table.fileselectortable td.plays {
+	width: 100px;
+	vertical-align: top;
+}
+
+table.table.tablestat th.file,
+table.table.tablestat td.file {
+	width: auto;
+}
+
+table.table.tablestat th.settings,
+table.table.tablestat td.settings {
+	width: 100px;
+}
+
+table.table.tablestat th.activities,
+table.table.tablestat td.activities {
+	width: 50px;
+	text-align: center;
+}
+
+table.table.tablestat th.play,
+table.table.tablestat td.play {
+	width: 40px;
+	text-align: center;
+}
+
+table.table.tablestat th.time,
+table.table.tablestat td.time {
+	width: 70px;
+	text-align: center;
+}
+
+table.table.tablestat th.mark,
+table.table.tablestat td.mark {
+	width: 40px;
+	text-align: center;
+}
+
+table.table.tablestat th.status,
+table.table.tablestat td.status {
+	width: 100px;
+	text-align: center;
+}
+
+table.table.tablestat th.actions,
+table.table.tablestat td.actions {
+	width: 20px;
+}
+
+table.table.tablestat td.play,
+table.table.tablestat td.activities,
+table.table.tablestat td.time,
+table.table.tablestat td.mark {
+	text-align: center;
+}
+
+table.table td.withauxright {
+	border-right: 0 !important;
+}
+
+table.table td.withauxleft {
+	border-left: 0 !important;
+}
+
+table.table td.auxiliary.auxright {
+	border-left: 0 !important;
+	text-align: right;
+}
+
+table.table td.auxiliary.auxleft {
+	border-right: 0 !important;
+	text-align: left;
+}
+
+table.table.tablestat td.auxiliary {
+	width: 18px !important;
+}
+
+table.table.tablestat th.datetime {
+	width: 120px;
+}
+
+div.completion.itemgreen,
+div.completion.itemred,
+div.completion.itemyellow {
+	margin: 0 !important;
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	box-shadow: inset 1px 1px 3px #666;
+	padding: 1px !important;
+	vertical-align: baseline;
+	border-radius: 5px;
+	text-shadow: 1px 1px 1px #999;
+}
+
+div.completion.itemgreen {
+	background-color: #99c74a !important;
+	text-align: center;
+	padding: 0px 15px;
+	/*	border: 1px solid #99c74a;*/
+}
+
+div.completion.itemyellow {
+	background-color: #ffcd40 !important;
+	text-align: center;
+	padding: 0px 15px;
+	/*	border: 1px solid #ffcd40;*/
+}
+
+div.completion.itemred {
+	background-color: #FF9999 !important;
+	text-align: center;
+	padding: 0px 15px;
+	/*	border: 1px solid #FF9999;*/
+}
+
+div.completion span {
+	vertical-align: middle;
+	display: inline-block;
+	padding: 2px;
+}
+
+.infostat {
+	width: 300px;
+	text-align: right;
+}
+
+.infostat span.title {
+	color: #aaa;
+	font-style: italic;
+}
+
+.infostat.autowidth {
+	width: auto;
+	text-align: right;
+}
+
+.playinfo {
+	margin-bottom: 1em;
+}
+
+.playinfo .inner {
+	vertical-align: top;
+}
+
+.playinfo .infostat span.title {
+	vertical-align: top;
+	font-style: normal;
+	color: #333;
+}
+
+.playinfo .infostat .completionstats {
+	margin-top: -4px;
+}
+
+.completionstats {
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+	width: 130px;
+}
+
+.completionstats .completion {
+	width: 30%;
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+}
+
+.cisectionheader h3 {
+	margin: 0;
+}
+
+h3 .user .firstname,
+h3 .user .lastname {
+	font-size: 1em
+}
+
+.statcontent .section {
+	margin-bottom: 0.5em;
+}
+
+.statcontent .section.collapsed {
+	margin-bottom: 0.5em;
+}
+
+span.icons span.icon.restarted {
+	background: url(../img/Movie-Refresh-WF.png);
+	cursor: default;
+}
+
+span.icons span.icon.scormsettingschanged {
+	background: url(../img/Movie-Settings-WF.png);
+	cursor: default;
+}
+
+span.icons span.icon.info {
+	background: url(../img/Circle%20Info%20-%2001.png);
+}
+
+span.icons span.icon.statrefresh {
+	background: url(../img/Command-Refresh.png);
+}
+
+.statcontent .inner {
+	padding: 5px;
+}
+
+div.fieldobject.rightside {
+	text-align: right;
+	margin-bottom: 0.5em;
+}
+
+.linkcommands {
+	margin-right: 5px;
+	margin-left: 5px;
+}
+
+.linkcommands .linkcommand {
+	text-decoration: none;
+}
+
+.linkcommands .linkcommand:hover {
+	text-decoration: underline;
+}
+
+input.datepicker {
+	width: 110px;
+	text-align: center;
+}
+
+span.inputgroup span.icon {
+	vertical-align: middle;
+	margin-top: -3px;
+}
+
+table.table td span.icons span.icon {
+	vertical-align: middle;
+	margin-top: 0;
+}
+
+.linkcommand.active {
+	color: #333;
+	font-weight: bold;
+}
+
+.scormstat .fieldobject.rightside {
+
+}
+
+.fieldobject.scormsettings.modal {
+	overflow: auto;
+	max-height: 700px !important;
+}
+
+.dialog.withiframe {
+	overflow: hidden !important;
+	padding: 0 !important;
+}
+
+.dialog.withiframe iframe {
+	border: 0 !important;
+	width: 100%;
+	height: 100%;
+	min-width: 1000px;
+	min-height: 700px;
+}
+
+ul.optionlists {
+	margin: 1em 0 1em 0;
+	display: none;
+}
+
+ul.optionlists li.optionitem {
+	list-style: decimal;
+	margin-bottom: 3px;
+}
+
+.commandoptions {
+	margin-top: 2em;
+}
+
+.commandoptions .commandoption {
+	width: 49%;
+	text-align: center;
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+	/*	margin:-1px;*/
+	border: 1px solid #ccc;
+	background: #eee;
+	padding-top: 1em;
+	padding-bottom: 1em;
+}
+
+.commandoptions .commandoption .commandbutton {
+	display: block;
+	height: 60px;
+	min-width: 130px;
+	margin: 0;
+	margin-left: auto;
+	margin-right: auto;
+	top: 0;
+	margin-bottom: 1em;
+}
+
+.commandoptions .commandoption .commanddescription {
+	margin: 15px;
+	display: block;
+	text-align: justify;
+}
+
+tr.file.notavailable,
+tr.file.witherrors,
+tr.file.unabletounzip,
+tr.file.unabletoverwrite,
+tr.file.invalidtype {
+	background: #fdeded !important;
+}
+
+tr.file.transfer,
+tr.file.waitingsettings,
+tr.file.increation,
+tr.file.unzip,
+tr.file.analyzing {
+	background: #fdeded !important;
+}
+
+tr.file.notavailable span.fileIco,
+tr.file.witherrors span.fileIco,
+tr.file.unabletounzip span.fileIco,
+tr.file.unabletoverwrite span.fileIco,
+tr.file.invalidtype span.fileIco {
+	opacity: 0.5;
+}
+
+tr.file.waitingsettings,
+tr.file.transfer span.fileIco,
+tr.file.increation span.fileIco,
+tr.file.unzip span.fileIco,
+tr.file.analyzing span.fileIco {
+}
+
+.filerepository .toolbar a.aicon.shadowcopy {
+	display: none;
+}
+
+.filerepository .toolbar a.aicon.enabled-icon {
+	opacity: 1;
+}
+
+.filerepository .toolbar a.aicon.disabled-icon {
+	display: none;
+}
+
+.filerepository .toolbar a.aicon.shadowcopy.enabled-icon {
+	display: none;
+	cursor: default !important;
+	pointer-events: none;
+	cursor: default;
+}
+
+.filerepository .toolbar a.aicon.shadowcopy.disabled-icon {
+
+	display: inline-block !important;
+	*display: inline;
+	*zoom: 1;
+	cursor: default !important;
+	pointer-events: none;
+	cursor: default;
+	
+	/* Crap */		
+		/* IE 5-7 */
+		filter: alpha(opacity=50);
+	
+	/* Bad browsers */		
+		/* IE 8 */
+		-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+		
+		/* Netscape */
+		-moz-opacity: 0.5;
+	
+		/* Safari 1.x */
+		-khtml-opacity: 0.5;
+
+	/* Good browsers */
+	opacity: 0.5;
+}
+
+
+
+div.fileinfo table.table.versions th.author,
+div.fileinfo table.table.versions td.author {
+}
+
+div.message.alert span a {
+	display: inline-block;
+	margin: 0 .5em;
+	vertical-align: baseline;
+	font-weight: bold;
+}
+
+.fileinfo table.permissions tbody tr {
+	height: 18px;
+}
+
+.fileinfo table.permissions tbody .userrole{
+ 	padding-left: 10px;
+}
+
+.fileinfo tr.community,
+.fileinfo tr.role {
+	background: #f5f5f5;
+}
+
+.fileinfo tr.community .userrole,
+.fileinfo tr.role .userrole {
+	text-transform: uppercase;
+}
+    

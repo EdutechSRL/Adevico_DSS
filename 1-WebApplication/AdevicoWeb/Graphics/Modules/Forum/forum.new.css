@@ -1,0 +1,636 @@
+﻿.datagridforum  td{
+    border:0;
+}
+
+/*style="width: 900px; text-align: right;" align="center"*/
+
+div.topmenu {
+    width: 900px;
+    text-align: right;
+}
+
+.forumcontent {
+    text-align: left;
+    width: 900px;
+    padding-top: 5px;
+}
+
+.forumcontent .fieldobject {
+    text-align: left;
+}
+
+.table.forumtable {
+
+}
+
+.table.forumtable th,
+.table.forumtable td {
+    border-right: none;
+    border-left: none;
+    /*	border-bottom: none;
+    border-top: none;*/
+    padding: 10px 5px !important;
+    box-shadow: none;
+}
+
+table#CPHservice_DGforums.table td,
+table#CPHservice_DGforums.table th {
+    border-right: none;
+    border-left: none;
+    /*	border-bottom: none;
+    border-top: none;*/
+    padding: 10px !important;
+    box-shadow: none;
+    color: #888;
+    text-shadow: 0 1px 0 rgba(255,255,255,0.3)
+}
+
+#CPHservice_DGforums tbody tr.ForumNW_RowDisabilitate td {
+    background: #ddd;
+}
+
+#CPHservice_DGforums tbody tr.ForumNW_RowDisabilitate td div.linewrapper {
+    color: #888;
+}
+
+#CPHservice_DGforums tr td div.linewrapper {
+    font-size: 14px;
+    color: #222;
+}
+
+.forumtable td.topics,
+.forumtable td.posts {
+    text-align: center !important;
+    font-weight: bold;
+}
+
+.table.forumtable tbody {
+    border: 0;
+}
+
+.datagridforum {
+    width: 100%;
+    border: 0;
+}
+
+.table.forumtable td.indicators,
+.table.forumtable th.indicators,
+.table.forumtable td.indicators,
+.table.forumtable th.indicators {
+    width: 30px;
+    text-align: center !important;
+}
+
+.table.forumtable th.forumname {
+    text-align: center;
+}
+
+.table.forumtable td.forumname {
+    text-align: left;
+}
+
+.table.forumtable td.topic {
+    text-align: left;
+    width: 500px;
+}
+
+.table.forumtable th.author,
+.table.forumtable td.author {
+    width: 100px;
+}
+
+.table.forumtable.posts th.author,
+.table.forumtable.posts td.author {
+    width: 150px;
+}
+
+.table.forumtable td.topics,
+.table.forumtable th.topics,
+.table.forumtable td.posts,
+.table.forumtable th.posts,
+.table.forumtable td.replies,
+.table.forumtable th.views {
+    width: 60px;
+    text-align: center !important;
+}
+
+#CPHservice_CTRLaggiungiPost_TBLrevisione div.fieldrow.iframe iframe {
+    border: 1px solid #ccc;
+    border-left: none;
+    border-right: none;
+}
+
+.table.forumtable td.lastpost,
+.table.forumtable th.lastpost {
+    width: 200px;
+    text-align: center;
+}
+
+.table.forumtable td.lastpost {
+    /*
+
+text-align:right;*/
+    text-align: left;
+}
+
+.table.forumtable tr,
+.table.threadtable tr {
+    display: none;
+}
+
+/*table.forumtable.posts tbody tr.tablerow.ForumNW_RowNormal,
+table.forumtable.posts tbody tr.jumper td {
+	background: #f8f8f8;
+}*/
+
+
+.table.forumtable tr.tableheader,
+.table.forumtable tr.tablerow,
+.table.threadtable tr.tableheader,
+.table.threadtable tr.tablerow {
+    display: table-row;
+    *display: inline;
+    height: 30px;
+}
+
+table.posts tr.tableheader {
+    display: none !important;
+}
+
+.table.forumtable tr.tablerow td.forumname div.linewrapper.title span.name,
+.table.forumtable tr.tablerow td.topic div.linewrapper.title span.name,
+.table.forumtable tr.tablerow td.message div.linewrapper.title span.name {
+    float: left;
+}
+
+.table.forumtable tr.tablerow td.forumname div.linewrapper.title span.mark,
+.table.forumtable tr.tablerow td.topic div.linewrapper.title span.mark,
+.table.forumtable tr.tablerow td.message div.linewrapper.title span.mark {
+    float: right;
+    font-size: 10px;
+
+}
+
+.table.forumtable tr.tablerow td.forumname div.linewrapper.description {
+    color: #777;
+    font-style: italic;
+}
+
+div.linewrapper.commands {
+    margin-top: 0.3em;
+    line-height:1.4em;
+}
+div.linewrapper.commands .separator.start,
+div.linewrapper.commands .separator.end {
+    display: none;
+}
+
+div.linewrapper.commands .separator {
+    color: #777;
+}
+
+div.linewrapper.commands .ForumNW_CommandPostLinkSmall {
+    padding: 1px 3px 2px 3px;
+    margin-right: 3px;
+    border-radius: 3px;
+    background-color: #e5e5e5;
+    color: #888;
+    text-shadow: 0 1px 0 #fff ;
+    text-decoration: none;
+    font-weight: normal;
+    font-style: normal;
+    box-shadow: inset 0 0 6px rgba(0,0,0,0.2);
+    
+    display:inline-block;
+    *display:inline;
+    *zoom:1;
+    margin-bottom:4px;
+}
+
+div.linewrapper.commands .ForumNW_CommandPostLinkSmall:hover {
+    background: #e0e0e0;
+    text-decoration: none;
+    box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    
+}
+
+.topic div.linewrapper.commands .ForumNW_CommandPostLinkSmall {
+    padding: 0px 4px 1px 4px;
+    background-color: #eee;
+}
+
+.topic div.linewrapper.commands .ForumNW_CommandPostLinkSmall:hover {
+    background-color: #e9e9e9;
+}
+
+.posts .header span.ForumNW_SubjectPost {
+    display: block;
+    font-size: 14px;
+    line-height: 21px;
+    color: #444;
+}
+
+.legend.hor .legenditem .legendicon.img {
+    margin-right: 5px;
+    border: 0;
+}
+
+.pnlmenu span,
+.pnlmenu label,
+.forumcontent,
+table.forums td span,
+table.forumtable td span {
+    color: #888;
+    font-size: 11px;
+}
+
+.forumcontent span.renderedtext {
+    color: inherit;
+}
+
+.forumcontent span.renderedtext blockquote {
+    color: #888;
+}
+
+.topmenu {
+    margin: 1em 0;
+}
+
+span#CPHservice_RBLselezioneForum.FiltroCampoSmall,
+div.topmenu span.FiltroCampoSmall {
+    margin-right: 1em;
+}
+
+span#CPHservice_LBnoforum.Errore {
+    display: block;
+    margin: 2em 0;
+    font-size: 16px;
+    background-color: #fbd6dd;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#fbdee3),to(#fbced7));
+    background-image: -webkit-linear-gradient(top, #fbdee3, #fbced7);
+    background-image: -moz-linear-gradient(top, #fbdee3, #fbced7);
+    background-image: -o-linear-gradient(top, #fbdee3, #fbced7);
+    background-image: -ms-linear-gradient(top, #fbdee3, #fbced7);
+    background-image: linear-gradient(top, #fbdee3, #fbced7);
+    color: #B10612;
+    border: 1px solid #fbbfcb;
+}
+
+#CPHservice_CTRLaggiungi_PNLruoloUtente div.fieldobject.adduser,
+#CPHservice_CTRLgestione_PNLmodificaRuolo div.fieldobject.editrole {
+    margin: 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+div#CTRLrubrica_PNLgruppi {
+    padding: 10px;
+    width: 97.335% !important;
+    border: 1px solid #ccc;
+}
+
+#PNLconferma div.content div.fieldobject div.fieldrow.title {
+
+}
+
+span#LBoggetto.RubricaGenerale_Testo {
+    font-weight: bold;
+}
+
+#PNLconferma div.content div.fieldobject div.fieldrow {
+    margin-bottom: 1em;
+}
+
+textarea#TXBtesto.RubricaGenerale_Testo {
+    font-size: 12px;
+    line-height: 18px;
+}
+
+#PNLconferma {
+    padding: 10px;
+    margin: 0;
+    border: 1px solid #ccc;
+    border-top: none;
+}
+
+div#CTRLrubrica_PNLgruppi span,
+div#CTRLrubrica_PNLgruppi td {
+    line-height: 21px;
+}
+
+span#CPHservice_LBnoforum.Errore br {
+    display: none;
+}
+
+span#CPHservice_RBLselezioneForum.FiltroCampoSmall label,
+.topmenu span.FiltroCampoSmall label {
+    margin: 0 .5em;
+}
+
+div.toolbar.top .left a {
+    margin: 0 .5em;
+}
+
+table .commands .separator {
+    display: none;
+}
+
+.name .ForumNW_Autore {
+    color: #333;
+    line-height: 21px;
+    display: inline-block;
+}
+
+.author .image {
+    margin: 3px 0;
+}
+
+.author .image img {
+    border-radius: 3px;
+    background-color: #eee;
+    /*	box-shadow: 2px 2px 0 rgba(0,0,0,0.2)*/
+
+}
+
+td .title {
+    margin-bottom: 5px;
+    min-height: 20px;
+}
+
+table.threads td .title {
+    margin-bottom: 10px;
+}
+
+.fieldrow.title label {
+    color: #333;
+    font-size: 16px;
+}
+
+.fieldrow.title {
+    margin: 1em 0;
+}
+
+div.fieldrow.message {
+    margin: 2em 0;
+}
+
+.forumname span.Forum_TableText {
+    font-weight: normal;
+    font-style: normal;
+    margin-bottom: 5px;
+    display: inline-block;
+    color: #666;
+}
+
+td.forumname .linewrapper.title span.mark input {
+    vertical-align: middle;
+    display: inline-block !important;
+    *display:inline;
+    zoom: 1;
+    background-color: transparent;
+    background-repeat: no-repeat !important;
+    overflow: hidden;
+    font-size: 0;
+    border: none;
+}
+
+td .title .name a,
+.fieldrow .title .name a {
+    font-size: 14px;
+    color: #5689ba;
+    text-decoration: none;
+    border-bottom: 1px dotted #aaa;
+    font-weight: bold;
+}
+
+td .title .name .details a {
+    font-size: 11px;
+}
+
+td .header .mark span {
+    color: #aaa;
+}
+
+div.toolbar.top a {
+    font-size: 14px;
+
+    border-bottom: 1px dotted #ccc;
+    text-decoration: none;
+}
+
+div.toolbar.top a:hover {
+    color: inherit;
+    background: transparent;
+    border-bottom: 1px solid #ccc;
+    font-size: 14px;
+}
+
+.title .name a:hover {
+    text-decoration: none;
+    border-bottom: 1px solid #5689ba;
+}
+
+div.pnlmenu label {
+    margin-right: 1em;
+    margin-left: .5em;
+    color: #444;
+}
+
+div.fieldobject.addthread label.fieldlabel {
+    color: #333;
+    font-size: 12px;
+}
+
+.subject input {
+    font-size: 16px;
+    padding: 3px;
+    width: 740px;
+}
+
+div.fieldobject.stats {
+    margin: 1em 0;
+}
+
+div.fieldobject.stats .fieldlabel {
+    color: #333;
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: .5em;
+}
+
+div.fieldobject.stats div.statitem {
+    margin: 0 12px .5em 0;
+    display: inline-block;
+}
+
+a.ForumNW_LinkButton:hover {
+    background: inherit;
+}
+
+.legend.hor .legenditem .legendtext {
+
+}
+
+div.fieldobject.stats div.inlinewrapper.maxheight {
+    /*	max-width: 87%;
+        max-height: auto;*/
+    overflow: visible;
+    overflow-x: visible;
+    overflow-y: visible;
+}
+
+div.fieldobject div.fieldrow label.fieldlabel {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    width: 120px;
+}
+
+.table.forumtable td {
+    vertical-align: middle;
+}
+
+.table.forumtable.posts tr.tablerow td.author {
+    text-align: center;
+    vertical-align: top;
+}
+
+.table.forumtable.forums tr.tablerow td,
+.table.forumtable.threads tr.tablerow td {
+    vertical-align: top;
+    text-align: left;
+    padding: 5px !important;
+}
+
+.table.forumtable tr.tablerow td.message .messagecontent .header {
+    padding-bottom: 0.5em;
+}
+
+.table.forumtable tr.tablerow td.message .linewrapper.title span.name span.separator {
+    color: #888;
+    font-style: italic;
+}
+
+.table.forumtable tr.tablerow td.message .linewrapper.title span.name span.details * {
+    color: #aaa;
+}
+
+.commands a.ForumNW_BackToTop,
+.table.forumtable tr.tablerow td.message .linewrapper.title span.name span.details a {
+    color: #5689ba;
+    text-decoration: none;
+    border-bottom: 1px dotted #aaa;
+    font-weight: normal;
+    font-style: normal;
+}
+
+td.message,
+td.author {
+    border-bottom: none !important;
+    padding-bottom: 2em !important;
+    text-align: left;
+    vertical-align: top !important;
+}
+
+div.messagecontent.clearfix {
+    /*	min-height: 150px;*/
+}
+
+tr.jumper td.author,
+tr.jumper td.message {
+    border-top: none !important;
+    /*	padding-bottom: 0 !important;*/
+}
+
+.commands a.ForumNW_BackToTop:hover,
+.table.forumtable tr.tablerow td.message .linewrapper.title span.name span.details a:hover {
+    background: transparent;
+    border-bottom: 1px solid #5689ba;
+    text-decoration: none;
+}
+
+.table.forumtable tr.tablerow td.message .messagecontent .post {
+    margin-top: 0.5em;
+    overflow: auto;
+    text-align: left;
+    /* aggiunge la barra di scroll se il testo non può andare a capo*/
+}
+
+.authorcontent {
+
+}
+
+.filtercontainer {
+    margin-top: 1em;
+    text-align: left;
+}
+
+div.fieldobject.adduser div.fieldrow label.fieldlabel,
+div.fieldobject.editrole div.fieldrow label.fieldlabel {
+    width: 150px;
+}
+
+table.table.moderators th.login {
+    width: 140px;
+}
+
+table.table.moderators th.user {
+    width: 200px;
+}
+
+table.table.moderators th.role {
+    width: 130px;
+}
+
+table.table.moderators th.email {
+    width: 200px;
+}
+
+div.popup {
+    text-align: left;
+    background: #fff;
+    padding: 20px;
+}
+
+div#TBRconferma.fieldobject {
+    margin-bottom: 2em;
+    padding: 0;
+}
+
+div.popup div.linewrapper.filterletters {
+    margin: 1em 0;
+}
+
+div.popup div.filtercontainer {
+    margin: 0;
+    padding: 1em 0;
+}
+
+div#PNLselezione,
+div#CTRLrubrica_PNLfiltri {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-top: none;
+}
+
+div.popup .footer {
+    text-align: center;
+}
+
+.content.genericmail .filtercontainer {
+    width: 100%;
+}
+
+tr.separator,
+tr.separator td,
+.table.forumtable tr.separator,
+.table.forumtable tr.separator td {
+    height: 0 !important;
+    padding: 0 !important;
+    line-height: none;
+    background: #ccc;
+    border: none !important;
+
+    display: none;
+
+}

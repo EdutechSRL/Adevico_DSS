@@ -1,0 +1,425 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Resource xmlns="urn:ComolTranslation">
+  <item name="LBproviderName_t.text" mustcontains="(*)">Nome (*):</item>
+  <item name="LBuniqueCode_t.text" mustcontains="(*)">Codice univoco (*):</item>
+  <item name="LBproviderType_t.text">Tipo:</item>
+
+  <item name="AuthenticationProviderType.None" hidden="true"> --  </item>
+  <item name="AuthenticationProviderType.Internal">Interno</item>
+  <item name="AuthenticationProviderType.Ldap">Via LDAP</item>
+  <item name="AuthenticationProviderType.Url">Via url</item>
+  <item name="AuthenticationProviderType.ActiveDirectory">Active Directory</item>
+  <item name="AuthenticationProviderType.WebService">Web Service</item>
+  <item name="AuthenticationProviderType.ExternalAPI">API esterne</item>
+  <item name="AuthenticationProviderType.Shibboleth">Shibboleth</item>
+  <item name="AuthenticationProviderType.UrlMacProvider">Url con validazione mac</item>
+  
+  <item name="HYPadvancedSettings.text">Impostazioni avanzate</item>
+  <item name="HYPadvancedSettings.ToolTip">Impostazioni avanzate</item>
+  <item name="HYPadvancedSettings.status">Impostazioni avanzate</item>
+
+  <item name="LBdisplayToUser_t.text">Visualizza agli utenti:</item>
+  <item name="CBXdisplayToUser.text">si</item>
+  <item name="LBallowAdminProfileInsert_t.text">Consenti:</item>
+  <item name="CBXallowAdminProfileInsert.text">creazione profili dagli amministratori.</item>
+  <item name="LBallowMultipleInsert_t.text">Inserimenti multipli:</item>
+  <item name="CBXallowMultipleInsert.text">si</item>
+  <item name="LBidentifierFields_t.text">Campi identificativi:</item>
+  <item name="IdentifierField.none">Nessuno</item>
+  <item name="IdentifierField.longField">Intero lungo</item>
+  <item name="IdentifierField.stringField">Stringa</item>
+  <item name="LBdateToChangePassword_t.text">Validità password:</item>
+  <item name="DDLpasswordDays.3">3 mesi</item>
+  <item name="DDLpasswordDays.6">6 mesi</item>
+  <item name="DDLpasswordDays.9">9 mesi</item>
+  <item name="DDLpasswordDays.12">1 anno</item>
+  <item name="DDLpasswordDays.24">2 anni</item>
+  <item name="DDLpasswordDays.36">3 anni</item>
+  <item name="DDLpasswordDays.0">Nessuna scadenza</item>
+  <item name="LBsenderUrl_t.text" mustcontains="(*)">Url di partenza (*):</item>
+  <item name="LBremoteLoginUrl_t.text">Url remota di login:</item>
+  <item name="LBverifyRemoteUrl_t.text">Verifica url di partenza:</item>
+  <item name="Option.True">si</item>
+  <item name="Option.False">No</item>
+  <item name="CBXverifyRemoteUrl.text">si</item>
+  <item name="LBurlIdentifier_t.text" mustcontains="(*)">Identificativo url (*):</item>
+  <item name="LBdeltaTime_t.text" mustcontains="(*)">Validità token (*):</item>
+  <item name="LBdeltaTime.text" mustcontains="5|7200">secondi (min 5, max 7200).</item>
+  <item name="LBtokenFormat_t.text">Formato token:</item>
+
+  <item name="UrlUserTokenFormat.PrefixDateTimeLogin">"[qualcosa] 2050-10-07T12:00:00 mario.rossi"</item>
+  <item name="UrlUserTokenFormat.DateTimeLogin" hidden="true">"2050-10-07T12:00:00 mario.rossi"</item>
+  <item name="UrlUserTokenFormat.LoginDateTime" hidden="true">"mario.rossi 2050-10-07T12:00:00"</item>
+  <item name="UrlUserTokenFormat.PrefixLoginDateTime">"[qualcosa] mario.rossi 2050-10-07T12:00:00"</item>
+  <item name="LBkey_t.text" mustcontains="(*)|256">Chiave 256-bit(*):</item>
+  <item name="LBinitializationVector_t.text" mustcontains="(*)|128">Vettore di inizializzazione 128-bit (*):</item>
+  <item name="LBencryptionAlgorithm_t.text">Algoritmo:</item>
+  <item name="EncryptionAlgorithm.None">Nessuno</item>
+  <item name="EncryptionAlgorithm.Des" hidden="true">Des</item>
+  <item name="EncryptionAlgorithm.Rc2" hidden="true">Rc2</item>
+  <item name="EncryptionAlgorithm.Rijndael" hidden="true">Rijndael</item>
+  <item name="EncryptionAlgorithm.TripleDes" hidden="true">TripleDes</item>
+  <item name="EncryptionAlgorithm.Md5" hidden="true">Md5</item>
+  <item name="LBenabledProvider_t.text">Abilitato:</item>
+  <item name="LBprivateKey_t.text" mustcontains="(*)">Chiave privata (*):</item>
+  <item name="LBautoEnroll_t.text">Profilazione automatica:</item>
+  <item name="LBautoAddAgency_t.text">Ente sconosciuto:</item>
+  <item name="CBXautoEnroll.text">Si</item>
+  <item name="CBXautoAddAgency.text">generato automaticamente</item>
+  <item name="CBXenabled.text">Si</item>
+  <item name="LBallowTaxCodeDuplication.text" disambiguation="cod.=codice"	>Cod.Fiscale:</item>
+  <item name="CBXallowTaxCodeDuplication.text">consenti duplicati</item>
+  <item name="LBallowRequestFromIpAddresses_t.text" disambiguation="Accesso consentito (da una lista di indirizzi ip)">Consentire da:</item>
+  <item name="LBdenyRequestFromIpAddresses_t.text" disambiguation="Accesso NON consentito (da una lista di indirizzi ip)">NON consentire da:</item>
+  <item name="FormatiIP">Indicare gli indirizzi IP desiderati e separati da virgola (10.0.0.*, 10.0.0.1-10.0.0.10, 10.0.0.23).</item>
+  
+  <item name="CBXallowTaxCodeDuplication.text">consenti duplicati</item>
+  
+  
+  <item name="LBtranslationName_t.text" mustcontains="(*)">Nome (*):"</item>
+  <item name="LBtranslationDescription_t.text">Descrizione:</item>
+  <item name="LBtranslationForSubscribeName_t.text" mustcontains="(*)">Nome per l'iscrizione (*):"</item>
+  <item name="LBforSubscribeDescription_t.text">Descrizione per l'iscrizione:</item>
+  <item name="LBfieldLong_t.text" disambiguation="ident.=identificativo">Nome ident. "intero lungo":</item>
+  <item name="LBfieldString_t.text" disambiguation="ident.=identificativo">Nome ident. "stringa":</item>
+  <item name="LBduplicateUniqueCode.text">Codice univoco duplicato</item>
+
+  <item name="BTNvalidateKey.text">Valida</item>
+  <item name="BTNvalidateKey.ToolTip">Valida la chiave a 256 bit</item>
+  <item name="BTNvalidateKey.status">Valida la chiave a 256 bit</item>
+  <item name="keyValidated.True">Valida</item>
+  <item name="keyValidated.False">Invalida</item>
+  <item name="BTNvalidateVector.text">Valida</item>
+  <item name="BTNvalidateVector.ToolTip">Valida il vettore da 128 bit</item>
+  <item name="BTNvalidateVector.status">Valida il vettore da 128 bit</item>
+  <item name="vectorValidated.True">Valido</item>
+  <item name="vectorValidated.False">Invalido</item>
+
+  <item name="serviceUrlSettingsProviderTitle">Impostazioni avanzate</item>
+  <item name="serviceUrlSettingsProviderNopermission">Nessun permesso per modificare le impostazioni avanzate del sistema di autenticazione.</item>
+  <item name="serviceNamedUrlSettingsProviderTitle" placeholder="true" mustcontains="{0}">Impostazioni avanzate del sistema di autenticazione "{0}"</item>
+  <item name="HYPbackToManagementTop.text">Torna alla gestione</item>
+  <item name="HYPbackToManagementTop.status">Torna alla gestione</item>
+  <item name="HYPbackToManagementTop.ToolTip">Torna alla gestione</item>
+  <item name="HYPbackToManagementBottom.text">Torna alla gestione</item>
+  <item name="HYPbackToManagementBottom.status">Torna alla gestione</item>
+  <item name="HYPbackToManagementBottom.ToolTip">Torna alla gestione</item>
+  <item name="HYPbackToProviderEdit.text">Modifica sistema autenticazione</item>
+  <item name="HYPbackToProviderEdit.status">Modifica sistema autenticazione</item>
+  <item name="HYPbackToProviderEdit.ToolTip">Modifica sistema autenticazione</item>
+  <item name="HYPbackToProviderEditBottom.text">Modifica sistema autenticazione</item>
+  <item name="HYPbackToProviderEditBottom.status">Modifica sistema autenticazione</item>
+  <item name="HYPbackToProviderEditBottom.ToolTip">Modifica sistema autenticazione</item>
+  <item name="BTNaddLoginFormat.text">Nuovo formato login</item>
+  <item name="BTNaddLoginFormat.status">Nuovo formato login</item>
+  <item name="BTNaddLoginFormat.ToolTip">Nuovo formato login</item>
+  <item name="LTprogress.text">Caricamento dati..........</item>
+  <item name="BTNvalidate.text">Valida parametri</item>
+  <item name="BTNvalidate.status">Valida i parametri di configurazione</item>
+  <item name="BTNvalidate.ToolTip">Valida i parametri di configurazione</item>
+  <item name="BTNdecrypt.text">Decripta</item>
+  <item name="BTNdecrypt.status">Decripta il valore specificato</item>
+  <item name="BTNdecrypt.ToolTip">Decripta il valore specificato</item>
+  <item name="BTNcrypt.text">Cripta</item>
+  <item name="BTNcrypt.status">Cripta il valore specificato</item>
+  <item name="BTNcrypt.ToolTip">Cripta il valore inserito</item>
+  <item name="LBencryptedValue_t.text">Valore criptato:</item>
+  <item name="LBdecrypted_t.text">Decriptato:</item>
+  <item name="LBdecryptedValue_t.text">Valore decriptato:</item>
+  <item name="LBcrypted_t.text">Criptato:</item>
+  <item name="BTNupdateConfigurationParameters.text">Salva parametri configurazione</item>
+  <item name="BTNupdateConfigurationParameters.status">Salva parametri configurazione</item>
+  <item name="BTNupdateConfigurationParameters.ToolTip">Salva parametri configurazione</item>
+  <item name="LBedit_t.text" disambiguation="M=modifica (un solo carattere)">M</item>
+  <item name="LBdelete_t.text" disambiguation="C=cancella (un solo carattere)">C</item>
+  <item name="LBdefault_t.text">Default</item>
+  <item name="LBformatName_t.text">Nome formato:</item>
+  <item name="LBformatBefore_t.text">Testo precedente</item>
+  <item name="LBformatAfter_t.text">Testo successivo</item>
+  <item name="LNBedit.text"></item>
+  <item name="LNBedit.status" disambiguation="verbo">Modifica.</item>
+  <item name="LNBedit.ToolTip" disambiguation="verbo">Modifica.</item>
+  <item name="LNBdelete.text" disambiguation="C=cancella (un solo carattere)">C</item>
+  <item name="LNBdelete.status">Cancella definitivamente.</item>
+  <item name="LNBdelete.ToolTip">Cancella definitivamente.</item>
+  <item name="LNBdelete.ConfirmText">Sicuro di voler cancellare definitivamente l'elemento ?</item>
+  <item name="LNBvirtualDelete.text"></item>
+  <item name="LNBvirtualDelete.status">Cestina</item>
+  <item name="LNBvirtualDelete.ToolTip">Cestina</item>
+  <item name="LNBvirtualUnDelete.text"></item>
+  <item name="LNBvirtualUnDelete.status">Recupera dal cestino</item>
+  <item name="LNBvirtualUnDelete.ToolTip">Recupera dal cestino</item>
+  <item name="LBisDefault.True">si.</item>
+  <item name="LBisDefault.False"></item>
+  <item name="BTNundoSaveTop.text">Annulla</item>
+  <item name="BTNundoSaveTop.status">Annulla</item>
+  <item name="BTNundoSaveTop.ToolTip">Annulla</item>
+  <item name="BTNsaveTop.text">Salva</item>
+  <item name="BTNsaveTop.status">Salva</item>
+  <item name="BTNsaveTop.ToolTip">Salva</item>
+  <item name="BTNundoSaveBottom.text">Annulla</item>
+  <item name="BTNundoSaveBottom.status">Annulla</item>
+  <item name="BTNundoSaveBottom.ToolTip">Annulla</item>
+  <item name="BTNsaveBottom.text">Salva</item>
+  <item name="BTNsaveBottom.status">Salva</item>
+  <item name="BTNsaveBottom.ToolTip">Salva</item>
+  <item name="LBloginFormatName_t.text" mustcontains="(*)">Nome(*):"</item>
+  <item name="LBloginFormatDefault_t.text">Formato default:</item>
+  <item name="CBXloginFormatDefault.text">si</item>
+  <item name="LBloginFormatTextBefore_t.text">Testo precedente:</item>
+  <item name="LBloginFormatTextAfter_t.text">Testo sucessivo:</item>
+
+  <item name="DisplayErrorSaving">Errore nella fase di salvataggio dei dati.</item>
+  <item name="DisplayNoPermission">Spiacente, non dispone dei permessi necessari per modificare questo tipo di autenticazione.</item>
+  <item name="DisplayProviderUnknown">Spiacente, sistema di autenticazione non trovato.</item>
+  <item name="DisplayDeletedProvider" placeholder="true" mustcontains="{0}|{1}">Il sistema di autenticazione {0} di tipo {1} è cancellato, non è possibile apportare delle modifiche.</item>
+
+  <item name="LBproviderAttributeName_t.text" mustcontains="(*)">Nome (*):"</item>
+  <item name="LBproviderAttributeAlias_t.text" mustcontains="(*)">Alias (*):"</item>
+  <item name="LBproviderAttributeType_t.text">Tipo:</item>
+  <item name="LBproviderAttributeDescription_t.text">Descrizione:</item>
+
+  <item name="AttributeType.sessionId">Id sessione</item>
+  <item name="AttributeType.unknown">Non definito</item>
+  <item name="AttributeType.externalId">Id esterno</item>
+  <item name="AttributeType.accountId">Id account</item>
+  <item name="AttributeType.name">Nome</item>
+  <item name="AttributeType.surname">Cognome</item>
+  <item name="AttributeType.mail">Mail</item>
+  <item name="AttributeType.telephoneNumber">Telefono</item>
+  <item name="AttributeType.fax">Fax</item>
+  <item name="AttributeType.im">Messaggistica istantanea</item>
+  <item name="AttributeType.mobile">Cellulare</item>
+  <item name="AttributeType.taxCode">Codice fiscale</item>
+  <item name="AttributeType.login">Login</item>
+  <item name="AttributeType.password">Password</item>
+  <item name="AttributeType.externalRoles">Ruoli esterni</item>
+  <item name="AttributeType.externalProfileId">Id profilo</item>
+  <item name="BTNundoSaveAttributeTop.text">Annulla</item>
+  <item name="BTNundoSaveAttributeTop.status">Annulla</item>
+  <item name="BTNundoSaveAttributeTop.ToolTip">Annulla</item>
+  <item name="BTNsaveAttributeTop.text">Salva</item>
+  <item name="BTNsaveAttributeTop.status">Salva i dati relativi all'attributo</item>
+  <item name="BTNsaveAttributeTop.ToolTip">Salva i dati relativi all'attributo</item>
+  <item name="BTNundoSaveAttributeBottom.text">Annulla</item>
+  <item name="BTNundoSaveAttributeBottom.status">Annulla</item>
+  <item name="BTNundoSaveAttributeBottom.ToolTip">Annulla</item>
+  <item name="BTNsaveAttributeBottom.text">Salva</item>
+  <item name="BTNsaveAttributeBottom.status">Salva i dati relativi all'attributo</item>
+  <item name="BTNsaveAttributeBottom.ToolTip">Salva i dati relativi all'attributo</item>
+  <item name="BTNaddAttribute.text">Aggiungi attributo</item>
+  <item name="BTNaddAttribute.status">Aggiungi un nuovo attributo</item>
+  <item name="BTNaddAttribute.ToolTip">Aggiungi un nuovo attributo</item>
+  <item name="BTNaddRole.text">Aggiungi ruolo</item>
+  <item name="BTNaddRole.status">Aggiungi un nuovo ruolo</item>
+  <item name="BTNaddRole.ToolTip">Aggiungi un nuovo ruolo</item>
+  <item name="LBattributeName_t.text">Nome attributo</item>
+  <item name="LBattributeAlias_t.text">Alias</item>
+  <item name="LBattributeType_t.text">Tipologia</item>
+
+
+  <item name="LBroleAlias_t.text">Ruolo esterno</item>
+  <item name="LBroleProfile_t.text">Ruolo Interno</item>
+  <item name="LBroleOrganization_t.text">Organizzazione</item>
+  <item name="BTNundoSaveRoleTop.text">Annulla</item>
+  <item name="BTNundoSaveRoleTop.status">Annulla</item>
+  <item name="BTNundoSaveRoleTop.ToolTip">Annulla</item>
+  <item name="BTNsaveRoleTop.text">Salva</item>
+  <item name="BTNsaveRoleTop.status">Salva i dati relativi al ruolo esterno</item>
+  <item name="BTNsaveRoleTop.ToolTip">Salva i dati relativi al ruolo esterno</item>
+  <item name="BTNundoSaveRoleBottom.text">Annulla</item>
+  <item name="BTNundoSaveRoleBottom.status">Annulla</item>
+  <item name="BTNundoSaveRoleBottom.ToolTip">Annulla</item>
+  <item name="BTNsaveRoleBottom.text">Salva</item>
+  <item name="BTNsaveRoleBottom.status">Salva i dati relativi al ruolo esterno</item>
+  <item name="BTNsaveRoleBottom.ToolTip">Salva i dati relativi al ruolo esterno</item>
+  <item name="LBroleName_t.text">Nome:</item>
+  <item name="LBroleCode_t.text">Codice:</item>
+  <item name="LBroleAlias_t.text">Alias:</item>
+  
+  <item name="LBproviderRoleName_t.text">Nome:</item>
+  <item name="LBproviderRoleAlias_t.text">Alias:</item>
+  <item name="LBproviderRoleCode_t.text">Codice:</item>
+  <item name="LBproviderRoleProfile_t.text">Tipo:</item>
+  <item name="LBproviderRoleOrganization_t.text">Organizzazione:</item>
+  <item name="DDLprofileType.0" hidden="true">--          --</item>
+  <item name="DDLorganizations.0" hidden="true">--          --</item>
+  <item name="ProviderAttribute">Attributo del sistema di autenticazione</item>
+  <item name="ProviderRole">Ruolo esterno associato al sistema di autenticazione</item>
+  <item name="LoadProviderInfo" placeholder="true" mustcontains="{0}|{1}">Sistema di autenticazione "{0}" di tipo {1}.</item>
+  <item name="LBpagesize.text">Elementi per pagina:</item>
+  <item name="LBroleNameSearch_t.text">Alias contiene:</item>
+  <item name="BTNsearch.text">Trova</item>
+  <item name="BTNsearch.status">Trova</item>
+  <item name="BTNsearch.ToolTip">Trova</item>
+  <item name="LBmultipleValue_t.text">Valori multipli per record:</item>
+  <item name="LBmultipleValue_t.Tooltip">Consente di associare ad un utente piu' identificativi per lo stesso record</item>
+  <item name="CBXseparator.text">si</item>
+
+
+
+  <item name="serviceMacUrlSettingsProviderTitle">Impostazioni avanzate</item>
+  <item name="serviceMacUrlSettingsProviderNopermission">Nessun permesso per modificare le impostazioni avanzate del sistema di autenticazione.</item>
+  <item name="BTNaddMacAttribute.text">Aggiungi</item>
+  <item name="BTNaddMacAttribute.status">Aggiungi attributo</item>
+  <item name="BTNaddMacAttribute.ToolTip">Aggiungi attributo</item>
+  <item name="BTNsaveSettingsBottom.text">Salva impostazioni</item>
+  <item name="BTNsaveSettingsBottom.status">Salva impostazioni</item>
+  <item name="BTNsaveSettingsBottom.ToolTip">Salva impostazioni</item>
+  <item name="BTNsaveSettingsTop.text">Salva impostazioni</item>
+  <item name="BTNsaveSettingsTop.status">Salva impostazioni</item>
+  <item name="BTNsaveSettingsTop.ToolTip">Salva impostazioni</item>
+  <item name="UrlMacAttributeType.url">Generico</item>
+  <item name="UrlMacAttributeType.mac">MAC</item>
+  <item name="UrlMacAttributeType.timestamp">Timestamp</item>
+  <item name="UrlMacAttributeType.profile">Profilo</item>
+  <item name="UrlMacAttributeType.organization">Organizzazione</item>
+  <item name="UrlMacAttributeType.coursecatalogue">Catalogo</item>
+  <item name="UrlMacAttributeType.applicationId">Id applicazione</item>
+  <item name="UrlMacAttributeType.functionId">Id servizio</item>
+  <item name="UrlMacAttributeType.compositeProfile">Campo composito</item>
+  <item name="LBmacAttributeType_t.text">Tipo attributo:</item>
+  
+  <item name="ApplicationAttribute.Name">Id applicazione</item>
+  <item name="ApplicationAttribute.Description">Identificativo applicazione, indispensabile per identificare l'applicazione esterna chiamante.</item>
+  <item name="ApplicationAttribute.QueryStringName" hidden="true">ApplicationID</item>
+  <item name="ApplicationAttribute.Value" hidden="true" placeholder="true" mustcontains="APP_{0}" disambiguation="non tradurre">APP_{0}</item>
+  <item name="CatalogueAttribute.Name">Catalogo</item>
+  <item name="CatalogueAttribute.Description">Attributo per indicare il catalogo da associare di default all'utente.</item>
+  <item name="CatalogueAttribute.QueryStringName">CatalogueID</item>
+  <item name="FunctionAttribute.Name">Id servizio</item>
+  <item name="FunctionAttribute.Description">Identificativo del servizio esterno, indispensabile per identificare l'applicazione esterna chiamante.</item>
+  <item name="FunctionAttribute.QueryStringName" hidden="true">FunctionID</item>
+  <item name="FunctionAttribute.Value" hidden="true" disambiguation="non tradurre">FN_{0}</item>
+  <item name="MacAttribute.Name" hidden="true">MAC</item>
+  <item name="MacAttribute.Description">Token di controllo criptato.</item>
+  <item name="MacAttribute.QueryStringName" hidden="true">MAC</item>
+  <item name="OrganizationAttribute.Name">Organizzazione</item>
+  <item name="OrganizationAttribute.Description">Organizzazione di appartenenza</item>
+  <item name="OrganizationAttribute.QueryStringName">Organizzazione</item>
+  <item name="UserProfileAttribute.Name">Attributo profilo</item>
+  <item name="UserProfileAttribute.Description">Attributo da associare ad un profilo</item>
+  <item name="UserProfileAttribute.QueryStringName" placeholder="true" mustcontains="{0}" disambiguation="att=attributo">Att{0}</item>
+  <item name="TimestampAttribute.Name">TimeStamp</item>
+  <item name="TimestampAttribute.Description">TimeStamp validita' token</item>
+  <item name="TimestampAttribute.QueryStringName">TimeStamp</item>
+  <item name="CompositeUserProfileAttribute.Name">Attributo profilo composito</item>
+  <item name="CompositeUserProfileAttribute.Description">Consente di definire un attributo del profilo come la somma di due attributi utente indicati nell'url.</item>
+  <item name="CompositeUserProfileAttribute.QueryStringName" hidden="true">cmp</item>
+  <item name="BaseUrlMacAttribute.Name">Attributo generico</item>
+  <item name="BaseUrlMacAttribute.Description">Attributo generico</item>
+  <item name="BaseUrlMacAttribute.QueryStringName" placeholder="true" mustcontains="{0}">Generico{0}</item>
+  <item name="DisplayAttributeAdded">Attributo aggiunto correttamente</item>
+  <item name="DisplayAttributeNotAdded">Errore nella crezione del nuovo attributo</item>
+  <item name="DisplayAttributeNotDeleted">Attributo non cancellato</item>
+  <item name="DisplayAttributeOptionNotDeleted">Elemento non cancellato</item>
+  <item name="DisplayAttributeOptionNotAdded">Elemento non aggiunto all'attributo</item>
+  <item name="DisplayDuplicatedRemoteCode">Codice esterno duplicato</item>
+  <item name="DisplayInvalidAttribute">Alcuni elementi obbligatori non sono stati specificati, impossibile concludere l'operazione correttamente.</item>
+  <item name="DisplayInvalidAttributeAndRemoteCode">Alcuni elementi obbligatori non sono stati specificat ed alcuni codici esterni sono duplicati: impossibile concludere l'operazione correttamente.</item>
+ 
+  <item name="ProfileAttributeType.skip">--    Ignora    --</item>
+  <item name="ProfileAttributeType.unknown">Sconosciuto</item>
+  <item name="ProfileAttributeType.externalId">Identificativo login esterna</item>
+  <item name="ProfileAttributeType.name">Nome</item>
+  <item name="ProfileAttributeType.surname">Cognome</item>
+  <item name="ProfileAttributeType.mail">Mail</item>
+  <item name="ProfileAttributeType.telephoneNumber">Telefono</item>
+  <item name="ProfileAttributeType.fax">Fax</item>
+  <item name="ProfileAttributeType.mobile">Cellulare</item>
+  <item name="ProfileAttributeType.taxCode">Codice fiscale</item>
+  <item name="ProfileAttributeType.login">Login</item>
+  <item name="ProfileAttributeType.password">Password</item>
+  <item name="ProfileAttributeType.companyName">Ragione sociale azienda</item>
+  <item name="ProfileAttributeType.companyAddress">Indirizzo azienda</item>
+  <item name="ProfileAttributeType.companyCity">Citta' azienda</item>
+  <item name="ProfileAttributeType.companyRegion">Regione azienda</item>
+  <item name="ProfileAttributeType.companyTaxCode">Codice fiscale /P.I azienda</item>
+  <item name="ProfileAttributeType.companyReaNumber">Numero R.E.A</item>
+  <item name="ProfileAttributeType.companyAssociations">Associazioni categoria</item>
+  <item name="ProfileAttributeType.matricula">Matricola</item>
+  <item name="ProfileAttributeType.matriculaYear">Anno immatricolazione</item>
+  <item name="ProfileAttributeType.institute">Istituto/Scuola</item>
+  <item name="ProfileAttributeType.classroom">Classe</item>
+  <item name="ProfileAttributeType.matters">Materia</item>
+  <item name="ProfileAttributeType.phdTitle">Dottorato</item>
+  <item name="ProfileAttributeType.externalUserInfo">Dettagli esterno</item>
+  <item name="ProfileAttributeType.jobInfo">Mansione/Ruolo</item>
+  <item name="ProfileAttributeType.address">Indirizzo</item>
+  <item name="ProfileAttributeType.zipCode" disambiguation="codice di avviamento postale"	>Cap</item>
+  <item name="ProfileAttributeType.city">Citta'</item>
+  <item name="ProfileAttributeType.autoGeneratedLogin">Login auto generata</item>
+  <item name="ProfileAttributeType.agencyName">Nome ente</item>
+  <item name="ProfileAttributeType.agencyNationalCode">Codice nazionale - Ente</item>
+  <item name="ProfileAttributeType.agencyTaxCode">Codice fiscale / Partita iva - Ente</item>
+  <item name="ProfileAttributeType.agencyExternalCode">Codice esterno - Ente</item>
+  <item name="ProfileAttributeType.agencyInternalCode">Codice piattaforma - Ente</item>
+  <item name="ProfileAttributeType.language">Lingua</item>
+  
+  <item name="GroupBy.MandatoryCommon">Campi obbligatori comuni</item>
+  <item name="GroupBy.NotMandatoryCommon">Campi NON obbligatori comuni</item>
+  <item name="GroupBy.UserTypeStandard" placeholder="true" mustcontains="{0}">Campi profilo {0}</item>
+
+  <item name="BTNcancelAttributeEditing.text">Chiudi</item>
+  <item name="BTNcancelAttributeEditing.ToolTip">Chiudi</item>
+  <item name="BTNsaveAttributeSettings.text">Salva</item>
+  <item name="BTNsaveAttributeSettings.ToolTip">Salva le impostazioni</item>
+  <item name="BTNdeleteAttribute.text"></item>
+  <item name="BTNdeleteAttribute.ToolTip">Cancellazione attributo</item>
+  <item name="BTNeditAttribute.text"></item>
+  <item name="BTNeditAttribute.ToolTip">Modifica attributo</item>
+  
+  <item name="LBmacUrlAttributeName_t.text" mustcontains="(*)">Nome (*):</item>
+  <item name="RFVname.errorMessage">campo obbligatorio</item>
+  <item name="LBmacUrlAttributeMultipleValue_t.text">Valori multipli/Separatore:</item>
+  <item name="LTmacUrlAttributeMultipleValue.text">si</item>
+  <item name="LBmacUrlAttributeDescription_t.text">Descrizione:</item>
+  <item name="LBmacUrlAttributeQueryStringName_t.text" mustcontains="(*)">Query item (*):</item>
+  <item name="RFVqueryStringName.errorMessage">campo obbligatorio</item>
+  <item name="LBmacUrlAttributeRequiredValue_t.text" mustcontains="(*)">Valore (*):</item>
+  <item name="RFVrequiredValue.errorMessage">campo obbligatorio</item>
+  <item name="LBtimeStampAttributeFormatType_t.text">Formato ora:</item>
+  <item name="LBprofileAttribute_t.text">Attributo:</item>
+  <item name="LTmacAttributeItemsTitle.text">Composizione:</item>
+  <item name="LBmacAttributeItemsTitle_t.text">Attributi</item>
+  <item name="LBmoveMacAttributeItem.ToolTip">Cambia l'ordine di valutazione</item>
+  <item name="BTNdeleteMacAttributeItem.text"></item>
+  <item name="BTNdeleteMacAttributeItem.ToolTip">Cancella l'elemento dalla composizione del MAC</item>
+  <item name="BTNaddMacAttributeitem.text">Aggiungi</item>
+  <item name="BTNaddMacAttributeitem.ToolTip">Aggiungi l'elemento alla composizione del MAC</item>
+  <item name="LBcompositeProfileAttribute_t.text">Attributo:</item>
+  <item name="LTcompositeAttributeItemsTitle.text">Composizione:</item>
+  <item name="LBmoveUrlAttributeItem.ToolTip">Cambia l'ordine di valutazione</item>
+  <item name="BTNdeleteUrlAttributeItem.text"></item>
+  <item name="BTNdeleteUrlAttributeItem.ToolTip">Cancella l'elemento dalla composizione</item>
+  <item name="BTNaddUrlAttributeitem.text">Aggiungi</item>
+  <item name="BTNaddUrlAttributeitem.ToolTip">Aggiungi l'elemento alla composizione</item>
+  
+  <item name="LTorganizationAttributeItemsTitle.text">Opzioni:</item>
+  <item name="LBorgNameTitle_t.text">Organizzazione</item>
+  <item name="LBorgProfileTitle_t.text">Profilo</item>
+  <item name="LBorgPageTitle_t.text">Pagina default</item>
+  <item name="LBorgCodeTitle_t.text">Codice</item>
+  <item name="BTNdeleteOrganizationAttributeItem.text"></item>
+  <item name="BTNdeleteOrganizationAttributeItem.ToolTip">Cancella l'elemento</item>
+  <item name="BTNaddOrganizationAttributeitem.text">Aggiungi</item>
+  <item name="BTNaddOrganizationAttributeitem.ToolTip">Aggiungi</item>
+  <item name="QuerySampleValue" disambiguation="tradurre solo -valore url-"  placeholder="true" mustcontains="{|}">{valore url}</item>
+
+  <item name="LTcatalogueAttributeItemsTitle.text">Opzioni:</item>
+  <item name="LBctgNameTitle_t.text">Catalogo</item>
+  <item name="LBctgCodeTitle_t.text">Codice</item>
+  <item name="BTNdeleteCatalogueAttributeItem.text"></item>
+  <item name="BTNdeleteCatalogueAttributeItem.ToolTip">Cancella l'elemento</item>
+  <item name="BTNaddCatalogueAttributeitem.text">Aggiungi</item>
+  <item name="BTNaddCatalogueAttributeitem.ToolTip">Aggiungi</item>
+
+  <item name="LBlogoutMode_t.text">Al logout:</item>
+  <item name="LogoutMode.internalLogonPage">vai alla login interna</item>
+  <item name="LogoutMode.externalPage">vai all'url esterno</item>
+  <item name="LogoutMode.logoutMessage">messaggio di uscita</item>
+  <item name="LogoutMode.logoutMessageAndUrl">messaggio di uscita e url di login</item>
+  <item name="LogoutMode.logoutMessageAndClose">messaggio di uscita e chiusura browser</item>
+  <item name="LogoutMode.portalPage">vai alla pagina principale</item>
+  <item name="LBnotifySubscriptionTo_t.text">Notifica iscrizione (e-mail):</item>
+</Resource>

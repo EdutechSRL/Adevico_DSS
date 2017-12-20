@@ -1,0 +1,165 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+COL_Utility
+</name>
+</assembly>
+<members>
+<member name="T:UtilityLibrary.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:UtilityLibrary.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:UtilityLibrary.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="T:UtilityLibrary.ExcelXML">
+ <summary>
+ Create on: 17/12/2009
+ Create by: Mirco Borsato
+ Convert to vb.net on 19/01/2010
+
+ Function to create an XML-Excel style document from any type of data.
+ Tested on Excel 2003 and Excel 2010.
+ If you create an .xml document, windows open it in Excel and not the default program associates with *.xml file. (YEAH!)
+ Order:
+ 1. Row += ExcelXML.AddData(obj1.Property1);
+ Row += ExcelXML.AddData(obj1.Property2);
+ ...
+ 2. ForEach item in list:
+ Table += ExcelXML.AddRow(Row); (1 Item == 1 Row)
+ 3. Add header and footer to Table (a sheet per table):
+ Table = ExcelXML.AddWorkSheet("SheetName", Table)
+ 4. You can create multi sheet and multi Table to main document:
+ MainDoc = Table1 + Table2 + ...
+ 5. Add default parameter to document:
+ MainDoc = ExcelXML.AddMain(MainDoc)
+ Note:
+ You can add a linked-cell.
+ If you want link to another cell in document, use GetInternalLink(SheetName, CellName). E.g. SheetName="Main", CellName="A1".
+ Default value for CellName (if = "") is "A1".
+ If you link to a file, in a folder with relative path, you must duplicate folder: E.g. /folder/filename.ext point to /folder/folder/filename.ext.
+ I think this is a bug from Excel2003 to Excel2010. (Manteined for backward compatibility?)
+ </summary>
+ <example>
+ string XML = "";
+ string XMLTable1 = "";
+ string XMLTable2 = "";
+ foreach (FakeObject1 Obj in GetFakeList(15))
+ {
+ string XMLRow = "";
+ XMLRow += ExcelXML.AddLinkData(Obj.Name,ExcelXML.GetInternalLink("Secondary",""));
+ XMLRow += ExcelXML.AddData(Obj.Description);
+ XMLRow += ExcelXML.AddData(Obj.Number);
+ XMLRow += ExcelXML.AddData(Obj.Time);
+ XMLRow += ExcelXML.AddData(Obj.Object);
+ XMLTable1 += ExcelXML.AddRow(XMLRow);
+ }
+ XMLTable2 = XMLTable1; //Only for sample. Put your code for create a New Table
+ XMLTable1 = ExcelXML.AddWorkSheet("Main", XMLTable1);
+ XMLTable2 = ExcelXML.AddWorkSheet("Secondary", XMLTable2);
+ XML = ExcelXML.AddMain(XMLTable1 + XMLTable2);
+ return XML;
+ </example>
+ <remarks>
+ Remember the correct order.
+ </remarks>
+</member>
+<member name="M:UtilityLibrary.FactoryBuilder.BuildFactory``1(System.String)">
+ <summary>
+    Create the requested Factory
+ </summary>
+ <typeparam name="t">type of</typeparam>
+ <param name="classname">class name</param>
+ <returns>new instance of t</returns>
+ <remarks></remarks>
+</member>
+<member name="M:UtilityLibrary.FactoryBuilder.BuildFactory(System.String)">
+ <summary>
+    Generic BuildFactory
+ </summary>
+ <param name="classname">class full name</param>
+ <returns>new instance of t</returns>
+ <remarks></remarks>
+</member>
+<member name="M:UtilityLibrary.FactoryBuilder.iFactoryImplementations``1">
+ <summary>
+    Obtains a list of Type that implements the given interface
+ </summary>
+ <typeparam name="t">interface</typeparam>
+ <returns>list of type</returns>
+ <remarks></remarks>
+</member>
+<member name="M:UtilityLibrary.FactoryBuilder.CreateObject(System.Reflection.Assembly,System.String)">
+ <summary>
+    Create an instance of a class, from assembly and class fullname
+ </summary>    
+ <param name="assemb">assembly</param>
+ <param name="fullname">class fullname</param>
+ <returns>a new object of requested class</returns>
+ <remarks></remarks>
+</member>
+<member name="M:UtilityLibrary.FactoryBuilder.CreateObject``1(System.String)">
+ <summary>
+    Create an instance of a class, extracting the assembly from the type
+ </summary>
+ <typeparam name="t">type of</typeparam>
+ <param name="fullname">class fullname</param>
+ <returns>new instance of class requested</returns>
+ <remarks></remarks>
+</member>
+<member name="M:UtilityLibrary.FactoryBuilder.CreateObject(System.String,System.String,System.Boolean)">
+ <summary>
+    Create an instance of a class, extracting the assembly from dll or assembly name
+ </summary>    
+ <param name="DLLorAssemblyname">path of dll, or assembly name</param>
+ <param name="fullname">class fullname</param>
+ <param name="isDLL">true: DLL , false: assembly name</param>
+ <returns>new instance of class requested</returns>
+ <remarks></remarks>
+</member>
+<member name="M:UtilityLibrary.FactoryBuilder.IsImplemented(System.Type,System.Type)">
+ <summary>
+    Check if a type implements an interface
+ </summary>
+ <param name="objectType">type to check</param>
+ <param name="interfaceType">interface that must be implemented</param>
+ <returns>check implementation</returns>
+ <remarks></remarks>
+</member>
+<member name="M:UtilityLibrary.MemCached.RemoveAll">
+ <summary>
+ Svuota TUTTA la cache: USARE CON PARSIMONIA!!!
+ </summary>
+ <remarks>Aggiungere lo SharedLogger</remarks>
+</member>
+<member name="M:UtilityLibrary.MemCached.RemoveNamespace(System.String)">
+ <summary>
+ Per cancellare le chiavi che iniziano con name. E' per questo che serve la hash table.
+ </summary>
+ <param name="name"></param>
+ <remarks></remarks>
+</member>
+<member name="M:UtilityLibrary.SharedCache.CacheSetup">
+ <summary>
+ 
+ </summary>
+ <returns></returns>
+ <remarks>
+   utilizzo:
+   imports TestCache.SharedCache
+   
+   una volta importato puoi usare direttamente l'oggetto shared cache
+ </remarks>
+</member>
+</members>
+</doc>

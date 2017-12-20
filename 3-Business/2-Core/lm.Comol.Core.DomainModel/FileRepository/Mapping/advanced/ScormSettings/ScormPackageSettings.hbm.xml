@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="lm.Comol.Core.DomainModel"  namespace="lm.Comol.Core.FileRepository.Domain.ScormSettings">
+	<class name="ScormPackageSettings" table="FR_ScormPackageSettings" lazy="false">
+		<id name="Id" column="Id" type="Int64">
+			<generator class="native"/>
+		</id>
+		<version name="TimeStamp"
+			generated="always"
+			unsaved-value="null"
+			type="BinaryBlob">
+			<column name="_Timestamp"
+				not-null="false"
+				sql-type="timestamp"/>
+		</version>
+
+		<property name="IdItem" type="Int64" column="IdItem" />
+		<property name="UniqueIdItem" type="Guid" column="UniqueIdItem" />
+		<property name="IdVersion" type="Int64" column="IdVersion" />
+		<property name="UniqueIdVersion" type="Guid" column="UniqueIdVersion" />
+		<property name="PackageGuid" type="String" column="PackageGuid" />
+		<property name="ValidUntil" type="DateTime" column="ValidUntil" />
+		<property name="IsCurrent" type="Boolean" column="IsCurrent" />
+    <property name="IsValid" type="Boolean" column="IsValid" />
+		<bag name="Organizations" table="FR_ScormOrganizationSettings" fetch="subselect" cascade="all-delete-orphan" lazy="false">
+			<key column="IdScormPackageSettings" foreign-key="Id"/>
+			<one-to-many class="ScormOrganizationSettings"/>
+		</bag>
+		<component name="Repository" class="lm.Comol.Core.FileRepository.Domain.RepositoryIdentifier,lm.Comol.Core.DomainModel">
+      <property name="IdCommunity" type="Int32" column="repositoryIdCommunity"/>
+      <property name="IdPerson" type="Int32" column="repositoryIdPerson"/>
+      <property name="Type" type="lm.Comol.Core.FileRepository.Domain.RepositoryType,lm.Comol.Core.DomainModel" column="repositoryType" />
+    </component>
+		<property name="PackagePath" type="String" column="PackagePath" />
+		<property name="ActivityCount" type="Int64" column="ActivityCount" />
+		<property name="EvaluationType" type="lm.Comol.Core.FileRepository.Domain.ScormSettings.EvaluationType,lm.Comol.Core.DomainModel" column="EvaluationType" />
+	  <property name="MinTime" type="Int64" column="MinTime" />
+    <property name="MinScore" type="Decimal" column="MinScore" />
+		<property name="CheckTime" type="Boolean" column="CheckTime" />
+		<property name="CheckScore" type="Boolean" column="CheckScore" />
+    <property name="UseScoreScaled" type="Boolean" column="UseScoreScaled" />
+		<property name="CheckScormCompletion" type="Boolean" column="CheckScormCompletion" />
+   
+		<property name="Deleted" type="lm.Comol.Core.DomainModel.BaseStatusDeleted,lm.Comol.Core.DomainModel" column="_Deleted" />
+		<property name="IdModifiedBy" type="Int32" column="_ModifiedBy" />
+		<property name="CreatedOn" type="DateTime" column="_CreatedOn" />
+		<property name="ModifiedOn" type="DateTime" column="_ModifiedOn" />
+		<property name="IdCreatedBy" type="Int32" column="_CreatedBy" />
+		<property name="CreatorProxyIpAddress" type="String" column="_CreatedProxyIPaddress" />
+		<property name="CreatorIpAddress" type="String" column="_CreatedIPaddress" />
+		<property name="ModifiedProxyIpAddress" type="String" column="_ModifiedProxyIPaddress" />
+		<property name="ModifiedIpAddress" type="String" column="_ModifiedIPaddress" />
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="lm.Comol.Core.DomainModel" namespace="lm.Comol.Core.DomainModel.DocTemplateVers">
+
+    <class name="PageElement" table="DT_PageElement" abstract="true" discriminator-value="0" >
+
+        <id name="Id" column="Id" type="Int64" unsaved-value="0">
+            <generator class="native"/>
+        </id>
+        <discriminator column="Discriminator" type="Int32" not-null="true" insert="true"/>
+        <version name="TimeStamp"
+            generated="always"
+            unsaved-value="null"
+            type="BinaryBlob">
+            <column name="_Timestamp"
+                    not-null="false"
+                    sql-type="timestamp"/>
+        </version>
+
+        <many-to-one name="TemplateVersion" class="lm.Comol.Core.DomainModel.DocTemplateVers.TemplateVersion, lm.Comol.Core.DomainModel" column="IdTemplateVersion" foreign-key="IdTemplateVersion"  cascade="none" not-found="ignore" />
+
+        <property name="SubVersion" type="Int64" column="SubVersion" />
+        <property name="IsActive" type="Boolean" column="IsActive" />
+
+        <property name="Position" type="lm.Comol.Core.DomainModel.DocTemplateVers.ElementPosition, lm.Comol.Core.DomainModel" column="Position" />
+        <property name="Alignment" type="lm.Comol.Core.DomainModel.DocTemplateVers.ElementAlignment, lm.Comol.Core.DomainModel" column="Alignment" />
+
+        
+
+        <property name="CreatedOn" type="DateTime" column="_CreatedOn" />
+        <many-to-one name="CreatedBy" class="lm.Comol.Core.DomainModel.Person" column="_CreatedBy" foreign-key="_CreatedBy" cascade="none" />
+        <property name="ModifiedOn" type="DateTime" column="_ModifiedOn" />
+        <many-to-one name="ModifiedBy" class="lm.Comol.Core.DomainModel.Person" column="_ModifiedBy" foreign-key="_ModifiedBy" cascade="none" />
+        <property name="CreatorProxyIpAddress" type="String" column="_CreatedProxyIPaddress" />
+        <property name="CreatorIpAddress" type="String" column="_CreatedIPaddress" />
+        <property name="ModifiedProxyIpAddress" type="String" column="_ModifiedProxyIPaddress" />
+        <property name="ModifiedIpAddress" type="String" column="_ModifiedIPaddress" />
+        <property name="Deleted" type="lm.Comol.Core.DomainModel.BaseStatusDeleted,lm.Comol.Core.DomainModel" column="_Deleted" />
+
+
+
+
+        <subclass discriminator-value="-1" name="ElementVoid" extends="PageElement" >
+        </subclass>
+
+        <subclass
+            discriminator-value="1"
+            name="ElementText" extends="PageElement">
+            <property name="Text" type="String" column="Txt_Text" />
+            <property name="IsHTML" type="Boolean" column="Txt_IsHtml" />
+        </subclass>
+
+        <subclass
+            discriminator-value="2"
+            name="ElementImage" extends="PageElement" >
+            <property name="Height" type="Int16" column="Img_Height" />
+            <property name="Width" type="Int16" column="Img_Width" />
+            <property name="Path" type="String" column="Img_Path" />
+        </subclass>
+        
+    </class>
+</hibernate-mapping>

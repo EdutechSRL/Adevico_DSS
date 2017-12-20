@@ -1,0 +1,112 @@
+/*ul.sortabletree,
+ul.sortabletree li.sortableitem,
+ul.sortabletree li.sortableitem ul.children,
+ul.sortabletree li.sortableitem ul.children li.sortableitem,
+
+{
+    margin: 0;
+    padding: 0;
+}*/
+
+/* GS: 24/04/2014 09:55 */
+
+ul.sortabletree {
+    margin: 0;
+    padding: 0;
+    margin-top: 5px;
+}
+
+ul.sortabletree li.sortableitem {
+    list-style: none;
+    list-style-position: inside;
+    margin-left: 0;
+    /* border:1px solid silver;
+     border-right:0px solid silver;*/
+    background-color: #eee;
+    /*margin-bottom: -1px;*/
+    margin-bottom: 5px;
+}
+
+.sortabletree.root {
+
+}
+
+body.dragging li.sortableitem {
+	background: url(../../../Generics/Command/img/vgrid_40.png) repeat;
+}
+
+ul.sortabletree li.sortableitem .text {
+    vertical-align: top;
+    cursor: move;
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    padding: 3px;
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin-bottom: 1px;
+    /*min-width: 300px;*/
+}
+
+ul.sortabletree li.sortableitem .text .icon {
+    margin-bottom: -3px;
+}
+
+ul.sortabletree li.sortableitem {	
+    clear: both;
+    float: none;
+
+    margin-bottom: 2px;
+    /*border-bottom: 1px solid silver;*/
+}
+
+ul.sortabletree li.sortableitem ul.children {
+    margin-top: 2px;
+}
+
+body.dragging, body.dragging * {
+    cursor: move !important;
+}
+
+.dragged {
+    position: absolute;
+    opacity: 0.75;
+    z-index: 2000;
+
+	background: none !important;
+}
+
+.dragged .text {
+  	background: lightyellow !important;
+}
+
+.sortabletree.root li.placeholder {
+    position: relative;
+    /** More li styles **/
+    background: lightyellow;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 0;
+    border: 1px solid red;
+    list-style: none;
+    height: 0;
+  	/*  width: 98%;*/
+ 	 width: 398px;
+}
+
+.sortabletree.root li.placeholder:before {
+    position: absolute;
+    /** Define arrowhead **/
+    content: "";
+    width: 0;
+    height: 0;
+    margin-top: -5px;
+
+    left: -8px;
+    top: 0px;
+    border: 5px solid transparent;
+    border-left-color: red;
+    border-right: none;
+    vertical-align: middle;
+}

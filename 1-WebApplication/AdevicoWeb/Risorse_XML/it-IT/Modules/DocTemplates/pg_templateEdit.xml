@@ -1,0 +1,371 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Resource xmlns="urn:ComolTranslation">
+
+    <item name="LTtitle_t.text" description="Template=schema predefinito per la creazione di documenti">Gestione Template certificati</item>
+    
+    <item name="BTNaddUp.text" description="Skin - veste grafica">Importa da Skin</item>
+    <item name="BTNaddUp.status" description="Skin - veste grafica">Importa da Skin</item>
+    <item name="BTNaddUp.ToolTip" description="Skin - veste grafica">Importa da Skin</item>
+    
+    <!-- Edit.aspx -->
+    <item name="NoPermission">Non di dispone dei pemessi per accedere al servizio</item>
+    <item name="SessionTimeOut">Sessione scaduta. Necessario rieseguire l'accesso.</item>
+
+    <item name="ErrorMsg_none">Operazione eseguita correttamente.</item>
+    <item name="ErrorMsg_NotFound">Elemento non trovato.</item>
+    <item name="ErrorMsg_NotVersionForTemplate">Nessuna versione disponibile.</item>
+    <item name="ErrorMsg_NotDraft">La versione non è più in bozza e non può essere editata.</item>
+    <item name="ErrorMsg_NoPremission">Non si dispone dei permessi per modficare l'elemento.</item>
+    <item name="ErrorMsg_NoTemplate" description="Template=schema predefinito per la creazione di documenti">Il template non è disponibile.</item>
+    <item name="ErrorMsg_IsSystem" description="Template=schema predefinito per la creazione di documenti">Il template è si sistema e non può essere modificato.</item>
+    <item name="ErrorMsg_IsDeleted">L'elemento è stato cancellato. Per editarlo è necessario che sia recuperato.</item>
+
+    <item name="DisplayToken.Title">Attendere.</item>
+    <item name="DisplayToken.Message">Preparazione file in corso...</item>
+
+    <item name="HYPbackUrl.text">Indietro</item>
+    <item name="HYPbackUrl.ToolTip">Ritorna al servizio precedente</item>
+    <item name="HYPbackUrl.status">Ritorna al servizio precedente</item>
+
+    <item name="LKBexportRTF.text" mustcontains="RTF">Scarica RTF</item>
+    <item name="LKBexportRTF.ToolTip" mustcontains="RTF">Scarica anteprima RTF</item>
+    <item name="LKBexportRTF.status" mustcontains="RTF">Scarica anteprima RTF</item>
+    <item name="LKBexportPDF.text" mustcontains="PDF">Scarica PDF</item>
+    <item name="LKBexportPDF.ToolTip" mustcontains="PDF">Scarica anteprima PDF</item>
+    <item name="LKBexportPDF.status" mustcontains="PDF">Scarica anteprima PDF</item>
+
+    <item name="HYPlist.text">Alla lista</item>
+    <item name="HYPlist.ToolTip" description="Template=schema predefinito per la creazione di documenti">Ritorna alla lista dei Template</item>
+    <item name="HYPlist.status" description="Template=schema predefinito per la creazione di documenti">Ritorna alla lista dei Template</item>
+
+    <item name="LKBundo.text">Annulla</item>
+    <item name="LKBundo.ToolTip">Annulla le modifiche fino all'ultimo salvataggio</item>
+    <item name="LKBundo.status">Annulla le modifiche fino all'ultimo salvataggio</item>
+
+    <item name="LKBsave.text">Salva</item>
+    <item name="LKBsave.ToolTip">Salva mdifiche</item>
+    <item name="LKBsave.status">Salva mdifiche</item>
+
+    <item name="HYPGoToAdvance.text">Avanzato</item>
+    <item name="HYPGoToAdvance.ToolTip">Visualizza editor avanzato</item>
+    <item name="HYPGoToAdvance.ConfirmText">I dati non salvati andranno persi. Continuare?</item>
+
+    <item name="HYPGoToSimple.text">Semplificato</item>
+    <item name="HYPGoToSimple.ToolTip">Visualizza editor semplificato</item>
+    <item name="HYPGoToSimple.ConfirmText">I dati non salvati andranno persi. Continuare?</item>
+    
+    <!-- UC Settings -->
+    <item name="LBLname_t.text" description="Template=schema predefinito per la creazione di documenti">Nome Template</item>
+    <item name="LITlayout_t.text">Orientamento pagina</item>
+    <item name="LBLpagesize.text">Dimensione pagina</item>
+    <item name="LBLpageFormat_t.text" description="Formato pagina, es: A4, B0, etc...">formato</item>
+
+    <item name="PageFormat.Landscape" description="Relativo ad orientamento pagina">Orizzontale</item>
+
+    <!--<item name="CBXhfOnIfirst.text">Intestazione e piè di pagina sulla prima pagina</item>
+    <item name="CBXhfOnIfirst.ToolTip">Intestazione e piè di pagina sulla prima pagina</item>
+
+    <item name="CBXpageNumber.text">Numeri di pagina</item>
+    <item name="CBXpageNumber.ToolTip">Numeri di pagina</item>-->
+
+    <item name="LITbackground_t.text">Sfondo</item>
+    <item name="LBLtype_t.text">Tipo sfondo</item>
+
+    <item name="RBLbgType.0">Nessuno</item>
+    <item name="RBLbgType.1">Colore</item>
+    <item name="RBLbgType.2">Immagine</item>
+
+    <item name="DDLimageArrange.-1" description="Centratura immagine: centrata">Centrale</item>
+    <item name="DDLimageArrange.0" description="Centratura immagine: ripeti affiancate">Affiancata</item>
+    <item name="DDLimageArrange.1" description="Centratura immagine: allargata ad occupare la pagina">Stirata</item>
+
+    <!--<item name="DDLnumPagePosition.-1">Sinistra</item>
+    <item name="DDLnumPagePosition.0">Centro</item>
+    <item name="DDLnumPagePosition.1">Destra</item>-->
+
+    <item name="CTRLmeasureWidth.Label" description="Dimensione generica">Larghezza:</item>
+    <item name="CTRLmeasureHeight.Label" description="Dimensione generica">Altezza:</item>
+    <item name="CTRLmarginTop.Label">Margine superiore:</item>
+    <item name="CTRLmarginRight.Label">Margine destro:</item>
+    <item name="CTRLmarginBottom.Label">Margine inferiore:</item>
+    <item name="CTRLmarginLeft.Label">Margine sinstro</item>
+
+    <item name="LITgenerics_t.text" description="Dati generici relativamente alla stampa di una pagina">Generico</item>
+    
+    <item name="LBLmargin_t.text">Margini</item>
+
+    <item name="LBLtitle_t.text" description="title">Titolo</item>
+    <item name="LBLsubject_t.text" description="subject">Oggetto</item>
+    <item name="LBLauthor_t.text" description="author">Autore</item>
+    <item name="LBLcreator_t.text" description="creator">Creatore</item>
+    <item name="LBLproducer_t.text" description="producer">Produttore</item>
+    <item name="LBLkeywords_t.text" description="keywords">Parole chiave</item>
+
+    <item name="LITpdfData.text" mustcontains="PDF">Dati PDF</item>
+
+    <item name="LBLhfPosition_t.text">Mostra intestazione e piè di pagina in:</item>
+    <item name="LBLbgimage_t.text">Immagine</item>
+    <item name="LBLbgImgaArrange_t.text">Posizionamento immagine</item>
+
+    <item name="LBLbgColor_t.text">Colore </item>
+    
+    <!-- UC Header/Footer -->
+
+    <item name="LKBgetSkinHeaderFooter.text" description="Skin - veste grafica">Recupera da Skin</item>
+    <item name="LKBgetSkinHeaderFooter.ToolTip" description="Skin - veste grafica">Recupera gli elementi dalla skin corrente.</item>
+    <item name="LKBgetSkinHeaderFooter.status" description="Skin - veste grafica">Recupera gli elementi dalla skin corrente.</item>
+
+    <item name="LITlegendHeader.text">Generale</item>
+    <item name="LITlegendLeft.text">Elemento a sinistra</item>
+    <item name="LITlegendCenter.text">Elemento centrale</item>
+    <item name="LITlegendRight.text">Elemento a destra</item>
+
+    <item name="LBLpageTag_t.text" description="Tag inteso come segnaposto">Tag di pagina</item>
+    <!-- UC_EditPageElement -->
+
+    <item name="LBLtype_t.text" description="Tipologia di un elemento: nessuno, testo, immagine">Tipo</item>
+
+    <item name="RBLtype.none" description="Tipologia di un elemento: nessuno=elemento vuoto">Nessuno</item>
+    <item name="RBLtype.txt" description="Tipologia di un elemento: test">Testo</item>
+    <item name="RBLtype.img" description="Tipologia di un elemento: immagine">Immagine</item>
+
+    <item name="UCimgWidth.Label" description="Dimensione generica">Larghezza: </item>
+    <item name="UCimgHeight.Label" description="Dimensione generica">Altezza: </item>
+
+    <!-- UC_Image -->
+    <item name="LBaddNewImage_t.text">Seleziona immagine</item>
+    <item name="LKBaddImageFile.text" disambiguation="carica=upload">Carica</item>
+    <item name="LKBaddImageFile.ToolTip" disambiguation="carica=upload">Carica la nuova immagine</item>
+    <item name="LKBaddImageFile.status" disambiguation="carica=upload">Carica la nuova immagine</item>
+    
+    <!-- UC Body -->
+
+    <item name="LITtag_t.text" description="Tag inteso come segnaposto">Tag</item>
+    <item name="LBLbodyText_t.text">Corpo del testo: </item>
+
+    <!-- UC Signatures -->
+    <!--<item name="CBXuseSignatures.text">Usa firme</item>
+    <item name="CBXuseSignatures.ToolTip">Abilita l'utilizzo delle firme</item>-->
+
+    <item name="LKBaddSignature.text">Nuova firma</item>
+    <item name="LKBaddSignature.ToolTip">Aggiungi nuova firma</item>
+    <item name="LKBaddSignature.status">Aggiungi nuova firma</item>
+
+    <item name="LITprevVersion.text">Versioni precedenti</item>
+    <item name="LBLnosign.text">Nessuna firma impostata.</item>
+    
+    <!-- UC Signature -->
+
+    <item name="LKBdeletesignature.text" hidden="true">X</item>
+    <item name="LKBdeletesignature.ToolTip">Cancella firma</item>
+    <item name="LKBdeletesignature.status">Cancella firma</item>
+
+    <item name="CBXuseText.text">Utilizza testo</item>
+    <item name="CBXuseText.ToolTip">Utilizza testo</item>
+    <item name="CBXpdfPositioning.text" mustcontains="PDF">Riposizionamento (Solo per PDF)</item>
+    <item name="CBXpdfPositioning.ToolTip" mustcontains="PDF">Riposizionamento (Solo per PDF)</item>
+
+    <item name="LBLsignText_t.text">Testo</item>
+    <item name="LBLimage_t.text">Immagine</item>
+
+    <item name="UCimageWidth.Label">Larghezza: </item>
+    <item name="UCimageHeight.Label">Altezza: </item>
+    <item name="UCimgPosX.Label">Posizione da sinistra: </item>
+    <item name="UCimgPosY.Label">Posizione da sotto:</item>
+
+    <item name="LBLhfPositionSign_t.text">Posizione elemento</item>
+    
+    <!-- UC Step -->
+    <item name="0.text">none</item>
+    <item name="0.description">none</item>
+
+    <item name="1.text">Impostazioni</item>
+    <item name="1.description">Proprietà del documento: dimensioni, margini, etc...</item>
+
+    <item name="2.text">Intestazione</item>
+    <item name="2.description">Elementi dell'intestazione del documento</item>
+
+    <item name="3.text">Elementi Skin</item>
+    <item name="3.description">Intestazione, piè di pagina e relativi test.</item>
+    
+    <item name="4.text">Corpo del testo</item>
+    <item name="4.description">Corpo principale del documento</item>
+
+    <item name="5.text">Firme</item>
+    <item name="5.description">Elementi testo o immagine che possono essere riposizionati o che finiscono nell'ultima pagina del documento.</item>
+
+    <item name="6.text">Piè di pagina</item>
+    <item name="6.description">Elementi in calce alle pagine.</item>
+    
+    <!-- UC Skin selector-->
+    <item name="LITskin_t.text">Selettore skin</item>
+    <item name="LBLcommunityID_t.text" disambiguation="singolare">Comunità:</item>
+    <item name="LBLorganizationID_t.text">Organizzazione :</item>
+    <item name="LBLlanguageCode_t.text">Codice lingua:</item>
+
+    <item name="LITnote_t.text" html="true">Si ricorda che i parametri qui inseriti servono solamente alla visualizzazione dei contenuti di una Skin.&lt;br/&gt;La singola skin, infatti, non è associata al template corrente.</item>
+    <item name="LITheaderLogo_t.text">Logo intestazione</item>
+    <item name="LITheaderText_t.text">Testo intestazione</item>
+    <item name="LITfooterLogos_t.text">Loghi pié di pagina</item>
+    <item name="LITfooterText.text">Testo Pié di pagina</item>
+    <item name="TemplateTitle">Titolo servizio</item>
+
+    <item name="LKBundoCome.text">Deseleziona comunità</item>
+    <item name="LKBundoCom.ToolTip">Deseleziona comunità</item>
+    <item name="LKBundoCom.status">Deseleziona comunità</item>
+    <item name="LKBundoOrgn.text">Deseleziona organizzazione</item>
+    <item name="LKBundoOrgn.ToolTip">Deseleziona organizzazione</item>
+    <item name="LKBundoOrgn.status">Deseleziona organizzazione</item>
+    <item name="LKBloade.text" disambiguation="carica=upload">Carica</item>
+    <item name="LKBload.ToolTip" disambiguation="carica=upload">Carica i dati dalle skin</item>
+    <item name="LKBload.status" disambiguation="carica=upload">Carica i dati dalle skin</item>
+    <item name="LKBClearCachee.text">Cancella cache</item>
+    <item name="LKBClearCache.ToolTip">Cancella cache, forzando il ricaricamento delle skin.</item>
+    <item name="LKBClearCache.status">Cancella cache, forzando il ricaricamento delle skin.</item>
+
+    <item name="LKBshowOrgnSel.text">Seleziona</item>
+    <item name="LKBshowOrgnSel.ToolTip">Selettore Organizzazioni</item>
+    <item name="LKBshowOrgnSel.status">Selettore Organizzazioni</item>
+    <item name="LKBshowOrgnSel.hide">Nascondi selettore</item>
+
+    <item name="LKBshowComSel.text">Seleziona</item>
+    <item name="LKBshowComSel.ToolTip">Selettore comunità</item>
+    <item name="LKBshowComSel.status">Selettore comunità</item>
+    <item name="LKBshowComSel.hide">Nascondi selettore</item>
+
+    <!-- UC Skin Import -->
+
+    <item name="Step.0.text">Seleziona importazione</item>
+    <item name="Step.0.description">Selezionare l'elemento da cui importare la skin.</item>
+    <item name="Step.1.text">Seleziona Organizzazione</item>
+    <item name="Step.1.description">Selezionare l'organizzazione da cui importare la skin.</item>
+    <item name="Step.2.text">Seleziona Comunità</item>
+    <item name="Step.2.description">Selezionare la Comunità da cui importare la skin.</item>
+    <item name="Step.3.text">Associa elementi</item>
+    <item name="Step.3.description">Specificare quale elemento del template sarà sostituito con l'elemento di skin.</item>
+    
+    <item name="LKBundot.text">Annulla</item>
+    <item name="LKBundot.ToolTip">Annulla</item>
+    <item name="LKBundot.status">Annulla</item>
+    <item name="LKBundob.text">Annulla</item>
+    <item name="LKBundob.ToolTip">Annulla</item>
+    <item name="LKBundob.status">Annulla</item>
+
+    <item name="RBLsource.0.text">Corrente</item>
+    <item name="RBLsource.0.description">Seleziona elementi dalla skin attualmente in uso.</item>
+    <item name="RBLsource.1.text">Portale</item>
+    <item name="RBLsource.1.description">Seleziona elementi dalla skin predefinita di portale.</item>
+    <item name="RBLsource.2.text">Organizzazione</item>
+    <item name="RBLsource.2.description">Seleziona elementi da una skin associata a una organizzazione.</item>
+    <item name="RBLsource.3.text" disambiguation="singolare">comunità</item>
+    <item name="RBLsource.3.description">Seleziona elementi da una skin associata a una comunità.</item>
+
+    <item name="LKBcomSelector.text">Apri</item>
+    <item name="LKBcomSelector.ToolTip">Seleziona comunità</item>
+    <item name="LKBcomSelector.status">Seleziona comunità</item>
+    <item name="LKBcomSelector.hide">Chiudi</item>
+
+    <item name="LKBorgnSelector.text">Apri</item>
+    <item name="LKBorgnSelector.ToolTip">Seleziona Organizzazione</item>
+    <item name="LKBorgnSelector.status">Seleziona Organizzazione</item>
+    <item name="LKBorgnSelector.hide">Chiudi</item>
+
+    <item name="LKBnextt.text">Avanti</item>
+    <item name="LKBnextt.ToolTip">Avanti</item>
+    <item name="LKBnextt.status">Avanti</item>
+    <item name="LKBnextb.text">Avanti</item>
+    <item name="LKBnextb.ToolTip">Avanti</item>
+    <item name="LKBnextb.status">Avanti</item>
+
+    <item name="LKBconfirmt.text" disambiguation="verbo">Conferma</item>
+    <item name="LKBconfirmt.ToolTip" disambiguation="verbo">Conferma</item>
+    <item name="LKBconfirmt.status" disambiguation="verbo">Conferma</item>
+    <item name="LKBconfirmb.text" disambiguation="verbo">Conferma</item>
+    <item name="LKBconfirmb.ToolTip" disambiguation="verbo">Conferma</item>
+    <item name="LKBconfirmb.status" disambiguation="verbo">Conferma</item>
+    
+    <item name="LKBbackt.text">Indietro</item>
+    <item name="LKBbackt.ToolTip">Indietro</item>
+    <item name="LKBbackt.status">Indietro</item>
+    <item name="LKBbackb.text">Indietro</item>
+    <item name="LKBbackb.ToolTip">Indietro</item>
+    <item name="LKBbackb.status">Indietro</item>
+
+    <item name="NewPlacing.10">Intestazione - Sinistra</item>
+    <item name="NewPlacing.11">Intestazione - Centro</item>
+    <item name="NewPlacing.12">Intestazione - Destra</item>
+    <item name="NewPlacing.20">Corpo del testo</item>
+    <item name="NewPlacing.30">Piè di pagina - Sinistra</item>
+    <item name="NewPlacing.31">Piè di pagina - Centro</item>
+    <item name="NewPlacing.32">Piè di pagina - Destra</item>
+    <item name="NewPlacing.40">Firme</item>
+    <item name="NewPlacing.50">ignora</item>
+
+    <item name="RBLsource.0">Corrente</item>
+    <item name="RBLsource.1">Portale</item>
+    <item name="RBLsource.2">Organizzazione</item>
+    <item name="RBLsource.3" disambiguation="singolare">Comunità</item>
+
+    <!-- UC Placing -->
+    <item name="RblPageSelect.0" disambiguation="Relativo a pagina">Nessuna</item>
+    <item name="RblPageSelect.1" disambiguation="Relativo a pagine">Tutte</item>
+    <item name="RblPageSelect.-1" disambiguation="Relativo a pagina">Specifica</item>
+
+    <item name="CBXeven.text" disambiguation="Relativo a pagine">Pari</item>
+    <item name="CBXeven.ToolTip" disambiguation="Relativo a pagine">Pari</item>
+
+    <item name="CBXodd.text" disambiguation="Relativo a pagine">Dispari</item>
+    <item name="CBXodd.ToolTip" disambiguation="Relativo a pagine">Dispari</item>
+
+    <item name="CBXfirst.text" disambiguation="Relativo a pagina">Prima</item>
+    <item name="CBXfirst.ToolTip" disambiguation="Relativo a pagina">Prima</item>
+
+    <item name="CBXlast.text" disambiguation="Relativo a pagina">Ultima</item>
+    <item name="CBXlast.ToolTip" disambiguation="Relativo a pagina">Ultima</item>
+
+    <item name="CBXspecific.text" disambiguation="Relativo a pagina">Specifica</item>
+    <item name="CBXspecific.ToolTip" disambiguation="Relativo a pagina">Specifica</item>
+
+    <item name="REVpageRange.ErrorMessage" disambiguation="non tradurre" hidden="true" mustcontains="(1-3, 6)">(1-3, 6)</item>
+    <item name="REVpageRange.text" hidden="true"></item>
+
+    <!-- Versioning -->
+    <item name="LKBdeleteSel.text">Cancella selezionati</item>
+    <item name="LKBdeleteSel.ToolTip">Cancella selezionati</item>
+    <item name="LKBdeleteSel.status">Cancella selezionati</item>
+
+    <item name="LKBrecover.text" hidden="true" disambiguation="non tradurre"></item>
+    <item name="LKBrecover.ToolTip">Recupera</item>
+    <item name="LKBrecover.status">Recupera</item>
+
+    <item name="LKBdelete.text" hidden="true" disambiguation="non tradurre"></item>
+    <item name="LKBdelete.ToolTip">Cancella</item>
+    <item name="LKBdelete.status">Cancella</item>
+
+    <item name="LITcode_t.text" description="Il codice di una specifica versione precedente">Codice</item>
+    <item name="LITrevision_t.text">Data</item>
+    <item name="LITaction_t.text">Azioni</item>
+    <!-- Elementi comuni. -->
+
+    <!-- UC Signature -->
+    <!-- UC_EditPageElement -->
+    <item name="RBLalignment.-1" description="Posizione elemento">Sinistra</item>
+    <item name="RBLalignment.0" description="Posizione elemento">Centro</item>
+    <item name="RBLalignment.1" description="Posizione elemento">Destra</item>
+
+    <!-- UC Signature -->
+    <!-- UC_EditPageElement -->
+    <item name="LBLalignment_t.text" description="Allinamento elemento">Allineamento</item>
+
+    <!-- Generici -->
+    <item name="LITrevision_t.text">Revisioni</item>
+
+    <item name="Services.Common" disambiguation="common">Comuni</item>
+    <item name="LBLcode_t.text" description="Abbreviazione codice/identificativo">Cod.</item>     <!-- Codice/ID -->
+    <item name="LITcode_t.text" description="Abbreviazione codice/identificativo">Cod.</item>     <!-- Codice/ID -->
+
+    <!-- Page Tag -->
+    <item name="PageTag.CurPage">Numero pagina corrente</item>
+    <item name="PageTag.CreateDate">Data Generazione</item>
+    <item name="PageTag.CreateTime">Ora Generazione</item>
+</Resource>

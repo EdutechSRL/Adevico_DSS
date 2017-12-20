@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="lm.Comol.Modules.CallForPapers" namespace="lm.Comol.Modules.CallForPapers.Domain.Evaluation.Export">
+	<class name="expEvaluation" table="CP_Evaluation">
+		<!--where="_Deleted=0"-->
+		<id name="Id" column="Id" type="Int64">
+			<generator class="native"/>
+		</id>
+	 <property name="IdCall" type="Int64" column="IdCall" />
+		<many-to-one name="Submission" class="lm.Comol.Modules.CallForPapers.Domain.Evaluation.Export.expSubmission" column="IdUserSubmission" foreign-key="IdUserSubmission" cascade="none" not-found="ignore"   />
+		
+		<many-to-one name="Committee" class="lm.Comol.Modules.CallForPapers.Domain.Evaluation.Export.expCommittee" column="IdCommittee" foreign-key="IdCommittee" cascade="none" not-found="ignore" />
+		<many-to-one name="Evaluator" class="lm.Comol.Modules.CallForPapers.Domain.Evaluation.Export.expEvaluator" column="IdCallEvaluator" foreign-key="IdCallEvaluator" cascade="none" not-found="ignore" />
+
+		<many-to-one name="AdvCommission" class="lm.Comol.Modules.CallForPapers.Advanced.Domain.AdvCommission" column="IdAdvCommission" foreign-key="IdAdvCommission" cascade="none" not-found="ignore" />
+		<many-to-one name="AdvEvaluator" class="lm.Comol.Modules.CallForPapers.Advanced.Domain.AdvMember" column="IdAdvMember" foreign-key="IdAdvMember" cascade="none" not-found="ignore" />
+		
+		<property name="Status" type="lm.Comol.Modules.CallForPapers.Domain.Evaluation.EvaluationStatus, lm.Comol.Modules.CallForPapers" column="Status" />
+		<property name="EvaluationStartedOn" type="DateTime" column="EvaluationStartedOn" />
+		<property name="EvaluatedOn" type="DateTime" column="EvaluatedOn" />
+
+		<bag name="EvaluatedCriteria" table="CP_EvaluatedCriterion" lazy="true" fetch="subselect" cascade="all-delete-orphan" where="_Deleted=0">
+			<key column="IdEvaluation" foreign-key="Id"/>
+			<one-to-many class="lm.Comol.Modules.CallForPapers.Domain.Evaluation.Export.expCriterionEvaluated, lm.Comol.Modules.CallForPapers"/>
+		</bag>
+		<property name="AverageRating" type="Double" column="AverageRating" />
+		<property name="SumRating" type="Double" column="SumRating" />
+    <property name="BoolRating" type="Boolean" column="BoolRating" />
+    <property name="IsPassed" type="Boolean" column="IsPassed" />
+    
+		<property name="DssRanking" type="Double" column="DssRanking" />
+		<property name="DssIsFuzzy" column="DssIsFuzzy" />
+		<property name="DssValue" />
+		<property name="DssValueFuzzy" />
+		<property name="UseDss" />
+		<property name="Evaluated" type="Boolean" column="Evaluated" />
+		<property name="Comment" type="String" column="Comment" />
+		<property name="LastUpdateOn" type="DateTime" column="_ModifiedOn" />
+		<property name="IdSubmission" type="Int64" column="IdUserSubmission" />
+		<property name="IdCommittee" type="Int64" column="IdCommittee" />
+		<property name="IdEvaluator" type="Int64" column="IdCallEvaluator" />
+		<property name="Deleted" type="lm.Comol.Core.DomainModel.BaseStatusDeleted,lm.Comol.Core.DomainModel" column="_Deleted" />
+	</class>
+</hibernate-mapping>

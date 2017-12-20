@@ -1,0 +1,101 @@
+/* ------------------------------------ */
+/* Default Skin 1.0 - 28.02.2010        */
+/* ------------------------------------ */
+
+
+/* ------------------------------------
+COMMUNITIES TYPES colors
+-------------------------------------*/
+
+body {
+	background-color: white;
+}
+
+/* ***** STATUS	***** */
+
+#Status {
+	border-bottom: 1px solid #afafaf;
+	background-color: #3b5679;
+}	
+
+#Status a {
+	color: white;
+	text-decoration: underline;
+	padding: 0 3px;
+}
+
+#Status a:hover {
+	color: black;
+	background-color: white;
+	text-decoration: none;
+}
+
+/* ***** HEADER ***** */
+
+#Header {
+	background: #f4f4f4 url(img/bg-header.png) bottom repeat-x;
+	border-bottom: 1px solid #8e8e8e;
+}
+
+#Title {
+	padding-top: 5px;	padding-bottom: 5px;
+	padding-left: 45px;
+	margin: 0 auto;
+}
+
+#Title .logo {
+	width:50%;
+	float: left;
+}
+
+#Title .name{
+	width: 50%;
+	float: left;
+}
+
+#Title h2 {
+	color: #a3978f;
+	font-size: 16px;
+	padding-top: 22px;
+	font-family: Times;
+	text-transform: uppercase;
+	text-align: right;
+}
+
+/* ***** MENU ***** */
+#Menu {
+ 	background-color: #eee;
+	border-bottom: 1px dotted #8e8e8e; 
+	background: #4f3f30 url(img/bg-menu.png) top repeat-x;
+}
+
+#Menu .container {
+	padding-top: 0; padding-bottom: 0;
+
+}
+
+/* ***** NAV ***** */
+
+#Nav li ul {
+	text-align: center;
+}
+
+#Nav li a{
+	color: white;
+}
+
+
+/* ***** FOOTER ***** */
+
+#Footer {
+	background: white url(img/bg-footer.png) repeat-x;
+	text-align: center;
+	padding-bottom: 40px;
+	font-size: 12px;
+	color: #666;
+}
+
+#Footer a {
+	color: black;
+}
+

@@ -1,0 +1,154 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Comment CommentText="Allegatis:&#xD;&#xA;&#xD;&#xA;Livello 1:&#xD;&#xA;Solo file INTERNI al servizio.&#xD;&#xA;Chiunque può allegare propri file (screenshot, documenti, etc...)&#xD;&#xA;Se Manager/resolver allegano FILE di comunità, questi verranno COPIATI in file &quot;Ticket&quot;.&#xD;&#xA;&#xD;&#xA;Livello 2:&#xD;&#xA;associazione TICKET ad OGGETTI di SERVIZI della COMUNITA' PERTENZA (principalmente file, ma estendibile a tutto, es: stanza WebConference, topic-forum, etc...)&#xD;&#xA;&#xD;&#xA;Livello 3:&#xD;&#xA;sistema analogo per manager/resolver per servizi di comunità Ticket (es: allegare una Wiki, etc...)">
+    <Position X="0.5" Y="3.854" Height="3.01" Width="2.544" />
+  </Comment>
+  <Class Name="lm.Comol.Core.BaseModules.Tickets.Domain.Ticket">
+    <Position X="2.75" Y="1" Width="1.5" />
+    <AssociationLine Name="CreationCategory" Type="lm.Comol.Core.BaseModules.Tickets.Domain.Category" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="3.812" Y="1" />
+        <Point X="3.812" Y="0.578" />
+        <Point X="11.625" Y="0.578" />
+        <Point X="11.625" Y="4.75" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAIEAEAAIAAEACAAAACAAAAACAAAAAEAQAIQAEAAA=</HashCode>
+      <FileName>Tickets\Domain\Ticket.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Creator" />
+      <Property Name="CreationCategory" />
+      <Property Name="Status" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="Assignemts" />
+      <Property Name="Messages" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="lm.Comol.Core.BaseModules.Tickets.Domain.Message">
+    <Position X="7.25" Y="1" Width="1.5" />
+    <AssociationLine Name="Attachments" Type="lm.Comol.Core.BaseModules.Tickets.Domain.TicketFile">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.047" Y="0.06" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AEAAEAAiAAAAACECAAAAIAAAAAAACAAAEQQACAAAAAU=</HashCode>
+      <FileName>Tickets\Domain\Message.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Creator" />
+      <Property Name="Ticket" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="Attachments" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="lm.Comol.Core.BaseModules.Tickets.Domain.TicketUser">
+    <Position X="7.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAEAAAAAAAAAAAAAAgAAQAAAACAAAAEAAAAAAEAAE=</HashCode>
+      <FileName>Tickets\Domain\TicketUser.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="lm.Comol.Core.BaseModules.Tickets.Domain.Assignment">
+    <Position X="4.25" Y="7.75" Width="1.5" />
+    <AssociationLine Name="Ticket" Type="lm.Comol.Core.BaseModules.Tickets.Domain.Ticket">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-0.648" Y="0.141" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="AssignedTo" Type="lm.Comol.Core.BaseModules.Tickets.Domain.TicketUser" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="5.75" Y="7.971" />
+        <Point X="8.125" Y="7.971" />
+        <Point X="8.125" Y="7.002" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAQAACAAAAAAAAAAAAAAAAAQABAAAAACA=</HashCode>
+      <FileName>Tickets\Domain\Assignment.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Ticket" />
+      <Property Name="AssignedTo" />
+      <Property Name="AssignedCategory" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="lm.Comol.Core.BaseModules.Tickets.Domain.MailNotification">
+    <Position X="5" Y="2.5" Width="1.5" />
+    <AssociationLine Name="User" Type="lm.Comol.Core.BaseModules.Tickets.Domain.TicketUser" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="6.5" Y="3.211" />
+        <Point X="6.875" Y="3.211" />
+        <Point X="6.875" Y="5.25" />
+        <Point X="7.5" Y="5.25" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAIBAAAAAAAAAAACAAAAAAAAAAAAAAAAgABAAAAAAAA=</HashCode>
+      <FileName>Tickets\Domain\MailNotification.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="User" />
+      <Property Name="Ticket" />
+      <Property Name="Settings" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="lm.Comol.Core.BaseModules.Tickets.Domain.Category">
+    <Position X="10.25" Y="4.75" Width="1.5" />
+    <AssociationLine Name="Father" Type="lm.Comol.Core.BaseModules.Tickets.Domain.Category" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="11.75" Y="5.207" />
+        <Point X="12" Y="5.207" />
+        <Point X="12" Y="5.436" />
+        <Point X="11.75" Y="5.436" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.143" Y="-0.223" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="Children" Type="lm.Comol.Core.BaseModules.Tickets.Domain.Category" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="11.75" Y="5.812" />
+        <Point X="12.612" Y="5.812" />
+        <Point X="12.612" Y="5" />
+        <Point X="11.75" Y="5" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAMAAAAAAAAgAAACAAAEAAQAAAAAAAgAAQABAAAAAAA=</HashCode>
+      <FileName>Tickets\Domain\Category.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Father" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="Children" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="lm.Comol.Core.BaseModules.Tickets.Domain.TicketFile">
+    <Position X="9.75" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAEABAAAAAAYAAAAAA=</HashCode>
+      <FileName>Tickets\Domain\TicketFile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="lm.Comol.Core.BaseModules.Tickets.Domain.Enums.TicketStatus">
+    <Position X="0.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAABAAAAAAAACBAAAAABAAAAAAAAAAAAIAAAAA=</HashCode>
+      <FileName>Tickets\Domain\Enums.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="lm.Comol.Core.BaseModules.Tickets.Domain.Enums.MailSettings">
+    <Position X="5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAEAAAAAAAAAAAAAAAAAAAEAAAAAAAAAgAACAA=</HashCode>
+      <FileName>Tickets\Domain\Enums.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Tahoma" Size="8.25" />
+</ClassDiagram>

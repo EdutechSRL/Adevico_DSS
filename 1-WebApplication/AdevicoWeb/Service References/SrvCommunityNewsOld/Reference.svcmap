@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="b6c1309a-71fd-4729-ba31-13f508be2f21" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:9778/Notification/mex" Protocol="mex" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="90ff61d9-f466-46a4-b544-d9e82fc4da97" SourceId="1" SourceUrl="http://localhost:9778/Notification/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="f3259184-a89b-4f7c-9043-fb9495b57694" SourceId="1" SourceUrl="http://localhost:9778/Notification/mex" />
+    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="a42c8bc9-6d8f-45b8-baee-339ebaef0187" SourceId="1" SourceUrl="http://localhost:9778/Notification/mex" />
+    <MetadataFile FileName="lm.Notification.DataContract.Domain.xsd" MetadataType="Schema" ID="b241995f-be16-4e8f-b37a-53c1230023ea" SourceId="1" SourceUrl="http://localhost:9778/Notification/mex" />
+    <MetadataFile FileName="Arrays.xsd" MetadataType="Schema" ID="6cd1087b-6614-4da1-8c51-afe0b58e1f06" SourceId="1" SourceUrl="http://localhost:9778/Notification/mex" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

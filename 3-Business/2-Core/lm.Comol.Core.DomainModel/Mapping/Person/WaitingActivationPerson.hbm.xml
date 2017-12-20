@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="lm.Comol.Core.DomainModel" namespace="lm.Comol.Core.DomainModel">
+	<class name="WaitingActivationPerson" table="Attesa_AttivazioneUtente" lazy="true">
+		<id name="Id" column="ATUT_ID" type="Int32">
+			<generator class="native"/>
+		</id>
+		<property name="Code" type="String" column="ATUT_Code_ID" />
+		<property name="WorkingSessionID" type="String" column="ATUT_SessionID"/>
+		<property name="CreatedOn" type="DateTime" column="ATUT_Data" not-null="false"/>
+		<many-to-one name="WaitingProfile" class="Person" column="ATUT_PRSN_ID" foreign-key="ATUT_PRSN_ID" cascade="none" lazy="false" />
+	</class>
+</hibernate-mapping>

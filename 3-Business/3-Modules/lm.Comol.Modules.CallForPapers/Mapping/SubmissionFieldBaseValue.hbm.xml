@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="lm.Comol.Modules.CallForPapers" namespace="lm.Comol.Modules.CallForPapers.Domain">
+	<class name="SubmissionFieldBaseValue" table="CP_FieldValue" discriminator-value="0" lazy="true" optimistic-lock ="version">
+		<id name="Id" column="Id" type="Int64">
+			<generator class="native"/>
+		</id>
+    <discriminator column="Discriminator" not-null="true" insert ="true" type="Int32"/>
+    <version name="TimeStamp"
+   generated="always"
+   unsaved-value="null"
+   type="BinaryBlob">
+      <column name="_Timestamp"
+              not-null="false"
+              sql-type="timestamp"/>
+    </version>
+    <many-to-one name="Revision" class="lm.Comol.Modules.CallForPapers.Domain.Revision" column="IdRevision" foreign-key="IdRevision" cascade="none"  />
+    <many-to-one name="Field" class="lm.Comol.Modules.CallForPapers.Domain.FieldDefinition" column="IdFieldDefinition" foreign-key="IdFieldDefinition" cascade="none"  />
+    <many-to-one name="Submission" class="lm.Comol.Modules.CallForPapers.Domain.UserSubmission" column="IdUserSubmission" foreign-key="IdUserSubmission" cascade="none"  />
+    <property name="isReplaced" type="Boolean" column="isReplaced" />
+    <property name="CreatedOn" type="DateTime" column="_CreatedOn" />
+    <many-to-one name="CreatedBy" class="lm.Comol.Core.DomainModel.litePerson" column="_CreatedBy" foreign-key="_CreatedBy" cascade="none" />
+    <property name="ModifiedOn" type="DateTime" column="_ModifiedOn" />
+    <many-to-one name="ModifiedBy" class="lm.Comol.Core.DomainModel.litePerson" column="_ModifiedBy" foreign-key="_ModifiedBy" cascade="none" />
+    <property name="CreatorProxyIpAddress" type="String" column="_CreatedProxyIPaddress" />
+    <property name="CreatorIpAddress" type="String" column="_CreatedIPaddress" />
+    <property name="ModifiedProxyIpAddress" type="String" column="_ModifiedProxyIPaddress" />
+    <property name="ModifiedIpAddress" type="String" column="_ModifiedIPaddress" />
+    <property name="Deleted" type="lm.Comol.Core.DomainModel.BaseStatusDeleted,lm.Comol.Core.DomainModel" column="_Deleted" />
+    
+    <subclass discriminator-value="1" name="SubmissionFieldStringValue">
+      <property name="Value" type="String" column="Value" />
+      <property name="UserValue" type="String" column="UserValue" />
+    </subclass>
+    <subclass discriminator-value="2" name="SubmissionFieldFileValue">
+      <many-to-one name="Item" class="lm.Comol.Core.FileRepository.Domain.liteRepositoryItem" column="IdFile" foreign-key="IdFile" cascade="all-delete-orphan" not-found="ignore" />
+      <many-to-one name="Link" class="lm.Comol.Core.DomainModel.liteModuleLink" column="IdLink" foreign-key="IdLink" cascade="all-delete-orphan" not-found="ignore"  />
+    </subclass>
+  </class>
+</hibernate-mapping>

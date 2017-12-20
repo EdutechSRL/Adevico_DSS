@@ -1,0 +1,2427 @@
+/* IMMAGINI FOMDO
+
+	IMPORTANTE: chat, meeting, lesson, conference, custom sono generati VIA CODICE! (Alias, preferisco NON TOCCALI!)
+
+	TUTTE LE ALTRE CLASSI possono essere modificate a piacere (es: .epsummary.epsummary-index andrà sistemato)
+*/
+
+/* DA EDUPATH, per balloticon dello wizard */
+
+/* GS: 03/06/2014 15:20 */
+
+div.wiz_top_info div.wiz_top_desc span.balloticon {
+	display: inline-block;
+	*display: inline;
+	zoom: 1;
+	width: 48px;
+	height: 48px;
+	vertical-align: middle;
+	background-color: transparent;
+	background-image: none;
+
+	/*ERROR: url();*/
+	background-position: 0 0;
+	background-repeat: no-repeat !important;
+	text-align: left;
+	text-indent: -9999px;
+	*text-indent: 0;
+	*font-size: 0;
+	*line-height: 0;
+	*overflow: hidden;
+	margin-right: 1em;
+
+	/*optional*/	
+	border-radius: 4px;
+	float: left;
+}
+
+/* Immagini wizard */
+
+div.wiz_top_info div.wiz_top_desc span.balloticon.chat {
+	background-image: url(../img/Chat_sm.png);
+}
+
+div.wiz_top_info div.wiz_top_desc span.balloticon.meeting {
+	background-image: url(../img/Meeting_sm.png);
+}
+
+div.wiz_top_info div.wiz_top_desc span.balloticon.lesson {
+	background-image: url(../img/Lesson_sm.png);
+}
+
+div.wiz_top_info div.wiz_top_desc span.balloticon.conference {
+	background-image: url(../img/Conference_sm.png);
+}
+
+div.wiz_top_info div.wiz_top_desc span.balloticon.custom {
+	background-image: url(../img/Custom_sm.png);
+}
+
+/* Immagini ballot */
+
+.ballotscreen ul.ballots li.ballot div.ballotcontent span.balloticon.chat {
+	background-image: url(../img/Chat.png);
+}
+
+.ballotscreen ul.ballots li.ballot div.ballotcontent span.balloticon.meeting {
+	background-image: url(../img/Meeting.png);
+}
+
+.ballotscreen ul.ballots li.ballot div.ballotcontent span.balloticon.lesson {
+	background-image: url(../img/Lesson.png);
+}
+
+.ballotscreen ul.ballots li.ballot div.ballotcontent span.balloticon.conference {
+	background-image: url(../img/Conference.png);
+}
+
+.ballotscreen ul.ballots li.ballot div.ballotcontent span.balloticon.custom {
+	background-image: url(../img/Custom.png);
+}
+
+.webconferencing div.buttonwrapper {
+	text-align: right;
+}
+
+table.meetingroom {
+	margin: 2em 0;
+	width: 100%;
+}
+
+table.meetingroom td {
+	font-size: 10px;
+}
+
+table.meetingusers th,
+table.meetingroom th {
+	text-align: center;
+}
+
+table.meetingusers th.name,
+table.meetingusers th.surename,
+table.meetingusers th.mail,
+table.meetingroom th.name {
+	text-align: left;
+}
+
+table.meetingroom td.name,
+table.meetingroom td.mail  {
+	width:  280px;
+}
+
+/*table.meetingroom td.name a {
+	padding-left: 16px;
+	background: url(../../../Generics/Command/img/Moveright16.png) 0 center no-repeat transparent;
+}*/
+
+table.meetingroom td.access  {
+	width: 160px;
+}
+
+table.meetingroom td.users  {
+	width: 60px;
+	text-align: center;
+}
+
+table.meetingroom td.name input {
+	width: 98%;
+	border: 1px solid #ccc;
+}
+
+table.meetingroom td.type,
+table.meetingroom td.status   {
+	width:  60px;
+	text-align: center;
+}
+
+table.meetingroom td.actions  {
+	text-align: right;
+	width:  160px;
+}
+
+.fieldrow .fieldlabel {
+	width: 200px;
+}
+
+a#ctl00_CPHservice_HYPList {
+	display: block;
+	margin: 1em 0;
+}
+
+iframe#ctl00_CPHservice_IFMeeting {
+	margin: 1em 0;
+	border: 1px solid #ccc;
+}
+
+.fieldbitrate * {
+	vertical-align: top;
+}
+
+.fieldbitrate br {
+	display: none;
+}
+
+.fieldbitrate span.inputtext {
+	display: inline-block;
+	*display: inline;
+	*zoom:1;
+}
+
+.fieldbitrate span.inputtext label {
+	margin-right: 2em;
+}
+
+#CPHservice_UCselectUsers_GRVuser,
+#ctl00_CPHservice_UCselectUsers_DIVricerca,
+table#ctl00_CPHservice_UCselectUsers_GRVuser,
+#ctl00_CPHservice_CTRL_SearchUser_GRVuser {
+	margin: 1em 0;
+}
+
+#CPHservice_UCselectUsers_GRVuser td,
+table#ctl00_CPHservice_UCselectUsers_GRVuser td,
+#ctl00_CPHservice_CTRL_SearchUser_GRVuser td,
+#CPHservice_CTRL_SearchUser_GRVuser td {
+	font-size: 10px;
+	text-align: left;
+}
+
+span.NoRecord {
+	display: inline-block;
+	margin: 1em 0;
+}
+
+#CPHservice_UCselectUsers_DIVricerca,
+#CPHservice_CTRL_SearchUser_GRVuser,
+div.group.filter {
+	margin: 1em 0;
+}
+
+#CPHservice_UCselectUsers_GRVuser th,
+#CPHservice_CTRL_SearchUser_GRVuser th {
+	text-align: center;
+}
+
+div#CPHservice_UCselectUsers_PNLpreview {
+	border: 1px solid #ccc !important;
+	border-radius: 4px;
+	padding: 5px;
+	margin: 1em 0122;
+}
+
+#CPHservice_UCselectUsers_GRVuser td:first-child,
+#CPHservice_CTRL_SearchUser_GRVuser td:first-child {
+	width: 30px;
+	text-align: center;
+}
+
+table.light.meetingusers,
+table.light.addextusers,
+table.light.subscription {
+	width: 100%;
+}
+
+table.light td {
+	font-size: 11px;
+}
+
+table td.name,
+table td.email,
+table td.sname,
+table td.surename,
+table td.sname {
+	width: 100px;
+}
+
+table .mail input {
+	width: 98%;
+}
+
+table.addextusers .name,
+table.addextusers .sname {
+	width: 180px;
+}
+
+table.addextusers .mail {
+	width: 240px;
+}
+
+table.addextusers td input[type="text"] {
+	width: 98%;
+}
+
+
+table td.actions {
+	width: 80px;
+	text-align: right;
+}
+
+table.meetingusers td.actions {
+	width: 100px;
+}
+
+table td.mail {
+	width: 170px;
+	max-width: 170px;
+	line-height: 1.4em;
+}
+
+table td.mail span.email {
+	width: 175px;
+	display: inline-block;
+}
+
+/*table tr.td.mail span.icon {
+	font-size: 11px !important;
+	text-indent: 0 !important;
+	font-weight: bold;
+	line-height: 6px;
+	text-align: center;
+	color: #fff;
+	text-shadow: 0 0 4px #000;
+}*/
+
+table.meetingusers tr.external {
+	background-color: #e7e8e9;
+	font-style: italic;
+}
+
+table td.mail span.email,
+table td.mail span.icon {
+	cursor: default;
+	vertical-align: middle !important;
+}
+
+table td.mail span.icon {
+	background-image: none !important;
+}
+
+div.description {
+	margin: 1em 0;
+}
+
+div.buttonwrapper {
+	text-align: right;
+	margin-bottom: 1em;
+}
+
+div.description {
+	margin-bottom: 1em;
+}
+
+table td.mail span.icons {
+	float: right;
+	*float:none;
+}
+
+table span.icons * {
+	vertical-align: top;
+}
+
+table span.icons .icon {
+}
+
+table td.value {
+	width: 100px;
+	text-align: center;
+}
+
+table td.name input,
+table td.email input,
+table td.sname input {
+	width: 146px;
+}
+
+table td.name input.aspNetDisabled {
+	border: none !important;
+}
+
+table.meetingroom td.actions {
+	width: 60px;
+}
+
+table .invitation {
+	width: 40px;
+	text-align: center;
+	display: none;
+}
+
+table .actions {
+	width: 80px !important;
+	text-align: center !important;
+}
+
+table .function,
+table .admin,
+table .audio,
+table .video,
+table .chat  {
+	width: 20px;
+	padding: 2px !important;
+	text-align: center;
+}
+
+table td.function,
+table td.admin,
+table td.audio,
+table td.video,
+table td.chat {
+	font-size: 18px !important;
+}
+
+table th.function,
+table th.admin,
+table th.audio,
+table th.video,
+table th.chat {
+	font-size: 9px !important;
+	cursor: alias;
+}
+
+/*table th.function  {
+	height:  50px;
+	width: 20px !important;
+	position: relative;
+	font-size: 10px;
+}*/
+
+/*table th.admin span,
+table th.admin span span,
+table th.video span,
+table th.video span span,
+table th.audio span,
+table th.audio span span,
+table th.chat span,
+table th.chatspan span,
+table th.function span,
+table th.function span span {
+	vertical-align: bottom;
+}
+
+table th.function span.outer {	
+	-webkit-transform: rotate(-90deg); 
+	-moz-transform: rotate(-90deg);
+	transform: rotate(-90deg);	
+	-webkit-transform: rotate(-90deg);
+	-moz-transform: rotate(-90deg);
+	filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+	display:block;
+	position:absolute;
+/*	right:0;
+/*	top:36px;*!/*!/
+
+
+}*/
+
+
+table .function span.inner,
+table .admin span.inner,
+table .audio span.inner,
+table .video span.inner,
+table .chat span.inner  {
+	display: none;
+	
+}
+
+/* semi-generic */
+
+.fieldcontainer {
+	margin-bottom: 1em;
+}
+
+.fieldcontainer .fieldrow {
+	margin-bottom: 5px;
+}
+
+
+div.fieldrow {
+	margin-bottom: .5em;
+}
+
+input#CPHservice_UC_ExtAccess_TXBlgnKey.inputtext {
+	margin: 0 !important;
+	border: 1px solid #ccc;
+	padding: 2px;
+
+}
+
+div.fieldrow.fieldproperties span.fieldlabel,
+div.fieldrow.fieldvsv span.fieldlabel {
+	width: auto !important;
+	vertical-align: middle;
+	background: r;
+}
+
+.fieldname input.inputtext,
+.fielddescription input.inputtext,
+.fieldsname input.inputtext,
+.fieldmail input.inputtext,
+.fielddescription textarea.inputtext {
+	width: 400px;
+}
+
+div.fieldExtUrl a,
+div.fieldcode span#CPHservice_LBLcode {
+	border: 1px solid #ccc;
+	padding: 2px 12px;
+	margin-right: 1em;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+}
+
+div.fieldcode span#CPHservice_LBLcode {
+
+}
+
+div.fieldExtUrl a {
+	color: #777;
+	text-decoration: none;
+	font-size: .9em;
+	
+	display:	inline-block;
+	*display:inline;
+	*zoom:1;
+	max-width: 495px;
+	vertical-align: top;
+}
+
+/* COPY REMOVE *
+
+/* Certificates stylesheet updated 04/07/2013 */
+
+/* @group ex Doctemplate.css */
+
+div.TemplateContainer {
+	padding: 0;
+	width: 920px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+div.TemplateContainerRow {
+	border: 0px;
+	padding: 3px;
+	margin: 0px;
+}
+
+div.TemplateContainer2 {
+	vertical-align: text-top;
+	display: inline-block;
+	width: 456px;
+}
+
+div.TemplateContainter2Right {
+	display: inline-block;
+	width: 456px;
+	text-align: right;
+}
+
+div.TemplateContainer3 {
+	display: inline-block;
+	width: 302px;
+	vertical-align: top;
+}
+
+div.TemplateContainer3 span,
+div.TemplateContainer3 div {
+	vertical-align: top;
+}
+
+span.TemplateDataRow {
+	display: inline-block;
+	vertical-align: text-top;
+	width: 100%;
+}
+
+span.TemplateDataRow .Field,
+span.TemplateDataRow .Data * {
+	vertical-align: top;
+}
+
+.Field {
+	font-weight: bold;
+	display: inline-block;
+	width: 100px;
+}
+
+.Data {
+	display: inline-block;
+	width: 300px;
+}
+
+.Data ul,
+ul.li_Type {
+	list-style-type: none;
+}
+
+.Data ul li,
+ul.li_Type li {
+	display: inline-block;
+	width: 30%;
+}
+
+span.uc_measure {
+	display: inline-block;
+	width: 45%;
+}
+
+div.TemplateHeaderRow,
+div.TemplateContentRow,
+div.TemplateFooterRow {
+	border: 0px;
+	padding: 0px;
+	margin: 0px;
+	vertical-align: top;
+}
+
+div.TemplateContentRow {
+	vertical-align: middle;
+}
+
+div.TemplateContentRow * {
+	vertical-align: middle;
+}
+
+div.ItemCol1 {
+	width: 99%;
+	border: 0px;
+	padding: 0px;
+	margin: 0px;
+	vertical-align: top;
+}
+
+div.ItemCol2 {
+	display: inline-block;
+	border: 0px;
+	width: 49.5%;
+	padding: 0px;
+	margin: 0px;
+	vertical-align: top;
+}
+
+div.ItemCol3 {
+	display: inline-block;
+	border: 0px;
+	width: 32%;
+	padding: 0px;
+	margin: 0px;
+	vertical-align: top;
+}
+
+/* Da usare le robe "generiche" */
+
+.viewbuttons {
+	width: 100%;
+	text-align: left;
+}
+
+/*  Una volta standardizzato il nome, spostare in stile di piattaforma */
+/*  NOTA: nel caso specifico indica un elemento deprecato. */
+/*  PS: c'è la possibilità di sitinguere gli elementi deprecati da quelli in bozza.*/
+
+span.DDLContainer option.ItemDisapproved {
+	color: Red;
+}
+
+span.DDLContainer option.ItemDraft {
+	color: Yellow;
+}
+
+span.DDLContainer option.ItemLast {
+	color: Green;
+}
+
+div.viewbuttons {
+	text-align: right;
+	margin: 1em 0;
+}
+
+div.TemplateContainerRow {
+	border: 1px solid #aaa;
+	padding: 0;
+	box-shadow: 5px 5px 0 0 rgba(0,0,0,0.25);
+}
+
+/* @end */
+
+
+
+/* @group Mgmt items */
+
+div.treetop {
+	margin: 0;
+	margin-bottom: 1em;
+	padding: 0;
+}
+
+div.treetop div.visibilitynav,
+div.treetop div.left  {
+	float: left;
+	width: 60%;
+}
+
+div.treetop div.visibilitynav  {
+	position: relative;
+	top: 10px;
+	height: 2em;
+}
+
+div.treetop .DivEpButton {
+	margin-bottom: 0;
+	padding: 0;
+	*padding: 4px;
+	float: right;
+	width: 39%;
+}
+
+div.visibilitynav span {
+	color: #888;
+	margin: 0 .3em;
+	padding: 0 .3em;
+	padding-left: .7em;
+	border-left: 1px solid #ccc;
+	display: inline-block;
+	float: left;
+	clear: right;
+	cursor: pointer;
+}
+
+div.visibilitynav span:hover {
+	color: #222;
+}
+
+div.visibilitynav span.fieldsHide {
+	border-left: none;
+}
+
+ul.sections {
+	width: 700px;
+	padding: 0;
+	*margin-left: 0;
+	list-style-position: outside;
+}
+
+li.invisible,
+ul.sections li.section,
+ul.sections li.cfield,
+ul.sections li.subcfield {
+	list-style: none;
+}
+
+li.invisible {
+	width: 10px;
+	height: 10px;
+	padding: 0;
+	margin: 0;
+	margin-bottom: -10px;
+	font-size: 1%;
+	background-color: transparent;
+	clear: both;
+	overflow: hidden;
+}
+
+ul.sections li.section {
+	margin: 0 0 1em 0;
+}
+
+ul.sections.addfile  {
+
+}
+
+div.sectioncontent,
+ul.templates li.template {
+	color: #666;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	background-color: #e6e9ed;
+	padding: 5px;
+	float: left;
+	width: 640px;
+	width: 670px; /*fix */
+	border: 1px solid #ccc;
+	*border-bottom: 2px;
+	-moz-box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.5), 1px 1px 1px rgba(0, 0, 0, 0.3);
+	-webkit-box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.5), 1px 1px 1px rgba(0, 0, 0, 0.3);
+	box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.5), 1px 1px 0 rgba(0, 0, 0, 0.15);
+}
+
+fieldset ul.sections li.section {
+	margin: 0;
+}
+
+fieldset ul.sections li.section .left {
+	float: left;
+	width: 510px;
+}
+
+fieldset ul.sections {
+	width: 690px;
+	padding: 0;
+	margin-left: -12px;
+}
+
+fieldset div.sectioncontent {
+	width: 650px;
+}
+
+fieldset ul.sections li.section div.sectioncontent div.innerwrapper {
+	float: left;
+	width: 625px;
+	*width: 615px;
+	*margin-left: 5px;
+}
+
+fieldset ul.sections li.section ul.fields li.cfield,
+fieldset ul.sections li.section ul.fields li.sectiondesc {
+	margin: .5em 0 1em 0;
+}
+
+fieldset ul.sections li.section ul.fields {
+	margin-left: 0;
+}
+
+ul.sections.addfile div.sectioncontent,
+ul.templates li.template.edit {
+	background-color: #fff;
+}
+
+ul.sections.addfile div.sectioncontent input#ctl00_CPHservice_BTNuploadAttachments {
+	float: right;
+	margin-top: 100px;
+	margin-bottom: -10px;
+	left: 20px;}
+
+ul.templates li.template {
+	list-style: none;
+	margin-bottom: 1em;
+}
+
+ul.sections.addfile div.sectioncontent div.fieldcontent {
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	border: none;
+	width: 640px;
+}
+
+ul.sections li.section li.cfield.note div.fieldcontent .internal {
+	border-bottom: none;
+}
+
+.externalleft {
+	margin-top: 4px;
+	width: 16px;
+	float: left;
+	display: block;
+}
+
+li.cfield .externalleft {
+	margin-top: 7px;
+}
+
+ul.sections li.section div.sectioncontent div.innerwrapper {
+	float: left;
+	width: 645px;
+	*width: 635px;
+	*margin-left: 5px;
+}
+
+ul.sections.submitters li.section div.sectioncontent div.innerwrapper {
+	 width: 666px;
+	*width: 656px;
+}
+
+ul.sections li.section div.sectioncontent.fileupload div.innerwrapper {
+	width: 661px;
+	*width: 651px;
+}
+
+ul.sections.submitters .internal,
+ul.sections.attachedfiles .internal {
+	margin-bottom: 1em;
+}
+
+span.filename {
+	font-weight: bold;
+}
+
+ul.sections li.section.note .internal {
+	margin-left: 0;
+	border-bottom: none;
+}
+
+ul.sections li.section .left {
+	float: left;
+	width: 525px;
+}
+
+ul.sections li.section.note .right {
+	width: 60px;
+}
+
+ul.sections li.section .right {
+	float: right;
+	width: 95px;
+}
+
+ul.sections li.section .right .icons {
+	position: relative;
+}
+
+ul.sections li.section li.cfield .right .icons {
+	top: 0;
+}
+
+div.lastcfield div.fieldcontent div.cfielddetails {
+	border-top: none;
+}
+
+ul.sections li.section .description {
+	clear: both;
+	margin: .5em 0 1em 0;
+}
+
+ul.sections li.section.collapsed .description {
+	clear: both;
+	margin: .5em 0 .5em 0;
+}
+
+ul.sections li.section div.sectionrules {
+	margin: 5px 0;
+}
+
+ul.sections li.section ul.fields {
+	padding: 0;
+	margin: 0;
+	margin-left: -4px;
+	clear: left;
+}
+
+ul.sections li.section ul.fields li.cfield .left {
+	display: inline-block;
+	width: 400px;
+	padding: 0;
+	margin: 0;
+}
+
+div.sectioncontent ul.fields.filesatteched li.cfield.fileattached div.fieldcontent div.internal span.left {
+	display: inline-block;
+	*display:inline;
+	*zoom: 1;
+	margin-bottom: 1em;
+}
+
+ul.fields.filesatteched li.cfield.fileattached div.fieldcontent div.internal span.right div.fieldrow.submit button {
+	margin: 0 !important;
+}
+
+ul.sections li.section .left input.itemname {
+	width: 405px;
+	font-weight: bold;
+	font-size: 1em;
+}
+
+ul.sections li.section input,
+ul.sections li.section textarea {
+	color: #000;
+}
+
+ul.sections li.section input.inputtext {
+	width: 450px;	
+}
+
+ul.sections li.section .fieldblockwrapper.imagesize {
+	width: 180px;
+}
+
+ul.sections li.section .fieldblockwrapper.imagesize input.inputtext {
+	width: 30px;	
+}
+
+ul.sections li.section input.inputtext.activator {
+	width: auto;	
+}
+
+ul.sections li.section li.cfield .left input.itemname {
+	width: 45%;
+	background-color: #fff;
+}
+
+ul.sections li.section input.inputchar {
+	width: 40px;
+}
+
+ul.sections li.section div.fieldcontent span.left input[type=text],
+ul.sections li.section input.inputchar {
+	margin: 0 10px; /*ERROR*/
+}
+
+ul.sections li.section .description {
+	margin: .5em 0 1em 0;
+	border-top: 1px solid #ccc;
+	padding-top: .5em;
+	-moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7);
+	-webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7);
+	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7);
+}
+
+ul.sections li.section .description.empty {
+	padding-top: 0;
+	*margin: 5px;
+	height: 1px;
+	*height: 1%;
+	*font-size: 0%;
+	overflow: hidden;
+	-moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7);
+	-webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7);
+	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7);
+}
+
+ul.sections li.section.collapsed .description {
+	margin: .5em 0 .5em 0;
+}
+
+ul.sections li.section.collapsed div.description.empty {
+	margin: 0;
+	border: none;
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+
+ul.sections li.section li.cfield .description {
+	margin: .5em 0 1em 0;
+	border-top: 1px solid #ccc;
+	padding-top: .5em;
+	-moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5);
+	-webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5);
+	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+ul.sections li.section li.cfield div.description.empty {
+	margin: 0;
+	margin-top: .5em;
+	*margin-top: .5em;
+	padding-top: .5em;
+	height: 1px;
+	*height: 1%;
+	*font-size: 0%;
+	overflow: hidden;
+	-moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7);
+	-webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7);
+	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7);
+}
+
+ul.sections li.section li.cfield.single .description,
+ul.sections li.section li.collapsed .description {
+	margin: .5em 0 .5em 0;
+}
+
+ul.sections li.section li.cfield.single .description.empty,
+ul.sections li.section li.collapsed.cfield .description.empty {
+	margin-top: 0;
+}
+
+ul.sections li.section li.cfield.single div.description.epmty,
+ul.sections li.section li.collapsed div.description.empty {
+	border-top: none;
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+
+div.sectioncontent div.internal span.left div.notecontent ul,
+div.sectioncontent div.internal span.left div.notecontent ol {
+	margin: .5em 0;
+	padding-left: 24px;
+}
+
+div.sectioncontent div.innerwrapper div.sectiondetails div.description ul,
+div.sectioncontent div.internal span.left div.notecontent ul,
+ul.sections li.section ul.fields li.cfield.note .left .notecontent ul {
+	list-style-position: outside;
+	list-style-type: square;
+}
+
+div.sectioncontent div.internal span.left div.notecontent ol,
+ul.sections li.section ul.fields li.cfield.note .left .notecontent ol {
+	list-style-position: outside;
+	list-style-type: decimal;
+}
+
+ul.sections li.section ul.fields li.cfield,
+ul.sections li.section ul.fields li.sectiondesc {
+	margin: .5em 0 1em 0;
+	*margin: 5px 0 7px 0;
+}
+
+ul.sections li.section ul.fields li.cfield.collapsed,
+ul.sections li.section ul.fields li.sectiondesc.collapsed {
+	margin: .5em 0 .5em 0;
+	*margin: 5px 0 5px 0;
+}
+
+ul.sections.attachedfiles.addfile li.section div.sectioncontent ul.fields.filesatteched li.cfield.fileattached {
+	margin: 0;
+}
+
+div#ctl00_CPHservice_CTRLmoduleUpload_DVfile0 div {
+	width: 100%;
+	text-align: left;
+}
+
+div.fieldcontent {
+	float: left;
+	width: 632px;
+	*width: 631px;
+	padding: 4px 8px;
+	padding-bottom: 5px;
+	border: 1px solid #fff;
+	*border-color: #fff #ccc #ccc #fff;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	background-color: #fff;
+	-moz-box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.15);
+	-webkit-box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.15);
+	box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.15);
+}
+
+li.sectiondesc div.fieldcontent {
+	border: none;
+	border-radius: 4px;
+	background-color: transparent;
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	float: left;
+	width: 648px;
+	*width: 643px;
+	padding: 4px 0;
+}
+
+fieldset div.fieldcontent {
+	float: left;
+	width: 612px;
+	*width: 611px;
+}
+
+div.lastcfield div.fieldcontent {
+	border: none;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	background-color: #fff;
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	float: left;
+	width: 100%;
+	padding: 4px;
+}
+
+div.lastcfield {
+	border: 1px solid #c7d0da;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	background-color: #fff;
+	-moz-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+	-webkit-box-shadow: 1px 1px 1px  rgba(0, 0, 0, 0.3);
+	box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+	width: 835px;
+	padding: 20px;
+	margin: 0;
+	margin-left: 15px;
+	margin-top: 1em;
+}
+
+div.lastcfield span.statuslight {
+	margin: 2px 10px
+}
+
+.tooLong {
+	position: relative;
+}
+
+.invisible {
+	height: 5px;
+}
+
+ul.sections li.section ul.fields li.cfield.note div.fieldcontent {
+	border: 1px solid #e6e9ed;
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	background-color: transparent;
+	background: url(../img/text-note.png) no-repeat -2px 2px;
+	padding-left: 24px;
+	padding-bottom: .667em;
+}
+
+ul.sections li.section.note div.notecontent {
+	background: url(../img/text-note.png) no-repeat -3px -3px;
+	padding-left: 24px;
+	padding-bottom: .667em;
+	line-height: 1.2em;
+}
+
+ul.sections li.section ul.fields li.cfield .internal {
+	display: block;
+	padding: 0;
+	padding-bottom: 1px;
+	*padding: 0;
+}
+
+ul.sections.attachedfiles li.section ul.fields li.cfield div.fieldcontent div.internal {
+	padding-bottom: 3px;
+	margin-bottom: 1em;
+	margin-top: 3px;
+}
+
+ul.sections li.section ul.fields li.cfield .title {
+	line-height: 1.2em;
+}
+
+ul.sections li.section ul.submitters .left span.title input {
+	width: 180px;
+}
+
+div.fieldcontent div.fielddetails {
+	margin-top: 7px;
+	padding-top: 10px;
+	border-top: 1px solid #e6e9ed;
+}
+
+li.sectiondesc div.fieldcontent div.fielddetails {
+	margin-top: 7px;
+	padding-top: 0;
+	border-top: none;
+}
+
+ul.sections li.section ul.fields li.cfield ul.subfields {
+	padding-left: 20px;
+	*padding-left: 7px;
+	margin: 0;
+}
+
+ul.sections li.section ul.fields li.cfield ul.subfields li.subcfield {
+	margin-top: 0.5em;
+	padding: 0.2em;
+}
+
+ul.sections li.section ul.fields li.cfield ul.subfields li.subcfield .title {
+	font-size: 0.9em;
+	color: #999;
+	border-bottom: 0;
+}
+
+ul.sections li.cfield .internal {
+	margin-bottom: -2px;
+	*margin-bottom: 0;
+}
+
+ul.fields .internal {
+	margin-left: 0px;
+}
+
+ul.fields li.cfield .right {
+	float: right;
+	width: 190px;
+	*width: 185px;
+	position: relative;
+	top: .1em;
+}
+
+ul.fields li.note .right {
+	float: right;
+	width: 60px;
+}
+
+li.template hr {
+	display: none;
+}
+
+li.template.edit div.fieldobject {
+	margin-top: 5px;
+	border-top: 1px solid #ccc;
+}
+
+
+
+
+div.fieldobject div.fieldrow.bodytext {
+	margin-bottom: 1em; 
+}
+
+div.fieldobject div.fieldrow .fieldblockwrapper .fieldrow {
+	margin-top: 0;
+}
+
+div.fieldobject div.fieldrow .fieldblockwrapper .fieldblockwrapper * {
+	vertical-align: top;
+}
+
+.rightcontent div#DIVcontenitoreSearch {
+	width: 640px !important;
+	margin: 1em auto !important;
+}
+
+.rightcontent div#DIVcontenitoreSearch table {
+	width: 100%;
+}
+
+div#ctl00_CPHservice_UCskin_PNLorganization,div#ctl00_CPHservice_UCskin_PNLcommunity {
+	margin-top: 1em;
+}
+
+#ctl00_CPHservice_UCskin_PNLorganization ul.UL_Orgn {
+	width: 100%;
+	padding-left: 2em;
+	font-size: .9em;
+}
+
+#ctl00_CPHservice_UCskin_PNLorganization ul.UL_Orgn li a {
+	padding: 2px 0;
+
+}
+
+#ctl00_CPHservice_UCskin_PNLorganization ul.UL_Orgn li a {
+	display: inline-block;
+	*display: inline;
+	zoom: 1;
+	padding: 2px;
+
+	/*	text-decoration: none;*/
+}
+
+#ctl00_CPHservice_UCskin_PNLorganization ul.UL_Orgn li a:hover {
+	
+}
+
+#ctl00_CPHservice_UCskin_UCcomSel_GRVcomunita tbody tr.ROW_header_Small th * {
+	vertical-align: middle;
+}
+
+.rightcontent div#DIVcontenitoreSearch div.StartCella120,
+.rightcontent div#DIVcontenitoreSearch div.Cella100,
+.rightcontent div#DIVcontenitoreSearch div.Cella100 {
+	width: auto;
+}
+
+.rightcontent div#DIVcontenitoreSearch div.RigaFiltro {
+	margin-bottom: .5em;
+}
+
+.rightcontent div#DIVcontenitoreSearch div input.FiltroCampoSmall10 {
+	width: 180px;
+	margin: 0;
+}
+
+.rightcontent div#DIVcontenitoreSearch table td {
+	font-size: .9em;
+	line-height: 2em;
+	padding: 3px !important;
+}
+
+
+div.fieldobject div.fieldrow .fieldblockwrapper .fieldblockwrapper span {
+	vertical-align: baseline;
+}
+
+div#ctl00_CPHservice_UCskin_PNLpreview fieldset {
+	padding: 12px;
+}
+
+div#ctl00_CPHservice_UCskin_PNLpreview fieldset div.fieldobject h1,
+div#ctl00_CPHservice_UCskin_PNLpreview fieldset div.fieldobject h2,
+div#ctl00_CPHservice_UCskin_PNLpreview fieldset div.fieldobject h3 {
+	margin: 0;
+}
+
+div#ctl00_CPHservice_UCskin_PNLpreview fieldset div.fieldobject img,
+div#ctl00_CPHservice_UCskin_PNLpreview fieldset div.fieldobject li img {
+	display: block;
+	margin: .5em 1em .5em 0
+}
+
+div#ctl00_CPHservice_UCskin_PNLpreview fieldset div.fieldobject ul {
+	padding-left: 0;
+}
+
+div#ctl00_CPHservice_UCskin_PNLpreview fieldset div.fieldobject ul li {
+/*	display: inline !important;*/
+	float: left;
+}
+
+span.fieldblockwrapper.contentcontextual.image {
+	margin-right: .5em;
+}
+
+span.fieldblockwrapper.image  {
+	text-align: right;
+}
+
+span.fieldblockwrapper.contentcontextual.image img  {
+	padding: 2px;
+	box-shadow: 3px 3px 0px  #ccc;
+	max-width: 610px;
+	border: 1px solid #ccc !important;
+	margin-bottom: 1em;
+}
+
+span.fieldblockwrapper.contentcontextual.image img.OldImage {
+	min-width: 50px;
+	min-height: 50px;
+}
+
+div.fieldobject div.fieldrow.short,
+div.fieldobject div.fieldrow.long {
+	margin-top: 1.5em;
+}
+
+div.fieldobject div.fieldrow.fieldendtime {
+	margin-top: 1.5em;
+	margin-bottom: 1.5em;
+}
+
+li.submitter div.fieldobject div.fieldrow,
+.view div.fieldobject div.fieldrow {
+	margin-top: 0;
+}
+
+.view .innerwrapper div.fieldobject div.fieldrow {
+	margin-bottom: 1em;
+}
+
+div.RowMail {
+	margin: 1em 0;
+	clear: both;
+}
+
+.right div.RowCellLeft {
+	float: left;
+	width: 100px;
+	margin-right: .5em;
+}
+
+.right div.RowCellRight {
+	float: left;
+	width: 540px;
+	text-align: left;
+}
+
+.right li.template div.RowCellRight span {
+	display: inline-block;
+	*display:inline;
+	zoom: 1;
+	margin-right: 0.5em;
+	margin-bottom: 0.5em
+}
+
+.right li.template div.RowCellRight input[type="text"] {
+	display: inline-block;
+	*display:inline;
+	width: 350px;
+	zoom: 1;
+	margin-right: 0.5em;
+}
+
+div.contenitoreEditor {
+	margin-top: 0.5em;	
+}
+
+.right div.RowCellLeft label,
+.right div.RowCellRight label,
+.right div.RowCellLeft input,
+.right div.RowCellRight input {
+	vertical-align: baseline;
+}
+
+span#ctl00_CPHservice_CTRLtemplate_LBpreSubject {
+	margin-right: .5em;
+	
+}
+
+div.fieldobject div.submit {
+	text-align: right;
+}
+
+li.sectiondesc div.fieldobject div.fieldrow {
+	margin-bottom: 0;
+}
+
+div.fieldobject div.fieldrow span.Titolo_Campo,
+div.fieldobject div.fieldrow span.Titolo_campo,
+div.fieldobject div.fieldrow label.Titolo_campo,
+div.fieldobject div.fieldrow label.Titolo_Campo,
+div.fieldfooter div.choseselect div.left label.fieldlabel, div.fieldfooter div.choseselect div.left span.fieldlabel
+div.fieldfooter div.choseselect div.left label.fieldlabel, div.fieldobject div.fieldrow span.fieldlabel,
+div.fieldobject div.fieldrow label.fieldlabel,
+label.fieldlabel,
+span.fieldlabel {
+	color: #222;
+	width: 150px;
+	*width: 100px;
+	display: inline-block;
+	*display: inline;
+	zoom: 1;
+	font-size: inherit;
+	margin-right: 5px;
+	font-weight: normal;
+}
+
+
+div.fieldrow li.attachedfile div.itemrow span.description {
+	margin-bottom: 0;
+}
+
+div.content div.fieldrow label.alignr {
+	width: auto;
+	margin: 0 .5em;
+}
+
+div.content div.fieldrow label.alignr.first {
+	margin-left: 0;
+}
+
+div.content div.fieldrow span.group {
+	display: inline-block;
+}
+
+div.content .description label {
+	vertical-align: baseline;
+}
+
+div.content .description label.alignr.first {
+	margin-left: 1em;
+}
+
+div.content .description select {
+	margin-right: 1em !important;
+}
+
+div.fieldrow.fieldendtime select.testo_campoSmall {
+	margin-right: 0 !important;
+}
+
+div.fieldrow.fieldendtime span.description label.alignr {
+	margin: 0 !important;
+}
+
+div.fieldrow span.Testo_campo {
+	display: inline-block;
+	*display:inline;
+	zoom: 1;
+	vertical-align: top;
+}
+
+div.fieldrow span.Testo_campo input {
+	vertical-align: middle;
+}
+
+div.content div.fieldrow .inputtext[type=text],
+div.content div.fieldrow select {
+	margin-right: 2em;
+}
+
+div.fieldobject div.fieldrow .inputtext[type=text] {
+	vertical-align: middle;
+}
+
+div.fieldobject div.fieldrow.fieldtitle .inputtext[type=text],
+div.fieldobject div.fieldrow.fieldedition .inputtext[type=text] {
+	width: 450px;
+}
+
+div.fieldobject div.fieldrow .textarea {
+	width: 450px;
+	vertical-align: top;
+	resize: vertical;
+	overflow: auto;
+	height: 60px;
+}
+
+div.fieldobject div.fieldrow .textarea.small {
+	height: 1.4em;
+}
+
+ul.sections li.section.collapsed .left input.itemname {
+	background-color: #f2f3f3;
+}
+
+li.cfield div.fieldobject div.fieldrow .textarea {
+	background-color: #fff;
+}
+
+div.fieldobject div.fieldrow.fieldmaxchar a.linkMenu.advanced {
+	float: right;
+	clear: left;
+	*float:none;
+	*margin-left: 420px
+}
+
+div.fieldobject.disclaimer div.fieldrow.fieldtext .textarea {
+	height: 100px;
+}
+
+div.fieldobject div.fieldrow.fieldmaxchar .inputtext {
+	width: 50px;
+}
+
+div.fieldfooter div.choseselect {
+	border-top: 1px solid #e6e9ed;
+	margin-top: 0.5em;
+	padding-top: 0.5em;
+}
+
+div.fieldfooter div.choseselect div.left {
+	width: 92% !important;
+}
+
+div.fieldfooter div.choseselect div.right {
+	width: 8% !important;
+}
+
+div.fieldfooter div.choseselect .icon {
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+}
+
+div.choseselect .icons .icon {
+	background-position: 0 0;
+}
+
+.partecipants,
+.chzn-container {
+	vertical-align: middle;
+}
+
+div.chzn-container {
+	font-size: 1em;
+	width: 448px !important;
+	*width: 448px !important;
+}
+
+table div.chzn-container,
+table div.chzn-container-multi {
+	width: 390px !important;
+	*width:370px !important;
+}
+
+table div.chzn-container div.chzn-drop,
+table div.chzn-container div.chzn-drop div.chzn-results {
+	width: 389px !important;
+	*width:369px !important;
+}
+
+table div.chzn-container.chzn-container-single {
+	width: 402px !important;
+}
+
+table div.chzn-container.chzn-container-single a.chzn-default {
+	border-color: #ccc;
+}
+
+table .chzn-container-multi .chzn-choices,
+table div.chzn-container ul.choices {
+  border: none !important;
+  background-image: none !important;
+}
+
+table .chzn-container.chzn-container-multi.chzn-container-active {
+	border: 1px solid #ccc !important;
+}	
+
+ul.chzn-choices li.search-field input.default {
+	padding-top: 0;
+	padding-bottom: 0;
+	*padding: 4px;
+}
+
+ul.chzn-choices li.search-field input.default {
+	width: 180px !important;
+}
+
+ul.chzn-choices li.search-field {
+	overflow: visible !important;
+}
+
+div.chzn-container div.chzn-drop,
+div.chzn-container div.chzn-drop div.chzn-results {
+	width: 446px !important;
+}
+
+div.chzn-container li.search-choice {
+
+}
+
+.textarea,
+input[type="text"],
+div.chzn-container-multi .chzn-choices,
+ul.submitters li.submitter div.fieldobject textarea {
+	border: 1px solid #ccc;
+	color: #333;
+	margin-left: 0;
+	font-size: inherit;
+
+}
+
+select, textarea, input[type="text"] {
+	border: 1px solid #ccc !important;
+	/*margin: inherit !important;*/
+}
+
+textarea {
+	vertical-align: middle;
+	font-family: inherit !important;
+	font-size: inherit !important;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+	border: none !important;
+}
+
+ul.fields li.subcfield {
+	border-bottom: 1px solid #e9e9e9;
+}
+
+ul.fields li.subcfield {
+	text-indent: -13px;
+	margin-left: 12px;
+}
+
+div.subfieldcontent {
+	padding-bottom: 2px;
+}
+
+ul.sections li.section ul.fields li.cfield .title {
+
+}
+
+ul.fields li.subcfield.last {
+	border-bottom: none;
+	margin-bottom: .5em;
+}
+
+span.description {
+	display: block;
+	line-height: 1.6em;
+	margin: 1em 0;
+}
+
+li.cfield.fileattached div.fieldrow span.description {
+	padding: .5em 0;
+	border-top: 1px solid #e6e9ed;
+}
+
+.switchsection,
+.switchcfield {
+	margin-right: 5px;
+	display: block;
+	float: left;
+}
+
+fieldset legend .switchsection {
+	display: none;
+}
+
+fieldset.collapsable legend .switchsection {
+	float: none;
+	display: inline-block;
+	*display:inline;
+	zoom: 1;
+	margin: 0;
+	padding: 0;
+}
+
+.switchcfield {
+	margin-top: 1px;
+}
+
+.expiration {
+	width: 200px;
+	display: inline-block;
+	font-size: 0.8em;
+	padding-top: .3em;
+}
+
+table .icon.locked {
+	width: 13px;
+	height: 13px;
+}
+
+.lockUnlock {
+	vertical-align: top;
+	display: inline-block;
+	background-color: transparent;
+	font-size: 0;
+	line-height: 16px;
+}
+
+li.section .lockUnlock {
+	width: 16px;
+	height: 16px;
+}
+
+li.cfield .lockUnlock {
+	width: 13px;
+	height: 13px;
+	margin-left: 2px;
+}
+
+span.objectRender span.leftDetail {
+	vertical-align: top;
+	padding-bottom: 4px;
+}
+
+li.cfield.single span.objectRender span.leftDetail {
+	*display: inline-block;
+	/**margin-left: 20px;*/
+}
+
+span.objectRender ul span.itemTitle {
+	max-width: 700px;
+	display: inline-block;
+	text-indent: -20px;
+	padding: 0;
+	padding-left: 20px;
+}
+
+ul.sections span.leftDetail span.itemTitle span.textAction,
+ul.sections span.leftDetail span.itemTitle span.fileIco,
+ul.sections span.leftDetail span.itemTitle span.actionIco {
+	position: relative;
+	top: -1px;
+}
+
+span.expiration {
+	float: left;
+}
+
+.icons {
+	top: 0 !i;  
+}
+
+.icons span,
+.right .icons span,
+.right  label,
+.right  input {
+	vertical-align: middle !important;
+}
+
+td.error .icons {
+	float: right;
+}
+
+td.error input {
+	float: left;
+	border: 1px solid #f57994 !important;
+}
+
+.right label {
+	margin-right: .5em;
+	vertical-align: middle;
+	display: inline-block;
+}
+
+legend.inlinelegend label,
+.right label.inline,
+.right legend label {
+	margin:  0;
+	margin: 0 .5em;
+	width: auto;
+}
+
+legend.inlinelegend {
+	margin-left: -1.2em;
+	padding: 2px;
+}
+
+legend.inlinelegend input{
+	margin:  0 1em;
+}
+
+fieldset.light.expandable legend {
+	margin-left: -1em;
+}
+
+fieldset.light.expandable .left label {
+	width: auto;
+}
+
+label#ctl00_CPHservice_LBsubmissionClosed.inline {
+	display: inline-block;
+	width: 170px !important;
+	margin-right: 0;
+}
+
+label.inline {
+	display: inline-block !important;
+	width: auto !important;
+}
+
+span.labelinput {
+	display: inline-block !important;
+	width: auto !important;
+}
+
+.left span.type,
+span.fieldinfo {
+	font-size: .9em;
+	vertical-align: middle;
+	font-style: italic;
+}
+
+.right  {
+	text-align: right;
+}
+
+li.section.locked .sectioncontent {
+	color: #9e9d97;
+}
+
+li.section.locked .fieldcontent,
+li.cfield.locked .fieldcontent,
+li.section.locked .subfieldcontent {
+	background-color: #e6e9ed;
+	border-color: #cacaca;
+	color: #9e9d97;
+}
+
+li.cfield.locked .fieldcontent {
+	border-color: #cacaca;
+	background-color: #e6e9ed;
+}
+
+li.section.locked .fieldcontent,
+li.cfield.locked .fieldcontent {
+	-moz-box-shadow: 1px 1px 0 rgba(255, 255, 255, 0.7), inset 1px 1px 0 rgba(0, 0, 0, 0.1);
+	-webkit-box-shadow: 1px 1px 0 rgba(255, 255, 255, 0.7), inset 1px 1px 0 rgba(0, 0, 0, 0.1);
+	box-shadow: 1px 1px 0 rgba(255, 255, 255, 0.7), inset 1px 1px 0 rgba(0, 0, 0, 0.07);
+}
+
+li.section.locked span.duration,
+li.cfield.locked .fieldcontent span.duration {
+	color: #9e9d97 !important;
+}
+
+li.cfield.single div.cfielddetails,
+li.cfield.empty div.cfielddetails,
+li.cfield.collapsed div.cfielddetails {
+	border: 0;
+}
+
+
+div.globalwrapper {
+	background-color: #e6e9ed;
+	border: 1px solid #ccc;
+	*border-bottom: 2px;
+	-moz-box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.5), 1px 1px 1px rgba(0, 0, 0, 0.3);
+	-webkit-box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.5), 1px 1px 1px rgba(0, 0, 0, 0.3);
+	box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.5), 1px 1px 0 rgba(0, 0, 0, 0.15);
+}
+  
+div.content fieldset.light {
+	padding: 4px 10px;
+}
+
+fieldset.disabled,
+fieldset.disabled * {
+	color: #888 !important;
+}
+
+fieldset.disabled legend,
+fieldset.disabled .messages .message {
+	color: #222 !important;
+}
+
+fieldset.expandable.hideall.disabled {
+	border: none;
+	margin-bottom: 0;
+	margin-left: 1px;
+	padding-bottom: 0;
+}
+
+fieldset.expandable.hideall.disabled * {
+	display: none;
+}
+
+fieldset.expandable.hideall.disabled legend,
+fieldset.expandable.hideall.disabled legend * {
+	display: inline;	
+}
+
+
+
+
+
+
+/* @end*/
+
+
+
+/* @group Revisions */
+
+.revisionsettings.hidden,
+.revisionfield.hidden {
+	display: none;
+}
+
+.revisionfield {
+	display: inline-block;
+	*display: inline;
+	-moz-border-radius-topleft: 2px;
+	-moz-border-radius-topright: 2px;
+	-moz-border-radius-bottomright: 2px;
+	-moz-border-radius-bottomleft: 2px;
+	-webkit-border-radius: 2px 2px 2px 2px;
+	border-radius: 2px 2px 2px 2px;
+	margin-right: 0.4em;
+}
+
+.revisionfield.revisioned {
+	padding: 0.3em 0.4em 0.1em 0.4em;
+	background: #ff3019;
+	background: -moz-linear-gradient(top,  #ff3019 0%, #cf0404 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ff3019), color-stop(100%,#cf0404));
+	background: -webkit-linear-gradient(top,  #ff3019 0%,#cf0404 100%);
+	background: -o-linear-gradient(top,  #ff3019 0%,#cf0404 100%);
+	background: -ms-linear-gradient(top,  #ff3019 0%,#cf0404 100%);
+	background: linear-gradient(to bottom,  #ff3019 0%,#cf0404 100%);
+	border: 1px solid #cf0404;
+}
+
+.revisionfield label,
+.revisionfield input, 
+span.revisionfield.revisioned {
+	display: inline-block !important;
+	*display: inline;
+	text-transform: uppercase;
+	font-size: 0.8em;
+	color: #cf0404;
+	vertical-align: middle;
+	margin: 0;
+}
+
+.revisionfield input {
+	margin: -2px 3px 0 0;
+	background: #c20;
+	border: 1px solid #c20;
+}
+
+.revisionfield.revisioned label,
+.revisionfield.revisioned input {
+	color: #fff;
+	text-shadow: #921000 0 1px 0;
+}
+
+td.partecipant span.revisionfield.revisioned {
+	padding: 0.2em 0.3em 0.2em 0.3em;
+	margin: 1px 0 0 0 ;
+	background: transparent;
+	border-radius:2px
+}
+
+td.template span.revisionfield.revisioned label,
+td.template span.revisionfield.revisioned input {
+	font-size: 0.75em;
+	color: #cf0404;
+	text-shadow: none;
+}
+
+.revisionfield + label {
+	display: inline-block !important;
+	*display: inline;
+}
+
+.revisionalert,
+.revisionconfirm {
+	text-align: center;
+}
+
+.revisionalert .revisionneeded,
+.revisionconfirm {
+	display: block;
+}
+
+.revisionalert .revisionneeded .revisionapplicant,
+.revisionconfirm .revisionmessage .revisionapplicant {
+	margin-top: 0.5em;
+	font-style: normal;
+}
+
+.revisionalert .revisionneeded .revisionapplicant .name,
+.revisionconfirm .revisionmessage .revisionapplicant .name {
+	font-weight: bold;
+}
+
+.revisionalert .revisionmsg {
+	display: block;
+	width: 70%;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: #fff;
+	padding: .7em .5em;
+	border: 1px solid #ccc;
+	margin-top: 0.2em;
+	margin-bottom: 0.5em;
+	font-style: italic;
+	line-height: 1.4em;
+	font-size: 0.9em;
+	color: #222;
+}
+
+.revisionalert .revisiondeadline {
+	color: #c00;
+	font-style: normal;
+}
+
+.revisionalert .revisionaction {
+	display: block;
+	margin: 1em 0;
+	text-align: center;
+}
+
+.revisionalert .revisiondeadline .date,
+.revisionconfirm .revisiondate .date {
+	font-weight: bold;
+	font-size: 1.2em;
+}
+
+.revisionconfirm span {
+	font-size: 1em !important;
+}
+
+/* @end */
+
+/* @group CFP Input types */
+
+input[type="file"] {
+	background-color: #fff;
+}
+
+div.fieldrow a.linkMenu {
+	display: inline-block;
+}
+
+span.inputradiobuttonlist,
+span.inputcheckboxlist,
+span.checkboxlist {
+	display: inline-block;
+	*display:inline;
+	zoom: 1;
+	vertical-align: top;
+}
+
+span.inputradiobuttonlist input,
+div.view fieldset.section span.inputradiobuttonlist input,
+span.inputcheckboxlist input,
+div.view fieldset.section span.inputcheckboxlist input,
+div.view fieldset.section span.checkboxlist input {
+	font-weight: normal;
+	font-style: normal;
+	display: inline;
+	margin-bottom: .5em;
+}
+
+span.inputradiobuttonlist label,
+div.view fieldset.section span.inputradiobuttonlist label,
+span.inputcheckboxlist label,
+div.view fieldset.section span.inputcheckboxlist label,
+div.view fieldset.section span.checkboxlist label {
+	font-weight: normal;
+	font-style: normal;
+	display: inline;
+	margin-right: 1em;
+}
+
+div.optionlist {
+	display: inline-block;
+	*display: inline;
+	width: 440px;
+	border: 1px solid #ccc;
+	padding: 5px;
+	vertical-align: middle;
+	margin: 1em 0;
+	margin-left: 105px !important;
+}
+
+div.optionlist label {
+	line-height: 1.4em;
+	margin-bottom: 4px;
+	display: inline-block;
+	width: 350px;
+	margin-left: 8px;
+	vertical-align: top;
+	padding-top: 2px;
+}
+
+div.optionlist input {
+	vertical-align: top;
+}
+
+div.optionlist div.right {
+	width: 450px !important;
+}
+
+table.optionbuilder {
+	margin-left: 105px !important;
+	width: 450px;
+}
+
+.varbuttons {
+	margin: 1em 0;
+}
+
+.varbuttons * {
+	vertical-align: middle;
+}
+
+.varbuttons a.varbutton.linkMenu {
+	font-size: .95em;
+}
+
+table.optionbuilder,
+table.optionbuilder td {
+	border: 1px solid #ccc;
+	padding: 2px;
+	margin: 1em 0;
+	border-collapse: collapse;
+}
+
+table.optionbuilder tfoot tr {
+	background-color: #eee;
+}
+
+div.fieldrow.fieldinput {
+
+}
+
+div.fileinputs {
+	position: relative;
+	display: inline-block;
+	margin: 0;
+}
+
+div.fakefile {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	z-index: 1;
+	padding: 0;
+}
+
+div.fakefile input {
+	margin: 0;
+	border: 1px solid #ccc;
+}
+
+div.fakefile label {
+	text-align: center;
+	line-height: 12px;
+	*line-height: 14px;
+	text-decoration: none !important;
+	padding: .2em .6em;
+	color: #555;
+	text-shadow: 1px 1px 0px #ddd;
+	border: 1px solid #aaa;
+	border-bottom-color: #999;
+	border-right-color: #999;
+	background-color: #ddd;
+	-moz-box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.1);
+	-webkit-box-shadow: 1px 1px 0  rgba(0, 0, 0, 0.1);
+	box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.1);
+	-moz-border-radius-topleft: 3px;
+	-moz-border-radius-topright: 3px;
+	-moz-border-radius-bottomright: 3px;
+	-moz-border-radius-bottomleft: 3px;
+	-webkit-border-radius: 3px 3px 3px 3px;
+	border-radius: 3px 3px 3px 3px;
+}
+
+input.file {
+	position: relative;
+	text-align: right;
+	-moz-opacity:0.5 ;
+	filter:alpha(opacity: 0);
+	opacity: 0;
+	z-index: 2;
+	text-indent: -9999px;
+}
+
+input.icon,
+input.icon:active,
+input.icon:hover {
+	border: none !important;
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	outline: none;
+	padding: 0;
+	margin: 0;
+	background-color: transparent;
+	line-height: 1em;
+	height: 16px;
+	width: 16px;
+	cursor: pointer;
+}
+
+div.fieldobject.fileupload .icons {
+	margin-left: 1em;
+	position: relative;
+	top: -1px;
+}
+
+/* @end */
+
+
+.rightcontent table.revisions.minimal {
+	width: 97%;
+	font-size: .9em;
+	margin: 1em auto;
+}
+
+.rightcontent table.revisions.minimal td {
+
+	font-size: .9em;
+}
+
+.rightcontent table.revisions.minimal .cbx,
+.rightcontent table.revisions.minimal .actions {
+	width: 40px;
+	text-align: left;
+}
+
+.rightcontent table.revisions.minimal .actions .icons {
+	margin: 0;
+}
+
+/* @end */
+
+/* @group Dialogs */
+
+
+.ui-resizable-handle {
+	background: none !important;
+}
+
+div.ui-dialog {
+	box-shadow: 2px 2px 12px rgba(0,0,0,0.4);
+	font-family: inherit;
+}
+
+div.ui-dialog div.column input.Link_Menu {
+	float: right;	
+}
+
+div.ui-dialog div.column span.Titolo_campoSmall {
+	margin: 1em 0;
+	display: inline-block;
+	*display: inline;
+	zoom: 1;
+	float: left;
+}
+
+/* @end */
+
+
+div.fieldobject div.fieldrow.pagesize {
+	margin-bottom: 1em;
+}
+
+span.fieldblockwrapper, 
+div.fieldblockwrapper {
+	display: inline-block;
+	*display:inline;
+	*zoom: 1;
+	vertical-align: top;
+	margin-bottom: .5em;
+}
+
+div.fieldblockwrapper.editor {
+	display: block;
+	margin: 1em 0;
+}
+
+div.fieldblockwrapper div.editorloader {
+	margin: .5em 0;
+}
+
+ul.fieldblockwrapper {
+	display: block;
+	margin: .5em 0;
+	padding-left: 1em;
+}
+
+span.fieldblockwrapper.varbuttons {
+	width: 500px;
+	margin: 0;
+}
+
+span.fieldblockwrapper input[type="text"] {
+	width: 45px;
+	margin-right: 1em !important;
+}
+
+div.fieldobject span.field {
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+	margin-right: 2em;
+}
+
+span.fieldblockwrapper select {
+	width: auto;
+	margin: 0;
+	margin-right:20px !important;
+	vertical-align: top;
+	margin-bottom: .5em;
+}
+
+.webconferencing .group.filter .filteritem {
+	margin: .5em 0;
+}
+
+.webconferencing .group.filter .filteritem span {
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+	width: 100px;
+}
+
+td.name .recording {
+	font-size: 10px;
+	text-transform: uppercase;
+	text-shadow: 0 1px #aa0c0c;
+	box-shadow: inset 1px 1px 3px #a20a0a;
+	color: #fff;
+	background-color: #d20;
+	padding: 1px 2px;
+	border-radius:2px;	
+	
+	top: 1px;		
+	position: relative;	
+}
+
+td.name .recording:before {
+	content: "";
+	color: #fff;
+	background-color: #fff;
+	border-radius: 20px;	
+	display: inline-block;
+	width: 8px;
+	height: 8px;
+	margin-right: 2px;
+}
+
+/*  DA RIVEDERE:
+	Multiselettore colonna "Utenti" */
+.select {
+	text-align: center;
+	width: 30px;
+}

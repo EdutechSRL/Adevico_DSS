@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="lm.Comol.Core.FileRepository.Domain.DiskSettings">
+    <Position X="9.75" Y="3.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAABAAABIQEAAAAAAAAAAgDAAABAAgAAA=</HashCode>
+      <FileName>FileRepository\Domain\settings\DiskSettings.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="RepositoryOverflow" />
+      <Property Name="UploadOverflow" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="lm.Comol.Core.FileRepository.Domain.VersioningSettings">
+    <Position X="4.25" Y="5.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAIAAAAEAAAAAAAAAAABAAAAAAAAg=</HashCode>
+      <FileName>FileRepository\Domain\settings\VersioningSettings.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="RepositoryTypes" />
+      <Property Name="AvailableModules" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="lm.Comol.Core.FileRepository.Domain.ViewSettings">
+    <Position X="10.5" Y="7.25" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAAACAAIEAgAQAAgAAAAAAAAAKgQJAAAAEAAA=</HashCode>
+      <FileName>FileRepository\Domain\settings\ViewSettings.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Tree" />
+      <Property Name="AvailableOptions" />
+      <Property Name="ActiveOptions" />
+      <Property Name="Type" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="lm.Comol.Core.FileRepository.Domain.RepositoryContextSettings">
+    <Position X="7" Y="7.25" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>CgIAgAAMAAAAAIAAAAAAgAACAAAAAgAAAUIAAAEAAgI=</HashCode>
+      <FileName>FileRepository\Domain\settings\RepositoryContextSettings.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="DiskSpace" />
+      <Property Name="Versioning" />
+      <Property Name="Type" />
+      <Property Name="Customization" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="ItemTypes" />
+      <Property Name="Views" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="lm.Comol.Core.FileRepository.Domain.VersioningModuleSettings">
+    <Position X="0.5" Y="4.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAEAAAAAAAAIAgAAAAQAAAAA=</HashCode>
+      <FileName>FileRepository\Domain\settings\VersioningModuleSettings.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="lm.Comol.Core.FileRepository.Domain.PlayerSettings">
+    <Position X="3" Y="10.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgQAQAAAAAAAAAAEAAAAAAAAAABAAgRAAAAAEgAA=</HashCode>
+      <FileName>FileRepository\Domain\settings\PlayerSettings.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="lm.Comol.Core.FileRepository.Domain.ProfileTypeAvailability">
+    <Position X="17" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAA=</HashCode>
+      <FileName>FileRepository\Domain\settings\ProfileTypeAvailability.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="lm.Comol.Core.FileRepository.Domain.ItemTypeSettings">
+    <Position X="6.5" Y="11.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAgAAAAAAAAAAAAABAAAAAAAAgAAAAgQAAAAAAAAA=</HashCode>
+      <FileName>FileRepository\Domain\settings\ItemTypeSettings.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Players" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Enum Name="lm.Comol.Core.FileRepository.Domain.CustomizationLevel">
+    <Position X="7" Y="4" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AQAAAgAAAAgAAAAAAAAAAAACAAAAEAAgAIAAAAEAAAg=</HashCode>
+      <FileName>FileRepository\Domain\settings\enum\CustomizationLevel.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="lm.Comol.Core.FileRepository.Domain.SettingsType">
+    <Position X="4" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAIAAAAAAQAAAAAAAAAAAAAAABAAAAABIAA=</HashCode>
+      <FileName>FileRepository\Domain\settings\enum\SettingsType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="lm.Comol.Core.FileRepository.Domain.PresetType">
+    <Position X="10.5" Y="11.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAIQAAAAAAAAAAAECAAA=</HashCode>
+      <FileName>FileRepository\Domain\settings\enum\PresetType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="lm.Comol.Core.FileRepository.Domain.OverflowAction">
+    <Position X="13.5" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAABEAAAAAAAAAAAwAAAAAAAAAACAAAAAAAAAEAAAE=</HashCode>
+      <FileName>FileRepository\Domain\settings\enum\OverflowAction.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="lm.Comol.Core.FileRepository.Domain.TreeViewOption">
+    <Position X="14.5" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAEAAAAAAIAAAAAAAAAgAAEAAAA=</HashCode>
+      <FileName>FileRepository\Domain\settings\enum\TreeViewOption.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="lm.Comol.Core.FileRepository.Domain.ViewOption">
+    <Position X="14.5" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAABEAAAAACAAAAAAAAAhAAAAAAkAAAA=</HashCode>
+      <FileName>FileRepository\Domain\settings\enum\ViewOption.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="lm.Comol.Core.FileRepository.Domain.ItemType">
+    <Position X="4" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAAAAAAAIAABCAAAAAAAAAAAAACIAAAAEABAA=</HashCode>
+      <FileName>FileRepository\Domain\base\enum\ItemType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

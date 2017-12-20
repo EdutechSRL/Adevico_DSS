@@ -1,0 +1,2 @@
+﻿<%@ Control Language="vb" AutoEventWireup="false" CodeBehind="UC_ExternalModuleDisplayAction.ascx.vb" Inherits="Comunita_OnLine.UC_ExternalModuleDisplayAction" %>
+<asp:PlaceHolder ID="PLHdisplayAction" runat="server"></asp:PlaceHolder>

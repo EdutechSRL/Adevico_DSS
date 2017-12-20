@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="lm.Comol.Core.DomainModel" namespace="lm.Comol.Core.DomainModel.Repository">
+	<class name="FilePlayInfo" table="FR_FilePlayInfo" lazy="true">
+		<id name="Id" column="Id" type="Int64">
+			<generator class="native"/>
+		</id>
+		<many-to-one name="Owner" class="lm.Comol.Core.DomainModel.Person, lm.Comol.Core.DomainModel" 
+					 column="IdPerson" foreign-key="IdPerson" cascade="none" lazy="false" not-found="ignore"/>
+		<many-to-one name="CommunityOwner" class="lm.Comol.Core.DomainModel.Community, lm.Comol.Core.DomainModel" column="IdCommunity"
+					 foreign-key="IdCommunity" cascade="none" lazy="false" not-found="ignore"/>
+		<many-to-one name="File" class="lm.Comol.Core.DomainModel.CommunityFile, lm.Comol.Core.DomainModel" column="IdFile"
+				 foreign-key="IdFile" cascade="none" lazy="false" not-found="ignore"/>
+
+		<property name="WorkingSessionID" type="String" column="WorkingSessionID" />
+		<property name="CreatedOn" type="DateTime" column="CreatedOn"/>
+		<property name="DateZone" type="Int32" column="DateZone" />
+		<property name="IdAction" type="Int32" column="IdAction" />
+		<property name="FileUniqueID" type="Guid" column="FileUniqueID" />
+    <property name="RepositoryItemType" type="lm.Comol.Core.DomainModel.Repository.FileTransferType,lm.Comol.Core.DomainModel" column="IdRepositoryItemType"/>
+	</class>
+</hibernate-mapping>

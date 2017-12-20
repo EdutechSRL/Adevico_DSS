@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--eng-->
+<Resource xmlns="urn:ComolTranslation">
+
+	<item name="LTpageTitle_t.text">Ticket - Category</item>
+	<item name="LTtitle_t.text">Category management</item>
+
+	<item name="LBnameC_t.text">Name</item>
+	<item name="LBdescC_t.text">Description</item>
+	<item name="LBname_t.text">Name</item>
+	<item name="LBdescription_t.text">Description</item>
+	<item name="LBusers_t.text">Users</item>
+	<item name="LBuserName_t.text">User</item>
+	<item name="LBrole_t.text">Role</item>
+	<item name="LBaction_t.text">Actions</item>
+	<item name="LBtype_t.text">Type</item>
+
+	<item name="LBnameC_t.ToolTip">Name</item>
+	<item name="LBdescC_t.ToolTip">Description</item>
+	<item name="LBname_t.ToolTip">Name</item>
+	<item name="LBdescription_t.ToolTip">Description</item>
+	<item name="LBusers_t.ToolTip">User: manager/resolver</item>
+	<item name="LBuserName_t.ToolTip">User</item>
+	<item name="LBrole_t.ToolTip">Role</item>
+	<item name="LBaction_t.ToolTip">Actions</item>
+	<item name="LBtype_t.ToolTip">Type</item>
+
+	<item name="ChbChild.text">Child of</item>
+
+	<item name="LNBadd.text">Create</item>
+	<item name="LNBadd.ToolTip">Create new category</item>
+	<item name="LNBadd.status">Create new category</item>
+	
+	<item name="LNBmodify.text">Save</item>
+	<item name="LNBmodify.ToolTip">Save changes</item>
+	<item name="LNBmodify.status">Save changes</item>
+
+	<item name="LNBtoList.text">To list</item>
+	<item name="LNBtoList.ToolTip">Save and back to list</item>
+	<item name="LNBtoList.status">Save and back to list</item>
+	
+	<item name="LNBaddUser.text">Add</item>
+	<item name="LNBaddUser.ToolTip">Add user</item>
+	<item name="LNBaddUser.status">Add user</item>
+	<item name="LNBdelete.text">D</item>
+	<item name="LNBdelete.ToolTip">Remove user</item>
+	<item name="LNBdelete.status">Remove user</item>
+
+	<item name="LNBdelLang.text">D</item>
+	<item name="LNBdelLang.ToolTip">Remove translation</item>
+	<item name="LNBdelete.status">>Remove translation</item>
+	<item name="LNBdelete.ConfirmText">Translation will be permanently deleted. Do you want to continue?</item>
+	
+	<item name="DDLtype.Public">Public</item>
+	<item name="DDLtype.Current">Private</item>
+	<item name="DDLtype.Ticket">Only Ticket</item>
+
+	<item name="RBLroles.1" disambiguation="plurale">Manager</item>
+	<item name="RBLroles.0" disambiguation="plurale">Resolver</item>
+
+	<item name="RBLrole.1">Manager</item>
+	<item name="RBLrole.0">Resolver</item>
+	
+	<item name="Modal.InternalUsers.Title">Add Manager/Resolver</item>
+	
+	<item name="language.multi">Multi</item>
+
+	<!-- Add On -->
+	<item name="Error.WrongCategory">Categoria inesistente nella comunità corrente.</item>
+	<item name="Error.NoAccess">La gestine delle categorie è momentaneamente disabilitata.</item>
+
+	<item name="TBLfooter.ShowAll" mustcontains="{allItem}">Espandi: mostra tutti gli elementi ({allItem})</item>
+	<item name="TBLfooter.HideAll">Comprimi: mostra solo i primi 5 elementi)</item>
+
+	<!-- 18/12/2014 -->
+	<item name="ForceReassign.ToResolver" mustcontains="{user}">La categoria non presentava manager ed è stato assegnato tale ruolo all'utente: {user}.</item>
+	<item name="ForceReassign.ToCurrent">La categoria non presentava manager né resolver. Il ruolo di manager è stato assegnato all'utente corrente.</item>
+	<item name="Reassign.NoManager">Impossibile salvare assegnazioni. Impostare almeno un Manager.</item>
+
+	<!--27/03/2015-->
+	<!--<item name="LTintUsrRoles_t.text">Ruolo</item>-->
+	<item name="LBintUserRoles_t.text">Ruolo</item>
+	<item name="LBintUserRoles_t.ToolTip">Ruolo</item>
+
+	<!-- Add 25/05/2015 -->
+
+	<item name="Message.UnSended">Notifiche bloccate: i messaggi non saranno inviati.</item>
+	<item name="Message.Sended">I messaggi verranno inviati a breve.</item>
+
+	<item name="LNBnotifyAll.text">Notifica a TUTTI</item>
+	<item name="LNBnotifyAll.ToolTip">Invia un riepilogo con tutte le categorie a tutti i manager e resolver iscritti nella comunità corrente.</item>
+	<item name="LNBnotifyAll.status">Invia un riepilogo con tutte le categorie a tutti i manager e resolver iscritti nella comunità corrente.</item>
+
+	<item name="LNBnotifyManager.text">Notifica ai manager</item>
+	<item name="LNBnotifyManager.ToolTip">Invia un riepilogo con tutte le categorie solo ai manager della comunità corrente.</item>
+	<item name="LNBnotifyManager.status">Invia un riepilogo con tutte le categorie solo ai manager della comunità corrente.</item>
+
+	<item name="LNBnotifyResolver.text">Notifica ai resolver</item>
+	<item name="LNBnotifyResolver.ToolTip">Invia un riepilogo con tutte le categorie solo ai manager della comunità corrente.</item>
+	<item name="LNBnotifyResolver.status">Invia un riepilogo con tutte le categorie solo ai manager della comunità corrente.</item>
+
+
+	<item name="LNBsend.text">Notifica</item>
+	<item name="LNBsend.ToolTip">Notifica al solo utente corrente</item>
+	<item name="LNBsend.status">Notifica al solo utente corrente</item>
+
+</Resource>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="lm.Comol.Modules.CallForPapers" namespace="lm.Comol.Modules.CallForPapers.Domain.Evaluation">
+	<class name="Evaluation" table="CP_Evaluation" optimistic-lock ="version">
+		<id name="Id" column="Id" type="Int64">
+			<generator class="native"/>
+		</id>
+    <version name="TimeStamp"
+   generated="always"
+   unsaved-value="null"
+   type="BinaryBlob">
+      <column name="_Timestamp"
+              not-null="false"
+              sql-type="timestamp"/>
+    </version>
+    <many-to-one name="Community" class="lm.Comol.Core.DomainModel.liteCommunity" column="IdCommunity" foreign-key="IdCommunity" cascade="none" not-found="ignore" />
+    <many-to-one name="Call" class="lm.Comol.Modules.CallForPapers.Domain.CallForPaper" column="IdCall" foreign-key="IdCall" cascade="none" not-found="ignore" />
+    <many-to-one name="Submission" class="lm.Comol.Modules.CallForPapers.Domain.UserSubmission" column="IdUserSubmission" foreign-key="IdUserSubmission" cascade="none" not-found="ignore"  />
+    
+    <many-to-one name="Committee" class="lm.Comol.Modules.CallForPapers.Domain.Evaluation.EvaluationCommittee" column="IdCommittee" foreign-key="IdCommittee" cascade="none" not-found="ignore" />
+    <many-to-one name="Evaluator" class="lm.Comol.Modules.CallForPapers.Domain.Evaluation.CallEvaluator" column="IdCallEvaluator" foreign-key="IdCallEvaluator" cascade="none" not-found="ignore" />
+    
+    <many-to-one name="AdvCommission" class="lm.Comol.Modules.CallForPapers.Advanced.Domain.AdvCommission" column="IdAdvCommission" foreign-key="IdAdvCommission" cascade="none" not-found="ignore" />
+    <many-to-one name="AdvEvaluator" class="lm.Comol.Modules.CallForPapers.Advanced.Domain.AdvMember" column="IdAdvMember" foreign-key="IdAdvMember" cascade="none" not-found="ignore" />
+
+    <property name="Status" type="lm.Comol.Modules.CallForPapers.Domain.Evaluation.EvaluationStatus, lm.Comol.Modules.CallForPapers" column="Status" />
+    <property name="EvaluationStartedOn" type="DateTime" column="EvaluationStartedOn" />
+    <property name="EvaluatedOn" type="DateTime" column="EvaluatedOn" />
+    <!--<bag name="EvaluatedCriteria" table="CP_EvaluatedCriterion" lazy="true" fetch="subselect" cascade="all-delete-orphan">
+      <key column="IdSubmissionEvaluation" foreign-key="Id"/>
+      <one-to-many class="lm.Comol.Modules.CallForPapers.Domain.EvaluatedCriterion, lm.Comol.Modules.CallForPapers"/>
+    </bag>-->
+    <property name="AverageRating" type="Double" column="AverageRating" />
+    <property name="SumRating" type="Double" column="SumRating" />
+    <property name="BoolRating" type="Boolean" column="BoolRating" />
+    <property name="IsPassed" type="Boolean" column="IsPassed" />
+    
+    <property name="UseDss" />
+    
+    <property name="DssRanking" type="Double" column="DssRanking" />
+    <property name="DssIsFuzzy" column="DssIsFuzzy" />
+    <property name="DssValue" />
+    <property name="DssValueFuzzy" />
+
+
+    <property name="Evaluated" type="Boolean" column="Evaluated" />
+    <property name="Comment" type="String" column="Comment" />
+    <!--<many-to-one name="Community" class="lm.Comol.Core.DomainModel.Community" column="IdCommunity" foreign-key="IdCommunity" cascade="none"  />-->
+    <property name="CreatedOn" type="DateTime" column="_CreatedOn" />
+    <many-to-one name="CreatedBy" class="lm.Comol.Core.DomainModel.litePerson" column="_CreatedBy" foreign-key="_CreatedBy" cascade="none" />
+    <property name="ModifiedOn" type="DateTime" column="_ModifiedOn" />
+    <many-to-one name="ModifiedBy" class="lm.Comol.Core.DomainModel.litePerson" column="_ModifiedBy" foreign-key="_ModifiedBy" cascade="none" />
+    <property name="CreatorProxyIpAddress" type="String" column="_CreatedProxyIPaddress" />
+    <property name="CreatorIpAddress" type="String" column="_CreatedIPaddress" />
+    <property name="ModifiedProxyIpAddress" type="String" column="_ModifiedProxyIPaddress" />
+    <property name="ModifiedIpAddress" type="String" column="_ModifiedIPaddress" />
+    <property name="Deleted" type="lm.Comol.Core.DomainModel.BaseStatusDeleted,lm.Comol.Core.DomainModel" column="_Deleted" />
+  </class>
+</hibernate-mapping>

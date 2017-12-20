@@ -1,0 +1,468 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>TEST - Grafica UC Files</title>
+    <!-- STILI COMOL -->
+    <link rel="stylesheet" href="../../../Styles.css" type="text/css" media="screen"/>
+    <link rel="stylesheet" href="../../../Style/NewMenuDemo/css/d.css" type="text/css" media="screen"/>
+    <!-- /STILI COMOL -->
+
+    <!-- Stili usati (spostati nel foglio di stile Repository.Common.css)-->
+    <link rel="stylesheet" href="../Repository.Common.css" type="text/css" media="screen"/>
+    <!-- VERSIONE ESTESA -->
+    <!--<style type="text/css" media="all">
+        div.File_MainInfo
+        {   word-wrap: break-word; text-align:left;
+            border: 0px solid Black; padding: 0.5em; font-size: 13px; }
+        div.File_MainInfo div.File_SMInfo_Actions
+        {   display: block; height: 28px;
+            min-height: 28px; padding: 0.1em 0em 0.1em 0em; }
+        /*div.File_MainInfo div.File_SMInfo_Actions div.File_Download
+        {
+            padding:0.2em 0em 0em 0em;
+            display: inline-block;
+            font-size: smaller;
+        }*/
+        div.File_MainInfo ul.File_Actions
+        {   padding:0; margin:0; white-space:nowrap; list-style-type:none;
+            display: inline-block; text-align: right; float: right; }
+        div.File_MainInfo ul.File_Actions li { display:inline; padding:0px; margin:0px; border:0px; }
+        div.File_MainInfo div.File_Detail { padding:0px; margin:0px; border:0px; font-size:smaller;}
+        div.File_MainInfo img.File_Img_Action { padding:0px; margin:0px; border:0px; }
+        div.File_MainInfo a.File_ImgLnk { font-size:smaller; }
+        div.FileInfoSmall { width: 230px; max-width: 230px; }
+    </style>
+    -->
+    <!-- Versione normale -->
+    <!--<style type="text/css" media="all">
+         
+        div.File_MainInfo_Normal
+        {
+            word-wrap: break-word;
+            text-align:left;
+            border: 0px solid Black;
+            padding: 0.5em;
+            font-size: 13px;
+        }
+        div.File_MainInfo_Normal div.File_SMInfo_Actions
+        {
+            display: block;
+            height: 28px;
+            min-height: 28px;
+            padding: 0.1em 0em 0.1em 0em;
+        }
+        /*div.File_MainInfo div.File_SMInfo_Actions div.File_Download
+        {
+            padding:0.2em 0em 0em 0em;
+            display: inline-block;
+            font-size: smaller;
+        }*/
+        div.File_MainInfo_Normal ul.File_Actions
+        {
+            padding:0;
+            margin:0;
+            white-space:nowrap;
+            list-style-type:none;
+            display: inline-block;
+            text-align: right;
+            float: right;
+        }
+        div.File_MainInfo_Normal ul.File_Actions li
+        {
+            display:inline;
+            padding:0px;
+            margin:0px;
+            border:0px;
+        }
+        div.File_MainInfo_Normal div.File_Detail { padding:0px; margin:0px; border:0px; font-size:smaller;}
+        div.File_MainInfo_Normal img.File_Img_Action { padding:0px; margin:0px; border:0px; }
+        div.File_MainInfo_Normal a.File_ImgLnk { font-size:smaller; }
+        
+        div.File_MainInfo_Normal div.FileInfoSmall { width: 230px; max-width: 230px; }
+        
+        div.File_MainInfo_Normal div.File_NameExt { display: inline-block; width: 15em; max-width:15em;}
+        
+    </style>
+    -->
+    <!-- /* Tiny HTML CUT */ -->
+    <!--<style type="text/css" media="all">
+        div.File_MainInfo_TinyCut
+        {
+            text-align:left;
+            padding: 0em;
+            /*font-size: 13px;*/
+            border: 0px;
+            display: inline-block;
+        }
+        div.File_MainInfo_TinyCut img
+        {
+            width: 13px;
+            min-width: 13px;
+            height: 13px;
+            min-height: 13px;
+        }
+        div.File_MainInfo_TinyCut div.File_SMInfo_Actions { display: inline-block; padding: 0.1em 0em 0.1em 0em; }
+        div.File_MainInfo_TinyCut div.File_SMInfo_Actions div.File_Download
+        {
+            padding:0.2em 0em 0em 0em;
+            display: inline-block;
+            font-size: smaller;
+        }
+        div.File_MainInfo_TinyCut ul.File_Actions
+        {
+            float: inherit;
+            padding:0;
+            margin:0;
+            white-space:nowrap;
+            list-style-type:none;
+            display: inline-block;
+            text-align: right;
+        }
+        div.File_MainInfo_TinyCut ul.File_Actions li
+        {
+            display:inline;
+            padding:0px;
+            margin:0px;
+            border:0px;
+        }
+        div.File_MainInfo_TinyCut div.File_Detail { padding:0px; margin:0px; border:0px; }
+        div.File_MainInfo_TinyCut img.File_Img_Action { padding:0px; margin:0px; border:0px; }
+        div.File_MainInfo_TinyCut div.File_NameExt { display: inline-block; }
+    
+    </style>
+    -->
+    <!-- /* Tiny HTML HIDE*/ -->
+    <!--<style type="text/css" media="all">
+        div.File_MainInfo_TinyHide
+        {
+            text-align:left;
+            padding: 0em;
+            /*font-size: 13px;*/
+            border: 0px;
+            display: inline-block;
+        }
+        div.File_MainInfo_TinyHide img
+        {
+            width: 13px;
+            min-width: 13px;
+            height: 13px;
+            min-height: 13px;
+        }
+        div.File_MainInfo_TinyHide div.File_SMInfo_Actions { display: inline-block; padding: 0.1em 0em 0.1em 0em; }
+        /*div.File_MainInfo_TinyHide div.File_SMInfo_Actions div.File_Download
+        {
+            padding:0.2em 0em 0em 0em;
+            display: inline-block;
+            font-size: smaller;
+        }*/
+        span.DataField { font-weight:bold; }
+        div.File_MainInfo_TinyHide ul.File_Actions
+        {
+            float: inherit;
+            padding:0;
+            margin:0;
+            white-space:nowrap;
+            list-style-type:none;
+            display: inline-block;
+            text-align: right;
+        }
+        div.File_MainInfo_TinyHide ul.File_Actions li
+        {
+            display:inline;
+            padding:0px;
+            margin:0px;
+            border:0px;
+        }
+        div.File_MainInfo_TinyHide div.File_Detail { padding:0px; margin:0px; border:0px; }
+        div.File_MainInfo_TinyHide img.File_Img_Action { padding:0px; margin:0px; border:0px; }
+        div.File_MainInfo_TinyHide div.File_NameExt { display: inline-block; }
+        div.File_MainInfo_TinyHide div.File_Download { background-color:Red; display:none; }
+        
+        
+        
+        div.File_Download { font-size:smaller; }
+    </style>
+    -->
+    <!-- /Stili di base -->
+    <!-- Stili di Servizio -->
+    <!--<style type="text/css" media="all">
+        /* Stili utilizzati per allineare con grafica comol di alcune tabelle o impaginazione pagina di test*/
+        ul.DiarioLezione_FileList { padding:0px; margin:0px; border:0px; }
+        ul.DiarioLezione_FileList li { padding:0px; margin:0px; border:0px; }
+        
+        div.note { text-align: left; width: 100%; padding: 1em; }
+        ul.note { padding:1em; list-style-type:circle; }
+        ul.note li { display: list-item; }
+        hr { color:White; }
+    </style>
+    -->
+    <!-- /Stili di Servizio -->
+</head>
+<body>
+    <br /><hr /><br />
+    <a name="Top"></a>
+    <h1>Indice</h1>
+    <a href="#UC_Code">Codice controlli</a><br />
+    <a href="#Note">Note sulle versioni</a><br />
+    <a href="#File">Tabella file + tree (Con modifiche al servizio file)</a><br />
+    <a href="#FileInfo">Tabella file + tree (Con modifiche al servizio file) - Estesa</a><br />
+    <br /><hr /><br />
+
+    <h1><a name="UC_Code"></a>Codice Controlli</h1>
+    <br /><hr /><br />
+    <!-- Div ESTESO Scorm-->
+    <div class="File_MainInfo">
+        <div class="File_NameExt">
+            <a href="#" class="File_Name" title="Click to download">
+                <img src="../../../images/FileActions/playScorm.png" alt="Play pacchetto" class="File_Img_Action" title="Play pacchetto"/>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ut mi turpis, in laoreet nunc. Maecenas odio sem, laoreet in vulputate nec nullam sodales.zip
+            </a>
+        </div>
+        <div class="File_SMInfo_Actions">
+            <!--<div class="File_Download"><b>15</b> download</div>-->
+            <span class="Titolo_campoSmall">25 Mb</span> - <span class="Titolo_campoSmall">15</span> <span class="testo_campoSmall">download</span>
+            <ul class="File_Actions">
+                <li>
+                    (<a href="#" class="File_TextLnk"">Download</a>)
+                </li>
+                <li>
+                    <a href="#" class="File_ImgLnk"">
+                        <img src="../../../images/Grid/statistic.gif" alt="Statistiche" class="File_Img_Action" title="Statistiche"/>
+                        Statistiche
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="File_ImgLnk"">
+                        <img src="../../../images/FileActions/settings.png" alt="Impostazioni pacchetto" class="File_Img_Action" title="Impostazioni pacchetto"/>
+                        Impostazioni pacchetto
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="File_Detail ToolTip">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pellentesque, est quis ornare consequat, arcu magna tristique justo, ut fringilla odio justo non nunc. Phasellus malesuada, nisi vel molestie elementum, nisl eros porttitor tellus, ut porttitor ante est id nunc. Nullam interdum rutrum risus, non facilisis dolor commodo eu. Proin vulputate, dui eu tempor faucibus, tortor nibh molestie enim, vel molestie leo nunc nec odio. Nam at elementum nisl. Phasellus vulputate, erat ac lacinia tempor, dui mauris ornare quam, vel euismod neque urna sit amet ligula. Maecenas eu leo vitae velit pretium lobortis vel id risus. Cras molestie, enim sit amet placerat adipiscing, risus tellus mollis enim, quis ultrices nisl velit in sapien. Praesent sollicitudin lacinia urna in tincidunt. Proin luctus pretium massa sit amet egestas. Nam viverra porta augue. Aliquam bibendum felis at mi posuere in tempor libero tincidunt. Donec vulputate, sem ut blandit porta, lacus nunc euismod neque.
+        </div>
+    </div>
+    <!-- /Div ESTESO -->
+    <!-- Div ESTESO MMD-->
+    <div class="File_MainInfo">
+        <div class="File_NameExt">
+            <a href="#" class="File_Name" title="Click to download">
+                <img src="../../../images/FileActions/playScorm.png" alt="Play pacchetto" class="File_Img_Action" title="Play pacchetto"/>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ut mi turpis, in laoreet nunc. Maecenas odio sem, laoreet in vulputate nec nullam sodales.zip
+            </a>
+        </div>
+        <div class="File_SMInfo_Actions">
+            <!--<div class="File_Download"><b>15</b> download</div>-->
+            <span class="Titolo_campoSmall">25 Mb</span> - <span class="Titolo_campoSmall">15</span> <span class="testo_campoSmall">download</span>
+            <ul class="File_Actions">
+                <li>
+                    <a href="#" class="File_ImgLnk"">
+                        <img src="../../../images/FileActions/settings.png" alt="Impostazioni pacchetto" class="File_Img_Action" title="Impostazioni pacchetto"/>
+                        Impostazioni pacchetto
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="File_Detail ToolTip">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pellentesque, est quis ornare consequat, arcu magna tristique justo, ut fringilla odio justo non nunc. Phasellus malesuada, nisi vel molestie elementum, nisl eros porttitor tellus, ut porttitor ante est id nunc. Nullam interdum rutrum risus, non facilisis dolor commodo eu. Proin vulputate, dui eu tempor faucibus, tortor nibh molestie enim, vel molestie leo nunc nec odio. Nam at elementum nisl. Phasellus vulputate, erat ac lacinia tempor, dui mauris ornare quam, vel euismod neque urna sit amet ligula. Maecenas eu leo vitae velit pretium lobortis vel id risus. Cras molestie, enim sit amet placerat adipiscing, risus tellus mollis enim, quis ultrices nisl velit in sapien. Praesent sollicitudin lacinia urna in tincidunt. Proin luctus pretium massa sit amet egestas. Nam viverra porta augue. Aliquam bibendum felis at mi posuere in tempor libero tincidunt. Donec vulputate, sem ut blandit porta, lacus nunc euismod neque.
+        </div>
+    </div>
+    <!-- /Div ESTESO -->
+    
+    <!-- Div ESTESO File-->
+    <div class="File_MainInfo">
+        <div class="File_NameExt">
+            <a href="#" class="File_Name" title="Click to download">
+                <img src="../../../images/ico/no_G.gif" alt="Download" class="File_Img_Action" title="Play pacchetto"/>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ut mi turpis, in laoreet nunc. Maecenas odio sem, laoreet in vulputate nec nullam sodales.zip
+            </a>
+        </div>
+        <div class="File_SMInfo_Actions">
+            <!--<div class="File_Download"><b>15</b> download</div>-->
+            <span class="Titolo_campoSmall">25 Mb</span> - <span class="Titolo_campoSmall">15</span> <span class="testo_campoSmall">download</span>
+        </div>
+        <div class="File_Detail ToolTip">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pellentesque, est quis ornare consequat, arcu magna tristique justo, ut fringilla odio justo non nunc. Phasellus malesuada, nisi vel molestie elementum, nisl eros porttitor tellus, ut porttitor ante est id nunc. Nullam interdum rutrum risus, non facilisis dolor commodo eu. Proin vulputate, dui eu tempor faucibus, tortor nibh molestie enim, vel molestie leo nunc nec odio. Nam at elementum nisl. Phasellus vulputate, erat ac lacinia tempor, dui mauris ornare quam, vel euismod neque urna sit amet ligula. Maecenas eu leo vitae velit pretium lobortis vel id risus. Cras molestie, enim sit amet placerat adipiscing, risus tellus mollis enim, quis ultrices nisl velit in sapien. Praesent sollicitudin lacinia urna in tincidunt. Proin luctus pretium massa sit amet egestas. Nam viverra porta augue. Aliquam bibendum felis at mi posuere in tempor libero tincidunt. Donec vulputate, sem ut blandit porta, lacus nunc euismod neque.
+        </div>
+    </div>
+    <!-- /Div ESTESO -->
+
+    
+    <br /><hr /><br />
+
+    <!-- Normal version SCORM-->
+    <div class="File_MainInfo_Normal">
+        <div class="File_NameExt">
+            <a href="#" class="File_Name" title="(Click to download) Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ut mi turpis, in laoreet nunc. Maecenas odio sem, laoreet in vulputate nec nullam sodales.zip">
+                <img src="../../../images/FileActions/playScorm.png" alt="Play pacchetto" class="File_Img_Action" title="Play pacchetto"/>
+                Lorem ipsu...odales.zip
+            </a>
+            <br />
+            <div class="File_SMInfo_Actions File_Download">
+                    <span class="Titolo_campoSmall">25 Mb</span> - <span class="Titolo_campoSmall">15</span> <span class="testo_campoSmall">download</span>
+                    <span class="File_Detail ToolTip" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pellentesque, est quis ornare consequat, arcu magna tristique justo, ut fringilla odio justo non nunc. Phasellus malesuada, nisi vel molestie elementum, nisl eros porttitor tellus, ut porttitor ante est id nunc. Nullam interdum rutrum risus, non facilisis dolor commodo eu. Proin vulputate, dui eu tempor faucibus, tortor nibh molestie enim, vel molestie leo nunc nec odio. Nam at elementum nisl. Phasellus vulputate, erat ac lacinia tempor, dui mauris ornare quam, vel euismod neque urna sit amet ligula. Maecenas eu leo vitae velit pretium lobortis vel id risus. Cras molestie, enim sit amet placerat adipiscing, risus tellus mollis enim, quis ultrices nisl velit in sapien. Praesent sollicitudin lacinia urna in tincidunt. Proin luctus pretium massa sit amet egestas. Nam viverra porta augue. Aliquam bibendum felis at mi posuere in tempor libero tincidunt. Donec vulputate, sem ut blandit porta, lacus nunc euismod neque.">
+                        <a href="#">Description</a>
+                    </span>
+            </div>
+        </div>
+        
+        <ul class="File_Actions">
+            <li>
+                (<a href="#" class="File_textLnk">Download</a>)
+            </li>
+            <li>
+                <a href="#" class="File_ImgLnk"">
+                    <img src="../../../images/Grid/statistic.gif" alt="Statistiche" class="File_Img_Action" title="Statistiche"/>
+                </a>
+            </li>
+            <li>
+                <a href="#" class="File_ImgLnk"">
+                    <img src="../../../images/FileActions/settings.png" alt="Impostazioni pacchetto" class="File_Img_Action" title="Impostazioni pacchetto"/>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <!-- /Normal Version -->
+    <!-- Normal version MMD-->
+    <div class="File_MainInfo_Normal">
+        <div class="File_NameExt">
+            <a href="#" class="File_Name" title="(Click to download) Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ut mi turpis, in laoreet nunc. Maecenas odio sem, laoreet in vulputate nec nullam sodales.zip">
+                <img src="../../../images/FileActions/playScorm.png" alt="Play pacchetto" class="File_Img_Action" title="Play pacchetto"/>
+                Lorem ipsu...odales.zip
+            </a>
+            <br />
+            <div class="File_SMInfo_Actions File_Download">
+                    <span class="Titolo_campoSmall">25 Mb</span> - <span class="Titolo_campoSmall">15</span> <span class="testo_campoSmall">download</span>
+                    <span class="File_Detail ToolTip" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pellentesque, est quis ornare consequat, arcu magna tristique justo, ut fringilla odio justo non nunc. Phasellus malesuada, nisi vel molestie elementum, nisl eros porttitor tellus, ut porttitor ante est id nunc. Nullam interdum rutrum risus, non facilisis dolor commodo eu. Proin vulputate, dui eu tempor faucibus, tortor nibh molestie enim, vel molestie leo nunc nec odio. Nam at elementum nisl. Phasellus vulputate, erat ac lacinia tempor, dui mauris ornare quam, vel euismod neque urna sit amet ligula. Maecenas eu leo vitae velit pretium lobortis vel id risus. Cras molestie, enim sit amet placerat adipiscing, risus tellus mollis enim, quis ultrices nisl velit in sapien. Praesent sollicitudin lacinia urna in tincidunt. Proin luctus pretium massa sit amet egestas. Nam viverra porta augue. Aliquam bibendum felis at mi posuere in tempor libero tincidunt. Donec vulputate, sem ut blandit porta, lacus nunc euismod neque.">
+                        <a href="#">Description</a>
+                    </span>
+            </div>
+        </div>
+        
+        <ul class="File_Actions">
+            <li>
+                <a href="#" class="File_ImgLnk"">
+                    <img src="../../../images/FileActions/settings.png" alt="Impostazioni pacchetto" class="File_Img_Action" title="Impostazioni pacchetto"/>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <!-- /Normal Version -->
+    <!-- Normal version File-->
+    <div class="File_MainInfo_Normal">
+        <div class="File_NameExt">
+            <a href="#" class="File_Name" title="(Click to download) Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ut mi turpis, in laoreet nunc. Maecenas odio sem, laoreet in vulputate nec nullam sodales.zip">
+                <img src="../../../images/ico/no_G.gif" class="File_Ext" />
+                Lorem ipsu...odales.zip
+            </a>
+            <br />
+            <div class="File_SMInfo_Actions File_Download">
+                    <span class="Titolo_campoSmall">25 Mb</span> - <span class="Titolo_campoSmall">15</span> <span class="testo_campoSmall">download</span>
+                    <span class="File_Detail ToolTip" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pellentesque, est quis ornare consequat, arcu magna tristique justo, ut fringilla odio justo non nunc. Phasellus malesuada, nisi vel molestie elementum, nisl eros porttitor tellus, ut porttitor ante est id nunc. Nullam interdum rutrum risus, non facilisis dolor commodo eu. Proin vulputate, dui eu tempor faucibus, tortor nibh molestie enim, vel molestie leo nunc nec odio. Nam at elementum nisl. Phasellus vulputate, erat ac lacinia tempor, dui mauris ornare quam, vel euismod neque urna sit amet ligula. Maecenas eu leo vitae velit pretium lobortis vel id risus. Cras molestie, enim sit amet placerat adipiscing, risus tellus mollis enim, quis ultrices nisl velit in sapien. Praesent sollicitudin lacinia urna in tincidunt. Proin luctus pretium massa sit amet egestas. Nam viverra porta augue. Aliquam bibendum felis at mi posuere in tempor libero tincidunt. Donec vulputate, sem ut blandit porta, lacus nunc euismod neque.">
+                        <a href="#">Description</a>
+                    </span>
+            </div>
+        </div>
+    </div>
+    <!-- /Normal Version -->
+
+
+
+
+
+
+
+
+    
+    <br /><hr /><br />
+
+    <!-- Tiny version V1 - html CUT SCORM-->
+    <div class="File_MainInfo_TinyCut">
+        <div class="File_NameExt">
+            <a href="#" class="File_Name" title="(Click to download) Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ut mi turpis, in laoreet nunc. Maecenas odio sem, laoreet in vulputate nec nullam sodales.zip">
+                <img src="../../../images/FileActions/playScorm.png" alt="Play pacchetto" class="File_Img_Action" title="Play pacchetto"/>
+                Lorem ipsu...odales.zip
+            </a>
+        </div>
+        <div class="File_SMInfo_Actions">
+            <ul class="File_Actions">
+                <li>
+                    (<a href="#" class="File_TextLnk"">Download</a>)
+                </li>
+                <li>
+                    <a href="#" class="File_ImgLnk"">
+                        <img src="../../../images/Grid/statistic.gif" alt="Statistiche" class="File_Img_Action" title="Statistiche"/>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="File_ImgLnk"">
+                        <img src="../../../images/FileActions/settings.png" alt="Impostazioni pacchetto" class="File_Img_Action" title="Impostazioni pacchetto"/>
+                    </a>
+                </li>
+                <!-- TEST!!! -->
+                <li>
+                    <a href="#" title="(27Mb - 15 download)
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pellentesque, est quis ornare consequat, arcu magna tristique justo, ut fringilla odio justo non nunc. Phasellus malesuada, nisi vel molestie elementum, nisl eros porttitor tellus, ut porttitor ante est id nunc. Nullam interdum rutrum risus, non facilisis dolor commodo eu. Proin vulputate, dui eu tempor faucibus, tortor nibh molestie enim, vel molestie leo nunc nec odio. Nam at elementum nisl. Phasellus vulputate, erat ac lacinia tempor, dui mauris ornare quam, vel euismod neque urna sit amet ligula. Maecenas eu leo vitae velit pretium lobortis vel id risus. Cras molestie, enim sit amet placerat adipiscing, risus tellus mollis enim, quis ultrices nisl velit in sapien. Praesent sollicitudin lacinia urna in tincidunt. Proin luctus pretium massa sit amet egestas. Nam viverra porta augue. Aliquam bibendum felis at mi posuere in tempor libero tincidunt. Donec vulputate, sem ut blandit porta, lacus nunc euismod neque.">
+                        Info
+                    </a>
+                </li>
+            </ul>
+        </div>
+        
+    </div>
+    <br />
+    <!-- /Tiny version V1 -->
+    <!-- Tiny version V1 - html CUT MMD-->
+    <div class="File_MainInfo_TinyCut">
+        <div class="File_NameExt">
+            <a href="#" class="File_Name" title="(Click to download) Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ut mi turpis, in laoreet nunc. Maecenas odio sem, laoreet in vulputate nec nullam sodales.zip">
+                <img src="../../../images/FileActions/playScorm.png" alt="Play pacchetto" class="File_Img_Action" title="Play pacchetto"/>
+                Lorem ipsu...odales.zip
+            </a>
+        </div>
+        <div class="File_SMInfo_Actions">
+            <ul class="File_Actions">
+                <li>
+                    <a href="#" class="File_ImgLnk"">
+                        <img src="../../../images/FileActions/settings.png" alt="Impostazioni pacchetto" class="File_Img_Action" title="Impostazioni pacchetto"/>
+                    </a>
+                </li>
+                <!-- TEST!!! -->
+                <li>
+                    <a href="#" title="(27Mb - 15 download)
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pellentesque, est quis ornare consequat, arcu magna tristique justo, ut fringilla odio justo non nunc. Phasellus malesuada, nisi vel molestie elementum, nisl eros porttitor tellus, ut porttitor ante est id nunc. Nullam interdum rutrum risus, non facilisis dolor commodo eu. Proin vulputate, dui eu tempor faucibus, tortor nibh molestie enim, vel molestie leo nunc nec odio. Nam at elementum nisl. Phasellus vulputate, erat ac lacinia tempor, dui mauris ornare quam, vel euismod neque urna sit amet ligula. Maecenas eu leo vitae velit pretium lobortis vel id risus. Cras molestie, enim sit amet placerat adipiscing, risus tellus mollis enim, quis ultrices nisl velit in sapien. Praesent sollicitudin lacinia urna in tincidunt. Proin luctus pretium massa sit amet egestas. Nam viverra porta augue. Aliquam bibendum felis at mi posuere in tempor libero tincidunt. Donec vulputate, sem ut blandit porta, lacus nunc euismod neque.">
+                        Info
+                    </a>
+                </li>
+            </ul>
+        </div>
+        
+    </div>
+    <br />
+    <!-- /Tiny version V1 -->
+    <!-- Tiny version V1 - html CUT FILE -->
+    <div class="File_MainInfo_TinyCut">
+        <div class="File_NameExt">
+            <a href="#" class="File_Name" title="(Click to download) Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ut mi turpis, in laoreet nunc. Maecenas odio sem, laoreet in vulputate nec nullam sodales.zip">
+                <img src="../../../images/ico/no_G.gif" alt="Play pacchetto" class="File_Img_Action" title="Play pacchetto"/>
+                Lorem ipsu...odales.zip
+            </a>
+        </div>
+        <div class="File_SMInfo_Actions">
+            <ul class="File_Actions">
+                <li>
+                    <a href="#" title="(27Mb - 15 download)
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pellentesque, est quis ornare consequat, arcu magna tristique justo, ut fringilla odio justo non nunc. Phasellus malesuada, nisi vel molestie elementum, nisl eros porttitor tellus, ut porttitor ante est id nunc. Nullam interdum rutrum risus, non facilisis dolor commodo eu. Proin vulputate, dui eu tempor faucibus, tortor nibh molestie enim, vel molestie leo nunc nec odio. Nam at elementum nisl. Phasellus vulputate, erat ac lacinia tempor, dui mauris ornare quam, vel euismod neque urna sit amet ligula. Maecenas eu leo vitae velit pretium lobortis vel id risus. Cras molestie, enim sit amet placerat adipiscing, risus tellus mollis enim, quis ultrices nisl velit in sapien. Praesent sollicitudin lacinia urna in tincidunt. Proin luctus pretium massa sit amet egestas. Nam viverra porta augue. Aliquam bibendum felis at mi posuere in tempor libero tincidunt. Donec vulputate, sem ut blandit porta, lacus nunc euismod neque.">
+                        Info
+                    </a>
+                </li>
+            </ul>
+        </div>
+        
+    </div>
+    <!-- /Tiny version V1 -->
+    <br /><hr /><br />
+    
+</body>
+</html>

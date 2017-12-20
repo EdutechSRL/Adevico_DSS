@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping
+    xmlns="urn:nhibernate-mapping-2.2"
+    assembly="lm.Comol.Core.BaseModules"
+    namespace="lm.Comol.Core.BaseModules.Tickets.Domain">
+
+    <class name="liteLK_UserCategory" table="TK_LK_UserCategory" >
+
+        <id name="Id" column="Id" type="Int64">
+            <generator class="native"/>
+        </id>
+
+        <property name="IdUser" type="Int64" column="IdUser" />
+        <property name="IdCategory" type="Int64" column="IdCategory" />
+        <property name="IsManager" type="Boolean" column="IsManager" />
+
+    </class>
+
+</hibernate-mapping>

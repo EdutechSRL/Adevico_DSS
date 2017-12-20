@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="lm.Comol.Core.DomainModel" namespace="lm.Comol.Core.Dashboard.Domain">
+	<class name="litePageSettings" table="DB_PageSettings" lazy="false" optimistic-lock ="none">
+    <id name="Id" column="Id" type="Int64" unsaved-value="0">
+      <generator class="native"/>
+    </id>
+    <version name="TimeStamp" generated="always" unsaved-value="null" type="BinaryBlob">
+      <column name="_Timestamp" not-null="false" sql-type="timestamp"/>
+    </version>
+    <property name="AutoUpdateLayout" type="Boolean" column="AutoUpdateLayout"/>
+    <property name="MaxItems" type="Int32" column="MaxItems"/>
+    <property name="MaxMoreItems" type="Int32" column="MaxMoreItems"/>
+    <property name="MiniTileDisplayItems" type="Int32" column="MiniTileDisplayItems"/>
+    <property name="Type" type="lm.Comol.Core.Dashboard.Domain.DashboardViewType,lm.Comol.Core.DomainModel" column="Type" />
+    <property name="PlainLayout" type="lm.Comol.Core.Dashboard.Domain.PlainLayout,lm.Comol.Core.DomainModel" column="PlainLayout" />
+    <property name="TileLayout" type="lm.Comol.Core.Dashboard.Domain.PlainLayout,lm.Comol.Core.DomainModel" column="TileLayout" />
+    <property name="Noticeboard" type="lm.Comol.Core.Dashboard.Domain.DisplayNoticeboard,lm.Comol.Core.DomainModel" column="Noticeboard" />
+    <property name="DisplayAsTile" type="Boolean" column="DisplayAsTile"/>
+    <property name="More" type="lm.Comol.Core.Dashboard.Domain.DisplayMoreItems,lm.Comol.Core.DomainModel" column="More" />
+    <property name="TileRedirectOn" type="lm.Comol.Core.Dashboard.Domain.DashboardViewType,lm.Comol.Core.DomainModel" column="TileRedirectOn" />
+    <property name="ExpandOrganizationList" type="Boolean" column="ExpandOrganizationList"/>
+    <component name="Range" class="lm.Comol.Core.Dashboard.Domain.RangeSettings">
+      <property name="LowerLimit" type="Int32" column="rMinItems" />
+      <property name="HigherLimit" type="Int32" column="rMaxItems" />
+      <property name="DisplayItems" type="Int32" column="rDisplay" />
+    </component>
+    <property name="Deleted" type="lm.Comol.Core.DomainModel.BaseStatusDeleted,lm.Comol.Core.DomainModel" column="_Deleted" />
+  </class>
+</hibernate-mapping>

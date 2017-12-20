@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0C1E9A80-CD05-4DF6-9CAB-58DC27850974}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>lm.Comol.MitLibrary</RootNamespace>
+    <AssemblyName>lm.Comol.MitLibrary</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="Adevico\DSS\FuzzyMCDMLibrary.dll" />
+    <Content Include="Adevico\DSS\FuzzyMCDMLibrary.resources.dll" />
+    <Content Include="Adevico\DSS\LM.MathLibrary.dll" />
+    <Content Include="Adevico\MIT\2_DynamicLibrary.dll" />
+    <Content Include="Adevico\MIT\2_DynamicLibrary.pdb" />
+    <Content Include="Adevico\MIT\2_DynamicLibrary.xml" />
+    <Content Include="Adevico\MIT\COL_BusinessLogic_v2.0.dll" />
+    <Content Include="Adevico\MIT\COL_BusinessLogic_v2.0.pdb" />
+    <Content Include="Adevico\MIT\COL_BusinessLogic_v2.0.xml" />
+    <Content Include="Adevico\MIT\COL_DataLayer.dll" />
+    <Content Include="Adevico\MIT\COL_DataLayer.pdb" />
+    <Content Include="Adevico\MIT\COL_DataLayer.xml" />
+    <Content Include="Adevico\MIT\COL_Questionario.dll" />
+    <Content Include="Adevico\MIT\COL_Questionario.pdb" />
+    <Content Include="Adevico\MIT\COL_Questionario.xml" />
+    <Content Include="Adevico\MIT\COL_Utility.dll" />
+    <Content Include="Adevico\MIT\COL_Utility.pdb" />
+    <Content Include="Adevico\MIT\COL_Utility.xml" />
+    <Content Include="Adevico\MIT\COL_Wiki.dll" />
+    <Content Include="Adevico\MIT\COL_Wiki.pdb" />
+    <Content Include="Adevico\MIT\COL_Wiki.xml" />
+    <Content Include="Adevico\MIT\COMOL_Entity.dll" />
+    <Content Include="Adevico\MIT\COMOL_Entity.pdb" />
+    <Content Include="Adevico\MIT\COMOL_Entity.xml" />
+    <Content Include="Adevico\MIT\lm.ActionDataContract.dll" />
+    <Content Include="Adevico\MIT\lm.ActionDataContract.pdb" />
+    <Content Include="Adevico\MIT\lm.ActionDataContract.xml" />
+    <Content Include="Adevico\MIT\lm.Comol.Core.Data.dll" />
+    <Content Include="Adevico\MIT\lm.Comol.Core.Data.pdb" />
+    <Content Include="Adevico\MIT\lm.Comol.Core.Data.xml" />
+    <Content Include="Adevico\MIT\lm.Comol.Core.Msmq.Services.Mail.DataContract.dll" />
+    <Content Include="Adevico\MIT\lm.Comol.Core.Msmq.Services.Mail.DataContract.pdb" />
+    <Content Include="Adevico\MIT\lm.Comol.Core.Statistiche.dll" />
+    <Content Include="Adevico\MIT\lm.Comol.Core.Statistiche.pdb" />
+    <Content Include="Adevico\MIT\lm.Comol.Core.Statistiche.xml" />
+    <Content Include="Adevico\MIT\lm.Comol.Modules.Base.dll" />
+    <Content Include="Adevico\MIT\lm.Comol.Modules.Base.pdb" />
+    <Content Include="Adevico\MIT\lm.Comol.Modules.Base.xml" />
+    <Content Include="Adevico\MIT\lm.Comol.Modules.Chat.dll" />
+    <Content Include="Adevico\MIT\lm.Comol.Modules.Chat.pdb" />
+    <Content Include="Adevico\MIT\lm.Comol.Modules.Chat.xml" />
+    <Content Include="Adevico\MIT\lm.Comol.Modules.EduPath.dll" />
+    <Content Include="Adevico\MIT\lm.Comol.Modules.EduPath.pdb" />
+    <Content Include="Adevico\MIT\lm.Comol.Modules.ScormStat.dll" />
+    <Content Include="Adevico\MIT\lm.Comol.Modules.ScormStat.pdb" />
+    <Content Include="Adevico\MIT\lm.Comol.Modules.Standard.dll" />
+    <Content Include="Adevico\MIT\lm.Comol.Modules.Standard.pdb" />
+    <Content Include="Adevico\MIT\lm.Comol.Modules.TaskList.dll" />
+    <Content Include="Adevico\MIT\lm.Comol.Modules.TaskList.pdb" />
+    <Content Include="Adevico\MIT\lm.Comol.Modules.UserActions.dll" />
+    <Content Include="Adevico\MIT\lm.Comol.Modules.UserActions.pdb" />
+    <Content Include="Adevico\MIT\lm.Comol.Modules.UserActions.xml" />
+    <Content Include="Adevico\MIT\lm.Comol.UI.Presentation.dll" />
+    <Content Include="Adevico\MIT\lm.Comol.UI.Presentation.pdb" />
+    <Content Include="Adevico\MIT\lm.Comol.UI.Presentation.xml" />
+    <Content Include="Adevico\MIT\lm.Modules.NotificationSystem.dll" />
+    <Content Include="Adevico\MIT\lm.Modules.NotificationSystem.pdb" />
+    <Content Include="Adevico\MIT\lm.Modules.NotificationSystem.xml" />
+    <Content Include="Adevico\MIT\lm.Notification.DataContract.dll" />
+    <Content Include="Adevico\MIT\lm.Notification.DataContract.pdb" />
+    <Content Include="External\Antlr3.Runtime.dll" />
+    <Content Include="External\Castle.Core.dll" />
+    <Content Include="External\Castle.Core.xml" />
+    <Content Include="External\Castle.DynamicProxy2.dll" />
+    <Content Include="External\ICSharpCode.SharpZipLib.dll" />
+    <Content Include="External\Iesi.Collections.dll" />
+    <Content Include="External\Ionic.Utils.Zip.dll" />
+    <Content Include="External\itextsharp.dll" />
+    <Content Include="External\itextsharp5.dll" />
+    <Content Include="External\log4net.dll" />
+    <Content Include="External\log4net.xml" />
+    <Content Include="External\NHibernate.ByteCode.Castle.dll" />
+    <Content Include="External\NHibernate.dll" />
+    <Content Include="External\NHibernate.Linq.dll" />
+    <Content Include="External\NHibernate.SessionUtility.dll" />
+    <Content Include="External\Telerik\README.txt" />
+    <Content Include="lm.Comol.Modules.ScormStat.dll" />
+    <Content Include="lm.Comol.Modules.ScormStat.pdb" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Adevico\MIT\COL_BusinessLogic_v2.0.dll.config" />
+    <None Include="Adevico\MIT\COL_DataLayer.dll.config" />
+    <None Include="Adevico\MIT\COL_Questionario.dll.config" />
+    <None Include="Adevico\MIT\COL_Utility.dll.config" />
+    <None Include="Adevico\MIT\COL_Wiki.dll.config" />
+    <None Include="Adevico\MIT\lm.Comol.Core.Statistiche.dll.config" />
+    <None Include="Adevico\MIT\lm.Comol.Modules.Base.dll.config" />
+    <None Include="Adevico\MIT\lm.Comol.Modules.Chat.dll.config" />
+    <None Include="Adevico\MIT\lm.Comol.Modules.EduPath.dll.config" />
+    <None Include="Adevico\MIT\lm.Comol.Modules.Standard.dll.config" />
+    <None Include="Adevico\MIT\lm.Comol.Modules.TaskList.dll.config" />
+    <None Include="Adevico\MIT\lm.Comol.Modules.UserActions.dll.config" />
+    <None Include="Adevico\MIT\lm.Comol.UI.Presentation.dll.config" />
+    <None Include="Adevico\MIT\lm.Modules.NotificationSystem.dll.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

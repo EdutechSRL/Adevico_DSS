@@ -1,0 +1,219 @@
+﻿
+<html>
+<head>
+    <title></title>
+
+    <!-- Stili caricati da MASTER -->
+    <link href="../../Generics/css/_Styles.css" type="text/css" rel="stylesheet" />
+
+    <!-- Stili per wizard -->
+    <link href="./css/Wizard.css" type="text/css" rel="stylesheet" />
+
+
+    <!-- Stili di test -->
+    <style type="text/css">
+        div#Wizard div.TopDescription { border: 0px; border-bottom: 1px solid black; }
+        div#Wizard div.StepContent div.StepData { border: 0px; border-radius: 0px; }
+        
+        div#Wizard div.StepContent { border: 1px solid black; border-radius: 0 0 6px 6px; }
+        div#Wizard div.TopDescription h1 { padding-top: 0.5em; }
+        
+        /* Bottoni servizio - Top del content */
+        div.top_button {   width: 100%; text-align: right; padding: 0.5em; }
+        
+    
+        /*div.StepContent .TopDescription div */
+        div.StepContent .TopDescription { padding: 0px; vertical-align: top;}
+        
+        div.StepContent .TopDescription .TopImg,
+        div.StepContent .TopDescription .TopText,
+        div.StepContent .TopDescription .TopButton { display: inline-block; vertical-align: top;}
+        
+        div.StepContent .TopDescription .TopImg { width: 5%; padding: 1em 0em 0em 1em;}
+        div.StepContent .TopDescription .TopText { width: 65%; }
+        div.StepContent .TopDescription .TopButton { width: 25%; padding-top: 0.5em; }
+        
+        div.StepContent .TopDescription .TopButton .StepButton { }
+        div.StepContent .TopDescription .TopButton .ExportButton { padding-top: 0.5em; text-align: right; padding-bottom: 0.5em;}
+        div.StepContent .TopDescription .TopButton .ExportButton * { vertical-align: middle; }
+        
+        div.StepContent .BottomDescription { padding: 0.5em 1em 0.5em 1em; background-color: #E6E9E9; border-top: 1px solid black; border-radius: 0 0 6px 6px;}
+        
+        .ico_scorm_user_m {
+            background-image: url("../../images/ScormStat/icona_users_sm.png");
+            height: 50px; width: 50px;
+        }
+    </style>
+
+    <!-- Stili importati da SKIN che andrebbero in "common" -->
+    <style type="text/css">
+        
+    #content div.DIV_MP_Content a.Link_Menu {
+	    display: inline-block !important;
+	    line-height: 14px !important;
+	    height: 14px !important;
+	    margin: 2px !important;
+	    font-size: 11px !important;
+	    padding: 3px 4px !important;
+	    color: #555;
+	    text-shadow: 1px 1px 0px #ddd;
+	    border: 1px solid #aaa !important;
+	    background-color: #ddd;
+	    -moz-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+	    -webkit-box-shadow: 1px 1px 1px  rgba(0, 0, 0, 0.3);
+	    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+	    -moz-border-radius-topleft: 3px;
+	    -moz-border-radius-topright: 3px;
+	    -moz-border-radius-bottomright: 3px;
+	    -moz-border-radius-bottomleft: 3px;
+	    -webkit-border-radius: 3px 3px 3px 3px;
+	    border-radius: 3px 3px 3px 3px;
+    }
+    
+    #content div.DIV_MP_Content a.Link_Menu:hover {
+	    outline: none;
+	    color: #565656;
+	    text-shadow: 1px 1px 0px #ddd;
+	    background-color: #bcbcbc;
+    }
+
+    #content div.DIV_MP_Content a.Link_Menu:active {
+	    outline: none;
+	    border: 1px solid #777 !important;
+	    -moz-box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.7);
+	    -webkit-box-shadow: inset 0 0 32px rgba(0, 0, 0, 0.7);
+	    box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.7);
+    }
+    
+    
+    </style>
+
+
+
+    <!-- Stili specifici derivati dal servizio (esempio) -->
+    <style type="text/css">
+                
+        span.Fieldrow {
+            text-align: left;
+            padding: 1em;
+        }
+
+        div#Wizard div.StepContent div.StepData span.Fieldrow .Titolo_campo
+        {
+            width: 180px;
+        }
+        
+        div#Wizard div.StepContent div.StepData span.Fieldrow .rbl_MultiElement
+        {
+            display: inline-block;
+            width: 656px;
+        }
+        
+    </style>
+
+    <!-- Altri stili caricati da MASTER (skin) -->
+</head>
+<body>
+    <!--  Altre direttive pagina  -->
+    <div id="header">
+        <div id="nav-main">
+            <div class="page-width">
+                <ul id="top">
+                    <li>Elementi menu</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="page-box">
+        <div id="container" class="page-width">
+            <div id="serviceinfo" class="RigaTitolo serviceinfo">
+                <span id="LBtitolo">Titolo servizio</span>
+            </div>
+            <div id="content">
+            <div class="data_content">
+            <div class="DIV_MP_Content">
+            <div class="middle-content">
+            
+            <div class="button">
+                <a href="#" class="Link_Menu">Service link</a>
+            </div>
+
+            <!--Direttive Wizard-->
+            <div id="Wizard">
+                <div class="wiz_header">
+                    <div class="wiz_top_nav">
+                    <div class="stepButton">
+                        <!-- Bottoni di navigazione Wizard-->
+                        <input type="submit" title="Vai all'inizio" value="All'inizio" />
+                        <input type="submit" title="Vai al passo precedente" value="< Indietro" />
+                        <a href="#" class="Link_Menu">#Next ></a>
+                    </div></div>
+                    <div class="wiz_top_info clearfix">
+                        <div class="wiz_top_desc clearfix">
+                            <img src="../../Modules/ScormStat/img/icona_user.jpg" />
+                            <h2>
+                                <span>Titolo passo</span>
+                            </h2>
+                            
+                            <span class="Testo_campo">Descrizione passo</span>
+                            <span class="Testo_campo errore">Errore passo...</span>
+                        </div>
+                        <div class="wiz_export">
+                            <a class="img_link ico_export_xls_l" href="#"></a>
+                            <a class="img_link ico_export_pdf_l" href="#"></a>
+                            <a class="img_link ico_export_rtf_l" href="#"></a>
+                        </div>
+                    </div>    
+                </div>
+                <div class="wiz_content">
+                    <div class="StepData IW_Step1">
+                        <span class="Fieldrow"> <!-- Riga dati -->
+                            <span class="Titolo_campo">Etichetta campo</span>
+                            <span class="Testo_campo">Testo campo</span>
+                        </span>
+                        <span class="Fieldrow"> <!-- Riga dati -->
+                            <span class="Titolo_campo">Etichetta campo</span>
+                            <span class="Testo_campo">Testo campo</span>
+                        </span>
+
+                        <span class="Fieldrow">
+                            <label class="Titolo_campo">Scegli il profilo:</label>
+                                <span class="Testo_campo rbl_MultiElement"> <!-- rbl_MultiElement: assegnata alle radiobutton per layout a colonne, larghezza fissa -->
+                                    <input id="Radio0" type="radio" value="19" name="RBL_Name"/>
+                                    <label for="Radio0">First element</label>
+                                    <input id="Radio1" type="radio" value="19" name="RBL_Name"/>
+                                    <label for="Radio1">Second item</label>
+                                    <input id="Radio2" type="radio" value="19" name="RBL_Name"/>
+                                    <label for="Radio2">Third component of list</label>
+                                    <input id="Radio3" type="radio" value="19" name="RBL_Name"/>
+                                    <label for="Radio3">Other...</label>
+                                    <input id="Radio4" type="radio" value="19" name="RBL_Name"/>
+                                    <label for="Radio4">First element</label>
+                                    <input id="Radio5" type="radio" value="19" name="RBL_Name"/>
+                                    <label for="Radio5">Second item</label>
+                                    <input id="Radio6" type="radio" value="19" name="RBL_Name"/>
+                                    <label for="Radio6">Third component of list</label>
+                                    <input id="Radio7" type="radio" value="19" name="RBL_Name"/>
+                                    <label for="Radio7">Other...</label>
+                                </span>
+                        </span>
+                    </div>
+                </div>
+                <div class="wiz_bot_nav clearfix">
+                    <div class="stepButton">
+                        <!-- Bottoni di navigazione Wizard-->
+                        <input type="submit" title="Vai all'inizio" value="All'inizio" />
+                        <input type="submit" title="Vai al passo precedente" value="< Indietro" />
+                        <a href="#" class="Link_Menu">#Next ></a>
+                    </div>
+                </div>    
+            </div>
+            
+            </div>
+            </div>
+            </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

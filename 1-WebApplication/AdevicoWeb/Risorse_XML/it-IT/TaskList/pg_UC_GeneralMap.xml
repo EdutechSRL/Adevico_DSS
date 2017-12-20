@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--ita-->
+<Resource xmlns="urn:ComolTranslation">
+
+  <item name="serviceTitle">Gestione progetti</item>
+  <item name="TaskTitle">TASK</item>
+  <item name="DeadlineTitle">DATA LIMITE</item>
+  <item name="StartDateTitle">DATA D'INIZIO</item>
+  <item name="EndDateTitle">DATA DI FINE</item>
+  <item name="CompletenessTitle">COMPLETAMENTO</item>
+  <item name="StatusTitle" disambiguation="S=status/condizione (un solo carattere)">S</item>
+  <item name="PriorityTitle" disambiguation="P=priorità di un task (un solo carattere)">P</item>
+  <item name="DeleteTitle" disambiguation="C=cancella (un solo carattere)">C</item>
+  <item name="ModifyTitle" disambiguation="M=modifica (un solo carattere)">M</item>
+
+  <item name="HYPreturnToTaskList.text">Pagina Principale</item>
+  <item name="HYPreturnToTaskList.status">Pagina Principale</item>
+  <item name="HYPreturnToTaskList.ToolTip">Pagina Principale</item>
+  <item name="HYPtaskMap.text">Mappa Generale</item>
+  <item name="HYPtaskMap.status">Mappa Generale</item>
+  <item name="HYPtaskMap.ToolTip">Mappa Generale</item>
+  <item name="HYPdetail.text">Dettagli del Task</item>
+  <item name="HYPdetail.status">Dettagli del Task</item>
+  <item name="HYPdetail.ToolTip">Dettagli del Task</item>
+  <item name="LBwbsLevel.text">Livello della WBS</item>
+  <item name="LBlegendaVD.text">Task cancellato</item>
+  <item name="LNBup.text">Su</item>
+  <item name="LNBup.ToolTip">Muovi in alto</item>
+  <item name="LNBdown.text">Giù</item>
+  <item name="LNBdown.ToolTip">Muovi in basso</item>
+
+  <item name="TaskStatus.completed">Completato</item>
+  <item name="TaskStatus.notStarted">Non iniziato</item>
+  <item name="TaskStatus.pending">In Attesa</item>
+  <item name="TaskStatus.suspended">Sospeso</item>
+  <item name="TaskStatus.started">Iniziato</item>
+  <item name="TaskPriority.critical" disambiguation="relativo a Priorita'">Critica</item>
+  <item name="TaskPriority.high" disambiguation="relativo a Priorita'">Alta</item>
+  <item name="TaskPriority.normal" disambiguation="relativo a Priorita'">Normale</item>
+  <item name="TaskPriority.low" disambiguation="relativo a Priorita'">Bassa</item>
+
+  <item name="HYPswichTask.text">Scambia la posizione dei Tasks nella WBS</item>
+  <item name="HYPswichTask.status">Scambia la posizione dei Tasks nella WBS</item>
+  <item name="HYPswichTask.ToolTip">Scambia la posizione dei Tasks nella WBS</item>
+
+  <item name="HYPaddSubTask.text">Aggiungi Tasks Figli</item>
+  <item name="HYPaddSubTask.status">Aggiungi Tasks Figli</item>
+  <item name="HYPaddSubTask.ToolTip">Aggiungi Tasks Figli</item>
+
+  <item name="HYPgantt.text">Diagramma di Gantt</item>
+  <item name="HYPgantt.status">Diagramma di Gantt</item>
+  <item name="HYPgantt.ToolTip">Diagramma di Gantt</item>
+  
+  <item name="HYPmodify.ToolTip" disambiguation="verbo">Modifica</item> 
+  <item name="HYPmodify.status" disambiguation="verbo">Modifica</item>
+  <item name="HYPmodify.text" disambiguation="verbo">Modifica</item>
+
+  <item name="LNBdelete.text">Cancella</item>
+  <item name="LNBdelete.ToolTip">Cancellazione definitiva</item>
+  <item name="LNBdelete.ConfirmText">Sei sicuro di voler cancellare DEFINITIVAMENTE il attivita' selezionato e le relative sottoattivita' ?</item>
+  <item name="LNBvirtualDelete.text">Cancellazione virtuale</item>
+  <item name="LNBvirtualDelete.ToolTip">Cancellazione virtuale</item>
+  <item name="LNBvirtualDelete.ConfirmText">Sei sicuro di voler cancellare il attivita' selezionato e le relative sottoattivita' ?</item>
+  <item name="LNBundelete.text">Ripristina</item>
+  <item name="LNBundelete.ToolTip">Ripristina</item>
+
+  <item name="LBTselectTask.text">Seleziona</item>
+  <item name="LBTselectTask.ToolTip">Seleziona</item>
+  
+
+  <item name="LThideStartDate.Text" html="true" description="tradurre solo: 'Mostra/Nascondi la Data d'Inizio' ">
+    &lt;a href="" name="hide_startDate" class="hideColumn Link_Menu"&gt;Mostra/Nascondi la Data d'Inizio&lt;/a&gt;
+  </item>
+  <item name="LThideEndDate.Text" html="true" description="tradurre solo: 'Mostra/Nascondi la Data di Fine' ">
+    &lt;a href="" name="hide_endDate" class="hideColumn Link_Menu"&gt;Mostra/Nascondi la Data di Fine&lt;/a&gt;
+  </item>
+  <item name="LThideDeletedTask.Text" html="true" description="tradurre solo: 'Mostra/Nascondi i Task Cancellati' ">
+    &lt;a href="" class="hideDeleted Link_Menu" &gt;Mostra/Nascondi i Task Cancellati&lt;/a&gt;
+  </item>
+  <item name="Return">Ritorna</item>
+  <item name="Error.ParentDeleted">Attivita' padre cancellata, impossibile ripristinare l'attivita'!!!</item>
+
+</Resource>

@@ -1,0 +1,911 @@
+/* ELEMENTI GLOBALI */
+
+body.internal_body
+{   BACKGROUND-COLOR: white; FONT-SIZE: 12px; FONT-WEIGHT: normal;
+    LETTER-SPACING: normal; TEXT-TRANSFORM: none; WORD-SPACING: normal;
+    border: 0; }
+
+IMG { border: 0px; }
+H1, H2, H3, H4, H5, DT, H6
+{	font-size:	2em; font-weight: 700; font-style: normal;
+	text-decoration: none; word-spacing: normal;
+	letter-spacing: normal; text-transform: none; }	
+H2 { font-size: 1.75em; }
+H3 { font-size: 1.58em; font-weight: 500; }
+
+div.temp {
+	background-color: yellow;
+}
+
+H4 { font-size: 12px; font-weight: 500; }                   /*testo descrittivo delle form */
+H5, DT { font-size: 12px; color: Blue; text-align:center; } /*stile del testo informativo della homePage */
+H6	{ font-size: 12px; text-align:center; }                 /*stile del testo nel footer */
+
+TFOOT, THEAD
+{	font-size: 1em; word-spacing: normal; letter-spacing: normal; text-transform: none; }
+TH
+{	vertical-align:	baseline; font-size: 1em; font-weight: bold;
+	word-spacing: normal; letter-spacing: normal; text-transform: none; }
+
+SMALL { font-size: .7em; }
+BIG	{ font-size: 1.17em; }	
+
+UL LI { list-style-type: square; }
+UL LI LI { list-style-type: disc; }
+UL LI LI LI	{ list-style-type: circle; }	
+OL LI { list-style-type: decimal; }	
+OL OL LI { list-style-type: lower-alpha; }
+OL OL OL LI { list-style-type: lower-roman; }
+
+TD { font-size: 12px; vertical-align: middle; }
+TD.top { font-size: 12px; vertical-align: top; }
+TD.bottom { font-size: 12px; vertical-align: bottom; }
+
+
+/* SERVIZI */
+
+
+/* \Comunita\UC_WizardComunita\ */
+/* UC_Fase1DatiComunita.ascx */
+.StatusAttivo_Titolo_campoSmall { font-size: 11px; font-weight: bold; color: #000001; }
+.StatusAttivo_Testo_CampoSmall { font-size: 11px; font-weight: normal; color: black; }
+TR.StatusAttivo_Riga { font-size: 11px; font-weight: normal; color: black; }
+TR.StatusBloccato_Riga { font-size: 11px; background: darkslategray; color: white; }
+.StatusBloccato_Titolo_campoSmall { font-size: 11px; font-weight: bold; color: white; }
+.StatusBloccato_Testo_CampoSmall { font-size: 11px; font-weight: normal; color: white; }
+TR.StatusArchiviata_Riga { font-size: 11px; background: silver; color: #000001; text-align: left; }
+.StatusArchiviata_Titolo_campoSmall { font-size: 11px; font-weight: bold; color: #000001; }
+.StatusArchiviata_Testo_CampoSmall { font-size: 11px; font-weight: normal; color: #000001; }
+/* \UC_Fase3VisualizzaComunitaPadri.ascx */
+.Pulsante_AzioneGriglia
+{   font-weight: bold; font-size: 10px; margin: 1px;
+	color: black; background-color: #f7f7f7; }
+
+/* \Generici\UC\UC_DatiCover.ascx */
+.CoverTable 
+{   width: 880px; border-right: #696969 thin solid; border-top: #696969 thin solid; 
+    border-left: #696969 thin solid; border-bottom: #696969 thin solid; }
+.CoverRowEdit { background-color:Aqua; }
+.CoverTitleCellEdit
+{   float:left; width:125px; padding-left:5px; 
+    vertical-align:middle; font-weight:bold; text-align:left; }
+.CoverDatiCellEdit
+{   float:right; width:740px; vertical-align:middle;
+    padding-right:5px; text-align: left; }
+
+/* Generici\NewsGlobali_Info.aspx */
+.LinkRigaTitolo, A.LinkRigaTitolo, A.LinkRigaTitolo:link, A.LinkRigaTitolo:hover
+{   font-weight: bold; font-size: 11px; text-indent: 10px;
+    color: white; position: static;	height: 22px;
+	background-color: #666; text-align: left; font-variant: small-caps; }
+A.LinkRigaTitolo, A.LinkRigaTitolo:link { text-decoration: underline; }
+A.LinkRigaTitolo:hover { background-color: gray; text-decoration: underline; }
+
+/* CURRICULUM */
+.RigaTab { background-image: url(../img/lineBg32.gif); background: url(../img/lineBg32.gif); } /* Statistiche\ */
+.Testo_campoSensibile { font-weight: normal; font-size: 11px; color: black; background-color: #99ccff; }    /* Curriculum\UC_DatiCurriculum.ascx */
+.Testo_campoRecapitiTel { font-weight: normal; font-size: 11px; color: black; background-color: #99ff76; }  /* Curriculum\UC_DatiCurriculum.ascx */
+
+/* MAIL */
+.Testo_Mail { font-size: 12px; font-weight: normal; color: black; }
+
+/* FORUM\, Generici\UC\UC_RubricaMailGenerica.ascx*/
+.RubricaGenerale_Errore { font-weight: bold; font-size: 12px; color: red; }
+.RubricaGenerale_Selezione { font-size: 12px; }
+.RubricaGenerale_Testo { font-size: 12px; }
+.RubricaGenerale_Pulsante { font-weight: bold; font-size: 12px; background-color: aqua; }
+.RubricaGenerale_Separatore { font-weight: normal; font-size: 2px; }
+.RubricaGenerale_DatiUtente { font-weight: normal; font-size: 10px; }
+.RubricaGenerale_DatiUtenteBold { font-weight: bold; font-size: 10px; }
+/* FORUM */
+.ForumNW_IntroLogon { font-weight: bold; font-size: 13px; color: #424542; }
+.ForumNW_TableHeader
+{	font-weight: bold; font-size: 11px; vertical-align: middle;
+	color: black; height: 18px; background-color:white }
+.ForumNW_PostReply
+{	font-weight: normal; font-size: 11px; color: white;
+	background-color: darkgray; text-align: left; }
+.ForumNW_RowHeader
+{	font-weight: bold; font-size: 11px; background-attachment: fixed;
+	background-image: url(../img/table_bg_image.gif); background: url(../img/table_bg_image.gif);
+	vertical-align: middle; color: black; background-repeat: repeat-x; height: 22px; }
+.ForumNW_RowNormal
+{	font-weight: normal; font-size: 12px; vertical-align: middle;
+	color: black; background-color: #f8f7ef; }
+.ForumNW_RowAlternato
+{	font-weight: normal; font-size: 12px; vertical-align: middle;
+	color: black; background-color: #fefefc; }
+.ForumNW_RowDisabilitate
+{	font-weight: normal; font-size: 12px; vertical-align: middle;
+	color: black; background-color: lightgrey; }
+.ForumNW_RowNormal_Top
+{	font-weight: normal; font-size: 12px; vertical-align: top;
+	color: black; background-color: #f8f7ef; }
+.ForumNW_RowAlternato_Top
+{	font-weight: normal; font-size: 12px; vertical-align: top;
+	color: black; background-color: #fefefc; }
+.ForumNW_TableCellText
+{	font-weight: normal; font-size: 12px;
+	vertical-align: middle; color: black; }
+.ForumNW_TableCellSmall { font-weight: normal; font-size: 10px; color: black; }
+.ForumNW_VotaTesto { font-weight: normal; font-size: 12px; color: black; }
+.ForumNW_VotaTestoDrop { font-weight: normal; font-size: 11px; color: black; }
+.ForumNW_VotaTestoValue { font-weight: normal; font-size: 12px; color: black; }
+.ForumNW_History_text { font-weight: normal; font-size: 11px; color: black; }
+.ForumNW_History_dropForum{ font-weight: normal; font-size: 11px; color: #000001; }
+.ForumNW_History { font-weight: bold; font-size: 11px; color: #000001; text-decoration: underline; }
+A.ForumNW_History:link { text-decoration: underline; color: #000001; font-size: 11px; }	
+A.ForumNW_History:hover { background-color: yellow; text-decoration: underline; color: red; font-size: 11px; }
+.ForumNW_LinkButton { color: blue; text-decoration: underline; font-size: 12px; }
+A.ForumNW_LinkButton:link { text-decoration: underline; color: blue; font-size: 12px; }	
+A.ForumNW_LinkButton:hover { background-color: yellow; text-decoration: underline; color: blue; font-size: 12px; }
+.ForumNW_LinkButtonSmall { color: blue; text-decoration: underline; font-size: 11px; }
+A.ForumNW_LinkButtonSmall:link { text-decoration: underline; color: blue; font-size: 11px; }
+A.ForumNW_LinkButtonSmall:hover { text-decoration: underline; color: blue; font-size: 11px; }
+.ForumNW_ModificaPostTitolo { font-weight: bold; font-size: 12px; color: #000001; background-color: #f7f3f7; }
+.ForumNW_RevisioneArgomento { font-weight: bold; font-size: 11px; color: #000001; background-color: #00f3f7; }
+.ForumNW_separatore { font-size: 2px; color: black; background-color: #EFEFEF; }
+.ForumNW_Autore { font-weight: bold; font-size: 11px; color: black; }
+.ForumNW_Ruolo { font-weight: normal; font-size: 10px; color: black; }
+.ForumNW_BackToTop { font-weight: bold; font-size: 10px; color: #424542; }
+A.ForumNW_BackToTop:link { font-weight: bold; font-size: 10px; color: #424542; }
+A.ForumNW_BackToTop:hover { font-weight: bold; font-size: 10px; color: teal; text-decoration: underline; }
+.ForumNW_SubjectPost { font-weight: bold; font-size: 11px; color: black; }
+.ForumNW_datapost { font-weight: normal; font-size: 10px; color: black; }
+.ForumNW_CommandPostLinkSmall { font-weight: bold; font-size: 11px; color: #424542; text-decoration: underline; }
+A.ForumNW_CommandPostLinkSmall:link { font-size: 10px; color: #424542; font-weight: bold; text-decoration: underline; }
+A.ForumNW_CommandPostLinkSmall:hover { font-size: 10px; color: #424542; font-weight: bold; background-color: yellow; text-decoration: underline; }
+
+.Forum_TableHeader
+{	font-weight: bold; font-size: 10px; vertical-align: middle;
+	color: #666; height: 22px; background-color: #a8c8f7; }
+.Forum_TableRow
+{	font-weight: normal; font-size: 10px; vertical-align: middle; color: #666;
+	background: url(Images/separatore.gif) #d6e3e7 fixed repeat-x left bottom; }
+.Forum_TableRowAlternato
+{	font-weight: normal; font-size: 10px; vertical-align: middle;
+	color: black; background-color: white;
+	background: url(../img/separatore.gif) white fixed repeat-x left bottom; }
+.Forum_TableCellInfo
+{	font-size: 11px; vertical-align: middle; color: black; background-color: #bdcfd6; }
+.Forum_TableText { font-weight: normal; font-size: 10px; }
+.Forum_TableTextBold { font-weight: bold; font-size: 10px; }
+.Forum_FlatSmall { font-weight: normal; font-size: 3px; background-color: #738a9c; }
+.Forum_FlatImage { font-weight: bold; font-size: 10px; background-color: #f7f3f7; }
+.Forum_FlatText { font-weight: normal; font-size: 10px; }
+.Forum_FlatMessage { font-weight: bold; font-size: 10px; }
+.Forum_FlatMenu
+{   font-weight: bold; font-size: 10px; height:20px;
+    color: blue; background-color: #dedfde; }
+
+BODYforum { MARGIN: 0px; BACKGROUND-COLOR: #ffffff; }
+.censurato { COLOR: #8AB0C4; }
+.post
+{	font-size: 10px; padding-left: 10px; vertical-align: top; color: black; }
+
+TDforum { font-size: 11px; color: black; line-height: 12px; }
+.TDForum { display: inline; float: right; overflow: visible; }
+
+Aforum { font-weight: bold; color: #666666; }
+
+/* \Comunita\ManagementServizi.aspx */
+.legendaSmall { font-size: 11px; color: #000001; }
+
+/* TESI */
+.StatTesi_RigaTitolo { font-weight: bold; font-size: 10px; background-color: gainsboro; }   /* \Tesi_New\UC\UC_StatisticheTesi.ascx  */
+.StatTesi_RigaUniversita { font-weight: normal; font-size: 11px; }                          /* \Tesi_New\UC\UC_StatisticheTesi.ascx  */
+.StatTesi_RigaLivello { font-weight: normal; font-size: 11px; }                             /* \Tesi_New\UC\UC_StatisticheTesi.ascx  */
+.Testo_campo_disable { font-weight: normal; font-size: 12px; color: dimgray; }              /* ManagementTesi_Docente.aspx.vb(973) */
+.InfoOrganizzazioni { font-weight: bold; font-size: 11px; color: #000001; }                 /* Tesi_New\Tesi_Docente\ManagementArgomenti.aspx */
+.DGtesi_Tvoce { font-weight: bold; font-size: 12px; color: #000001; }
+.tesi_titolo { font-weight: bold; font-size: 11px; color: black; font-style: normal; }
+.tesi_tesista { font-weight: normal; font-size: 11px; color: red; }
+.tesi_docente { font-size: 11px; color: #666; }
+.tesi_testo { font-weight: normal; font-size: 11px; color: black; }
+
+/* CHAT */
+.chat_chiaro { background-color: #efefef; }
+.chat_scuro { background-color: #000099; }
+.chat_bianco { background-color: #FAFAFF; }
+.chat_output { background-color:White; text-decoration: none; color: Black; font-size:11px; }
+.chat_input { background-color:White; text-decoration: none; color: Black; font-size:11px; }
+.Chat_Pulsante { font-size: 11px; color: black; background-color:#FAFAFF; }
+.Chat_PulsanteSM { font-size: 8px; color: #666; background-color: #efefef; }
+.Chat_Comunita { font-size:15px ; font-weight:bold ; color: #666; background-color: #efefef; }
+
+/* WebMeeting\ */
+.Linksmall_ManualiSezioneNews, A.Linksmall_ManualiSezioneNews:link, A.Linksmall_ManualiSezioneNews:hover
+{   font-weight: bold; font-size: 11px; color: #000001;
+	background-color: #e7ebef; text-decoration: underline; }
+A.Linksmall_ManualiSezioneNews:link { background-color: #e7ebef; }	
+A.Linksmall_ManualiSezioneNews:hover { background-color: yellow; text-decoration: underline; }
+
+/*NUOVI STILI DiarioLezioni - WorkBook, CommunityDiary*/
+/* \Modules\Repository\UC\UC_File_TEST_GRAFICO.htm */
+.DiarioLezioni_DGheader
+{	font-weight: bold; font-size: 14px; color: white;
+	background-color: #666; text-align: center; }
+.DiarioLezioni_HeaderRigaLezione_Bold
+{	font-weight: bold; font-size: 11px; color: white;
+	background-color: steelblue; text-align: center; }
+.DiarioLezioni_HeaderRigaLezione_Normale
+{	font-weight: bold; font-size: 11px; color: white;
+	background-color: steelblue; text-align: center; }
+.DiarioLezioni_HeaderLink
+{	font-weight: bold; font-size: 11px; color: white;
+	background-color: steelblue; text-decoration: underline; }
+.DiarioLezioni_HeaderLink:link
+{	font-weight: bold; font-size: 11px; color: white;
+ 	background-color: steelblue; text-decoration: underline; }
+.DiarioLezioni_HeaderLink:hover
+{	font-weight: bold; font-size: 11px; color: white;
+	background-color: steelblue; text-decoration: underline; }
+.DiarioLezioni_NonVisibili
+{	font-size: 12px; color: white;
+	background-color: gray; text-align: center; }
+	
+/*VECCHI STILI DiarioLezioni*/
+.DiarioLezioni_Header
+{	font-weight: bold; font-size: 16px; color: #000001;
+	background-color: aquamarine; text-align: center; }
+.DiarioLezioni_HeaderBold
+{	font-weight: bold; font-size: 12px; color: white;
+	background-color: steelblue; text-align: center; }
+.DiarioLezioni_NormaliCentrate
+{	font-size: 12px; color: black;
+ 	background-color: white; text-align: center; }
+.DiarioLezioni_Link { font-size: 12px; color: aqua; text-decoration: underline; }
+.DiarioLezioni_Link:link { font-size: 12px; color: aqua; text-decoration: underline; }
+.DiarioLezioni_Link:hover
+{	font-size: 12px; color: black;	
+	background-color: yellow; text-decoration: underline; }
+.DiarioLezioni_AlternateCentrate
+{	font-size: 12px; color: #000001;
+	background-color: blanchedalmond; text-align: center; }
+.DiarioLezioni_HeaderTabella
+{	font-size: 12px; color: white;
+	background-color: steelblue; text-align: center; }
+.DiarioLezioni_NonVisibili
+{	font-size: 12px; color: white;
+	background-color: gray; text-align: center; }
+
+/* EVENTI */
+.HeaderEventi
+{	font-weight: bold; font-size: 11px; color: #000001;
+	background-color: aquamarine; text-align: center; }
+.Eventi_PulsanteGiorno
+{	font-size: 9px; color: #000099; background-color: #f5e793; border-color :#000099; }
+.Eventi_CellaOre { FONT-WEIGHT: bold; }
+.Eventi_CellaTipoEvento { border-color:#ffde9d; }
+.Eventi_CellaGiorno { text-align:left; vertical-align:bottom; }
+.Eventi_LinkbuttonEvento { font-family:courier; }
+.Eventi_LabelBold { font-weight: bold; font-size: 10px; }
+.Eventi_Label { font-size: 11px; }
+.Eventi_LinkButtonAnnuale { font-size: 10px; }
+.Eventi_cellaAnnuale { height: 20px; width: 20px; }
+.Eventi_cellaMensile
+{	vertical-align: top; width: 40px; height: 40px; text-align: left; }
+.Eventi_LabelDettagli { font-size:10px; color:#000084; }
+.Eventi_LabelDettagliBold { font-size:10px; font-weight: bold; color:#000084; }
+.Eventi_tabella { vertical-align:top; }
+.Eventi_cella { vertical-align: bottom; }
+.ROW_headerEventi_SmallCenter
+{	font-weight: bold; font-size: 11px; color: #000001;
+	background-color: #c7d9ca; text-align: center; }
+
+/* UC */
+.dettagli_Voce { font-weight: bold; font-size: 11px; color: #000001; vertical-align: top; } /* \uc\UC_DettagliComunita.ascx */
+
+/* ALTRO */
+.HelpBody { font-size: 12px; color: black; background-color: aqua; }    /* \Utente\InfoRegistrazione.aspx */
+.HelpAttenzione { font-weight: normal; font-size: 11px; color: red; }   /* \Utente\InfoRegistrazione.aspx */
+.HelpListU
+{   font-weight: normal; list-style-position: outside; font-size: 12px;
+	color: black; line-height: 16px; list-style-type: lower-alpha; }    /* \Utente\InfoRegistrazione.asp */
+.HelpNumero { font-weight: bold; font-size: 11px; color: black; }       /* Comunita\Help.aspx */
+.TabStrip_Contenuto { padding: 10 10 0 10; background-color: #CFE6F2; } /* \Admin_Globale\AdminG_NewsGlobali.aspx */
+
+/* \Admin_Globale\AdminG_ImportUser.aspx*/
+TD.importTitolo_Sorgente
+{   font-weight: bold; font-size: 12px; color: #000001;	
+	background-color: #efefef; text-align: center; }
+TD.importSeparatore_Sorgente
+{   font-size: 6px; color: #000001;
+	background-color: #efefef; text-align: center; }
+TD.importTitolo_Destinatario
+{   font-weight: bold; font-size: 12px; color: #000001;
+	background-color: aquamarine; }
+TD.importSeparatore_Destinatario
+{   font-size: 6px; color: #000001;
+	background-color: aquamarine; text-align: center; }
+	
+/* Old Header */
+A.TastoLoguot
+{   border: #efefef thin outset; padding: 2px 5px 2px 5px;
+	font-weight: bold; font-size: 12px; color: black;
+	height: 8px; }
+A.TastoLoguot:hover
+{
+	border: #efefef thin inset; padding: 2px 5px 2px 5px;
+	font-weight: bold; font-size: 12px; text-decoration: none;
+	color: blue; background-color: #efefef;	height: 8px; }
+.login_lastVisit { font-weight: normal; font-size: 10px; }
+/* HeaderAdmin, HeaderArea, HaederArea2 */
+.LinkHome, A.LinkHome:link, .LinkProfilo, A.LinkProfilo:link
+{ font-weight: normal; font-size: 12px; color: #000001; text-decoration: underline; }
+A.LinkHome:hover, A.LinkProfilo:hover
+{ background-color: yellow; }
+/*(ABO, ESPERTO) - Unused - */
+.MargineImgLogo { position:relative; right: 65px; } 
+.RigaTitoloLogo
+{   font-weight: bold; font-size: 20px; clip: rect(10px auto auto auto);
+	color: black; position: static; height: 40px;
+	background-color: white; text-align: left; font-variant: small-caps; }
+
+/* Comunita_OnLine\UC_Login.. */
+/* ..ComputerLearning, ..StrutturaInformatica */
+.test { font-size: 14pt; color: #000001; }
+
+/* SOLO PER AREA - Inutile */
+.RigaTitoloArea
+{   font-weight: bold; font-size: 16px; color: white;
+	text-indent: 10px; position: static; height: 22px;
+	background-color: #1d4e65; text-align: left; font-variant: small-caps;
+}
+/* end area */
+
+
+/* ELEMENTI COMOL - generici */
+
+
+.RigaTitolo
+{   font-weight: bold; font-size: 14px; color: #666;
+	border-bottom:1px solid #000; text-indent: 10px; position: static;
+	height: 22px; text-align: left; font-variant: small-caps; }
+.RigaTitolo_Center
+{   font-weight: bold; font-size: 14px; color: white;
+	text-indent: 10px; position: static; height: 22px;
+	background-color: #666; text-align: center; font-variant: small-caps; }
+.RigaTitoloAdmin
+{   font-weight: bold; font-size: 16px; color: white;
+	text-indent: 10px; position: static; height: 22px;
+	background-color: red; text-align: left; font-variant: small-caps; }
+
+.PulsantiMenu
+{   font-size: 10px; color: black; height: 18px;
+	background-color: whitesmoke; margin: 1px; border: black 1px inset; }
+.PulsantiMenu_Bold
+{   border: black 1px inset; margin: 1px; height: 16px;
+    background-color: whitesmoke; color: black;
+	font-weight: bold; font-size: 10px; }
+.Pulsante_Menu
+{   border: black 1px solid; font-weight: bold; font-size: 11px;
+	margin: 1px; clip: rect(5px 5px 5px 5px);
+	color: black; background-color: #f7f7f7; }
+.Pulsante_MenuOver
+{
+	border: black 1px ridge; margin: 1px; clip: rect(5px 5px 5px 5px);
+	font-weight: bold; font-size: 11px;
+	color: black; background-color: #f7f7f7; }
+
+.Link_Menu, A.Link_Menu, A.Link_Menu:link, A.Link_Menu:hover
+{   border: black 1px inset; padding-right: 6px; padding-left: 6px;
+	font-weight: bold; font-size: 10px; text-decoration: none;
+	margin: 1px; background-color: whitesmoke;
+	color: black; height: 18px; }
+A.Link_Menu:hover
+{   border: whitesmoke thin inset; padding-right: 5px; padding-left: 5px; }
+
+.tableLegend { font-size: 12px; color: #000001; text-align: center; }
+table.testo_campoSmall { font-size: 11px; }
+
+.Titolo_campo { font-size: 12px; font-weight: bold; color: #000001; }
+.Titolo_dettagliSmall { font-weight: bold; font-size: 11px; color: black; }
+.Titolo_campoSmall { font-size: 11px; font-weight: bold; color: #000001; }
+.Titolo_campo_Rosso { font-size: 12px; font-weight: bold; color: Red; }
+.Titolo_NoAccesso { font-weight: bold; font-size: 11px; color: red; }
+
+.Testo_campo { font-size: 12px; font-weight: normal; color: black; }
+.Testo_campoSmall {	font-size: 11px; font-weight: normal; color: black; }
+.Testo_campoSmall10 { font-size: 10px; font-weight: normal; color: black; }
+.Testo_campoSmall_obbligatorio { font-size: 11px; font-weight: normal; color: black; background-color: #fff7e5; }
+.Testo_campo_obbligatorio { font-weight: normal; font-size: 12px; color: black; background-color: #fff7e5; }
+.Testo_campo_obbligatorioSmall { font-weight: normal; font-size: 11px; color: black; background-color: #fff7e5; }
+
+.dataGrid_TitoloCampo { font-weight: bold; font-size: 10px; color: #000001; }
+.dataGrid_TestoCampo { font-weight: normal; font-size: 10px; color: black; }
+.dataGrid_TestoCampoObbligatorio { font-weight: normal; font-size: 10px; color: black; background-color: #fff7e5; }	
+
+.dettagli_Campo, dettagli_CampoSmall
+{   background-position: left bottom; font-weight: normal; 
+    font-size: 12px; color: black; }
+.dettagli_CampoSmall { font-size: 11px; }
+.dettagli_separatore
+{   font-weight: normal; font-size: 0px; vertical-align: baseline;
+	color: black; text-align: left; }
+
+.Details_titolo
+{   font-weight: bold; font-size: 10px; color: black;
+	background-color: lemonchiffon; text-align: left; }
+.Details_Campo 
+{   font-weight: normal; font-size: 11px;
+	color: #000001; text-align: left; }
+	
+.Linksmall, A.Linksmall:link, A.Linksmall:hover
+{   font-weight: normal; font-size: 12px; }
+A.Linksmall:link { color: blue; text-decoration: none; }	
+A.Linksmall:hover { color: blue; background-color: yellow; text-decoration: underline; }
+
+.Linksmall_Under, A.Linksmall_Under:link, A.Linksmall_Under:hover, .Linksmall_Under11, A.Linksmall_Under11:link, A.Linksmall_Under11:hover
+{ font-weight: normal; font-size: 12px; text-decoration: underline; }
+A.Linksmall_Under:link { color: blue; }	
+A.Linksmall_Under:hover { color: blue; background-color: yellow; }
+
+.Linksmall_Under11 { font-size: 11px; }
+A.Linksmall_Under11:link { font-size: 11px; color: blue; }	
+A.Linksmall_Under11:hover {	font-size: 11px; color: blue; background-color: yellow; }
+
+.HelpTitolo { font-weight: bold; font-size: 14px; color: red; }
+.HelpTesto { font-weight: normal; font-size: 12px; color: black; }
+.HelpKeyWord { font-weight: normal; font-size: 12px; color: #000001; font-style: italic; background-color: aqua; }
+
+TABLE.FiltroCampoSmall, TD.FiltroCampoSmall, TR.FiltroCampoSmall
+{ font-size: 10px; }
+
+TD.borderBottom { font-size: 1px; BACKGROUND-POSITION-Y: bottom; background-repeat: repeat-x; }
+TD.NoborderBottom { font-size: 0px; vertical-align: bottom; }
+
+.Editor_Titolo
+{	font-weight: bold; font-size: 14px;
+	color: black; line-height: 16px; }
+.Editor_testo
+{	font-weight: normal; font-size: 12px;
+	color: black; line-height: 14px; }
+
+A.EditorLink:link
+{	font-weight: normal; font-size: 12px;
+	color: blue; text-decoration: none; }	
+A.EditorLink:hover
+{	font-weight: normal; font-size: 12px; text-decoration: underline;
+	color: blue; background-color: yellow; }
+
+.Riga_Header
+{	font-weight: bold; font-size: 11px; color: #000001;
+ 	background-color: aquamarine; text-align: center; }
+.Riga_Header_Big
+{	font-weight: bold; font-size: 16px; color: #000001;
+	background-color: aquamarine; text-align: center; }
+
+.HeaderLink { color: #000001; text-decoration: underline; }
+A.HeaderLink:link { color: #000001; }	
+A.HeaderLink:hover { background-color: yellow; text-decoration: underline; color: #000001; }
+
+A.NoLink:link { color: white; text-decoration: none; }
+A.NoLink:hover { color: white; text-decoration: none; }
+
+.small_Padre { font-size: 11px; color: red; }
+
+.Righe_Normali
+{	font-size: 12px; color: Black; background-color: White; text-align: left;
+	background: url(../img/separatore.gif) #fff7e5 fixed repeat-x left bottom; }
+.Righe_Alternate
+{   font-size: 12px; color: #666; text-align: left;
+	background: url(../img/separatore.gif) #efefef fixed repeat-x left bottom; }
+.Righe_Disattivate
+{	font-size: 12px; color: white; text-align: left;
+	background: url(../img/separatore.gif) darkslategray fixed repeat-x left bottom; }
+.Righe_Disattivate_Bold
+{	font-size: 12px; color:#A8A8A8; text-align: left; font-weight: bold;
+	background: url(../img/separatore.gif) darkslategray fixed repeat-x left bottom; }
+.Righe_Disabilitate
+{	font-size: 12px; color: dimgray; text-align: left;
+	background: url(../img/separatore.gif) silver fixed repeat-x left bottom; }
+.Righe_Grigio
+{	font-size: 12px; color:black; text-align: left;
+	background: url(../img/separatore.gif) gray fixed repeat-x left bottom; }
+.Righe_Normali_center
+{	font-size: 12px; color: Black; background-color: White; text-align: center;
+	background: url(../img/separatore.gif) #fff7e5 fixed repeat-x left bottom; }
+.Righe_Alternate_center
+{	font-size: 12px; color: #666; text-align: center;
+	background: url(../img/separatore.gif) #efefef fixed repeat-x left bottom; }
+.Righe_Disattivate_center
+{	font-size: 12px; color: white; text-align: center;
+	background: url(../img/separatore.gif) dimgray fixed repeat-x left bottom; }
+.Righe_Disabilitate_center
+{	font-size: 12px; color: dimgray; text-align: center;
+	background: url(../img/separatore.gif) silver fixed repeat-x left bottom; }
+.Riga_Paginazione { font-size: 11px; color: blue; background-color: white; }
+
+.Filtro_TestoPaginazione { font-weight: bold; font-size: 10px; color: #000001; }
+.Filtro_RecordPaginazione { font-weight: normal; font-size: 10px; color: #000001; }
+.Filtro_RecordPaginazioneIndex { font-weight: normal; font-size: 10px; color: #000001; z-index: 100; }
+.Filtro_CellSelezionato
+{	border-right: #cccccc 1px solid; border-top: #cccccc 1px solid; border-left: #cccccc 1px solid;
+ 	font-weight: normal; font-size: 10pt; color: #000001; background-color: #f7f8ff; }
+.Filtro_CellDeSelezionato
+{	font-weight: normal; font-size: 10pt; color: #000001;
+	border-bottom: #cccccc 1px solid; background-color: white; }
+.Filtro_CellFiltri
+{	font-size: 10pt; color: #000001; font-weight:normal; background-color: #f7f8ff;
+	border-bottom: #cccccc 1px solid; border-right: #cccccc 1px solid; border-left: #cccccc 1px solid; }
+.Filtro_Cellnull
+{	font-size: 10pt; color: #000001; font-weight:normal; background-color: #ffffff; }
+.Filtro_CellApriFiltro
+{	font-size: 10pt; color: #000001; font-weight:normal;
+	border: #cccccc 1px solid; background-color: #f7f8ff; }	
+.Filtro_LabelLink
+{	font-weight: bold; font-size: 11px; color: black; text-decoration: none; }
+.Filtro_Link
+{	font-weight: bold; font-size: 11px; color: black; text-decoration: underline; }
+A.Filtro_Link:link
+{   font-weight: bold; font-size: 11px; color: black; text-decoration: underline; }
+A.Filtro_Link:hover
+{	font-weight: bold; font-size: 11px; color: black;
+	text-decoration: underline; background-color: yellow; }
+.Filtro_Link10
+{	font-weight: bold; font-size: 10px; color: black; text-decoration: underline; }
+A.Filtro_Link10:link
+{   font-weight: bold; font-size: 10px; color: black; text-decoration: underline; }
+A.Filtro_Link10:hover
+{	font-weight: bold; font-size: 10px; color: black;
+ 	text-decoration: underline; background-color: yellow; }
+.FiltroTitolo { font-weight: bolder; font-size: 14px; color: #000001; }
+.FiltroVoce { font-weight: bold; font-size: 12px; color: #000001; }	
+.FiltroCampo { font-weight: normal; font-size: 12px; color: #000001; }
+.FiltroCampoCorrente { font-size: 10pt; color: Red; font-weight:normal; }
+.FiltroTitoloSmall { font-weight: bolder; font-size: 12px; color: #000001; }
+.FiltroVoceSmall { font-weight: bold; font-size: 11px; color: #000001; }
+.FiltroVoceSmall10 { font-weight: bold; font-size: 10px; color: #000001; }
+.FiltroVoceSmall9 { font-weight: bold; font-size: 9px; color: #000001; }
+.FiltroCampoSmall9 { font-weight: normal; font-size: 9px; color: #000001; }
+.FiltroCampoSmallNoFont { color: #000001; }
+.FiltroCampoSmall
+{   font-weight: normal; font-size: 11px; color: #000001; z-index:1; }
+.FiltroCampoSmall10
+{	font-weight: normal; font-size: 10px; color: #000001; z-index:1; }
+.FiltroCampoSmallSmall { font-weight: normal; font-size: 10px; color: #000001; }
+.FiltroCampoCorrenteSmall { font-size: 11px; color: Red; font-weight:normal; }
+
+.Testo_paginazione { font-weight: normal; font-size: 11px; color: Blue; }
+.Testo_paginazioneDRP { font-weight: normal; font-size: 11px; color: #000001; }
+
+/* Generici - BOOKMARK, LinkPersonali, UC_Link\UC_DettagliLink, TASKLIST */
+.Bookmark_Titolo { font-weight: normal; font-size: 11px; color: blue; }
+.Bookmark_TitoloBold { font-weight: bold; font-size: 11px; color: black; }
+.Bookmark_Testo { font-weight: normal; font-size: 11px; color: #000001; }
+.Bookmark_TestoInfo { font-weight: normal; font-size: 11px; color: blue; font-style: italic; }
+.Bookmark_TestoBold { font-weight: bold; font-size: 11px; color: black; }
+.Bookmark_Hovernode { font-size: 12px; font-weight: normal; color: black; height: 18px; }
+.Bookmark_Selectednode { font-weight: normal; font-size: 12px; color: #000001; height: 18px; }
+.Bookmark_SelectedLine { font-weight: normal; font-size: 12px; color: #000001; height: 18px; background-color: yellow; }
+.Bookmark_Node { font-weight: normal; font-size: 12px; color: black; height: 18px; }
+
+.PagerLink { color: Blue ; font-size: 11px ; }
+.PagerSpan { color: Blue ; font-size: 11px ; background-color:Yellow; font-weight: bold; }
+
+/* Emoticon - UC -  ?? */
+.Emoticon_Header
+{	font-weight: bold; font-size: 12px; color: #000001;
+	background-color: lightgreen; text-align: center; }
+.Emoticon_Normali
+{	font-size: 12px; color: black; height: 20px;
+	background-color: #eeeeee; text-align: left; }
+.Emoticon_Alternate
+{	font-size: 12px; height: 20px; color: #000001;
+	background-color: #eeffff; text-align: left; }
+
+.Header_Repeater { font-weight: bold; font-size: 12px; color: #000001; }
+.Header_Repeater10 { font-weight: bold; font-size: 10px; color: #000001; }
+button.Header_Repeater10 { font-weight: bold; font-size: 10px; color: #000001; background-color: fuchsia; }
+input.Header_Repeater10 { font-weight: bold; font-size: 10px; color: #000001; }
+input.Command_Repeater10 { font-weight: normal; font-size: 11px; color: #000001; }
+.Repeater_Voce { font-weight: normal; font-size: 12px; color: #000001; }
+.Repeater_VoceLingua { font-weight: normal; font-size: 10px; color: #000001; }
+.Repeater_TestoVoce { font-weight: normal; font-size: 12px; color: black; }
+.Repeater_DescrizioneSmallTitolo { font-weight: bold; font-size: 10px; color: black; }
+.Repeater_DescrizioneSmall { font-weight: normal; font-size: 11px; color: black; }
+.Repeater_VoceDisabilitata { font-weight: bold; font-size: 12px; color: dimgray; }
+.Repeater_VoceBloccata { font-weight: bold; font-size: 12px; color: red; background-color: silver; }
+.Repeater_Link { font-size: 12px; color: #000001; text-decoration: underline; }
+A.Repeater_Link:link { font-size: 12px; color: #000001; text-decoration: underline; }	
+A.Repeater_Link:hover { font-size: 12px; color: #000001; background-color: yellow; text-decoration: underline; }
+
+.lettera { font-weight: normal; font-size: 10px; text-align: center; }
+a.lettera { color: #3b5679; border: 1px solid #ccc; padding-left: 3px; padding-right:3px; }
+a.lettera:hover { background-color:#3b5679; color:white; }
+.lettera_Selezionata
+{   font-weight: bold; font-size: 11px; text-align: center;
+	background-color: #3b5679; color:white; }
+.lettera_disabilitata
+{
+    font-weight:normal; font-size: 11px; text-align: center;
+    background-color: White; color:#3b5679;
+    }
+
+.notaIndexBottom { font-size: 11px; color: #666; }
+.avvisoIscrizione { font-size: 12px; color: red; }
+.messaggioIscrizione { font-size: 12px; color: #000001; }
+.notaIndexTop { font-size: 11px; color: #666; }
+.notaRecuperoPwd { font-size: 11px; color: #666; }
+.Link_noteIndex, A.Link_noteIndex:link, A.Link_noteIndex:hover
+{   font-weight: bold; font-size: 11px; color: #000001; text-decoration: underline; }
+A.Link_noteIndex:hover { background-color: yellow; }
+
+.avviso { color: Red; font-size: 14px; font-weight: bold; }	
+.avviso12 { color: Red; font-size: 12px; font-weight: bold; }
+.avviso_normal { font-weight: normal; font-size: 12px; color: red; }
+.avviso11 { font-weight: normal; font-size: 11px; color: red; }
+.avviso11_black { font-weight: normal; font-size: 11px; color: black; }
+.avviso_small { font-weight: normal; font-size: 11px; color: #000001; }
+
+.infoUser, .infoInput
+{   font-weight: normal; font-size: 11px; color: blue; }
+
+.infoTesi { font-weight: normal; font-size: 12px; color: #000001; }
+
+.confirmDelete { font-weight: normal; font-size: 12px; color: blue; }
+.confirmDelete11 { font-weight: normal; font-size: 11px; color: #000001; }
+.confirmDeleteComunita { font-weight: normal; font-size: 12px; color: black; }
+.confirmDelete_NomeComunitàSelezionata { font-weight: bold; font-size: 10px; color: black; }
+.confirmDelete_NomeComunità { font-weight: normal; font-size: 10px; color: black; }
+.confirmDelete_NomeComunitàBloccata { font-weight: normal; font-size: 10px; color: gray; }
+
+.info_blackMedium { font-weight: normal; font-size: 12px; color: black; }
+.info_black11 { font-weight: normal; font-size: 11px; color: black; }
+.info_small { font-weight: bold; font-size: 10px; color: dimgray; }
+.info_medium { color: dimgray; font-size: 12px; font-weight: bold; }
+.info_large { color: dimgray; font-size: 14px; font-weight: bold; }
+.info_genericoMedio { font-weight: normal; font-size: 12px; color: #000001; }
+.info_generico11 { font-weight: normal; font-size: 11px; color: #000001; }
+
+.Linkinfo_genericoMedio, A.Linkinfo_genericoMedio:link, A.Linkinfo_genericoMedio:hover
+{	font-weight: normal; font-size: 12px; color: #000001; text-decoration: underline; }
+A.Linkinfo_genericoMedio:hover { background-color: yellow; }
+
+.errore { font-weight: bold; font-size: 12px; color: red; }
+.erroreSmall { font-weight: bold; font-size: 11px; color: red; }
+
+.TitoloServizio { font-weight: bolder; font-size: 16px; color: #000001; }
+
+.history
+{	font-size: 0.7em; color: #002b74; font-style: normal; text-decoration: none; }
+.history:link { COLOR: #002B74; }
+.history:hover { COLOR: #FD0029; }
+.historyLast
+{	font-weight: bold; font-size: 9pt; color: #002b74;
+	font-style: normal; text-decoration: none; }
+.historyLast:link { COLOR: #002B74; }
+.historyLast:hover { COLOR: #FD0029; }
+.history_link11, .history_link11:link, .history_link11:hover
+{	font-size: 11px; color: #000001; font-style: normal; text-decoration: underline; }
+.history_link11:hover { background-color: yellow; }
+
+.Pulsante
+{	font-weight: bold; font-size: 12px; color: blue; background-color: #efefef; }
+
+.PulsanteFiltro
+{	border: black 1px solid; margin: 1px;
+ 	clip: rect(5px 5px 5px 5px);
+	font-weight: bold; font-size: 11px;
+	color: black; background-color: #f7f7f7; }
+.PulsanteFiltroOver
+{	border: black 1px ridge; margin: 1px; color: black; background-color: #f7f7f7;
+	font-weight: bold; font-size: 11px; clip: rect(5px 5px 5px 5px); }
+.PulsanteSmall
+{	font-weight: bold; font-size: 11px; color: blue; background-color: #efefef; }
+.PulsantePiccolo
+{	font-weight: bold; font-size: 10px; color: blue; background-color: #efefef; }
+
+/*-----------  PERMESSI -------------*/
+.LegendaSmall
+{	font-weight: bold; font-size: 11px; color: #000001;
+	text-align: center; text-decoration: underline; }
+.TBLpermessi_Header
+{	font-weight: bold; font-size: 11px; color: white;
+	background-color: #666; text-align: center; }
+.TBLpermessi_RowItem
+{	font-weight: normal; font-size: 11px; color: black;
+	direction: ltr; background-color: white; }
+.TBLpermessi_RowItemNonDefiniti
+{	font-weight: normal; font-size: 11px; color: black;
+	background-color: lightgrey; }
+.TBLpermessi_RowItemDefinitiDefault
+{	font-weight: normal; font-size: 11px; color: black;
+	background-color: #cfe3f5; }
+.TBLpermessi_RowItemNonDefinitiConRuoli
+{	font-weight: normal; font-size: 10px; color: black;
+	background-color: lightyellow; }
+.TBLpermessi_RowItemPermessi { font-weight: normal; font-size: 10px; color: black; }
+.TBLpermessi_RowItemPermessiSelezionati { font-weight: bold; font-size: 10px; color: black; }
+.TBLpermessi_RowLink
+{	font-weight: normal; font-size: 11px; color: #000001; text-decoration: underline; }
+A.TBLpermessi_RowLink:link
+{	font-weight: normal; font-size: 11px; color: #000001; text-decoration: underline; }
+A.TBLpermessi_RowLink:hover 
+{	font-weight: normal; font-size: 11px; color: #000001;
+	text-decoration: underline; background-color: yellow; }
+.TablePermessi_Header
+{	font-weight: bold; font-size: 11px; color: #000001;
+ 	background-color: #c9d3e6; text-align: center; }
+.TablePermessi_Riga
+{	font-weight: normal; font-size: 11px; color: black;
+	direction: ltr; background-color: white; }
+.TablePermessi_RigaNonAssociati
+{	font-weight: normal; font-size: 11px; color: black; background-color: aqua; }
+.tablePermessi_Permessi { font-weight: normal; font-size: 10px; color: black; }
+.tablePermessi_Permessi_selezionati { font-weight: bold; font-size: 10px; color: black; }
+.TablePermessi_Link
+{   font-weight: normal; font-size: 11px; color: #000001; text-decoration: underline; }
+A.TablePermessi_Link:link
+{	font-weight: normal; font-size: 11px; color: #000001; text-decoration: underline; }
+A.TablePermessi_Link:hover
+{	font-weight: normal; font-size: 11px; color: #000001;
+	text-decoration: underline; background-color: yellow; }
+
+.PermessiAssociati
+{	font-weight: bold; font-size: 12px; color: black;
+	background-color: white; text-align: center; }
+.PermessiDaAssociare
+{	font-weight: normal; font-size: 12px; color: black;
+	background-color: white; text-align: center; }
+.PermessiDefault
+{	font-weight: normal; font-size: 12px; font-style: italic; font-variant: normal;
+ 	background-color: white; color: #000001; text-align: center; }
+.NoPermessi
+{   font-weight: normal; font-size: 12px; font-style: normal; font-variant: normal;
+	color: red; background-color: white; text-align: center; }
+/*----------- FINE PERMESSI -------------*/
+
+table.contenitore { border: 1px; width: 900px; position: static; }
+td.contenitore { border: 0; }
+tr.contenitore { border: 0; }
+
+.Textbox { width:200px; background-color:#fff7e5; }
+.ricerca { width:150px; background-color:#fff7e5; } /*stile predefinito per le textbox della ricerca */
+.Validatori { font-size: 16px; }
+
+.nosize0 { font-size: 0px; font-style: normal; text-decoration: none; }
+
+.Internaz_celle_topLeft { vertical-align:top; text-align:left; }
+.Internaz_cella_Campi
+{   overflow:scroll; vertical-align:top; text-align:left; width:210px; }
+
+.bacheca
+{	overflow: auto; vertical-align:top; text-align:center;
+	width:630px; height:280px; border:1px solid red; }
+
+/* NUOVI STILI RIGHE DATAGRID  */
+.descrizioneFile { font-weight: normal; font-size: 11px; color: black; }
+
+.ROW_header_Small
+{	font-weight: bold; font-size: 10px; color: white;
+	background-color: #666; text-align: left; }
+.ROW_header_Small_Center
+{	font-weight: bold; font-size: 10px; color: white;
+	background-color: #666; text-align: center; }
+.ROW_header_Small_Center9
+{	font-weight: bold; font-size: 9px; color: white;
+	background-color: #666; text-align: center; }
+.ROW_TD_Small12 { font-size: 12px; }
+.ROW_TD_Small { font-size: 11px; }
+.ROW_TD_Small9 { font-size: 9px; }
+.ROW_TD_Small_Center { font-size: 11px; text-align: center; }
+.ROW_TD_Small_Center9 { font-size: 9px; text-align: center; }
+.ROW_TD_Small_Right { font-size: 11px; text-align: right; }
+.ROW_ItemDisattivate_Small { font-size: 11px; color: white; }
+.ROWrepeater_Normal_Small
+{	font-size: 11px; color: black;
+	background-color: white; text-align: left; }
+.ROWrepeater_Alternate_Small
+{	font-size: 11px; color: #666; background-color: #efefef; text-align: left; }
+.ROWrepeater_Normal_Small9
+{	font-size: 9px; color: black; background-color: white; text-align: left; }
+.ROW_Normal_Small
+{	font-size: 11px; color: black; text-align: left;
+	background: url(../img/separatore.gif) white fixed repeat-x left bottom; }
+.ROW_Normal_Small9
+{	font-size: 9px; color: black; text-align: left;
+	background: url(../img/separatore.gif) white fixed repeat-x left bottom; }
+.ROW_Normal_Small_Center
+{	font-size: 11px; color: black; text-align: center;
+	background: url(../img/separatore.gif) white fixed repeat-x left bottom; }
+.ROW_Normal_Small_Center9
+{	font-size: 9px; color: black; text-align: center;
+	background: url(../img/separatore.gif) white fixed repeat-x left bottom; }
+.ROW_Alternate_Small
+{	font-size: 11px; color: black; text-align: left;
+	background: url(../img/separatore.gif) #efefef fixed repeat-x left bottom; }
+.ROW_Alternate_Small9
+{	font-size: 09px; color: black; text-align: left;
+	background: url(../img/separatore.gif) #efefef fixed repeat-x left bottom; }
+.ROW_Alternate_Small_Center
+{	font-size: 11px; color: black; text-align: center;
+	background: url(../img/separatore.gif) #efefef fixed repeat-x left bottom; }
+.ROW_Disattivate_Small
+{	font-size: 11px; color: white; text-align: left;
+	background: url(../img/separatore.gif) darkslategray fixed repeat-x left bottom; }
+.ROW_Disattivate_Small9
+{	font-size: 9px; color: white; text-align: left; 
+	background: url(../img/separatore.gif) darkslategray fixed repeat-x left bottom; }
+.ROW_Disattivate_Small_Center
+{	font-size: 11px; color: white; text-align: center;
+	background: url(../img/separatore.gif) darkslategray fixed repeat-x left bottom; }
+.ROW_Evidenziate_Small
+{	font-size: 11px; color: black; text-align: left;
+	background: url(../img/separatore.gif) palegreen fixed repeat-x left bottom; }
+.ROW_Selezionate_Small
+{	font-weight: bold; font-size: 11px; color: #666; text-align: left;
+	background: url(../img/separatore.gif) lemonchiffon fixed repeat-x left bottom; }
+.ROW_Disabilitate_Small
+{	font-size: 11px; color: #666; text-align: left;
+	background: url(../img/separatore.gif) silver fixed repeat-x left bottom; }
+.ROW_Disabilitate_Small9
+{	font-size: 9px; color: #666; text-align: left;
+	background: url(../img/separatore.gif) silver fixed repeat-x left bottom; }
+.ROW_Disabilitate_Small_center
+{	font-size: 11px; color: #666; text-align: center;
+	background: url(../img/separatore.gif) silver fixed repeat-x left bottom; }
+.ROW_AreeDisabilitate_Small
+{	font-size: 11px; color: white; text-align: left;
+	background: url(../img/separatore.gif) red fixed repeat-x left bottom; }
+.ROW_AreeDisabilitate_Small9
+{	font-size: 9px; color: white; text-align: left;
+	background: url(../img/separatore.gif) red fixed repeat-x left bottom; }
+.ROW_AreeDisabilitate_Small_center
+{	font-size: 11px; color: white; text-align: center;
+	background: url(../img/separatore.gif) red fixed repeat-x left bottom; }
+.ROW_Page_Small { font-size: 10px; color: #666; background-color: white; }
+.ROW_PagerLink_Small { color: #666 ; font-size: 10px ; }
+.ROW_PagerSpan_Small 
+{   color: #666 ; font-size: 10px ; background-color:Yellow; font-weight: bold; }
+.ROW_HeaderLink_SmallOther9 { font-size: 9px; }
+A.ROW_HeaderLink_SmallOther9:link { font-size: 9px; }
+A.ROW_HeaderLink_SmallOther9:hover { font-size: 9px; background-color: yellow; text-decoration: underline; }
+.ROW_HeaderLink_Small { font-size: 10px; color: white; text-decoration: underline; }
+A.ROW_HeaderLink_Small:link { color: white; font-size: 10px; }
+A.ROW_HeaderLink_Small:hover
+{	font-size: 10px; color: black; background-color: aqua; text-decoration: underline; }
+.ROW_ItemLink_Small { font-size: 11px; color: #000001; text-decoration: underline; }
+A.ROW_ItemLink_Small:link { color: #000001; font-size: 11px; text-decoration: underline; }
+A.ROW_ItemLink_Small:hover
+{	font-size: 11px; color: #000001; background-color: yellow; text-decoration: underline; }
+.ROW_ItemLink_Small_Bold
+{	font-weight: bold; font-size: 11px; color: #000001; text-decoration: underline; }
+A.ROW_ItemLink_Small_Bold:link
+{	color: #000001; font-weight: bold; font-size: 11px; text-decoration: underline; }	
+A.ROW_ItemLink_Small_Bold:hover
+{	font-size: 11px; color: #000001; background-color: yellow;
+	font-weight: bold; text-decoration: underline; }
+.ROW_ItemLinkDisattivate_Small { font-size: 11px; color: white; text-decoration: underline; }
+A.ROW_ItemLinkDisattivate_Small:link { color: white; font-size: 11px; text-decoration: underline; }
+A.ROW_ItemLinkDisattivate_Small:hover { font-size: 11px; color: white; text-decoration: underline; }
+.ROW_TD_Titolo { font-size: 12px; font-weight:bold; text-decoration: underline; }
+.ROW_TD_Small_d { font-size: 10px; font-weight: bold; }
+/* FINE STILI NUOVI DATAGRID */
+
+.Righe_Alternate_center_Small
+{	font-size: 8px; color: #666; text-align: center;
+	background: url(../img/separatore.gif) #efefef fixed repeat-x left bottom; }
+.Riga_Header_Small
+{	font-weight: bold; font-size: 8px; color: #000001;
+	background-color: aquamarine; text-align: center; }
+.Righe_Normali_center_Small
+{	font-size: 5px;	 color: Black; background-color: White; text-align: center;
+	background: url(../img/separatore.gif) #fff7e5 fixed repeat-x left bottom; }
+.Riga_Paginazione_Small { font-size: 7px; color: blue; background-color: white; }
+
+.linkbianco { color:White; }
+.Link_evidenziato { font-weight: bold; font-size: 12px; text-decoration: underline; }
+A.Link_evidenziato:link
+{	font-weight: bold; font-size: 12px; color: blue; text-decoration: underline; }
+A.Link_evidenziato:hover
+{	font-weight: bold; font-size: 12px; color: blue;
+ 	background-color: yellow; text-decoration: underline; }
+.Link_Filtro_Small
+{	font-weight: normal; font-size: 11px; color: #000001; text-decoration: underline; }
+A.Link_Filtro_Small:link
+{	font-weight: normal; font-size: 11px; color: #000001; text-decoration: underline; }
+A.Link_Filtro_Small:hover
+{	font-weight: normal; font-size: 11px; color: #000001;
+	background-color: yellow; text-decoration: underline; }

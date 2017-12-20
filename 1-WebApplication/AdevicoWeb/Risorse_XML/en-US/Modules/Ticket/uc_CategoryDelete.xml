@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--eng-->
+<Resource xmlns="urn:ComolTranslation">
+
+	<item name="LTst1Text1.text">The category you are trying to delete contains subcategories. Do you want to continue?</item>
+	<item name="LTst1Text2.text">Choose an action to perform on the subcategories</item>
+
+	<item name="LTst2Text1.text" mustcontains="{num}">There are {num} tickets currently assigned to the category you want to delete.</item>
+	<item name="LTst2Text2.text">Choose an action to perform on the subcategories</item>
+
+	<item name="LTst3ReassignALL_t.text">All the categories you want to delete will be reassigned to an existent single category.</item>
+	<item name="LTst3ReassignALLcate_t.text">Category</item>
+
+	<item name="LTst3ReassignSinglecate_t.text">Select, for every category you are up to delete, a destination category.</item>
+
+	<item name="LTcateName_t.text">Source category</item>
+	<item name="LTnewCate_t.text">Destination category</item>
+
+	<item name="LTconfirm.text">Confirm choices</item>
+
+	<item name="LTclose.text">Changes have been applied.</item>
+
+	<item name="UcRBLdelCAtegory.MoveUp.text">Move up</item>
+	<item name="UcRBLdelCAtegory.MoveUp.description">Subcategories will not be deleted and will be moved to the superior level.</item> 
+
+	<item name="CTRLrblDelCAtegory.DeleteAll.text">Cancel</item>
+	<item name="CTRLrblDelCAtegory.DeleteAll.description">
+		All categories will be immediately deleted.<br /> By choosing this option you will have to reassign the external tickets.
+	</item>
+
+	<item name="CTRLrblDelCAtegory.Reorder.text">Reorganize manually</item>
+	<item name="CTRLrblDelCAtegory.Reorder.description">Cancel current operation and go to the categories reordering page.</item>
+
+	<item name="CTRLrblTicketAss.ReassignALL.text">Reassign all</item>
+	<item name="CTRLrblTicketAss.ReassignALL.description">All tickets will be assigned to a single, existent category.</item>
+
+	<item name="CTRLrblTicketAss.ReassignSingle.text">Reassign single categories</item>
+	<item name="CTRLrblTicketAss.ReassignSingle.description">For every category you want to delete, you will have to choose a category to replace the previous one.</item>
+
+	<item name="LNBundo.text">Cancel</item>
+	<item name="LNBundo.ToolTip">Cancel and close windows</item>
+	<item name="LNBundo.status">Cancel and close windows</item>
+	<item name="LNBback.text">Back</item>
+	<item name="LNBback.ToolTip">Previous step</item>
+	<item name="LNBback.status">Previous step</item>
+	<item name="LNBnext.text">Next</item>
+	<item name="LNBnext.ToolTip">Next step</item>
+	<item name="LNBnext.status">Next step</item>
+	<item name="LNBconfirm.text">Save</item>
+	<item name="LNBconfirm.ToolTip">Confirm and apply changes</item>
+	<item name="LNBconfirm.status">Confirm and apply changes</item>
+	<item name="LNBexit.text">Exit</item>
+	<item name="LNBexit.ToolTip">Close wizard and refresh category list</item>
+	<item name="LNBexit.status">Close wizard and refresh category list</item>
+
+	<item name="DDLCategory.UnAssigned">Select categories</item>
+
+	<item name="Reassign.message">Reassigned to a different category, due to deletion.</item>
+
+	<item name="LTerrorSingle.text">Please, choose a category to reassign.</item>
+	<item name="LTerrorMulti.text">Please, choose a category to reassign.</item>
+	
+</Resource>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="lm.Comol.Modules.CallForPapers" namespace="lm.Comol.Modules.CallForPapers.Domain.Evaluation">
+	<class name="DssCallEvaluation" table="CP_DssEvaluation" optimistic-lock ="version">
+		<id name="Id" column="Id" type="Int64">
+			<generator class="native"/>
+		</id>
+    <version name="TimeStamp"
+   generated="always"
+   unsaved-value="null"
+   type="BinaryBlob">
+      <column name="_Timestamp"
+              not-null="false"
+              sql-type="timestamp"/>
+    </version>
+    <property name="IdCall" />
+    <property name="IdCommittee" />
+    <property name="IdEvaluation" />
+    <property name="IdEvaluator" />
+    <property name="IdSubmission" />
+    
+    <property name="Type" type="lm.Comol.Modules.CallForPapers.Domain.Evaluation.DssEvaluationType, lm.Comol.Modules.CallForPapers" column="Type" />
+    
+    <property name="Ranking" />
+    <property name="Value" />
+    <property name="ValueFuzzy" />
+    <property name="IsFuzzy" />
+    <property name="RatingType" type="lm.Comol.Core.Dss.Domain.RatingType, lm.Comol.Core.Dss" column="RatingType" />
+    <property name="IsCompleted" />
+    <property name="IsValid" />
+    <property name="LastUpdateOn" not-null="false" />
+    <property name="Deleted" type="lm.Comol.Core.DomainModel.BaseStatusDeleted,lm.Comol.Core.DomainModel" column="_Deleted" />
+  </class>
+</hibernate-mapping>

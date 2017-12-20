@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="lm.Comol.Core.DomainModel" namespace="lm.Comol.Core.FileRepository.Domain.toRemove">
+  <class name="TransferFromOldTable" table="FILE_Disponibile" mutable="false">
+    <id name="FLDS_id" column="FLDS_id" type="Int64" unsaved-value="0">
+      <generator class="native"/>
+    </id>
+    <property name="FLDS_CMNT_id"/>
+    <property name="FLDS_TPMT_id"/>
+    <property name="FLDS_Ordine"/>
+    <property name="FLDS_PRSN_ID"/>
+    <property name="FLDS_nome"/>
+    <property name="FLDS_descrizione"/>
+    <property name="FLDS_dataInserimento"/>
+    <property name="FLDS_dimensione"/>
+    <property name="ContentType"/>
+    <property name="FLDS_numeroScaricamenti"/>
+    <property name="FLDS_path"/>
+    <property name="FLDS_RLPC_id"/>
+    <property name="FLDS_CTGR_id"/>
+    <property name="FLDS_visibile"/>
+    <property name="FLDS_Livello"/>
+    <property name="FLDS_isFile"/>
+    <property name="FLDS_padreID"/>
+    <property name="FLDS_CloneID"/>
+    <property name="FLDS_isVirtual"/>
+    <property name="FLDS_isDeleted"/>
+    <property name="FLDS_IsPersonal"/>
+    <property name="FLDS_GUID"/>
+
+    <property name="_ModifiedOn"/>
+    <property name="_ModifiedBy"/>
+    <property name="IdRepositoryItemType"/>
+    <property name="IsDownloadable"/>
+    <property name="Extension"/>
+    <property name="CloneUniqueID"/>
+    <property name="IsInternal"/>
+    <property name="AllowUpload"/>
+    <property name="ServiceActionAjax"/>
+    <property name="ServiceOwner"/>
+    <property name="OwnerFullyQualifiedName"/>
+    <property name="OwnerTypeID"/>
+    <property name="OwnerLongID"/>
+    <property name="Discriminator"/>
+    <property name="changedname"/>
+    <property name="updated"/>    
+  </class>
+</hibernate-mapping>

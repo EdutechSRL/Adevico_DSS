@@ -1,0 +1,210 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Resource xmlns="urn:ComolTranslation">
+  <item name="LBmailType_t.text">Tipo messaggio:</item>
+  <item name="LBmailMessage_t.text">Testo messaggio:</item>
+  <item name="LBsubject_t.text">Oggetto:</item>
+  <item name="LBmailMessage_t.text">Messaggio:</item>
+  <item name="RBLmailType.0">HTML</item>
+  <item name="RBLmailType.1">Testo</item>
+  <item name="System.Mail" placeholder="true" mustcontains="{0}">Sistema ({0})</item>
+  <item name="LBmailUserSender.text">Utente corrente</item>
+  <item name="LBmailUserSender.ToolTip" placeholder="true" mustcontains="{0}">Attualmente la mail dell'utente corrente sarebbe: {0}</item>
+  <item name="LBsignatureType_t.text">Firma:</item>
+  <item name="LBsignatureNone.text">Nessuna</item>
+  <item name="LBsignatureFromConfigurationSettings.text">Da configurazione</item>
+  <item name="LBsignatureFromNoReplySettings.text">Messaggio automatico (da configurazione)</item>
+  <item name="LBsignatureFromTemplate.text">Presente all'interno del testo del modello</item>
+  <item name="LBsignatureFromField.text">Dal campo "Firma"</item>
+  <item name="LBsignatureFromSkin.text">Dalla skin</item>        
+  <item name="LBsender_t.text">Mittente:</item>
+  <item name="DDLsender.System" placeholder="true" mustcontains="{0}">Sistema ({0})</item>
+  <item name="DDLsender.LoggedUser">Mail personale</item>
+  <item name="LBsubjectType_t.text">Oggetto inizia con:</item>
+  <item name="DDLsubject.SystemConfiguration">Oggetto di sistema</item>
+  <item name="DDLsubject.None">Nulla</item>
+  <item name="CBXcopyToSender.text">Invia copia a mittente</item>
+  <item name="CBXnotifyToSender.text">Conferma Ricezione</item>
+  <item name="LBtags_t.text">Segnaposti:</item>
+  <item name="LBmandatorySkipped.text">Mancano i seguenti obbligatori:</item>
+  <item name="LTtagHeaderTranslatedName.text">Pulsante</item>
+  <item name="LTtagHeaderValue.text">Segnaposto</item>
+  <item name="LTtagHeaderDescription.text">Descrizione</item>
+  <item name="DVdialog.Title">Legend</item>
+  <item name="SystemForUser" html="false" placeholder="true" mustcontains="{0}|{1}|{2}|{3}">{0}&lt;{1}&gt; per conto di {2}&lt;{3}&gt;</item>
+  <item name="LNBaddressesOn.text" disambiguation="destinatari di una mail" html="false" placeholder="false">Destinatari</item>
+  <item name="LNBaddressesOn.ToolTip" html="false" placeholder="false">Mostra il destinatario/i destinatari del messaggio</item>
+  <item name="LNBaddressesOff.text" disambiguation="destinatari di una mail" html="false" placeholder="false">nascondi</item>
+  <item name="LNBaddressesOff.ToolTip" html="false" placeholder="false">Nascondi il destinatario/i destinatari del messaggio</item>
+  <item name="LNBattachmentsOn.text" disambiguation="allegati ad una mail" html="false" placeholder="false">Allegati</item>
+  <item name="LNBattachmentsOn.ToolTip" disambiguation="allegati ad una mail" html="false" placeholder="false">Mostra i file allegati al messaggio</item>
+  <item name="LNBattachmentsOff.text" disambiguation="allegati ad una mail" html="false" placeholder="false">nascondi</item>
+  <item name="LNBattachmentsOff.ToolTip" disambiguation="allegati ad una mail" html="false" placeholder="false">Nascondi i file allegati al messaggio</item>
+  <item name="LNBoptionsOn.text" html="false" placeholder="false">Opzioni</item>
+  <item name="LNBoptionsOn.ToolTip" html="false" placeholder="false">Mostra le opzioni del messaggio</item>
+  <item name="LNBoptionsOff.text" html="false" placeholder="false">nascondi</item>
+  <item name="LNBoptionsOff.ToolTip" html="false" placeholder="false">Nascondi le opzioni del messaggio</item>
+  <item name="LBsentBy_t.text" disambiguation="riferito al mittente di una mail" html="false" placeholder="false">Inviato da:</item>
+  <item name="LBsentBy_t.text" disambiguation="riferito al mittente di una mail" html="false" placeholder="false">Inviato da:</item>
+  <item name="LBaddressTo_t.text" html="false" placeholder="false">Destinatario/i:</item>
+  <item name="BTNsendPreviewMail.text">Invia anteprima</item>
+  <item name="BTNsendPreviewMail.ToolTip">Invia anteprima della mail</item>
+  <item name="LBrecipients_t.text" disambiguation="destinatari di una mail" html="false" placeholder="false">Destinatario/i:</item>
+  <item name="LBshowAllrecipients.text" disambiguation="destinatari di una mail" html="false" placeholder="false">Mostra tutti</item>
+  <item name="LBshowAllrecipients.ToolTip" disambiguation="destinatari di una mail" html="false" placeholder="false">Mostra tutti i destinatari</item>
+  <item name="LBhideAllrecipients.text" disambiguation="destinatari di una mail" html="false" placeholder="false">^</item>
+  <item name="LBhideAllrecipients.ToolTip" disambiguation="destinatari di una mail" html="false" placeholder="false">Nascondi i destinatari del messaggio</item>
+  <item name="LBattachments_t.text" disambiguation="allegati ad una mail" html="false" placeholder="false">Allegati:</item>
+  <item name="LBshowAllAttachments.text" disambiguation="allegati ad una mail" html="false" placeholder="false">Mostra tutti</item>
+  <item name="LBshowAllAttachments.ToolTip" disambiguation="allegati ad una mail" html="false" placeholder="false">Mostra tutti i destinatari</item>
+  <item name="LBhideAllAttachments.text" disambiguation="allegati ad una mail" html="false" placeholder="false">^</item>
+  <item name="LBhideAllAttachments.ToolTip" disambiguation="allegati ad una mail" html="false" placeholder="false">Nascondi i destinatari del messaggio</item>
+  <item name="LBmessageSubject_t.text" disambiguation="riferito ad una" html="false" placeholder="false">Oggetto:</item>
+  <item name="LTmailAddressInvalidErrorsInfo.text" html="false" placeholder="false">I seguenti indirizzi mail NON sono nel formato corretto:</item>
+  <item name="BTNclosePreviewMessageWindow.text">Chiudi</item>
+  <item name="BTNclosePreviewMessageWindow.ToolTip">Chiudi la finestra.</item>
+  <item name="HYPhideErrors.text">nascondi gli errori</item>
+  <item name="HYPhideErrors.ToolTip">Nascondi gli errori</item>
+  <item name="LBmailbodyHTML.text">HTML</item>
+  <item name="LBmailbodyTEXT.text">Testo</item>
+  <item name="LBsubjectSystem.text">Oggetto di sistema</item>
+  <item name="LBsubjectNone.text">Nulla</item>
+  <item name="LBnotifyToSender.text">Nulla</item>
+  <item name="LBcopyToSender.text">Nulla</item>
+  <item name="CBnotifyToSender.text">Conferma Ricezione</item>
+  <item name="CBcopyToSender.text">Invia copia a mittente</item>
+  <item name="SubmissionTranslations.CallTitle" placeholder="true" mustcontains="{0}">Domanda di partecipazione al bando {0}</item>
+  <item name="SubmissionTranslations.CallTitleAndEdition" placeholder="true" mustcontains="{0}|{1}">Domanda di partecipazione al bando {0} edizione {1}</item>
+  <item name="SubmissionTranslations.PrintInfo" placeholder="true" mustcontains="{0}|{1}|{2}" description="-mario rossi- IL -01/01/2016- ALLE -16:55-">Stampata da {0} il {1} alle {2}</item>
+  <item name="SubmissionTranslations.SubmittedByTitle">Sottomessa da:</item>
+  <item name="SubmissionTranslations.SubmittedByInfo" placeholder="true" mustcontains="{0}|{1}|{2}" description="-mario rossi- IL -01/01/2016- ALLE -16:55-">{0} il {1} alle {2}</item>
+  <item name="SubmissionTranslations.SubmittedForInfo" placeholder="true" mustcontains="{0}|{1}|{2}|{3}" description="-sysadmin@sysadmin.it- PER CONTO DI -mario rossi- IL -01/01/2016- ALLE -16:55-">{0} per conto di {1} il {2} alle {3}</item>
+  <item name="SubmissionTranslations.SubmittedTypeTitle" disambiguation="domanda di partecipazione/domanda di adesione">Tipo domanda</item>
+  <item name="SubmissionTranslations.SubmissionStatusTitle" disambiguation="status: attivo/chiuso/in corso/valutazione" >Status:</item>
+  <item name="SubmissionTranslations.SubmissionStatus" hidden="true">- </item>
+  <item name="SubmissionTranslations.EmptyItem" hidden="true"> // </item>
+  <item name="SubmissionTranslations.SubmittedFilesTitle">File allegati:</item>
+  <item name="SubmissionTranslations.SubmissionInfo"> Informazioni di base</item>
+  <item name="SubmissionTranslations.CommunityNameTitle" disambiguation="singolare" placeholder="true" mustcontains="{0}">Comunità {0}</item>
+  <item name="SubmissionTranslations.PortalCommunityName">Portale</item>
+  <item name="SubmissionTranslations.CreatedByInfo" placeholder="true" mustcontains="{0}|{1}|{2}" description="-mario rossi- IL -01/01/2016- ALLE -16:55-">{0} il {1} alle {2}</item>
+  <item name="SubmissionTranslations.FileSubmitted">sottomesso</item>
+  <item name="SubmissionTranslations.FileNotSubmitted">NON sottomesso</item>
+  <item name="SubmissionTranslations.StatusAccepted">Accettata</item>
+  <item name="SubmissionTranslations.StatusDraft">In bozza</item>
+  <item name="SubmissionTranslations.StatusRejected">Rifiutata</item>
+  <item name="SubmissionTranslations.StatusSubmitted">Sottomessa</item>
+  <item name="SubmissionTranslations.StatusValuated">Valutata</item>
+  <item name="SubmissionTranslations.StatusValuating">In valutazione</item>
+  <item name="SubmissionTranslations.StatusWaitingValuation">In attesa di valutazione</item>
+  <item name="SubmissionTranslations.ItemMandatory" hidden="true" disambiguation="non tradurre"> *</item>
+  <item name="SubmissionTranslations.MaxCharInfo" placeholder="true" mustcontains="{0}">(massimo {0} caratteri compresi gli spazi)</item>
+  <item name="SubmissionTranslations.DisclaimerAccept"> Accetta</item>
+  <item name="SubmissionTranslations.DisclaimerReject"> Non accetta</item>
+  <item name="SubmissionTranslations.FileCreationError">Errore nella fase di creazione del file.</item>
+  <item name="SubmissionTranslations.Pager">Pag.</item>
+  <item name="SubmissionTranslations.FilesSubmitted">DocumentiAllegati</item>
+  <item name="SubmissionTranslations.SubmissionCallFileName" placeholder="true" mustcontains="{0}">DomandaSottomessa_{0}</item>
+  <item name="SubmissionTranslations.SubmissionRequestFileName" placeholder="true" mustcontains="{0}">DomandaPartecipazione_{0}</item>
+  <item name="SubmissionTranslations.AnonymousUser">Utente anonimo</item>
+  <item name="SubmissionTranslations.MinOption" placeholder="true" mustcontains="{0}">Almeno {0} opzione/i</item>
+  <item name="SubmissionTranslations.MaxOption" placeholder="true" mustcontains="{0}">Al massimo {0} opzioni/e</item>
+  <item name="SubmissionTranslations.MinOptionMaxOption" placeholder="true" mustcontains="{0}|{1}">Minimo {0} opzioni/e, massimo {1}</item>
+  <item name="SubmissionTranslations.RequestTitle" placeholder="true" mustcontains="{0}">Domanda di adesione a "{0}"</item>
+  <item name="SubmissionTranslations.SubmitToCallFileName" placeholder="true" mustcontains="{0}">DomandaBando_{0}</item>
+  <item name="SubmissionTranslations.SubmitToRequestFileName" placeholder="true" mustcontains="{0}">DomandaAdesione_{0}</item>
+  <item name="SubmissionTranslations.DisclaimerRead">Letto</item>
+  <item name="SubmissionTranslations.OtherOption">Altro:</item>
+  <item name="SubmissionTranslations.OtherOptionValue" mustcontains="{0}|{1}" placeholder="true">{0}:{1}</item>
+  <item name="fakeCommunityName">Corso di test</item>
+  <item name="fakeRoleName">Partecipante</item>
+  <item name="fakeName">Mario</item>
+  <item name="fakeSurname">Rossi</item>
+  <item name="fakeTaxCode">RSSMRIO</item>
+  <item name="fakeMail">mario.rossi@unknown.fake.it</item>
+  <item name="CallForPaper.Name">Bando di prova</item>
+  <item name="CallForPaper.Description">Questo è un bando di prova: serve per poter visualizzare l'anteprima.</item>
+  <item name="CallForPaper.Summary">Questo è un bando di prova: serve per poter visualizzare l'anteprima.</item>
+  <item name="CallForPaper.SubmittersType.Name">Partecipante</item>
+  <item name="CallForPaper.SubmittersType.Description">Partecipante di test</item>
+  <item name="CallForPaper.FieldsSection.1.Name">Dati personali</item>
+  <item name="CallForPaper.FieldsSection.1.Description">Selezione relativa alla raccolta dei dati personali dell'utente</item>
+  <item name="CallForPaper.FieldDefinition.1.1.Name">Nome</item>
+  <item name="CallForPaper.FieldDefinition.1.1.Description">Nome dell'utente.</item>
+  <item name="CallForPaper.FieldDefinition.1.2.Name">Cognome</item>
+  <item name="CallForPaper.FieldDefinition.1.2.Description">Cognome dell'utente.</item>
+  <item name="CallForPaper.FieldDefinition.1.3.Name">Codice fiscale</item>
+  <item name="CallForPaper.FieldDefinition.1.3.Description">Codice fiscale dell'utente.</item>
+  <item name="CallForPaper.FieldsSection.2.Name">Contatti</item>
+  <item name="CallForPaper.FieldsSection.2.Description">Selezione relativa alle modalità di contatto del partecipante al bando</item>
+  <item name="CallForPaper.FieldDefinition.2.1.Name">Mail</item>
+  <item name="CallForPaper.FieldDefinition.2.1.Description">Indirizzo mail.</item>
+  <item name="CallForPaper.FieldDefinition.2.2.Name">Telefono</item>
+  <item name="CallForPaper.FieldDefinition.2.2.Description">Recapito telefonico dell'utente.</item>
+  <item name="CallForPaper.FieldDefinition.2.3.Name">Indirizzo</item>
+  <item name="CallForPaper.FieldDefinition.2.3.Description">Recapito per l'invio delle mail.</item>
+  <item name="RequestForMembership.Name">Adesione/Pre adesione di prova</item>
+  <item name="RequestForMembership.Description">Questa è una adesione/pre adesione: serve per poter visualizzare l'anteprima.</item>
+  <item name="RequestForMembership.Summary">Questa è una adesione/pre adesione: serve per poter visualizzare l'anteprima.</item>
+  <item name="RequestForMembership.SubmittersType.Name">Partecipante</item>
+  <item name="RequestForMembership.SubmittersType.Description">Partecipante di test</item>
+  <item name="RequestForMembership.FieldsSection.1.Name">Dati personali</item>
+  <item name="RequestForMembership.FieldsSection.1.Description">Selezione relativa alla raccolta dei dati personali dell'utente</item>
+  <item name="RequestForMembership.FieldDefinition.1.1.Name">Nome</item>
+  <item name="RequestForMembership.FieldDefinition.1.1.Description">Nome dell'utente.</item>
+  <item name="RequestForMembership.FieldDefinition.1.2.Name">Cognome</item>
+  <item name="RequestForMembership.FieldDefinition.1.2.Description">Cognome dell'utente.</item>
+  <item name="RequestForMembership.FieldDefinition.1.3.Name">Titolo di studio</item>
+  <item name="RequestForMembership.FieldDefinition.1.3.Description">Deve indicare il proprio titolo di studio.</item>
+  <item name="RequestForMembership.FieldsSection.2.Name">Contatti</item>
+  <item name="RequestForMembership.FieldsSection.2.Description">Selezione relativa alle modalità di contatto del partecipante al bando</item>
+  <item name="RequestForMembership.FieldDefinition.2.1.Name">Mail</item>
+  <item name="RequestForMembership.FieldDefinition.2.1.Description">Indirizzo mail.</item>
+  <item name="RequestForMembership.FieldDefinition.2.2.Name">Skype</item>
+  <item name="RequestForMembership.FieldDefinition.2.2.Description">Eventuale recapito skype dell'utente.</item>
+  <item name="RequestForMembership.FieldDefinition.2.3.Name">Sito aziendale</item>
+  <item name="RequestForMembership.FieldDefinition.2.3.Description">Eventuale sito aziendale dell'utente.</item>
+  <item name="Webconferencing.Room.Name">Nome della stanza</item>
+  <item name="Webconferencing.Room.Description">Descrizione della stanza, senza formattazione</item>
+  <item name="Webconferencing.User.Name">Nome-Utente</item>
+  <item name="Webconferencing.User.SName">Cognome-Utente</item>
+  <item name="Webconferencing.User.LangCode">Codice lingua</item>
+  <item name="Webconferencing.User.Mail">nome.cognome@mail.net</item>
+	<item name="Webconferencing.NullDateTime" description="Placeholder date vuote - Valido SOLO per preview"> non impostata </item>
+
+  <item name="ModuleTicket.Category.CategoryType.Public">Pubblica</item>
+  <item name="ModuleTicket.Category.CategoryType.Current">Privata</item>
+  <item name="ModuleTicket.Category.CategoryType.Ticket">Solo Ticket</item>
+  <item name="ModuleTicket.Category.TicketStatus.draft">in bozza</item>
+  <item name="ModuleTicket.Category.TicketStatus.open">aperto</item>
+  <item name="ModuleTicket.Category.TicketStatus.inProcess">in lavorazione</item>
+  <item name="ModuleTicket.Category.TicketStatus.userRequest">in attesa</item>
+  <item name="ModuleTicket.Category.TicketStatus.userRequest">in attesa</item>
+  <item name="ModuleTicket.Category.TicketStatus.inProcess">in lavorazione</item>
+  <item name="ModuleTicket.Category.TicketStatus.closeUnsolved">non risolto</item>
+  <item name="ModuleTicket.Category.TicketStatus.closeSolved">chiuso con successo</item>
+  <item name="ModuleTicket.FakeAnswer.ShortText.Request">Richiesta utente</item>
+  <item name="ModuleTicket.FakeAnswer.FullText.Request">Richiesta di aiuto dell'utente per un problema inerente...</item>
+  <item name="ModuleTicket.FakeAnswer.ShortText.FeedBack">Problema risolto</item>
+  <item name="ModuleTicket.FakeAnswer.FullText.FeedBack">Il suo problema è stato risolto in data odierna</item>
+  <item name="ModuleTicket.FakeAnswer.ShortText.PersonalFeedBack">FeedBack</item>
+  <item name="ModuleTicket.FakeAnswer.FullText.PersonalFeedBack">FeedBack personale</item>
+  <item name="ModuleTicket.FakeAnswer.ShortText.System">Messaggio sistema</item>
+  <item name="ModuleTicket.FakeAnswer.FullText.System">Messaggio di sistema inerente il ticket</item>
+  <item name="ModuleTicket.FakeCategory.Name">Percorso formativo</item>
+  <item name="ModuleTicket.FakeCategory.Description">Problemi relativi all'accesso del materiale del corso.</item>
+  <item name="ModuleTicket.FakeCategory.NewAssignerDisplayName">Mario Verdi</item>
+  <item name="ModuleTicket.FakeCategory.Name.multi">Percorso formativo/Educational Path</item>
+  <item name="ModuleTicket.FakeCategory.Description.multi">Problemi relativi all'accesso del materiale del corso./ Unable to see file.</item>
+  <item name="ModuleTicket.FakeCategory.Name.Initial">Generica</item>
+  <item name="ModuleTicket.FakeCategory.Description.Initial">Problemi non riconducibili ad altre categorie presenti.</item>
+  <item name="ModuleTicket.FakeUser.Name">Marco</item>
+  <item name="ModuleTicket.FakeUser.Surname">Bianchi</item>
+  <item name="ModuleTicket.FakeUser.Password">TN12a-23</item>
+  <item name="ModuleTicket.FakeUser.Mail">mario.bianchi@nomail.it</item>
+  <item name="ModuleTicket.FakeTicket.Assigner">Marta Verdi</item>
+  <item name="ModuleTicket.FakeTicket.CreatorDisplayName">Mario Bianchi</item>
+  <item name="ModuleTicket.FakeTicket.LongText">Non sono in grado di vedere il materiale presente nel percorso formativo "Formazione in rete" della comunità "Gruppi di studio".</item>
+  <item name="ModuleTicket.FakeTicket.Preview">Non sono in grado di vedere il materiale presente nel percorso formativo "Formazione in rete"</item>
+  <item name="ModuleTicket.FakeTicket.Title">Impossibile vedere il materiale</item>  
+  
+</Resource>

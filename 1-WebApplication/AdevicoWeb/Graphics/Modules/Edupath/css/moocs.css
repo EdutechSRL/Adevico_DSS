@@ -1,0 +1,699 @@
+﻿/* Mooc stylesheet - updated 07/07/201*/
+
+/*#header .page-width,
+#page-box .page-width{
+    width:90%;
+}*/
+.adv-alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+}
+.adv-alert.adv-alert-info {
+    color: #A8B85A;
+    background-color: #e8eecd;
+    border-color: #A8B85A;
+}
+.paths .path .ico_playmmd_m{
+    display:none !important;
+}
+/* star and coccarda */
+span.star {
+    display: inline-block;
+    vertical-align:middle;
+    width: 30px;
+    height: 30px;
+    background-image: url('../img/cokades-and-stars/star-none.png');
+    background-position: center center;
+    background-repeat:no-repeat;
+    position:relative;
+    overflow:hidden;
+    text-indent:-1000px;
+}
+
+.cokadecontainer.empty{
+	display:none;
+}
+span.star.Info{
+    background-image:none !important;
+}
+span.star.None{
+    background-image: url('../img/cokades-and-stars/star-none.png');
+}
+span.star.Certification.None,
+span.star.Certification{
+    background-image: url('../img/cokades-and-stars/certificate-not-download.png');
+    width:60px;
+    height:60px;
+
+}
+span.star.Certification.BrowsedStarted,
+span.star.Certification.Browsed,
+span.star.Certification.Started,
+span.star.Certification.Completed,
+span.star.Certification.Passed,
+span.star.Certification.CompletedPassed{
+    background-image: url('../img/cokades-and-stars/certificate.png');
+
+}
+span.star.Browsed, span.star.Started, span.star.BrowsedStarted {
+    background-image: url('../img/cokades-and-stars/star-browsed-started.png');
+}
+
+span.star.Completed, span.star.Passed, span.star.CompletedPassed {
+    background-image: url('../img/cokades-and-stars/star-complated.png');
+}
+span.star.Completed, span.star.Passed, span.star.CompletedPassed.gold {
+    background-image: url('../img/cokades-and-stars/star-complated-gold.png');
+}
+
+.mookCompletition{
+    white-space: nowrap;
+}
+.completitionbarContainer{
+    display:inline-block;
+}
+.mookCompletition .completitionBar {
+    display: inline-block;
+    vertical-align:middle;
+    padding: 2px 12px;
+    background-color:#D3D3D3;
+    border-radius: 4px;
+}
+.mookCompletition .completitionBar.None {
+    background-color:#D3D3D3;
+}
+.mookCompletition .completitionBar.BrowsedStarted,
+.mookCompletition .completitionBar.Browsed,
+.mookCompletition .completitionBar.Started {
+    background-color:#FFCD40;
+}
+.mookCompletition .completitionBar.CompletedPassed,
+.mookCompletition .completitionBar.Completed
+.mookCompletition .completitionBar.Passed {
+    background-color:#A8B85A;
+}
+
+.cokadecontainer {
+    /*contenitore coccarda*/  
+}
+
+.cokadecontainer .cokadeItem {
+    /*coccarda generica*/   
+    background-color: #fff;
+    display: inline-block;
+    width: 41px;
+    height: 60px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    position: relative;
+    overflow: hidden;
+    text-indent: -1000px;
+    border-color: grey;
+    padding: 8px 15px;
+    border-style: double;
+    border-width: 3px;
+}
+
+.cokadecontainer .empty {
+    /*coccarda vuota: nessun play*/
+    display:none;
+}
+.cokadecontainer .incomplete {
+    /*coccarda parziale: iniziati ma non completi*/
+    display:none;
+}
+.cokadecontainer .silver {
+    /*coccarda completamento MINIMO*/
+    background-image: url('../img/cokades-and-stars/cockade-silver.png');
+    background-position: center center;
+    background-repeat:no-repeat;
+}
+.cokadecontainer .gold {
+    /*coccarda tutti completati, ma non al 100%*/
+    background-image: url('../img/cokades-and-stars/cockade-gold.png');
+    background-position: center center;
+    background-repeat:no-repeat;
+}
+.cokadecontainer .platinum {
+    /*coccarda tutti completati al 100%*/
+    background-color: #FF55FF;
+}
+/* fine star and coccarda */
+
+/* @group Mooc Play */
+
+span#LBtitolo {
+	font-size: 1.5em;
+	text-transform: capitalize;
+	color: #aaa;
+	letter-spacing: -1px;
+}
+
+#CPHservice_divProgressBar {
+	margin: 20px 0;
+}
+
+div.RadChart {
+	width: 100% !important;
+	height: auto !important;
+}
+
+div.RadChart img {
+	max-width: 100%;
+	height: auto;
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	display: inherit;
+}
+
+div#ctl00_CPHservice_CTRLprogressBar_RDpathBar.RadChart img {
+	margin-bottom: 1em;
+	margin: 1em auto !important;
+}
+
+.lastActivity {
+	padding: 20px;
+	margin: 10px 0;
+	border: 1px solid #ccc;
+	background: #fff;
+}
+
+.lastActivity .statuslight {
+	margin: 0 1em;
+	width: 16px;
+	height: 16px;
+	vertical-align: middle;
+}
+
+.lastActivity a {
+	margin: 0 1em ;
+	vertical-align: middle;
+	font-size: 1.3em;
+}
+
+.lastActivity * {
+	line-height: 1em;
+	vertical-align: middle;
+	margin-right: 1em;
+}
+
+div.tree {
+	margin: 20px 0;
+}
+
+.segnaposto{
+    position: fixed;
+    width:20%;
+    height:100%;
+    top:0;
+    left: -18%;
+    z-index:11;
+    background-color:#fff;
+    box-shadow:0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
+
+    transition: left ease 600ms;
+}
+
+
+div.segnaposto:hover {
+    left: 0%;   
+}
+.segnaposto .arrowRight {
+    position:absolute;
+    right:-28px;
+    width:40px;
+    height:40px;
+    top:220px;
+    background-size:50%;
+    background-image: url('../img/cokades-and-stars/arrow-right.png');
+    background-position:center center;
+    background-repeat:no-repeat;
+    background-color:#fff;
+    opacity:1;
+    border: solid 1px #ccc;
+
+    transition: opacity ease 400ms;
+}
+div.segnaposto:hover .arrowRight {
+    opacity:0;
+}
+
+div.floatbar {
+    width: 90%;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    border: 1px solid #ccc;
+    background: #fff;
+    position: relative;
+    margin: 212px auto 20px auto;
+}
+
+.floatbar.abs {
+	position:relative;
+}
+
+.floatbar.fixed {
+	position:fixed;
+	top:0;
+}
+
+.floatbar .cloneme {
+	display:none;
+}
+
+div.floatbar .unit {
+	padding: 10px;
+	border-bottom: 1px dotted #ccc;
+}
+
+div.floatbar .unit:last-child {
+	border: none
+}
+
+div.floatbar .unit:hover {
+	background: #f5f5f5;
+}
+
+.floatbar .unit a {
+	display:inline-block;
+	*display:inline;
+	*zoom:1;
+	text-decoration:none;
+	width:100%;
+	font-size:1.3em;
+}
+
+.floatbar .unit a:hover {
+	text-decoration: underline;
+}
+
+.floatbar .gotop,
+.floatbar .gobottom {
+	text-align: center;
+	background: #fff !important;
+}
+
+.floatbar .gotop a,
+.floatbar .gobottom a {
+	color: #888;
+	font-weight:bold !important;
+	display: inline-block !important;
+	text-decoration:none !important;
+	margin: 0 !important;
+	padding: 0 !important;
+	text-align:center;
+	border-radius:24px;
+	width: 20px;
+	height: 20px;	
+	font-size: 20px !important;
+}
+
+.floatbar .gotop a:hover,
+.floatbar .gobottom a:hover {
+	background: #f5f5f5;
+	color: #5689ba;
+}
+
+ul.units.playmode,
+ul.units.playmode * {
+	font-size: 13px;
+}
+
+ul.units,
+ul.activities,
+ul.subactivities {
+	margin: 0;
+	padding: 0;
+}
+
+.units {
+	width: 100%;
+	/*	max-width:1000px;*/
+	float:right;
+}
+
+ul.subactivities {
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+li.unit .unitcontent {
+	margin: 1em 0;
+	margin-top: 0;
+	padding: 10px 20px;
+	background: #f5f5f5;
+	background: #e9ecef;
+	/*	background: #fff;*/
+	border: 1px solid #ccc;
+}
+
+.units .unit:first-child .unitcontent {
+	margin-top: 0;
+}
+
+li.activity .activitycontent {
+	margin-bottom: 1em;
+	padding: 10px;
+	background: #fff;
+	border: 1px solid #ccc;
+	border-left: 5px solid #ccc;
+}
+
+li.note.activity .activitycontent {
+	border: 1px dotted #ccc;
+	border-left-width: 5px;
+	background: #f5f5f5;
+}
+
+.activitycontent  span.right {
+	width: 33%;
+	text-align: right;
+}
+
+.activitycontent  span.left {
+	width: 65%;
+	line-height: 1.5em;
+}
+
+.note .activitycontent  span.left {
+	width: 100%;
+}
+
+li.activity.green .activitycontent,
+li.subactivity.green .subactivitycontent {
+	border-left: 5px solid #99c74a;
+}
+
+li.activity.yellow .activitycontent,
+li.subactivity.yellow .subactivitycontent {
+	border-left: 5px solid #ffcd40;
+}
+
+li.activity .subactivitycontent {
+	margin-bottom: 1em;
+	padding: 10px;
+	background: #fff !important;
+	border: 1px solid #ccc;
+	border-left: 5px solid #ccc;
+}
+
+span.switchunit.handle,
+span.switchactivity.handle,
+.switchactivity.spacer {
+	display: none;
+}
+
+span.title.switchunity.handle,
+span.title.switchactivity.handle {
+    width: auto !important;
+    height: auto !important;
+    min-height: 16px !important;
+    text-indent: 0 !important;
+    line-height: inherit !important;
+    background: none !important;
+    display: inline-block;
+}
+
+span.title.switchunity.handle {
+	position: relative;
+	font-size: 18px !important;
+	left: -10px;
+}
+
+span.title.switchactivity.handle {
+	font-size: 13px !important;
+}
+
+div.externalleft {
+	display: none;
+}
+
+.tree span.statuslight {
+	margin: 0;
+	line-height: inherit !important;
+	/* alt */
+	display: none;
+}
+
+span.icon.mandatory {
+	width: 12px;
+	height: 12px;
+	background-position: -2px -482px !important;
+}
+
+.activitydetails div.description,
+.unitdetails div.description {
+	margin: 1em 0;
+}
+
+.handle.title,
+.wrapper a.ROW_ItemLink_Small {
+	color: #5689ba !important;
+	text-decoration: none;
+}
+
+.handle.title:hover,
+.iteminfo a span.text:hover,
+.wrapper a.ROW_ItemLink_Small:hover {
+	color: #5689ba;
+	text-decoration: underline;
+	background: none !important;
+}
+
+span.switchunity.handle.collapsed.title,
+span.switchactivity.handle.collapsed.title {
+	background: url(../../../Generics/Command/img/arrowright_1616_999999.png) 0px 0 no-repeat !important;
+}
+
+span.title.switchunity.handle,
+span.title.switchactivity.handle {
+	padding-left: 22px;
+	background: url(../../../Generics/Command/img/arrowdown_1616_999999.png) 0px 0 no-repeat !important;
+}
+
+.activitycontent .internal .right span {
+	font-size: 11px;
+	color: #888;
+	margin-bottom: .5em;
+	display: inline-block;
+}
+
+span.duration {
+	color: #888;
+}
+
+.activity span.expiration::before {
+	content: "";
+	display: inline-block;
+	width: 11px;
+	height: 11px;
+	vertical-align: baseline;
+	margin-right: 3px;
+	background: url(../../../Generics/Command/img/jqui_888888_256x240.png) -83px -114px no-repeat;
+}
+
+span.filecontainer.file span {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.gray .assignment .itemTitle {
+	display: block !important;
+}
+
+.assignment {
+	display: inline-block;
+	width: 100%;
+}
+
+.assignment .itemTitle {
+	display: inline-block;
+	margin: .5em 0;
+}
+
+a.linkMenu.taskDone {
+	font-size: 16px !important;
+	background: transparent !important;
+	box-shadow: none !important;
+	text-shadow: none !important;
+	color: #5689ba !important;
+	border: 1px solid #5689ba !important;
+}
+
+sa.linkMenu.taskDone:hover {
+	color: #888 !important;
+	border: 1px solid #888 !important;
+	background: #f5f5f5 !important;
+}
+
+.epsummary .green,
+div.pathsummary .green,
+.statusbox.green,
+.statuslight.green {
+	background-color: #99c74a;
+}
+
+.epsummary .gray,
+div.pathsummary .gray,
+.statusbox.grey,
+.statuslight.grey,
+.statusbox.gray,
+.statuslight.gray {
+	background-color: #ccc;
+}
+
+.epsummary .yellow,
+div.pathsummary .yellow,
+.statusbox.yellow,
+.statuslight.yellow {
+	background-color: #ffcd40;
+}
+
+/* @end */
+
+/* @group Mooc List */
+
+div.list {
+	font-size: 13px;
+}
+
+ul.paths {
+	padding: 0;
+}
+
+li.path:first-child {
+	margin-top: 2em;
+}
+
+li.path {
+	margin-bottom: 2em;
+}
+
+.pathcontainer {
+	background: #fff;
+	border: 1px solid #ccc;
+}
+
+.pathcontainer .pathheader,
+.pathcontainer .pathdesc,
+.pathcontainer .pathfooter {
+	padding: 10px;
+}
+
+.manage .blocked .pathcontainer {
+	background: #fef6e8;
+	border: 1px solid #e9d2a8;
+}
+
+.blocked .pathcontainer {
+	background: #f5f5f5;
+}
+
+.pathcontainer .pathheader span.Details_titolo,
+.pathcontainer .pathheader .title a {
+	font-size: 18px;
+	text-decoration: none;
+	font-weight: normal;
+	font-style: normal;
+	letter-spacing: 0px;
+}
+
+.pathcontainer .pathheader span.Details_titolo {
+	color: #444;
+	background: none;
+}
+
+.blocked .pathcontainer .pathheader span.Details_titolo {
+	color: #888;
+	background: none;
+}
+
+.pathcontainer .pathheader .title a {
+	color: #5689ba;
+	text-decoration: none;
+	font-weight: normal;
+	font-style: normal;
+}
+
+.manage .blocked .pathcontainer .pathheader .title a,
+.manage .blocked .pathheader span.Details_titolo {
+	color: #b89080;
+	background: none;
+}
+
+.manage .blocked .pathcontainer .pathheader .title a:hover {
+	color: #c7aba0;
+	background: none;
+}
+
+.pathcontainer .pathheader .title a:hover {
+	background: none !important;
+	color: #87acd1;
+}
+
+.pathcontainer .pathheader .titlecont * {
+	display: inline-block;
+	vertical-align: middle;
+	line-height: 1.2em;
+	vertical-align: middle !important;
+}
+
+.pathcontainer .pathdesc .description .renderedtext {
+	font-size: 13px;
+	line-height: 1.5em;
+	color: #333;
+}
+
+.pathcontainer .pathfooter {
+	border-top: 1px solid #333;
+	font-size: 13px;
+	line-height: 1.5em;
+	border-color: rgba(0, 0, 0, 0.15);
+}
+
+.titlecont .icons .default {
+	display: none;
+}
+
+.titlecont .icons .default {
+	display: none;
+}
+
+.commandoptions{
+    margin-top:2em;
+}
+
+.commandoptions .commandoption{
+    width:49%;
+    text-align:center;
+    display:inline-block;
+    *display:inline;
+    *zoom:1; 
+    /*margin:-1px;*/         
+    border:1px solid #ccc; 
+    background:#eee;
+    padding-top:1em;
+    padding-bottom:1em;    
+}
+
+.commandoptions .commandoption .commandbutton{
+    display:block;
+    height:60px;
+    min-width:130px;
+    margin:0;
+    margin-left:auto;
+    margin-right:auto;
+    top:0;    
+    margin-bottom:1em;    
+}
+
+.commandoptions .commandoption .commanddescription{
+    margin:15px;
+    display:block;
+    text-align:justify;    
+}
+/* @end */

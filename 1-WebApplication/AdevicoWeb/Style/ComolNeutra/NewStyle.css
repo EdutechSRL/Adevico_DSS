@@ -1,0 +1,391 @@
+* {
+	font-family: Verdana,Arial,Tahoma,Helvetica,sans-serif;
+}
+
+
+a {
+	color: black;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+
+body {
+	background: #ffffff url(bg.png) repeat-x;
+	margin: 0; padding:0;
+}
+
+
+body#popup 
+{
+	background-image: none;
+	}
+
+#linkHome a{
+	display: block;
+	width:100px;
+	height:60px;
+}
+	
+#cFooter {
+	margin-top: 20px;
+	background: url(bg-footer.png) repeat-x;	
+	padding-top:20px;
+	color: #848484;
+	height: 95px;
+}
+
+	#cFooter a {
+		color:#666;
+		text-decoration: underline;
+	}
+	
+	#cFooter a:hover {
+		color: red;
+		text-decoration:underline;
+	}
+
+input, select, textarea {
+	border:1px solid #989898;
+}
+
+
+.DataGrid_Generica {
+	border-color: #666666;
+	border-style:solid;
+	border-width: 1px 2px 1px 2px;
+	width: 900px;
+}
+
+#cTopHead {
+	background:url(unitn.png) 0 25px no-repeat;
+	padding-bottom:5px;
+	position: absolute;
+	z-index: -10;
+}
+
+#cBreadCrumb {
+	padding-top: 25px;
+}
+
+#cBreadCrumb a{
+	color: black;
+}
+
+
+#newscontainer {
+ margin-top: 15px;
+ border: 1px solid #ccc;
+ padding-bottom: 5px;
+}
+
+#communityName {
+	margin-top:13px;
+	font-size: 20px;
+
+	color:#867b74;
+	font-weight: bold;
+}
+
+
+/* bottoni header */
+
+/*
+
+#Intestazione_ctl00_CTRLLingue_BTNit {
+	height: 20px;
+	width: 40px;
+	cursor: pointer;
+	text-indent: -9999px;
+	border: none;
+	background: url(ita.png) no-repeat left top;
+}
+
+
+
+#Intestazione_ctl00_CTRLLingue_BTNen {
+  width: 40px;
+  height: 20px;
+  padding: 55px 0 0;
+  margin: 0;
+  border: 0;
+  background: transparent url(eng.png) no-repeat center top;
+  overflow: hidden;
+  cursor: pointer; 
+  cursor: hand; 
+}
+
+
+#Intestazione_ctl00_BTNlogout {
+	height: 20px;
+	width: 35px;
+	cursor: pointer;
+	text-indent: -9999px;
+	border: none;
+	background: url(logout2.png) no-repeat left top;} 
+
+*/
+
+
+
+
+/* MAIL */
+
+.mailFieldTo{
+	background-color: #ddd;
+}
+
+.menuhack {
+	position: absolute;
+	z-index: 9999999;
+}
+
+#newmenu {
+	position: absolute;
+	z-index: 99999999;
+}
+
+.jquerycssmenu{
+font: bold 12px;
+padding-left: 15px; /*offset of tabs relative to browser left edge*/
+}
+
+.jquerycssmenu ul{
+margin: 0;
+padding: 0;
+list-style-type: none;
+list-style:none;
+}
+
+/*Top level list items*/
+.jquerycssmenu ul li{
+	position: relative;
+	display: inline;
+	float: left;
+	list-style:none;
+	text-align: left;
+}
+
+
+/*Top level menu link items style*/
+.jquerycssmenu ul li a{
+	display: block;
+	background-color:#3b5679;
+	padding: 5px 7px 4px 7px;
+	margin-right: 3px; /*spacing between tabs*/
+	text-align: left !important;
+	border-bottom-width: 0;
+	color: white;
+	text-decoration: none;
+}
+
+.jquerycssmenu ul li a:hover{
+	text-align: left;
+	background-color:#bb0a0a;
+	text-decoration:none;
+}
+
+/*Top level list items  +HELP*/
+.jquerycssmenu ul li.help{
+	position: relative;
+	display: inline;
+	float: left;
+	list-style:none;
+	text-align: left;
+}
+
+/*Top level menu link items style +HELP*/
+.jquerycssmenu ul li.help a{
+	display: block;
+	background-color:#CB7C12;
+	padding: 5px 7px 4px 7px;
+	margin-right: 3px; /*spacing between tabs*/
+	text-align: left !important;
+	border-bottom-width: 0;
+	color: white;
+	text-decoration: none;
+}
+
+/* +HELP*/
+.jquerycssmenu ul li.help a:hover{
+	text-align: left;
+	background-color:#bb0a0a;
+	text-decoration:none;
+}
+
+	
+/*1st sub level menu*/
+.jquerycssmenu ul li ul{
+	position: absolute;
+	left: 0;
+	display: block;
+	visibility: hidden;
+	text-align: left;
+}
+
+.jquerycssmenu ul li ul li{
+	color:yellow;
+}
+
+
+
+
+/*Sub level menu list items (undo style from Top level List Items)*/
+.jquerycssmenu ul li ul li{
+	text-align: left;
+	display: list-item;
+	float: none;
+}
+
+/*All subsequent sub menu levels vertical offset after 1st level sub menu */
+.jquerycssmenu ul li ul li ul{
+	text-align: left;
+	top: 0;
+}
+
+/* Sub level menu links style */
+.jquerycssmenu ul li ul li a{
+width: 180px; /*width of sub menus*/
+padding: 4px 5px;
+margin: 0;
+border-top-width: 0;
+text-align: left;
+}
+
+.jquerycssmenu ul li ul li a:hover{ /*sub menus hover style*/
+text-align: left;
+}
+
+
+/* ######### CSS classes applied to down and right arrow images  ######### */
+
+.downarrowclass{
+position: absolute;
+top: 7px;
+right: 5px;
+}
+
+.rightarrowclass{
+position: absolute;
+top: 5px;
+right: 4px;
+}
+.fakeFieldset
+{
+	width:100%;
+}
+
+.fakeFieldset span.left
+{
+	display:inline-block;
+	width:65%;
+}
+
+.fakeFieldset span.right
+{
+	text-align:right;
+	width:34%;
+	display:inline-block;	
+}
+
+.fakeFieldsetNoticeboard
+{
+	width:100%;
+}
+
+.fakeFieldsetNoticeboard  span.left
+{
+	display:inline-block;
+	width:230px;
+}
+
+.fakeFieldsetNoticeboard noticeboard span.right
+{
+	text-align:right;
+	display:inline-block;	
+}
+
+ .containerQuest
+        {
+            width:100%;
+            top:170px;
+            margin-top:1em;
+       	    position:relative;
+       	    clear:both;
+       	    float:left;
+       	    z-index:1;
+       	    padding:1px;
+        }
+        
+          .DIVpanelTempo
+{
+    top:140px;
+    display: none;
+    padding-top: 5px; 
+    padding-bottom: 5px;
+    position: fixed; 
+    width: 100%; 
+    left: 0px;
+    z-index:2;
+    border:0;
+}
+.HeaderUICompile
+{
+    width:100%;
+    left: 0px; 
+    height:140px; 
+    position:fixed; 
+    background-color:White;
+    z-index:2;
+}
+       .FolderFiles
+{
+    width: 512px;
+    }
+    
+.FilesList
+{
+    width: 890px;
+}
+
+
+
+/*
+    Elementi che c'erano nella MasterPage
+*/
+
+.formLayout
+{
+    background-color: #fff;
+    border: solid 1px #a1a1a1;
+    padding: 10px;
+    width: 300px;
+}
+.formLayout legend
+{
+    font-weight: bold;
+}
+.formLayout label, .formLayout input, .formLayout span.label
+{
+    display: block;
+    float: left;
+    margin-bottom: 10px;
+}
+.formLayout input
+{
+    min-width: 50px;
+    margin-left: 0.5em;
+}
+.formLayout label, .formLayout span.label
+{
+    text-align: right;
+    padding-right: 20px;
+    width: 120px;
+}
+.formLayout br
+{
+    clear: left;
+}

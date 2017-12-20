@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="lm.Comol.Core.DomainModel" namespace="lm.Comol.Core.FileRepository.Domain.toRemove">
+  <class name="NewMultimediaObject" table="FR_ItemMultimediaFileObject">
+    <id name="Id" column="Id" type="Int64">
+        <generator class="assigned"/>
+    </id>
+    <property name="IdItem"/>
+    <property name="UniqueIdItem"/>
+    <property name="IdVersion"/>
+    <property name="UniqueIdVersion"/>
+    <property name="IdItemTransfer"/>
+    <property name="IsDefaultDocument"/>
+    <property name="Fullname"/>
+    <property name="Probability"/>
+  </class>
+</hibernate-mapping>

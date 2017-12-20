@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="urn:ComolTranslation">
+  <item name="HYPinternalPage.text" html="false" placeholder="false">Back to login page</item>
+  <item name="HYPinternalPage.status" html="false" placeholder="false">Back to login page</item>
+  <item name="HYPinternalPage.ToolTip" html="false" placeholder="false">Back to login page</item>
+  <item name="LTtitleWizardInternal.text" html="false" placeholder="false">Profile creation</item>
+  <item name="BTNbackBottom.text" html="false" placeholder="false">Back</item>
+  <item name="BTNbackBottom.status" html="false" placeholder="false">Back to previous step</item>
+  <item name="BTNbackBottom.ToolTip" html="false" placeholder="false">Back to previous step</item>
+  <item name="BTNbackTop.text" html="false" placeholder="false">Back</item>
+  <item name="BTNbackTop.status" html="false" placeholder="false">Back to previous step</item>
+  <item name="BTNbackTop.ToolTip" html="false" placeholder="false">Back to previous step</item>
+  <item name="BTNnextBottom.text" html="false" placeholder="false">Next</item>
+  <item name="BTNnextBottom.status" html="false" placeholder="false">Go to next step</item>
+  <item name="BTNnextBottom.ToolTip" html="false" placeholder="false">Go to next step</item>
+  <item name="BTNnextTop.text" html="false" placeholder="false">Next</item>
+  <item name="BTNnextTop.status" html="false" placeholder="false">Go to next step</item>
+  <item name="BTNnextTop.ToolTip" html="false" placeholder="false">Go to next step</item>
+  <item name="BTNcompleteTop.text" html="false" placeholder="false">Create profile</item>
+  <item name="BTNcompleteTop.status" html="false" placeholder="false">Create profile</item>
+  <item name="BTNcompleteTop.ToolTip" html="false" placeholder="false">Create profile</item>
+  <item name="BTNcompleteBottom.text" html="false" placeholder="false">Create profile</item>
+  <item name="BTNcompleteBottom.status" html="false" placeholder="false">Create profile</item>
+  <item name="BTNcompleteBottom.ToolTip" html="false" placeholder="false">Create profile</item>
+  <item name="ProfileWizardStep.StandardDisclaimer.Title" html="false" placeholder="true" mustcontains="{0}">Step {0}: choose languages</item>
+  <item name="ProfileWizardStep.StandardDisclaimer.Description" html="false" placeholder="false">Per completare il processo di registrazione devi selezionare il tuo profilo utente, indicare l'organizzazione di cui farai parte nel sistema, indicare il tipo di autenticazione desiderato ed infine indicare alcune informazioni utili per l'identificazione nel sistema (nome, email, etc.)</item>
+  <item name="LBlanguage_t.text" html="false" placeholder="false">Language:</item>
+  <item name="ProfileWizardStep.OrganizationSelector.Title" html="false" placeholder="true" mustcontains="{0}">Step {0}: choose organization</item>
+  <item name="ProfileWizardStep.OrganizationSelector.Description" html="false" placeholder="false">Show membership organization.</item>
+  <item name="LBsubscribeTo.text" html="false" placeholder="false">Enroll in:</item>
+  <item name="LBsubscribeToDefault.text" html="false" placeholder="false">Default organization:</item>
+  <item name="LBsubscribeToAlso.text" html="false" placeholder="false">Enroll also in:</item>
+  <item name="ProfileWizardStep.ProfileTypeSelector.Title" html="false" placeholder="true" mustcontains="{0}">Step {0}: choose profile type</item>
+  <item name="ProfileWizardStep.ProfileTypeSelector.Description" html="false" placeholder="false">Select the profile type, to register in the platform with:</item>
+  <item name="ProfileWizardStep.Privacy.Title" html="false" placeholder="true" mustcontains="{0}">Step {0}: service access</item>
+  <item name="ProfileWizardStep.Privacy.Description" html="false" placeholder="false">Request for consent for personal data processing, system functionalities, etc:</item>
+  <item name="ProfileWizardStep.ProfileUserData.Title" html="false" placeholder="true" mustcontains="{0}">Step {0}: user information "{1}"</item>
+  <item name="ProfileWizardStep.ProfileUserData.Description" html="false" placeholder="false">Specify data necessary to create a platform profile (fields marked with * are mandatory):</item>
+  <item name="ProfileWizardStep.AuthenticationTypeSelector.Title" html="false" placeholder="true" mustcontains="{0}">Step {0}: select the authentication provider</item>
+  <item name="ProfileWizardStep.AuthenticationTypeSelector.Description" html="false" placeholder="false" />
+  <item name="ProfileWizardStep.Summary.Title" html="false" placeholder="true" mustcontains="{0}">Step {0}: confirm user data</item>
+  <item name="ProfileWizardStep.Summary.Description" html="false" placeholder="false">Summary of the data saved in the profile to create:</item>
+  <item name="ProfileWizardStep.SubscriptionError.Title" html="false" placeholder="false">Error while creating profile</item>
+  <item name="ProfileWizardStep.SubscriptionError.Description" html="false" placeholder="false">Some errors occurred while creating the profile</item>
+  <item name="ProfileWizardStep.UnknownProfileDisclaimer.Title" html="false" placeholder="true" mustcontains="{0}">Step {0}: profile creation</item>
+  <item name="ProfileWizardStep.UnknownProfileDisclaimer.Description" html="false" placeholder="false">This is the first time you access the platform with this account.</item>
+  <item name="ProfileWizardStep.InternalCredentials.Title" html="false" placeholder="true" mustcontains="{0}">Step {0}: existing profile's data recovery"</item>
+  <item name="ProfileWizardStep.InternalCredentials.Description" html="false" placeholder="false">Specify login and password of the existent profile in order to recover the related data and associate them to the new access mode.</item>
+  <item name="LBlogin_t.text" html="false" placeholder="false">(*)Login:</item>
+  <item name="LBnome_t.text" html="false" placeholder="false">(*)Name:</item>
+  <item name="LBcognome_t.text" html="false" placeholder="false">(*)Surname:</item>
+  <item name="LBtaxCode_t.text" html="false" placeholder="false">(*)Tax code:</item>
+  <item name="LBlingua_t.text" html="false" placeholder="false">Language:</item>
+  <item name="LBmail_t.text" html="false" placeholder="false">(*)Mail:</item>
+  <item name="LBpwd.text" html="false" placeholder="false">(*)Password:</item>
+  <item name="LBconfirmpwd.text" html="false" placeholder="false">(*)Confirm password:</item>
+  <item name="CBXshowMail.text" html="false" placeholder="false" />
+  <item name="LBmostraMail.text" html="false" placeholder="false">Show mail:</item>
+  <item name="LBmailInfo.text" html="false" placeholder="false">If the option is enabled, the profile mail address will be visible to all the community users.</item>
+  <item name="LBmatricola_t.text" html="false" placeholder="false">Matriculation number:</item>
+  <item name="CBXwaiting.text" html="false" placeholder="false">Waiting for Matriculation</item>
+  <item name="LBimmatricolazione_t.text" html="false" placeholder="false">matriculated on:</item>
+  <item name="LBtipoDocente_t.text" html="false" placeholder="false">Type:</item>
+  <item name="LBricevimento_t.text" html="false" placeholder="false">Consultation hours:</item>
+  <item name="LBcodice_t.text" html="false" placeholder="false">Code:</item>
+  <item name="LBqualifica_t.text" disambiguation="qualifica=qualifica docenza universitaria" html="false" placeholder="false">Qualification :</item>
+  <item name="LBfascia_t.text" disambiguation="fascia=fascia docenza universitaria" html="false" placeholder="false">Slot:</item>
+  <item name="LBregime_t.text" disambiguation="regime=regime docenza universitaria" html="false" placeholder="false">Regimen:</item>
+  <item name="LBistitutoSTU_t.text" disambiguation="istituto=scuola superiore" html="false" placeholder="false">Institute:</item>
+  <item name="LBclasseSezione_t.text" disambiguation="riferito alle scuole superiori" html="false" placeholder="false">Class and section:</item>
+  <item name="LBistituto_t.text" disambiguation="istituto=scuola superiore" html="false" placeholder="false">Institute:</item>
+  <item name="LBmatters_t.text" html="false" placeholder="false">Subjects:</item>
+  <item name="LBphd_t.text" html="false" placeholder="false">Doctor's degree in:</item>
+  <item name="LBtechnician_t.text" html="false" placeholder="false">Area/function:</item>
+  <item name="LBexternalUser_t.text" html="false" placeholder="false">Registration reason / job performed:</item>
+  <item name="WaitingStudentID" html="false" placeholder="false">Waiting for Matriculation</item>
+  <item name="LBcompanyName_t.text" html="false" placeholder="false">(*)Company Tax Code:</item>
+  <item name="LBcompanyAddress_t.text" html="false" placeholder="false">   Company address:</item>
+  <item name="LBcompanyCity_t.text" html="false" placeholder="false">   Company city:</item>
+  <item name="LBcompanyRegion_t.text" html="false" placeholder="false">   Province/Region:</item>
+  <item name="LBcompanyTaxCode_t.text" html="false" placeholder="false">   VAT/Company Tax Code:</item>
+  <item name="LBcompanyReaNumber_t.text" html="false" placeholder="false">   Company R.E.A:</item>
+  <item name="LBassociationCategories_t.text" html="false" placeholder="false">   Professional associations:</item>
+  <item name="LBauthenticationType_t.text" html="false" placeholder="false">Authentication type:</item>
+  <item name="LBuserType_t.text" html="false" placeholder="false">Profile type:</item>
+  <item name="ShowMail.True" html="false" placeholder="false">Yes.</item>
+  <item name="ShowMail.False" html="false" placeholder="false">No.</item>
+  <item name="LBorganizationInfo_t.text" html="false" placeholder="false">Organization:</item>
+  <item name="LBotherOrganizations_t.text" html="false" placeholder="false">Other organizations:</item>
+  <item name="LBsendNotification_t.text" html="false" placeholder="false">User's notification:</item>
+  <item name="CBXnotify.text" html="false" placeholder="false" />
+  <item name="LBmailDuplicate.text" html="false" placeholder="false">Mail is already present in the system !</item>
+  <item name="LBtaxCodeDuplicate.text" html="false" placeholder="false">Tax code is already present in the system !</item>
+  <item name="LBloginDuplicate.text" html="false" placeholder="false"> Login is already present in the system !</item>
+  <item name="LBmatriculaDuplicate.text" html="false" placeholder="false"> Student number is already present in the system !</item>
+  <item name="LBexternalDuplicateLong.text" html="false" placeholder="false"> The entered numeric id type is already used by another user in the platform</item>
+  <item name="LBexternalDuplicateString.text" html="false" placeholder="false"> The entered string id type is already used by another user in the platform</item>
+  <item name="BTNclose.text" html="false" placeholder="false">Close</item>
+  <item name="BTNclose.ToolTip" html="false" placeholder="false">Close this error message</item>
+  <item name="BTNclose.status" html="false" placeholder="false">Close this error message</item>
+  <item name="mail.infoSubject" html="false" placeholder="false">Notify registration</item>
+  <item name="mail.infoSubject_Bloccata" html="false" placeholder="false">Notify registration and activation </item>
+  <item name="mail.infoBody" html="true" placeholder="true" mustcontains="#Link2#">Platfrom registration successfully performed.&lt;br&gt;&lt;br&gt;To access the system use this link: #Link2# &lt;br&gt;The data that you entered are:</item>
+  <item name="mail.infoBody_Bloccata" html="true" placeholder="true" mustcontains="#Link1#|#Link2#">Iscrizione alla piattaforma avvenuta correttamente.&lt;br&gt;&lt;br&gt;ATTIVARE la propria iscrizione con un semplice clic sull'indirizzo seguente (oppure copiarlo nella barra degli indirizzi di un browser): #Link1# (l'indirizzo deve stare su una sola riga)&lt;br&gt;&lt;br&gt;Dopo aver attivato il suo account potrà accedere al sistema dal seguente link: #Link2# &lt;br&gt;I dati da te inseriti sono:</item>
+  <item name="ProfileSubscriptionMessage.None" html="false" placeholder="false" hidden="true" />
+  <item name="ProfileSubscriptionMessage.Created" html="true" placeholder="false">Insertion correctly performed&lt;br&gt;Select items above to perform the access.</item>
+  <item name="ProfileSubscriptionMessage.LoginDuplicated" html="false" placeholder="false">Login already assigned to another user</item>
+  <item name="ProfileSubscriptionMessage.TaxCodeDuplicated" html="false" placeholder="false">Tax code already assigned to another user</item>
+  <item name="ProfileSubscriptionMessage.MailDuplicated" html="false" placeholder="false">The main mail address has been assigned to another user.</item>
+  <item name="ProfileSubscriptionMessage.MailNotificationNotSent" html="false" placeholder="false">Insertion performed, notification mail was not sent.</item>
+  <item name="ProfileSubscriptionMessage.OrganizationCommunityNotSubscribed" html="false" placeholder="false">Insertion failed, please contact a system administrator.</item>
+  <item name="ProfileSubscriptionMessage.OrganizationNotSubscribed" html="false" placeholder="false">Insertion failed, please contact a system administrator.</item>
+  <item name="ProfileSubscriptionMessage.UnknownError" html="false" placeholder="false">Insertion failed, please contact a system administrator.</item>
+  <item name="ProfileSubscriptionMessage.AlreadyCreated" html="false" placeholder="false">Insertion failed, you seem to be already rgistered, if it is not so, please contact an administrator.</item>
+  <item name="ProfileSubscriptionMessage.MatriculaDuplicated" html="true" placeholder="true" mustcontains="{0}">Insertion failed, the entered matricula is already present in the system. For more information, please contact the administrator at the following address: &lt;a href="mailto:{0}?Subject=Matricola esistente" class="1"&gt;{0}&lt;/a&gt;.</item>
+  <item name="ErroreRegistrazione.100" html="true" placeholder="false">Insertion successfully performed&lt;br&gt;Click above to log into the system.</item>
+  <item name="ProfileSubscriptionMessage.CreatedAndDisabled" html="true" placeholder="false">Registration completed, your account will be activated by the activation mail that has been sent to the email address you entered when subscribing.&lt;br&gt;Mail delivering time will depends on your mail provider.</item>
+  <item name="ProfileSubscriptionMessage.CreatedAndWaiting" html="true" placeholder="false">Registration completed, your account will be activated by the activation mail that has been sent to the email address you entered when subscribing.&lt;br&gt;Mail delivering time will depends on your mail provider.&lt;br&gt;The access to the system must first be evaluated and enabled by the administrator of the organization you are enrolling in.</item>
+  <item name="ProfileSubscriptionMessage.CreatedWithAutoLogon" html="false" placeholder="false">Profile correctòy created, your account is active and you can access the platform.</item>
+  <item name="ProfileSubscriptionMessage.FillField" html="false" placeholder="false">Some mandatory fields are empty.</item>
+  <item name="ProfileSubscriptionMessage.ProfileTypeChanged" html="false" placeholder="false">The profile type was successfully modified.</item>
+  <item name="ProfileSubscriptionMessage.Edited" html="false" placeholder="false">Profile correctly changed</item>
+  <item name="ProfileSubscriptionMessage.AccountDisabled" html="false" placeholder="false">Your account seems to be disabled, please contact a platform administrator.</item>
+  <item name="ProfileSubscriptionMessage.ProviderUnknown" html="false" placeholder="false">Error while synchronizing the internal platform account </item>
+  <item name="ProfileSubscriptionMessage.UnableToConnectToInternalProvider" html="false" placeholder="false">Error while synchronizing the internal platform account </item>
+  <item name="ProfileSubscriptionMessage.externalUniqueIDduplicate" html="false" placeholder="false">Insertion failed, the external authentication provider's identifier already exist in the platform.</item>
+  <item name="ProfileSubscriptionMessage.SubscriptionNotActive" html="false" placeholder="false">Platform registration diasbled for administrative reasons, try again later or contact the person in charge of the service.</item>
+  <item name="LTtitleWizardCompleted.Text" html="false" placeholder="false">Profile creation</item>
+  <item name="LTbackToLoginPage.text" html="true" placeholder="true" mustcontains="{0}">&lt;li&gt;&lt;a class="pwd-retrive" title="Accedi con account interno alla piattaforma" href="{0}"&gt; Sign in with internal account&lt;/a&gt;&lt;/li&gt;</item>
+  <item name="LTstartPage.text" html="true" placeholder="true" mustcontains="{0}">&lt;li&gt;&lt;a class="pwd-retrive" href="{0}"&gt;Go to next page&lt;/a&gt;&lt;/li&gt;</item>
+  <item name="LTshibbolethLogon.text" html="true" placeholder="true" mustcontains="{0}">&lt;li&gt;&lt;a class="account-type" href="{0}"&gt;Sign in  with Shibboleth account &lt;/a&gt;&lt;/li&gt;</item>
+  <item name="LTexternalWebLogon.text" html="true" placeholder="true" mustcontains="{0}">&lt;li&gt;&lt;a" class="account-type" href="{0}"&gt;Enter company website&lt;/a&gt;&lt;/li&gt;</item>
+  <item name="LBinternalProfileRadio.text" html="false" placeholder="false">I already have a platform profile.</item>
+  <item name="LBinternalProfileRadioDescription.text" html="true" placeholder="false">
+    Verranno richieste le vecchie credenziali della piattaforma ed in automatico verra' collegato il vecchio profilo con la nuova modalita' di accesso.&lt;/br&gt;
+    Una volta conclusa questa operazione questo messaggio NON comparira' più.
+  </item>
+  <item name="LBnewProfileRadio.text" html="false" placeholder="false">Create a new profile.</item>
+  <item name="LBnewProfileRadioDescription.text" html="false" placeholder="false">
+    Crea un nuovo profilo utente in piattaforma (non saranno richieste le credenziali di accesso ma solo i campi indispensabili per la definizione del profilo e per consentire le comunicazioni via mail fra piattaforma ed utente).
+    Una volta conclusa questa operazione questo messaggio NON comparira' più.
+  </item>
+  <item name="LTloginError.text" html="false" placeholder="false">The inserted login or password is incorrect.</item>
+  <item name="LBproviderInfo.text" html="false" placeholder="true" mustcontains="{0}|{1}|{3}|{2}">Last changes on {0} at {1} ({2} by {3}).</item>
+  <item name="LBpasswordExpiresOn.text" html="false" placeholder="true" mustcontains="{0}|{1}">Password expires on {0} at {1}.</item>
+  <item name="HYPchangePassword.text" html="false" placeholder="false">Modify password</item>
+  <item name="HYPchangePassword.status" html="false" placeholder="false">Go to the external password change page</item>
+  <item name="HYPchangePassword.ToolTip" html="false" placeholder="false">Go to the external password change page</item>
+  <item name="BTNchangePassword.text" html="false" placeholder="false">Modify password</item>
+  <item name="BTNchangePassword.status" html="false" placeholder="false">Change the internal password of the platform</item>
+  <item name="BTNchangePassword.ToolTip" html="false" placeholder="false">Change the internal password of the platform</item>
+  <item name="LBpasswordOld_t.text" html="false" placeholder="false">Current password:</item>
+  <item name="LBpasswordNew_t.text" html="false" placeholder="false">New password:</item>
+  <item name="LBpasswordConfirm_t.text" html="false" placeholder="false">Confirm new password:</item>
+  <item name="BTNback.text" html="false" placeholder="false">Back</item>
+  <item name="BTNback.status" html="false" placeholder="false">Back</item>
+  <item name="BTNback.ToolTip" html="false" placeholder="false">Back</item>
+  <item name="BTNundoSavePassword.text" html="false" placeholder="false">Back</item>
+  <item name="BTNundoSavePassword.status" html="false" placeholder="false">Back</item>
+  <item name="BTNundoSavePassword.ToolTip" html="false" placeholder="false">Back</item>
+  <item name="BTNsavePassword.text" html="false" placeholder="false">Save change</item>
+  <item name="BTNsavePassword.status" html="false" placeholder="false">Save change</item>
+  <item name="BTNsavePassword.ToolTip" html="false" placeholder="false">Save change</item>
+  <item name="LBmessage.text" html="false" placeholder="false">The old password does NOT correspond to the stored one. Password change was NOTsuccessfully performed. </item>
+  <item name="LBunknownUser.text" html="false" placeholder="false">Unrecognized user, impossible to continue</item>
+  <item name="PasswordNotChanged" html="false" placeholder="false">New password was not correctly saved. </item>
+  <item name="InvalidPassword" html="false" placeholder="false">The old password does NOT correspond to the stored one. Password change was NOTsuccessfully performed. </item>
+  <item name="EditType.none" html="false" placeholder="false">Enrollment</item>
+  <item name="EditType.user" html="false" placeholder="false">modified</item>
+  <item name="EditType.admin" html="false" placeholder="false">administratively modified</item>
+  <item name="EditType.reset" html="false" placeholder="false">renewed by mail</item>
+  <item name="EditType.retrieve" html="false" placeholder="false">recovered by mail</item>
+  <item name="LBauthenticationProviders_t.text" html="false" placeholder="false">Select the authenticatoin type you want to associate to the profile:</item>
+  <item name="CMVpassword.ErrorMessage" html="false" placeholder="false">New password and its confirmation do not match</item>
+  <item name="HYPmanage.text" html="false" placeholder="false">Back to profiles </item>
+  <item name="HYPmanage.status" html="false" placeholder="false">Back to profile management page</item>
+  <item name="HYPmanage.ToolTip" html="false" placeholder="false">Back to profile management page</item>
+  <item name="serviceTitleAddProfileToPortal" html="false" placeholder="true" mustcontains="{0}">Create a new profile {0}</item>
+  <item name="nopermissionAddProfileToPortal" html="false" placeholder="false">Sorry, you do not have permission to adda new profile.</item>
+  <item name="BTNcloseModal.text" html="false" placeholder="false">Close window</item>
+  <item name="BTNcloseModal.status" html="false" placeholder="false">Close authentication provider management window</item>
+  <item name="BTNcloseModal.ToolTip" html="false" placeholder="false">Close authentication provider management window</item>
+  <item name="BTNaddNewProvider.text" html="false" placeholder="false">Add authentication</item>
+  <item name="BTNaddNewProvider.status" html="false" placeholder="false">Add a new authentication type to profile</item>
+  <item name="BTNaddNewProvider.ToolTip" html="false" placeholder="false">Add a new authentication type to profile</item>
+  <item name="BTNnewPassword.text" html="false" placeholder="false">Send password</item>
+  <item name="BTNnewPassword.status" html="false" placeholder="false">Send a new password to the user.</item>
+  <item name="BTNnewPassword.ToolTip" html="false" placeholder="false">Send a new password to the user.</item>
+  <item name="BTNundoSaveLogin.text" html="false" placeholder="false">Back</item>
+  <item name="BTNundoSaveLogin.status" html="false" placeholder="false">Back to authentication systems list.</item>
+  <item name="BTNundoSaveLogin.ToolTip" html="false" placeholder="false">Back to authentication systems list.</item>
+  <item name="BTNsaveLogin.text" html="false" placeholder="false">Save</item>
+  <item name="BTNsaveLogin.status" html="false" placeholder="false">Save changes to login.</item>
+  <item name="BTNsaveLogin.ToolTip" html="false" placeholder="false">Save changes to login.</item>
+  <item name="BTNundoExternal.text" html="false" placeholder="false">Back</item>
+  <item name="BTNundoExternal.status" html="false" placeholder="false">Back to authentication systems list.</item>
+  <item name="BTNundoExternal.ToolTip" html="false" placeholder="false">Back to authentication systems list.</item>
+  <item name="BTNsaveExternal.text" html="false" placeholder="false">Save</item>
+  <item name="BTNsaveExternal.status" html="false" placeholder="false">Save changes.</item>
+  <item name="BTNsaveExternal.ToolTip" html="false" placeholder="false">Save changes.</item>
+  <item name="BTNundoAdd.text" html="false" placeholder="false">Cancel</item>
+  <item name="BTNundoAdd.status" html="false" placeholder="false">Cancel insertion of a new authentication type to profile.</item>
+  <item name="BTNundoAdd.ToolTip" html="false" placeholder="false">Cancel insertion of a new authentication type to profile.</item>
+  <item name="DisplayWorkinkSessionTimeout" html="false" placeholder="false">Work session has expired, close window and log into the platform again</item>
+  <item name="DisplayNoPermission" html="false" placeholder="false">You do not have permission to modify the authentication types associated to an user.</item>
+  <item name="LBauthenticationTypes_t.text" html="false" placeholder="false">Authentication type:</item>
+  <item name="BTNsetDefault.text" html="false" placeholder="false">Make default</item>
+  <item name="BTNsetDefault.status" html="false" placeholder="false">Make the authentication provider the default one</item>
+  <item name="BTNsetDefault.ToolTip" html="false" placeholder="false">Make the authentication provider the default one</item>
+  <item name="BTNeditProvider.text" disambiguation="verbo" html="false" placeholder="false">Modify</item>
+  <item name="BTNeditProvider.status" disambiguation="verbo" html="false" placeholder="false">Modify</item>
+  <item name="BTNeditProvider.ToolTip" disambiguation="verbo" html="false" placeholder="false">Modify</item>
+  <item name="BTNdeleteProvider.text" html="false" placeholder="false">Delete</item>
+  <item name="BTNdeleteProvider.status" html="false" placeholder="false">Delete the selected authenication type</item>
+  <item name="BTNdeleteProvider.ToolTip" html="false" placeholder="false">Delete the selected authenication type</item>
+  <item name="BTNdeleteProvider.ConfirmText" html="false" placeholder="false">Are you sure you want to delete the selected authentication type?</item>
+  <item name="BTNenable.text.enable" disambiguation="relativo a sistema di autenticazione" html="false" placeholder="false">Enable</item>
+  <item name="BTNenable.status.enable" html="false" placeholder="false">Enable authentication provider.</item>
+  <item name="BTNenable.ToolTip.enable" html="false" placeholder="false">Enable authentication provider.</item>
+  <item name="BTNenable.text.disable" disambiguation="relativo a sistema di autenticazione" html="false" placeholder="false">Disable</item>
+  <item name="BTNenable.status.disable" html="false" placeholder="false">Disable authentication provider for the selected profile.</item>
+  <item name="BTNenable.ToolTip.disable" html="false" placeholder="false">Disable authentication provider for the selected profile.</item>
+  <item name="BTNadd.text" html="false" placeholder="false">Add</item>
+  <item name="BTNadd.status" html="false" placeholder="false">Add</item>
+  <item name="BTNadd.ToolTip" html="false" placeholder="false">Add</item>
+  <item name="ProfileProvidersTitle" html="false" placeholder="true" mustcontains="{0}">Authentication system of {0}</item>
+  <item name="WaitingLogon" html="false" placeholder="false">ATTENZIONE: sincronizazione con il profilo pre-esistente in corso, attendere prego. L'accesso in piattaforma avverrà automaticamente al termine dell'operazione di sincronizzazione.</item>
+  <item name="WaitingProfile" html="false" placeholder="false">ATTENTION: Profile creation in progress , please wait.</item>
+  <item name="AuthenticationProviders" html="false" placeholder="false">Authentication type managemenet</item>
+  <item name="LBnote_t.text" html="false" placeholder="false">Notes:</item>
+  <item name="LBprovince_t.text" html="false" placeholder="false">Province:</item>
+  <item name="LBnations_t.text" html="false" placeholder="false">Status:</item>
+  <item name="LBbirthDate_t.text" html="false" placeholder="false">Birth date(*):</item>
+  <item name="LBbirthPlace_t.text" html="false" placeholder="false">Birth place:</item>
+  <item name="LBisMale_t.text" html="false" placeholder="false">Male:</item>
+  <item name="CBXisMale.text" html="false" placeholder="false">Yes.</item>
+  <item name="LBgender_t.text" html="false" placeholder="false">Gender:</item>
+  <item name="RBLgender.True" disambiguation="M=maschio (un solo carattere)" html="false" placeholder="false">M</item>
+  <item name="RBLgender.False" disambiguation="F=femmina (un solo carattere)" html="false" placeholder="false">F</item>
+  <item name="LBaddress_t.text" html="false" placeholder="false">Address:</item>
+  <item name="LBpostCode_t.text" disambiguation="codice di avviamento postale" html="false" placeholder="false">ZIP code:</item>
+  <item name="LBcity_t.text" html="false" placeholder="false">City:</item>
+  <item name="LBofficePhone_t.text" html="false" placeholder="false">Telephone:</item>
+  <item name="LBhomePhone_t.text" html="false" placeholder="false">Secondary telephone:</item>
+  <item name="LBmobile_t.text" html="false" placeholder="false">Mobile:</item>
+  <item name="LBfax_t.text" html="false" placeholder="false">Fax:</item>
+  <item name="LBhomePage_t.text" html="false" placeholder="false">Personal web site:</item>
+  <item name="serviceTitleEditProfilePassword" html="false" placeholder="false">Modify access data</item>
+  <item name="BTNmailEdit.text" disambiguation="verbo" html="false" placeholder="false">Modify</item>
+  <item name="BTNmailEdit.status" html="false" placeholder="false">Modify platform mail</item>
+  <item name="BTNmailEdit.ToolTip" html="false" placeholder="false">Modify platform mail</item>
+  <item name="newPasswordmailSubject" html="false" placeholder="false">Enter credentials</item>
+  <item name="newPasswordmailBody" html="true" placeholder="true" mustcontains="{0}|{1}|{2}|{3}">Dear {0}, as you requested, here are the login credentials to access the web address {3} :&lt;br&gt;Login: {1}&lt;br&gt; Password: {2}&lt;br&gt;&lt;br&gt;</item>
+  <item name="newPasswordmailAdministratorBody" html="true" placeholder="true" mustcontains="{0}|{1}|{2}|{3}">Dear {0}, the platform administrator sends you these new login credentials:&lt;br&gt;Login: {1}&lt;br&gt;Password: {2}&lt;br&gt; per collegarsi all’indirizzo web {3}.&lt;br&gt;&lt;br&gt;We recommend to modify the password after you performed the login;&lt;br&gt;Kind regards.</item>
+  <item name="LBagency_t.text" html="false" placeholder="false">Membership agency:</item>
+  <item name="NoAffiliations" html="false" placeholder="false">Not specified</item>
+  <item name="affiliation.IsEnabled" html="false" placeholder="true" mustcontains="{0}">{0} (on course).</item>
+  <item name="affiliation.EndDate" html="false" placeholder="true" mustcontains="{0}|{1}">{0} (till the {1}).</item>
+  <item name="affiliation.ClosedNoDate" html="false" placeholder="true" mustcontains="{0}">{0} (in the past).</item>
+  <item name="BTNundoSaveAgency.text" html="false" placeholder="false">Cancel</item>
+  <item name="BTNundoSaveAgency.status" html="false" placeholder="false">Cancel changes to agency</item>
+  <item name="BTNundoSaveAgency.ToolTip" html="false" placeholder="false">Cancel changes to agency</item>
+  <item name="BTNsaveAgency.text" html="false" placeholder="false">Save</item>
+  <item name="BTNsaveAgency.status" html="false" placeholder="false">Save as employe of the selected agency</item>
+  <item name="BTNsaveAgency.ToolTip" html="false" placeholder="false">Save as employe of the selected agency</item>
+  <item name="BTNeditAgency.text" html="false" placeholder="false">New agency</item>
+  <item name="BTNeditAgency.status" html="false" placeholder="false">Choose new agency</item>
+  <item name="BTNeditAgency.ToolTip" html="false" placeholder="false">Choose new agency</item>
+  <item name="PasswordInfo" html="false" placeholder="false">Warning: the password received by mail (current password field) and  the new one must NOT overlap.</item>
+  <item name="DisplaySamePasswordException" html="false" placeholder="false">New password MUST be different from the old one.</item>
+  <item name="BTNsaveNewPassword.text" html="false" placeholder="false">Save</item>
+  <item name="BTNsaveNewPassword.ToolTip" html="false" placeholder="false">Save changes</item>
+  <item name="LTtitleMustEditPassword.text" html="false" placeholder="false">Password change</item>
+  <item name="LTtitleMustEditPassword.expiredOn" html="false" placeholder="true" mustcontains="{0}">Password expired on {0}</item>
+  <item name="LTtitleMustEditPassword.none" html="false" placeholder="false">Password change</item>
+  <item name="LTtitleMustEditPassword.user" html="false" placeholder="false">Password change</item>
+  <item name="LTtitleMustEditPassword.admin" html="false" placeholder="false">Password regenerated by an administrator - Password change</item>
+  <item name="LTtitleMustEditPassword.reset" html="false" placeholder="false">Password change</item>
+  <item name="LTtitleMustEditPassword.retrieve" html="false" placeholder="false">Password change requested by mail</item>
+  <item name="LTtitleMustEditPassword.oneTime" html="false" placeholder="false">Please change your password. it is valid only at first access.</item>
+  <item name="LBidentifyer_t.text" disambiguation="Identificativo utente: login/ id univoco presso il sito aziendale, ecc" html="false" placeholder="false">Identifier:</item>
+  <item name="LBpasswordEditDescription.text" html="false" placeholder="false">Enter the new password for the user {0}, the password will be notified by email at {1} and must be changed to the first access platform.</item>
+  <item name="BTNsetPassword.text" html="false" placeholder="false">Set password</item>
+  <item name="BTNsetPassword.ToolTip" html="false" placeholder="false">Set password for user first access.</item>
+  <item name="LBloginPasswordEdit_t.text" html="false" placeholder="false">Login:</item>
+  <item name="LBpasswordEdit_t.text" html="false" placeholder="false">New password:</item>
+  <item name="LBpasswordEditConfirm_t.text" html="false" placeholder="false">Confirm password:</item>
+  <item name="BTNundoSetPassword.text" html="false" placeholder="false">Undo</item>
+  <item name="BTNundoSetPassword.ToolTip" html="false" placeholder="false">Undo password changing.</item>
+  <item name="BTNsaveNewPassword.text" html="false" placeholder="false">Save</item>
+  <item name="BTNsaveNewPassword.ToolTip" html="false" placeholder="false">Save changes and send password to user.</item>
+
+    <item name="LBsector_t.text">Settore:</item>
+    <item name="LBjob_t.text">Mansione:</item>
+</Resource>

@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="lm.Comol.Modules.CallForPapers.AdvEconomic.Domain.EconomicEvaluation">
+    <Position X="3.25" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAJQAAEAIAAAAAAAAUAQAAAAAAAAAQBICAAAAAAAAA=</HashCode>
+      <FileName>AdvEconomic\Domain\EconomicEvaluation.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Call" />
+      <Property Name="Commission" />
+      <Property Name="CurrentMember" />
+      <Property Name="Submission" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="Tables" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="lm.Comol.Modules.CallForPapers.AdvEconomic.Domain.EconomicItem">
+    <Position X="7.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIBAAEAAAQAAAAAAAAYAAAAAAQAAQAAAAAAAACgAA=</HashCode>
+      <FileName>AdvEconomic\Domain\EconomicItem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="lm.Comol.Modules.CallForPapers.AdvEconomic.Domain.EconomicTable">
+    <Position X="5.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgIAAAgAAAACAAAAIAAAAAAAAAAgAQAAAAAAAAAAAA=</HashCode>
+      <FileName>AdvEconomic\Domain\EconomicTable.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Items" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="lm.Comol.Modules.CallForPapers.Advanced.Domain.AdvCommission" Collapsed="true">
+    <Position X="0.5" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAREAFAIAgABAAAAAAAAQhAAAEAEAAIgAEAAAAAAA=</HashCode>
+      <FileName>Advanced\Domain\AdvCommission.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="lm.Comol.Modules.CallForPapers.Domain.BaseForPaper" Collapsed="true">
+    <Position X="0.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACQABAEGBokAQMgAAgAhAQgCKAACEAAAUDQQEAgBAA=</HashCode>
+      <FileName>Domain\Base\Call\BaseForPaper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="lm.Comol.Modules.CallForPapers.Domain.UserSubmission" Collapsed="true">
+    <Position X="0.5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQBQACEQAJAAAIAAAIAAQAIAEBBAABAgQAAAAEAAIA=</HashCode>
+      <FileName>Domain\Base\Call\UserSubmission.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="lm.Comol.Modules.CallForPapers.Advanced.Domain.AdvMember" Collapsed="true">
+    <Position X="0.5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAAAAAAAAgAAAAAAAAIAAABAAAAAAAAAAA=</HashCode>
+      <FileName>Advanced\Domain\AdvMember.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="lm.Comol.Modules.CallForPapers.AdvEconomic.Helpers.EconomicSummaryHTMLexpHelper">
+    <Position X="3.25" Y="5" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAAAAhBwgAAAAAIAQMAIIgAACBICAAADAAAg=</HashCode>
+      <FileName>AdvEconomic\Helpers\EconomicSummaryHTMLexpHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -1,0 +1,23 @@
+.RadTile_Windows7 {
+  font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  color: black;
+  background-color: #cddaea;
+  /* Loading image */ }
+  .RadTile_Windows7.rtileSelected {
+    border-color: #75abec; }
+  .RadTile_Windows7.rtileHovered {
+    border-color: #aabfd6; }
+  .RadTile_Windows7.rtileSelected.rtileHovered {
+    border-color: rgba(117, 171, 236, 0.7); }
+  .RadTile_Windows7.rtileSelected .rtileSelectedIcon {
+    background-image: url('Tile/rtileSprite.png');
+    _background-image: url('Tile/rtileSpriteIE6.png'); }
+  html .RadTile_Windows7.RadTile h6.rtileTitle {
+    color: black; }
+  .RadTile_Windows7 .rtilePeekContent {
+    background-color: #cddaea; }
+  .RadTile_Windows7.rtileLoading,
+  .RadTile_Windows7 .rtileLoading {
+    background-image: url('Common/loading_small.gif'); }
+

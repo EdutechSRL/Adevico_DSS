@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/lm.Comol.Core.MailCommons.Domain.Messages" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/lm.Comol.Core.MailCommons.Domain.Configurations" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/lm.Comol.Core.Notification.Domain" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/lm.Comol.Core.Mail.Messages" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/lm.Comol.Core.DomainModel" />
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:element name="SendMailMessage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="istanceIdentifier" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="idUser" type="xs:int" />
+        <xs:element minOccurs="0" name="idCommunity" type="xs:int" />
+        <xs:element minOccurs="0" name="moduleCode" nillable="true" type="xs:string" />
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/lm.Comol.Core.MailCommons.Domain.Messages" minOccurs="0" name="message" nillable="true" type="q1:Message" />
+        <xs:element minOccurs="0" name="attachmentPath" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="saveMessage" type="xs:boolean" />
+        <xs:element minOccurs="0" name="attachmentSavedPath" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendMailWithSettings">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="istanceIdentifier" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="idUser" type="xs:int" />
+        <xs:element minOccurs="0" name="idCommunity" type="xs:int" />
+        <xs:element minOccurs="0" name="moduleCode" nillable="true" type="xs:string" />
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/lm.Comol.Core.MailCommons.Domain.Configurations" minOccurs="0" name="config" nillable="true" type="q2:SmtpServiceConfig" />
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/lm.Comol.Core.MailCommons.Domain.Messages" minOccurs="0" name="message" nillable="true" type="q3:Message" />
+        <xs:element minOccurs="0" name="attachmentPath" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="saveMessage" type="xs:boolean" />
+        <xs:element minOccurs="0" name="attachmentSavedPath" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendMailFromModuleNotification">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="istanceIdentifier" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="idUser" type="xs:int" />
+        <xs:element minOccurs="0" name="moduleCode" nillable="true" type="xs:string" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/lm.Comol.Core.Notification.Domain" minOccurs="0" name="message" nillable="true" type="q4:dtoModuleNotificationMessage" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendMailFromGroupNotification">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="istanceIdentifier" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="idUser" type="xs:int" />
+        <xs:element minOccurs="0" name="moduleCode" nillable="true" type="xs:string" />
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/lm.Comol.Core.Notification.Domain" minOccurs="0" name="message" nillable="true" type="q5:GroupMessages" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendMailMessagesFromTemplate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="istanceIdentifier" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="idUser" type="xs:int" />
+        <xs:element minOccurs="0" name="moduleCode" nillable="true" type="xs:string" />
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/lm.Comol.Core.MailCommons.Domain.Messages" minOccurs="0" name="mailSettings" nillable="true" type="q6:MessageSettings" />
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/lm.Comol.Core.Mail.Messages" minOccurs="0" name="messages" nillable="true" type="q7:ArrayOfdtoMailTranslatedMessage" />
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/lm.Comol.Core.Mail.Messages" minOccurs="0" name="template" nillable="true" type="q8:dtoBaseMailTemplate" />
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/lm.Comol.Core.DomainModel" minOccurs="0" name="obj" nillable="true" type="q9:ModuleObject" />
+        <xs:element minOccurs="0" name="idCommunity" type="xs:int" />
+        <xs:element minOccurs="0" name="isPortal" type="xs:boolean" />
+        <xs:element xmlns:q10="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="attachments" nillable="true" type="q10:ArrayOfstring" />
+        <xs:element minOccurs="0" name="attachmentPath" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="saveMessage" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

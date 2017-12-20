@@ -1,0 +1,355 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Resource xmlns="urn:ComolTranslation">
+  <!--<item name="action.CompileQuiz" html="true" placeholder="true" mustcontains="{0}|{1}|{2}">Compila il quiz &lt;a href="{0}" title="{1}" class="ROW_ItemLink_Small" &gt;&lt;img src="{2}"/&gt; {1}&lt;/a&gt;</item>
+  <item name="action.ViewQuiz" html="true" placeholder="true" mustcontains="{0}|{1}|{2}|{3}">Puoi rivedere il quiz &lt;a href="{0}" title="{1}" class="ROW_ItemLink_Small" &gt;&lt;img src="{2}"/&gt; {1}&lt;/a&gt;. Il tuo punteggio: {3}/100</item>
+  <item name="action.noLinkQuiz" placeholder="true" mustcontains="{0}|{1}">Hai compilato il quiz {0}. Il tuo punteggio: {1}/100</item>
+  <item name="action.UserStatQuiz" html="true" placeholder="true" mustcontains="{0}|{1}|{2}">&lt;a href="{0}" title="{1}" class="ROW_ItemLink_Small" &gt;&lt;img src="{2}"/&gt; {1}&lt;/a&gt;</item>
+  <item name="action.AdvancedStatQuiz" html="true" placeholder="true" mustcontains="{0}|{1}|{2}">&lt;a href="{0}" title="{1}" class="ROW_ItemLink_Small" &gt;&lt;img src="{2}"/&gt; {1}&lt;/a&gt;</item>
+  <item name="action.UserStatQuiz" html="true" placeholder="true" mustcontains="{0}|{1}">&lt;a href="{0}" title="{1}" class="ROW_ItemLink_Small" &gt; {1}&lt;/a&gt;</item>
+  <item name="action.AdvancedStatQuiz" html="true" placeholder="true" mustcontains="{0}|{1}">&lt;a href="{0}" title="{1}" class="ROW_ItemLink_Small" &gt; {1}&lt;/a&gt;</item>
+  <item name="action.InLineQuiz" html="true" placeholder="true" mustcontains="{0}|{1}|{2}">&lt;a href="{0}" title="{1}" class="ROW_ItemLink_Small" &gt;&lt;img src="{2}"/&gt; {1}&lt;/a&gt;</item>-->
+  <item name="BTNaddQuiz_toEP.text">Aggiungi questionario</item>
+  <item name="BTNaddQuiz_toEP.Tooltip">Aggiungi questionario</item>
+  <item name="LTaddQuiz_toEP.text">Aggiunge un'attività relativa alla compilazione di un questionario raggiungibile solo dal percorso formativo</item>
+  <item name="BTNimportQuiz.text">Importa questionario</item>
+  <item name="BTNimportQuiz.Tooltip">Importa questionario di comunità copiandolo nel percorso formativo</item>
+  <item name="LTimportQuiz.text">Seleziona un questionario di comunità da importare nel percorso per la compilazione.</item>
+  <item name="LTuploadToCommunity_t.text">Seleziona il questionario da importare</item>
+  <item name="BTNbackToActionSelectorTopFromCommunity.text">Indietro</item>
+  <item name="BTNbackToActionSelectorTopFromCommunity.Tooltip">Indietro</item>
+  <item name="BTNbackToActionSelectorBottomFromCommunity.text">Indietro</item>
+  <item name="BTNbackToActionSelectorBottomFromCommunity.Tooltip">Indietro</item>
+  <item name="Quiz">Questionario</item>
+  <item name="description" placeholder="true" mustcontains="{0}">Questionario: {0}</item>
+  <item name="LTnoQuiz.text">Nessun questionario presente !</item>
+  <item name="description.IsInline.False" placeholder="true" mustcontains="{0}">Questionario: {0}</item>
+  <item name="description.IsInline.True" html="true" placeholder="true" mustcontains="{0}|{1}">&lt;img src="{1}"/&gt; {0}</item>
+  <item name="action.CompileQuiz.IsInline.False" html="true" placeholder="true" mustcontains="{0}|{1}|{2}">Compila il quiz &lt;a href="{0}" title="{1}" class="ROW_ItemLink_Small" &gt;&lt;img src="{2}"/&gt; {1}&lt;/a&gt;</item>
+  <item name="action.CompileQuiz.IsInline.True" html="true" placeholder="true" mustcontains="{0}|{1}"> &lt;a href="{0}" title="Compila il quiz {1}" class="ROW_ItemLink_Small" &gt;{1}&lt;/a&gt;</item>
+  <item name="action.ViewQuiz.IsInline.False" html="true"  placeholder="true" mustcontains="{0}|{1}|{2}|{3}">Puoi rivedere il quiz &lt;a href="{0}" title="{1}" class="ROW_ItemLink_Small" &gt;&lt;img src="{2}"/&gt; {1}&lt;/a&gt;. Il tuo punteggio: {3}/100</item>
+  <item name="action.ViewQuiz.IsInline.True" html="true" placeholder="true" mustcontains="{0}|{1}|{2}">&lt;a href="{0}" title="Puoi rivedere il quiz {1}. Il tuo punteggio: {2}/100" class="ROW_ItemLink_Small" &gt;{1}&lt;/a&gt;.</item>
+  <item name="action.noLinkQuiz.IsInline.False" placeholder="true" mustcontains="{0}|{1}">Hai compilato il quiz {0}. Il tuo punteggio: {1}/100</item>
+  <item name="action.noLinkQuiz.IsInline.True"  html="true" placeholder="true" mustcontains="{0}|{1}">&lt;span title="Hai compilato il quiz {0}. Il tuo punteggio: {1}/100" /&gt; {0}.&lt;span/&gt;</item>
+  <item name="action.unhandled">Tipo di oggetto non supportato.</item>
+  <item name="action.RemovedObject">Azione cancellata.</item>
+  <item name="LBscore.Text" placeholder="true" mustcontains="{0}">Il tuo punteggio: {0}/100</item>
+
+  <item name="QuestionnaireAction.ButtonText.None"></item>
+  <item name="QuestionnaireAction.ToolTip.None"></item>
+  <item name="QuestionnaireAction.Description.None"></item>
+  <item name="QuestionnaireAction.ActionTitle.None"></item>
+  <item name="QuestionnaireAction.ActionTitle.SelectAction">Azioni disponibili per i questionari</item>
+  <item name="QuestionnaireAction.ButtonText.AddStandard">Standard</item>
+  <item name="QuestionnaireAction.ToolTip.AddStandard">Aggiungi questionario</item>
+  <item name="QuestionnaireAction.Description.AddStandard">Aggiunge un'attivita' relativa alla compilazione di un questionario raggiungibile solo dal percorso formativo</item>
+  <item name="QuestionnaireAction.ActionTitle.AddStandard">Aggiungi questionario</item>
+  <item name="QuestionnaireAction.ButtonText.AddRandom">Domande casuali</item>
+  <item name="QuestionnaireAction.ToolTip.AddRandom">Aggiungi questionario con domande casuali</item>
+  <item name="QuestionnaireAction.Description.AddRandom">Aggiunge un'attivita' relativa alla compilazione di un questionario con domande casuali per ciascun utente (domande recuperate dalle medesime librerie per tutti).</item>
+  <item name="QuestionnaireAction.ActionTitle.AddRandom">Aggiungi questionario random</item>
+  <item name="QuestionnaireAction.ButtonText.AddRandomRepeat">Autovalutazione</item>
+  <item name="QuestionnaireAction.ToolTip.AddRandomRepeat">Aggiungi un questionario di autovalutazione</item>
+  <item name="QuestionnaireAction.Description.AddRandomRepeat">Aggiunge un'attivita' relativa alla compilazione di un questionario con domande casuali, ripetibile fino al superamento.</item>
+  <item name="QuestionnaireAction.ActionTitle.AddRandomRepeat">Aggiungi un questionario di autovalutazione</item>
+  <item name="QuestionnaireAction.ButtonText.ImportFromCommunity">Importa questionario</item>
+  <item name="QuestionnaireAction.ToolTip.ImportFromCommunity">Importa questionario</item>
+  <item name="QuestionnaireAction.Description.ImportFromCommunity">Seleziona un questionario di comunità da importare nel percorso per la compilazione.</item>
+  <item name="QuestionnaireAction.ActionTitle.ImportFromCommunity">Seleziona questionario</item>
+  <item name="BTNcloseAddActionWindowBottom.text">Chiudi finestra</item>
+  <item name="BTNcloseAddActionWindowBottom.ToolTip">Chiudi finestra</item>
+  <item name="BTNcloseAddActionWindowTop.text">Chiudi finestra</item>
+  <item name="BTNcloseAddActionWindowTop.ToolTip">Chiudi finestra</item>
+  <item name="BTNselectActionBottom.text">Cambia azione</item>
+  <item name="BTNselectActionBottom.ToolTip">Cambia azione</item>
+  <item name="BTNselectActionTop.text">Cambia azione</item>
+  <item name="BTNselectActionTop.ToolTip">Cambia azione</item>
+  <item name="BTNLinkToModuleBottom.text">Importa</item>
+  <item name="BTNLinkToModuleBottom.ToolTip">Importa il questionario selezionato</item>
+  <item name="BTNLinkToModuleBottom.status">Importa il questionario selezionato</item>
+  <item name="BTNLinkToModuleTop.text">Importa</item>
+  <item name="BTNLinkToModuleTop.ToolTip">Importa il questionario selezionato</item>
+  <item name="BTNLinkToModuleTop.status">Importa il questionario selezionato</item>
+  <item name="LNBimportQuestionnaire.text">Importa</item>
+  <item name="LNBimportQuestionnaire.ToolTip">Importa </item>
+  <item name="LTquestionnaireName_t.text">Nome questionario</item>
+  <item name="LTquestionnaireAction_t.text">Azione</item>
+  <item name="LTquestionnaireType_t.text">Tipo</item>
+  <item name="QuestionnaireType.Standard">Standard</item>
+  <item name="QuestionnaireType.QuestionLibrary" disambiguation="libreria=libreria di domande">Libreria</item>
+  <item name="QuestionnaireType.Poll">Sondaggio</item>
+  <item name="QuestionnaireType.Model" disambiguation="modello=modello di questionario">Modello</item>
+  <item name="QuestionnaireType.Random">Domande casuali</item>
+  <item name="QuestionnaireType.AutoEvaluation">Autovalutazione</item>
+  <item name="QuestionnaireType.Meeting">Meeting</item>
+  <item name="QuestionnaireType.RandomMultipleAttempts">Domande causali con ripetizione</item>
+  <item name="QuestionnaireType.0">Standard</item>
+  <item name="QuestionnaireType.1" disambiguation="libreria=libreria di domande">Libreria</item>
+  <item name="QuestionnaireType.2">Sondaggio</item>
+  <item name="QuestionnaireType.3" disambiguation="modello=modello di questionario">Modello</item>
+  <item name="QuestionnaireType.4">Domande casuali</item>
+  <item name="QuestionnaireType.5">Autovalutazione</item>
+  <item name="QuestionnaireType.6">Meeting</item>
+  <item name="QuestionnaireType.7">Domande causali con ripetizione</item>
+  <item name="QuizStatus.NewAttempt.Score.0" placeholder="true" mustcontains="{0}|{1}|{2}|{3}|{4}|{5}">Test non superato (punteggio {4}/{5}). Compila nuovamente il quiz &lt;a href="{0}" title="{1}" class="ROW_ItemLink_Small" &gt;{2}&lt;/a&gt; (gia' {3} tentativi)</item>
+  <item name="QuizStatus.NewAttempt.Score.1" placeholder="true" mustcontains="{0}|{1}|{2}|{3}|{4}">Test non superato (punteggio {3}/{4}). Compila nuovamente il quiz &lt;a href="{0}" title="{1}" class="ROW_ItemLink_Small" &gt;{2}&lt;/a&gt;</item>
+  <item name="QuizStatus.NewAttempt.Score" placeholder="true" mustcontains="{0}|{1}|{2}|{3}|{4}|{5}|{6}">Test non superato (punteggio {5}/{6}). Compila nuovamente il quiz &lt;a href="{0}" title="{1}" class="ROW_ItemLink_Small" &gt;{2}&lt;/a&gt; (sei al {3}° tentativo su {4})</item>
+  <item name="QuizStatus.CompiledWithAttempts.Score" placeholder="true" mustcontains="{0}|{1}|{2}|{3}">Hai superato il quiz {0} al {1}° tentativo. Il tuo punteggio: {2}/{3}</item>
+  <!-- TRADUZIONE AZIONI-->
+  <!-- COMUNI-->
+  <item name="ToolTip.StandardActionType.None"></item>
+  <item name="ToolTip.StandardActionType.Play" placeholder="true" mustcontains="{0}">Compila il quiz {0}</item>
+  <item name="ToolTip.StandardActionType.Edit">Modifica il questionario</item>
+  <item name="ToolTip.StandardActionType.VirtualDelete"></item>
+  <item name="ToolTip.StandardActionType.VirtualUndelete"></item>
+  <item name="ToolTip.StandardActionType.Admin"></item>
+  <item name="ToolTip.StandardActionType.ViewPersonalStatistics">Visualizza le tue statistiche</item>
+  <item name="ToolTip.StandardActionType.ViewAdvancedStatistics">Visualizza le statistiche del questionario</item>
+  <item name="ToolTip.StandardActionType.EditPermission"></item>
+  <item name="ToolTip.StandardActionType.EditMetadata"></item>
+  <item name="ToolTip.StandardActionType.ViewUserStatistics">Visualizza le statistiche dell'utente</item>
+  <item name="ToolTip.StandardActionType.ViewDescription"></item>
+  <item name="ToolTip.StandardActionType.DownloadItem"></item>
+  <!-- VECCHIE TRADUZIONI-->
+  <item name="QuizStatus.ToCompile"  html="true" placeholder="true" mustcontains="{0}|{1}|{2}">Compila il quiz &lt;a href="{0}" title="{1}" class="ROW_ItemLink_Small" &gt;{2}&lt;/a&gt;</item>
+  <item name="QuizStatus.ViewCompiled"  html="true" placeholder="true" mustcontains="{0}|{1}">Puoi rivedere il quiz &lt;a href="{0}" title="{1}" class="ROW_ItemLink_Small" &gt;{2}&lt;/a&gt;.</item>
+  <item name="QuizStatus.Compiled" placeholder="true" mustcontains="{0}">Hai compilato il quiz {0}.</item>
+  <item name="QuizStatus.NotCreated">Quiz inesistente.</item>
+  <item name="QuizStatus.Deleted" placeholder="true" mustcontains="{0}">Il quiz {0} è stato cancellato.</item>
+  <item name="QuizStatus.Unknown">Quiz inesistente.</item>
+  <item name="QuizStatus.ToCompileWithAttempts.0" placeholder="true" mustcontains="{0}|{1}|{2}|{3}">Compila il quiz &lt;a href="{0}" title="{1}" class="ROW_ItemLink_Small" &gt;{2}&lt;/a&gt; (al {3}° tentativo)</item>
+  <item name="QuizStatus.ToCompileWithAttempts.1" placeholder="true" mustcontains="{0}|{1}|{2}">Compila il quiz &lt;a href="{0}" title="{1}" class="ROW_ItemLink_Small" &gt;{2}&lt;/a&gt; (hai un solo tentativo)</item>
+  <item name="QuizStatus.ToCompileWithAttempts" placeholder="true" mustcontains="{0}|{1}|{2}|{3}|{4}">Compila il quiz &lt;a href="{0}" title="{1}" class="ROW_ItemLink_Small" &gt;{2}&lt;/a&gt; (sei al {3}° tentativo su {4})</item>
+  <item name="QuizStatus.NewAttempt.0" placeholder="true" mustcontains="{0}|{1}|{2}|{3}">Test non superato. Compila nuovamente il quiz &lt;a href="{0}" title="{1}" class="ROW_ItemLink_Small" &gt;{2}&lt;/a&gt; (gia' {3} tentativi)</item>
+  <item name="QuizStatus.NewAttempt.1" placeholder="true" mustcontains="{0}|{1}|{2}">Test non superato. Compila nuovamente il quiz &lt;a href="{0}" title="{1}" class="ROW_ItemLink_Small" &gt;{2}&lt;/a&gt;</item>
+  <item name="QuizStatus.NewAttempt" placeholder="true" mustcontains="{0}|{1}|{2}|{3}|{4}">Test non superato. Compila nuovamente il quiz &lt;a href="{0}" title="{1}" class="ROW_ItemLink_Small" &gt;{2}&lt;/a&gt; (sei al {3}° tentativo su {4})</item>
+  <item name="QuizStatus.MaxAttempts" placeholder="true" mustcontains="{0}|{1}">Il quiz {0} non è stato superato dopo {1} tentativi.</item>
+  <item name="QuizStatus.ViewAttemptCompiled.0" placeholder="true" mustcontains="{0}|{1}|{2}|{3}|{4}|{5}">Puoi rivedere il quiz &lt;a href="{0}" title="{1}" class="ROW_ItemLink_Small" &gt;{2}&lt;/a&gt; (superato al {5}° tentativo con un punteggio di {3}/{4}).</item>
+  <item name="QuizStatus.ViewAttemptCompiled.1" placeholder="true" mustcontains="{0}|{1}|{2}|{3}|{4}">Puoi rivedere il quiz &lt;a href="{0}" title="{1}" class="ROW_ItemLink_Small" &gt;{2}&lt;/a&gt; (superato con un punteggio di {3}/{4}).</item>
+  <item name="QuizStatus.ViewAttemptCompiled" placeholder="true" mustcontains="{0}|{1}|{2}|{3}|{4}|{5}|{6}">Puoi rivedere il quiz &lt;a href="{0}" title="{1}" class="ROW_ItemLink_Small" &gt;{2}&lt;/a&gt; (superato al {5}° tentativo su {6} con un punteggio di {3}/{4}).</item>
+  <item name="QuizStatus.CompiledWithAttempts" placeholder="true" mustcontains="{0}|{1}">Hai superato il quiz {0} al {1}° tentativo.</item>
+  <item name="QuizStatus.RetrieveErrors" placeholder="true" mustcontains="{0}">Dati non recuperati per il quiz {0}.</item>
+
+
+
+  <!--<item name="ToolTip.StandardActionType.Play.QuizStatus.ViewCompiled.True" placeholder="true" mustcontains="{0}|{1}">Puoi rivedere il quiz {0}.Il tuo punteggio: {1}/100</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.ViewCompiled.False" placeholder="true" mustcontains="{0}">Puoi rivedere il quiz {0}.</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.Compiled.True" placeholder="true" mustcontains="{0}|{1}">Hai compilato il quiz {0}.Il tuo punteggio: {1}/100</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.Compiled.False" placeholder="true" mustcontains="{0}">Hai compilato il quiz {0}.</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.NewAttempt.0" placeholder="true" mustcontains="{0}|{1}">Compila il quiz {0} (gia' {1} tentativi).</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.NewAttempt.1" placeholder="true" mustcontains="{0}">Compila il quiz {0} (hai un tentativo).</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.NewAttempt" placeholder="true" mustcontains="{0}|{1}|{2}">Compila il quiz {0} (sei al {1}° tentativo su {2}).</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.MaxAttempts" placeholder="true" mustcontains="{0}|{1}">Il quiz {0} non è stato superato dopo {1} tentativi.</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.ViewAttemptCompiled.0" placeholder="true" mustcontains="{0}|{1}|{2}|{3}">Hai compilato il quiz {0} in {3} tentativi.Il tuo punteggio: {1}/{2}</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.ViewAttemptCompiled.1" placeholder="true" mustcontains="{0}|{1}|{2}">Hai compilato il quiz {0}.Il tuo punteggio: {1}/{2}</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.ViewAttemptCompiled" placeholder="true" mustcontains="{0}|{1}|{2}|{3}|{4}">Hai compilato il quiz {0} in {3} tentativi su {4}.Il tuo punteggio: {1}/{2}</item>-->
+  <!-- NUOVE TRADUZIONI-->
+  <item name="ToolTip.StandardActionType.Edit.Standard">Modifica il questionario</item>
+  <item name="ToolTip.StandardActionType.Edit.QuestionLibrary">Modifica la libreria</item>
+  <item name="ToolTip.StandardActionType.Edit.Poll">Modifica il sondaggio</item>
+  <item name="ToolTip.StandardActionType.Edit.Model">Modifica il modello</item>
+  <item name="ToolTip.StandardActionType.Edit.Random">Modifica il questionario a domande casuali</item>
+  <item name="ToolTip.StandardActionType.Edit.AutoEvaluation">Modifica il questionario di autovalutazione</item>
+  <item name="ToolTip.StandardActionType.Edit.Meeting">Modifica il meeting</item>
+  <item name="ToolTip.StandardActionType.Edit.RandomRepeat">Modifica il questionario di valutazione con domande casuali ed eventuali tentativi multipli</item>
+  <item name="ToolTip.StandardActionType.Edit.RandomMultipleAttempts">Modifica il questionario di valutazione con domande casuali ed eventuali tentativi multipli</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.Deleted" placeholder="true" mustcontains="#name#">Il quiz #name# è stato cancellato.</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.Deleted.Standard" placeholder="true" mustcontains="#name#">Il questionario #name# è stato cancellato.</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.Deleted.Poll" placeholder="true" mustcontains="#name#">Il sondaggio #name# è stato cancellato.</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.Deleted.Random" placeholder="true" mustcontains="#name#">Il questionario #name# è stato cancellato.</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.Deleted.AutoEvaluation" placeholder="true" mustcontains="#name#">Il quiz #name# è stato cancellato.</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.Deleted.RandomMultipleAttempts" placeholder="true" mustcontains="#name#">Il quiz #name# è stato cancellato.</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.Unknown">Quiz inesistente.</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.Unknown.Standard">Questionario inesistente.</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.Unknown.Poll">Sondaggio inesistente.</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.Unknown.Random">Questionario inesistente.</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.Unknown.AutoEvaluation">Quiz inesistente.</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.Unknown.RandomMultipleAttempts">Quiz inesistente.</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.NotCreated">Quiz inesistente.</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.NotCreated.Standard">Questionario inesistente.</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.NotCreated.Poll">Sondaggio inesistente.</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.NotCreated.Random">Questionario inesistente.</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.NotCreated.AutoEvaluation">Quiz inesistente.</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.NotCreated.RandomMultipleAttempts">Quiz inesistente.</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.RetrieveErrors" placeholder="true" mustcontains="#name#">Dati non recuperati per il quiz #name#.</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.RetrieveErrors.Standard" placeholder="true" mustcontains="#name#">Dati non recuperati per il questionario #name#.</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.RetrieveErrors.Poll" placeholder="true" mustcontains="#name#">Dati non recuperati per il sondaggio #name#.</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.RetrieveErrors.Random" placeholder="true" mustcontains="#name#">Dati non recuperati per il questionario #name#.</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.RetrieveErrors.AutoEvaluation" placeholder="true" mustcontains="#name#">Dati non recuperati per il quiz #name#.</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.RetrieveErrors.RandomMultipleAttempts" placeholder="true" mustcontains="#name#">Dati non recuperati per il quiz #name#.</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.ToCompile" placeholder="true" mustcontains="#name#">Compila il quiz #name#.</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.ToCompile.Standard" placeholder="true" mustcontains="#name#">Compila il questionario #name#.</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.ToCompile.Poll" placeholder="true" mustcontains="#name#">Compila il sondaggio #name#.</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.ToCompile.Random" placeholder="true" mustcontains="#name#">Compila il questionario #name#.</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.ToCompile.AutoEvaluation" placeholder="true" mustcontains="#name#">Compila il quiz #name#.</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.ToCompile.RandomMultipleAttempts" placeholder="true" mustcontains="#name#">Compila il quiz #name#.</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.ToCompile.RandomMultipleAttempts.DisplayAvailableAttempts.True" placeholder="true" mustcontains="#name#">Compila il quiz #name# (hai più tentativi per superarlo).</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.ToCompile.RandomMultipleAttempts.DisplayAvailableAttempts.True.1" placeholder="true" mustcontains="#name#">Compila il quiz #name# (hai un solo tentativo  per superarlo).</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.ToCompile.RandomMultipleAttempts.DisplayAvailableAttempts.True.n" placeholder="true" mustcontains="#name#|#availableattempts#">Compila il quiz #name# (hai #availableattempts# tentativi per superarlo).</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.ToCompile.RandomMultipleAttempts.DisplayAvailableAttempts.False" placeholder="true" mustcontains="#name#">Compila il quiz #name#.</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.Compiled" placeholder="true" mustcontains="#name#">Hai compilato il quiz #name#.</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.Compiled.Standard" placeholder="true" mustcontains="#name#">Hai compilato il questionario #name#.</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.Compiled.Standard.DisplayScoreToUser.True.DisplayResultsStatus.True" placeholder="true" mustcontains=" #name#|#score#|#maxscore#">Hai compilato il questionario  #name#. Il tuo punteggio: #score#/#maxscore#</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.Compiled.Standard.DisplayScoreToUser.False.DisplayResultsStatus.True" placeholder="true" mustcontains="#name#">Hai compilato il questionario #name#.</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.Compiled.Standard.DisplayScoreToUser.True.DisplayResultsStatus.False" placeholder="true" mustcontains="#name#">Hai compilato il questionario #name#.</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.Compiled.Standard.DisplayScoreToUser.False.DisplayResultsStatus.False" placeholder="true" mustcontains="#name#">Hai compilato il questionario #name#.</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.Compiled.Poll" placeholder="true" mustcontains=" #name#">Hai compilato il sondaggio #name#.</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.Compiled.Random.DisplayScoreToUser.True.DisplayResultsStatus.True" placeholder="true" mustcontains="#name#|#score#">Hai compilato il questionario #name#. Il tuo punteggio: #score#/#maxscore#</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.Compiled.Random.DisplayScoreToUser.False.DisplayResultsStatus.True" placeholder="true" mustcontains="#name#">Hai compilato il questionario #name#.</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.Compiled.Random.DisplayScoreToUser.True.DisplayResultsStatus.False" placeholder="true" mustcontains="#name#">Hai compilato il questionario #name#.</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.Compiled.Random.DisplayScoreToUser.False.DisplayResultsStatus.False" placeholder="true" mustcontains="#name#">Hai compilato il questionario #name#.</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.Compiled.AutoEvaluation.DisplayScoreToUser.True.DisplayResultsStatus.True" placeholder="true" mustcontains="#name#|#score#|#maxscore#">Hai compilato il quiz #name#. Il tuo punteggio: #score#/#maxscore#</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.Compiled.AutoEvaluation.DisplayScoreToUser.False.DisplayResultsStatus.True" placeholder="true" mustcontains="#name#">Hai compilato il quiz #name#.</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.Compiled.AutoEvaluation.DisplayScoreToUser.True.DisplayResultsStatus.False" placeholder="true" mustcontains="#name#">Hai compilato il quiz #name#.</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.Compiled.AutoEvaluation.DisplayScoreToUser.False.DisplayResultsStatus.False" placeholder="true" mustcontains="#name#">Hai compilato il quiz #name#.</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.Compiled.RandomMultipleAttempts.DisplayScoreToUser.True.DisplayResultsStatus.True" placeholder="true" mustcontains="#name#|#score#|#maxscore#">Hai compilato il quiz #name#. Il tuo punteggio: #score#/#maxscore#</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.Compiled.RandomMultipleAttempts.DisplayScoreToUser.False.DisplayResultsStatus.True" placeholder="true" mustcontains="#name#">Hai compilato il quiz #name#.</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.Compiled.RandomMultipleAttempts.DisplayScoreToUser.True.DisplayResultsStatus.False" placeholder="true" mustcontains="#name#">Hai compilato il quiz #name#.</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.Compiled.RandomMultipleAttempts.DisplayScoreToUser.False.DisplayResultsStatus.False" placeholder="true" mustcontains="#name#">Hai compilato il quiz #name#.</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.ViewCompiled.Standard.DisplayScoreToUser.True.DisplayResultsStatus.True" placeholder="true" mustcontains="#name#|#score#|#maxscore#">Puoi rivedere il questionario #name#. Il tuo punteggio: #score#/#maxscore#</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.ViewCompiled.Standard.DisplayScoreToUser.False.DisplayResultsStatus.True" placeholder="true" mustcontains="#name#">Puoi rivedere il questionario #name#.</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.ViewCompiled.Standard.DisplayScoreToUser.True.DisplayResultsStatus.False" placeholder="true" mustcontains="#name#">Puoi rivedere il questionario #name#.</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.ViewCompiled.Standard.DisplayScoreToUser.False.DisplayResultsStatus.False" placeholder="true" mustcontains="#name#">Puoi rivedere il questionario #name#.</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.ViewCompiled.Poll" placeholder="true" mustcontains="#name#">Puoi rivedere il sondaggio #name#.</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.ViewCompiled.Random.DisplayScoreToUser.True.DisplayResultsStatus.True" placeholder="true" mustcontains="#name#|#score#|#maxscore#">Puoi rivedere il quiz #name#. Il tuo punteggio: #score#/#maxscore#</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.ViewCompiled.Random.DisplayScoreToUser.False.DisplayResultsStatus.True" placeholder="true" mustcontains="#name#">Puoi rivedere il quiz #name#.</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.ViewCompiled.Random.DisplayScoreToUser.True.DisplayResultsStatus.False" placeholder="true" mustcontains="#name#">Puoi rivedere il quiz #name#.</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.ViewCompiled.Random.DisplayScoreToUser.False.DisplayResultsStatus.False" placeholder="true" mustcontains="#name#">Puoi rivedere il quiz #name#.</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.ViewCompiled.AutoEvaluation.DisplayScoreToUser.True.DisplayResultsStatus.True" placeholder="true" mustcontains="#name#|#score#|#maxscore#">Puoi rivedere il quiz #name#. Il tuo punteggio: #score#/#maxscore#</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.ViewCompiled.AutoEvaluation.DisplayScoreToUser.False.DisplayResultsStatus.True" placeholder="true" mustcontains="#name#">Puoi rivedere il quiz #name#.</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.ViewCompiled.AutoEvaluation.DisplayScoreToUser.True.DisplayResultsStatus.False" placeholder="true" mustcontains="#name#">Puoi rivedere il quiz #name#.</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.ViewCompiled.AutoEvaluation.DisplayScoreToUser.False.DisplayResultsStatus.False" placeholder="true" mustcontains="#name#">Puoi rivedere il quiz #name#.</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.ViewCompiled.RandomMultipleAttempts.DisplayScoreToUser.True.DisplayResultsStatus.True" placeholder="true" mustcontains="#name#|#score#|#maxscore#">Puoi rivedere il quiz #name#. Il tuo punteggio: #score#/#maxscore#</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.ViewCompiled.RandomMultipleAttempts.DisplayScoreToUser.False.DisplayResultsStatus.True" placeholder="true" mustcontains="#name#">Puoi rivedere il quiz #name#.</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.ViewCompiled.RandomMultipleAttempts.DisplayScoreToUser.True.DisplayResultsStatus.False" placeholder="true" mustcontains="#name#">Puoi rivedere il quiz #name#.</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.ViewCompiled.RandomMultipleAttempts.DisplayScoreToUser.False.DisplayResultsStatus.False" placeholder="true" mustcontains="#name#">Puoi rivedere il quiz #name#.</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.CompiledWithAttempts.DisplayScoreToUser.True.DisplayResultsStatus.True.DisplayCurrentAttempts.True.1" placeholder="true" mustcontains="#name#|#score#|#maxscore#">Hai superato il quiz #name# al primo tentativo. Il tuo punteggio: #score#/#maxscore#</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.CompiledWithAttempts.DisplayScoreToUser.True.DisplayResultsStatus.True.DisplayCurrentAttempts.True.n" placeholder="true" mustcontains="#name#|#score#|#attemptsnumber#|#maxscore#">Hai superato il quiz #name# al #attemptsnumber#° tentativo. Il tuo punteggio: #score#/#maxscore#</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.CompiledWithAttempts.DisplayScoreToUser.True.DisplayResultsStatus.True.DisplayCurrentAttempts.False" placeholder="true" mustcontains="#name#|#score#|#maxscore#">Hai superato il quiz #name#. Il tuo punteggio: #score#/#maxscore#</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.CompiledWithAttempts.DisplayScoreToUser.False.DisplayResultsStatus.True.DisplayCurrentAttempts.True.1" placeholder="true" mustcontains="#name#">Hai superato il quiz #name# al primo tentativo.</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.CompiledWithAttempts.DisplayScoreToUser.False.DisplayResultsStatus.True.DisplayCurrentAttempts.True.n" placeholder="true" mustcontains="#name#|#attemptsnumber#">Hai superato il quiz #name# al #attemptsnumber#° tentativo.</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.CompiledWithAttempts.DisplayScoreToUser.False.DisplayResultsStatus.True.DisplayCurrentAttempts.False" placeholder="true" mustcontains="#name#">Hai superato il quiz #name#.</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.CompiledWithAttempts.DisplayScoreToUser.True.DisplayResultsStatus.False.DisplayCurrentAttempts.True.1" placeholder="true" mustcontains="#name#|#score#|#maxscore#">Hai compilato il quiz #name# al primo tentativo. Il tuo punteggio: #score#/#maxscore#</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.CompiledWithAttempts.DisplayScoreToUser.True.DisplayResultsStatus.False.DisplayCurrentAttempts.True.n" placeholder="true" mustcontains="#name#|#score#|#attemptsnumber#|#maxscore#">Hai compilato il quiz #name# al #attemptsnumber#° tentativo. Il tuo punteggio: #score#/#maxscore#</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.CompiledWithAttempts.DisplayScoreToUser.True.DisplayResultsStatus.False.DisplayCurrentAttempts.False" placeholder="true" mustcontains="#name#|#score#|#maxscore#">Hai compilato il quiz #name#. Il tuo punteggio: #score#/#maxscore#</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.CompiledWithAttempts.DisplayScoreToUser.False.DisplayResultsStatus.False.DisplayCurrentAttempts.True.1" placeholder="true" mustcontains="#name#">Hai compilato il quiz #name# al primo tentativo.</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.CompiledWithAttempts.DisplayScoreToUser.False.DisplayResultsStatus.False.DisplayCurrentAttempts.True.n" placeholder="true" mustcontains="#name#|#attemptsnumber#">Hai compilato il quiz #name# al #attemptsnumber#° tentativo.</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.CompiledWithAttempts.DisplayScoreToUser.False.DisplayResultsStatus.False.DisplayCurrentAttempts.False" placeholder="true" mustcontains="#name#">Hai compilato il quiz #name#.</item>
+  <item name="ToolTip.CompiledWithAttempts.True"> (su più disponibili)</item>
+  <item name="ToolTip.CompiledWithAttempts.True.1"> (su l'unico disponibile)</item>
+  <item name="ToolTip.CompiledWithAttempts.True.n" mustcontains="#availableattempts#" placeholder="true"> (su #availableattempts# disponibili)</item>
+  <item name="ToolTip.CompiledWithAttempts.False" hidden="true"></item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.ToCompileWithAttempts.DisplayAvailableAttempts.True.DisplayCurrentAttempts.True.1" placeholder="true" mustcontains="#name#">Continua a compilare il quiz #name# (sei al primo tentativo e ne hai altri per superarlo).</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.ToCompileWithAttempts.DisplayAvailableAttempts.True.1.DisplayCurrentAttempts.True.1" placeholder="true" mustcontains="#name#">Continua a compilare il quiz #name# (sei al primo e unico tentativo per superarlo).</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.ToCompileWithAttempts.DisplayAvailableAttempts.True.n.DisplayCurrentAttempts.True.1" placeholder="true" mustcontains="#name#|#availableattempts#">Continua a compilare il quiz #name# (sei al primo tentativo su #availableattempts#).</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.ToCompileWithAttempts.DisplayAvailableAttempts.True.DisplayCurrentAttempts.True.n" placeholder="true" mustcontains="#name#|#attemptsnumber#">Continua a compilare il quiz #name# (sei al #attemptsnumber#° tentativo e ne hai altri per superarlo).</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.ToCompileWithAttempts.DisplayAvailableAttempts.True.1.DisplayCurrentAttempts.True.n" placeholder="true" mustcontains="#name#|#attemptsnumber#">Continua a compilare il quiz #name# (sei al #attemptsnumber#° tentativo e ne hai uno unico per superarlo).</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.ToCompileWithAttempts.DisplayAvailableAttempts.True.n.DisplayCurrentAttempts.True.n" placeholder="true" mustcontains="#name#|#attemptsnumber#|#availableattempts#">Continua a compilare il quiz #name# (sei al #attemptsnumber#° tentativo su #availableattempts#).</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.ToCompileWithAttempts.DisplayAvailableAttempts.True.DisplayCurrentAttempts.False" placeholder="true" mustcontains="#name#">Continua a compilare il quiz #name# (più tentativi).</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.ToCompileWithAttempts.DisplayAvailableAttempts.True.1.DisplayCurrentAttempts.False" placeholder="true" mustcontains="#name#">Continua a compilare il quiz #name# (un solo tentativo).</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.ToCompileWithAttempts.DisplayAvailableAttempts.True.n.DisplayCurrentAttempts.False" placeholder="true" mustcontains="#name#|#availableattempts#">Continua a compilare il quiz #name# (#availableattempts# tentativi).</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.ToCompileWithAttempts.DisplayAvailableAttempts.False.DisplayCurrentAttempts.True.1" placeholder="true" mustcontains="#name#">Continua a compilare il quiz #name# (sei al primo tentativo).</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.ToCompileWithAttempts.DisplayAvailableAttempts.False.DisplayCurrentAttempts.True.n" placeholder="true" mustcontains="#name#|#attemptsnumber#">Continua a compilare il quiz #name# (sei al #attemptsnumber#° tentativo).</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.ToCompileWithAttempts.DisplayAvailableAttempts.False.DisplayCurrentAttempts.False" placeholder="true" mustcontains="#name#">Continua a compilare il quiz #name#.</item>
+
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.MaxAttempts.DisplayResultsStatus.True.DisplayScoreToUser.True.DisplayAvailableAttempts.True.1.DisplayCurrentAttempts.True.1" placeholder="true" mustcontains="#name#|#score#|#maxscore#">Il quiz #name# non è stato superato (punteggio: #score#/#maxscore#).</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.MaxAttempts.DisplayResultsStatus.True.DisplayScoreToUser.True.DisplayAvailableAttempts.True.1.DisplayCurrentAttempts.True.n" placeholder="true" mustcontains="#name#|#score#|#maxscore#|#attemptsnumber#">Il quiz #name# non è stato superato dopo il #attemptsnumber#° tentativo (punteggio: #score#/#maxscore#).</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.MaxAttempts.DisplayResultsStatus.True.DisplayScoreToUser.True.DisplayAvailableAttempts.True.n.DisplayCurrentAttempts.True.n" placeholder="true" mustcontains="#name#|#score#|#maxscore#|#availableattempts#">Il quiz #name# non è stato superato dopo il #availableattempts#° e ultimo tentativo (punteggio: #score#/#maxscore#).</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.MaxAttempts.DisplayResultsStatus.True.DisplayScoreToUser.True.DisplayAvailableAttempts.True.n.DisplayCurrentAttempts.False" placeholder="true" mustcontains="#name#|#availableattempts#">Il quiz #name# non è stato superato (#availableattempts# tentativi possibili).</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.MaxAttempts.DisplayResultsStatus.True.DisplayScoreToUser.False.DisplayAvailableAttempts.True.1.DisplayCurrentAttempts.True.1" placeholder="true" mustcontains="#name#">Il quiz #name# non è stato superato.</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.MaxAttempts.DisplayResultsStatus.True.DisplayScoreToUser.False.DisplayAvailableAttempts.True.1.DisplayCurrentAttempts.True.n" placeholder="true" mustcontains="#name#|#attemptsnumber#">Il quiz #name# non è stato superato dopo il #attemptsnumber#° e ultimo tentativo.</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.MaxAttempts.DisplayResultsStatus.True.DisplayScoreToUser.False.DisplayAvailableAttempts.True.n.DisplayCurrentAttempts.True.n" placeholder="true" mustcontains="#name#|#availableattempts#">Il quiz #name# non è stato superato dopo il #availableattempts#° e ultimo tentativo.</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.MaxAttempts.DisplayResultsStatus.True.DisplayScoreToUser.True" placeholder="true" mustcontains="#name#|#score#|#maxscore#">Il quiz #name# non è stato superato (punteggio: #score#/#maxscore#).</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.MaxAttempts.DisplayResultsStatus.True.DisplayScoreToUser.False" placeholder="true" mustcontains="#name#">Il quiz #name# non è stato superato.</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.MaxAttempts.DisplayResultsStatus.False.DisplayScoreToUser.False.DisplayAvailableAttempts.True.1" placeholder="true" mustcontains="#name#">Il quiz #name# è stato completato dopo il primo tentativo.</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.MaxAttempts.DisplayResultsStatus.False.DisplayScoreToUser.False.DisplayAvailableAttempts.True.n" placeholder="true" mustcontains="#name#|#availableattempts#">Il quiz #name# non è stato superato dopo #availableattempts# tentativi.</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.MaxAttempts.DisplayResultsStatus.False.DisplayScoreToUser.False" placeholder="true" mustcontains="#name#">Il quiz #name# è stato completato.</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.MaxAttempts.DisplayResultsStatus.False.DisplayScoreToUser.True" placeholder="true" mustcontains="#name#">Il quiz #name# è stato completato (punteggio: #score#/#maxscore#).</item>
+
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.ViewAttemptCompiled.DisplayResultsStatus.True.DisplayScoreToUser.True.DisplayAvailableAttempts.True.DisplayCurrentAttempts.True.1" placeholder="true" mustcontains="#name#|#score#|#maxscore#">Puoi rivedere il quiz #name# superato con un punteggio di #score#/#maxscore# in un solo tentativo.</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.ViewAttemptCompiled.DisplayResultsStatus.True.DisplayScoreToUser.True.DisplayAvailableAttempts.True.DisplayCurrentAttempts.True.n" placeholder="true" mustcontains="#name#|#score#|#maxscore#|#attemptsnumber#">Puoi rivedere il quiz #name# superato con un punteggio di #score#/#maxscore# in #attemptsnumber# tentativi.</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.ViewAttemptCompiled.DisplayResultsStatus.True.DisplayScoreToUser.True.DisplayAvailableAttempts.True.n.DisplayCurrentAttempts.True.1" placeholder="true" mustcontains="#name#|#score#|#maxscore#">Puoi rivedere il quiz #name# superato con un punteggio di #score#/#maxscore# in un solo tentativo.</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.ViewAttemptCompiled.DisplayResultsStatus.True.DisplayScoreToUser.True.DisplayAvailableAttempts.True.n.DisplayCurrentAttempts.True.n" placeholder="true" mustcontains="#name#|#score#|#maxscore#|#attemptsnumber#|#availableattempts#">Hai superato il quiz #name# al #attemptsnumber#° tentativo su #availableattempts#. Il tuo punteggio: #score#/#maxscore#</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.ViewAttemptCompiled.DisplayResultsStatus.True.DisplayScoreToUser.False.DisplayAvailableAttempts.True.DisplayCurrentAttempts.True.1" placeholder="true" mustcontains="#name#">Puoi rivedere il quiz #name# superato in un solo tentativo.</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.ViewAttemptCompiled.DisplayResultsStatus.True.DisplayScoreToUser.False.DisplayAvailableAttempts.True.DisplayCurrentAttempts.True.n" placeholder="true" mustcontains="#name#|#attemptsnumber#">Puoi rivedere il quiz #name# superato in #attemptsnumber# tentativi.</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.ViewAttemptCompiled.DisplayResultsStatus.True.DisplayScoreToUser.False.DisplayAvailableAttempts.True.n.DisplayCurrentAttempts.True.1" placeholder="true" mustcontains="#name#">Puoi rivedere il quiz #name# superato in un solo tentativo.</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.ViewAttemptCompiled.DisplayResultsStatus.True.DisplayScoreToUser.False.DisplayAvailableAttempts.True.n.DisplayCurrentAttempts.True.n" placeholder="true" mustcontains="#name#|#attemptsnumber#|#availableattempts#">Puoi rivedere il quiz #name# superato al #attemptsnumber#° tentativo su #availableattempts#.</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.ViewAttemptCompiled.DisplayResultsStatus.True.DisplayScoreToUser.True.DisplayAvailableAttempts.True.DisplayCurrentAttempts.False" placeholder="true" mustcontains="#name#|#score#|#maxscore#">Puoi rivedere il quiz #name# superato con un punteggio di #score#/#maxscore# (più tentativi disponibili).</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.ViewAttemptCompiled.DisplayResultsStatus.True.DisplayScoreToUser.True.DisplayAvailableAttempts.True.1.DisplayCurrentAttempts.False" placeholder="true" mustcontains="#name#|#score#|#maxscore#">Puoi rivedere il quiz #name# superato con un punteggio di #score#/#maxscore# (un solo tentativo disponibile).</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.ViewAttemptCompiled.DisplayResultsStatus.True.DisplayScoreToUser.True.DisplayAvailableAttempts.True.n.DisplayCurrentAttempts.False" placeholder="true" mustcontains="#name#|#score#|#maxscore#|#availableattempts#">Puoi rivedere il quiz #name# superato con un punteggio di #score#/#maxscore# (#availableattempts# disponibili).</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.ViewAttemptCompiled.DisplayResultsStatus.True.DisplayScoreToUser.False.DisplayAvailableAttempts.True.DisplayCurrentAttempts.False" placeholder="true" mustcontains="#name#">Puoi rivedere il quiz #name# che hai superato (più tentativi disponibili).</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.ViewAttemptCompiled.DisplayResultsStatus.True.DisplayScoreToUser.False.DisplayAvailableAttempts.True.1.DisplayCurrentAttempts.False" placeholder="true" mustcontains="#name#">Puoi rivedere il quiz #name# che hai superato (un solo tentativo disponibile).</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.ViewAttemptCompiled.DisplayResultsStatus.True.DisplayScoreToUser.False.DisplayAvailableAttempts.True.n.DisplayCurrentAttempts.False" placeholder="true" mustcontains="#name#|#availableattempts#">Puoi rivedere il quiz #name# che hai superato (#availableattempts# disponibili).</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.ViewAttemptCompiled.DisplayResultsStatus.True.DisplayScoreToUser.True.DisplayAvailableAttempts.False.DisplayCurrentAttempts.True.1" placeholder="true" mustcontains="#name#|#score#|#maxscore#">Puoi rivedere il quiz #name# superato con un punteggio di #score#/#maxscore# al primo tentativo.</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.ViewAttemptCompiled.DisplayResultsStatus.True.DisplayScoreToUser.True.DisplayAvailableAttempts.False.DisplayCurrentAttempts.True.n" placeholder="true" mustcontains="#name#|#score#|#maxscore#|#attemptsnumber#|">Puoi rivedere il quiz #name# superato con un punteggio di #score#/#maxscore# al #attemptsnumber#° tentativo.</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.ViewAttemptCompiled.DisplayResultsStatus.True.DisplayScoreToUser.False.DisplayAvailableAttempts.False.DisplayCurrentAttempts.True.1" placeholder="true" mustcontains="#name#">Puoi rivedere il quiz #name# superato al primo tentativo.</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.ViewAttemptCompiled.DisplayResultsStatus.True.DisplayScoreToUser.False.DisplayAvailableAttempts.False.DisplayCurrentAttempts.True.n" placeholder="true" mustcontains="#name#|#attemptsnumber#|">Puoi rivedere il quiz #name# superato al #attemptsnumber#° tentativo.</item>
+
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.ViewAttemptCompiled.DisplayResultsStatus.False.DisplayScoreToUser.True.DisplayAvailableAttempts.True.DisplayCurrentAttempts.True.1" placeholder="true" mustcontains="#name#|#score#|#maxscore#">Puoi rivedere il quiz #name# completato con un punteggio di #score#/#maxscore# al primo tentativo.</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.ViewAttemptCompiled.DisplayResultsStatus.False.DisplayScoreToUser.True.DisplayAvailableAttempts.True.DisplayCurrentAttempts.True.n" placeholder="true" mustcontains="#name#|#score#|#maxscore#|#attemptsnumber#">Puoi rivedere il quiz #name# completato con un punteggio di #score#/#maxscore# in #attemptsnumber# tentativi.</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.ViewAttemptCompiled.DisplayResultsStatus.False.DisplayScoreToUser.True.DisplayAvailableAttempts.True.n.DisplayCurrentAttempts.True.1" placeholder="true" mustcontains="#name#|#score#|#maxscore#">Puoi rivedere il quiz #name# completato con un punteggio di #score#/#maxscore# al primo tentativo.</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.ViewAttemptCompiled.DisplayResultsStatus.False.DisplayScoreToUser.True.DsplayAvailableAttempts.True.n.DisplayCurrentAttempts.True.n" placeholder="true" mustcontains="#name#|#score#|#maxscore#|#attemptsnumber#|#availableattempts#">Puoi rivedere il quiz #name# completato con un punteggio di #score#/#maxscore# al #attemptsnumber#° tentativo su #availableattempts#.</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.ViewAttemptCompiled.DisplayResultsStatus.False.DisplayScoreToUser.False.DisplayAvailableAttempts.True.DisplayCurrentAttempts.True.1" placeholder="true" mustcontains="#name#">Puoi rivedere il quiz #name# completato in solo tentativo.</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.ViewAttemptCompiled.DisplayResultsStatus.False.DisplayScoreToUser.False.DisplayAvailableAttempts.True.DisplayCurrentAttempts.True.n" placeholder="true" mustcontains="#name#|#attemptsnumber#">Puoi rivedere il quiz #name# completato in #attemptsnumber# tentativi.</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.ViewAttemptCompiled.DisplayResultsStatus.False.DisplayScoreToUser.False.DisplayAvailableAttempts.True.n.DisplayCurrentAttempts.True.1" placeholder="true" mustcontains="#name#">Puoi rivedere il quiz #name# completato con un solo tentativo.#</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.ViewAttemptCompiled.DisplayResultsStatus.False.DisplayScoreToUser.False.DisplayAvailableAttempts.True.n.DisplayCurrentAttempts.True.n" placeholder="true" mustcontains="#name#|#attemptsnumber#|#availableattempts#">Puoi rivedere il quiz #name# completato al #attemptsnumber#° tentativo su #availableattempts#.</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.ViewAttemptCompiled.DisplayResultsStatus.False.DisplayScoreToUser.True.DisplayAvailableAttempts.True.DisplayCurrentAttempts.False" placeholder="true" mustcontains="#name#|#score#|#maxscore#">Puoi rivedere il quiz #name# con un punteggio di #score#/#maxscore# (più tentativi disponibili).</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.ViewAttemptCompiled.DisplayResultsStatus.False.DisplayScoreToUser.True.DisplayAvailableAttempts.True.1.DisplayCurrentAttempts.False" placeholder="true" mustcontains="#name#|#score#|#maxscore#">Puoi rivedere il quiz #name# con un punteggio di #score#/#maxscore# (un solo tentativo disponibile).</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.ViewAttemptCompiled.DisplayResultsStatus.False.DisplayScoreToUser.True.DisplayAvailableAttempts.True.n.DisplayCurrentAttempts.False" placeholder="true" mustcontains="#name#|#score#|#maxscore#|#availableattempts#">Puoi rivedere il quiz #name# completato con un punteggio di #score#/#maxscore# (#availableattempts# tentativi disponibili).</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.ViewAttemptCompiled.DisplayResultsStatus.False.DisplayScoreToUser.False.DisplayAvailableAttempts.True.DisplayCurrentAttempts.False" placeholder="true" mustcontains="#name#">Puoi rivedere il quiz #name# (più tentativi disponibili).</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.ViewAttemptCompiled.DisplayResultsStatus.False.DisplayScoreToUser.False.DisplayAvailableAttempts.True.1.DisplayCurrentAttempts.False" placeholder="true" mustcontains="#name#">Puoi rivedere il quiz #name# (un solo tentativo disponibile).</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.ViewAttemptCompiled.DisplayResultsStatus.False.DisplayScoreToUser.False.DisplayAvailableAttempts.True.n.DisplayCurrentAttempts.False" placeholder="true" mustcontains="#name#|#availableattempts#">Puoi rivedere il quiz #name# (#availableattempts# tentativi disponibili).</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.ViewAttemptCompiled.DisplayResultsStatus.False.DisplayScoreToUser.True.DisplayAvailableAttempts.False.DisplayCurrentAttempts.True.1" placeholder="true" mustcontains="#name#|#score#|#maxscore#">Puoi rivedere il quiz #name# completato al primo tentativo con un punteggio di #score#/#maxscore#.</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.ViewAttemptCompiled.DisplayResultsStatus.False.DisplayScoreToUser.True.DisplayAvailableAttempts.False.DisplayCurrentAttempts.True.n" placeholder="true" mustcontains="#name#|#score#|#maxscore#|#attemptsnumber#">Puoi rivedere il quiz #name# completato al #attemptsnumber#° tentativo con un punteggio di #score#/#maxscore#.</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.ViewAttemptCompiled.DisplayResultsStatus.False.DisplayScoreToUser.False.DisplayAvailableAttempts.False.DisplayCurrentAttempts.True.1" placeholder="true" mustcontains="#name#">Puoi rivedere il quiz #name# completato al primo tentativo.</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.ViewAttemptCompiled.DisplayResultsStatus.False.DisplayScoreToUser.False.DisplayAvailableAttempts.False.DisplayCurrentAttempts.True.n" placeholder="true" mustcontains="#name#|#attemptsnumber#">Puoi rivedere il quiz #name# completato al #attemptsnumber#° tentativo.</item>
+
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.NewAttempt.DisplayResultsStatus.True.DisplayAttemptScoreToUser.True.DisplayAvailableAttempts.True.DisplayCurrentAttempts.True.1" placeholder="true" mustcontains="#name#|#score#|#maxscore#">Test non superato (punteggio #score#/#maxscore#). Compila nuovamente il quiz #name# (sei al primo tentativo).</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.NewAttempt.DisplayResultsStatus.True.DisplayAttemptScoreToUser.True.DisplayAvailableAttempts.True.DisplayCurrentAttempts.True.n" placeholder="true" mustcontains="#name#|#score#|#maxscore#|#attemptsnumber#">Test non superato (punteggio #score#/#maxscore#). Compila nuovamente il quiz #name# (sei al #attemptsnumber#° tentativo).</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.NewAttempt.DisplayResultsStatus.True.DisplayAttemptScoreToUser.True.DisplayAvailableAttempts.True.n.DisplayCurrentAttempts.True.1" placeholder="true" mustcontains="#name#|#score#|#maxscore#|#availableattempts#">Test non superato (punteggio #score#/#maxscore#). Compila nuovamente il quiz #name# (sei al primo tentativo su #availableattempts#).</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.NewAttempt.DisplayResultsStatus.True.DisplayAttemptScoreToUser.True.DisplayAvailableAttempts.True.n.DisplayCurrentAttempts.True.n" placeholder="true" mustcontains="#name#|#score#|#maxscore#|#attemptsnumber#|#availableattempts#">Test non superato (punteggio #score#/#maxscore#). Compila nuovamente il quiz #name# (sei al #attemptsnumber#° tentativo su #availableattempts#).</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.NewAttempt.DisplayResultsStatus.True.DisplayAttemptScoreToUser.True.DisplayAvailableAttempts.True.DisplayCurrentAttempts.False" placeholder="true" mustcontains="#name#|#score#|#maxscore#">Test non superato (punteggio #score#/#maxscore#). Compila nuovamente il quiz #name#.</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.NewAttempt.DisplayResultsStatus.True.DisplayAttemptScoreToUser.True.DisplayAvailableAttempts.False.DisplayCurrentAttempts.True.1" placeholder="true" mustcontains="#name#|#score#|#maxscore#">Test non superato (punteggio #score#/#maxscore#). Compila nuovamente il quiz #name# (sei al primo tentativo).</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.NewAttempt.DisplayResultsStatus.True.DisplayAttemptScoreToUser.True.DisplayAvailableAttempts.False.DisplayCurrentAttempts.True.n" placeholder="true" mustcontains="#name#|#score#|#maxscore#|#attemptsnumber#">Test non superato (punteggio #score#/#maxscore#). Compila nuovamente il quiz #name# (sei al #attemptsnumber#° tentativo).</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.NewAttempt.DisplayResultsStatus.True.DisplayAttemptScoreToUser.False.DisplayAvailableAttempts.True.DisplayCurrentAttempts.True.1" placeholder="true" mustcontains="#name#">Test non superato. Compila nuovamente il quiz #name# (sei al primo tentativo).</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.NewAttempt.DisplayResultsStatus.True.DisplayAttemptScoreToUser.False.DisplayAvailableAttempts.True.DisplayCurrentAttempts.True.n" placeholder="true" mustcontains="#name#|#attemptsnumber#">Test non superato. Compila nuovamente il quiz #name# (sei al #attemptsnumber#° tentativo).</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.NewAttempt.DisplayResultsStatus.True.DisplayAttemptScoreToUser.False.DisplayAvailableAttempts.True.n.DisplayCurrentAttempts.True.1" placeholder="true" mustcontains="#name#|#availableattempts#">Test non superato. Compila nuovamente il quiz #name# (sei al primo tentativo su #availableattempts#).</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.NewAttempt.DisplayResultsStatus.True.DisplayAttemptScoreToUser.False.DisplayAvailableAttempts.True.n.DisplayCurrentAttempts.True.n" placeholder="true" mustcontains="#name#|#attemptsnumber#|#availableattempts#">Test non superato. Compila nuovamente il quiz #name# (sei al #attemptsnumber#° tentativo su #availableattempts#).</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.NewAttempt.DisplayResultsStatus.True.DisplayAttemptScoreToUser.False.DisplayAvailableAttempts.True.DisplayCurrentAttempts.False" placeholder="true" mustcontains="#name#">Test non superato. Compila nuovamente il quiz #name#.</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.NewAttempt.DisplayResultsStatus.True.DisplayAttemptScoreToUser.False.DisplayAvailableAttempts.False.DisplayCurrentAttempts.True.1" placeholder="true" mustcontains="#name#">Test non superato. Compila nuovamente il quiz #name# (sei al primo tentativo).</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.NewAttempt.DisplayResultsStatus.True.DisplayAttemptScoreToUser.False.DisplayAvailableAttempts.False.DisplayCurrentAttempts.True.n" placeholder="true" mustcontains="#name#|#attemptsnumber#">Test non superato. Compila nuovamente il quiz #name# (sei al #attemptsnumber#° tentativo).</item>
+
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.NewAttempt.DisplayResultsStatus.False.DisplayAttemptScoreToUser.False.DisplayAvailableAttempts.True.DisplayCurrentAttempts.True.1" placeholder="true" mustcontains="#name#">Compila nuovamente il quiz #name# (sei al primo tentativo).</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.NewAttempt.DisplayResultsStatus.False.DisplayAttemptScoreToUser.False.DisplayAvailableAttempts.True.DisplayCurrentAttempts.True.n" placeholder="true" mustcontains="#name#|#attemptsnumber#">Compila nuovamente il quiz #name# (sei al #attemptsnumber#° tentativo).</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.NewAttempt.DisplayResultsStatus.False.DisplayAttemptScoreToUser.False.DisplayAvailableAttempts.True.n.DisplayCurrentAttempts.True.1" placeholder="true" mustcontains="#name#|#availableattempts#">Compila nuovamente il quiz #name# (sei al primo tentativo su #availableattempts#).</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.NewAttempt.DisplayResultsStatus.False.DisplayAttemptScoreToUser.False.DisplayAvailableAttempts.True.n.DisplayCurrentAttempts.True.n" placeholder="true" mustcontains="#name#|#attemptsnumber#|#availableattempts#">Compila nuovamente il quiz #name# (sei al #attemptsnumber#° tentativo su #availableattempts#).</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.NewAttempt.DisplayResultsStatus.False.DisplayAttemptScoreToUser.False.DisplayAvailableAttempts.True.DisplayCurrentAttempts.False" placeholder="true" mustcontains="#name#">Compila nuovamente il quiz #name#.</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.NewAttempt.DisplayResultsStatus.False.DisplayAttemptScoreToUser.False.DisplayAvailableAttempts.False.DisplayCurrentAttempts.True.1" placeholder="true" mustcontains="#name#">Compila nuovamente il quiz #name# (sei al primo tentativo).</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.NewAttempt.DisplayResultsStatus.False.DisplayAttemptScoreToUser.False.DisplayAvailableAttempts.False.DisplayCurrentAttempts.True.n" placeholder="true" mustcontains="#name#|#attemptsnumber#">Compila nuovamente il quiz #name# (sei al #attemptsnumber#° tentativo).</item>
+  <item name="ToolTip.StandardActionType.Play.QuizStatus.NewAttempt.DisplayResultsStatus.False.DisplayAttemptScoreToUser.False.DisplayAvailableAttempts.False.DisplayCurrentAttempts.False" placeholder="true" mustcontains="#name#">Compila nuovamente il quiz #name#.</item>
+
+  <!--
+  Case QuizStatus.CompiledWithAttempts
+  Case QuizStatus.MaxAttempts
+  Case QuizStatus.NewAttempt
+  Case QuizStatus.ToCompileWithAttempts
+  Case QuizStatus.ViewAttemptCompiled
+
+
+  DisplayScoreToUser.True
+  DisplayScoreToUser.False
+  DisplayAttemptScoreToUser.True
+  DisplayAttemptScoreToUser.False
+  DisplayResultsStatus.True
+  DisplayResultsStatus.False
+  DisplayAvailableAttempts.True
+  DisplayAvailableAttempts.False
+  DisplayCurrentAttempts.True
+  DisplayCurrentAttempts.False
+
+-->
+
+
+
+
+
+</Resource>

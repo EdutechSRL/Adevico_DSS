@@ -1,0 +1,157 @@
+.RadTabStrip_Windows7 {
+  color: #000000;
+  font: 12px "Segoe UI", Arial, Helvetica, sans-serif;
+  line-height: 26px; }
+  .RadTabStrip_Windows7 .rtsGhostTab {
+    border-color: #c2cedb;
+    border-radius: 5px;
+    color: #1e395b;
+    background-color: #dde7f5; }
+  .RadTabStrip_Windows7 .rtsLI,
+  .RadTabStrip_Windows7 .rtsLink {
+    color: #000000;
+    font: 12px/26px "Segoe UI", Arial, Helvetica, sans-serif; }
+  .RadTabStrip_Windows7 .rtsLink {
+    background-image: none; }
+    .RadTabStrip_Windows7 .rtsLink:hover {
+      text-decoration: underline; }
+  .RadTabStrip_Windows7 .rtsOut {
+    background-image: none; }
+  .RadTabStrip_Windows7 .rtsSelected,
+  .RadTabStrip_Windows7 .rtsSelected:hover {
+    text-decoration: underline; }
+  .RadTabStrip_Windows7 .rtsDisabled {
+    color: #a7a7a7; }
+  .RadTabStrip_Windows7 .rtsLevel {
+    background-color: #e5e9ee; }
+  .RadTabStrip_Windows7 .rtsLevel2,
+  .RadTabStrip_Windows7 .rtsLevel3 {
+    background-image: url('TabStrip/Level2Bg.png');
+    background-repeat: repeat-x; }
+  .RadTabStrip_Windows7 .rtsLevel1 {
+    background-color: #dfe9f5; }
+    .RadTabStrip_Windows7 .rtsLevel1 .rtsLink {
+      background-image: url('TabStrip/TabStripStates.png');
+      background-position: 0 0; }
+      .RadTabStrip_Windows7 .rtsLevel1 .rtsLink:hover {
+        background-position: 0 -52px;
+        text-decoration: none; }
+    .RadTabStrip_Windows7 .rtsLevel1 .rtsSelected,
+    .RadTabStrip_Windows7 .rtsLevel1 .rtsSelected:hover {
+      text-decoration: none;
+      background-position: 0 -26px; }
+    .RadTabStrip_Windows7 .rtsLevel1 .rtsOut {
+      background-image: url('TabStrip/TabStripStates.png');
+      background-position: 100% 0; }
+    .RadTabStrip_Windows7 .rtsLevel1 .rtsLink:hover .rtsOut {
+      background-position: 100% -52px; }
+    .RadTabStrip_Windows7 .rtsLevel1 .rtsSelected .rtsOut,
+    .RadTabStrip_Windows7 .rtsLevel1 .rtsSelected:hover .rtsOut {
+      background-position: 100% -26px; }
+    .RadTabStrip_Windows7 .rtsLevel1 .rtsDisabled:hover {
+      background-position: 0 0; }
+    .RadTabStrip_Windows7 .rtsLevel1 .rtsDisabled:hover .rtsOut {
+      background-position: 100% 0; }
+  .RadTabStrip_Windows7 .rtsLevel2 {
+    background-position: 0 0; }
+  .RadTabStrip_Windows7 .rtsLevel3 {
+    background-position: 0 -26px; }
+  .RadTabStrip_Windows7 .rtsNextArrow,
+  .RadTabStrip_Windows7 .rtsPrevArrow,
+  .RadTabStrip_Windows7 .rtsPrevArrowDisabled,
+  .RadTabStrip_Windows7 .rtsNextArrowDisabled {
+    background-image: url('TabStrip/TabStripStates.png'); }
+
+.RadTabStrip_Windows7.RadTabStripVertical .rtsLevel .rtsLink,
+.RadTabStrip_Windows7.RadTabStripVertical .rtsLevel .rtsOut {
+  background-image: none; }
+.RadTabStrip_Windows7.RadTabStripVertical .rtsLevel1 {
+  background-image: none; }
+  .RadTabStrip_Windows7.RadTabStripVertical .rtsLevel1 .rtsLink {
+    background-image: url('TabStrip/TabStripVStates.png');
+    *zoom: 1; }
+  .RadTabStrip_Windows7.RadTabStripVertical .rtsLevel1 .rtsOut {
+    background-image: none; }
+.RadTabStrip_Windows7.RadTabStripVertical .rtsLevel.rtsLevel2, .RadTabStrip_Windows7.RadTabStripVertical .rtsLevel.rtsLevel3, .RadTabStrip_Windows7.RadTabStripVertical .rtsLevel.rtsLevel4, .RadTabStrip_Windows7.RadTabStripVertical .rtsLevel.rtsLevel5 {
+  background-image: none; }
+
+.RadTabStripBottom_Windows7 .rtsLevel.rtsLevel2, .RadTabStripBottom_Windows7 .rtsLevel.rtsLevel3 {
+  background-image: none; }
+.RadTabStripBottom_Windows7 .rtsLevel {
+  background-position: 0 -599px;
+  background-repeat: repeat-x; }
+  .RadTabStripBottom_Windows7 .rtsLevel .rtsLink {
+    background-position: 0 -182px; }
+    .RadTabStripBottom_Windows7 .rtsLevel .rtsLink:hover {
+      background-position: 0 -130px; }
+  .RadTabStripBottom_Windows7 .rtsLevel .rtsOut {
+    background-position: 100% -182px; }
+  .RadTabStripBottom_Windows7 .rtsLevel .rtsLink:hover .rtsOut {
+    background-position: 100% -130px; }
+  .RadTabStripBottom_Windows7 .rtsLevel .rtsSelected,
+  .RadTabStripBottom_Windows7 .rtsLevel .rtsSelected:hover {
+    background-position: 0 -156px; }
+  .RadTabStripBottom_Windows7 .rtsLevel .rtsSelected .rtsOut,
+  .RadTabStripBottom_Windows7 .rtsLevel .rtsSelected:hover .rtsOut {
+    background-position: 100% -156px; }
+  .RadTabStripBottom_Windows7 .rtsLevel .rtsDisabled:hover {
+    background-position: 0 -182px; }
+    .RadTabStripBottom_Windows7 .rtsLevel .rtsDisabled:hover .rtsOut {
+      background-position: 100% -182px; }
+
+.RadTabStripLeft_Windows7 .rtsLevel1 .rtsLink {
+  background-position: 100% 0; }
+  .RadTabStripLeft_Windows7 .rtsLevel1 .rtsLink:hover {
+    background-position: 0 -200px; }
+  .RadTabStripLeft_Windows7 .rtsLevel1 .rtsLink.rtsSelected {
+    background-position: 0 -400px; }
+.RadTabStripLeft_Windows7 .rtsLevel1 .rtsDisabled:hover {
+  background-position: 100% 0; }
+.RadTabStripLeft_Windows7 .rtsSeparator {
+  background: #6f6f6f; }
+
+.RadTabStripRight_Windows7 .rtsLevel1 .rtsLink {
+  background-position: 100% 0; }
+  .RadTabStripRight_Windows7 .rtsLevel1 .rtsLink:hover {
+    background-position: 100% -200px; }
+  .RadTabStripRight_Windows7 .rtsLevel1 .rtsLink.rtsSelected {
+    background-position: 100% -400px; }
+.RadTabStripRight_Windows7 .rtsLevel1 .rtsDisabled:hover {
+  background-position: 100% 0; }
+.RadTabStripRight_Windows7 .rtsSeparator {
+  background: #6f6f6f; }
+
+html .RadTabStrip_Windows7_disabled .rtsLevel1 .rtsLink {
+  color: #8d8d8d;
+  cursor: default; }
+  html .RadTabStrip_Windows7_disabled .rtsLevel1 .rtsLink:hover {
+    background: transparent;
+    text-decoration: none; }
+    html .RadTabStrip_Windows7_disabled .rtsLevel1 .rtsLink:hover .rtsOut {
+      background: transparent; }
+
+/* <focus cue> */
+div.RadTabStrip_Office2010Blue a.rtsLink:focus {
+  outline-color: #6f6f6f; }
+
+div.RadTabStrip_Office2010Blue a.rtsLink:focus:after {
+  border-color: #6f6f6f \9; }
+
+/* </focus cue> */
+/** DropClues */
+.rtsDropClue_Windows7 {
+  background-image: url('../Common/TabStrip/rtsDropClueSprite.png'); }
+
+.rtsDropClueTop_Windows7 {
+  background-position: 0 -20px; }
+
+.rtsDropClueRight_Windows7 {
+  background-position: 0 -30px; }
+
+.rtsDropClueBottom_Windows7 {
+  background-position: 0 0; }
+
+.rtsDropClueLeft_Windows7 {
+  background-position: 0 -10px; }
+
+/*# sourceMappingURL=TabStrip.Windows7.css.map */

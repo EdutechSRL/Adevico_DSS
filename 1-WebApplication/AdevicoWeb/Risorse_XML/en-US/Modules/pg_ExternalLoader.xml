@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--eng-->
+<Resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="urn:ComolTranslation">
+  <item name="serviceTitle" html="false" placeholder="false">Access to the platform</item>
+  <item name="nopermission" html="false" placeholder="false">You don't have permissions to access the platform from this page</item>
+  <item name="UnknowAuthenticationProvider" html="false" placeholder="false">Access to the platform unrecognized</item>
+  <item name="Loading" html="false" placeholder="false">Access to the platform ongoing</item>
+  <item name="LoadWaitingMessage" html="false" placeholder="true" mustcontains="{0}|{1}">Welcome {0} we are up to load the requested page, wait while the system enters the {1} community.</item>
+  <item name="LoadUnknowCommunity" html="false" placeholder="false">The specified community does not exist in the system.</item>
+  <item name="LoadUnsubscribedCommunity" html="false" placeholder="true" mustcontains="{0}">Currently you do not seem to be enrolled in the {0} community ."</item>
+  <item name="UrlProviderResult.NotEvaluatedToken" html="false" placeholder="true" mustcontains="{0}">Access data verification not performed. Access again page {0}"</item>
+  <item name="UrlProviderResult.InternalError" html="false" placeholder="false">Error while validating access data.</item>
+  <item name="UrlProviderResult.InvalidToken" html="false" placeholder="true" mustcontains="{0}">The entered login data are invalid, it is impossible to access the platform. Try to log in again from page {0}"</item>
+  <item name="UrlProviderResult.ExpiredToken" html="false" placeholder="true" mustcontains="{0}">Impossible to access automatically the platform, login data have expired, you have to reload access page {0}."</item>
+  <item name="UrlProviderResult.UnknowToken" html="false" placeholder="true" mustcontains="{0}">Specified url is invalid, impossible to access the platform. Retry from page {0}"</item>
+  <item name="AuthenticationResult.InternalError" html="false" placeholder="false">Error while accessing the platform. Please retry later.</item>
+  <item name="AuthenticationResult.Authenticated" html="false" placeholder="false">Access performed</item>
+  <item name="AuthenticationResult.UserDisabled" html="false" placeholder="false">Your profile is currently disabled, it is impossible tyo access the platform.</item>
+  <item name="AuthenticationResult.UserNotFound" html="false" placeholder="false">You are not signed in the platform, impossible to continue.</item>
+  <item name="AuthenticationResult.UnableToConnectToProvider" html="false" placeholder="false">At this moment it is not possible to validate access data. It is not possible to log into the system.</item>
+  <item name="AuthenticationResult.NotAuthenticated" html="false" placeholder="false">Access data are not correct, it is impossible to access the platform.</item>
+  <item name="AuthenticationResult.AuthenticationExpired" html="false" placeholder="false">Login data have expired. It is not possible to access the platform.</item>
+  <item name="AuthenticationResult.AuthenticatedProfileToCreate" html="false" placeholder="false">Login data are valid but the profile must be created on this platform.</item>
+</Resource>

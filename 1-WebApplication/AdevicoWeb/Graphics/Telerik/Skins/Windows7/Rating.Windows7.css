@@ -1,0 +1,9 @@
+.RadRating_Windows7 a,
+.RadRating_Windows7 a span {
+  background-image: url('Rating/Sprite.png');
+  _background-image: url('Rating/Sprite.gif'); }
+@media print {
+  .RadRating_Windows7 a:before,
+  .RadRating_Windows7 a span:before {
+    content: url('Rating/Sprite.png'); } }
+

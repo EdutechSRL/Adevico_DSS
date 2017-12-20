@@ -1,0 +1,127 @@
+﻿<root>
+  <modules>
+    <module name="RadEditorStatistics" dockingZone="Modules" enabled="true" visible="true" />
+  </modules>
+  <tools name="StandardTools">
+    <tool name="Cut" />
+    <tool name="Copy" />
+    <EditorToolStrip Name="PasteStrip" PopupHeight="250px">
+      <EditorTool Name="Paste" shortcut="CTRL+!"/>
+      <EditorTool Name="PasteFromWord" />
+      <EditorTool Name="Paste" />
+      <EditorTool Name="PasteFromWordNoFontsNoSizes" />
+      <EditorTool Name="PastePlainText" />
+      <EditorTool Name="PasteAsHtml" />
+    </EditorToolStrip>
+    <tool separator="true"/>
+    <tool name="Undo" />
+    <tool name="Redo" />
+  </tools>
+  <!--<tools name="GrpTable">
+    <tool name="InsertTable"/>
+    <EditorToolStrip PopupHeight="250px" Name="SetTableProperties">
+      <EditorTool name="InsertRowAbove"/>
+      <EditorTool name="InsertRowBelow"/>
+      <EditorTool name="DeleteRow"/>
+      <EditorTool name="InsertColumnLeft"/>
+      <EditorTool name="InsertColumnRight"/>
+      <EditorTool name="DeleteColumn"/>
+      <EditorTool name="MergeColumns"/>
+      <EditorTool name="MergeRows"/>
+      <EditorTool name="SplitCell"/>
+      <EditorTool name="SplitCellHorizontal"/>
+      <EditorTool name="DeleteCell"/>
+      <EditorTool name="SetCellProperties"/>
+      <EditorTool name="SetTableProperties"/>
+      <EditorTool name="InsertRowAbove"/>
+      <EditorTool name="InsertRowBelow"/>
+      <EditorTool name="DeleteRow"/>
+      <EditorTool name="InsertColumnLeft"/>
+      <EditorTool name="InsertColumnRight"/>
+      <EditorTool name="DeleteColumn"/>
+      <EditorTool name="MergeColumns"/>
+      <EditorTool name="MergeRows"/>
+      <EditorTool name="SplitCell"/>
+      <EditorTool name="SplitCellHorizontal"/>
+      <EditorTool name="DeleteCell"/>
+      <EditorTool name="SetCellProperties"/>
+      <EditorTool name="SetTableProperties"/>
+    </EditorToolStrip>
+    --><!--<tool name="InsertRowAbove" /> <tool name="InsertRowBelow" /> <tool name="DeleteRow" /> <tool name="InsertColumnLeft" /> <tool name="InsertColumnRight" /> <tool name="DeleteColumn" /> <tool separator="true"/> <tool name="MergeColumns" /> <tool name="MergeRows" /> <tool separator="true"/> <tool name="SplitCell" /> <tool name="SplitCellHorizontal" /> <tool name="DeleteCell" /> <tool name="SetCellProperties" /> <tool name="SetTableProperties" /> <tool name="InsertRowAbove" /> <tool name="InsertRowBelow" /> <tool name="DeleteRow" /> <tool name="InsertColumnLeft" /> <tool name="InsertColumnRight" /> <tool name="DeleteColumn" /> <tool separator="true"/> <tool name="MergeColumns" /> <tool name="MergeRows" /> <tool separator="true"/> <tool name="SplitCell" /> <tool name="SplitCellHorizontal" /> <tool name="DeleteCell" /> <tool name="SetCellProperties" /> <tool name="SetTableProperties" />--><!--
+  </tools>-->
+  <tools name="FormattingFonts">
+    <tool name="InsertParagraph"/>
+    <tool separator="true"/>
+    <tool name="ForeColor"/>
+    <tool name="BackColor"/>
+    <tool separator="true"/>
+    <tool name="FontName"/>
+    <tool name="FontSize"/>
+    <tool name="RealFontSize"/>
+  </tools>
+  <tools name="FormattingDef">
+    <tool name="Bold"/>
+    <tool name="Italic"/>
+    <tool name="Underline"/>
+    <tool name="StrikeThrough"/>
+  </tools>
+  <tools name="FormattingParagraph">
+    <tool name="JustifyLeft"/>
+    <tool name="JustifyCenter"/>
+    <tool name="JustifyRight"/>
+    <tool name="JustifyFull"/>
+    <tool name="JustifyNone"/>
+    <tool separator="true"/>
+    <tool name="InsertOrderedList"/>
+    <tool name="InsertUnorderedList"/>
+    <tool separator="true"/>
+    <tool name="Outdent"/>
+    <tool name="Indent"/>
+    <tool separator="true"/>
+    <tool name="FormatStripper"/>
+  </tools>
+  <tools name="InsertStandard">
+    <tool name="InsertEmoticons"></tool>
+    <tool name="LinkManager"/>
+    <tool name="Unlink"/>
+    <tool separator="true"/>
+    <tool name="InsertSymbol"/>
+    <tool name="InsertDate"/>
+    <tool name="InsertTime"/>
+    <tool name="InsertHorizontalRule"/>
+    <tool separator="true"/>
+  </tools>
+  <tools name="InsertAdvanced">
+    <tool name="ImageManager" shortcut="CTRL+M"/>
+    <tool name="InsertLatex" />
+    <tool name="InsertYoutube" />
+    <tool name="InsertWiki" />
+  </tools>
+  <tools name="GrpTable">
+    <tool name="InsertTable" />
+  </tools>
+  <!--'make sure that the tools file is loaded RadEditor1.EnsureToolsFileLoaded() Dim imgTag As EditorContextMenu = RadEditor1.ContextMenus.FindByTagName("IMG") 'the Copy tool is not available for this tag, it is just for demonstration purposes imgTag.Tools.Add(New EditorTool("Copy"))-->
+  <contextMenus>
+    <!--<contextMenu forElement="TABLE">
+      <tool Name="ToggleTableBorder"/>
+      <tool Name="SetTableProperties"/>
+      <tool Name="DeleteTable"/>
+    </contextMenu>
+    <contextMenu forElement="TD">
+      <tool Name="InsertRowAbove"/>
+      <tool Name="InsertRowBelow"/>
+      <tool Name="DeleteRow"/>
+      <tool Name="InsertColumnLeft"/>
+      <tool Name="InsertColumnRight"/>
+      <tool Name="MergeColumns"/>
+      <tool Name="MergeRows"/>
+      <tool Name="SplitCell"/>
+      <tool Name="DeleteCell"/>
+      <tool Name="SetCellProperties"/>
+    </contextMenu>--> 
+    <contextMenu forElement="A">
+      <tool Name="SetLinkProperties"/>
+      <tool Name="Unlink"/>
+    </contextMenu>
+  </contextMenus>
+</root>

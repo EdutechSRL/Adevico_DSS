@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping 
+	xmlns="urn:nhibernate-mapping-2.2" 
+	assembly="lm.Comol.Core.BaseModules" 
+	namespace="lm.Comol.Core.BaseModules.Tickets.Domain">
+	
+	<class name="liteTicket" table="TK_Ticket" >
+		
+		<id name="Id" column="Id" type="Int64">
+			<generator class="native"/>
+		</id>
+		
+		<property name="Title" type="String" column="Title" />
+		<property name="LanguageCode" type="String" column="LanguageCode" />
+
+		<property name="Status" type="lm.Comol.Core.BaseModules.Tickets.Domain.Enums.TicketStatus, lm.Comol.Core.BaseModules" column="Status"/>
+
+		<property name="Condition" type="lm.Comol.Core.BaseModules.Tickets.Domain.Enums.TicketCondition, lm.Comol.Core.BaseModules" column="Condition"/>
+						   
+		<many-to-one name="Community"
+					 class="lm.Comol.Core.BaseModules.Tickets.Domain.liteCommunity"
+					 column="IdCommunity" foreign-key="IdCommunity" cascade="none" />
+
+		<many-to-one name="CreationCategory"
+			 class="liteCategory, lm.Comol.Core.BaseModules.Tickets.Domain.liteCategory"
+			 column="IdCreationCategory" foreign-key="IdCreationCategory" cascade="none" />
+
+		<many-to-one name="LastAssignment"
+			 class="liteAssignment, lm.Comol.Core.BaseModules.Tickets.Domain.liteAssignment"
+			 column="IdLastAssignment" foreign-key="IdLastAssignment" cascade="none" />
+
+		<property name="OpenOn" type="DateTime" column="OpenOn" />
+		<property name="ModifiedOn" type="DateTime" column="_ModifiedOn" />
+
+		<!--<bag name="Messages" table="TK_Message" lazy="true" fetch="subselect" cascade="all-delete-orphan" inverse="true" order-by="_CreatedOn ASC" >
+			<key column="IdTicket" />
+			<one-to-many class="lm.Comol.Core.BaseModules.Tickets.Domain.liteMessage"/>
+		</bag>
+
+		<bag name="Assignments" table="TK_Assignement" lazy="true" fetch="subselect" cascade="all-delete-orphan" inverse="false" >
+			<key column="IdTicket" />
+			<one-to-many class="lm.Comol.Core.BaseModules.Tickets.Domain.liteAssignment"/>
+		</bag>-->
+
+		<bag name="Messages" table="TK_Message" lazy="false" fetch="subselect" cascade="all-delete-orphan" inverse="true" order-by="_CreatedOn ASC" >
+			<key column="IdTicket" />
+			<one-to-many class="lm.Comol.Core.BaseModules.Tickets.Domain.liteMessage"/>
+		</bag>
+
+		<bag name="Assignments" table="TK_Assignement" lazy="false" fetch="subselect" cascade="all-delete-orphan" inverse="false" >
+			<key column="IdTicket" />
+			<one-to-many class="lm.Comol.Core.BaseModules.Tickets.Domain.liteAssignment"/>
+		</bag>
+
+
+
+	</class>
+	
+</hibernate-mapping>

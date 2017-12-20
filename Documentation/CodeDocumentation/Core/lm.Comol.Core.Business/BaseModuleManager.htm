@@ -1,0 +1,1414 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+	<!--[if lt IE 9]>
+	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+    <title>BaseModuleManager - lm.Comol.Core.DomainModel Documentation</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+    <link type="text/css" rel="stylesheet" href="../main.css"/>
+    <script type="text/javascript" src="../js/jquery-1.3.2.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.scrollTo-min.js"></script>
+    <script type="text/javascript" src="../js/navigation.js"></script>
+    <script type="text/javascript" src="../js/example.js"></script>
+  </head>
+  <body>
+  	<header><h1>lm.Comol.Core.DomainModel : API Documentation</h1>
+	</header>
+<nav id="namespaces">
+	<h2 class="fixed">Namespaces</h2>
+	<div class="scroll">
+		<ul>
+			<li>
+          <a href="../lm.Comol.Core.Authentication/index.htm">lm.Comol.Core.Authentication</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.Authentication.Business/index.htm">lm.Comol.Core.Authentication.Business</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.Authentication.Helpers/index.htm">lm.Comol.Core.Authentication.Helpers</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.Business/index.htm" class="current">lm.Comol.Core.Business</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.Catalogues/index.htm">lm.Comol.Core.Catalogues</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.Certifications/index.htm">lm.Comol.Core.Certifications</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.Certifications.Business/index.htm">lm.Comol.Core.Certifications.Business</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.Communities/index.htm">lm.Comol.Core.Communities</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.Dashboard.Business/index.htm">lm.Comol.Core.Dashboard.Business</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.Dashboard.Domain/index.htm">lm.Comol.Core.Dashboard.Domain</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.DomainModel/index.htm">lm.Comol.Core.DomainModel</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.DomainModel.Assignment/index.htm">lm.Comol.Core.DomainModel.Assignment</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.DomainModel.Common/index.htm">lm.Comol.Core.DomainModel.Common</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.DomainModel.DocTemplateVers/index.htm">lm.Comol.Core.DomainModel.DocTemplateVers</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.DomainModel.DocTemplateVers.Business/index.htm">lm.Comol.Core.DomainModel.DocTemplateVers.Business</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.DomainModel.DocTemplateVers.Domain.Core/index.htm">lm.Comol.Core.DomainModel.DocTemplateVers.Domain.Core</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.DomainModel.DocTemplateVers.Domain.DTO.Management/index.htm">lm.Comol.Core.DomainModel.DocTemplateVers.Domain.DTO.Management</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.DomainModel.DocTemplateVers.Domain.DTO.ServiceExport/index.htm">lm.Comol.Core.DomainModel.DocTemplateVers.Domain.DTO.ServiceExport</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.DomainModel.DocTemplateVers.Helpers/index.htm">lm.Comol.Core.DomainModel.DocTemplateVers.Helpers</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.DomainModel.Domain/index.htm">lm.Comol.Core.DomainModel.Domain</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.DomainModel.Filters/index.htm">lm.Comol.Core.DomainModel.Filters</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.DomainModel.Helpers/index.htm">lm.Comol.Core.DomainModel.Helpers</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.DomainModel.Helpers.Export/index.htm">lm.Comol.Core.DomainModel.Helpers.Export</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.DomainModel.Helpers.Tags/index.htm">lm.Comol.Core.DomainModel.Helpers.Tags</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.DomainModel.Languages/index.htm">lm.Comol.Core.DomainModel.Languages</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.DomainModel.Repository/index.htm">lm.Comol.Core.DomainModel.Repository</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.DomainModel.SrvFileTransfer/index.htm">lm.Comol.Core.DomainModel.SrvFileTransfer</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.DomainModel.SrvFileUnzip/index.htm">lm.Comol.Core.DomainModel.SrvFileUnzip</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.Event/index.htm">lm.Comol.Core.Event</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.Event.Business/index.htm">lm.Comol.Core.Event.Business</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.Events.Domain/index.htm">lm.Comol.Core.Events.Domain</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.FileRepository.Business/index.htm">lm.Comol.Core.FileRepository.Business</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.FileRepository.Domain/index.htm">lm.Comol.Core.FileRepository.Domain</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.FileRepository.Domain.ScormSettings/index.htm">lm.Comol.Core.FileRepository.Domain.ScormSettings</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.FileRepository.Domain.toRemove/index.htm">lm.Comol.Core.FileRepository.Domain.toRemove</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.InLineTags.Business/index.htm">lm.Comol.Core.InLineTags.Business</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.InLineTags.Domain/index.htm">lm.Comol.Core.InLineTags.Domain</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.Mail/index.htm">lm.Comol.Core.Mail</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.Mail.Messages/index.htm">lm.Comol.Core.Mail.Messages</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.ModuleLinks/index.htm">lm.Comol.Core.ModuleLinks</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.Msmq.DataContract/index.htm">lm.Comol.Core.Msmq.DataContract</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.Notification.DataContract/index.htm">lm.Comol.Core.Notification.DataContract</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.Notification.Domain/index.htm">lm.Comol.Core.Notification.Domain</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.PersonalInfo/index.htm">lm.Comol.Core.PersonalInfo</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.Subscriptions/index.htm">lm.Comol.Core.Subscriptions</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.Tag.Business/index.htm">lm.Comol.Core.Tag.Business</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.Tag.Domain/index.htm">lm.Comol.Core.Tag.Domain</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.TemplateMessages/index.htm">lm.Comol.Core.TemplateMessages</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.TemplateMessages.Business/index.htm">lm.Comol.Core.TemplateMessages.Business</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.TemplateMessages.Domain/index.htm">lm.Comol.Core.TemplateMessages.Domain</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.WinService.Configurations/index.htm">lm.Comol.Core.WinService.Configurations</a>
+      </li>
+			<li>
+          <a href="../lm.Comol.Core.Wizard/index.htm">lm.Comol.Core.Wizard</a>
+      </li>
+		</ul>
+	</div>
+</nav><nav id="types">
+  <h2 class="fixed">Types in lm.Comol.Core.Business</h2>
+	<div class="scroll">
+		<ul>
+				<li>
+            <a href="../lm.Comol.Core.Business/BaseCoreServices.htm">BaseCoreServices</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Business/BaseModuleManager.htm" class="current">BaseModuleManager</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Business/CoreServices.htm">CoreServices</a>
+        </li>
+				<li>
+            <a href="../lm.Comol.Core.Business/LinqExtension.htm">LinqExtension</a>
+        </li>
+		</ul>
+	</div>
+</nav>
+	<article>
+    <header>
+		<p class="class"><strong>Type</strong> BaseModuleManager</p>
+	</header>
+	<section>
+		<header>
+		<p><strong>Namespace</strong> lm.Comol.Core.Business</p>
+		<p><strong>Interfaces</strong> <a href="../lm.Comol.Core.DomainModel.Common/iDomainManager.htm">iDomainManager</a></p>
+		</header>
+    <div class="sub-header">
+		
+		
+			<h3 class="section">Methods</h3>
+			<ul>
+				<li><a href="../lm.Comol.Core.Business/BaseModuleManager.htm#BeginTransaction">BeginTransaction</a></li>
+				<li><a href="../lm.Comol.Core.Business/BaseModuleManager.htm#Commit">Commit</a></li>
+				<li><a href="../lm.Comol.Core.Business/BaseModuleManager.htm#DeleteGeneric">DeleteGeneric</a></li>
+				<li><a href="../lm.Comol.Core.Business/BaseModuleManager.htm#DeletePhysical``1">DeletePhysical&lt;T&gt;</a></li>
+				<li><a href="../lm.Comol.Core.Business/BaseModuleManager.htm#DeletePhysicalList``1">DeletePhysicalList&lt;T&gt;</a></li>
+				<li><a href="../lm.Comol.Core.Business/BaseModuleManager.htm#Detach``1">Detach&lt;T&gt;</a></li>
+				<li><a href="../lm.Comol.Core.Business/BaseModuleManager.htm#DetachList``1">DetachList&lt;T&gt;</a></li>
+				<li><a href="../lm.Comol.Core.Business/BaseModuleManager.htm#Flush">Flush</a></li>
+				<li><a href="../lm.Comol.Core.Business/BaseModuleManager.htm#Get``1">Get&lt;T&gt;</a></li>
+				<li><a href="../lm.Comol.Core.Business/BaseModuleManager.htm#GetActiveSubscription">GetActiveSubscription</a></li>
+				<li><a href="../lm.Comol.Core.Business/BaseModuleManager.htm#GetActiveSubscriptionIdRole">GetActiveSubscriptionIdRole</a></li>
+				<li><a href="../lm.Comol.Core.Business/BaseModuleManager.htm#GetAll``1">GetAll&lt;T&gt;</a></li>
+				<li><a href="../lm.Comol.Core.Business/BaseModuleManager.htm#GetAllLanguages">GetAllLanguages</a></li>
+				<li><a href="../lm.Comol.Core.Business/BaseModuleManager.htm#GetAllOrganizations">GetAllOrganizations</a></li>
+				<li><a href="../lm.Comol.Core.Business/BaseModuleManager.htm#GetAvailableRoles">GetAvailableRoles</a></li>
+				<li><a href="../lm.Comol.Core.Business/BaseModuleManager.htm#GetAvailableRoles">GetAvailableRoles</a></li>
+				<li><a href="../lm.Comol.Core.Business/BaseModuleManager.htm#GetBaseActiveSubscriptions">GetBaseActiveSubscriptions</a></li>
+				<li><a href="../lm.Comol.Core.Business/BaseModuleManager.htm#GetCommunity">GetCommunity</a></li>
+				<li><a href="../lm.Comol.Core.Business/BaseModuleManager.htm#GetCommunityName">GetCommunityName</a></li>
+				<li><a href="../lm.Comol.Core.Business/BaseModuleManager.htm#GetCommunityTypeName">GetCommunityTypeName</a></li>
+				<li><a href="../lm.Comol.Core.Business/BaseModuleManager.htm#GetDefaultIdLanguage">GetDefaultIdLanguage</a></li>
+				<li><a href="../lm.Comol.Core.Business/BaseModuleManager.htm#GetDefaultIdRole">GetDefaultIdRole</a></li>
+				<li><a href="../lm.Comol.Core.Business/BaseModuleManager.htm#GetDefaultLanguage">GetDefaultLanguage</a></li>
+				<li><a href="../lm.Comol.Core.Business/BaseModuleManager.htm#GetDefaultRole">GetDefaultRole</a></li>
+				<li><a href="../lm.Comol.Core.Business/BaseModuleManager.htm#GetIdCommunityFromOrganization">GetIdCommunityFromOrganization</a></li>
+				<li><a href="../lm.Comol.Core.Business/BaseModuleManager.htm#GetIdCommunityType">GetIdCommunityType</a></li>
+				<li><a href="../lm.Comol.Core.Business/BaseModuleManager.htm#GetIdModules">GetIdModules</a></li>
+				<li><a href="../lm.Comol.Core.Business/BaseModuleManager.htm#GetIdOrganizationFromCommunity">GetIdOrganizationFromCommunity</a></li>
+				<li><a href="../lm.Comol.Core.Business/BaseModuleManager.htm#GetIdProfileType">GetIdProfileType</a></li>
+				<li><a href="../lm.Comol.Core.Business/BaseModuleManager.htm#GetIdUnknownUser">GetIdUnknownUser</a></li>
+				<li><a href="../lm.Comol.Core.Business/BaseModuleManager.htm#GetIQ``1">GetIQ&lt;T&gt;</a></li>
+				<li><a href="../lm.Comol.Core.Business/BaseModuleManager.htm#GetLanguage">GetLanguage</a></li>
+				<li><a href="../lm.Comol.Core.Business/BaseModuleManager.htm#GetLanguage">GetLanguage</a></li>
+				<li><a href="../lm.Comol.Core.Business/BaseModuleManager.htm#GetLanguageByCodeOrDefault">GetLanguageByCodeOrDefault</a></li>
+				<li><a href="../lm.Comol.Core.Business/BaseModuleManager.htm#GetLanguageByIdOrDefault">GetLanguageByIdOrDefault</a></li>
+				<li><a href="../lm.Comol.Core.Business/BaseModuleManager.htm#GetLiteCommunities">GetLiteCommunities</a></li>
+				<li><a href="../lm.Comol.Core.Business/BaseModuleManager.htm#GetLiteCommunity">GetLiteCommunity</a></li>
+				<li><a href="../lm.Comol.Core.Business/BaseModuleManager.htm#GetLiteCommunityInfo">GetLiteCommunityInfo</a></li>
+				<li><a href="../lm.Comol.Core.Business/BaseModuleManager.htm#GetLitePerson">GetLitePerson</a></li>
+				<li><a href="../lm.Comol.Core.Business/BaseModuleManager.htm#GetLitePersons">GetLitePersons</a></li>
+				<li><a href="../lm.Comol.Core.Business/BaseModuleManager.htm#GetLitePublicUser">GetLitePublicUser</a></li>
+				<li><a href="../lm.Comol.Core.Business/BaseModuleManager.htm#GetLitePublicUser">GetLitePublicUser</a></li>
+				<li><a href="../lm.Comol.Core.Business/BaseModuleManager.htm#GetLiteSubscriptionInfo">GetLiteSubscriptionInfo</a></li>
+				<li><a href="../lm.Comol.Core.Business/BaseModuleManager.htm#GetLiteUnknownUser">GetLiteUnknownUser</a></li>
+				<li><a href="../lm.Comol.Core.Business/BaseModuleManager.htm#GetModuleCode">GetModuleCode</a></li>
+				<li><a href="../lm.Comol.Core.Business/BaseModuleManager.htm#GetModuleID">GetModuleID</a></li>
+				<li><a href="../lm.Comol.Core.Business/BaseModuleManager.htm#GetModulePermission">GetModulePermission</a></li>
+				<li><a href="../lm.Comol.Core.Business/BaseModuleManager.htm#GetModulePermission">GetModulePermission</a></li>
+				<li><a href="../lm.Comol.Core.Business/BaseModuleManager.htm#GetModulePermissionByRole">GetModulePermissionByRole</a></li>
+				<li><a href="../lm.Comol.Core.Business/BaseModuleManager.htm#GetModuleStatus">GetModuleStatus</a></li>
+				<li><a href="../lm.Comol.Core.Business/BaseModuleManager.htm#GetOrganization">GetOrganization</a></li>
+				<li><a href="../lm.Comol.Core.Business/BaseModuleManager.htm#GetOrganizationName">GetOrganizationName</a></li>
+				<li><a href="../lm.Comol.Core.Business/BaseModuleManager.htm#GetPerson">GetPerson</a></li>
+				<li><a href="../lm.Comol.Core.Business/BaseModuleManager.htm#GetRole">GetRole</a></li>
+				<li><a href="../lm.Comol.Core.Business/BaseModuleManager.htm#GetSubscription">GetSubscription</a></li>
+				<li><a href="../lm.Comol.Core.Business/BaseModuleManager.htm#GetSubscription">GetSubscription</a></li>
+				<li><a href="../lm.Comol.Core.Business/BaseModuleManager.htm#GetSubscriptionIdRole">GetSubscriptionIdRole</a></li>
+				<li><a href="../lm.Comol.Core.Business/BaseModuleManager.htm#GetSubscriptionRole">GetSubscriptionRole</a></li>
+				<li><a href="../lm.Comol.Core.Business/BaseModuleManager.htm#GetSubscriptionRoleId">GetSubscriptionRoleId</a></li>
+				<li><a href="../lm.Comol.Core.Business/BaseModuleManager.htm#GetTranslatedCommunityTypes">GetTranslatedCommunityTypes</a></li>
+				<li><a href="../lm.Comol.Core.Business/BaseModuleManager.htm#GetTranslatedItem``1">GetTranslatedItem&lt;T&gt;</a></li>
+				<li><a href="../lm.Comol.Core.Business/BaseModuleManager.htm#GetTranslatedProfileType">GetTranslatedProfileType</a></li>
+				<li><a href="../lm.Comol.Core.Business/BaseModuleManager.htm#GetTranslatedProfileTypes">GetTranslatedProfileTypes</a></li>
+				<li><a href="../lm.Comol.Core.Business/BaseModuleManager.htm#GetTranslatedRole">GetTranslatedRole</a></li>
+				<li><a href="../lm.Comol.Core.Business/BaseModuleManager.htm#GetTranslatedRoles">GetTranslatedRoles</a></li>
+				<li><a href="../lm.Comol.Core.Business/BaseModuleManager.htm#GetTranslatedRoles">GetTranslatedRoles</a></li>
+				<li><a href="../lm.Comol.Core.Business/BaseModuleManager.htm#GetUnknownUser">GetUnknownUser</a></li>
+				<li><a href="../lm.Comol.Core.Business/BaseModuleManager.htm#GetUrlMacEncryptor">GetUrlMacEncryptor</a></li>
+				<li><a href="../lm.Comol.Core.Business/BaseModuleManager.htm#GetUserAffiliation">GetUserAffiliation</a></li>
+				<li><a href="../lm.Comol.Core.Business/BaseModuleManager.htm#GetUserByMail">GetUserByMail</a></li>
+				<li><a href="../lm.Comol.Core.Business/BaseModuleManager.htm#GetUserDefaultIdOrganization">GetUserDefaultIdOrganization</a></li>
+				<li><a href="../lm.Comol.Core.Business/BaseModuleManager.htm#GetUserDefaultOrganizationName">GetUserDefaultOrganizationName</a></li>
+				<li><a href="../lm.Comol.Core.Business/BaseModuleManager.htm#GetUserLanguage">GetUserLanguage</a></li>
+				<li><a href="../lm.Comol.Core.Business/BaseModuleManager.htm#GetUserLanguage">GetUserLanguage</a></li>
+				<li><a href="../lm.Comol.Core.Business/BaseModuleManager.htm#GetUsername">GetUsername</a></li>
+				<li><a href="../lm.Comol.Core.Business/BaseModuleManager.htm#GetUserOrganizations">GetUserOrganizations</a></li>
+				<li><a href="../lm.Comol.Core.Business/BaseModuleManager.htm#HasActiveSubscription">HasActiveSubscription</a></li>
+				<li><a href="../lm.Comol.Core.Business/BaseModuleManager.htm#HasActiveSubscription">HasActiveSubscription</a></li>
+				<li><a href="../lm.Comol.Core.Business/BaseModuleManager.htm#HasModulePermission">HasModulePermission</a></li>
+				<li><a href="../lm.Comol.Core.Business/BaseModuleManager.htm#HasModulePermission">HasModulePermission</a></li>
+				<li><a href="../lm.Comol.Core.Business/BaseModuleManager.htm#IsInTransaction">IsInTransaction</a></li>
+				<li><a href="../lm.Comol.Core.Business/BaseModuleManager.htm#IsModuleActive">IsModuleActive</a></li>
+				<li><a href="../lm.Comol.Core.Business/BaseModuleManager.htm#Linq``1">Linq&lt;T&gt;</a></li>
+				<li><a href="../lm.Comol.Core.Business/BaseModuleManager.htm#Refresh``1">Refresh&lt;T&gt;</a></li>
+				<li><a href="../lm.Comol.Core.Business/BaseModuleManager.htm#RollBack">RollBack</a></li>
+				<li><a href="../lm.Comol.Core.Business/BaseModuleManager.htm#SaveOrUpdate``1">SaveOrUpdate&lt;T&gt;</a></li>
+				<li><a href="../lm.Comol.Core.Business/BaseModuleManager.htm#SaveOrUpdateList``1">SaveOrUpdateList&lt;T&gt;</a></li>
+				<li><a href="../lm.Comol.Core.Business/BaseModuleManager.htm#Tx">Tx</a></li>
+				<li><a href="../lm.Comol.Core.Business/BaseModuleManager.htm#UserAffiliations">UserAffiliations</a></li>
+				<li><a href="../lm.Comol.Core.Business/BaseModuleManager.htm#UserHasAgencyAffiliations">UserHasAgencyAffiliations</a></li>
+				<li><a href="../lm.Comol.Core.Business/BaseModuleManager.htm#UserHasAgencyAffiliations">UserHasAgencyAffiliations</a></li>
+				<li><a href="../lm.Comol.Core.Business/BaseModuleManager.htm#UserHasAgencyAffiliations">UserHasAgencyAffiliations</a></li>
+				<li><a href="../lm.Comol.Core.Business/BaseModuleManager.htm#UsersAffiliations">UsersAffiliations</a></li>
+				<li><a href="../lm.Comol.Core.Business/BaseModuleManager.htm#UsersHasAgencyAffiliations">UsersHasAgencyAffiliations</a></li>
+				<li><a href="../lm.Comol.Core.Business/BaseModuleManager.htm#UsersHasAgencyAffiliations">UsersHasAgencyAffiliations</a></li>
+			</ul>
+		
+		
+	</div>
+	
+	<h3 class="section">Public instance methods</h3>
+
+	<div id="BeginTransaction" class="method">
+		<h4>
+			<span title="System.void">void</span> <strong>BeginTransaction</strong>()
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="Commit" class="method">
+		<h4>
+			<span title="System.void">void</span> <strong>Commit</strong>()
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="DeleteGeneric" class="method">
+		<h4>
+			<span title="System.void">void</span> <strong>DeleteGeneric</strong>(<span title="System.object">object</span> o)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="DeletePhysical``1" class="method">
+		<h4>
+			<span title="System.void">void</span> <strong>DeletePhysical&lt;T&gt;</strong>(<span title="lm.Comol.Core.Business.T">T</span> item)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="DeletePhysicalList``1" class="method">
+		<h4>
+			<span title="System.void">void</span> <strong>DeletePhysicalList&lt;T&gt;</strong>(<span title="System.Collections.Generic.IEnumerable<T>">IEnumerable&lt;T&gt;</span> list)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="Detach``1" class="method">
+		<h4>
+			<span title="System.void">void</span> <strong>Detach&lt;T&gt;</strong>(<span title="lm.Comol.Core.Business.T">T</span> obj)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="DetachList``1" class="method">
+		<h4>
+			<span title="System.void">void</span> <strong>DetachList&lt;T&gt;</strong>(<span title="System.Collections.Generic.IList<T>">IList&lt;T&gt;</span> objs)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="Flush" class="method">
+		<h4>
+			<span title="System.void">void</span> <strong>Flush</strong>()
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="Get``1" class="method">
+		<h4>
+			<span title="lm.Comol.Core.Business.T">T</span> <strong>Get&lt;T&gt;</strong>(<span title="System.object">object</span> id)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="GetActiveSubscription" class="method">
+		<h4>
+			<a href="../lm.Comol.Core.DomainModel/Subscription.htm">Subscription</a> <strong>GetActiveSubscription</strong>(<span title="System.int">int</span> PersonID, <span title="System.int">int</span> CommunityID)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="GetActiveSubscriptionIdRole" class="method">
+		<h4>
+			<span title="System.int">int</span> <strong>GetActiveSubscriptionIdRole</strong>(<span title="System.int">int</span> idPerson, <span title="System.int">int</span> idCommunity)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="GetAll``1" class="method">
+		<h4>
+			<span title="System.Collections.Generic.IList<T>">IList&lt;T&gt;</span> <strong>GetAll&lt;T&gt;</strong>(<span title="System.Linq.Expressions.Expression<Func<T, bool>>">Expression&lt;Func&lt;T, bool&gt;&gt;</span> condition)
+		</h4>
+		<div class="content">Recupera TUTTI gli oggetti completi. <blockquote class="remarks">
+  SE non si usa "condition", recupera TUTTI gli oggetti nel dB prima di filtrarli 
+</blockquote>
+
+
+			<div class="parameters">
+				<h5>Parameters</h5>
+				<dl>
+						<dt>
+							<code><span title="System.Linq.Expressions.Expression<Func<T, bool>>">Expression&lt;Func&lt;T, bool&gt;&gt;</span></code> condition
+						</dt>
+						<dd>Lambda expression per filtro dati 
+						</dd>
+				</dl>
+			</div>
+
+			<div class="return">
+
+				<h5>Returns</h5>
+				<dl>
+					<dt>
+						<code><span title="System.Collections.Generic.IList<T>">IList&lt;T&gt;</span></code>
+					</dt>
+					<dd>Lista di oggetti del tipo indicato 
+					</dd>
+				</dl>
+			</div>
+<div class="example">
+  <a href="javascript:void(0)">Show Example</a>
+  <pre>.GetAll(Of Person)()   => TUTTI gli oggetti person completi, presenti nel dB
+.GetAll(Of Person)(p => p.LanguageID == value) => Oggetti person completi in cui.LanguageID == value </pre>
+</div>
+		</div>
+	</div>
+	<div id="GetAllLanguages" class="method">
+		<h4>
+			<span title="System.Collections.Generic.IList<Language>">IList&lt;Language&gt;</span> <strong>GetAllLanguages</strong>()
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="GetAllOrganizations" class="method">
+		<h4>
+			<span title="System.Collections.Generic.IList<Organization>">IList&lt;Organization&gt;</span> <strong>GetAllOrganizations</strong>()
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="GetAvailableRoles" class="method">
+		<h4>
+			<span title="System.Collections.Generic.List<int>">List&lt;int&gt;</span> <strong>GetAvailableRoles</strong>(<a href="../lm.Comol.Core.DomainModel/Community.htm">Community</a> community)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="GetAvailableRoles" class="method">
+		<h4>
+			<span title="System.Collections.Generic.List<int>">List&lt;int&gt;</span> <strong>GetAvailableRoles</strong>(<span title="System.int">int</span> idCommunity)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="GetBaseActiveSubscriptions" class="method">
+		<h4>
+			<span title="System.Collections.Generic.List<LazySubscription>">List&lt;LazySubscription&gt;</span> <strong>GetBaseActiveSubscriptions</strong>(<span title="System.int">int</span> idPerson, <span title="System.Collections.Generic.List<int>">List&lt;int&gt;</span> idCommunities)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="GetCommunity" class="method">
+		<h4>
+			<a href="../lm.Comol.Core.DomainModel/Community.htm">Community</a> <strong>GetCommunity</strong>(<span title="System.int">int</span> idCommunity)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="GetCommunityName" class="method">
+		<h4>
+			<span title="System.string">string</span> <strong>GetCommunityName</strong>(<span title="System.int">int</span> idCommunity)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="GetCommunityTypeName" class="method">
+		<h4>
+			<span title="System.string">string</span> <strong>GetCommunityTypeName</strong>(<span title="System.int">int</span> idType, <span title="System.int">int</span> idLanguage)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="GetDefaultIdLanguage" class="method">
+		<h4>
+			<span title="System.int">int</span> <strong>GetDefaultIdLanguage</strong>()
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="GetDefaultIdRole" class="method">
+		<h4>
+			<span title="System.int">int</span> <strong>GetDefaultIdRole</strong>(<span title="System.int">int</span> idCommunity)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="GetDefaultLanguage" class="method">
+		<h4>
+			<a href="../lm.Comol.Core.DomainModel/Language.htm">Language</a> <strong>GetDefaultLanguage</strong>()
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="GetDefaultRole" class="method">
+		<h4>
+			<a href="../lm.Comol.Core.DomainModel/Role.htm">Role</a> <strong>GetDefaultRole</strong>(<a href="../lm.Comol.Core.DomainModel/Community.htm">Community</a> community)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="GetIdCommunityFromOrganization" class="method">
+		<h4>
+			<span title="System.int">int</span> <strong>GetIdCommunityFromOrganization</strong>(<span title="System.int">int</span> idOrganization)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="GetIdCommunityType" class="method">
+		<h4>
+			<span title="System.int">int</span> <strong>GetIdCommunityType</strong>(<span title="System.int">int</span> idCommunity)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="GetIdModules" class="method">
+		<h4>
+			<span title="System.Collections.Generic.Dictionary<string, int>">Dictionary&lt;string, int&gt;</span> <strong>GetIdModules</strong>(<span title="System.Collections.Generic.List<string>">List&lt;string&gt;</span> codes)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="GetIdOrganizationFromCommunity" class="method">
+		<h4>
+			<span title="System.int">int</span> <strong>GetIdOrganizationFromCommunity</strong>(<span title="System.int">int</span> idCommunity)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="GetIdProfileType" class="method">
+		<h4>
+			<span title="System.int">int</span> <strong>GetIdProfileType</strong>(<span title="System.int">int</span> idPerson)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="GetIdUnknownUser" class="method">
+		<h4>
+			<span title="System.int">int</span> <strong>GetIdUnknownUser</strong>()
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="GetIQ``1" class="method">
+		<h4>
+			<span title="System.Linq.IQueryable<T>">IQueryable&lt;T&gt;</span> <strong>GetIQ&lt;T&gt;</strong>()
+		</h4>
+		<div class="content">Da usare con Query Linq. Recupera solo i PARAMETRI INDICATI degli oggetti filtrati nell'espressione LINQ. <blockquote class="remarks">
+  from Person p in GetIQ(Of Person)() where p.LanguageID == value select p   è equivalente a
+.GetAll(Of Person)(p => p.LanguageID == value) 
+</blockquote>
+
+
+
+			<div class="return">
+
+				<h5>Returns</h5>
+				<dl>
+					<dt>
+						<code><span title="System.Linq.IQueryable<T>">IQueryable&lt;T&gt;</span></code>
+					</dt>
+					<dd>A seconda della query Linq. 
+					</dd>
+				</dl>
+			</div>
+<div class="example">
+  <a href="javascript:void(0)">Show Example</a>
+  <pre>from Person p in GetIQ(Of Person)() where p.LanguageID == value select p.SurnameAndName    = elenco di soli nome e cognome delle persone con LanguageID == value </pre>
+</div>
+		</div>
+	</div>
+	<div id="GetLanguage" class="method">
+		<h4>
+			<a href="../lm.Comol.Core.DomainModel/Language.htm">Language</a> <strong>GetLanguage</strong>(<span title="System.int">int</span> idLanguage)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="GetLanguage" class="method">
+		<h4>
+			<a href="../lm.Comol.Core.DomainModel/Language.htm">Language</a> <strong>GetLanguage</strong>(<span title="System.string">string</span> code)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="GetLanguageByCodeOrDefault" class="method">
+		<h4>
+			<a href="../lm.Comol.Core.DomainModel/Language.htm">Language</a> <strong>GetLanguageByCodeOrDefault</strong>(<span title="System.string">string</span> lCode, <span title="System.bool">bool</span> getDefault)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="GetLanguageByIdOrDefault" class="method">
+		<h4>
+			<a href="../lm.Comol.Core.DomainModel/Language.htm">Language</a> <strong>GetLanguageByIdOrDefault</strong>(<span title="System.int">int</span> idLanguage, <span title="System.bool">bool</span> getDefault)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="GetLiteCommunities" class="method">
+		<h4>
+			<span title="System.Collections.Generic.List<liteCommunity>">List&lt;liteCommunity&gt;</span> <strong>GetLiteCommunities</strong>(<span title="System.Collections.Generic.List<int>">List&lt;int&gt;</span> idCommunities)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="GetLiteCommunity" class="method">
+		<h4>
+			<a href="../lm.Comol.Core.DomainModel/liteCommunity.htm">liteCommunity</a> <strong>GetLiteCommunity</strong>(<span title="System.int">int</span> idCommunity)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="GetLiteCommunityInfo" class="method">
+		<h4>
+			<a href="../lm.Comol.Core.DomainModel/liteCommunityInfo.htm">liteCommunityInfo</a> <strong>GetLiteCommunityInfo</strong>(<span title="System.int">int</span> idCommunity)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="GetLitePerson" class="method">
+		<h4>
+			<a href="../lm.Comol.Core.DomainModel/litePerson.htm">litePerson</a> <strong>GetLitePerson</strong>(<span title="System.int">int</span> idPerson)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="GetLitePersons" class="method">
+		<h4>
+			<span title="System.Collections.Generic.List<litePerson>">List&lt;litePerson&gt;</span> <strong>GetLitePersons</strong>(<span title="System.Collections.Generic.List<int>">List&lt;int&gt;</span> idUsers)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="GetLitePublicUser" class="method">
+		<h4>
+			<a href="../lm.Comol.Core.DomainModel/litePerson.htm">litePerson</a> <strong>GetLitePublicUser</strong>()
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="GetLitePublicUser" class="method">
+		<h4>
+			<a href="../lm.Comol.Core.DomainModel/litePerson.htm">litePerson</a> <strong>GetLitePublicUser</strong>(<span title="System.int">int</span> idCommunity)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="GetLiteSubscriptionInfo" class="method">
+		<h4>
+			<a href="../lm.Comol.Core.DomainModel/liteSubscriptionInfo.htm">liteSubscriptionInfo</a> <strong>GetLiteSubscriptionInfo</strong>(<span title="System.int">int</span> idPerson, <span title="System.int">int</span> idCommunity)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="GetLiteUnknownUser" class="method">
+		<h4>
+			<a href="../lm.Comol.Core.DomainModel/litePerson.htm">litePerson</a> <strong>GetLiteUnknownUser</strong>()
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="GetModuleCode" class="method">
+		<h4>
+			<span title="System.string">string</span> <strong>GetModuleCode</strong>(<span title="System.int">int</span> IdModule)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="GetModuleID" class="method">
+		<h4>
+			<span title="System.int">int</span> <strong>GetModuleID</strong>(<span title="System.string">string</span> moduleCode)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="GetModulePermission" class="method">
+		<h4>
+			<span title="System.long">long</span> <strong>GetModulePermission</strong>(<span title="System.int">int</span> idUser, <span title="System.int">int</span> idCommunity, <span title="System.string">string</span> moduleCode)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="GetModulePermission" class="method">
+		<h4>
+			<span title="System.long">long</span> <strong>GetModulePermission</strong>(<span title="System.int">int</span> idUser, <span title="System.int">int</span> idCommunity, <span title="System.int">int</span> idModule)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="GetModulePermissionByRole" class="method">
+		<h4>
+			<span title="System.long">long</span> <strong>GetModulePermissionByRole</strong>(<span title="System.int">int</span> idRole, <span title="System.int">int</span> idCommunity, <span title="System.int">int</span> idModule)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="GetModuleStatus" class="method">
+		<h4>
+			<a href="../lm.Comol.Core.DomainModel/ModuleStatus.htm">ModuleStatus</a> <strong>GetModuleStatus</strong>(<span title="System.string">string</span> moduleCode, <span title="System.int">int</span> idCommunity)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="GetOrganization" class="method">
+		<h4>
+			<a href="../lm.Comol.Core.DomainModel/Organization.htm">Organization</a> <strong>GetOrganization</strong>(<span title="System.int">int</span> idOrganization)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="GetOrganizationName" class="method">
+		<h4>
+			<span title="System.string">string</span> <strong>GetOrganizationName</strong>(<span title="System.int">int</span> idOrganization)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="GetPerson" class="method">
+		<h4>
+			<a href="../lm.Comol.Core.DomainModel/Person.htm">Person</a> <strong>GetPerson</strong>(<span title="System.int">int</span> idPerson)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="GetRole" class="method">
+		<h4>
+			<a href="../lm.Comol.Core.DomainModel/Role.htm">Role</a> <strong>GetRole</strong>(<span title="System.int">int</span> RoleID)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="GetSubscription" class="method">
+		<h4>
+			<a href="../lm.Comol.Core.DomainModel/Subscription.htm">Subscription</a> <strong>GetSubscription</strong>(<a href="../lm.Comol.Core.DomainModel/Person.htm">Person</a> person, <a href="../lm.Comol.Core.DomainModel/Community.htm">Community</a> community)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="GetSubscription" class="method">
+		<h4>
+			<a href="../lm.Comol.Core.DomainModel/Subscription.htm">Subscription</a> <strong>GetSubscription</strong>(<span title="System.int">int</span> PersonID, <span title="System.int">int</span> CommunityID)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="GetSubscriptionIdRole" class="method">
+		<h4>
+			<span title="System.int">int</span> <strong>GetSubscriptionIdRole</strong>(<span title="System.int">int</span> idPerson, <span title="System.int">int</span> idCommunity, <span title="System.bool">bool</span> onlyActive)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="GetSubscriptionRole" class="method">
+		<h4>
+			<a href="../lm.Comol.Core.DomainModel/Role.htm">Role</a> <strong>GetSubscriptionRole</strong>(<span title="System.int">int</span> PersonID, <span title="System.int">int</span> CommunityID)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="GetSubscriptionRoleId" class="method">
+		<h4>
+			<span title="System.int">int</span> <strong>GetSubscriptionRoleId</strong>(<a href="../lm.Comol.Core.DomainModel/Person.htm">Person</a> person, <a href="../lm.Comol.Core.DomainModel/Community.htm">Community</a> community, <span title="System.bool">bool</span> onlyActive)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="GetTranslatedCommunityTypes" class="method">
+		<h4>
+			<span title="System.Collections.Generic.List<dtoTranslatedCommunityType>">List&lt;dtoTranslatedCommunityType&gt;</span> <strong>GetTranslatedCommunityTypes</strong>(<span title="System.int">int</span> idLanguage)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="GetTranslatedItem``1" class="method">
+		<h4>
+			<span title="System.Collections.Generic.List<T>">List&lt;T&gt;</span> <strong>GetTranslatedItem&lt;T&gt;</strong>(<span title="System.int">int</span> idLanguage)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="GetTranslatedProfileType" class="method">
+		<h4>
+			<span title="System.string">string</span> <strong>GetTranslatedProfileType</strong>(<span title="System.int">int</span> idProfileType, <span title="System.int">int</span> idLanguage)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="GetTranslatedProfileTypes" class="method">
+		<h4>
+			<span title="System.Collections.Generic.List<dtoTranslatedProfileType>">List&lt;dtoTranslatedProfileType&gt;</span> <strong>GetTranslatedProfileTypes</strong>(<span title="System.int">int</span> idLanguage)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="GetTranslatedRole" class="method">
+		<h4>
+			<span title="System.string">string</span> <strong>GetTranslatedRole</strong>(<span title="System.int">int</span> idRole, <span title="System.int">int</span> idLanguage)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="GetTranslatedRoles" class="method">
+		<h4>
+			<span title="System.Collections.Generic.List<dtoTranslatedRoleType>">List&lt;dtoTranslatedRoleType&gt;</span> <strong>GetTranslatedRoles</strong>(<span title="System.int">int</span> idLanguage)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="GetTranslatedRoles" class="method">
+		<h4>
+			<span title="System.Collections.Generic.List<dtoTranslatedRoleType>">List&lt;dtoTranslatedRoleType&gt;</span> <strong>GetTranslatedRoles</strong>(<span title="System.int">int</span> idCommunity, <span title="System.int">int</span> idLanguage, <span title="System.bool">bool</span> skipGuest)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="GetUnknownUser" class="method">
+		<h4>
+			<a href="../lm.Comol.Core.DomainModel/Person.htm">Person</a> <strong>GetUnknownUser</strong>()
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="GetUrlMacEncryptor" class="method">
+		<h4>
+			<a href="../lm.Comol.Core.Authentication/liteGenericEncryption.htm">liteGenericEncryption</a> <strong>GetUrlMacEncryptor</strong>()
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="GetUserAffiliation" class="method">
+		<h4>
+			<a href="../lm.Comol.Core.DomainModel/LazyAffiliation.htm">LazyAffiliation</a> <strong>GetUserAffiliation</strong>(<span title="System.int">int</span> idUser, <span title="System.DateTime">DateTime</span> date)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="GetUserByMail" class="method">
+		<h4>
+			<a href="../lm.Comol.Core.DomainModel/Person.htm">Person</a> <strong>GetUserByMail</strong>(<span title="System.string">string</span> mail)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="GetUserDefaultIdOrganization" class="method">
+		<h4>
+			<span title="System.int">int</span> <strong>GetUserDefaultIdOrganization</strong>(<span title="System.int">int</span> idPerson)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="GetUserDefaultOrganizationName" class="method">
+		<h4>
+			<span title="System.string">string</span> <strong>GetUserDefaultOrganizationName</strong>(<span title="System.int">int</span> idPerson)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="GetUserLanguage" class="method">
+		<h4>
+			<a href="../lm.Comol.Core.DomainModel/Language.htm">Language</a> <strong>GetUserLanguage</strong>(<span title="System.int">int</span> idPerson, <span title="System.bool">bool</span> orDefault)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="GetUserLanguage" class="method">
+		<h4>
+			<a href="../lm.Comol.Core.DomainModel/Language.htm">Language</a> <strong>GetUserLanguage</strong>(<a href="../lm.Comol.Core.DomainModel/litePerson.htm">litePerson</a> p, <span title="System.bool">bool</span> orDefault)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="GetUsername" class="method">
+		<h4>
+			<span title="System.string">string</span> <strong>GetUsername</strong>(<span title="System.int">int</span> idPerson)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="GetUserOrganizations" class="method">
+		<h4>
+			<span title="System.Collections.Generic.List<int>">List&lt;int&gt;</span> <strong>GetUserOrganizations</strong>(<span title="System.int">int</span> idPerson)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="HasActiveSubscription" class="method">
+		<h4>
+			<span title="System.bool">bool</span> <strong>HasActiveSubscription</strong>(<span title="System.int">int</span> IdPerson, <span title="System.int">int</span> IdCommunity)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="HasActiveSubscription" class="method">
+		<h4>
+			<span title="System.bool">bool</span> <strong>HasActiveSubscription</strong>(<a href="../lm.Comol.Core.DomainModel/Person.htm">Person</a> person, <a href="../lm.Comol.Core.DomainModel/Community.htm">Community</a> community)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="HasModulePermission" class="method">
+		<h4>
+			<span title="System.bool">bool</span> <strong>HasModulePermission</strong>(<span title="System.int">int</span> userID, <span title="System.int">int</span> communityId, <span title="System.int">int</span> moduleId, <span title="System.long">long</span> RequiredPermission)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="HasModulePermission" class="method">
+		<h4>
+			<span title="System.bool">bool</span> <strong>HasModulePermission</strong>(<span title="System.int">int</span> userID, <span title="System.int">int</span> roleId, <span title="System.int">int</span> communityId, <span title="System.int">int</span> moduleId, <span title="System.long">long</span> RequiredPermission)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="IsInTransaction" class="method">
+		<h4>
+			<span title="System.bool">bool</span> <strong>IsInTransaction</strong>()
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="IsModuleActive" class="method">
+		<h4>
+			<span title="System.bool">bool</span> <strong>IsModuleActive</strong>(<span title="System.string">string</span> moduleCode, <span title="System.int">int</span> idCommunity)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="Linq``1" class="method">
+		<h4>
+			<span title="NHibernate.Linq.INHibernateQueryable<T>">INHibernateQueryable&lt;T&gt;</span> <strong>Linq&lt;T&gt;</strong>()
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="Refresh``1" class="method">
+		<h4>
+			<span title="System.void">void</span> <strong>Refresh&lt;T&gt;</strong>(<span title="lm.Comol.Core.Business.T">T</span> obj)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="RollBack" class="method">
+		<h4>
+			<span title="System.void">void</span> <strong>RollBack</strong>()
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="SaveOrUpdate``1" class="method">
+		<h4>
+			<span title="System.void">void</span> <strong>SaveOrUpdate&lt;T&gt;</strong>(<span title="lm.Comol.Core.Business.T">T</span> item)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="SaveOrUpdateList``1" class="method">
+		<h4>
+			<span title="System.void">void</span> <strong>SaveOrUpdateList&lt;T&gt;</strong>(<span title="System.Collections.Generic.IEnumerable<T>">IEnumerable&lt;T&gt;</span> list)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="Tx" class="method">
+		<h4>
+			<span title="System.void">void</span> <strong>Tx</strong>(<span title="System.Action">Action</span> method)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="UserAffiliations" class="method">
+		<h4>
+			<span title="System.Collections.Generic.List<LazyAffiliation>">List&lt;LazyAffiliation&gt;</span> <strong>UserAffiliations</strong>(<span title="System.int">int</span> idUser)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="UserHasAgencyAffiliations" class="method">
+		<h4>
+			<span title="System.bool">bool</span> <strong>UserHasAgencyAffiliations</strong>(<span title="System.Collections.Generic.List<LazyAffiliation>">List&lt;LazyAffiliation&gt;</span> affiliations, <span title="System.DateTime">DateTime</span> date)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="UserHasAgencyAffiliations" class="method">
+		<h4>
+			<span title="System.bool">bool</span> <strong>UserHasAgencyAffiliations</strong>(<span title="System.int">int</span> idUser, <span title="System.Nullable<DateTime>">Nullable&lt;DateTime&gt;</span> fromDate, <span title="System.Nullable<DateTime>">Nullable&lt;DateTime&gt;</span> toDate)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="UserHasAgencyAffiliations" class="method">
+		<h4>
+			<span title="System.bool">bool</span> <strong>UserHasAgencyAffiliations</strong>(<span title="System.int">int</span> idUser, <span title="System.DateTime">DateTime</span> date)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="UsersAffiliations" class="method">
+		<h4>
+			<span title="System.Collections.Generic.List<LazyAffiliation>">List&lt;LazyAffiliation&gt;</span> <strong>UsersAffiliations</strong>(<span title="System.Collections.Generic.List<int>">List&lt;int&gt;</span> idUsers)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="UsersHasAgencyAffiliations" class="method">
+		<h4>
+			<span title="System.bool">bool</span> <strong>UsersHasAgencyAffiliations</strong>(<span title="System.Collections.Generic.List<int>">List&lt;int&gt;</span> idUsers, <span title="System.DateTime">DateTime</span> date)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="UsersHasAgencyAffiliations" class="method">
+		<h4>
+			<span title="System.bool">bool</span> <strong>UsersHasAgencyAffiliations</strong>(<span title="System.Collections.Generic.List<int>">List&lt;int&gt;</span> idUsers, <span title="System.Nullable<DateTime>">Nullable&lt;DateTime&gt;</span> fromDate, <span title="System.Nullable<DateTime>">Nullable&lt;DateTime&gt;</span> toDate)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	
+	
+	</section>
+	</article><footer>
+	<span id="version">Built from v1.0.0.0 of lm.Comol.Core.DomainModel</span>
+	<span id="docu-link">
+		Generated by <a href="http://docu.jagregory.com">docu</a>
+	</span>
+</footer>
+  </body>
+</html>
