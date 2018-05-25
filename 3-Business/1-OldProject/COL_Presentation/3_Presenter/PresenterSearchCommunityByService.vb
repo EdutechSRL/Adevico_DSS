@@ -54,9 +54,7 @@ Public Class PresenterSearchCommunityByService
         GoToPage(1)
     End Sub
 	Private Sub SetNullByCommunityType()
-		Me.View.LoadDegreeTypes(New List(Of TypeDegree))
-		Me.View.LoadPeriodi(New List(Of Periodo))
-		Me.View.LoadAcademicYears(New List(Of AcademicYear))
+
 	End Sub
 	Private Sub LoadOrganizations()
 		Dim oList As List(Of FilterElement) = CurrentManager.GetFilterOrganization(Me.View.ServiceClauses)
@@ -94,22 +92,7 @@ Public Class PresenterSearchCommunityByService
 		If Not IsNothing(oType) Then
 			Me.View.CurrentCommunityType = oType
 		End If
-		'Me.View.LoadCommunityTypes(Me.CurrentManager.GetFilterCommunityType(Me.View.CurrentOrganization, Me.View.CurrentStatus, Me.View.CurrentServiceCode, "Name"))
-
-
-
-		If Not Me.View.CurrentCommunityType Is Nothing Then
-			Select Case Me.View.CurrentCommunityType.ID
-				Case StandardCommunityType.Degree
-					Me.LoadDegreeTypes()
-				Case StandardCommunityType.UniversityCourse
-					Me.LoadAccademicYears()
-					If Not IsNothing(Me.View.CurrentAcademicYear) Then
-						Me.LoadPeriodi()
-					End If
-			End Select
-		End If
-	End Sub
+    End Sub
 
 	Private Function RetrieveCommunityTypes() As List(Of FilterElement)
 		Dim oList As List(Of FilterElement) = CurrentManager.GetFilterCommunityType(Me.View.CurrentOrganization, Me.View.CurrentStatus, Me.View.ServiceClauses)
@@ -123,44 +106,6 @@ Public Class PresenterSearchCommunityByService
 			Return oList
 		End If
 	End Function
-	Private Sub LoadDegreeTypes()
-		Dim oList As List(Of FilterElement) = CurrentManager.GetFilterDegreeType(Me.View.CurrentOrganization, Me.View.CurrentStatus, Me.View.ServiceClauses)
-		Dim oReturnedList As New List(Of FilterElement)
-
-		If oList.Count > 1 Then
-			oReturnedList.AddRange(From oFilterElement As FilterElement In oList Order By oFilterElement.Text)
-			oReturnedList.Insert(0, (New FilterElement(-1, "--		--")))
-			Me.View.LoadDegreeTypes(oReturnedList)
-		Else
-			Me.View.LoadDegreeTypes(oList)
-		End If
-	End Sub
-	Private Sub LoadAccademicYears()
-		Dim oList As List(Of FilterElement) = CurrentManager.GetFilterAccademicYear(Me.View.CurrentOrganization, Me.View.CurrentStatus, Me.View.ServiceClauses)
-
-		Dim oReturnedList As New List(Of FilterElement)
-
-		If oList.Count > 1 Then
-			oReturnedList.AddRange(From oFilterElement As FilterElement In oList Order By oFilterElement.Text Descending)
-			oReturnedList.Insert(0, (New FilterElement(-1, "--		--")))
-			Me.View.LoadAcademicYears(oReturnedList)
-		Else
-			Me.View.LoadAcademicYears(oList)
-		End If
-	End Sub
-	Private Sub LoadPeriodi()
-		Dim oList As List(Of FilterElement) = CurrentManager.GetFilterPeriod(Me.View.CurrentOrganization, Me.View.CurrentStatus, Me.View.CurrentAcademicYear, Me.View.ServiceClauses)
-		Dim oReturnedList As New List(Of FilterElement)
-
-		If oList.Count > 1 Then
-			oReturnedList.AddRange(From oFilterElement As FilterElement In oList Order By oFilterElement.Text)
-			oReturnedList.Insert(0, (New FilterElement(-1, "--		--")))
-			Me.View.LoadPeriodi(oReturnedList)
-		Else
-			Me.View.LoadPeriodi(oList)
-		End If
-	End Sub
-
 
 	Public Sub ChangeOrganization()
 		Me.View.LoadCommunityTypes(New List(Of CommunityType))
@@ -188,40 +133,11 @@ Public Class PresenterSearchCommunityByService
 	End Sub
 	Public Sub ChangeCommunityType()
 		Me.SetNullByCommunityType()
-		Select Case Me.View.CurrentCommunityType.ID
-			Case StandardCommunityType.Degree
-				Me.LoadDegreeTypes()
-			Case StandardCommunityType.UniversityCourse
-				Me.LoadAccademicYears()
-				If Not IsNothing(Me.View.CurrentAcademicYear) Then
-					Me.LoadPeriodi()
-				End If
-		End Select
-		If Me.View.AutoUpdateList Then
-			Me.View.SelectedCommunitiesID = New List(Of Integer)
-			Me.GoToPage(1)
-		End If
+        If Me.View.AutoUpdateList Then
+            Me.View.SelectedCommunitiesID = New List(Of Integer)
+            Me.GoToPage(1)
+        End If
 	End Sub
-	Public Sub ChangeDegree()
-		If Me.View.AutoUpdateList Then
-			Me.View.SelectedCommunitiesID = New List(Of Integer)
-			Me.GoToPage(1)
-		End If
-	End Sub
-	Public Sub ChangeAccademicYear()
-		Me.LoadPeriodi()
-		If Me.View.AutoUpdateList Then
-			Me.View.SelectedCommunitiesID = New List(Of Integer)
-			Me.GoToPage(1)
-		End If
-	End Sub
-	Public Sub ChangePeriodo()
-		If Me.View.AutoUpdateList Then
-			Me.View.SelectedCommunitiesID = New List(Of Integer)
-			Me.GoToPage(1)
-		End If
-	End Sub
-
 
 	Public Sub LoadCommunityList()
 		Me.GoToPage(1)
@@ -257,19 +173,10 @@ Public Class PresenterSearchCommunityByService
 			Dim StatusID As CommunityStatus = Me.View.CurrentStatus
 			Dim DegreeTypeID As Integer = -1, YearID As Integer = -1, PeriodoID As Integer = -1
 
-			If Not Me.View.CurrentDegreeType Is Nothing Then
-				DegreeTypeID = Me.View.CurrentDegreeType.ID
-			End If
+		
 			If Not Me.View.CurrentCommunityType Is Nothing Then
 				CommunityTypeID = Me.View.CurrentCommunityType.ID
 			End If
-			If Not Me.View.CurrentPeriodo Is Nothing Then
-				PeriodoID = Me.View.CurrentPeriodo.ID
-			End If
-			If Not Me.View.CurrentAcademicYear Is Nothing Then
-				YearID = Me.View.CurrentAcademicYear.Year
-			End If
-
 
 			Dim oQuery = From oIscrizione As Subscription In oSubscriptionList _
 			Where (OrganizationID = -1 OrElse (oIscrizione.CommunitySubscripted.Type.ID = StandardCommunityType.Organization AndAlso DirectCast(oIscrizione.CommunitySubscripted, Organization).OrganizationID = OrganizationID) OrElse _
@@ -277,13 +184,6 @@ Public Class PresenterSearchCommunityByService
 			(oIscrizione.CommunitySubscripted.Status = Me.View.CurrentStatus Or Me.View.CurrentStatus = CommunityStatus.All) AndAlso _
 			(CommunityTypeID = -1 OrElse oIscrizione.CommunitySubscripted.Type.ID = CommunityTypeID)
 
-			If oQuery.Count > 0 And CommunityTypeID = StandardCommunityType.UniversityCourse Then
-				oQuery = From oIscrizione As Subscription In oQuery Where oIscrizione.CommunitySubscripted.Type.ID = CommunityTypeID AndAlso (YearID = -1 OrElse DirectCast(oIscrizione.CommunitySubscripted, UniversityCourse).AccademicY.Year = YearID) AndAlso (PeriodoID = -1 OrElse DirectCast(oIscrizione.CommunitySubscripted, UniversityCourse).CoursePeriodo.ID = PeriodoID)
-			ElseIf oQuery.Count > 0 And CommunityTypeID = StandardCommunityType.Degree Then
-				oQuery = From oIscrizione As Subscription In oQuery Where (oIscrizione.CommunitySubscripted.Type.ID = CommunityTypeID AndAlso (DegreeTypeID = -1 OrElse DirectCast(oIscrizione.CommunitySubscripted, Degree).DegreeType.ID = DegreeTypeID))
-
-
-			End If
 
 
 			Dim SearchBy As String = Me.View.SearchBy

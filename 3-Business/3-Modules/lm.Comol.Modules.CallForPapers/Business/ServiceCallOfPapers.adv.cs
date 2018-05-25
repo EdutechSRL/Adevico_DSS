@@ -14,6 +14,7 @@ namespace lm.Comol.Modules.CallForPapers.Business
     /// Molte funzioni sono le stesse presenti in ServiceCallOfPeaper.cs o service anaologhi,
     /// aggiornate per il funzionamento con i nuovi oggetti relativi alle commissioni avanzate.
     /// </remarks>
+    [System.Runtime.InteropServices.Guid("B1232450-8B6C-445F-B31E-FFDE3F90B5D4")]
     public partial class ServiceCallOfPapers : BaseService
     {
         #region Internal
@@ -477,7 +478,7 @@ namespace lm.Comol.Modules.CallForPapers.Business
         /// </summary>
         /// <param name="Orders">KVP con Id step e posizione</param>
         /// <returns></returns>
-        public bool StepReorder(IList<KeyValuePair<Int64, int>> Orders)
+        public bool StepReorder(IList<KeyValuePair<Int64, int>> Orders, long CallId)
         {
 
             if (Orders == null || !Orders.Any())
@@ -489,6 +490,7 @@ namespace lm.Comol.Modules.CallForPapers.Business
                 st => st.Type == StepType.custom
                 && st.Status == StepStatus.Draft
                 && Ids.Contains(st.Id)
+                && st.Call != null && st.Call.Id == CallId
                 );
 
             //Core.DomainModel.litePerson person = Manager.GetLitePerson(UC.CurrentUserID);
@@ -718,8 +720,17 @@ namespace lm.Comol.Modules.CallForPapers.Business
 
                 IList<Advanced.Domain.AdvSubmissionToStep> CommEvals = commSubs.Where(c => c.Submission != null && c.Submission.Id == sub.Submission.Id).ToList();
 
-                stepEval.AverageRating = CommEvals.Average(ev => (ev.Commission.EvalType == EvalType.Sum) ? ev.SumRating : ev.AverageRating);
-                stepEval.SumRating = CommEvals.Sum(ev => (ev.Commission.EvalType == EvalType.Sum) ? ev.SumRating : ev.AverageRating);
+                // MEDIA: somma su valutatori : NO E' per lo STEP!!!!
+
+                stepEval.AverageRating = Math.Round(CommEvals.Average(ev => (ev.Commission.EvalType == EvalType.Sum) ? ev.SumRating : Math.Round(ev.AverageRating, 2)), 2);
+
+                stepEval.SumRating = CommEvals.Sum(ev => (ev.Commission.EvalType == EvalType.Sum) ? ev.SumRating : Math.Round(ev.AverageRating, 2));
+
+                //stepEval.AverageRating = Math.Round(CommEvals.Average(ev => ev.SumRating), 2);
+                //stepEval.SumRating = CommEvals.Sum(ev => ev.SumRating);
+                
+
+
                 stepEval.BoolRating = CommEvals.All(ev => ev.BoolRating);
 
                 stepEval.Passed = CommEvals.All(ev => ev.Passed);
@@ -733,7 +744,7 @@ namespace lm.Comol.Modules.CallForPapers.Business
             int rank = 1;
 
             foreach (Advanced.Domain.AdvSubmissionToStep sbst in stepSubs.OrderByDescending(s => s.Passed)
-                .ThenByDescending(s => s.AverageRating))
+                .ThenByDescending(s => s.AverageRating).ThenBy(s => s.Submission.SubmittedOn))
             {
                 sbst.Rank = rank;
                 rank++;
@@ -1095,6 +1106,25 @@ namespace lm.Comol.Modules.CallForPapers.Business
             commission.Step = step;
             commission.IsMaster = isMaster;
 
+            if(step.Type == StepType.economics)
+            {
+                Double sum = 0;
+                try
+                {
+                    IList<Domain.FieldDefinition> field = Manager.GetAll<Domain.FieldDefinition>(
+                        fd =>
+                            fd.Deleted == Core.DomainModel.BaseStatusDeleted.None
+                            && fd.Call.Id == call.Id
+                            && fd.Type == Domain.FieldType.TableReport
+                        );
+
+                    sum = field.Sum(fl => fl.TableMaxTotal);
+
+                } catch { }
+
+                commission.MaxValue = sum;
+            }
+
             return commission;
         }
 
@@ -1335,7 +1365,7 @@ namespace lm.Comol.Modules.CallForPapers.Business
 
 
             Advanced.dto.dtoCommissionEdit dtoComm = (comm == null) ?
-                new Advanced.dto.dtoCommissionEdit()
+                new Advanced.dto.dtoCommissionEdit(0)
                 : dtoComm = new Advanced.dto.dtoCommissionEdit(comm, currentUserId);
 
 
@@ -1471,6 +1501,7 @@ namespace lm.Comol.Modules.CallForPapers.Business
             int EvMinVal,
             bool EvLockBool,
             EvalType StepEvType,
+            Double MaxValue,
             List<Eval.dtoCriterion> criterionsToAdd = null)
         {
 
@@ -1483,7 +1514,7 @@ namespace lm.Comol.Modules.CallForPapers.Business
             Comm.Name = Name;
             Comm.Description = Description;
             Comm.Tags = Tags;
-
+            Comm.MaxValue = MaxValue;
             Comm.EvalType = EvType;
             Comm.EvalMinValue = EvMinVal;
             Comm.EvalBoolBlock = EvLockBool;
@@ -1700,6 +1731,9 @@ namespace lm.Comol.Modules.CallForPapers.Business
                                                        minRange = comm.EvalMinValue,
                                                        LockBool = comm.EvalBoolBlock
                                                    }).FirstOrDefault();
+
+            if (EvInfo == null)
+                return new dtoCommEvalInfo();
 
             return EvInfo;
         }
@@ -3435,6 +3469,47 @@ namespace lm.Comol.Modules.CallForPapers.Business
             return false;
         }
 
+
+        public bool CommissionUserIsPresidentOrSegretaryInMaster(Int64 CommissionId, int UserId)
+        {
+            Advanced.Domain.AdvCommission comm = Manager.Get<Advanced.Domain.AdvCommission>(CommissionId);
+
+            if (comm != null && comm.Step != null)
+            {
+                Advanced.Domain.AdvCommission mainComm = comm.Step.Commissions.FirstOrDefault(c => c.IsMaster);
+
+                if (mainComm != null)
+                {
+                    if(mainComm.President.Id == UserId || mainComm.Secretary.Id == UserId)
+                    {
+                        return true;
+                    }
+                }
+            }
+
+            return false;
+        }
+        
+        /// <summary>
+        /// Verifica se un utente è segretario della commissione
+        /// </summary>
+        /// <param name="CommissionId">Id Commissione</param>
+        /// <param name="UserId">Id Utente</param>
+        /// <returns></returns>
+        public bool CommissionUserIsSecretary(Int64 CommissionId, int UserId)
+        {
+            Advanced.Domain.AdvCommission comm = Manager.Get<Advanced.Domain.AdvCommission>(CommissionId);
+
+            if (comm != null &&
+                (comm.Secretary != null && comm.Secretary.Id == UserId)
+                )
+                return true;
+
+
+            return false;
+        }
+
+
         /// <summary>
         /// Verifica se l'utente ha una sottomissione in valutazione allo step indicato.
         /// </summary>
@@ -3492,6 +3567,11 @@ namespace lm.Comol.Modules.CallForPapers.Business
                 StepPermission |= GenericStepPermission.MainPresident;
             }
 
+            if (Step.Commissions.Any(cm => (cm.Secretary != null && cm.Secretary.Id == UserId && cm.IsMaster)))
+            {
+                StepPermission |= GenericStepPermission.MainSecretary;
+            }
+
             if (Step.Commissions.Any(cm => (cm.President != null && cm.President.Id == UserId)))
             {
                 StepPermission |= GenericStepPermission.President;
@@ -3539,18 +3619,31 @@ namespace lm.Comol.Modules.CallForPapers.Business
             ).Any();
         }
 
-        #endregion
 
-        #region Evaluation
+        public bool UserIsInCallCommissionPresidentOrSecreatary(long CallId, int UserId)
+        {
+            return Manager.GetAll<Advanced.Domain.AdvCommission>(c =>
+            c.Call != null && c.Call.Id == CallId
+            && (c.Status != CommissionStatus.Draft && c.IsInCommissionAsSecretaryOrPresident(UserId))
+            ).Any();
 
-        /// <summary>
-        /// Riepilogo valutazioni Commissione
-        /// </summary>
-        /// <param name="idCall">Id Bando</param>
-        /// <param name="idMember">Id membro</param>
-        /// <param name="idCommission">Id Commissione</param>
-        /// <returns></returns>
-        public List<Eval.dtoCommitteeEvaluationsInfo> GetCommitteesEvaluationInfoAdv(long idCall, long idMember, long idCommission) //, long idEvaluator)
+        }
+    #endregion
+
+    #region Evaluation
+
+    /// <summary>
+    /// Riepilogo valutazioni Commissione
+    /// </summary>
+    /// <param name="idCall">Id Bando</param>
+    /// <param name="idMember">Id membro</param>
+    /// <param name="idCommission">Id Commissione</param>
+    /// <returns></returns>
+    public List<Eval.dtoCommitteeEvaluationsInfo> GetCommitteesEvaluationInfoAdv(
+            long idCall, 
+            long idMember, 
+            long idCommission,
+            ref Domain.EvaluationType evType) //, long idEvaluator)
         {
 
             if (idMember == 0)
@@ -3564,6 +3657,16 @@ namespace lm.Comol.Modules.CallForPapers.Business
             try
             {
                 Advanced.Domain.AdvCommission commission = Manager.Get<Advanced.Domain.AdvCommission>(idCommission);
+
+
+                if(commission != null)
+                {
+                    if (commission.EvalType == EvalType.Average)
+                        evType = Domain.EvaluationType.Average;
+                    else
+                        evType = Domain.EvaluationType.Sum;
+                }
+
 
                 items.Add(
                     new Eval.dtoCommitteeEvaluationsInfo()
@@ -4595,8 +4698,9 @@ namespace lm.Comol.Modules.CallForPapers.Business
                 }
 
                 //Criteri: lascio entrambe, POI dipende dalle impostazioni della commissione E successivamente dello step!!!
-
-                substep.AverageRating = c.Average(sr => sr.AverageRating);
+                // SOMMA : anche per la media uso la somma dei criteri
+                substep.AverageRating = Math.Round(c.Average(sr => sr.SumRating), 2);
+                //substep.AverageRating = Math.Round(c.Average(sr => Math.Round(sr.AverageRating, 2)), 2);
             
                 substep.SumRating = c.Sum(sr => sr.SumRating);
 
@@ -4614,7 +4718,7 @@ namespace lm.Comol.Modules.CallForPapers.Business
 
 
             foreach (Advanced.Domain.AdvSubmissionToStep sbst in oldSubs.OrderByDescending(s => s.Passed)
-                .ThenByDescending(s => s.AverageRating))
+                .ThenByDescending(s => s.AverageRating).ThenBy(s => s.Submission.SubmittedOn))
             {
                 sbst.Rank = rank;
                 rank++;
@@ -5584,6 +5688,14 @@ namespace lm.Comol.Modules.CallForPapers.Business
             {
                 permission |= SubmissionListPermission.View;
                 permission |= SubmissionListPermission.Evaluate;
+            }
+
+            if (advCommissions.Any(c =>
+                (c.President != null && c.President.Id == UC.CurrentUserID)
+                || (c.Secretary != null && c.Secretary.Id == UC.CurrentUserID)
+                ))
+            {
+                permission |= SubmissionListPermission.Manage;
             }
 
             return permission;

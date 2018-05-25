@@ -61,6 +61,13 @@
     {
         display: inline-block !important;
     }
+    a.tabcloser {
+        display:inline-block;
+        padding: 4px;
+    }
+    a.tabcloser.opened {
+        background-position: 4px -82px !important;
+    }
 </style>
 	 <script type="text/javascript" language="javascript">
 		 $(function () {
@@ -204,10 +211,16 @@
 				 show: function (event, ui) {
 					 $("#tabs-0").hide();
 				 }
-			 });
+             });
 
-			 $(".tabcloser").click(function () {
-				 $(".tabs").tabs("select", -1);
+             $(".tabcloser").click(function () {
+                 if (!$(".tabs").hasClass("hide")) {
+                     $(".tabs").addClass("hide");
+                     $(".tabcloser.opened").parent().show();
+                 } else {
+                     $(".tabs").removeClass("hide");
+                     $(".tabcloser.opened").parent().hide();
+                 }
 			 });
 
 			 /*
@@ -261,10 +274,11 @@
 			<div class="persist-area">
 				<div class="evaluationbar persist-header" id="DVevaluationTab" runat="server" visible="false">
 					<div class="innerwrapper clearfix">
+                        <div style="display:none;"><a href="#tabs-0" class="tabcloser opened">&nbsp;</a></div>
 						<div class="tabs criteriatabs">
 							<div class="criteriatabswrapper clearfix">
 								<ul>
-									<li><a href="#tabs-0" class="tabcloser">&nbsp;</a></li>
+                                    <li><a href="#tabs-0" class="tabcloser active">&nbsp;</a></li>
 									<asp:Repeater id="RPTcriteriaTabs" runat="server">
 										<ItemTemplate>
 											<li class="tab">

@@ -27,6 +27,7 @@ namespace lm.Comol.Core.BaseModules.Editor
         simple = 2,
         advanced = 3,
         full = 4,
-        lite = 5
+        lite = 5,
+        question = 6
     }
 }

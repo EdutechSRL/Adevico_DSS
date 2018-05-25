@@ -517,6 +517,8 @@ Public MustInherit Class Base
         Session("CMNT_ID_forNews") = ""
         Session("TPCM_ID") = -1
 
+        PageUtility.ApiTokenSetCommunity(0)
+
         Me.RedirectToUrl(url)
     End Sub
 
@@ -805,16 +807,16 @@ Public MustInherit Class Base
                 Catch ex As Exception
 
                 End Try
-            Case Services_RaccoltaLink.Codex
-                Dim oServizio As New Services_RaccoltaLink
-                Try
-                    oServizio.PermessiAssociati = COL_Comunita.GetPermessiForServizioByPersona(PRSN_ID, IdCommunity, Codice)
-                    If oServizio.Admin Or oServizio.Moderate Or oServizio.List Or oServizio.AddLink Then
-                        Redirigi = True
-                    End If
-                Catch ex As Exception
+                'Case Services_RaccoltaLink.Codex
+                '    Dim oServizio As New Services_RaccoltaLink
+                '    Try
+                '        oServizio.PermessiAssociati = COL_Comunita.GetPermessiForServizioByPersona(PRSN_ID, IdCommunity, Codice)
+                '        If oServizio.Admin Or oServizio.Moderate Or oServizio.List Or oServizio.AddLink Then
+                '            Redirigi = True
+                '        End If
+                '    Catch ex As Exception
 
-                End Try
+                '    End Try
             Case Services_Statistiche.Codex
                 Dim oServizio As New Services_Statistiche
                 Try
@@ -874,19 +876,19 @@ Public MustInherit Class Base
                 Catch ex As Exception
 
                 End Try
-            Case Is = Services_TaskList.Codex
-                Dim moduleT As New Services_TaskList
-                Try
-                    Dim oRuoloComunita As New COL_BusinessLogic_v2.Comunita.COL_RuoloPersonaComunita
-                    If Not COL_RuoloPersonaComunita.isSkipCover(IdCommunity, PRSN_ID) Then
-                        moduleT.PermessiAssociati = COL_Comunita.GetPermessiForServizioByPersona(PRSN_ID, IdCommunity, Codice)
-                        If moduleT.ViewCommunityProjects OrElse moduleT.Administration Then
-                            Redirigi = True
-                        End If
-                    End If
-                Catch ex As Exception
+                'Case Is = Services_TaskList.Codex
+                '    Dim moduleT As New Services_TaskList
+                '    Try
+                '        Dim oRuoloComunita As New COL_BusinessLogic_v2.Comunita.COL_RuoloPersonaComunita
+                '        If Not COL_RuoloPersonaComunita.isSkipCover(IdCommunity, PRSN_ID) Then
+                '            moduleT.PermessiAssociati = COL_Comunita.GetPermessiForServizioByPersona(PRSN_ID, IdCommunity, Codice)
+                '            If moduleT.ViewCommunityProjects OrElse moduleT.Administration Then
+                '                Redirigi = True
+                '            End If
+                '        End If
+                '    Catch ex As Exception
 
-                End Try
+                '    End Try
             Case Services_EduPath.Codex
                 Dim modulePf As New Services_EduPath
                 Try
@@ -904,8 +906,11 @@ Public MustInherit Class Base
                 Return True
             Case "PATHINDEX"
                 Return True
+
             Case Else
+                'OK redirezioniamo per tutti i servizi a sè stanti
                 Return True
+
         End Select
         Return Redirigi
 

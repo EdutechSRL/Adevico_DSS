@@ -111,5 +111,10 @@ namespace lm.Comol.Core.BaseModules.FileRepository.Presentation
         void NotifyVirtualDelete(long idFolder, String folderName, String folderUrl, List<liteRepositoryItem> items, Boolean isDeleted);
         void NotifyDelete(String folderUrl, dtoItemToDelete item);
         void NotifyDelete(String folderUrl, List<dtoItemToDelete> items);
+
+        //SCORM:
+        void SaveLinkEvaluation(lm.Comol.Core.FileRepository.Domain.ScormPackageUserEvaluation evaluation);
+        NHibernate.ISession GetScormSession(String connectionString);
+        TimeSpan GetScormStatDelay();
     }
 }

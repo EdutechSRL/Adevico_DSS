@@ -27,7 +27,8 @@
     <property name="Sector" type="String" column="PRSN_Sector" />
     <property name="Job" type="String" column="PRSN_Job" />
 
-      <component name="PersonInfo" class="PersonInfo">
+      <component name="PersonInfo" class="PersonInfo"> <!--class="PersonInfo"-->
+          <!--<parent name="Person"/>-->
           <property name="RemoteUniqueID" type="String" column="PRSN_AUTN_RemoteUniqueID"/>
           <property name="BirthDate" type="DateTime" column="PRSN_dataNascita"/>
           <property name="Note" type="String" column="PRSN_note"/>

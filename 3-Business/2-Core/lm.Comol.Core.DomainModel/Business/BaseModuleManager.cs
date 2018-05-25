@@ -783,6 +783,29 @@ namespace lm.Comol.Core.Business
             }
             return permission;
         }
+        public string GetModulePermissionString(Int32 idUser, Int32 idCommunity, Int32 idModule)
+        {
+            String permissionValue = "";
+            int idRole = GetActiveSubscriptionIdRole(idUser, idCommunity);
+            if (idRole != 0)
+            {
+                ModuleDefinition module = (from cModule in Linq<CommunityModuleAssociation>()
+                                           where cModule.Enabled && cModule.Service.Available && cModule.Community.Id == idCommunity && cModule.Service.Id == idModule
+                                           select cModule.Service).FirstOrDefault<ModuleDefinition>();
+
+                if (module != null)
+                {
+                    permissionValue = (from crmp in Linq<CommunityRoleModulePermission>()
+                                              where crmp.Community.Id == idCommunity && crmp.Service == module && crmp.Role.Id == idRole
+                                              select crmp.PermissionString).FirstOrDefault();
+                }
+            }
+
+            if (String.IsNullOrWhiteSpace(permissionValue))
+                permissionValue = "00000000000000000000000000000000";
+
+            return permissionValue;
+        }
         public long GetModulePermissionByRole(int idRole, int idCommunity, int idModule)
         {
             long permission = 0;
@@ -916,6 +939,23 @@ namespace lm.Comol.Core.Business
                 liteCommunity c = Get<liteCommunity>(idCommunity);
                 if (c != null)
                     roles = (from r in Linq<lm.Comol.Core.Communities._RoleCommunityTypeTemplate>() where r.IdCommunityType == c.IdType select r.IdRole).ToList();
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return roles;
+        }
+
+        public List<Int32> GetAvailableRolesByType(Int32 idCommunityType)
+        {
+            List<Int32> roles = new List<Int32>();
+            try
+            {
+                roles = (
+                    from r in Linq<lm.Comol.Core.Communities._RoleCommunityTypeTemplate>()
+                    where r.IdCommunityType == idCommunityType
+                    select r.IdRole).ToList();
             }
             catch (Exception ex)
             {

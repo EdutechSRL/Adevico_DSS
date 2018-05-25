@@ -43,7 +43,7 @@
         Dim oUser As New MemberContact
         Dim oUserList As New List(Of MemberContact)
         Dim oTempUserList As New List(Of MemberContact)
-        oUserList = Me.CurrentManager.GetUserList(Me.View.SelectedCommunitiesId, Me.View.Name, Me.View.Surname, Me.View.RegistrationCode, Me.View.MailAddress, Me.View.Login, Me.View.SelectedRoleId, Me.View.CurrentUserId)
+        oUserList = Me.CurrentManager.GetUserList(Me.View.SelectedCommunitiesId, Me.View.Name, Me.View.Surname, "", Me.View.MailAddress, Me.View.Login, Me.View.SelectedRoleId, Me.View.CurrentUserId)
         Dim oMemberContact = From oMember As MemberContact In oUserList Where oMember.Id = userId
         oUser = oMemberContact.Single
         oTempUserList.Add(oUser)
@@ -90,7 +90,7 @@
         Dim oSearchResult As New List(Of MemberContact)
         oOldUserList = CurrentManager.TemporaryUserList(Me.View.CurrentUserId)
         Me.View.BindPreview(oOldUserList)
-        oSearchResult = Me.CurrentManager.GetUserList(Me.View.SelectedCommunitiesId, Me.View.Name, Me.View.Surname, Me.View.RegistrationCode, Me.View.MailAddress, Me.View.Login, Me.View.SelectedRoleId, Me.View.CurrentUserId)
+        oSearchResult = Me.CurrentManager.GetUserList(Me.View.SelectedCommunitiesId, Me.View.Name, Me.View.Surname, "", Me.View.MailAddress, Me.View.Login, Me.View.SelectedRoleId, Me.View.CurrentUserId)
         BindSearchResult(oSearchResult)
     End Sub
     Public Sub BindPreview()
@@ -128,7 +128,7 @@
         If ULupdate Then
             TemporaryUserListUpdate()
         End If
-        BindSearchResult(Me.CurrentManager.GetUserList(Me.View.SelectedCommunitiesId, Me.View.Name, Me.View.Surname, Me.View.RegistrationCode, Me.View.MailAddress, Me.View.Login, Me.View.SelectedRoleId, Me.View.CurrentUserId))
+        BindSearchResult(Me.CurrentManager.GetUserList(Me.View.SelectedCommunitiesId, Me.View.Name, Me.View.Surname, "", Me.View.MailAddress, Me.View.Login, Me.View.SelectedRoleId, Me.View.CurrentUserId))
     End Sub
     Public Function GetConfirmedUsers() As List(Of MemberContact)
         Dim oList As List(Of MemberContact)
@@ -139,7 +139,7 @@
         Return oList
     End Function
     Public Sub GoToPage(ByVal PageIndex As Integer)
-        Dim oLista As IList = CurrentManager.GetUserList(Me.View.SelectedCommunitiesId, Me.View.Name, Me.View.Surname, Me.View.RegistrationCode, Me.View.MailAddress, Me.View.Login, Me.View.SelectedRoleId, Me.View.CurrentUserId)
+        Dim oLista As IList = CurrentManager.GetUserList(Me.View.SelectedCommunitiesId, Me.View.Name, Me.View.Surname, "", Me.View.MailAddress, Me.View.Login, Me.View.SelectedRoleId, Me.View.CurrentUserId)
         If oLista.Count = 0 Then
             Me.View.GridCurrentPage = 1
         Else

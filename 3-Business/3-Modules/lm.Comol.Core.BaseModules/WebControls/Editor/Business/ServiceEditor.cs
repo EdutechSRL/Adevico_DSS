@@ -37,6 +37,7 @@ namespace lm.Comol.Core.BaseModules.Editor.Business
             catch (Exception ex) { 
                 
             }
+
             return config;
         }
         public String ImageHandlerPath(String configurationPath)

@@ -35,17 +35,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Antlr3.Runtime, Version=3.1.0.39271, Culture=neutral, PublicKeyToken=3a9cab8f8d22bfb7, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\9-AdevicoMIT_Library\lm.Comol.MitLibrary\External\Antlr3.Runtime.dll</HintPath>
+    <Reference Include="Antlr3.Runtime">
+      <HintPath>..\..\..\Library\lm.Comol.Core.CommonLib\NHibernate_21\Antlr3.Runtime.dll</HintPath>
     </Reference>
-    <Reference Include="Castle.Core, Version=1.1.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\9-AdevicoMIT_Library\lm.Comol.MitLibrary\External\Castle.Core.dll</HintPath>
+    <Reference Include="Castle.Core">
+      <HintPath>..\..\..\Library\lm.Comol.Core.CommonLib\NHibernate_21\Castle.Core.dll</HintPath>
     </Reference>
-    <Reference Include="Castle.DynamicProxy2, Version=2.1.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\9-AdevicoMIT_Library\lm.Comol.MitLibrary\External\Castle.DynamicProxy2.dll</HintPath>
+    <Reference Include="Castle.DynamicProxy2">
+      <HintPath>..\..\..\Library\lm.Comol.Core.CommonLib\NHibernate_21\Castle.DynamicProxy2.dll</HintPath>
     </Reference>
     <Reference Include="HtmlRenderer, Version=1.5.0.6, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\..\Solution\packages\HtmlRenderer.Core.1.5.0.6\lib\net40-client\HtmlRenderer.dll</HintPath>
@@ -55,37 +52,26 @@
       <HintPath>..\..\..\Solution\packages\HtmlRenderer.WinForms.1.5.0.6\lib\net40-client\HtmlRenderer.WinForms.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Iesi.Collections, Version=1.0.1.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\9-AdevicoMIT_Library\lm.Comol.MitLibrary\External\Iesi.Collections.dll</HintPath>
+    <Reference Include="Iesi.Collections">
+      <HintPath>..\..\..\Library\lm.Comol.Core.CommonLib\NHibernate_21\Iesi.Collections.dll</HintPath>
     </Reference>
     <Reference Include="itextsharp, Version=3.1.6.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\9-AdevicoMIT_Library\lm.Comol.MitLibrary\External\itextsharp.dll</HintPath>
+      <HintPath>..\..\..\Library\lm.Comol.Core.CommonLib\iTextSharp\itextsharp.dll</HintPath>
     </Reference>
     <Reference Include="itextsharp5, Version=5.3.2.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\9-AdevicoMIT_Library\lm.Comol.MitLibrary\External\itextsharp5.dll</HintPath>
+      <HintPath>..\..\..\Library\lm.Comol.Core.CommonLib\iTextSharp\itextsharp5.dll</HintPath>
     </Reference>
-    <Reference Include="lm.Comol.Modules.ScormStat, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\9-AdevicoMIT_Library\lm.Comol.MitLibrary\lm.Comol.Modules.ScormStat.dll</HintPath>
+    <Reference Include="log4net">
+      <HintPath>..\..\..\Library\lm.Comol.Core.CommonLib\NHibernate_21\log4net.dll</HintPath>
     </Reference>
-    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\9-AdevicoMIT_Library\lm.Comol.MitLibrary\External\log4net.dll</HintPath>
+    <Reference Include="NHibernate">
+      <HintPath>..\..\..\Library\lm.Comol.Core.CommonLib\NHibernate_21\NHibernate.dll</HintPath>
     </Reference>
-    <Reference Include="NHibernate, Version=2.1.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\9-AdevicoMIT_Library\lm.Comol.MitLibrary\External\NHibernate.dll</HintPath>
+    <Reference Include="NHibernate.ByteCode.Castle">
+      <HintPath>..\..\..\Library\lm.Comol.Core.CommonLib\NHibernate_21\NHibernate.ByteCode.Castle.dll</HintPath>
     </Reference>
-    <Reference Include="NHibernate.ByteCode.Castle, Version=2.1.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\9-AdevicoMIT_Library\lm.Comol.MitLibrary\External\NHibernate.ByteCode.Castle.dll</HintPath>
-    </Reference>
-    <Reference Include="NHibernate.Linq, Version=1.0.0.4000, Culture=neutral, PublicKeyToken=444cf6a87fdab271, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\9-AdevicoMIT_Library\lm.Comol.MitLibrary\External\NHibernate.Linq.dll</HintPath>
+    <Reference Include="NHibernate.Linq">
+      <HintPath>..\..\..\Library\lm.Comol.Core.CommonLib\NHibernate_21\NHibernate.Linq.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -99,36 +85,42 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
-    <Reference Include="Telerik.Web.Spreadsheet, Version=2017.2.612.40, Culture=neutral, PublicKeyToken=121fae78165ba3d4, processorArchitecture=MSIL">
+    <Reference Include="Telerik.Web.Spreadsheet, Version=2017.3.1314.40, Culture=neutral, PublicKeyToken=121fae78165ba3d4, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\9-AdevicoMIT_Library\lm.Comol.MitLibrary\External\Telerik\Telerik.Web.Spreadsheet.dll</HintPath>
+      <HintPath>..\..\..\Solution\lib\RCAJAX\2018.1.117.40\AdditionalLibraries\Bin40\Telerik.Web.Spreadsheet.dll</HintPath>
     </Reference>
-    <Reference Include="Telerik.Web.UI, Version=2017.2.711.40, Culture=neutral, PublicKeyToken=121fae78165ba3d4, processorArchitecture=MSIL">
+    <Reference Include="Telerik.Web.UI, Version=2018.1.117.40, Culture=neutral, PublicKeyToken=121fae78165ba3d4, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\9-AdevicoMIT_Library\lm.Comol.MitLibrary\External\Telerik\Telerik.Web.UI.dll</HintPath>
+      <HintPath>..\..\..\Solution\lib\RCAJAX\2018.1.117.40\Telerik.Web.UI.dll</HintPath>
     </Reference>
-    <Reference Include="Telerik.Windows.Documents.Core, Version=2017.2.607.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+    <Reference Include="Telerik.Web.UI.Skins, Version=2018.1.117.40, Culture=neutral, PublicKeyToken=121fae78165ba3d4, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\9-AdevicoMIT_Library\lm.Comol.MitLibrary\External\Telerik\Telerik.Windows.Documents.Core.dll</HintPath>
+      <HintPath>..\..\..\Solution\lib\RCAJAX\2018.1.117.40\Telerik.Web.UI.Skins.dll</HintPath>
     </Reference>
-    <Reference Include="Telerik.Windows.Documents.Flow, Version=2017.2.607.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+    <Reference Include="Telerik.Windows.Documents.Core, Version=2018.1.112.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\9-AdevicoMIT_Library\lm.Comol.MitLibrary\External\Telerik\Telerik.Windows.Documents.Flow.dll</HintPath>
+      <HintPath>..\..\..\Solution\lib\RCAJAX\2018.1.117.40\AdditionalLibraries\Bin40\Telerik.Windows.Documents.Core.dll</HintPath>
     </Reference>
-    <Reference Include="Telerik.Windows.Documents.Spreadsheet, Version=2017.2.607.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+    <Reference Include="Telerik.Windows.Documents.Flow, Version=2018.1.112.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\9-AdevicoMIT_Library\lm.Comol.MitLibrary\External\Telerik\Telerik.Windows.Documents.Spreadsheet.dll</HintPath>
+      <HintPath>..\..\..\Solution\lib\RCAJAX\2018.1.117.40\AdditionalLibraries\Bin40\Telerik.Windows.Documents.Flow.dll</HintPath>
     </Reference>
-    <Reference Include="Telerik.Windows.Documents.Spreadsheet.FormatProviders.OpenXml, Version=2017.2.607.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+    <Reference Include="Telerik.Windows.Documents.Spreadsheet, Version=2018.1.112.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\9-AdevicoMIT_Library\lm.Comol.MitLibrary\External\Telerik\Telerik.Windows.Documents.Spreadsheet.FormatProviders.OpenXml.dll</HintPath>
+      <HintPath>..\..\..\Solution\lib\RCAJAX\2018.1.117.40\AdditionalLibraries\Bin40\Telerik.Windows.Documents.Spreadsheet.dll</HintPath>
     </Reference>
-    <Reference Include="Telerik.Windows.Zip, Version=2017.2.607.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+    <Reference Include="Telerik.Windows.Documents.Spreadsheet.FormatProviders.OpenXml, Version=2018.1.112.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\9-AdevicoMIT_Library\lm.Comol.MitLibrary\External\Telerik\Telerik.Windows.Zip.dll</HintPath>
+      <HintPath>..\..\..\Solution\lib\RCAJAX\2018.1.117.40\AdditionalLibraries\Bin40\Telerik.Windows.Documents.Spreadsheet.FormatProviders.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Zip, Version=2018.1.112.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Solution\lib\RCAJAX\2018.1.117.40\AdditionalLibraries\Bin40\Telerik.Windows.Zip.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApiToken\Business\TokenService.cs" />
+    <Compile Include="ApiToken\Domain\ApiToken.cs" />
     <Compile Include="AuthenticationManagement\Business\MacProviderHelper.cs" />
     <Compile Include="AuthenticationManagement\Business\ServiceAuthenticationManagement.cs" />
     <Compile Include="AuthenticationManagement\Presentation\Access\LogonExpiredPasswordPresenter.cs" />
@@ -168,6 +160,18 @@
     <Compile Include="CommunityDiary\Business\ServiceCommunityDiary.Repository.cs" />
     <Compile Include="CommunityDiary\Presentation\Controls\AddAttachmentPresenter.cs" />
     <Compile Include="CommunityDiary\Presentation\View\Controls\IViewAddAttachment.cs" />
+    <Compile Include="CommunityExpiration\Business\CacheHelper.cs" />
+    <Compile Include="CommunityExpiration\Business\ComExpirationService.cs" />
+    <Compile Include="CommunityExpiration\Domain\dtoExpirationConfig.cs" />
+    <Compile Include="CommunityExpiration\Domain\dtoUserExpiration.cs" />
+    <Compile Include="CommunityExpiration\Domain\Enums.cs" />
+    <Compile Include="CommunityExpiration\Domain\ExpirationConfig.cs" />
+    <Compile Include="CommunityExpiration\Domain\SubscriptionExpiration.cs" />
+    <Compile Include="CommunityExpiration\Domain\SubscriptionExpirationHyst.cs" />
+    <Compile Include="CommunityExpiration\Presentation\CommunityConfigPresenter.cs" />
+    <Compile Include="CommunityExpiration\Presentation\iViewCommunityConfig.cs" />
+    <Compile Include="CommunityExpiration\Presentation\PortalConfigPresenter.cs" />
+    <Compile Include="CommunityExpiration\Presentation\iViewPortalConfig.cs" />
     <Compile Include="CommunityManagement\Domain\CacheKeys.cs" />
     <Compile Include="CommunityManagement\Domain\dto\new\dtoUserEnrollments.cs" />
     <Compile Include="CommunityManagement\Domain\dto\new\dtoEnrollment.cs" />
@@ -912,6 +916,14 @@
     <Compile Include="WebControls\Generic\ExtendedDropDown.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\1-OldProject\COL_BusinessLogic\COL_BusinessLogic_v2.0.vbproj">
+      <Project>{51f57fb8-1245-4ea5-bf34-d6412c283afb}</Project>
+      <Name>COL_BusinessLogic_v2.0</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\1-OldProject\COL_Entity\0_COL_Entity.vbproj">
+      <Project>{d1efb82a-de0c-43d2-8dc7-ad808b32c2a2}</Project>
+      <Name>0_COL_Entity</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\2-Core\lm.Comol.Core.File\lm.Comol.Core.File.csproj">
       <Project>{FFA417B0-A44B-441A-921B-FEB57C5FD7DA}</Project>
       <Name>lm.Comol.Core.File</Name>
@@ -923,6 +935,10 @@
     <ProjectReference Include="..\..\2-Core\lm.Comol.Core.MailCommons\lm.Comol.Core.MailCommons.csproj">
       <Project>{428243cb-28cd-4d81-8099-74d1448b5e1d}</Project>
       <Name>lm.Comol.Core.MailCommons</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\lm.Comol.Modules.ScormStat\lm.Comol.Modules.ScormStat.csproj">
+      <Project>{88AB4D29-203F-47CA-9F95-DE1ADACDA528}</Project>
+      <Name>lm.Comol.Modules.ScormStat</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
@@ -956,6 +972,7 @@
     <EmbeddedResource Include="Tickets\Mapping\Category.hbm.xml">
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <None Include="DocTemplate\Tag Tabella Bandi.docx" />
     <None Include="packages.config" />
     <None Include="Tickets\Domain\MappedDTO\liteObject.cd" />
     <EmbeddedResource Include="Tickets\Mapping\liteAssignment.hbm.xml" />
@@ -978,6 +995,14 @@
     <EmbeddedResource Include="WebControls\Editor\Mapping\EditorRepositoryItem.hbm.xml" />
     <EmbeddedResource Include="NoticeBoard\Mapping\MessageStyle.hbm.xml" />
     <EmbeddedResource Include="NoticeBoard\Mapping\NoticeBoardMessage.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CommunityExpiration\Mapping\ExpirationConfig.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CommunityExpiration\Mapping\SubscriptionExpiration.hbm.xml" />
+    <EmbeddedResource Include="CommunityExpiration\Mapping\SubscriptionExpirationHyst.hbm.xml" />
+    <EmbeddedResource Include="ApiToken\Mapping\Mobitoken.hbm.xml">
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <Content Include="DocTemplate\Presentation\ADD NEW SERVICES TO LIST.txt" />

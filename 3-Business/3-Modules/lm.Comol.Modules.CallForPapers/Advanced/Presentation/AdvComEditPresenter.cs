@@ -202,6 +202,7 @@ namespace lm.Comol.Modules.CallForPapers.Advanced.Presentation
             bool EvLockBool,
             bool UpdateView,
             EvalType StepEvType,
+            Double MaxValue,
             List<dtoCriterion> criterions = null)
         {
             bool success = CallService.CommissionUpdate(
@@ -214,6 +215,7 @@ namespace lm.Comol.Modules.CallForPapers.Advanced.Presentation
                 EvMinVal,
                 EvLockBool,
                 StepEvType,
+                MaxValue,
                 criterions);
 
             if (success && UpdateView)
@@ -858,6 +860,11 @@ namespace lm.Comol.Modules.CallForPapers.Advanced.Presentation
                  objectType,
                  ObjectId);
 
+        }
+
+        public int CurrentUserId()
+        {
+            return UserContext.CurrentUserID;
         }
     }
 }

@@ -143,7 +143,10 @@ namespace lm.Comol.Modules.CallForPapers.Advanced.Presentation
             }                
             else
             {
-                bool showSubmission = isManager() || Service.UserIsInCallCommissionViewSubmission(callId, UserContext.CurrentUserID);
+                bool showSubmission = isManager() ||
+                    Service.UserIsInCallCommissionPresidentOrSecreatary(callId, UserContext.CurrentUserID);
+                
+                //bool showSubmission = isManager() || Service.UserIsInCallCommissionViewSubmission(callId, UserContext.CurrentUserID);
                 View.Initialize(steps, isManager(), showSubmission);
                 SendAction(CallForPapers.Domain.ModuleCallForPaper.ActionType.AdvStepsView, CallForPapers.Domain.ModuleCallForPaper.ObjectType.AdvStep, callId.ToString());
             }
@@ -230,7 +233,7 @@ namespace lm.Comol.Modules.CallForPapers.Advanced.Presentation
             if (Orders == null || !Orders.Any())
                 return;
 
-            bool success = Service.StepReorder(Orders);
+            bool success = Service.StepReorder(Orders, CallId);
 
             if (success)
                 this.InitView(CallId);

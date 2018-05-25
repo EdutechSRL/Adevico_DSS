@@ -14,6 +14,8 @@ using Adv = lm.Comol.Modules.CallForPapers.Advanced;
 using EcoD = lm.Comol.Modules.CallForPapers.AdvEconomic.Domain;
 using Eco = lm.Comol.Modules.CallForPapers.AdvEconomic;
 
+using Telerik.Web.Spreadsheet;
+
 namespace lm.Comol.Modules.CallForPapers.Business
 {
     public partial class ServiceCallOfPapers
@@ -91,7 +93,7 @@ namespace lm.Comol.Modules.CallForPapers.Business
                 try
                 {
                     ecEval.Rank = subStep.FirstOrDefault(st => st.Submission != null && st.Submission.Id == sub.Id).Rank;
-                    ecEval.AverageRating = subStep.FirstOrDefault(st => st.Submission != null && st.Submission.Id == sub.Id).AverageRating;
+                    ecEval.AverageRating = Math.Round(subStep.FirstOrDefault(st => st.Submission != null && st.Submission.Id == sub.Id).AverageRating, 2);
                     ecEval.SumRating = subStep.FirstOrDefault(st => st.Submission != null && st.Submission.Id == sub.Id).SumRating;
 
                 } catch (Exception ex)
@@ -235,15 +237,13 @@ namespace lm.Comol.Modules.CallForPapers.Business
                             double unitycost = 0;
                             double quantity = 0;
                             double total = 0;
-
                             int curCol = 0;
+
+                            bool hasValue = false;
                             foreach (XmlNode tdXml in trXml.ChildNodes)
                             {
                                 curCol++;
 
-
-                                //if (tdXml.Attributes != null && tdXml.Attributes.Count > 0)
-                                //{
                                 string cssclass = "";
 
                                 try
@@ -257,18 +257,29 @@ namespace lm.Comol.Modules.CallForPapers.Business
                                 if (!String.IsNullOrEmpty(cssclass) && cssclass == "quantity")
                                 {
                                     Double.TryParse(tdXml.InnerText.ToString(), out quantity);
+
+                                    if (quantity > 0)
+                                        hasValue = true;
                                 }
                                 else if (!String.IsNullOrEmpty(cssclass) && cssclass == "unitycost")
                                 {
                                     Double.TryParse(tdXml.InnerText.ToString(), out unitycost);
+                                    if (unitycost > 0)
+                                        hasValue = true;
                                 }
                                 else if (!String.IsNullOrEmpty(cssclass) && cssclass == "total")
                                 {
                                     Double.TryParse(tdXml.InnerText.ToString(), out total);
+                                    if (total > 0)
+                                        hasValue = true;
                                 }
                                 else
                                 {
-                                    if (String.IsNullOrEmpty(itm.InfoValue))
+                                    bool infoHasvalue = CheckInfoValues(tdXml.InnerText.ToString());
+                                    if (infoHasvalue)
+                                        hasValue = true;
+
+                                    if (String.IsNullOrEmpty(itm.InfoValue)) 
                                     {
                                         itm.InfoValue = String.IsNullOrEmpty(tdXml.InnerText.ToString())? "&nbsp;" : tdXml.InnerText.ToString();
                                     }
@@ -278,22 +289,17 @@ namespace lm.Comol.Modules.CallForPapers.Business
                                             itm.InfoValue,
                                             tdXml.InnerText.ToString());
                                     }
-
                                 }
-
-
-                                //}
                             }
-                            //itm.InfoValue = 
+                            
                             itm.IsAdmit = false;
                             itm.RequestQuantity = quantity;
                             itm.RequestUnitPrice = unitycost;
-                            //itm.RequestTotal
+                            
                             itm.Table = table;
-
+                            itm.IsEmpty = !hasValue;
+                            //if(hasValue)
                             table.Items.Add(itm);
-
-                            //table.RequestTotal
                         }
                         table.EcoEvaluation = eval;
                         
@@ -304,6 +310,21 @@ namespace lm.Comol.Modules.CallForPapers.Business
             return tables;
         }
 
+        /// <summary>
+        /// Controllo SE ci sono valori immessi dall'utente
+        /// </summary>
+        /// <param name="values"></param>
+        /// <returns></returns>
+        public bool CheckInfoValues(string values)
+        {
+            //tdXml.InnerText.ToString()
+            values = values.Replace("&nbsp", "").Replace("|", "");
+
+            if (String.IsNullOrWhiteSpace(values))
+                return false;
+
+            return true;
+        }
         #endregion
 
         #region GET
@@ -351,9 +372,57 @@ namespace lm.Comol.Modules.CallForPapers.Business
                 (container.Summaries.All(s => s.status == Eco.EvalStatus.confirmed) &&
                 (commission.President != null && commission.President.Id == UC.CurrentUserID));
 
+            container.IsAverage = EvaluationIsLastAverage(commission);
 
             return container;
 
+        }
+
+
+        public bool EvaluationIsLastAverage(Int64 commissionId)
+        {
+            Adv.Domain.AdvCommission commission = Manager.Get<Adv.Domain.AdvCommission>(commissionId);
+            return EvaluationIsLastAverage(commission);
+        }
+
+        public bool EvaluationIsLastAverage(Adv.Domain.AdvCommission commission)
+        {
+            try
+            {
+
+
+                
+
+                if (commission.Step != null)
+                {
+                    if (commission.Step.Type == Adv.StepType.economics)
+                    {
+                        try
+                        {
+                            Adv.Domain.AdvStep step = Manager.GetAll<Adv.Domain.AdvStep>(
+                                st =>
+                                    st.Call != null && st.Call.Id == commission.Step.Call.Id
+                                    && st.Type != Adv.StepType.economics
+                                    ).OrderByDescending(st => st.Order).FirstOrDefault();
+
+                            return (step.EvalType == Adv.EvalType.Sum ? false : true);
+
+                        }
+                        catch
+                        {
+                            return false;
+                        }
+
+                    }
+                    else
+                    {
+                        return commission.Step.EvalType == Adv.EvalType.Sum ? false : true;
+
+                    }
+                }
+            } catch { }
+
+            return false;
         }
 
         public Eco.dto.dtoEcoEvaluation EcoEvaluationGet(long commId, long evaluationId)
@@ -531,6 +600,36 @@ namespace lm.Comol.Modules.CallForPapers.Business
         }
         #endregion
 
+        //public Workbook EcoTablesGetFromEval(long evalId)
+        //{
+        //    Eco.Domain.EconomicEvaluation eval = Manager.Get<Eco.Domain.EconomicEvaluation>(evalId);
+
+        //    return Eco.Helpers.EconomicExportRadSpreadsheet.EcoExportGetWorkbookPerUser(eval);
+
+        //}
+
+        //EcoEvalTableExportStream(Eco.Domain.EconomicEvaluation Eval, Stream documentStream, SpreadDocumentFormat DocFormat = SpreadDocumentFormat.Xlsx)
+
+        /// <summary>
+        /// Esporta via stream le tabelle economiche relative ad una valutazione
+        /// </summary>
+        /// <param name="evalId">Id valutazione</param>
+        /// <param name="stream">stream</param>
+        /// <param name="DocFormat">Formato documento (non in uso)</param>
+        public void EcoTablesExportStream(
+            long evalId, 
+            System.IO.Stream stream, 
+            Telerik.Documents.SpreadsheetStreaming.SpreadDocumentFormat DocFormat = Telerik.Documents.SpreadsheetStreaming.SpreadDocumentFormat.Xlsx)
+        {
+            if (evalId == 0)
+                return;
+
+            Eco.Domain.EconomicEvaluation eval = Manager.Get<Eco.Domain.EconomicEvaluation>(evalId);
+            if (eval == null)
+                return;
+
+            Eco.Helpers.EconomicExportRadSpreadsheet.EcoEvalTableExportStream(eval, stream, DocFormat);
+        }
 
     }
 }

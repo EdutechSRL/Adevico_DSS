@@ -20,6 +20,15 @@ Public Class cpAdvEconomicSubmissions
     Private Shared CurrencyCulture As String = "it-IT"
     Private Totalfunded As Double = 0
 
+    Private Property IsAverage As Boolean
+        Get
+            Return ViewStateOrDefault("IsAverage", True)
+        End Get
+        Set(value As Boolean)
+            ViewState("IsAverage") = value
+        End Set
+    End Property
+
 #Region "Context"
     Private _Presenter As Eco.Presentation.AdvEcoSummaryPresenter
     Private ReadOnly Property CurrentPresenter() As Eco.Presentation.AdvEcoSummaryPresenter
@@ -142,6 +151,7 @@ Public Class cpAdvEconomicSubmissions
 
     Public Sub BindView(Summaries As Eco.dto.dtoEcoSummaryContainer) Implements iViewEcoSummary.BindView
 
+        Me.IsAverage = Summaries.IsAverage
 
         HYPback.NavigateUrl = BaseUrl & RootObject.AdvStepsEdit(Summaries.CallId)
         LKBcloseCommission.Visible = Summaries.CanCloseCommission
@@ -181,7 +191,15 @@ Public Class cpAdvEconomicSubmissions
 
             Lit = e.Item.FindControl("LTscore")
             If Not IsNothing(Lit) Then
-                Lit.Text = Eval.AverageRating.ToString("F2")
+
+                If IsAverage Then
+                    Lit.Text = Eval.AverageRating.ToString("F2")
+                Else
+                    Lit.Text = Eval.SumRating.ToString("F2")
+                End If
+
+
+
             End If
 
             Lit = e.Item.FindControl("LTfunded")
@@ -220,6 +238,12 @@ Public Class cpAdvEconomicSubmissions
                 HYPEval.NavigateUrl = BaseUrl & RootObject.ViewSubmission(CallForPaperType.CallForBids, Eval.CallId, Eval.SubmissionId, False, CallStatusForSubmitters.None, Me.ComunitaCorrenteID, Me.CommissionId)
             End If
 
+            Dim UcTableExport As Uc_AdvTableExport = e.Item.FindControl("Uc_AdvTableExport")
+
+            If Not IsNothing(UcTableExport) Then
+                UcTableExport.EvaluationId = Eval.EvalautionId
+                UcTableExport.FileName = String.Format("{0}-{1}", Eval.EvalautionId, Eval.SubmissionName.Replace(" ", "_"))
+            End If
 
         End If
     End Sub

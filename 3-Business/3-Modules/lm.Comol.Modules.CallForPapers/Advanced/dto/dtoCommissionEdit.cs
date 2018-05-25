@@ -116,10 +116,16 @@ namespace lm.Comol.Modules.CallForPapers.Advanced.dto
         /// Indica se l'utente corrente è il presidente della commissione
         /// </summary>
         public bool IsPresident { get; set; }
+
+        /// <summary>
+        /// Massimale ammesso per commissione economica
+        /// </summary>
+        public double MaxValue { get; set; }
+
         /// <summary>
         /// Costruttore vuoto
         /// </summary>
-        public dtoCommissionEdit()
+        public dtoCommissionEdit(Double MaxValue)
         {
             Id = 0;
             Name = "";
@@ -146,8 +152,10 @@ namespace lm.Comol.Modules.CallForPapers.Advanced.dto
             EvalBoolBlock = false;
 
             VerbaleLink = null;
+
+            this.MaxValue = MaxValue;
         }
-        
+
 
         /// <summary>
         /// Costruttore da oggetto dominio
@@ -273,6 +281,7 @@ namespace lm.Comol.Modules.CallForPapers.Advanced.dto
 
             VerbaleLink = Comm.VerbaleLink;
 
+            MaxValue = Comm.MaxValue;
         }
 
         /// <summary>

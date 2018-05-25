@@ -123,10 +123,11 @@ Public Class cpAdvEvaluationSteps
             Me.RPTsteps.Visible = False
         End If
 
-        HYPshowSubmission.Visible = CanShowSubmission
+        'HYPshowSubmission.Visible = CanShowSubmission
+        'HYPshowSubmission.Enabled = CanShowSubmission
 
         LTaddStep_t.Visible = LkbAddStep.Visible
-        LKBconfirmReorder.Visible = LkbAddStep.Visible
+        'LKBconfirmReorder.Visible = LkbAddStep.Visible
         HypBackManage.Visible = Not _IsManager
 
         If _IsManager Then
@@ -150,12 +151,21 @@ Public Class cpAdvEvaluationSteps
 
                 CanAddCommission = (valStep.Status < StepStatus.Closed)
 
-                Dim CanShowCommission As Boolean = _IsManager '_
+                Dim CanShowCommission As Boolean = _IsManager _
+                    OrElse ((valStep.StepPermission And GenericStepPermission.MainPresident) = GenericStepPermission.MainPresident) _
+                    OrElse ((valStep.StepPermission And GenericStepPermission.MainSecretary) = GenericStepPermission.MainSecretary)
+                '_
                 'OrElse (valStep.StepPermission And GenericStepPermission.Member = GenericStepPermission.Member) _
                 'OrElse (valStep.StepPermission And GenericStepPermission.Secretary = GenericStepPermission.Secretary) _
                 'OrElse (valStep.StepPermission And GenericStepPermission.President = GenericStepPermission.President) _
                 'OrElse (valStep.StepPermission And GenericStepPermission.MainPresident = GenericStepPermission.MainPresident) _
                 'OrElse ((valStep.StepPermission And GenericStepPermission.Submitter = GenericStepPermission.Submitter) And valStep.Status = StepStatus.Closed)
+
+                If (CanShowCommission) Then
+                    HYPshowSubmission.Visible = True
+                    HYPshowSubmission.Enabled = True
+                End If
+
 
                 Dim CanDrag As Boolean = CanAddCommission AndAlso _IsManager
                 '(_IsManager _
@@ -165,7 +175,7 @@ Public Class cpAdvEvaluationSteps
                 Dim LTdrag As Literal = e.Item.FindControl("LTdrag")
                 If Not IsNothing(LTdrag) Then
 
-                    If Not valStep.Status = StepStatus.Draft _
+                    If valStep.Status = StepStatus.Draft _
                         AndAlso valStep.Commissions.All(Function(cm) cm.Status = CommissionStatus.Draft) _
                         AndAlso CanDrag Then
 
@@ -276,26 +286,20 @@ Public Class cpAdvEvaluationSteps
                     End Try
                 End If
 
-                Dim showCommiss As Boolean = _IsManager OrElse valCommis.HasCommissionPermission(CommissionPermission.View)
+                'Dim showCommiss As Boolean = _IsManager OrElse valCommis.HasCommissionPermission(CommissionPermission.View)
 
 
                 Dim hyp As HyperLink
                 hyp = e.Item.FindControl("HYPcomStepEditMember")
                 If Not IsNothing(hyp) Then
                     hyp.NavigateUrl = BaseUrl & RootObject.AdvCommissionEdit(Me.GetCallId, valCommis.Id, CommiteeEditPage.Members)
-                    hyp.Visible = showCommiss
+                    hyp.Visible = _IsManager OrElse valCommis.HasCommissionPermission(CommissionPermission.Edit)
                 End If
 
                 hyp = e.Item.FindControl("HYPcomStepEditRules")
                 If Not IsNothing(hyp) Then
                     hyp.NavigateUrl = BaseUrl & RootObject.AdvCommissionEdit(Me.GetCallId, valCommis.Id, CommiteeEditPage.Criterion)
-                    hyp.Visible = showCommiss
-                End If
-
-                hyp = e.Item.FindControl("HYPcomStepEditRules")
-                If Not IsNothing(hyp) Then
-                    hyp.NavigateUrl = BaseUrl & RootObject.AdvCommissionEdit(Me.GetCallId, valCommis.Id, CommiteeEditPage.Criterion)
-                    hyp.Visible = showCommiss
+                    hyp.Visible = _IsManager OrElse valCommis.HasCommissionPermission(CommissionPermission.Edit)
                 End If
 
                 hyp = e.Item.FindControl("HypcomSubmission")
@@ -312,8 +316,20 @@ Public Class cpAdvEvaluationSteps
                     0,
                     Evaluation.EvaluationFilterStatus.Evaluating,
                     "")
-                    hyp.Visible = showCommiss AndAlso Not (valCommis.Status = CommissionStatus.Draft)
+                    hyp.Visible = (_IsManager OrElse valCommis.HasCommissionPermission(CommissionPermission.View)) AndAlso Not (valCommis.Status = CommissionStatus.Draft) 'showCommiss 
                 End If
+
+                hyp = e.Item.FindControl("HYPvalutation")
+                If Not IsNothing(hyp) Then
+                    hyp.NavigateUrl = BaseUrl & RootObject.AdvEvalSummary(
+                        MyBase.ComunitaCorrenteID,
+                        Me.GetCallId,
+                        valCommis.Id, CallStatusForSubmitters.None
+                        )
+
+                    hyp.Visible = (_IsManager OrElse valCommis.HasCommissionPermission(CommissionPermission.Edit)) AndAlso (valCommis.Status > CommissionStatus.ViewSubmission) 'showCommiss 
+                End If
+
 
                 hyp = e.Item.FindControl("HYPshowALLSubmission")
                 If Not IsNothing(hyp) Then
@@ -324,7 +340,7 @@ Public Class cpAdvEvaluationSteps
                         Me.GetCallId(),
                         lm.Comol.Modules.CallForPapers.Domain.CallStatusForSubmitters.None) &
                         "&cmmId=" & valCommis.Id
-                    hyp.Visible = showCommiss
+                    hyp.Visible = _IsManager OrElse valCommis.HasCommissionPermission(CommissionPermission.Edit)
                 End If
 
                 'lkb = e.Item.FindControl("LKBcomStepEditMember")
@@ -388,10 +404,10 @@ Public Class cpAdvEvaluationSteps
 
     End Sub
 
-    Private Sub BindValidation(ByVal validation As dtoAdvStepContainer)
+    Private Sub BindValidation(ByVal valStep As dtoAdvStepContainer)
 
-        If IsNothing(validation) Then
-            validation = New dtoAdvStepContainer()
+        If IsNothing(valStep) Then
+            valStep = New dtoAdvStepContainer()
             'validation.Commissions = New List(Of dtoAdvCommissionContainer)
         End If
 
@@ -400,8 +416,8 @@ Public Class cpAdvEvaluationSteps
         HYPstepValstatus.Text = "Riepilogo valutazioni sottomissioni"
 
 
-        If Not IsNothing(validation.Commissions) AndAlso validation.Commissions.Any() Then
-            Dim commId As Int64 = validation.Commissions.FirstOrDefault().Id
+        If Not IsNothing(valStep.Commissions) AndAlso valStep.Commissions.Any() Then
+            Dim commId As Int64 = valStep.Commissions.FirstOrDefault().Id
 
 
 
@@ -414,23 +430,23 @@ Public Class cpAdvEvaluationSteps
             'OrElse ((validation.StepPermission And GenericStepPermission.Submitter = GenericStepPermission.Submitter) And validation.Status = StepStatus.Closed)
 
             If HYPstepValstatus.Visible Then
-                HYPstepValstatus.NavigateUrl = BaseUrl & RootObject.AdvStepSummary(validation.Id, commId)
+                HYPstepValstatus.NavigateUrl = BaseUrl & RootObject.AdvStepSummary(valStep.Id, commId)
             End If
 
-            Dim IsSimpleUser As Boolean = (validation.StepPermission = GenericStepPermission.none) '_
+            Dim IsSimpleUser As Boolean = (valStep.StepPermission = GenericStepPermission.none) '_
             'OrElse (validation.StepPermission And GenericStepPermission.Submitter = GenericStepPermission.Submitter)
 
             If Not IsSimpleUser Then
-                HYPcomValEditMember.NavigateUrl = BaseUrl & RootObject.AdvCommissionEdit(validation.CallId, commId, CommiteeEditPage.Members)
-                HYPcomValEditRules.NavigateUrl = BaseUrl & RootObject.AdvCommissionEdit(validation.CallId, commId, CommiteeEditPage.Criterion)
+                HYPcomValEditMember.NavigateUrl = BaseUrl & RootObject.AdvCommissionEdit(valStep.CallId, commId, CommiteeEditPage.Members)
+                HYPcomValEditRules.NavigateUrl = BaseUrl & RootObject.AdvCommissionEdit(valStep.CallId, commId, CommiteeEditPage.Criterion)
 
-                If (validation.Status = StepStatus.Draft) Then
+                If (valStep.Status = StepStatus.Draft) Then
                     HYPcomValShowSubmission.Visible = False
                     HYPcomValShowSubmission.Enabled = False
                 Else
                     HYPcomValShowSubmission.NavigateUrl = BaseUrl & RootObject.ViewSubmissionsToEvaluateAdv(
                     CallForPaperType.CallForBids,
-                    validation.CallId,
+                    valStep.CallId,
                     MyBase.ComunitaCorrenteID,
                     commId,
                     CallStatusForSubmitters.None,
@@ -444,7 +460,7 @@ Public Class cpAdvEvaluationSteps
                 End If
 
 
-                Dim commission As dtoAdvCommissionContainer = validation.Commissions.FirstOrDefault()
+                Dim commission As dtoAdvCommissionContainer = valStep.Commissions.FirstOrDefault()
 
                 If Not IsNothing(commission) AndAlso (_IsManager OrElse commission.HasCommissionPermission(CommissionPermission.View)) Then
 
@@ -480,14 +496,14 @@ Public Class cpAdvEvaluationSteps
 
         End If
         Try
-            LTstepValStatus.Text = String.Format(LTstepValStatus.Text, GetStepStatusIcon(validation.Status), GetStepStatusIcon(validation.Status))
+            LTstepValStatus.Text = String.Format(LTstepValStatus.Text, GetStepStatusIcon(valStep.Status), GetStepStatusIcon(valStep.Status))
         Catch ex As Exception
-            LTstepValStatus.Text = validation.Status.ToString()
+            LTstepValStatus.Text = valStep.Status.ToString()
         End Try
 
-        If (Not IsNothing(validation.Commissions) AndAlso validation.Commissions.Any()) Then
+        If (Not IsNothing(valStep.Commissions) AndAlso valStep.Commissions.Any()) Then
 
-            Dim commission As dtoAdvCommissionContainer = validation.Commissions.FirstOrDefault()
+            Dim commission As dtoAdvCommissionContainer = valStep.Commissions.FirstOrDefault()
 
             Try
                 LBLcomValName.Text = commission.Name
@@ -495,11 +511,19 @@ Public Class cpAdvEvaluationSteps
 
                 Dim comStatus As CommissionStatus = commission.Status
 
+                HYPvalutationValid.Visible = (_IsManager OrElse commission.HasCommissionPermission(CommissionPermission.Edit)) _
+                    AndAlso (comStatus > CommissionStatus.ViewSubmission) 'showCommiss 
 
+                HYPvalutationValid.NavigateUrl = BaseUrl & RootObject.AdvEvalSummary(
+                        MyBase.ComunitaCorrenteID,
+                        Me.GetCallId,
+                        commission.Id,
+                        CallStatusForSubmitters.None
+                        )
 
                 LTcomValStatus.Text = String.Format(LTcomValStatus.Text, GetCommStatusIcon(commission.Status), GetCommStatusAlt(commission.Status))
             Catch ex As Exception
-                LTcomValStatus.Text = validation.Status.ToString()
+                LTcomValStatus.Text = valStep.Status.ToString()
             End Try
 
         End If
@@ -752,9 +776,9 @@ Public Class cpAdvEvaluationSteps
         End If
     End Sub
 
-    Private Sub LKBconfirmReorder_Click(sender As Object, e As EventArgs) Handles LKBconfirmReorder.Click
-        UpdateOrder()
-    End Sub
+    'Private Sub LKBconfirmReorder_Click(sender As Object, e As EventArgs) Handles LKBconfirmReorder.Click
+    '    UpdateOrder()
+    'End Sub
 
 
 #End Region

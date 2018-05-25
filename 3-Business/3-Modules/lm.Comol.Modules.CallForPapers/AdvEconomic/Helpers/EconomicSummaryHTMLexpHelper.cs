@@ -166,5 +166,7 @@ namespace lm.Comol.Modules.CallForPapers.AdvEconomic.Helpers
             return string.Format(HeaderFormat,
                 HTML);
         }
+
+      
     }
 }

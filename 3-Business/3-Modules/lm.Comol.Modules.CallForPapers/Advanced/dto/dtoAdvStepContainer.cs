@@ -97,6 +97,11 @@ namespace lm.Comol.Modules.CallForPapers.Advanced.dto
                     StepPermission |= GenericStepPermission.MainPresident;
                 }
 
+                if (Commissions.Any(cm => (cm.GenericPermission & GenericStepPermission.MainSecretary) == GenericStepPermission.MainSecretary))
+                {
+                    StepPermission |= GenericStepPermission.MainSecretary;
+                }
+
                 if (Commissions.Any(cm => (cm.GenericPermission & GenericStepPermission.President) == GenericStepPermission.President))
                 {
                     StepPermission |= GenericStepPermission.President;

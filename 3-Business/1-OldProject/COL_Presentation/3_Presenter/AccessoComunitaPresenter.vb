@@ -21,10 +21,7 @@ Public Class AccessoComunitaPresenter
 		Me.CaricaStatusComunita()
 		Me.CaricaTipoComunita()
 		Me.CaricaOrganizzazione()
-		Me.CaricaCorsiDiStudio()
-
-
-	End Sub
+    End Sub
 
 	Public Sub AccediComunita(ByVal ComunitaID As Integer, ByVal Percorso As String) Implements IviewAccessoComunitaPresenter.AccediComunita
 
@@ -50,57 +47,34 @@ Public Class AccessoComunitaPresenter
 		End If
 		Me.View.ElencoTipoComunita = Lista
 	End Sub
-	Public Sub CaricaCorsiDiStudio() Implements IviewAccessoComunitaPresenter.CaricaCorsiDiStudio
-		Dim Lista As List(Of COL_Tipo_CorsoDiStudi)
-		Lista = COL_Tipo_CorsoDiStudi.PlainLista(Me.View.LinguaID, True)
-		If Lista.Count > 1 Then
-			Lista.Insert(0, New COL_Tipo_CorsoDiStudi(-1, Me.View.Resource.getValue("All_maschile")))
-		End If
-		Me.View.ElencoTipoCorsiDiLaurea = Lista
-	End Sub
-	Public Sub CaricaStatusComunita() Implements IviewAccessoComunitaPresenter.CaricaStatusComunita
-		Dim iList As New List(Of FilterElement)
+    Public Sub CaricaStatusComunita() Implements IviewAccessoComunitaPresenter.CaricaStatusComunita
+        Dim iList As New List(Of FilterElement)
 
-		Dim totale, TotaleArchiviate, totaleBloccate As Integer
-		Try
-			Me.View.UtenteCorrente.StatusComunitaIscritto(Me.View.UtenteCorrente.ID, totale, TotaleArchiviate, totaleBloccate)
+        Dim totale, TotaleArchiviate, totaleBloccate As Integer
+        Try
+            Me.View.UtenteCorrente.StatusComunitaIscritto(Me.View.UtenteCorrente.ID, totale, TotaleArchiviate, totaleBloccate)
 
-			If Not (totaleBloccate = 0 And TotaleArchiviate = 0) Then
-				iList.Add(New FilterElement(-1, Me.View.Resource.getValue("status_tutte")))
-			End If
-			iList.Add(New FilterElement(0, Me.View.Resource.getValue("status_attivate")))
-			If TotaleArchiviate > 0 Then
-				iList.Add(New FilterElement(1, Me.View.Resource.getValue("status_archiviate")))
-			End If
-			If totaleBloccate > 0 Then
-				iList.Add(New FilterElement(2, Me.View.Resource.getValue("status_bloccate")))
-			End If
-		Catch ex As Exception
+            If Not (totaleBloccate = 0 And TotaleArchiviate = 0) Then
+                iList.Add(New FilterElement(-1, Me.View.Resource.getValue("status_tutte")))
+            End If
+            iList.Add(New FilterElement(0, Me.View.Resource.getValue("status_attivate")))
+            If TotaleArchiviate > 0 Then
+                iList.Add(New FilterElement(1, Me.View.Resource.getValue("status_archiviate")))
+            End If
+            If totaleBloccate > 0 Then
+                iList.Add(New FilterElement(2, Me.View.Resource.getValue("status_bloccate")))
+            End If
+        Catch ex As Exception
 
-		End Try
-		Me.View.ElencoStatus = iList
-	End Sub
+        End Try
+        Me.View.ElencoStatus = iList
+    End Sub
 	Public Sub CaricaOrganizzazione() Implements IviewAccessoComunitaPresenter.CaricaOrganizzazione
 		Dim Lista As List(Of COL_BusinessLogic_v2.IscrizioneComunita)
 		Lista = Me.View.UtenteCorrente.PlainOrganizzazioniAssociate()
 		Me.View.ElencoOrganizzazioni = Lista
 	End Sub
-	Public Sub CaricaPeriodo(Optional ByVal OrganizzazioneID As Integer = -1) Implements IviewAccessoComunitaPresenter.CaricaPeriodo
-		Dim Lista As List(Of COL_Periodo)
-		Lista = COL_Periodo.PlainLista(Me.View.LinguaID, OrganizzazioneID)
-		If Lista.Count > 1 Then
-			Lista.Insert(0, New COL_Periodo(-1, Me.View.Resource.getValue("All_maschile")))
-		End If
-		Me.View.ElencoPeriodi = Lista
-	End Sub
-	Public Sub CaricaAnnoAccademico() Implements IviewAccessoComunitaPresenter.CaricaAnnoAccademico
-		Dim oLista As GenericCollection(Of AnnoAccademico)
-		oLista = COL_Corso.LazyAnniAccademici(Me.View.FiltroOrganizzazione.Value, Me.View.UtenteCorrente.Id, Me.View.FiltroStatus.Value)
-		If oLista.Count > 1 Then
-			oLista.Insert(0, New AnnoAccademico(-1, Me.View.Resource.getValue("All_maschile")))
-		End If
-		Me.View.ElencoAnniAccademici = oLista
-	End Sub
+
 	'Private Sub ChangeNumeroRecord(ByVal num As Integer)
 	'	Try
 	'		Me.DDLNumeroRecord.SelectedValue = num

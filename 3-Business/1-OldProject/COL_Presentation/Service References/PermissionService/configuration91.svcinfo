@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="QTnPELDqk1cHupEhlOm3PmnNn9U=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="5wQCfuYA0QcCKWaH9xPs6wbLSyA=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="wsHttpBinding" name="WSHttpBinding_IServicePermission">
       <properties>
@@ -127,10 +127,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="WSHttpBinding_IServicePermission" contract="PermissionService.IServicePermission" bindingType="wsHttpBinding" address="http://sviluppo01/WCF_AdevicoCoreServices_TS/ServicePermission.svc" bindingConfiguration="WSHttpBinding_IServicePermission">
+    <endpoint name="WSHttpBinding_IServicePermission" contract="PermissionService.IServicePermission" bindingType="wsHttpBinding" address="http://pc-sviluppo01/WCF_AdevicoCoreServices/ServicePermission.svc" bindingConfiguration="WSHttpBinding_IServicePermission">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://sviluppo01/WCF_AdevicoCoreServices_TS/ServicePermission.svc</serializedValue>
+          <serializedValue>http://pc-sviluppo01/WCF_AdevicoCoreServices/ServicePermission.svc</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />

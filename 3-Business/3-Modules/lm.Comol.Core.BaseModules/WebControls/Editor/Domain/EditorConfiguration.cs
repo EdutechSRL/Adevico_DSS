@@ -32,7 +32,11 @@ namespace lm.Comol.Core.BaseModules.Editor
         public virtual List<EditorCssFile> CssFiles { get; set; }
         public virtual List<lm.Comol.Core.DomainModel.Helpers.Tags.SmartTag> AvailableSmartags { get; set; }
         public virtual List<AdvancedLinkItem> AvailableItemsToLink { get; set; }
-        public virtual List<EditorToolbar> AvailableToolbars { get; set; }
+        public virtual List<EditorToolbar> AvailableToolbars
+        {
+            get;
+            set;
+        }
 
 
         public virtual EditorSettings DefaultEditor { get; set; }
@@ -222,6 +226,7 @@ namespace lm.Comol.Core.BaseModules.Editor
         public virtual String FontNames { get; set; }
         public virtual String FontSizes { get; set; }
         public virtual String RealFontSizes { get; set; }
+        public virtual Boolean StripFormattingOnPaste { get; set; }
         public virtual Boolean UseRealFontSize
         {
             get

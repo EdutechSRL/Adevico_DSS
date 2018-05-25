@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="lm.Comol.Core.DomainModel" namespace="lm.Comol.Core.DomainModel.PersonalInfo">
+	<class name="Province" table="PROVINCIA" lazy="false">
+    <id name="Id" column="PRVN_id" type="Int32" unsaved-value="0">
+      <generator class="native"/>
+    </id>
+   
+    <property name="Name" type="String" column="PRVN_nome" />
+    <property name="Code" type="String" column="PRVN_sigla" />
+    
+	</class>
+</hibernate-mapping>

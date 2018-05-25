@@ -77,7 +77,8 @@ Public Class HTTPhandler_DownloadRepositoryItem
             .FolderID = 0
             .FileName = ""
             .Settings = oHandler.SystemSettings.NotificationErrorService
-
+            .IsOnModal = False
+            Boolean.TryParse(oHandler.HttpContext.Request.QueryString("onModalPage"), .IsOnModal)
             Dim wSessionId As System.Guid
             Try
                 wSessionId = New Guid(oHandler.HttpContext.Request.QueryString("wSessionId"))
@@ -192,9 +193,11 @@ Public Class HTTPhandler_DownloadRepositoryItem
                         oImpersonate = Nothing
                     End Try
                     If allowDownload Then
+                        Dim notSaveExecution As Boolean = False
+                        Boolean.TryParse(oHandler.HttpContext.Request.QueryString("notSaveStat"), notSaveExecution)
                         oImpersonate = New lm.Comol.Core.File.Impersonate
                         If oImpersonate.ImpersonateValidUser() <> ItemRepositoryStatus.ImpersonationFailed Then
-                            oHandler.DownloadRepositoryFile(oImpersonate, Link, oError.UserID, FileNamePath, oFile.DisplayName, oFile.Extension, oFile.ContentType, oHandler.HttpContext.Request.Url.Query)
+                            oHandler.DownloadRepositoryFile(oImpersonate, Link, Not notSaveExecution, oError.UserID, FileNamePath, oFile.DisplayName, oFile.Extension, oFile.ContentType, oHandler.HttpContext.Request.Url.Query)
                         End If
                     End If
                 End If

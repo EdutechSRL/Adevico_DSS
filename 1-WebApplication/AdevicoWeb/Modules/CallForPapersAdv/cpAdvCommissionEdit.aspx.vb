@@ -221,7 +221,7 @@ Public Class cpAdvCommissionEdit
         _Permission = CommissionData.Permission
         _IsManager = IsManager
         _CanEdit = CommissionData.canEdit
-        _CanUpdateMember = CommissionData.Status = CommissionStatus.Locked AndAlso _IsManager
+        _CanUpdateMember = CommissionData.Status = CommissionStatus.Locked ' AndAlso (_IsManager OrElse 
 
         If Not CommissionData.IsMaster Then
             DVevaluationStep.Attributes.Item("css") = "stepeval hide"
@@ -245,6 +245,8 @@ Public Class cpAdvCommissionEdit
         CBXisMaster.Enabled = CommissionData.EnableMaster
 
         Me.TXBevalMinValue.Text = CommissionData.EvalMinValue
+
+        Me.TXBmaxTotal.Text = CommissionData.MaxValue
 
         Select Case CommissionData.EvalType
             Case EvalType.Average
@@ -329,6 +331,7 @@ Public Class cpAdvCommissionEdit
             Me.CBXevalBoolType.Enabled = False
             Me.DDLevalType.Enabled = False
             DDLevalStep.Enabled = False
+            TXBmaxTotal.Enabled = False
 
             BTNaddCriteria.Visible = False
         Else
@@ -404,9 +407,8 @@ Public Class cpAdvCommissionEdit
                 lm.Comol.Modules.CallForPapers.Domain.CallStatusForSubmitters.None) &
                 "&cmmId=" & Me.IdComm
 
-
         PHevalutation.Visible = Not CommissionData.isEconomic
-
+        PHeconomic.Visible = CommissionData.isEconomic
     End Sub
 
 
@@ -428,9 +430,16 @@ Public Class cpAdvCommissionEdit
                     LBmemName.Text = member.SurnameAndName
                 End If
 
-
-
             End If
+
+            Dim uId As Int32 = _Presenter.CurrentUserId()
+
+            Dim IsCurrentPresident As Boolean = (uId = Me.PresId)
+
+            '(isPresident OrElse _IsManager)
+
+            _CanEdit = _CanEdit AndAlso (_IsManager OrElse IsCurrentPresident)
+            _CanUpdateMember = _CanUpdateMember AndAlso (_IsManager OrElse IsCurrentPresident)
 
             Dim Lkb As LinkButton = e.Item.FindControl("LKBdelMember")
             If Not IsNothing(Lkb) Then
@@ -438,6 +447,8 @@ Public Class cpAdvCommissionEdit
                 Lkb.CommandArgument = member.Id
                 Lkb.Enabled = _CanEdit AndAlso Not isPresident
                 Lkb.Visible = _CanEdit AndAlso Not isPresident
+
+
             End If
 
             Lkb = e.Item.FindControl("LKBupdateMember")
@@ -449,7 +460,7 @@ Public Class cpAdvCommissionEdit
             End If
 
 
-            '
+
         End If
 
     End Sub
@@ -797,6 +808,12 @@ Public Class cpAdvCommissionEdit
 
         End Try
 
+        Dim MaxValue As Double = 0
+        Try
+            MaxValue = System.Convert.ToInt32(Me.TXBmaxTotal.Text)
+        Catch ex As Exception
+
+        End Try
 
         Me.CurrentPresenter.SaveCommitee(
             TXBcommName.Text,
@@ -808,6 +825,7 @@ Public Class cpAdvCommissionEdit
             Me.CBXevalBoolType.Checked,
             UpdateView,
             StepType,
+            MaxValue,
             criterions)
 
     End Sub

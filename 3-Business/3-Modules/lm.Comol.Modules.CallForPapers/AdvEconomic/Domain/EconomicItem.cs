@@ -66,5 +66,12 @@ namespace lm.Comol.Modules.CallForPapers.AdvEconomic.Domain
         /// Commenti
         /// </summary>
         public virtual String Comment { get; set; }
+
+        /// <summary>
+        /// Se l'elemento risulta vuoto (può essere nascosto).
+        /// Per nascosto si intende che verrà impostato di default come "barrato"
+        /// e potrà essere eventualmente nascosto.
+        /// </summary>
+        public virtual bool IsEmpty { get; set; }
     }
 }

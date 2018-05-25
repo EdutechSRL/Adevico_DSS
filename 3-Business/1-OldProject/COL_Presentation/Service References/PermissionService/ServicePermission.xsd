@@ -1,404 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import schemaLocation="http://sviluppo01/WCF_AdevicoCoreServices_TS/ServicePermission.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/lm.Comol.Core.DomainModel" />
-  <xs:import schemaLocation="http://sviluppo01/WCF_AdevicoCoreServices_TS/ServicePermission.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
-  <xs:import schemaLocation="http://sviluppo01/WCF_AdevicoCoreServices_TS/ServicePermission.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/lm.Comol.Core.BaseModules.Federation" />
-  <xs:element name="GetAllowedStandardAction">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/lm.Comol.Core.DomainModel" minOccurs="0" name="source" nillable="true" type="q1:ModuleObject" />
-        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/lm.Comol.Core.DomainModel" minOccurs="0" name="destination" nillable="true" type="q2:ModuleObject" />
-        <xs:element minOccurs="0" name="idUser" type="xs:int" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="GetAllowedStandardActionResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/lm.Comol.Core.DomainModel" minOccurs="0" name="GetAllowedStandardActionResult" nillable="true" type="q3:ArrayOfStandardActionType" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="GetAllowedStandardActionForExternal">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/lm.Comol.Core.DomainModel" minOccurs="0" name="source" nillable="true" type="q4:ModuleObject" />
-        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/lm.Comol.Core.DomainModel" minOccurs="0" name="destination" nillable="true" type="q5:ModuleObject" />
-        <xs:element minOccurs="0" name="idUser" type="xs:int" />
-        <xs:element xmlns:q6="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="moduleUserLong" nillable="true" type="q6:ArrayOfKeyValueOfstringlong" />
-        <xs:element xmlns:q7="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="moduleUserString" nillable="true" type="q7:ArrayOfKeyValueOfstringstring" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="GetAllowedStandardActionForExternalResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/lm.Comol.Core.DomainModel" minOccurs="0" name="GetAllowedStandardActionForExternalResult" nillable="true" type="q8:ArrayOfStandardActionType" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="AllowStandardAction">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/lm.Comol.Core.DomainModel" minOccurs="0" name="actionType" type="q9:StandardActionType" />
-        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/lm.Comol.Core.DomainModel" minOccurs="0" name="source" nillable="true" type="q10:ModuleObject" />
-        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/lm.Comol.Core.DomainModel" minOccurs="0" name="destination" nillable="true" type="q11:ModuleObject" />
-        <xs:element minOccurs="0" name="idUser" type="xs:int" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="AllowStandardActionResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="AllowStandardActionResult" type="xs:boolean" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="AllowStandardActionForExternal">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/lm.Comol.Core.DomainModel" minOccurs="0" name="actionType" type="q12:StandardActionType" />
-        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/lm.Comol.Core.DomainModel" minOccurs="0" name="source" nillable="true" type="q13:ModuleObject" />
-        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/lm.Comol.Core.DomainModel" minOccurs="0" name="destination" nillable="true" type="q14:ModuleObject" />
-        <xs:element minOccurs="0" name="idUser" type="xs:int" />
-        <xs:element xmlns:q15="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="moduleUserLong" nillable="true" type="q15:ArrayOfKeyValueOfstringlong" />
-        <xs:element xmlns:q16="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="moduleUserString" nillable="true" type="q16:ArrayOfKeyValueOfstringstring" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="AllowStandardActionForExternalResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="AllowStandardActionForExternalResult" type="xs:boolean" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="AllowActionExecution">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="idLink" type="xs:long" />
-        <xs:element minOccurs="0" name="idAction" type="xs:int" />
-        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/lm.Comol.Core.DomainModel" minOccurs="0" name="destination" nillable="true" type="q17:ModuleObject" />
-        <xs:element minOccurs="0" name="idUser" type="xs:int" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="AllowActionExecutionResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="AllowActionExecutionResult" type="xs:boolean" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="AllowActionExecutionForExternal">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="idLink" type="xs:long" />
-        <xs:element minOccurs="0" name="idAction" type="xs:int" />
-        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/lm.Comol.Core.DomainModel" minOccurs="0" name="destination" nillable="true" type="q18:ModuleObject" />
-        <xs:element minOccurs="0" name="idUser" type="xs:int" />
-        <xs:element xmlns:q19="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="moduleUserLong" nillable="true" type="q19:ArrayOfKeyValueOfstringlong" />
-        <xs:element xmlns:q20="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="moduleUserString" nillable="true" type="q20:ArrayOfKeyValueOfstringstring" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="AllowActionExecutionForExternalResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="AllowActionExecutionForExternalResult" type="xs:boolean" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="ModuleLinkPermission">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="idLink" type="xs:long" />
-        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/lm.Comol.Core.DomainModel" minOccurs="0" name="destination" nillable="true" type="q21:ModuleObject" />
-        <xs:element minOccurs="0" name="idUser" type="xs:int" />
-        <xs:element xmlns:q22="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="moduleUserLong" nillable="true" type="q22:ArrayOfKeyValueOfstringlong" />
-        <xs:element xmlns:q23="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="moduleUserString" nillable="true" type="q23:ArrayOfKeyValueOfstringstring" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="ModuleLinkPermissionResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="ModuleLinkPermissionResult" type="xs:long" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="ModuleLinkActionPermission">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="idLink" type="xs:long" />
-        <xs:element minOccurs="0" name="idAction" type="xs:int" />
-        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/lm.Comol.Core.DomainModel" minOccurs="0" name="destination" nillable="true" type="q24:ModuleObject" />
-        <xs:element minOccurs="0" name="idUser" type="xs:int" />
-        <xs:element xmlns:q25="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="moduleUserLong" nillable="true" type="q25:ArrayOfKeyValueOfstringlong" />
-        <xs:element xmlns:q26="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="moduleUserString" nillable="true" type="q26:ArrayOfKeyValueOfstringstring" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="ModuleLinkActionPermissionResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="ModuleLinkActionPermissionResult" type="xs:long" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="ActionPermission">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/lm.Comol.Core.DomainModel" minOccurs="0" name="source" nillable="true" type="q27:ModuleObject" />
-        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/lm.Comol.Core.DomainModel" minOccurs="0" name="destination" nillable="true" type="q28:ModuleObject" />
-        <xs:element minOccurs="0" name="idUser" type="xs:int" />
-        <xs:element xmlns:q29="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="moduleUserLong" nillable="true" type="q29:ArrayOfKeyValueOfstringlong" />
-        <xs:element xmlns:q30="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="moduleUserString" nillable="true" type="q30:ArrayOfKeyValueOfstringstring" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="ActionPermissionResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="ActionPermissionResult" type="xs:long" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="AllowedActionPermission">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="idLink" type="xs:long" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="AllowedActionPermissionResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="AllowedActionPermissionResult" type="xs:long" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="ExecutedAction">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="idLink" type="xs:long" />
-        <xs:element minOccurs="0" name="isStarted" type="xs:boolean" />
-        <xs:element minOccurs="0" name="isPassed" type="xs:boolean" />
-        <xs:element minOccurs="0" name="completion" type="xs:short" />
-        <xs:element minOccurs="0" name="isCompleted" type="xs:boolean" />
-        <xs:element minOccurs="0" name="mark" type="xs:short" />
-        <xs:element minOccurs="0" name="idUser" type="xs:int" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="ExecutedActionResponse">
-    <xs:complexType>
-      <xs:sequence />
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="ExecutedActionForExternal">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="idLink" type="xs:long" />
-        <xs:element minOccurs="0" name="isStarted" type="xs:boolean" />
-        <xs:element minOccurs="0" name="isPassed" type="xs:boolean" />
-        <xs:element minOccurs="0" name="completion" type="xs:short" />
-        <xs:element minOccurs="0" name="isCompleted" type="xs:boolean" />
-        <xs:element minOccurs="0" name="mark" type="xs:short" />
-        <xs:element minOccurs="0" name="idUser" type="xs:int" />
-        <xs:element xmlns:q31="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="moduleUserLong" nillable="true" type="q31:ArrayOfKeyValueOfstringlong" />
-        <xs:element xmlns:q32="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="moduleUserString" nillable="true" type="q32:ArrayOfKeyValueOfstringstring" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="ExecutedActionForExternalResponse">
-    <xs:complexType>
-      <xs:sequence />
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="ExecutedActions">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/lm.Comol.Core.DomainModel" minOccurs="0" name="evaluatedLinks" nillable="true" type="q33:ArrayOfdtoItemEvaluationOflong" />
-        <xs:element minOccurs="0" name="idUser" type="xs:int" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="ExecutedActionsResponse">
-    <xs:complexType>
-      <xs:sequence />
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="EvaluateModuleLink">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="idLink" type="xs:long" />
-        <xs:element minOccurs="0" name="idUser" type="xs:int" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="EvaluateModuleLinkResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/lm.Comol.Core.DomainModel" minOccurs="0" name="EvaluateModuleLinkResult" nillable="true" type="q34:dtoEvaluation" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="EvaluateModuleLinkForExternal">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="idLink" type="xs:long" />
-        <xs:element minOccurs="0" name="idUser" type="xs:int" />
-        <xs:element xmlns:q35="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="moduleUserLong" nillable="true" type="q35:ArrayOfKeyValueOfstringlong" />
-        <xs:element xmlns:q36="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="moduleUserString" nillable="true" type="q36:ArrayOfKeyValueOfstringstring" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="EvaluateModuleLinkForExternalResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/lm.Comol.Core.DomainModel" minOccurs="0" name="EvaluateModuleLinkForExternalResult" nillable="true" type="q37:dtoEvaluation" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="EvaluateModuleLinks">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q38="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="linksId" nillable="true" type="q38:ArrayOflong" />
-        <xs:element minOccurs="0" name="idUser" type="xs:int" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="EvaluateModuleLinksResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/lm.Comol.Core.DomainModel" minOccurs="0" name="EvaluateModuleLinksResult" nillable="true" type="q39:ArrayOfdtoItemEvaluationOflong" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="EvaluateModuleLinksForExternal">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q40="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="linksId" nillable="true" type="q40:ArrayOflong" />
-        <xs:element minOccurs="0" name="idUser" type="xs:int" />
-        <xs:element xmlns:q41="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="moduleUserLong" nillable="true" type="q41:ArrayOfKeyValueOfstringlong" />
-        <xs:element xmlns:q42="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="moduleUserString" nillable="true" type="q42:ArrayOfKeyValueOfstringstring" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="EvaluateModuleLinksForExternalResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q43="http://schemas.datacontract.org/2004/07/lm.Comol.Core.DomainModel" minOccurs="0" name="EvaluateModuleLinksForExternalResult" nillable="true" type="q43:ArrayOfdtoItemEvaluationOflong" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="GetPendingEvaluations">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q44="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="linksId" nillable="true" type="q44:ArrayOflong" />
-        <xs:element minOccurs="0" name="idUser" type="xs:int" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="GetPendingEvaluationsResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q45="http://schemas.datacontract.org/2004/07/lm.Comol.Core.DomainModel" minOccurs="0" name="GetPendingEvaluationsResult" nillable="true" type="q45:ArrayOfdtoItemEvaluationOflong" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="GetPendingEvaluationsForExternal">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q46="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="linksId" nillable="true" type="q46:ArrayOflong" />
-        <xs:element minOccurs="0" name="idUser" type="xs:int" />
-        <xs:element xmlns:q47="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="moduleUserLong" nillable="true" type="q47:ArrayOfKeyValueOfstringlong" />
-        <xs:element xmlns:q48="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="moduleUserString" nillable="true" type="q48:ArrayOfKeyValueOfstringstring" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="GetPendingEvaluationsForExternalResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q49="http://schemas.datacontract.org/2004/07/lm.Comol.Core.DomainModel" minOccurs="0" name="GetPendingEvaluationsForExternalResult" nillable="true" type="q49:ArrayOfdtoItemEvaluationOflong" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="PhisicalDeleteCommunity">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="serviceCode" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="idCommunity" type="xs:int" />
-        <xs:element minOccurs="0" name="idUser" type="xs:int" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="PhisicalDeleteCommunityResponse">
-    <xs:complexType>
-      <xs:sequence />
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="PhisicalDeleteRepositoryItem">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="serviceCode" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="idFileItem" type="xs:long" />
-        <xs:element minOccurs="0" name="idCommunity" type="xs:int" />
-        <xs:element minOccurs="0" name="idUser" type="xs:int" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="PhisicalDeleteRepositoryItemResponse">
-    <xs:complexType>
-      <xs:sequence />
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="PhisicalDeleteRepositoryItemForExternal">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="serviceCode" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="idFileItem" type="xs:long" />
-        <xs:element minOccurs="0" name="idCommunity" type="xs:int" />
-        <xs:element minOccurs="0" name="idUser" type="xs:int" />
-        <xs:element xmlns:q50="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="moduleUserLong" nillable="true" type="q50:ArrayOfKeyValueOfstringlong" />
-        <xs:element xmlns:q51="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="moduleUserString" nillable="true" type="q51:ArrayOfKeyValueOfstringstring" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="PhisicalDeleteRepositoryItemForExternalResponse">
-    <xs:complexType>
-      <xs:sequence />
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="FederationCommunityCheck">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="communityId" type="xs:int" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="FederationCommunityCheckResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q52="http://schemas.datacontract.org/2004/07/lm.Comol.Core.BaseModules.Federation" minOccurs="0" name="FederationCommunityCheckResult" type="q52:Enums.FederationType" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="FederationUserCheck">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="communityId" type="xs:int" />
-        <xs:element minOccurs="0" name="userId" type="xs:int" />
-        <xs:element minOccurs="0" name="externlUrl" nillable="true" type="xs:string" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="FederationUserCheckResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q53="http://schemas.datacontract.org/2004/07/lm.Comol.Core.BaseModules.Federation" minOccurs="0" name="FederationUserCheckResult" type="q53:Enums.FederationResult" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
+<xs:schema xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/Arrays" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfKeyValueOfstringlong">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsDictionary xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsDictionary>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="KeyValueOfstringlong">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Key" nillable="true" type="xs:string" />
+            <xs:element name="Value" type="xs:long" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfKeyValueOfstringlong" nillable="true" type="tns:ArrayOfKeyValueOfstringlong" />
+  <xs:complexType name="ArrayOfKeyValueOfstringstring">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsDictionary xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsDictionary>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="KeyValueOfstringstring">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Key" nillable="true" type="xs:string" />
+            <xs:element name="Value" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfKeyValueOfstringstring" nillable="true" type="tns:ArrayOfKeyValueOfstringstring" />
+  <xs:complexType name="ArrayOflong">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="long" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOflong" nillable="true" type="tns:ArrayOflong" />
 </xs:schema>

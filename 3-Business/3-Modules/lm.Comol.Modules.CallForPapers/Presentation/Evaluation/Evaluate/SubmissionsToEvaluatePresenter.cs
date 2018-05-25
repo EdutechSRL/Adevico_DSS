@@ -90,7 +90,9 @@ namespace lm.Comol.Modules.CallForPapers.Presentation.Evaluation
 
                 //Il TIPO di valutazione IMPOSTATO ha impatto SOLO nell'aggregazione tra COMMISSARI.
                 //Nell'aggregazione tra i criteri di un VALUTATORE, uso SEMPRE E SOLO LA SOMMA!
-                View.CurrentEvaluationType = EvaluationType.Sum;
+                
+               // View.CurrentEvaluationType = EvaluationType.Sum;
+               //Sposto a DOPO , dove ho l'AdvCommission!
 
 
             } else
@@ -239,10 +241,19 @@ namespace lm.Comol.Modules.CallForPapers.Presentation.Evaluation
                 return;
             }
 
+
+            EvaluationType type = EvaluationType.Sum;
+
             List<dtoCommitteeEvaluationsInfo> committees = 
                 isAdvance ?
-                ServiceCall.GetCommitteesEvaluationInfoAdv(idCall, idEvaluator, idCommittee) :
+                ServiceCall.GetCommitteesEvaluationInfoAdv(idCall, idEvaluator, idCommittee, ref type) :
                 Service.GetCommitteesEvaluationInfo(idCall, idEvaluator);
+
+            if(isAdvance)
+            {
+                View.CurrentEvaluationType = type;
+            }
+            
 
             View.CurrentFilters = filters;
             View.CurrentOrderBy = filters.OrderBy;
@@ -305,9 +316,10 @@ namespace lm.Comol.Modules.CallForPapers.Presentation.Evaluation
         }
 
         private void LoadCommitteDataAdv(long idCall, Int32 idCommunity, long idCommittee, long idMember, dtoEvaluationsFilters filters)
-        {   
+        {
+            EvaluationType evalType = EvaluationType.Sum;
 
-            List<dtoCommitteeEvaluationsInfo> committees = ServiceCall.GetCommitteesEvaluationInfoAdv(idCall, idMember, idCommittee);
+            List<dtoCommitteeEvaluationsInfo> committees = ServiceCall.GetCommitteesEvaluationInfoAdv(idCall, idMember, idCommittee, ref evalType);
 
             View.CurrentFilters = filters;
             View.CurrentOrderBy = filters.OrderBy;
@@ -332,6 +344,13 @@ namespace lm.Comol.Modules.CallForPapers.Presentation.Evaluation
                 }
                 View.AllowExportAll = (committees.Count > 1);
                 View.AllowExportCurrent = true;
+
+                View.CurrentEvaluationType = evalType;
+
+
+
+
+
                 if (!committees.Where(c => c.IdCommittee == idCommittee).Any())
                     idCommittee = committees.Select(c => c.IdCommittee).FirstOrDefault();
                 View.IdCurrentCommittee = idCommittee;

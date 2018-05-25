@@ -61,47 +61,6 @@ Public MustInherit Class PageBase
         End Try
         Return oElement
     End Function
-
-    Public Property PostItSistema() As COL_BusinessLogic_v2.COL_PostIt Implements IviewBase.PostItSistema
-        Get
-            Try
-                PostItSistema = DirectCast(Me.Application.Item("oSystemPostIt"), COL_PostIt)
-            Catch ex As Exception
-                PostItSistema = Nothing
-                Me.Application.Item("ShowSystemPostIt") = False
-            End Try
-        End Get
-        Set(ByVal value As COL_BusinessLogic_v2.COL_PostIt)
-            Me.Application.Item("oSystemPostIt") = value
-        End Set
-    End Property
-    Public Property ShowPostItSistema() As Boolean Implements IviewBase.ShowPostItSistema
-        Get
-            Try
-                ShowPostItSistema = DirectCast(Me.Application.Item("ShowSystemPostIt"), Boolean)
-            Catch ex As Exception
-                Me.Application.Item("ShowSystemPostIt") = False
-                ShowPostItSistema = False
-            End Try
-        End Get
-        Set(ByVal value As Boolean)
-            Me.Application.Item("ShowSystemPostIt") = value
-        End Set
-    End Property
-    Public Property RiepilogoPostIt() As Integer Implements IviewBase.RiepilogoPostIt
-        Get
-            Try
-                RiepilogoPostIt = DirectCast(Session("Popupwin"), Integer)
-            Catch ex As Exception
-                RiepilogoPostIt = 0
-            End Try
-
-        End Get
-        Set(ByVal value As Integer)
-            Session("Popupwin") = value
-        End Set
-    End Property
-
     Public Property UtentiConnessi() As Integer Implements IviewGeneric.UtentiConnessi
         Get
             Try
@@ -336,7 +295,7 @@ Public MustInherit Class PageBase
 
     Public Sub WriteLogoutAccessCookie(item As lm.Comol.Core.DomainModel.Helpers.dtoExpiredAccessUrl)
         Dim cookie As New HttpCookie("LogoutAccess")
-        Dim minutes As Long = Me.SystemSettings.BlogSettings.ValidationTime
+        Dim minutes As Long = 5
 
         cookie.Expires = Now.AddMinutes(minutes)
         cookie.Values.Add("Display", item.Display.ToString())
@@ -416,7 +375,7 @@ Public MustInherit Class PageBase
 
     Public Sub WriteLogoutAccessCookie(ByVal CommunityID As Integer, ByVal PersonID As Integer, ByVal PersonLogin As String, ByVal PostPage As String, ByVal ForDownload As Boolean, InPopupWindow As Boolean)
         Dim oHttpCookie As New HttpCookie("LogoutAccess")
-        Dim minutes As Long = Me.SystemSettings.BlogSettings.ValidationTime
+        Dim minutes As Long = 5
         oHttpCookie.Expires = Now.AddMinutes(minutes)
         oHttpCookie.Values.Add("PersonID", PersonID)
         oHttpCookie.Values.Add("PersonLogin", PersonLogin)

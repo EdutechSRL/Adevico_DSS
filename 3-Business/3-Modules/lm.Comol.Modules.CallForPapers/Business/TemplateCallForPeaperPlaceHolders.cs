@@ -240,7 +240,7 @@ namespace lm.Comol.Modules.CallForPapers.Business
 
                 //        if (content.Contains(GetPlaceHolder(EduPathPlaceHoldersType.QuizAttempts)))
                 //            translation = translation.Replace(GetPlaceHolder(EduPathPlaceHoldersType.QuizAttempts), query.Count().ToString());
-                       
+
                 //        //if (content.Contains(GetPlaceHolder(EduPathPlaceHoldersType.QuizQuestionsNumber)))
                 //        //{
 
@@ -253,7 +253,7 @@ namespace lm.Comol.Modules.CallForPapers.Business
                 //        //}
                 //    }
                 //}
-                return content;
+            return content;
                 //return translation;
             }
 

@@ -79,7 +79,17 @@ namespace lm.Comol.Core.FileRepository.Business
                     if (version != null && version.IdItem == idItem)
                     {
                         Manager.BeginTransaction();
-                        aSettings = settings.CreateForUpdateSettings(person.Id, UC.IpAddress, UC.ProxyIpAddress, version, evaluation, items.Where(i => i.ForPackage).FirstOrDefault());
+
+                        aSettings = settings.CreateForUpdateSettings(
+                            person.Id, 
+                            UC.IpAddress, 
+                            UC.ProxyIpAddress, 
+                            version, 
+                            evaluation, 
+                            items.Where(i => i.ForPackage).FirstOrDefault());
+
+
+
                         Manager.SaveOrUpdate(aSettings);
                         if (settings.Organizations.Any())
                         {

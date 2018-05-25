@@ -24,7 +24,22 @@ namespace lm.Comol.Core.FileRepository.Business
                     settings = new List<litePlayerSettings>();
                 return settings;
             }
-            public IQueryable<litePlayerSettings> PlayerGetSettings(Expression<Func<litePlayerSettings, bool>> filters)
+
+        public litePlayerSettings PlayerScormGetSettings()
+        {
+
+            litePlayerSettings setting =
+                Manager.GetAll<litePlayerSettings>(
+                    s => s.Type == ItemType.ScormPackage
+                    ).Skip(0).Take(1).FirstOrDefault();
+
+            if (setting != null)
+                Manager.Detach(setting);
+
+            return setting;
+            
+        }
+        public IQueryable<litePlayerSettings> PlayerGetSettings(Expression<Func<litePlayerSettings, bool>> filters)
             {
                 return (from q in Manager.GetIQ<litePlayerSettings>() select q).Where(filters);
             }

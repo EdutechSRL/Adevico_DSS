@@ -28,10 +28,18 @@ Public Class NoticeboardNotificationUtility
         Me._Utility.SendNotificationToPermission(Permission, oActionType, CommunityID, Services_Bacheca.Codex, values, CreateObjectToNotify(NoticeBoardID, Services_Bacheca.ObjectType.WhiteBoard))
     End Sub
     Public Sub NotifyCleanNoticeboard(ByVal CommunityID As Integer, ByVal NoticeBoardID As Long)
+
         Dim NewsID As System.Guid = System.Guid.NewGuid
         Dim oValues = New List(Of String)
 
-        Me._Utility.SendNotificationToPermission(NewsID, Me.PermissionToSee, Services_Bacheca.ActionType.Clean, CommunityID, Services_Bacheca.Codex, oValues, CreateObjectToNotify(NoticeBoardID, Services_Bacheca.ObjectType.WhiteBoard))
+        Me._Utility.SendNotificationToPermission( _
+            NewsID, _
+            Me.PermissionToSee, _
+            Services_Bacheca.ActionType.Clean, _
+            CommunityID, _
+            Services_Bacheca.Codex, _
+            oValues, _
+            CreateObjectToNotify(NoticeBoardID, Services_Bacheca.ObjectType.WhiteBoard))
     End Sub
 
     Public Sub NotifyAddMessage(ByVal NoticeBoardID As Long, ByVal CommunityID As Integer, ByVal ModifiedOn As DateTime?, ByVal ModifiedBy As String, ByVal UrlBase As String)
@@ -113,7 +121,13 @@ Public Class NoticeboardNotificationUtility
         oValues.Add(ModifiedBy)
         Me._Utility.SendNotificationToPermission(NewsID, Me.PermissionToSee, Services_Bacheca.ActionType.SetDefault, CommunityID, Services_Bacheca.Codex, oValues, CreateObjectToNotify(NoticeBoardID, Services_Bacheca.ObjectType.WhiteBoard))
     End Sub
-    Public Sub NotifyEditMessage(ByVal NoticeBoardID As Long, ByVal CommunityID As Integer, ByVal ModifiedOn As DateTime?, ByVal ModifiedBy As String, ByVal UrlBase As String)
+    Public Sub NotifyEditMessage( _
+                                ByVal NoticeBoardID As Long, _
+                                ByVal CommunityID As Integer, _
+                                ByVal ModifiedOn As DateTime?, _
+                                ByVal ModifiedBy As String, _
+                                ByVal UrlBase As String)
+
         Dim NewsID As System.Guid = System.Guid.NewGuid
         Dim oValues = New List(Of String)
 

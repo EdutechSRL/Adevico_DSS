@@ -194,6 +194,15 @@ Partial Public Class cpAdvEconomicEvaluation
     Protected WithEvents LKBClose As Global.System.Web.UI.WebControls.LinkButton
     
     '''<summary>
+    '''Uc_AdvTableExport control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Uc_AdvTableExport As Global.Comunita_OnLine.Uc_AdvTableExport
+    
+    '''<summary>
     '''RPTtables control.
     '''</summary>
     '''<remarks>
@@ -201,6 +210,51 @@ Partial Public Class cpAdvEconomicEvaluation
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents RPTtables As Global.System.Web.UI.WebControls.Repeater
+    
+    '''<summary>
+    '''HypSummary_bot control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents HypSummary_bot As Global.System.Web.UI.WebControls.HyperLink
+    
+    '''<summary>
+    '''LKBSave_bot control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents LKBSave_bot As Global.System.Web.UI.WebControls.LinkButton
+    
+    '''<summary>
+    '''LKBconfirm_bot control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents LKBconfirm_bot As Global.System.Web.UI.WebControls.LinkButton
+    
+    '''<summary>
+    '''LKBdraft_bot control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents LKBdraft_bot As Global.System.Web.UI.WebControls.LinkButton
+    
+    '''<summary>
+    '''LKBClose_bot control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents LKBClose_bot As Global.System.Web.UI.WebControls.LinkButton
     
     '''<summary>
     '''Master property.

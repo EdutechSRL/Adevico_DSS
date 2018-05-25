@@ -60,49 +60,6 @@ Public MustInherit Class BaseControlMenu
         Return oElement
     End Function
 
-    Public Property PostItSistema() As COL_BusinessLogic_v2.COL_PostIt Implements IviewBase.PostItSistema
-        Get
-            Try
-                PostItSistema = DirectCast(Me.Application.Item("oSystemPostIt"), COL_PostIt)
-            Catch ex As Exception
-                PostItSistema = Nothing
-                Me.Application.Item("ShowSystemPostIt") = False
-            End Try
-        End Get
-        Set(ByVal value As COL_BusinessLogic_v2.COL_PostIt)
-            Me.Application.Lock()
-            Me.Application.Item("oSystemPostIt") = value
-            Me.Application.UnLock()
-        End Set
-    End Property
-    Public Property ShowPostItSistema() As Boolean Implements IviewBase.ShowPostItSistema
-        Get
-            Try
-                ShowPostItSistema = DirectCast(Me.Application.Item("ShowSystemPostIt"), Boolean)
-            Catch ex As Exception
-                Me.Application.Item("ShowSystemPostIt") = False
-                ShowPostItSistema = False
-            End Try
-        End Get
-        Set(ByVal value As Boolean)
-            Me.Application.Lock()
-            Me.Application.Item("ShowSystemPostIt") = value
-            Me.Application.UnLock()
-        End Set
-    End Property
-    Public Property RiepilogoPostIt() As Integer Implements IviewBase.RiepilogoPostIt
-        Get
-            Try
-                RiepilogoPostIt = DirectCast(Session("Popupwin"), Integer)
-            Catch ex As Exception
-                RiepilogoPostIt = 0
-            End Try
-
-        End Get
-        Set(ByVal value As Integer)
-            Session("Popupwin") = value
-        End Set
-    End Property
 
     Public Property UtentiConnessi() As Integer Implements IviewBase.UtentiConnessi
         Get

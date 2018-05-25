@@ -10,6 +10,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="CPHserviceLocalization" runat="server"></asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="HeadContent" runat="server">
 	 <CTRL:Header ID="CTRLheader" runat="server"  EnableTreeTableScript="true" EnableDropDownButtonsScript="true"   />
+	<link href="../../Graphics/Modules/CallForPapers/css/callforpapers.css" rel="stylesheet" />
 	 <link href="../../Graphics/Modules/CallForPapers/css/cfp-evaluation.css?v=201605041410lm" rel="Stylesheet" />
 		<script type="text/javascript" src="../../Jscript/Modules/Common/jquery.slider.extend.js"></script>
 	<%--<link href="../../Graphics/Modules/CallForPapers/css/callforpapers.css" rel="stylesheet" />
@@ -74,11 +75,11 @@
 		   left: 10px;
 		   /*width: 10px;
 		   height: 10px;
-           display: inline-block;*/
-            width: 12px;
-            height: 12px;
-            border-radius: 6px;
-            text-indent: -1000px;
+		   display: inline-block;*/
+			width: 12px;
+			height: 12px;
+			border-radius: 6px;
+			text-indent: -1000px;
 /*overflow: hidden;
 position: relative;*/
 	   }
@@ -443,7 +444,7 @@ position: relative;*/
 								<ItemTemplate>
 									<tr id="criteria-<%#Container.DataItem.Id %>" class="criteria initialized <%#CssCriterion(Container.DataItem.DisplayAs) %>">
 										<td class="criteria"><asp:literal ID="LTcriterionName" runat="server"></asp:literal></td>
-										<td class="points"><asp:Label ID="LBcriteriaRating" runat="server"></asp:Label></td>
+										<td class="points"><asp:Label ID="LBcriteriaRating" runat="server" class="hide"></asp:Label></td>
 										<asp:Repeater ID="RPTcriteriaEvaluations" runat="server" DataSource="<%#Container.DataItem.Evaluations %>"  OnItemDataBound="RPTcriteriaEvaluations_ItemDataBound">
 											<ItemTemplate>
 												<td class="evaluator" id="TDcriterion" runat="server">

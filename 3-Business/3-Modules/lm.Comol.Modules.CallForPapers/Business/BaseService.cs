@@ -804,6 +804,16 @@ namespace lm.Comol.Modules.CallForPapers.Business
                        
                         if (!permission) {
                             BaseForPaper call = Manager.Get<BaseForPaper>(idCall);
+
+                            //NOTA:
+                            //LASCIO qui questo controllo, perchè altrimenti è NECESSARIO 
+                            //che l'utente "anonimo" sia iscritto alla comunità con ruolo "-4", cioè "Utente Non autenticato"
+
+                            if (call != null && call.IsPublic)
+                            {
+                                return true;
+                            }
+
                             if (call != null && call.IsPortal)
                             {
                                 permission = (
@@ -824,7 +834,6 @@ namespace lm.Comol.Modules.CallForPapers.Business
                                 if (!permission) {
                                     permission = IsCallAvailableByRole(idCall, person);
                                 }
-
                             }
                         }
                     }

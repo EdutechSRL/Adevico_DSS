@@ -6,9 +6,6 @@ Public Interface IviewBase
 
 
     Property UtentiConnessi() As Integer
-    Property PostItSistema() As COL_PostIt
-    Property ShowPostItSistema() As Boolean
-    Property RiepilogoPostIt() As Integer
 
     Sub CambiaComunitaFromHistory(ByVal ComunitaID As Integer)
     Sub CambiaComunita(ByVal OrganizzazioneID As Integer, ByVal ComunitaID As Integer, ByVal TipoComunitaID As Integer, ByVal RuoloID As Integer, ByVal iListaServizi As ServiziCorrenti, ByVal iHistory As HistoryElement)

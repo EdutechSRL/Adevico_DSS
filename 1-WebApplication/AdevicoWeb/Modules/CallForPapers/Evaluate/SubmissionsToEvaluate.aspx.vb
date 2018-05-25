@@ -792,26 +792,33 @@ Public Class SubmissionsToEvaluateList
 
 
         Dim oLabel As Label = e.Item.FindControl("LBvote")
-        Select Case CurrentEvaluationType
-            Case EvaluationType.Sum
-                oLabel.Text = GetEvaluatedValue(item.SumRating)
-            Case EvaluationType.Average
-                oLabel.Text = GetEvaluatedValue(item.AverageRating)
-            Case EvaluationType.Dss
-                If Not IsNothing(item.DssRating) AndAlso item.DssRating.IsCompleted AndAlso item.Status <> EvaluationStatus.None AndAlso Not item.Criteria.Any(Function(c) Not c.IsValidForEvaluation) Then
-                    SetDssValue(item.DssRating, _IsFuzzyCommittees, oLabel, e.Item.FindControl("SPNfuzzy"), e.Item.FindControl("CTRLfuzzyNumber"))
-                    'If _AllEvaluated Then
-                    '    oLabel.Text = GetEvaluatedValue(item.DssRating, 4)
-                    '    oLabel.ToolTip = item.DssRating
-                    'Else
-                    '    oLabel.Text = GetEvaluatedValue(item.DssRating, 4) & "(*)"
-                    '    oLabel.ToolTip = Resource.getValue("DssWaitingEvaluations")
-                    'End If
-                Else
-                    oLabel.Text = "//"
-                    oLabel.ToolTip = Resource.getValue("DssWaitingEvaluations")
-                End If
-        End Select
+
+        If IdAdvCommittee > 0 Then
+            'ADV EvalType: SOMMA
+            oLabel.Text = GetEvaluatedValue(item.SumRating)
+        Else
+
+            Select Case CurrentEvaluationType
+                Case EvaluationType.Sum
+                    oLabel.Text = GetEvaluatedValue(item.SumRating)
+                Case EvaluationType.Average
+                    oLabel.Text = GetEvaluatedValue(item.AverageRating)
+                Case EvaluationType.Dss
+                    If Not IsNothing(item.DssRating) AndAlso item.DssRating.IsCompleted AndAlso item.Status <> EvaluationStatus.None AndAlso Not item.Criteria.Any(Function(c) Not c.IsValidForEvaluation) Then
+                        SetDssValue(item.DssRating, _IsFuzzyCommittees, oLabel, e.Item.FindControl("SPNfuzzy"), e.Item.FindControl("CTRLfuzzyNumber"))
+                        'If _AllEvaluated Then
+                        '    oLabel.Text = GetEvaluatedValue(item.DssRating, 4)
+                        '    oLabel.ToolTip = item.DssRating
+                        'Else
+                        '    oLabel.Text = GetEvaluatedValue(item.DssRating, 4) & "(*)"
+                        '    oLabel.ToolTip = Resource.getValue("DssWaitingEvaluations")
+                        'End If
+                    Else
+                        oLabel.Text = "//"
+                        oLabel.ToolTip = Resource.getValue("DssWaitingEvaluations")
+                    End If
+            End Select
+        End If
 
         Dim oTableCell As HtmlTableCell = e.Item.FindControl("TDcriterionPlaceHolder")
         oTableCell.Visible = (item.Criteria.Count Mod 5) > 0

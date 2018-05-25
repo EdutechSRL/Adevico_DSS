@@ -12,11 +12,8 @@ Public Interface IviewSearchCommunity
 	ReadOnly Property CurrentSubscriber() As Person
 	ReadOnly Property CurrentCommunity() As Community
 
-	ReadOnly Property CurrentOrganization() As Organization ' As Facolta_Esse3
-	ReadOnly Property CurrentAcademicYear() As AcademicYear	'As AnnoAccademicoOfferta_Esse3
-	ReadOnly Property CurrentPeriodo() As Periodo
-	ReadOnly Property CurrentDegreeType() As TypeDegree
-	Property CurrentCommunityType() As CommunityType
+    ReadOnly Property CurrentOrganization() As Organization
+    Property CurrentCommunityType() As CommunityType
 	ReadOnly Property CurrentStatus() As CommunityStatus
 	ReadOnly Property CurrentSearch() As StandardCommunitySearch
 	ReadOnly Property CurrentResponsibleID() As Integer
@@ -30,11 +27,8 @@ Public Interface IviewSearchCommunity
 
 	Sub LoadOrganizations(ByVal oList As IList)
 	Sub LoadCommunityTypes(ByVal oList As IList)
-	Sub LoadAcademicYears(ByVal oList As IList)
-	Sub LoadPeriodi(ByVal oList As IList)
-	Sub LoadStatus(ByVal oList As IList)
-	Sub LoadDegreeTypes(ByVal oList As IList)
-	Sub LoadCommunities(ByVal oList As IList)
+    Sub LoadStatus(ByVal oList As IList)
+    Sub LoadCommunities(ByVal oList As IList)
 
 	Property AllowMultipleOrganizationSelection() As Boolean
 	Property AllowCommunityChangedEvent() As Boolean

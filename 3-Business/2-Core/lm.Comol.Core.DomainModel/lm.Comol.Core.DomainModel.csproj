@@ -37,15 +37,15 @@
   <ItemGroup>
     <Reference Include="Antlr3.Runtime, Version=3.1.0.39271, Culture=neutral, PublicKeyToken=3a9cab8f8d22bfb7, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\9-AdevicoMIT_Library\lm.Comol.MitLibrary\External\Antlr3.Runtime.dll</HintPath>
+      <HintPath>..\..\..\Library\lm.Comol.Core.CommonLib\NHibernate_21\Antlr3.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Castle.Core, Version=1.1.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\9-AdevicoMIT_Library\lm.Comol.MitLibrary\External\Castle.Core.dll</HintPath>
+      <HintPath>..\..\..\Library\lm.Comol.Core.CommonLib\NHibernate_21\Castle.Core.dll</HintPath>
     </Reference>
     <Reference Include="Castle.DynamicProxy2, Version=2.1.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\9-AdevicoMIT_Library\lm.Comol.MitLibrary\External\Castle.DynamicProxy2.dll</HintPath>
+      <HintPath>..\..\..\Library\lm.Comol.Core.CommonLib\NHibernate_21\Castle.DynamicProxy2.dll</HintPath>
     </Reference>
     <Reference Include="CsvHelper, Version=2.0.0.0, Culture=neutral, PublicKeyToken=8c4959082be5c823, processorArchitecture=MSIL">
       <HintPath>..\..\..\Solution\packages\CsvHelper.2.16.1.0\lib\net40\CsvHelper.dll</HintPath>
@@ -57,30 +57,30 @@
     </Reference>
     <Reference Include="Iesi.Collections, Version=1.0.1.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\9-AdevicoMIT_Library\lm.Comol.MitLibrary\External\Iesi.Collections.dll</HintPath>
+      <HintPath>..\..\..\Library\lm.Comol.Core.CommonLib\NHibernate_21\Iesi.Collections.dll</HintPath>
     </Reference>
     <Reference Include="itextsharp, Version=3.1.6.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\9-AdevicoMIT_Library\lm.Comol.MitLibrary\External\itextsharp.dll</HintPath>
+      <HintPath>..\..\..\Library\lm.Comol.Core.CommonLib\iTextSharp\itextsharp.dll</HintPath>
     </Reference>
     <Reference Include="itextsharp5, Version=5.3.2.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\9-AdevicoMIT_Library\lm.Comol.MitLibrary\External\itextsharp5.dll</HintPath>
+      <HintPath>..\..\..\Library\lm.Comol.Core.CommonLib\iTextSharp\itextsharp5.dll</HintPath>
     </Reference>
     <Reference Include="log4net">
-      <HintPath>..\..\..\9-AdevicoMIT_Library\lm.Comol.MitLibrary\External\log4net.dll</HintPath>
+      <HintPath>..\..\..\Library\lm.Comol.Core.CommonLib\NHibernate_21\log4net.dll</HintPath>
     </Reference>
     <Reference Include="NHibernate, Version=2.1.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\9-AdevicoMIT_Library\lm.Comol.MitLibrary\External\NHibernate.dll</HintPath>
+      <HintPath>..\..\..\Library\lm.Comol.Core.CommonLib\NHibernate_21\NHibernate.dll</HintPath>
     </Reference>
     <Reference Include="NHibernate.ByteCode.Castle, Version=2.1.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\9-AdevicoMIT_Library\lm.Comol.MitLibrary\External\NHibernate.ByteCode.Castle.dll</HintPath>
+      <HintPath>..\..\..\Library\lm.Comol.Core.CommonLib\NHibernate_21\NHibernate.ByteCode.Castle.dll</HintPath>
     </Reference>
     <Reference Include="NHibernate.Linq, Version=1.0.0.4000, Culture=neutral, PublicKeyToken=444cf6a87fdab271, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\9-AdevicoMIT_Library\lm.Comol.MitLibrary\External\NHibernate.Linq.dll</HintPath>
+      <HintPath>..\..\..\Library\lm.Comol.Core.CommonLib\NHibernate_21\NHibernate.Linq.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
@@ -401,6 +401,8 @@
     <Compile Include="Notification\DataContract\iNotificationsManagerService.cs" />
     <Compile Include="Notification\Domain\NotificationAction.cs" />
     <Compile Include="Notification\Domain\iNotifiableService.cs" />
+    <Compile Include="PersonalInfo\Country.cs" />
+    <Compile Include="PersonalInfo\Province.cs" />
     <Compile Include="Service References\SrvFileTransfer\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -923,6 +925,8 @@
     <Compile Include="Wizard\NavigableWizardItemBase.cs" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Mapping\PersonalInfo\Country.xml" />
+    <EmbeddedResource Include="Mapping\PersonalInfo\Province.hbm.xml" />
     <EmbeddedResource Include="InLineTags\Mapping\lite\liteInLineTag.hbm.xml">
       <SubType>Designer</SubType>
     </EmbeddedResource>
@@ -1307,17 +1311,17 @@
     <None Include="Domain\Person\Person.cd" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\lm.Comol.Core.MailCommons\lm.Comol.Core.MailCommons.csproj">
+      <Project>{428243cb-28cd-4d81-8099-74d1448b5e1d}</Project>
+      <Name>lm.Comol.Core.MailCommons</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\SrvFileTransfer\" />
     <WCFMetadataStorage Include="Service References\SrvFileUnzip\" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\lm.Comol.Core.MailCommons\lm.Comol.Core.MailCommons.csproj">
-      <Project>{428243cb-28cd-4d81-8099-74d1448b5e1d}</Project>
-      <Name>lm.Comol.Core.MailCommons</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />

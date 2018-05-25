@@ -90,7 +90,7 @@
                             <thead>
                                 <tr>
                                     <th class="partecipant">
-                                        <asp:literal ID="LTsubPartecipant_t" runat="server">Sottomittore</asp:literal>
+                                        <asp:literal ID="LTsubPartecipant_t" runat="server">Proponente</asp:literal>
                                         <asp:LinkButton ID="LNBorderByUserUp" runat="server" cssclass="icon orderUp" CommandArgument="ByUser.True" CommandName="orderby"></asp:LinkButton>
                                         <asp:LinkButton ID="LNBorderByUserDown" runat="server" cssclass="icon orderDown" CommandArgument="ByUser.False" CommandName="orderby"></asp:LinkButton>
                                     </th>

@@ -11,7 +11,7 @@ namespace lm.Comol.Core.DomainModel
         public CompanyUser() :base()
 		{
             CompanyInfo = new CompanyInfo();
-            PersonInfo = new PersonInfo();
+            //PersonInfo = new PersonInfo();
 		}
 	}
 }

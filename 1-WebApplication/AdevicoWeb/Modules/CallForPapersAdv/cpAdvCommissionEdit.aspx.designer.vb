@@ -338,6 +338,42 @@ Partial Public Class cpAdvCommissionEdit
     Protected WithEvents DDLevalStep As Global.System.Web.UI.WebControls.DropDownList
     
     '''<summary>
+    '''PHeconomic control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents PHeconomic As Global.System.Web.UI.WebControls.PlaceHolder
+    
+    '''<summary>
+    '''LBLmaxTotal_t control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents LBLmaxTotal_t As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
+    '''TXBmaxTotal control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents TXBmaxTotal As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
+    '''LBLmaxTotal_info control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents LBLmaxTotal_info As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
     '''MLVmain control.
     '''</summary>
     '''<remarks>

@@ -254,6 +254,14 @@ Public Class EditCallSettings
 
     End Sub
 
+    Private Sub CheckAdvance()
+        If Not SystemSettings.Features.CallAdvanceEvaluation Then
+            Me.RBLcommissionType.SelectedValue = "0"
+            Me.RBLcommissionType.Enabled = False
+            DVadvancedCommission.Visible = False
+        End If
+    End Sub
+
 #Region "Inherits"
     Public Overrides Sub BindDati()
         If Not Page.IsPostBack() Then
@@ -528,12 +536,18 @@ Public Class EditCallSettings
             FLDevaluation.Visible = False
             DVrevision.Visible = (item.Type = CallForPaperType.CallForBids)
 
-            DVadvancedCommission.Visible = (item.Type = CallForPaperType.CallForBids) 'ToDo: mettere " AND Application("Se c'è lovedi")
-            If item.AdvacedEvaluation Then
-                Me.RBLcommissionType.SelectedValue = "1"
-            End If
+            If Not SystemSettings.Features.CallAdvanceEvaluation Then
+                Me.RBLcommissionType.SelectedValue = "0"
+                Me.RBLcommissionType.Enabled = False
+                DVadvancedCommission.Visible = False
+            Else
+                DVadvancedCommission.Visible = (item.Type = CallForPaperType.CallForBids) 'ToDo: mettere " AND Application("Se c'è lovedi")
+                If item.AdvacedEvaluation Then
+                    Me.RBLcommissionType.SelectedValue = "1"
+                End If
 
-            Me.RBLcommissionType.Enabled = canChangeCommission
+                Me.RBLcommissionType.Enabled = canChangeCommission
+            End If
 
             CBXsignMandatory.Checked = .AttachSign
             FLDSsignMandatory.Visible = (item.Type = CallForPaperType.CallForBids)
@@ -649,13 +663,22 @@ Public Class EditCallSettings
         Me.CloseDialog()
         Me.CurrentPresenter.SaveSettings(oDto, Resource.getValue("DefaultSubmitterName"), SystemSettings.Presenter.AllowDssUse, False)
         Me.CTRLprintSet.SaveSettings()
+
+        Me.BindDati()
     End Sub
     Private Sub BTNundoConfirmStatus_Click(sender As Object, e As System.EventArgs) Handles BTNundoConfirmStatus.Click
         Me.CloseDialog()
         Me.DisplaySettingsError()
     End Sub
     Private Sub BTNsaveSettingsBottom_Click(sender As Object, e As System.EventArgs) Handles BTNsaveSettingsBottom.Click, BTNsaveSettingsTop.Click
-        Me.CurrentPresenter.SaveSettings(Me.CurrentCall, Resource.getValue("DefaultSubmitterName"), SystemSettings.Presenter.AllowDssUse, True)
+
+        Dim rebind As Boolean = True
+
+        rebind = Me.CurrentPresenter.SaveSettings(
+            Me.CurrentCall,
+            Resource.getValue("DefaultSubmitterName"),
+            SystemSettings.Presenter.AllowDssUse,
+            True)
 
         Me.CTRLprintSet.SaveSettings()
 
@@ -665,7 +688,11 @@ Public Class EditCallSettings
             lm.Comol.Modules.CallForPapers.Trap.CallObjectId.CallForPeaper,
             "Settings")
 
-        Me.BindDati()
+        If rebind Then
+            Me.BindDati()
+        End If
+
+
     End Sub
     Private Sub EditCallSettings_PreLoad(sender As Object, e As System.EventArgs) Handles Me.PreLoad
         Me.Master.ShowDocType = True

@@ -118,42 +118,128 @@ namespace lm.Comol.Core.FileRepository.Business
             {
                 return ScormQuery(e => e.IdPerson == idPerson && e.Deleted == BaseStatusDeleted.None && e.IsCompleted).ToList();
             }
+
+        public List<ScormPackageUserEvaluation> ScormGetPendingPlayEvaluations(
+            Int32 idPerson,
+            TimeSpan delay)
+        {
+            return ScormQuery(e => 
+                e.IdPerson == idPerson 
+                && e.Deleted == BaseStatusDeleted.None 
+                && !e.IsCalculated
+                && e.IsCreatedByPlay
+                && e.LastUpdate < (DateTime.Now - delay))
+                .ToList();
+        }
+
+        public IList<ScormPackageWithVersionToEvaluate> GetItemScormToEvaluate(
+            Int32 idPerson,
+            TimeSpan delay)
+        {
+            return Manager.GetAll<ScormPackageWithVersionToEvaluate>(
+                evItm =>
+                !evItm.IsPlaying &&
+                evItm.ToUpdate &&
+                evItm.ModifiedOn < (DateTime.Now - delay)
+                );
+        }
         #endregion
 
         #region Pending evaluations
-            public ScormPackageWithVersionToEvaluate ScormAddPendingEvaluation(liteRepositoryItem item, liteRepositoryItemVersion version, Int32 idPerson, long idLink = 0)
+        public ScormPackageWithVersionToEvaluate ScormAddPendingEvaluation(liteRepositoryItem item, liteRepositoryItemVersion version, Int32 idPerson, long idLink = 0)
+        {
+            ScormPackageWithVersionToEvaluate pItem = null;
+            try
             {
-                ScormPackageWithVersionToEvaluate pItem = null;
-                try
+                pItem = (from ScormPackageWithVersionToEvaluate i in Manager.GetIQ<ScormPackageWithVersionToEvaluate>()
+                            where i.IdPerson == idPerson && i.IdItem == item.Id && i.IdVersion == version.Id && i.IdLink == idLink
+                        select i).Skip(0).Take(1).ToList().FirstOrDefault();
+                Manager.BeginTransaction();
+                if (pItem == null)
                 {
-                    pItem = (from ScormPackageWithVersionToEvaluate i in Manager.GetIQ<ScormPackageWithVersionToEvaluate>()
-                             where i.IdPerson == idPerson && i.IdItem == item.Id && i.IdVersion == version.Id && i.IdLink == idLink
-                            select i).Skip(0).Take(1).ToList().FirstOrDefault();
-                    Manager.BeginTransaction();
-                    if (pItem == null)
-                    {
-                        pItem = new ScormPackageWithVersionToEvaluate();
-                        pItem.IdItem = item.Id;
-                        pItem.IdLink = idLink;
-                        pItem.IdPerson = idPerson;
-                        pItem.IdVersion = version.Id;
-                        pItem.UniqueIdItem = item.UniqueId;
-                        pItem.UniqueIdVersion = version.UniqueIdVersion;
-                    }
-                    pItem.IsPlaying = true;
-                    pItem.Deleted = BaseStatusDeleted.None;
-                    pItem.ToUpdate = true;
-                    pItem.ModifiedOn = DateTime.Now;
-                    Manager.SaveOrUpdate(pItem);
-                    Manager.Commit();
+                    pItem = new ScormPackageWithVersionToEvaluate();
+                    pItem.IdItem = item.Id;
+                    pItem.IdLink = idLink;
+                    pItem.IdPerson = idPerson;
+                    pItem.IdVersion = version.Id;
+                    pItem.UniqueIdItem = item.UniqueId;
+                    pItem.UniqueIdVersion = version.UniqueIdVersion;
                 }
-                catch (Exception ex)
-                {
-                    Manager.RollBack();
-                    pItem = null;
-                }
-                return pItem;
+                pItem.IsPlaying = true;
+                pItem.Deleted = BaseStatusDeleted.None;
+                pItem.ToUpdate = true;
+                pItem.ModifiedOn = DateTime.Now;
+                Manager.SaveOrUpdate(pItem);
+                Manager.Commit();
             }
+            catch (Exception ex)
+            {
+                Manager.RollBack();
+                pItem = null;
+            }
+            return pItem;
+        }
+
+        public List<lm.Comol.Core.FileRepository.Domain.ScormPackageWithVersionToEvaluate> GetPendingEvaluationsForExternal(List<long> idLinks, int idUser, Dictionary<String, long> moduleUserLong, Dictionary<String, String> moduleUserString)
+        {
+            List<dtoItemEvaluation<long>> results = new List<dtoItemEvaluation<long>>();
+            List<lm.Comol.Core.FileRepository.Domain.ScormPackageWithVersionToEvaluate> pendingLinks = new List<lm.Comol.Core.FileRepository.Domain.ScormPackageWithVersionToEvaluate>();
+            
+            pendingLinks = (from l in Manager.GetIQ<lm.Comol.Core.FileRepository.Domain.ScormPackageWithVersionToEvaluate>()
+                            where l.ToUpdate && idLinks.Contains(l.IdLink) && l.IdPerson == idUser
+                            select l).ToList();
+
+            return pendingLinks;
+
+            //if (pendingLinks.Count > 0)
+            //{
+            //    try
+            //    {
+            //        results = EvaluateModuleLinks((from i in pendingLinks select i.IdLink).Distinct().ToList(), idUser, moduleUserLong, moduleUserString);
+            //        Dictionary<long, DateTime> evaluated = (from pl in pendingLinks select new { Id = pl.Id, ModifiedOn = pl.ModifiedOn }).ToDictionary(x => x.Id, x => x.ModifiedOn);
+            //        session.BeginTransaction();
+
+            //        foreach (lm.Comol.Core.FileRepository.Domain.ScormPackageWithVersionToEvaluate item in pendingLinks)
+            //        {
+            //            session.Refresh(item);
+            //            if (evaluated[item.Id] == item.ModifiedOn)
+            //                item.ToUpdate = false;
+            //        }
+            //        session.Transaction.Commit();
+            //    }
+            //    catch (Exception ex)
+            //    {
+            //        if (session.Transaction.IsActive)
+            //            session.Transaction.Rollback();
+            //    }
+            //}
+           
+            //return results;
+        }
+
+        //private List<dtoItemEvaluation<long>> EvaluateModuleLinks(List<long> idLinks, int idUser, Dictionary<String, long> moduleUserLong, Dictionary<String, String> moduleUserString)
+        //{
+        //    List<dtoItemEvaluation<long>> evaluations = new List<dtoItemEvaluation<long>>();
+        //    DataContext dc = new DataContext(session);
+        //    List<ModuleLink> links = (from l in session.Linq<ModuleLink>() where idLinks.Contains(l.Id) select l).ToList();
+
+        //    var query = from l in links
+        //                group l by l.DestinationItem.ServiceCode into linksGroup
+        //                orderby linksGroup.Key
+        //                select linksGroup;
+
+        //    using (ISession icodeon = GetIcodeonSession())
+        //    {
+        //        DataContext ic = new DataContext(icodeon);
+        //        foreach (var groupOfLinks in query)
+        //        {
+        //            evaluations.AddRange(EvaluateModuleLinks(dc, ic, groupOfLinks.Key, groupOfLinks.ToList(), idUser, moduleUserLong, moduleUserString));
+        //        }
+        //    }
+
+
+        //    return evaluations;
+        //}
         #endregion
     }
 }

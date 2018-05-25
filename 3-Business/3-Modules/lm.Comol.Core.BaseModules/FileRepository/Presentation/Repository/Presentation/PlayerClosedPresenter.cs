@@ -98,9 +98,22 @@ namespace lm.Comol.Core.BaseModules.FileRepository.Presentation
                             else{
                                 litePlayerSettings player = players.FirstOrDefault(p => p.Id == version.IdPlayer);
                                 using (NHibernate.ISession session = View.GetScormSession(player.MappingPath)){
-                                    lm.Comol.Modules.ScormStat.Business.ScormService service = new Modules.ScormStat.Business.ScormService(AppContext, session);
+
+                                    lm.Comol.Modules.ScormStat.Business.ScormService service = 
+                                        new Modules.ScormStat.Business.ScormService(AppContext, session);
+
                                     DateTime referenceTime = DateTime.Now;
-                                    lm.Comol.Core.FileRepository.Domain.dtoPackageEvaluation dto = service.EvaluatePackage_NEW(idUser, playerSessionId, item.Id, item.UniqueId, version.Id, version.UniqueIdVersion, out referenceTime);
+
+                                    lm.Comol.Core.FileRepository.Domain.dtoPackageEvaluation dto = 
+                                        service.EvaluatePackage_NEW(
+                                            idUser, 
+                                            playerSessionId, 
+                                            item.Id, 
+                                            item.UniqueId, 
+                                            version.Id, 
+                                            version.UniqueIdVersion, 
+                                            out referenceTime);
+
                                     if (dto != null && dto.IdItem > 0)
                                     {
                                         dto.IdLink = idLink;

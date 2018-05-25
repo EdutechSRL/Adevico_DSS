@@ -95,6 +95,15 @@ Partial Public Class cpAdvEvaluationSteps
     Protected WithEvents LTcomValDesciption As Global.System.Web.UI.WebControls.Literal
     
     '''<summary>
+    '''HYPvalutationValid control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents HYPvalutationValid As Global.System.Web.UI.WebControls.HyperLink
+    
+    '''<summary>
     '''LTcomValStatus control.
     '''</summary>
     '''<remarks>
@@ -174,24 +183,6 @@ Partial Public Class cpAdvEvaluationSteps
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents RPTsteps As Global.System.Web.UI.WebControls.Repeater
-    
-    '''<summary>
-    '''LKBconfirmReorder control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents LKBconfirmReorder As Global.System.Web.UI.WebControls.LinkButton
-    
-    '''<summary>
-    '''HiddenField1 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents HiddenField1 As Global.System.Web.UI.WebControls.HiddenField
     
     '''<summary>
     '''DVecoContainer control.

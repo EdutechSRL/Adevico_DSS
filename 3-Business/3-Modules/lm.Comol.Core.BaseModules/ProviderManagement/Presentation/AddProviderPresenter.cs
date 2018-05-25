@@ -212,6 +212,15 @@ namespace lm.Comol.Core.BaseModules.ProviderManagement.Presentation
                 list.Add(AuthenticationProviderType.Internal);
             list.Add(AuthenticationProviderType.Url);
             list.Add(AuthenticationProviderType.UrlMacProvider);
+
+            //Test Provider Type!
+            list.Add(AuthenticationProviderType.Shibboleth);
+            list.Add(AuthenticationProviderType.Ldap);
+
+            list.Add(AuthenticationProviderType.ActiveDirectory);
+            list.Add(AuthenticationProviderType.ExternalAPI);
+            list.Add(AuthenticationProviderType.WebService);
+
             return list;
         }
     }

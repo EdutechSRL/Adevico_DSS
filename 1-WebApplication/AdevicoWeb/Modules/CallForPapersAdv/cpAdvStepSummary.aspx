@@ -38,7 +38,13 @@
 			/* fine script checked fino a dove fai click*/
 		});
 	</script>
-
+    <style type="text/css">
+        td.Score,
+        td.passed
+        {
+            text-align: center;
+        }
+    </style>
   
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="TitleContent" runat="server">
@@ -60,16 +66,16 @@
 			<table class="tree_table evaluation basic">
 				<thead>
 					<tr>
-						<th class="submitternumber" style="width: 1%;">
+						<th class="submitternumber">
 						<%--<asp:HyperLink ID="HYPorderByEvaluationIndexUp" runat="server" cssclass="icon orderUp">#</asp:HyperLink>
 							<asp:HyperLink ID="HYPorderByEvaluationIndexDown" runat="server" cssclass="icon orderDown">#</asp:HyperLink>--%>
 						</th>
 						<th class="submittername">
-							<asp:Literal id="LTsubmitterName_t" runat="server">Nome sottomittore</asp:Literal>
+							<asp:Literal id="LTsubmitterName_t" runat="server">Nome proponente</asp:Literal>
 							<%--<asp:HyperLink ID="HYPorderByUserUp" runat="server" cssclass="icon orderUp"></asp:HyperLink>
 							<asp:HyperLink ID="HYPorderByUserDown" runat="server" cssclass="icon orderDown"></asp:HyperLink>--%>
 						</th>
-						<th class="points">
+						<th class="totalpoints">
 							<asp:Literal id="LTstepPoints_t" runat="server">Punteggio finale</asp:Literal>
 							<%--<asp:HyperLink ID="HyperLink1" runat="server" cssclass="icon orderUp"></asp:HyperLink>
 							<asp:HyperLink ID="HyperLink2" runat="server" cssclass="icon orderDown"></asp:HyperLink>--%>

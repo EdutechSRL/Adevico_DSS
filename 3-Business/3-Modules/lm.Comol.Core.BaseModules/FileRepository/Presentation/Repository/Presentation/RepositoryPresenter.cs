@@ -15,40 +15,40 @@ namespace lm.Comol.Core.BaseModules.FileRepository.Presentation
     {
         #region "Initialize"
         private ServiceRepository service;
-            public virtual BaseModuleManager CurrentManager { get; set; }
-            private Int32 currentIdModule;
-            protected virtual IViewRepository View
+        public virtual BaseModuleManager CurrentManager { get; set; }
+        private Int32 currentIdModule;
+        protected virtual IViewRepository View
+        {
+            get { return (IViewRepository)base.View; }
+        }
+        private ServiceRepository Service
+        {
+            get
             {
-                get { return (IViewRepository)base.View; }
+                if (service == null)
+                    service = new ServiceRepository(AppContext);
+                return service;
             }
-            private ServiceRepository Service
+        }
+        public Int32 CurrentIdModule
+        {
+            get
             {
-                get
-                {
-                    if (service == null)
-                        service = new ServiceRepository(AppContext);
-                    return service;
-                }
+                if (currentIdModule == 0)
+                    currentIdModule = CurrentManager.GetModuleID(ModuleRepository.UniqueCode);
+                return currentIdModule;
             }
-            public Int32 CurrentIdModule
-            {
-                get
-                {
-                    if (currentIdModule == 0)
-                        currentIdModule = CurrentManager.GetModuleID(ModuleRepository.UniqueCode);
-                    return currentIdModule;
-                }
-            }
-            public RepositoryPresenter(iApplicationContext oContext)
-                : base(oContext)
-            {
-                this.CurrentManager = new BaseModuleManager(oContext);
-            }
-            public RepositoryPresenter(iApplicationContext oContext, IViewRepository view)
-                : base(oContext, view)
-            {
-                this.CurrentManager = new BaseModuleManager(oContext);
-            }
+        }
+        public RepositoryPresenter(iApplicationContext oContext)
+            : base(oContext)
+        {
+            this.CurrentManager = new BaseModuleManager(oContext);
+        }
+        public RepositoryPresenter(iApplicationContext oContext, IViewRepository view)
+            : base(oContext, view)
+        {
+            this.CurrentManager = new BaseModuleManager(oContext);
+        }
         #endregion
 
         public void InitView(RepositoryType type, long idFolder, String path, FolderType folderType, Int32 idCommunity = -1)
@@ -188,7 +188,15 @@ namespace lm.Comol.Core.BaseModules.FileRepository.Presentation
                 if (availableOptions.Contains(ViewOption.Tree) || availableOptions.Contains(ViewOption.FolderPath))
                 {
                     if (availableOptions.Contains(ViewOption.Tree))
-                        View.InitializeTree(currentFolder, items.Where(i => i.Type == ItemType.Folder).ToList(), RepositoryIdentifier.Create((idCommunity>0)? RepositoryType.Community : RepositoryType.Portal,idCommunity) , View.RepositoryIdentifier);
+                    {
+                        //Add Delete == none per togliere le cancellate dal tree!
+                        View.InitializeTree(
+                            currentFolder, 
+                            items.Where(i => i.Type == ItemType.Folder && i.Deleted == BaseStatusDeleted.None).ToList(), 
+                            RepositoryIdentifier.Create((idCommunity > 0) ? RepositoryType.Community : RepositoryType.Portal, idCommunity), 
+                            View.RepositoryIdentifier);
+                }
+                        
                     if (availableOptions.Contains(ViewOption.FolderPath))
                         InitializeFolderPath(currentFolder, type, idCommunity,  orderBy, ascending);
                     else
@@ -1144,5 +1152,107 @@ namespace lm.Comol.Core.BaseModules.FileRepository.Presentation
             else
                 return false;
         }
+
+
+        #region ScormStat
+
+
+
+
+        public void UpdateScormStat()
+        {
+            int personId = UserContext.CurrentUserID;
+            //String playerSessionId = UserContext.WorkSessionID.ToString();
+
+            int CommunityId = UserContext.CurrentCommunityID;
+            DateTime referenceTime = DateTime.Now;
+
+            litePlayerSettings playerSets = Service.PlayerScormGetSettings();
+
+            if (playerSets == null)
+                return;
+
+            TimeSpan Delay = View.GetScormStatDelay();
+            
+            List<ScormPackageUserEvaluation> UserEvaluations = service.ScormGetPendingPlayEvaluations(personId, Delay);
+
+            if (UserEvaluations == null || !UserEvaluations.Any())
+                return;
+
+            //FR_ItemScormToEvaluate => ScormPackageWithVersionToEvaluate
+            //Lo fa internamente "AGGIORNA SCORM PLAY"
+            //IList<ScormPackageWithVersionToEvaluate> EvaluationsToUpdate = service.GetItemScormToEvaluate(personId, Delay);
+            //if (EvaluationsToUpdate == null || !EvaluationsToUpdate.Any())
+            //    return;
+
+
+
+            //bool saved = false;
+
+            //IList<lm.Comol.Core.FileRepository.Domain.ScormPackageUserEvaluation> EvaluatedItem = new List<ScormPackageUserEvaluation>();
+
+            try
+            {
+                using (NHibernate.ISession session = View.GetScormSession(playerSets.MappingPath))
+                {
+                    foreach(ScormPackageUserEvaluation newEval in UserEvaluations)
+                    {
+                        //ScormPackageUserEvaluation newEval = UserEvaluation.FirstOrDefault(ev =>
+                        //        ev.IdItem == evaltoupdate.IdItem
+                        //        && ev.IdPerson == evaltoupdate.IdPerson
+                        //        && ev.IdVersion == evaltoupdate.IdVersion
+                        //);
+
+                        //if(newEval != null)
+                        //{
+                        lm.Comol.Modules.ScormStat.Business.ScormService ScormService = new Modules.ScormStat.Business.ScormService(AppContext, session);
+                        lm.Comol.Core.FileRepository.Domain.dtoPackageEvaluation dto = ScormService.EvaluatePackage_NEW(
+                            personId,
+                            newEval.PlaySession,
+                            newEval.IdItem,
+                            newEval.UniqueIdItem,
+                            newEval.IdVersion,
+                            newEval.UniqueIdVersion,
+                            out referenceTime);
+
+                        //AGGIORNA SCORM PLAY
+                        lm.Comol.Core.FileRepository.Domain.ScormPackageUserEvaluation saved = Service.ScormSaveEvaluation(
+                            dto,
+                            personId,
+                            referenceTime,
+                            true,
+                            true);
+                        //}
+
+
+                        //if(saved != null)
+                        //{
+                        //    EvaluatedItem.Add(saved);
+                        //} 
+                    }
+                }
+            }   catch
+            {
+
+            }
+
+            //if (saved != null)
+            //{
+            //    //if (saveCompleteness && saved != null && idLink > 0 && saved.ModuleCode == View.EduPathModuleCode)
+            //    //{
+            //    //    View.SaveLinkEvaluation(saved);
+            //    //}
+            //}
+        }
+
+        public void UpdatePendingScormStat()
+        {
+            int CommunityId = UserContext.CurrentCommunityID;
+            int PersonId = -1;
+
+            //Service.PlayStatisticsCalculate(PersonId, CommunityId);
+        }
+
+        #endregion
     }
 }

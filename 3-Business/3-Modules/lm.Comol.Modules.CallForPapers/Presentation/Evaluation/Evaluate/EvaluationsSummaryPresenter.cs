@@ -81,10 +81,7 @@ namespace lm.Comol.Modules.CallForPapers.Presentation.Evaluation
 
             ModuleCallForPaper module = ServiceCall.CallForPaperServicePermission(idUser, idCommunity);
             Boolean allowAdmin =  ((module.ManageCallForPapers || module.Administration || ((module.CreateCallForPaper || module.EditCallForPaper) && call.Owner.Id == idUser)));
-
-            
-
-
+           
             View.SetActionUrl((allowAdmin) ? CallStandardAction.Manage : CallStandardAction.List, RootObject.ViewCalls(idCall,type, ((allowAdmin) ? CallStandardAction.Manage : CallStandardAction.List), idCommunity, View.PreloadView));
 
             if (UserContext.isAnonymous)
@@ -113,42 +110,50 @@ namespace lm.Comol.Modules.CallForPapers.Presentation.Evaluation
                     View.CurrentEvaluationType = call.EvaluationType;
                     InitializeView(idCall, call.EvaluationType, idCommunity, View.PreloadFilters);
                     View.SetStepSummaryLink(0, 0, false);
-                } else
-                {
-                    long idCommission = View.IdCallAdvCommission;
-                    long StepId = ServiceCall.StepGetIdFromComm(idCommission);
-                    View.SetStepSummaryLink(StepId, idCommission, true);
-
-                    EvaluationType oldEvtype = EvaluationType.Average;
-
-                    Advanced.dto.dtoCommEvalInfo evinfo = ServiceCall.CommissionEvalTypeGet(idCommission);
-
-                    switch (evinfo.Type)
-                    {
-                        case Advanced.EvalType.Average:
-                            oldEvtype = EvaluationType.Average;
-                            break;
-                        case Advanced.EvalType.Sum:
-                            oldEvtype = EvaluationType.Sum;
-                            break;
-                    }
-                    View.CurrentEvaluationType = (evinfo.Type == Advanced.EvalType.Sum) ? EvaluationType.Sum : EvaluationType.Average;
-                    View.minRange = evinfo.minRange;
-                    View.LockBool = evinfo.LockBool;
-
-                   
-                    bool cancloseAdvance = ServiceCall.CommissionCanClose(idCommission);
-
-                    View.ShowCloseCommission(cancloseAdvance);
-                   
-
-                    InitializeViewAvance(idCall,
-                        oldEvtype,
-                        idCommunity,
-                        idCommission,
-                        View.PreloadFilters);
-                }
+                } 
                 
+            }
+
+            if (call.AdvacedEvaluation)
+            {
+                long idCommission = View.IdCallAdvCommission;
+                long StepId = ServiceCall.StepGetIdFromComm(idCommission);
+
+
+                bool ShowGenericLink = ServiceCall.CommissionUserIsPresidentOrSegretaryInMaster(idCommission, UserContext.CurrentUserID);
+                
+
+                View.SetStepSummaryLink(StepId, idCommission, ShowGenericLink);
+
+                EvaluationType oldEvtype = EvaluationType.Average;
+
+                Advanced.dto.dtoCommEvalInfo evinfo = ServiceCall.CommissionEvalTypeGet(idCommission);
+                
+                switch (evinfo.Type)
+                {
+                    case Advanced.EvalType.Average:
+                        oldEvtype = EvaluationType.Average;
+                        break;
+                    case Advanced.EvalType.Sum:
+                        oldEvtype = EvaluationType.Sum;
+                        break;
+                }
+                View.CurrentEvaluationType = (evinfo.Type == Advanced.EvalType.Sum) ? EvaluationType.Sum : EvaluationType.Average;
+                View.minRange = evinfo.minRange;
+                View.LockBool = evinfo.LockBool;
+
+
+                bool cancloseAdvance = ServiceCall.CommissionCanClose(idCommission);
+
+                View.ShowCloseCommission(cancloseAdvance);
+
+
+                InitializeViewAvance(idCall,
+                    oldEvtype,
+                    idCommunity,
+                    idCommission,
+                    View.PreloadFilters,
+                    call.Type);
             }
         }
 
@@ -182,7 +187,7 @@ namespace lm.Comol.Modules.CallForPapers.Presentation.Evaluation
             View.LoadAvailableSubmitterTypes(types, filters.IdSubmitterType);
             LoadEvaluations(idCall,type, idCommunity, filters, View.PreloadPageIndex, View.PreloadPageSize);
         }
-        public void LoadEvaluations(long idCall, EvaluationType type, Int32 idCommunity, dtoEvaluationsFilters filters, int pageIndex, int pageSize)
+        public void LoadEvaluations(long idCall, EvaluationType EvalType, Int32 idCommunity, dtoEvaluationsFilters filters, int pageIndex, int pageSize)
         {
             Boolean allowManage = true;
             View.CurrentFilters = filters;
@@ -190,10 +195,26 @@ namespace lm.Comol.Modules.CallForPapers.Presentation.Evaluation
             ModuleCallForPaper module = Service.CallForPaperServicePermission(UserContext.CurrentUserID, idCommunity);
             allowManage = (module.CreateCallForPaper || module.Administration || module.ManageCallForPapers || module.EditCallForPaper);
 
+            lm.Comol.Modules.CallForPapers.Domain.CallForPaperType type = ServiceCall.GetCallType(idCall);
+            dtoCall call = (type == CallForPaperType.CallForBids) ? ServiceCall.GetDtoCall(idCall) : null;
+            
+            if(call.AdvacedEvaluation)
+            {
+                bool isPresident = ServiceCall.CommissionUserIsPresident(View.IdCallAdvCommission, UserContext.CurrentUserID);
+                bool isSecretary = ServiceCall.CommissionUserIsSecretary(View.IdCallAdvCommission, UserContext.CurrentUserID);
+
+                if(isPresident || isSecretary)
+                {
+                    allowManage = true;
+                }
+            }
+
+
             if (UserContext.isAnonymous)
                 View.DisplaySessionTimeout();
             else if (allowManage)
-                LoadItems(idCall, type, idCommunity, filters, pageIndex, pageSize);
+                LoadItems(idCall, EvalType, idCommunity, filters, pageIndex, pageSize);
+
             else
                 View.DisplayNoPermission(idCommunity, View.IdCallModule);
         }
@@ -262,7 +283,9 @@ namespace lm.Comol.Modules.CallForPapers.Presentation.Evaluation
             EvaluationType type, 
             Int32 idCommunity, 
             long idCommission,
-            dtoEvaluationsFilters filters)
+            dtoEvaluationsFilters filters,
+            CallForPaperType CpType
+            )
         {
             type = ServiceCall.CommissionGetEvalType(idCommission);
 
@@ -275,8 +298,10 @@ namespace lm.Comol.Modules.CallForPapers.Presentation.Evaluation
 
             if (!items.Contains(filters.Status))
                 filters.Status = items[0];
+
             if (types == null || (types != null && (!types.Any() && !types.Where(i => i.Id == filters.IdSubmitterType).Any())))
                 filters.IdSubmitterType = -1;
+
             View.CurrentFilters = filters;
             View.LoadAvailableStatus(items, filters.Status);
             View.LoadAvailableSubmitterTypes(types, filters.IdSubmitterType);
@@ -290,7 +315,8 @@ namespace lm.Comol.Modules.CallForPapers.Presentation.Evaluation
                 idCommission,
                 filters, 
                 View.PreloadPageIndex, 
-                View.PreloadPageSize);
+                View.PreloadPageSize,
+                CpType);
         }
 
         public void LoadEvaluationsAdvance(
@@ -300,7 +326,8 @@ namespace lm.Comol.Modules.CallForPapers.Presentation.Evaluation
             long idCommission,
             dtoEvaluationsFilters filters, 
             int pageIndex, 
-            int pageSize)
+            int pageSize,
+            CallForPaperType CpType)
         {
             Boolean allowManage = true;
             View.CurrentFilters = filters;
@@ -308,8 +335,15 @@ namespace lm.Comol.Modules.CallForPapers.Presentation.Evaluation
             ModuleCallForPaper module = Service.CallForPaperServicePermission(UserContext.CurrentUserID, idCommunity);
             allowManage = (module.CreateCallForPaper || module.Administration || module.ManageCallForPapers || module.EditCallForPaper);
 
+            bool IsPresident = ServiceCall.CommissionUserIsPresident(idCommission, UserContext.CurrentUserID);
+            bool IsSecretary = ServiceCall.CommissionUserIsSecretary(idCommission, UserContext.CurrentUserID);
+
+            allowManage |= IsPresident | IsSecretary;
+
             //E controllo sui membri della commissione!
 
+            View.SetActionUrl((allowManage) ? CallStandardAction.Manage : CallStandardAction.List, RootObject.ViewCalls(idCall, CpType, ((allowManage) ? CallStandardAction.Manage : CallStandardAction.List), idCommunity, View.PreloadView));
+            
             if (UserContext.isAnonymous)
                 View.DisplaySessionTimeout();
             else if (allowManage)

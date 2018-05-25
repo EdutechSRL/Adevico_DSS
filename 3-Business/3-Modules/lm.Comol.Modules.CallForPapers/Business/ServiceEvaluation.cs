@@ -2816,7 +2816,82 @@ namespace lm.Comol.Modules.CallForPapers.Business
                 }
 
 
-                public Boolean SaveDefaultAssignments(long idCall, long idcommittee)
+        public Boolean SaveDefaultFirstAssignments(long idCall, long idcommittee)
+        {
+            BaseForPaper call = Manager.Get<BaseForPaper>(idCall);
+            EvaluationCommittee committee = Manager.Get<EvaluationCommittee>(idcommittee);
+            if (committee != null && call != null)
+            {
+                Boolean result = false;
+                try
+                {
+                    litePerson person = Manager.GetLitePerson(UC.CurrentUserID);
+                    if (call != null && person != null && committee != null)
+                    {
+                        Boolean useDss = CallUseDss(call.Id);
+
+                        Manager.BeginTransaction();
+                        
+                        List<long> idTypes = committee.AssignedTypes.Where(a => a.Deleted == BaseStatusDeleted.None).Select(a => a.SubmitterType.Id).ToList();
+                        var evaluations = (from e in Manager.GetIQ<Evaluation>()
+                                           where (e.Deleted == BaseStatusDeleted.None || (e.Deleted != BaseStatusDeleted.None && e.Status == Domain.Evaluation.EvaluationStatus.None)) && e.Call.Id == call.Id
+                                               && e.Committee.Id == committee.Id
+                                           select e).ToList();
+
+                        UserSubmission FirstSubmission = (from e in Manager.GetIQ<UserSubmission>()
+                                                            where e.Deleted == BaseStatusDeleted.None && e.Call.Id == call.Id
+                                                            && e.Status == SubmissionStatus.accepted
+                                                                && (committee.ForAllSubmittersType || idTypes.Contains(e.Type.Id))
+                                                            select e).Skip(0).Take(1).ToList().FirstOrDefault();
+
+                        CommitteeMember member = committee.Members.FirstOrDefault();
+
+                        if(FirstSubmission != null && member != null)
+                        {
+                            Evaluation evaluation = evaluations.Where(
+                                e => e.Committee.Id == committee.Id 
+                                && e.Evaluator.Id == member.Evaluator.Id 
+                                && e.Submission.Id == FirstSubmission.Id).FirstOrDefault();
+
+                            if (evaluation == null)
+                            {
+                                evaluation = new Evaluation();
+                                evaluation.CreateMetaInfo(person, UC.IpAddress, UC.ProxyIpAddress);
+                                evaluation.Evaluator = member.Evaluator;
+                                evaluation.Submission = FirstSubmission;
+                                evaluation.Call = call;
+                                evaluation.UseDss = useDss;
+                                evaluation.Community = call.Community;
+                                evaluation.Comment = "";
+                                evaluation.Committee = committee;
+                                evaluation.Evaluated = false;
+                                evaluation.Status = Domain.Evaluation.EvaluationStatus.None;
+                                Manager.SaveOrUpdate(evaluation);
+                            }
+                            else if (evaluation.Deleted != BaseStatusDeleted.None)
+                            {
+                                evaluation.RecoverMetaInfo(person, UC.IpAddress, UC.ProxyIpAddress);
+                                Manager.SaveOrUpdate(evaluation);
+                            }
+                        }
+
+                        Manager.Commit();
+                        result = true;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    if (Manager.IsInTransaction())
+                        Manager.RollBack();
+                }
+                return result;
+            }
+            else
+                return false;
+        }
+
+
+        public Boolean SaveDefaultAssignments(long idCall, long idcommittee)
                 {
                     BaseForPaper call = Manager.Get<BaseForPaper>(idCall);
                     EvaluationCommittee committee = Manager.Get<EvaluationCommittee>(idcommittee);
@@ -2825,7 +2900,9 @@ namespace lm.Comol.Modules.CallForPapers.Business
                     else
                         return false;
                 }
-                public Boolean SaveDefaultAssignments(BaseForPaper call, EvaluationCommittee committee)
+
+       
+        public Boolean SaveDefaultAssignments(BaseForPaper call, EvaluationCommittee committee)
                 {
                     Boolean result = false;
                     try
@@ -2846,6 +2923,8 @@ namespace lm.Comol.Modules.CallForPapers.Business
                     }
                     return result;
                 }
+
+
                 public Boolean SaveDefaultAssignments(long idCall)
                 {
                     BaseForPaper call = Manager.Get<BaseForPaper>(idCall);
@@ -5688,60 +5767,101 @@ namespace lm.Comol.Modules.CallForPapers.Business
                     return status;
                 }
 
-                public List<dtoSubmissionCommitteeItem> GetSubmissionEvaluations(long idCall,long idSubmission, long idCommittee, String unknownUser)
+        public List<dtoSubmissionCommitteeItem> GetSubmissionEvaluations(long idCall,long idSubmission, long idCommittee, String unknownUser)
+        {
+            List<dtoSubmissionCommitteeItem> items = new List<dtoSubmissionCommitteeItem>();
+            try
+            {
+                List<expEvaluation> evaluations = (from e in Manager.GetIQ<expEvaluation>()
+                                                    where e.IdSubmission == idSubmission 
+                                                        && (idCommittee <= 0 || (idCommittee > 0 && e.IdCommittee == idCommittee)) 
+                                                        && e.Deleted == BaseStatusDeleted.None
+                                                    select e)
+                                                    .ToList();
+
+                List<long> idCommittees = evaluations.Select(e => e.IdCommittee).Distinct().ToList();
+
+                List<DssCallEvaluation> dssEvaluations = DssRatingGetValues(idCall, idCommittees);
+
+                List<DssCallEvaluation> dssEvaluatorEvaluations = DssRatingGetEvaluationValues(idCall, idCommittees);
+
+                foreach (var c in evaluations.GroupBy(e => e.Committee))
                 {
-                    List<dtoSubmissionCommitteeItem> items = new List<dtoSubmissionCommitteeItem>();
-                    try
-                    {
-                        List<expEvaluation> evaluations = (from e in Manager.GetIQ<expEvaluation>()
-                                                           where e.IdSubmission == idSubmission && (idCommittee <= 0 || (idCommittee > 0 && e.IdCommittee == idCommittee)) && e.Deleted == BaseStatusDeleted.None
-                                                           select e).ToList();
-                        List<long> idCommittees = evaluations.Select(e => e.IdCommittee).Distinct().ToList();
-                        List<DssCallEvaluation> dssEvaluations = DssRatingGetValues(idCall, idCommittees);
-                        List<DssCallEvaluation> dssEvaluatorEvaluations = DssRatingGetEvaluationValues(idCall, idCommittees);
-                        foreach (var c in evaluations.GroupBy(e => e.Committee)) {
-                            List<expCommitteeMember> members = (from m in Manager.GetIQ<expCommitteeMember>() where m.Deleted == BaseStatusDeleted.None && m.IdCommittee == c.Key.Id select m).ToList();
-                            dtoSubmissionCommitteeItem item = new dtoSubmissionCommitteeItem() { Name = c.Key.Name, IdSubmission = idSubmission, IdCommittee = c.Key.Id, DssEvaluation = dssEvaluations.Where(e=> e.IdCommittee==c.Key.Id && e.IdSubmission== idSubmission).FirstOrDefault() };
-                            item.Criteria = 
-                                    (c.Key.Criteria != null) ? 
-                                    c.Key.Criteria
-                                        .OrderBy(cr => cr.DisplayOrder)
-                                        .ThenBy(cr => cr.Name)
-                                        .Select(cr => new dtoCriterionSummaryItem(cr, members.Count))
-                                        .ToList() 
-                                        : new List<dtoCriterionSummaryItem>();
+                    List<expCommitteeMember> members = 
+                            (from m in Manager.GetIQ<expCommitteeMember>()
+                                where m.Deleted == BaseStatusDeleted.None 
+                                && m.IdCommittee == c.Key.Id
+                                select m)
+                                .ToList();
 
-                            if (item.Criteria.Any())
-                            {
-                                if (item.Criteria.Count == 1)
-                                    item.Criteria[0].DisplayAs = displayAs.first | displayAs.last;
-                                else
-                                {
-                                    item.Criteria.First().DisplayAs = displayAs.first;
-                                    item.Criteria.Last().DisplayAs = displayAs.last;
-                                }
-                            }
-                            item.Evaluators = members.Select(e => CreateEvaluatorDisplayItem(c.Key.Id, idSubmission,item.Criteria, e.Status, e.Evaluator, c.FirstOrDefault(g => g.IdEvaluator == e.Evaluator.Id), dssEvaluatorEvaluations.Where(d => d.IdEvaluation == c.Where(x => x.IdEvaluator == e.Evaluator.Id).Select(x => x.Id).DefaultIfEmpty(0).FirstOrDefault()).FirstOrDefault(), unknownUser)).ToList();
-                            item.Criteria.ForEach(cr => cr.LoadEvaluations(item.Evaluators));
-                            items.Add(item);
-                        }
-                    }
-                    catch (Exception ex)
+                    dtoSubmissionCommitteeItem item = new dtoSubmissionCommitteeItem()
                     {
+                        Name = c.Key.Name,
+                        IdSubmission = idSubmission,
+                        IdCommittee = c.Key.Id,
+                        DssEvaluation = dssEvaluations.Where(e=> e.IdCommittee==c.Key.Id && e.IdSubmission== idSubmission).FirstOrDefault()
+                    };
 
-                    }
-                    
-                    //ToDo: verificare, poi ottimizzare sta roba
-                    foreach(var itm in items)
+                    item.Criteria = 
+                            (c.Key.Criteria != null) ? 
+                            c.Key.Criteria
+                                .OrderBy(cr => cr.DisplayOrder)
+                                .ThenBy(cr => cr.Name)
+                                .Select(cr => new dtoCriterionSummaryItem(cr, members.Count))
+                                .ToList() 
+                                : new List<dtoCriterionSummaryItem>();
+
+                    if (item.Criteria.Any())
                     {
-                        foreach(var eval in itm.Criteria)
+                        if (item.Criteria.Count == 1)
+                            item.Criteria[0].DisplayAs = displayAs.first | displayAs.last;
+                        else
                         {
-                            eval.Evaluations = eval.Evaluations.OrderBy(e => e.Evaluator.Name).ThenBy(e => e.Evaluator.IdMembership).ToList();
+                            item.Criteria.First().DisplayAs = displayAs.first;
+                            item.Criteria.Last().DisplayAs = displayAs.last;
                         }
                     }
+                    item.Evaluators = 
+                        members.Select(e => 
+                            CreateEvaluatorDisplayItem(
+                                c.Key.Id, 
+                                idSubmission,
+                                item.Criteria, 
+                                e.Status, 
+                                e.Evaluator, 
+                                c.FirstOrDefault(g => g.IdEvaluator == e.Evaluator.Id), 
+                                dssEvaluatorEvaluations
+                                    .Where(d => 
+                                        d.IdEvaluation == 
+                                            c.Where(x => x.IdEvaluator == e.Evaluator.Id).Select(x => x.Id).DefaultIfEmpty(0).FirstOrDefault())
+                                    .FirstOrDefault(), 
+                                unknownUser)
+                            ).ToList();
 
-                    return items;
+                    item.Criteria.ForEach(cr => cr.LoadEvaluations(item.Evaluators));
+                    items.Add(item);
                 }
+            }
+            catch (Exception ex)
+            {
+
+            }
+                    
+            //ToDo: verificare, poi ottimizzare sta roba
+            foreach(var itm in items)
+            {
+
+                itm.Evaluators = itm.Evaluators.OrderBy(e => e.Name).ThenBy(e => e.IdMembership).ToList();
+                    
+                foreach (var eval in itm.Criteria)
+                {
+                    eval.Evaluations = 
+                        eval.Evaluations.OrderBy(e => e.Evaluator.Name).ThenBy(e => e.Evaluator.IdMembership).ToList();
+                }
+            }
+
+            return items;
+        }
 
                 private dtoEvaluatorDisplayItem CreateEvaluatorDisplayItem(long idCommittees, long idSubmission,List<dtoCriterionSummaryItem> criteria, MembershipStatus status, expEvaluator evaluator, expEvaluation evaluation, DssCallEvaluation dssEvaluation, String unknownUser)
                 {

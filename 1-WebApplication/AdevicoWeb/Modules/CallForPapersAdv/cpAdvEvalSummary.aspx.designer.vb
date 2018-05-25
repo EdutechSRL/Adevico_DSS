@@ -149,6 +149,15 @@ Partial Public Class cpAdvEvalSummary
     Protected WithEvents HYPcommissionSummary As Global.System.Web.UI.WebControls.HyperLink
     
     '''<summary>
+    '''HYPevaluationProcess control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents HYPevaluationProcess As Global.System.Web.UI.WebControls.HyperLink
+    
+    '''<summary>
     '''LKBupdate control.
     '''</summary>
     '''<remarks>

@@ -129,11 +129,29 @@ namespace lm.Comol.Core.Authentication.Business
                     {
                         items.AddRange((from i in this.Manager.GetIQ<ExternalLoginInfo>() where i.IdExternalString.Contains(idn) && i.Provider == provider && i.Person != null select i).ToList());
                     }
-                    multipleIdentifiers.ForEach(id => list.AddRange(items.Where(i => i.IdExternalString.Split(provider.MultipleItemsSeparator.ToArray(), StringSplitOptions.RemoveEmptyEntries).Contains(id)).ToList()));
+                    multipleIdentifiers.ForEach(
+                        id => 
+                        list.AddRange(
+                            items.Where(
+                                i => i.IdExternalString.Split(
+                                    provider.MultipleItemsSeparator.ToArray(), 
+                                    StringSplitOptions.RemoveEmptyEntries)
+                                .Contains(id)
+                            )
+                            .ToList()
+                            )
+                        );
+
                 }
             }
             else
-                list = (from i in this.Manager.GetIQ<ExternalLoginInfo>() where i.IdExternalString == identifier && i.Provider == provider && i.Person != null select i).ToList();
+                list = (
+                    from i in this.Manager.GetIQ<ExternalLoginInfo>()
+                    where i.IdExternalString == identifier 
+                        && i.Provider == provider 
+                        && i.Person != null
+                        && i.Deleted == BaseStatusDeleted.None
+                    select i).ToList();
             return list;
         }
 

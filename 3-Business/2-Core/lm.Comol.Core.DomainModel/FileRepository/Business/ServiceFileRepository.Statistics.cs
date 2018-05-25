@@ -262,7 +262,10 @@ namespace lm.Comol.Core.FileRepository.Business
                 {
                     return (from q in Manager.GetIQ<PlayStatistics>() select q).Where(filters);
                 }
-            #endregion
+
+
+       
+        #endregion
         #endregion
     }
 }

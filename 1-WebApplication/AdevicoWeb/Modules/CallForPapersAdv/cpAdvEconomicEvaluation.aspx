@@ -2,6 +2,8 @@
 <%@ MasterType VirtualPath="~/AjaxPortal.Master" %>
 
 <%@ Register TagPrefix="CTRL" TagName="Header" Src="~/Modules/CallForPapersAdv/UC/Uc_AdvHeader.ascx" %>
+<%@ Register Src="~/Modules/CallForPapersAdv/UC/Uc_AdvTableExport.ascx" TagPrefix="CTRL" TagName="Uc_AdvTableExport" %>
+
 
 <asp:Content ID="Content1" ContentPlaceHolderID="PageTitleContent" runat="server">
 </asp:Content>
@@ -153,12 +155,12 @@
 		table.tree_table.evaluation.detail tr td textarea{
 			width:100%;
 		}
-		.overBudget,
+		/*.overBudget,
 		.errorBordered{
 			background-color:#ad2424 !important;
 			padding:0 6px;
 			color:#fff;
-		}
+		}*/
 		#container{
 			min-width:920px;
 			width:90%;
@@ -201,9 +203,13 @@
 							<asp:Label ID="LBFinalTotalAdmit_t" runat="server">Totale Ammesso:</asp:Label>
 							<asp:Label ID="LBFinalTotalAdmit" runat="server" CssClass="admitGlobalTotal">###</asp:Label> &euro;
 						</li>
-						 <li>
+						 <li class="hide">
 							<asp:Label ID="LBFinalMAXadmit_t" runat="server">Massimo Ammesso:</asp:Label>
 							<asp:Label ID="LBFinalMAXadmit" runat="server" CssClass="admitGlobalMax">###</asp:Label> &euro;
+							 <%--
+                                 Classe da reimpostare: overBudget
+                                 File Css: inline, vedi sopra.
+                            --%>
 						</li>
 						<%--<li class="status">
 							<asp:Literal ID="LTsubmissionStatus_t" runat="server"></asp:Literal>&nbsp;<asp:Label
@@ -224,6 +230,7 @@
 					<asp:LinkButton ID="LKBconfirm" runat="server" CssClass="linkMenu">Conferma definitiva</asp:LinkButton>
 					<asp:LinkButton ID="LKBdraft" runat="server" CssClass="linkMenu">Rimetti in bozza</asp:LinkButton>
 					<asp:LinkButton ID="LKBClose" runat="server" CssClass="linkMenu">Chiudi valutazione</asp:LinkButton>
+                    <CTRL:Uc_AdvTableExport runat="server" id="Uc_AdvTableExport" />
 				</div>
 			</div>
 
@@ -263,7 +270,7 @@
 												<asp:Literal ID="LTtotal_t" runat="server">Totale richiesto</asp:Literal>
 											</th>
 											<th>
-												<asp:Literal ID="LTisAmmessa_t" runat="server">Ammetti</asp:Literal>
+												<asp:Literal ID="LTisAmmessa_t" runat="server">Approvato</asp:Literal>
 											</th>
 											<th>
 												<asp:Literal ID="LTAmmessaQntt_t" runat="server">Quantità ammessa</asp:Literal>
@@ -348,7 +355,19 @@
 			<div class="viewbuttons clearfix">
 
 			</div>
+			<div class="innerwrapper clearfix">
+				<div class="left">
+				</div>
+				<div class="right">
+					<asp:HyperLink ID="HypSummary_bot" runat="server" CssClass="linkMenu">Sommario</asp:HyperLink>
+					<asp:LinkButton ID="LKBSave_bot" runat="server" CssClass="linkMenu">Salva bozza</asp:LinkButton>
+					<asp:LinkButton ID="LKBconfirm_bot" runat="server" CssClass="linkMenu">Conferma definitiva</asp:LinkButton>
+					<asp:LinkButton ID="LKBdraft_bot" runat="server" CssClass="linkMenu">Rimetti in bozza</asp:LinkButton>
+					<asp:LinkButton ID="LKBClose_bot" runat="server" CssClass="linkMenu">Chiudi valutazione</asp:LinkButton>
+				</div>
+			</div>
 		</asp:View>
 	</asp:MultiView>
 	</div>
+      
 </asp:Content>

@@ -33,10 +33,9 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>bin\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\WCF_CoreServices.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -49,71 +48,40 @@
   <ItemGroup>
     <Reference Include="Antlr3.Runtime, Version=3.1.0.39271, Culture=neutral, PublicKeyToken=3a9cab8f8d22bfb7, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\9-AdevicoMIT_Library\lm.Comol.MitLibrary\External\Antlr3.Runtime.dll</HintPath>
+      <HintPath>..\..\..\..\Library\lm.Comol.Core.CommonLib\NHibernate_21\Antlr3.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Castle.Core, Version=1.1.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\9-AdevicoMIT_Library\lm.Comol.MitLibrary\External\Castle.Core.dll</HintPath>
+      <HintPath>..\..\..\..\Library\lm.Comol.Core.CommonLib\NHibernate_21\Castle.Core.dll</HintPath>
     </Reference>
     <Reference Include="Castle.DynamicProxy2, Version=2.1.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\9-AdevicoMIT_Library\lm.Comol.MitLibrary\External\Castle.DynamicProxy2.dll</HintPath>
+      <HintPath>..\..\..\..\Library\lm.Comol.Core.CommonLib\NHibernate_21\Castle.DynamicProxy2.dll</HintPath>
     </Reference>
-    <Reference Include="COL_BusinessLogic_v2.0, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Iesi.Collections, Version=1.0.0.1, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\9-AdevicoMIT_Library\lm.Comol.MitLibrary\Adevico\MIT\COL_BusinessLogic_v2.0.dll</HintPath>
-    </Reference>
-    <Reference Include="COL_Questionario, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\9-AdevicoMIT_Library\lm.Comol.MitLibrary\Adevico\MIT\COL_Questionario.dll</HintPath>
-    </Reference>
-    <Reference Include="Iesi.Collections, Version=1.0.1.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\9-AdevicoMIT_Library\lm.Comol.MitLibrary\External\Iesi.Collections.dll</HintPath>
-    </Reference>
-    <Reference Include="lm.Comol.Core.Data, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\9-AdevicoMIT_Library\lm.Comol.MitLibrary\Adevico\MIT\lm.Comol.Core.Data.dll</HintPath>
-    </Reference>
-    <Reference Include="lm.Comol.Modules.Base, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\9-AdevicoMIT_Library\lm.Comol.MitLibrary\Adevico\MIT\lm.Comol.Modules.Base.dll</HintPath>
-    </Reference>
-    <Reference Include="lm.Comol.Modules.EduPath, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\9-AdevicoMIT_Library\lm.Comol.MitLibrary\Adevico\MIT\lm.Comol.Modules.EduPath.dll</HintPath>
-    </Reference>
-    <Reference Include="lm.Comol.Modules.ScormStat, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\9-AdevicoMIT_Library\lm.Comol.MitLibrary\Adevico\MIT\lm.Comol.Modules.ScormStat.dll</HintPath>
-    </Reference>
-    <Reference Include="lm.Comol.Modules.Standard, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\9-AdevicoMIT_Library\lm.Comol.MitLibrary\Adevico\MIT\lm.Comol.Modules.Standard.dll</HintPath>
+      <HintPath>..\..\..\..\Library\lm.Comol.Core.CommonLib\NHibernate_21\Iesi.Collections.dll</HintPath>
     </Reference>
     <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\9-AdevicoMIT_Library\lm.Comol.MitLibrary\External\log4net.dll</HintPath>
+      <HintPath>..\..\..\..\Library\lm.Comol.Core.CommonLib\NHibernate_21\log4net.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="Microsoft.QualityTools.Testing.Fakes, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-    </Reference>
     <Reference Include="NHibernate, Version=2.1.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\9-AdevicoMIT_Library\lm.Comol.MitLibrary\External\NHibernate.dll</HintPath>
+      <HintPath>..\..\..\..\Library\lm.Comol.Core.CommonLib\NHibernate_21\NHibernate.dll</HintPath>
     </Reference>
     <Reference Include="NHibernate.ByteCode.Castle, Version=2.1.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\9-AdevicoMIT_Library\lm.Comol.MitLibrary\External\NHibernate.ByteCode.Castle.dll</HintPath>
+      <HintPath>..\..\..\..\Library\lm.Comol.Core.CommonLib\NHibernate_21\NHibernate.ByteCode.Castle.dll</HintPath>
     </Reference>
     <Reference Include="NHibernate.Linq, Version=1.0.0.4000, Culture=neutral, PublicKeyToken=444cf6a87fdab271, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\9-AdevicoMIT_Library\lm.Comol.MitLibrary\External\NHibernate.Linq.dll</HintPath>
+      <HintPath>..\..\..\..\Library\lm.Comol.Core.CommonLib\NHibernate_21\NHibernate.Linq.dll</HintPath>
     </Reference>
     <Reference Include="NHibernate.SessionUtility, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\9-AdevicoMIT_Library\lm.Comol.MitLibrary\External\NHibernate.SessionUtility.dll</HintPath>
+      <HintPath>..\..\..\..\Library\lm.Comol.Core.CommonLib\NHibernate_21\NHibernate.SessionUtility.dll</HintPath>
     </Reference>
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Web.DynamicData" />
@@ -134,7 +102,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="hibernate.cfg.xml.config" />
-    <Content Include="Player\Config_Player.config" />
+    <Content Include="Icodeon\Config_IcodeonConn_Eduth.config" />
     <Content Include="ServiceCommunity.svc" />
     <Content Include="ServicePermission.svc" />
     <Content Include="Web.config">
@@ -165,6 +133,14 @@
     <Folder Include="Service\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\1-OldProject\COL_BusinessLogic\COL_BusinessLogic_v2.0.vbproj">
+      <Project>{51F57FB8-1245-4EA5-BF34-D6412C283AFB}</Project>
+      <Name>COL_BusinessLogic_v2.0</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\1-OldProject\COL_Questionario\COL_Questionario.vbproj">
+      <Project>{10eeacdf-85f8-4aa9-a965-ee1b2fd233d4}</Project>
+      <Name>COL_Questionario</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\..\3-Business\2-Core\lm.Comol.Core.DomainModel\lm.Comol.Core.DomainModel.csproj">
       <Project>{9B7DA676-5030-47CD-8B2B-A30A09C8D0B5}</Project>
       <Name>lm.Comol.Core.DomainModel</Name>
@@ -173,14 +149,32 @@
       <Project>{7FAE537E-6ACF-4C65-9D68-E22AEC839EEA}</Project>
       <Name>lm.Comol.Core.BaseModules</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\..\7-Data\lm.Comol.Core.Data\lm.Comol.Core.Data.vbproj">
+      <Project>{0890F82D-3130-489D-92B2-8B2A1E3DC5FE}</Project>
+      <Name>lm.Comol.Core.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\3-Modules\lm.Comol.Modules.Base\lm.Comol.Modules.Base.vbproj">
+      <Project>{7F38A696-661E-4BDF-9FAD-38E51B3E7E96}</Project>
+      <Name>lm.Comol.Modules.Base</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\..\3-Business\3-Modules\lm.Comol.Modules.CallForPapers\lm.Comol.Modules.CallForPapers.csproj">
       <Project>{86AC380F-16E0-4E8F-AF84-555E13EA456E}</Project>
       <Name>lm.Comol.Modules.CallForPapers</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\..\3-Modules\lm.Comol.Modules.ScormStat\lm.Comol.Modules.ScormStat.csproj">
+      <Project>{88AB4D29-203F-47CA-9F95-DE1ADACDA528}</Project>
+      <Name>lm.Comol.Modules.ScormStat</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\3-Modules\lm.Comol.Modules.Standard\lm.Comol.Modules.Standard.csproj">
+      <Project>{d253bf62-a7f2-48d5-ad05-12ac8ea66279}</Project>
+      <Name>lm.Comol.Modules.Standard</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\3-Modules\lm.Comol.Modules.EduPath\lm.Comol.Modules.EduPath.csproj">
+      <Project>{72BC03AF-85E6-4D60-B529-5B0D303D6632}</Project>
+      <Name>lm.Comol.Modules.EduPath</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Fakes Include="Fakes\Antlr3.Runtime.fakes" />
-    <None Include="packages.config" />
     <None Include="Properties\PublishProfiles\Deploy.pubxml" />
   </ItemGroup>
   <PropertyGroup>
@@ -198,7 +192,7 @@
           <AutoAssignPort>False</AutoAssignPort>
           <DevelopmentServerPort>1204</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost/WCF_AdevicoCoreServices_TS</IISUrl>
+          <IISUrl>http://localhost/WCF_CoreServices</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

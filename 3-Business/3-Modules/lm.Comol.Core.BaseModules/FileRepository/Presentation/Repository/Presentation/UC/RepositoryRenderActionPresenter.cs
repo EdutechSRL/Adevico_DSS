@@ -160,7 +160,11 @@ namespace lm.Comol.Core.BaseModules.FileRepository.Presentation
                 else
                     View.DisplayTextAction(obj.Item.Name, ((ModuleRepository.ActionType)obj.Link.Action));
             }
-            private void DisplayDefaultAction(liteRepositorySettings settings, dtoDisplayObjectRepositoryItem obj, dtoObjectRenderInitializer dto, DisplayActionMode dAction)
+            private void DisplayDefaultAction(
+                liteRepositorySettings settings, 
+                dtoDisplayObjectRepositoryItem obj, 
+                dtoObjectRenderInitializer dto, 
+                DisplayActionMode dAction)
             {
                 Int32 idModule = obj.Link.SourceItem.ServiceID;
                 String moduleCode = obj.Link.SourceItem.ServiceCode;
@@ -186,7 +190,23 @@ namespace lm.Comol.Core.BaseModules.FileRepository.Presentation
                                 break;
                             default:
                                 if (obj.Item.IsDownloadable)
-                                    View.DisplayActiveAction(obj,mode, RootObject.DownloadFromModule("", obj.IdItem, obj.IdVersion,obj.DisplayName,mode,UserContext.WorkSessionID.ToString(),((long)idModule), obj.Link.Id, (!dto.SaveObjectStatistics || notSaveStat)), dto.RefreshContainerPage, false, dto.SaveObjectStatistics, dto.SaveOwnerStatistics); 
+                                    View.DisplayActiveAction(
+                                        obj,
+                                        mode, 
+                                        RootObject.DownloadFromModule(
+                                            "", 
+                                            obj.IdItem, 
+                                            obj.IdVersion,
+                                            obj.DisplayName,
+                                            mode,
+                                            UserContext.WorkSessionID.ToString(),
+                                            ((long)idModule), 
+                                            obj.Link.Id, 
+                                            (!dto.SaveObjectStatistics || notSaveStat)), 
+                                        dto.RefreshContainerPage,
+                                        false, 
+                                        dto.SaveObjectStatistics, 
+                                        dto.SaveOwnerStatistics); 
                                 else
                                     DisplayTextInfo(obj);
                                 break;

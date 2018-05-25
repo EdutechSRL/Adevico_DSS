@@ -16,6 +16,7 @@ Public Class EvaluationReordering
     Inherits System.Web.Services.WebService
 
     Private _service As lm.Comol.Modules.CallForPapers.Business.ServiceEvaluation
+    Private _serviceCall As ServiceCallOfPapers
     Private CurrentContext As lm.Comol.Core.DomainModel.iApplicationContext
 
     Private ReadOnly Property Service As ServiceEvaluation
@@ -24,6 +25,17 @@ Public Class EvaluationReordering
                 _service = New ServiceEvaluation(CurrentContext)
             End If
             Return _service
+        End Get
+    End Property
+
+    Private ReadOnly Property ServiceCall As ServiceCallOfPapers
+
+        Get
+            If IsNothing(_serviceCall) Then
+                _serviceCall = New ServiceCallOfPapers(CurrentContext)
+            End If
+
+            Return _serviceCall
         End Get
     End Property
 
@@ -63,7 +75,40 @@ Public Class EvaluationReordering
         Dim orderedItems As List(Of Long) = position.Split(",").Select(Function(x) Long.Parse(x)).ToList()
         callId = callId.Replace("callId_", "")
         If Not CurrentContext.UserContext Is Nothing AndAlso IsNumeric(callId) Then
+
+
+            Dim NewOrderList As New List(Of KeyValuePair(Of Int64, Integer))()
+
+            If Not String.IsNullOrEmpty(position) Then
+                Dim Order As String() = position.Split(",")
+
+                Dim i As Integer = 1
+
+                For Each ord As String In Order.ToList()
+                    Dim Id As Int64 = System.Convert.ToInt64(ord)
+
+                    If Id > 0 Then
+                        NewOrderList.Add(New KeyValuePair(Of Long, Integer)(Id, i))
+                        i += 1
+                    End If
+                Next
+            End If
+
+            Dim cid As Long = System.Convert.ToInt64(callId)
+
+            ServiceCall.StepReorder(NewOrderList, cid)
+
             'Service.UpdateCriteriaAdvDisplayOrder(orderedItems, CLng(callId))
+
+
+
+            'If (Orders == null || !Orders.Any())
+            '    Return;
+
+            'bool success = Service.StepReorder(Orders);
+
+            'If (success) Then
+            '        this.InitView(callId);
 
             CurrentContext.DataContext.Dispose()
             _service = Nothing

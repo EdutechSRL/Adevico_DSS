@@ -364,11 +364,18 @@ namespace WCF_CoreServices
             }
             return evaluations;
         }
-        private List<dtoItemEvaluation<long>> EvaluateModuleLinks(ISession session, List<long> idLinks, int idUser, Dictionary<String, long> moduleUserLong, Dictionary<String, String> moduleUserString)
+        private List<dtoItemEvaluation<long>> EvaluateModuleLinks(
+            ISession session, 
+            List<long> idLinks, 
+            int idUser, 
+            Dictionary<String, long> moduleUserLong, 
+            Dictionary<String, String> moduleUserString)
         {
             List<dtoItemEvaluation<long>> evaluations = new List<dtoItemEvaluation<long>>();
             DataContext dc = new DataContext(session);
-            List<ModuleLink> links = (from l in session.Linq<ModuleLink>() where idLinks.Contains(l.Id) select l).ToList();
+            List<ModuleLink> links = (from l in session.Linq<ModuleLink>()
+                                      where idLinks.Contains(l.Id) select l)
+                                      .ToList();
 
             var query = from l in links
                         group l by l.DestinationItem.ServiceCode into linksGroup
@@ -380,10 +387,16 @@ namespace WCF_CoreServices
                 DataContext ic = new DataContext(icodeon);
                 foreach (var groupOfLinks in query)
                 {
-                    evaluations.AddRange(EvaluateModuleLinks(dc, ic, groupOfLinks.Key, groupOfLinks.ToList(), idUser, moduleUserLong, moduleUserString));
+                    evaluations.AddRange(
+                        EvaluateModuleLinks(dc, ic, 
+                            groupOfLinks.Key, 
+                            groupOfLinks.ToList(), 
+                            idUser, 
+                            moduleUserLong, 
+                            moduleUserString)
+                        );
                 }
             }
-
 
             return evaluations;
         }
@@ -428,12 +441,16 @@ namespace WCF_CoreServices
         public List<dtoItemEvaluation<long>> GetPendingEvaluationsForExternal(List<long> idLinks, int idUser, Dictionary<String, long> moduleUserLong, Dictionary<String, String> moduleUserString)
         {
             List<dtoItemEvaluation<long>> results = new List<dtoItemEvaluation<long>>();
-            List<lm.Comol.Core.FileRepository.Domain.ScormPackageWithVersionToEvaluate> pendingLinks = new List<lm.Comol.Core.FileRepository.Domain.ScormPackageWithVersionToEvaluate>();
+
+            List<lm.Comol.Core.FileRepository.Domain.ScormPackageWithVersionToEvaluate> pendingLinks = 
+                new List<lm.Comol.Core.FileRepository.Domain.ScormPackageWithVersionToEvaluate>();
+
             using (ISession session = NHSessionHelper.GetComolSession())
             {
                 pendingLinks = (from l in session.Linq<lm.Comol.Core.FileRepository.Domain.ScormPackageWithVersionToEvaluate>()
                                 where l.ToUpdate && idLinks.Contains(l.IdLink) && l.IdPerson == idUser
                                 select l).ToList();
+
                 if (pendingLinks.Count > 0)
                 {
                     try

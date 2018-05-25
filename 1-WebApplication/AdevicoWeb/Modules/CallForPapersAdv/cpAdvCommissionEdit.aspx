@@ -320,6 +320,13 @@
 											</div>
 										</div>
 									</asp:PlaceHolder>
+									<asp:PlaceHolder ID="PHeconomic" runat="server">
+										<div class="fieldrow fieldmaxTotal">
+											<asp:Label ID="LBLmaxTotal_t" CssClass="fieldlabel" runat="server">Massimale singola domanda:</asp:Label>
+											<asp:TextBox ID="TXBmaxTotal" runat="server">0</asp:TextBox>
+											<asp:Label ID="LBLmaxTotal_info" runat="server">(Se = 0, nessun limite)</asp:Label>
+										</div>
+									</asp:PlaceHolder>
 								</fieldset>
 								<asp:MultiView ID="MLVmain" runat="server">
 									<asp:View ID="VMembres" runat="server" >

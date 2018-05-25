@@ -26,10 +26,7 @@ Public Interface IviewUtenteSistema
 	Sub PopolaProvincia(ByVal Lista As List(Of Provincia))
 	Sub PopolaStato(ByVal Lista As List(Of Provincia))
 	Sub PopolaLingua(ByVal Lista As List(Of Lingua))
-	Sub PopolaRegimeDocente(ByVal Lista As List(Of COL_Regime))
-	Sub PopolaFasciaDocente(ByVal Lista As List(Of COL_Fascia))
-	Sub PopolaTipoDocente(ByVal Lista As List(Of COL_Tipo_Docente))
-	Sub PopolaQualificaDocente(ByVal Lista As List(Of COL_Qualifica))
+
 
 	Enum Fase
 		SceltaOrganizzazione

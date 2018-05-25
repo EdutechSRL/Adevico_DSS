@@ -55,6 +55,7 @@
 		<asp:HyperLink ID="HYPtoCommitteesSummary" runat="server" Text="Details" CssClass="Link_Menu" Visible="false"></asp:HyperLink>
 		<CTRL:CTRLreport ID="CTRLreport" runat="server" WebOnlyRender="True" isContainer="false" Visible="false" />
 		<asp:HyperLink ID="HYPcommissionSummary" runat="server" CssClass="linkMenu">Sommario commissioni</asp:HyperLink>
+        <asp:HyperLink ID="HYPevaluationProcess" runat="server" CssClass="linkMenu">Processo di valutazione</asp:HyperLink>
 		<asp:LinkButton ID="LKBupdate" runat="server" CssClass="linkMenu">Aggiorna</asp:LinkButton>
 	</div>
 	<CTRL:Messages ID="CTRLdssMessage"  runat="server" visble="false"/>

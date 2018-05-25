@@ -87,7 +87,7 @@ namespace lm.Comol.Modules.CallForPapers.Advanced.dto
                 if (commission.President.Id == currentUserId)
                 {
                     Permission |= CommissionPermission.View
-                       // | CommissionPermission.ChangeStatus
+                        | CommissionPermission.Edit
                         | CommissionPermission.UploadVerbale;
 
                     GenericPermission |= GenericStepPermission.President;
@@ -104,6 +104,9 @@ namespace lm.Comol.Modules.CallForPapers.Advanced.dto
                         | CommissionPermission.RequestIntegration;
 
                     GenericPermission |= GenericStepPermission.Secretary;
+
+                    if (commission.IsMaster)
+                        GenericPermission |= GenericStepPermission.MainSecretary;
                 }
 
 

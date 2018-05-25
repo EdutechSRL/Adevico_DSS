@@ -48,7 +48,7 @@ namespace lm.Comol.Core.BaseModules.Dashboard.Presentation
             }
         #endregion
 
-        public void InitView(long idDashboard, DashboardType dashboardType, Int32 idContainerCommunity)
+        public void InitView(long idDashboard, DashboardType dashboardType, Int32 idContainerCommunity, bool initialize)
         {
             Person p = CurrentManager.GetPerson(UserContext.CurrentUserID);
             View.IdDashboard = idDashboard;
@@ -85,7 +85,7 @@ namespace lm.Comol.Core.BaseModules.Dashboard.Presentation
                     {
                         View.AllowSave = (settings.Deleted == BaseStatusDeleted.None);
                         View.SetPreviewUrl(RootObject.DashboardPreview(settings.Id, settings.Type, settings.IdCommunity));
-                        View.LoadSettings(new dtoViewSettings(settings));
+                        View.LoadSettings(new dtoViewSettings(settings), initialize);
                         View.SendUserAction(idContainerCommunity, Service.ServiceModuleID(), settings.Id, ModuleDashboard.ActionType.DashboardSettingsViewsStartEditing);
                     }
                     else
@@ -127,6 +127,10 @@ namespace lm.Comol.Core.BaseModules.Dashboard.Presentation
                                 action = ModuleDashboard.ActionType.DashboardSettingsViewsSaved;
                                 View.LoadWizardSteps(Service.GetAvailableSteps(WizardDashboardStep.HomepageSettings, idDashboard, item.Type, View.IdContainerCommunity));
                             }
+
+                            //Per aggiornare gli switch...
+                            InitView(View.PreloadIdDashboard, View.DashboardType, View.IdContainerCommunity, false);
+
                             View.DisplayMessage(action);
                         }
                         catch (DashboardException ex)

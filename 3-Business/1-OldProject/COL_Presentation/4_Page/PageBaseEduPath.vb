@@ -95,45 +95,6 @@ Public MustInherit Class PageBaseEduPath
         End Try
         Return oElement
     End Function
-    Public Property PostItSistema() As COL_BusinessLogic_v2.COL_PostIt Implements IviewBase.PostItSistema
-        Get
-            Try
-                PostItSistema = DirectCast(Me.Application.Item("oSystemPostIt"), COL_PostIt)
-            Catch ex As Exception
-                PostItSistema = Nothing
-                Me.Application.Item("ShowSystemPostIt") = False
-            End Try
-        End Get
-        Set(ByVal value As COL_BusinessLogic_v2.COL_PostIt)
-            Me.Application.Item("oSystemPostIt") = value
-        End Set
-    End Property
-    Public Property ShowPostItSistema() As Boolean Implements IviewBase.ShowPostItSistema
-        Get
-            Try
-                ShowPostItSistema = DirectCast(Me.Application.Item("ShowSystemPostIt"), Boolean)
-            Catch ex As Exception
-                Me.Application.Item("ShowSystemPostIt") = False
-                ShowPostItSistema = False
-            End Try
-        End Get
-        Set(ByVal value As Boolean)
-            Me.Application.Item("ShowSystemPostIt") = value
-        End Set
-    End Property
-    Public Property RiepilogoPostIt() As Integer Implements IviewBase.RiepilogoPostIt
-        Get
-            Try
-                RiepilogoPostIt = DirectCast(Session("Popupwin"), Integer)
-            Catch ex As Exception
-                RiepilogoPostIt = 0
-            End Try
-
-        End Get
-        Set(ByVal value As Integer)
-            Session("Popupwin") = value
-        End Set
-    End Property
 
     Public Property UtentiConnessi() As Integer Implements IviewGeneric.UtentiConnessi
         Get
@@ -155,7 +116,7 @@ Public MustInherit Class PageBaseEduPath
 
 
     Private Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-        If Me.VerifyAuthentication = False Or Not IsSessioneScaduta(Me.VerifyAuthentication) Then
+        If Me.VerifyAuthentication = False OrElse Not IsSessioneScaduta(Me.VerifyAuthentication) Then
             If Page.IsPostBack = False Then
                 Me.SetInternazionalizzazione()
             End If
@@ -348,7 +309,7 @@ Public MustInherit Class PageBaseEduPath
 
     Public Sub WriteLogoutAccessCookie(ByVal CommunityID As Integer, ByVal PersonID As Integer, ByVal PersonLogin As String, ByVal PostPage As String, ByVal ForDownload As Boolean)
         Dim oHttpCookie As New HttpCookie("LogoutAccess")
-        Dim minutes As Long = Me.SystemSettings.BlogSettings.ValidationTime
+        Dim minutes As Long = 5
         oHttpCookie.Expires = Now.AddMinutes(minutes)
         oHttpCookie.Values.Add("PersonID", PersonID)
         oHttpCookie.Values.Add("PersonLogin", PersonLogin)

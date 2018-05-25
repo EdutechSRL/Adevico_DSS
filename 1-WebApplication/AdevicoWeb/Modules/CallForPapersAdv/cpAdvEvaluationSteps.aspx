@@ -75,7 +75,7 @@
 </asp:Content>
 <asp:Content ID="Content5" ContentPlaceHolderID="CPHservice" runat="server">
 	<div class="viewbuttons clearfix">
-		<asp:HyperLink runat="server" ID="HYPshowSubmission" CssClass="Link_Menu">Mostra tutte le sottomissioni</asp:HyperLink>
+		<asp:HyperLink runat="server" ID="HYPshowSubmission" CssClass="Link_Menu" Visible="false">Mostra tutte le sottomissioni</asp:HyperLink>
 		<asp:HyperLink ID="HypBackManage" runat="server" CssClass="Link_Menu">Gestione bandi</asp:HyperLink>
 		<asp:HyperLink ID="HypBackList" runat="server" CssClass="Link_Menu">Lista bandi</asp:HyperLink>
 	</div>
@@ -95,7 +95,10 @@
 				<asp:Label runat="server" ID="LBLcomValName" CssClass="title">Commissione validazione</asp:Label>
 				<span class="description">
 					<asp:literal ID="LTcomValDesciption" runat="server">...descrizione commissione...</asp:literal>
+                    <br />
+                    <asp:HyperLink ID="HYPvalutationValid" runat="server">Riepilogo valutazioni</asp:HyperLink>
 				</span>
+                
 				<span class="iconcontainer icons">
 					<asp:literal ID="LTcomValStatus" runat="server"><a href="#" class="icon {0}" title="{1}"></a></asp:literal>
 					<asp:HyperLink runat="server" ID="HYPcomValEditMember" ToolTip="Configurazione commissione" CssClass="icon committeesettings"></asp:HyperLink>
@@ -143,6 +146,8 @@
 										<asp:Label runat="server" ID="LBLcomStepName" CssClass="title">Nome</asp:Label>
 										<span class="description">
 											<asp:literal ID="LTcomStepDesciption" runat="server">...descrizione commissione...</asp:literal>
+                                             <br />
+                                            <asp:HyperLink ID="HYPvalutation" runat="server">Riepilogo valutazioni</asp:HyperLink>
 										</span>
 										<span class="iconcontainer icons">
 											<asp:literal ID="LTcomStepStatus" runat="server"><a href="#" class="icon {0}" title="{1}"></a></asp:literal>
@@ -164,12 +169,12 @@
 			</asp:repeater>
 		</div>
 		
-		<div class="stepcontainer addSteps">
+<%--		<div class="stepcontainer addSteps">
 			<span class="iconcontainer icons">
 					<asp:linkbutton runat="server" id="LKBconfirmReorder" CssClass="linkmenu">Conferma ordinamento</asp:linkbutton>
 			</span>
 			<asp:HiddenField ID="HiddenField1" ClientIDMode="Static" runat="server" />
-		</div>
+		</div>--%>
 		
 		<div class="stepcontainer last" runat="server" id="DVecoContainer">
 			<div class="stepinfo validation">

@@ -90,6 +90,16 @@ namespace lm.Comol.Modules.CallForPapers.Presentation.Evaluation
                     ModuleCallForPaper module = ServiceCall.CallForPaperServicePermission(idUser, idCommunity);
                     Boolean allowAdmin = ((module.ManageCallForPapers || module.Administration || ((module.CreateCallForPaper || module.EditCallForPaper) && call.Owner.Id == idUser)));
                     EvaluationType evaluationType = ServiceCall.GetEvaluationType(idCall);
+
+                    if(call.AdvacedEvaluation)
+                    {
+                        bool isPresident = ServiceCall.CommissionUserIsPresident(View.AdvCommissionId, idUser);
+                        bool isSecretary = ServiceCall.CommissionUserIsSecretary(View.AdvCommissionId, idUser);
+
+                        allowAdmin |= isPresident | isSecretary;
+                    }
+
+
                     //View.CurrentEvaluationType = evaluationType;
                     if (!allowAdmin)
                         View.DisplayNoPermissionToView();
@@ -277,6 +287,8 @@ namespace lm.Comol.Modules.CallForPapers.Presentation.Evaluation
             if (success)
                 InitView();
         }
+
+        
 
     }
 }

@@ -746,16 +746,15 @@ Public Class cpAdvEvalDetail
                     oHyperLink.Visible = True
 
                     If minValue > 0 Then
-                        oHyperLink.Text = String.Format("{0}/{1}", dto.SumRatingToString(), minValue)
+
+                        If CurrentEvaluationType = EvaluationType.Average Then
+                            oHyperLink.Text = String.Format("{0}/{1}", dto.AverageRatingToString(), minValue)
+                        Else
+                            oHyperLink.Text = String.Format("{0}/{1}", dto.SumRatingToString(), minValue)
+                        End If
                     Else
-                        oHyperLink.Text = dto.SumRatingToString
+                            oHyperLink.Text = dto.SumRatingToString
                     End If
-
-
-
-
-
-
 
                     'Select Case CurrentEvaluationType
                     '    Case EvaluationType.Average
@@ -853,19 +852,25 @@ Public Class cpAdvEvalDetail
             Dim oLiteral As Literal = e.Item.FindControl("LTcriterionName")
             oLiteral.Text = String.Format(Resource.getValue("CriterionName"), dto.Name)
             Dim oLabel As Label = e.Item.FindControl("LBcriteriaRating")
-            Select Case CurrentEvaluationType
-                Case EvaluationType.Average
-                    oLabel.Text = dto.AverageRatingToString
-                Case EvaluationType.Dss
 
-                    'If _AllEvaluated Then
-                    oLabel.Text = ""
-                    'Else
-                    '    oHyperLink.Text = dto.DssRatingToString(4) & "(*)"
-                    'End If
-                Case Else
-                    oLabel.Text = dto.SumRatingToString
-            End Select
+            If dto.Type = CriterionType.Boolean Then
+                oLabel.Text = "--"
+            Else
+                Select Case CurrentEvaluationType
+                    Case EvaluationType.Average
+                        oLabel.Text = dto.AverageRatingToString
+                    Case EvaluationType.Dss
+
+                        'If _AllEvaluated Then
+                        oLabel.Text = ""
+                        'Else
+                        '    oHyperLink.Text = dto.DssRatingToString(4) & "(*)"
+                        'End If
+                    Case Else
+                        oLabel.Text = dto.SumRatingToString
+                End Select
+            End If
+
         End If
     End Sub
 

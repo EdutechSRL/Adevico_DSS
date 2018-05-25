@@ -74,7 +74,34 @@ namespace lm.Comol.Core.BaseModules.FileRepository.Business
                 return true;
             }
         #endregion
-           
+
+        public List<dtoItemEvaluation<long>> EvaluateModuleLinksIds(
+           List<long> linksId,
+           int idUser,
+           Dictionary<string, long> moduleUserLong = null,
+           Dictionary<string, string> moduleUserString = null)
+        {
+            List<ModuleLink> links = new List<ModuleLink>();
+
+            if (linksId.Count() <= 500)
+            {
+                links = Manager.GetAll<ModuleLink>(lk => linksId.Contains(lk.Id)).ToList();
+            } else
+            {
+                int blockLk = (linksId.Count / 500) + 1;
+
+                for (int lks = 0; lks < blockLk; lks++)
+                {
+                    IList<Int64> currentLinkId = linksId.Skip(500 * lks).Take(500).ToList();
+
+                    IList<ModuleLink> Curlinks = Manager.GetAll<ModuleLink>(lk => currentLinkId.Contains(lk.Id)).ToList();
+
+                    links = links.Union(Curlinks).Distinct().ToList();
+                }
+            }
+
+            return EvaluateModuleLinks(links, idUser, moduleUserLong, moduleUserString);
+        }
 
         public List<dtoItemEvaluation<long>> EvaluateModuleLinks(
             List<ModuleLink> links, 
@@ -82,6 +109,8 @@ namespace lm.Comol.Core.BaseModules.FileRepository.Business
             Dictionary<string, long> moduleUserLong = null, 
             Dictionary<string, string> moduleUserString = null)
         {
+
+            List<dtoPackageEvaluation> Evals = new List<dtoPackageEvaluation>();
 
             List<dtoItemEvaluation<long>> results = new List<dtoItemEvaluation<long>>();
 
@@ -216,6 +245,7 @@ namespace lm.Comol.Core.BaseModules.FileRepository.Business
                             double mark = (eval == null ? 0 : eval.UserScore);
                             bool alreadyCompleted = (eval != null && eval.AlreadyCompleted);
 
+                            Evals.Add(eval);
 
                             results.AddRange(
                                 (from i in items 
@@ -270,7 +300,64 @@ namespace lm.Comol.Core.BaseModules.FileRepository.Business
                     }
                 }
             }
+
+            if(Evals != null && Evals.Any())
+            {
+                  
+            }
+
+
             return results;
+        }
+
+        /// <summary>
+        /// AGGIORNO LE STATISTICHE 
+        ///   su FR_ItemScormToEvaluate         => track by play (UPDATE CALCULATED = TRUE!)
+        /// e su FR_ScormUserPackageEvaluation  => STATISTICHE   (Aggiornare o aggiungere dati play)
+        /// 
+        /// Verificare oggetti in uso per quelle tabelle
+        /// </summary>
+        /// <param name="Evals"></param>
+        private void ScormEvalsUpdate(List<dtoPackageEvaluation> Evals, int PersonId)
+        {
+            IList<ScormPackageWithVersionToEvaluate> PendingEvals = new List<ScormPackageWithVersionToEvaluate>();
+
+            IList<long> LinksId = (from dtoPackageEvaluation ev in Evals
+                                   select ev.IdLink).Distinct().ToList();
+
+            if(LinksId.Count <= 500)
+            {
+                PendingEvals = Manager.GetAll<ScormPackageWithVersionToEvaluate>(
+                    pe => pe.ToUpdate
+                        && pe.IdPerson == PersonId
+                        && LinksId.Contains(pe.IdLink) && pe.IdPerson == PersonId)
+                        .ToList();
+            }
+            else
+            {
+                int blockLk = (LinksId.Count / 500) + 1;
+
+                for (int lks = 0; lks < blockLk; lks++)
+                {
+                    IList<Int64> currentLinkId = LinksId.Skip(500 * lks).Take(500).ToList();
+                    IList<ScormPackageWithVersionToEvaluate> curPendEvals = 
+                        Manager.GetAll<ScormPackageWithVersionToEvaluate>(
+                            pe => currentLinkId.Contains(pe.IdLink)).ToList();
+
+                    PendingEvals = PendingEvals.Union(curPendEvals).Distinct().ToList();
+                }
+            }
+
+             
+            
+
+
+            foreach (dtoPackageEvaluation ev in Evals)
+            {
+                
+
+
+            }
         }
 
         public dtoEvaluation EvaluateModuleLink(ModuleLink link, int idUser, Dictionary<string, long> moduleUserLong = null, Dictionary<string, string> moduleUserString = null)

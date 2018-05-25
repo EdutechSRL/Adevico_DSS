@@ -220,8 +220,10 @@ namespace lm.Comol.Modules.CallForPapers.Presentation
             View.CurrentStatus = ((idCall==0 || !availableStatus.Any() ||call==null)? CallForPaperStatus.Draft : (availableStatus.Contains(call.Status)? call.Status : availableStatus.FirstOrDefault()));
         }
         
-        public void SaveSettings(dtoBaseForPaper dto, String submitterName, Boolean allowUseOfDss, Boolean validateStatus)
+        public bool SaveSettings(dtoBaseForPaper dto, String submitterName, Boolean allowUseOfDss, Boolean validateStatus)
         {
+            bool rebindView = true;
+
             int idCommunity = View.IdCommunity;
             try
             {
@@ -241,7 +243,7 @@ namespace lm.Comol.Modules.CallForPapers.Presentation
                     Boolean stepsToComplete = false;
                     List<lm.Comol.Core.Wizard.NavigableWizardItem<WizardCallStep>> wizardSteps = null;
                     BaseForPaper call = null;
-                    List<WizardCallStep> skipedSteps = new List<WizardCallStep>(); ;
+                    List<WizardCallStep> skipedSteps = new List<WizardCallStep>();
                     long idCall = dto.Id;
                     Boolean hasSubmission = false;
                     if (idCall > 0)
@@ -305,6 +307,7 @@ namespace lm.Comol.Modules.CallForPapers.Presentation
             }
             catch (SkipRequiredSteps exc) {
                 View.DisplaySkippedRequiredSteps(exc.Steps);
+                rebindView = false;
             }
             catch (CallForPaperInvalidStatus ex)
             {
@@ -319,7 +322,11 @@ namespace lm.Comol.Modules.CallForPapers.Presentation
                 }
                 View.LoadInvalidStatus(dto.Status, dto.EndDate);
                 RefreshCallName(View.CurrentAction, dto.Name, idCommunity);
+
+                rebindView = false;
             }
+
+            return rebindView;
         }
 
 

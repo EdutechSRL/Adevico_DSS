@@ -35,6 +35,10 @@ namespace lm.Comol.Modules.CallForPapers.AdvEconomic.dto
         public bool CanCloseCommission { get; set; }
 
         /// <summary>
+        /// Indica se mostrare la media o la somma. Se true, mostra la media
+        /// </summary>
+        public bool IsAverage { get; set; }
+        /// <summary>
         /// Costruttore vuoto
         /// </summary>
         public dtoEcoSummaryContainer()

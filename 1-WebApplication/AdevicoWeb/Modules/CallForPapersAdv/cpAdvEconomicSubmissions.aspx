@@ -5,6 +5,8 @@
 <%@ Register TagPrefix="CTRL" TagName="Header" Src="~/Modules/CallForPapersAdv/UC/Uc_AdvHeader.ascx" %>
 
 <%@ Register Src="~/Modules/Common/UC/UC_StackedBar.ascx" TagName="StackedBar" TagPrefix="CTRL" %>
+<%@ Register Src="~/Modules/CallForPapersAdv/UC/Uc_AdvTableExport.ascx" TagPrefix="CTRL" TagName="Uc_AdvTableExport" %>
+
 
 <asp:Content ID="Content1" ContentPlaceHolderID="PageTitleContent" runat="server">
 </asp:Content>
@@ -20,7 +22,7 @@
 <asp:Content ID="Content5" ContentPlaceHolderID="CPHservice" runat="server">
 	<div class="contentwrapper edit clearfix">
 	<div class="viewbuttons clearfix">
-		<asp:HyperLink ID="HYPback" runat="server" CssClass="linkMenu">Step</asp:HyperLink>
+		<asp:HyperLink ID="HYPback" runat="server" CssClass="linkMenu">Processo di valutazione</asp:HyperLink>
 	</div>
 	<asp:MultiView id="MLVstatistics" runat="server" ActiveViewIndex="1">
 		<asp:View ID="VIWempty" runat="server">
@@ -92,6 +94,7 @@
 									<td class="actions icons">
 										<asp:HyperLink ID="HYPeval" runat="server" CssClass="icon evaluate">Valuta</asp:HyperLink>
 										<asp:HyperLink ID="HYPsubmission" runat="server" CssClass="icon submission">Vista completa</asp:HyperLink>
+										<CTRL:Uc_AdvTableExport runat="server" ID="Uc_AdvTableExport" LinkClass="icon download" LinkText="" LinkToolTip="Esporta tabelle in .xlsx" />
 									</td>
 								</tr>
 							</ItemTemplate>

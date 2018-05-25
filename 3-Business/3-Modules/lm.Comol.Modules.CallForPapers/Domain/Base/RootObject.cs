@@ -558,7 +558,7 @@ namespace lm.Comol.Modules.CallForPapers.Domain
 
         public static string AdvEvalSummary(int idCommunity, long idCall,  long idCommission, CallStatusForSubmitters view, long idSubmission, long idSubmitterType, Evaluation.EvaluationFilterStatus filter, SubmissionsOrder order, Boolean ascending, int pageIndex, int pageSize, String searchBy)
         {
-            return AdvEvalSummary(idCall, idCommunity, idCommission, view) + (String.IsNullOrEmpty(searchBy) ? "" : "&SearchForName=" + searchBy) + "&filter=" + filter.ToString() + "&idType=" + idSubmitterType.ToString() + "&OrderBy=" + order.ToString() + "&ascending=" + ascending.ToString() + "&pageIndex=" + pageIndex.ToString() + "&pageSize=" + pageSize.ToString() + "#sub" + idSubmission.ToString();
+            return AdvEvalSummary(idCommunity, idCall, idCommission, view) + (String.IsNullOrEmpty(searchBy) ? "" : "&SearchForName=" + searchBy) + "&filter=" + filter.ToString() + "&idType=" + idSubmitterType.ToString() + "&OrderBy=" + order.ToString() + "&ascending=" + ascending.ToString() + "&pageIndex=" + pageIndex.ToString() + "&pageSize=" + pageSize.ToString() + "#sub" + idSubmission.ToString();
         }       
 
         public static string AdvEvalSummary(long idCommunity, long idCall, long idCommission, CallStatusForSubmitters view)

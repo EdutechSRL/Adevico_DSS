@@ -1010,11 +1010,11 @@
   </wsp:Policy>
   <wsdl:types>
     <xsd:schema targetNamespace="http://tempuri.org/Imports">
-      <xsd:import schemaLocation="http://sviluppo01/WCF_AdevicoCoreServices_TS/ServicePermission.svc?xsd=xsd0" namespace="http://tempuri.org/" />
-      <xsd:import schemaLocation="http://sviluppo01/WCF_AdevicoCoreServices_TS/ServicePermission.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
-      <xsd:import schemaLocation="http://sviluppo01/WCF_AdevicoCoreServices_TS/ServicePermission.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/lm.Comol.Core.DomainModel" />
-      <xsd:import schemaLocation="http://sviluppo01/WCF_AdevicoCoreServices_TS/ServicePermission.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
-      <xsd:import schemaLocation="http://sviluppo01/WCF_AdevicoCoreServices_TS/ServicePermission.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/lm.Comol.Core.BaseModules.Federation" />
+      <xsd:import schemaLocation="http://pc-sviluppo01/WCF_AdevicoCoreServices/ServicePermission.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://pc-sviluppo01/WCF_AdevicoCoreServices/ServicePermission.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://pc-sviluppo01/WCF_AdevicoCoreServices/ServicePermission.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/lm.Comol.Core.DomainModel" />
+      <xsd:import schemaLocation="http://pc-sviluppo01/WCF_AdevicoCoreServices/ServicePermission.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://pc-sviluppo01/WCF_AdevicoCoreServices/ServicePermission.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/lm.Comol.Core.BaseModules.Federation" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="IServicePermission_GetAllowedStandardAction_InputMessage">
@@ -1529,9 +1529,9 @@
   </wsdl:binding>
   <wsdl:service name="ServicePermission">
     <wsdl:port name="WSHttpBinding_IServicePermission" binding="tns:WSHttpBinding_IServicePermission">
-      <soap12:address location="http://sviluppo01/WCF_AdevicoCoreServices_TS/ServicePermission.svc" />
+      <soap12:address location="http://pc-sviluppo01/WCF_AdevicoCoreServices/ServicePermission.svc" />
       <wsa10:EndpointReference>
-        <wsa10:Address>http://sviluppo01/WCF_AdevicoCoreServices_TS/ServicePermission.svc</wsa10:Address>
+        <wsa10:Address>http://pc-sviluppo01/WCF_AdevicoCoreServices/ServicePermission.svc</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
           <Dns>localhost</Dns>
         </Identity>

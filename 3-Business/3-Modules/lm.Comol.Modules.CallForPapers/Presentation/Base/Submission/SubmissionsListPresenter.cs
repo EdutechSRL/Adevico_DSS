@@ -207,7 +207,15 @@ namespace lm.Comol.Modules.CallForPapers.Presentation
             }
             if (UserContext.isAnonymous)
                 View.DisplaySessionTimeout();
-            else if (allowManage)
+
+            bool isAdvance = Service.CallIsAdvanced(View.IdCall);
+
+            if(isAdvance)
+            {
+                allowManage = allowManage || Service.UserIsInCallCommissionPresidentOrSecreatary(View.IdCall, UserContext.CurrentUserID);
+            }
+
+            if (allowManage)
                 LoadSubmissions(allowManage, View.IdCall, type, filters, pageIndex, pageSize);
             else
                 View.DisplayNoPermission(idCommunity, View.IdCallModule);

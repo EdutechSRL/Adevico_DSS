@@ -222,7 +222,34 @@ Public MustInherit Class PageBaseQuestionario
             Return oQuest
         End Get
         Set(ByVal value As COL_Questionario.Questionario)
+            If Not Page.IsPostBack Then
+                'SOLO al primo caricamento della pagina
+                If QuestionarioCorrente.idDestinatario_Persona > 0 Then
+                    Me.QsDestUserId = QuestionarioCorrente.idDestinatario_Persona
+                Else
+                    Me.QsDestUserId = UtenteCorrente.ID
+                End If
+
+            End If
+
             Session("QuestionarioCorrente") = value
+        End Set
+    End Property
+
+    ''' <summary>
+    ''' Per verifica che la compilazione in SESSIONE corrisponda a quella visualizzata sulla pagina,
+    ''' nel caso in cui la sessione venga sovrascritta con altri questionari.
+    ''' </summary>
+    ''' <returns></returns>
+    ''' <remarks>
+    ''' NON sono ancora chiare le cause!!!
+    ''' </remarks>
+    Public Property QsDestUserId As Integer
+        Get
+            Return ViewStateOrDefault("QsCompileId", UtenteCorrente.ID)
+        End Get
+        Set(value As Integer)
+            ViewState("QsCompileId") = value
         End Set
     End Property
 
@@ -301,11 +328,7 @@ Public MustInherit Class PageBaseQuestionario
             isScaduta = False
         Else
 
-            If Not IsNothing(Me.UtenteCorrente) Then
-                If Me.UtenteCorrente.ID > 0 Then
-                    isScaduta = False
-                End If
-            ElseIf Me.EncryptedQueryString("idu", SecretKeyUtil.EncType.Questionario) <> "" Then
+            If Me.EncryptedQueryString("idu", SecretKeyUtil.EncType.Questionario) <> "" Then
                 RedirectToLoginPage = False
                 Try
                     If CInt(Me.EncryptedQueryString("idu", SecretKeyUtil.EncType.Questionario)) > 0 Then
@@ -314,6 +337,10 @@ Public MustInherit Class PageBaseQuestionario
                 Catch ex As Exception
 
                 End Try
+            ElseIf Not IsNothing(Me.UtenteCorrente) Then
+                If Me.UtenteCorrente.ID > 0 Then
+                    isScaduta = False
+                End If
             ElseIf Me.EncryptedQueryString("ida", SecretKeyUtil.EncType.Questionario) = "1" Then
                 isAnonymousCompiler = True
                 RedirectToLoginPage = False
@@ -421,6 +448,7 @@ Public MustInherit Class PageBaseQuestionario
 
         If IsNothing(Session("Invito")) Then 'Or Session("Invito").GetType Is GetType(String) Then
             Session("Invito") = New COL_Questionario.UtenteInvitato(0)
+            'CaricaInvito()
         End If
 
     End Sub
@@ -477,6 +505,9 @@ Public MustInherit Class PageBaseQuestionario
             oUtenteInvitato = DALUtenteInvitato.readUtenteInvitatoByID(InvitoID)
             If oUtenteInvitato.PersonaID = 0 Then
                 oUtenteInvitato.PersonaID = idUtenteAnonimo()
+
+            ElseIf oUtenteInvitato.PersonaID <> idUtenteAnonimo Then
+                Me.CaricaAnonimo(oUtenteInvitato.PersonaID)
             End If
             If oUtenteInvitato.ID = 0 Then
                 InvitoID = 0
@@ -529,15 +560,37 @@ Public MustInherit Class PageBaseQuestionario
 
         If PersonaID = 0 Then
             oPersona = MyBase.PageUtility.AnonymousCOL_Persona
-        Else
-            oPersona.Estrai(oLingua.ID)
-            If oPersona.Errore <> Errori_Db.None Then
-                oPersona = MyBase.PageUtility.AnonymousCOL_Persona
-            End If
+            'Else
+            '    oPersona.ID = PersonaID
+            '    oPersona.Estrai(oLingua.ID)
+            '    If oPersona.Errore <> Errori_Db.None Then
+            '        oPersona = MyBase.PageUtility.AnonymousCOL_Persona
+            '    End If
         End If
         Session("objPersona") = oPersona
+        Session("objPersonaQuest") = oPersona
     End Sub
 
+    Public Sub CaricaUtenteInvitatoEVerificato(ByVal PersonaID As Integer)
+        Dim oPersona As New COL_Persona
+
+        Dim oLingua As Lingua = ManagerLingua.GetByCodeOrDefault(LinguaCode)
+
+        If IsNothing(oLingua) Then
+            Session("LinguaCode") = "it-IT"
+            Session("LinguaID") = 1
+            oLingua = Lingua.CreateByCode(1, "it-IT")
+        End If
+
+        oPersona.ID = PersonaID
+        oPersona.Estrai(oLingua.ID)
+        If oPersona.Errore <> Errori_Db.None Then
+            oPersona = MyBase.PageUtility.AnonymousCOL_Persona
+        End If
+
+        Session("objPersona") = oPersona
+
+    End Sub
     '' ACTIONS 
 
     Public Function CreateObjectsList(ByVal oType As Services_Questionario.ObjectType, ByVal oValueID As String) As List(Of lm.ActionDataContract.ObjectAction)
@@ -813,7 +866,7 @@ Public MustInherit Class PageBaseQuestionario
     End Property
 #End Region
 
-   
+
     Protected Function SubActivityCompleted(ByVal idLink As Long, ByVal idUser As Integer) As Boolean
         Return SubActivityCompleted(EPservice.ServiceStat.GetSubactivityStatusByModuleLink(idLink, lm.Comol.Modules.EduPath.Domain.SubActivityType.Quiz, idUser))
     End Function
@@ -928,4 +981,43 @@ Public MustInherit Class PageBaseQuestionario
 
     End Sub
     Public MustOverride ReadOnly Property LoadDataByUrl() As Boolean
+
+
+
+    ''' <summary>
+    ''' Utente questionario su INVITO!!!
+    ''' </summary>
+    ''' <returns></returns>
+    Protected ReadOnly Property UtenteQuestionario As COL_Persona
+        Get
+
+            If Not IsNothing(Invito) Then
+                'Dim QuestUser As New COL_Persona
+
+                If Invito.PersonaID = 0 OrElse Invito.PersonaID = idUtenteAnonimo() Then
+                    Return MyBase.PageUtility.AnonymousCOL_Persona
+                ElseIf Invito.PersonaID <> UtenteCorrente.ID Then
+                    Throw New Exception("Invito non corrispondente!")
+                End If
+            End If
+
+            Return UtenteCorrente
+            'Dim QuestUser As COL_Persona
+
+            'Try
+            '    If Not IsNothing(Session("objPersonaQuest")) AndAlso TypeOf (Session("objPersonaQuest")) Is COL_Persona Then
+            '        QuestUser = Session("objPersonaQuest")
+            '    Else
+            '        QuestUser = Nothing
+            '    End If
+            'Catch ex As Exception
+            '    QuestUser = Nothing
+            'End Try
+            'Return QuestUser
+        End Get
+    End Property
+
+    Public Sub CaricaInvito()
+        Session("objPersonaQuest") = MyBase.PageUtility.AnonymousCOL_Persona
+    End Sub
 End Class

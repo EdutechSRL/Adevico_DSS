@@ -214,11 +214,16 @@ namespace lm.Comol.Modules.CallForPapers.Advanced
         /// <summary>
         /// Sola visualizzazione
         /// </summary>
-        View = 1<<0,
+        View = 1 << 0,
         /// <summary>
         /// Valutazione sottomissioni
         /// </summary>
-        Evaluate = 1 << 2
+        Evaluate = 1 << 2,
+        /// <summary>
+        /// Gestione: Segretario o presidente
+        /// </summary>
+        Manage = 1 << 3
+        
     }
 
     /// <summary>
@@ -330,7 +335,11 @@ namespace lm.Comol.Modules.CallForPapers.Advanced
         /// <summary>
         /// Presidente commissione default
         /// </summary>
-        MainPresident = 1 << 4
+        MainPresident = 1 << 4,
+        /// <summary>
+        /// Presidente commissione default
+        /// </summary>
+        MainSecretary = 1 << 5
     }
 
 }

@@ -348,6 +348,9 @@ Public Class cpAdvEvalSummary
 
         Master.ShowNoPermission = False
         Me.CurrentPresenter.InitView()
+
+        HYPevaluationProcess.NavigateUrl = BaseUrl & RootObject.AdvStepsEdit(Me.IdCall)
+
     End Sub
 
     Public Overrides Sub BindNoPermessi()

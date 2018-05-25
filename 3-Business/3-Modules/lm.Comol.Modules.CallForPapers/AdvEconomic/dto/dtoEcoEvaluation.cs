@@ -36,6 +36,11 @@ namespace lm.Comol.Modules.CallForPapers.AdvEconomic.dto
         public double AdmitTotal { get; set; }
 
         /// <summary>
+        /// Totale ammesso
+        /// </summary>
+        public double AdmitMax { get; set; }
+
+        /// <summary>
         /// stato valutazione
         /// </summary>
         public EvalStatus status { get; set; }
@@ -95,6 +100,8 @@ namespace lm.Comol.Modules.CallForPapers.AdvEconomic.dto
                 SubmissionName = "Unknow";
             }
 
+            AdmitMax = (evaluation.Commission != null) ? evaluation.Commission.MaxValue : 0;
+            
             status = evaluation.Status;
 
             RequestTotal = evaluation.RequestTotal;

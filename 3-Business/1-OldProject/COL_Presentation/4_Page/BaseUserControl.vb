@@ -143,7 +143,7 @@ Public MustInherit Class BaseControl
     End Property
     Protected Sub WriteLogoutAccessCookie(ByVal CommunityID As Integer, ByVal PersonID As Integer, ByVal PersonLogin As String, ByVal PostPage As String, ByVal ForDownload As Boolean)
         Dim oHttpCookie As New HttpCookie("LogoutAccess")
-        Dim minutes As Long = Me.SystemSettings.BlogSettings.ValidationTime
+        Dim minutes As Long = 5
         oHttpCookie.Expires = Now.AddMinutes(minutes)
         oHttpCookie.Values.Add("PersonID", PersonID)
         oHttpCookie.Values.Add("PersonLogin", PersonLogin)

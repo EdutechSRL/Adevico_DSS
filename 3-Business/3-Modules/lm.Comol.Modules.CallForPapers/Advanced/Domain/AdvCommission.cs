@@ -96,6 +96,12 @@ namespace lm.Comol.Modules.CallForPapers.Advanced.Domain
         }
 
         /// <summary>
+        /// Massimale ammesso.
+        /// Per commissione economica.
+        /// </summary>
+        public virtual double MaxValue { get; set; }
+
+        /// <summary>
         /// Verifica se l'utente è in commissione e puo' visualizzare le sottomissioni
         /// </summary>
         /// <param name="PersonId">Id Persona</param>
@@ -114,6 +120,19 @@ namespace lm.Comol.Modules.CallForPapers.Advanced.Domain
                     return true;
             }
 
+            return false;
+
+
+        }
+
+        public virtual bool IsInCommissionAsSecretaryOrPresident(int PersonId)
+        {
+            if (President != null && President.Id == PersonId)
+                return true;
+
+            if (Secretary != null && Secretary.Id == PersonId)
+                return true;
+            
             return false;
 
 

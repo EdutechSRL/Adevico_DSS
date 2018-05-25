@@ -339,7 +339,7 @@ Public Class SingleAssignEvaluators
     Private Sub RPTassignments_ItemDataBound(sender As Object, e As System.Web.UI.WebControls.RepeaterItemEventArgs) Handles RPTassignments.ItemDataBound
         If e.Item.ItemType = ListItemType.Item OrElse e.Item.ItemType = ListItemType.AlternatingItem Then
             Dim item As dtoSubmissionAssignment = DirectCast(e.Item.DataItem, dtoSubmissionAssignment)
-            Dim allowEdit As Boolean = Not AllowSave AndAlso Not AllowChangeAssignModeToEvalutors
+            Dim allowEdit As Boolean = AllowSave AndAlso AllowChangeAssignModeToEvalutors 'Not AllowSave AndAlso Not AllowChangeAssignModeToEvalutors
 
             Dim oSelect As HtmlSelect = e.Item.FindControl("SLBevaluators")
             oSelect.DataSource = AvailableEvaluators

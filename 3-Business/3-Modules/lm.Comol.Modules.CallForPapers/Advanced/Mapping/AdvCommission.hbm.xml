@@ -29,7 +29,8 @@ xmlns="urn:nhibernate-mapping-2.2"
         <property name="Description" type="String" column="Description" />
 
         <property name="IsMaster" type="Boolean" column="IsMaster" />
-
+        <property name="MaxValue" type="Double" column="MaxValue" />
+      
         <property name="Tags" type="String" column="Tags" />
       
         <property name="Status" type="lm.Comol.Modules.CallForPapers.Advanced.CommissionStatus,lm.Comol.Modules.CallForPapers" column="Status" />

@@ -8,7 +8,7 @@ namespace lm.Comol.Core.DomainModel
 	[Serializable(), CLSCompliant(true)]
     public class Employee : Person
 	{
-        public virtual PersonInfo PersonInfo { get; set; }
+        //public virtual PersonInfo PersonInfo { get; set; }
         public virtual AgencyAffiliation CurrentAffiliation
         {
             get
@@ -23,7 +23,7 @@ namespace lm.Comol.Core.DomainModel
             : base()
 		{
             Affiliations = new List<AgencyAffiliation>();
-            PersonInfo = new PersonInfo();
+            //PersonInfo = new PersonInfo();
 		}
 
         public virtual AgencyAffiliation GetAffiliation(DateTime date)

@@ -244,6 +244,20 @@ namespace lm.Comol.Modules.CallForPapers.Presentation.Evaluation
                     View.SendUserAction(idCommunity, View.IdCallModule, idCall, ModuleCallForPaper.ActionType.SaveSingleSubmissionAssignmentForEvaluation);
                 }
             }
+            else
+            {
+                //Aggiunto!
+                //SE non è presente NEMMENO 1 "valutazione", viene visualizzato sempre e solo la scelta se assegnare tutto...
+                //Da rivedere nel dettaglio, intanto assegno la prima sottomissione al primo membro.
+                if (!Service.SaveDefaultFirstAssignments(idCall, View.IdCommittee))
+                    View.DisplayError(EvaluationEditorErrors.Saving);
+                else
+                {
+                    View.DisplaySettingsSaved();
+                    View.SendUserAction(idCommunity, View.IdCallModule, idCall, ModuleCallForPaper.ActionType.SaveSingleSubmissionAssignmentForEvaluation);
+                }
+            }
+
             LoadAssignments(View.IdCall);
         }
         public void SetEvaluatorsToAllSubmissions()

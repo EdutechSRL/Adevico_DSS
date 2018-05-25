@@ -12,6 +12,9 @@ Imports lm.Comol.Modules.CallForPapers.Presentation
 
 Imports lm.Comol.Modules.CallForPapers.Domain
 
+
+
+
 Public Class cpAdvEconomicEvaluation
     Inherits PageBase
     Implements Eco.Presentation.View.iViewEcoEvaluation
@@ -87,6 +90,10 @@ Public Class cpAdvEconomicEvaluation
 
 
         Me.CurrentPresenter.InitView()
+
+        Uc_AdvTableExport.EvaluationId = Me.EvalId
+        Uc_AdvTableExport.FileName = String.Format("{0}-{1}", Me.EvalId, LBowner.Text.Replace(" ", "_"))
+
     End Sub
 
     Public Overrides Function HasPermessi() As Boolean
@@ -175,18 +182,31 @@ Public Class cpAdvEconomicEvaluation
         LKBClose.Visible = evaluations.CanClose
         LKBClose.Enabled = evaluations.CanClose
 
+        LKBClose_bot.Visible = evaluations.CanClose
+        LKBClose_bot.Enabled = evaluations.CanClose
+
         'Conferma dati membri
         LKBconfirm.Visible = evaluations.CanModify
         LKBconfirm.Enabled = evaluations.CanModify
 
+        LKBconfirm_bot.Visible = evaluations.CanModify
+        LKBconfirm_bot.Enabled = evaluations.CanModify
+
         LKBdraft.Visible = evaluations.CanReopen
         LKBdraft.Enabled = evaluations.CanReopen
+
+        LKBdraft_bot.Visible = evaluations.CanReopen
+        LKBdraft_bot.Enabled = evaluations.CanReopen
 
         LKBSave.Visible = evaluations.CanModify
         LKBSave.Enabled = evaluations.CanModify
 
+        LKBSave_bot.Visible = evaluations.CanModify
+        LKBSave_bot.Enabled = evaluations.CanModify
+
 
         HypSummary.NavigateUrl = BaseUrl & RootObject.EcoSummaries(Me.CommId)
+        HypSummary_bot.NavigateUrl = BaseUrl & RootObject.EcoSummaries(Me.CommId)
 
         LBowner.Text = evaluations.SubmissionName
         LBsubmitterType.Text = evaluations.SubmissionType
@@ -203,7 +223,7 @@ Public Class cpAdvEconomicEvaluation
             RPTtables.DataSource = evaluations.Tables
             RPTtables.DataBind()
 
-            LBFinalMAXadmit.Text = evaluations.Tables.Sum(Function(t) t.AdmitMax).ToString(CurrencyFormat, System.Globalization.CultureInfo.CreateSpecificCulture(CurrencyCulture)).Remove(0, 2)
+            LBFinalMAXadmit.Text = evaluations.AdmitMax 'evaluations.Tables.Sum(Function(t) t.AdmitMax).ToString(CurrencyFormat, System.Globalization.CultureInfo.CreateSpecificCulture(CurrencyCulture)).Remove(0, 2)
 
         Else
 
@@ -387,7 +407,7 @@ Public Class cpAdvEconomicEvaluation
         End If
     End Sub
 
-    Private Sub LKBSave_Click(sender As Object, e As EventArgs) Handles LKBSave.Click
+    Private Sub LKBSave_Click(sender As Object, e As EventArgs) Handles LKBSave.Click, LKBSave_bot.Click
         Save(True)
     End Sub
 
@@ -509,7 +529,7 @@ Public Class cpAdvEconomicEvaluation
         Me.CurrentPresenter.SaveEvaluation(evalValues, refresh)
     End Sub
 
-    Private Sub LKBdraft_Click(sender As Object, e As EventArgs) Handles LKBdraft.Click
+    Private Sub LKBdraft_Click(sender As Object, e As EventArgs) Handles LKBdraft.Click, LKBdraft_bot.Click
 
 
         CallTrapHelper.SendTrap(
@@ -521,7 +541,7 @@ Public Class cpAdvEconomicEvaluation
         Me.CurrentPresenter.DraftEvaluation()
     End Sub
 
-    Private Sub LKBconfirm_Click(sender As Object, e As EventArgs) Handles LKBconfirm.Click
+    Private Sub LKBconfirm_Click(sender As Object, e As EventArgs) Handles LKBconfirm.Click, LKBconfirm_bot.Click
 
         CallTrapHelper.SendTrap(
                 lm.Comol.Modules.CallForPapers.Trap.CallTrapId.AdvEvaluationsConfirm,
@@ -534,7 +554,7 @@ Public Class cpAdvEconomicEvaluation
         Me.CurrentPresenter.CompleteEvaluation()
     End Sub
 
-    Private Sub LKBClose_Click(sender As Object, e As EventArgs) Handles LKBClose.Click
+    Private Sub LKBClose_Click(sender As Object, e As EventArgs) Handles LKBClose.Click, LKBClose_bot.Click
 
         CallTrapHelper.SendTrap(
                 lm.Comol.Modules.CallForPapers.Trap.CallTrapId.AdvEvaluationsConfirm,
@@ -569,7 +589,7 @@ Public Class cpAdvEconomicEvaluation
                                         InteractionType.UserWithLearningObject)
     End Sub
 
-
 #End Region
+
 
 End Class

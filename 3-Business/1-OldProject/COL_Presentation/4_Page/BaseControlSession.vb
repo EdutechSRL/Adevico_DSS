@@ -534,6 +534,8 @@ Public MustInherit Class BaseControlSession
         Session("CMNT_ID_forNews") = ""
         Session("TPCM_ID") = -1
 
+        PageUtility.ApiTokenSetCommunity(0)
+
         Me.RedirectToUrl(url)
     End Sub
 
@@ -916,7 +918,7 @@ Public MustInherit Class BaseControlSession
 
     Public Sub WriteLogoutAccessCookie(ByVal CommunityID As Integer, ByVal PersonID As Integer, ByVal PersonLogin As String, ByVal PostPage As String, ByVal ForDownload As Boolean)
         Dim oHttpCookie As New HttpCookie("LogoutAccess")
-        Dim minutes As Long = Me.SystemSettings.BlogSettings.ValidationTime
+        Dim minutes As Long = 5
         oHttpCookie.Expires = Now.AddMinutes(minutes)
         oHttpCookie.Values.Add("PersonID", PersonID)
         oHttpCookie.Values.Add("PersonLogin", PersonLogin)

@@ -522,10 +522,11 @@ namespace lm.Comol.Modules.CallForPapers.Business
                             break;
                         case CallStatusForSubmitters.SubmissionClosed:
                         case CallStatusForSubmitters.SubmissionOpened:
-                            idCallsToEvaluate = GetCallsForEvaluationId(fromAllcommunities, forPortal, community, person, DisplayEvaluationStatus.Any);
-                            
+                            //idCallsToEvaluate = GetCallsForEvaluationId(fromAllcommunities, forPortal, community, person, DisplayEvaluationStatus.Any);
 
-                            var queryCalls = GetBaseForPaperQuery(false,fromAllcommunities, forPortal, community, person,  CallForPaperType.CallForBids, status, FilterCallVisibility.OnlyVisible);
+                            //idCallsToEvaluate = idCallsToEvaluate.Union(idCallsToEvaluateAdv).ToList();
+                    
+                        var queryCalls = GetBaseForPaperQuery(false,fromAllcommunities, forPortal, community, person,  CallForPaperType.CallForBids, status, FilterCallVisibility.OnlyVisible);
                             
                             switch (status)
                             {
@@ -564,7 +565,9 @@ namespace lm.Comol.Modules.CallForPapers.Business
                             List<long> idCalls = GetIdCallsBySubmissionQuery(calls.Where(c => !c.IsPublic && !c.ForSubscribedUsers && !idSubmittedCalls.Contains(c.Id)).Select(c => c.Id).ToList(),
                                 fromAllcommunities,forPortal,community,person, CallForPaperType.CallForBids, status,filter);
 
-                            items = queryCalls.Where(c => ((c.IsPublic || (c.ForSubscribedUsers && person != null && person.TypeID != (Int32)UserTypeStandard.Guest && person.TypeID != (Int32)UserTypeStandard.PublicUser)) && !idSubmittedCalls.Contains(c.Id)) || idCalls.Contains(c.Id)).Skip(pageIndex * pageSize).Take(pageSize).ToList().ToProxySafeList().Select(c =>
+                        idCalls = idCalls.Union(idCallsToEvaluateAdv).ToList();
+
+                        items = queryCalls.Where(c => ((c.IsPublic || (c.ForSubscribedUsers && person != null && person.TypeID != (Int32)UserTypeStandard.Guest && person.TypeID != (Int32)UserTypeStandard.PublicUser)) && !idSubmittedCalls.Contains(c.Id)) || idCalls.Contains(c.Id)).Skip(pageIndex * pageSize).Take(pageSize).ToList().ToProxySafeList().Select(c =>
                                  new dtoCallItemPermission(c.Id, c.Community, status ,
                                  new dtoCall()
                                  {
@@ -1132,9 +1135,37 @@ namespace lm.Comol.Modules.CallForPapers.Business
                 try
                 {
                     iResponse = (from e in Manager.GetIQ<lm.Comol.Modules.CallForPapers.Domain.Evaluation.Evaluation>()
-                                 where e.Submission.Id == idSubmission && e.Evaluator.Deleted == BaseStatusDeleted.None && e.Evaluator.Person != null
-                                    && e.Evaluator.Person.Id == idPerson
-                                    select e.Id).Any();
+                                 where e.Submission.Id == idSubmission 
+                                 && e.Evaluator != null 
+                                 && e.Evaluator.Deleted == BaseStatusDeleted.None && e.Evaluator.Person != null
+                                 && e.Evaluator.Person.Id == idPerson
+                                 select e.Id).Any();
+
+
+
+                    if(!iResponse)
+                    {
+                        iResponse = (from e in Manager.GetIQ<lm.Comol.Modules.CallForPapers.Domain.Evaluation.Evaluation>()
+                                 where e.Submission.Id == idSubmission
+                                 && e.AdvEvaluator != null
+                                 && e.AdvEvaluator.Deleted == BaseStatusDeleted.None
+                                 && (
+                                 (e.AdvEvaluator.Member != null 
+                                    && e.AdvEvaluator.Member.Id == idPerson)                                 
+                                 ||
+                                 (e.AdvCommission != null
+                                    && ((e.AdvCommission.President != null 
+                                        && e.AdvCommission.President.Id == idPerson)
+                                        ||
+                                        (e.AdvCommission.Secretary != null
+                                        && e.AdvCommission.Secretary.Id == idPerson)
+                                        )
+                                    )
+                                 )
+                                 select e.Id).Any();
+
+                    }
+
                 }
                 catch (Exception ex) { }
 

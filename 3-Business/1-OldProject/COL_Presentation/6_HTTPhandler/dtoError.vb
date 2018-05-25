@@ -13,4 +13,5 @@ Public Class dtoError
     Public FileSettings As FileSettings
     Public ErrorType As ItemRepositoryStatus
     Public Language As String
+    Public IsOnModal As Boolean
 End Class

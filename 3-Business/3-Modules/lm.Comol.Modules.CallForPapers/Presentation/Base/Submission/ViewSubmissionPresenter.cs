@@ -125,6 +125,23 @@ namespace lm.Comol.Modules.CallForPapers.Presentation
                             allowAdmin = (View.PreloadFromManagement && (moduleR.ManageBaseForPapers || moduleR.Administration || ((moduleR.CreateBaseForPaper || moduleR.EditBaseForPaper) && call.Owner.Id == idUser)));
                             break;
                     }
+
+                    if(View.IsAdvance)
+                    {
+                        Advanced.SubmissionListPermission permission = ServiceCall.SubmissionCanList(idCall);
+                        
+                        if((permission & Advanced.SubmissionListPermission.View) == Advanced.SubmissionListPermission.View)
+                        {
+                            allowView = true;
+                        }
+
+                        if ((permission & Advanced.SubmissionListPermission.Manage) == Advanced.SubmissionListPermission.Manage)
+                        {
+                            allowAdmin = true;
+                        }
+                    }
+
+
                     View.ShowAdministrationTools = allowAdmin;
                     CallStatusForSubmitters fromView = View.PreloadView;
                     if (fromView == CallStatusForSubmitters.None)
@@ -140,7 +157,10 @@ namespace lm.Comol.Modules.CallForPapers.Presentation
                     else if (allowAdmin || allowView || (isAnonymousUser && submission.IsAnonymous && submission.UniqueId == View.PreloadedUniqueID))
                         LoadSubmission(call,submission,idUser,allowAdmin);
                     else
-                        View.DisplayNoPermission(idCommunity, idModule);
+                    {
+                       View.DisplayNoPermission(idCommunity, idModule);
+                    }
+                        
                 }
             }
 

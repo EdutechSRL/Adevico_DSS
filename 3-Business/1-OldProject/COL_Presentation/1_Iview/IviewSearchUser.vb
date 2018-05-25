@@ -4,7 +4,6 @@ Public Interface IviewSearchUser
 
     ReadOnly Property Name() As String
     ReadOnly Property Surname() As String
-    ReadOnly Property RegistrationCode() As String
     ReadOnly Property MailAddress() As String
     ReadOnly Property Login() As String
     ReadOnly Property SelectedRoleId() As Integer
@@ -23,7 +22,6 @@ Public Interface IviewSearchUser
 
     Property SelectionMode() As ListSelectionMode
 
-    Sub SetRegistrationCodeVisibility(ByRef isVisible As Boolean)
     Sub init(ByRef oRoleList As List(Of Role))
 
     Function GetUsers() As List(Of BaseElement)

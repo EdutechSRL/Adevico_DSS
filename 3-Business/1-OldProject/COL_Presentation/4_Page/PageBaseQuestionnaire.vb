@@ -578,8 +578,7 @@ Public MustInherit Class PageBaseQuestionnaire
         Try
             oSender = New PermissionService.ServicePermissionClient
 
-            Dim actions As List(Of StandardActionType) = oSender.GetAllowedStandardAction(link.SourceItem, link.DestinationItem, idUser).ToList()
-            
+            Dim actions As List(Of StandardActionType) = oSender.GetAllowedStandardAction(link.SourceItem, link.DestinationItem, idUser)
             moduleQ.Administration = actions.Contains(StandardActionType.Admin) OrElse actions.Contains(StandardActionType.Edit)
             moduleQ.Compile = actions.Contains(StandardActionType.Play)
             moduleQ.CopyQuestionnaire = actions.Contains(StandardActionType.Admin) OrElse actions.Contains(StandardActionType.Edit)

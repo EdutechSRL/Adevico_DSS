@@ -7,7 +7,10 @@ using lm.Comol.Core.DomainModel;
 using lm.Comol.Core.DomainModel.Common;
 using lm.Comol.Modules.CallForPapers.Business;
 
+
 using Eco = lm.Comol.Modules.CallForPapers.AdvEconomic;
+
+using Sp = Telerik.Web.Spreadsheet;
 
 namespace lm.Comol.Modules.CallForPapers.AdvEconomic.Presentation
 {
@@ -174,6 +177,12 @@ namespace lm.Comol.Modules.CallForPapers.AdvEconomic.Presentation
         }
         #endregion
 
+        /// <summary>
+        /// Invio UserActions
+        /// </summary>
+        /// <param name="actionType">Tipo azione</param>
+        /// <param name="objectType">Tipo oggetto</param>
+        /// <param name="ObjectId">Id Oggetto</param>
         private void SendAction(
           CallForPapers.Domain.ModuleCallForPaper.ActionType actionType,
           CallForPapers.Domain.ModuleCallForPaper.ObjectType objectType,
@@ -188,5 +197,10 @@ namespace lm.Comol.Modules.CallForPapers.AdvEconomic.Presentation
                  ObjectId);
 
         }
+
+
+
+
+       
     }
 }

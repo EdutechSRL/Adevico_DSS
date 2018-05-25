@@ -151,7 +151,7 @@ namespace lm.Comol.Modules.CallForPapers.Advanced.Helpers
                         String.Format(ContentItemFormat, (sub.Submission.SubmittedBy != null) ? sub.Submission.SubmittedBy.SurnameAndName : sub.Submission.CreatedBy.SurnameAndName),
                         String.Format(ContentItemFormat, sub.Submission.Type.Name),
                         String.Format(ContentItemFormat, (sub.Submission.SubmittedOn != null) ? sub.Submission.SubmittedOn.ToString() : "--"),
-                        String.Format(ContentItemFormat, (useSum) ? sub.SumRating : sub.AverageRating),
+                        String.Format(ContentItemFormat, (useSum) ? sub.SumRating.ToString("F2") : sub.AverageRating.ToString("F2")),
                         String.Format(ContentItemFormat, (sub.BoolRating) ? ValuePass : ValueNotPass),
                         String.Format(ContentItemFormat, (sub.Passed) ? ValuePass : ValueNotPass),
                         String.Format(ContentItemFormat, (sub.Admitted) ? ValueAdmit : ValueNotAdmit)
