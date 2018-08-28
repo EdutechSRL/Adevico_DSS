@@ -114,8 +114,11 @@ Public Class UC_DashboardViews
     End Sub
 #End Region
 #Region "Internal"
-    Public Sub InitializeControl(settings As dtoViewSettings)
-        InitializeContainer()
+    Public Sub InitializeControl(settings As dtoViewSettings, initialize As Boolean)
+        If initialize Then
+            InitializeContainer()
+        End If
+
         CurrentType = settings.Type
         DVorganizationList.Visible = (settings.Type = DashboardType.Portal)
         DVsubscribeSettings.Visible = (settings.Type = DashboardType.Portal)

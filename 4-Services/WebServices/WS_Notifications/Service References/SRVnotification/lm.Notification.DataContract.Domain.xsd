@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/lm.Notification.DataContract.Domain" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/lm.Notification.DataContract.Domain" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="NotificationToCommunity">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ActionID" type="xs:int" />
+      <xs:element minOccurs="0" name="CommunityID" type="xs:int" />
+      <xs:element minOccurs="0" name="ModuleCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ModuleID" type="xs:int" />
+      <xs:element minOccurs="0" name="NotificatedObjects" nillable="true" type="tns:ArrayOfdtoNotificatedObject" />
+      <xs:element minOccurs="0" name="SentDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="UniqueID" type="ser:guid" />
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ValueParameters" nillable="true" type="q1:ArrayOfstring" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NotificationToCommunity" nillable="true" type="tns:NotificationToCommunity" />
+  <xs:complexType name="ArrayOfdtoNotificatedObject">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="dtoNotificatedObject" nillable="true" type="tns:dtoNotificatedObject" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfdtoNotificatedObject" nillable="true" type="tns:ArrayOfdtoNotificatedObject" />
+  <xs:complexType name="dtoNotificatedObject">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FullyQualiFiedName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ModuleCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ModuleID" type="xs:int" />
+      <xs:element minOccurs="0" name="ObjectID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ObjectTypeID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="dtoNotificatedObject" nillable="true" type="tns:dtoNotificatedObject" />
+  <xs:complexType name="NotificationToPerson">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:NotificationToCommunity">
+        <xs:sequence>
+          <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="PersonsID" nillable="true" type="q2:ArrayOfint" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="NotificationToPerson" nillable="true" type="tns:NotificationToPerson" />
+  <xs:complexType name="NotificationToPermission">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:NotificationToCommunity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Permission" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="NotificationToPermission" nillable="true" type="tns:NotificationToPermission" />
+  <xs:complexType name="NotificationToRole">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:NotificationToCommunity">
+        <xs:sequence>
+          <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="RolesID" nillable="true" type="q3:ArrayOfint" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="NotificationToRole" nillable="true" type="tns:NotificationToRole" />
+  <xs:complexType name="NotificationToItemGuid">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:NotificationToPermission">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ItemID" type="ser:guid" />
+          <xs:element minOccurs="0" name="ObjectTypeID" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="NotificationToItemGuid" nillable="true" type="tns:NotificationToItemGuid" />
+  <xs:complexType name="NotificationToItemLong">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:NotificationToPermission">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ItemID" type="xs:long" />
+          <xs:element minOccurs="0" name="ObjectTypeID" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="NotificationToItemLong" nillable="true" type="tns:NotificationToItemLong" />
+  <xs:complexType name="NotificationToItemInt">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:NotificationToPermission">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ItemID" type="xs:int" />
+          <xs:element minOccurs="0" name="ObjectTypeID" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="NotificationToItemInt" nillable="true" type="tns:NotificationToItemInt" />
+</xs:schema>

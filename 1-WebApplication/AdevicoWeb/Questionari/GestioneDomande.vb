@@ -1,6 +1,7 @@
 Imports Microsoft.VisualBasic
 Imports System.Collections.Generic
 Imports COL_Questionario
+Imports Telerik.Web.UI
 
 Public Class GestioneDomande
     Inherits PageBaseQuestionario
@@ -184,13 +185,16 @@ Public Class GestioneDomande
         Try
             Select Case oQuest.pagine(iPag).domande.Item(iDom).tipo
                 Case Domanda.TipoDomanda.Multipla And oQuest.pagine(iPag).domande.Item(iDom).isMultipla
-                    ctrl = addDomandaMultipla(oQuest, iPag, iDom, isReadOnly)
+                    ctrl = addDomandaMultipla(oQuest, iPag, iDom, isReadOnly)                                   'ok: no style
                 Case Domanda.TipoDomanda.Multipla And Not oQuest.pagine(iPag).domande.Item(iDom).isMultipla
                     ctrl = addDomandaSingola(oQuest, iPag, iDom, isReadOnly)
                 Case Domanda.TipoDomanda.DropDown
                     ctrl = addDomandaDropDown(oQuest, iPag, iDom, isReadOnly)
                 Case Domanda.TipoDomanda.Rating
                     ctrl = addDomandaRating(oQuest, iPag, iDom, isReadOnly)
+                Case Domanda.TipoDomanda.RatingStars
+                    ctrl = addDomandaRatingStarsV2(oQuest, iPag, iDom, isReadOnly)
+                    'ctrl.DataBind()
                 Case Domanda.TipoDomanda.Meeting
                     ctrl = addDomandaMeeting(oQuest, iPag, iDom, isReadOnly)
                 Case Domanda.TipoDomanda.TestoLibero
@@ -207,8 +211,8 @@ Public Class GestioneDomande
 
     ' imposta la visualizzazione della domanda, carica le checkbox, imposta gli stili..
     Protected Function addDomandaMultipla(ByVal oQuest As Questionario, ByVal iPag As String, ByVal iDom As String, ByVal isReadOnly As Boolean) As Control
+        Dim TBLDomandaMultipla As New Table
         Try
-            Dim TBLDomandaMultipla As New Table
             TBLDomandaMultipla.ID = "TBLDomandaMultipla_" + iDom
             TBLDomandaMultipla.CssClass = "questionmultiple"
             Dim counter As Integer = 0
@@ -241,7 +245,7 @@ Public Class GestioneDomande
                 If Me.QuestionarioCorrente.visualizzaSuggerimenti Then
                     Dim LBSuggerimentoOpzione As New Label
                     LBSuggerimentoOpzione.ID = "suggestion" & counter.ToString
-                    LBSuggerimentoOpzione.Style.Item("font-style") = "italic"
+                    'LBSuggerimentoOpzione.Style.Item("font-style") = "italic"
                     LBSuggerimentoOpzione.CssClass = "suggestion"
                     oDiv.Controls.Add(LBSuggerimentoOpzione)
                 End If
@@ -269,8 +273,13 @@ Public Class GestioneDomande
         Catch ex As Exception
             Dim errore As String
             errore = ex.Message
+            TBLDomandaMultipla = New Table
         End Try
+
+        Return TBLDomandaMultipla
     End Function
+
+
 
     'Public Function numeroMaxRisposte_Validate(ByRef TBLDomadaMultipla, ByRef numeroMaxRisposte) As Boolean
     '    Try
@@ -335,7 +344,6 @@ Public Class GestioneDomande
             If Me.QuestionarioCorrente.visualizzaSuggerimenti Then
                 Dim LBSuggerimentoOpzione As New Label
                 LBSuggerimentoOpzione.ID = "suggestion" & counter.ToString
-                LBSuggerimentoOpzione.Style.Item("font-style") = "italic"
                 LBSuggerimentoOpzione.CssClass = "suggestion"
                 oDiv.Controls.Add(LBSuggerimentoOpzione)
             End If
@@ -391,8 +399,15 @@ Public Class GestioneDomande
             Dim oCell2 As New TableCell
             Dim TXBTesto As New TextBox
             TXBTesto.Width = 500
-            TXBTesto.TextMode = TextBoxMode.MultiLine
-            TXBTesto.Rows = 3
+            If oOpzione.isSingleLine Then
+                TXBTesto.TextMode = TextBoxMode.SingleLine
+                TXBTesto.Rows = 1
+            Else
+                TXBTesto.TextMode = TextBoxMode.MultiLine
+                TXBTesto.Rows = 3
+            End If
+
+
             TXBTesto.Enabled = Not isReadOnly
             oCell2.Controls.Add(TXBTesto)
             row.Cells.Add(oCell2)
@@ -490,56 +505,55 @@ Public Class GestioneDomande
 
         Dim tabella As New Table
         tabella.ID = "TBLRadiobutton_" + iDom
-        tabella.CssClass = "questionrating"
-        tabella.BorderWidth = 1
-        tabella.Width = 810
-        tabella.CellPadding = 10
-        tabella.CellSpacing = 0
-        'tabella.GridLines = GridLines.Both
+        tabella.CssClass = "tableData questionrating"
 
         Dim numeroRating As Integer = oQuest.pagine(iPag).domande.Item(iDom).domandaRating.numeroRating
 
-        Dim rigaInt As New TableRow
+        Dim rigaInt As New TableHeaderRow
         'If oQuest.pagine(iPag).domande.Item(iDom).domandaRating.opzioniRating.Count > 1 Then
-        If Not (oQuest.pagine(iPag).domande.Item(iDom).domandaRating.opzioniRating.Count = 1 And oQuest.pagine(iPag).domande.Item(iDom).domandaRating.opzioniRating(0).testo = String.Empty) Then
-            Dim cellaInt1 As New TableCell
-            cellaInt1.CssClass = "CellaVuota"
-            cellaInt1.Width = 0
+        If Not (oQuest.pagine(iPag).domande.Item(iDom).domandaRating.opzioniRating.Count = 0) Then ' And oQuest.pagine(iPag).domande.Item(iDom).domandaRating.opzioniRating(0).testo = String.Empty) Then
+            Dim cellaInt1 As New TableHeaderCell
+            cellaInt1.Text = "&nbsp;"
+            cellaInt1.CssClass = "tdTextual"
             rigaInt.Cells.Add(cellaInt1)
         End If
 
 
         If oQuest.pagine(iPag).domande.Item(iDom).domandaRating.tipoIntestazione = DomandaRating.TipoIntestazioneRating.Numerazione Then
             For i As Integer = 1 To oQuest.pagine(iPag).domande.Item(iDom).domandaRating.numeroRating
-                Dim cella As New TableCell
-                cella.CssClass = "CellaRisposta"
+                Dim cellaHd As New TableHeaderCell
+                cellaHd.CssClass = "tdData"
                 'cella.HorizontalAlign = HorizontalAlign.Center
                 Dim lbTesto As New Label
                 lbTesto.Text = i
                 'lbTesto.Font.Italic = True
-                cella.Controls.Add(lbTesto)
-                rigaInt.Cells.Add(cella)
+                cellaHd.Controls.Add(lbTesto)
+                rigaInt.Cells.Add(cellaHd)
             Next
 
         Else
             For Each oInt As DomandaOpzione In oQuest.pagine(iPag).domande.Item(iDom).domandaRating.intestazioniRating
-                Dim cella As New TableCell
+                Dim cellaHd As New TableHeaderCell
                 ' cella.HorizontalAlign = HorizontalAlign.Center
-                cella.CssClass = "CellaRisposta"
+                cellaHd.CssClass = "tdData"
                 Dim lbTesto As New Label
 
-                lbTesto.Text = oInt.testo
+                If String.IsNullOrWhiteSpace(oInt.testo) Then
+                    lbTesto.Text = "&nbsp;"
+                Else
+                    lbTesto.Text = oInt.testo
+                End If
+
                 'lbTesto.Font.Italic = True
-                cella.Controls.Add(lbTesto)
-                rigaInt.Cells.Add(cella)
+                cellaHd.Controls.Add(lbTesto)
+                rigaInt.Cells.Add(cellaHd)
             Next
 
         End If
 
         If oQuest.pagine(iPag).domande.Item(iDom).domandaRating.mostraND Then
-            Dim cellaND As New TableCell
-            cellaND.CssClass = "CellaRisposta"
-            cellaND.HorizontalAlign = HorizontalAlign.Left
+            Dim cellaND As New TableHeaderCell
+            cellaND.CssClass = "tdData"
             Dim lbTestoND As New Label
             lbTestoND.Text = oQuest.pagine(iPag).domande.Item(iDom).domandaRating.testoND
             cellaND.Controls.Add(lbTestoND)
@@ -550,19 +564,28 @@ Public Class GestioneDomande
 
         tabella.Rows.Add(rigaInt)
 
+        'DATI:
+
         Dim indiceRiga As Integer = 1
 
         For Each oOpzione As DomandaOpzione In oQuest.pagine(iPag).domande.Item(iDom).domandaRating.opzioniRating
 
             Dim riga As New TableRow
-            If Not (oQuest.pagine(iPag).domande.Item(iDom).domandaRating.opzioniRating.Count = 1 And oOpzione.testo = String.Empty) Then
+            If Not (oQuest.pagine(iPag).domande.Item(iDom).domandaRating.opzioniRating.Count = 0) Then 'And oOpzione.testo = String.Empty) Then
                 Dim cella As New TableCell
-                cella.CssClass = "CellaDomanda"
+                cella.CssClass = "tdTextual"
                 Dim LBOpzione As New Label
                 Dim TBisAltro As New TextBox
                 TBisAltro.MaxLength = 250
                 TBisAltro.Enabled = Not isReadOnly
-                LBOpzione.Text = oOpzione.testo + "  "
+
+                If String.IsNullOrWhiteSpace(oOpzione.testo) Then
+                    LBOpzione.Text = "&nbsp;"
+                Else
+                    LBOpzione.Text = oOpzione.testo
+                End If
+
+
                 cella.Controls.Add(LBOpzione)
                 If oOpzione.isAltro Then
                     cella.Controls.Add(TBisAltro)
@@ -572,9 +595,10 @@ Public Class GestioneDomande
 
             For c As Integer = 1 To numeroRating
                 Dim cellaRB As New TableCell
-                cellaRB.CssClass = "CellaRisposta"
+                cellaRB.CssClass = "tdData"
                 Dim rbOpzione As New RadioButton
                 rbOpzione.GroupName = "RBGOpzione_" + indiceRiga.ToString()
+                rbOpzione.CssClass = "rbOpzione"
                 Try
                     rbOpzione.Visible = Boolean.Parse(oOpzione.arrayCBisVisible.Chars(c - 1) = "0")
                 Catch
@@ -596,18 +620,19 @@ Public Class GestioneDomande
 
     End Function
 
-    Protected Function addDomandaRatingStars(ByVal oQuest As Questionario, ByVal iPag As String, ByVal iDom As String, ByVal isReadOnly As Boolean) As Control
+    Protected Function addDomandaRatingStars(
+                                            ByVal oQuest As Questionario,
+                                            ByVal iPag As String,
+                                            ByVal iDom As String,
+                                            ByVal isReadOnly As Boolean) As Control
 
         'Dim dlOpzioniRating As New PlaceHolder
         'dlOpzioniRating.ID = "PHOpzioniRating"
 
         Dim tabella As New Table
         tabella.ID = "TBLRadiobutton_" + iDom
-        tabella.CssClass = "questionrating"
-        tabella.BorderWidth = 1
-        tabella.Width = 810
-        tabella.CellPadding = 10
-        tabella.CellSpacing = 0
+        tabella.CssClass = "tableData questionrating star"
+
 
         Dim numeroRating As Integer = oQuest.pagine(iPag).domande.Item(iDom).domandaRating.numeroRating
 
@@ -616,21 +641,28 @@ Public Class GestioneDomande
         For Each oOpzione As DomandaOpzione In oQuest.pagine(iPag).domande.Item(iDom).domandaRating.opzioniRating
 
             Dim riga As New TableRow
-            If Not (oQuest.pagine(iPag).domande.Item(iDom).domandaRating.opzioniRating.Count = 1 And oOpzione.testo = String.Empty) Then
+            If Not (oQuest.pagine(iPag).domande.Item(iDom).domandaRating.opzioniRating.Count = 0) Then ' And oOpzione.testo = String.Empty) Then
                 Dim cella As New TableCell
-                cella.CssClass = "CellaDomanda"
+                cella.CssClass = "tdTextual"
                 Dim LBOpzione As New Label
 
-                LBOpzione.Text = oOpzione.testo + "  "
+                If String.IsNullOrWhiteSpace(oOpzione.testo) Then
+                    LBOpzione.Text = "&nbsp;"
+                Else
+                    LBOpzione.Text = oOpzione.testo
+                End If
+
                 cella.Controls.Add(LBOpzione)
 
                 riga.Cells.Add(cella)
             End If
 
             Dim cellaRB As New TableCell
-            cellaRB.CssClass = "CellaRisposta"
+            cellaRB.CssClass = "tdData"
 
             Dim rdStars As New Telerik.Web.UI.RadRating
+
+            Dim value As Integer = 0
 
             Try
 
@@ -642,19 +674,27 @@ Public Class GestioneDomande
                     ris = oRisposta.findRispostaByNumeroOpzione(oQuest.pagine(iPag).domande.Item(iDom).risposteDomanda, oQuest.pagine(iPag).domande.Item(iDom).domandaRating.opzioniRating(indiceRiga - 1).numero)
                 End If
 
-                rdStars.Value = CInt(ris.valore)
-
+                'rdStars.Value = CInt(ris.valore)
+                value = CInt(ris.valore)
                 'end tentativo
             Catch ex As Exception
-                rdStars.Value = 0
+                'rdStars.Value = 0
             End Try
 
 
-            rdStars.ItemCount = numeroRating
+            '
             rdStars.SelectionMode = Telerik.Web.UI.RatingSelectionMode.Continuous
             rdStars.Precision = Telerik.Web.UI.RatingPrecision.Item
             rdStars.Orientation = System.Web.UI.WebControls.Orientation.Horizontal
-            rdStars.ReadOnly = isReadOnly
+
+            If isReadOnly Then
+                rdStars.ReadOnly = isReadOnly
+            End If
+            rdStars.ItemCount = numeroRating
+            rdStars.Value = value
+            'rdStars.DataSource = GetRadRatingItems(numeroRating)
+            rdStars.Enabled = True
+            rdStars.DataBind()
 
             cellaRB.Controls.Add(rdStars)
 
@@ -670,6 +710,102 @@ Public Class GestioneDomande
         Return tabella
 
     End Function
+
+    Public Function addDomandaRatingStarsV2(
+                                            ByVal oQuest As Questionario,
+                                            ByVal iPag As String,
+                                            ByVal iDom As String,
+                                            ByVal isReadOnly As Boolean) As Control
+
+        'Dim dlOpzioniRating As New PlaceHolder
+        'dlOpzioniRating.ID = "PHOpzioniRating"
+
+        Dim tabella As New Table
+        tabella.ID = "TBLRadiobutton_" + iDom
+        tabella.CssClass = "tableData questionrating star"
+
+
+        Dim numeroRating As Integer = oQuest.pagine(iPag).domande.Item(iDom).domandaRating.numeroRating
+
+        Dim indiceRiga As Integer = 1
+
+        For Each oOpzione As DomandaOpzione In oQuest.pagine(iPag).domande.Item(iDom).domandaRating.opzioniRating
+
+            Dim rdStarsUC As Uc_StarBind = CType(LoadControl("Questionari/UserControls/Uc_StarBind.ascx"), Uc_StarBind)
+
+            'BaseUrl & 
+
+            Dim riga As New TableRow
+            If Not (oQuest.pagine(iPag).domande.Item(iDom).domandaRating.opzioniRating.Count = 0) Then ' And oOpzione.testo = String.Empty) Then
+                Dim cella As New TableCell
+                cella.CssClass = "tdTextual"
+                Dim LBOpzione As New Label
+
+                LBOpzione.Text = oOpzione.testo + "  "
+                cella.Controls.Add(LBOpzione)
+
+                riga.Cells.Add(cella)
+            End If
+
+            Dim cellaRB As New TableCell
+            cellaRB.CssClass = "tdData"
+
+            'Dim rdStars As New Telerik.Web.UI.RadRating
+
+            Dim value As Integer = 0
+
+            Try
+
+                'Tentativo recupero dato
+                Dim oRisposta As New RispostaQuestionario
+
+                Dim ris As New RispostaDomanda
+                If oQuest.pagine(iPag).domande.Item(iDom).risposteDomanda.Count > 0 Then
+                    ris = oRisposta.findRispostaByNumeroOpzione(oQuest.pagine(iPag).domande.Item(iDom).risposteDomanda, oQuest.pagine(iPag).domande.Item(iDom).domandaRating.opzioniRating(indiceRiga - 1).numero)
+                End If
+
+                'rdStars.Value = CInt(ris.valore)
+                value = CInt(ris.valore)
+                'end tentativo
+            Catch ex As Exception
+                'rdStars.Value = 0
+            End Try
+
+            If isReadOnly Then
+                rdStarsUC.RadRating.ReadOnly = isReadOnly
+            End If
+            rdStarsUC.RadRating.ItemCount = numeroRating
+            rdStarsUC.RadRating.Value = value
+            'rdStars.DataSource = GetRadRatingItems(numeroRating)
+            rdStarsUC.RadRating.Enabled = True
+
+            'rdStars.DataBind()
+
+            cellaRB.Controls.Add(rdStarsUC)
+
+            riga.Cells.Add(cellaRB)
+
+            tabella.Rows.Add(riga)
+
+            indiceRiga = indiceRiga + 1
+
+        Next
+
+
+        Return tabella
+
+    End Function
+
+    Private Function GetRadRatingItems(ByVal count As Integer) As ArrayList
+        Dim items As New ArrayList()
+
+        For i As Integer = 1 To count
+            items.Add(New TkRadRatingItemTmp(i, i.ToString()))
+        Next
+
+        Return items
+    End Function
+
 
     ' carica lo user control domanda meeting
     Protected Function addDomandaMeeting(ByVal oQuest As Questionario, ByVal iPag As String, ByVal iDom As String, ByVal isReadOnly As Boolean) As Control
@@ -743,7 +879,7 @@ Public Class GestioneDomande
         For Each oOpzione As DomandaOpzione In oQuest.pagine(iPag).domande.Item(iDom).domandaRating.opzioniRating
 
             Dim riga As New TableRow
-            If Not (oQuest.pagine(iPag).domande.Item(iDom).domandaRating.opzioniRating.Count = 1 And oOpzione.testo = String.Empty) Then
+            If Not (oQuest.pagine(iPag).domande.Item(iDom).domandaRating.opzioniRating.Count = 1) Then ' And oOpzione.testo = String.Empty) Then
                 Dim cella As New TableCell
                 cella.CssClass = "CellaDomanda"
                 Dim LBOpzione As New Label
@@ -899,9 +1035,9 @@ Public Class GestioneDomande
                 Case Domanda.TipoDomanda.Rating
                     ctrl = Page.LoadControl(RootObject.ucDomandaRatingEdit)
                     ctrl.ID = "UCDomandaRating"
-                'Case Domanda.TipoDomanda.RatingStars
-                '    ctrl = Page.LoadControl(RootObject.ucDomandaRatingStarsEdit)
-                '    ctrl.ID = "UCDomandaRatingStars"
+                Case Domanda.TipoDomanda.RatingStars
+                    ctrl = Page.LoadControl(RootObject.ucDomandaRatingStarsEdit)
+                    ctrl.ID = "UCDomandaRatingStars"
                 Case Domanda.TipoDomanda.TestoLibero
                     ctrl = Page.LoadControl(RootObject.ucDomandaTestoLiberoEdit)
                     ctrl.ID = "UCDomandaTestoLibero"
@@ -1042,6 +1178,7 @@ Public Class GestioneDomande
         Dim nuovoTestoDopo As String
 
         If Not oDomanda.tipo = Domanda.TipoDomanda.Rating _
+            AndAlso Not oDomanda.tipo = Domanda.TipoDomanda.RatingStars _
             AndAlso Not oDomanda.tipo = Domanda.TipoDomanda.Meeting Then
             'le rating e le meeting non hanno TXBPeso
             If Not DirectCast(FindControlRecursive(FRVDomanda, "TXBPeso"), TextBox).Text = String.Empty Then
@@ -1105,7 +1242,8 @@ Public Class GestioneDomande
                 oDomandaSet = setDomandaNumerica(FRVDomanda, oDomanda, oQuest, isMinorUpdate)
             Case Domanda.TipoDomanda.Rating
                 oDomandaSet = setDomandaRating(FRVDomanda, oDomanda, oQuest)
-
+            Case Domanda.TipoDomanda.RatingStars
+                oDomandaSet = setDomandaRatingStars(FRVDomanda, oDomanda, oQuest)
             Case Domanda.TipoDomanda.TestoLibero
                 oDomandaSet = setDomandaTestoLibero(FRVDomanda, oDomanda, oQuest, isMinorUpdate)
             Case Domanda.TipoDomanda.Meeting
@@ -1147,6 +1285,7 @@ Public Class GestioneDomande
         oDomanda.peso = nuovoPeso
         oDomanda.difficolta = nuovaDifficolta
         Dim retVal As Integer
+
         If Not oDomanda.testo.Trim() = String.Empty Or oDomanda.testo.Trim() = "<br>" Then
 
             Dim saveOK As Boolean
@@ -1845,14 +1984,23 @@ Public Class GestioneDomande
         oCheck.Attributes.Add("onclick", "changeText(this,'" & oText.ClientID & "'); return true")
     End Sub
     Public Sub DLOpzioniFreeText_DataBound(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.DataListItemEventArgs)
+        Dim opt As DomandaTestoLibero = DirectCast(e.Item.DataItem, DomandaTestoLibero)
+
         Dim editor As Comunita_OnLine.UC_Editor = e.Item.FindControl("CTRLeditorEtichetta")
         If Not IsNothing(editor) Then
-            Dim opt As DomandaTestoLibero = DirectCast(e.Item.DataItem, DomandaTestoLibero)
+
             If Not editor.isInitialized Then
                 editor.InitializeControl(COL_Questionario.ModuleQuestionnaire.UniqueID)
             End If
             editor.HTML = opt.etichetta
         End If
+
+        Dim CHKisSingleLine As CheckBox = e.Item.FindControl("CHKisSingleLine")
+
+        If Not IsNothing(CHKisSingleLine) Then
+            CHKisSingleLine.Checked = opt.isSingleLine
+        End If
+
     End Sub
 
     Public Sub eliminaOpzioneTestoLibero(ByVal FRVDomanda As FormView, ByVal DLItemIndex As Integer)
@@ -2031,6 +2179,7 @@ Public Class GestioneDomande
                 opzione.peso = DirectCast(FindControlRecursive(dlopzioni.Items(opzione.numero - 1), "TXBPeso"), TextBox).Text
                 opzione.suggestion = DirectCast(FindControlRecursive(dlopzioni.Items(opzione.numero - 1), "TXBSuggerimentoOpzione"), TextBox).Text
                 opzione.isCorretta = DirectCast(FindControlRecursive(dlopzioni.Items(opzione.numero - 1), "CBisCorretta"), CheckBox).Checked
+
             Next
         End If
 
@@ -2080,6 +2229,7 @@ Public Class GestioneDomande
                     oDomandaOpzione.isCorretta = cbCorretta.Checked
                     oDomandaOpzione.isAltro = cbIsAltro.Checked
                     oDomandaOpzione.suggestion = txbSuggestion.Text
+
                     oDomandaNew.domandaMultiplaOpzioni.Add(oDomandaOpzione)
                     nOpzione = nOpzione + 1
                     If oDomandaOpzione.isCorretta = True Then
@@ -2327,30 +2477,36 @@ Public Class GestioneDomande
                 txbScelta = DirectCast(item.FindControl("TXBTestoMin"), TextBox)
                 Dim txbScelta2 As New TextBox
                 txbScelta2 = DirectCast(item.FindControl("TXBTestoMax"), TextBox)
-                If Not txbScelta.Text = String.Empty Then
-                    Dim oDomandaOpzione As New DomandaOpzione
-                    oDomandaOpzione.numero = nOpzione
-                    oDomandaOpzione.testo = txbScelta.Text
-                    oDomandaOpzione.testoDopo = txbScelta2.Text
-                    oDomandaOpzione.isAltro = DirectCast(item.FindControl("CBisAltro"), CheckBox).Checked
-                    Dim c As Int16
-                    Dim tabella As New Table
-                    Dim cb As New CheckBox
-                    tabella = DirectCast(FindControlRecursive(FRVDomanda, "TBLCheckbox"), Table)
-                    If Not isChangingTable Then
-                        For c = 0 To oDomanda.domandaRating.numeroRating - 1
-                            'Try
-                            '    cb = DirectCast(tabella.Rows(nOpzione - 1).Cells(c).Controls(0), CheckBox)
-                            '    oDomandaOpzione.arrayCBisVisible = oDomandaOpzione.arrayCBisVisible & CStr(Math.Abs(CInt(cb.Checked)))
-                            'Catch
-                            '    oDomandaOpzione.arrayCBisVisible = oDomandaOpzione.arrayCBisVisible & "0"
-                            'End Try
-                            oDomandaOpzione.arrayCBisVisible = True
-                        Next
-                    End If
-                    oDomanda.domandaRating.opzioniRating.Add(oDomandaOpzione)
-                    nOpzione = nOpzione + 1
+                'If Not txbScelta.Text = String.Empty Then
+
+                Dim opzTesto As String = txbScelta.Text
+                If String.IsNullOrEmpty(opzTesto) Then
+                    opzTesto = " "
                 End If
+
+                Dim oDomandaOpzione As New DomandaOpzione
+                oDomandaOpzione.numero = nOpzione
+                oDomandaOpzione.testo = opzTesto
+                oDomandaOpzione.testoDopo = txbScelta2.Text
+                oDomandaOpzione.isAltro = DirectCast(item.FindControl("CBisAltro"), CheckBox).Checked
+                Dim c As Int16
+                Dim tabella As New Table
+                Dim cb As New CheckBox
+                tabella = DirectCast(FindControlRecursive(FRVDomanda, "TBLCheckbox"), Table)
+                If Not isChangingTable Then
+                    For c = 0 To oDomanda.domandaRating.numeroRating - 1
+                        'Try
+                        '    cb = DirectCast(tabella.Rows(nOpzione - 1).Cells(c).Controls(0), CheckBox)
+                        '    oDomandaOpzione.arrayCBisVisible = oDomandaOpzione.arrayCBisVisible & CStr(Math.Abs(CInt(cb.Checked)))
+                        'Catch
+                        '    oDomandaOpzione.arrayCBisVisible = oDomandaOpzione.arrayCBisVisible & "0"
+                        'End Try
+                        oDomandaOpzione.arrayCBisVisible = True
+                    Next
+                End If
+                oDomanda.domandaRating.opzioniRating.Add(oDomandaOpzione)
+                nOpzione = nOpzione + 1
+                'End If
             Next
         End If
         oDomanda.domandaRating.testoND = DirectCast(FindControlRecursive(FRVDomanda, "TXBTestoND"), TextBox).Text
@@ -2433,6 +2589,7 @@ Public Class GestioneDomande
         DirectCast(FindControlRecursive(FRVDomanda, "DDLNumeroOpzioni"), DropDownList).SelectedValue = oDomanda.opzioniTestoLibero.Count
     End Sub
     Public Function setDomandaTestoLibero(ByVal FRVDomanda As FormView, ByVal oDomanda As Domanda, ByVal oQuest As Questionario, Optional ByRef isMinorUpdate As Boolean = True) As Domanda
+
         Dim oPagina As New QuestionarioPagina
         Dim dlOpzioni As New DataList
         dlOpzioni = FindControlRecursive(FRVDomanda, "DLOpzioni")
@@ -2497,17 +2654,29 @@ Public Class GestioneDomande
             For Each item As DataListItem In dlOpzioni.Items
                 Dim txbScelta As New Comunita_OnLine.UC_Editor
                 txbScelta = DirectCast(item.FindControl("CTRLeditorEtichetta"), Comunita_OnLine.UC_Editor)
-                If Not txbScelta.HTML = String.Empty Then
-                    Dim oDomandaOpzione As New DomandaTestoLibero
-                    oDomandaOpzione.etichetta = txbScelta.HTML
-                    oDomandaOpzione.idDomanda = oDomanda.idDomandaMultilingua
-                    oDomandaOpzione.numeroColonne = 1
-                    oDomandaOpzione.numeroRighe = 1
-                    oDomandaOpzione.numero = nOpzione
-                    oDomandaOpzione.peso = DirectCast(item.FindControl("TXBPesoRisposta"), TextBox).Text
-                    oDomanda.opzioniTestoLibero.Add(oDomandaOpzione)
-                    nOpzione = nOpzione + 1
-                End If
+
+                Dim isSingleLine As Boolean = False
+
+                Try
+                    Dim CHKisSingleLine As CheckBox = item.FindControl("CHKisSingleLine")
+                    isSingleLine = CHKisSingleLine.Checked
+                Catch ex As Exception
+
+                End Try
+
+                'Dim text As String = txbScelta.HTML
+                'If Not txbScelta.HTML = String.Empty Then
+                Dim oDomandaOpzione As New DomandaTestoLibero
+                oDomandaOpzione.etichetta = txbScelta.HTML
+                oDomandaOpzione.idDomanda = oDomanda.idDomandaMultilingua
+                oDomandaOpzione.numeroColonne = 1
+                oDomandaOpzione.numeroRighe = 1
+                oDomandaOpzione.numero = nOpzione
+                oDomandaOpzione.peso = DirectCast(item.FindControl("TXBPesoRisposta"), TextBox).Text
+                oDomandaOpzione.isSingleLine = isSingleLine
+                oDomanda.opzioniTestoLibero.Add(oDomandaOpzione)
+                nOpzione = nOpzione + 1
+                'End If
             Next
         End If
         Return oDomanda
@@ -2688,6 +2857,21 @@ Public Class GestioneDomande
                 End If
 
             Case Domanda.TipoDomanda.Rating
+
+                Dim nOpzioniCorrenti As Integer = oDomanda.domandaRating.opzioniRating.Count
+
+                If nOpzioniScelte > nOpzioniCorrenti Then
+                    For n As Integer = 1 To nOpzioniScelte - nOpzioniCorrenti
+                        Dim newOpzione As New DomandaOpzione
+                        oDomanda.domandaRating.opzioniRating.Add(newOpzione)
+                    Next
+                Else
+                    For n As Integer = 1 To nOpzioniCorrenti - nOpzioniScelte
+                        oDomanda.domandaRating.opzioniRating.RemoveAt(oDomanda.domandaRating.opzioniRating.Count - 1)
+                    Next
+                End If
+
+            Case Domanda.TipoDomanda.RatingStars
 
                 Dim nOpzioniCorrenti As Integer = oDomanda.domandaRating.opzioniRating.Count
 
@@ -3010,3 +3194,46 @@ Public Class GestioneDomande
         End Get
     End Property
 End Class
+
+Public Class TkRadRatingItemTmp
+    Public Sub New(path As String, value As Double)
+        _path = path
+        _value = value
+    End Sub
+
+    Public Sub New(value As Double, toolTip As String)
+        _value = value
+        _toolTip = toolTip
+    End Sub
+
+    Private _path As String
+    Public Property Path() As String
+        Get
+            Return _path
+        End Get
+        Set
+            _path = Value
+        End Set
+    End Property
+
+    Private _value As Double
+    Public Property Value() As Double
+        Get
+            Return _value
+        End Get
+        Set
+            _value = Value
+        End Set
+    End Property
+
+    Private _toolTip As String
+    Public Property ToolTip() As String
+        Get
+            Return _toolTip
+        End Get
+        Set
+            _toolTip = Value
+        End Set
+    End Property
+End Class
+

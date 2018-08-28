@@ -1,0 +1,315 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D1EFB82A-DE0C-43D2-8DC7-AD808B32C2A2}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Comol.Entity</RootNamespace>
+    <AssemblyName>COMOL_Entity</AssemblyName>
+    <MyType>Windows</MyType>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <StartupObject>
+    </StartupObject>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>COMOL_Entity.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>COMOL_Entity.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ManagedDesigns.ApplicationBlocks.Validation, Version=0.4.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Library\lm.Comol.Core.CommonLib\ManagedDesigns\ManagedDesigns.ApplicationBlocks.Validation.dll</HintPath>
+    </Reference>
+    <Reference Include="Memcached.ClientLibrary, Version=1.0.0.0, Culture=neutral, PublicKeyToken=42c0400964dcc297, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Library\lm.Comol.Core.CommonLib\Memcached\Memcached.ClientLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.ServiceModel">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="ManagedDesigns" />
+    <Import Include="ManagedDesigns.ApplicationBlocks" />
+    <Import Include="Memcached" />
+    <Import Include="Memcached.ClientLibrary" />
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Text.RegularExpressions" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Clause\GenericClause.vb" />
+    <Compile Include="Clause\ServiceClause.vb" />
+    <Compile Include="Comunita\CachePolicyPerson.vb" />
+    <Compile Include="Comunita\CachePolicyCommunity.vb" />
+    <Compile Include="Comunita\CachePolicySearch.vb" />
+    <Compile Include="Comunita\CachePolicyServiceTemporary.vb" />
+    <Compile Include="Comunita\CommunityService.vb" />
+    <Compile Include="Comunita\Property\AccademicYear.vb" />
+    <Compile Include="Comunita\Community.vb" />
+    <Compile Include="Comunita\Property\CommunityType.vb" />
+    <Compile Include="Comunita\Property\TypeDegree.vb" />
+    <Compile Include="Comunita\Specializzazioni\Organization.vb" />
+    <Compile Include="Comunita\CommunityStatus.vb" />
+    <Compile Include="Comunita\StandardCommunitySearch.vb" />
+    <Compile Include="Comunita\StandardCommunityType.vb" />
+    <Compile Include="Configuration\ActionsSettings.vb" />
+    <Compile Include="Configuration\AutenticationSetting.vb" />
+    <Compile Include="Configuration\ChatSettings.vb" />
+    <Compile Include="Configuration\Components\AutoLoginPrefix.vb" />
+    <Compile Include="Configuration\Components\ConfigurationPath.vb" />
+    <Compile Include="Configuration\Components\dtoErrorType.vb" />
+    <Compile Include="Configuration\Components\ServiceToNotify.vb" />
+    <Compile Include="Configuration\Components\ExternalServerRender.vb" />
+    <Compile Include="Configuration\Components\URLelement.vb" />
+    <Compile Include="Configuration\Components\UrlProvider.vb" />
+    <Compile Include="Configuration\DocTemplateSettings.vb" />
+    <Compile Include="Configuration\FeaturesSettings.vb" />
+    <Compile Include="Configuration\NotificationErrorServiceSettings.vb" />
+    <Compile Include="Configuration\QuestionnaireSettings.vb" />
+    <Compile Include="Configuration\SkinSettings.vb" />
+    <Compile Include="Configuration\StyleSettings.vb" />
+    <Compile Include="Configuration\ErrorSettings.vb" />
+    <Compile Include="Configuration\Components\ConnectionType.vb" />
+    <Compile Include="Configuration\Components\MailLocalized.vb" />
+    <Compile Include="Configuration\ComolSettings.vb" />
+    <Compile Include="Configuration\DBconnectionSettings.vb" />
+    <Compile Include="Configuration\IcodeonSettings.vb" />
+    <Compile Include="Configuration\MailSettings.vb" />
+    <Compile Include="Configuration\BulkInsertSettings.vb" />
+    <Compile Include="Configuration\Components\IconElement.vb" />
+    <Compile Include="Configuration\ExtensionSettings.vb" />
+    <Compile Include="Configuration\FileSettings.vb" />
+    <Compile Include="Configuration\LoginSettings.vb" />
+    <Compile Include="Configuration\NotificationSettings.vb" />
+    <Compile Include="Configuration\QuizSettings.vb" />
+    <Compile Include="Configuration\LatexSettings.vb" />
+    <Compile Include="Configuration\CSVsettings.vb" />
+    <Compile Include="Configuration\TagSettings.vb" />
+    <Compile Include="Configuration\PresenterSettings.vb" />
+    <Compile Include="Configuration\TopBarSetting.vb" />
+    <Compile Include="Configuration\Validity\DelaySubscriptionConfig.vb" />
+    <Compile Include="Configuration\Validity\dsValidity.vb" />
+    <Compile Include="Configuration\WebConferencingSettings.vb" />
+    <Compile Include="Configuration\xApiSettings.vb" />
+    <Compile Include="Events\CachePolicyEvent.vb" />
+    <Compile Include="Events\EventTypeStandard.vb" />
+    <Compile Include="Events\EventConflict.vb" />
+    <Compile Include="Events\CommunityEvent.vb" />
+    <Compile Include="Events\EventType.vb" />
+    <Compile Include="Events\EventItem.vb" />
+    <Compile Include="File\CachePolicyRepository.vb" />
+    <Compile Include="File\CommunityRepository.vb" />
+    <Compile Include="File\CoverRepository.vb" />
+    <Compile Include="File\LabelTag.vb" />
+    <Compile Include="File\ForumRepository.vb" />
+    <Compile Include="File\Mimetype.vb" />
+    <Compile Include="Configuration\Components\ConnectionDB.vb" />
+    <Compile Include="File\FileCsvField.vb" />
+    <Compile Include="File\CSVsettings.vb" />
+    <Compile Include="Configuration\Components\NotificationMessage.vb" />
+    <Compile Include="File\LearningObjectFile.vb" />
+    <Compile Include="File\ObjectFilePath.vb" />
+    <Compile Include="Configuration\Components\TemplateTag.vb" />
+    <Compile Include="File\Repository.vb" />
+    <Compile Include="File\ServiceRepository.vb" />
+    <Compile Include="File\UserRepository.vb" />
+    <Compile Include="Forum\Forum.vb" />
+    <Compile Include="Forum\ForumPost.vb" />
+    <Compile Include="Forum\ForumTopic.vb" />
+    <Compile Include="Forum\ForumRole.vb" />
+    <Compile Include="Generici\BaseDomainObject.vb" />
+    <Compile Include="Generici\BaseElement.vb" />
+    <Compile Include="Generici\CachePolicy.vb" />
+    <Compile Include="Generici\CacheTime.vb" />
+    <Compile Include="Clause\OperatorType.vb" />
+    <Compile Include="Generici\DateTimeContext.vb" />
+    <Compile Include="Generici\GenericElement.vb" />
+    <Compile Include="Generici\SpeedStatus.vb" />
+    <Compile Include="Generici\GenericNestedComparer.vb" />
+    <Compile Include="Generici\DomainObjectCommunity.vb" />
+    <Compile Include="Generici\Enum.vb" />
+    <Compile Include="Generici\Property\Contact.vb" />
+    <Compile Include="Generici\Property\PostalAddress.vb" />
+    <Compile Include="Generici\Translation.vb" />
+    <Compile Include="Generici\IValidableObject.vb" />
+    <Compile Include="Generici\DomainObject.vb" />
+    <Compile Include="Generici\GenericComparer.vb" />
+    <Compile Include="Generici\Property\Lingua.vb" />
+    <Compile Include="Generici\Property\Provincia.vb" />
+    <Compile Include="Generici\GenericPredicate.vb" />
+    <Compile Include="Generici\Property\State.vb" />
+    <Compile Include="Generici\sortDirection.vb" />
+    <Compile Include="Generici\SummaryElement.vb" />
+    <Compile Include="Generici\TextStyle.vb" />
+    <Compile Include="Generici\VisibilityStatus.vb" />
+    <Compile Include="Generici\WhiteBoard.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="NEW ADDED\ConfigurationErrorSettings.vb" />
+    <Compile Include="NEW ADDED\Helpers.vb" />
+    <Compile Include="NEW ADDED\ManagerConfigurationSettings.vb" />
+    <Compile Include="NEW ADDED\ObjectBase.vb" />
+    <Compile Include="Persona\Class1.vb" />
+    <Compile Include="Persona\PersonInfo.vb" />
+    <Compile Include="Persona\MemberContact.vb" />
+    <Compile Include="Persona\MembershipInfo.vb" />
+    <Compile Include="Persona\Specializzazioni\Dottorando.vb" />
+    <Compile Include="Persona\Specializzazioni\Technical.vb" />
+    <Compile Include="Persona\Subscription.vb" />
+    <Compile Include="Persona\PrivateData.vb" />
+    <Compile Include="Persona\Person.vb" />
+    <Compile Include="Persona\PersonType.vb" />
+    <Compile Include="Persona\Specializzazioni\Esterno.vb" />
+    <Compile Include="Persona\Role.vb" />
+    <Compile Include="Search\KeyElment.vb" />
+    <Compile Include="Service References\ErrorsNotificationService\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Services\EntityBaseServices.vb" />
+    <Compile Include="Services\Service.vb" />
+    <Compile Include="Services\ServiceEntity.vb" />
+    <Compile Include="SmartTags\SmartTag.vb" />
+    <Compile Include="SmartTags\WellKnownSmartTag.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="File\Repository.cd" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Service References\ErrorsNotificationService\Arrays.xsd" />
+    <None Include="Service References\ErrorsNotificationService\lm.ErrorsNotification.DataContract.Domain.xsd" />
+    <None Include="Service References\ErrorsNotificationService\service.wsdl" />
+    <None Include="Service References\ErrorsNotificationService\service.xsd" />
+    <None Include="Service References\ErrorsNotificationService\service1.xsd" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ErrorsNotificationService\configuration91.svcinfo" />
+    <None Include="Service References\ErrorsNotificationService\configuration.svcinfo" />
+    <None Include="Service References\ErrorsNotificationService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\ErrorsNotificationService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

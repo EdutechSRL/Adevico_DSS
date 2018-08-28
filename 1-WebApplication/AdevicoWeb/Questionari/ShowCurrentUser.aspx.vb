@@ -41,34 +41,7 @@ Public Partial Class ShowCurrentUser
         SetServiceTitle(Master)
     End Sub
 
-    Public WriteOnly Property ListaIscritti() As System.Collections.IList Implements PresentationLayer.IviewQuestionarioPresence.ListaIscritti
-        Set(ByVal value As System.Collections.IList)
-
-        End Set
-    End Property
-
-    Public Property OrderDir() As Boolean Implements PresentationLayer.IviewQuestionarioPresence.OrderDir
-        Get
-            If IsNothing(ViewState("OrderDir")) Then
-                ViewState("OrderDir") = False
-            End If
-            Return ViewState("OrderDir")
-
-            'True = Desc
-            'False = Asc
-        End Get
-        Set(ByVal value As Boolean)
-            ViewState("OrderDir") = value
-        End Set
-    End Property
-    Public Property OrderValue() As String Implements PresentationLayer.IviewQuestionarioPresence.OrderValue
-        Get
-            Return ViewState("OrderValue")
-        End Get
-        Set(ByVal value As String)
-            ViewState("OrderValue") = value
-        End Set
-    End Property
+   
     Public Overrides ReadOnly Property LoadDataByUrl As Boolean
         Get
             Return False

@@ -118,6 +118,18 @@ namespace lm.Comol.Modules.CallForPapers.Advanced.dto
         public bool IsPresident { get; set; }
 
         /// <summary>
+        /// Id Template per esportazione documento di riepilogo
+        /// </summary>
+        public Int64 TemplateId { get; set; }
+        /// <summary>
+        /// Id Versione Template per esportazione documento di riepilogo
+        /// </summary>
+        /// <remarks>
+        /// Se -1, verrà utilizzata sempre l'ultima versione
+        /// </remarks>
+        public Int64 TemplateVersionId { get; set; }
+
+        /// <summary>
         /// Massimale ammesso per commissione economica
         /// </summary>
         public double MaxValue { get; set; }
@@ -185,7 +197,10 @@ namespace lm.Comol.Modules.CallForPapers.Advanced.dto
                 .ToList();
 
             EnableMaster = false;
-            
+
+            TemplateId = Comm.TemplateId;
+            TemplateVersionId = Comm.TemplateVersionId;
+
             if (Comm.Criteria != null)// && Comm.Criteria.Any())
             {
                 Criterion = Comm.Criteria.Select(bc => new Eval.dtoCriterion(bc)).OrderBy(c => c.DisplayOrder).ThenBy(c => c.Name).ToList();

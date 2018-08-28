@@ -1,0 +1,458 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{10EEACDF-85F8-4AA9-A965-EE1B2FD233D4}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>COL_Questionario</RootNamespace>
+    <AssemblyName>COL_Questionario</AssemblyName>
+    <MyType>Windows</MyType>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>COL_Questionario.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\release\</OutputPath>
+    <DocumentationFile>COL_Questionario.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Castle.Core, Version=1.1.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Library\lm.Comol.Core.CommonLib\NHibernate_21\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="COL_BusinessLogic_v2.0, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\9-AdevicoMIT_Library\lm.Comol.MitLibrary\bin\Debug\COL_BusinessLogic_v2.0.dll</HintPath>
+    </Reference>
+    <Reference Include="COL_Utility, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\9-AdevicoMIT_Library\lm.Comol.MitLibrary\bin\Debug\COL_Utility.dll</HintPath>
+    </Reference>
+    <Reference Include="Iesi.Collections, Version=1.0.1.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Library\lm.Comol.Core.CommonLib\NHibernate_21\Iesi.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="lm.Comol.Modules.EduPath, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\9-AdevicoMIT_Library\lm.Comol.MitLibrary\bin\Debug\lm.Comol.Modules.EduPath.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common, Version=3.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Library\lm.Comol.Core.CommonLib\EnterpriseLibrary\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Data, Version=3.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Library\lm.Comol.Core.CommonLib\EnterpriseLibrary\Microsoft.Practices.EnterpriseLibrary.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ObjectBuilder, Version=1.0.51206.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Library\lm.Comol.Core.CommonLib\EnterpriseLibrary\Microsoft.Practices.ObjectBuilder.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate, Version=2.1.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Library\lm.Comol.Core.CommonLib\NHibernate_21\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate.Linq, Version=1.0.0.4000, Culture=neutral, PublicKeyToken=444cf6a87fdab271, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Library\lm.Comol.Core.CommonLib\NHibernate_21\NHibernate.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Telerik.Web.Spreadsheet, Version=2017.3.1314.40, Culture=neutral, PublicKeyToken=121fae78165ba3d4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Solution\lib\RCAJAX\2018.1.117.40\AdditionalLibraries\Bin40\Telerik.Web.Spreadsheet.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Web.UI, Version=2018.1.117.40, Culture=neutral, PublicKeyToken=121fae78165ba3d4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Solution\lib\RCAJAX\2018.1.117.40\Telerik.Web.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Web.UI.Skins, Version=2018.1.117.40, Culture=neutral, PublicKeyToken=121fae78165ba3d4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Solution\lib\RCAJAX\2018.1.117.40\Telerik.Web.UI.Skins.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Core, Version=2018.1.112.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Solution\lib\RCAJAX\2018.1.117.40\AdditionalLibraries\Bin40\Telerik.Windows.Documents.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Flow, Version=2018.1.112.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Solution\lib\RCAJAX\2018.1.117.40\AdditionalLibraries\Bin40\Telerik.Windows.Documents.Flow.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Spreadsheet, Version=2018.1.112.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Solution\lib\RCAJAX\2018.1.117.40\AdditionalLibraries\Bin40\Telerik.Windows.Documents.Spreadsheet.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Spreadsheet.FormatProviders.OpenXml, Version=2018.1.112.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Solution\lib\RCAJAX\2018.1.117.40\AdditionalLibraries\Bin40\Telerik.Windows.Documents.Spreadsheet.FormatProviders.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Zip, Version=2018.1.112.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Solution\lib\RCAJAX\2018.1.117.40\AdditionalLibraries\Bin40\Telerik.Windows.Zip.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="COL_BusinessLogic_v2.Comol.Manager" />
+    <Import Include="Comol.Entity" />
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Business\BaseHelperExport.vb" />
+    <Compile Include="Business\HelperExportToXml.vb" />
+    <Compile Include="Business\HelperExportToCsv.vb" />
+    <Compile Include="Business\ServiceQuestionnaire.vb" />
+    <Compile Include="Comunita.vb" />
+    <Compile Include="DAL\DALDomande.vb" />
+    <Compile Include="DAL\DALDropDown.vb" />
+    <Compile Include="DAL\DALExternal.vb" />
+    <Compile Include="DAL\DALPagine.vb" />
+    <Compile Include="DAL\DALQuestionario.vb" />
+    <Compile Include="DAL\DALQuestionarioGruppo.vb" />
+    <Compile Include="DAL\DALRisposte.vb" />
+    <Compile Include="DAL\DALStatistiche.vb" />
+    <Compile Include="DAL\DALTemplate.vb" />
+    <Compile Include="DAL\DALUtenteInvitato.vb" />
+    <Compile Include="Domain\AssignmentType.vb" />
+    <Compile Include="Domain\AnswerStatus.vb" />
+    <Compile Include="Domain\dto\dtoWorkingLibrary.vb" />
+    <Compile Include="Domain\dto\dtoDisplayName.vb" />
+    <Compile Include="Domain\dto\dtoFullUserAnswerItem.vb" />
+    <Compile Include="Domain\Lazy\LazyMultilanguageQuestion.vb" />
+    <Compile Include="Domain\QuestionnaireAnswers.vb" />
+    <Compile Include="Domain\QuestionnaireExportTranslations.vb" />
+    <Compile Include="Domain\dto\dtoExportRow.vb" />
+    <Compile Include="Domain\dto\dtoUserAnswerItem.vb" />
+    <Compile Include="Domain\Lazy\LazyAssignedLibrary.vb" />
+    <Compile Include="Domain\QuestionDifficulty.vb" />
+    <Compile Include="Domain\QuestionnaireFilter.vb" />
+    <Compile Include="Domain\dto\dtoQuestionnaireAssignment.vb" />
+    <Compile Include="Domain\Lazy\LazyQuestionnaireAssignment.vb" />
+    <Compile Include="Domain\LibraryAccessibility.vb" />
+    <Compile Include="Domain\StatisticsType.vb" />
+    <Compile Include="Domain\Lazy\LazyQuestionnaireRandom.vb" />
+    <Compile Include="Domain\QuestionnaireType.vb" />
+    <Compile Include="Domain\QuestionnaireAction.vb" />
+    <Compile Include="Domain\participantType.vb" />
+    <Compile Include="Domain\dto\dtoContext.vb" />
+    <Compile Include="Domain\dto\dtoUserQuest.vb" />
+    <Compile Include="Domain\Lazy\LazyGroup.vb" />
+    <Compile Include="Domain\ModuleQuestionnaire.vb" />
+    <Compile Include="Domain\QuizStatus.vb" />
+    <Compile Include="Domain\dto\dtoPage.vb" />
+    <Compile Include="Domain\dto\dtoPageQuestion.vb" />
+    <Compile Include="Domain\Lazy\LazyQuestionnaire.vb" />
+    <Compile Include="Domain\Lazy\LazyQuestionnaireTranslation.vb" />
+    <Compile Include="Domain\Lazy\LazyQuestionnairePage.vb" />
+    <Compile Include="Domain\Lazy\LazyQuestionAssociation.vb" />
+    <Compile Include="Domain\QuestionTranslation.vb" />
+    <Compile Include="Domain\QuestionAssociation.vb" />
+    <Compile Include="Domain\Question.vb" />
+    <Compile Include="Domain\QuestionnairePage.vb" />
+    <Compile Include="Domain\QuestionnaireTranslation.vb" />
+    <Compile Include="Domain\ImportedUserColumn.vb" />
+    <Compile Include="Domain\InvitedUsersImportStep.vb" />
+    <Compile Include="Domain\Lazy\LazyTemplate.vb" />
+    <Compile Include="Domain\Lazy\LazyInternalInvitedUser.vb" />
+    <Compile Include="Domain\Lazy\LazyExternalInvitedUser.vb" />
+    <Compile Include="Domain\Lazy\LazyInvitedUser.vb" />
+    <Compile Include="Domain\Lazy\LazyAssociatedQuestion.vb" />
+    <Compile Include="Domain\Lazy\LazyUserResponse.vb" />
+    <Compile Include="Domanda.vb" />
+    <Compile Include="DomandaNumerica.vb" />
+    <Compile Include="DomandaOpzione.vb" />
+    <Compile Include="DomandaRating.vb" />
+    <Compile Include="DomandaTestoLibero.vb" />
+    <Compile Include="DropDown.vb" />
+    <Compile Include="DropDownItem.vb" />
+    <Compile Include="GenericCollection.vb" />
+    <Compile Include="Iview\IViewGenerateQuesionnaireUrl.vb" />
+    <Compile Include="Iview\IViewModuleToQuestionnaire.vb" />
+    <Compile Include="Iview\IViewAdvancedStatistics.vb" />
+    <Compile Include="Iview\IViewExportData.vb" />
+    <Compile Include="Iview\IViewExternalModuleQuestionnaire.vb" />
+    <Compile Include="Iview\IViewModuleQuizAction.vb" />
+    <Compile Include="Iview\IViewInvitedUsers.vb" />
+    <Compile Include="Iview\ImoduleToQuizAction.vb" />
+    <Compile Include="Iview\IViewImportUsersFromCSV.vb" />
+    <Compile Include="Iview\IviewDaySurvey.vb" />
+    <Compile Include="Iview\IViewUserStatistics.vb" />
+    <Compile Include="LibreriaQuestionario.vb" />
+    <Compile Include="Lingua.vb" />
+    <Compile Include="ManagerLibreria.vb" />
+    <Compile Include="Manager\ManagerSurveys.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Persona.vb" />
+    <Compile Include="PredicateWrapper.vb" />
+    <Compile Include="Presenter\AdvancedStatisticsPresenter.vb" />
+    <Compile Include="Presenter\GenerateQuestionnaireUrlPresenter.vb" />
+    <Compile Include="Presenter\ModuleToQuestionnairePresenter.vb" />
+    <Compile Include="Presenter\ExportDataPresenter.vb" />
+    <Compile Include="Presenter\UserStatisticsPresenter.vb" />
+    <Compile Include="Presenter\InvitedUsersPresenter.vb" />
+    <Compile Include="Presenter\ImportUsersFromCSVpresenter.vb" />
+    <Compile Include="Presenter\ModuleQuizActionPresenter.vb" />
+    <Compile Include="Presenter\PresenterDaySurvey.vb" />
+    <Compile Include="Questionario.vb" />
+    <Compile Include="QuestionarioGruppo.vb" />
+    <Compile Include="QuestionarioPagina.vb" />
+    <Compile Include="RispostaDomanda.vb" />
+    <Compile Include="RispostaQuestionario.vb" />
+    <Compile Include="RootObject.vb">
+    </Compile>
+    <Compile Include="Statistica.vb" />
+    <Compile Include="Template.vb" />
+    <Compile Include="TipoGrafico.vb" />
+    <Compile Include="TipoStatistiche.vb" />
+    <Compile Include="UtenteInvitato.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Diagram\CDDomanda.cd" />
+    <None Include="Diagram\CDQuestionarioGlobal.cd" />
+    <None Include="Diagram\CDSondaggioDelGiorno.cd" />
+    <None Include="Diagram\CDQuestionario.cd" />
+    <None Include="Documentation\DiagrammaQuestionario.pdf" />
+    <None Include="Documentation\Gestione Risposte.mm" />
+    <None Include="Documentation\Questionari_Sessione.epgz" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\2-Core\lm.Comol.Core.File\lm.Comol.Core.File.csproj">
+      <Project>{FFA417B0-A44B-441A-921B-FEB57C5FD7DA}</Project>
+      <Name>lm.Comol.Core.File</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\COL_Entity\0_COL_Entity.vbproj">
+      <Project>{D1EFB82A-DE0C-43D2-8DC7-AD808B32C2A2}</Project>
+      <Name>0_COL_Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\2-Core\lm.Comol.Core.DomainModel\lm.Comol.Core.DomainModel.csproj">
+      <Project>{9B7DA676-5030-47CD-8B2B-A30A09C8D0B5}</Project>
+      <Name>lm.Comol.Core.DomainModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\3-Modules\lm.Comol.Core.BaseModules\lm.Comol.Core.BaseModules.csproj">
+      <Project>{7FAE537E-6ACF-4C65-9D68-E22AEC839EEA}</Project>
+      <Name>lm.Comol.Core.BaseModules</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\2-Core\lm.Comol.Core.MailCommons\lm.Comol.Core.MailCommons.csproj">
+      <Project>{428243cb-28cd-4d81-8099-74d1448b5e1d}</Project>
+      <Name>lm.Comol.Core.MailCommons</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{967B4E0D-AD0C-4609-AB67-0FA40C0206D8}" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Mapping\LazyInvitedUser.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Mapping\LazyAssociatedQuestion.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Mapping\LazyUserResponse.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Mapping\LazyTemplate.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Mapping\QuestionnairePage.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Mapping\QuestionnaireTranslation.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Mapping\Question.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Mapping\QuestionAssociation.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Mapping\QuestionTranslation.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Mapping\LazyQuestionAssociation.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Mapping\LazyQuestionnairePage.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Mapping\LazyQuestionnaireTranslation.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Mapping\LazyQuestionnaire.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Mapping\LazyGroup.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Mapping\LazyQuestionnaireRandom.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Mapping\LazyQuestionnaireAssignment.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Domain\Lazy\Assignment\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Mapping\LazyAssignedLibrary.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Mapping\LazyMultilanguageQuestion.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Documentation\Questionari.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -2,6 +2,9 @@ Imports COL_Questionario
 Imports COL_BusinessLogic_v2.UCServices
 Imports COL_BusinessLogic_v2.UCServices.Services_Questionario
 Imports System.Linq
+Imports lm.Comol.Core.DomainModel
+
+
 Partial Public Class QuestionarioCompile
     Inherits PageBaseQuestionario
 
@@ -166,9 +169,9 @@ Partial Public Class QuestionarioCompile
     Public ReadOnly Property displayDifficulty() As String
         Get
             If Me.QuestionarioCorrente.tipo = Questionario.TipoQuestionario.Autovalutazione OrElse Me.QuestionarioCorrente.tipo = Questionario.TipoQuestionario.Meeting OrElse Me.QuestionarioCorrente.tipo = Questionario.TipoQuestionario.Sondaggio Then
-                Return "display:none;" 'False
+                Return "hide" 'False
             Else
-                Return "text-align: right;" 'True
+                Return "show" 'True
             End If
         End Get
     End Property
@@ -246,7 +249,15 @@ Partial Public Class QuestionarioCompile
         Try
             iDom = e.Item.ItemIndex
             'oGestioneDomande.loadDomandeOpzioni(Me.QuestionarioCorrente, iPag, iDom, False)
-            DLPagine.Controls(0).FindControl("DLDomande").Controls(iDom).FindControl("PHOpzioni").Controls.Add(oGestioneDomande.loadDomandeOpzioni(Me.QuestionarioCorrente, iPag, iDom, Not IsEditableQuestionnaire))
+            'Dim ctrlRisposta As Control
+            'If Me.QuestionarioCorrente.pagine(iPag).domande.Item(iDom).tipo = Domanda.TipoDomanda.RatingStars Then
+
+            '    ctrlRisposta = oGestioneDomande.addDomandaRatingStarsV2(Me.QuestionarioCorrente, iPag, iDom, Not IsEditableQuestionnaire)
+            'Else
+            Dim ctrlRisposta As Control = oGestioneDomande.loadDomandeOpzioni(Me.QuestionarioCorrente, iPag, iDom, Not IsEditableQuestionnaire)
+            'End If
+
+            DLPagine.Controls(0).FindControl("DLDomande").Controls(iDom).FindControl("PHOpzioni").Controls.Add(ctrlRisposta)
             If Not (Me.QuestionarioCorrente.tipo = Questionario.TipoQuestionario.Meeting AndAlso Not iDom = Me.QuestionarioCorrente.pagine(0).domande.Count - 1) Then
                 Dim LBtestoDopoDomanda As New Label
                 LBtestoDopoDomanda.Text = Me.QuestionarioCorrente.pagine(iPag).domande(iDom).testoDopo
@@ -272,10 +283,12 @@ Partial Public Class QuestionarioCompile
             End If
             If Me.QuestionarioCorrente.tipo = Questionario.TipoQuestionario.Meeting AndAlso iDom > 0 Then
                 DirectCast(DLPagine.Controls(0).FindControl("DLDomande").Controls(iDom).FindControl("DIVDomanda"), HtmlControl).Style("display") = "none"
-                'Else 'nasconde difficolta', che e' gia' gestita da showDifficulty
+                'Else 'nasconde difficolta', che e' gia' gestita da showDifficulty, ma non và una sega perchè è runat="server"!!!
                 '    DirectCast(DLPagine.Controls(0).FindControl("DLDomande").Controls(iDom).FindControl("DIVDomanda"), HtmlControl).Style("display") = "block"
                 '    DirectCast(DLPagine.Controls(0).FindControl("DLDomande").Controls(iDom).FindControl("DIVCode"), HtmlControl).Style("display") = "none"
             End If
+
+
         Catch ex As Exception
             inviaMailErrore(ex)
         End Try
@@ -319,7 +332,28 @@ Partial Public Class QuestionarioCompile
             LBnomeVIWDescrizione.Text = Me.QuestionarioCorrente.nome
         End If
     End Sub
-    Protected Sub IMBprima_Click(ByVal sender As System.Object, ByVal e As System.Web.UI.ImageClickEventArgs) Handles IMBprima.Click
+    'Protected Sub IMBprima_Click(ByVal sender As System.Object, ByVal e As System.Web.UI.ImageClickEventArgs) Handles IMBprima.Click
+    '    If iPag > 0 Then
+    '        Dim isValida As Boolean = True
+    '        Me.QuestionarioCorrente.rispostaQuest = oGestioneRisposte.getRisposte(DLPagine, isValida)
+    '        If isValida Then
+    '            If PHnumeroPagina.Controls.Count > iPag And iPag >= 0 Then
+    '                DirectCast(PHnumeroPagina.Controls(iPag), LinkButton).Style.Clear()
+    '            End If
+    '            iPag = iPag - 1
+    '            LBTroppeRispostePagina.Visible = False
+    '        Else
+    '            LBTroppeRispostePagina.Visible = True
+    '        End If
+    '    End If
+    '    TMDurata_Tick(sender, e)
+    '    If IsValidForAttempts Then
+    '        bindDLPagine()
+    '        isFirstRun = True
+    '    End If
+
+    'End Sub
+    Protected Sub LkbBack_Click(ByVal sender As System.Object, ByVal e As EventArgs) Handles LkbBack.Click
         If iPag > 0 Then
             Dim isValida As Boolean = True
             Me.QuestionarioCorrente.rispostaQuest = oGestioneRisposte.getRisposte(DLPagine, isValida)
@@ -338,9 +372,16 @@ Partial Public Class QuestionarioCompile
             bindDLPagine()
             isFirstRun = True
         End If
-     
+
     End Sub
-    Protected Sub IMBdopo_Click(ByVal sender As System.Object, ByVal e As System.Web.UI.ImageClickEventArgs) Handles IMBdopo.Click
+    'Protected Sub IMBdopo_Click(ByVal sender As System.Object, ByVal e As System.Web.UI.ImageClickEventArgs) Handles IMBdopo.Click
+    '    TMDurata_Tick(sender, e)
+    '    If IsValidForAttempts Then
+    '        vaiPaginaDopo()
+    '        isFirstRun = True
+    '    End If
+    'End Sub
+    Protected Sub LkbNext_Click(ByVal sender As System.Object, ByVal e As EventArgs) Handles LkbNext.Click
         TMDurata_Tick(sender, e)
         If IsValidForAttempts Then
             vaiPaginaDopo()
@@ -447,31 +488,33 @@ Partial Public Class QuestionarioCompile
         Dim counter As Int16 = 0
         Try
             If Me.QuestionarioCorrente.pagine.Count > 1 And iPag + 1 < Me.QuestionarioCorrente.pagine.Count Then
-                IMBdopo.Visible = True
+                LkbNext.Visible = True
                 If iPag < 1 Then
-                    IMBprima.Visible = False
+                    'IMBprima.Visible = False
+                    LkbBack.Visible = False
                 Else
-                    IMBprima.Visible = True
+                    'IMBprima.Visible = True
+                    LkbBack.Visible = True
                 End If
                 BTNFine.Visible = False
                 LBAvvisoFine.Visible = False
             Else
                 If Not Me.QuestionarioCorrente.tipo = Questionario.TipoQuestionario.Autovalutazione Then
-                    IMBdopo.Visible = False
+                    LkbNext.Visible = False
                     BTNFine.Visible = True
                     LBAvvisoFine.Visible = True
                 Else
                     BTNFine.Visible = False
                     LBAvvisoFine.Visible = False
                     If iPag < 1 Then
-                        IMBprima.Visible = False
+                        LkbBack.Visible = False
                     Else
-                        IMBprima.Visible = True
+                        LkbBack.Visible = True
                     End If
-                    IMBdopo.Visible = True
+                    LkbNext.Visible = True
                 End If
                 If iPag > 0 Then
-                    IMBprima.Visible = True
+                    LkbBack.Visible = True
                 End If
                 BTNFine.Visible = True
                 LBAvvisoFine.Visible = True
@@ -546,10 +589,26 @@ Partial Public Class QuestionarioCompile
 
     End Sub
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+
+        If Not IsNothing(Request.QueryString("View")) AndAlso Request.QueryString("View").ToLower() = "true" Then
+            Dim redirectUrl As String = Request.Url.AbsoluteUri.Replace("QuestionarioCompile", "QuestionarioStat").Replace("&View=true", "&mode=3")
+            Response.Redirect(redirectUrl)
+        End If
+
         If Page.IsPostBack Then
+
+            If Not QuestionarioCorrente.idDestinatario_Persona <= 0 AndAlso QuestionarioCorrente.idDestinatario_Persona <> QsDestUserId Then
+                Dim responseUrl As String = Request.QueryString("BackUrl")
+                If String.IsNullOrEmpty(responseUrl) Then
+                    responseUrl = String.Format("/Modules/common/RedirectToDefaultModule.aspx?IdCommunity={0}", Me.ComunitaCorrenteID)
+                End If
+                Response.Redirect(Me.BaseUrl & responseUrl)
+            End If
             bindDLPagine()
         Else
             isFirstRun = True
+            'Me.QsDestUserId = QuestionarioCorrente.idDestinatario_Persona   del
+            'Me.QsCompileId = QuestionarioCorrente.ownerId
         End If
         'PHHeader.Controls.Add(Page.LoadControl(RootObject.ucHeaderCompile))
     End Sub
@@ -642,9 +701,9 @@ Partial Public Class QuestionarioCompile
                 End If
                 Me.MLVquestionari.SetActiveView(Me.VIWmessaggi)
                 Return False
-            ElseIf Me.QuestionarioCorrente.isPrimaRisposta AndAlso Not (DateDiff(DateInterval.Second, Now, DateTime.Parse(Me.QuestionarioCorrente.dataFine)) > 0 AndAlso DateDiff(DateInterval.Second, Now, DateTime.Parse(Me.QuestionarioCorrente.dataInizio)) < 0) Then
+            ElseIf Me.QuestionarioCorrente.isPrimaRisposta AndAlso Not (DateDiff(DateInterval.Second, DateTime.Now, DateTime.Parse(Me.QuestionarioCorrente.dataFine)) > 0 AndAlso DateDiff(DateInterval.Second, DateTime.Now, DateTime.Parse(Me.QuestionarioCorrente.dataInizio)) < 0) Then
                 'si visualizzano i risultati di meeting e sondaggi anche se il tempo per compilare e' scaduto
-                If (Me.QuestionarioCorrente.tipo = Questionario.TipoQuestionario.Sondaggio OrElse Me.QuestionarioCorrente.tipo = Questionario.TipoQuestionario.Meeting) AndAlso DateDiff(DateInterval.Second, Now, DateTime.Parse(Me.QuestionarioCorrente.dataInizio)) < 0 Then
+                If (Me.QuestionarioCorrente.tipo = Questionario.TipoQuestionario.Sondaggio OrElse Me.QuestionarioCorrente.tipo = Questionario.TipoQuestionario.Meeting) AndAlso DateDiff(DateInterval.Second, DateTime.Now, DateTime.Parse(Me.QuestionarioCorrente.dataInizio)) < 0 Then
                     RedirectToUrl(RootObject.QuestionarioStatistiche & "?mode=2" & "&comp=1" & "&idq=" & Me.QuestionarioCorrente.id) ' & "&comp=")
                 End If
                 CTRLerrorMessages.Visible = True
@@ -711,8 +770,30 @@ Partial Public Class QuestionarioCompile
         End If
 
         '' ADDED FOR MULTIPLE ITEMS
-        'If (Not (Me.QuestionarioCorrente.editaRisposta OrElse Me.QuestionarioCorrente.isPrimaRisposta)) OrElse (Not Me.QuestionarioCorrente.isPrimaRisposta AndAlso (Me.QuestionarioCorrente.durata > 0 AndAlso (String.IsNullOrEmpty(Me.QuestionarioCorrente.rispostaQuest.dataInizio) OrElse (DateDiff("s", Me.QuestionarioCorrente.rispostaQuest.dataInizio, Now) > RootObject.maxOvertimeSalvataggio)))) Then
-        If (Not (Me.QuestionarioCorrente.editaRisposta OrElse Me.QuestionarioCorrente.isPrimaRisposta)) OrElse ((Me.QuestionarioCorrente.durata > 0 AndAlso (String.IsNullOrEmpty(Me.QuestionarioCorrente.rispostaQuest.dataInizio) OrElse (DateDiff("s", Me.QuestionarioCorrente.rispostaQuest.dataInizio, Now) > RootObject.maxOvertimeSalvataggio)))) Then
+        'If (Not (Me.QuestionarioCorrente.editaRisposta OrElse Me.QuestionarioCorrente.isPrimaRisposta)) 
+        '   OrElse (Not Me.QuestionarioCorrente.isPrimaRisposta 
+        '           AndAlso (Me.QuestionarioCorrente.durata > 0 
+        '           AndAlso (String.IsNullOrEmpty(Me.QuestionarioCorrente.rispostaQuest.dataInizio) 
+        '           OrElse (DateDiff("s", Me.QuestionarioCorrente.rispostaQuest.dataInizio, Now) > RootObject.maxOvertimeSalvataggio)))) Then
+
+        Dim notEdit As Boolean = Not (Me.QuestionarioCorrente.editaRisposta OrElse Me.QuestionarioCorrente.isPrimaRisposta)
+
+        Dim byDate As Boolean = False
+
+        If Me.QuestionarioCorrente.durata > 0 Then
+
+            If Not (String.IsNullOrEmpty(Me.QuestionarioCorrente.rispostaQuest.dataInizio)) Then
+
+                'Dim byOverTime As Boolean = DateDiff("s", Me.QuestionarioCorrente.rispostaQuest.dataInizio, DateTime.Now) > RootObject.maxOvertimeSalvataggio
+                Dim byScadenza As Boolean = DateDiff("n", Me.QuestionarioCorrente.rispostaQuest.dataInizio, DateTime.Now) < QuestionarioCorrente.durata '* 60
+
+                byDate = Not byScadenza 'orElse byOverTime 
+
+            End If
+        End If
+
+        If notEdit OrElse byDate Then
+            '((Me.QuestionarioCorrente.durata > 0 AndAlso (String.IsNullOrEmpty(Me.QuestionarioCorrente.rispostaQuest.dataInizio) OrElse (DateDiff("s", Me.QuestionarioCorrente.rispostaQuest.dataInizio, Now) > RootObject.maxOvertimeSalvataggio)))) Then
             BTNSalvaContinua.Visible = False
             BTNSalvaEEsci.Visible = False
             Dim sVisible As Boolean = Me.QuestionarioCorrente.isPrimaRisposta AndAlso QuestionarioCorrente.tipo <> QuestionnaireType.AutoEvaluation AndAlso (QuestionarioCorrente.pagine.Count = iPag OrElse QuestionarioCorrente.pagine.Count = iPag + 1)
@@ -874,7 +955,7 @@ Partial Public Class QuestionarioCompile
             Dim name As String = Me.QuestionarioCorrente.nome
             Dim qType As COL_Questionario.Questionario.TipoQuestionario = CInt(QuestionarioCorrente.tipo)
             Dim serviceTitle As String = Me.Resource.getValue("ServiceTitle." & qType.ToString)
-            If Not String.IsNullOrEmpty(ServiceTitle) Then
+            If Not String.IsNullOrEmpty(serviceTitle) Then
                 Master.ServiceTitle = serviceTitle
                 Master.ServiceTitleToolTip = String.Format(Me.Resource.getValue("ServiceTitleToolTip." & qType.ToString), name)
             Else
@@ -1035,7 +1116,7 @@ Partial Public Class QuestionarioCompile
             Me.LBisMandatoryInfoTop.Text = Resource.getValue("LBisMandatoryInfo.text") & "<br/>"
             Me.LBisMandatoryInfoBottom.Text = Resource.getValue("LBisMandatoryInfo.text")
 
-        
+
 
             .setButton(BTNundoOption, True)
             .setLabel(LBundoOption)
@@ -1045,15 +1126,59 @@ Partial Public Class QuestionarioCompile
         setLabelTitolo()
     End Sub
     Protected Sub BTNFine_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BTNFine.Click
+
+
+        If Me.QuestionarioCorrente.durata <= 0 Then
+            SalvaEdEsci()
+
+        Else
+
+
+            '
+            'BTNFine_Original(sender, e)
+
+            'Modificato tempo
+            HDNcurrentTime.Value = HIDtempoRimanente.Value
+            Dim tempoRimanente As Long = (Me.QuestionarioCorrente.durata * 60) - DateDiff("s", Me.QuestionarioCorrente.rispostaQuest.dataInizio, DateTime.Now)
+            HIDtempoRimanente.Value = tempoRimanente
+            If Not IsNothing(QuestionarioCorrente) Then
+                'If Not QuestionarioCorrente.editaRisposta AndAlso QuestionarioCorrente.durata > 0 Then
+                If QuestionarioCorrente.editaRisposta _
+                    OrElse (QuestionarioCorrente.durata > 0 AndAlso tempoRimanente > 0) Then
+
+                    SaveCompletedAnswer(sender, e)
+                Else
+                    'tempo scaduto o non edita...
+                    Master.OpenDialogOnPostback = True
+                    Master.SetOpenDialogOnPostbackByCssClass(LTdlgconfirmsubmit.Text)
+                    DVconfirmSubmit.Visible = True
+
+                End If
+            Else
+                SaveCompletedAnswer(sender, e)
+            End If
+        End If
+    End Sub
+
+    'ORIGINALE:
+    Protected Sub BTNFine_Original(ByVal sender As Object, ByVal e As System.EventArgs)
         HDNcurrentTime.Value = HIDtempoRimanente.Value
         HIDtempoRimanente.Value = (Me.QuestionarioCorrente.durata * 60) - DateDiff("s", Me.QuestionarioCorrente.rispostaQuest.dataInizio, DateTime.Now)
+
         If Not IsNothing(QuestionarioCorrente) Then
             If Not QuestionarioCorrente.editaRisposta AndAlso QuestionarioCorrente.durata > 0 Then
+
+
+
+
+
+
                 Master.OpenDialogOnPostback = True
                 Master.SetOpenDialogOnPostbackByCssClass(LTdlgconfirmsubmit.Text)
                 DVconfirmSubmit.Visible = True
             Else
                 SaveCompletedAnswer(sender, e)
+
             End If
         Else
             SaveCompletedAnswer(sender, e)
@@ -1101,10 +1226,10 @@ Partial Public Class QuestionarioCompile
                 If pageRedirect = -10 Then
 
                     oGestioneQuest.setCampiRispostaQuestionario(False)
-                    Me.QuestionarioCorrente.rispostaQuest.dataFine = Now()
+                    Me.QuestionarioCorrente.rispostaQuest.dataFine = DateTime.Now()
                     Me.QuestionarioCorrente.rispostaQuest.indirizzoIPEnd = OLDpageUtility.ProxyIPadress() & " / " & OLDpageUtility.ClientIPadress
                     Dim oGestioneRisposte As New GestioneRisposte
-                    oGestioneRisposte.SalvaRisposta(Me.QuestionarioCorrente)
+                    oGestioneRisposte.SalvaRisposta(Me.QuestionarioCorrente, UserId, True)
                     QuestionnarieSaved = True
                     oGestioneQuest.CompileEndActionAdd()
                     LBConferma.Text &= Me.Resource.getValue("MSGConfermaFine")
@@ -1119,6 +1244,11 @@ Partial Public Class QuestionarioCompile
                                 If IsNothing(calc) Then
                                     calc = New lm.Comol.Core.DomainModel.dtoItemEvaluation(Of Long) With {.Item = QuestionarioCorrente.id, .Completion = 0, .isCompleted = False, .isStarted = True, .isPassed = True, .Mark = 0}
                                 End If
+
+                                If Not calc.isPassed Then
+                                    calc.isCompleted = False
+                                End If
+
                                 executedAction(qs_linkId, calc.isStarted, calc.isPassed, calc.Completion, calc.isCompleted, calc.Mark, UtenteCorrente.ID)
                                 If Not String.IsNullOrEmpty(Request.QueryString("BackUrl")) Then
                                     PageUtility.RedirectToUrl(Server.HtmlDecode(Request.QueryString("BackUrl")))
@@ -1167,8 +1297,13 @@ Partial Public Class QuestionarioCompile
                     'cosa fa quando si accorge che mancano delle risposte obbligatorie
                     oGestioneQuest.setCampiRispostaQuestionario(True)
                     iPag = pageRedirect - 1
-                    IMBdopo.AlternateText = Me.Resource.getValue("IMBprimaDopo") & (iPag + 2).ToString()
-                    IMBprima.AlternateText = Me.Resource.getValue("IMBprimaDopo") & (iPag).ToString()
+                    'LkbNext.ToolTip = Me.Resource.getValue("LkbNext.ToolTip") & (iPag + 2).ToString()
+                    'LkbNext.Text = Me.Resource.getValue("LkbNext.Text") '& (iPag + 2).ToString()
+
+                    ''IMBprima.AlternateText = Me.Resource.getValue("IMBprimaDopo") & (iPag).ToString()
+                    'LkbBack.ToolTip = Me.Resource.getValue("LkbBack.ToolTip") & (iPag).ToString()
+                    'LkbBack.Text = Me.Resource.getValue("LkbBack.Text") '& (iPag).ToString()
+
                     LBTroppeRispostePagina.Visible = False
                     TMDurata_Tick(sender, e) 'il salvataggio viene fatto qui
                     bindDLPagine()
@@ -1202,7 +1337,9 @@ Partial Public Class QuestionarioCompile
     Protected Sub LNBFinito_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles LNBFinito.Click
         BTNFine_Click(sender, e)
     End Sub
-    Protected Sub BTNSalvaEEsci_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BTNSalvaEEsci.Click
+
+
+    Private Sub SalvaEdEsci()
         Try
             If QuestionarioCorrente.tipo = QuestionnaireType.RandomMultipleAttempts Then
                 Dim isValidAttempt As Boolean = IsValidForAttempts
@@ -1235,14 +1372,14 @@ Partial Public Class QuestionarioCompile
                     For Each oDomanda As Domanda In Me.QuestionarioCorrente.domande
                         DALDomande.connectQuestionToSurvey(oDomanda, Me.QuestionarioCorrente.id, Me.QuestionarioCorrente.idFiglio)
                     Next
-                    Me.QuestionarioCorrente.rispostaQuest.dataFine = Now
+                    Me.QuestionarioCorrente.rispostaQuest.dataFine = DateTime.Now
                     Me.QuestionarioCorrente.rispostaQuest.indirizzoIPEnd = OLDpageUtility.ProxyIPadress() & " / " & OLDpageUtility.ClientIPadress
                     LBConferma.Text &= Me.Resource.getValue("MSGConfermaSalvaAutovalutazione")
                 Else
                     LBConferma.Text &= Me.Resource.getValue("MSGConfermaSalvaEdEsci")
                 End If
                 Me.QuestionarioCorrente.rispostaQuest.idQuestionarioRandom = Me.QuestionarioCorrente.idFiglio
-                oGestioneRisposte.SalvaRisposta(Me.QuestionarioCorrente)
+                oGestioneRisposte.SalvaRisposta(Me.QuestionarioCorrente, UserId, True)
                 QuestionnarieSaved = True
                 LBConferma.Visible = True
                 Me.MLVquestionari.SetActiveView(Me.VIWmessaggi)
@@ -1250,18 +1387,59 @@ Partial Public Class QuestionarioCompile
                 Select Case qs_ownerTypeId
                     Case OwnerType_enum.EduPathSubActivity, OwnerType_enum.EduPathActivity
                         If Me.QuestionarioCorrente.tipo = QuestionnaireType.RandomMultipleAttempts Then
-                            Dim calc As lm.Comol.Core.DomainModel.dtoItemEvaluation(Of Long) = DALQuestionario.CalculateComplation(PageUtility.CurrentContext, QuestionarioCorrente.id, UtenteCorrente.ID, QuestionarioCorrente.rispostaQuest.id)
-                            If IsNothing(calc) Then
-                                calc = New lm.Comol.Core.DomainModel.dtoItemEvaluation(Of Long) With {.Item = QuestionarioCorrente.id, .Completion = 0, .isCompleted = False, .isStarted = True, .isPassed = True, .Mark = 0}
+
+                            Dim idRandom As Integer = Me.QuestionarioCorrente.idFiglio 'QuestionarioCorrente.id
+                            Dim idQuest As Integer = Me.QuestionarioCorrente.id
+                            Dim idAnswer As Integer = Me.QuestionarioCorrente.rispostaQuest.id
+
+                            'Dim calc As lm.Comol.Core.DomainModel.dtoItemEvaluation(Of Long)
+
+                            'If (idAnswer <= 0) Then
+                            '    calc = DALQuestionario.CalculateComplationRandomId(PageUtility.CurrentContext, idQuest, UtenteCorrente.ID, idRandom)
+                            'Else
+                            '    calc = DALQuestionario.CalculateComplation(PageUtility.CurrentContext, idQuest, UtenteCorrente.ID, idAnswer)
+                            'End If
+
+
+                            'VERIFICARE IL CALCOLO DEL PUNTEGGIO!!!!
+                            Dim calc As dtoItemEvaluation(Of Long) = Nothing
+                            calc = CurrentService.CalculateComplation(idQuest, UtenteCorrente.ID, idAnswer)
+
+                            ''Dim calc As lm.Comol.Core.DomainModel.dtoItemEvaluation(Of Long) = DALQuestionario.CalculateComplation(PageUtility.CurrentContext, QuestionarioCorrente.id, UtenteCorrente.ID, QuestionarioCorrente.rispostaQuest.id)
+                            'If IsNothing(calc) Then
+                            '    'calc = New lm.Comol.Core.DomainModel.dtoItemEvaluation(Of Long) With {.Item = QuestionarioCorrente.id, .Completion = 0, .isCompleted = False, .isStarted = True, .isPassed = True, .Mark = 0}
+                            '    calc = New lm.Comol.Core.DomainModel.dtoItemEvaluation(Of Long) With {.Item = idQuest, .Completion = 0, .isCompleted = False, .isStarted = True, .isPassed = True, .Mark = 0}
+                            'End If
+                            If Not calc.isPassed Then
+                                calc.isCompleted = False
                             End If
-                            executedAction(qs_linkId, calc.isStarted, calc.isPassed, calc.Completion, False, calc.Mark, UtenteCorrente.ID)
+
+                            executedAction(
+                                qs_linkId,
+                                calc.isStarted,
+                                calc.isPassed,
+                                calc.Completion,
+                                calc.isCompleted,
+                                calc.Mark,
+                                UtenteCorrente.ID)
+
                             If Not String.IsNullOrEmpty(Request.QueryString("BackUrl")) Then
                                 PageUtility.RedirectToUrl(Server.HtmlDecode(Request.QueryString("BackUrl")))
                             Else
                                 Me.RedirectToUrl(RootObject.EduPath_CompileInActivity(Me.QuestionarioCorrente.ownerId))
                             End If
                         Else
-                            executedAction(qs_linkId, True, True, CInt(100 - QuestionarioCorrente.rispostaQuest.oStatistica.nRisposteSaltate * 100 / QuestionarioCorrente.domande.Count), False, QuestionarioCorrente.rispostaQuest.oStatistica.punteggio, UtenteCorrente.ID)
+                            Dim completed As Boolean = True
+
+                            executedAction(
+                                qs_linkId,
+                                True,
+                                True,
+                                CInt(100 - QuestionarioCorrente.rispostaQuest.oStatistica.nRisposteSaltate * 100 / QuestionarioCorrente.domande.Count),
+                                True,
+                                QuestionarioCorrente.rispostaQuest.oStatistica.punteggio,
+                                UtenteCorrente.ID)
+
                             If Not String.IsNullOrEmpty(Request.QueryString("BackUrl")) Then
                                 PageUtility.RedirectToUrl(Server.HtmlDecode(Request.QueryString("BackUrl")))
                             Else
@@ -1283,6 +1461,12 @@ Partial Public Class QuestionarioCompile
         Catch ex As Exception
             Response.Write(ex.Message)
         End Try
+    End Sub
+
+
+
+    Protected Sub BTNSalvaEEsci_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BTNSalvaEEsci.Click
+        SalvaEdEsci()
     End Sub
     Protected Sub LNBSalvaEsci_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles LNBsalvaEsci.Click
         BTNSalvaEEsci_Click(sender, e)
@@ -1312,11 +1496,28 @@ Partial Public Class QuestionarioCompile
                 oGestioneQuest.setCampiRispostaQuestionario(False)
 
                 Dim oGestioneRisposte As New GestioneRisposte
-                oGestioneRisposte.SalvaRisposta(Me.QuestionarioCorrente)
+                oGestioneRisposte.SalvaRisposta(Me.QuestionarioCorrente, UserId, False)
                 QuestionnarieSaved = True
                 LBTroppeRispostePagina.Visible = False
                 If Me.QuestionarioCorrente.tipo = QuestionnaireType.RandomMultipleAttempts Then
-                    Dim calc As lm.Comol.Core.DomainModel.dtoItemEvaluation(Of Long) = DALQuestionario.CalculateComplation(PageUtility.CurrentContext, QuestionarioCorrente.id, UtenteCorrente.ID, QuestionarioCorrente.rispostaQuest.id)
+                    'OLD
+                    'Dim calc As lm.Comol.Core.DomainModel.dtoItemEvaluation(Of Long) = DALQuestionario.CalculateComplation(PageUtility.CurrentContext, QuestionarioCorrente.id, UtenteCorrente.ID, QuestionarioCorrente.rispostaQuest.id)
+
+                    'New
+                    Dim idRandom As Integer = Me.QuestionarioCorrente.idFiglio 'QuestionarioCorrente.id
+                    Dim idQuest As Integer = Me.QuestionarioCorrente.id
+                    Dim idAnswer As Integer = Me.QuestionarioCorrente.rispostaQuest.id
+
+                    Dim calc As lm.Comol.Core.DomainModel.dtoItemEvaluation(Of Long)
+
+                    If (idAnswer <= 0) Then
+                        calc = DALQuestionario.CalculateComplationRandomId(PageUtility.CurrentContext, idQuest, UtenteCorrente.ID, idRandom)
+                    Else
+                        calc = DALQuestionario.CalculateComplation(PageUtility.CurrentContext, idQuest, UtenteCorrente.ID, idAnswer)
+                    End If
+                    'End new
+
+
                     If IsNothing(calc) Then
                         calc = New lm.Comol.Core.DomainModel.dtoItemEvaluation(Of Long) With {.Item = QuestionarioCorrente.id, .Completion = 0, .isCompleted = False, .isStarted = True, .isPassed = True, .Mark = 0}
                     End If
@@ -1350,7 +1551,7 @@ Partial Public Class QuestionarioCompile
             TMSessione_Tick(sender, e)
             If Me.QuestionarioCorrente.isPrimaRisposta Or Me.QuestionarioCorrente.editaRisposta Or Me.QuestionarioCorrente.tipo = Questionario.TipoQuestionario.Autovalutazione Then
                 If RootObject.setNullDate(Me.QuestionarioCorrente.rispostaQuest.dataInizio) Is System.DBNull.Value Then
-                    Me.QuestionarioCorrente.rispostaQuest.dataInizio = Now()
+                    Me.QuestionarioCorrente.rispostaQuest.dataInizio = DateTime.Now()
                     Me.QuestionarioCorrente.rispostaQuest.indirizzoIPStart = OLDpageUtility.ProxyIPadress() & " / " & OLDpageUtility.ClientIPadress
                 End If
 
@@ -1406,7 +1607,7 @@ Partial Public Class QuestionarioCompile
                             If isValida AndAlso Not QuestionarioCorrente.tipo = QuestionnaireType.RandomMultipleAttempts AndAlso (QuestionarioCorrente.editaRisposta OrElse (Not QuestionarioCorrente.editaRisposta AndAlso CurrentService.IsValidSave(QuestionarioCorrente.id, QuestionarioCorrente.rispostaQuest.idPersona, QuestionarioCorrente.rispostaQuest.idUtenteInvitato, QuestionarioCorrente.rispostaQuest.id))) Then
                                 oGestioneQuest.setCampiRispostaQuestionario(False)
                                 Dim oGestioneRisposte As New GestioneRisposte
-                                oGestioneRisposte.SalvaRisposta(Me.QuestionarioCorrente)
+                                oGestioneRisposte.SalvaRisposta(Me.QuestionarioCorrente, UserId, False)
                                 QuestionnarieSaved = True
                             Else
                                 SaveEmptyAttempt(QuestionarioCorrente)
@@ -1460,10 +1661,10 @@ Partial Public Class QuestionarioCompile
             question.risposteDomanda = New List(Of RispostaDomanda)()
         Next
         'DALRisposte.cancellaRispostaBYID(QuestionarioCorrente.rispostaQuest.id)
-        questionnaire.rispostaQuest.dataFine = Now
+        questionnaire.rispostaQuest.dataFine = DateTime.Now
         questionnaire.rispostaQuest.risposteDomande = New List(Of RispostaDomanda)
         oGestioneQuest.setCampiRispostaQuestionario(False)
-        oGestioneRisposte.SalvaRisposta(questionnaire)
+        oGestioneRisposte.SalvaRisposta(questionnaire, UserId, True)
         QuestionnarieSaved = True
     End Sub
     Protected Sub LNBindietro_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles LNBindietro.Click
@@ -1483,8 +1684,14 @@ Partial Public Class QuestionarioCompile
                 LKBpag = DirectCast(sender, LinkButton)
                 DirectCast(PHnumeroPagina.Controls(iPag), LinkButton).Style.Clear()
                 iPag = Integer.Parse(LKBpag.ID.Substring(10)) - 1
-                IMBdopo.AlternateText = Me.Resource.getValue("IMBprimaDopo") & (iPag + 2).ToString()
-                IMBprima.AlternateText = Me.Resource.getValue("IMBprimaDopo") & (iPag).ToString()
+                ''IMBDopo.AlternateText = Me.Resource.getValue("IMBprimaDopo") & (iPag + 2).ToString()
+                'LkbNext.ToolTip = Me.Resource.getValue("IMBprimaDopo") & (iPag + 2).ToString()
+                'LkbNext.Text = Me.Resource.getValue("IMBprimaDopo") '& (iPag + 2).ToString()
+
+                ''IMBprima.AlternateText = Me.Resource.getValue("IMBprimaDopo") & (iPag).ToString()
+                'LkbBack.ToolTip = Me.Resource.getValue("IMBprimaDopo") & (iPag).ToString()
+                'LkbBack.Text = Me.Resource.getValue("IMBprimaDopo") '& (iPag).ToString()
+
                 LBTroppeRispostePagina.Visible = False
             Else
                 LBTroppeRispostePagina.Visible = True
@@ -1502,14 +1709,14 @@ Partial Public Class QuestionarioCompile
     Protected Sub TMSessione_Tick(ByVal sender As Object, ByVal e As System.EventArgs) Handles TMSessione.Tick
         If isFirstRun Then
             TMSessione.Interval = RootObject.tickMassimo
-            startTime = Now
+            startTime = DateTime.Now
             isFirstRun = False
             If Not (MLVquestionari.ActiveViewIndex = 0) Then
                 TMSessione.Enabled = False
                 TMDurata.Enabled = False
             End If
         End If
-        If DateDiff("n", startTime, Now) > RootObject.vitaSessione_max Then
+        If DateDiff("n", startTime, DateTime.Now) > RootObject.vitaSessione_max Then
             TMDurata_Tick(sender, e)
             Session("isSessioneScaduta") = True
             Response.Redirect(RootObject.compileUrlUI_short)
@@ -1552,7 +1759,7 @@ Partial Public Class QuestionarioCompile
                             End If
 
 
-                            If oGestioneRisposte.SalvaRisposta(Me.QuestionarioCorrente) = "-1" Then
+                            If oGestioneRisposte.SalvaRisposta(Me.QuestionarioCorrente, UserId, False) = "-1" Then
                                 CTRLerrorMessages.Visible = True
                                 CTRLerrorMessages.InitializeControl(Resource.getValue("QuestionnaireError.AnswerNotSaved"), lm.Comol.Core.DomainModel.Helpers.MessageType.error)
                                 MLVquestionari.SetActiveView(Me.VIWmessaggi)
@@ -1571,8 +1778,8 @@ Partial Public Class QuestionarioCompile
                                 Case OwnerType_enum.EduPathSubActivity, OwnerType_enum.EduPathActivity
                                     If Not Me.QuestionarioCorrente.visualizzaRisposta OrElse QuestionarioCorrente.tipo = QuestionnaireType.RandomMultipleAttempts Then
                                         Me.QuestionarioCorrente.rispostaQuest.idQuestionarioRandom = Me.QuestionarioCorrente.idFiglio
-                                        Me.QuestionarioCorrente.rispostaQuest.dataFine = Now
-                                        oGestioneRisposte.SalvaRisposta(Me.QuestionarioCorrente)
+                                        Me.QuestionarioCorrente.rispostaQuest.dataFine = DateTime.Now()
+                                        oGestioneRisposte.SalvaRisposta(Me.QuestionarioCorrente, UserId, False)
                                         QuestionnarieSaved = True
                                     End If
 
@@ -1638,7 +1845,7 @@ Partial Public Class QuestionarioCompile
                             DALQuestionario.InsertRandomDestinatario(Me.QuestionarioCorrente, Me.UtenteCorrente.ID)
                             Me.QuestionarioCorrente.rispostaQuest.idQuestionarioRandom = Me.QuestionarioCorrente.idFiglio
                         End If
-                        If oGestioneRisposte.SalvaRisposta(Me.QuestionarioCorrente) = "-1" Then
+                        If oGestioneRisposte.SalvaRisposta(Me.QuestionarioCorrente, UserId, False) = "-1" Then
                             CTRLerrorMessages.Visible = True
                             CTRLerrorMessages.InitializeControl(Resource.getValue("QuestionnaireError.AnswerNotSaved"), lm.Comol.Core.DomainModel.Helpers.MessageType.error)
                             MLVquestionari.SetActiveView(Me.VIWmessaggi)
@@ -1761,4 +1968,73 @@ Partial Public Class QuestionarioCompile
     Private Sub BTNconfirmLeaveQuestionnaireOption_Click(sender As Object, e As EventArgs) Handles BTNconfirmLeaveQuestionnaireOption.Click
         LNBannulla_Click(sender, e)
     End Sub
+
+    Private Sub QuestionarioCompile_PreRender(sender As Object, e As EventArgs) Handles Me.PreRender
+
+
+        Dim value As String = Me.Resource.getValue("LkbNext.Text")
+
+        If String.IsNullOrEmpty(value) Then
+            value = "&gt;"
+        End If
+
+        LkbNext.Text = value
+
+        value = Me.Resource.getValue("LkbNext.ToolTip")
+
+        If String.IsNullOrEmpty(value) Then
+            value = "Avanti"
+        End If
+
+        LkbNext.ToolTip = value
+
+
+        value = Me.Resource.getValue("LkbBack.Text")
+
+        If String.IsNullOrEmpty(value) Then
+            value = "&gt;"
+        End If
+
+        LkbBack.Text = value
+
+        value = Me.Resource.getValue("LkbBack.ToolTip")
+
+        If String.IsNullOrEmpty(value) Then
+            value = "Indietro"
+        End If
+
+        LkbBack.ToolTip = value
+
+    End Sub
+
+    ''' <summary>
+    ''' Aggiunto per il salva!
+    ''' Risulta NECESSARIO VERIFICARE che le risposte SALVATE siano effettivamente
+    ''' quelle dell'utente corrente, per EVITARE sovrascritture o cancellazioni incongrue.
+    ''' </summary>
+    ''' <returns></returns>
+    Private ReadOnly Property UserId As Integer
+        Get
+            Return Me.UtenteCorrente.ID
+        End Get
+    End Property
+
+    'messa in BASE
+    '''' <summary>
+    '''' Per verifica che la compilazione in SESSIONE corrisponda a quella visualizzata sulla pagina,
+    '''' nel caso in cui la sessione venga sovrascritta con altri questionari.
+    '''' </summary>
+    '''' <returns></returns>
+    '''' <remarks>
+    '''' NON sono ancora chiare le cause!!!
+    '''' </remarks>
+    'Private Property QsDestUserId As Integer
+    '    Get
+    '        Return ViewStateOrDefault("QsCompileId", 0)
+    '    End Get
+    '    Set(value As Integer)
+    '        ViewState("QsCompileId") = value
+    '    End Set
+    'End Property
+
 End Class

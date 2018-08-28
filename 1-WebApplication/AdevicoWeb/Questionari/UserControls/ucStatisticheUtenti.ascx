@@ -19,28 +19,21 @@
     <asp:LinkButton ID="LNBIndietro" Visible="true" runat="server" CssClass="Link_Menu"></asp:LinkButton>&nbsp
 </asp:Panel>
 <br />
-<asp:Panel runat="server" ID="PNLFiltri" BorderWidth="1">
-    <br />
-    &nbsp&nbsp&nbsp<asp:Label runat="server" ID="LBTitolo"></asp:Label>
-    &nbsp&nbsp&nbsp&nbsp<asp:CheckBox runat="server" ID="CHKUtentiComunita" />
-    &nbsp&nbsp&nbsp&nbsp<asp:Label runat="server" ID="LBnrUtentiComunitaCorrente"></asp:Label>
-    &nbsp&nbsp&nbsp&nbsp<asp:CheckBox runat="server" ID="CHKUtentiNonComunita" />
-    &nbsp&nbsp&nbsp&nbsp<asp:Label runat="server" ID="LBnrUtentiTutteLeComunita"></asp:Label>
-    &nbsp&nbsp&nbsp&nbsp<asp:CheckBox runat="server" ID="CHKUtentiEsterni" />
-    &nbsp&nbsp&nbsp&nbsp<asp:Label runat="server" ID="LBnrUtentiEsterni"> </asp:Label>
-    &nbsp&nbsp&nbsp&nbsp<asp:CheckBox runat="server" ID="CHKUtentiInvitati" />
-    &nbsp&nbsp&nbsp&nbsp<asp:Label runat="server" ID="LBnrUtentiInvitati"></asp:Label><br />
-    <br />
-    &nbsp&nbsp&nbsp<asp:LinkButton ID="LNBOk" runat="server" CssClass="Link_Menu">Ok</asp:LinkButton>
-    <br />
-    <br />
+<asp:Panel runat="server" ID="PNLFiltri" CssClass="pnlFilter">
+    <asp:Label runat="server" ID="LBTitolo"></asp:Label>
+    <asp:CheckBox runat="server" ID="CHKUtentiComunita" />
+    <asp:Label runat="server" ID="LBnrUtentiComunitaCorrente"></asp:Label>
+    <asp:CheckBox runat="server" ID="CHKUtentiNonComunita" />
+    <asp:Label runat="server" ID="LBnrUtentiTutteLeComunita"></asp:Label>
+    <asp:CheckBox runat="server" ID="CHKUtentiEsterni" />
+    <asp:Label runat="server" ID="LBnrUtentiEsterni"> </asp:Label>
+    <asp:CheckBox runat="server" ID="CHKUtentiInvitati" />
+    <asp:Label runat="server" ID="LBnrUtentiInvitati"></asp:Label><br />
+    <asp:LinkButton ID="LNBOk" runat="server" CssClass="Link_Menu">Ok</asp:LinkButton>
 </asp:Panel>
-<br />
 <div class="nomePagina" runat="server" id="DIVNomi">
     <div id="DVquestionnaireName" runat="server">
         <asp:Label runat="server" ID="LBNomeQuestionario" Font-Size="Large"></asp:Label>
-        <br />
-        <br />
     </div>
     <asp:Label Visible="false" runat="server" ID="LBNomeUtente"></asp:Label>
 </div>
@@ -61,29 +54,29 @@
         <radt:Tab ID="TAButentiQuestNonCompilato" Value="2" Text="" ToolTip="">
         </radt:Tab>
     </Tabs>
-</radt:RadTabStrip>--%><br />
-<asp:GridView Width="100%" ID="GRVUtenti" runat="server" DataKeyNames="RispostaID"
+</radt:RadTabStrip>--%>
+<asp:GridView ID="GRVUtenti" runat="server" DataKeyNames="RispostaID"
     AutoGenerateColumns="false" ShowFooter="false"
     CssClass="light fullwidth" AllowPaging="True" AllowSorting="True" PageSize="20">
     <Columns>
-        <asp:TemplateField  HeaderStyle-Width="40%">
+        <asp:TemplateField ControlStyle-CssClass="data name">
             <ItemTemplate>
                 <%#Eval("cognome")%>
                 <%#Eval("nome")%>
                 <asp:Literal ID="LTattemptsInfo" runat="server" Visible="false"></asp:Literal>
             </ItemTemplate>
         </asp:TemplateField>
-        <asp:TemplateField  HeaderStyle-Width="30%">
+        <asp:TemplateField ControlStyle-CssClass="data mail">
             <ItemTemplate>
                 <%#Eval("mail")%>
             </ItemTemplate>
         </asp:TemplateField>
-        <asp:TemplateField HeaderStyle-Width="20%">
+        <asp:TemplateField ControlStyle-CssClass="data description">
             <ItemTemplate>
                 <%#Eval("descrizione")%>
             </ItemTemplate>
         </asp:TemplateField>
-        <asp:TemplateField HeaderStyle-Width="5%">
+        <asp:TemplateField ControlStyle-CssClass="data icon">
             <ItemTemplate>
                 <center>
                     <asp:ImageButton runat="server" ImageUrl="../img/entra.gif" ID="IMBVedi" CommandName="Vedi" CommandArgument='<%#Eval("RispostaID")%>'>
@@ -91,7 +84,7 @@
                 </center>
             </ItemTemplate>
         </asp:TemplateField>
-        <asp:TemplateField HeaderStyle-Width="5%">
+        <asp:TemplateField ControlStyle-CssClass="data icon">
             <ItemTemplate>
                 <center>
                     <asp:ImageButton runat="server" ImageUrl="../img/elimina.gif" ID="IMBElimina" CommandName="Elimina" CommandArgument='<%#Eval("RispostaID")%>' />
@@ -109,16 +102,11 @@
 <asp:Panel runat="server" ID="PNLExcel" Visible="false">
     <asp:LinkButton ID="LKBEsportaExcel" runat="server" CssClass="Link_Menu">Esporta in Excel</asp:LinkButton>
 </asp:Panel>
-<br />
 <asp:Panel runat="server" ID="PNLDettagli">
 
-<asp:PlaceHolder runat="server" ID="PHStat"></asp:PlaceHolder>
-
-    <br />
-    <asp:LinkButton Visible="false" runat="server" ID="LNBStampaQuestionario" Text="Stampa Questionario"
-        Width="160px"></asp:LinkButton><br />
-    <asp:DataList Width="100%" ID="DLPagine" runat="server" DataKeyField="id" CellPadding="4"
-        ForeColor="#333333">
+    <asp:PlaceHolder runat="server" ID="PHStat"></asp:PlaceHolder>
+    <asp:LinkButton Visible="false" runat="server" ID="LNBStampaQuestionario" Text="Stampa Questionario"></asp:LinkButton>
+    <asp:DataList ID="DLPagine" runat="server" DataKeyField="id" CellPadding="4" CssClass="datalistPagine" RepeatLayout="Flow">
         <ItemTemplate>
             <span class="questionnairepage name">
                 <b><%#DataBinder.Eval(Container.DataItem, "nomePagina")%></b>
@@ -128,28 +116,24 @@
             </span>
             <br />
             <hr />
-            <asp:DataList ID="DLDomande" runat="server" OnItemDataBound="loadDomandeOpzioni"
-                Width="100%" DataKeyField="id">
+            <asp:DataList ID="DLDomande" runat="server" OnItemDataBound="loadDomandeOpzioni" DataKeyField="id"
+                CssClass="datalistDomande" RepeatLayout="Flow">
                 <ItemTemplate>
                     <span class="questionnumber"><%#DataBinder.Eval(Container, "DataItem.numero")%>.</span>
                     <span class="questiontext"><%#DataBinder.Eval(Container, "DataItem.testo")%></span>
-                    <br />
-                    <br />
                     <asp:PlaceHolder ID="PHOpzioni" runat="server" Visible="true"></asp:PlaceHolder>
-                    <br />
-                    <br />
                 </ItemTemplate>
-                <FooterStyle BackColor="WHITE" Font-Bold="True" ForeColor="White" />
-                <SelectedItemStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
-                <AlternatingItemStyle BackColor="WHITE" />
-                <ItemStyle BackColor="WHITE" />
-                <HeaderStyle BackColor="#EFF3FB" Font-Bold="True" ForeColor="White" />
+                <FooterStyle CssClass="footer"/>
+                <SelectedItemStyle CssClass="item-question Selected"/>
+                <AlternatingItemStyle CssClass="item-question Alternate"/>
+                <ItemStyle CssClass="item-question"/>
+                <HeaderStyle CssClass="header"/>
             </asp:DataList>
         </ItemTemplate>
-        <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
-        <SelectedItemStyle BackColor="#C5BBAF" Font-Bold="True" ForeColor="#333333" />
-        <AlternatingItemStyle BackColor="#E3EAEB" />
-        <ItemStyle BackColor="#E3EAEB" />
-        <HeaderStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
+        <FooterStyle CssClass="footer"/>
+        <SelectedItemStyle CssClass="item-page Selected"/>
+        <AlternatingItemStyle CssClass="item-page alternate" />
+        <ItemStyle CssClass="item-page"/>
+        <HeaderStyle CssClass="header"/>
     </asp:DataList>
 </asp:Panel>

@@ -1502,6 +1502,8 @@ namespace lm.Comol.Modules.CallForPapers.Business
             bool EvLockBool,
             EvalType StepEvType,
             Double MaxValue,
+            Int64 TemplateId,
+            Int64 TemplateVersionId,
             List<Eval.dtoCriterion> criterionsToAdd = null)
         {
 
@@ -1518,7 +1520,11 @@ namespace lm.Comol.Modules.CallForPapers.Business
             Comm.EvalType = EvType;
             Comm.EvalMinValue = EvMinVal;
             Comm.EvalBoolBlock = EvLockBool;
-            
+
+            Comm.TemplateId = TemplateId;
+            Comm.TemplateVersionId = TemplateVersionId;
+
+
             Comm.UpdateMetaInfo(GetCurrentPerson(), UC.IpAddress, UC.ProxyIpAddress);
 
             if (Comm.Criteria == null)

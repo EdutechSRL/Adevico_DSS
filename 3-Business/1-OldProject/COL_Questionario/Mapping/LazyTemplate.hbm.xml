@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="COL_Questionario" namespace="COL_Questionario">
+  <class name="LazyTemplate" table="TEMPLATE" lazy="true">
+    <id name="Id" column="TMPL_ID" type="Int32">
+      <generator class="native"/>
+    </id>
+    <property name="IdPerson" type="Int32" column="TMPL_PRSN_Id" />
+    <property name="IdLanguage" type="Int32" column="TMPL_LNGU_id" />
+    <property name="TemplateType" type="Int32" column="TMPL_TPTL_Id" />
+    
+    <property name="Body" type="String" column="TMPL_Testo" />
+    <property name="Subject" type="String" column="TMPL_Titolo"/>
+    <property name="Name" type="String" column="TMPL_Nome" />
+    <property name="Link" type="String" column="TMPL_LinkFile" />
+    
+    <component name="MailSettings" class="lm.Comol.Core.MailCommons.Domain.Messages.MessageSettings,lm.Comol.Core.MailCommons">
+      <property name="IsBodyHtml" type="Boolean" column="isHtml" />
+      <property name="NotifyToSender" type="Boolean" column="NotifyToSender" />
+      <property name="CopyToSender" type="Boolean" column="CopyToSender" />
+      <property name="SenderType" type="lm.Comol.Core.MailCommons.Domain.SenderUserType,lm.Comol.Core.MailCommons" column="SenderType" />
+      <property name="PrefixType" type="lm.Comol.Core.MailCommons.Domain.SubjectPrefixType,lm.Comol.Core.MailCommons" column="SubjectType" />
+      <property name="Signature" type="lm.Comol.Core.MailCommons.Domain.Signature,lm.Comol.Core.MailCommons" column="SignatureType" />
+      <property name="IdSkin" type="Int64" column="IdSkin"/>
+    </component>
+  </class>
+</hibernate-mapping>

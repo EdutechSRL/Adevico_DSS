@@ -17,6 +17,8 @@
 </head>
 <body class="bodyCompile">
     <form runat="server">
+         <asp:ScriptManager ID="SCMmanager" runat="server" EnablePageMethods="true" EnablePartialRendering="true">
+        </asp:ScriptManager>
         <div id="container" class="page-wrapper">
             <asp:Panel runat="server" ID="PNLerrore" Visible="false">
                 <br /><br /><br /><br />

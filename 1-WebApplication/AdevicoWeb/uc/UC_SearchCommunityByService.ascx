@@ -137,31 +137,6 @@
                     <asp:ListItem Value="2">Bloccate</asp:ListItem>
                 </asp:DropDownList>
             </div>
-            <div id="DIVcourse" runat="server">
-                <div class="Cella120">
-                    <asp:Label ID="LBannoAccademico_c" runat="server" CssClass="FiltroVoceSmall10" AssociatedControlID="DDLannoAccademico">Anno Accademico:</asp:Label>
-                </div>
-                <div class="Cella130">
-                    <asp:DropDownList ID="DDLannoAccademico" runat="server" AutoPostBack="True" SkinID="Filter" CssClass="FiltroCampoSmall10">
-                    </asp:DropDownList>
-                </div>
-                <div class="Cella">
-                    <asp:Label ID="LBperiodo_c" runat="server" CssClass="FiltroVoceSmall10" AssociatedControlID="DDLperiodo">Periodo:&nbsp;</asp:Label>
-                </div>
-                <div class="Cella">
-                    <asp:DropDownList ID="DDLperiodo" runat="server" AutoPostBack="True" SkinID="Filter" CssClass="FiltroCampoSmall10">
-                    </asp:DropDownList>
-                </div>
-            </div>
-            <div id="DIVdegreeType" runat="server">
-                <div class="Cella120">
-                    <asp:Label ID="LBcorsoDiStudi_t" runat="server" CssClass="FiltroVoceSmall10" AssociatedControlID="DDLtipoCorsoDiStudi">Tipo Cdl:&nbsp;</asp:Label>
-                </div>
-                <div class="Cella">
-                    <asp:DropDownList ID="DDLtipoCorsoDiStudi" runat="server" AutoPostBack="True" SkinID="Filter" CssClass="FiltroCampoSmall10">
-                    </asp:DropDownList>
-                </div>
-            </div>
             <div id="DIVsearch" runat="server" class="RigaFiltroSearch">
                 <asp:Button ID="BTNCerca" runat="server" CssClass="PulsanteFiltro" Text="Cerca" CausesValidation="False">
                 </asp:Button>

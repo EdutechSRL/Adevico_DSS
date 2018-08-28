@@ -12,7 +12,7 @@ Option Explicit On
 
 
 Partial Public Class UtentiInvitati
-
+    
     '''<summary>
     '''PNLmenu control.
     '''</summary>
@@ -21,7 +21,7 @@ Partial Public Class UtentiInvitati
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents PNLmenu As Global.System.Web.UI.WebControls.Panel
-
+    
     '''<summary>
     '''LNBGestioneMail control.
     '''</summary>
@@ -30,7 +30,7 @@ Partial Public Class UtentiInvitati
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LNBGestioneMail As Global.System.Web.UI.WebControls.LinkButton
-
+    
     '''<summary>
     '''LNBQuestionarioAdmin control.
     '''</summary>
@@ -39,7 +39,7 @@ Partial Public Class UtentiInvitati
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LNBQuestionarioAdmin As Global.System.Web.UI.WebControls.LinkButton
-
+    
     '''<summary>
     '''LNBNuovoUtente control.
     '''</summary>
@@ -48,7 +48,7 @@ Partial Public Class UtentiInvitati
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LNBNuovoUtente As Global.System.Web.UI.WebControls.LinkButton
-
+    
     '''<summary>
     '''LNBImportaCSV control.
     '''</summary>
@@ -57,7 +57,7 @@ Partial Public Class UtentiInvitati
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LNBImportaCSV As Global.System.Web.UI.WebControls.LinkButton
-
+    
     '''<summary>
     '''LNBcommunityImport control.
     '''</summary>
@@ -66,7 +66,7 @@ Partial Public Class UtentiInvitati
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LNBcommunityImport As Global.System.Web.UI.WebControls.LinkButton
-
+    
     '''<summary>
     '''LNBSalva control.
     '''</summary>
@@ -75,7 +75,7 @@ Partial Public Class UtentiInvitati
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LNBSalva As Global.System.Web.UI.WebControls.LinkButton
-
+    
     '''<summary>
     '''LNBGestioneRubrica control.
     '''</summary>
@@ -84,7 +84,7 @@ Partial Public Class UtentiInvitati
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LNBGestioneRubrica As Global.System.Web.UI.WebControls.LinkButton
-
+    
     '''<summary>
     '''LNBSelezionaDestinatari control.
     '''</summary>
@@ -93,7 +93,7 @@ Partial Public Class UtentiInvitati
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LNBSelezionaDestinatari As Global.System.Web.UI.WebControls.LinkButton
-
+    
     '''<summary>
     '''LNBIndietro control.
     '''</summary>
@@ -102,7 +102,7 @@ Partial Public Class UtentiInvitati
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LNBIndietro As Global.System.Web.UI.WebControls.LinkButton
-
+    
     '''<summary>
     '''MLVquestionari control.
     '''</summary>
@@ -111,7 +111,7 @@ Partial Public Class UtentiInvitati
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents MLVquestionari As Global.System.Web.UI.WebControls.MultiView
-
+    
     '''<summary>
     '''VIWmessaggi control.
     '''</summary>
@@ -120,7 +120,7 @@ Partial Public Class UtentiInvitati
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents VIWmessaggi As Global.System.Web.UI.WebControls.View
-
+    
     '''<summary>
     '''LBerrore control.
     '''</summary>
@@ -129,7 +129,7 @@ Partial Public Class UtentiInvitati
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LBerrore As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''LBconferma control.
     '''</summary>
@@ -138,7 +138,7 @@ Partial Public Class UtentiInvitati
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LBconferma As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''VIWlista control.
     '''</summary>
@@ -147,7 +147,7 @@ Partial Public Class UtentiInvitati
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents VIWlista As Global.System.Web.UI.WebControls.View
-
+    
     '''<summary>
     '''LBlistaMessaggi control.
     '''</summary>
@@ -156,7 +156,7 @@ Partial Public Class UtentiInvitati
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LBlistaMessaggi As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''PNLUtentiInvitati control.
     '''</summary>
@@ -165,7 +165,7 @@ Partial Public Class UtentiInvitati
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents PNLUtentiInvitati As Global.System.Web.UI.WebControls.Panel
-
+    
     '''<summary>
     '''LBTitolo control.
     '''</summary>
@@ -174,7 +174,7 @@ Partial Public Class UtentiInvitati
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LBTitolo As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''GRVElenco control.
     '''</summary>
@@ -183,7 +183,7 @@ Partial Public Class UtentiInvitati
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents GRVElenco As Global.System.Web.UI.WebControls.GridView
-
+    
     '''<summary>
     '''CheckBoxIDsArray control.
     '''</summary>
@@ -192,7 +192,7 @@ Partial Public Class UtentiInvitati
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents CheckBoxIDsArray As Global.System.Web.UI.WebControls.Literal
-
+    
     '''<summary>
     '''LNKConfermaUtenti control.
     '''</summary>
@@ -201,7 +201,7 @@ Partial Public Class UtentiInvitati
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LNKConfermaUtenti As Global.System.Web.UI.WebControls.LinkButton
-
+    
     '''<summary>
     '''LNKStampaUtenti control.
     '''</summary>
@@ -210,7 +210,7 @@ Partial Public Class UtentiInvitati
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LNKStampaUtenti As Global.System.Web.UI.WebControls.LinkButton
-
+    
     '''<summary>
     '''CHKisPassword control.
     '''</summary>
@@ -219,7 +219,7 @@ Partial Public Class UtentiInvitati
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents CHKisPassword As Global.System.Web.UI.WebControls.CheckBox
-
+    
     '''<summary>
     '''PNLgeneraQuestionari control.
     '''</summary>
@@ -228,7 +228,7 @@ Partial Public Class UtentiInvitati
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents PNLgeneraQuestionari As Global.System.Web.UI.WebControls.Panel
-
+    
     '''<summary>
     '''BTNgeneraQuestionari control.
     '''</summary>
@@ -237,7 +237,7 @@ Partial Public Class UtentiInvitati
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents BTNgeneraQuestionari As Global.System.Web.UI.WebControls.Button
-
+    
     '''<summary>
     '''LBgeneraQuestionari control.
     '''</summary>
@@ -246,7 +246,7 @@ Partial Public Class UtentiInvitati
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LBgeneraQuestionari As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''VIWdettagli control.
     '''</summary>
@@ -255,7 +255,7 @@ Partial Public Class UtentiInvitati
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents VIWdettagli As Global.System.Web.UI.WebControls.View
-
+    
     '''<summary>
     '''LBAiutoDettagli control.
     '''</summary>
@@ -264,7 +264,7 @@ Partial Public Class UtentiInvitati
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LBAiutoDettagli As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''IMBHelpDettagli control.
     '''</summary>
@@ -273,7 +273,7 @@ Partial Public Class UtentiInvitati
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents IMBHelpDettagli As Global.System.Web.UI.WebControls.ImageButton
-
+    
     '''<summary>
     '''FRVUtente control.
     '''</summary>
@@ -282,7 +282,7 @@ Partial Public Class UtentiInvitati
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents FRVUtente As Global.System.Web.UI.WebControls.FormView
-
+    
     '''<summary>
     '''BTNAggiungiUtente control.
     '''</summary>
@@ -291,7 +291,7 @@ Partial Public Class UtentiInvitati
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents BTNAggiungiUtente As Global.System.Web.UI.WebControls.Button
-
+    
     '''<summary>
     '''VIWMail control.
     '''</summary>
@@ -300,7 +300,7 @@ Partial Public Class UtentiInvitati
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents VIWMail As Global.System.Web.UI.WebControls.View
-
+    
     '''<summary>
     '''LBErroreNoTag control.
     '''</summary>
@@ -309,7 +309,7 @@ Partial Public Class UtentiInvitati
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LBErroreNoTag As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''LBErroreGenerico control.
     '''</summary>
@@ -318,7 +318,7 @@ Partial Public Class UtentiInvitati
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LBErroreGenerico As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''LBAiutoMail control.
     '''</summary>
@@ -327,7 +327,7 @@ Partial Public Class UtentiInvitati
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LBAiutoMail As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''IMBHelpMail control.
     '''</summary>
@@ -336,7 +336,7 @@ Partial Public Class UtentiInvitati
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents IMBHelpMail As Global.System.Web.UI.WebControls.ImageButton
-
+    
     '''<summary>
     '''LBMsgQuestionarioBloccato control.
     '''</summary>
@@ -345,7 +345,7 @@ Partial Public Class UtentiInvitati
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LBMsgQuestionarioBloccato As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''PNLTemplate control.
     '''</summary>
@@ -354,7 +354,7 @@ Partial Public Class UtentiInvitati
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents PNLTemplate As Global.System.Web.UI.WebControls.Panel
-
+    
     '''<summary>
     '''LBTitoloTemplate control.
     '''</summary>
@@ -363,7 +363,7 @@ Partial Public Class UtentiInvitati
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LBTitoloTemplate As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''DDLTemplate control.
     '''</summary>
@@ -372,7 +372,7 @@ Partial Public Class UtentiInvitati
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents DDLTemplate As Global.System.Web.UI.WebControls.DropDownList
-
+    
     '''<summary>
     '''BTNLoadTemplate control.
     '''</summary>
@@ -381,7 +381,7 @@ Partial Public Class UtentiInvitati
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents BTNLoadTemplate As Global.System.Web.UI.WebControls.Button
-
+    
     '''<summary>
     '''BTNElimina control.
     '''</summary>
@@ -390,7 +390,7 @@ Partial Public Class UtentiInvitati
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents BTNElimina As Global.System.Web.UI.WebControls.Button
-
+    
     '''<summary>
     '''BTNNuovo control.
     '''</summary>
@@ -399,7 +399,7 @@ Partial Public Class UtentiInvitati
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents BTNNuovo As Global.System.Web.UI.WebControls.Button
-
+    
     '''<summary>
     '''LBDestinatario control.
     '''</summary>
@@ -408,7 +408,7 @@ Partial Public Class UtentiInvitati
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LBDestinatario As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''TXBDestinatario control.
     '''</summary>
@@ -417,7 +417,7 @@ Partial Public Class UtentiInvitati
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents TXBDestinatario As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''LKBSelezionaUtenti control.
     '''</summary>
@@ -426,7 +426,7 @@ Partial Public Class UtentiInvitati
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LKBSelezionaUtenti As Global.System.Web.UI.WebControls.LinkButton
-
+    
     '''<summary>
     '''LNBaddNotStartedNotCompleted control.
     '''</summary>
@@ -435,7 +435,7 @@ Partial Public Class UtentiInvitati
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LNBaddNotStartedNotCompleted As Global.System.Web.UI.WebControls.LinkButton
-
+    
     '''<summary>
     '''LNBaddNotStarted control.
     '''</summary>
@@ -444,7 +444,7 @@ Partial Public Class UtentiInvitati
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LNBaddNotStarted As Global.System.Web.UI.WebControls.LinkButton
-
+    
     '''<summary>
     '''LNBaddNotCompleted control.
     '''</summary>
@@ -453,7 +453,7 @@ Partial Public Class UtentiInvitati
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LNBaddNotCompleted As Global.System.Web.UI.WebControls.LinkButton
-
+    
     '''<summary>
     '''LNBaddCompleted control.
     '''</summary>
@@ -462,7 +462,7 @@ Partial Public Class UtentiInvitati
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LNBaddCompleted As Global.System.Web.UI.WebControls.LinkButton
-
+    
     '''<summary>
     '''LKBAggiungiTutti control.
     '''</summary>
@@ -471,7 +471,7 @@ Partial Public Class UtentiInvitati
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LKBAggiungiTutti As Global.System.Web.UI.WebControls.LinkButton
-
+    
     '''<summary>
     '''LKBAggiungiNonInvitati control.
     '''</summary>
@@ -480,7 +480,7 @@ Partial Public Class UtentiInvitati
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LKBAggiungiNonInvitati As Global.System.Web.UI.WebControls.LinkButton
-
+    
     '''<summary>
     '''PNLMail control.
     '''</summary>
@@ -489,7 +489,7 @@ Partial Public Class UtentiInvitati
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents PNLMail As Global.System.Web.UI.WebControls.Panel
-
+    
     '''<summary>
     '''CTRLmailEditor control.
     '''</summary>
@@ -498,7 +498,7 @@ Partial Public Class UtentiInvitati
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents CTRLmailEditor As Global.Comunita_OnLine.UC_MailEditor
-
+    
     '''<summary>
     '''LTRvariables control.
     '''</summary>
@@ -507,7 +507,7 @@ Partial Public Class UtentiInvitati
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LTRvariables As Global.System.Web.UI.WebControls.Literal
-
+    
     '''<summary>
     '''LBAnteprima control.
     '''</summary>
@@ -516,7 +516,7 @@ Partial Public Class UtentiInvitati
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LBAnteprima As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''BTNpreview control.
     '''</summary>
@@ -525,7 +525,7 @@ Partial Public Class UtentiInvitati
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents BTNpreview As Global.System.Web.UI.WebControls.Button
-
+    
     '''<summary>
     '''LBpreviewDisplay control.
     '''</summary>
@@ -534,7 +534,7 @@ Partial Public Class UtentiInvitati
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LBpreviewDisplay As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''BTNSalvaTemplate control.
     '''</summary>
@@ -543,7 +543,7 @@ Partial Public Class UtentiInvitati
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents BTNSalvaTemplate As Global.System.Web.UI.WebControls.Button
-
+    
     '''<summary>
     '''BTNSalvaTemplateConNome control.
     '''</summary>
@@ -552,7 +552,7 @@ Partial Public Class UtentiInvitati
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents BTNSalvaTemplateConNome As Global.System.Web.UI.WebControls.Button
-
+    
     '''<summary>
     '''TXBNomeTemplate control.
     '''</summary>
@@ -561,7 +561,7 @@ Partial Public Class UtentiInvitati
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents TXBNomeTemplate As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''CHKInoltraMittente control.
     '''</summary>
@@ -570,7 +570,7 @@ Partial Public Class UtentiInvitati
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents CHKInoltraMittente As Global.System.Web.UI.WebControls.CheckBox
-
+    
     '''<summary>
     '''LBMsgInvia control.
     '''</summary>
@@ -579,7 +579,7 @@ Partial Public Class UtentiInvitati
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LBMsgInvia As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''BTNInviaMail control.
     '''</summary>
@@ -588,7 +588,7 @@ Partial Public Class UtentiInvitati
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents BTNInviaMail As Global.System.Web.UI.WebControls.Button
-
+    
     '''<summary>
     '''LBMsgSbloccaInvia control.
     '''</summary>
@@ -597,7 +597,7 @@ Partial Public Class UtentiInvitati
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LBMsgSbloccaInvia As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''BTNSbloccaInvia control.
     '''</summary>
@@ -606,7 +606,7 @@ Partial Public Class UtentiInvitati
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents BTNSbloccaInvia As Global.System.Web.UI.WebControls.Button
-
+    
     '''<summary>
     '''VIWupload control.
     '''</summary>
@@ -615,7 +615,7 @@ Partial Public Class UtentiInvitati
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents VIWupload As Global.System.Web.UI.WebControls.View
-
+    
     '''<summary>
     '''LBDownload control.
     '''</summary>
@@ -624,7 +624,7 @@ Partial Public Class UtentiInvitati
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LBDownload As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''LBUploadFile control.
     '''</summary>
@@ -633,7 +633,7 @@ Partial Public Class UtentiInvitati
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LBUploadFile As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''FLUcsv control.
     '''</summary>
@@ -642,7 +642,7 @@ Partial Public Class UtentiInvitati
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents FLUcsv As Global.System.Web.UI.WebControls.FileUpload
-
+    
     '''<summary>
     '''LBTerminatore control.
     '''</summary>
@@ -651,7 +651,7 @@ Partial Public Class UtentiInvitati
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LBTerminatore As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''TXBTerminatore control.
     '''</summary>
@@ -660,7 +660,7 @@ Partial Public Class UtentiInvitati
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents TXBTerminatore As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''BTNUpload control.
     '''</summary>
@@ -669,7 +669,7 @@ Partial Public Class UtentiInvitati
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents BTNUpload As Global.System.Web.UI.WebControls.Button
-
+    
     '''<summary>
     '''BTNimportaDaComunita control.
     '''</summary>
@@ -678,7 +678,97 @@ Partial Public Class UtentiInvitati
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents BTNimportaDaComunita As Global.System.Web.UI.WebControls.Button
-
+    
+    '''<summary>
+    '''VIWStampa control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents VIWStampa As Global.System.Web.UI.WebControls.View
+    
+    '''<summary>
+    '''PNLStampaTutti control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents PNLStampaTutti As Global.System.Web.UI.WebControls.Panel
+    
+    '''<summary>
+    '''LNKStampaTutti control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents LNKStampaTutti As Global.System.Web.UI.WebControls.LinkButton
+    
+    '''<summary>
+    '''LBStampaTutti control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents LBStampaTutti As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
+    '''PNLStampaUtentiDomande control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents PNLStampaUtentiDomande As Global.System.Web.UI.WebControls.Panel
+    
+    '''<summary>
+    '''LNKStampaUtentiDomande control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents LNKStampaUtentiDomande As Global.System.Web.UI.WebControls.LinkButton
+    
+    '''<summary>
+    '''LBStampaUtentiDomande control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents LBStampaUtentiDomande As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
+    '''PNLStampaSelezionati control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents PNLStampaSelezionati As Global.System.Web.UI.WebControls.Panel
+    
+    '''<summary>
+    '''LNKStampaSelezionati control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents LNKStampaSelezionati As Global.System.Web.UI.WebControls.LinkButton
+    
+    '''<summary>
+    '''LBStampaSelezionati control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents LBStampaSelezionati As Global.System.Web.UI.WebControls.Label
+    
     '''<summary>
     '''VIWimportaDaComunita control.
     '''</summary>
@@ -687,7 +777,7 @@ Partial Public Class UtentiInvitati
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents VIWimportaDaComunita As Global.System.Web.UI.WebControls.View
-
+    
     '''<summary>
     '''PNLGestioneListe control.
     '''</summary>
@@ -696,7 +786,7 @@ Partial Public Class UtentiInvitati
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents PNLGestioneListe As Global.System.Web.UI.WebControls.Panel
-
+    
     '''<summary>
     '''UCsearchUser control.
     '''</summary>
@@ -705,7 +795,7 @@ Partial Public Class UtentiInvitati
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents UCsearchUser As Global.Comunita_OnLine.UC_SearchUserByCommunities
-
+    
     '''<summary>
     '''BTNcancel control.
     '''</summary>
@@ -714,7 +804,7 @@ Partial Public Class UtentiInvitati
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents BTNcancel As Global.System.Web.UI.WebControls.Button
-
+    
     '''<summary>
     '''BTNconfirm control.
     '''</summary>
@@ -723,7 +813,7 @@ Partial Public Class UtentiInvitati
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents BTNconfirm As Global.System.Web.UI.WebControls.Button
-
+    
     '''<summary>
     '''VIWselezionaComunita control.
     '''</summary>
@@ -732,7 +822,7 @@ Partial Public Class UtentiInvitati
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents VIWselezionaComunita As Global.System.Web.UI.WebControls.View
-
+    
     '''<summary>
     '''VIWpreview control.
     '''</summary>
@@ -741,7 +831,7 @@ Partial Public Class UtentiInvitati
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents VIWpreview As Global.System.Web.UI.WebControls.View
-
+    
     '''<summary>
     '''LBpreview control.
     '''</summary>
@@ -750,7 +840,7 @@ Partial Public Class UtentiInvitati
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LBpreview As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''BTNclosePreview control.
     '''</summary>
@@ -759,7 +849,7 @@ Partial Public Class UtentiInvitati
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents BTNclosePreview As Global.System.Web.UI.WebControls.Button
-
+    
     '''<summary>
     '''Master property.
     '''</summary>
@@ -768,7 +858,7 @@ Partial Public Class UtentiInvitati
     '''</remarks>
     Public Shadows ReadOnly Property Master() As Comunita_OnLine.AjaxPortal
         Get
-            Return CType(MyBase.Master, Comunita_OnLine.AjaxPortal)
+            Return CType(MyBase.Master,Comunita_OnLine.AjaxPortal)
         End Get
     End Property
 End Class

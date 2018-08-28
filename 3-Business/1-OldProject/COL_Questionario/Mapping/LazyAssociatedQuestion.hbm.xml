@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="COL_Questionario" namespace="COL_Questionario">
+	<class name="LazyAssociatedQuestion" table="QS_LK_QUESTIONARIO_DOMANDA" lazy="false">
+    <id name="Id" column="LKQD_Id" type="Int32" unsaved-value="0">
+      <generator class="native"/>
+    </id>
+    <property name="IdQuestionnnaire" type="Int32" column="LKQD_QSTN_Id" />
+    <property name="IdQuestion" type="Int32" column="LKQD_DMND_Id" />
+    <property name="IdRandomQuestionnnaire" type="Int32" column="LKQD_QSRD_Id" />
+    <property name="Number" type="Int32" column="LKQD_NumeroDomanda"  />
+    <bag name="Languages" table="QS_DOMANDA_MULTILINGUA" inverse="false" lazy="true" fetch="subselect" cascade="none" >
+      <key column="IdQuestion"/>
+      <one-to-many class="LazyMultilanguageQuestion"/>
+    </bag>
+  </class>
+</hibernate-mapping>

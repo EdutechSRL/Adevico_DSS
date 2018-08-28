@@ -1,5 +1,5 @@
 ﻿Imports lm.Comol.Core.BaseModules.FileStatistics.Presentation
-Imports lm.Comol.Modules.ScormStat
+'Imports lm.Comol.Modules.ScormStat
 
 Public Class UC_DisplayFileInfo
     Inherits BaseControl

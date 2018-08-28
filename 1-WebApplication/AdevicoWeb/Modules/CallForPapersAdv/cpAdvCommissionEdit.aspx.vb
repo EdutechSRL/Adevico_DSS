@@ -815,6 +815,9 @@ Public Class cpAdvCommissionEdit
 
         End Try
 
+        Dim IdTemplate As Int64 = 0
+        Dim IdTempalteVersion As Int64 = 0
+
         Me.CurrentPresenter.SaveCommitee(
             TXBcommName.Text,
             TXBcommDescription.Text,
@@ -826,6 +829,8 @@ Public Class cpAdvCommissionEdit
             UpdateView,
             StepType,
             MaxValue,
+            IdTemplate,
+            IdTempalteVersion,
             criterions)
 
     End Sub

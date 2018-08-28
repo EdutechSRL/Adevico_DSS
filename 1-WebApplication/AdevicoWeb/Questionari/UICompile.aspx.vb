@@ -59,9 +59,9 @@ Partial Public Class UICompile_
     Public ReadOnly Property displayDifficulty() As String
         Get
             If Not (Me.QuestionarioCorrente.tipo = Questionario.TipoQuestionario.Sondaggio OrElse Me.QuestionarioCorrente.tipo = Questionario.TipoQuestionario.Autovalutazione OrElse Me.QuestionarioCorrente.tipo = Questionario.TipoQuestionario.Meeting) AndAlso QuestionarioCorrente.isPassword Then
-                Return "text-align: right;" 'True
+                Return "hide" '"text-align: right;" 'True
             Else
-                Return "display:none;" 'False
+                Return "show" '"display:none;" 'False
             End If
         End Get
     End Property
@@ -253,7 +253,25 @@ Partial Public Class UICompile_
     'Protected Sub SMTimer_AsyncPostBackError(ByVal sender As Object, ByVal e As AsyncPostBackErrorEventArgs) Handles SMTimer.AsyncPostBackError
     '    SMTimer.AsyncPostBackErrorMessage = e.Exception.Message + e.Exception.StackTrace
     'End Sub
-    Protected Sub IMBprima_Click(ByVal sender As System.Object, ByVal e As System.Web.UI.ImageClickEventArgs) Handles IMBprima.Click
+    'Protected Sub IMBprima_Click(ByVal sender As System.Object, ByVal e As System.Web.UI.ImageClickEventArgs) Handles IMBprima.Click
+    '    If iPag > 0 Then
+    '        Dim isValida As Boolean = True
+    '        Me.QuestionarioCorrente.rispostaQuest = oGestioneRisposte.getRisposte(DLPagine, isValida)
+    '        If isValida Then
+    '            If PHnumeroPagina.Controls.Count > iPag And iPag >= 0 Then
+    '                DirectCast(PHnumeroPagina.Controls(iPag), LinkButton).Style.Clear()
+    '            End If
+    '            iPag = iPag - 1
+    '            LBTroppeRispostePagina.Visible = False
+    '        Else
+    '            LBTroppeRispostePagina.Visible = True
+    '        End If
+    '    End If
+    '    TMDurata_Tick(sender, e)
+    '    bindDLPagine()
+    '    isFirstRun = True
+    'End Sub
+    Private Sub LkbBack_Click(sender As Object, e As EventArgs) Handles LkbBack.Click
         If iPag > 0 Then
             Dim isValida As Boolean = True
             Me.QuestionarioCorrente.rispostaQuest = oGestioneRisposte.getRisposte(DLPagine, isValida)
@@ -271,7 +289,11 @@ Partial Public Class UICompile_
         bindDLPagine()
         isFirstRun = True
     End Sub
-    Protected Sub IMBdopo_Click(ByVal sender As System.Object, ByVal e As System.Web.UI.ImageClickEventArgs) Handles IMBdopo.Click
+
+    'Protected Sub IMBdopo_Click(ByVal sender As System.Object, ByVal e As System.Web.UI.ImageClickEventArgs) Handles IMBdopo.Click
+
+    'End Sub
+    Private Sub LkbNext_Click(sender As Object, e As EventArgs) Handles LkbNext.Click
         TMDurata_Tick(sender, e)
         vaiPaginaDopo()
         isFirstRun = True
@@ -407,36 +429,38 @@ Partial Public Class UICompile_
         Dim counter As Int16 = 0
         Try
             If Me.QuestionarioCorrente.pagine.Count > 1 And iPag + 1 < Me.QuestionarioCorrente.pagine.Count Then
-                IMBdopo.Visible = True
+                LkbNext.Visible = True
                 If iPag < 1 Then
-                    IMBprima.Visible = False
+                    LkbBack.Visible = False
                 Else
-                    IMBprima.Visible = True
+                    LkbBack.Visible = True
                 End If
                 BTNFine.Visible = False
                 LBAvvisoFine.Visible = False
             Else
                 If Not Me.QuestionarioCorrente.tipo = Questionario.TipoQuestionario.Autovalutazione Then
-                    IMBdopo.Visible = False
+                    LkbNext.Visible = False
                     BTNFine.Visible = True
                     LBAvvisoFine.Visible = True
                 Else
                     BTNFine.Visible = False
                     LBAvvisoFine.Visible = False
                     If iPag < 1 Then
-                        IMBprima.Visible = False
+                        LkbBack.Visible = False
                     Else
-                        IMBprima.Visible = True
+                        LkbBack.Visible = True
                     End If
-                    IMBdopo.Visible = True
+                    LkbNext.Visible = True
                 End If
                 If iPag > 0 Then
-                    IMBprima.Visible = True
+                    LkbBack.Visible = True
                 End If
             End If
         Catch ex As Exception
             inviaMailErrore(ex)
         End Try
+
+        'MB: era iPag > -1
         If iPag > -1 Then
 
             Try
@@ -817,7 +841,7 @@ Partial Public Class UICompile_
                 End If
                 DVconfirmSubmit.Visible = True
             Else
-                DVconfirmSubmit.Visible = False
+                'DVconfirmSubmit.Visible = False
                 DVconfirmExit.Visible = True
             End If
         End If
@@ -924,6 +948,9 @@ Partial Public Class UICompile_
     End Sub
     Private Sub SaveCompletedAnswer(ByVal sender As Object, ByVal e As System.EventArgs)
         Try
+
+            'Dim CurrentUserIdByInvitation As Integer = Me.
+
             If Not QuestionarioCorrente.editaRisposta AndAlso Not CurrentService.IsValidSave(QuestionarioCorrente.id, QuestionarioCorrente.rispostaQuest.idPersona, QuestionarioCorrente.rispostaQuest.idUtenteInvitato, QuestionarioCorrente.rispostaQuest.id) Then
                 CTRLerrorMessages.Visible = True
                 CTRLerrorMessages.InitializeControl(Resource.getValue("QuestionnaireError.AlreadyCompiled.TipoQuestionario." & DirectCast(QuestionarioCorrente.tipo, Questionario.TipoQuestionario).ToString), lm.Comol.Core.DomainModel.Helpers.MessageType.alert)
@@ -939,7 +966,13 @@ Partial Public Class UICompile_
                     Me.QuestionarioCorrente.rispostaQuest.dataFine = Now()
                     Me.QuestionarioCorrente.rispostaQuest.indirizzoIPEnd = OLDpageUtility.ProxyIPadress() & " / " & OLDpageUtility.ClientIPadress
                     Dim oGestioneRisposte As New GestioneRisposte
-                    oGestioneRisposte.SalvaRisposta(Me.QuestionarioCorrente)
+
+
+
+                    oGestioneRisposte.SalvaRisposta(Me.QuestionarioCorrente, UserId, True)
+
+
+
                     oGestioneQuest.CompileEndActionAdd()
                     LBConferma.Text &= Me.Resource.getValue("MSGConfermaFine")
                     LBConferma.Visible = True
@@ -956,8 +989,14 @@ Partial Public Class UICompile_
                     oGestioneQuest.setCampiRispostaQuestionario(True)
                     'iPag = Me.QuestionarioCorrente.rispostaQuest.domandeNoRisp(0).numeroPagina - 1
                     iPag = pageRedirect - 1
-                    IMBdopo.AlternateText = Me.Resource.getValue("IMBprimaDopo") & (iPag + 2).ToString()
-                    IMBprima.AlternateText = Me.Resource.getValue("IMBprimaDopo") & (iPag).ToString()
+                    ''IMBDopo.AlternateText = Me.Resource.getValue("IMBprimaDopo") & (iPag + 2).ToString()
+                    'LkbNext.ToolTip = Me.Resource.getValue("IMBprimaDopo") & (iPag + 2).ToString()
+                    'LkbNext.Text = Me.Resource.getValue("IMBprimaDopo") '& (iPag + 2).ToString()
+
+                    ''IMBprima.AlternateText = Me.Resource.getValue("IMBprimaDopo") & (iPag).ToString()
+                    'LkbBack.ToolTip = Me.Resource.getValue("IMBprimaDopo") & (iPag).ToString()
+                    'LkbBack.Text = Me.Resource.getValue("IMBprimaDopo") '& (iPag).ToString()
+
                     LBTroppeRispostePagina.Visible = False
                     TMDurata_Tick(sender, e) 'il salvataggio viene fatto qui
                     bindDLPagine()
@@ -1000,7 +1039,7 @@ Partial Public Class UICompile_
             If isValida Then
                 oGestioneQuest.setCampiRispostaQuestionario(True)
                 Dim oGestioneRisposte As New GestioneRisposte
-                oGestioneRisposte.SalvaRisposta(Me.QuestionarioCorrente)
+                oGestioneRisposte.SalvaRisposta(Me.QuestionarioCorrente, UserId, True)
                 LBConferma.Text &= Me.Resource.getValue("MSGConfermaSalvaEdEsci")
                 LBConferma.Visible = True
                 Me.MLVquestionari.SetActiveView(Me.VIWmessaggi)
@@ -1027,7 +1066,7 @@ Partial Public Class UICompile_
                     Exit Sub
                 Else
                     Dim oGestioneRisposte As New GestioneRisposte
-                    oGestioneRisposte.SalvaRisposta(Me.QuestionarioCorrente)
+                    oGestioneRisposte.SalvaRisposta(Me.QuestionarioCorrente, UserId, False)
                     LBTroppeRispostePagina.Visible = False
                 End If
             Else
@@ -1046,48 +1085,59 @@ Partial Public Class UICompile_
             BindDati()
             Exit Sub
         Else
-            If iPag = -1 Then
-                TMSessione.Enabled = True
-                TMSessione.Interval = RootObject.tickMassimo
-                TMSessione_Tick(sender, e)
-                If Me.QuestionarioCorrente.isPrimaRisposta Or Me.QuestionarioCorrente.editaRisposta Then
-                    If RootObject.setNullDate(Me.QuestionarioCorrente.rispostaQuest.dataInizio) Is System.DBNull.Value Then
-                        Me.QuestionarioCorrente.rispostaQuest.dataInizio = Now()
-                        Me.QuestionarioCorrente.rispostaQuest.indirizzoIPStart = OLDpageUtility.ProxyIPadress() & " / " & OLDpageUtility.ClientIPadress
-                    End If
-                    isFirstRun = True
-                    'DirectCast(UPTempo.FindControl("LBTempoRimanente"), Label).Visible = LBTempoRimanenteVIWDescrizione.Visible
-                    DirectCast(UPTempo.FindControl("LBTempoRimanente"), Label).Text = String.Format(LBTempoRimanente.Text, Me.QuestionarioCorrente.durata)
-                    'Me.SetFocus(IMBdopo)
-                    'per disattivare i timer commentare l'if seguente
-                    If Me.QuestionarioCorrente.durata > 0 Then
-                        LBTempoRimanente.Text = String.Format(Me.Resource.getValue("LBTempoRimanente.text"), Me.QuestionarioCorrente.durata, Me.Resource.getValue("minuti"))
-                        'DIVpanelTempo.Attributes.CssStyle.Clear()
-                        DIVpanelTempo_Container.Attributes.Add("class", "div_paneltempo_container time_visible")
-                        'DIVpanelTempo.Style.Item("display") = "block"
 
-                        TMDurata.Enabled = True
-                        TMDurata.Interval = RootObject.autoSaveTimer
-                        TMDurata_Tick(sender, e)
-                    Else
-                        ' salvo la risposta al questionario
-                        oGestioneQuest.setCampiRispostaQuestionario(True)
-                        Me.QuestionarioCorrente.rispostaQuest.dataFine = Date.MinValue.ToString
-                        If oGestioneRisposte.SalvaRisposta(Me.QuestionarioCorrente) = "-1" Then
+            'Ora, quando si preme su "INIZIA",
+            'SE ho un utente invitato (e verificato tramite password se richiesto)
+            'ed ho ancora un utente anonimo, carico l'utente dell'invito (di piattaforma)
+            If Me.Invito.ID > 0 AndAlso
+                (IsNothing(UtenteCorrente) OrElse UtenteCorrente.ID = 0 OrElse UtenteCorrente.ID = idUtenteAnonimo()) Then
+                CaricaUtenteInvitatoEVerificato(Me.Invito.PersonaID)
+
+            End If
+
+
+            If iPag = -1 Then
+                    TMSessione.Enabled = True
+                    TMSessione.Interval = RootObject.tickMassimo
+                    TMSessione_Tick(sender, e)
+                    If Me.QuestionarioCorrente.isPrimaRisposta Or Me.QuestionarioCorrente.editaRisposta Then
+                        If RootObject.setNullDate(Me.QuestionarioCorrente.rispostaQuest.dataInizio) Is System.DBNull.Value Then
+                            Me.QuestionarioCorrente.rispostaQuest.dataInizio = Now()
+                            Me.QuestionarioCorrente.rispostaQuest.indirizzoIPStart = OLDpageUtility.ProxyIPadress() & " / " & OLDpageUtility.ClientIPadress
+                        End If
+                        isFirstRun = True
+                        'DirectCast(UPTempo.FindControl("LBTempoRimanente"), Label).Visible = LBTempoRimanenteVIWDescrizione.Visible
+                        DirectCast(UPTempo.FindControl("LBTempoRimanente"), Label).Text = String.Format(LBTempoRimanente.Text, Me.QuestionarioCorrente.durata)
+                        'Me.SetFocus(IMBdopo)
+                        'per disattivare i timer commentare l'if seguente
+                        If Me.QuestionarioCorrente.durata > 0 Then
+                            LBTempoRimanente.Text = String.Format(Me.Resource.getValue("LBTempoRimanente.text"), Me.QuestionarioCorrente.durata, Me.Resource.getValue("minuti"))
+                            'DIVpanelTempo.Attributes.CssStyle.Clear()
+                            DIVpanelTempo_Container.Attributes.Add("class", "div_paneltempo_container time_visible")
+                            'DIVpanelTempo.Style.Item("display") = "block"
+
+                            TMDurata.Enabled = True
+                            TMDurata.Interval = RootObject.autoSaveTimer
+                            TMDurata_Tick(sender, e)
+                        Else
+                            ' salvo la risposta al questionario
+                            oGestioneQuest.setCampiRispostaQuestionario(True)
+                            Me.QuestionarioCorrente.rispostaQuest.dataFine = Date.MinValue.ToString
+                        If oGestioneRisposte.SalvaRisposta(Me.QuestionarioCorrente, UserId, False) = "-1" Then
                             CTRLerrorMessages.Visible = True
                             CTRLerrorMessages.InitializeControl(Resource.getValue("QuestionnaireError.AnswerNotSaved"), lm.Comol.Core.DomainModel.Helpers.MessageType.error)
                             MLVquestionari.SetActiveView(Me.VIWmessaggi)
                         End If
                     End If
 
+                    End If
+
+                    isCorrezione = False 'serve per i test di autovalutazione
+                    vaiPaginaDopo()
+                    oGestioneQuest.CompileStartActionAdd()
                 End If
 
-                isCorrezione = False 'serve per i test di autovalutazione
-                vaiPaginaDopo()
-                oGestioneQuest.CompileStartActionAdd()
             End If
-
-        End If
     End Sub
     Protected Sub LNBindietro_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles LNBindietro.Click
         Me.RedirectToUrl(RootObject.QuestionariList & "?Type=" & Me.QuestionarioCorrente.tipo)
@@ -1139,7 +1189,7 @@ Partial Public Class UICompile_
                             TMDurata.Enabled = False
                             TMSessione.Enabled = False
                         End If
-                        If oGestioneRisposte.SalvaRisposta(Me.QuestionarioCorrente) = "-1" Then
+                        If oGestioneRisposte.SalvaRisposta(Me.QuestionarioCorrente, UserId, False) = "-1" Then
                             CTRLerrorMessages.Visible = True
                             CTRLerrorMessages.InitializeControl(Resource.getValue("QuestionnaireError.AnswerNotSaved"), lm.Comol.Core.DomainModel.Helpers.MessageType.error)
                             MLVquestionari.SetActiveView(Me.VIWmessaggi)
@@ -1167,7 +1217,7 @@ Partial Public Class UICompile_
                     Exit Sub
                 Else
 
-                    If oGestioneRisposte.SalvaRisposta(Me.QuestionarioCorrente) = "-1" Then
+                    If oGestioneRisposte.SalvaRisposta(Me.QuestionarioCorrente, UserId, False) = "-1" Then
                         CTRLerrorMessages.Visible = True
                         CTRLerrorMessages.InitializeControl(Resource.getValue("QuestionnaireError.AnswerNotSaved"), lm.Comol.Core.DomainModel.Helpers.MessageType.error)
                         MLVquestionari.SetActiveView(Me.VIWmessaggi)
@@ -1177,6 +1227,19 @@ Partial Public Class UICompile_
         End If
     End Sub
     Protected Sub LKBpagina_OnClientClick(ByVal sender As System.Object, ByVal e As System.EventArgs)
+
+        'MB: PROVO a controllare la modifica in fase di cambio pagina (se non già sottomesso, etc...)
+        Try
+            If Not QuestionarioCorrente.editaRisposta AndAlso Not CurrentService.IsValidSave(QuestionarioCorrente.id, QuestionarioCorrente.rispostaQuest.idPersona, QuestionarioCorrente.rispostaQuest.idUtenteInvitato, QuestionarioCorrente.rispostaQuest.id) Then
+                CTRLerrorMessages.Visible = True
+                CTRLerrorMessages.InitializeControl(Resource.getValue("QuestionnaireError.AlreadyCompiled.TipoQuestionario." & DirectCast(QuestionarioCorrente.tipo, Questionario.TipoQuestionario).ToString), lm.Comol.Core.DomainModel.Helpers.MessageType.alert)
+                MLVquestionari.SetActiveView(Me.VIWmessaggi)
+                Exit Sub
+            End If
+        Catch ex As Exception
+
+        End Try
+
         LBnoRisposta.Visible = False
         Dim isValida As Boolean = True
         Try
@@ -1186,8 +1249,13 @@ Partial Public Class UICompile_
                 LKBpag = DirectCast(sender, LinkButton)
                 DirectCast(PHnumeroPagina.Controls(iPag), LinkButton).Style.Clear()
                 iPag = Integer.Parse(LKBpag.ID.Substring(10)) - 1
-                IMBdopo.AlternateText = Me.Resource.getValue("IMBprimaDopo") & (iPag + 2).ToString()
-                IMBprima.AlternateText = Me.Resource.getValue("IMBprimaDopo") & (iPag).ToString()
+                ''IMBDopo.AlternateText = Me.Resource.getValue("IMBprimaDopo") & (iPag + 2).ToString()
+                'LkbNext.ToolTip = Me.Resource.getValue("IMBprimaDopo") & (iPag + 2).ToString()
+                'LkbNext.Text = Me.Resource.getValue("IMBprimaDopo") '& (iPag + 2).ToString()
+
+                ''IMBprima.AlternateText = Me.Resource.getValue("IMBprimaDopo") & (iPag).ToString()
+                'LkbBack.ToolTip = Me.Resource.getValue("IMBprimaDopo") & (iPag).ToString()
+                'LkbBack.Text = Me.Resource.getValue("IMBprimaDopo") '& (iPag).ToString()
                 LBTroppeRispostePagina.Visible = False
             Else
                 LBTroppeRispostePagina.Visible = True
@@ -1239,7 +1307,7 @@ Partial Public Class UICompile_
     Private Sub BTNconfirmOption_Click(sender As Object, e As EventArgs) Handles BTNconfirmOption.Click
         Master.OpenDialogOnPostback = False
         Master.ClearOpenedDialogOnPostback()
-        DVconfirmSubmit.Visible = False
+        'DVconfirmSubmit.Visible = False
         HIDtempoRimanente.Value = (Me.QuestionarioCorrente.durata * 60) - DateDiff("s", Me.QuestionarioCorrente.rispostaQuest.dataInizio, DateTime.Now)
         SaveCompletedAnswer(sender, e)
         HDNcurrentTime.Value = 0
@@ -1249,8 +1317,63 @@ Partial Public Class UICompile_
     Private Sub BTNundoOption_Click(sender As Object, e As EventArgs) Handles BTNundoOption.Click
         Master.OpenDialogOnPostback = False
         Master.ClearOpenedDialogOnPostback()
-        DVconfirmSubmit.Visible = False
+        'DVconfirmSubmit.Visible = False
         HDNcurrentTime.Value = 0
         HIDtempoRimanente.Value = (Me.QuestionarioCorrente.durata * 60) - DateDiff("s", Me.QuestionarioCorrente.rispostaQuest.dataInizio, DateTime.Now)
     End Sub
+
+
+    Public Sub HideDiv(ByVal Div As HtmlControl)
+        Div.Attributes.Add("style", "display:none;")
+    End Sub
+
+    Private Sub UICompile__PreRender(sender As Object, e As EventArgs) Handles Me.PreRender
+        Dim value As String = Me.Resource.getValue("LkbNext.Text")
+
+        If String.IsNullOrEmpty(value) Then
+            value = "&gt;"
+        End If
+
+        LkbNext.Text = value
+
+        value = Me.Resource.getValue("LkbNext.ToolTip")
+
+        If String.IsNullOrEmpty(value) Then
+            value = "Avanti"
+        End If
+
+        LkbNext.ToolTip = value
+
+
+        value = Me.Resource.getValue("LkbBack.Text")
+
+        If String.IsNullOrEmpty(value) Then
+            value = "&gt;"
+        End If
+
+        LkbBack.Text = value
+
+        value = Me.Resource.getValue("LkbBack.ToolTip")
+
+        If String.IsNullOrEmpty(value) Then
+            value = "Indietro"
+        End If
+
+        LkbBack.ToolTip = value
+    End Sub
+
+
+
+    ''' <summary>
+    ''' Aggiunto per il salva!
+    ''' Risulta NECESSARIO VERIFICARE che le risposte SALVATE siano effettivamente
+    ''' quelle dell'utente corrente, per EVITARE sovrascritture o cancellazioni incongrue.
+    ''' </summary>
+    ''' <returns></returns>
+    Private ReadOnly Property UserId As Integer
+        Get
+            Return UtenteQuestionario.ID
+            'Return Me.UtenteCorrente.ID
+        End Get
+    End Property
 End Class

@@ -194,7 +194,7 @@ Partial Public Class ucDaySurvey
                 Me.QuestionarioCorrente.rispostaQuest.idQuestionarioRandom = Me.QuestionarioCorrente.idFiglio
 
                 Dim oGestioneRisposte As New GestioneRisposte
-                oGestioneRisposte.SalvaRisposta(Me.QuestionarioCorrente)
+                oGestioneRisposte.SalvaRisposta(Me.QuestionarioCorrente, UserId, True)
                 If Me.QuestionarioCorrente.tipo = COL_Questionario.Questionario.TipoQuestionario.Sondaggio And Me.QuestionarioCorrente.visualizzaRisposta Then
                     Response.Redirect(RootObject.QuestionarioStatisticheGeneraliShort + "&comp=1")
                 End If
@@ -323,4 +323,17 @@ Partial Public Class ucDaySurvey
     End Property
     Public Overrides Sub SetControlliByPermessi()
     End Sub
+
+
+    ''' <summary>
+    ''' Aggiunto per il salva!
+    ''' Risulta NECESSARIO VERIFICARE che le risposte SALVATE siano effettivamente
+    ''' quelle dell'utente corrente, per EVITARE sovrascritture o cancellazioni incongrue.
+    ''' </summary>
+    ''' <returns></returns>
+    Private ReadOnly Property UserId As Integer
+        Get
+            Return Me.UtenteCorrente.ID
+        End Get
+    End Property
 End Class

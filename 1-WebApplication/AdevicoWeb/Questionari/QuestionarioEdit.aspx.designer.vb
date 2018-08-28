@@ -12,7 +12,7 @@ Option Explicit On
 
 
 Partial Public Class QuestionarioEdit
-
+    
     '''<summary>
     '''PNLmenu control.
     '''</summary>
@@ -21,7 +21,7 @@ Partial Public Class QuestionarioEdit
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents PNLmenu As Global.System.Web.UI.WebControls.Panel
-
+    
     '''<summary>
     '''LNBCartellaPrincipale control.
     '''</summary>
@@ -30,7 +30,7 @@ Partial Public Class QuestionarioEdit
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LNBCartellaPrincipale As Global.System.Web.UI.WebControls.LinkButton
-
+    
     '''<summary>
     '''LNBGestioneQuestionario control.
     '''</summary>
@@ -39,7 +39,7 @@ Partial Public Class QuestionarioEdit
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LNBGestioneQuestionario As Global.System.Web.UI.WebControls.LinkButton
-
+    
     '''<summary>
     '''LNBAggiungiPagina control.
     '''</summary>
@@ -48,7 +48,7 @@ Partial Public Class QuestionarioEdit
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LNBAggiungiPagina As Global.System.Web.UI.WebControls.LinkButton
-
+    
     '''<summary>
     '''IMBHelp control.
     '''</summary>
@@ -57,7 +57,7 @@ Partial Public Class QuestionarioEdit
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents IMBHelp As Global.System.Web.UI.WebControls.ImageButton
-
+    
     '''<summary>
     '''LBHelp control.
     '''</summary>
@@ -66,7 +66,7 @@ Partial Public Class QuestionarioEdit
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LBHelp As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''MLVquestionari control.
     '''</summary>
@@ -75,7 +75,7 @@ Partial Public Class QuestionarioEdit
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents MLVquestionari As Global.System.Web.UI.WebControls.MultiView
-
+    
     '''<summary>
     '''VIWdati control.
     '''</summary>
@@ -84,7 +84,7 @@ Partial Public Class QuestionarioEdit
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents VIWdati As Global.System.Web.UI.WebControls.View
-
+    
     '''<summary>
     '''PNLElenco control.
     '''</summary>
@@ -93,7 +93,7 @@ Partial Public Class QuestionarioEdit
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents PNLElenco As Global.System.Web.UI.WebControls.Panel
-
+    
     '''<summary>
     '''LBTitolo control.
     '''</summary>
@@ -102,7 +102,7 @@ Partial Public Class QuestionarioEdit
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LBTitolo As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''CTRLmessages control.
     '''</summary>
@@ -111,7 +111,7 @@ Partial Public Class QuestionarioEdit
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents CTRLmessages As Global.Comunita_OnLine.UC_ActionMessages
-
+    
     '''<summary>
     '''DLPagine control.
     '''</summary>
@@ -120,7 +120,7 @@ Partial Public Class QuestionarioEdit
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents DLPagine As Global.System.Web.UI.WebControls.DataList
-
+    
     '''<summary>
     '''VIWSelezionaLibrerie control.
     '''</summary>
@@ -129,7 +129,7 @@ Partial Public Class QuestionarioEdit
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents VIWSelezionaLibrerie As Global.System.Web.UI.WebControls.View
-
+    
     '''<summary>
     '''PNLQuestionarioRandom control.
     '''</summary>
@@ -138,7 +138,7 @@ Partial Public Class QuestionarioEdit
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents PNLQuestionarioRandom As Global.System.Web.UI.WebControls.Panel
-
+    
     '''<summary>
     '''LBMessaggioLibrerie control.
     '''</summary>
@@ -147,7 +147,7 @@ Partial Public Class QuestionarioEdit
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LBMessaggioLibrerie As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''GRVLibrerie control.
     '''</summary>
@@ -156,7 +156,7 @@ Partial Public Class QuestionarioEdit
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents GRVLibrerie As Global.System.Web.UI.WebControls.GridView
-
+    
     '''<summary>
     '''BTNAggiungiLibreria control.
     '''</summary>
@@ -165,7 +165,7 @@ Partial Public Class QuestionarioEdit
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents BTNAggiungiLibreria As Global.System.Web.UI.WebControls.Button
-
+    
     '''<summary>
     '''BTNConferma control.
     '''</summary>
@@ -174,7 +174,7 @@ Partial Public Class QuestionarioEdit
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents BTNConferma As Global.System.Web.UI.WebControls.Button
-
+    
     '''<summary>
     '''PHLibrerie control.
     '''</summary>
@@ -183,7 +183,7 @@ Partial Public Class QuestionarioEdit
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents PHLibrerie As Global.System.Web.UI.WebControls.PlaceHolder
-
+    
     '''<summary>
     '''VIWImpostaLibrerie control.
     '''</summary>
@@ -192,7 +192,7 @@ Partial Public Class QuestionarioEdit
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents VIWImpostaLibrerie As Global.System.Web.UI.WebControls.View
-
+    
     '''<summary>
     '''LBMessaggioImpostaLibrerie control.
     '''</summary>
@@ -201,7 +201,7 @@ Partial Public Class QuestionarioEdit
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LBMessaggioImpostaLibrerie As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''LBHeaderNome control.
     '''</summary>
@@ -210,7 +210,7 @@ Partial Public Class QuestionarioEdit
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LBHeaderNome As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''LBHeaderDiffBassa control.
     '''</summary>
@@ -219,7 +219,7 @@ Partial Public Class QuestionarioEdit
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LBHeaderDiffBassa As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''LBHeaderDiffMedia control.
     '''</summary>
@@ -228,7 +228,7 @@ Partial Public Class QuestionarioEdit
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LBHeaderDiffMedia As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''LBHeaderDiffAlta control.
     '''</summary>
@@ -237,7 +237,7 @@ Partial Public Class QuestionarioEdit
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LBHeaderDiffAlta As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''LBHeaderElimina control.
     '''</summary>
@@ -246,7 +246,7 @@ Partial Public Class QuestionarioEdit
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LBHeaderElimina As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''RPTLibrerieQuestionario control.
     '''</summary>
@@ -255,7 +255,7 @@ Partial Public Class QuestionarioEdit
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents RPTLibrerieQuestionario As Global.System.Web.UI.WebControls.Repeater
-
+    
     '''<summary>
     '''LBMessaggioErrore control.
     '''</summary>
@@ -264,7 +264,7 @@ Partial Public Class QuestionarioEdit
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LBMessaggioErrore As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''BTNSelezionaLibrerie control.
     '''</summary>
@@ -273,7 +273,7 @@ Partial Public Class QuestionarioEdit
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents BTNSelezionaLibrerie As Global.System.Web.UI.WebControls.Button
-
+    
     '''<summary>
     '''BTNSalvaLibrerie control.
     '''</summary>
@@ -282,7 +282,7 @@ Partial Public Class QuestionarioEdit
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents BTNSalvaLibrerie As Global.System.Web.UI.WebControls.Button
-
+    
     '''<summary>
     '''VIWmessaggi control.
     '''</summary>
@@ -291,7 +291,7 @@ Partial Public Class QuestionarioEdit
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents VIWmessaggi As Global.System.Web.UI.WebControls.View
-
+    
     '''<summary>
     '''CTRLerrorMessage control.
     '''</summary>
@@ -300,7 +300,7 @@ Partial Public Class QuestionarioEdit
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents CTRLerrorMessage As Global.Comunita_OnLine.UC_ActionMessages
-
+    
     '''<summary>
     '''PNLisRisposte control.
     '''</summary>
@@ -309,7 +309,7 @@ Partial Public Class QuestionarioEdit
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents PNLisRisposte As Global.System.Web.UI.WebControls.Panel
-
+    
     '''<summary>
     '''LBIsRisposte control.
     '''</summary>
@@ -318,7 +318,7 @@ Partial Public Class QuestionarioEdit
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LBIsRisposte As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''LBCopiaQuestionario control.
     '''</summary>
@@ -327,7 +327,7 @@ Partial Public Class QuestionarioEdit
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LBCopiaQuestionario As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''BTNCopiaEEdita control.
     '''</summary>
@@ -336,7 +336,7 @@ Partial Public Class QuestionarioEdit
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents BTNCopiaEEdita As Global.System.Web.UI.WebControls.Button
-
+    
     '''<summary>
     '''LBCancellaRisposte control.
     '''</summary>
@@ -345,7 +345,7 @@ Partial Public Class QuestionarioEdit
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LBCancellaRisposte As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''BTNCancellaRisposte control.
     '''</summary>
@@ -354,7 +354,7 @@ Partial Public Class QuestionarioEdit
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents BTNCancellaRisposte As Global.System.Web.UI.WebControls.Button
-
+    
     '''<summary>
     '''LBreadOnly control.
     '''</summary>
@@ -363,7 +363,7 @@ Partial Public Class QuestionarioEdit
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LBreadOnly As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''BTNreadOnly control.
     '''</summary>
@@ -372,7 +372,7 @@ Partial Public Class QuestionarioEdit
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents BTNreadOnly As Global.System.Web.UI.WebControls.Button
-
+    
     '''<summary>
     '''Master property.
     '''</summary>
@@ -381,7 +381,7 @@ Partial Public Class QuestionarioEdit
     '''</remarks>
     Public Shadows ReadOnly Property Master() As Comunita_OnLine.AjaxPortal
         Get
-            Return CType(MyBase.Master, Comunita_OnLine.AjaxPortal)
+            Return CType(MyBase.Master,Comunita_OnLine.AjaxPortal)
         End Get
     End Property
 End Class

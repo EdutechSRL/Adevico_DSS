@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Font Name="Tahoma" Size="8.25" />
+  <Class Name="Comol.Entity.File.LabelTag">
+    <Position X="1.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>File\LabelTag.vb</FileName>
+      <HashCode>AAAEEAMAEQAhgAIAAiJAEABgBCAgAgBEAAAgAEQGQAA=</HashCode>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="FatherLabel" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="Labels" />
+    </ShowAsCollectionAssociation>
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <AssociationLine Name="FatherLabel" Type="Comol.Entity.File.LabelTag" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="1.438" Y="3.187" />
+        <Point X="1.438" Y="3.643" />
+        <Point X="1.917" Y="3.643" Type="JumpStart" />
+        <Point X="2.083" Y="3.643" Type="JumpEnd" />
+        <Point X="2.562" Y="3.643" />
+        <Point X="2.562" Y="3.187" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.13" Y="0.591" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="Labels" Type="Comol.Entity.File.LabelTag" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="1.5" Y="0.5" />
+        <Point X="1.5" Y="0.115" />
+        <Point X="2.228" Y="0.115" />
+        <Point X="2.228" Y="0.5" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.922" Y="0.112" />
+      </MemberNameLabel>
+    </AssociationLine>
+  </Class>
+  <Class Name="Comol.Entity.File.LearningObjectFile">
+    <Position X="6.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>File\LearningObjectFile.vb</FileName>
+      <HashCode>AAAAAAAAAAAhgAAAgoBiIAYCAAAAAwAEAAAwAAAGEAA=</HashCode>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="ContentType" />
+    </ShowAsAssociation>
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+  </Class>
+  <Class Name="Comol.Entity.File.CoverRepository">
+    <Position X="9.25" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <FileName>File\CoverRepository.vb</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Comol.Entity.File.CommunityRepository">
+    <Position X="9.25" Y="2.25" Width="2" />
+    <TypeIdentifier>
+      <FileName>File\CommunityRepository.vb</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Comol.Entity.File.MimeType">
+    <Position X="10" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>File\Mimetype.vb</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAAAACAQAAAQAAAAAABAA=</HashCode>
+    </TypeIdentifier>
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+  </Class>
+  <Class Name="Comol.Entity.File.Repository">
+    <Position X="4" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>File\Repository.vb</FileName>
+      <HashCode>ABAAACCAEAAAgAAAAAAAAAAAAAAIEAAAEAAAABAGAAA=</HashCode>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="UserFile" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="Labels" />
+    </ShowAsCollectionAssociation>
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+  </Class>
+  <Class Name="Comol.Entity.File.ServiceRepository">
+    <Position X="6.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>File\ServiceRepository.vb</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAABAAAAAAAAQAAAAAAAAQAA=</HashCode>
+    </TypeIdentifier>
+    <InheritanceLine Type="Comol.Entity.File.Repository" ManuallyRouted="true" FixedToPoint="true">
+      <Path>
+        <Point X="4.75" Y="2.25" />
+        <Point X="4.75" Y="1.693" />
+        <Point X="6.5" Y="1.693" />
+      </Path>
+    </InheritanceLine>
+  </Class>
+  <Class Name="Comol.Entity.File.UserRepository">
+    <Position X="7" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>File\UserRepository.vb</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Comol.Entity.DomainObject">
+    <Position X="1.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Generici\DomainObject.vb</FileName>
+      <HashCode>AAABCAhBAADAGAAgACAAAAAABAAAAgAAAABABwAAABU=</HashCode>
+    </TypeIdentifier>
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <Lollipop Position="0.2" />
+  </Class>
+</ClassDiagram>

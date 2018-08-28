@@ -14,15 +14,6 @@ Option Explicit On
 Partial Public Class ShowCurrentUser
 
     '''<summary>
-    '''GRVIscritti control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents GRVIscritti As Global.System.Web.UI.WebControls.GridView
-
-    '''<summary>
     '''Master property.
     '''</summary>
     '''<remarks>

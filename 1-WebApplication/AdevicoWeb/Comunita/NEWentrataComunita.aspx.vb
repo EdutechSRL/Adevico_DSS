@@ -22,293 +22,190 @@ Partial Public Class NEWentrataComunita
 		End Get
 	End Property
 #Region "Proprieta popolamento Filtri"
-	Public Property Selezione_AnnoAccademico() As COL_BusinessLogic_v2.FilterElement Implements IviewEntrataComunita.Selezione_AnnoAccademico
-		Get
-			Try
-				Selezione_AnnoAccademico = New FilterElement(Me.DDLannoAccademico.SelectedValue, Me.DDLannoAccademico.SelectedItem.Text)
-			Catch ex As Exception
-				Selezione_AnnoAccademico = Nothing
-			End Try
-		End Get
-		Set(ByVal value As COL_BusinessLogic_v2.FilterElement)
-			Try
-				Me.DDLannoAccademico.SelectedValue = value.Value
-			Catch ex As Exception
+    Public Property Selezione_Organizzazioneata() As COL_BusinessLogic_v2.FilterElement Implements IviewEntrataComunita.Selezione_Organizzazioneata
+        Get
+            Try
+                Selezione_Organizzazioneata = New FilterElement(Me.DDLorganizzazione.SelectedValue, Me.DDLorganizzazione.SelectedItem.Text)
+            Catch ex As Exception
+                Selezione_Organizzazioneata = Nothing
+            End Try
+        End Get
+        Set(ByVal value As COL_BusinessLogic_v2.FilterElement)
+            Try
+                Me.DDLorganizzazione.SelectedValue = value.Value
+            Catch ex As Exception
 
-			End Try
-		End Set
-	End Property
-	Public Property Selezione_Organizzazioneata() As COL_BusinessLogic_v2.FilterElement Implements IviewEntrataComunita.Selezione_Organizzazioneata
-		Get
-			Try
-				Selezione_AnnoAccademico = New FilterElement(Me.DDLannoAccademico.SelectedValue, Me.DDLannoAccademico.SelectedItem.Text)
-			Catch ex As Exception
-				Selezione_AnnoAccademico = Nothing
-			End Try
-		End Get
-		Set(ByVal value As COL_BusinessLogic_v2.FilterElement)
-			Try
-				Me.DDLorganizzazione.SelectedValue = value.Value
-			Catch ex As Exception
+            End Try
+        End Set
+    End Property
+    Public Property Selezione_Referente() As COL_BusinessLogic_v2.FilterElement Implements IviewEntrataComunita.Selezione_Referente
+        Get
+            Try
+                Selezione_Referente = New FilterElement(Me.DDLresponsabile.SelectedValue, Me.DDLresponsabile.SelectedItem.Text)
+            Catch ex As Exception
+                Selezione_Referente = Nothing
+            End Try
+        End Get
+        Set(ByVal value As COL_BusinessLogic_v2.FilterElement)
+            Try
+                Me.DDLresponsabile.SelectedValue = value.Value
+            Catch ex As Exception
 
-			End Try
-		End Set
-	End Property
-	Public Property Selezione_Periodo() As COL_BusinessLogic_v2.FilterElement Implements IviewEntrataComunita.Selezione_Periodo
-		Get
-			Try
-				Selezione_Periodo = New FilterElement(Me.DDLperiodo.SelectedValue, Me.DDLperiodo.SelectedItem.Text)
-			Catch ex As Exception
-				Selezione_Periodo = Nothing
-			End Try
-		End Get
-		Set(ByVal value As COL_BusinessLogic_v2.FilterElement)
-			Try
-				Me.DDLperiodo.SelectedValue = value.Value
-			Catch ex As Exception
+            End Try
+        End Set
+    End Property
+    Public Property Selezione_Status() As COL_BusinessLogic_v2.FilterElement Implements IviewEntrataComunita.Selezione_Status
+        Get
+            Try
+                Selezione_Status = New FilterElement(Me.RBLstatoComunita.SelectedValue, Me.RBLstatoComunita.SelectedItem.Text)
+            Catch ex As Exception
+                Selezione_Status = Nothing
+            End Try
+        End Get
+        Set(ByVal value As COL_BusinessLogic_v2.FilterElement)
+            Try
+                Me.RBLstatoComunita.SelectedValue = value.Value
+            Catch ex As Exception
 
-			End Try
-		End Set
-	End Property
-	Public Property Selezione_Referente() As COL_BusinessLogic_v2.FilterElement Implements IviewEntrataComunita.Selezione_Referente
-		Get
-			Try
-				Selezione_Referente = New FilterElement(Me.DDLresponsabile.SelectedValue, Me.DDLresponsabile.SelectedItem.Text)
-			Catch ex As Exception
-				Selezione_Referente = Nothing
-			End Try
-		End Get
-		Set(ByVal value As COL_BusinessLogic_v2.FilterElement)
-			Try
-				Me.DDLresponsabile.SelectedValue = value.Value
-			Catch ex As Exception
+            End Try
+        End Set
+    End Property
+    Public Property Selezione_TipoComunita() As COL_BusinessLogic_v2.FilterElement Implements IviewEntrataComunita.Selezione_TipoComunita
+        Get
+            Try
+                Selezione_TipoComunita = New FilterElement(Me.DDLTipo.SelectedValue, Me.DDLTipo.SelectedItem.Text)
+            Catch ex As Exception
+                Selezione_TipoComunita = Nothing
+            End Try
+        End Get
+        Set(ByVal value As COL_BusinessLogic_v2.FilterElement)
+            Try
+                Me.DDLTipo.SelectedValue = value.Value
+            Catch ex As Exception
 
-			End Try
-		End Set
-	End Property
-	Public Property Selezione_Status() As COL_BusinessLogic_v2.FilterElement Implements IviewEntrataComunita.Selezione_Status
-		Get
-			Try
-				Selezione_Status = New FilterElement(Me.RBLstatoComunita.SelectedValue, Me.RBLstatoComunita.SelectedItem.Text)
-			Catch ex As Exception
-				Selezione_Status = Nothing
-			End Try
-		End Get
-		Set(ByVal value As COL_BusinessLogic_v2.FilterElement)
-			Try
-				Me.RBLstatoComunita.SelectedValue = value.Value
-			Catch ex As Exception
+            End Try
+        End Set
+    End Property
 
-			End Try
-		End Set
-	End Property
-	Public Property Selezione_TipoCorsodiLurea() As COL_BusinessLogic_v2.FilterElement Implements IviewEntrataComunita.Selezione_TipoCorsodiLurea
-		Get
-			Try
-				Selezione_TipoCorsodiLurea = New FilterElement(Me.DDLtipoCorsoDiStudi.SelectedValue, Me.DDLtipoCorsoDiStudi.SelectedItem.Text)
-			Catch ex As Exception
-				Selezione_TipoCorsodiLurea = Nothing
-			End Try
-		End Get
-		Set(ByVal value As COL_BusinessLogic_v2.FilterElement)
-			Try
-				Me.DDLtipoCorsoDiStudi.SelectedValue = value.Value
-			Catch ex As Exception
 
-			End Try
-		End Set
-	End Property
-	Public Property Selezione_TipoComunita() As COL_BusinessLogic_v2.FilterElement Implements IviewEntrataComunita.Selezione_TipoComunita
-		Get
-			Try
-				Selezione_TipoComunita = New FilterElement(Me.DDLTipo.SelectedValue, Me.DDLTipo.SelectedItem.Text)
-			Catch ex As Exception
-				Selezione_TipoComunita = Nothing
-			End Try
-		End Get
-		Set(ByVal value As COL_BusinessLogic_v2.FilterElement)
-			Try
-				Me.DDLTipo.SelectedValue = value.Value
-			Catch ex As Exception
+    Public WriteOnly Property ElencoOrganizzazioni() As System.Collections.Generic.List(Of COL_BusinessLogic_v2.IscrizioneComunita) Implements IviewEntrataComunita.ElencoOrganizzazioni
+        Set(ByVal value As System.Collections.Generic.List(Of COL_BusinessLogic_v2.IscrizioneComunita))
+            Me.DDLorganizzazione.DataSource = value
+            Me.DDLorganizzazione.DataTextField = "OrganizzazioneNome"
+            Me.DDLorganizzazione.DataValueField = "OrganizzazioneId"
+            Me.DDLorganizzazione.DataBind()
+        End Set
+    End Property
 
-			End Try
-		End Set
-	End Property
+    Public WriteOnly Property ElencoResponsabili() As System.Collections.Generic.List(Of COL_BusinessLogic_v2.CL_persona.COL_Persona) Implements IviewEntrataComunita.ElencoResponsabili
+        Set(ByVal value As System.Collections.Generic.List(Of COL_BusinessLogic_v2.CL_persona.COL_Persona))
+            Me.DDLresponsabile.DataSource = value
+            Me.DDLresponsabile.DataTextField = "Anagrafica"
+            Me.DDLresponsabile.DataValueField = "Id"
+            Me.DDLresponsabile.DataBind()
+        End Set
+    End Property
+    Public WriteOnly Property ElencoStatus() As System.Collections.Generic.List(Of COL_BusinessLogic_v2.FilterElement) Implements IviewEntrataComunita.ElencoStatus
+        Set(ByVal value As System.Collections.Generic.List(Of COL_BusinessLogic_v2.FilterElement))
+            Me.RBLstatoComunita.DataSource = value
+            Me.RBLstatoComunita.DataTextField = "Text"
+            Me.RBLstatoComunita.DataValueField = "Value"
+            Me.RBLstatoComunita.DataBind()
+        End Set
+    End Property
 
-	Public WriteOnly Property ElencoAnniAccademici() As System.Collections.Generic.List(Of COL_BusinessLogic_v2.Comunita.AnnoAccademico) Implements IviewEntrataComunita.ElencoAnniAccademici
-		Set(ByVal value As System.Collections.Generic.List(Of COL_BusinessLogic_v2.Comunita.AnnoAccademico))
-			Me.DDLannoAccademico.DataSource = value
-			Me.DDLannoAccademico.DataTextField = "Anno"
-			Me.DDLannoAccademico.DataValueField = "AnnoAccademico"
-			Me.DDLannoAccademico.DataBind()
-		End Set
-	End Property
-	Public WriteOnly Property ElencoOrganizzazioni() As System.Collections.Generic.List(Of COL_BusinessLogic_v2.IscrizioneComunita) Implements IviewEntrataComunita.ElencoOrganizzazioni
-		Set(ByVal value As System.Collections.Generic.List(Of COL_BusinessLogic_v2.IscrizioneComunita))
-			Me.DDLorganizzazione.DataSource = value
-			Me.DDLorganizzazione.DataTextField = "OrganizzazioneNome"
-			Me.DDLorganizzazione.DataValueField = "OrganizzazioneId"
-			Me.DDLorganizzazione.DataBind()
-		End Set
-	End Property
-	Public WriteOnly Property ElencoPeriodi() As System.Collections.Generic.List(Of COL_BusinessLogic_v2.Comunita.COL_Periodo) Implements IviewEntrataComunita.ElencoPeriodi
-		Set(ByVal value As System.Collections.Generic.List(Of COL_BusinessLogic_v2.Comunita.COL_Periodo))
-			Me.DDLperiodo.DataSource = value
-			Me.DDLperiodo.DataTextField = "Descrizione"
-			Me.DDLperiodo.DataValueField = "Id"
-			Me.DDLperiodo.DataBind()
-		End Set
-	End Property
-	Public WriteOnly Property ElencoResponsabili() As System.Collections.Generic.List(Of COL_BusinessLogic_v2.CL_persona.COL_Persona) Implements IviewEntrataComunita.ElencoResponsabili
-		Set(ByVal value As System.Collections.Generic.List(Of COL_BusinessLogic_v2.CL_persona.COL_Persona))
-			Me.DDLresponsabile.DataSource = value
-			Me.DDLresponsabile.DataTextField = "Anagrafica"
-			Me.DDLresponsabile.DataValueField = "Id"
-			Me.DDLresponsabile.DataBind()
-		End Set
-	End Property
-	Public WriteOnly Property ElencoStatus() As System.Collections.Generic.List(Of COL_BusinessLogic_v2.FilterElement) Implements IviewEntrataComunita.ElencoStatus
-		Set(ByVal value As System.Collections.Generic.List(Of COL_BusinessLogic_v2.FilterElement))
-			Me.RBLstatoComunita.DataSource = value
-			Me.RBLstatoComunita.DataTextField = "Text"
-			Me.RBLstatoComunita.DataValueField = "Value"
-			Me.RBLstatoComunita.DataBind()
-		End Set
-	End Property
-	Public WriteOnly Property ElencoTipoCorsiDiLaurea() As System.Collections.Generic.List(Of COL_BusinessLogic_v2.Comunita.COL_Tipo_CorsoDiStudi) Implements IviewEntrataComunita.ElencoTipoCorsiDiLaurea
-		Set(ByVal value As System.Collections.Generic.List(Of COL_BusinessLogic_v2.Comunita.COL_Tipo_CorsoDiStudi))
-			Me.DDLtipoCorsoDiStudi.DataSource = value
-			Me.DDLtipoCorsoDiStudi.DataTextField = "Nome"
-			Me.DDLtipoCorsoDiStudi.DataValueField = "Id"
-			Me.DDLtipoCorsoDiStudi.DataBind()
-		End Set
-	End Property
-	Public WriteOnly Property ElencoTipoComunita() As System.Collections.Generic.List(Of COL_BusinessLogic_v2.Comunita.COL_Tipo_Comunita) Implements IviewEntrataComunita.ElencoTipoComunita
-		Set(ByVal value As System.Collections.Generic.List(Of COL_BusinessLogic_v2.Comunita.COL_Tipo_Comunita))
-			Me.DDLTipo.DataSource = value
-			Me.DDLTipo.DataTextField = "Descrizione"
-			Me.DDLTipo.DataValueField = "Id"
-			Me.DDLTipo.DataBind()
-		End Set
-	End Property
+    Public WriteOnly Property ElencoTipoComunita() As System.Collections.Generic.List(Of COL_BusinessLogic_v2.Comunita.COL_Tipo_Comunita) Implements IviewEntrataComunita.ElencoTipoComunita
+        Set(ByVal value As System.Collections.Generic.List(Of COL_BusinessLogic_v2.Comunita.COL_Tipo_Comunita))
+            Me.DDLTipo.DataSource = value
+            Me.DDLTipo.DataTextField = "Descrizione"
+            Me.DDLTipo.DataValueField = "Id"
+            Me.DDLTipo.DataBind()
+        End Set
+    End Property
 #End Region
 
 #Region "Proprieta impostazioni filtro"
-	Public Property AutomaticFilterUpdate() As Boolean Implements IviewEntrataComunita.AutomaticFilterUpdate
-		Get
-			AutomaticFilterUpdate = Me.CBXautoUpdate.Checked
-		End Get
-		Set(ByVal value As Boolean)
-			Me.CBXautoUpdate.Checked = value
-		End Set
-	End Property
+    Public Property AutomaticFilterUpdate() As Boolean Implements IviewEntrataComunita.AutomaticFilterUpdate
+        Get
+            AutomaticFilterUpdate = Me.CBXautoUpdate.Checked
+        End Get
+        Set(ByVal value As Boolean)
+            Me.CBXautoUpdate.Checked = value
+        End Set
+    End Property
 
-	Public Property FiltroTipoComunita() As COL_BusinessLogic_v2.FilterElement Implements IviewEntrataComunita.FiltroTipoComunita
-		Get
-			Try
-				FiltroTipoComunita = DirectCast(Me.ViewState("FiltroTipoComunita"), FilterElement)
-			Catch ex As Exception
-				FiltroTipoComunita = Nothing
-			End Try
-		End Get
-		Set(ByVal value As COL_BusinessLogic_v2.FilterElement)
-			Me.ViewState("FiltroTipoComunita") = value
-		End Set
-	End Property
-	Public Property FiltroAnnoAccademico() As COL_BusinessLogic_v2.FilterElement Implements IviewEntrataComunita.FiltroAnnoAccademico
-		Get
-			Try
-				FiltroAnnoAccademico = DirectCast(Me.ViewState("FiltroAnnoAccademico"), FilterElement)
-			Catch ex As Exception
-				FiltroAnnoAccademico = Nothing
-			End Try
-		End Get
-		Set(ByVal value As COL_BusinessLogic_v2.FilterElement)
-			Me.ViewState("FiltroAnnoAccademico") = value
-		End Set
-	End Property
-	Public Property FiltroLettera() As COL_BusinessLogic_v2.Main.FiltroComunita Implements IviewEntrataComunita.FiltroLettera
-		Get
-			Try
-				FiltroLettera = DirectCast(Me.ViewState("FiltroLettera"), FiltroComunita)
-			Catch ex As Exception
-				FiltroLettera = Nothing
-			End Try
-		End Get
-		Set(ByVal value As COL_BusinessLogic_v2.FiltroComunita)
-			Me.ViewState("FiltroLettera") = value
-		End Set
-	End Property
-	Public Property FiltroOrganizzazione() As COL_BusinessLogic_v2.FilterElement Implements IviewEntrataComunita.FiltroOrganizzazione
-		Get
-			Try
-				FiltroOrganizzazione = DirectCast(Me.ViewState("FiltroOrganizzazione"), FilterElement)
-			Catch ex As Exception
-				FiltroOrganizzazione = Nothing
-			End Try
-		End Get
-		Set(ByVal value As FilterElement)
-			Me.ViewState("FiltroOrganizzazione") = value
-		End Set
-	End Property
-	Public Property FiltroPeriodo() As COL_BusinessLogic_v2.FilterElement Implements IviewEntrataComunita.FiltroPeriodo
-		Get
-			Try
-				FiltroPeriodo = DirectCast(Me.ViewState("FiltroPeriodo"), FilterElement)
-			Catch ex As Exception
-				FiltroPeriodo = Nothing
-			End Try
-		End Get
-		Set(ByVal value As FilterElement)
-			Me.ViewState("FiltroPeriodo") = value
-		End Set
-	End Property
-	Public ReadOnly Property FiltroQuickSearch() As COL_BusinessLogic_v2.QuickSearchElement Implements IviewEntrataComunita.FiltroQuickSearch
-		Get
-			FiltroQuickSearch = New QuickSearchElement(Me.DDLTipoRicerca.SelectedItem.Text, Me.DDLTipoRicerca.SelectedValue, Me.TXBValore.Text)
-		End Get
-	End Property
-	Public Property FiltroReferente() As COL_BusinessLogic_v2.FilterElement Implements IviewEntrataComunita.FiltroReferente
-		Get
-			Try
-				FiltroReferente = DirectCast(Me.ViewState("FiltroReferente"), FilterElement)
-			Catch ex As Exception
-				FiltroReferente = Nothing
-			End Try
-		End Get
-		Set(ByVal value As FilterElement)
-			Me.ViewState("FiltroReferente") = value
-		End Set
-	End Property
-	Public Property FiltroStatus() As COL_BusinessLogic_v2.FilterElement Implements IviewEntrataComunita.FiltroStatus
-		Get
-			Try
-				FiltroStatus = DirectCast(Me.ViewState("FiltroStatus"), FilterElement)
-			Catch ex As Exception
-				FiltroStatus = Nothing
-			End Try
-		End Get
-		Set(ByVal value As FilterElement)
-			Me.ViewState("FiltroStatus") = value
-		End Set
-	End Property
-	Public Property FiltroTipoCorsodiLurea() As COL_BusinessLogic_v2.FilterElement Implements IviewEntrataComunita.FiltroTipoCorsodiLurea
-		Get
-			Try
-				FiltroTipoCorsodiLurea = DirectCast(Me.ViewState("FiltroTipoCorsodiLurea"), FilterElement)
-			Catch ex As Exception
-				FiltroTipoCorsodiLurea = Nothing
-			End Try
-		End Get
-		Set(ByVal value As FilterElement)
-			Me.ViewState("FiltroTipoCorsodiLurea") = value
-		End Set
-	End Property
+    Public Property FiltroTipoComunita() As COL_BusinessLogic_v2.FilterElement Implements IviewEntrataComunita.FiltroTipoComunita
+        Get
+            Try
+                FiltroTipoComunita = DirectCast(Me.ViewState("FiltroTipoComunita"), FilterElement)
+            Catch ex As Exception
+                FiltroTipoComunita = Nothing
+            End Try
+        End Get
+        Set(ByVal value As COL_BusinessLogic_v2.FilterElement)
+            Me.ViewState("FiltroTipoComunita") = value
+        End Set
+    End Property
+    Public Property FiltroLettera() As COL_BusinessLogic_v2.Main.FiltroComunita Implements IviewEntrataComunita.FiltroLettera
+        Get
+            Try
+                FiltroLettera = DirectCast(Me.ViewState("FiltroLettera"), FiltroComunita)
+            Catch ex As Exception
+                FiltroLettera = Nothing
+            End Try
+        End Get
+        Set(ByVal value As COL_BusinessLogic_v2.Main.FiltroComunita)
+            Me.ViewState("FiltroLettera") = value
+        End Set
+    End Property
+    Public Property FiltroOrganizzazione() As COL_BusinessLogic_v2.FilterElement Implements IviewEntrataComunita.FiltroOrganizzazione
+        Get
+            Try
+                FiltroOrganizzazione = DirectCast(Me.ViewState("FiltroOrganizzazione"), FilterElement)
+            Catch ex As Exception
+                FiltroOrganizzazione = Nothing
+            End Try
+        End Get
+        Set(ByVal value As FilterElement)
+            Me.ViewState("FiltroOrganizzazione") = value
+        End Set
+    End Property
+
+    Public ReadOnly Property FiltroQuickSearch() As COL_BusinessLogic_v2.QuickSearchElement Implements IviewEntrataComunita.FiltroQuickSearch
+        Get
+            FiltroQuickSearch = New QuickSearchElement(Me.DDLTipoRicerca.SelectedItem.Text, Me.DDLTipoRicerca.SelectedValue, Me.TXBValore.Text)
+        End Get
+    End Property
+    Public Property FiltroReferente() As COL_BusinessLogic_v2.FilterElement Implements IviewEntrataComunita.FiltroReferente
+        Get
+            Try
+                FiltroReferente = DirectCast(Me.ViewState("FiltroReferente"), FilterElement)
+            Catch ex As Exception
+                FiltroReferente = Nothing
+            End Try
+        End Get
+        Set(ByVal value As FilterElement)
+            Me.ViewState("FiltroReferente") = value
+        End Set
+    End Property
+    Public Property FiltroStatus() As COL_BusinessLogic_v2.FilterElement Implements IviewEntrataComunita.FiltroStatus
+        Get
+            Try
+                FiltroStatus = DirectCast(Me.ViewState("FiltroStatus"), FilterElement)
+            Catch ex As Exception
+                FiltroStatus = Nothing
+            End Try
+        End Get
+        Set(ByVal value As FilterElement)
+            Me.ViewState("FiltroStatus") = value
+        End Set
+    End Property
+
 #End Region
 
 
 
-	Public Property Ordinamento() As Main.FiltroOrdinamento Implements IviewEntrataComunita.Ordinamento
+    Public Property Ordinamento() As Main.FiltroOrdinamento Implements IviewEntrataComunita.Ordinamento
 		Get
 			Try
 				Ordinamento = DirectCast(Me.ViewState("Ordinamento"), Main.FiltroOrdinamento)

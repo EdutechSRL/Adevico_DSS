@@ -294,7 +294,7 @@ Partial Public Class RisposteLibereList
                     rispostaDom.valutazione = oRisposta.valutazione
 
                     oQuestTemp.rispostaQuest.oStatistica = oGestioneRisposte.calcoloPunteggioByQuestionario(oQuestTemp, oQuestTemp.rispostaQuest.oStatistica, oQuestTemp.scalaValutazione)
-                    DALRisposte.RispostaQuestionario_Update(oQuestTemp.rispostaQuest, False)
+                    DALRisposte.RispostaQuestionario_Update(True, oQuestTemp.rispostaQuest, False)
                 End If
                 LBConferma.Visible = True
             Next

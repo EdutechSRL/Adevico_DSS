@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="COL_Questionario" namespace="COL_Questionario">
+	<class name="Question" table="QS_DOMANDA" lazy="false">
+    <id name="Id" column="DMND_Id" type="Int32" unsaved-value="0">
+      <generator class="native"/>
+    </id>
+    <property name="Layout" type="String" column="DMND_Layout" />
+    <property name="CreatedBy" type="Int32" column="DMND_PRSN_Creator_Id"  />
+    <property name="CreatedOn" type="DateTime" column="DMND_dataCreazione"  />
+    <property name="ModifiedBy" type="Int32" column="DMND_PRSN_Editor_Id"  />
+    <property name="ModifiedOn" type="DateTime" column="DMND_dataModifica"  />
+    <!--<property name="isFromLibrary" type="Boolean" column="DMND_isFromLibreria" ignore=""  />-->
+    <property name="IdType" type="Int32" column="DMND_Tipo"  />
+    <property name="Count" type="Int32" column="DMND_Count"  />
+  </class>
+</hibernate-mapping>

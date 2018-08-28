@@ -68,24 +68,6 @@ Partial Public Class UC_SearchUserByCommunities
     Protected WithEvents TXBsurname As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''LBregistrationCode control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents LBregistrationCode As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''TXBregistrationCode control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents TXBregistrationCode As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
     '''LBmail control.
     '''</summary>
     '''<remarks>

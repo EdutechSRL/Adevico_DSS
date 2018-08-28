@@ -191,6 +191,9 @@ namespace lm.Comol.Modules.CallForPapers.Advanced.Presentation
         /// <param name="EvLockBool">Indica se considerare i criteri booleani ai fini del superamento</param>
         /// <param name="UpdateView">Se TRUE la pagina sarà aggiornata in automatico. A FALSE se sono necessarie altre operazioni prima del refresh.</param>
         /// <param name="StepEvType">Tipo di aggregazione tra le commissioni</param>
+        /// <param name="MaxValue"></param>
+        /// <param name="TemplateId">Id Template per esportazione documento commissione</param>
+        /// <param name="TemplateVersionId">Id Versione Template (se -1, ultima versione)</param>
         /// <param name="criterions">Elenco criteri di valutazione</param>
         public void SaveCommitee(
             string Name, 
@@ -203,6 +206,8 @@ namespace lm.Comol.Modules.CallForPapers.Advanced.Presentation
             bool UpdateView,
             EvalType StepEvType,
             Double MaxValue,
+            Int64 TemplateId,
+            Int64 TemplateVersionId,
             List<dtoCriterion> criterions = null)
         {
             bool success = CallService.CommissionUpdate(
@@ -215,7 +220,9 @@ namespace lm.Comol.Modules.CallForPapers.Advanced.Presentation
                 EvMinVal,
                 EvLockBool,
                 StepEvType,
-                MaxValue,
+                MaxValue, 
+                TemplateId,
+                TemplateVersionId,
                 criterions);
 
             if (success && UpdateView)

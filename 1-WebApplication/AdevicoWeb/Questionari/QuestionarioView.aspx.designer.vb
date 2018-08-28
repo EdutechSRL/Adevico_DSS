@@ -12,7 +12,7 @@ Option Explicit On
 
 
 Partial Public Class QuestionarioView
-
+    
     '''<summary>
     '''MLVquestionari control.
     '''</summary>
@@ -21,7 +21,7 @@ Partial Public Class QuestionarioView
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents MLVquestionari As Global.System.Web.UI.WebControls.MultiView
-
+    
     '''<summary>
     '''VIWdati control.
     '''</summary>
@@ -30,7 +30,7 @@ Partial Public Class QuestionarioView
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents VIWdati As Global.System.Web.UI.WebControls.View
-
+    
     '''<summary>
     '''PNLmenu control.
     '''</summary>
@@ -39,7 +39,7 @@ Partial Public Class QuestionarioView
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents PNLmenu As Global.System.Web.UI.WebControls.Panel
-
+    
     '''<summary>
     '''LNBCartellaPrincipale control.
     '''</summary>
@@ -48,7 +48,7 @@ Partial Public Class QuestionarioView
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LNBCartellaPrincipale As Global.System.Web.UI.WebControls.LinkButton
-
+    
     '''<summary>
     '''LNBGestioneDomande control.
     '''</summary>
@@ -57,7 +57,7 @@ Partial Public Class QuestionarioView
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LNBGestioneDomande As Global.System.Web.UI.WebControls.LinkButton
-
+    
     '''<summary>
     '''LNBCestino control.
     '''</summary>
@@ -66,7 +66,7 @@ Partial Public Class QuestionarioView
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LNBCestino As Global.System.Web.UI.WebControls.LinkButton
-
+    
     '''<summary>
     '''LNBImportaModello control.
     '''</summary>
@@ -75,7 +75,7 @@ Partial Public Class QuestionarioView
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LNBImportaModello As Global.System.Web.UI.WebControls.LinkButton
-
+    
     '''<summary>
     '''PNLElenco control.
     '''</summary>
@@ -84,7 +84,7 @@ Partial Public Class QuestionarioView
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents PNLElenco As Global.System.Web.UI.WebControls.Panel
-
+    
     '''<summary>
     '''LBTitolo control.
     '''</summary>
@@ -93,7 +93,7 @@ Partial Public Class QuestionarioView
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LBTitolo As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''DLPagine control.
     '''</summary>
@@ -102,7 +102,7 @@ Partial Public Class QuestionarioView
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents DLPagine As Global.System.Web.UI.WebControls.DataList
-
+    
     '''<summary>
     '''LBpagina control.
     '''</summary>
@@ -111,16 +111,16 @@ Partial Public Class QuestionarioView
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LBpagina As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
-    '''IMBprima control.
+    '''LkbBack control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents IMBprima As Global.System.Web.UI.WebControls.ImageButton
-
+    Protected WithEvents LkbBack As Global.System.Web.UI.WebControls.LinkButton
+    
     '''<summary>
     '''PHnumeroPagina control.
     '''</summary>
@@ -129,16 +129,16 @@ Partial Public Class QuestionarioView
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents PHnumeroPagina As Global.System.Web.UI.WebControls.PlaceHolder
-
+    
     '''<summary>
-    '''IMBdopo control.
+    '''LkbNext control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents IMBdopo As Global.System.Web.UI.WebControls.ImageButton
-
+    Protected WithEvents LkbNext As Global.System.Web.UI.WebControls.LinkButton
+    
     '''<summary>
     '''VIWmessaggi control.
     '''</summary>
@@ -147,7 +147,7 @@ Partial Public Class QuestionarioView
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents VIWmessaggi As Global.System.Web.UI.WebControls.View
-
+    
     '''<summary>
     '''LBerrore control.
     '''</summary>
@@ -156,7 +156,7 @@ Partial Public Class QuestionarioView
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LBerrore As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''Master property.
     '''</summary>
@@ -165,7 +165,7 @@ Partial Public Class QuestionarioView
     '''</remarks>
     Public Shadows ReadOnly Property Master() As Comunita_OnLine.AjaxPortal
         Get
-            Return CType(MyBase.Master, Comunita_OnLine.AjaxPortal)
+            Return CType(MyBase.Master,Comunita_OnLine.AjaxPortal)
         End Get
     End Property
 End Class

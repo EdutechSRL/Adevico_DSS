@@ -66,9 +66,57 @@
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="2_DynamicLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\9-AdevicoMIT_Library\lm.Comol.MitLibrary\bin\Debug\2_DynamicLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="COL_BusinessLogic_v2.0, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\9-AdevicoMIT_Library\lm.Comol.MitLibrary\bin\Debug\COL_BusinessLogic_v2.0.dll</HintPath>
+    </Reference>
+    <Reference Include="COL_Questionario, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\9-AdevicoMIT_Library\lm.Comol.MitLibrary\bin\Debug\COL_Questionario.dll</HintPath>
+    </Reference>
+    <Reference Include="COL_Utility, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\9-AdevicoMIT_Library\lm.Comol.MitLibrary\bin\Debug\COL_Utility.dll</HintPath>
+    </Reference>
+    <Reference Include="COL_Wiki, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\9-AdevicoMIT_Library\lm.Comol.MitLibrary\bin\Debug\COL_Wiki.dll</HintPath>
+    </Reference>
     <Reference Include="EeekSoft.Web.PopupWin, Version=1.2.263.17891, Culture=neutral">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\Library\lm.Comol.Core.CommonLib\Utility\EeekSoft.Web.PopupWin.dll</HintPath>
+    </Reference>
+    <Reference Include="lm.ActionDataContract, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\9-AdevicoMIT_Library\lm.Comol.MitLibrary\bin\Debug\lm.ActionDataContract.dll</HintPath>
+    </Reference>
+    <Reference Include="lm.Comol.Modules.Base, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\9-AdevicoMIT_Library\lm.Comol.MitLibrary\bin\Debug\lm.Comol.Modules.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="lm.Comol.Modules.EduPath, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\9-AdevicoMIT_Library\lm.Comol.MitLibrary\bin\Debug\lm.Comol.Modules.EduPath.dll</HintPath>
+    </Reference>
+    <Reference Include="lm.Comol.Modules.Standard, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\9-AdevicoMIT_Library\lm.Comol.MitLibrary\bin\Debug\lm.Comol.Modules.Standard.dll</HintPath>
+    </Reference>
+    <Reference Include="lm.Comol.UI.Presentation, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\9-AdevicoMIT_Library\lm.Comol.MitLibrary\bin\Debug\lm.Comol.UI.Presentation.dll</HintPath>
+    </Reference>
+    <Reference Include="lm.Modules.NotificationSystem, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\9-AdevicoMIT_Library\lm.Comol.MitLibrary\bin\Debug\lm.Modules.NotificationSystem.dll</HintPath>
+    </Reference>
+    <Reference Include="lm.Notification.DataContract, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\9-AdevicoMIT_Library\lm.Comol.MitLibrary\bin\Debug\lm.Notification.DataContract.dll</HintPath>
     </Reference>
     <Reference Include="RadEditor.Net2, Version=7.0.0.0, Culture=neutral, PublicKeyToken=852c9eb6525c1b53, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -387,45 +435,13 @@
     <None Include="Service References\WS_Actions\UserActions.wsdl" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\4-Services\CommunityNews\Module\lm.Modules.NotificationSystem\lm.Modules.NotificationSystem.vbproj">
-      <Project>{fd38df95-3bf6-4f06-8ca3-2e93862e1f00}</Project>
-      <Name>lm.Modules.NotificationSystem</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\4-Services\CommunityNews\Service\lm.Notification.DataContract\lm.Notification.DataContract.csproj">
-      <Project>{a1a17311-6b8f-4670-95ec-4e87a9e71353}</Project>
-      <Name>lm.Notification.DataContract</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\2-Core\lm.Comol.Core.File\lm.Comol.Core.File.csproj">
       <Project>{FFA417B0-A44B-441A-921B-FEB57C5FD7DA}</Project>
       <Name>lm.Comol.Core.File</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\3-Modules\lm.Comol.Modules.EduPath\lm.Comol.Modules.EduPath.csproj">
-      <Project>{72BC03AF-85E6-4D60-B529-5B0D303D6632}</Project>
-      <Name>lm.Comol.Modules.EduPath</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\2_DynamicLibrary\2_DynamicLibrary.vbproj">
-      <Project>{CA4ACDE1-2EE9-4882-A406-1191ACE2AA94}</Project>
-      <Name>2_DynamicLibrary</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\COL_BusinessLogic\COL_BusinessLogic_v2.0.vbproj">
-      <Project>{51F57FB8-1245-4EA5-BF34-D6412C283AFB}</Project>
-      <Name>COL_BusinessLogic_v2.0</Name>
-    </ProjectReference>
     <ProjectReference Include="..\COL_Entity\0_COL_Entity.vbproj">
       <Project>{D1EFB82A-DE0C-43D2-8DC7-AD808B32C2A2}</Project>
       <Name>0_COL_Entity</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\COL_Questionario\COL_Questionario.vbproj">
-      <Project>{10EEACDF-85F8-4AA9-A965-EE1B2FD233D4}</Project>
-      <Name>COL_Questionario</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\COL_Utility\1_COL_UtilityLibrary.vbproj">
-      <Project>{8D15EFA2-EC97-462D-813F-11CEDB939F25}</Project>
-      <Name>1_COL_UtilityLibrary</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\COL_Wiki\COL_Wiki.vbproj">
-      <Project>{3CB7809A-EFAB-4785-A18B-C6E1A6685134}</Project>
-      <Name>COL_Wiki</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\2-Core\lm.Comol.Core.DomainModel\lm.Comol.Core.DomainModel.csproj">
       <Project>{9B7DA676-5030-47CD-8B2B-A30A09C8D0B5}</Project>
@@ -438,22 +454,6 @@
     <ProjectReference Include="..\..\2-Core\lm.Comol.Core.MailCommons\lm.Comol.Core.MailCommons.csproj">
       <Project>{428243cb-28cd-4d81-8099-74d1448b5e1d}</Project>
       <Name>lm.Comol.Core.MailCommons</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\2-Core\lm.Comol.UI.Presentation\lm.Comol.UI.Presentation.vbproj">
-      <Project>{3D1DE719-D489-43DD-93D9-00B9B650FB63}</Project>
-      <Name>lm.Comol.UI.Presentation</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\4-Services\Actions\lm.Comol.Modules.ActionDataContract\lm.ActionDataContract.vbproj">
-      <Project>{679008CC-574E-46A6-BA1D-707BA8EE5CF4}</Project>
-      <Name>lm.ActionDataContract</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\3-Modules\lm.Comol.Modules.Base\lm.Comol.Modules.Base.vbproj">
-      <Project>{7F38A696-661E-4BDF-9FAD-38E51B3E7E96}</Project>
-      <Name>lm.Comol.Modules.Base</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\3-Modules\lm.Comol.Modules.Standard\lm.Comol.Modules.Standard.csproj">
-      <Project>{D253BF62-A7F2-48D5-AD05-12AC8EA66279}</Project>
-      <Name>lm.Comol.Modules.Standard</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

@@ -1,104 +1,142 @@
-﻿.page {
-	
+﻿body .numeriPagina a.prev,
+body .numeriPagina a.next {
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    color: #333;
+    background-color: #fff;
+    border-color: #ccc;
+    width: auto;
+}
+
+.numeriPagina span:first-child {
+    display: none;
+}
+
+html body .numeriPagina a,
+html body .numeriPagina input {
+    font-size: 18px;
+    display: inline-block;
+    width: 26px;
+    vertical-align: middle;
+}
+
+.page {
 }
 
 .upper {
-	position: fixed;
-	text-align: center;
-	display: block;
-	float: left;
-	padding-top: 10px;
-	top: 0;
-	left: 0px;
-	clear: both;
-	width: 99%;
-	z-index: 2;
-	margin-bottom: 1em;
-	background-color: transparent;
+    position: fixed;
+    text-align: center;
+    display: block;
+    float: left;
+    padding-top: 10px;
+    top: 0;
+    left: 0px;
+    clear: both;
+    width: 99%;
+    z-index: 2;
+    margin-bottom: 1em;
+    background-color: transparent;
 }
 
 .elenco {
-	position: relative;
+    position: relative;
 }
 
 .blu {
-	background-color: Blue;
-	color: White;
-	font-size: medium;
-	font-style: italic;
+    background-color: Blue;
+    color: White;
+    font-size: medium;
+    font-style: italic;
 }
 
 .confermaVerde {
-	font-weight: bold;
-	font-size: 12px;
-	color: green;
+    font-weight: bold;
+    font-size: 12px;
+    color: green;
 }
 
 .titolo {
-	font-size: larger;
-	font-weight: bolder;
-	text-align: center;
+    font-size: larger;
+    font-weight: bolder;
+    text-align: center;
 }
 
 .panelAdmin {
-	width: 98.2%;
-	padding: 7px;
+    width: 98.2%;
+    padding: 7px;
 }
 
 * html .panelAdmin {
-	width: 100%;
+    width: 100%;
 }
 
 .bodyCompile {
-	margin-left: 10px;
-	margin-right: 10px;
-	padding: 0px;
-	border: 0px;
-	font-family: Verdana;
-	font-size: 11px;
-	color: #333;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 0px;
+    border: 0px;
+    font-family: Verdana;
+    font-size: 11px;
+    color: #333;
 }
 
 .bodyUICompile {
-	background: none;
-	margin-left: 10px;
-	margin-right: 10px;
-	padding: 0px;
-	border: 0px;
-	font-family: Verdana;
-	font-size: 11px;
-	color: #333;
+    background: none;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 0px;
+    border: 0px;
+    font-family: Verdana;
+    font-size: 11px;
+    color: #333;
 }
 
 .EffettoPagina {
-	top: 0;
-	left: 0;
-	width: 99%;
-	padding: 5px;
-	text-align: center;
-	margin-bottom: 5px;
-	position: fixed;
-	background-color: White;
+    top: 0;
+    left: 0;
+    width: 99%;
+    padding: 5px;
+    text-align: center;
+    margin-bottom: 5px;
+    position: fixed;
+    background-color: White;
 }
 
 .TestoDomanda {
-	font-weight: bold;
-	font-size: 12px;
-	margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 12px;
+    margin-bottom: 10px;
 }
 
 .TestoRispostaCorretta {
-	font-weight: bold;
-	color: green;
-	padding-left: 20px;
-	background-position: left center;
-	background-repeat: no-repeat;
-	background-image: url("../Questionari/img/verde.gif");
-	display: inline-block;
+    font-weight: bold;
+    color: green;
+    padding-left: 20px;
+    background-position: left center;
+    background-repeat: no-repeat;
+    background-image: url("../Questionari/img/verde.gif");
+    display: inline-block;
 }
 
 .TestoRispostaNonSegnata {
-	/*fon
+    /*fon
 
 t-weight: bold;
     font-style: italic;*/
@@ -106,87 +144,103 @@ t-weight: bold;
 }
 
 .TestoRispostaErrata {
-	font-weight: bold;
-	color: red;
-	padding-left: 20px;
-	background-position: left center;
-	background-repeat: no-repeat;
-	background-image: url("../Questionari/img/rosso.gif");
-	display: inline-block;
+    font-weight: bold;
+    color: red;
+    padding-left: 20px;
+    background-position: left center;
+    background-repeat: no-repeat;
+    background-image: url("../Questionari/img/rosso.gif");
+    display: inline-block;
 }
 
 .TestoRosso {
-	font-weight: bold;
-	color: red;
+    font-weight: bold;
+    color: red;
 }
 
 .TestoVerde {
-	font-weight: bold;
-	color: green;
+    font-weight: bold;
+    color: green;
 }
 
 .Risposte {
-	/*margin-left: 20px;*/
-	padding-left: 20px !important;
-	font-size: 11px;
-	text-align: left;
-	padding: .5em;
+    /*margin-left: 20px;*/
+    padding-left: 20px !important;
+    font-size: 11px;
+    text-align: left;
+    padding: .5em;
 }
 
 td label {
-	margin-right: 1em;
+    margin-right: 1em;
 }
 
 td.Risposte div.inlinewrapper input.inputother {
-	margin: 1em 0;
-	min-width: 200px;
+    margin: 1em 0;
+    min-width: 200px;
 }
 
 .Errore {
-	margin-left: 20px;
-	font-size: 12px;
-	color: red;
+    margin-left: 20px;
+    font-size: 12px;
+    color: red;
+}
+
+.TestoDomanda {
+    line-height: 16px;
 }
 
 .ContenitoreDomanda0 {
-	width: 99%;
-	text-align: left;
-	padding: 10px;
-	font-size: 11px;
+    width: 99%;
+    text-align: left;
+    padding: 10px;
+    font-size: 11px;
 }
 
-.NomePagina {
-	width: 99%;
-	min-width: 800px;
-	border-bottom: 1px dotted #333;
-	margin-bottom: 30px;
-	text-align: center;
+html body .NomePagina {
+    width: 99%;
+    border-bottom: 1px solid #7b7b7b;
+    margin-bottom: 22px;
+    text-align: left;
+    background-color: #ececec;
+    padding-top: 6px;
 }
+
+    html body .NomePagina h3 {
+        color: #555;
+        margin-bottom: 8px;
+        margin-top: 6px;
+        padding-left: 6px;
+        font-size: 18px;
+    }
 
 .NomePaginaFooter {
-	width: 99%;
-	border-bottom: 1px dotted #333;
-	margin-bottom: 30px;
-	text-align: right;
-	font-size: 11px;
+    width: 99%;
+    color: #7b7b7b;
+    border-top: 1px solid #7b7b7b;
+    margin-top: 15px;
+    margin-bottom: 30px;
+    text-align: right;
+    font-size: 11px;
+    padding-top: 8px;
 }
 
 .Loghi {
-	width: 100%;
-	margin-bottom: 30px;
-	text-align: center;
+    width: 100%;
+    margin-bottom: 30px;
+    text-align: center;
 }
 
 .Selected {
-	background-color: #333;
-	color: #fff;
-	padding-left: 2px;
-	padding-right: 2px;
+    background-color: #333;
+    color: #fff;
+    padding-left: 2px;
+    padding-right: 2px;
 }
 
 .bordato {
-	border: 1px solid black;
-	padding: 7px;
+    border: 1px solid black;
+    padding: 7px;
 }
 
 /*a
@@ -197,101 +251,109 @@ td.Risposte div.inlinewrapper input.inputother {
 }*/
 
 .CellaRisposta {
-	height: 27px;
-	border-bottom: 1px #ccc dotted;
-	border-right: 1px #ccc dotted;
-	text-align: center;
-	font-style: italic;
-	font-size: 11px;
+    height: 27px;
+    border-bottom: 1px #ccc dotted;
+    border-right: 1px #ccc dotted;
+    text-align: center;
+    font-style: italic;
+    font-size: 11px;
 }
 
 .CellaDomanda {
-	height: 27px;
-	border-bottom: 1px #ccc dotted;
-	text-align: left;
-	border-right: 1px #ccc dotted;
-	font-size: 11px;
+    height: 27px;
+    border-bottom: 1px #ccc dotted;
+    text-align: left;
+    border-right: 1px #ccc dotted;
+    font-size: 11px;
 }
 
 .CellaVuota {
-	height: 27px;
-	border-right: 1px #ccc dotted;
-	border-bottom: 1px #ccc dotted;
+    height: 27px;
+    border-right: 1px #ccc dotted;
+    border-bottom: 1px #ccc dotted;
 }
 
 .menuStatico {
-	background-color: #B5C7DE;
-	margin-right: 1px;
+    background-color: #B5C7DE;
+    margin-right: 1px;
 }
 
 .menuSelezionato {
-	background-color: #507CD1;
-	margin-right: 1px;
+    background-color: #507CD1;
+    margin-right: 1px;
 }
 
 a.menuSelezionato {
-	text-decoration: none;
-	color: #ffffff;
-	font-size: large;
-	font-weight: bold;
+    text-decoration: none;
+    color: #ffffff;
+    font-size: large;
+    font-weight: bold;
 }
 
 .menuStatico {
-	color: White;
-	font-variant: small-caps;
-	font-size: large;
-	font-weight: bold;
+    color: White;
+    font-variant: small-caps;
+    font-size: large;
+    font-weight: bold;
 }
 
 .Filtro_CellFiltri {
-/*	font-family: Verdana,Arial,Tahoma,Helvetica,sans-serif;*/
-	font-size: 10pt;
-	color: navy;
-	font-weight: bold;
-	border-bottom: #cccccc 1px solid;
-	border-right: #cccccc 1px solid;
-	border-left: #cccccc 1px solid;
-	background-color: #fffbf7;
+    /*	font-family: Verdana,Arial,Tahoma,Helvetica,sans-serif;*/
+    font-size: 10pt;
+    color: navy;
+    font-weight: bold;
+    border-bottom: #cccccc 1px solid;
+    border-right: #cccccc 1px solid;
+    border-left: #cccccc 1px solid;
+    background-color: #fffbf7;
 }
 
 .DIVHelp {
-	display: none;
+    display: none;
+}
+
+table.question.statistics {
+    margin-bottom: 40px;
 }
 
 table.multiplechoicequestion.statistics {
-	width: 100%;
+    width: 100%;
 }
 
-td.answergraphic  {
-	border: none !important;
+td.answergraphic {
+    border: none !important;
 }
 
 .question.statistics td {
-	color: #444;
-	font-size: 11px;
-	padding: .5em 0;
+    color: #444;
+    font-size: 12px;
+    padding: .5em 0;
 }
 
 .ratingquestion.statistics td a {
-	margin: auto 1em ;
+    margin: auto 1em;
 }
 
 div#CPHservice_ucStatUtenti_PNLFiltri {
-	border: 1px solid #ccc;
+    border: 1px solid #ccc;
 }
 
-table.statistics,
-table.statistics tr {
-	border: none !important;
+table.datatable,
+table.statistics {
+    border: none !important;
 }
+
+    table.datatable tr > td {
+        padding: 6px 4px !important;
+    }
 
 .question b,
 .question span.questionanswers {
-	margin-bottom: .5em;
-	display: inline-block;
-	*display:inline;
-	*zoom: 1;
-	width: 100%;
+    margin-bottom: .5em;
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    width: 100%;
 }
 
 .question.statistics td.question b {
@@ -300,200 +362,234 @@ table.statistics tr {
 }
 
 .question span.questionanswers {
-	font-size: 12px;
+    font-size: 12px;
 }
 
 .statistics td.displayoptionanwsers {
-	width: 80px;
-	padding-left: 10px;
-	padding-right: 10px;
+    width: 80px;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 .statistics .optiontext .inlinewrapper {
-	display: block;	
+    display: block;
 }
 
-.statistics .optiontext .inlinewrapper span {
-	margin-right: 10px;
-}
+    .statistics .optiontext .inlinewrapper span {
+        margin-right: 10px;
+    }
 
-.statistics .optiontext .inlinewrapper span.renderedtext {
-	display: inline-block;
-	margin-right: 10px;
-	width: 90%;
-	vertical-align: top;
-    line-height:1.4em;
-}
+        .statistics .optiontext .inlinewrapper span.renderedtext {
+            display: inline-block;
+            margin-right: 10px;
+            /*width: 90%;*/
+            vertical-align: top;
+            line-height: 1.4em;
+        }
 
 .statistics .inlinewrapper span.optioniscorrect {
-	display: inline-block;
-	*display: inline;
-	*zoom: 1;
-	background-color: #b4c561;
-	background: -moz-linear-gradient(top,  #a4b357 0%, #75890c 100%);
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#a4b357), color-stop(100%,#75890c));
-	background: -webkit-linear-gradient(top,  #a4b357 0%,#75890c 100%);
-	background: -o-linear-gradient(top,  #a4b357 0%,#75890c 100%);
-	background: -ms-linear-gradient(top,  #a4b357 0%,#75890c 100%);
-	background: linear-gradient(top,  #a4b357 0%,#75890c 100%);
-	color: #fff;
-	padding: 2px 4px;
-	border-radius: 3px;
-	margin: .5em;
-	margin-left: 1.3em;
-	box-shadow: inset 0px 3px 5px rgba(0,0,0,0.2);
-	line-height: 1em;
-	text-shadow: 1px 1px 0 rgba(0,0,0,0.2);
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    background-color: #b4c561;
+    background: -moz-linear-gradient(top, #a4b357 0%, #75890c 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#a4b357), color-stop(100%,#75890c));
+    background: -webkit-linear-gradient(top, #a4b357 0%,#75890c 100%);
+    background: -o-linear-gradient(top, #a4b357 0%,#75890c 100%);
+    background: -ms-linear-gradient(top, #a4b357 0%,#75890c 100%);
+    background: linear-gradient(top, #a4b357 0%,#75890c 100%);
+    color: #fff;
+    padding: 2px 4px;
+    border-radius: 3px;
+    margin: .5em;
+    margin-left: 1.3em;
+    box-shadow: inset 0px 3px 5px rgba(0,0,0,0.2);
+    line-height: 1em;
+    text-shadow: 1px 1px 0 rgba(0,0,0,0.2);
 }
 
 
 .question.statistics td .renderedtext p {
-	margin-bottom: 0 !important;
+    margin-bottom: 0 !important;
 }
 
 
-textarea {font-size: 1em}
+textarea {
+    font-size: 1em
+}
 
 input.inputother {
-
 }
 
 span.question span {
-	vertical-align: top;
+    vertical-align: top;
 }
 
-.fieldobject .fieldrow{
-                margin-bottom:1em;
-}
-.fieldobject .fieldrow input{
-margin:0;
-}
-.fieldobject .fieldrow input,
-.fieldobject .fieldrow label{
-vertical-align:middle;
+.fieldobject .fieldrow {
+    margin-bottom: 1em;
 }
 
-.fieldobject .fieldrow label.fieldlabel{
-                display:inline-block;
-                *display:inline;
-                *zoom:1;
-                width:150px;
-}
+    .fieldobject .fieldrow input {
+        margin: 0;
+    }
 
-.fieldobject .fieldrow div.inlinewrapper{
-                display:inline-block;
-                *display:inline;
-                *zoom:1;            
-                width:700px;
-}
+    .fieldobject .fieldrow input,
+    .fieldobject .fieldrow label {
+        vertical-align: middle;
+    }
 
-.fieldobject .fieldrow div.inlinewrapper div.description{
-                margin-top:0.2em;
-font-style:italic;
-}
+        .fieldobject .fieldrow label.fieldlabel {
+            display: inline-block;
+            *display: inline;
+            *zoom: 1;
+            width: 150px;
+        }
+
+    .fieldobject .fieldrow div.inlinewrapper {
+        display: inline-block;
+        *display: inline;
+        *zoom: 1;
+        width: 700px;
+    }
+
+        .fieldobject .fieldrow div.inlinewrapper div.description {
+            margin-top: 0.2em;
+            font-style: italic;
+        }
 
 /* Aggiunte per limitare larghezza colonne URL e DESCRIPTION (Eventualmente rivedere) */
 
 td.tdurl {
-	max-width: 250px;
-	font-size: 10px;			
+    max-width: 250px;
+    font-size: 10px;
 }
 
 td.tddesc {
-	max-width: 250px;
+    max-width: 250px;
 }
 
-commandoptions{
-    margin-top:2em;
+commandoptions {
+    margin-top: 2em;
 }
 
-.commandoptions .commandoption{
-    width:49%;
-    text-align:center;
-    display:inline-block;
-    *display:inline;
-    *zoom:1; 
-    /*margin:-1px;*/         
-    border:1px solid #ccc; 
-    background:#eee;
-    padding-top:1em;
-    padding-bottom:1em;    
+.commandoptions .commandoption {
+    width: 49%;
+    text-align: center;
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    /*margin:-1px;*/
+    border: 1px solid #ccc;
+    background: #eee;
+    padding-top: 1em;
+    padding-bottom: 1em;
 }
 
-.commandoptions .commandoption .commandbutton{
-    display:block;
-    height:60px;
-    min-width:130px;
-    margin:0;
-    margin-left:auto;
-    margin-right:auto;
-    top:0;    
-    margin-bottom:1em;    
-}
+    .commandoptions .commandoption .commandbutton {
+        display: block;
+        height: 60px;
+        min-width: 130px;
+        margin: 0;
+        margin-left: auto;
+        margin-right: auto;
+        top: 0;
+        margin-bottom: 1em;
+    }
 
-.commandoptions .commandoption .commanddescription{
-    margin:15px;
-    display:block;
-    text-align:justify;    
-}
+    .commandoptions .commandoption .commanddescription {
+        margin: 15px;
+        display: block;
+        text-align: justify;
+    }
 
 /* aggiunta Leo 08/05/2017 */
 .statistics {
-    color:#444;
+    color: #444;
 }
-.statistics table.datatable {
-    width: 80%;
+
+.tdchart {
+    padding: 24px 0 !important;
+    border-bottom: solid 1px #fff !important;
 }
-.statistics td.tddata,
-.statistics td.tdchart {
-    width: 50%;
+
+tr.header > td,
+.datatable tr > th,
+.statistics tr > th,
+tr.summary > td,
+table.tableData tr > th {
+    text-align: center;
+    padding: 12px 0 !important;
+    font-size: 12px !important;
+    background-color: #dedede !important;
+    font-weight: bold;
 }
-.answer .renderedtext{
-    font-size:12px;
+
+    tr.header > td:first-child,
+    .datatable tr > th:first-child,
+    .statistics tr > th:first-child,
+    tr.summary > td:first-child {
+        text-align: left;
+    }
+
+.tableData .tdTextual {
+    text-align: left;
 }
-.numericquestion.statistics tr:hover,
-.multiplechoicequestion.statistics tr:hover {
-    background-color: #ddd;
+
+.tableData .tdIndex {
+    text-align: left;
 }
-.numericquestion.statistics tr,
-.multiplechoicequestion.statistics tr {
-    border-bottom: solid 1px #ddd;
+
+.tableData .tdData {
+    text-align: right;
 }
-.numericquestion.statistics,
-.freetextquestion.statistics,
-.multiplechoicequestion.statistics,
-.ratingquestion.statistics {
-    margin-left: 14px;
-    margin-right: 14px;
+
+.item-question .tableData .tdTextual {
+    text-align: left;
 }
+
+.item-question .tableData .tdIndex {
+    text-align: left;
+}
+
+.item-question .tableData .tdData {
+    text-align: center;
+}
+
+.statistics table {
+    width: 100%;
+}
+
+
+.answer .renderedtext {
+    font-size: 12px;
+}
+/*html body table.tableData {
+    width: auto !important;
+    min-width: 50%;
+}*/
+html body table.tableData tr > td,
+html body table.tableData tr > th {
+    padding: 6px 4px !important;
+}
+
+html body table.tableData tr > th {
+    padding: 6px 4px !important;
+}
+
+table.tableData tr:hover {
+    background-color: #ececec !important;
+}
+
 .answer, .answer p {
     font-size: 12px;
 }
+
 .answergraphic svg {
     overflow: visible !important;
 }
 /* tables */
 .tddata th {
     text-align: left;
-}
-
-.tddata .datatable {
-    width: 68%;
-    max-width: 100%;
-    border: none;
-    margin-bottom: 20px;
-}
-
-.tddata .datatable > thead > tr > th,
-.tddata .datatable > tbody > tr > th,
-.tddata .datatable > tfoot > tr > th,
-.tddata .datatable > thead > tr > td,
-.tddata .datatable > tbody > tr > td,
-.tddata .datatable > tfoot > tr > td {
-    padding: 8px;
-    line-height: 1.42857143;
-    vertical-align: top;
-    border-top: 1px solid #ddd;
 }
 
 .tddata .datatable > thead > tr > th {
@@ -518,11 +614,22 @@ commandoptions{
     background-color: #fff;
 }
 
-.tddata .datatable  > tbody > tr:nth-of-type(odd) {
+/*.tddata .datatable > tbody > tr:nth-of-type(odd) {
+    background-color: #f9f9f9;
+       
+}*/
+
+table.tableData > tbody > tr:nth-of-type(2n+1) {
     background-color: #f9f9f9;
 }
 
-.tddata .datatable > tbody > tr:hover {
+table.tableData > tbody > tr:nth-of-type(2n) {
+    background-color: #fff;
+}
+
+
+
+table.tableData > tbody > tr:hover {
     background-color: #f5f5f5;
 }
 
@@ -599,4 +706,56 @@ commandoptions{
 .tddata .datatable > tbody > tr.danger > th,
 .tddata .datatable > tfoot > tr.danger > th {
     background-color: #f2dede;
+}
+
+table.mainTable,
+table.mainTable table {
+    width: 100%;
+}
+
+.datalistDomande span.item-question {
+    display: block;
+    padding: 24px 14px;
+}
+
+    .datalistDomande span.item-question:nth-of-type(2n+1) {
+        background-color: #f9f9f9;
+    }
+
+    .datalistDomande span.item-question:nth-of-type(2n) {
+        background-color: #fff;
+    }
+
+.difficultyInfo {
+    float: right;
+    display: none;
+}
+
+body .questionfreetext input[type="text"],
+body .questionfreetext textarea {
+    width: 70% !important;
+    margin-bottom: 20px !important;
+}
+
+body .titleContainer h2 {
+    margin-bottom: 38px;
+}
+
+.numeriPagina a {
+    text-decoration: none;
+}
+
+    .numeriPagina a.prev,
+    .numeriPagina a.next {
+    }
+
+.question-number {
+    float: left;
+    margin-right: 10px;
+    margin-bottom: 2px;
+    font-size: 14px;
+}
+
+.difficultyInfo.show {
+    display: block;
 }

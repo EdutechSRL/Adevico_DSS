@@ -17,14 +17,51 @@ Public Class GestioneRisposte
     Private _ApplicationUrlBase As String
     Private _SmartTagsAvailable As SmartTags
 
-    Private Const MaxCharacterForchart = 30
+    Private Const _MaxCharacterForchartInline As Integer = 25
+    Private Const _MaxCharacterForchartNewline As Integer = 80
+
+    Private Const _CorrectString As String = "<span class=""TestoRispostaCorretta"">&nbsp;</span>"
+    Private Const _FormatPerc As String = "N1"
+    Private Const _FormatAvg As String = "N1"
+    Private Const _FormatDev As String = "N2"
+
+    Private Const _ClassText As String = "tdTextual"
+    Private Const _ClassData As String = "tdData"
+    Private Const _ClassNoData As String = "tdData empty"
+    Private Const _ClassLink As String = "tdLink"
+    Private Const _ClassIndex As String = "tdIndex"
 
 
-    Public Function SalvaRisposta(ByRef oQuest As Questionario) As String
+    Private Const _NewLineCharacter As Integer = 20
+    Private Const _NewLineMaxHeaderChar As Integer = 50
+
+    Public Function SalvaRisposta(
+                                 ByRef oQuest As Questionario,
+                                 ByVal UserId As Integer,
+                                 ByVal CloseAnswer As Boolean) As String
+
         oQuest.rispostaQuest.oStatistica = calcoloPunteggioAutovalutazione(oQuest)
-        Return Salva(oQuest, oQuest.durata, Me.QuestionarioCorrente.tipo = QuestionnaireType.AutoEvaluation OrElse Me.QuestionarioCorrente.tipo = QuestionnaireType.RandomMultipleAttempts, Me.isUtenteAnonimo Or Me.isAnonymousCompiler Or Invito.PersonaID = idUtenteAnonimo())
+
+        Return Salva(
+            oQuest,
+            oQuest.durata,
+            Me.QuestionarioCorrente.tipo = QuestionnaireType.AutoEvaluation OrElse Me.QuestionarioCorrente.tipo = QuestionnaireType.RandomMultipleAttempts,
+            Me.isUtenteAnonimo Or Me.isAnonymousCompiler Or Invito.PersonaID = idUtenteAnonimo(),
+            UserId,
+            CloseAnswer)
+
     End Function
-    Public Function Salva(ByRef oQuest As Questionario, ByVal durata As Integer, ByVal isAutoval As Boolean, ByRef isUtenteAnonimo As Boolean) As String
+    Public Function Salva(
+                         ByRef oQuest As Questionario,
+                         ByVal durata As Integer,
+                         ByVal isAutoval As Boolean,
+                         ByRef isUtenteAnonimo As Boolean,
+                         ByVal UserId As Integer,
+                         ByVal CloseAnswer As Boolean) As String
+
+
+
+
         'valutare se convertire il tipo della funzione in integer
         Dim retVal As String = String.Empty
         Dim oDalRisposte As New DALRisposte
@@ -38,9 +75,22 @@ Public Class GestioneRisposte
         End If
         Try
             If oQuest.rispostaQuest.id > 0 Then
-                ' RIMOSSO IL 19/02/2014
-                oDalRisposte.clearRisposte(oQuest.rispostaQuest)
-                oDalRisposte.RispostaQuestionario_Update(oQuest.rispostaQuest)
+                ' NO:RIMOSSO IL 19/02/2014
+                'Aggiornato il 21/11/2017 con controllo che sia l'utente corrente ad aggiornare le proprie risposte. E SOLO LUI!
+                Dim IsCurrent As Boolean = False
+                Try
+                    ''aaa
+                    IsCurrent = oDalRisposte.RispostaQuestionario_CheckUpdateUpdate(oQuest.rispostaQuest.id, UserId)
+                Catch ex As Exception
+
+                End Try
+
+                If Not IsCurrent Then
+                    Return "-1"
+                End If
+                oDalRisposte.clearRisposte(oQuest.rispostaQuest) 'Necessario per ri-compilazioni, ma PERICOLOSSSSISSSISMO!
+                'Tag: cancella risposte questinario
+                oDalRisposte.RispostaQuestionario_Update(CloseAnswer, oQuest.rispostaQuest)
             Else
                 Dim idPersona As Integer
                 If Invito.ID > 0 AndAlso Not isAutoval AndAlso Not isUtenteAnonimo AndAlso oDalRisposte.countRisposteByIdPersona(Invito.PersonaID, oQuest.rispostaQuest.idQuestionario) > 0 Then
@@ -48,7 +98,7 @@ Public Class GestioneRisposte
                 ElseIf oDalRisposte.countRisposteByIdPersona(oQuest.rispostaQuest.idPersona, oQuest.rispostaQuest.idQuestionario) > 0 AndAlso Not isAutoval AndAlso Not isUtenteAnonimo Then
                     Return "0"
                 Else
-                    RispostaQuestionario_Insert(oQuest)
+                    RispostaQuestionario_Insert(oQuest, CloseAnswer)
                     retVal = "1"
                 End If
             End If
@@ -57,8 +107,19 @@ Public Class GestioneRisposte
         End Try
         Return retVal
     End Function
-    Public Function RispostaQuestionario_Insert(ByRef oQuest As Questionario) As Integer
+    Public Function RispostaQuestionario_Insert(ByRef oQuest As Questionario, ByVal CloseAnswer As Boolean) As Integer
         oQuest.rispostaQuest.oStatistica = calcoloPunteggioAutovalutazione(oQuest)
+
+        '?? Ci proviamoci...
+        'If oQuest.rispostaQuest.oStatistica.isFinito AndAlso CloseAnswer Then
+        '    oQuest.rispostaQuest.dataFine = DateTime.Now()
+        'End If
+
+        If CloseAnswer Then
+            oQuest.rispostaQuest.dataFine = DateTime.Now()
+        End If
+
+
         If isAnonymousCompiler Then
             DALRisposte.RispostaQuestionario_Insert(oQuest.rispostaQuest, idUtenteAnonimo)
         ElseIf Invito.ID > 0 Then
@@ -75,7 +136,18 @@ Public Class GestioneRisposte
             Return _SmartTagsAvailable
         End Get
     End Property
-    Public Function getRisposte(ByVal DLPagine As DataList, ByRef isValida As Boolean, Optional ByVal isTempoScaduto As Boolean = False) As RispostaQuestionario
+    Public Function getRisposte(
+                               ByVal DLPagine As DataList,
+                               ByRef isValida As Boolean,
+                               Optional ByVal isTempoScaduto As Boolean = False) _
+                               As RispostaQuestionario
+
+        Dim IdUtenteQuestionario As Integer = Me.UtenteCorrente.ID
+
+        If Not IsNothing(UtenteQuestionario) Then
+            IdUtenteQuestionario = UtenteQuestionario.ID
+        End If
+
         'isTempoScaduto = true impedisce il salvataggio delle risposte multiple se sono state date piu' risposte dell'ammesso a una singola domanda
         Dim numeroTroppeRisposte As Int16 = 0
         Dim oRispostaQ As New RispostaQuestionario
@@ -85,7 +157,7 @@ Public Class GestioneRisposte
             'oRispostaQ.findRispostaByIDPersona(Me.QuestionarioCorrente.risposteQuestionario, Me.UtenteCorrente.Id)
             ' se è la prima risposta della persona creo l'istanza
             oRispostaQ = New COL_Questionario.RispostaQuestionario
-            oRispostaQ.idPersona = Me.UtenteCorrente.ID
+            oRispostaQ.idPersona = IdUtenteQuestionario 'Me.UtenteCorrente.ID
             oRispostaQ.idQuestionario = Me.QuestionarioCorrente.id
             oRispostaQ.dataInizio = Now()
             oRispostaQ.indirizzoIPStart = OLDpageUtility.ProxyIPadress() & " / " & OLDpageUtility.ClientIPadress
@@ -276,7 +348,69 @@ Public Class GestioneRisposte
                                 iRiga = iRiga + 1
                             Next
                         End If
+                    Case Domanda.TipoDomanda.RatingStars
+                        Dim tabella As New Table
+                        tabella = FindControlRecursive(itemD, "TBLRadiobutton_" + itemD.ItemIndex.ToString())
+                        If Not tabella Is Nothing Then
+                            Dim iRiga As Integer = 0
+                            For Each row As TableRow In tabella.Rows
+                                Dim iCella As Integer = 0
+                                'If iRiga > 0 Then
+                                Dim testoIsAltro As String = String.Empty
+                                For Each ctrl As Control In row.Cells(0).Controls
+                                    If ctrl.GetType() Is GetType(TextBox) Then
+                                        Dim txbOpzione As New TextBox
+                                        txbOpzione = DirectCast(ctrl, TextBox)
+                                        testoIsAltro = txbOpzione.Text
+                                    End If
+                                Next
+                                For Each cell As TableCell In row.Cells
+                                    'If iCella > 0 Then
+                                    'Dim rdStars As New Telerik.Web.UI.RadRating
 
+                                    For Each ctrl As Control In cell.Controls
+
+                                        Dim container As Uc_StarBind = TryCast(ctrl, Uc_StarBind)
+
+                                        If Not IsNothing(container) Then
+                                            'If ctrl.GetType() Is GetType(UserControl) Then
+                                            'If ctrl.GetType() Is GetType(Uc_StarBind) Then 
+                                            '                  Is GetType(Telerik.Web.UI.RadRating) Then
+
+
+                                            Dim rdStars As Telerik.Web.UI.RadRating = container.RadRating 'DirectCast(ctrl, Telerik.Web.UI.RadRating)
+                                            Dim value As Integer = rdStars.Value
+
+                                            Dim oRisp As New RispostaDomanda
+                                            'iCella
+                                            oRisp = setRisposta(oDomanda.domandaRating.opzioniRating(iRiga).id, oDomanda.domandaRating.opzioniRating(iRiga).numero, value, testoIsAltro, Domanda.TipoDomanda.RatingStars)
+                                            oRisp.idDomanda = idQuestion
+                                            oRisp.tipo = oDomanda.tipo
+                                            oDomanda.risposteDomanda.Add(oRisp)
+                                            oRispostaQ.risposteDomande.Add(oRisp)
+
+
+                                            '        Dim dlOpzioni As New RadioButton
+                                            '        dlOpzioni = DirectCast(ctrl, RadioButton)
+                                            '        If Not dlOpzioni Is Nothing Then
+                                            '            If dlOpzioni.Checked Then
+                                            '                Dim oRisp As New RispostaDomanda
+                                            '                oRisp = setRisposta(oDomanda.domandaRating.opzioniRating(iRiga - 1).id, oDomanda.domandaRating.opzioniRating(iRiga - 1).numero, iCella, testoIsAltro, Domanda.TipoDomanda.Rating)
+                                            '                oRisp.idDomanda = idQuestion
+                                            '                oRisp.tipo = oDomanda.tipo
+                                            '                oDomanda.risposteDomanda.Add(oRisp)
+                                            '                oRispostaQ.risposteDomande.Add(oRisp)
+                                            '            End If
+                                            '        End If
+                                        End If
+                                    Next
+                                    'End If
+                                    iCella = iCella + 1
+                                Next
+                                'End If
+                                iRiga = iRiga + 1
+                            Next
+                        End If
                     Case Domanda.TipoDomanda.Meeting
                         Dim tabella As New Table
                         tabella = FindControlRecursive(itemD, "TBLRadiobutton_" + itemD.ItemIndex.ToString())
@@ -602,7 +736,86 @@ Public Class GestioneRisposte
                                         End If
                                         indiceRiga = indiceRiga + 1
                                     Next
+                                Case Domanda.TipoDomanda.RatingStars
+                                    Dim tabella As New Table
+                                    tabella = FindControlRecursive(itemD, "TBLRadiobutton_" + itemD.ItemIndex.ToString())
+                                    Dim indiceRiga As Integer = 0
+                                    For Each row As TableRow In tabella.Rows
+                                        Dim iCella As Integer = 0
+                                        'If indiceRiga > 0 Then
+                                        Dim ris As New RispostaDomanda
+                                        If oDomanda.risposteDomanda.Count > 0 Then
+                                            ris = oRisposta.findRispostaByNumeroOpzione(oDomanda.risposteDomanda, oDomanda.domandaRating.opzioniRating(indiceRiga).numero)
+                                        End If
 
+                                        For Each cell As TableCell In row.Cells
+                                            For Each ctrl As Control In cell.Controls
+                                                'Dim rdStars As New Telerik.Web.UI.RadRating
+                                                If ctrl.GetType() Is GetType(Telerik.Web.UI.RadRating) Then
+                                                    Try
+                                                        Dim rdStars As Telerik.Web.UI.RadRating = DirectCast(ctrl, Telerik.Web.UI.RadRating)
+                                                        rdStars.Value = CInt(ris.valore)
+                                                        rdStars.Enabled = False
+                                                    Catch ex As Exception
+
+                                                    End Try
+
+                                                    'If ctrl.GetType() Is GetType(HtmlGenericControl) Then
+                                                    '    For Each dControl As Control In ctrl.Controls
+                                                    '        If dControl.GetType() Is GetType(RadioButton) Then
+                                                    '            Dim dlOpzioni As New RadioButton
+                                                    '            dlOpzioni = DirectCast(dControl, RadioButton)
+                                                    '            If Not dlOpzioni Is Nothing Then
+                                                    '                If Not ris Is Nothing Then
+                                                    '                    If iCella = ris.valore And ris.numeroOpzione = oDomanda.domandaRating.opzioniRating(indiceRiga).numero Then
+                                                    '                        dlOpzioni.Checked = True
+                                                    '                    End If
+                                                    '                End If
+                                                    '            End If
+                                                    '            dlOpzioni.Enabled = False
+                                                    '        ElseIf dControl.GetType() Is GetType(TextBox) Then
+                                                    '            Dim dlOpzioni As New TextBox
+                                                    '            dlOpzioni = DirectCast(dControl, TextBox)
+                                                    '            If Not dlOpzioni Is Nothing Then
+                                                    '                If Not ris Is Nothing Then
+                                                    '                    If ris.numeroOpzione = oDomanda.domandaRating.opzioniRating(indiceRiga - 1).numero Then
+                                                    '                        dlOpzioni.Text = ris.testoOpzione
+                                                    '                    End If
+                                                    '                End If
+                                                    '            End If
+                                                    '            dlOpzioni.Enabled = False
+                                                    '        End If
+                                                    '    Next
+
+                                                    'ElseIf ctrl.GetType() Is GetType(RadioButton) Then
+                                                    '    Dim dlOpzioni As New RadioButton
+                                                    '    dlOpzioni = DirectCast(ctrl, RadioButton)
+                                                    '    If Not dlOpzioni Is Nothing Then
+                                                    '        If Not ris Is Nothing Then
+                                                    '            If iCella = ris.valore And ris.numeroOpzione = oDomanda.domandaRating.opzioniRating(indiceRiga - 1).numero Then
+                                                    '                dlOpzioni.Checked = True
+                                                    '            End If
+                                                    '        End If
+                                                    '    End If
+                                                    '    dlOpzioni.Enabled = False
+                                                ElseIf ctrl.GetType() Is GetType(TextBox) Then
+                                                    Dim dlOpzioni As New TextBox
+                                                    dlOpzioni = DirectCast(ctrl, TextBox)
+                                                    If Not dlOpzioni Is Nothing Then
+                                                        If Not ris Is Nothing Then
+                                                            If ris.numeroOpzione = oDomanda.domandaRating.opzioniRating(indiceRiga - 1).numero Then
+                                                                dlOpzioni.Text = ris.testoOpzione
+                                                            End If
+                                                        End If
+                                                    End If
+                                                    dlOpzioni.Enabled = False
+                                                End If
+                                            Next
+                                            iCella = iCella + 1
+                                        Next
+                                        'End If
+                                        indiceRiga = indiceRiga + 1
+                                    Next
                                 Case Domanda.TipoDomanda.Meeting
 
                                     Dim tabella As New Table
@@ -999,7 +1212,86 @@ Public Class GestioneRisposte
                                 End If
                                 indiceRiga = indiceRiga + 1
                             Next
+                        Case Domanda.TipoDomanda.RatingStars
+                            Dim tabella As New Table
+                            tabella = FindControlRecursive(itemD, "TBLRadiobutton_" + itemD.ItemIndex.ToString())
+                            Dim indiceRiga As Integer = 0
+                            For Each row As TableRow In tabella.Rows
+                                Dim iCella As Integer = 0
+                                'If indiceRiga > 0 Then
+                                Dim ris As New RispostaDomanda
+                                If oDomanda.risposteDomanda.Count > 0 Then
+                                    ris = oRisposta.findRispostaByNumeroOpzione(oDomanda.risposteDomanda, oDomanda.domandaRating.opzioniRating(indiceRiga).numero)
+                                End If
 
+                                For Each cell As TableCell In row.Cells
+                                    For Each ctrl As Control In cell.Controls
+                                        'Dim rdStars As New Telerik.Web.UI.RadRating
+                                        If ctrl.GetType() Is GetType(Telerik.Web.UI.RadRating) Then
+                                            Try
+                                                Dim rdStars As Telerik.Web.UI.RadRating = DirectCast(ctrl, Telerik.Web.UI.RadRating)
+                                                rdStars.Value = CInt(ris.valore)
+                                                rdStars.Enabled = False
+                                            Catch ex As Exception
+
+                                            End Try
+
+                                            'If ctrl.GetType() Is GetType(HtmlGenericControl) Then
+                                            '    For Each dControl As Control In ctrl.Controls
+                                            '        If dControl.GetType() Is GetType(RadioButton) Then
+                                            '            Dim dlOpzioni As New RadioButton
+                                            '            dlOpzioni = DirectCast(dControl, RadioButton)
+                                            '            If Not dlOpzioni Is Nothing Then
+                                            '                If Not ris Is Nothing Then
+                                            '                    If iCella = ris.valore And ris.numeroOpzione = oDomanda.domandaRating.opzioniRating(indiceRiga).numero Then
+                                            '                        dlOpzioni.Checked = True
+                                            '                    End If
+                                            '                End If
+                                            '            End If
+                                            '            dlOpzioni.Enabled = False
+                                            '        ElseIf dControl.GetType() Is GetType(TextBox) Then
+                                            '            Dim dlOpzioni As New TextBox
+                                            '            dlOpzioni = DirectCast(dControl, TextBox)
+                                            '            If Not dlOpzioni Is Nothing Then
+                                            '                If Not ris Is Nothing Then
+                                            '                    If ris.numeroOpzione = oDomanda.domandaRating.opzioniRating(indiceRiga - 1).numero Then
+                                            '                        dlOpzioni.Text = ris.testoOpzione
+                                            '                    End If
+                                            '                End If
+                                            '            End If
+                                            '            dlOpzioni.Enabled = False
+                                            '        End If
+                                            '    Next
+
+                                            'ElseIf ctrl.GetType() Is GetType(RadioButton) Then
+                                            '    Dim dlOpzioni As New RadioButton
+                                            '    dlOpzioni = DirectCast(ctrl, RadioButton)
+                                            '    If Not dlOpzioni Is Nothing Then
+                                            '        If Not ris Is Nothing Then
+                                            '            If iCella = ris.valore And ris.numeroOpzione = oDomanda.domandaRating.opzioniRating(indiceRiga - 1).numero Then
+                                            '                dlOpzioni.Checked = True
+                                            '            End If
+                                            '        End If
+                                            '    End If
+                                            '    dlOpzioni.Enabled = False
+                                        ElseIf ctrl.GetType() Is GetType(TextBox) Then
+                                            Dim dlOpzioni As New TextBox
+                                            dlOpzioni = DirectCast(ctrl, TextBox)
+                                            If Not dlOpzioni Is Nothing Then
+                                                If Not ris Is Nothing Then
+                                                    If ris.numeroOpzione = oDomanda.domandaRating.opzioniRating(indiceRiga - 1).numero Then
+                                                        dlOpzioni.Text = ris.testoOpzione
+                                                    End If
+                                                End If
+                                            End If
+                                            dlOpzioni.Enabled = False
+                                        End If
+                                    Next
+                                    iCella = iCella + 1
+                                Next
+                                'End If
+                                indiceRiga = indiceRiga + 1
+                            Next
                         Case Domanda.TipoDomanda.TestoLibero
                             Dim tabella As New Table
                             tabella = FindControlRecursive(itemD, "TBLTestoLibero_" + itemD.ItemIndex.ToString())
@@ -1133,19 +1425,26 @@ Public Class GestioneRisposte
 #Region "ucStatGenerali"
     Public Function loadTabellaRisposte(ByVal oDomanda As Domanda) As Table
         Select Case oDomanda.tipo
-            Case Domanda.TipoDomanda.Multipla   'Ok
-                Return CreateTableForMultipleChoiceQuestion(oDomanda)
-            Case Domanda.TipoDomanda.DropDown   'ToDo
+            Case Domanda.TipoDomanda.DropDown       '
                 Return CreateTableForDropDownQuestion(oDomanda)
-            Case Domanda.TipoDomanda.Rating 'Ok
+
+            Case Domanda.TipoDomanda.Multipla       'To verify
+                Return CreateTableForMultipleChoiceQuestion(oDomanda)
+
+            Case Domanda.TipoDomanda.Rating         '
                 Return CreateTableForRatingQuestion(oDomanda)
 
-            Case Domanda.TipoDomanda.Meeting
-                Return creaTabellaMeeting(oDomanda)
-            Case Domanda.TipoDomanda.TestoLibero
+            Case Domanda.TipoDomanda.RatingStars    '
+                Return CreateTableForRatingStarsQuestion_V2(oDomanda) 'NOTA: al momento è uguale a quella rating normale: copia incolla, tenuta diversa per metterci le stelline, eventualmente.
+
+            Case Domanda.TipoDomanda.TestoLibero    '
                 Return CreateTableForFreeTextQuestion(oDomanda)
-            Case Domanda.TipoDomanda.Numerica
+            Case Domanda.TipoDomanda.Numerica       '
                 Return CreateTableForNumericQuestion(oDomanda)
+
+
+            Case Domanda.TipoDomanda.Meeting        'unused on 0404 2018
+                Return creaTabellaMeeting(oDomanda)
         End Select
         Return New Table
 
@@ -1153,36 +1452,67 @@ Public Class GestioneRisposte
 
 
 
-    'Risposta multipla - Telerick HTML 5 - V
+    'Risposta multipla - Telerick HTML 5 - Counter risposte - V
     Private Function CreateTableForMultipleChoiceQuestion(ByVal oDomanda As Domanda) As Table
-        Dim tabella As New Table
-        tabella.CssClass = "multiplechoicequestion statistics"
-        tabella.CellSpacing = 5
-        
+
+        Dim labelLenght As Integer = 0
+        'Dim headerLenght As Integer = 2
+
+        Dim mainTable As New Table
+        mainTable.CssClass = "multiplechoicequestion statistics"
+        Dim dataTable As New Table
+        dataTable.CssClass = "tableData"
+
+        'Header
+        Dim RowHeader As New TableHeaderRow()
+        Dim CellHeader As New TableHeaderCell()
+        CellHeader.Text = "#"
+        CellHeader.CssClass = _ClassData
+        RowHeader.Cells.Add(CellHeader)
+
+        CellHeader = New TableHeaderCell()
+        CellHeader.Text = "Testo opzione"
+        CellHeader.CssClass = _ClassText
+        RowHeader.Cells.Add(CellHeader)
+
+        CellHeader = New TableHeaderCell()
+        CellHeader.Text = "Freq."
+        CellHeader.CssClass = _ClassData
+        RowHeader.Cells.Add(CellHeader)
+
+        CellHeader = New TableHeaderCell()
+        CellHeader.Text = "Freq. %"
+        CellHeader.CssClass = _ClassData
+        RowHeader.Cells.Add(CellHeader)
+
+        dataTable.Rows.Add(RowHeader)
+
+
+        'Dati
         Dim cellaGrafico As New TableCell
         cellaGrafico.CssClass = "answergraphic"
-        '  cellaGrafico.Width = Unit.Percentage(100)
-        'cellaGrafico.Width = 100%
 
-
-        Dim putTextOutsideChart As Boolean = False
+        Dim putTextOutsideChart As Boolean = True
 
         ' controllo se i testi delle opzioni contengono HTML
         For Each oOpz As DomandaOpzione In oDomanda.domandaMultiplaOpzioni
             If Not Me.SmartTagsAvailable.TagAll(oOpz.testo) = oOpz.testo Or oOpz.testo.Contains("<") Or oOpz.isAltro Then
-                putTextOutsideChart = True
-                'oGrafico.Width = 450
                 cellaGrafico.CssClass &= " small"
                 Exit For
             End If
         Next
 
         If Not putTextOutsideChart Then
-            'inverto l'ordine delle opzioni perchè appaiano correttamente nel grafico 
             oDomanda.domandaMultiplaOpzioni.Reverse()
         End If
+
+
         Dim nRispsPercent As New List(Of Decimal)
-        For i As Int16 = (oDomanda.domandaMultiplaOpzioni.Count - 1) To 0 Step -1
+        Dim nRispsCount As New List(Of Integer)
+
+
+
+        For i As Int16 = 0 To (oDomanda.domandaMultiplaOpzioni.Count - 1) 'To 0 Step -1
 
             Dim oOpz As DomandaOpzione = oDomanda.domandaMultiplaOpzioni(i)
             'Next
@@ -1191,6 +1521,7 @@ Public Class GestioneRisposte
 
             If oDomanda.risposteDomanda.Count > 0 Then
                 nRispsPercent.Add(oOpz.numeroRisposte / oDomanda.risposteDomanda.Count)
+                nRispsCount.Add(oOpz.numeroRisposte)
             End If
         Next
 
@@ -1206,99 +1537,93 @@ Public Class GestioneRisposte
 
 
 
-        
-        'NEW HTML 5
+        'Grafico - NEW HTML 5
         Dim values As New List(Of Double)()
+        Dim PieValues As New List(Of KeyValuePair(Of String, Double))()
+
         Dim xAxisLabel As New List(Of String)()
 
+        Dim RisposteTotali As Integer = 0
+
+        Dim Alternate As Boolean = True
+
+        Dim ColSpan As Integer = 0
 
         For iOpzione As Int16 = 0 To (oDomanda.domandaMultiplaOpzioni.Count - 1) Step 1
+
+            Dim rigaOpz As New TableRow
+            rigaOpz.CssClass = "optiontext"
+
+
             Dim oOpz As DomandaOpzione = oDomanda.domandaMultiplaOpzioni(iOpzione)
-            'creo la tabella per le risposte multiple
-            Dim riga As New TableRow
-            Dim firstCell As New TableCell
-            Dim otherCell As New TableCell
-            firstCell.CssClass = "optiontext"
-            otherCell.CssClass = "displayoptionanwsers"
-            If putTextOutsideChart Then
-                Dim oDiv As New HtmlGenericControl("div")
-                oDiv.Attributes.Add("class", "inlinewrapper")
-                Dim oLabel As New Label
-                oLabel.Text = oOpz.numero.ToString()
-                oLabel.CssClass = "optionnumber"
-                oDiv.Controls.Add(oLabel)
+
+            Dim Cella As New TableCell
+            Cella.CssClass = _ClassData
+            Cella.Text = oOpz.numero
+            rigaOpz.Cells.Add(Cella)
 
 
-                oLabel = New Label
-                oLabel.CssClass = "answer renderedtext"
-                oLabel.Text = SmartTagsAvailable.TagAll(oOpz.testo) + "  "
-                oDiv.Controls.Add(oLabel)
+            Cella = New TableCell
+            Cella.CssClass = _ClassText
 
 
-                If oOpz.isCorretta Then
-                    oLabel = New Label
-                    oLabel.CssClass = "optioniscorrect"
-                    Select Case oOpz.peso
-                        Case 100
-                            oLabel.Text = Me.Resource.getValue("correctAnswer")
-                        Case 0
-                            oLabel.Text = Me.Resource.getValue("correctAnswer")
-                        Case Else
-                            oLabel.Text = String.Format(Me.Resource.getValue("correctAnswerPercentage"), oOpz.peso)
-                    End Select
-                    oDiv.Controls.Add(oLabel)
-                End If
-                firstCell.Controls.Add(oDiv)
-                firstCell.HorizontalAlign = HorizontalAlign.Left
-                If oOpz.isAltro Then
-                    Dim LNKVisualizzaRisposte As New LinkButton
-                    MyBase.SetCulture("pg_ucStatisticheGeneraliQuest", "Questionari")
-                    LNKVisualizzaRisposte.Text = Me.Resource.getValue("VisualizzaRisposteAltro")
-                    LNKVisualizzaRisposte.CommandName = "visualizzaRisposte"
-                    LNKVisualizzaRisposte.CommandArgument = oOpz.id
-                    otherCell.Controls.Add(LNKVisualizzaRisposte)
-                Else
-                    otherCell.CssClass &= " empty"
-                End If
-
-                riga.Cells.Add(firstCell)
-                If addDisplayoptionanwsers Then
-                    riga.Cells.Add(otherCell)
-                End If
-                tabella.Rows.Add(riga)
+            If oOpz.testo.Length > labelLenght Then
+                labelLenght = oOpz.testo.Length
             End If
 
-            'riga.Cells.Add(cella1)
-            'riga.Cells.Add(cella2)
-            'tabella.Rows.Add(riga)
+            If oOpz.isCorretta Then
+                Cella.Text = String.Format("{0}{1}", oOpz.testo, _CorrectString)
+            Else
+                Cella.Text = oOpz.testo
+            End If
+
+            rigaOpz.Cells.Add(Cella)
 
 
-            'Dim chartItem As New ChartSeriesItem
-            'chartItem.Name = Me.Resource.getValue("opzioneLegenda") & (oOpz.numero)
+            Cella = New TableCell
+            Cella.CssClass = _ClassData
+            Cella.Text = oOpz.numeroRisposte
+            rigaOpz.Cells.Add(Cella)
 
+            RisposteTotali = RisposteTotali + oOpz.numeroRisposte
 
-            'chartItem.MainColor = GetColor(iOpzione)
-            'chartItem.Appearance.FillStyle = FillStyle.Solid
-            'serie.DefaultLabelValue = "#%"
-            'If oDomanda.risposteDomanda.Count = 0 Then
-            '    chartItem.Empty = True
-            'End If
-            'serie.Items.Add(chartItem)
+            Cella = New TableCell
+            Cella.CssClass = _ClassData
+            Cella.Text = String.Format("{0}%", (oOpz.numeroRisposte * 100 / oDomanda.risposteDomanda.Count).ToString(_FormatPerc))
 
-            'If oDomanda.risposteDomanda.Count > 0 Then
-            '    If putTextOutsideChart Then
-            '        serie.SetItemValue(iOpzione, nRispsPercent(iOpzione))
-            '    Else
-            '        serie.SetItemValue(iOpzione, nRispsPercent(oDomanda.domandaMultiplaOpzioni.Count - 1 - iOpzione))
-            '    End If
-            'Else
-            '    serie.SetItemValue(iOpzione, 0)
-            'End If
+            If oOpz.isAltro Then
+                Dim LNKVisualizzaRisposte As New LinkButton
+                MyBase.SetCulture("pg_ucStatisticheGeneraliQuest", "Questionari")
+                LNKVisualizzaRisposte.Text = Me.Resource.getValue("VisualizzaRisposteAltro")
+                LNKVisualizzaRisposte.CommandName = "visualizzaRisposte"
+                LNKVisualizzaRisposte.CommandArgument = oOpz.id
+                Cella.Controls.Add(LNKVisualizzaRisposte)
+                'Else
+                '    Cella.CssClass &= " empty"
+            End If
 
+            rigaOpz.Cells.Add(Cella)
 
+            'Cella = New TableCell
+            'Cella.CssClass = _ClassLink
+
+            'rigaOpz.Cells.Add(Cella)
+
+            If Alternate Then
+                rigaOpz.CssClass &= " alternate"
+            End If
+
+            Alternate = Not Alternate
+
+            If ColSpan < rigaOpz.Cells.Count Then
+                ColSpan = rigaOpz.Cells.Count
+            End If
+
+            dataTable.Rows.Add(rigaOpz)
 
 
             'NEW HTML 5
+
 
             Dim val As Double = 0
             If oDomanda.risposteDomanda.Count > 0 Then
@@ -1314,12 +1639,20 @@ Public Class GestioneRisposte
                 'serie.SetItemValue(iOpzione, 0)
             End If
 
+            If Double.IsNaN(val) Then
+                val = 0
+            End If
+
             values.Add(val)
 
+            'Dim chartOptText As String = TxtHelper_HtmlCutToString(oOpz.testo, _MaxCharacterForchart)
+
+            'PieValues.Add(New KeyValuePair(Of String, Double)(chartOptText, val))
+            PieValues.Add(New KeyValuePair(Of String, Double)(oOpz.testo, val))
 
             'String.Format("Opzione {0}", iOpzione) '
 
-            Dim xAxisValue As String = oDomanda.domandaMultiplaOpzioni(iOpzione).testo
+            Dim xAxisValue As String = oDomanda.domandaMultiplaOpzioni(iOpzione).testo 'TxtHelper_HtmlCutToString(oDomanda.domandaMultiplaOpzioni(iOpzione).testo, _MaxCharacterForchart)
 
             If (oDomanda.isValutabile AndAlso oDomanda.domandaMultiplaOpzioni(iOpzione).isCorretta) Then
                 xAxisValue = String.Format("* {0}", xAxisValue)
@@ -1328,147 +1661,135 @@ Public Class GestioneRisposte
             xAxisLabel.Add(xAxisValue)
         Next
 
+        Dim TotalValPerc As Double = values.Sum()
 
+        'Footer Dati
+        Dim rigaRiepilogo As New TableRow()
+        rigaRiepilogo.CssClass = "summary"
+        Dim cellaRiepilogo As New TableCell()
+
+        cellaRiepilogo.Text = "Totale"
+        cellaRiepilogo.CssClass = _ClassText
+        cellaRiepilogo.ColumnSpan = 2
+        rigaRiepilogo.Cells.Add(cellaRiepilogo)
+
+        cellaRiepilogo = New TableCell()
+        cellaRiepilogo.Text = RisposteTotali
+        cellaRiepilogo.CssClass = _ClassData
+        rigaRiepilogo.Cells.Add(cellaRiepilogo)
+
+        cellaRiepilogo = New TableCell()
+        cellaRiepilogo.Text = String.Format("{0}%", (TotalValPerc * 100).ToString(_FormatPerc))
+        cellaRiepilogo.CssClass = _ClassData
+        rigaRiepilogo.Cells.Add(cellaRiepilogo)
+
+        dataTable.Rows.Add(rigaRiepilogo)
         'NEW HTML5
 
         Dim ChartTitle As String = ""
 
         If Me.QuestionarioCorrente.tipo = Questionario.TipoQuestionario.Sondaggio Then
-            ChartTitle = TxtHelper_CutString(Me.QuestionarioCorrente.nome)
+            ChartTitle = TxtHelper_CutString(Me.QuestionarioCorrente.nome, _MaxCharacterForchartInline)
         End If
 
 
-        
-        'ToDo: controllare:
-        'Dim j As Integer = 0
-        'For j = 0 To oDomanda.domandaMultiplaOpzioni.Count - 1
-        '    If putTextOutsideChart Then
-        '        'oGrafico.PlotArea.XAxis.AutoScale = True
-        '        'oGrafico.PlotArea.XAxis(j).TextBlock.Text = oDomanda.domandaMultiplaOpzioni.Count - j
-        '    Else
-        '        Dim sBuilder As New System.Text.StringBuilder()
-        '        sBuilder.Append(SmartTagsAvailable.TagAll(oDomanda.domandaMultiplaOpzioni(j).testo))
-        '        If oDomanda.domandaMultiplaOpzioni(j).isCorretta Then
-        '            Dim optionName As String = Me.Resource.getValue("correctAnswer")
-        '            If oDomanda.domandaMultiplaOpzioni(j).peso <> 100 AndAlso oDomanda.domandaMultiplaOpzioni(j).peso <> 0 Then
-        '                optionName = String.Format(Me.Resource.getValue("correctAnswerPercentage"), oDomanda.domandaMultiplaOpzioni(j).peso)
-        '            End If
-        '            If Not String.IsNullOrEmpty(optionName) Then
-        '                sBuilder.Append(" ")
-        '                sBuilder.Append(Server.HtmlEncode(optionName))
-        '            End If
+        Dim isNewLine As Boolean = False
 
-        '        End If
-        '        oGrafico.PlotArea.XAxis(j).TextBlock.Text = sBuilder.ToString
-        '        oGrafico.PlotArea.XAxis(j).TextBlock.Appearance.MaxLength = 300
-        '    End If
-        'Next
-
-        'oGrafico.Legend.Visible = False
-
-        'END NEW HTML5
-
-        'cellaGrafico.Controls.Add(oGrafico)
+        If (labelLenght > _NewLineMaxHeaderChar) Then
+            isNewLine = True
+        End If
 
         'NEW HTML5 RadChart
-        Dim oChart As RadHtmlChart = ChartHelper.CreateBarChar( _
-            values, xAxisLabel, True, 100, MaxCharacterForchart, ChartTitle)
+        Dim oChart As RadHtmlChart
 
-        'oChart.Height = New Unit("150px")
-        cellaGrafico.Controls.Add(oChart)
+        Dim chartContainer As New System.Web.UI.HtmlControls.HtmlGenericControl("DIV")
 
-       
+        Dim textLenght As Integer = _MaxCharacterForchartInline
 
-        'cellaGrafico.RowSpan = oDomanda.domandaMultiplaOpzioni.Count
-        If tabella.Rows.Count = 0 Then
-            tabella.Rows.Add(New TableRow())
+        If isNewLine Then
+            textLenght = _MaxCharacterForchartNewline
         End If
 
-        Dim oRowGrafico As New TableRow
-        oRowGrafico.Cells.Add(cellaGrafico)
-        tabella.Rows.Add(oRowGrafico)
+        If oDomanda.isMultipla Then
+            oChart = ChartHelper.CreateBarChar(
+            values, xAxisLabel, True, 100, textLenght, ChartTitle)
+            chartContainer.Attributes.Add("class", "optionChart barChart")
+        Else
+            oChart = ChartHelper.CreatePieChar(PieValues, textLenght)
+            chartContainer.Attributes.Add("class", "optionChart pieChart")
+        End If
 
-        'tabella.Rows.Add(oRowGrafico)
+        chartContainer.Controls.Add(oChart)
 
+        cellaGrafico.ColumnSpan = ColSpan
 
+        Dim tdData As New TableCell
 
+        Dim chartClass As String = "dataContainer" 'maxLabelLenght
 
-        'Dim newcell As New TableCell
-        'newcell.Controls.Add(oChart)
-        'Dim newrow As New TableRow()
-        'newrow.Cells.Add(newcell)
-        'tabella.Rows.Add(newrow)
+        If isNewLine Then
+            chartClass = "dataContainer longLabel"
+        End If
 
+        tdData.CssClass = chartClass '"dataContainer"
+        tdData.Controls.Add(dataTable)
+        tdData.Controls.Add(chartContainer)
 
-        'Dim newcell2 As New TableCell
-        'newcell.Controls.Add(text)
-        'Dim newrow2 As New TableRow()
-        'newrow2.Cells.Add(newcell2)
-        'tabella.Rows.Add(newrow2)
-        ''tabella.Rows.Add(New TableRow())
-        ''tabella.Rows(0).Cells.Add(cellaGrafico)
+        Dim trData As New TableRow
+        trData.Cells.Add(tdData)
 
+        mainTable.Rows.Add(trData)
 
-        Return tabella
+        Return mainTable
     End Function
 
 
 
 
     Private Function CreateTableForDropDownQuestion(ByVal question As Domanda) As Table
-        Dim tabella As New Table
-        tabella.CssClass = "dropdownquestion statistics"
-        tabella.CellSpacing = 5
 
+        Dim labelLenght As Integer = 0
+        'Dim headerLenght As Integer = 2
 
+        Dim mainTable As New Table
+        mainTable.CssClass = "dropdownquestion statistics"
 
+        Dim dataTable As New Table
+        dataTable.CssClass = "tableData"
+
+        Dim RowHeader As New TableHeaderRow
+        Dim HeadCell As New TableHeaderCell
+        HeadCell.CssClass = _ClassData
+        HeadCell.Text = "#"
+        RowHeader.Cells.Add(HeadCell)
+
+        HeadCell = New TableHeaderCell
+        HeadCell.CssClass = _ClassText
+        HeadCell.Text = "Testo Opzione"
+        RowHeader.Cells.Add(HeadCell)
+
+        HeadCell = New TableHeaderCell
+        HeadCell.CssClass = _ClassData
+        HeadCell.Text = "Freq."
+        RowHeader.Cells.Add(HeadCell)
+
+        HeadCell = New TableHeaderCell
+        HeadCell.CssClass = _ClassData
+        HeadCell.Text = "Freq. %"
+        RowHeader.Cells.Add(HeadCell)
+
+        dataTable.Rows.Add(RowHeader)
         'NEW HTML 5
-        Dim values As New List(Of Double)()
+        Dim values As New List(Of KeyValuePair(Of String, Double))()
         Dim xAxisLabel As New List(Of String)()
-        'Dim chartTitle As String = ""
-
-
-        'Dim oGrafico As New RadChart
-        'oGrafico.DefaultType = ChartSeriesType.Bar
-        'oGrafico.SeriesOrientation = ChartSeriesOrientation.Horizontal
-        'oGrafico.AutoTextWrap = True
-        'oGrafico.AutoLayout = True
-        'oGrafico.Skin = "Office2007"
-        'oGrafico.Width = 850
-
-        'oGrafico.Appearance.Border.Visible = False
-        'oGrafico.PlotArea.YAxis.AxisMode = ChartYAxisMode.Extended
 
         If Me.QuestionarioCorrente.tipo = Questionario.TipoQuestionario.Sondaggio Then
-            'oGrafico.ChartTitle.TextBlock.Text = Me.QuestionarioCorrente.nome
-            title = Me.QuestionarioCorrente.nome
-            'Else
-            '    oGrafico.ChartTitle.TextBlock.Visible = False
+            Title = Me.QuestionarioCorrente.nome
         End If
 
-        'Dim serie As New ChartSeries
-        'serie.Type = ChartSeriesType.Bar
+        Dim Alternate As Boolean = True
 
-        Dim cellaGrafico As New TableCell
-        ' cellaGrafico.Width = 800
-        cellaGrafico.CssClass = "answergraphic"
-
-        'Dim putTextOutsideChart As Boolean = False  'SEMPRE FALSE, a che serve?!
-
-        ' inverto l'ordine delle opzioni perchè appaiano correttamente nel grafico 
-        'question.domandaDropDown.dropDownItems.Reverse() <= NO, fa solo casino.
-
-        ' controllo se i testi delle opzioni contengono HTML
-        'non interessa
-        'For Each oOpz As DropDownItem In question.domandaDropDown.dropDownItems
-        '    If Not Me.SmartTagsAvailable.TagAll(oOpz.testo) = oOpz.testo Then
-        '        putTextOutsideChart = True
-        '        'oGrafico.Width = 450
-        '        cellaGrafico.CssClass &= " small"
-        '        Exit For
-        '    End If
-        'Next
-
+        Dim TotaleRisposte As Integer = 0
 
         For Each oOpz As DropDownItem In question.domandaDropDown.dropDownItems
             Dim iOpzione As Int16
@@ -1484,391 +1805,416 @@ Public Class GestioneRisposte
             Dim nRispPercent As Decimal = 0
             If question.risposteDomanda.Count > 0 Then
                 nRispPercent = oOpz.numeroRisposte / question.risposteDomanda.Count
+
             End If
 
+            TotaleRisposte = TotaleRisposte + oOpz.numeroRisposte
+
             'creo la tabella per le risposte dropdown
-            'Dim riga As New TableRow
-            'Dim cella1 As New TableCell
-            'If putTextOutsideChart Then
-            '    cella1.Text = oOpz.numero.ToString() + " " + SmartTagsAvailable.TagAll(oOpz.testo)
 
-            '    'HTML5
+            Dim riga As New TableRow
+            riga.CssClass = "optiontext"
+            Dim cella As New TableCell
+            cella.CssClass = _ClassData
+            cella.Text = oOpz.numero
+            riga.Cells.Add(cella)
 
+            cella = New TableCell
+            cella.CssClass = _ClassText
 
-            '    cella1.HorizontalAlign = HorizontalAlign.Left
-            'End If
+            If oOpz.testo.Length > labelLenght Then
+                labelLenght = oOpz.testo.Length
+            End If
 
-            xAxisLabel.Add(oOpz.testo) 'String.Format("{0}{1}", oOpz.numero.ToString(), oOpz.testo))
+            If (oOpz.isCorretta) Then
+                cella.Text = String.Format("{0} {1}", oOpz.testo, _CorrectString)
+            Else
+                cella.Text = oOpz.testo
+            End If
 
-            'riga.Cells.Add(cella1)
-            'Dim cella2 As New TableCell
-            'cella2.Text = oOpz.numeroRisposte
-            'cella2.HorizontalAlign = HorizontalAlign.Right
-            'riga.Cells.Add(cella2)
+            riga.Cells.Add(cella)
 
-            'Dim cellaColore As New TableCell
-            'cellaColore.BackColor = GetColor(iOpzione)
-            'cellaColore.Width = 30
-            'riga.Cells.Add(cellaColore)
-            'tabella.Rows.Add(riga)
+            cella = New TableCell
+            cella.CssClass = _ClassData
+            cella.Text = oOpz.numeroRisposte
+            riga.Cells.Add(cella)
+
+            cella = New TableCell
+            cella.CssClass = _ClassData
+            cella.Text = String.Format("{0}%", (oOpz.numeroRisposte * 100 / question.risposteDomanda.Count).ToString(_FormatPerc))
+            riga.Cells.Add(cella)
+            If Alternate Then
+                riga.CssClass &= " alternate"
+            End If
+
+            Alternate = Not Alternate
+
+            dataTable.Rows.Add(riga)
+
+            xAxisLabel.Add(oOpz.testo)
+
 
             Dim chartItem As New ChartSeriesItem
             MyBase.SetCulture("pg_ucStatisticheGeneraliQuest", "Questionari")
             chartItem.Name = Me.Resource.getValue("opzioneLegenda") & oOpz.numero
-            'chartItem.MainColor = GetColor(iOpzione)
-            'chartItem.Appearance.FillStyle = FillStyle.Solid
-            'serie.Items.Add(chartItem)
-            'serie.DefaultLabelValue = "#%"
-            'serie.SetItemValue(iOpzione, nRispPercent)
-            'serie.Appearance.LabelAppearance.Dimensions.Margins.Left = 10
-            values.Add(nRispPercent)
+
+            If Double.IsNaN(nRispPercent) Then
+                nRispPercent = 0
+            End If
+            values.Add(New KeyValuePair(Of String, Double)(oOpz.testo, nRispPercent))
             iOpzione += 1
         Next
-        'oGrafico.Series.Add(serie)
 
-        'oGrafico.PlotArea.YAxis.Visible = Styles.ChartAxisVisibility.False
+        Dim RowSummaries As New TableRow
+        RowSummaries.CssClass = "summary"
+        Dim sumCell As New TableCell
+        sumCell.ColumnSpan = 2
+        sumCell.CssClass = _ClassText
+        sumCell.Text = "Totale"
+        RowSummaries.Cells.Add(sumCell)
 
-        'oGrafico.PlotArea.XAxis.AutoScale = False
-        'oGrafico.PlotArea.XAxis.AddRange(0, question.domandaDropDown.dropDownItems.Count - 1, 1)
+        sumCell = New TableCell
+        sumCell.CssClass = _ClassData
+        sumCell.Text = TotaleRisposte
 
-        'Dim j As Integer = 0
+        RowSummaries.Cells.Add(sumCell)
 
-        'For j = 0 To question.domandaDropDown.dropDownItems.Count - 1
-        '    If putTextOutsideChart Then
-        '        oGrafico.PlotArea.XAxis.AutoScale = True
-        '    Else
-        '        oGrafico.PlotArea.XAxis(j).TextBlock.Text = Me.SmartTagsAvailable.TagAll(question.domandaDropDown.dropDownItems(j).testo)
-        '    End If
-        'Next
+        sumCell = New TableCell
+        sumCell.CssClass = _ClassData
+        If question.risposteDomanda.Count > 0 Then
+            sumCell.Text = String.Format("{0}%", (TotaleRisposte * 100 / question.risposteDomanda.Count).ToString(_FormatPerc))
+        Else
+            sumCell.Text = "0%"
+        End If
+        RowSummaries.Cells.Add(sumCell)
 
-        'oGrafico.Legend.Visible = False
+        dataTable.Rows.Add(RowSummaries)
+
+        'HTML 5 chart
+
+        Dim isnewLine As Boolean = False
+        Dim charLenght As Integer = _MaxCharacterForchartInline
+
+        If (labelLenght >= _NewLineMaxHeaderChar) Then
+            isnewLine = True
+            charLenght = _MaxCharacterForchartNewline
+        End If
 
 
-        Dim oChart As RadHtmlChart = ChartHelper.CreateBarChar( _
-           values, xAxisLabel, True, 100, ChartHelper.NoCutLabel)
+        Dim oChart As RadHtmlChart = ChartHelper.CreatePieChar(values, charLenght)
 
-        cellaGrafico.Controls.Add(oChart)
-        'cellaGrafico.RowSpan = question.domandaDropDown.dropDownItems.Count
+        Dim chartContainer As New System.Web.UI.HtmlControls.HtmlGenericControl("DIV")
+        chartContainer.Controls.Add(oChart)
+        chartContainer.Attributes.Add("class", "optionChart pieChart")
 
-        Dim row As New TableRow()
-        row.Cells.Add(cellaGrafico)
+        Dim tdData As New TableCell
+        Dim chartClass As String = "dataContainer" 'maxLabelLenght
 
-        tabella.Rows.Add(row)
-        'tabella.Rows(0).Cells.Add(cellaGrafico)
-        Return tabella
+        If isnewLine Then
+            chartClass = "dataContainer longLabel"
+        End If
+
+        tdData.CssClass = chartClass '"dataContainer"
+        tdData.Controls.Add(dataTable)
+        tdData.Controls.Add(chartContainer)
+
+        Dim trData As New TableRow
+        trData.Cells.Add(tdData)
+
+        mainTable.Rows.Add(trData)
+
+        Return mainTable
     End Function
 
 
 
 
     Private Function CreateTableForRatingQuestion(ByVal oDomanda As Domanda) As Table
-        
-        Dim averages As New List(Of Double)()
-        Dim labels As New List(Of String)()
-
-        Dim currentAvg As Double = 0
-        
-
-        Dim tabella As New Table
-        tabella.GridLines = GridLines.Horizontal
-        tabella.CssClass = "datatable"
-        
-        Dim numeroRating As Integer = oDomanda.domandaRating.numeroRating
-        Dim rigaInt As New TableRow
-
-        If oDomanda.domandaRating.opzioniRating.Count > 1 Then
-            Dim cellaInt1 As New TableCell
-            rigaInt.Cells.Add(cellaInt1)
-        End If
-
-        If oDomanda.domandaRating.tipoIntestazione = DomandaRating.TipoIntestazioneRating.Numerazione Then
-            For i As Integer = 1 To oDomanda.domandaRating.numeroRating
-                Dim cella As New TableCell
-                cella.HorizontalAlign = HorizontalAlign.Center
-                cella.Text = i
-                cella.Font.Bold = True
-                rigaInt.Cells.Add(cella)
-            Next
-
-        Else
-            For Each oInt As DomandaOpzione In oDomanda.domandaRating.intestazioniRating
-                Dim cella As New TableCell
-                cella.HorizontalAlign = HorizontalAlign.Center
-                cella.Text = oInt.testo
-                cella.Font.Bold = True
-                rigaInt.Cells.Add(cella)
-            Next
-
-        End If
-
-        If oDomanda.domandaRating.mostraND Then
-            Dim cellaND As New TableCell
-            cellaND.HorizontalAlign = HorizontalAlign.Center
-            cellaND.Text = oDomanda.domandaRating.testoND
-            cellaND.CssClass = "cellarisposte"
-            rigaInt.Cells.Add(cellaND)
-            numeroRating = numeroRating + 1
-        End If
-
-        Dim cellaAVGheader As New TableCell
-        cellaAVGheader.HorizontalAlign = HorizontalAlign.Center
-        cellaAVGheader.Text = Me.Resource.getValue("VisualizzaRisposteAltro")
-        cellaAVGheader.Text = "*Media"
-        cellaAVGheader.Font.Bold = True
-        rigaInt.Cells.Add(cellaAVGheader)
-        rigaInt.CssClass = "header"
-        tabella.Rows.Add(rigaInt)
-
-        Dim iOpzione As Integer = 0
-        
-        For Each oOpz As DomandaOpzione In oDomanda.domandaRating.opzioniRating
-            Dim noText As Integer = 0
-            If oOpz.testo = String.Empty Then
-                noText = 1
-            End If
-            Dim riga As New TableRow
-
-            Dim cella As New TableCell
-
-            If oDomanda.domandaRating.opzioniRating.Count > 1 Then
-                Dim lbTesto As New Label
-                lbTesto.Text = SmartTagsAvailable.TagAll(oOpz.testo)
-                cella.CssClass = "cellarisposte"
-                cella.Controls.Add(lbTesto)
-
-                labels.Add(TxtHelper_HtmlCutToString(oOpz.testo, MaxCharacterForchart))
-
-                If oOpz.isAltro Then
-                    Dim LNKVisualizzaRisposte As New LinkButton
-                    MyBase.SetCulture("pg_ucStatisticheGenerali", "Questionari")
-                    LNKVisualizzaRisposte.Text = Me.Resource.getValue("VisualizzaRisposteAltro")
-                    LNKVisualizzaRisposte.CommandName = "visualizzaRisposte"
-                    LNKVisualizzaRisposte.CommandArgument = oOpz.id
-                    cella.Controls.Add(LNKVisualizzaRisposte)
-                End If
-
-                cella.HorizontalAlign = HorizontalAlign.Left
-                riga.Cells.Add(cella)
-            End If
-            
-            currentAvg = 0
-            Dim currentCount As Integer = 0
-
-            For c As Integer = 1 To numeroRating
-                Dim cellaRB As New TableCell
-                cellaRB.HorizontalAlign = HorizontalAlign.Left
-                Dim count As Integer = 0
-                For Each oRisp As RispostaDomanda In oDomanda.risposteDomanda
-                    'notext serve per visualizzare le statistiche corrette quando non c'e' un testo nell'opz. rating. se si cambia la lettura dei dati dal quest, va cambiato anche questo
-                    If oOpz.numero = oRisp.numeroOpzione And c = oRisp.valore + noText Then
-                        count = count + 1
-                    End If
-                Next
-                cellaRB.Text = count
-                cellaRB.HorizontalAlign = HorizontalAlign.Center
-                Dim chartItem As New ChartSeriesItem
-                chartItem.Appearance.FillStyle.MainColor = GetColor(iOpzione)
-                chartItem.YValue = count
-                riga.Cells.Add(cellaRB)
-                currentAvg += count * c
-                currentCount += count
-            Next
-
-            currentAvg = (currentAvg / currentCount)
-            averages.Add(currentAvg)
-
-            Dim cellaAvg As New TableCell()
-            cellaAvg.Text = currentAvg
-            cellaAvg.HorizontalAlign = HorizontalAlign.Center
-            cellaAvg.Font.Bold = True
-            riga.Cells.Add(cellaAvg)
-
-           MyBase.SetCulture("pg_ucStatisticheGenerali", "Questionari")
-           
-            If (iOpzione Mod 2 > 0) Then
-                riga.CssClass = "alternate"
-            End If
-            tabella.Rows.Add(riga)
-            iOpzione = iOpzione + 1
-            
-        Next
-
-        Dim chartTitle As String = ""
-
-        If Me.QuestionarioCorrente.tipo = Questionario.TipoQuestionario.Sondaggio Then
-            chartTitle = Me.QuestionarioCorrente.nome
-        End If
-
-
-
-        'Tabella contenitore
-
-        'Cella tabella dati
-       
-        Dim cellaDati As New TableCell
-        cellaDati.CssClass = "tddata"
-        cellaDati.Controls.Add(tabella)
-        
-        Dim rigaDati As New TableRow
-        rigaDati.Cells.Add(cellaDati)
-
-
-        'GRafico HTML 5
-
-        Dim oChart As RadHtmlChart = ChartHelper.CreateBarChar(averages, labels, False, numeroRating, MaxCharacterForchart, chartTitle)
-
-        Dim cellaGrafico As New TableCell
-        cellaGrafico.CssClass = "tdchart"
-        cellaGrafico.Controls.Add(oChart)
-       
-        Dim rigaGrafico As New TableRow
-        rigaGrafico.Cells.Add(cellaGrafico)
-
-
-
-        'Main:
-
-        Dim tabellaMain As New Table
-        tabellaMain.CssClass = "ratingquestion statistics"
-        tabellaMain.GridLines = GridLines.Horizontal
-
-        tabellaMain.Rows.Add(rigaDati)
-        tabellaMain.Rows.Add(rigaGrafico)
-
-
-        Return tabellaMain
-    End Function
-
-    Private Function CreateTableForRatingStarsQuestion(ByVal oDomanda As Domanda) As Table
+        Dim labelLenght As Integer = 0
+        Dim headerLenght As Integer = 2
+        'INTESTAZIONI
 
         Dim averages As New List(Of Double)()
         Dim labels As New List(Of String)()
 
-        Dim currentAvg As Double = 0
+        Dim Summaries As New Dictionary(Of Integer, Integer)()
+
+        'Dim currentAvg As Double = 0
+
+        Dim mainTable As New Table
+        mainTable.CssClass = "ratingquestion statistics"
 
 
-        Dim tabella As New Table
-        tabella.GridLines = GridLines.Horizontal
-        tabella.CssClass = "datatable"
+        Dim tableData As New Table
+        tableData.CssClass = "tableData"
 
         Dim numeroRating As Integer = oDomanda.domandaRating.numeroRating
-        Dim rigaInt As New TableRow
+        Dim rigaInt As New TableHeaderRow
 
-        If oDomanda.domandaRating.opzioniRating.Count > 1 Then
-            Dim cellaInt1 As New TableCell
-            rigaInt.Cells.Add(cellaInt1)
+
+        Dim hasAverage As Boolean = False
+
+        Dim TestoND As String
+        If String.IsNullOrEmpty(oDomanda.domandaRating.testoND) Then
+            TestoND = "--"
+        Else
+            TestoND = oDomanda.domandaRating.testoND
         End If
 
+        If String.IsNullOrWhiteSpace(TestoND) Then
+            TestoND = "&nbsp;"
+        End If
+
+        'Cella colonna opzioni
+        'If oDomanda.domandaRating.opzioniRating.Count > 0 Then
+
+        Dim cellaInt1 As New TableHeaderCell
+        cellaInt1.Text = "#"
+        cellaInt1.CssClass = _ClassIndex
+        rigaInt.Cells.Add(cellaInt1)
+
+        cellaInt1 = New TableHeaderCell
+        cellaInt1.Text = "Opzione"
+        cellaInt1.CssClass = _ClassText
+        rigaInt.Cells.Add(cellaInt1)
+        'End If
+
+        'Celle valori
         If oDomanda.domandaRating.tipoIntestazione = DomandaRating.TipoIntestazioneRating.Numerazione Then
             For i As Integer = 1 To oDomanda.domandaRating.numeroRating
-                Dim cella As New TableCell
-                cella.HorizontalAlign = HorizontalAlign.Center
+                Dim cella As New TableHeaderCell
                 cella.Text = i
-                cella.Font.Bold = True
+                cella.CssClass = _ClassData
                 rigaInt.Cells.Add(cella)
-            Next
 
+                headerLenght += 2
+            Next
+            hasAverage = True
         Else
             For Each oInt As DomandaOpzione In oDomanda.domandaRating.intestazioniRating
-                Dim cella As New TableCell
-                cella.HorizontalAlign = HorizontalAlign.Center
+                Dim cella As New TableHeaderCell
                 cella.Text = oInt.testo
-                cella.Font.Bold = True
+
+                headerLenght += cella.Text.Length + 1
+
+                cella.CssClass = _ClassData
                 rigaInt.Cells.Add(cella)
             Next
-
+            hasAverage = False
         End If
 
-        If oDomanda.domandaRating.mostraND Then
-            Dim cellaND As New TableCell
-            cellaND.HorizontalAlign = HorizontalAlign.Center
-            cellaND.Text = oDomanda.domandaRating.testoND
-            cellaND.CssClass = "cellarisposte"
-            rigaInt.Cells.Add(cellaND)
-            numeroRating = numeroRating + 1
+        If hasAverage Then
+            'Cella media
+            Dim cellaAVGheader As New TableHeaderCell
+            cellaAVGheader.Text = Me.Resource.getValue("HeaderValue.Average")
+            cellaAVGheader.Text = "Avg."
+            cellaAVGheader.CssClass = _ClassData
+            rigaInt.Cells.Add(cellaAVGheader)
+
+            'Cella Dev
+            Dim cellaDevheader As New TableHeaderCell
+            cellaDevheader.Text = Me.Resource.getValue("HeaderValue.Dev")
+            cellaDevheader.Text = "Dev.St."
+            cellaDevheader.CssClass = _ClassData
+            rigaInt.Cells.Add(cellaDevheader)
+
+            headerLenght += 4
         End If
 
-        Dim cellaAVGheader As New TableCell
-        cellaAVGheader.HorizontalAlign = HorizontalAlign.Center
-        cellaAVGheader.Text = Me.Resource.getValue("VisualizzaRisposteAltro")
-        cellaAVGheader.Text = "*Media"
-        cellaAVGheader.Font.Bold = True
-        rigaInt.Cells.Add(cellaAVGheader)
         rigaInt.CssClass = "header"
-        tabella.Rows.Add(rigaInt)
 
+        'Cella ND
+        If oDomanda.domandaRating.mostraND Then
+            Dim cellaND As New TableHeaderCell
+            cellaND.CssClass = _ClassData
+            cellaND.Text = TestoND
+            rigaInt.Cells.Add(cellaND)
+            'numeroRating = numeroRating + 1
+            headerLenght += 2
+        End If
+
+        'Dim ColSpan As Integer = rigaInt.Cells.Count()
+
+        tableData.Rows.Add(rigaInt)
+
+        'RIGHE VALORI
         Dim iOpzione As Integer = 0
 
+        Dim chrValues As New List(Of KeyValuePair(Of String, List(Of KeyValuePair(Of String, Integer))))
+
+        Dim BarCount As Integer = oDomanda.domandaRating.opzioniRating.Count
+
+        If BarCount < 1 Then
+            BarCount = 0
+        Else
+            BarCount = BarCount - 1
+        End If
+
+        Dim index As Integer = 1
+
+        'Dim countND As Integer = 0
         For Each oOpz As DomandaOpzione In oDomanda.domandaRating.opzioniRating
-            Dim noText As Integer = 0
-            If oOpz.testo = String.Empty Then
-                noText = 1
-            End If
+
+            Dim chrSerie As New List(Of KeyValuePair(Of String, Integer))
+
             Dim riga As New TableRow
 
             Dim cella As New TableCell
+            cella.CssClass = _ClassIndex
+            cella.Text = index
+            index = index + 1
+            riga.Cells.Add(cella)
 
-            If oDomanda.domandaRating.opzioniRating.Count > 1 Then
-                Dim lbTesto As New Label
-                lbTesto.Text = SmartTagsAvailable.TagAll(oOpz.testo)
-                cella.CssClass = "cellarisposte"
-                cella.Controls.Add(lbTesto)
+            cella = New TableCell
 
-                labels.Add(TxtHelper_HtmlCutToString(oOpz.testo, MaxCharacterForchart))
+            'If oDomanda.domandaRating.opzioniRating.Count > 1 Then
+            Dim text As String = SmartTagsAvailable.TagAll(oOpz.testo)
 
-                If oOpz.isAltro Then
-                    Dim LNKVisualizzaRisposte As New LinkButton
-                    MyBase.SetCulture("pg_ucStatisticheGenerali", "Questionari")
-                    LNKVisualizzaRisposte.Text = Me.Resource.getValue("VisualizzaRisposteAltro")
-                    LNKVisualizzaRisposte.CommandName = "visualizzaRisposte"
-                    LNKVisualizzaRisposte.CommandArgument = oOpz.id
-                    cella.Controls.Add(LNKVisualizzaRisposte)
-                End If
-
-                cella.HorizontalAlign = HorizontalAlign.Left
-                riga.Cells.Add(cella)
+            If (text.Length > labelLenght) Then
+                labelLenght = text.Length
             End If
 
-            currentAvg = 0
-            Dim currentCount As Integer = 0
+            If String.IsNullOrEmpty(text) Then
+                text = "&nbsp;"
+            End If
+
+            Dim lbTesto As New Label
+            lbTesto.Text = text
+
+            cella.CssClass = _ClassText
+            cella.Controls.Add(lbTesto)
+
+            labels.Add(oOpz.testo)
+
+            If oOpz.isAltro Then
+                Dim LNKVisualizzaRisposte As New LinkButton
+                MyBase.SetCulture("pg_ucStatisticheGenerali", "Questionari")
+                LNKVisualizzaRisposte.Text = Me.Resource.getValue("VisualizzaRisposteAltro")
+                LNKVisualizzaRisposte.CommandName = "visualizzaRisposte"
+                LNKVisualizzaRisposte.CommandArgument = oOpz.id
+                cella.Controls.Add(LNKVisualizzaRisposte)
+            End If
+
+            riga.Cells.Add(cella)
+            'End If
+
+            Dim avgValues As New List(Of Integer)
+
+            Dim chrSeries As New List(Of KeyValuePair(Of String, Integer))
+
+
+
 
             For c As Integer = 1 To numeroRating
                 Dim cellaRB As New TableCell
-                cellaRB.HorizontalAlign = HorizontalAlign.Left
+                cellaRB.CssClass = _ClassData
                 Dim count As Integer = 0
                 For Each oRisp As RispostaDomanda In oDomanda.risposteDomanda
                     'notext serve per visualizzare le statistiche corrette quando non c'e' un testo nell'opz. rating. se si cambia la lettura dei dati dal quest, va cambiato anche questo
-                    If oOpz.numero = oRisp.numeroOpzione And c = oRisp.valore + noText Then
+                    If oOpz.numero = oRisp.numeroOpzione And c = oRisp.valore Then
                         count = count + 1
                     End If
                 Next
+
+                If Not hasAverage Then
+
+                    Dim opz As DomandaOpzione = oDomanda.domandaRating.intestazioniRating _
+                    .FirstOrDefault(Function(o) o.numero = c)
+
+                    If Not IsNothing(opz) AndAlso Not String.IsNullOrWhiteSpace(opz.testo) Then
+                        chrSeries.Add(New KeyValuePair(Of String, Integer)(TxtHelper_HtmlToString(opz.testo), count))
+                    Else
+                        chrSeries.Add(New KeyValuePair(Of String, Integer)(TxtHelper_HtmlToString(c.ToString()), count))
+                    End If
+
+                End If
+
+                If (Summaries.ContainsKey(c)) Then
+
+                    Summaries(c) = Summaries(c) + count
+                Else
+                    Summaries.Add(c, count)
+                End If
+
                 cellaRB.Text = count
-                cellaRB.HorizontalAlign = HorizontalAlign.Center
                 Dim chartItem As New ChartSeriesItem
                 chartItem.Appearance.FillStyle.MainColor = GetColor(iOpzione)
                 chartItem.YValue = count
                 riga.Cells.Add(cellaRB)
-                currentAvg += count * c
-                currentCount += count
+
+                If count > 0 Then
+                    For i As Integer = 1 To count
+                        avgValues.Add(c)
+                    Next
+                End If
+
             Next
 
-            currentAvg = (currentAvg / currentCount)
-            averages.Add(currentAvg)
 
-            Dim cellaAvg As New TableCell()
-            cellaAvg.Text = currentAvg
-            cellaAvg.HorizontalAlign = HorizontalAlign.Center
-            cellaAvg.Font.Bold = True
-            riga.Cells.Add(cellaAvg)
+
+            If hasAverage Then
+                Dim currentAvg As Double = 0
+                Dim currentDev As Double = Deviation(avgValues, currentAvg)
+
+                If (Double.IsNaN(currentAvg)) Then
+                    currentAvg = 0
+                End If
+                averages.Add(currentAvg)
+
+
+                'Average
+                Dim cellaAvg As New TableCell()
+                cellaAvg.CssClass = _ClassData
+                cellaAvg.Text = currentAvg.ToString(_FormatAvg)
+                riga.Cells.Add(cellaAvg)
+
+                'Deviation
+                Dim cellaDev As New TableCell()
+                cellaDev.CssClass = _ClassData
+                cellaDev.Text = currentDev.ToString(_FormatDev)
+                riga.Cells.Add(cellaDev)
+
+            Else
+                Dim kvpSeries As KeyValuePair(Of String, List(Of KeyValuePair(Of String, Integer))) =
+                    New KeyValuePair(Of String, List(Of KeyValuePair(Of String, Integer)))(TxtHelper_HtmlToString(oOpz.testo), chrSeries)
+
+                chrValues.Add(kvpSeries)
+
+            End If
 
             MyBase.SetCulture("pg_ucStatisticheGenerali", "Questionari")
 
             If (iOpzione Mod 2 > 0) Then
                 riga.CssClass = "alternate"
             End If
-            tabella.Rows.Add(riga)
+
             iOpzione = iOpzione + 1
 
+
+            'Celle "No Risposta"
+
+            If oDomanda.domandaRating.mostraND Then
+                Dim cellaND As New TableCell
+                cellaND.CssClass = _ClassData
+                Dim count As Integer = 0
+
+                For Each oRisp As RispostaDomanda In oDomanda.risposteDomanda
+                    'notext serve per visualizzare le statistiche corrette quando non c'e' un testo nell'opz. rating. se si cambia la lettura dei dati dal quest, va cambiato anche questo
+                    If oOpz.numero = oRisp.numeroOpzione And oRisp.valore = numeroRating + 1 Then
+                        count = count + 1
+                    End If
+                Next
+
+                If Not Summaries.ContainsKey(numeroRating + 1) Then
+                    Summaries(numeroRating + 1) = 0
+                End If
+
+                Summaries(numeroRating + 1) += count
+                cellaND.Text = count
+                riga.Cells.Add(cellaND)
+            End If
+
+            tableData.Rows.Add(riga)
         Next
 
         Dim chartTitle As String = ""
@@ -1879,43 +2225,600 @@ Public Class GestioneRisposte
 
 
 
-        'Tabella contenitore
+        'Riga riepilogo
+        Dim rowSummary As New TableRow
+        rowSummary.CssClass = "summary"
 
-        'Cella tabella dati
+        Dim cellSummary As New TableCell()
+        cellSummary.Text = "Totali"
+        cellSummary.CssClass = _ClassText
+        cellSummary.ColumnSpan = 2
+        rowSummary.Cells.Add(cellSummary)
 
-        Dim cellaDati As New TableCell
-        cellaDati.CssClass = "tddata"
-        cellaDati.Controls.Add(tabella)
+        For i As Integer = 1 To numeroRating
+            cellSummary = New TableCell()
+            cellSummary.CssClass = _ClassData
+            If Summaries.ContainsKey(i) Then
+                cellSummary.Text = Summaries(i)
+            Else
+                cellSummary.Text = "0"
+            End If
+            rowSummary.Cells.Add(cellSummary)
+        Next
 
-        Dim rigaDati As New TableRow
-        rigaDati.Cells.Add(cellaDati)
+        If hasAverage Then
+            cellSummary = New TableCell()
+            cellSummary.CssClass = _ClassData
+            cellSummary.Text = "--"
+            rowSummary.Cells.Add(cellSummary)
+            cellSummary = New TableCell()
+            cellSummary.CssClass = _ClassData
+            cellSummary.Text = "--"
+            rowSummary.Cells.Add(cellSummary)
+        End If
+
+        If oDomanda.domandaRating.mostraND Then
+            cellSummary = New TableCell()
+            cellSummary.CssClass = _ClassData
+            If Summaries.ContainsKey(numeroRating + 1) Then
+                cellSummary.Text = Summaries(numeroRating + 1)
+            Else
+                cellSummary.Text = "0"
+            End If
+            rowSummary.Cells.Add(cellSummary)
+        End If
+
+        tableData.Rows.Add(rowSummary)
+
+
+
+        'Summaries(c)
+
+
+        ''Cella tabella dati
+
+        'Dim cellaDati As New TableCell
+        'cellaDati.Controls.Add(tableData)
+
+        'Dim rigaDati As New TableRow
+        'rigaDati.Cells.Add(cellaDati)
 
 
         'GRafico HTML 5
 
-        Dim oChart As RadHtmlChart = ChartHelper.CreateBarChar(averages, labels, False, numeroRating, MaxCharacterForchart, chartTitle)
+        Dim charLenght As Integer = _MaxCharacterForchartInline
+        Dim newLine As Boolean = False
+        If (labelLenght > _NewLineCharacter) OrElse (labelLenght + headerLenght > _NewLineMaxHeaderChar) Then
+            newLine = True
+            charLenght = _MaxCharacterForchartNewline
+        End If
 
-        Dim cellaGrafico As New TableCell
-        cellaGrafico.CssClass = "tdchart"
-        cellaGrafico.Controls.Add(oChart)
-
-        Dim rigaGrafico As New TableRow
-        rigaGrafico.Cells.Add(cellaGrafico)
-
-
-
-        'Main:
-
-        Dim tabellaMain As New Table
-        tabellaMain.CssClass = "ratingquestion statistics"
-        tabellaMain.GridLines = GridLines.Horizontal
-
-        tabellaMain.Rows.Add(rigaDati)
-        tabellaMain.Rows.Add(rigaGrafico)
+        Dim oChart As RadHtmlChart
+        If hasAverage Then
+            oChart = ChartHelper.CreateBarChar(averages, labels, False, numeroRating, charLenght, chartTitle)
+        Else
+            oChart = ChartHelper.CreateStackedBarCharForRatingReverse(BarCount, chrValues, charLenght)
+        End If
 
 
-        Return tabellaMain
+        'Dim cellaGrafico As New TableCell
+        'cellaGrafico.CssClass = "tdchart"
+
+        'If Not IsNothing(oChart) Then
+        '    cellaGrafico.Controls.Add(oChart)
+        'End If
+
+
+        'Dim rigaGrafico As New TableRow
+        ''Dim colSpan As Integer = numeroRating + 2
+        ''If oDomanda.domandaRating.mostraND Then
+        ''    colSpan += 1
+        ''End If
+        ''cellaGrafico.ColumnSpan = colSpan
+        'rigaGrafico.Cells.Add(cellaGrafico)
+
+        Dim chartContainer As New System.Web.UI.HtmlControls.HtmlGenericControl("DIV")
+        chartContainer.Controls.Add(oChart)
+
+        Dim chartClass As String = "dataContainer" 'maxLabelLenght
+
+        If newLine Then
+            chartClass = "dataContainer longLabel"
+        End If
+
+        chartContainer.Attributes.Add("class", "optionChart barChart")
+
+        Dim tdData As New TableCell
+        tdData.CssClass = chartClass '"dataContainer"
+        tdData.Controls.Add(tableData)
+        tdData.Controls.Add(chartContainer)
+
+        Dim trData As New TableRow
+        trData.Cells.Add(tdData)
+
+        mainTable.Rows.Add(trData)
+
+        ''Main:
+        'mainTable.Rows.Add(rigaDati)
+        'mainTable.Rows.Add(rigaGrafico)
+
+        Return mainTable
     End Function
+
+    Private Function CreateTableForRatingStarsQuestion_V2(ByVal oDomanda As Domanda) As Table
+
+        Dim labelLenght As Integer = 0
+        Dim headerLenght As Integer = 2
+
+        'INTESTAZIONI
+        Dim mainTable As New Table
+        mainTable.CssClass = "ratingquestion statistics"
+
+        Dim tabella As New Table
+        tabella.CssClass = "tableData"
+
+        Dim averages As New List(Of Double)()
+        Dim labels As New List(Of String)()
+
+        'Dim currentAvg As Double = 0
+        Dim Summaries As New Dictionary(Of Integer, Integer)()
+
+
+
+        Dim numeroRating As Integer = oDomanda.domandaRating.numeroRating
+        Dim rigaInt As New TableHeaderRow
+        rigaInt.CssClass = "header"
+
+        'Cella vuota (colonna opzioni)
+        'If oDomanda.domandaRating.opzioniRating.Count > 1 Then
+        Dim cellaInt1 As New TableHeaderCell
+            cellaInt1.Text = "#"
+            cellaInt1.CssClass = _ClassIndex
+            rigaInt.Cells.Add(cellaInt1)
+
+            cellaInt1 = New TableHeaderCell
+            cellaInt1.Text = "Testo opzione"
+            cellaInt1.CssClass = _ClassText
+            rigaInt.Cells.Add(cellaInt1)
+        'End If
+
+
+        'Celle valori
+        'If oDomanda.domandaRating.tipoIntestazione = DomandaRating.TipoIntestazioneRating.Numerazione Then
+        For i As Integer = 1 To oDomanda.domandaRating.numeroRating
+            Dim cella As New TableHeaderCell
+            cella.CssClass = _ClassData
+            cella.Text = i
+            rigaInt.Cells.Add(cella)
+            headerLenght += 2
+        Next
+
+
+
+        'Cella media
+        Dim cellaAVGheader As New TableHeaderCell
+        cellaAVGheader.CssClass = _ClassData
+        cellaAVGheader.Text = Me.Resource.getValue("HeaderValue.Average")
+        cellaAVGheader.Text = "Avg."
+        rigaInt.Cells.Add(cellaAVGheader)
+
+        'Cella Dev
+        Dim cellaDevheader As New TableHeaderCell
+        cellaDevheader.CssClass = _ClassData
+        cellaDevheader.Text = Me.Resource.getValue("HeaderValue.Dev")
+        cellaDevheader.Text = "Dev.St."
+        rigaInt.Cells.Add(cellaDevheader)
+
+        headerLenght += 4
+        'Dim colSpan As Integer = rigaInt.Cells.Count
+
+        tabella.Rows.Add(rigaInt)
+
+        'RIGHE VALORI
+        Dim iOpzione As Integer = 0
+
+        Dim chrValues As New List(Of KeyValuePair(Of String, List(Of KeyValuePair(Of String, Integer))))
+
+        For Each oOpz As DomandaOpzione In oDomanda.domandaRating.opzioniRating
+
+            'If oDomanda.domandaRating.opzioniRating.Count > 1 Then
+            '    Dim cellaopz As New TableCell
+            '    cellaopz.Text = (iOpzione + 1)
+            '    rigaInt.Cells.Add(cellaopz)
+            'End If
+
+            Dim chrSerie As New List(Of KeyValuePair(Of String, Integer))
+
+            Dim riga As New TableRow
+            Dim cella As New TableCell
+
+            cella.CssClass = _ClassIndex
+            cella.Text = iOpzione
+            riga.Cells.Add(cella)
+
+            cella = New TableCell
+
+            'If oDomanda.domandaRating.opzioniRating.Count > 1 Then
+            Dim lbTesto As New Label
+                lbTesto.Text = SmartTagsAvailable.TagAll(oOpz.testo)
+
+                If lbTesto.Text.Length > labelLenght Then
+                    labelLenght = lbTesto.Text.Length
+                End If
+
+                cella.CssClass = _ClassText
+                cella.Controls.Add(lbTesto)
+
+                labels.Add(oOpz.testo)
+
+                If oOpz.isAltro Then
+                    Dim LNKVisualizzaRisposte As New LinkButton
+                    MyBase.SetCulture("pg_ucStatisticheGenerali", "Questionari")
+                    LNKVisualizzaRisposte.Text = Me.Resource.getValue("VisualizzaRisposteAltro")
+                    LNKVisualizzaRisposte.CommandName = "visualizzaRisposte"
+                    LNKVisualizzaRisposte.CommandArgument = oOpz.id
+                    cella.Controls.Add(LNKVisualizzaRisposte)
+                End If
+                riga.Cells.Add(cella)
+            ' End If
+
+            'currentAvg = 0
+            'Dim currentCount As Integer = 0
+
+
+
+            'Celle risposte previste
+
+            Dim avgValues As New List(Of Integer)
+
+            Dim chrSeries As New List(Of KeyValuePair(Of String, Integer))
+
+            For c As Integer = 1 To numeroRating
+                Dim cellaRB As New TableCell
+                cellaRB.CssClass = _ClassData
+
+                Dim count As Integer = 0
+                For Each oRisp As RispostaDomanda In oDomanda.risposteDomanda
+                    'notext serve per visualizzare le statistiche corrette quando non c'e' un testo nell'opz. rating. se si cambia la lettura dei dati dal quest, va cambiato anche questo
+                    If oOpz.numero = oRisp.numeroOpzione And c = oRisp.valore Then
+                        count = count + 1
+                    End If
+                Next
+
+                cellaRB.Text = count
+                Dim chartItem As New ChartSeriesItem
+                chartItem.Appearance.FillStyle.MainColor = GetColor(iOpzione)
+                chartItem.YValue = count
+                riga.Cells.Add(cellaRB)
+
+                If count > 0 Then
+                    For i As Integer = 1 To count
+                        avgValues.Add(c)
+                    Next
+                End If
+
+                If (Summaries.ContainsKey(c)) Then
+
+                    Summaries(c) = Summaries(c) + count
+                Else
+                    Summaries(c) = count
+                End If
+            Next
+
+
+
+
+            Dim currentAvg As Double = 0
+            Dim currentDev As Double = Deviation(avgValues, currentAvg)
+
+            If (Double.IsNaN(currentAvg)) Then
+                currentAvg = 0
+            End If
+            averages.Add(currentAvg)
+
+
+            'Average
+            Dim cellaAvg As New TableCell()
+            cellaAvg.CssClass = _ClassData
+            cellaAvg.Text = currentAvg.ToString(_FormatAvg)
+            riga.Cells.Add(cellaAvg)
+
+            'Deviation
+            Dim cellaDev As New TableCell()
+            cellaDev.CssClass = _ClassData
+            cellaDev.Text = currentDev.ToString(_FormatDev)
+            riga.Cells.Add(cellaDev)
+
+
+            MyBase.SetCulture("pg_ucStatisticheGenerali", "Questionari")
+
+            If (iOpzione Mod 2 > 0) Then
+                riga.CssClass = "alternate"
+            End If
+
+            iOpzione = iOpzione + 1
+
+
+
+
+            tabella.Rows.Add(riga)
+        Next
+
+        'Riga riepilogo
+        Dim rowSummary As New TableRow
+        rowSummary.CssClass = "summary"
+
+        Dim cellSummary As New TableCell()
+        cellSummary.CssClass = _ClassText
+        cellSummary.ColumnSpan = 2
+        cellSummary.Text = "Totali"
+        rowSummary.Cells.Add(cellSummary)
+
+        For i As Integer = 1 To numeroRating
+            cellSummary = New TableCell()
+            cellSummary.CssClass = _ClassData
+            If Summaries.ContainsKey(i) Then
+                cellSummary.Text = Summaries(i)
+            Else
+                cellSummary.Text = "0"
+            End If
+            rowSummary.Cells.Add(cellSummary)
+        Next
+
+
+        cellSummary = New TableCell()
+        cellSummary.CssClass = _ClassData
+        cellSummary.Text = "--"
+        rowSummary.Cells.Add(cellSummary)
+        cellSummary.CssClass = _ClassData
+        cellSummary = New TableCell()
+        cellSummary.Text = "--"
+        rowSummary.Cells.Add(cellSummary)
+
+        tabella.Rows.Add(rowSummary)
+
+        Dim chartTitle As String = ""
+
+        If Me.QuestionarioCorrente.tipo = Questionario.TipoQuestionario.Sondaggio Then
+            chartTitle = Me.QuestionarioCorrente.nome
+        End If
+
+        'Dim BarCount As Integer = tabella.Rows.Count
+
+        'If BarCount < 1 Then
+        '    BarCount = 0
+        'Else
+        '    BarCount = BarCount - 1
+        'End If
+
+        'Tabella contenitore
+
+        'Cella tabella dati
+
+        'Dim cellaDati As New TableCell
+        'cellaDati.CssClass = _ClassData
+        'cellaDati.Controls.Add(tabella)
+
+        'Dim rigaDati As New TableRow
+        'rigaDati.Cells.Add(cellaDati)
+
+
+        'GRafico HTML 5
+        Dim isnewLine As Boolean = False
+        Dim charLenght As Integer = _MaxCharacterForchartInline
+
+        If (labelLenght > _NewLineCharacter) OrElse (labelLenght + headerLenght > _NewLineMaxHeaderChar) Then
+            isnewLine = True
+            charLenght = _MaxCharacterForchartNewline
+        End If
+
+        Dim oChart As RadHtmlChart
+
+        oChart = ChartHelper.CreateBarChar(averages, labels, False, numeroRating, charLenght, chartTitle)
+
+
+        Dim chartContainer As New System.Web.UI.HtmlControls.HtmlGenericControl("DIV")
+        chartContainer.Controls.Add(oChart)
+        chartContainer.Attributes.Add("class", "optionChart barChart")
+
+
+        Dim chartClass As String = "dataContainer" 'maxLabelLenght
+
+        If isnewLine Then
+            chartClass = "dataContainer longLabel"
+        End If
+
+        Dim tdData As New TableCell
+        tdData.CssClass = chartClass '"dataContainer"
+        tdData.Controls.Add(tabella)
+        tdData.Controls.Add(chartContainer)
+
+        Dim trData As New TableRow
+        trData.Cells.Add(tdData)
+
+        mainTable.Rows.Add(trData)
+        'Dim cellaGrafico As New TableCell
+        'cellaGrafico.CssClass = "tdchart"
+
+        'If Not IsNothing(oChart) Then
+        '    cellaGrafico.Controls.Add(oChart)
+        'End If
+
+
+        'Dim rigaGrafico As New TableRow
+        'rigaGrafico.Cells.Add(cellaGrafico)
+
+        'mainTable.Rows.Add(rigaDati)
+        'mainTable.Rows.Add(rigaGrafico)
+
+        Return mainTable
+    End Function
+
+    'Private Function CreateTableForRatingStarsQuestion_OLD2(ByVal oDomanda As Domanda) As Table
+
+    '    Dim averages As New List(Of Double)()
+    '    Dim labels As New List(Of String)()
+
+    '    Dim currentAvg As Double = 0
+
+
+    '    Dim tabella As New Table
+    '    tabella.CssClass = "datatable"
+
+    '    Dim numeroRating As Integer = oDomanda.domandaRating.numeroRating
+    '    Dim rigaInt As New TableRow
+
+    '    If oDomanda.domandaRating.opzioniRating.Count > 1 Then
+    '        Dim cellaInt1 As New TableCell
+    '        rigaInt.Cells.Add(cellaInt1)
+    '    End If
+
+    '    If oDomanda.domandaRating.tipoIntestazione = DomandaRating.TipoIntestazioneRating.Numerazione Then
+    '        For i As Integer = 1 To oDomanda.domandaRating.numeroRating
+    '            Dim cella As New TableCell
+    '            cella.Text = i
+    '            rigaInt.Cells.Add(cella)
+    '        Next
+
+    '    Else
+    '        For Each oInt As DomandaOpzione In oDomanda.domandaRating.intestazioniRating
+    '            Dim cella As New TableCell
+    '            cella.Text = oInt.testo
+    '            rigaInt.Cells.Add(cella)
+    '        Next
+
+    '    End If
+
+    '    If oDomanda.domandaRating.mostraND Then
+    '        Dim cellaND As New TableCell
+    '        cellaND.Text = oDomanda.domandaRating.testoND
+    '        cellaND.CssClass = "cellarisposte"
+    '        rigaInt.Cells.Add(cellaND)
+    '        numeroRating = numeroRating + 1
+    '    End If
+
+    '    Dim cellaAVGheader As New TableCell
+    '    cellaAVGheader.Text = Me.Resource.getValue("VisualizzaRisposteAltro")
+    '    cellaAVGheader.Text = "Avg"
+    '    rigaInt.Cells.Add(cellaAVGheader)
+    '    rigaInt.CssClass = "header"
+    '    tabella.Rows.Add(rigaInt)
+
+    '    Dim iOpzione As Integer = 0
+
+    '    For Each oOpz As DomandaOpzione In oDomanda.domandaRating.opzioniRating
+    '        Dim noText As Integer = 0
+    '        If oOpz.testo = String.Empty Then
+    '            noText = 1
+    '        End If
+    '        Dim riga As New TableRow
+
+    '        Dim cella As New TableCell
+
+    '        If oDomanda.domandaRating.opzioniRating.Count > 1 Then
+    '            Dim lbTesto As New Label
+    '            lbTesto.Text = SmartTagsAvailable.TagAll(oOpz.testo)
+    '            cella.CssClass = "cellarisposte"
+    '            cella.Controls.Add(lbTesto)
+
+    '            labels.Add(oOpz.testo)
+
+    '            If oOpz.isAltro Then
+    '                Dim LNKVisualizzaRisposte As New LinkButton
+    '                MyBase.SetCulture("pg_ucStatisticheGenerali", "Questionari")
+    '                LNKVisualizzaRisposte.Text = Me.Resource.getValue("VisualizzaRisposteAltro")
+    '                LNKVisualizzaRisposte.CommandName = "visualizzaRisposte"
+    '                LNKVisualizzaRisposte.CommandArgument = oOpz.id
+    '                cella.Controls.Add(LNKVisualizzaRisposte)
+    '            End If
+    '            riga.Cells.Add(cella)
+    '        End If
+
+    '        currentAvg = 0
+    '        Dim currentCount As Integer = 0
+
+    '        For c As Integer = 1 To numeroRating
+    '            Dim cellaRB As New TableCell
+    '            Dim count As Integer = 0
+    '            For Each oRisp As RispostaDomanda In oDomanda.risposteDomanda
+    '                'notext serve per visualizzare le statistiche corrette quando non c'e' un testo nell'opz. rating. se si cambia la lettura dei dati dal quest, va cambiato anche questo
+    '                If oOpz.numero = oRisp.numeroOpzione And c = oRisp.valore + noText Then
+    '                    count = count + 1
+    '                End If
+    '            Next
+    '            cellaRB.Text = count
+    '            Dim chartItem As New ChartSeriesItem
+    '            chartItem.Appearance.FillStyle.MainColor = GetColor(iOpzione)
+    '            chartItem.YValue = count
+    '            riga.Cells.Add(cellaRB)
+    '            currentAvg += count * c
+    '            currentCount += count
+    '        Next
+
+    '        currentAvg = (currentAvg / currentCount)
+    '        If (Double.IsNaN(currentAvg)) Then
+    '            currentAvg = 0
+    '        End If
+    '        averages.Add(currentAvg)
+
+    '        Dim cellaAvg As New TableCell()
+    '        cellaAvg.Text = currentAvg.ToString(_FormatAvg)
+    '        riga.Cells.Add(cellaAvg)
+
+    '        MyBase.SetCulture("pg_ucStatisticheGenerali", "Questionari")
+
+    '        If (iOpzione Mod 2 > 0) Then
+    '            riga.CssClass = "alternate"
+    '        End If
+    '        tabella.Rows.Add(riga)
+    '        iOpzione = iOpzione + 1
+
+    '    Next
+
+    '    Dim chartTitle As String = ""
+
+    '    If Me.QuestionarioCorrente.tipo = Questionario.TipoQuestionario.Sondaggio Then
+    '        chartTitle = Me.QuestionarioCorrente.nome
+    '    End If
+
+
+
+    '    'Tabella contenitore
+
+    '    'Cella tabella dati
+
+    '    Dim cellaDati As New TableCell
+    '    cellaDati.CssClass = _ClassData
+    '    cellaDati.Controls.Add(tabella)
+
+    '    Dim rigaDati As New TableRow
+    '    rigaDati.Cells.Add(cellaDati)
+
+
+    '    'GRafico HTML 5
+
+    '    Dim oChart As RadHtmlChart = ChartHelper.CreateBarChar(averages, labels, False, numeroRating, _MaxCharacterForchartNewline, chartTitle)
+
+    '    Dim cellaGrafico As New TableCell
+    '    cellaGrafico.CssClass = "tdchart"
+    '    cellaGrafico.Controls.Add(oChart)
+
+    '    Dim rigaGrafico As New TableRow
+    '    rigaGrafico.Cells.Add(cellaGrafico)
+
+
+
+    '    'Main:
+
+    '    Dim tabellaMain As New Table
+    '    tabellaMain.CssClass = "ratingquestion statistics"
+
+    '    tabellaMain.Rows.Add(rigaDati)
+    '    tabellaMain.Rows.Add(rigaGrafico)
+
+
+    '    Return tabellaMain
+    'End Function
     'Private Function CreateTableForRatingQuestion_OLD(ByVal oDomanda As Domanda) As Table
     '    Dim oGrafico As New RadChart
     '    oGrafico.DefaultType = ChartSeriesType.Line
@@ -1949,8 +2852,6 @@ Public Class GestioneRisposte
     '            Dim cella As New TableCell
     '            cella.HorizontalAlign = HorizontalAlign.Center
     '            cella.Text = i
-    '            'cella.Height = 20%
-    '            cella.Font.Bold = True
     '            rigaInt.Cells.Add(cella)
     '        Next
 
@@ -1959,8 +2860,6 @@ Public Class GestioneRisposte
     '            Dim cella As New TableCell
     '            cella.HorizontalAlign = HorizontalAlign.Center
     '            cella.Text = oInt.testo
-    '            cella.Font.Bold = True
-    '            'cella.Height = 20%
     '            rigaInt.Cells.Add(cella)
     '        Next
 
@@ -2077,7 +2976,7 @@ Public Class GestioneRisposte
     'End Function
 
 
-  
+
     Private Function CreateTableForRatingStarsQuestion_OLD(ByVal oDomanda As Domanda) As Table
         Dim oGrafico As New RadChart
         oGrafico.DefaultType = ChartSeriesType.Line
@@ -2094,7 +2993,6 @@ Public Class GestioneRisposte
         Dim tabella As New Table
         tabella.CssClass = "ratingquestion statistics"
         tabella.BorderWidth = 1
-        tabella.GridLines = GridLines.Horizontal
         Dim oOpzioniRating As New List(Of DomandaOpzione)
         Dim numeroRating As Integer = oDomanda.domandaRating.numeroRating
         Dim rigaInt As New TableRow
@@ -2109,10 +3007,7 @@ Public Class GestioneRisposte
         'If oDomanda.domandaRating.tipoIntestazione = DomandaRating.TipoIntestazioneRating.Numerazione Then
         For i As Integer = 1 To oDomanda.domandaRating.numeroRating
             Dim cella As New TableCell
-            cella.HorizontalAlign = HorizontalAlign.Center
             cella.Text = i
-            'cella.Height = 20%
-            cella.Font.Bold = True
             rigaInt.Cells.Add(cella)
         Next
 
@@ -2121,8 +3016,6 @@ Public Class GestioneRisposte
         '    Dim cella As New TableCell
         '    cella.HorizontalAlign = HorizontalAlign.Center
         '    cella.Text = oInt.testo
-        '    cella.Font.Bold = True
-        '    'cella.Height = 20%
         '    rigaInt.Cells.Add(cella)
         'Next
 
@@ -2130,7 +3023,6 @@ Public Class GestioneRisposte
 
         If oDomanda.domandaRating.mostraND Then
             Dim cellaND As New TableCell
-            cellaND.HorizontalAlign = HorizontalAlign.Left
             cellaND.Text = oDomanda.domandaRating.testoND
             rigaInt.Cells.Add(cellaND)
             numeroRating = numeroRating + 1
@@ -2163,8 +3055,6 @@ Public Class GestioneRisposte
                     cella.Controls.Add(LNKVisualizzaRisposte)
                 End If
 
-                cella.HorizontalAlign = HorizontalAlign.Left
-
                 Dim cellaColore As New TableCell
                 cellaColore.BackColor = GetColor(iOpzione)
                 cellaColore.ForeColor = GetColor(iOpzione)
@@ -2180,7 +3070,6 @@ Public Class GestioneRisposte
 
             For c As Integer = 1 To numeroRating
                 Dim cellaRB As New TableCell
-                cellaRB.HorizontalAlign = HorizontalAlign.Left
                 'cellaRB.Height = 80%
                 Dim count As Integer = 0
                 For Each oRisp As RispostaDomanda In oDomanda.risposteDomanda
@@ -2190,7 +3079,6 @@ Public Class GestioneRisposte
                     End If
                 Next
                 cellaRB.Text = count
-                cellaRB.HorizontalAlign = HorizontalAlign.Center
                 Dim chartItem As New ChartSeriesItem
                 chartItem.Appearance.FillStyle.MainColor = GetColor(iOpzione)
                 'chartItem.MainColor = GetColor(iOpzione)
@@ -2271,8 +3159,6 @@ Public Class GestioneRisposte
         '    Dim cella As New TableCell
         '    cella.HorizontalAlign = HorizontalAlign.Center
         '    cella.Text = oInt.testo
-        '    cella.Font.Bold = True
-        '    'cella.Height = 20%
         '    rigaInt.Cells.Add(cella)
         'Next
 
@@ -2355,7 +3241,7 @@ Public Class GestioneRisposte
     End Function
     Private Function CreateTableForFreeTextQuestion(ByVal question As Domanda) As Table
         Dim tabella As New Table
-        tabella.CssClass = "freetextquestion statistics"
+        tabella.CssClass = "freetextquestion statistics notNested"
         For Each oOpz As DomandaTestoLibero In question.opzioniTestoLibero
             Dim row As New TableRow
             Dim cell As New TableCell
@@ -2388,7 +3274,7 @@ Public Class GestioneRisposte
     End Function
     Private Function CreateTableForNumericQuestion(ByVal oDomanda As Domanda) As Table
         Dim tabella As New Table
-        tabella.CssClass = "numericquestion statistics"
+        tabella.CssClass = "numericquestion statistics notNested"
         For Each oOpz As DomandaNumerica In oDomanda.opzioniNumerica
             Dim row As New TableRow
             Dim cell As New TableCell
@@ -2398,7 +3284,7 @@ Public Class GestioneRisposte
             Dim oLabel As New Label
 
             oLabel.CssClass = "answer renderedtext"
-            oLabel.Text = SmartTagsAvailable.TagAll(oOpz.testoPrima) + "  "
+            oLabel.Text = oOpz.testoPrima 'String.Format("{0} ({1})", SmartTagsAvailable.TagAll(oOpz.testoPrima), oOpz.numeroRisposte)
             oDiv.Controls.Add(oLabel)
             cell.CssClass = "optiontext"
             cell.Controls.Add(oDiv)
@@ -2431,7 +3317,8 @@ Public Class GestioneRisposte
             End If
         End If
 
-        If oQuestionario.rispostaQuest.dataFine = Date.MaxValue.ToString() Then
+        If oQuestionario.rispostaQuest.dataFine = Date.MaxValue.ToString() _
+            OrElse oQuestionario.rispostaQuest.dataFine = Date.MinValue.ToString() Then
             oStat.isFinito = False
         Else
             oStat.isFinito = True
@@ -3137,7 +4024,7 @@ Public Class GestioneRisposte
     ''' QUESTIONARIO: esportazione di tutte le risposte date !
     ''' </summary>
     ''' <param name="appContext"></param>
-    ''' <param name="idQuest"></param>
+    ''' <param name="Quest"></param>
     ''' <param name="status"></param>
     ''' <param name="idLanguage"></param>
     ''' <param name="anonymousUser"></param>
@@ -3148,11 +4035,50 @@ Public Class GestioneRisposte
     ''' <param name="webResponse"></param>
     ''' <param name="cookie"></param>
     ''' <remarks></remarks>
-    Public Shared Sub ExportQuestionnaireAnswers(appContext As lm.Comol.Core.DomainModel.iApplicationContext, ByVal idQuest As Integer, ByVal platformTaxCodeRequired As Boolean, ByVal status As AnswerStatus, ByVal idLanguage As Integer, ByVal anonymousUser As String, ByVal translations As Dictionary(Of QuestionnaireExportTranslations, String), ByVal type As lm.Comol.Core.DomainModel.Helpers.Export.ExportFileType, openCloseConnection As Boolean, clientFilename As String, webResponse As System.Web.HttpResponse, cookie As System.Web.HttpCookie, Optional ByVal oneColumnForEachQuestion As Boolean = True)
+    Public Shared Sub ExportQuestionnaireAnswers(
+                                                appContext As lm.Comol.Core.DomainModel.iApplicationContext,
+                                                ByVal Quest As Questionario,
+                                                ByVal platformTaxCodeRequired As Boolean,
+                                                ByVal status As AnswerStatus,
+                                                ByVal idLanguage As Integer,
+                                                ByVal anonymousUser As String,
+                                                ByVal translations As Dictionary(Of QuestionnaireExportTranslations, String),
+                                                ByVal type As lm.Comol.Core.DomainModel.Helpers.Export.ExportFileType,
+                                                openCloseConnection As Boolean,
+                                                clientFilename As String,
+                                                webResponse As System.Web.HttpResponse,
+                                                cookie As System.Web.HttpCookie,
+                                                Optional ByVal oneColumnForEachQuestion As Boolean = True)
+
         If oneColumnForEachQuestion Then
-            ExportQuestionnaireAnswersOneColumnForEachQuestion(appContext, idQuest, platformTaxCodeRequired, status, idLanguage, anonymousUser, translations, type, openCloseConnection, clientFilename, webResponse, cookie)
+            ExportQuestionnaireAnswersOneColumnForEachQuestion(
+                appContext,
+                Quest.id,
+                platformTaxCodeRequired,
+                status,
+                idLanguage,
+                anonymousUser,
+                translations,
+                type,
+                openCloseConnection,
+                clientFilename,
+                webResponse,
+                cookie)
+
         Else
-            ExportQuestionnaireAnswersPlain(appContext, idQuest, platformTaxCodeRequired, status, idLanguage, anonymousUser, translations, type, openCloseConnection, clientFilename, webResponse, cookie)
+            ExportQuestionnaireAnswersPlain(
+                appContext,
+                Quest,
+                platformTaxCodeRequired,
+                status,
+                idLanguage,
+                anonymousUser,
+                translations,
+                type,
+                openCloseConnection,
+                clientFilename,
+                webResponse,
+                cookie)
         End If
     End Sub
 
@@ -3218,10 +4144,24 @@ Public Class GestioneRisposte
 
         End Try
     End Sub
-    Private Shared Sub ExportQuestionnaireAnswersPlain(appContext As lm.Comol.Core.DomainModel.iApplicationContext, ByVal idQuest As Integer, ByVal platformTaxCodeRequired As Boolean, ByVal status As AnswerStatus, ByVal idLanguage As Integer, ByVal anonymousUser As String, ByVal translations As Dictionary(Of QuestionnaireExportTranslations, String), ByVal type As lm.Comol.Core.DomainModel.Helpers.Export.ExportFileType, openCloseConnection As Boolean, clientFilename As String, webResponse As System.Web.HttpResponse, cookie As System.Web.HttpCookie)
+    Private Shared Sub ExportQuestionnaireAnswersPlain(
+                                                      appContext As lm.Comol.Core.DomainModel.iApplicationContext,
+                                                      ByVal Quest As Questionario,
+                                                      ByVal platformTaxCodeRequired As Boolean,
+                                                      ByVal status As AnswerStatus,
+                                                      ByVal idLanguage As Integer,
+                                                      ByVal anonymousUser As String,
+                                                      ByVal translations As Dictionary(Of QuestionnaireExportTranslations, String),
+                                                      ByVal type As lm.Comol.Core.DomainModel.Helpers.Export.ExportFileType,
+                                                      openCloseConnection As Boolean,
+                                                      clientFilename As String,
+                                                      webResponse As System.Web.HttpResponse,
+                                                      cookie As System.Web.HttpCookie)
         Try
             Dim service As New Business.ServiceQuestionnaire(appContext)
-            Dim name As String = service.GetQuestionaireName(idQuest, idLanguage)
+            'Dim name As String = service.GetQuestionaireName(idQuest, idLanguage)
+            Dim idQuest As Integer = Quest.id
+            Dim name As String = Quest.nome
 
             If openCloseConnection Then
                 webResponse.Clear()
@@ -3241,7 +4181,10 @@ Public Class GestioneRisposte
 
             Dim displayNames As New Dictionary(Of String, dtoDisplayName)
             Dim isAnonymous As Boolean = service.QuestionnaireHasAnonymousValues(idQuest)
-            Dim displayTaxCode As Boolean = platformTaxCodeRequired AndAlso Not isAnonymous
+
+            'Messo internamente: controllo il TIPO PERSONA (sysAdmin, Admin,  Administrative)
+            'Dim displayTaxCode As Boolean = platformTaxCodeRequired AndAlso Not isAnonymous
+
             Dim qAnswers As List(Of dtoFullUserAnswerItem) = service.GetQuestionnaireAnswers(idQuest, status, False)
 
             If Not isAnonymous Then
@@ -3251,7 +4194,17 @@ Public Class GestioneRisposte
             End If
             Dim answers As New Dictionary(Of Long, QuestionnaireAnswer)
             For Each answer As dtoFullUserAnswerItem In qAnswers
-                answers.Add(answer.Id, DALQuestionario.GetQuestionnaireAnswers(appContext, answer.Id, idQuest, answer.Answer.IdPerson, answer.Answer.IdInvitedUser, answer.Answer.IdRandomQuestionnaire, True))
+                answers.Add(
+                    answer.Id,
+                    DALQuestionario.GetQuestionnaireAnswers(
+                        appContext,
+                        answer.Id,
+                        idQuest,
+                        answer.Answer.IdPerson,
+                        answer.Answer.IdInvitedUser,
+                        answer.Answer.IdRandomQuestionnaire,
+                        True)
+                    )
             Next
             Dim p As lm.Comol.Core.DomainModel.Person = service.GetItem(Of lm.Comol.Core.DomainModel.Person)(appContext.UserContext.CurrentUserID)
             Select Case type
@@ -3259,13 +4212,34 @@ Public Class GestioneRisposte
                     webResponse.ContentType = "application/ms-excel"
                     Dim helper As New Business.HelperExportToXml(translations)
 
-                    webResponse.Write(helper.QuestionnaireAnswers(p, True, idLanguage, qAnswers, answers, anonymousUser, displayNames))
+                    webResponse.Write(
+                        helper.QuestionnaireAnswers(
+                            p,
+                            True,
+                            idLanguage,
+                            qAnswers,
+                            answers,
+                            anonymousUser,
+                            displayNames,
+                            Quest)
+                        )
                 Case lm.Comol.Core.DomainModel.Helpers.Export.ExportFileType.csv
                     webResponse.ContentType = "text/csv"
                     webResponse.BinaryWrite(webResponse.ContentEncoding.GetPreamble())
                     Dim helper As New Business.HelperExportToCsv(translations)
 
-                    webResponse.Write(helper.QuestionnaireAnswers(p, displayTaxCode, True, idLanguage, qAnswers, answers, anonymousUser, displayNames))
+                    webResponse.Write(
+                        helper.QuestionnaireAnswers(
+                                p,
+                                True,
+                                idLanguage,
+                                qAnswers,
+                                answers,
+                                anonymousUser,
+                                displayNames,
+                                Quest
+                            )
+                        )
             End Select
 
 
@@ -3283,8 +4257,31 @@ Public Class GestioneRisposte
             ExportUserQuestionnaireAnswersPlain(appContext, displayTaxCode, idUser, idInvite, idQuest, status, idLanguage, anonymousUser, translations, type, openCloseConnection, clientFilename, webResponse, cookie)
         End If
     End Sub
-    Private Shared Sub ExportUserQuestionnaireAnswersOneColumnForEachQuestion(appContext As lm.Comol.Core.DomainModel.iApplicationContext, ByVal displayTaxCode As Boolean, ByVal idUser As Integer, ByVal idInvite As Integer, ByVal idQuest As Integer, ByVal status As AnswerStatus, ByVal idLanguage As Integer, ByVal anonymousUser As String, ByVal translations As Dictionary(Of QuestionnaireExportTranslations, String), ByVal type As lm.Comol.Core.DomainModel.Helpers.Export.ExportFileType, openCloseConnection As Boolean, clientFilename As String, webResponse As System.Web.HttpResponse, cookie As System.Web.HttpCookie)
-        Dim quest As Questionario = DALQuestionario.readQuestionarioBYLingua(appContext, idQuest, idLanguage, False)
+    Private Shared Sub ExportUserQuestionnaireAnswersOneColumnForEachQuestion(
+                        appContext As lm.Comol.Core.DomainModel.iApplicationContext,
+                        ByVal displayTaxCode As Boolean,
+                        ByVal idUser As Integer,
+                        ByVal idInvite As Integer,
+                        ByVal idQuest As Integer,
+                        ByVal status As AnswerStatus,
+                        ByVal idLanguage As Integer,
+                        ByVal anonymousUser As String,
+                        ByVal translations As Dictionary(Of QuestionnaireExportTranslations, String),
+                        ByVal type As lm.Comol.Core.DomainModel.Helpers.Export.ExportFileType,
+                        openCloseConnection As Boolean,
+                        clientFilename As String,
+                        webResponse As System.Web.HttpResponse, cookie As System.Web.HttpCookie)
+
+        'QUESTA è presumibilmente una "vecchia cosa", che NON LEGGE le risposte.
+        'Infatti esporta tutto vuoto!!!
+        'Dim quest As Questionario = DALQuestionario.readQuestionarioBYLingua(appContext, idQuest, idLanguage, False)
+
+        'QUESTA, invece, è quella utilizzata anche "dall'altra parte" che legge le varie risposte!
+        'DA TESTARE: PF ed utente DIVERSO da quello corrente!
+        Dim quest As New Questionario
+        quest = DALQuestionario.readQuestionarioByPersona(appContext, False, idQuest, idLanguage, idUser, idInvite)
+
+
         Dim questName As String = quest.nome
         Dim userDisplayName As dtoDisplayName = New dtoDisplayName(anonymousUser)
         Try
@@ -3553,6 +4550,46 @@ Public Class GestioneRisposte
     ''' <remarks></remarks>
     Public Function TxtHelper_HtmlCutToString(ByVal html As String, Optional ByVal numChar As Integer = 0)
         Return TxtHelper_CutString(TxtHelper_HtmlToString(html), numChar)
+    End Function
+
+
+    Private Function Deviation(ByVal values As List(Of Integer), ByRef Average As Double) As Double
+        ', Optional ByVal IsCampione As Boolean = True
+
+        If IsNothing(values) OrElse Not values.Any() Then
+            Return 0
+        End If
+
+        Dim count As Integer = values.Count
+        Average = 0
+        'If IsCampione AndAlso count <= 1 Then
+        '    Return 0
+        'End If
+
+        Dim sum As Integer = 0
+
+        For Each val As Integer In values
+            sum += val
+        Next
+
+        Average = sum / count
+
+        Dim divSum As Double = 0
+
+        For Each val As Integer In values
+            divSum += ((val - Average) ^ 2)
+        Next
+
+        Dim Dev As Double = 0
+
+
+        'If (IsCampione) Then
+        '    Dev = divSum / (count - 1)
+        'Else
+        Dev = divSum / count
+        'End If
+
+        Return Dev
     End Function
 
 End Class

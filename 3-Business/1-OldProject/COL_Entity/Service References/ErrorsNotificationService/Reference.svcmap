@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="6f824a75-a3e5-46ed-9816-127bfc913638" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:9779/ErrorsNotification/mex" Protocol="mex" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="d91c0c77-066c-4e73-b7f7-0c90787c6de2" SourceId="1" SourceUrl="http://localhost:9779/ErrorsNotification/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="8b1ae310-45b2-4eec-903d-11fdffffad1c" SourceId="1" SourceUrl="http://localhost:9779/ErrorsNotification/mex" />
+    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="5cf827ce-6f8c-44cf-9842-8c7d660c96fc" SourceId="1" SourceUrl="http://localhost:9779/ErrorsNotification/mex" />
+    <MetadataFile FileName="lm.ErrorsNotification.DataContract.Domain.xsd" MetadataType="Schema" ID="d9b425a1-eae1-48d5-b569-5b928ac92ff0" SourceId="1" SourceUrl="http://localhost:9779/ErrorsNotification/mex" />
+    <MetadataFile FileName="Arrays.xsd" MetadataType="Schema" ID="911fd759-1dba-4013-a590-78bc57ed6943" SourceId="1" SourceUrl="http://localhost:9779/ErrorsNotification/mex" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

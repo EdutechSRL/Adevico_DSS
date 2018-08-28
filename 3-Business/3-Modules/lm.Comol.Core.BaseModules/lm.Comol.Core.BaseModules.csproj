@@ -44,6 +44,14 @@
     <Reference Include="Castle.DynamicProxy2">
       <HintPath>..\..\..\Library\lm.Comol.Core.CommonLib\NHibernate_21\Castle.DynamicProxy2.dll</HintPath>
     </Reference>
+    <Reference Include="COL_BusinessLogic_v2.0, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\9-AdevicoMIT_Library\lm.Comol.MitLibrary\bin\Debug\COL_BusinessLogic_v2.0.dll</HintPath>
+    </Reference>
+    <Reference Include="COMOL_Entity, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\9-AdevicoMIT_Library\lm.Comol.MitLibrary\bin\Debug\COMOL_Entity.dll</HintPath>
+    </Reference>
     <Reference Include="HtmlRenderer, Version=1.5.0.6, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\..\Solution\packages\HtmlRenderer.Core.1.5.0.6\lib\net40-client\HtmlRenderer.dll</HintPath>
       <Private>True</Private>
@@ -60,6 +68,10 @@
     </Reference>
     <Reference Include="itextsharp5, Version=5.3.2.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
       <HintPath>..\..\..\Library\lm.Comol.Core.CommonLib\iTextSharp\itextsharp5.dll</HintPath>
+    </Reference>
+    <Reference Include="lm.Comol.Modules.ScormStat, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\9-AdevicoMIT_Library\lm.Comol.MitLibrary\bin\Debug\lm.Comol.Modules.ScormStat.dll</HintPath>
     </Reference>
     <Reference Include="log4net">
       <HintPath>..\..\..\Library\lm.Comol.Core.CommonLib\NHibernate_21\log4net.dll</HintPath>
@@ -160,18 +172,6 @@
     <Compile Include="CommunityDiary\Business\ServiceCommunityDiary.Repository.cs" />
     <Compile Include="CommunityDiary\Presentation\Controls\AddAttachmentPresenter.cs" />
     <Compile Include="CommunityDiary\Presentation\View\Controls\IViewAddAttachment.cs" />
-    <Compile Include="CommunityExpiration\Business\CacheHelper.cs" />
-    <Compile Include="CommunityExpiration\Business\ComExpirationService.cs" />
-    <Compile Include="CommunityExpiration\Domain\dtoExpirationConfig.cs" />
-    <Compile Include="CommunityExpiration\Domain\dtoUserExpiration.cs" />
-    <Compile Include="CommunityExpiration\Domain\Enums.cs" />
-    <Compile Include="CommunityExpiration\Domain\ExpirationConfig.cs" />
-    <Compile Include="CommunityExpiration\Domain\SubscriptionExpiration.cs" />
-    <Compile Include="CommunityExpiration\Domain\SubscriptionExpirationHyst.cs" />
-    <Compile Include="CommunityExpiration\Presentation\CommunityConfigPresenter.cs" />
-    <Compile Include="CommunityExpiration\Presentation\iViewCommunityConfig.cs" />
-    <Compile Include="CommunityExpiration\Presentation\PortalConfigPresenter.cs" />
-    <Compile Include="CommunityExpiration\Presentation\iViewPortalConfig.cs" />
     <Compile Include="CommunityManagement\Domain\CacheKeys.cs" />
     <Compile Include="CommunityManagement\Domain\dto\new\dtoUserEnrollments.cs" />
     <Compile Include="CommunityManagement\Domain\dto\new\dtoEnrollment.cs" />
@@ -308,7 +308,6 @@
     <Compile Include="FileRepository\Presentation\Repository\Presentation\DownloadErrorPresenter.cs" />
     <Compile Include="FileRepository\Presentation\Repository\Presentation\EditViewDetailsPresenter.cs" />
     <Compile Include="FileRepository\Presentation\Repository\Presentation\MultimediaSettingsPresenter.cs" />
-    <Compile Include="FileRepository\Presentation\Repository\Presentation\PlayerClosedPresenter.cs" />
     <Compile Include="FileRepository\Presentation\Repository\Presentation\PlayerPresenter.cs" />
     <Compile Include="FileRepository\Presentation\Repository\Presentation\RepositoryPresenter.cs" />
     <Compile Include="FileRepository\Presentation\Repository\Presentation\ScormSettingsPresenter.cs" />
@@ -322,6 +321,14 @@
     <Compile Include="FileRepository\Presentation\Repository\Presentation\UC\ModuleCommunityUploaderPresenter.cs" />
     <Compile Include="FileRepository\Presentation\Repository\Presentation\UC\ModuleInternalUploaderPresenter.cs" />
     <Compile Include="FileRepository\Presentation\Repository\Presentation\UC\RepositoryRenderActionPresenter.cs" />
+    <Compile Include="FileStatistics\Business\ServiceFileStatistics.cs" />
+    <Compile Include="FileStatistics\Presentation\DisplayDetailFilePresenter.cs" />
+    <Compile Include="FileStatistics\Presentation\DisplayDetailScormPresenter.cs" />
+    <Compile Include="FileStatistics\Presentation\DisplayFileStatisticsPresenter.cs" />
+    <Compile Include="FileStatistics\Presentation\DisplayUsersStatisticsPresenter.cs" />
+    <Compile Include="FileStatistics\Presentation\IViewDisplayDetailScorm.cs" />
+    <Compile Include="FileStatistics\Presentation\IViewDisplayFileStatistics.cs" />
+    <Compile Include="FileStatistics\Presentation\IViewDisplayUsersStatistics.cs" />
     <Compile Include="NoticeBoard\Domain\dto\dtoHistoryItem.cs" />
     <Compile Include="NoticeBoard\Domain\Status.cs" />
     <Compile Include="NoticeBoard\Domain\Lite\liteHistoryItem.cs" />
@@ -586,14 +593,7 @@
     <Compile Include="FileStatistics\Domain\dtoDownInfo.cs" />
     <Compile Include="FileStatistics\Domain\dtoFileDetail.cs" />
     <Compile Include="FileStatistics\Domain\dtoUserDownInfo.cs" />
-    <Compile Include="FileStatistics\Presentation\DisplayDetailFilePresenter.cs" />
-    <Compile Include="FileStatistics\Presentation\DisplayDetailScormPresenter.cs" />
     <Compile Include="FileStatistics\Presentation\IViewDisplayDetailfile.cs" />
-    <Compile Include="FileStatistics\Presentation\IViewDisplayDetailScorm.cs" />
-    <Compile Include="FileStatistics\Presentation\IViewDisplayFileStatistics.cs" />
-    <Compile Include="FileStatistics\Presentation\IViewDisplayUsersStatistics.cs" />
-    <Compile Include="FileStatistics\Presentation\DisplayFileStatisticsPresenter.cs" />
-    <Compile Include="FileStatistics\Presentation\DisplayUsersStatisticsPresenter.cs" />
     <Compile Include="FileStatistics\Presentation\IVIewModuleItemPersonSelector.cs" />
     <Compile Include="ModulesLoader\Presentation\ExternalModuleLoaderPresenter.cs" />
     <Compile Include="ModulesLoader\Presentation\IViewExternalModuleLoader.cs" />
@@ -615,6 +615,7 @@
     <Compile Include="PolicyManagement\Presentation\View\IViewAcceptLogonPolicy.cs" />
     <Compile Include="PolicyManagement\Presentation\View\IViewProfilePolicySubmission.cs" />
     <Compile Include="Repository\Presentation\Presenter\Display\DisplayUrlItemPresenter.cs" />
+    <Compile Include="Repository\Presentation\Presenter\Player\ScormStatisticsUpdatePresenter.cs" />
     <Compile Include="Repository\Presentation\View\Display\IViewDisplayUrlItem.cs" />
     <Compile Include="Tags\Business\Exceptions.cs" />
     <Compile Include="Tags\Business\ServiceTags.cs" />
@@ -889,7 +890,6 @@
     <Compile Include="Repository\Presentation\View\Controls\IViewMultipleFileUploader.cs" />
     <Compile Include="Repository\Presentation\View\OtherModules\IViewModuleToRepository.cs" />
     <Compile Include="Repository\Presentation\View\Player\IViewFilePlayer.cs" />
-    <Compile Include="Repository\Presentation\Presenter\Player\ScormStatisticsUpdatePresenter.cs" />
     <Compile Include="Repository\Presentation\View\Player\IViewMultimediaFileSettings.cs" />
     <Compile Include="Repository\Presentation\View\Player\IViewScormStatisticsUpdate.cs" />
     <Compile Include="Repository\Presentation\Presenter\Display\RepositoryDisplayInLinePresenter.cs" />
@@ -912,14 +912,9 @@
     <Compile Include="Repository\Presentation\View\IViewPublishIntoRepositoryFromModuleItem.cs" />
     <Compile Include="Repository\Presentation\OtherModuleManagmentFilesLongPresenter.cs" />
     <Compile Include="Repository\Presentation\PublishIntoRepositoryFromModulePresenter.cs" />
-    <Compile Include="FileStatistics\Business\ServiceFileStatistics.cs" />
     <Compile Include="WebControls\Generic\ExtendedDropDown.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\1-OldProject\COL_BusinessLogic\COL_BusinessLogic_v2.0.vbproj">
-      <Project>{51f57fb8-1245-4ea5-bf34-d6412c283afb}</Project>
-      <Name>COL_BusinessLogic_v2.0</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\1-OldProject\COL_Entity\0_COL_Entity.vbproj">
       <Project>{d1efb82a-de0c-43d2-8dc7-ad808b32c2a2}</Project>
       <Name>0_COL_Entity</Name>
@@ -935,10 +930,6 @@
     <ProjectReference Include="..\..\2-Core\lm.Comol.Core.MailCommons\lm.Comol.Core.MailCommons.csproj">
       <Project>{428243cb-28cd-4d81-8099-74d1448b5e1d}</Project>
       <Name>lm.Comol.Core.MailCommons</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\lm.Comol.Modules.ScormStat\lm.Comol.Modules.ScormStat.csproj">
-      <Project>{88AB4D29-203F-47CA-9F95-DE1ADACDA528}</Project>
-      <Name>lm.Comol.Modules.ScormStat</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
@@ -997,11 +988,6 @@
     <EmbeddedResource Include="NoticeBoard\Mapping\NoticeBoardMessage.hbm.xml">
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="CommunityExpiration\Mapping\ExpirationConfig.hbm.xml">
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CommunityExpiration\Mapping\SubscriptionExpiration.hbm.xml" />
-    <EmbeddedResource Include="CommunityExpiration\Mapping\SubscriptionExpirationHyst.hbm.xml" />
     <EmbeddedResource Include="ApiToken\Mapping\Mobitoken.hbm.xml">
       <SubType>Designer</SubType>
     </EmbeddedResource>

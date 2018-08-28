@@ -53,7 +53,8 @@ namespace lm.Comol.Modules.CallForPapers.Presentation
         public void InitView(Boolean allowUseOfDss)
         {
             CallStandardAction action = View.PreloadAction;
-            long idCall = View.PreloadIdCall;
+            long idCall = View.IdCall > 0 ? View.IdCall : View.PreloadIdCall;
+
 
             dtoBaseForPaper call = null;
             CallForPaperType type = View.PreloadType;

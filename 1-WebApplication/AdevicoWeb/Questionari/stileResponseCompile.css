@@ -1,0 +1,171 @@
+﻿@media (max-width: 1108px) {
+
+    .panelMenu > .Link_Menu {
+        width: 100%;
+    }
+
+    body div#container,
+    body form#aspnetForm,
+    body div.Risposte,
+    body .ContenitoreDomanda0,
+    body div#cFooter div.chiusura,
+    body .page-width,
+    body #header .page-width,
+    body #footer .page-width,
+    html body table.questionrating {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 320px !important;
+    }
+
+    body div#serviceinfo.RigaTitolo.serviceinfo {
+        width: 100% !important;
+    }
+
+    body table.questionrating .CellaDomanda,
+    body table.questionrating .CellaDomanda span {
+        min-width: 50px !important;
+        width: 40% !important;
+    }
+
+    body .NEW_containerQuest .questionfreetext textarea {
+        min-width: 320px !important;
+        width: 50% !important;
+    }
+
+    td.Risposte div.inlinewrapper {
+        width: auto !important;
+    }
+
+    .elenco > table {
+        border-color: #eff3fb;
+    }
+
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box;
+    }
+
+    html body div.DIV_MP_Content input.opendlgconfirmsubmit {
+        width: 100% !important;
+        line-height: 36px !important;
+        height: 40px !important;
+        font-size: 1.5em !important;
+    }
+
+    html body #content div.DIV_MP_Content a.Link_Menu {
+        line-height: 24px !important;
+        height: 30px !important;
+        font-size: 1.2em !important;
+    }
+
+    #content {
+        margin: 0;
+        padding: 0 2%;
+    }
+
+    #header {
+        overflow: hidden;
+    }
+
+    #branding {
+        text-align: center;
+    }
+
+        #branding img.logo {
+            display: inline-block !important;
+            float: none !important;
+        }
+
+    #content td.Risposte {
+        padding-left: 0 !important;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    html body textarea {
+        width: 90% !important;
+    }
+
+    html .tdTextual input[type="text"] {
+        max-width: 70px !important;
+    }
+
+    .ui-dialog .commandoption.left {
+        float: none;
+        width: 300px;
+        margin: auto;
+        display: block;
+        margin-bottom: 12px;
+    }
+
+    .ui-dialog .commandoption.right {
+        float: none;
+        width: 300px;
+        margin: auto;
+        display: block;
+    }
+
+    .dialog.ui-dialog-content {
+        max-width: 320px;
+    }
+
+    .ui-dialog.ui-widget.ui-widget-content {
+        width: 100% !important;
+    }
+
+    .dialog.dlgconfirmsubmit.ui-dialog-content.ui-widget-content {
+        height: auto !important;
+    }
+}
+
+@media (min-width: 1108px) {
+    html body textarea {
+        width: 70% !important;
+    }
+}
+
+/* menu response */
+@media (max-width: 1108px) {
+    #nav-main .page-width {
+        float: left;
+    }
+
+    #nav-main:before,
+    #nav-main:after,
+    body #nav-main ul#top li .sub .col:after,
+    body #nav-main ul#top li .sub:after,
+    #header .page-width:after {
+        display: block;
+        content: "";
+        clear: both;
+    }
+
+    #nav-main {
+        height: auto;
+    }
+
+    body #nav-main ul#top li {
+        width: 100% !important;
+    }
+
+    html body #nav-main ul#top li .sub {
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 100% !important;
+        float: none;
+    }
+
+    html body #toolbar #tools {
+        padding-left: 10px;
+        padding-right: 10px;
+        width: 100%;
+    }
+
+    #greetings {
+        width: 100%;
+    }
+}

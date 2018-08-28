@@ -9,7 +9,7 @@ using lm.Comol.Core.Business;
 using lm.Comol.Core.BaseModules.Tickets.Domain;
 using lm.Comol.Core.BaseModules.Tickets.Domain.DTO;
 using lm.Comol.Core.BaseModules.Tickets.Domain.Enums;
-using lm.Comol.Modules.ScormStat;
+//using lm.Comol.Modules.ScormStat;
 using NHibernate.Criterion;
 using NHibernate.Hql.Ast.ANTLR;
 using NHibernate.Mapping;

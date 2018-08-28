@@ -126,6 +126,7 @@ Partial Public Class UtentiInvitati
         VIWnoPermessi = 5
         VIWconferma = 6
         VIWerrore = 7
+        VIWStampa = 8
         VIWimportaUtenti = 9
     End Enum
     Public Property editMode() As Boolean
@@ -222,6 +223,7 @@ Partial Public Class UtentiInvitati
                 LNBSalva.Visible = True
                 LNBGestioneRubrica.Visible = True
                 LNBSelezionaDestinatari.Visible = False
+                'LNKStampa.Visible = False
                 LBlistaMessaggi.Visible = False
                 Me.viewPrecedente = VIWattiva.VIWdettagli
 
@@ -255,6 +257,7 @@ Partial Public Class UtentiInvitati
                 LNBSalva.Visible = False
                 LNBGestioneRubrica.Visible = True
                 LNBSelezionaDestinatari.Visible = False
+                'LNKStampa.Visible = False
                 CHKisPassword.Visible = False
                 PNLgeneraQuestionari.Visible = False
                 LBlistaMessaggi.Visible = False
@@ -274,6 +277,7 @@ Partial Public Class UtentiInvitati
                 LNBSalva.Visible = False
                 LNBGestioneRubrica.Visible = False
                 LNBSelezionaDestinatari.Visible = False
+                'LNKStampa.Visible = True
                 CHKisPassword.Visible = True
 
                 Me.viewPrecedente = VIWattiva.VIWgestioneUI
@@ -293,6 +297,7 @@ Partial Public Class UtentiInvitati
                 LNBSalva.Visible = False
                 LNBGestioneRubrica.Visible = True
                 LNBSelezionaDestinatari.Visible = True
+                'LNKStampa.Visible = False
                 Dim numeroUtenti As Integer = DALUtenteInvitato.countUtentiInvitatiByIDQuestionario(Me.QuestionarioCorrente.id)
                 If numeroUtenti = 0 Then
                     Me.LNKConfermaUtenti.Visible = False
@@ -321,6 +326,7 @@ Partial Public Class UtentiInvitati
                 LNBSalva.Visible = False
                 LNBGestioneRubrica.Visible = True
                 LNBSelezionaDestinatari.Visible = False
+                'LNKStampa.Visible = False
                 Me.viewPrecedente = VIWattiva.VIWupload
 
             Case VIWattiva.VIWnoPermessi
@@ -328,6 +334,7 @@ Partial Public Class UtentiInvitati
                 PNLmenu.Visible = False
                 LBconferma.Visible = False
                 LBerrore.Visible = True
+                'LNKStampa.Visible = False
                 LBerrore.Text = Me.Resource.getValue("MSGnoPermessi")
                 Me.viewPrecedente = VIWattiva.VIWnoPermessi
 
@@ -343,6 +350,7 @@ Partial Public Class UtentiInvitati
                 LNBSalva.Visible = False
                 LNBGestioneRubrica.Visible = False
                 LNBSelezionaDestinatari.Visible = False
+                'LNKStampa.Visible = False
                 Me.viewPrecedente = VIWattiva.VIWconferma
 
             Case VIWattiva.VIWerrore
@@ -356,8 +364,22 @@ Partial Public Class UtentiInvitati
                 LNBSalva.Visible = False
                 LNBGestioneRubrica.Visible = False
                 LNBSelezionaDestinatari.Visible = False
+                'LNKStampa.Visible = False
                 Me.viewPrecedente = VIWattiva.VIWerrore
 
+            Case VIWattiva.VIWStampa
+                'inserimento o visualizzazione dei dati completi di un singolo utente invitato
+                LNBGestioneMail.Visible = False
+                LNBQuestionarioAdmin.Visible = False
+                LNBNuovoUtente.Visible = False
+                LNBImportaCSV.Visible = False
+                LNBcommunityImport.Visible = False
+                LNBSalva.Visible = False
+                LNBGestioneRubrica.Visible = False
+                LNBSelezionaDestinatari.Visible = False
+                'LNKStampa.Visible = False
+                Me.MLVquestionari.SetActiveView(Me.VIWStampa)
+                Me.viewPrecedente = VIWattiva.VIWStampa
             Case VIWattiva.VIWimportaUtenti
                 LBlistaMessaggi.Visible = False
                 Me.MLVquestionari.SetActiveView(Me.VIWimportaDaComunita)
@@ -445,6 +467,9 @@ Partial Public Class UtentiInvitati
             LBgeneraQuestionari.Text = .getValue("LBgeneraQuestionari." & CurrentType.ToString)
             LBMsgQuestionarioBloccato.Text = .getValue("LBMsgQuestionarioBloccato." & CurrentType.ToString)
             LBMsgInvia.Text = .getValue("LBMsgInvia." & CurrentType.ToString)
+            LBStampaTutti.Text = .getValue("LBStampaTutti." & CurrentType.ToString)
+            LBStampaUtentiDomande.Text = .getValue("LBStampaUtentiDomande." & CurrentType.ToString)
+            LBStampaSelezionati.Text = .getValue("LBStampaSelezionati." & CurrentType.ToString)
             .setButton(BTNInviaMail, False, False, False, False)
             .setButton(BTNSbloccaInvia, False, False, False, False)
             .setButton(Me.BTNcancel, True)
@@ -452,6 +477,10 @@ Partial Public Class UtentiInvitati
             .setButton(BTNUpload)
             .setButton(BTNimportaDaComunita)
             .setButton(BTNgeneraQuestionari)
+            '.setLinkButton(LNKStampa, False, False)
+            .setLinkButton(LNKStampaTutti, False, False)
+            .setLinkButton(LNKStampaUtentiDomande, False, False)
+            .setLinkButton(LNKStampaSelezionati, False, False)
             .setButton(BTNpreview, True, , , True)
             .setButton(BTNclosePreview, True, , , True)
             .setLinkButtonToValue(LNBaddNotCompleted, DirectCast(Me.QuestionarioCorrente.tipo, Questionario.TipoQuestionario).ToString, False, True)
@@ -724,7 +753,37 @@ Partial Public Class UtentiInvitati
         LNBGestioneMail.Visible = True
         LNBGestioneRubrica.Visible = True
     End Sub
+    'Protected Sub LNKStampa_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles LNKStampa.Click
+    '    SetView(VIWattiva.VIWStampa)
+    'End Sub
+    'Protected Sub LNKStampaTutti_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles LNKStampaTutti.Click
+    '    Dim oGS As New GestioneStampa
 
+    '    Dim oUtenti As New List(Of UtenteInvitato)
+    '    oUtenti = DALUtenteInvitato.readUtentiInvitatiByIDQuestionario(Me.QuestionarioCorrente.id)
+
+    '    oGS.creaReportElencoUtenti(oUtenti)
+
+    'End Sub
+    'Protected Sub LNKStampaUtentiDomande_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles LNKStampaUtentiDomande.Click
+
+    '    Dim oGS As New GestioneStampa
+    '    BTNgeneraQuestionari_Click(sender, e)
+    '    oGS.creaReportFogliUtentiInvitatiDomande(Me.UtentiInvitatiLista, PageUtility.ApplicationUrlBase(True))
+
+    'End Sub
+    'Protected Sub LNKStampaSelezionati_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles LNKStampaSelezionati.Click
+    '    SetView(VIWattiva.VIWdestinatari)
+    '    LNKConfermaUtenti.Visible = False
+    '    LNKStampaUtenti.Visible = True
+    'End Sub
+    'Protected Sub LNKStampaUtenti_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles LNKStampaUtenti.Click
+    '    selezionaUtenti()
+    '    UtenteInvitato.removeUtentiNonSelezionati(Me.UtentiInvitatiLista)
+    '    BTNgeneraQuestionari_Click(sender, e)
+    '    Dim oGS As New GestioneStampa
+    '    oGS.creaReportFogliUtentiInvitatiDomande(Me.UtentiInvitatiLista, PageUtility.ApplicationUrlBase(True))
+    'End Sub
     Private Sub BTNimportaDaComunita_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BTNimportaDaComunita.Click
         SetView(VIWattiva.VIWimportaUtenti)
 

@@ -95,47 +95,47 @@ namespace lm.Comol.Core.BaseModules.FileRepository.Presentation
                             List<litePlayerSettings> players = Service.PlayerGetSettings();
                             if (players == null || (version != null && !players.Any(p => p.Id == version.IdPlayer && !String.IsNullOrEmpty(p.PlayUrl) && !String.IsNullOrEmpty(p.PlayerRenderUrl) && !String.IsNullOrEmpty(p.ModalPlayerRenderUrl))))
                                 View.DisplayMessage(item.DisplayName, item.Extension, item.Type, Domain.PlayerErrors.PlayerUnavailable);
-                            else{
-                                litePlayerSettings player = players.FirstOrDefault(p => p.Id == version.IdPlayer);
-                                using (NHibernate.ISession session = View.GetScormSession(player.MappingPath)){
+                            //else{
+                            //    litePlayerSettings player = players.FirstOrDefault(p => p.Id == version.IdPlayer);
+                            //    using (NHibernate.ISession session = View.GetScormSession(player.MappingPath)){
 
-                                    lm.Comol.Modules.ScormStat.Business.ScormService service = 
-                                        new Modules.ScormStat.Business.ScormService(AppContext, session);
+                            //        lm.Comol.Modules.ScormStat.Business.ScormService service = 
+                            //            new Modules.ScormStat.Business.ScormService(AppContext, session);
 
-                                    DateTime referenceTime = DateTime.Now;
+                            //        DateTime referenceTime = DateTime.Now;
 
-                                    lm.Comol.Core.FileRepository.Domain.dtoPackageEvaluation dto = 
-                                        service.EvaluatePackage_NEW(
-                                            idUser, 
-                                            playerSessionId, 
-                                            item.Id, 
-                                            item.UniqueId, 
-                                            version.Id, 
-                                            version.UniqueIdVersion, 
-                                            out referenceTime);
+                            //        lm.Comol.Core.FileRepository.Domain.dtoPackageEvaluation dto = 
+                            //            service.EvaluatePackage_NEW(
+                            //                idUser, 
+                            //                playerSessionId, 
+                            //                item.Id, 
+                            //                item.UniqueId, 
+                            //                version.Id, 
+                            //                version.UniqueIdVersion, 
+                            //                out referenceTime);
 
-                                    if (dto != null && dto.IdItem > 0)
-                                    {
-                                        dto.IdLink = idLink;
-                                        lm.Comol.Core.FileRepository.Domain.ScormPackageUserEvaluation saved = Service.ScormSaveEvaluation(dto, idUser, referenceTime, true, true);
-                                        if (saved != null)
-                                        {
-                                            if (saveCompleteness && saved != null && idLink > 0 && saved.ModuleCode == View.EduPathModuleCode)
-                                            {
-                                                View.SaveLinkEvaluation(saved);
-                                                View.DisplayMessage(version.DisplayName, version.Extension, version.Type, Domain.PlayerClosedMessage.EvaluationSaved);
-                                            }
-                                            else
-                                                View.DisplayMessage(version.DisplayName, version.Extension, version.Type, Domain.PlayerClosedMessage.Successful);
-                                        }
-                                        else
-                                            View.DisplayMessage(version.DisplayName, version.Extension, version.Type, Domain.PlayerClosedMessage.EvaluationNotSaved);
-                                    }
-                                    else
-                                        View.DisplayMessage(version.DisplayName, version.Extension, version.Type, Domain.PlayerClosedMessage.EvaluationNotSaved);
+                            //        if (dto != null && dto.IdItem > 0)
+                            //        {
+                            //            dto.IdLink = idLink;
+                            //            lm.Comol.Core.FileRepository.Domain.ScormPackageUserEvaluation saved = Service.ScormSaveEvaluation(dto, idUser, referenceTime, true, true);
+                            //            if (saved != null)
+                            //            {
+                            //                if (saveCompleteness && saved != null && idLink > 0 && saved.ModuleCode == View.EduPathModuleCode)
+                            //                {
+                            //                    View.SaveLinkEvaluation(saved);
+                            //                    View.DisplayMessage(version.DisplayName, version.Extension, version.Type, Domain.PlayerClosedMessage.EvaluationSaved);
+                            //                }
+                            //                else
+                            //                    View.DisplayMessage(version.DisplayName, version.Extension, version.Type, Domain.PlayerClosedMessage.Successful);
+                            //            }
+                            //            else
+                            //                View.DisplayMessage(version.DisplayName, version.Extension, version.Type, Domain.PlayerClosedMessage.EvaluationNotSaved);
+                            //        }
+                            //        else
+                            //            View.DisplayMessage(version.DisplayName, version.Extension, version.Type, Domain.PlayerClosedMessage.EvaluationNotSaved);
                                    
-                                }
-                            }
+                            //    }
+                            //}
                             break;
                     }
                 }

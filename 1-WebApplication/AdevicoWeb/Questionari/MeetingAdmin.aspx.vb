@@ -1,4 +1,7 @@
 ﻿Imports COL_Questionario
+Imports CrystalDecisions.CrystalReports.Engine
+Imports CrystalDecisions.Web
+Imports CrystalDecisions.Shared
 
 Partial Public Class MeetingAdmin
     Inherits PageBaseQuestionario

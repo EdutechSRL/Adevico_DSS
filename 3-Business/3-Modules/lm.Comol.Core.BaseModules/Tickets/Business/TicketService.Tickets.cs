@@ -9,7 +9,7 @@ using lm.Comol.Core.Business;
 using lm.Comol.Core.BaseModules.Tickets.Domain;
 using lm.Comol.Core.BaseModules.Tickets.Domain.DTO;
 using lm.Comol.Core.BaseModules.Tickets.Domain.Enums;
-using lm.Comol.Modules.ScormStat;
+//using lm.Comol.Modules.ScormStat;
 using NHibernate.Mapping;
 using Message = lm.Comol.Core.BaseModules.Tickets.Domain.Message;
 
@@ -3084,6 +3084,7 @@ namespace lm.Comol.Core.BaseModules.Tickets
             try
             {
                 tk.Messages.Where(m => m.Creator.Id == OldOwner.Id && m.Type != MessageType.System && m.UserType == MessageUserType.Partecipant)
+                    .ToList()
                 .ForEach(m =>
                 {
                     m.Creator = User;

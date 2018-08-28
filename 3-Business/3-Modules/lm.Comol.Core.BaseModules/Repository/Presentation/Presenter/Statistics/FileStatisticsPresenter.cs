@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using lm.Comol.Core.BaseModules.Scorm.Business;
+//using lm.Comol.Core.BaseModules.Scorm.Business;
 using lm.Comol.Core.DomainModel;
 using lm.Comol.Core.Business;
 
@@ -638,33 +638,33 @@ namespace lm.Comol.Core.BaseModules.Repository.Presentation
             }
         }
 
-        public String GetXMLExportString(
-            iApplicationContext oContext, 
-            ref NHibernate.ISession IcoSession, 
-            Modules.ScormStat.ExcelExport.ExportInternationalization Localization)
-        {
-            IList<Int32> LearnersIds = this.View.CurrentUsers;
-            Int32 CurrentUserId = oContext.UserContext.CurrentUserID;
+        //public String GetXMLExportString(
+        //    iApplicationContext oContext, 
+        //    ref NHibernate.ISession IcoSession, 
+        //    Modules.ScormStat.ExcelExport.ExportInternationalization Localization)
+        //{
+        //    IList<Int32> LearnersIds = this.View.CurrentUsers;
+        //    Int32 CurrentUserId = oContext.UserContext.CurrentUserID;
 
-            if ((View.CurrentStartView == FileStatPages.SelectFiles) ||
-                (View.CurrentStartView == FileStatPages.StatsFiles) ||
-                (View.CurrentStartView == FileStatPages.StatsUsers))
-            {
-                LearnersIds.Add(CurrentUserId);
-            }
-            //else
-            //{
-            //    if (!this.View.CurrentUsers.Contains(CurrentUserId))
-            //    {
-            //        CurrentUserId = 0;
-            //        CurrentSelectedUserId = View.CurrentUsers;
-            //    }
-            //}
+        //    if ((View.CurrentStartView == FileStatPages.SelectFiles) ||
+        //        (View.CurrentStartView == FileStatPages.StatsFiles) ||
+        //        (View.CurrentStartView == FileStatPages.StatsUsers))
+        //    {
+        //        LearnersIds.Add(CurrentUserId);
+        //    }
+        //    //else
+        //    //{
+        //    //    if (!this.View.CurrentUsers.Contains(CurrentUserId))
+        //    //    {
+        //    //        CurrentUserId = 0;
+        //    //        CurrentSelectedUserId = View.CurrentUsers;
+        //    //    }
+        //    //}
             
 
-            ServiceFileStatistics oService = new ServiceFileStatistics(oContext, oContext.DataContext.GetCurrentSession(), IcoSession);
-            return oService.GetXMLStringExport(this.View.CurrentFiles(), LearnersIds, CurrentUserId, Localization);
-        }
+        //    ServiceFileStatistics oService = new ServiceFileStatistics(oContext, oContext.DataContext.GetCurrentSession(), IcoSession);
+        //    return oService.GetXMLStringExport(this.View.CurrentFiles(), LearnersIds, CurrentUserId, Localization);
+        //}
 
     }
 }

@@ -152,7 +152,7 @@
 		<asp:LinkButton ID="LNBSelezionaDestinatari" runat="server" CausesValidation="false"
 			CssClass="Link_Menu" Visible="False"></asp:LinkButton>
 		<%--<asp:LinkButton ID="LNKStampa" Visible="false" runat="server" CssClass="Link_Menu">
-		</asp:LinkButton>--%>&nbsp;
+		</asp:LinkButton>&nbsp;--%>
 		<asp:LinkButton ID="LNBIndietro" runat="server" CausesValidation="false" CssClass="Link_Menu"
 			Visible="true"></asp:LinkButton>
 	</asp:Panel>
@@ -409,8 +409,10 @@
 				<asp:Button runat="server" ID="BTNimportaDaComunita" />
 			</div>
 		</asp:View>
-		<%--<asp:View ID="VIWStampa" runat="server">
+		<asp:View ID="VIWStampa" runat="server">
 			<asp:Panel ID="PNLStampaTutti" runat="server" BorderWidth="1" Style="padding: 3px">
+				<asp:LinkButton ID="LNKStampaTutti" runat="server" CssClass="Link_Menu">
+				</asp:LinkButton>&nbsp;
 				<br />
 				<br />
 				<asp:Label runat="server" ID="LBStampaTutti"></asp:Label>
@@ -418,16 +420,20 @@
 			<br />
 			<br />
 			<asp:Panel ID="PNLStampaUtentiDomande" runat="server" BorderWidth="1" Style="padding: 3px">
+				<asp:LinkButton ID="LNKStampaUtentiDomande" runat="server" CssClass="Link_Menu">
+				</asp:LinkButton><br />
 				<br />
 				<asp:Label runat="server" ID="LBStampaUtentiDomande"></asp:Label>
 			</asp:Panel>
 			<br />
 			<br />
 			<asp:Panel ID="PNLStampaSelezionati" runat="server" BorderWidth="1" Style="padding: 3px">
+				<asp:LinkButton ID="LNKStampaSelezionati" runat="server" CssClass="Link_Menu" Text="">
+				</asp:LinkButton><br />
 				<br />
 				<asp:Label runat="server" ID="LBStampaSelezionati"></asp:Label>
 			</asp:Panel>
-		</asp:View>--%>
+		</asp:View>
 		<asp:View ID="VIWimportaDaComunita" runat="server">
 			<asp:Panel ID="PNLGestioneListe" runat="server">
 				<uc1:UC_SearchUser ID="UCsearchUser" runat="server" />

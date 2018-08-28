@@ -40,6 +40,10 @@ xmlns="urn:nhibernate-mapping-2.2"
       <property name="EvalMinValue" type="Int32" column="EvalMinValue" />
       <property name="EvalBoolBlock" type="Boolean" column="EvalBoolBlock" />
 
+
+      <property name="TemplateId" type="Int64" column="TemplateId" />
+      <property name="TemplateVersionId" type="Int64" column="TemplateVersionId" />
+      
       <many-to-one name="VerbaleLink" class="lm.Comol.Core.DomainModel.ModuleLink" column="VerbaleLinkId" foreign-key="VerbaleLinkId" cascade="none"  />
       
       

@@ -186,14 +186,29 @@ Partial Public Class QuestionarioStat
                 Return False
             ElseIf pageMode = TipoStatistiche.Utente Then
                 If qs_PersonaId = 0 OrElse CurrentContext.UserContext.CurrentUserID = qs_PersonaId Then
+
+
+                    'If allowStandardAction(lm.Comol.Core.DomainModel.StandardActionType.ViewPersonalStatistics, UtenteCorrente.ID, 0, oSourceObject, oDestinationObject) Then
+                    '    Dim oQuest As New Questionario
+                    '    oQuest = DALQuestionario.readQuestionarioByPersona(PageUtility.CurrentContext, False, qs_questId, LinguaID, IIf(qs_PersonaId = 0, Me.UtenteCorrente.ID, qs_PersonaId), 0)
+                    '    Me.QuestionarioCorrente = oQuest
+                    '    AllowedStandardActionType = lm.Comol.Core.DomainModel.StandardActionType.ViewPersonalStatistics
+                    '    Return True
+                    'Else : Return False
+                    'End If
+
+                    Dim oQuest As New Questionario
+                    oQuest = DALQuestionario.readQuestionarioByPersona(PageUtility.CurrentContext, False, qs_questId, LinguaID, IIf(qs_PersonaId = 0, Me.UtenteCorrente.ID, qs_PersonaId), 0)
+                    Me.QuestionarioCorrente = oQuest
+
                     If allowStandardAction(lm.Comol.Core.DomainModel.StandardActionType.ViewPersonalStatistics, UtenteCorrente.ID, 0, oSourceObject, oDestinationObject) Then
-                        Dim oQuest As New Questionario
-                        oQuest = DALQuestionario.readQuestionarioByPersona(PageUtility.CurrentContext, False, qs_questId, LinguaID, IIf(qs_PersonaId = 0, Me.UtenteCorrente.ID, qs_PersonaId), 0)
-                        Me.QuestionarioCorrente = oQuest
                         AllowedStandardActionType = lm.Comol.Core.DomainModel.StandardActionType.ViewPersonalStatistics
                         Return True
-                    Else : Return False
+                    ElseIf oQuest.DisplayScoreToUser Then
+                        Return True
+                    Else Return False
                     End If
+
                 ElseIf allowStandardAction(lm.Comol.Core.DomainModel.StandardActionType.ViewUserStatistics, UtenteCorrente.ID, 0, oSourceObject, oDestinationObject) Then
                     Dim oQuest As New Questionario
                     oQuest = DALQuestionario.readQuestionarioByPersona(Me.PageUtility.CurrentContext, False, qs_questId, LinguaID, IIf(qs_PersonaId = 0, Me.UtenteCorrente.ID, qs_PersonaId), 0)

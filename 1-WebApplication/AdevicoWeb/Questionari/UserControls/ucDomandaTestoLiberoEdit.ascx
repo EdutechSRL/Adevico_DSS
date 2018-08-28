@@ -55,6 +55,7 @@
             </div>
             <br />
             <asp:CheckBox runat="server" ID="CHKisObbligatoria" Checked='<%#DataBinder.Eval(Container, "DataItem.isObbligatoria")%>' />
+            
             <asp:Label ID="LBNumeroOpzioni" runat="server" Text=""></asp:Label>
             <asp:DropDownList Enabled='<%#Not isDomandaReadOnly%>' ID="DDLNumeroOpzioni" runat="server"
                 AutoPostBack="true" OnSelectedIndexChanged="selezionaNumeroOpzioni">
@@ -105,6 +106,9 @@
                         </tr>
                         <tr>
                             <td>
+                                <div>
+                                    <asp:CheckBox runat="server" ID="CHKisSingleLine" Text="Riga singola"/>
+                                </div>                                                                     
                                 <div style="display: <%#visibilityValutazione%>;">
                                     <asp:Label ID="LBPesoRisposta" runat="server" AssociatedControlID="TXBPesoRisposta"></asp:Label>
                                     <asp:TextBox ID="TXBPesoRisposta" runat="server" Width="30px" Text='<%#DataBinder.Eval(Container, "DataItem.peso")%>'></asp:TextBox>

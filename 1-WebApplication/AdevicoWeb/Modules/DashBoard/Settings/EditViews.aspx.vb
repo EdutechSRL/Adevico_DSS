@@ -24,7 +24,7 @@ Public Class EditDashboardViews
 #Region "Inherits"
     Public Overrides Sub BindDati()
         Master.ShowNoPermission = False
-        CurrentPresenter.InitView(PreloadIdDashboard, PreloadDashboardType, PreloadIdCommunity)
+        CurrentPresenter.InitView(PreloadIdDashboard, PreloadDashboardType, PreloadIdCommunity, True)
     End Sub
 
     Public Overrides Sub BindNoPermessi()
@@ -64,9 +64,9 @@ Public Class EditDashboardViews
 #End Region
 
 #Region "Implements"
-    Private Sub LoadSettings(settings As dtoViewSettings) Implements IViewEditViews.LoadSettings
+    Private Sub LoadSettings(settings As dtoViewSettings, initialize As Boolean) Implements IViewEditViews.LoadSettings
         CTRLsettings.Visible = True
-        CTRLsettings.InitializeControl(settings)
+        CTRLsettings.InitializeControl(settings, initialize)
     End Sub
     Private Sub DisplayNoPageError() Implements IViewEditViews.DisplayNoPageError
         CTRLmessages.Visible = True

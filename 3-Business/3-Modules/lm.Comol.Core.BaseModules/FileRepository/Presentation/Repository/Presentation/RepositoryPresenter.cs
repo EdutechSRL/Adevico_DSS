@@ -1159,99 +1159,99 @@ namespace lm.Comol.Core.BaseModules.FileRepository.Presentation
 
 
 
-        public void UpdateScormStat()
-        {
-            int personId = UserContext.CurrentUserID;
-            //String playerSessionId = UserContext.WorkSessionID.ToString();
+        //public void UpdateScormStat()
+        //{
+        //    int personId = UserContext.CurrentUserID;
+        //    //String playerSessionId = UserContext.WorkSessionID.ToString();
 
-            int CommunityId = UserContext.CurrentCommunityID;
-            DateTime referenceTime = DateTime.Now;
+        //    int CommunityId = UserContext.CurrentCommunityID;
+        //    DateTime referenceTime = DateTime.Now;
 
-            litePlayerSettings playerSets = Service.PlayerScormGetSettings();
+        //    litePlayerSettings playerSets = Service.PlayerScormGetSettings();
 
-            if (playerSets == null)
-                return;
+        //    if (playerSets == null)
+        //        return;
 
-            TimeSpan Delay = View.GetScormStatDelay();
+        //    TimeSpan Delay = View.GetScormStatDelay();
             
-            List<ScormPackageUserEvaluation> UserEvaluations = service.ScormGetPendingPlayEvaluations(personId, Delay);
+        //    List<ScormPackageUserEvaluation> UserEvaluations = service.ScormGetPendingPlayEvaluations(personId, Delay);
 
-            if (UserEvaluations == null || !UserEvaluations.Any())
-                return;
+        //    if (UserEvaluations == null || !UserEvaluations.Any())
+        //        return;
 
-            //FR_ItemScormToEvaluate => ScormPackageWithVersionToEvaluate
-            //Lo fa internamente "AGGIORNA SCORM PLAY"
-            //IList<ScormPackageWithVersionToEvaluate> EvaluationsToUpdate = service.GetItemScormToEvaluate(personId, Delay);
-            //if (EvaluationsToUpdate == null || !EvaluationsToUpdate.Any())
-            //    return;
-
-
-
-            //bool saved = false;
-
-            //IList<lm.Comol.Core.FileRepository.Domain.ScormPackageUserEvaluation> EvaluatedItem = new List<ScormPackageUserEvaluation>();
-
-            try
-            {
-                using (NHibernate.ISession session = View.GetScormSession(playerSets.MappingPath))
-                {
-                    foreach(ScormPackageUserEvaluation newEval in UserEvaluations)
-                    {
-                        //ScormPackageUserEvaluation newEval = UserEvaluation.FirstOrDefault(ev =>
-                        //        ev.IdItem == evaltoupdate.IdItem
-                        //        && ev.IdPerson == evaltoupdate.IdPerson
-                        //        && ev.IdVersion == evaltoupdate.IdVersion
-                        //);
-
-                        //if(newEval != null)
-                        //{
-                        lm.Comol.Modules.ScormStat.Business.ScormService ScormService = new Modules.ScormStat.Business.ScormService(AppContext, session);
-                        lm.Comol.Core.FileRepository.Domain.dtoPackageEvaluation dto = ScormService.EvaluatePackage_NEW(
-                            personId,
-                            newEval.PlaySession,
-                            newEval.IdItem,
-                            newEval.UniqueIdItem,
-                            newEval.IdVersion,
-                            newEval.UniqueIdVersion,
-                            out referenceTime);
-
-                        //AGGIORNA SCORM PLAY
-                        lm.Comol.Core.FileRepository.Domain.ScormPackageUserEvaluation saved = Service.ScormSaveEvaluation(
-                            dto,
-                            personId,
-                            referenceTime,
-                            true,
-                            true);
-                        //}
+        //    //FR_ItemScormToEvaluate => ScormPackageWithVersionToEvaluate
+        //    //Lo fa internamente "AGGIORNA SCORM PLAY"
+        //    //IList<ScormPackageWithVersionToEvaluate> EvaluationsToUpdate = service.GetItemScormToEvaluate(personId, Delay);
+        //    //if (EvaluationsToUpdate == null || !EvaluationsToUpdate.Any())
+        //    //    return;
 
 
-                        //if(saved != null)
-                        //{
-                        //    EvaluatedItem.Add(saved);
-                        //} 
-                    }
-                }
-            }   catch
-            {
 
-            }
+        //    //bool saved = false;
 
-            //if (saved != null)
-            //{
-            //    //if (saveCompleteness && saved != null && idLink > 0 && saved.ModuleCode == View.EduPathModuleCode)
-            //    //{
-            //    //    View.SaveLinkEvaluation(saved);
-            //    //}
-            //}
-        }
+        //    //IList<lm.Comol.Core.FileRepository.Domain.ScormPackageUserEvaluation> EvaluatedItem = new List<ScormPackageUserEvaluation>();
 
-        public void UpdatePendingScormStat()
-        {
-            int CommunityId = UserContext.CurrentCommunityID;
-            int PersonId = -1;
+        //    try
+        //    {
+        //        using (NHibernate.ISession session = View.GetScormSession(playerSets.MappingPath))
+        //        {
+        //            foreach(ScormPackageUserEvaluation newEval in UserEvaluations)
+        //            {
+        //                //ScormPackageUserEvaluation newEval = UserEvaluation.FirstOrDefault(ev =>
+        //                //        ev.IdItem == evaltoupdate.IdItem
+        //                //        && ev.IdPerson == evaltoupdate.IdPerson
+        //                //        && ev.IdVersion == evaltoupdate.IdVersion
+        //                //);
 
-            //Service.PlayStatisticsCalculate(PersonId, CommunityId);
-        }
+        //                //if(newEval != null)
+        //                //{
+        //                lm.Comol.Modules.ScormStat.Business.ScormService ScormService = new Modules.ScormStat.Business.ScormService(AppContext, session);
+        //                lm.Comol.Core.FileRepository.Domain.dtoPackageEvaluation dto = ScormService.EvaluatePackage_NEW(
+        //                    personId,
+        //                    newEval.PlaySession,
+        //                    newEval.IdItem,
+        //                    newEval.UniqueIdItem,
+        //                    newEval.IdVersion,
+        //                    newEval.UniqueIdVersion,
+        //                    out referenceTime);
+
+        //                //AGGIORNA SCORM PLAY
+        //                lm.Comol.Core.FileRepository.Domain.ScormPackageUserEvaluation saved = Service.ScormSaveEvaluation(
+        //                    dto,
+        //                    personId,
+        //                    referenceTime,
+        //                    true,
+        //                    true);
+        //                //}
+
+
+        //                //if(saved != null)
+        //                //{
+        //                //    EvaluatedItem.Add(saved);
+        //                //} 
+        //            }
+        //        }
+        //    }   catch
+        //    {
+
+        //    }
+
+        //    //if (saved != null)
+        //    //{
+        //    //    //if (saveCompleteness && saved != null && idLink > 0 && saved.ModuleCode == View.EduPathModuleCode)
+        //    //    //{
+        //    //    //    View.SaveLinkEvaluation(saved);
+        //    //    //}
+        //    //}
+        //}
+
+        //public void UpdatePendingScormStat()
+        //{
+        //    int CommunityId = UserContext.CurrentCommunityID;
+        //    int PersonId = -1;
+
+        //    //Service.PlayStatisticsCalculate(PersonId, CommunityId);
+        //}
 
         #endregion
     }

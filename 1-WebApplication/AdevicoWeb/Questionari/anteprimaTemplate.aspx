@@ -10,6 +10,8 @@
 </head>
 <body>
      <form id="aspnetForm" runat="server">
+          <asp:ScriptManager ID="SCMmanager" runat="server" EnablePageMethods="true" EnablePartialRendering="true">
+        </asp:ScriptManager>
     <div>
     <asp:Label runat="server" ID="LBAnteprima"></asp:Label>
     </div>

@@ -18,9 +18,9 @@ Partial Public Class QuestionarioView
     Public ReadOnly Property displayDifficulty() As String
         Get
             If Me.QuestionarioCorrente.tipo = Questionario.TipoQuestionario.Autovalutazione OrElse Me.QuestionarioCorrente.tipo = Questionario.TipoQuestionario.Meeting OrElse Me.QuestionarioCorrente.tipo = Questionario.TipoQuestionario.Sondaggio Then
-                Return "display:none;" 'False
+                Return "hide"   '"display:none;" 'False
             Else
-                Return "text-align: right;" 'True
+                Return "show"   '"text-align: right;" 'True
             End If
         End Get
     End Property
@@ -80,25 +80,25 @@ Partial Public Class QuestionarioView
         oPagedDataSource.CurrentPageIndex = iPag
         Dim counter As Int16 = 0
         If Me.QuestionarioCorrente.pagine.Count > 1 And iPag + 1 < Me.QuestionarioCorrente.pagine.Count Then
-            IMBdopo.Visible = True
+            LkbNext.Visible = True
             If iPag < 1 Then
-                IMBprima.Visible = False
+                LkbBack.Visible = False
             Else
-                IMBprima.Visible = True
+                LkbBack.Visible = True
             End If
         Else
             If Not Me.QuestionarioCorrente.tipo = Questionario.TipoQuestionario.Autovalutazione Then
-                IMBdopo.Visible = False
+                LkbNext.Visible = False
             Else
                 If iPag < 1 Then
-                    IMBprima.Visible = False
+                    LkbBack.Visible = False
                 Else
-                    IMBprima.Visible = True
+                    LkbBack.Visible = True
                 End If
-                IMBdopo.Visible = True
+                LkbNext.Visible = True
             End If
             If iPag > 0 Then
-                IMBprima.Visible = True
+                LkbBack.Visible = True
             End If
         End If
         If Not PHnumeroPagina.Controls.Count = (Me.QuestionarioCorrente.pagine.Count) Or PHnumeroPagina.Controls.Count = 0 Then
@@ -240,8 +240,13 @@ Partial Public Class QuestionarioView
             Dim LKBpag As New LinkButton
             LKBpag = DirectCast(sender, LinkButton)
             iPag = Integer.Parse(LKBpag.Text.Substring(0, LKBpag.Text.IndexOf("&"))) - 1
-            IMBdopo.AlternateText = "Vai a pagina " + (iPag + 2).ToString()
-            IMBprima.AlternateText = "Vai a pagina " + (iPag).ToString()
+            'IMBDopo.AlternateText = Me.Resource.getValue("IMBprimaDopo") & (iPag + 2).ToString()
+            LkbNext.ToolTip = Me.Resource.getValue("IMBprimaDopo") & (iPag + 2).ToString()
+            LkbNext.Text = Me.Resource.getValue("IMBprimaDopo") '& (iPag + 2).ToString()
+
+            'IMBprima.AlternateText = Me.Resource.getValue("IMBprimaDopo") & (iPag).ToString()
+            LkbBack.ToolTip = Me.Resource.getValue("IMBprimaDopo") & (iPag).ToString()
+            LkbBack.Text = Me.Resource.getValue("IMBprimaDopo") '& (iPag).ToString()
             'LBTroppeRispostePagina.Visible = False
 
             'LKBpag.CssClass = "Selected"
@@ -260,7 +265,19 @@ Partial Public Class QuestionarioView
         End Try
 
     End Sub
-    Protected Sub IMBprima_Click(ByVal sender As System.Object, ByVal e As System.Web.UI.ImageClickEventArgs) Handles IMBprima.Click
+    'Protected Sub IMBprima_Click(ByVal sender As System.Object, ByVal e As System.Web.UI.ImageClickEventArgs) Handles IMBprima.Click
+    '    If iPag > 0 Then
+
+    '        ' LBTitolo.Text += Me.QuestionarioCorrente.nome
+
+    '        iPag = iPag - 1
+
+    '    End If
+
+    '    bindDataList()
+    'End Sub
+
+    Private Sub LkbBack_Click(sender As Object, e As EventArgs) Handles LkbBack.Click
         If iPag > 0 Then
 
             ' LBTitolo.Text += Me.QuestionarioCorrente.nome
@@ -271,9 +288,13 @@ Partial Public Class QuestionarioView
 
         bindDataList()
     End Sub
-    Protected Sub IMBdopo_Click(ByVal sender As System.Object, ByVal e As System.Web.UI.ImageClickEventArgs) Handles IMBdopo.Click
+
+    Private Sub LkbNext_Click(sender As Object, e As EventArgs) Handles LkbNext.Click
         vaiPaginaDopo()
     End Sub
+    'Protected Sub IMBdopo_Click(ByVal sender As System.Object, ByVal e As System.Web.UI.ImageClickEventArgs) Handles IMBdopo.Click
+    '    vaiPaginaDopo()
+    'End Sub
     Protected Sub vaiPaginaDopo()
 
         If iPag > -2 Then
@@ -362,6 +383,27 @@ Partial Public Class QuestionarioView
         '    LBerrore.Text = Me.Resource.getValue("LBerroreModello")
         'End If
     End Sub
+
+    Private Sub QuestionarioView_PreRender(sender As Object, e As EventArgs) Handles Me.PreRender
+        If String.IsNullOrEmpty(LkbNext.Text) Then
+            LkbNext.Text = "&gt;"
+        End If
+
+        If String.IsNullOrEmpty(LkbBack.Text) Then
+            LkbBack.Text = "&lt;"
+        End If
+
+        If String.IsNullOrEmpty(LkbNext.ToolTip) Then
+            LkbNext.ToolTip = "Avanti"
+        End If
+
+        If String.IsNullOrEmpty(LkbBack.ToolTip) Then
+            LkbBack.ToolTip = "Indietro"
+        End If
+    End Sub
+
+
+
     Public Overrides ReadOnly Property LoadDataByUrl As Boolean
         Get
             Return False

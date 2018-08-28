@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="COL_Questionario.Domanda">
+    <Position X="16" Y="1.25" Width="2" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Enum Name="COL_Questionario.Domanda.TipoDomanda">
+        <TypeIdentifier>
+          <NewMemberFileName>Domanda.vb</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+      <Enum Name="COL_Questionario.Domanda.DifficoltaDomanda">
+        <TypeIdentifier>
+          <NewMemberFileName>Domanda.vb</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>wAE0X1yYFZMKEEiDAwBjNAiAogATBSQQpEUIOABUAgQ=</HashCode>
+      <FileName>Domanda.vb</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="domandaDropDown" />
+      <Property Name="domandaRating" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="opzioniNumerica" />
+      <Property Name="opzioniTestoLibero" />
+      <Property Name="risposteDomanda" />
+      <Property Name="domandaMultiplaOpzioni" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="COL_Questionario.DropDown">
+    <Position X="22" Y="10.25" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Enum Name="COL_Questionario.DropDown.TipoDropDown" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>DropDown.vb</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AQgANIAAAAAIAAAAAABAAAgAAAABgQQAAAAAgAAEAgA=</HashCode>
+      <FileName>DropDown.vb</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="dropDownItems" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="COL_Questionario.DomandaRating">
+    <Position X="19.25" Y="1.5" Width="1.75" />
+    <NestedTypes>
+      <Enum Name="COL_Questionario.DomandaRating.TipoIntestazioneRating" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>DomandaRating.vb</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAgAQAAAAAAICEAACBBAQAQAAAEAAAEAABAAggBAIkA=</HashCode>
+      <FileName>DomandaRating.vb</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="opzioniRating" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="COL_Questionario.DomandaNumerica">
+    <Position X="21.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgQSEQQAAAAQAAACADgAAAAAAAAAAEAAAEAgAAQAgA=</HashCode>
+      <FileName>DomandaNumerica.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="COL_Questionario.DomandaTestoLibero">
+    <Position X="12.5" Y="6.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAgAQEAAAAAAAAAACABgAAAAAAAAAQEkAAEAgAAEAgA=</HashCode>
+      <FileName>DomandaTestoLibero.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="COL_Questionario.RispostaDomanda">
+    <Position X="12.5" Y="1.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>ACgABAIAAAACAACAAABAAAAAAEADBAAAABCFgAAAAkA=</HashCode>
+      <FileName>RispostaDomanda.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="COL_Questionario.DomandaOpzione">
+    <Position X="19.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACASEAQAAAAAAABCABhAIAAAAAAAQEABEEQAIACAgA=</HashCode>
+      <FileName>DomandaOpzione.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="COL_Questionario.DropDownItem">
+    <Position X="22" Y="6.75" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AACQQEAAAAAAAAABCABhAAAgAAIAAAEABEEAIAACAgA=</HashCode>
+      <FileName>DropDownItem.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

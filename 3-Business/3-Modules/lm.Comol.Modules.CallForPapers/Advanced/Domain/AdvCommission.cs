@@ -76,6 +76,18 @@ namespace lm.Comol.Modules.CallForPapers.Advanced.Domain
         
 
         /// <summary>
+        /// Id Template per esportazione documento di riepilogo
+        /// </summary>
+        public virtual Int64 TemplateId { get; set; }
+        /// <summary>
+        /// Id Versione Template per esportazione documento di riepilogo
+        /// </summary>
+        /// <remarks>
+        /// Se -1, verrà utilizzata sempre l'ultima versione
+        /// </remarks>
+        public virtual Int64 TemplateVersionId { get; set; }
+
+        /// <summary>
         /// Verifica se l'utente appartiene alla commissione
         /// </summary>
         /// <param name="PersonId">Id persona da controllare</param>

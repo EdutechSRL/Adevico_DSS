@@ -278,15 +278,15 @@ Partial Public Class DomandaEdit
         mostraViewDati()
     End Sub
 
-    'Private Sub LNBRatingStarsStandard_Click(sender As Object, e As EventArgs) Handles LNBRatingStarsStandard.Click
-    '    Me.DomandaCorrente.tipo = Domanda.TipoDomanda.RatingStars
-    '    mostraViewDati()
-    'End Sub
-
-    'Private Sub LNBRatingStarsWIZ_Click(sender As Object, e As EventArgs) Handles LNBRatingStarsWIZ.Click
-    '    Me.DomandaCorrente.tipo = Domanda.TipoDomanda.Rating
-    '    Me.RedirectToUrl(RootObject.WizardDomandaRatingStars)
-    'End Sub
+    Private Sub LNBRatingStarsStandard_Click(sender As Object, e As EventArgs) Handles LNBRatingStarsStandard.Click
+        Me.DomandaCorrente.tipo = Domanda.TipoDomanda.RatingStars
+        mostraViewDati()
+    End Sub
+    
+    Private Sub LNBRatingStarsWIZ_Click(sender As Object, e As EventArgs) Handles LNBRatingStarsWIZ.Click
+        Me.DomandaCorrente.tipo = Domanda.TipoDomanda.Rating
+        Me.RedirectToUrl(RootObject.WizardDomandaRatingStars)
+    End Sub
 
     Protected Sub LNBDropDownWIZ_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles LNBDropDownWIZ.Click
         Me.DomandaCorrente.tipo = Domanda.TipoDomanda.DropDown

@@ -1,0 +1,466 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="COL_Questionario.Comunita" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAIAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>Comunita.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="COL_Questionario.DALDomande" Collapsed="true">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQBAQEHAGAEgGAAAAEAQQzIwIokEckFJQKAAAQTQ=</HashCode>
+      <FileName>DAL\DALDomande.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="COL_Questionario.DALDropDown" Collapsed="true">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DAL\DALDropDown.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="COL_Questionario.DALExternal" Collapsed="true">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DAL\DALExternal.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="COL_Questionario.DALPagine" Collapsed="true">
+    <Position X="7.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAEAgAAAAAAhAAAAAAAASAAAAAAAAAAAAA=</HashCode>
+      <FileName>DAL\DALPagine.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="COL_Questionario.DALQuestionario" Collapsed="true">
+    <Position X="9.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AGUABEACIRgEAKECbFAGhIGAAABA4AAAAIUMhEABQoQ=</HashCode>
+      <FileName>DAL\DALQuestionario.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="COL_Questionario.DALQuestionarioGruppo" Collapsed="true">
+    <Position X="11" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAACAAAAgAIQAAAAAAAAAAAIAAAAAAAg=</HashCode>
+      <FileName>DAL\DALQuestionarioGruppo.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="COL_Questionario.DALRisposte" Collapsed="true">
+    <Position X="0.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAgCgEAAKoCCJARABAAAAAAACIBAEIAEECDDARKAA=</HashCode>
+      <FileName>DAL\DALRisposte.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="COL_Questionario.DALStatistiche">
+    <Position X="6.75" Y="5" Width="3.75" />
+    <TypeIdentifier>
+      <HashCode>EAADAAAAACBEAAAAAAAAAAAAAAQAIAgAAAAQAIAiAAQ=</HashCode>
+      <FileName>DAL\DALStatistiche.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="COL_Questionario.DALTemplate" Collapsed="true">
+    <Position X="4" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQABEAAAAAAAAACAAAAAAAQAAAAAAAAABAAAAAAAAA=</HashCode>
+      <FileName>DAL\DALTemplate.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="COL_Questionario.DALUtenteInvitato" Collapsed="true">
+    <Position X="5.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAgAAAAAAAAUCEAAKCAiAAQQEAAAAAEAAQABAAAA=</HashCode>
+      <FileName>DAL\DALUtenteInvitato.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="COL_Questionario.LazyAssociatedQuestion" Collapsed="true">
+    <Position X="9.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAACAAAAAAEAABBAAAAAAAAAAAAAAAAAEAAA=</HashCode>
+      <FileName>Domain\LazyAssociatedQuestion.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="COL_Questionario.LazyUserResponse" Collapsed="true">
+    <Position X="11" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAACAAAQAACAQIAACEAAAAACABBAAgABABIIAAAEgAA=</HashCode>
+      <FileName>Domain\LazyUserResponse.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="COL_Questionario.Domanda">
+    <Position X="55.25" Y="5.5" Width="2" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Enum Name="COL_Questionario.Domanda.TipoDomanda">
+        <TypeIdentifier>
+          <NewMemberFileName>Domanda.vb</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+      <Enum Name="COL_Questionario.Domanda.DifficoltaDomanda">
+        <TypeIdentifier>
+          <NewMemberFileName>Domanda.vb</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>wAE0X1yYFZMKEEiDAwBjNAiAogATBSQQpEUIOABUAgQ=</HashCode>
+      <FileName>Domanda.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="COL_Questionario.DomandaNumerica" Collapsed="true">
+    <Position X="9.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgQSEQQAAAAQAAACADgAAAAAAAAAAEAAAEAgAAQAgA=</HashCode>
+      <FileName>DomandaNumerica.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="COL_Questionario.DomandaOpzione" Collapsed="true">
+    <Position X="11" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACASEAQAAAAAAABCABhAIAAAAAAAQEABEEQAIACAgA=</HashCode>
+      <FileName>DomandaOpzione.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="COL_Questionario.DomandaRating" Collapsed="true">
+    <Position X="0.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAQAAAAAAICEAACBBAQAQAAAEAAAEAABAAggBAIkA=</HashCode>
+      <FileName>DomandaRating.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="COL_Questionario.DomandaTestoLibero" Collapsed="true">
+    <Position X="2.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAQEAAAAAAAAAACABgAAAAAAAAAQEkAAEAgAAEAgA=</HashCode>
+      <FileName>DomandaTestoLibero.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="COL_Questionario.DropDown" Collapsed="true">
+    <Position X="4" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQgANIAAAAAIAAAAAABAAAgAAAABgQQAAAAAgAAEAgA=</HashCode>
+      <FileName>DropDown.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="COL_Questionario.DropDownItem" Collapsed="true">
+    <Position X="5.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACQQEAAAAAAAAABCABhAAAgAAIAAAEABEEAIAACAgA=</HashCode>
+      <FileName>DropDownItem.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="COL_Questionario.LibreriaQuestionario">
+    <Position X="54.5" Y="19.25" Width="2.75" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AEABAggAIIAAQAABAADAkCCEwAAAIAAAACQEAQAAUgI=</HashCode>
+      <FileName>LibreriaQuestionario.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="COL_Questionario.ManagerSurveys" BaseTypeListCollapsed="true">
+    <Position X="41.75" Y="10.25" Width="2" />
+    <AssociationLine Name="_CurrentCommunity" Type="Comol.Entity.Community">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-0.266" Y="-0.377" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="_CurrentUser" Type="Comol.Entity.Person">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.691" Y="0.094" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="CurrentUser" Type="Comol.Entity.Person">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.201" Y="-0.322" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="_CurrentDB" Type="Comol.Entity.Configuration.Components.ConnectionDB">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.045" Y="0.321" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="CurrentDB" Type="Comol.Entity.Configuration.Components.ConnectionDB">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-0.718" Y="0.241" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAIAAgDIAAAAAAAFAAAAQAAIAgACAQAAAgAAAEAAA=</HashCode>
+      <FileName>Manager\ManagerSurveys.vb</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_CurrentCommunity" />
+      <Field Name="_CurrentUser" />
+      <Field Name="_CurrentDB" />
+      <Property Name="CurrentCommunity" />
+      <Property Name="CurrentUser" />
+      <Property Name="CurrentDB" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="COL_Questionario.Persona" Collapsed="true">
+    <Position X="4" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAIAAAAAAAAAAAAABAAAAQAEAAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>Persona.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="COL_Questionario.PredicateWrapper(Of T, A)" Collapsed="true">
+    <Position X="11" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAEAAAAAAABAAAAgAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>PredicateWrapper.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="COL_Questionario.PresenterDaySurvey">
+    <Position X="45.25" Y="10" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQABAAAAAAAAACAAAAAAAIABAAAAAAACQAAAAAA=</HashCode>
+      <FileName>Presenter\PresenterDaySurvey.vb</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_Manager" />
+      <Field Name="_View" />
+      <Property Name="View" />
+      <Property Name="CurrentManager" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="COL_Questionario.Questionario">
+    <Position X="58.75" Y="5" Width="2.75" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Enum Name="COL_Questionario.Questionario.TipoQuestionario">
+        <TypeIdentifier>
+          <NewMemberFileName>Questionario.vb</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+      <Enum Name="COL_Questionario.Questionario.StatoQuestionario">
+        <TypeIdentifier>
+          <NewMemberFileName>Questionario.vb</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+      <Enum Name="COL_Questionario.Questionario.Destinatari">
+        <TypeIdentifier>
+          <NewMemberFileName>Questionario.vb</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>gU5ApACyaL/ZkI4DFRjovBgok0ZdNjgS5BSAOgBr04Y=</HashCode>
+      <FileName>Questionario.vb</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="ownerType" />
+      <Property Name="rispostaQuest" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="domande" />
+      <Property Name="librerieQuestionario" />
+      <Property Name="linguePresenti" />
+      <Property Name="pagine" />
+      <Property Name="risposteQuestionario" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="COL_Questionario.QuestionarioGruppo" Collapsed="true">
+    <Position X="2.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAgJAAYEAqAAIAAAgBAAAAAQABFAiAAYAQAMACCSgA=</HashCode>
+      <FileName>QuestionarioGruppo.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="COL_Questionario.QuestionarioPagina">
+    <Position X="63" Y="4.75" Width="2.25" />
+    <AssociationLine Name="domande" Type="COL_Questionario.Domanda" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="63.125" Y="4.875" />
+        <Point X="56.25" Y="4.875" />
+        <Point X="56.25" Y="5.5" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AQAAAQAyAAAAAAACCABCAAggAgFAMAQAgAAAIIAAAgA=</HashCode>
+      <FileName>QuestionarioPagina.vb</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="domande" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="COL_Questionario.RispostaDomanda">
+    <Position X="67.5" Y="10.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>ACgABAIAAAACAACAAABAAAAAAEADBAAAABCFgAAAAkA=</HashCode>
+      <FileName>RispostaDomanda.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="COL_Questionario.RispostaQuestionario">
+    <Position X="63" Y="12.75" Width="2.75" />
+    <NestedTypes>
+      <Class Name="COL_Questionario.RispostaQuestionario.PosizioneDomanda" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>RispostaQuestionario.vb</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>gIAIBygAFAbAAAIAAJRAEARk4gCEDAwAiAAFEAgKYlg=</HashCode>
+      <FileName>RispostaQuestionario.vb</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="oStatistica" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="risposteDomande" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="COL_Questionario.RootObject" Collapsed="true">
+    <Position X="2.25" Y="10.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Enum Name="COL_Questionario.RootObject.EduPath_Permission">
+        <TypeIdentifier>
+          <NewMemberFileName>RootObject.vb</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>S0MKqMEjEBR0qMohWtLfbgibkF0WQBq2lATFUQIRDCY=</HashCode>
+      <FileName>RootObject.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="COL_Questionario.Statistica">
+    <Position X="67" Y="15.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>IAACBAAlBCQQAAAAABRAIAAARAAIACAAgAEAAMBCBAA=</HashCode>
+      <FileName>Statistica.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="COL_Questionario.Template" Collapsed="true">
+    <Position X="2.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAJAAAAIAAAgAAAABBAAAAQAABAAAABAQAAAACAgA=</HashCode>
+      <FileName>Template.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="COL_Questionario.TipoGrafico" Collapsed="true">
+    <Position X="4" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAIAAQAAAAAAAAAABAAAAAAAAAAACIAAAAIAAAAgA=</HashCode>
+      <FileName>TipoGrafico.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="COL_Questionario.UtenteInvitato" Collapsed="true">
+    <Position X="2.25" Y="12.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>YBAQAHAAEAACkEAAgIAAJCAwgECAAAgCCAQCASEEAAA=</HashCode>
+      <FileName>UtenteInvitato.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="COL_Questionario.Business.ServiceQuestionnaire" BaseTypeListCollapsed="true">
+    <Position X="14" Y="0.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAhAASAAAIAAAAAQCgQAAgBEAAAAIBAAAAAAAAAAAAA=</HashCode>
+      <FileName>Business\ServiceQuestionnaire.vb</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="COL_Questionario.Comol.Manager.ManagerLibreria" Collapsed="true">
+    <Position X="2.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ManagerLibreria.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="COL_Questionario.My.MySettings" Collapsed="true">
+    <Position X="5.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Comol.Entity.Community" Collapsed="true">
+    <Position X="44.5" Y="8.25" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Comol.Entity.Person" Collapsed="true">
+    <Position X="45.5" Y="12.25" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Comol.Entity.Configuration.Components.ConnectionDB">
+    <Position X="41" Y="13.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Comol.Entity.Lingua" Collapsed="true">
+    <Position X="63.25" Y="11.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Collections.Generic.List(Of T)" Collapsed="true">
+    <Position X="18.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="COL_Questionario.ImoduleToQuizAction" Collapsed="true">
+    <Position X="0.5" Y="7.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAYCAQAQAQAAAAAEKAAAAAAACAAAAEQAAAAAAEAAQ=</HashCode>
+      <FileName>Iview\ImoduleToQuizAction.vb</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="COL_Questionario.IviewDaySurvey">
+    <Position X="48.75" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAADKAIAAAYEBAAAEAEAAIQAAgAAAACAAEAAAA=</HashCode>
+      <FileName>Iview\IviewDaySurvey.vb</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="CurrentCommunity" />
+      <Property Name="CurrentPresenter" />
+      <Property Name="CurrentUser" />
+    </ShowAsAssociation>
+  </Interface>
+  <Enum Name="COL_Questionario.TipoStatistiche" Collapsed="true">
+    <Position X="0.5" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAAAAAAAAQAAAAABAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>TipoStatistiche.vb</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="COL_BusinessLogic_v2.OwnerType_enum" Collapsed="true">
+    <Position X="63.25" Y="10.5" Width="1.5" />
+    <TypeIdentifier />
+  </Enum>
+  <Delegate Name="COL_Questionario.PredicateWrapperDelegate(Of T, A)" Collapsed="true">
+    <Position X="0.5" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>PredicateWrapper.vb</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Module Name="COL_Questionario.My.Resources.Resources" Collapsed="true">
+    <Position X="2.25" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABEAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Module>
+  <Module Name="COL_Questionario.My.MySettingsProperty" Collapsed="true">
+    <Position X="0.5" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Module>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

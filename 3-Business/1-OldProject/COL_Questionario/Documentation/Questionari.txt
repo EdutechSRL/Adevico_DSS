@@ -1,0 +1,44 @@
+Il percorso formativo crea un link errato a "rivedi compilazione".
+
+Sono stati TEMPORANEAMENTE aggiunti i seguenti Javascript per sistemare i link errati:
+
+- \Modules\CallForPeaper\FullPlay.aspx		
+	(Corregge i link "errati" nella pagina)
+
+jQuery(".activitycontent a").each(function(){
+        var jEl = jQuery(this);
+        var href = jEl.attr("href")+"";
+        if(href.indexOf("QuestionarioCompile.aspx") > -1 && href.indexOf("&View=true") > -1){
+            href = href.replace("&View=true","&mode=3");
+            href = href.replace("QuestionarioCompile.aspx","QuestionarioStat.aspx");
+            jEl.attr("href", href);
+        }
+    });
+
+
+- \Questionari\QuestionarioStat.aspx
+	(Toglie il download nel caso sia mode=3: utente)
+
+jQuery(document).ready(function(){
+    var href = location.href;
+    if(href.indexOf("QuestionarioStat.aspx") > -1 && href.indexOf("&mode=3") > -1){
+        jQuery(".ddbuttonlist").hide();
+    }
+});
+
+
+NOTA: a livello di CODICE ora avviene lo stesso controllo,
+rendendo di fatto inutili i controlli di cui sopra:
+- La pagina dei Percorsi Formativi mentiene il link errato.
+- La pagina QuestionarioCompile.aspx fa un redirect su statistics se è presente "View=true" nella querystring.
+- La pagina con le statistiche nasconde il div con i ddlbutton se è presente "mode=3" nella querystring.
+
+
+E' tutt'altro che una cosa buona e giusta, ma evita alcuni refactor su codice del precambriano.
+
+In fase di refactor è NECESSARIO:
+- che i permessi siano gestiti e controllati ESCLUSIVAMENTE lato BUSINESS!!! (E non da parametri nella querystring)
+- Che gli oggetti NON siano persistiti in Sessione, o al limite lo siano in modo univoco, attraverso chiavi come l'ID dell'oggetto (vedi Questionario)
+- Eliminare TOTALMENTE le STORE PROCEDURE!
+Questo come da prassi nel resto di Comol.
+

@@ -250,6 +250,9 @@ namespace lm.Comol.Modules.CallForPapers.Presentation.Evaluation
         }
         public void CreateAssignments(Boolean byDefault, dtoSubmissionFilters filters)
         {
+            //ToDo: togliere e sistemare le commissioni!!!
+            byDefault = true;
+
             long idCall = View.IdCall;
             Int32 idCommunity = View.IdCommunity;
             if (byDefault)

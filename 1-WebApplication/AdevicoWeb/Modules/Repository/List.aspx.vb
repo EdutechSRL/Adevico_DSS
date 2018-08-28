@@ -1,9 +1,13 @@
 ﻿Imports lm.Comol.Core.FileRepository.Domain
 Imports lm.Comol.Core.BaseModules.FileRepository.Presentation
+
+'Scorm Update:
+Imports lm.Comol.UI.Presentation
+Imports NHibernate
+
 Public Class RepositoryList
     Inherits FRrepositoryPageBase
     Implements IViewRepository
-
 
 #Region "Context"
     Private _Presenter As RepositoryPresenter
@@ -65,7 +69,7 @@ Public Class RepositoryList
         End Get
     End Property
 #End Region
-   
+
     Private Property CurrentOrderBy As OrderBy Implements IViewRepository.CurrentOrderBy
         Get
             Return CTRLtree.CurrentOrderBy
@@ -170,6 +174,13 @@ Public Class RepositoryList
 #End Region
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+        If Not Page.IsPostBack() Then
+            Try
+                'CurrentPresenter.UpdateScormStat()
+            Catch ex As Exception
+
+            End Try
+        End If
 
     End Sub
 
@@ -283,7 +294,7 @@ Public Class RepositoryList
     Private Sub DisplaySameDirectory() Implements IViewRepository.DisplaySameDirectory
         DisplayMessage(Resource.getValue("IViewRepository.DisplaySameDirectory"), lm.Comol.Core.DomainModel.Helpers.MessageType.alert)
     End Sub
-   
+
     Private Sub DisplayUnavailableSpace(name As String, extension As String, type As ItemType, size As Long, folder As dtoFolderTreeItem) Implements IViewRepository.DisplayUnavailableSpace
         Dim key As String = "IViewRepository.DisplayUnavailableSpace"
         Dim message As String = ""
@@ -296,7 +307,7 @@ Public Class RepositoryList
         DisplayMessage(String.Format(message, GetFilenameRender(name, extension, type)), lm.Comol.Core.DomainModel.Helpers.MessageType.alert)
     End Sub
     Private Sub DisplayUnableToAddFolders(folderName As String, cFolders As Long) Implements IViewRepository.DisplayUnableToAddFolders
-        DisplayMessage(String.Format(Resource.getValue("IViewRepository.DisplayUnableToAddFolders"), cfolders), lm.Comol.Core.DomainModel.Helpers.MessageType.error)
+        DisplayMessage(String.Format(Resource.getValue("IViewRepository.DisplayUnableToAddFolders"), cFolders), lm.Comol.Core.DomainModel.Helpers.MessageType.error)
     End Sub
     Private Sub DisplayAddedFolders(folderName As String, added As Long, notAdded As Long) Implements IViewRepository.DisplayAddedFolders
         Dim items As New List(Of lm.Comol.Core.DomainModel.Helpers.dtoMessage)
@@ -432,11 +443,11 @@ Public Class RepositoryList
                         End If
                     Case Else
                         mType = lm.Comol.Core.DomainModel.Helpers.MessageType.error
-                            If isMainFolder Then
-                                message = String.Format(message, folderInfo.GetOverSize, folderInfo.Quota.GetAvailableSize)
-                            Else
-                                message = String.Format(message, folderInfo.Name, folderInfo.GetOverSize, folderInfo.Quota.GetAvailableSize)
-                            End If
+                        If isMainFolder Then
+                            message = String.Format(message, folderInfo.GetOverSize, folderInfo.Quota.GetAvailableSize)
+                        Else
+                            message = String.Format(message, folderInfo.Name, folderInfo.GetOverSize, folderInfo.Quota.GetAvailableSize)
+                        End If
                 End Select
             End If
             CTRLfolderInfo.Visible = Not String.IsNullOrWhiteSpace(message)
@@ -509,7 +520,7 @@ Public Class RepositoryList
         Dim oSender As New RepositoryCommunityNewsUtility(CurrentPresenter.CurrentIdModule, PageUtility)
         Dim backUrl As String = CleanBackUrl(folderUrl)
         folderUrl = SanitizeFolderUrl(folderUrl)
-        
+
         For Each item As RepositoryItem In items
             Dim permissions As Integer = IIf(item.IsVisible, oSender.PermissionToSee, oSender.PermissionToAdmin)
             oSender.ItemAdded(item.Repository.IdCommunity, item.Id, item.IdVersion, item.Type, item.DisplayName, folderName, GetItemDownloadOrPlayUrl(item, True, Server.HtmlEncode(backUrl)), folderUrl, permissions)
@@ -988,6 +999,93 @@ Public Class RepositoryList
         Return ""
     End Function
 
+#End Region
+
+#Region "Scorm Update"
+    Private _serviceEduPath As lm.Comol.Modules.EduPath.BusinessLogic.Service
+    Private _serviceScorm As lm.Comol.Modules.ScormStat.Business.ScormService
+    Private _serviceFile As lm.Comol.Core.FileRepository.Business.ServiceFileRepository
+
+
+    Private ReadOnly Property ServiceScorm As lm.Comol.Modules.ScormStat.Business.ScormService
+        Get
+            If IsNothing(_serviceScorm) Then
+                _serviceScorm = New lm.Comol.Modules.ScormStat.Business.ScormService(PageUtility.CurrentContext, SessionHelpers.GetIcodeonSession(SystemSettings.Icodeon.MappingPath))
+            End If
+            Return _serviceScorm
+        End Get
+    End Property
+    Private ReadOnly Property ServiceEduPath As lm.Comol.Modules.EduPath.BusinessLogic.Service
+        Get
+            If IsNothing(_serviceEduPath) Then
+                _serviceEduPath = New lm.Comol.Modules.EduPath.BusinessLogic.Service(PageUtility.CurrentContext)
+            End If
+            Return _serviceEduPath
+        End Get
+    End Property
+    Private ReadOnly Property ServiceFile As lm.Comol.Core.FileRepository.Business.ServiceFileRepository
+        Get
+            If IsNothing(_serviceFile) Then
+                _serviceFile = New lm.Comol.Core.FileRepository.Business.ServiceFileRepository(PageUtility.CurrentContext)
+            End If
+            Return _serviceFile
+        End Get
+    End Property
+
+
+    'Private Sub OldMehtods()
+    '    Dim idPerson As Integer = PageUtility.CurrentContext.UserContext.CurrentUserID
+    '    If PageUtility.CurrentContext.UserContext.isAnonymous Then
+    '        If IdItem > 0 Then
+    '            idPerson = ServiceFile.ScormGetPlayIdUser(PreloadsessionID, PreloadedFileUniqueID, PreloadedFileUniqueID)
+    '        Else
+    '            idPerson = ServiceFile.ScormGetPlayIdUser(PreloadsessionID, PreloadIdItem, PreloadIdVersion)
+    '        End If
+    '    End If
+    '    If idPerson > 0 Then
+    '        Dim referenceTime As DateTime = DateTime.Now
+    '        Dim session As String = PreloadsessionID
+    '        Dim dto As lm.Comol.Core.FileRepository.Domain.dtoPackageEvaluation = Nothing
+    '        If IdItem > 0 Then
+    '            dto = ServiceScorm.EvaluatePackage_NEW(idPerson, PreloadsessionID, PreloadedIdFile, PreloadedFileUniqueID, referenceTime)
+    '        Else
+    '            dto = ServiceScorm.EvaluatePackage_NEW(idPerson, PreloadsessionID, PreloadIdItem, PreloadUniqueId, PreloadIdVersion, PreloadUniqueIdVersion, referenceTime)
+    '        End If
+
+    '        If Not IsNothing(dto) AndAlso dto.IdItem > 0 Then
+    '            dto.IdLink = PreloadedIdLink
+    '            Dim saved As lm.Comol.Core.FileRepository.Domain.ScormPackageUserEvaluation = ServiceFile.ScormSaveEvaluation(dto, idPerson, referenceTime, True, True)
+    '            If Not IsNothing(saved) Then
+    '                If PreloadSaveCompleteness AndAlso saved.ModuleCode = lm.Comol.Modules.EduPath.Domain.ModuleEduPath.UniqueCode Then
+    '                    'ServiceEduPath.SaveActionExecution(saved)
+    '                    CTRLmessages.InitializeControl(Resource.getValue("ClosePlayer.PlayerClosed.ActionSaved"), Helpers.MessageType.success)
+    '                Else
+    '                    CTRLmessages.InitializeControl(Resource.getValue("ClosePlayer.PlayerClosed"), Helpers.MessageType.success)
+    '                End If
+    '            Else
+    '                CTRLmessages.InitializeControl(Resource.getValue("ClosePlayer.PlayerClosedNotSaved"), Helpers.MessageType.alert)
+    '            End If
+    '        Else
+    '            CTRLmessages.InitializeControl(Resource.getValue("ClosePlayer.PlayerClosedNotSaved"), Helpers.MessageType.alert)
+    '        End If
+    '    Else
+    '        CTRLmessages.InitializeControl(Resource.getValue("ClosePlayer.SessionExpired"), Helpers.MessageType.alert)
+    '    End If
+    'End Sub
+    Private Sub SaveLinkEvaluation(evaluation As lm.Comol.Core.FileRepository.Domain.ScormPackageUserEvaluation) Implements IViewRepository.SaveLinkEvaluation
+        'ServiceEduPath.SaveActionExecution(evaluation)
+    End Sub
+
+    Public Function GetScormSession(connectionString As String) As ISession Implements IViewRepository.GetScormSession
+        If String.IsNullOrWhiteSpace(connectionString) Then
+            connectionString = SystemSettings.Icodeon.MappingPath
+        End If
+        Return SessionHelpers.GetIcodeonSession(connectionString)
+    End Function
+
+    Public Function GetScormStatDelay() As TimeSpan Implements IViewRepository.GetScormStatDelay
+        Return New TimeSpan(0, 0, 10) 'Delay 10 secondi, per test!
+    End Function
 #End Region
 
 End Class

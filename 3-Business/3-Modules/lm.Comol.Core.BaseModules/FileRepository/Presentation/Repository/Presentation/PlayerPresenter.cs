@@ -205,43 +205,43 @@ namespace lm.Comol.Core.BaseModules.FileRepository.Presentation
                         if (isOnModal)
                             View.DisplayClosingToolBar();
                         break;
-                    case ItemType.ScormPackage:
-                        Service.ScormAddPendingEvaluation(item, version,UserContext.CurrentUserID, (link==null ? 0 : link.Id));
-                        if (saveStatistics)
-                        {
-                            using (NHibernate.ISession session = View.GetScormSession(player.MappingPath))
-                            {
-                                lm.Comol.Modules.ScormStat.Business.ScormService service = new Modules.ScormStat.Business.ScormService(AppContext, session);
-                                DateTime referenceTime = DateTime.Now;
+                    //case ItemType.ScormPackage:
+                    //    Service.ScormAddPendingEvaluation(item, version,UserContext.CurrentUserID, (link==null ? 0 : link.Id));
+                    //    if (saveStatistics)
+                    //    {
+                    //        using (NHibernate.ISession session = View.GetScormSession(player.MappingPath))
+                    //        {
+                    //            lm.Comol.Modules.ScormStat.Business.ScormService service = new Modules.ScormStat.Business.ScormService(AppContext, session);
+                    //            DateTime referenceTime = DateTime.Now;
 
-                                lm.Comol.Core.FileRepository.Domain.dtoPackageEvaluation dto = service.EvaluatePackage_NEW(idUser, playSessionId, item.Id, item.UniqueId, version.Id, version.UniqueIdVersion, out referenceTime);
+                    //            lm.Comol.Core.FileRepository.Domain.dtoPackageEvaluation dto = service.EvaluatePackage_NEW(idUser, playSessionId, item.Id, item.UniqueId, version.Id, version.UniqueIdVersion, out referenceTime);
                                 
-                                if (dto != null)
-                                {
-                                    dto.IdLink = (link == null) ? 0 : link.Id;
-                                    lm.Comol.Core.FileRepository.Domain.ScormPackageUserEvaluation saved = Service.ScormSaveEvaluation(dto, idUser, referenceTime, false, true);
-                                    if (saveCompleteness && saved != null && link != null)
-                                    {
-                                        if (saved.ModuleCode == View.EduPathModuleCode && link.Id > 0)
-                                            View.SaveLinkEvaluation(idUser, link.Id, saved);
-                                    }
-                                }
-                            }
-                        }
+                    //            if (dto != null)
+                    //            {
+                    //                dto.IdLink = (link == null) ? 0 : link.Id;
+                    //                lm.Comol.Core.FileRepository.Domain.ScormPackageUserEvaluation saved = Service.ScormSaveEvaluation(dto, idUser, referenceTime, false, true);
+                    //                if (saveCompleteness && saved != null && link != null)
+                    //                {
+                    //                    if (saved.ModuleCode == View.EduPathModuleCode && link.Id > 0)
+                    //                        View.SaveLinkEvaluation(idUser, link.Id, saved);
+                    //                }
+                    //            }
+                    //        }
+                    //    }
 
-                        playUrl = player.PlayUrl;
-                        playUrl = playUrl.Replace("#" + PlayerPlaceHolders.idUser.ToString() + "#", idUser.ToString());
-                        playUrl = playUrl.Replace("#" + PlayerPlaceHolders.courseId.ToString() + "#", version.UniqueIdVersion.ToString().Replace(" ", "%20").Replace("\\", "%2F").Replace("/", "%2F"));
-                        playUrl = playUrl.Replace("#" + PlayerPlaceHolders.workingSessionId.ToString() + "#", playSessionId);
-                        playUrl = playUrl.Replace("#" + PlayerPlaceHolders.dbIdentifier.ToString() + "#", player.DBidentifier);
+                    //    playUrl = player.PlayUrl;
+                    //    playUrl = playUrl.Replace("#" + PlayerPlaceHolders.idUser.ToString() + "#", idUser.ToString());
+                    //    playUrl = playUrl.Replace("#" + PlayerPlaceHolders.courseId.ToString() + "#", version.UniqueIdVersion.ToString().Replace(" ", "%20").Replace("\\", "%2F").Replace("/", "%2F"));
+                    //    playUrl = playUrl.Replace("#" + PlayerPlaceHolders.workingSessionId.ToString() + "#", playSessionId);
+                    //    playUrl = playUrl.Replace("#" + PlayerPlaceHolders.dbIdentifier.ToString() + "#", player.DBidentifier);
 
-                        if (!saveStatistics && !String.IsNullOrEmpty(player.NoSaveStatParameter))
-                            playUrl += (playUrl.Contains("?") ? "&" : "?") + player.NoSaveStatParameter;
-                        playUrl +=RootObject.PlayBaseParameters(!saveStatistics, refreshContainer, isOnModal, saveCompleteness);
-                        playUrl += RootObject.UrlItemParameters(false, version.IdItem, version.Id, (link != null ? link.Id : 0));
-                        playUrl += RootObject.UrlGuidParameters(version.UniqueIdItem, version.UniqueIdVersion);
+                    //    if (!saveStatistics && !String.IsNullOrEmpty(player.NoSaveStatParameter))
+                    //        playUrl += (playUrl.Contains("?") ? "&" : "?") + player.NoSaveStatParameter;
+                    //    playUrl +=RootObject.PlayBaseParameters(!saveStatistics, refreshContainer, isOnModal, saveCompleteness);
+                    //    playUrl += RootObject.UrlItemParameters(false, version.IdItem, version.Id, (link != null ? link.Id : 0));
+                    //    playUrl += RootObject.UrlGuidParameters(version.UniqueIdItem, version.UniqueIdVersion);
                         
-                        break;
+                    //    break;
                 }
                 View.InitializePlayer((isOnModal ? player.ModalPlayerRenderUrl : player.PlayerRenderUrl), playUrl, ajaxActionUrl, item.DisplayName, item.Type);
             }

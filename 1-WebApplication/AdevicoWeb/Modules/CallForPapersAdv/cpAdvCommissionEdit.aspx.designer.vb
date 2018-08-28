@@ -500,6 +500,51 @@ Partial Public Class cpAdvCommissionEdit
     Protected WithEvents PNLpresident As Global.System.Web.UI.WebControls.Panel
     
     '''<summary>
+    '''LBLtemplate_t control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents LBLtemplate_t As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
+    '''CTRLtemplate control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents CTRLtemplate As Global.Comunita_OnLine.UC_TemplateAssociation
+    
+    '''<summary>
+    '''LBLtemplateDoanload_t control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents LBLtemplateDoanload_t As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
+    '''LKBdownloadPDF control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents LKBdownloadPDF As Global.System.Web.UI.WebControls.LinkButton
+    
+    '''<summary>
+    '''LKBdownloadRTF control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents LKBdownloadRTF As Global.System.Web.UI.WebControls.LinkButton
+    
+    '''<summary>
     '''LKBStatShowSubmission control.
     '''</summary>
     '''<remarks>

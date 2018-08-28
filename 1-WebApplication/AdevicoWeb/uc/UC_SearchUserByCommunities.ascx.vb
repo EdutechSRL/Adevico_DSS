@@ -216,11 +216,6 @@
 
     Private Sub SetControlsVisibility()
         BTNupdatePreview.Visible = CBshowPreview.Checked
-
-        'If Not ProfileService.HasProfilesWithMatricula Then
-        '    LBregistrationCode.Visible = False
-        '    TXBregistrationCode.Visible = False
-        'End If
     End Sub
     Public Overrides Sub SetCultureSettings()
         MyBase.SetCulture("pg_UC_SearchUserByCommunities", "UC")
@@ -233,7 +228,6 @@
             .setLabel(LBsearchTitle)
             .setLabel(LBname)
             .setLabel(LBsurname)
-            .setLabel(LBregistrationCode)
             .setLabel(LBrole)
             .setLabel(LBuserPerPage)
             .setLabel(LBnoRecord)
@@ -274,11 +268,6 @@
         End Get
     End Property
 
-    Private ReadOnly Property RegistrationCode() As String Implements PresentationLayer.IviewSearchUser.RegistrationCode
-        Get
-            Return TXBregistrationCode.Text
-        End Get
-    End Property
 
     Private ReadOnly Property Surname() As String Implements PresentationLayer.IviewSearchUser.Surname
         Get
@@ -305,10 +294,7 @@
 
 #End Region
 
-    Private Sub SetRegistrationCodeVisibility(ByRef isVisible As Boolean) Implements PresentationLayer.IviewSearchUser.SetRegistrationCodeVisibility
-        LBregistrationCode.Visible = isVisible
-        TXBregistrationCode.Visible = isVisible
-    End Sub
+   
     Private Function GetUsers() As System.Collections.Generic.List(Of Comol.Entity.BaseElement) Implements PresentationLayer.IviewSearchUser.GetUsers
         Dim oUserList As New List(Of BaseElement)
 

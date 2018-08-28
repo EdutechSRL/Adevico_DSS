@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:tns="http://tempuri.org/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" name="ErrorsNotificationService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="NetMsmqBinding_iErrorsNotificationService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import namespace="http://tempuri.org/" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/lm.ErrorsNotification.DataContract.Domain" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="iErrorsNotificationService_sendCommunityModuleError_InputMessage">
+    <wsdl:part name="parameters" element="tns:sendCommunityModuleError" />
+  </wsdl:message>
+  <wsdl:message name="iErrorsNotificationService_sendDBerror_InputMessage">
+    <wsdl:part name="parameters" element="tns:sendDBerror" />
+  </wsdl:message>
+  <wsdl:message name="iErrorsNotificationService_sendGenericError_InputMessage">
+    <wsdl:part name="parameters" element="tns:sendGenericError" />
+  </wsdl:message>
+  <wsdl:message name="iErrorsNotificationService_sendGenericModuleError_InputMessage">
+    <wsdl:part name="parameters" element="tns:sendGenericModuleError" />
+  </wsdl:message>
+  <wsdl:message name="iErrorsNotificationService_sendGenericWebError_InputMessage">
+    <wsdl:part name="parameters" element="tns:sendGenericWebError" />
+  </wsdl:message>
+  <wsdl:message name="iErrorsNotificationService_sendFileError_InputMessage">
+    <wsdl:part name="parameters" element="tns:sendFileError" />
+  </wsdl:message>
+  <wsdl:portType name="iErrorsNotificationService">
+    <wsdl:operation name="sendCommunityModuleError">
+      <wsdl:input wsaw:Action="http://tempuri.org/iErrorsNotificationService/sendCommunityModuleError" message="tns:iErrorsNotificationService_sendCommunityModuleError_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="sendDBerror">
+      <wsdl:input wsaw:Action="http://tempuri.org/iErrorsNotificationService/sendDBerror" message="tns:iErrorsNotificationService_sendDBerror_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="sendGenericError">
+      <wsdl:input wsaw:Action="http://tempuri.org/iErrorsNotificationService/sendGenericError" message="tns:iErrorsNotificationService_sendGenericError_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="sendGenericModuleError">
+      <wsdl:input wsaw:Action="http://tempuri.org/iErrorsNotificationService/sendGenericModuleError" message="tns:iErrorsNotificationService_sendGenericModuleError_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="sendGenericWebError">
+      <wsdl:input wsaw:Action="http://tempuri.org/iErrorsNotificationService/sendGenericWebError" message="tns:iErrorsNotificationService_sendGenericWebError_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="sendFileError">
+      <wsdl:input wsaw:Action="http://tempuri.org/iErrorsNotificationService/sendFileError" message="tns:iErrorsNotificationService_sendFileError_InputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="NetMsmqBinding_iErrorsNotificationService" type="tns:iErrorsNotificationService">
+    <wsp:PolicyReference URI="#NetMsmqBinding_iErrorsNotificationService_policy" />
+    <soap12:binding transport="http://schemas.microsoft.com/soap/msmq" />
+    <wsdl:operation name="sendCommunityModuleError">
+      <soap12:operation soapAction="http://tempuri.org/iErrorsNotificationService/sendCommunityModuleError" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="sendDBerror">
+      <soap12:operation soapAction="http://tempuri.org/iErrorsNotificationService/sendDBerror" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="sendGenericError">
+      <soap12:operation soapAction="http://tempuri.org/iErrorsNotificationService/sendGenericError" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="sendGenericModuleError">
+      <soap12:operation soapAction="http://tempuri.org/iErrorsNotificationService/sendGenericModuleError" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="sendGenericWebError">
+      <soap12:operation soapAction="http://tempuri.org/iErrorsNotificationService/sendGenericWebError" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="sendFileError">
+      <soap12:operation soapAction="http://tempuri.org/iErrorsNotificationService/sendFileError" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ErrorsNotificationService">
+    <wsdl:port name="NetMsmqBinding_iErrorsNotificationService" binding="tns:NetMsmqBinding_iErrorsNotificationService">
+      <soap12:address location="net.msmq://localhost/private/lm_Errors" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.msmq://localhost/private/lm_Errors</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

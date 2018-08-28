@@ -130,12 +130,6 @@
             <td>
                 <asp:TextBox ID="TXBsurname" runat="server" CssClass="FiltroCampoSmall"></asp:TextBox>
             </td>
-            <td align="right">
-                <asp:Label ID="LBregistrationCode" runat="server" CssClass="Titolo_campoSmall">Matricola: </asp:Label>
-            </td>
-            <td>
-                <asp:TextBox ID="TXBregistrationCode" runat="server" CssClass="FiltroCampoSmall"></asp:TextBox>
-            </td>
         </tr>
         <tr>
             <td align="right">

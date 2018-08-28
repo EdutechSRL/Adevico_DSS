@@ -20,6 +20,7 @@
 
 <%@ Register Src="~/Modules/Common/UC/UC_HTMLExport.ascx" TagPrefix="CTRL" TagName="UC_HTMLExport" %>
 
+<%@ Register TagPrefix="CTRL" TagName="Template" Src="~/Modules/DocTemplate/UC/UC_TemplateAssociation.ascx" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="PageTitleContent" runat="server">
 </asp:Content>
@@ -385,6 +386,19 @@
 										</fieldset>
 
 										<asp:Panel ID="PNLpresident" runat="server">
+                                            <div class="hide hidden">
+                                                <fieldset>
+                                                    <div class="fieldrow template">
+											            <asp:Label ID="LBLtemplate_t" CssClass="fieldlabel" runat="server">Template verbale:</asp:Label>
+                                                        <CTRL:template ID="CTRLtemplate"  runat="server" EnabledSelectedIndexChanged="False" AllowPreview="False" />
+                                                    </div>
+                                                    <div class="fieldrow template">
+											            <asp:Label ID="LBLtemplateDoanload_t" CssClass="fieldlabel" runat="server">Scarica verbale:</asp:Label>
+                                                        <asp:LinkButton ID="LKBdownloadPDF" runat="server">PDF</asp:LinkButton>
+                                                        <asp:LinkButton ID="LKBdownloadRTF" runat="server">RTF</asp:LinkButton>
+                                                    </div>
+                                                </fieldset>
+                                            </div>
 											<fieldset>
 												<%--<div class="fieldrow fieldedition">
 													<asp:Label ID="LBLpresidentDescription" runat="server">Testo descrittivo</asp:Label>

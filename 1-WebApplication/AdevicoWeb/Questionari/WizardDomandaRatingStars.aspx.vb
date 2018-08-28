@@ -196,6 +196,7 @@ Partial Public Class WizardDomandaRatingStars
     End Sub
     Protected Sub salva()
 
+        Me.DomandaCorrente.tipo = Domanda.TipoDomanda.RatingStars
 
         Dim returnValue As Integer = oGestioneDomande.salvaDomanda(Me.FRVDomanda)
 

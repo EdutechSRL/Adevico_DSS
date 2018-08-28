@@ -159,7 +159,23 @@ Partial Public Class ucStatisticheUtenti
             Else
                 oPersona = oRis.findUtenteInvitatoBYIDPersona(Me.UtentiLista, idP)
             End If
+
+            If IsNothing(oPersona) Then
+                'ToDo...
+                'Pare nel caso in cui Me.UtentiLista sia vuoto!!!
+                'Verificare su altri PF!!!
+
+                oPersona = New UtenteInvitato()
+                oPersona.ID = idUI
+                oPersona.IdRandomQuestionnaire = IdRandomQuestionnaire
+                oPersona.Nome = ""
+                oPersona.Cognome = "Unknown"
+            Else
+
+            End If
+
             CurrentCompilerName = oPersona.Cognome & " " & oPersona.Nome
+
 
             Me.QuestionarioCorrente = DALQuestionario.readQuestionarioByPersona(Me.PageUtility.CurrentContext, False, Me.QuestionarioCorrente.id, Me.QuestionarioCorrente.idLingua, idP, idUI, idRisposta, , IdRandomQuestionnaire)
         End If
@@ -434,6 +450,14 @@ Partial Public Class ucStatisticheUtenti
                 PageUtility.RedirectToUrl(Server.HtmlDecode(Request.QueryString("BackUrl")))
             End If
         End If
+
+        Dim mode As String = Request.QueryString("mode")
+
+        If Not String.IsNullOrEmpty(mode) AndAlso mode = "3" Then
+            PNLFiltri.Visible = False
+        End If
+
+
     End Sub
     'Protected Sub LNBTornaLista_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles LNBTornaLista.Click
     '    Response.Redirect("../" + RootObject.QuestionariStatList + "&type=" + Me.QuestionarioCorrente.tipo.ToString())
@@ -567,7 +591,7 @@ Partial Public Class ucStatisticheUtenti
         For Each name As String In [Enum].GetNames(GetType(QuestionnaireExportTranslations))
             translations.Add([Enum].Parse(GetType(QuestionnaireExportTranslations), name), Me.Resource.getValue("QuestionnaireExportTranslations." & name))
         Next
-        GestioneRisposte.ExportQuestionnaireAnswers(PageUtility.CurrentContext, Me.QuestionarioCorrente.id, SystemSettings.Presenter.DefaultTaxCodeRequired, status, Me.LinguaID, Resource.getValue("AnonymousUser"), translations, exportType, True, clientFileName, Response, cookie, oneColumnForEachQuestion)
+        GestioneRisposte.ExportQuestionnaireAnswers(PageUtility.CurrentContext, Me.QuestionarioCorrente, SystemSettings.Presenter.DefaultTaxCodeRequired, status, Me.LinguaID, Resource.getValue("AnonymousUser"), translations, exportType, True, clientFileName, Response, cookie, oneColumnForEachQuestion)
     End Sub
     Private Sub ExportAnswers(idPerson As Integer, idInvite As Integer, exportType As lm.Comol.Core.DomainModel.Helpers.Export.ExportFileType, Optional ByVal oneColumnForEachQuestion As Boolean = True)
         Dim cookieName As String = "", cookieValue As String = ""

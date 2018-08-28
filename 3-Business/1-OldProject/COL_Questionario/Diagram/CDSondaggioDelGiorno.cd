@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="COL_Questionario.ManagerSurveys" BaseTypeListCollapsed="true">
+    <Position X="1.75" Y="2" Width="2" />
+    <AssociationLine Name="CurrentCommunity" Type="Comol.Entity.Community">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.094" Y="-0.257" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="CurrentDB" Type="Comol.Entity.Configuration.Components.ConnectionDB">
+      <MemberNameLabel ManuallyPlaced="true" ManuallySized="true">
+        <Position X="0.061" Y="0.15" Height="0.182" Width="0.909" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="CurrentUser" Type="Comol.Entity.Person">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.708" Y="0.09" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="Language" Type="Comol.Entity.Lingua">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-0.899" Y="0.165" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAIAAgDIAAAAAAAFAAAAQAAIAgACAQAAAgAAAEAAA=</HashCode>
+      <FileName>Manager\ManagerSurveys.vb</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="CurrentCommunity" />
+      <Property Name="CurrentDB" />
+      <Property Name="CurrentUser" />
+      <Property Name="Language" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="COL_Questionario.PresenterDaySurvey">
+    <Position X="5.25" Y="2.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQABAAAAAAAAACAAAAAAAIABAAAAAAACQAAAAAA=</HashCode>
+      <FileName>Presenter\PresenterDaySurvey.vb</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="View" />
+      <Property Name="CurrentManager" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="COL_Questionario.Questionario" Collapsed="true">
+    <Position X="8.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gU5ApACyaL/ZkI4DFRjovBgok0ZdNjgS5BSAOgBr04Y=</HashCode>
+      <FileName>Questionario.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Comol.Entity.Community" Collapsed="true">
+    <Position X="5.5" Y="1" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Comol.Entity.Person" Collapsed="true">
+    <Position X="5.5" Y="5" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Comol.Entity.Configuration.Components.ConnectionDB" Collapsed="true">
+    <Position X="1.5" Y="6.25" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Comol.Entity.Lingua" Collapsed="true">
+    <Position X="3.25" Y="6.25" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Interface Name="COL_Questionario.IviewDaySurvey">
+    <Position X="8.75" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAADKAIAAAYEBAAAEAEAAIQAAgAAAACAAEAAAA=</HashCode>
+      <FileName>Iview\IviewDaySurvey.vb</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="CurrentCommunity" />
+      <Property Name="CurrentUser" />
+      <Property Name="CurrentSurvey" />
+      <Property Name="CurrentPresenter" />
+    </ShowAsAssociation>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

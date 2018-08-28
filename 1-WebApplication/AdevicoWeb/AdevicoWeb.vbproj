@@ -122,10 +122,6 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\9-AdevicoMIT_Library\lm.Comol.MitLibrary\Adevico\MIT\COL_DataLayer.dll</HintPath>
     </Reference>
-    <Reference Include="COL_Questionario, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\9-AdevicoMIT_Library\lm.Comol.MitLibrary\Adevico\MIT\COL_Questionario.dll</HintPath>
-    </Reference>
     <Reference Include="COL_Utility, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\9-AdevicoMIT_Library\lm.Comol.MitLibrary\Adevico\MIT\COL_Utility.dll</HintPath>
@@ -133,10 +129,6 @@
     <Reference Include="COL_Wiki, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\9-AdevicoMIT_Library\lm.Comol.MitLibrary\Adevico\MIT\COL_Wiki.dll</HintPath>
-    </Reference>
-    <Reference Include="COMOL_Entity, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\9-AdevicoMIT_Library\lm.Comol.MitLibrary\Adevico\MIT\COMOL_Entity.dll</HintPath>
     </Reference>
     <Reference Include="CsvHelper, Version=2.0.0.0, Culture=neutral, PublicKeyToken=8c4959082be5c823, processorArchitecture=MSIL">
       <HintPath>..\..\Solution\packages\CsvHelper.2.16.1.0\lib\net40\CsvHelper.dll</HintPath>
@@ -330,6 +322,9 @@
     <Reference Include="System.Xml">
       <Name>System.XML</Name>
     </Reference>
+    <Reference Include="Telerik.Documents.SpreadsheetStreaming">
+      <HintPath>..\..\Solution\lib\RCAJAX\2018.1.117.40\AdditionalLibraries\Bin40\Telerik.Documents.SpreadsheetStreaming.dll</HintPath>
+    </Reference>
     <Reference Include="Telerik.Web.Device.Detection, Version=2018.1.117.40, Culture=neutral, PublicKeyToken=121fae78165ba3d4, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\Solution\lib\RCAJAX\2018.1.117.40\Telerik.Web.Device.Detection.dll</HintPath>
@@ -361,6 +356,9 @@
     <Reference Include="Telerik.Windows.Documents.Spreadsheet.FormatProviders.OpenXml, Version=2018.1.112.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\Solution\lib\RCAJAX\2018.1.117.40\AdditionalLibraries\Bin40\Telerik.Windows.Documents.Spreadsheet.FormatProviders.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Spreadsheet.FormatProviders.Pdf">
+      <HintPath>..\..\Solution\lib\RCAJAX\2018.1.117.40\AdditionalLibraries\Bin40\Telerik.Windows.Documents.Spreadsheet.FormatProviders.Pdf.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.Windows.Zip, Version=2018.1.112.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -702,6 +700,13 @@
     </Compile>
     <Compile Include="Modules\CallForPapersAdv\UC\Uc_advScoreItem.ascx.vb">
       <DependentUpon>Uc_advScoreItem.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\CallForPapersAdv\UC\Uc_AdvTableExport.ascx.designer.vb">
+      <DependentUpon>Uc_AdvTableExport.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\CallForPapersAdv\UC\Uc_AdvTableExport.ascx.vb">
+      <DependentUpon>Uc_AdvTableExport.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Modules\CallForPapersAdv\UC\Uc_Integration.ascx.designer.vb">
@@ -6327,6 +6332,7 @@
     <Content Include="Modules\CallForPapersAdv\UC\Uc_advCpWizSteps.ascx" />
     <Content Include="Modules\CallForPapersAdv\UC\Uc_AdvHeader.ascx" />
     <Content Include="Modules\CallForPapersAdv\UC\Uc_advScoreItem.ascx" />
+    <Content Include="Modules\CallForPapersAdv\UC\Uc_AdvTableExport.ascx" />
     <Content Include="Modules\CallForPapersAdv\UC\Uc_Integration.ascx" />
     <Content Include="Modules\CallForPapers\Edit\CallReordering.asmx" />
     <Content Include="Modules\CallForPapers\Edit\EditAttachments.aspx" />
@@ -7012,6 +7018,7 @@
     <Content Include="Questionari\UserControls\ucVisualizzaRisposta.ascx" />
     <Content Include="Questionari\UserControls\UC_ModuleToQuiz.ascx" />
     <Content Include="Questionari\UserControls\UC_SelectQuiz.ascx" />
+    <Content Include="Questionari\UserControls\Uc_StarBind.ascx" />
     <Content Include="Questionari\UtentiInvitati.aspx" />
     <Content Include="Questionari\WizardDomandaDropDown.aspx" />
     <Content Include="Questionari\WizardDomandaMeeting.aspx" />
@@ -13389,6 +13396,13 @@
       <DependentUpon>UC_SelectQuiz.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="Questionari\UserControls\Uc_StarBind.ascx.designer.vb">
+      <DependentUpon>Uc_StarBind.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Questionari\UserControls\Uc_StarBind.ascx.vb">
+      <DependentUpon>Uc_StarBind.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="Questionari\UtentiInvitati.aspx.designer.vb">
       <DependentUpon>UtentiInvitati.aspx</DependentUpon>
     </Compile>
@@ -15832,9 +15846,17 @@
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\3-Business\1-OldProject\COL_Entity\0_COL_Entity.vbproj">
+      <Project>{d1efb82a-de0c-43d2-8dc7-ad808b32c2a2}</Project>
+      <Name>0_COL_Entity</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\3-Business\1-OldProject\COL_Presentation\COL_PresentationLayer.vbproj">
       <Project>{dc39c9fe-04e3-4817-bc75-1c89ef95f2d0}</Project>
       <Name>COL_PresentationLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\3-Business\1-OldProject\COL_Questionario\COL_Questionario.vbproj">
+      <Project>{10eeacdf-85f8-4aa9-a965-ee1b2fd233d4}</Project>
+      <Name>COL_Questionario</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\3-Business\3-Modules\lm.Comol.Modules.CallForPapers\lm.Comol.Modules.CallForPapers.csproj">
       <Project>{86ac380f-16e0-4e8f-af84-555e13ea456e}</Project>

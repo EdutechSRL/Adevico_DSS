@@ -1,0 +1,175 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/lm.ErrorsNotification.DataContract.Domain" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/lm.ErrorsNotification.DataContract.Domain" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="CommunityModuleError">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CommunityID" type="xs:int" />
+      <xs:element minOccurs="0" name="ComolUniqueID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Day" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="InnerExceptionMessage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ModuleCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Persist" type="tns:PersistTo" />
+      <xs:element minOccurs="0" name="SentDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Type" type="tns:ErrorType" />
+      <xs:element minOccurs="0" name="UniqueID" type="ser:guid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CommunityModuleError" nillable="true" type="tns:CommunityModuleError" />
+  <xs:simpleType name="PersistTo">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Database">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Mail">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="File">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="PersistTo" nillable="true" type="tns:PersistTo" />
+  <xs:simpleType name="ErrorType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="CommunityModuleError">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DBerror">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GenericError">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GenericModuleError">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">4</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GenericWebError">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">5</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="FileError">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">6</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ErrorType" nillable="true" type="tns:ErrorType" />
+  <xs:complexType name="DBerror">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ComolUniqueID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Day" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Persist" type="tns:PersistTo" />
+      <xs:element minOccurs="0" name="SQLcommand" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="SQLparameters" nillable="true" type="q1:ArrayOfstring" />
+      <xs:element minOccurs="0" name="SentDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="StackTrace" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Type" type="tns:ErrorType" />
+      <xs:element minOccurs="0" name="UniqueID" type="ser:guid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DBerror" nillable="true" type="tns:DBerror" />
+  <xs:complexType name="GenericError">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ComolUniqueID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Day" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="InnerExceptionMessage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Persist" type="tns:PersistTo" />
+      <xs:element minOccurs="0" name="SentDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Type" type="tns:ErrorType" />
+      <xs:element minOccurs="0" name="UniqueID" type="ser:guid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GenericError" nillable="true" type="tns:GenericError" />
+  <xs:complexType name="GenericModuleError">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ComolUniqueID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Day" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="InnerExceptionMessage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ModuleCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Persist" type="tns:PersistTo" />
+      <xs:element minOccurs="0" name="SentDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Type" type="tns:ErrorType" />
+      <xs:element minOccurs="0" name="UniqueID" type="ser:guid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GenericModuleError" nillable="true" type="tns:GenericModuleError" />
+  <xs:complexType name="GenericWebError">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BaseExceptionStackTrace" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CommunityID" type="xs:int" />
+      <xs:element minOccurs="0" name="ComolUniqueID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Day" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ExceptionSource" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InnerExceptionMessage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ModuleCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ModuleID" type="xs:int" />
+      <xs:element minOccurs="0" name="Persist" type="tns:PersistTo" />
+      <xs:element minOccurs="0" name="QueryString" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SentDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ServerName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Type" type="tns:ErrorType" />
+      <xs:element minOccurs="0" name="UniqueID" type="ser:guid" />
+      <xs:element minOccurs="0" name="Url" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GenericWebError" nillable="true" type="tns:GenericWebError" />
+  <xs:complexType name="FileError">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BaseFileID" type="ser:guid" />
+      <xs:element minOccurs="0" name="CommunityFileID" type="xs:long" />
+      <xs:element minOccurs="0" name="CommunityID" type="xs:int" />
+      <xs:element minOccurs="0" name="ComolUniqueID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Day" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NoticeboardFileID" type="xs:long" />
+      <xs:element minOccurs="0" name="Persist" type="tns:PersistTo" />
+      <xs:element minOccurs="0" name="SentDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ThesisFileID" type="xs:int" />
+      <xs:element minOccurs="0" name="Type" type="tns:ErrorType" />
+      <xs:element minOccurs="0" name="UniqueID" type="ser:guid" />
+      <xs:element minOccurs="0" name="UserID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FileError" nillable="true" type="tns:FileError" />
+</xs:schema>

@@ -12,7 +12,7 @@ Option Explicit On
 
 
 Partial Public Class anteprimaTemplate
-
+    
     '''<summary>
     '''aspnetForm control.
     '''</summary>
@@ -21,7 +21,16 @@ Partial Public Class anteprimaTemplate
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents aspnetForm As Global.System.Web.UI.HtmlControls.HtmlForm
-
+    
+    '''<summary>
+    '''SCMmanager control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents SCMmanager As Global.System.Web.UI.ScriptManager
+    
     '''<summary>
     '''LBAnteprima control.
     '''</summary>

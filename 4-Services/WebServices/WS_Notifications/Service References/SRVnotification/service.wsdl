@@ -1,0 +1,201 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="NotificationService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="NetMsmqBinding_iNotificationService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import namespace="http://tempuri.org/" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/lm.Notification.DataContract.Domain" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="iNotificationService_NotifyToCommunity_InputMessage">
+    <wsdl:part name="parameters" element="tns:NotifyToCommunity" />
+  </wsdl:message>
+  <wsdl:message name="iNotificationService_NotifyToUsers_InputMessage">
+    <wsdl:part name="parameters" element="tns:NotifyToUsers" />
+  </wsdl:message>
+  <wsdl:message name="iNotificationService_NotifyForPermission_InputMessage">
+    <wsdl:part name="parameters" element="tns:NotifyForPermission" />
+  </wsdl:message>
+  <wsdl:message name="iNotificationService_NotifyForRoles_InputMessage">
+    <wsdl:part name="parameters" element="tns:NotifyForRoles" />
+  </wsdl:message>
+  <wsdl:message name="iNotificationService_NotifyForPermissionItemGuid_InputMessage">
+    <wsdl:part name="parameters" element="tns:NotifyForPermissionItemGuid" />
+  </wsdl:message>
+  <wsdl:message name="iNotificationService_NotifyForPermissionItemLong_InputMessage">
+    <wsdl:part name="parameters" element="tns:NotifyForPermissionItemLong" />
+  </wsdl:message>
+  <wsdl:message name="iNotificationService_NotifyForPermissionItemInt_InputMessage">
+    <wsdl:part name="parameters" element="tns:NotifyForPermissionItemInt" />
+  </wsdl:message>
+  <wsdl:message name="iNotificationService_RemoveNotification_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveNotification" />
+  </wsdl:message>
+  <wsdl:message name="iNotificationService_RemoveNotificationForUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveNotificationForUser" />
+  </wsdl:message>
+  <wsdl:message name="iNotificationService_RemoveUserNotification_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveUserNotification" />
+  </wsdl:message>
+  <wsdl:message name="iNotificationService_ReadNotification_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReadNotification" />
+  </wsdl:message>
+  <wsdl:message name="iNotificationService_ReadUserNotification_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReadUserNotification" />
+  </wsdl:message>
+  <wsdl:message name="iNotificationService_ReadUserCommunityNotification_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReadUserCommunityNotification" />
+  </wsdl:message>
+  <wsdl:message name="iNotificationService_RemoveUserCommunityNotification_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveUserCommunityNotification" />
+  </wsdl:message>
+  <wsdl:portType name="iNotificationService">
+    <wsdl:operation name="NotifyToCommunity">
+      <wsdl:input wsaw:Action="http://tempuri.org/iNotificationService/NotifyToCommunity" message="tns:iNotificationService_NotifyToCommunity_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NotifyToUsers">
+      <wsdl:input wsaw:Action="http://tempuri.org/iNotificationService/NotifyToUsers" message="tns:iNotificationService_NotifyToUsers_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NotifyForPermission">
+      <wsdl:input wsaw:Action="http://tempuri.org/iNotificationService/NotifyForPermission" message="tns:iNotificationService_NotifyForPermission_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NotifyForRoles">
+      <wsdl:input wsaw:Action="http://tempuri.org/iNotificationService/NotifyForRoles" message="tns:iNotificationService_NotifyForRoles_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NotifyForPermissionItemGuid">
+      <wsdl:input wsaw:Action="http://tempuri.org/iNotificationService/NotifyForPermissionItemGuid" message="tns:iNotificationService_NotifyForPermissionItemGuid_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NotifyForPermissionItemLong">
+      <wsdl:input wsaw:Action="http://tempuri.org/iNotificationService/NotifyForPermissionItemLong" message="tns:iNotificationService_NotifyForPermissionItemLong_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NotifyForPermissionItemInt">
+      <wsdl:input wsaw:Action="http://tempuri.org/iNotificationService/NotifyForPermissionItemInt" message="tns:iNotificationService_NotifyForPermissionItemInt_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveNotification">
+      <wsdl:input wsaw:Action="http://tempuri.org/iNotificationService/RemoveNotification" message="tns:iNotificationService_RemoveNotification_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveNotificationForUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/iNotificationService/RemoveNotificationForUser" message="tns:iNotificationService_RemoveNotificationForUser_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveUserNotification">
+      <wsdl:input wsaw:Action="http://tempuri.org/iNotificationService/RemoveUserNotification" message="tns:iNotificationService_RemoveUserNotification_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadNotification">
+      <wsdl:input wsaw:Action="http://tempuri.org/iNotificationService/ReadNotification" message="tns:iNotificationService_ReadNotification_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadUserNotification">
+      <wsdl:input wsaw:Action="http://tempuri.org/iNotificationService/ReadUserNotification" message="tns:iNotificationService_ReadUserNotification_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadUserCommunityNotification">
+      <wsdl:input wsaw:Action="http://tempuri.org/iNotificationService/ReadUserCommunityNotification" message="tns:iNotificationService_ReadUserCommunityNotification_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveUserCommunityNotification">
+      <wsdl:input wsaw:Action="http://tempuri.org/iNotificationService/RemoveUserCommunityNotification" message="tns:iNotificationService_RemoveUserCommunityNotification_InputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="NetMsmqBinding_iNotificationService" type="tns:iNotificationService">
+    <wsp:PolicyReference URI="#NetMsmqBinding_iNotificationService_policy" />
+    <soap12:binding transport="http://schemas.microsoft.com/soap/msmq" />
+    <wsdl:operation name="NotifyToCommunity">
+      <soap12:operation soapAction="http://tempuri.org/iNotificationService/NotifyToCommunity" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="NotifyToUsers">
+      <soap12:operation soapAction="http://tempuri.org/iNotificationService/NotifyToUsers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="NotifyForPermission">
+      <soap12:operation soapAction="http://tempuri.org/iNotificationService/NotifyForPermission" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="NotifyForRoles">
+      <soap12:operation soapAction="http://tempuri.org/iNotificationService/NotifyForRoles" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="NotifyForPermissionItemGuid">
+      <soap12:operation soapAction="http://tempuri.org/iNotificationService/NotifyForPermissionItemGuid" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="NotifyForPermissionItemLong">
+      <soap12:operation soapAction="http://tempuri.org/iNotificationService/NotifyForPermissionItemLong" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="NotifyForPermissionItemInt">
+      <soap12:operation soapAction="http://tempuri.org/iNotificationService/NotifyForPermissionItemInt" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveNotification">
+      <soap12:operation soapAction="http://tempuri.org/iNotificationService/RemoveNotification" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveNotificationForUser">
+      <soap12:operation soapAction="http://tempuri.org/iNotificationService/RemoveNotificationForUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveUserNotification">
+      <soap12:operation soapAction="http://tempuri.org/iNotificationService/RemoveUserNotification" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="ReadNotification">
+      <soap12:operation soapAction="http://tempuri.org/iNotificationService/ReadNotification" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="ReadUserNotification">
+      <soap12:operation soapAction="http://tempuri.org/iNotificationService/ReadUserNotification" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="ReadUserCommunityNotification">
+      <soap12:operation soapAction="http://tempuri.org/iNotificationService/ReadUserCommunityNotification" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveUserCommunityNotification">
+      <soap12:operation soapAction="http://tempuri.org/iNotificationService/RemoveUserCommunityNotification" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="NotificationService">
+    <wsdl:port name="NetMsmqBinding_iNotificationService" binding="tns:NetMsmqBinding_iNotificationService">
+      <soap12:address location="net.msmq://localhost/private/lm_Notification" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.msmq://localhost/private/lm_Notification</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

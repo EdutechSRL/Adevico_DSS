@@ -205,12 +205,17 @@ Partial Public Class _QuestionariGestioneList
                     Me.RedirectToUrl(RootObject.QuestionariGestioneList & "&" & qs_questType & CInt(Me.qs_questIdType))
                 Case "Export"
                     oGestioneQuest.ExportActionAdd(idQuest, CurrentService.ServiceModuleID(), idCommunity)
-                    ExportAnswers(idQuest, lm.Comol.Core.DomainModel.Helpers.Export.ExportFileType.csv)
+                    'ExportAnswers(idQuest, lm.Comol.Core.DomainModel.Helpers.Export.ExportFileType.csv)
+                    'Verificare che il questionario corrente ci sia e sia quello giusto, che qui è tutto "unpredictable"
+                    ExportAnswers(QuestionarioCorrente, lm.Comol.Core.DomainModel.Helpers.Export.ExportFileType.csv)
             End Select
         End If
     End Sub
 
-    Private Sub ExportAnswers(ByVal idQuest As Integer, exportType As lm.Comol.Core.DomainModel.Helpers.Export.ExportFileType)
+    Private Sub ExportAnswers(
+                             ByVal Quest As Questionario,
+                             exportType As lm.Comol.Core.DomainModel.Helpers.Export.ExportFileType)
+
         Dim cookie As New HttpCookie(CookieName, HDNdownloadTokenValue.Value)
 
         Dim clientFileName As String = GetFileName("QuestionnaireResults", exportType)
@@ -220,7 +225,7 @@ Partial Public Class _QuestionariGestioneList
         For Each name As String In [Enum].GetNames(GetType(QuestionnaireExportTranslations))
             translations.Add([Enum].Parse(GetType(QuestionnaireExportTranslations), name), Me.Resource.getValue("QuestionnaireExportTranslations." & name))
         Next
-        GestioneRisposte.ExportQuestionnaireAnswers(PageUtility.CurrentContext, idQuest, SystemSettings.Presenter.DefaultTaxCodeRequired, status, Me.LinguaID, Resource.getValue("AnonymousUser"), translations, exportType, True, clientFileName, Response, cookie)
+        GestioneRisposte.ExportQuestionnaireAnswers(PageUtility.CurrentContext, Quest, SystemSettings.Presenter.DefaultTaxCodeRequired, status, Me.LinguaID, Resource.getValue("AnonymousUser"), translations, exportType, True, clientFileName, Response, cookie)
     End Sub
 
 

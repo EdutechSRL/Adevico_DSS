@@ -4,46 +4,121 @@
 
 <%@ MasterType VirtualPath="~/AjaxPortal.Master" %>
 <%@ Reference Control="UserControls/ucDomandaMultiplaEdit.ascx" %>
-<asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="Server">
+<asp:Content ID="Content3" ContentPlaceHolderID="HeadContent" runat="server">
    <link media="screen" href="stile.css?v=201604071200lm" type="text/css" rel="StyleSheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="CPHservice" runat="Server">
-    <asp:Panel ID="PNLmenu" runat="server" Width="100%" HorizontalAlign="right">
-        <asp:LinkButton ID="LNBCartellaPrincipale" Visible="true" runat="server" CssClass="Link_Menu"
-            CausesValidation="false"></asp:LinkButton>&nbsp;
-        <asp:LinkButton ID="LNBGestioneQuestionario" Visible="true" runat="server" CssClass="Link_Menu"
-            CausesValidation="false"></asp:LinkButton>
+    <div id="QuestionariEdit">
+    <asp:Panel ID="PNLmenu" runat="server" CssClass="panelMenu">
+        <asp:LinkButton ID="LNBCartellaPrincipale" Visible="true" runat="server" CssClass="Link_Menu" CausesValidation="false"></asp:LinkButton>
+        <asp:LinkButton ID="LNBGestioneQuestionario" Visible="true" runat="server" CssClass="Link_Menu" CausesValidation="false"></asp:LinkButton>
         <asp:LinkButton ID="LNBAggiungiPagina" Visible="true" runat="server" CssClass="Link_Menu"></asp:LinkButton>
         <div class="DIVHelp">
-            <asp:ImageButton ID="IMBHelp" runat="server" ImageUrl="img/Help20px.png" Style="margin-top: 5px;
-                float: right;" />
-            <asp:Label runat="server" ID="LBHelp" Style="margin-top: 7px; float: right;"></asp:Label>
+            <asp:ImageButton ID="IMBHelp" runat="server" ImageUrl="img/Help20px.png" CssClass="helpButton" />
+            <asp:Label runat="server" ID="LBHelp" CssClass="helpLabel"></asp:Label>
         </div>
     </asp:Panel>
     
     <asp:MultiView runat="server" ID="MLVquestionari">
         <asp:View ID="VIWdati" runat="server">
             <asp:Panel ID="PNLElenco" runat="server">
-                <h2><asp:Label ID="LBTitolo" runat="server" Text="" class="NomePagina"></asp:Label></h2>
+                <h2>
+                    <asp:Label ID="LBTitolo" runat="server" Text="" class="NomePagina"></asp:Label>
+                </h2>
                 <CTRL:Messages ID="CTRLmessages"  runat="server" Visible="false" />
-                <br />
-                <asp:DataList ID="DLPagine" runat="server" DataKeyField="id" CellPadding="4" ForeColor="#333333"
-                    Width="100%" OnItemCommand="DLPagineEditCommand">
+                <asp:DataList ID="DLPagine" runat="server" DataKeyField="id" 
+                    OnItemCommand="DLPagineEditCommand"
+                    CssClass="datalistPagine" RepeatLayout="Flow">
                     <ItemTemplate>
-                        <b>
-                            <%#Eval("nomePagina")%>
-                        </b>
-                        <asp:Literal ID="LTpageNumber" runat="server" Text='<%#Container.DataItem.NumeroPagina %>' Visible="false"></asp:Literal>
-                        <asp:ImageButton ID="IMBPagina" runat="server" ImageUrl="img/modifica-documento.gif"
-                            CommandName="paginaEdit"></asp:ImageButton>
-                        <asp:ImageButton ID="IMBEliminaPag" runat="server" ImageUrl="img/elimina.gif" CommandName="elimina"
-                            AlternateText="" Visible='<%#isAperto%>'></asp:ImageButton>
-                        <br />
-                        <%#Eval("descrizione")%>
-                        <br />
-                        <div class="quizactions">
-                            <asp:Label runat="server" ID="LBScegliAzione"></asp:Label>
-                            <asp:DropDownList runat="server" ID="DDLAzioni">
+                        <div class="pageHeaderContainer">
+                            <div class="pageInfo">
+                                <div class="NomePagina">
+                                    <%#Eval("nomePagina")%>
+                                </div>
+                                <asp:Literal ID="LTpageNumber" runat="server" Text='<%#Container.DataItem.NumeroPagina %>' Visible="false"></asp:Literal>
+                                <div class="pageAction">
+                                    <asp:ImageButton ID="IMBPagina" runat="server" ImageUrl="img/modifica-documento.gif"
+                                        CommandName="paginaEdit"></asp:ImageButton>
+                                    <asp:ImageButton ID="IMBEliminaPag" runat="server" ImageUrl="img/elimina.gif" CommandName="elimina"
+                                        AlternateText="" Visible='<%#isAperto%>'></asp:ImageButton>
+                                </div>
+                                <div class="pageDescription">
+                                    <%#Eval("descrizione")%>
+                                </div>
+                            </div>
+                            <div class="quizactions">
+                                <asp:Label runat="server" ID="LBScegliAzione"></asp:Label>
+                                <asp:DropDownList runat="server" ID="DDLAzioni">
+                                    <asp:ListItem Text="" Value="0"></asp:ListItem>
+                                    <asp:ListItem Text="" Value="1"></asp:ListItem>
+                                    <asp:ListItem Text="" Value="2"></asp:ListItem>
+                                    <asp:ListItem Text="" Value="3"></asp:ListItem>
+                                    <asp:ListItem Text="" Value="4"></asp:ListItem>
+                                    <asp:ListItem Text="" Value="5"></asp:ListItem>
+                                </asp:DropDownList>
+                                <asp:LinkButton runat="server" ID="LNBConfermaAzione" CssClass="Link_Menu" CommandName="ConfermaAzione" />
+                            </div>
+                            <div class="quizactions" runat="server" id="DVcopyActions" Visible='<%#isCopyVisible%>'>
+                                <asp:Label runat="server" ID="LBCopia"></asp:Label>
+                                <asp:DropDownList runat="server" ID="DDLQuestionariDestinazione" DataTextField="nome" DataValueField="id"></asp:DropDownList>
+                                <asp:LinkButton runat="server" ID="LNBCopiaDomande" Text="Copy" CssClass="Link_Menu" CommandName="CopiaDomande" />
+                            </div>
+                            <div class="quizactions" runat="server" id="DVdeleteActions" Visible='<%#isDeleteVisible%>'>
+                                <asp:Label runat="server" ID="LBMessaggioElimina"></asp:Label>
+                                <asp:LinkButton runat="server" ID="LNBEliminaSi" CssClass="Link_Menu" CommandName="ConfermaElimina" />
+                                <asp:LinkButton runat="server" ID="LNBEliminaNo" CssClass="Link_Menu" CommandName="AnnullaElimina" />
+                            </div>
+                            <asp:RadioButtonList runat="server" ID="RBLfiltraDomande" AutoPostBack="true" RepeatDirection="Horizontal"
+                                OnSelectedIndexChanged="FiltraDomande">
+                                <asp:ListItem Value="1"></asp:ListItem>
+                                <asp:ListItem Value="2"></asp:ListItem>
+                                <asp:ListItem Value="3"></asp:ListItem>
+                                <asp:ListItem Value="4"></asp:ListItem>
+                            </asp:RadioButtonList>
+                        </div>
+                        <asp:DataList ID="DLDomande" runat="server" OnItemDataBound="loadDomandeOpzioni"
+                            DataKeyField="id" OnItemCommand="DLDomandeEditCommand"
+                            CssClass="datalistDomande"
+                            RepeatLayout="Flow">
+                            <ItemTemplate>
+                                <div class="ContenitoreDomanda0">
+                                    <div class="TestoDomanda">
+                                        <div class="difficultyInfo show">
+                                            (Cod.<%#Eval("id")%>) Diff.<%#Eval("difficolta")%><br />
+                                            <asp:Label runat="server" ID="LBSelezionaDomanda"></asp:Label><asp:CheckBox runat="server"
+                                                ID="CHKSelect" Checked='<%#Eval("isSelected")%>' />
+                                        </div>
+                                        <div class="question-number" title="<%#MandatoryToolTip(Container.Dataitem)%>">
+                                            <span class="number"><%#Eval("numero") & "."%></span>
+                                            <%#MandatoryDisplay(Container.Dataitem)%>
+                                        </div>
+                                        <div class="question-name"><%#me.SmartTagsAvailable.TagAll(Eval("testo"))%></div>
+                                    </div>
+                                    <div class="buttoncontainer">
+                                        <asp:ImageButton ID="IMBEdit" runat="server" ImageUrl="img/modifica-documento.gif"
+                                            CommandName="edit" AlternateText=""></asp:ImageButton>
+                                        <asp:ImageButton ID="IMBElimina" Visible='<%#isAperto%>' runat="server" ImageUrl="img/elimina.gif"
+                                            CommandName="elimina" AlternateText="" OnClientClick="return confirm('Sei sicuro di voler cancellare la domanda?');">
+                                        </asp:ImageButton>
+                                        <asp:ImageButton ID="IMBSpostaSu" Visible='<%#isAperto%>' runat="server" ImageUrl="img/up.jpg"
+                                            CommandName="su" AlternateText=""></asp:ImageButton>
+                                        <asp:ImageButton ID="IMBSpostaGiu" Visible='<%#isAperto%>' runat="server" ImageUrl="img/down.jpg"
+                                            CommandName="giu" AlternateText=""></asp:ImageButton>
+                                    </div>
+                                    <div class="Risposte">
+                                        <asp:PlaceHolder ID="PHOpzioni" runat="server" Visible="true"></asp:PlaceHolder>
+                                    </div>
+                                </div>
+                            </ItemTemplate>
+                            <FooterStyle CssClass="footer"/>
+                            <SelectedItemStyle CssClass="item-question Selected"/>
+                            <AlternatingItemStyle CssClass="item-question Alternate"/>
+                            <ItemStyle CssClass="item-question"/>
+                            <HeaderStyle CssClass="header"/>
+                        </asp:DataList>
+                        <div class="selectionAction">
+                            <asp:Label runat="server" ID="LBScegliAzioneBottom"></asp:Label>
+                            <asp:DropDownList runat="server" ID="DDLAzioniBottom">
                                 <asp:ListItem Text="" Value="0"></asp:ListItem>
                                 <asp:ListItem Text="" Value="1"></asp:ListItem>
                                 <asp:ListItem Text="" Value="2"></asp:ListItem>
@@ -51,98 +126,34 @@
                                 <asp:ListItem Text="" Value="4"></asp:ListItem>
                                 <asp:ListItem Text="" Value="5"></asp:ListItem>
                             </asp:DropDownList>
-                            <asp:LinkButton runat="server" ID="LNBConfermaAzione" CssClass="Link_Menu" CommandName="ConfermaAzione" />
+                            <asp:LinkButton runat="server" ID="LNBConfermaAzioneBottom" CssClass="Link_Menu"
+                                CommandName="ConfermaAzioneBottom" />
+                            <%-- <asp:Label runat="server" ID="LBCopiaBottom" Visible='<%#isCopyVisible%>'></asp:Label>
+                            <asp:DropDownList runat="server" ID="DDLQuestionariDestinazioneBottom" Visible='<%#isCopyVisible%>'
+                                DataTextField="nome" DataValueField="id">
+                            </asp:DropDownList>
+                            <asp:LinkButton runat="server" ID="LNBCopiaDomandeBottom" Text="Copy" Visible='<%#isCopyVisible%>'
+                                CssClass="Link_Menu" CommandName="CopiaDomandeBottom" />--%>
                         </div>
-                        <div class="quizactions" runat="server" id="DVcopyActions" Visible='<%#isCopyVisible%>'>
-                            <asp:Label runat="server" ID="LBCopia"></asp:Label>
-                            <asp:DropDownList runat="server" ID="DDLQuestionariDestinazione" DataTextField="nome" DataValueField="id"></asp:DropDownList>
-                            <asp:LinkButton runat="server" ID="LNBCopiaDomande" Text="Copy" CssClass="Link_Menu" CommandName="CopiaDomande" />
-                        </div>
-                        <div class="quizactions" runat="server" id="DVdeleteActions" Visible='<%#isDeleteVisible%>'>
-                            <asp:Label runat="server" ID="LBMessaggioElimina"></asp:Label>
-                            <asp:LinkButton runat="server" ID="LNBEliminaSi" CssClass="Link_Menu" CommandName="ConfermaElimina" />
-                            <asp:LinkButton runat="server" ID="LNBEliminaNo" CssClass="Link_Menu" CommandName="AnnullaElimina" />
-                        </div>
-                        <asp:RadioButtonList runat="server" ID="RBLfiltraDomande" AutoPostBack="true" RepeatDirection="Horizontal"
-                            OnSelectedIndexChanged="FiltraDomande">
-                            <asp:ListItem Value="1"></asp:ListItem>
-                            <asp:ListItem Value="2"></asp:ListItem>
-                            <asp:ListItem Value="3"></asp:ListItem>
-                            <asp:ListItem Value="4"></asp:ListItem>
-                        </asp:RadioButtonList>
-                        <hr />
-                        <asp:DataList ID="DLDomande" runat="server" OnItemDataBound="loadDomandeOpzioni"
-                            Width="100%" DataKeyField="id" OnItemCommand="DLDomandeEditCommand">
-                            <ItemTemplate>
-                                <div style="text-align: right;">
-                                    (Cod.<%#Eval("id")%>) Diff.<%#Eval("difficolta")%><br />
-                                    <asp:Label runat="server" ID="LBSelezionaDomanda"></asp:Label><asp:CheckBox runat="server"
-                                        ID="CHKSelect" Checked='<%#Eval("isSelected")%>' />
-                                </div>
-                                <br />
-                                <span class="question" title="<%#MandatoryToolTip(Container.Dataitem)%>">
-                                    <span class="number"><%#Eval("numero")%></span>
-                                    <span class="separator">.</span>
-                                    <%#MandatoryDisplay(Container.Dataitem)%>
-                                    <span class="name">
-                                    <%#me.SmartTagsAvailable.TagAll(Eval("testo"))%>
-                                    </span>
-                                </span>
-                                <asp:ImageButton ID="IMBEdit" runat="server" ImageUrl="img/modifica-documento.gif"
-                                    CommandName="edit" AlternateText=""></asp:ImageButton>
-                                <asp:ImageButton ID="IMBElimina" Visible='<%#isAperto%>' runat="server" ImageUrl="img/elimina.gif"
-                                    CommandName="elimina" AlternateText="" OnClientClick="return confirm('Sei sicuro di voler cancellare la domanda?');">
-                                </asp:ImageButton>
-                                <asp:ImageButton ID="IMBSpostaSu" Visible='<%#isAperto%>' runat="server" ImageUrl="img/up.jpg"
-                                    CommandName="su" AlternateText=""></asp:ImageButton>
-                                <asp:ImageButton ID="IMBSpostaGiu" Visible='<%#isAperto%>' runat="server" ImageUrl="img/down.jpg"
-                                    CommandName="giu" AlternateText=""></asp:ImageButton>
-                                <br />
-                                <br />
-                                <asp:PlaceHolder ID="PHOpzioni" runat="server" Visible="true"></asp:PlaceHolder>
-                                <br />
-                                <br />
-                            </ItemTemplate>
-                            <FooterStyle BackColor="WHITE" Font-Bold="True" ForeColor="White" />
-                            <SelectedItemStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
-                            <AlternatingItemStyle BackColor="WHITE" />
-                            <ItemStyle BackColor="WHITE" />
-                            <HeaderStyle BackColor="#EFF3FB" Font-Bold="True" ForeColor="White" />
-                        </asp:DataList>
-                        <asp:Label runat="server" ID="LBScegliAzioneBottom"></asp:Label>
-                        <asp:DropDownList runat="server" ID="DDLAzioniBottom">
-                            <asp:ListItem Text="" Value="0"></asp:ListItem>
-                            <asp:ListItem Text="" Value="1"></asp:ListItem>
-                            <asp:ListItem Text="" Value="2"></asp:ListItem>
-                            <asp:ListItem Text="" Value="3"></asp:ListItem>
-                            <asp:ListItem Text="" Value="4"></asp:ListItem>
-                            <asp:ListItem Text="" Value="5"></asp:ListItem>
-                        </asp:DropDownList>
-                        <asp:LinkButton runat="server" ID="LNBConfermaAzioneBottom" CssClass="Link_Menu"
-                            CommandName="ConfermaAzioneBottom" />
-                        <%-- <asp:Label runat="server" ID="LBCopiaBottom" Visible='<%#isCopyVisible%>'></asp:Label>
-                        <asp:DropDownList runat="server" ID="DDLQuestionariDestinazioneBottom" Visible='<%#isCopyVisible%>'
-                            DataTextField="nome" DataValueField="id">
-                        </asp:DropDownList>
-                        <asp:LinkButton runat="server" ID="LNBCopiaDomandeBottom" Text="Copy" Visible='<%#isCopyVisible%>'
-                            CssClass="Link_Menu" CommandName="CopiaDomandeBottom" />--%>
                     </ItemTemplate>
-                    <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
-                    <SelectedItemStyle BackColor="#C5BBAF" Font-Bold="True" ForeColor="#333333" />
-                    <AlternatingItemStyle BackColor="#E3EAEB" />
-                    <ItemStyle BackColor="#E3EAEB" />
-                    <HeaderStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
-                </asp:DataList>&nbsp;</asp:Panel>
+                    <FooterStyle CssClass="footer"/>
+                    <SelectedItemStyle CssClass="item-page Selected"/>
+                    <AlternatingItemStyle CssClass="item-page alternate" />
+                    <ItemStyle CssClass="item-page"/>
+                    <HeaderStyle CssClass="header"/>
+                </asp:DataList>
+            </asp:Panel>
         </asp:View>
+
         <asp:View ID="VIWSelezionaLibrerie" runat="server">
-            <asp:Panel runat="server" ID="PNLQuestionarioRandom" BackColor="white" BorderColor="black">
-                <asp:Label ID="LBMessaggioLibrerie" runat="server" Text=""></asp:Label><br />
-                <br />
+            <asp:Panel runat="server" ID="PNLQuestionarioRandom" CssClass="librarySelector">
+                <asp:Label ID="LBMessaggioLibrerie" runat="server" Text=""></asp:Label>
+                
                 <asp:GridView ID="GRVLibrerie" runat="server" DataKeyNames="ID" AutoGenerateColumns="false"
-                    Font-Size="8" ShowFooter="false" BackColor="transparent"
-                    BorderColor="#8080FF" AllowPaging="True" PageSize="20" AllowSorting="True" Width="99%">
+                    ShowFooter="false" AllowPaging="True" PageSize="20" AllowSorting="True" 
+                    CssClass="grvLibrerie">
                     <Columns>
-                        <asp:TemplateField ItemStyle-Width="20" HeaderText="">
+                        <asp:TemplateField HeaderText="">
                             <ItemTemplate>
                                 <asp:CheckBox runat="server" ID="CHKisSelected" />
                                 <asp:literal ID="LTidLanguage" runat="server" Visible="false" text='<%#Container.DataItem.IdLingua %>'></asp:literal>
@@ -153,26 +164,26 @@
                         <asp:BoundField DataField="nDomandeDiffMedia" HeaderText="" />
                         <asp:BoundField DataField="nDomandeDiffAlta" HeaderText="" />
                     </Columns>
-                    <RowStyle CssClass="ROW_Normal_Small" Height="22px" />
-                    <EditRowStyle BackColor="#2461BF" />
-                    <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
-                    <PagerStyle CssClass="ROW_Page_Small" HorizontalAlign="Right" Height="25px" VerticalAlign="Bottom" />
+                    <RowStyle CssClass="ROW_Normal_Small" />
+                    <SelectedRowStyle CssClass="ROW_Normal_Small Selected" />
+                    <PagerStyle CssClass="ROW_Page_Small" />
                     <HeaderStyle CssClass="ROW_header_Small_Center" />
                     <AlternatingRowStyle CssClass="ROW_Alternate_Small" />
                 </asp:GridView>
-                <br />
-                <br />
-                <asp:Button runat="server" ID="BTNAggiungiLibreria" Text="" />
-                <asp:Button runat="server" ID="BTNConferma" Text="" Visible="false" />
-                <br />
-                <br />
-                <asp:PlaceHolder ID="PHLibrerie" runat="server"></asp:PlaceHolder>
+                
+                <div class="buttoncontainer libraryAction">
+                    <asp:Button runat="server" ID="BTNAggiungiLibreria" Text="" />
+                    <asp:Button runat="server" ID="BTNConferma" Text="" Visible="false" />
+                </div>
+                <div class="libraryContainer">
+                    <asp:PlaceHolder ID="PHLibrerie" runat="server"></asp:PlaceHolder>
+                </div>
             </asp:Panel>
         </asp:View>
         <asp:View ID="VIWImpostaLibrerie" runat="server">
             <asp:Label ID="LBMessaggioImpostaLibrerie" runat="server" Text=""></asp:Label><br />
             <br />
-            <table width="100%">
+            <table class="tblSetLibrary">
                 <tr>
                     <td class="ROW_header_Small_Center">
                         <asp:Label ID="LBHeaderNome" runat="server"></asp:Label>
@@ -205,34 +216,32 @@
                                     ErrorMessage="" Display="Static">* 
                                 </asp:RangeValidator>
                                 <asp:TextBox ID="TXBDiffBassa" runat="server" Text='<%#Eval("nDomandeDiffBassa")%>'
-                                    Width="30"></asp:TextBox>
+                                    ></asp:TextBox>
                                 /
-                                <asp:TextBox runat="server" ID="TXBnDomandeDiffBassaDisponibili" Style="border: none;"
-                                    ReadOnly="true" Width="30" Text='<%#Eval("nDomandeDiffBassaDisponibili")%>'></asp:TextBox>
+                                <asp:TextBox runat="server" ID="TXBnDomandeDiffBassaDisponibili"
+                                    ReadOnly="true" Text='<%#Eval("nDomandeDiffBassaDisponibili")%>'></asp:TextBox>
                             </td>
                             <td class="CellaRisposta">
                                 <asp:RangeValidator ID="RVdiffMedia" runat="server" ControlToValidate="TXBDiffMedia"
                                     MaximumValue='<%#Eval("nDomandeDiffMediaDisponibili")%>' MinimumValue="0" Type="Integer"
                                     ErrorMessage="" Display="Static">* 
                                 </asp:RangeValidator>
-                                <asp:TextBox ID="TXBDiffMedia" runat="server" Text='<%#Eval("nDomandeDiffMedia")%>'
-                                    Width="30"></asp:TextBox>
+                                <asp:TextBox ID="TXBDiffMedia" runat="server" Text='<%#Eval("nDomandeDiffMedia")%>'></asp:TextBox>
                                 /
-                                <asp:TextBox runat="server" ID="TXBnDomandeDiffMediaDisponibili" Style="border: none;"
-                                    ReadOnly="true" Width="30" Text='<%#Eval("nDomandeDiffMediaDisponibili")%>'></asp:TextBox>
+                                <asp:TextBox runat="server" ID="TXBnDomandeDiffMediaDisponibili"
+                                    ReadOnly="true" Text='<%#Eval("nDomandeDiffMediaDisponibili")%>'></asp:TextBox>
                             </td>
                             <td class="CellaRisposta">
                                 <asp:RangeValidator ID="RVdiffAlta" runat="server" ControlToValidate="TXBDiffAlta"
                                     MaximumValue='<%#Eval("nDomandeDiffAltaDisponibili")%>' MinimumValue="0" Type="Integer"
                                     ErrorMessage="" Display="Static">* 
                                 </asp:RangeValidator>
-                                <asp:TextBox ID="TXBDiffAlta" runat="server" Text='<%#Eval("nDomandeDiffAlta")%>'
-                                    Width="30"></asp:TextBox>
+                                <asp:TextBox ID="TXBDiffAlta" runat="server" Text='<%#Eval("nDomandeDiffAlta")%>'></asp:TextBox>
                                 /
-                                <asp:TextBox runat="server" ID="TXBnDomandeDiffAltaDisponibili" Style="border: none;"
-                                    ReadOnly="true" Width="30" Text='<%#Eval("nDomandeDiffAltaDisponibili")%>'></asp:TextBox>
+                                <asp:TextBox runat="server" ID="TXBnDomandeDiffAltaDisponibili"
+                                    ReadOnly="true" Text='<%#Eval("nDomandeDiffAltaDisponibili")%>'></asp:TextBox>
                             </td>
-                            <td bordercolor="#EFF3FB" align="right" class="CellaRisposta">
+                            <td class="CellaRisposta">
                                 <asp:ImageButton ID="IMBElimina" runat="server" ImageUrl="img/elimina.gif" CommandName="elimina"
                                     AlternateText=""></asp:ImageButton>
                             </td>
@@ -241,7 +250,6 @@
                 </asp:Repeater>
                 <tr>
                     <td colspan="5">
-                        <br />
                         <asp:Label runat="server" ID="LBMessaggioErrore" CssClass="Errore" Visible="false"></asp:Label>
                     </td>
                 </tr>
@@ -268,4 +276,5 @@
             </asp:Panel>
         </asp:View>
     </asp:MultiView>
+    </div>
 </asp:Content>

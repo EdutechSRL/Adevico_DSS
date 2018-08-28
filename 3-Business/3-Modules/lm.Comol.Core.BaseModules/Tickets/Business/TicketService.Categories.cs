@@ -9,7 +9,7 @@ using lm.Comol.Core.BaseModules.Tickets.Domain.Enums;
 using NHibernate.Mapping;
 
 using lm.Comol.Core.DomainModel.Helpers;
-using lm.Comol.Modules.ScormStat;
+//using lm.Comol.Modules.ScormStat;
 
 
 namespace lm.Comol.Core.BaseModules.Tickets

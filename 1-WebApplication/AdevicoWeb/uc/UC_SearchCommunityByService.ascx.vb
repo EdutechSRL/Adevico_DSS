@@ -309,14 +309,6 @@ Public Partial Class UC_SearchCommunityByService
             If Me.DDLTipo.Items.Count > 0 AndAlso Not IsNothing(Me.DDLTipo.Items.FindByValue(value.ID)) Then
                 Me.DDLTipo.SelectedValue = value.ID
             End If
-            Me.DIVcourse.Style("display") = "none"
-            Me.DIVdegreeType.Style("display") = "none"
-            Select Case value.ID
-                Case StandardCommunityType.Degree
-                    Me.DIVdegreeType.Style("display") = "block"
-                Case StandardCommunityType.UniversityCourse
-                    Me.DIVcourse.Style("display") = "block"
-            End Select
         End Set
     End Property
     Public ReadOnly Property CurrentStatus() As CommunityStatus Implements PresentationLayer.IviewSearchCommunity.CurrentStatus
@@ -328,29 +320,13 @@ Public Partial Class UC_SearchCommunityByService
             End If
         End Get
     End Property
-    Public ReadOnly Property CurrentAccademicYear() As AcademicYear Implements PresentationLayer.IviewSearchCommunity.CurrentAcademicYear
-        Get
-            If Me.DDLannoAccademico.Items.Count > 0 Then
-                Return New AcademicYear(Me.DDLannoAccademico.SelectedValue, Me.DDLannoAccademico.SelectedItem.Text)
-            Else
-                Return Nothing
-            End If
-        End Get
-    End Property
+   
     Public ReadOnly Property CurrentResponsibleID() As Integer Implements PresentationLayer.IviewSearchCommunity.CurrentResponsibleID
         Get
             Return -1
         End Get
     End Property
-    Public ReadOnly Property CurrentDegreeType() As Comol.Entity.TypeDegree Implements PresentationLayer.IviewSearchCommunity.CurrentDegreeType
-        Get
-            If Me.DDLtipoCorsoDiStudi.Items.Count > 0 Then
-                Return New TypeDegree(Me.DDLtipoCorsoDiStudi.SelectedValue, Me.DDLtipoCorsoDiStudi.SelectedItem.Text)
-            Else
-                Return Nothing
-            End If
-        End Get
-    End Property
+    
     Public ReadOnly Property CurrentOrganization() As Organization Implements PresentationLayer.IviewSearchCommunity.CurrentOrganization
         Get
             If Me.DDLorganizzazione.Items.Count > 0 Then
@@ -360,15 +336,7 @@ Public Partial Class UC_SearchCommunityByService
             End If
         End Get
     End Property
-    Public ReadOnly Property CurrentPeriodo() As Periodo Implements PresentationLayer.IviewSearchCommunity.CurrentPeriodo
-        Get
-            If Me.DDLperiodo.Items.Count > 0 Then
-                Return New Periodo(Me.DDLperiodo.SelectedValue, Me.DDLperiodo.SelectedItem.Text)
-            Else
-                Return Nothing
-            End If
-        End Get
-    End Property
+
 #End Region
 
     Public ReadOnly Property AscendingImage() As String
@@ -403,35 +371,16 @@ Public Partial Class UC_SearchCommunityByService
             .setDropDownList(Me.DDLTipoRicerca, StandardCommunitySearch.NameStartWith)
 
             .setLabel(LBorganizzazione_c)
-            .setLabel(Me.LBannoAccademico_c)
-            .setLabel(Me.LBperiodo_c)
             .setLabel(Me.LBtipoComunita_c)
             .setLabel(Me.LBtipoRicerca_c)
-            '    .setLabel(Me.LBvalore_)
             .setButton(Me.BTNCerca)
-            .setLabel(Me.LBcorsoDiStudi_t)
 
             .setHeaderGridView(Me.GRVcomunita, 1, "Opzioni", True)
-            '.setHeaderGridView(Me.GRVcomunita, 2, "Opzioni", True)
             .setHeaderGridView(Me.GRVcomunita, 3, "Name", True)
             .setHeaderGridView(Me.GRVcomunita, 4, "Type", True)
         End With
     End Sub
 
-    Public Sub LoadAccademicYears(ByVal oList As System.Collections.IList) Implements PresentationLayer.IviewSearchCommunity.LoadAcademicYears
-        Me.DDLannoAccademico.DataSource = oList
-        Me.DDLannoAccademico.DataTextField = "Text"
-        Me.DDLannoAccademico.DataValueField = "Value"
-        Me.DDLannoAccademico.DataBind()
-
-        If Me.DDLannoAccademico.Items.Count > 1 Then
-            Me.DDLannoAccademico.Enabled = True
-            'Me.DDLannoAccademico.Items.Insert(0, New ListItem("All", -1))
-            'Me.Resource.setDropDownList(Me.DDLannoAccademico, -1)
-        Else
-            Me.DDLannoAccademico.Enabled = False
-        End If
-    End Sub
     Public Sub LoadCommunityTypes(ByVal oList As System.Collections.IList) Implements PresentationLayer.IviewSearchCommunity.LoadCommunityTypes
         Me.DDLTipo.DataSource = oList
         Me.DDLTipo.DataTextField = "Text"
@@ -446,47 +395,13 @@ Public Partial Class UC_SearchCommunityByService
             Me.DDLTipo.Enabled = False
         End If
 
-        Me.DIVcourse.Style("display") = "none"
-        Me.DIVdegreeType.Style("display") = "none"
-        Select Case Me.DDLTipo.SelectedValue
-            Case StandardCommunityType.Degree
-                Me.DIVdegreeType.Style("display") = "block"
-            Case StandardCommunityType.UniversityCourse
-                Me.DIVcourse.Style("display") = "block"
-        End Select
     End Sub
-    Public Sub LoadDegreeTypes(ByVal oList As System.Collections.IList) Implements PresentationLayer.IviewSearchCommunity.LoadDegreeTypes
-        Me.DDLtipoCorsoDiStudi.DataSource = oList
-        Me.DDLtipoCorsoDiStudi.DataTextField = "Text"
-        Me.DDLtipoCorsoDiStudi.DataValueField = "Value"
-        Me.DDLtipoCorsoDiStudi.DataBind()
-        If Me.DDLtipoCorsoDiStudi.Items.Count > 1 Then
-            Me.DDLtipoCorsoDiStudi.Enabled = True
-            'Me.DDLtipoCorsoDiStudi.Items.Insert(0, New ListItem("All", -1))
-            'Me.Resource.setDropDownList(Me.DDLtipoCorsoDiStudi, -1)
-        Else
-            Me.DDLtipoCorsoDiStudi.Enabled = False
-        End If
-    End Sub
+
     Public Sub LoadOrganizations(ByVal oList As System.Collections.IList) Implements PresentationLayer.IviewSearchCommunity.LoadOrganizations
         Me.DDLorganizzazione.DataSource = oList
         Me.DDLorganizzazione.DataTextField = "Text"
         Me.DDLorganizzazione.DataValueField = "Value"
         Me.DDLorganizzazione.DataBind()
-    End Sub
-    Public Sub LoadPeriodi(ByVal oList As System.Collections.IList) Implements PresentationLayer.IviewSearchCommunity.LoadPeriodi
-        Me.DDLperiodo.DataSource = oList
-        Me.DDLperiodo.DataTextField = "Text"
-        Me.DDLperiodo.DataValueField = "Value"
-        Me.DDLperiodo.DataBind()
-
-        If Me.DDLperiodo.Items.Count > 1 Then
-            Me.DDLperiodo.Enabled = True
-            'Me.DDLperiodo.Items.Insert(0, New ListItem("All", -1))
-            'Me.Resource.setDropDownList(Me.DDLperiodo, -1)
-        Else
-            Me.DDLperiodo.Enabled = False
-        End If
     End Sub
     Public Sub LoadCommunities(ByVal oList As System.Collections.IList) Implements PresentationLayer.IviewSearchCommunity.LoadCommunities
 
@@ -523,28 +438,9 @@ Public Partial Class UC_SearchCommunityByService
         Me.CurrentPresenter.ChangeStatus()
     End Sub
     Private Sub DDLTipo_SelectedIndexChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles DDLTipo.SelectedIndexChanged
-        Me.DIVcourse.Style("display") = "none"
-        Me.DIVdegreeType.Style("display") = "none"
-
-        Select Case Me.DDLTipo.SelectedValue
-            Case StandardCommunityType.Degree
-                Me.DIVdegreeType.Style("display") = "block"
-            Case StandardCommunityType.UniversityCourse
-                Me.DIVcourse.Style("display") = "block"
-        End Select
         Me.CurrentPresenter.ChangeCommunityType()
     End Sub
-    Private Sub DDLannoAccademico_SelectedIndexChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles DDLannoAccademico.SelectedIndexChanged
-        Me.CurrentPresenter.ChangeAccademicYear()
-    End Sub
-
-    Private Sub DDLperiodo_SelectedIndexChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles DDLperiodo.SelectedIndexChanged
-        Me.CurrentPresenter.ChangePeriodo()
-    End Sub
-
-    Private Sub DDLtipoCorsoDiStudi_SelectedIndexChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles DDLtipoCorsoDiStudi.SelectedIndexChanged
-        Me.CurrentPresenter.ChangeDegree()
-    End Sub
+   
 
 #Region "select community"
 

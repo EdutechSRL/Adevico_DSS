@@ -104,6 +104,57 @@ Partial Public Class QuestionarioEdit
             ViewState("domandeSelezionate") = value
         End Set
     End Property
+
+
+    'Private ReadOnly Property listaDomandeSelezionate() As List(Of Domanda)
+    '    Get
+    '        'Return ViewState("domandeSelezionate")
+
+    '        listaDomandeSelezionate = New List(Of Domanda)
+    '        ' ciclo il datalist delle domande
+    '        For Each oItem As DataListItem In DLPagine.Items
+
+
+    '            Dim dlDomande As DataList
+    '            dlDomande = DirectCast(oItem.FindControl("DLDomande"), DataList)
+
+    '            Dim indice As Integer = 0
+
+    '            For Each oItemD As DataListItem In dlDomande.Items
+    '                ' prelevo le domande selezionate da aggiungere al questionario
+    '                If DirectCast(oItemD.FindControl("CHKSelect"), CheckBox).Checked Then
+    '                    Dim idDomandaSel = dlDomande.DataKeys.Item(indice)
+    '                    Dim oDomandaSel As New Domanda
+
+    '                    Dim iPagCount As Integer = Me.QuestionarioCorrente.pagine.Count()
+
+    '                    If iPagCount > 0 Then
+    '                        For pageIndex As Integer = 0 To (iPagCount - 1)
+    '                            oDomandaSel = Domanda.findDomandaBYID(Me.QuestionarioCorrente.pagine(iPag).domande, idDomandaSel)
+    '                            If Not IsNothing(oDomandaSel) Then
+    '                                Exit For
+    '                            End If
+    '                        Next
+    '                    End If
+
+    '                    If Not IsNothing(oDomandaSel) Then
+    '                        listaDomandeSelezionate.Add(oDomandaSel)
+    '                    End If
+
+    '                End If
+    '                indice = indice + 1
+    '            Next
+
+    '        Next
+    '    End Get
+    '    'Set(ByVal value As List(Of Domanda))
+    '    '    ViewState("domandeSelezionate") = value
+    '    'End Set
+    'End Property
+
+
+
+
     Public ReadOnly Property SmartTagsAvailable() As Comol.Entity.SmartTags
         Get
             If _SmartTagsAvailable Is Nothing Then
@@ -388,7 +439,20 @@ Partial Public Class QuestionarioEdit
                 dropAzione = DirectCast(DLPagine.Items(e.Item.ItemIndex).FindControl("DDLAzioniBottom"), DropDownList)
                 confermaAzione(dropAzione, e)
             Case "CopiaDomande"
-                copiaDomandeSelezionate(DirectCast(DLPagine.Items(e.Item.ItemIndex).FindControl("DDLQuestionariDestinazione"), DropDownList).SelectedValue)
+                Me.PaginaCorrenteID = DLPagine.DataKeys.Item(e.Item.ItemIndex)
+
+                Dim destPageId As Integer = 0
+
+                Dim idQuestDest As Integer
+                Dim ddlQuest As DropDownList = DirectCast(DLPagine.Items(e.Item.ItemIndex).FindControl("DDLQuestionariDestinazione"), DropDownList)
+
+                idQuestDest = ddlQuest.SelectedValue
+
+                If idQuestDest = Me.QuestionarioCorrente.id Then
+                    destPageId = Me.PaginaCorrenteID
+                End If
+
+                copiaDomandeSelezionate(idQuestDest, destPageId)
             Case "ConfermaElimina"
                 getDomandeSelezionate()
                 eliminaDomandeSelezionate()
@@ -399,32 +463,115 @@ Partial Public Class QuestionarioEdit
         caricaQuestionario()
 
     End Sub
-    Protected Sub copiaDomandeSelezionate(ByVal idQuestDestinazione As Integer)
+    Protected Sub copiaDomandeSelezionate(ByVal idQuestDestinazione As Integer, ByVal idPaginaTarget As Integer)
+
+        'Dim idNuovaPagina As Integer = 0
+
+
 
         If listaDomandeSelezionate.Count > 0 Then
 
             Dim questionarioDestinazione As New Questionario
+            Dim questionadded As Integer = 0
 
             questionarioDestinazione = DALQuestionario.readQuestionarioBYLingua(Me.PageUtility.CurrentContext, idQuestDestinazione, Me.LinguaQuestionario, False)
 
+            If IsNothing(questionarioDestinazione) OrElse Not questionarioDestinazione.pagine.Any() Then
+                Return
+            End If
+
+            'contorllo che la pagina esista nel questionario
+            If Not questionarioDestinazione.pagine.Any(Function(pg) pg.id = idPaginaTarget) Then
+                idPaginaTarget = 0
+            End If
+
+            'Se ho Id = 0, prendo l'ultima pagina del questionario
+            If idPaginaTarget = 0 Then
+                idPaginaTarget = questionarioDestinazione.pagine.LastOrDefault().id
+            End If
+
+            Dim PaginaTarget As QuestionarioPagina = questionarioDestinazione.pagine.FirstOrDefault(Function(p) p.id = idPaginaTarget)
+
+
+            Dim newIndex As Integer = 0
+            Dim addQuestion As Integer = listaDomandeSelezionate.Count
+
+            If PaginaTarget.domande.Any() Then
+                newIndex = PaginaTarget.domande.LastOrDefault().numero
+            Else
+                newIndex = questionarioDestinazione.pagine.OrderByDescending(Function(p) p.numeroPagina).FirstOrDefault(Function(p) p.numeroPagina < PaginaTarget.numeroPagina AndAlso p.domande.Any).domande.LastOrDefault().numero
+            End If
+
+            'Dim newDomande As New List(Of Domanda)()
+            Dim currentIndex As Integer = newIndex
+
             For Each oDomandaSel As Domanda In listaDomandeSelezionate
+                currentIndex += 1
+
                 oDomandaSel.id = 0
                 oDomandaSel.idQuestionario = questionarioDestinazione.id
-                ' reimposto i parametri della domanda che verrà copiata nell'ultima pagina del questionario
-                oDomandaSel.idPagina = questionarioDestinazione.pagine(questionarioDestinazione.pagine.Count - 1).id
-                oDomandaSel.numeroPagina = questionarioDestinazione.pagine(questionarioDestinazione.pagine.Count - 1).numeroPagina
-                oDomandaSel.numero = questionarioDestinazione.pagine(questionarioDestinazione.pagine.Count - 1).domande.Count + 1
-                questionarioDestinazione.pagine(questionarioDestinazione.pagine.Count - 1).domande.Add(oDomandaSel)
 
+                oDomandaSel.idPagina = idPaginaTarget                   'questionarioDestinazione.pagine(questionarioDestinazione.pagine.Count - 1).id
+                oDomandaSel.numeroPagina = PaginaTarget.numeroPagina    'questionarioDestinazione.pagine(questionarioDestinazione.pagine.Count - 1).numeroPagina
+
+                oDomandaSel.numero = currentIndex
+
+
+                PaginaTarget.domande.Add(oDomandaSel)   '??? vediamo...
+                'questionarioDestinazione.pagine(questionarioDestinazione.pagine.Count - 1).domande.Add(oDomandaSel)
+
+                'VErificare COME aggiorna i numeri domande delle domande precedenti!!!
                 DALDomande.Salva(oDomandaSel, False, Me.QuestionarioCorrente.tipo = COL_Questionario.Questionario.TipoQuestionario.LibreriaDiDomande)
+
+                questionadded += 1
             Next
 
-            'aggiorno i numeri di domande per pagina
-            Dim oPagina As New QuestionarioPagina
-            oPagina = questionarioDestinazione.pagine(questionarioDestinazione.pagine.Count - 1)
-            oPagina.dallaDomanda = oPagina.domande(0).numero
-            oPagina.allaDomanda = oPagina.domande(oPagina.domande.Count - 1).numero
-            DALPagine.Pagina_Update(questionarioDestinazione.pagine(questionarioDestinazione.pagine.Count - 1))
+            'Aggiorno la tabella LK_Quest_Domanda
+            'SE copio nell'ultima pagina (vuota), questa cosa non serve.
+            'DALDomande.DomandaAggiornaNumeri_Update(questionarioDestinazione.id, newIndex, questionadded)
+
+            'aggiorno i numeri di domande per pagina, rinumerando TUTTE le pagina da quella aggiornata
+            Dim lastDomandaIndex As Integer = 0
+            Dim pgUpdate As Boolean = False
+            For Each oPg As QuestionarioPagina In questionarioDestinazione.pagine.OrderBy(Function(pg) pg.numeroPagina)
+
+                'Inizio dalla pagina TAGET
+                If oPg.id = idPaginaTarget Then
+                    If oPg.dallaDomanda = 0 Then
+                        oPg.dallaDomanda = newIndex + 1
+                        oPg.allaDomanda = oPg.dallaDomanda + (questionadded - 1)
+                    Else
+                        oPg.allaDomanda = oPg.allaDomanda + (questionadded)
+                    End If
+
+                    lastDomandaIndex = oPg.allaDomanda
+
+                    DALPagine.Pagina_Update(oPg)
+                    pgUpdate = True
+
+                    'le precedenti le ignoro
+                ElseIf pgUpdate Then
+                    If oPg.dallaDomanda > 0 Then
+                        Dim opgDomande As Integer = oPg.allaDomanda - oPg.dallaDomanda
+                        oPg.dallaDomanda = lastDomandaIndex + 1
+                        oPg.allaDomanda = oPg.dallaDomanda + opgDomande
+                        DALPagine.Pagina_Update(oPg)
+                    Else
+                        oPg.dallaDomanda = 0
+                        oPg.allaDomanda = 0
+                        DALPagine.Pagina_Update(oPg)
+                    End If
+                End If
+
+                lastDomandaIndex = oPg.allaDomanda
+            Next
+
+
+            'Dim oPagina As New QuestionarioPagina
+            'oPagina = questionarioDestinazione.pagine.FirstOrDefault(Function(qs) qs.id =)
+
+            'oPagina.allaDomanda = oPagina.allaDomanda + questionadded
+            'DALPagine.Pagina_Update(oPagina)
 
             'caricaQuestionario()
 
@@ -493,9 +640,64 @@ Partial Public Class QuestionarioEdit
         End If
 
     End Sub
-    Protected Sub getDomandeSelezionate()
+    'Protected Sub getDomandeSelezionate()
 
-        listaDomandeSelezionate = New List(Of Domanda)
+    '    'listaDomandeSelezionate = New List(Of Domanda)
+    '    '' ciclo il datalist delle domande
+    '    'For Each oItem As DataListItem In DLPagine.Items
+
+
+    '    '    Dim dlDomande As DataList
+    '    '    dlDomande = DirectCast(oItem.FindControl("DLDomande"), DataList)
+
+    '    '    Dim indice As Integer = 0
+
+    '    '    For Each oItemD As DataListItem In dlDomande.Items
+    '    '        ' prelevo le domande selezionate da aggiungere al questionario
+    '    '        If DirectCast(oItemD.FindControl("CHKSelect"), CheckBox).Checked Then
+    '    '            Dim idDomandaSel = dlDomande.DataKeys.Item(indice)
+    '    '            Dim oDomandaSel As New Domanda
+
+    '    '            Dim iPagCount As Integer = Me.QuestionarioCorrente.pagine.Count()
+
+    '    '            If iPagCount > 0 Then
+    '    '                For pageIndex As Integer = 0 To (iPagCount - 1)
+    '    '                    oDomandaSel = Domanda.findDomandaBYID(Me.QuestionarioCorrente.pagine(iPag).domande, idDomandaSel)
+    '    '                    If Not IsNothing(oDomandaSel) Then
+    '    '                        Exit For
+    '    '                    End If
+    '    '                Next
+    '    '            End If
+
+    '    '            If Not IsNothing(oDomandaSel) Then
+    '    '                listaDomandeSelezionate.Add(oDomandaSel)
+    '    '            End If
+
+    '    '        End If
+    '    '        indice = indice + 1
+    '    '    Next
+
+    '    'Next
+
+    'End Sub
+    Protected Sub setDomandeSelezionate()
+        If Not listaDomandeSelezionate Is Nothing Then
+            For Each oDomandaSel As Domanda In listaDomandeSelezionate
+                Dim oDomandaQuest As New Domanda
+                oDomandaQuest = Domanda.findDomandaBYID(Me.QuestionarioCorrente.pagine(iPag).domande, oDomandaSel.id)
+                If Not oDomandaQuest Is Nothing Then
+                    oDomandaQuest.isSelected = True
+                End If
+            Next
+        End If
+
+
+
+    End Sub
+
+    Protected Sub getDomandeSelezionate()
+        Dim currentSelection As New List(Of Domanda)
+        'listaDomandeSelezionate = New List(Of Domanda)
         ' ciclo il datalist delle domande
         For Each oItem As DataListItem In DLPagine.Items
 
@@ -510,25 +712,30 @@ Partial Public Class QuestionarioEdit
                 If DirectCast(oItemD.FindControl("CHKSelect"), CheckBox).Checked Then
                     Dim idDomandaSel = dlDomande.DataKeys.Item(indice)
                     Dim oDomandaSel As New Domanda
-                    oDomandaSel = Domanda.findDomandaBYID(Me.QuestionarioCorrente.pagine(iPag).domande, idDomandaSel)
-                    listaDomandeSelezionate.Add(oDomandaSel)
+
+                    Dim iPagCount As Integer = Me.QuestionarioCorrente.pagine.Count()
+
+                    If iPagCount > 0 Then
+                        For pageIndex As Integer = 0 To (iPagCount - 1)
+                            oDomandaSel = Domanda.findDomandaBYID(Me.QuestionarioCorrente.pagine(pageIndex).domande, idDomandaSel)
+                            If Not IsNothing(oDomandaSel) Then
+                                Exit For
+                            End If
+                        Next
+                    End If
+
+                    If Not IsNothing(oDomandaSel) Then
+                        currentSelection.Add(oDomandaSel)
+                    End If
+
                 End If
                 indice = indice + 1
             Next
 
         Next
 
-    End Sub
-    Protected Sub setDomandeSelezionate()
-        If Not listaDomandeSelezionate Is Nothing Then
-            For Each oDomandaSel As Domanda In listaDomandeSelezionate
-                Dim oDomandaQuest As New Domanda
-                oDomandaQuest = Domanda.findDomandaBYID(Me.QuestionarioCorrente.pagine(iPag).domande, oDomandaSel.id)
-                If Not oDomandaQuest Is Nothing Then
-                    oDomandaQuest.isSelected = True
-                End If
-            Next
-        End If
+
+        listaDomandeSelezionate = currentSelection
     End Sub
     Protected Sub LNBCartellaPrincipale_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles LNBCartellaPrincipale.Click
         Select Case Me.QuestionarioCorrente.tipo

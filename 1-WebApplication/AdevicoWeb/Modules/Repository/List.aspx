@@ -16,6 +16,7 @@
 <%@ Register TagPrefix="CTRL" TagName="CTRLaddFiles" Src="~/Modules/Repository/UC_New/UC_AddFiles.ascx" %>
 <%@ Register TagPrefix="CTRL" TagName="CTRLaddVersion" Src="~/Modules/Repository/UC_New/UC_AddVersion.ascx" %>
 <%@ Register TagPrefix="CTRL" TagName="ModalPlayerHeader" Src="~/Modules/Repository/UC_New/UC_ModalPlayerHeader.ascx" %>
+
 <%@ MasterType VirtualPath="~/AjaxPortal.Master" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="PageTitleContent" runat="server">
@@ -62,6 +63,23 @@
 			            document.body.appendChild(ifrm);
 		            }
 	            }
+            }
+        });
+    </script>
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+            let radioInputMultimediaPack = $('.controlSubType .showSubtype input[type="radio"]:first');
+            if(radioInputMultimediaPack) {
+                $('.controlSubType input[name="' + radioInputMultimediaPack.attr('name') + '"]').on('change', function(){
+                    if ($(this).attr("id") == radioInputMultimediaPack.attr("id")) {
+                        $('.multimediaPackageSubType').addClass("show");
+                        $('.multimediaPackageSubType').removeClass("hide");
+                    } else {
+                        $('.multimediaPackageSubType').addClass("hide");
+                        $('.multimediaPackageSubType').removeClass("show");
+                    }
+                });
             }
         });
     </script>
@@ -163,10 +181,15 @@
         </asp:View>
         <asp:View ID="VIWempty" runat="server"></asp:View>
     </asp:MultiView>
-</div><asp:Literal ID="LTcookieTemplate" runat="server" Visible="false">comol_CollapsableStatus[{0}]</asp:Literal><asp:Literal ID="LThiddenItemCssClass" runat="server" Visible="false">hiddenfile</asp:Literal><asp:Literal ID="LTtemplateStats" runat="server" Visible="false"><span class="stats {0}" title="{2}"><span class="text"></span><span class="number">{1}</span></span></asp:Literal><asp:Literal ID="LTmyStatsCssClass" runat="server" Visible="false">my</asp:Literal><asp:Literal ID="LTstatsCssClass" runat="server" Visible="false">my</asp:Literal><asp:Literal ID="LTtemplateFile" runat="server"  Visible="false"><span class="iteminfo"><span class="name"><span class="actionbuttons"><span class="#ico#"></span></span><span class="text">#name#</span></span></span></asp:Literal><asp:Literal ID="LTitemExtensionCssClass" runat="server" Visible="false">fileIco ext</asp:Literal><asp:Literal ID="LTitemFolderCssClass" runat="server" Visible="false">fileIco folder</asp:Literal><asp:Literal ID="LTitemUrlCssClass" runat="server" Visible="false">fileIco extlink</asp:Literal><asp:Literal ID="LTitemScormPackageCssClass" runat="server" Visible="false">fileIco scorm</asp:Literal><asp:Literal ID="LTitemMultimediaCssClass" runat="server" Visible="false">fileIco multimedia</asp:Literal>
+</div><asp:Literal ID="LTcookieTemplate" runat="server" Visible="false">comol_CollapsableStatus{0}</asp:Literal><asp:Literal ID="LThiddenItemCssClass" runat="server" Visible="false">hiddenfile</asp:Literal><asp:Literal ID="LTtemplateStats" runat="server" Visible="false"><span class="stats {0}" title="{2}"><span class="text"></span><span class="number">{1}</span></span></asp:Literal><asp:Literal ID="LTmyStatsCssClass" runat="server" Visible="false">my</asp:Literal><asp:Literal ID="LTstatsCssClass" runat="server" Visible="false">my</asp:Literal><asp:Literal ID="LTtemplateFile" runat="server"  Visible="false"><span class="iteminfo"><span class="name"><span class="actionbuttons"><span class="#ico#"></span></span><span class="text">#name#</span></span></span></asp:Literal><asp:Literal ID="LTitemExtensionCssClass" runat="server" Visible="false">fileIco ext</asp:Literal><asp:Literal ID="LTitemFolderCssClass" runat="server" Visible="false">fileIco folder</asp:Literal><asp:Literal ID="LTitemUrlCssClass" runat="server" Visible="false">fileIco extlink</asp:Literal><asp:Literal ID="LTitemScormPackageCssClass" runat="server" Visible="false">fileIco scorm</asp:Literal><asp:Literal ID="LTitemMultimediaCssClass" runat="server" Visible="false">fileIco multimedia</asp:Literal>
 <CTRL:CTRLmove id="CTRLmoveDialog" runat="server" visible="false"/>
 <CTRL:CTRLaddFolder id="CTRLaddFolder" runat="server" visible="false" MaxItems="3"/>
 <CTRL:CTRLaddLinks id="CTRLaddLinks" runat="server" visible="false" MaxItems="3"/>
 <CTRL:CTRLaddFiles id="CTRLaddFiles" runat="server" visible="false" MaxItems="4"/>
 <CTRL:CTRLaddVersion id="CTRLaddVersion" runat="server" visible="false" />
+
+
+    <CTRL:UC_xApiHelper runat="server" id="UC_xApiHelper" />
+
+
 </asp:Content>

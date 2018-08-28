@@ -12,7 +12,7 @@ Option Explicit On
 
 
 Partial Public Class Risposte
-
+    
     '''<summary>
     '''Head1 control.
     '''</summary>
@@ -21,7 +21,16 @@ Partial Public Class Risposte
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Head1 As Global.System.Web.UI.HtmlControls.HtmlHead
-
+    
+    '''<summary>
+    '''SCMmanager control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents SCMmanager As Global.System.Web.UI.ScriptManager
+    
     '''<summary>
     '''PNLerrore control.
     '''</summary>
@@ -30,7 +39,7 @@ Partial Public Class Risposte
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents PNLerrore As Global.System.Web.UI.WebControls.Panel
-
+    
     '''<summary>
     '''LBerrore control.
     '''</summary>
@@ -39,7 +48,7 @@ Partial Public Class Risposte
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LBerrore As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''PNLDettagli control.
     '''</summary>
@@ -48,7 +57,7 @@ Partial Public Class Risposte
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents PNLDettagli As Global.System.Web.UI.WebControls.Panel
-
+    
     '''<summary>
     '''LNBStampaQuestionario control.
     '''</summary>
@@ -57,7 +66,7 @@ Partial Public Class Risposte
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LNBStampaQuestionario As Global.System.Web.UI.WebControls.LinkButton
-
+    
     '''<summary>
     '''DLquestionari control.
     '''</summary>
@@ -66,7 +75,7 @@ Partial Public Class Risposte
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents DLquestionari As Global.System.Web.UI.WebControls.DataList
-
+    
     '''<summary>
     '''prova control.
     '''</summary>

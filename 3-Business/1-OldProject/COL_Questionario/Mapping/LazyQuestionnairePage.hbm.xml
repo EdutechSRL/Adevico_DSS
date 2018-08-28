@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="COL_Questionario" namespace="COL_Questionario">
+	<class name="LazyQuestionnairePage" table="QS_QUESTIONARIO_PAGINA" lazy="false">
+    <id name="Id" column="QSPG_Id" type="Int32" unsaved-value="0">
+      <generator class="native"/>
+    </id>
+    <property name="FromQuestion" type="Int32" column="QSPG_DallaDomanda" />
+    <property name="ToQuestion" type="Int32" column="QSPG_AllaDomanda"  />
+    <property name="Number" type="Int32" column="QSPG_NumeroPagina"  />
+    <property name="IdQuestionnaireTranslation" type="Int32" column="QSPG_QSML_Id"  />
+  </class>
+</hibernate-mapping>

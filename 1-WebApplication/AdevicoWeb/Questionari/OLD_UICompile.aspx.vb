@@ -760,7 +760,7 @@ Partial Public Class UICompile
                     Me.QuestionarioCorrente.rispostaQuest.dataFine = Now()
                     Me.QuestionarioCorrente.rispostaQuest.indirizzoIPEnd = OLDpageUtility.ProxyIPadress() & " / " & OLDpageUtility.ClientIPadress
                     Dim oGestioneRisposte As New GestioneRisposte
-                    oGestioneRisposte.SalvaRisposta(Me.QuestionarioCorrente)
+                    oGestioneRisposte.SalvaRisposta(Me.QuestionarioCorrente, UserId, True)
                     oGestioneQuest.CompileEndActionAdd()
                     LBConferma.Text &= Me.Resource.getValue("MSGConfermaFine")
                     LBConferma.Visible = True
@@ -802,7 +802,7 @@ Partial Public Class UICompile
             If isValida Then
                 oGestioneQuest.setCampiRispostaQuestionario(True)
                 Dim oGestioneRisposte As New GestioneRisposte
-                oGestioneRisposte.SalvaRisposta(Me.QuestionarioCorrente)
+                oGestioneRisposte.SalvaRisposta(Me.QuestionarioCorrente, UserId, True)
                 LBConferma.Text &= Me.Resource.getValue("MSGConfermaSalvaEdEsci")
                 LBConferma.Visible = True
                 LBErrore.Visible = False
@@ -825,7 +825,7 @@ Partial Public Class UICompile
                 oGestioneQuest.setCampiRispostaQuestionario(True)
 
                 Dim oGestioneRisposte As New GestioneRisposte
-                oGestioneRisposte.SalvaRisposta(Me.QuestionarioCorrente)
+                oGestioneRisposte.SalvaRisposta(Me.QuestionarioCorrente, UserId, False)
                 LBTroppeRispostePagina.Visible = False
             Else
                 LBTroppeRispostePagina.Visible = True
@@ -867,7 +867,7 @@ Partial Public Class UICompile
                         ' salvo la risposta al questionario
                         oGestioneQuest.setCampiRispostaQuestionario(True)
                         Me.QuestionarioCorrente.rispostaQuest.dataFine = Date.MinValue.ToString
-                        If oGestioneRisposte.SalvaRisposta(Me.QuestionarioCorrente) = "-1" Then
+                        If oGestioneRisposte.SalvaRisposta(Me.QuestionarioCorrente, UserId, False) = "-1" Then
                             LBErrore.Visible = True
                         End If
                     End If
@@ -929,7 +929,7 @@ Partial Public Class UICompile
                             TMDurata.Enabled = False
                             TMSessione.Enabled = False
                         End If
-                        If oGestioneRisposte.SalvaRisposta(Me.QuestionarioCorrente) = "-1" Then
+                        If oGestioneRisposte.SalvaRisposta(Me.QuestionarioCorrente, UserId, False) = "-1" Then
                             LBErrore.Visible = True
                         End If
                         'Catch ex As Exception
@@ -948,7 +948,7 @@ Partial Public Class UICompile
                 Dim isValida As Boolean = True
                 Me.QuestionarioCorrente.rispostaQuest = oGestioneRisposte.getRisposte(DLPagine, isValida, True)
                 oGestioneQuest.setCampiRispostaQuestionario(True)
-                If oGestioneRisposte.SalvaRisposta(Me.QuestionarioCorrente) = "-1" Then
+                If oGestioneRisposte.SalvaRisposta(Me.QuestionarioCorrente, UserId, False) = "-1" Then
                     LBErrore.Visible = True
                 End If
             End If
@@ -990,6 +990,18 @@ Partial Public Class UICompile
     Public Overrides ReadOnly Property LoadDataByUrl As Boolean
         Get
             Return False
+        End Get
+    End Property
+
+    ''' <summary>
+    ''' Aggiunto per il salva!
+    ''' Risulta NECESSARIO VERIFICARE che le risposte SALVATE siano effettivamente
+    ''' quelle dell'utente corrente, per EVITARE sovrascritture o cancellazioni incongrue.
+    ''' </summary>
+    ''' <returns></returns>
+    Private ReadOnly Property UserId As Integer
+        Get
+            Return Me.UtenteCorrente.ID
         End Get
     End Property
 End Class

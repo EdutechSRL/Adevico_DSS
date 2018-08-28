@@ -14,24 +14,24 @@ namespace lm.Comol.Core.BaseModules.FileRepository.Business
 {
     public partial class ServiceRepositoryScorm : ServiceRepository, iLinkedNHibernateService
     {
-        private lm.Comol.Modules.ScormStat.Business.ScormService _ScormService;
+        //private lm.Comol.Modules.ScormStat.Business.ScormService _ScormService;
         private iDataContext _IcodeonContext;
         private iDataContext _ComolContext;
 
-        private lm.Comol.Modules.ScormStat.Business.ScormService ScormService
-        {
-            get
-            {
-                return (_ScormService != null) ? _ScormService : ((_IcodeonContext != null) ? new Modules.ScormStat.Business.ScormService(_ComolContext, _IcodeonContext) : new Modules.ScormStat.Business.ScormService(_ComolContext, null));
-            }
-        }
+        //private lm.Comol.Modules.ScormStat.Business.ScormService ScormService
+        //{
+        //    get
+        //    {
+        //        return (_ScormService != null) ? _ScormService : ((_IcodeonContext != null) ? new Modules.ScormStat.Business.ScormService(_ComolContext, _IcodeonContext) : new Modules.ScormStat.Business.ScormService(_ComolContext, null));
+        //    }
+        //}
           #region initClass
             public ServiceRepositoryScorm(iDataContext comolContext,iDataContext icodeonContext )
                 : base(comolContext)
             {
                 _IcodeonContext = icodeonContext;
                 _ComolContext = comolContext;
-                _ScormService = new Modules.ScormStat.Business.ScormService(comolContext, icodeonContext);
+                //_ScormService = new Modules.ScormStat.Business.ScormService(comolContext, icodeonContext);
             }
 
         #endregion
@@ -229,14 +229,15 @@ namespace lm.Comol.Core.BaseModules.FileRepository.Business
 
                         foreach(liteRepositoryItem item in rItems)
                         {
-                            dtoPackageEvaluation eval = ScormService.GetPackageEvaluation_NewTMP(
-                                idUser, 
-                                item.Id, 
-                                item.UniqueId, 
-                                item.UniqueIdVersion, 
-                                Modules.ScormStat.Domain.UserStatisticsFrom.Last, 
-                                Modules.ScormStat.Domain.PlayCompletionStatus.Ignore, 
-                                date);
+                            dtoPackageEvaluation eval = new dtoPackageEvaluation();
+                                //ScormService.GetPackageEvaluation_NewTMP(
+                                //idUser, 
+                                //item.Id, 
+                                //item.UniqueId, 
+                                //item.UniqueIdVersion, 
+                                //Modules.ScormStat.Domain.UserStatisticsFrom.Last, 
+                                //Modules.ScormStat.Domain.PlayCompletionStatus.Ignore, 
+                                //date);
 
                             Boolean isStarted = (eval!=null &&  eval.Status!= PackageStatus.notstarted);
                             Boolean isCompleted = (eval!=null && eval.IsCompleted);

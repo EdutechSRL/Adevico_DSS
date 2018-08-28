@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="COL_Questionario" namespace="COL_Questionario">
+	<class name="LazyQuestionnaireRandom" table="QS_QUESTIONARIO_RANDOM_DESTINATARIO" lazy="false">
+    <id name="Id" column="QSRD_Id" type="Int32" unsaved-value="0">
+      <generator class="native"/>
+    </id>
+    <property name="IdFather" type="Int32" column="QSRD_QSTN_Padre_Id"  />
+    <property name="CreatedOn" type="DateTime" column="QSRD_DataCreazione" />
+    <property name="DeletedOn" type="DateTime" column="QSRD_DataCancellazioneRisposte" />
+    <property name="IdPerson" type="Int32" column="QSRD_PRSN_Destinatario_Id"  />
+    <property name="IdUser" type="Int32" column="QSRD_QSUI_Destinatario_Id"  />
+
+  </class>
+</hibernate-mapping>
