@@ -1071,7 +1071,18 @@ tr.section .flag,
 tr.section .progressbar {
     height: 12px;
 }
-
+.flag .confirmed,
+.progressbar .confirmed {
+    display: inline-block;
+    width: 0;
+    background-color: #4a9ac7;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#4a9ac7),to(#9dc1da));
+    background-image: -webkit-linear-gradient(top, #4a9ac7, #9dc1da);
+    background-image: -moz-linear-gradient(top, #4a9ac7, #9dc1da);
+    background-image: -o-linear-gradient(top, #4a9ac7, #9dc1da);
+    background-image: -ms-linear-gradient(top, #4a9ac7, #9dc1da);
+    background-image: linear-gradient(top, #4a9ac7, #9dc1da);
+}
 .flag .notstarted,
 .progressbar .notstarted {
     display: inline-block;
@@ -5079,7 +5090,6 @@ span.progressbar.global {
     border-radius: 4px;
 
     vertical-align: middle;
-    vertical-align: baseline;
 }
 
 div.commissionwrapper {
@@ -5124,8 +5134,13 @@ ul.commissions {
 
 ul.commissions li.commission {
     margin-bottom: .2em;
+    border-left: solid 6px #ccc;
+    padding: 8px 12px 8px 12px;
 }
-
+ul.commissions li.commission.active{
+	border-left-color:#0058d4;
+    background-color: #efefef;
+}
 /* @end */
 
 /* @group CFP Evalutaion mgmt tables */
@@ -5557,16 +5572,19 @@ div.globalwrapper span.commissionname {
     margin-right: 1em;
     min-width: 130px;
     display: inline-block;
+	width:60%;
+	margin-bottom:6px;
     *display: inline;
     *zoom: 1;
 }
 
 .active span.commissionname {
     font-weight: bold;
+	font-size:1.2em;
 }
 
 div.globalwrapper li.commission {
-    margin-bottom: .5em;
+    margin-bottom: .2em;
 }
 
 td .green,
@@ -6684,3 +6702,31 @@ div.smallgraph{
     *display:inline;
     *zoom:1;    
 }
+
+.tableReport.table.table-striped {
+    margin-bottom: 15px;
+}
+
+.tableReport th,
+.tableReport td
+ {
+    padding: 0.5em;
+    border: 1px solid #a0a0a0;
+}
+
+/*Aggiunta Mirco x evidenziare totale massimo ammissibile*/
+.tableReport tr.error
+ {
+	font-weight: bold;
+	color: #c20 !important;
+ }
+
+/* votazioni confermate dal presidente: blue*/
+.vote.blue {
+    background-color: #4a9ac7;
+    color: #fff;
+}
+
+    .vote.blue a {
+        color: #fff;
+    }

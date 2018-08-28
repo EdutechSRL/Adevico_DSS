@@ -1,23 +1,29 @@
-body {
-    font-family: "Lucida Grande", Lucida, Verdana, sans-serif;
-    background-color: transparent;
-    color:Black;
+.title1-editor {
+    font-weight: bold;
+    font-size: 24px;
+    margin: 20px 0px 20px 0px;
 }
-.wikirow img{vertical-align: middle;}
-.wikirow span.wikiimg, .wikirow font.wikiimg{width:50px; display: inline-block; *display:inline; *zoom:1}
-.wikirow span.wikibody, .wikirow font.wikibody{display: block; padding-left: 50px;}            
-.wikirow span.wikititle, .wikirow font.wikititle{vertical-align: middle;display: inline-block;*display:inline; *zoom:1;width: 600px;}
 
-.wikirow span.wikibody, .wikirow font.wikibody{border:1px dotted #444;}            
-.wikirow{border:1px dashed #444;}
+.title2-editor {
+    font-weight: bold;
+    font-size: 20px;
+    margin: 16px 0px 16px 0px;
+}
 
+.title3-editor {
+    font-weight: bold;
+    font-size: 16px;
+    margin: 10px 0px 10px 0px;
+}
 
-div.wikirow-editoronly{color:red; font-style: italic}
+.subtitle-editor {
+    font-weight: bold;
+    font-style: italic;
+    font-size: 16px;
+    margin: 10px 0px 10px 0px;
+}
 
-div.wikirow-editoronly+div.wikirow-editoronly{margin-top: 10px;}
-
-.wikilink.missing{
-    color:red !important;
-    text-decoration:line-through;
-    font-style:italic;
+.text-editor {
+    font-size: 12px;
+    margin: 8px 0px 8px 0px;
 }

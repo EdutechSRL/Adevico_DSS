@@ -567,4 +567,118 @@ Messages/errors</item>
     <item name="Closed.CallForBids.SubmissionStatus.draft.n">Other drafts not submitted</item>
     <item name="Closed.RequestForMembership.SubmissionStatus.draft.1">Other draft not submitted</item>
     <item name="Closed.CallForBids.SubmissionStatus.draft.1">Other draft not submitted</item>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <!--Add-->
+    <item name="SubmissionStatus.waitforsignature" disambiguation="domanda di partecipazione/domanda di adesione">Waiting for counter-signature</item>
+    
+    <item name="DefaultMessage.signature.CallForBids">The application for participation in the announcement is now awaiting counter-signature.</item>
+    <item name="DefaultMessage.signature.RequestForMembership">The application for membership is now awaiting counter-signature.</item>
+
+    <item name="BTNsubmitSubmissionTop.ConfirmText" html="false" placeholder="false">It will no longer be possible to change the submission. To continue?</item>
+
+
+    <!--Add for signs-->
+    <item name="LTsign.text">countersignatures</item>
+    <item name="LTsignMandatory_t.text">
+      For the competition a counter-signature is required. &lt;br/&gt;
+      Follow the steps below to complete the submission process:
+    </item>
+
+    <item name="LBprint_t.text">Download the submission just sent:</item>
+    <item name="LBprint_t.ToolTip"></item>
+    <item name="LBsign_t.text">Print and sign the downloaded document.</item>
+    <item name="LBsign_t.ToolTip"></item>
+    <item name="LBUpload.text">Scan the signed document and attach it: </item>
+    <item name="LBUpload.ToolTip"></item>
+    <item name="LBsubmittedSign.text">Counter-Signature Uploaded:</item>
+    <item name="LBsubmittedSign.ToolTip"></item>
+    <item name="LBsubmitted.text">Counter-Signature Uploaded:</item>
+    <item name="LBsubmitted.ToolTip"></item>
+    <item name="LBnotSigned_t.text">Counter-Signature NOT Uploaded:</item>
+    <item name="LBnotSigned_t.ToolTip"></item>
+
+    <item name="LBtoSubmit_t.text" html="true">
+      In order to accommodate the submission, it is necessary: &lt;br/&gt;
+      &lt;ul class="bullet"&gt;
+      &lt;li&gt;Print the announcement&lt;/li&gt;
+      &lt;li&gt;Place a signature&lt;/li&gt;
+      &lt;li&gt;Scan them&lt;/li&gt;
+      &lt;li&gt;Upload the scan&lt;/li&gt;
+      &lt;/ul&gt;
+    </item>
+    <item name="LBtoSubmit_t.ToolTip"></item>
+
+    <item name="LKBupload.text">Upload Counter-Signature</item>
+    <item name="LKBupload.ToolTip">Definitive Upload of the Counter-Signature.</item>
+    <item name="ConfirmText.ToolTip">CAUTION. Once the counter-signature is loaded it can no longer be changed. Continue?</item>
+
+
+
+
+    <item name="LTsaveAndSubmitBottomExplanation.signature.text" html="true" placeholder="false">
+      The announcement requires a countersignature, for which it is necessary to confirm the data entered. Once confirmed, they will no longer be editable. &lt;br/&gt;  
+      The submission process will be considered completed only after loading the countersigned print of the current submission.
+    </item>
+
+    <item name="LBL_Sign_t.text">Counter-Signature</item>
+    <item name="LBL_Sign_t.ToolTip"></item>
+
+    <item name="LBL_Sign.text">For this announcement a counter-signature is required.</item>
+    <item name="LBL_Sign.ToolTip"></item>
+
+    <item name="LKBprintForSign.text">Print application</item>
+    <item name="LKBprintForSign.ToolTip">Print application</item>
+    <item name="LKBprintForSign.status">Print application</item>
+
+
+
+    <item name="LBKsubmitSubmissionBottom.text">Submit definitively</item>
+    <item name="LBKsubmitSubmissionBottom.status">Submit definitively the application</item>
+    <item name="LBKsubmitSubmissionBottom.ConfirmText">It will no longer be possible to modify the application. Confirm?</item>
+    <item name="LBKsubmitSubmissionBottom.ToolTip">Submit definitively the application</item>
+
+    <item name="LBKsubmitSubmissionTop.text">Submit definitively </item>
+    <item name="LBKsubmitSubmissionTop.status">Submit definitively the application</item>
+    <item name="LBKsubmitSubmissionTop.ConfirmText">It will no longer be possible to modify the application. Confirm?</item>
+    <item name="LBKsubmitSubmissionTop.ToolTip">Submit definitively the application</item>
+
+    <item name="LBKsubmitSubmissionTop.signature.text">Confirm application</item>
+    <item name="LBKsubmitSubmissionTop.signature.ToolTip">Confirm application</item>
+    <item name="LBKsubmitSubmissionTop.signature.ConfirmText">It will no longer be possible to modify the application. Confirm?</item>
+    <item name="LBKsubmitSubmissionTop.signature.status">Confirm application</item>
+
+    <item name="LBKsubmitSubmissionBottom.signature.text">Confirm application</item>
+    <item name="LBKsubmitSubmissionBottom.signature.ToolTip">Confirm application</item>
+    <item name="LBKsubmitSubmissionBottom.signature.ConfirmText">It will no longer be possible to modify the application. Confirm?</item>
+    <item name="LBKsubmitSubmissionBottom.signature.status">Confirm application</item>
+
+
+    <item name="SubmissionTranslations.StatusWaitForSign">Waiting for counter-signature</item>
+
+
+  
+ 
+    <item name="Integration.Mail.Subject">Notice [Call.Name] - Request for additions</item>
+    <item name="Integration.Mail.Body">
+      Good morning, &lt;br/&gt;&lt;br/&gt;
+             in relation to your application in the call [Call.Name], we hereby inform you that the Commission has read the documentation you have produced. &lt;br/&gt;
+             In this regard, the same Commission has requested additions to the web platform [Call.Integration.Url], accessing with the same credentials used for submitting the application. &lt;br/&gt;
+             Please note that the Commission has indicated in &lt;b&gt; [Call.Integration.EndOn] &lt;/b&gt; the deadline within which to provide the required additions: beyond this limit the application will be automatically excluded. &lt;br/&gt;
+             &lt;br/&gt;
+             Best regards. &lt;br/&gt;
+             &lt;br/&gt;
+             &lt;b&gt; Warning: this warning is generated automatically by the system, so please do not reply to this address. &lt;/b&gt;
+    </item>
+  <item name="Integration.Mail.Signature">Edutech Team</item>
+  
 </Resource>

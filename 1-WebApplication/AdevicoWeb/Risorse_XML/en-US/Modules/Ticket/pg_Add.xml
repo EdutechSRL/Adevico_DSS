@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<!--eng-->
+<!-- eng -->
 <Resource xmlns="urn:ComolTranslation">
 
 	<item name="LTpageTitle_t.text">Ticket</item>
@@ -26,9 +26,9 @@
 	<item name="LNBsend.text">Send</item>
 	<item name="LNBsend.ToolTip">Send Ticket</item>
 	<item name="LNBsend.status">Send Ticket</item>
-	<item name="LNBsend.ToolTip.NoBehalf">Non si dispone più dei permessi di "Crea per conto di...".</item>
-	<item name="LNBsend.ToolTip.DisabledCategory">Non è possibile inviare un Ticket senza categoria.</item>
-	<item name="LNBsend.ToolTip.CantCreate">Non è possibile inviare un Ticket.</item>
+	<item name="LNBsend.ToolTip.NoBehalf">You no longer have permission to "Create on behalf of ...".</item>
+	<item name="LNBsend.ToolTip.DisabledCategory">You can not send a ticket without a category.</item>
+	<item name="LNBsend.ToolTip.CantCreate">You can not send a ticket.</item>
 
 	<item name="Community.Portal">Portal</item>
 
@@ -56,13 +56,13 @@
 	<item name="TicketDraft.Title" description="Titolo default per creazione ticket in bozza"></item>
 	<item name="TicketDraft.Preview" description="Testo anteprima default per creazione ticket in bozza"></item>
 
-	<item name="Error.permission">Non si dispone dei permessi per accedere alla pagina</item>
-	<item name="Error.System">La creazione di nuovi Ticket è stata temporaneamente sospesa.</item>
-	<item name="Error.MaxDraftNoSend">Raggiunto il limite massimo di bozze consentito.</item>
+	<item name="Error.permission">You do not have permission to access the page</item>
+	<item name="Error.System">The creation of new tickets has been temporarily suspended.</item>
+	<item name="Error.MaxDraftNoSend">Reached the maximum allowed draft limit.</item>
 
-	<item name="Error.NoAccess">Al momento non è possibile creare nuovi Ticket.</item>
+	<item name="Error.NoAccess">At the moment it is not possible to create new Tickets.</item>
 
-	<item name="LNBsend.blocked">Impossibile creare nuovi Ticket: raggiunto limite Ticket Aperti. Impossibile inviare.</item>
+	<item name="LNBsend.blocked">Unable to create new Tickets: reached Open Ticket limit. Unable to send.</item>
 
 	<!--Aggiunte postume 24/09/2014-->
 	<item name="BTNaddAttachment.text">Add</item>
@@ -77,106 +77,106 @@
 
 	<item name="LBattachment_t.text">Attachments</item>
 
-	<item name="Message.EmptyMessage">Non è possibile inviare un messaggio vuoto o senza titolo.</item>
-	<item name="Info.Saved">Bozza salvata con successo.</item>
-	<item name="Message.NewDraft">Creato nuovo Ticket in bozza.</item>
+	<item name="Message.EmptyMessage">You can not send an empty or untitled message.</item>
+	<item name="Info.Saved">Successfully saved draft</item>
+	<item name="Message.NewDraft">Created new Ticket in draft.</item>
 
 	<!-- Add-On-->
-	<item name="Page.Title.External">Ticket esterni</item>
+	<item name="Page.Title.External">External Tickets</item>
 
-	<item name="LBnoCategory.text">Nessuna categoria disponibile. Selezionare altra comunità.</item>
+	<item name="LBnoCategory.text">No categories available. Select another community.</item>
 	<item name="Error.NoCreate.NoCategory">
-		Nessuna categoria pubblica presente nel sistema.
-		La creazione di nuovi Ticket è quindi disabilitata.
+		No public category exists in the system.
+		The creation of new tickets is therefore disabled.
 	</item>
 
-	<item name="LNBcloseCommunityWindow.text">Chiudi</item>
-	<item name="LNBcloseCommunityWindow.ToolTip">Chiudi finestra</item>
-	<item name="LNBcloseCommunityWindow.status">Chiudi finestra</item>
+	<item name="LNBcloseCommunityWindow.text">Close</item>
+	<item name="LNBcloseCommunityWindow.ToolTip">Close window</item>
+	<item name="LNBcloseCommunityWindow.status">Close window</item>
 
-	<item name="LNBcommunitySetPortal.text">Imposta portale</item>
-	<item name="LNBcommunitySetPortal.ToolTip">Imposta portale</item>
-	<item name="LNBcommunitySetPortal.status">Imposta portale</item>
+	<item name="LNBcommunitySetPortal.text">Set up portal</item>
+	<item name="LNBcommunitySetPortal.ToolTip">Set up portal</item>
+	<item name="LNBcommunitySetPortal.status">Set up portal</item>
 
 	<!--<item name="LNBopenCommunity.text">Cambia comunità</item>
 	<item name="LNBopenCommunity.ToolTip">Cambia comunità</item>
 	<item name="LNBopenCommunity.status">Cambia comunità</item>-->
 
 	<!--Add 15/12/2014-->
-	<item name="Message.NewDraftAndOther">Il nuovo Ticket è stato creato in bozza. Si ricorda che ci sono già altri Ticket in bozza.</item>
+	<item name="Message.NewDraftAndOther">The new Ticket has been created in draft. Please note that there are already other tickets in draft.</item>
 
 	<!-- Add 20/01/2015 -->
-	<item name="LNBdelete.text">Cancella</item>
-	<item name="LNBdelete.ToolTip">Cancella bozza</item>
-	<item name="LNBdelete.status">Cancella bozza</item>
-	<item name="LNBdelete.ConfirmText">Tutti i dati relativi alla bozza corrente saranno eliminati. Proseguire con la cancellazione?</item>
+	<item name="LNBdelete.text">CancDeleteella</item>
+	<item name="LNBdelete.ToolTip">Delete Draft</item>
+	<item name="LNBdelete.status">Delete Draft</item>
+	<item name="LNBdelete.ConfirmText">All data relating to the current draft will be deleted. Continue with the deletion?</item>
 
 	<!-- Add 09/03/2015 -->
-	<item name="LBcreator.Text" placeholder="true" mustcontains="{0}">Creato da {0}</item>
+	<item name="LBcreator.Text" placeholder="true" mustcontains="{0}">Created by {0}</item>
 
-	<item name="Modal.InternalUsers.Description">Seleziona il proprietario del Ticket.</item>
+	<item name="Modal.InternalUsers.Description">Select the Ticket owner.</item>
 
-	<item name="LNBaddUsers.text">Imposta utente sistema</item>
-	<item name="LNBaddUsers.ToolTip">Imposta come mittente un utente iscritto alla piattaforma.</item>
-	<item name="LNBaddUsers.status">Imposta come mittente un utente iscritto alla piattaforma.</item>
+	<item name="LNBaddUsers.text">Set system user</item>
+	<item name="LNBaddUsers.ToolTip">Set a subscriber to the platform as sender.</item>
+	<item name="LNBaddUsers.status">Set a subscriber to the platform as sender.</item>
 
-	<item name="LNBremoveBehalf.text">Rimuovi "Per conto di..."</item>
-	<item name="LNBremoveBehalf.ToolTip">Rimuovi "Per conto di..."</item>
-	<item name="LNBremoveBehalf.status">Rimuovi "Per conto di..."</item>
+	<item name="LNBremoveBehalf.text">Remove "On behalf of..."</item>
+	<item name="LNBremoveBehalf.ToolTip">Remove "On behalf of..."</item>
+	<item name="LNBremoveBehalf.status">Remove "On behalf of..."</item>
 
-	<item name="BehalfOperation.success">"Crea per conto di..." impostato correttamente.</item>
-	<item name="BehalfOperation.NoPermission">Non si dispone dei permessi per completare l'operazione.</item>
-	<item name="BehalfOperation.dBerror">Errore interno.</item>
-	<item name="BehalfOperation.deleteSuccess">Rimozione avvenuta con successo.</item>
-
-
-	<item name="LTbehalft_t.text" description="behalf - titolo colonna">Proprietario</item>
+	<item name="BehalfOperation.success">"Create on behalf of ..." set correctly.</item>
+	<item name="BehalfOperation.NoPermission">You do not have permission to complete the operation.</item>
+	<item name="BehalfOperation.dBerror">Internal Error.</item>
+	<item name="BehalfOperation.deleteSuccess">Removal completed successfully.</item>
 
 
-	<item name="CBXhideToOwner.text">Ticket nascosto all'utente</item>
-	<item name="CBXhideToOwner.ToolTip">Se attivo, nasconde il Ticket all'utente.</item>
+	<item name="LTbehalft_t.text" description="behalf - titolo colonna">Owner</item>
 
-	<item name="LBbehalfAction_t.text">Azioni 'Per conto di...'</item>
-	<item name="LBbehalfAction_t.ToolTip">Azioni 'Per conto di...'</item>
 
-	<item name="BehalfOperation.visibilitySuccess">Visibilità impostata correttamente.</item>
+	<item name="CBXhideToOwner.text">Ticket hidden to the user</item>
+	<item name="CBXhideToOwner.ToolTip">If active, hides the Ticket to the user.</item>
 
-	<item name="LBcreator_t.text">Creato da</item>
-	<item name="LBcreator_t.ToolTip">Creatore del messaggio</item>
+	<item name="LBbehalfAction_t.text">Actions 'On behalf of ...'</item>
+	<item name="LBbehalfAction_t.ToolTip">Actions 'On behalf of ...'</item>
 
-	<item name="LBmailVisibility_t.text">Visibilità proprietario</item>
-	<item name="LBmailVisibility_t.ToolTip">Indica SE il ticket è o meno visibile al proprietario.</item>
+	<item name="BehalfOperation.visibilitySuccess">Visibility set correctly.</item>
 
-	<item name="CBXhideToOwner.text">Nascosto</item>
-	<item name="CBXhideToOwner.ToolTip">Se attivo il Ticket è nascosto all'utente.</item>
+	<item name="LBcreator_t.text">Created by</item>
+	<item name="LBcreator_t.ToolTip">Message Creator</item>
+
+	<item name="LBmailVisibility_t.text">Owner visibility</item>
+	<item name="LBmailVisibility_t.ToolTip">Indicates IF the ticket is visible to the owner or not.</item>
+
+	<item name="CBXhideToOwner.text">Hidden</item>
+	<item name="CBXhideToOwner.ToolTip">If active, the Ticket is hidden for the user.</item>
 
 	<!-- Add: 11/05/2015 - Notification -->
-	<item name="LBLmailSettings.text">Impostazioni notifiche</item>
-	<item name="LBLmailSettings.ToolTip">Personalizza le notifiche a livello di Ticket</item>
-	<item name="LBMailSetOwner_t.text">Proprietario</item>
-	<item name="LBMailSetOwner_t.ToolTip">Impostazioni per il proprietario</item>
-	<item name="LBMailSetCreator_t.text">Personali</item>
-	<item name="LBMailSetCreator_t.ToolTip">Impostazioni per il creatore effettivo</item>
-	<item name="LTownerInfo.text">Proprietario: </item>
-	<item name="LTcreatorInfo.text">Creatore: </item>
+	<item name="LBLmailSettings.text">Notification settings</item>
+	<item name="LBLmailSettings.ToolTip">Customize notifications at the Ticket level</item>
+	<item name="LBMailSetOwner_t.text">owner</item>
+	<item name="LBMailSetOwner_t.ToolTip">Settings for the owner</item>
+	<item name="LBMailSetCreator_t.text">Personal</item>
+	<item name="LBMailSetCreator_t.ToolTip">Settings for the actual creator</item>
+	<item name="LTownerInfo.text">Owner: </item>
+	<item name="LTcreatorInfo.text">Creator: </item>
 
-	<item name="Send.Disabled.Behalf">Non si dispone più dei permessi di "Crea per conto di...".</item>
+	<item name="Send.Disabled.Behalf">You no longer have permission to "Create on behalf of ...".</item>
 
-	<item name="dialogTitle.RepositoryAttachmentUploadActions.uploadtomoduleitem">Carica allegati</item>
-	<item name="dialogTitle.RepositoryAttachmentUploadActions.uploadtomoduleitemandcommunity">Carica allegati in comunità</item>
-	<item name="dialogTitle.RepositoryAttachmentUploadActions.linkfromcommunity">Seleziona elementi dalla comunità</item>
-	<item name="dialogTitle.RepositoryAttachmentUploadActions.addurltomoduleitem">Aggiungi url</item>
-	<item name="dialogTitle.RepositoryAttachmentUploadActions.addurltomoduleitemandcommunity">Aggiungi url</item>
+	<item name="dialogTitle.RepositoryAttachmentUploadActions.uploadtomoduleitem">Upload attachments</item>
+	<item name="dialogTitle.RepositoryAttachmentUploadActions.uploadtomoduleitemandcommunity">Upload attachments to the community</item>
+	<item name="dialogTitle.RepositoryAttachmentUploadActions.linkfromcommunity">Select items from the community</item>
+	<item name="dialogTitle.RepositoryAttachmentUploadActions.addurltomoduleitem">Add URL</item>
+	<item name="dialogTitle.RepositoryAttachmentUploadActions.addurltomoduleitemandcommunity">Add URL</item>
 
-	<item name="ComSelector.ModalTitle" description="Modale selezione comunità: titolo">Seleziona comunità</item>
-	<item name="ComSelector.Description" description="Modale selezione comunità: descrizione">Permette di selezionare la comunità che sarà associata al Ticket. Modificando la comunità saranno visualizzate le categorie accessibili dalla stessa.</item>
-	<item name="ComSelector.CloseButtonText" description="Modale selezione comunità: Testo bottone chiusura">Annulla</item>
-	<item name="ComSelector.CloseButtonToolTip" description="Modale selezione comunità: tooltip bottone chiusura">Annulla e chiudi</item>
-	<item name="ComSelector.SelectButtonText" description="Modale selezione comunità: testo bottone conferma">Conferma</item>
-	<item name="ComSelector.SelectButtonToolTip" description="Modale selezione comunità: tooltip bottone conferma">Conferma e chiudi</item>
+	<item name="ComSelector.ModalTitle" description="Modale selezione comunità: titolo">Select community</item>
+	<item name="ComSelector.Description" description="Modale selezione comunità: descrizione">It allows you to select the community that will be associated with the Ticket. Changing the community will display the categories accessible from it.</item>
+	<item name="ComSelector.CloseButtonText" description="Modale selezione comunità: Testo bottone chiusura">Cancel</item>
+	<item name="ComSelector.CloseButtonToolTip" description="Modale selezione comunità: tooltip bottone chiusura">Cancel and Close</item>
+	<item name="ComSelector.SelectButtonText" description="Modale selezione comunità: testo bottone conferma">Confirm</item>
+	<item name="ComSelector.SelectButtonToolTip" description="Modale selezione comunità: tooltip bottone conferma">Confirm and Close</item>
 
-	<item name="LNBcommunitySetCurrent.text">Imposta comunità corrente</item>
-	<item name="LNBcommunitySetCurrent.ToolTip">Imposta la comunità corrente, indicata in alto.</item>
-	<item name="LNBcommunitySetCurrent.status">Imposta la comunità corrente, indicata in alto.</item>
+	<item name="LNBcommunitySetCurrent.text">Set current community</item>
+	<item name="LNBcommunitySetCurrent.ToolTip">Set the current community, shown above.</item>
+	<item name="LNBcommunitySetCurrent.status">Set the current community, shown above.</item>
 	
 </Resource>

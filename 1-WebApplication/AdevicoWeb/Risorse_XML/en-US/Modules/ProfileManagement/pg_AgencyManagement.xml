@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- eng -->
 <Resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="urn:ComolTranslation">
   <item name="serviceTitle" html="false" placeholder="false">User's agencies management</item>
   <item name="serviceNopermission" html="false" placeholder="false">Sorry, you do not have permission to access this page.</item>
@@ -151,7 +152,7 @@
   <item name="Import.ImportOther" html="false" placeholder="true" mustcontains="{0}">From the selected data source there are other {0} agencies that you can create: to import them click "Back".</item>
   <item name="Import.ImportOther.1" html="false" placeholder="true">From the selected data source there is another agency that you can create: to import it click "Back".</item>
   <item name="ImportError.Completed.1" html="true" placeholder="false">Some operations were NOTsuccessfully preformed, ONLY one agency were created in the platform.&lt;br&gt;Error details:</item>
-  <item name="ImportError.Completed" html="true" placeholder="true" mustcontains="{0}">Some operations were NOTsuccessfully preformed, {0} agencies were added to the platform.&lt;br&gt;Error details:</item>
+  <item name="ImportError.Completed" html="true" placeholder="true" mustcontains="{0}">Some operations were NOT successfully preformed, {0} agencies were added to the platform.&lt;br&gt;Error details:</item>
   <item name="LBimportedAgenciesErrors_t.text" html="false" placeholder="false">Agencies not imported:</item>
   <item name="Summary.0" html="false" placeholder="false">Agency to import:</item>
   <item name="Summary" html="false" placeholder="false">Agencies to import:</item>
@@ -160,9 +161,9 @@
   <item name="Summary.Platform" html="false" placeholder="false">the whole platform</item>
   <item name="CurrentOperationText.True" html="false" placeholder="true" mustcontains="{0}">Importation of the agency {0}</item>
   <item name="CurrentOperationText.False" html="false" placeholder="true" mustcontains="{0}">Importation of the agency {0} was NOT successfully performed.</item>
-  <item name="OnLoadingTranslation" html="false" placeholder="false">Caricamento dati in corso</item>
-  <item name="LBagencyAvailability_t.text" disambiguation="inteso come ricerca fra gli enti (disponibili,default,vuoti)" html="false" placeholder="false">fra:</item>
-  <item name="AgencyAvailability.All" html="false" placeholder="false">tutti gli enti</item>
-  <item name="AgencyAvailability.Default" html="false" placeholder="false">gli enti di default</item>
-  <item name="AgencyAvailability.Empty" html="false" placeholder="false">gli enti "non assegnati"</item>
+  <item name="OnLoadingTranslation" html="false" placeholder="false">Loading data in progress</item>
+  <item name="LBagencyAvailability_t.text" disambiguation="intended as a search among institutions (available, default, empty)" html="false" placeholder="false">between:</item>
+  <item name="AgencyAvailability.All" html="false" placeholder="false">all institutions</item>
+  <item name="AgencyAvailability.Default" html="false" placeholder="false">default institutions</item>
+  <item name="AgencyAvailability.Empty" html="false" placeholder="false">"not assigned" institutions</item>
 </Resource>

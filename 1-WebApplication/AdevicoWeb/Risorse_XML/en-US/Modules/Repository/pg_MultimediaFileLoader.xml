@@ -28,7 +28,8 @@
   <item name="TransferStatus.Analyzed" html="false" placeholder="true" mustcontains="{0}">(analysis of the correctness of the file completed - code:{0})."</item>
   <item name="TransferStatus.UnzipFileNotFound" html="false" placeholder="true" mustcontains="{0}">(ERROR: the unzipped file on the media server was NOT found - error code:{0})."</item>
   <item name="TransferStatus.UnableToDeleteAfterUnzip" html="false" placeholder="true" mustcontains="{0}">(ERROR: the file transferred on the media server was NOT deleted - error code:{0})."</item>
-  <item name="TransferStatus.UnzipFileNotFound" html="false" placeholder="true" mustcontains="{0}">(ERRORE: file scompattato sul media server NON è stato individuato - codice errore:{0})."</item>
+  
+  <item name="TransferStatus.UnzipFileNotFound" html="false" placeholder="true" mustcontains="{0}">(ERROR: the file unpacked on the media server has NOT been detected - error code: {0})."</item>
   <item name="TransferStatus.UploadFileNotFound" html="false" placeholder="true" mustcontains="{0}">(ERROR: the file you want to transfer to the media server was NOT detected - error code:{0})."</item>
   <item name="TransferStatus.Error" html="false" placeholder="true" mustcontains="{0}">(ERROR: generic error - error code:{0})."</item>
   <item name="HYPback.text" html="false" placeholder="false">Back to previous page</item>
@@ -40,9 +41,9 @@
   <item name="LTmultimediaInfo.text" html="false" placeholder="false">No file found in the selected package.</item>
   <item name="serviceSettings_Title" html="false" placeholder="false">Multimedia package - Choose the main player file.</item>
   <item name="ServiceSettings_NoPermission" html="false" placeholder="false">You don't have permissions to access this page</item>
-  <item name="LoadFileNoPermission" html="false" placeholder="false">Nessun permesso per gestire il file, spiacente contattare l'amministratore di comunità o di sistema.</item>
-  <item name="LoadFileNotExist" html="false" placeholder="false">ATTENZIONE: il file richiesto non è stato individuato.</item>
+  <item name="LoadFileNoPermission" html="false" placeholder="false">No permission to manage the file, contact the community or system administrator.</item>
+  <item name="LoadFileNotExist" html="false" placeholder="false">WARNING: the requested file has not been detected.</item>
   <item name="LoadFileWithoutIndex" html="true" placeholder="true" mustcontains="{0}|{1}|{2}">The file &lt;img src="{1}"/&gt; {0} ({2}) has not a default document to set.</item>
   <item name="LoadInvalidFileType" html="true" placeholder="true" mustcontains="{0}|{1}|{2}">The file &lt;img src="{1}"/&gt; {0} ({2}) has not a default document to set.</item>
-  <item name="LTinfo.text" html="false" placeholder="false">ATTENTION: una voce dell'albero a sinistra per selezionare il file da caricare di default all'apertura del pacchetto multimediale.</item>
+  <item name="LTinfo.text" html="false" placeholder="false">WARNING: select the file to be loaded by default when opening the multimedia package through the file tree on the left</item>
 </Resource>

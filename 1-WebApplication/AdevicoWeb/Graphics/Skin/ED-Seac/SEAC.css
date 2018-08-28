@@ -1,0 +1,1086 @@
+/* @override 
+	http://seac.elearning-center.it/Style/Skin/SEAC/SEAC.css */
+
+
+/* ---- Skin Seac ---- */
+/* --- update 11.12.13 --- */
+
+/* @group  page elements */
+
+body.internal_body {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	word-wrap: break-word;
+	/*text-rendering: optimizeLegibility;*/
+	background: #1e222c;
+	background-color: #1e222c;
+	background-image: #1e222c;
+}
+
+#page-box,
+#aspnetForm.mainForm {
+	background: #f5f5f5;
+	background-color: #f5f5f5;
+	background-image: #f5f5f5;
+	margin: 0;
+}
+
+#content {
+	min-height: 300px;
+	-webkit-font-smoothing: subpixel-antialiased;
+	font-size: 1em;
+}
+
+#container {
+	padding-top: 12px;
+	background-color: #fff;
+	-moz-box-shadow: 0 4px 6px #888;
+	-webkit-box-shadow: 0 4px 6px #888;
+	box-shadow: 0 4px 6px #888;
+	border: 1px solid #ccc;
+	border-top: none;
+	z-index: 1;
+	-moz-border-radius-topleft: 0px;
+	-moz-border-radius-topright: 0px;
+	-moz-border-radius-bottomright: 10px;
+	-moz-border-radius-bottomleft: 10px;
+	-webkit-border-radius: 0px 0px 10px 10px;
+	border-radius: 0px 0px 10px 10px;
+	*padding-left:0; /* sovrascrive COL_Reset*/
+}
+
+/* @group #container Webkit + IE hacks */
+
+* html #container {
+	border: 1px solid #bbb;
+	border-top: none;
+	border-bottom: 2px solid #bbb;
+	top: 0;
+}
+
+*+html #container {
+	border: 1px solid #bbb;
+	border-top: none;
+	border-bottom: 2px solid #bbb;
+	top: 0;
+}
+
+#container {
+	border: 1px solid #bbb\9;
+	border-top: none\9;
+	top: 0\9;
+}
+
+::selection {background: #c7d0da;}
+::-moz-selection {background: #c7d0da;}
+
+img::selection {background: transparent;}
+img::-moz-selection {background: transparent;}
+
+/* @end */
+
+/* @end */
+
+/* @group Toolbar, Notifications */
+
+#header #toolbar {
+	margin: 0 !important;
+	padding: 2px 0 0 0 !important;
+	background-color: #ebeaeb;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#d5d5d5),to(#ebeaeb));
+	background-image: -webkit-linear-gradient(top, #d5d5d5, #ebeaeb);
+	background-image: -moz-linear-gradient(top, #d5d5d5, #ebeaeb);
+	background-image: -o-linear-gradient(top, #d5d5d5, #ebeaeb);
+	background-image: -ms-linear-gradient(top, #d5d5d5, #ebeaeb);
+	background-image: linear-gradient(top, #d5d5d5, #ebeaeb);	
+	font-family: Helvetica, Arial,sans-serif;
+	color: #888;
+	font-size: 1em;
+	line-height: 1.6em;
+	min-height: 24px;
+	vertical-align: middle !important;
+	border-bottom: none;
+	-moz-box-shadow: 	inset 0 -1px 0 rgba(255, 255, 255, 0.200);
+	-webkit-box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.200);
+	box-shadow: 		inset 0 -1px 0 rgba(255, 255, 255, 0.200);
+}
+
+#toolbar a {
+	color: #404d5a;
+}
+
+#toolbar a:hover {
+	text-decoration: underline;
+}
+
+#toolbar ul li a.menu:hover,
+#toolbar ul li a.status:hover,
+#toolbar ul li li a:hover {
+	text-decoration: none;
+}
+
+#toolbar ul li#greetings {
+	color: #888;
+	padding-right: 15px;
+}
+
+#toolbar ul li {
+	background-color: transparent;
+	margin-top: 0;
+	margin-bottom: 0;
+	padding-top: 2px;
+	padding-bottom: 1px;
+	color: #b0bbc9;
+}
+
+#toolbar #tools ul li a {
+	margin-left: 5px;
+	margin-right: 15px;
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
+#toolbar #tools li#Top_Home {
+	background: #fff;
+	margin-right: 15px;
+	margin-top: 1px;
+	line-height: 15px;
+	-moz-border-radius: 4px !important;
+	-webkit-border-radius: 4px !important;
+	border-radius: 4px !important;
+	color: #404d5a;
+}
+
+* html #toolbar #tools li#Top_Home {
+	border: 1px solid #bbb;
+}
+
+#toolbar #tools li#Top_Home a,
+#toolbar #tools li#Top_Home a.Home,
+#toolbar #tools li#Top_Home a.home {
+	background: url("Images/toolbar-sprite.png") 3px 1px no-repeat;
+	background-color: transparent;
+	margin: 0;
+	padding: 1px 5px 1px 22px;
+	text-shadow: 0px 1px 0px #fff;
+}
+
+#toolbar #tools li#Top_Tools a,
+#toolbar #tools li#Top_Lang a {
+	margin-right: 13px;
+	cursor: default;
+}
+
+#toolbar #tools li#Top_Tools .sub li a,
+#toolbar #tools li#Top_Lang .sub li a {
+	cursor: pointer;
+}
+
+#toolbar #tools li#Top_Help a {
+	
+}
+
+#toolbar #tools li#Top_Logout a {
+
+}
+
+#toolbar #tools li.expanded#Top_Tools a,
+#toolbar #tools li.expanded#Top_Lang a,
+#toolbar #notifications ul li.expanded#memo a,
+#toolbar #notifications ul li.expanded#chat a {
+	color: #777;
+}
+
+#toolbar #tools li.expanded#Top_Tools .sub a,
+#toolbar #tools li.expanded#Top_Lang .sub a,
+#toolbar #notifications ul li.expanded#memo .sub a,
+#toolbar #notifications ul li.expanded#chat .sub a {
+	color: #404d5a;
+}
+
+#toolbar #tools ul li ul.sub,
+#toolbar #notifications ul li .sub {
+	background-color: #ebeaeb;
+	border: 1px solid #ccc;
+	border-top: none;
+	-moz-border-radius-topleft: 0px;
+	-moz-border-radius-topright: 0px;
+	-moz-border-radius-bottomright: 4px;
+	-moz-border-radius-bottomleft: 4px;
+	-webkit-border-radius: 0px 0px 4px 4px;
+	border-radius: 0px 0px 4px 4px;
+	padding-bottom: 4px;
+	-moz-box-shadow: 0 6px 6px rgba(0, 0, 0, 0.250);
+	-webkit-box-shadow: 0 6px 6px rgba(0, 0, 0, 0.250);
+	box-shadow: 0 6px 6px rgba(0, 0, 0, 0.250);	
+}
+
+#toolbar #tools ul li ul.sub {
+	top: 23px;
+	left: -2px;
+}
+
+#toolbar #notifications ul li ul.sub {
+	top: 22px;
+}
+
+#toolbar #tools ul.sub li a,
+#toolbar #notifications ul.sub li a {
+	margin: 0 !important;
+	padding: 3px 3px 3px 7px;
+}
+
+#toolbar #tools ul li li a:hover,
+#toolbar #notifications ul li ul.sub li a:hover {
+	color: #fff !important;
+	background-color: #404d5a;
+	background: -moz-linear-gradient(top, #63717a 0%, #404d5a 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#63717a), color-stop(100%,#404d5a));
+	background: -webkit-linear-gradient(top, #63717a 0%,#404d5a 100%);
+	background: -o-linear-gradient(top, #63717a 0%,#404d5a 100%);
+	background: -ms-linear-gradient(top, #63717a 0%,#404d5a 100%);
+	background: linear-gradient(top, #63717a 0%,#404d5a 100%);
+	
+	background-color: #3b5679;
+	background: -moz-linear-gradient(top, #476891 0%, #3b5679 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#476891), color-stop(100%,#3b5679));
+	background: -webkit-linear-gradient(top, #476891 0%,#3b5679 100%);
+	background: -o-linear-gradient(top, #476891 0%,#3b5679 100%);
+	background: -ms-linear-gradient(top, #476891 0%,#3b5679 100%);
+	background: linear-gradient(top, #476891 0%,#3b5679 100%);
+}
+
+/* @group #toolbar ul li li a:hover IE hacks */
+
+* html #toolbar #tools ul li li a:hover {
+	background-color: #404d5a;
+}
+
+*+html #toolbar #tools ul li li a:hover {
+	background-color: #404d5a;
+}
+
+#toolbar #tools ul li li a:hover {
+	background-color: #404d5a\9;
+}
+
+* html #toolbar #notifications ul li ul.sub li a:hover {
+	background-color: #404d5a;
+}
+
+*+html #toolbar #notifications ul li ul.sub li a:hover {
+	background-color: #404d5a;
+}
+
+#toolbar #notifications ul li ul.sub li a:hover {
+	background-color: #404d5a\9;
+}
+
+/* @end */
+
+#toolbar #chat ul.sub li a:hover {
+	background-color: #3b5679 !important;
+	background: #3b5679 url("Images/i-status-offline.png") no-repeat 0 center;
+}
+
+#toolbar #notifications ul li#memo a,
+#toolbar #notifications ul li#chat {
+	cursor: default;
+}
+
+#toolbar #notifications ul li#memo .sub a,
+#toolbar #notifications ul li#chat .sub a {
+	cursor: pointer;
+}
+
+#toolbar #notifications ul li {
+	line-height: 1.4em;
+}
+
+#toolbar #memo ul.sub {
+	text-align: left;
+}
+
+#toolbar #notifications ul {
+	padding-top: 2px;
+}
+
+#toolbar #notifications ul li span {
+	background-color: #d4160e;
+	border: 2px solid #d4160e;
+	-moz-border-radius: 6px !important;
+	-webkit-border-radius: 6px !important;
+	border-radius: 6px !important;
+	color: #fff;
+	font-size: 0.8em;
+	font-weight: bold;
+	line-height: 140%;
+	margin: 0 0 1px 4px;
+	padding: 0 4px !mportant;
+	text-align: center;
+}
+
+/* @group #toolbar icons */
+
+#toolbar #tools li a.menu {
+	background-image: url("Images/toolbar-sprite.png");
+	background-position: right -394px;
+	padding-right: 15px
+}
+
+#toolbar #tools li.expanded a.menu {
+	background-position: right -460px;
+}
+
+#toolbar #chat a.status {
+	background-image: url("Images/i-status-offline.png");
+}
+
+#toolbar #chat.online a.status {
+	background-image: url("Images/i-status-online.png");
+}
+
+#toolbar #chat .sub li a {
+	background-image: url("Images/i-status-offline.png");
+}
+
+#toolbar #chat .sub li.online a {
+	background-image: url("Images/i-status-online.png");
+}
+
+#toolbar #memo a.status {
+	background-image: url("Images/toolbar-sprite.png");
+	background-position: 4px -200px;
+	padding-bottom: 1px;
+}
+
+/* @end */
+
+/* @end */
+
+/* @group Heading */
+
+#header {
+	background-color: #565d6d;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#565d6d),to(#1e222c));
+	background-image: -webkit-linear-gradient(top, #565d6d, #1e222c);
+	background-image: -moz-linear-gradient(top, #565d6d, #1e222c);
+	background-image: -o-linear-gradient(top, #565d6d, #1e222c);
+	background-image: -ms-linear-gradient(top, #565d6d, #1e222c);
+	background-image: linear-gradient(top, #565d6d, #1e222c);
+	-moz-box-shadow: 0 4px 5px #999;
+	-webkit-box-shadow: 0 4px 5px #999;
+	box-shadow: 0 4px 5px #999;
+}
+
+/* @group #header IE hacks */
+
+
+* html #header {
+	background: #565d6d;
+	background-image: url("Images/bg-header.png");
+	background-repeat: repeat-x;
+	background-position: 0 top;
+}
+
+*+html #header {
+	background: #565d6d;
+	background-image: url("Images/bg-header.png");
+	background-repeat: repeat-x;
+	background-position: 0 top;
+}
+
+#header {
+	background-color: #565d6d\9;
+	background-image: url("Images/bg-header.png")\9;
+	background-repeat: repeat-x\9;
+	background-position: 0 top\9;
+}
+
+/* @end */
+
+#branding img.logo {
+	margin-top: 0;
+	height: 120px;
+	min-height: 120px;
+	max-height: 120px;
+}
+
+#branding {
+	min-height: 120px;
+}
+
+#branding h1 {
+	font-size: 1.2em;
+	padding: 24px 30px 12px 430px;
+	text-align: right;
+	color: #989898;
+	text-shadow: 0px 1px 0px #000;
+}
+
+#branding h1 span {
+	display: block;
+	padding: 3px 0;
+	padding-top: 0.6em;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight: 400;
+	font-size: 1.4em;
+	color: #e2e2e2;
+	text-transform: uppercase;
+}
+
+/* @end */
+
+/* @group Nav-main */
+
+#nav-main {
+	color: #404d5a;
+	font-size: 0.95em;
+	min-height: 30px;
+	text-shadow: 0px -1px 0px #604d3a;
+	background-color: #ebeaeb;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#ebeaeb),to(#d5d5d5));
+	background-image: -webkit-linear-gradient(top, #ebeaeb, #d5d5d5);
+	background-image: -moz-linear-gradient(top, #ebeaeb, #d5d5d5);
+	background-image: -o-linear-gradient(top, #ebeaeb, #d5d5d5);
+	background-image: -ms-linear-gradient(top, #ebeaeb, #d5d5d5);
+	background-image: linear-gradient(top, #ebeaeb, #d5d5d5);
+	border-top: 1px solid #efefef;
+	border-bottom: 1px solid #d5d5d5;
+}
+
+/* @group #nav-main IE hacks */
+
+* html #nav-main {
+	background-color: #ebeaeb;
+	background-image: url("Images/bg-nav-main.png");
+	background-repeat: repeat-x;
+	background-position: 0 top;
+}
+
+*+html #nav-main {
+	background: #ebeaeb;
+	background-image: url("Images/bg-nav-main.png");
+	background-repeat: repeat-x;
+	background-position: 0 top;
+}
+
+#nav-main {
+	background-color: #ebeaeb\9;
+	background-image: url("Images/bg-nav-main.png")\9;
+	background-repeat: repeat-x\9;
+	background-position: 0 top\9;
+}
+
+/* @end */
+
+#nav-main ul#top {
+	margin: 0;
+	padding: 0;
+	float: left;
+	width: 100%;
+	line-height: 1.4em;
+	font-size: 1.3em;
+	list-style: none;
+}
+
+#nav-main ul#top li {
+	margin-top: 0;
+	padding: 0;
+}
+
+#nav-main ul#top li a {
+	margin-top: 0;
+	margin-left: 6px;
+	margin-right: 6px;
+	color: #404d5a;
+	text-shadow: 0px 1px 0px #eee;
+	padding-top: 5px;
+	padding-bottom: 5px !important;
+	padding-left: 6px;
+	padding-right: 16px;
+	background-image: url("Images/i-triangle-sprite.png");
+	background-repeat: no-repeat;
+	background-position: right -167px;
+	cursor: default;
+}
+
+#nav-main ul#top li#community-type a,
+#nav-main ul#top li .sub ul li a {
+	cursor:pointer;
+}
+
+div#nav-main ul#top li.communitydefaultview a {
+	background-image: url("Images/book16.png");
+}
+
+#nav-main ul#top li#community-type a {
+	margin-top: 0;
+	padding-left: 0;
+	padding-right: 6px;
+}
+
+#nav-main ul#top li#community-type a img {
+	margin-top: 3px;
+	height: 16px;
+}
+
+#nav-main ul#top #community-type a:hover img {
+	
+}
+
+#nav-main ul#top li.expanded a {
+	color: #404d5a;
+	text-shadow: 0px 1px 0px #ddd;
+	background-color: #c9c9c9;
+	background-position: right -108px;
+	-moz-box-shadow: 	inset 0 0 6px rgba(0, 0, 0, 0.700),
+						inset 0 1px 0 rgba(255, 255, 255, 0.600),
+						0 0 1px rgba(255, 255, 255, 0.500);
+	-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.700),
+						inset 0 1px 0 rgba(255, 255, 255, 0.600),
+						0 0 1px rgba(255, 255, 255, 0.500);
+	box-shadow: 		inset 0 0 6px rgba(0, 0, 0, 0.700),
+						inset 0 1px 0 rgba(255, 255, 255, 0.600),
+						0 0 1px rgba(255, 255, 255, 0.500);
+	-webkit-transition: background-color 0.2s ease;
+	-moz-transition: 	background-color 0.2s ease;
+	-o-transition: 		background-color 0.2s ease;
+	transition: 		background-color 0.2s ease;
+}
+
+#nav-main ul#top li a:hover {
+	color: #404d5a;
+	text-shadow: 0px 1px 0px #ddd;
+	-webkit-transition: color 0.2s ease;
+	-moz-transition: color 0.2s ease;
+	-o-transition: color 0.2s ease;
+	transition: color 0.2s ease;
+}
+
+#nav-main ul#top li#community-type a {
+	margin-top: 0;
+	padding-left: 0;
+	padding-right: 6px;
+}
+
+#nav-main ul#top li#community-type a img {
+	margin-top: 3px;
+	height: 16px;
+}
+
+#nav-main ul#top #community-type a:hover img {
+	
+}
+
+#nav-main ul#top li.expanded li a {
+	color: #333;
+	text-shadow: none;
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	background-color: #fff;
+	-moz-border-radius-topleft: 0;
+	-moz-border-radius-topright: 0;
+	-moz-border-radius-bottomright: 0;
+	-moz-border-radius-bottomleft: 0;
+	-webkit-border-radius: 0;
+	border-radius: 0;
+}
+
+#nav-main ul#top li#community-type.expanded a {
+	color: #333;
+	text-shadow: none;
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	background-color: transparent;
+	-moz-border-radius-topleft: 0;
+	-moz-border-radius-topright: 0;
+	-moz-border-radius-bottomright: 0;
+	-moz-border-radius-bottomleft: 0;
+	-webkit-border-radius: 0;
+	border-radius: 0;
+}
+
+#nav-main ul#top #community-type a img {
+	
+}
+
+#nav-main ul#top #community-type a:hover img {
+	
+}
+
+#nav-main ul#top li#community-type a,
+#nav-main ul#top li div.sub a {
+	background: url("");
+}
+
+/* @end */
+
+/* @group Nav-main dropdpwn */
+
+#nav-main ul#top li .sub, 
+#nav-main ul#top li .sub .col,
+#nav-main ul#top li .sub ul li a,
+#nav-main ul#top li .sub ul li.admin a {
+	background-color: #f6f6f6;
+}
+
+#nav-main ul#top li .sub {
+	left: auto;
+}
+
+#nav-main div.sub {
+	text-shadow: none;
+	-moz-border-radius-topleft: 0px;
+	-moz-border-radius-topright: 0px;
+	-moz-border-radius-bottomright: 4px;
+	-moz-border-radius-bottomleft: 4px;
+	-webkit-border-radius: 0px 0px 4px 4px;
+	border-radius: 0px 0px 4px 4px;
+	padding-bottom: 4px;
+}
+
+#nav-main ul#top li .sub {
+	font-size: 0.8em;
+	border: none;
+	-moz-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.300);
+	-webkit-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.300);
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.300);
+	top: 31px;
+	left: 6px;
+}
+
+/* @group #community-type a img IE hacks */
+
+* html #nav-main ul#top li .sub  {
+	padding-bottom: 0;
+	border: 1px solid #ccc;
+	border-top: none;
+	left: 5px;
+}
+
+*+html #nav-main ul#top li .sub  {
+	padding-bottom: 0;
+	border: 1px solid #ccc;
+	border-top: none;
+	left: 5px;
+}
+
+#nav-main #nav-main ul#top li .sub  {
+	padding-bottom: 0\9;
+	border: 1px solid #ccc\9;
+	border-top: none\9;
+	left: 5px\9;
+}
+
+/* @end */
+
+#nav-main ul#top li .sub h2 {
+	color: #777;
+	background-color: #dedede;
+	background: -moz-linear-gradient(top, #eeeeee 0%, #d5ccc5 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#eeeeee), color-stop(100%,#d5ccc5));
+	background: -webkit-linear-gradient(top, #eeeeee 0%,#d5ccc5 100%);
+	background: -o-linear-gradient(top, #eeeeee 0%,#d5ccc5 100%);
+	background: -ms-linear-gradient(top, #eeeeee 0%,#d5ccc5 100%);
+	-moz-box-shadow: inset 0 -1px 3px #d5ccc5;
+	-webkit-box-shadow: inset 0 -1px 3px #d5ccc5;
+	box-shadow: inset 0 -1px 3px #d5ccc5;
+	text-shadow: 0px 1px 0px #eee;
+}
+
+#nav-main ul#top li ul li span.actions a {
+	padding: 0 1px !important;
+}
+
+/* @group #nav-main ul#top li .sub h2 IE hacks */
+
+* html #nav-main ul#top li .sub h2 {
+	background-color: #dedede;
+}
+
+*+html #nav-main ul#top li .sub h2 {
+	background-color: #dedede;
+}
+
+#nav-main ul#top li .sub h2 {
+	background-color: #dedede\9;
+}
+
+/* @group #nav-main ul#top li .sub h2 IE hacks */
+
+* html #nav-main ul#top li .sub h2 {
+	border-bottom: 1px solid #ccc;
+}
+
+*+html #nav-main ul#top li .sub h2 {
+	border-bottom: 1px solid #ccc;
+}
+
+#nav-main ul#top li .sub h2 {
+	border-bottom: 1px solid #ccc\9;
+}
+
+/* @end */
+
+/* @end */
+
+#nav-main ul#top li .sub .col {
+	margin-right: 1px;
+	width: auto;
+	-moz-border-radius-topleft: 0px;
+	-moz-border-radius-topright: 0px;
+	-moz-border-radius-bottomright: 6px;
+	-moz-border-radius-bottomleft: 6px;
+	-webkit-border-radius: 0px 0px 6px 6px;
+	border-radius: 0px 0px 6px 6px;
+}
+
+#nav-main ul#top li .sub ul li a {
+	padding: 6px 4px 10px 6px;
+	margin: 0;
+}
+
+#nav-main ul#top li .sub ul li a,
+#nav-main ul#top li .sub ul li span {
+	padding: 4px 64px 4px 8px;
+}
+
+#nav-main ul#top li .sub ul li span.actions {
+	padding: 0;
+	width: 66px;
+}
+
+#nav-main ul#top li .sub ul li span {
+	color: #b4b4b4;
+}
+
+#nav-main ul#top li .sub ul li a:hover,
+#nav-main ul#top li .sub ul li.admin a:hover {
+	color: #fff !important;
+	background: #3b5679;
+	background: -moz-linear-gradient(top, #476891 0%, #3b5679 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#476891), color-stop(100%,#3b5679));
+	background: -webkit-linear-gradient(top, #476891 0%,#3b5679 100%);
+	background: -o-linear-gradient(top, #476891 0%,#3b5679 100%);
+	background: -ms-linear-gradient(top, #476891 0%,#3b5679 100%);
+	background: linear-gradient(top, #476891 0%,#3b5679 100%);
+}
+
+/* @group #nav-main ul#top li .sub ul li a:hover IE hacks */
+
+* html #nav-main ul#top li .sub ul li a:hover,
+* html #nav-main ul#top li .sub ul li.admin a:hover {
+	background-color: #3b5679;
+}
+
+*+html #nav-main ul#top li .sub ul li a:hover,
+*+html #nav-main ul#top li.admin .sub ul li a:hover {
+	background-color: #3b5679;
+}
+
+#nav-main ul#top li .sub ul li a:hover,
+#nav-main ul#top li .sub ul li a:hover {
+	background-color: #3b5679\9;
+}
+
+/* @end */
+
+/* @group Box Admin */
+
+#nav-main ul#top li.admin .sub h2 {
+	background-color: #dedede;
+}
+
+#nav-main ul#top li.admin .sub ul li span {
+	color: #b4b4b4;
+}
+
+#nav-main ul#top li.admin .sub ul li a:hover {
+	
+}
+
+#nav-main ul#top li.admin a {
+	color: #404d5a !important;
+}
+
+#nav-main ul#top li.admin a:hover {
+	color: #404d5a !important;
+	text-shadow: 0px 1px 0px #ddd !important;
+}
+
+#nav-main ul#top li .sub ul li a,
+#nav-main ul#top li .sub ul li.admin a,
+#nav-main ul#top li.expanded .sub ul li a,
+#nav-main ul#top li.expanded .sub ul li.admin a {
+	color: #333;
+	-webkit-transition: none;
+	-moz-transition: none;
+	-o-transition: none;
+	transition: none;
+	text-shadow: none !important;
+}
+
+#nav-main ul#top li.admin div.sub div.col ul li.expanded a:hover,
+#nav-main ul#top li.admin.expanded div.sub div.col ul li.expanded a:hover {
+	color: #fff;
+}
+
+#nav-main ul#top li.admin .sub {
+	/*left: -19em !important;*/
+	left: -52px;
+}
+
+* html #nav-main ul#top li.admin .sub,
+*+html #nav-main ul#top li.admin .sub {
+    left: -63px;
+}
+
+/* @end */
+
+/* @group #nav-main inline icons */
+
+#nav-main ul#top li .sub ul li span.actions a {
+	background: url("Images/action-ico.png") no-repeat top left;
+	background-position: 0 0;
+	width: 16px;
+	height: 16px;
+}
+
+#nav-main ul#top li .sub ul li span.actions a:hover {
+	background: url("Images/action-ico.png") no-repeat top left;
+	background-position: 0 -66px;
+	width: 16px;
+	height: 16px;
+}
+
+#nav-main ul#top li .sub ul li span.actions a.new {
+	background: url("Images/action-ico.png") no-repeat top left;
+	background-position: 0 -132px;
+	width: 16px;
+	height: 16px;
+}
+
+#nav-main ul#top li .sub ul li span.actions a.new:hover {
+	background: url("Images/action-ico.png") no-repeat top left;
+	background-position: 0 -198px;
+	width: 16px;
+	height: 16px;
+}
+
+#nav-main ul#top li .sub ul li span.actions a.stats {
+	background: url("Images/action-ico.png") no-repeat top left;
+	background-position: 0 -264px;
+	width: 16px;
+	height: 16px;
+}
+
+#nav-main ul#top li .sub ul li span.actions a.stats:hover {
+	background: url("Images/action-ico.png") no-repeat top left;
+	background-position: 0 -330px;
+	width: 16px;
+	height: 16px;
+}
+
+/* @end */
+
+/* @end */
+
+/* @group Footer */
+
+#cFooter {
+	margin-top: 30px;
+	padding-top: 0.7em;
+	font-size: 1em;
+	line-height: 1.5em;
+	color: #e2e2e2;
+	border-top: 2px solid #d5d5d5;
+
+	background-color: #565d6d;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#565d6d),to(#1e222c));
+	background-image: -webkit-linear-gradient(top, #565d6d, #1e222c);
+	background-image: -moz-linear-gradient(top, #565d6d, #1e222c);
+	background-image: -o-linear-gradient(top, #565d6d, #1e222c);
+	background-image: -ms-linear-gradient(top, #565d6d, #1e222c);
+	background-image: linear-gradient(top, #565d6d, #1e222c);
+
+	text-shadow: 0px -1px 0px #000;
+}
+
+/* @group #cFooter IE hacks */
+
+* html #cFooter {
+	background: #1e222c;
+	background-image: url("Images/bg-footer.png");
+	background-repeat: repeat-x;
+	background-position: 0 top;
+	height: 150px
+}
+
+*+html #cFooter {
+	background: #1e222c;
+	background-image: url("Images/bg-footer.png");
+	background-repeat: repeat-x;
+	background-position: 0 top;
+	height: 150px
+}
+
+#cFooter {
+	background-color: #1e222c\9;
+	background-image: url("Images/bg-footer.png")\9;
+	background-repeat: repeat-x\9;
+	background-position: 0 top\9;
+	height: 150px\9;
+}
+
+/* @end */
+
+#cFooter a {
+	color: #fff;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+#cFooter a:hover {
+	color: #fff;
+	text-decoration: underline;
+}
+
+#cFooter div.container div.chiusura { 
+	width: 512px;
+	margin-left: auto;
+	margin-right: auto;
+	background: url("Images/footer_elearning.png") no-repeat center center;
+}
+
+/* @end */
+
+/* @group Content overrides */
+
+div#serviceinfo.RigaTitolo.serviceinfo {
+	color: #666;
+	border-bottom: none;
+	font-size: 1.5em;
+	font-weight: 400;
+	padding: 18px 12px 12px 12px;
+	font-variant: normal;
+	text-transform: uppercase;
+}
+
+/* @group div#serviceinfo.RigaTitolo.serviceinfo IE hacks */
+
+* html div#serviceinfo.RigaTitolo.serviceinfo {
+	font-size: 1.5em;
+}
+
+*+html div#serviceinfo.RigaTitolo.serviceinfo {
+	font-size: 1.5em;
+}
+
+div#serviceinfo.RigaTitolo.serviceinfo {
+	font-size: 1.5em\9;
+}
+
+/* @end */
+
+#content div.DIV_MP_Content {
+	padding-top: 6px !important;
+	border-top: 1px solid #ccc !important;
+	width: inherit;
+}
+
+#content div.DIV_MP_Content div#Div1 {
+	margin-bottom: 20px;
+	height: 30px;
+}
+
+#content div.DIV_MP_Content a.Link_Menu {
+	display: inline-block !important;
+	line-height: 14px !important;
+	height: 14px !important;
+	margin: 2px !important;
+	font-size: 11px !important;
+	padding: 3px 4px !important;
+	color: #555;
+	text-shadow: 1px 1px 0px #ddd;
+	border: 1px solid #aaa !important;
+	background-color: #ddd;
+	-moz-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+	-webkit-box-shadow: 1px 1px 1px  rgba(0, 0, 0, 0.3);
+	box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+	-moz-border-radius-topleft: 3px;
+	-moz-border-radius-topright: 3px;
+	-moz-border-radius-bottomright: 3px;
+	-moz-border-radius-bottomleft: 3px;
+	-webkit-border-radius: 3px 3px 3px 3px;
+	border-radius: 3px 3px 3px 3px;
+}
+
+#content div.DIV_MP_Content a.Link_Menu:hover {
+	outline: none;
+	color: #565656;
+	text-shadow: 1px 1px 0px #ddd;
+	background-color: #bcbcbc;
+}
+
+#content div.DIV_MP_Content a.Link_Menu:active {
+	outline: none;
+	border: 1px solid #777 !important;
+	-moz-box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.7);
+	-webkit-box-shadow: inset 0 0 32px rgba(0, 0, 0, 0.7);
+	box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.7);
+}
+
+#content div.DIV_MP_Content div.DefaultDashBoardContainer div div.RightContainer div div table tbody tr {
+	line-height: 1.6em;
+}
+
+#CPHservice_CTRLmessage_DIVmenuDashboard div.topBoxMenu span.title {
+	border: none;
+}
+
+/* @group Quaderni */
+
+#content table tbody tr .DiarioLezioni_HeaderRigaLezione_Bold,
+#content table tbody tr .DiarioLezioni_HeaderRigaLezione_Bold a.DiarioLezioni_HeaderLink,
+#content table tbody tr .DiarioLezioni_HeaderRigaLezione_Bold span.DiarioLezioni_HeaderRigaLezione_Bold,
+#content table tbody tr .DiarioLezioni_HeaderRigaLezione_Bold img {
+	background-color: #58799d !important;
+}
+
+#content div.DIV_MP_Content div table tbody tr .DiarioLezioni_HeaderRigaLezione_Bold * {
+	margin: 0;
+	padding: 1px 0;
+	vertical-align: middle;
+}
+
+#content div.DiaryItemRow div.cellLeft,
+#content div.DiaryItemRow div.cellRight {
+	margin-bottom: 0.9em;
+}
+
+
+#content div.DIV_MP_Content div div.DiarioLezioni_DGheader {
+	background-color: #444;
+	vertical-align: bottom;
+}
+
+#content div.DiaryItemRow div.cellRight a {
+	color: #1e72e6 !important;
+	text-decoration: none;
+}
+
+#content div.DiaryItemRow div.cellRight a:hover {
+	text-decoration: underline;
+}
+
+#content div.DIV_MP_Content div.DefaultDashBoardContainer div div.RightContainer div div table {
+	font-size: 1.2em !important;
+}
+
+/* @end */
+
+body#SRVELNC_CMNT div#content span.title { border: 0px;}
+
+/* @end */

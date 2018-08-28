@@ -1,0 +1,49 @@
+/*========================================= Toolbar related CSS ========================*/
+.RadFileExplorer_Metro {
+  /* Thumbnail view */
+  /* Thumbnail filter */ }
+  .RadFileExplorer_Metro .RadToolBar .rtbText {
+    background-image: url('FileExplorer/FileExplorerToolbarSprites.png');
+    _background-image: url('FileExplorer/FileExplorerToolbarSpritesIE6.gif') !important;
+    background-repeat: no-repeat; }
+  .RadFileExplorer_Metro span.rfeFileExtension,
+  .RadFileExplorer_Metro div.rfeFileExtension {
+    background: transparent url('../Common/FileExplorer/FileExtensionMonoLightSprites.png') no-repeat -7px -681px;
+    _background: transparent url('../Common/FileExplorer/FileExtensionMonoLightSpritesIE6.png'); }
+  .RadFileExplorer_Metro,
+  .RadFileExplorer_Metro .rfeAddressBox,
+  .RadFileExplorer_Metro .rfeFilterTxt {
+    border-color: #e5e5e5; }
+  .RadFileExplorer_Metro div.selectedFileName {
+    border-top: 1px solid #e5e5e5; }
+  .RadFileExplorer_Metro .RadGrid .rgActiveRow td {
+    border-bottom: 1px solid #25a0da !important;
+    border-left: 1px solid #25a0da !important; }
+  .RadFileExplorer_Metro .rfeThumbList a {
+    border-radius: 0; }
+  .RadFileExplorer_Metro .rfeThumbList a:hover,
+  .RadFileExplorer_Metro .rfeThumbList .rfeHoveredLink,
+  .RadFileExplorer_Metro .rfeThumbList .rfeSelectedLink,
+  .RadFileExplorer_Metro .rfeThumbList .rfeSelectedLink:hover {
+    background: #e8e8e8;
+    color: #000000; }
+  .RadFileExplorer_Metro .rfeThumbList a:hover {
+    border-color: transparent; }
+  .RadFileExplorer_Metro .rfeThumbList .rfeSelectedLink,
+  .RadFileExplorer_Metro .rfeThumbList .rfeSelectedLink:hover {
+    background: #25a0da;
+    color: #ffffff;
+    border: none; }
+  .RadFileExplorer_Metro .rfeFilterContainer {
+    border-bottom: 1px solid #e5e5e5; }
+  .RadFileExplorer_Metro .rfeDropZone {
+    background-color: rgba(249, 249, 249, 0.8); }
+  .RadFileExplorer_Metro .rfeDropUploadInfoPanel {
+    background-color: #25a0da;
+    color: #000000;
+    font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+    font-size: 12px; }
+    .RadFileExplorer_Metro .rfeDropUploadInfoPanel .RadButton_Metro.RadButton:active,
+    .RadFileExplorer_Metro .rfeDropUploadInfoPanel .RadButton_Metro.rbPressedButton,
+    .RadFileExplorer_Metro .rfeDropUploadInfoPanel .RadButton_Metro.RadButton.rbPressedButton {
+      border: 1px solid #fff; }

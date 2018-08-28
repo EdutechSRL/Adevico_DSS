@@ -1,9 +1,54 @@
-﻿/*
+﻿/*(function () {
+    $(document).ready(function () {
+        if (!isTodayViewed()) {
+            $("body").append($(
+                `<div id="messaggioManutenzione" onclick="$(this).remove()" style="position:fixed;left:0;top:0;bottom:0;right:0;background-color:#fff;background-color:rgba(255,255,255,0.7);z-index:11111;">
+                    <div style="margin: 10% 24%;color: #333;padding: 24px;background-color: #fff;text-align: center;border: solid 1px #cecece;">
+                        <h1>
+                            ATTENZIONE!<br />Lunedì 20.08.2018 dalle ore 13.00 alle ore 18.00 la piattaforma NON SARA’ DISPONIBILE per manutenzione.<br><br>
+                            <button type="button">OK</button>
+                        </h1>
+                    </div>
+                </div>`
+            ));
+            setCookie('messaggioManutenzione', '1', 1);
+        }
+    });
+    function isTodayViewed() {
+        return getCookie('messaggioManutenzione');
+    }
+    function setCookie(cname, cvalue, exdays) {
+        var d = new Date();
+        d.setHours(0, 0, 0);
+        d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+        var expires = "expires=" + d.toUTCString();
+        document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+    }
+    function getCookie(cname) {
+        var name = cname + "=";
+        var decodedCookie = decodeURIComponent(document.cookie);
+        var ca = decodedCookie.split(';').reverse();
+        for (var i = 0; i < ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0) == ' ') {
+                c = c.substring(1);
+            }
+            if (c.indexOf(name) == 0) {
+                return c.substring(name.length, c.length);
+            }
+        }
+        return "";
+    }
+})();
+*/
+
+/*
     en-US
     de-DE
     it-IT
     es-ES
 */
+/*
 var generalDictionary = {};
 generalDictionary["en-US"] = {
     Title: '*Avviso',
@@ -66,8 +111,10 @@ function detectIE() {
     var trident = ua.indexOf('Trident/');
     if (trident > 0) {
         // IE 11 => return version number
-        var rv = ua.indexOf('rv:');
-        return parseInt(ua.substring(rv + 3, ua.indexOf('.', rv)), 10);
+		var rv = ua.indexOf('rv:');
+		if(rv > -1)
+			return parseInt(ua.substring(rv + 3, ua.indexOf('.', rv)), 10);
+		
     }
 
     var edge = ua.indexOf('Edge/');
@@ -101,3 +148,28 @@ function getCookie(cname) {
     }
     return "";
 }
+
+
+
+//in explorer tolgo gli openmodal da FullPlay.aspx
+$(document).ready(function () {
+    if((location.href+"").indexOf("/FullPlay.aspx") > 0){
+        var IEversion = detectIE();
+        if (IEversion) {
+            var items = jQuery("ul.activities .iteminfo a.openmodal");
+            if(items.size() > 0){
+                items.each(function(index, item){
+					var el = jQuery(item);
+					var hrefA = el.attr("href");
+					hrefA = (hrefA+"").replace("/PlayerOnModal.aspx","/Player.aspx");
+					hrefA = (hrefA+"").replace("onModalPage=True","onModalPage=False");
+					el.attr("href", hrefA);
+					el.removeClass("openmodal");
+					el.attr("target","_blank");
+                    el.unbind("click");
+                });
+            }
+        }
+    }
+});
+*/

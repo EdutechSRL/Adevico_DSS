@@ -1,0 +1,914 @@
+/* @override 
+	https://qsaservizi.elearning-center.it/Skins/4/Login.css
+	https://qsaservizi.elearning-center.it/Skins/5/Login.css */
+
+/* ---- Skin Login QSA Updated 14.04.2015 ---- */
+/* ------ Richiede defaultlogin.css ------ */
+
+/* @group Page layout */
+
+body.internal_body {
+    font: 1em Helvetica, Arial, sans-serif !important;
+}
+
+body,
+div#page-box,
+#aspnetForm.mainForm {
+	background: #f3f3f3 !important;
+}
+
+div#container {
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+
+#header {
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	background-color: #f3f3f3;
+	/*background-image: -webkit-gradient(linear, left top, left bottom, from(#003d79),to(#001b4d));
+	background-image: -webkit-linear-gradient(top, #003d79, #001b4d);
+	background-image: -moz-linear-gradient(top, #003d79, #001b4d);
+	background-image: -o-linear-gradient(top, #003d79, #001b4d);
+	background-image: -ms-linear-gradient(top, #003d79, #001b4d);
+	background-image: linear-gradient(top, #003d79, #001b4d);*/
+	height: 100px;
+	border-bottom: 1px solid #bbb;
+	padding-top: 12px !important;
+	
+}
+
+div#branding.page-width {
+	height: 100px !important;
+	min-height: 100px !important;
+	position: relative;
+	left: 70px; top: -10px;
+	z-index: 100;
+
+}
+
+#header img.logo {
+	height: 85px;
+	min-height: 85px;
+	max-height: 85px;
+}
+
+#toolbar {
+	display: none;
+}
+
+#branding h1 {
+	display: none;
+}
+
+div#nav-main {
+	display: none;
+}
+
+div.section {
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 1400px;
+	min-width: 640px;
+	width: 960px;
+	padding: 0;
+}
+
+div#top-content {
+	border-bottom: 1px solid #bbb;
+	background: #000;
+	color: #f3f3f3;
+	fon
+}
+
+div#middle-content {
+	background-color: #f0f0f0;
+}
+div#bottom-content {
+	background-color: #f0f0f0;
+	border-bottom: 1px solid #e3e0dc;
+}
+
+/* @end */
+
+/* @group Tools */
+
+div#tools {
+	background-color: #transparent;
+	color: #555;
+	font-size: 1.05em;
+	font-weight: bold;
+	text-align: left;
+	line-height: 1.2em;
+	height: 36px;
+	/*text-shadow: 0px 1px 0px #fff;*/
+}
+
+div#tools a {
+	color: #a5a5a5;
+	
+	text-decoration: none;
+	text-transform: none;
+	font-weight: normal;
+	font-style: normal;
+}
+
+div#tools a:hover {
+	text-decoration: underline;
+}
+
+
+div#tools ul li {
+	background-color: transparent;
+}
+
+div#tools li a.menu {
+	background-image: url(./images/i-triangle_login.png) !important;
+	background-position: right 0.4em !important;
+	padding-right: 15px;
+	padding-left: 0;
+}
+
+div#tools li a.help {
+	background: url(./images/help_login.png) no-repeat left center;
+	padding-left: 24px;
+	padding-top: 3px;
+}
+
+div#tools li#Top_Lang {
+	background: url(./images/globe_login.png) no-repeat left center;
+	padding-left: 24px;
+}
+
+div#tools li#Top_Lang a {
+	background-image: url(./images/i-triangle-login.png);
+	background-position: right -174px;
+	padding-right: 15px;
+	text-decoration: none;
+	cursor: default;
+}
+
+div#tools li#Top_Lang ul.sub li a {
+	background-image: none;
+	padding-left: 0;
+	cursor: pointer;
+}
+
+div#tools ul li ul.sub {
+	background-color: #000;
+	top: 23px;
+	left: 0;
+	font-weight: normal;
+	font-style: normal;
+	padding-left: 0;
+	padding-bottom: 4px;
+	border-top: none;
+	-moz-border-radius-topleft: 0px;
+	-moz-border-radius-topright: 0px;
+	-moz-border-radius-bottomright: 4px;
+	-moz-border-radius-bottomleft: 4px;
+	-webkit-border-radius: 0px 0px 4px 4px;
+	border-radius: 0px 0px 4px 4px;
+	-moz-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.300);
+	-webkit-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.300);
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.00);
+}
+
+div#tools ul li ul.sub li a:hover {
+	color: #fff;
+	background: #383838;
+	-moz-box-shadow: 0px 1px 0px rgba(000,000,000,0.2),
+		inset 1px 1px 0 #555;
+	-webkit-box-shadow: 0px 1px 0px rgba(255,255,255,0.2),
+		inset 1px 1px 0 #555;
+	box-shadow: 0px 1px 0px rgba(255,255,255,0.2),
+		inset 1px 1px 0 #555;
+}
+
+div#tools ul li li.first a {
+	border-top: 1px solid #c7c7c7;
+}
+
+/* icons */
+
+div#tools li a.home {
+	background: url(./images/i-home.png) top left no-repeat;
+}
+
+div#tools li a.menu {
+	background: url(./images/i-triangle.png) top left no-repeat;
+}
+
+/* @end */
+
+
+/* @group Form */
+
+div#form {
+	background: #f0f0f0;
+}
+
+div#form  h2 {
+	font-family: "Trebuchet MS", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	color: #444;
+	font-size: 1.3em;
+	margin: 1em 0;
+	text-align: left;
+	text-transform: uppercase;
+}
+
+div#form div#submit-feedback {
+	
+}
+
+div#form div#submit-feedback span {
+	color: #56493f;
+	background-color: #fff3b7;
+	background: -moz-linear-gradient(top, #fff3b7 0%, #ffe57c 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fff3b7), color-stop(100%,#ffe57c));
+	background: -webkit-linear-gradient(top, #fff3b7 0%,#ffe57c 100%);
+	background: -o-linear-gradient(top, #fff3b7 0%,#ffe57c 100%);
+	background: -ms-linear-gradient(top, #fff3b7 0%,#ffe57c 100%);
+	background: linear-gradient(top, #fff3b7 0%,#ffe57c 100%);
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	border: 1px solid #f9c075;
+	-moz-box-shadow: 0px 1px 3px rgba(0,0,0,0.2),
+		inset 0 1px 0 rgba(255,255,255,0.2);
+	-webkit-box-shadow: 0px 1px 3px rgba(0,0,0,0.2),
+		inset 0 1px 0 rgba(255,255,255,0.2);
+	box-shadow: 0px 1px 3px rgba(0,0,0,0.2),
+		inset 0 1px 0 rgba(255,255,255,0.2);
+	text-shadow: 0 1px 0 rgba(255,255,255,0.2);
+}
+
+div#form div#submit-feedback span.invisible {
+	display: none;
+}
+
+div#form div#submit-feedback a,
+div#form div#submit-feedback a:visited {
+	font-weight: bold;
+	color: #56493f !important;
+	text-decoration: none;
+	border-bottom: 1px dotted #56493f;
+}
+
+div#form div#submit-feedback a:hover {
+	border-bottom: 1px solid #56493f;
+}
+
+/* @end */
+
+/* @group Form inputs */
+
+div#form input,
+div#form span.submit {
+	display: inline-block;
+	font-size: 16px !important;
+}
+
+div#form input,
+div#form span.submit a {
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+}
+
+div#form input,
+div#form input.jq_watermark {
+	line-height: 2em;
+	padding-left: 6px;
+	color: #6d7f90;
+	background-color: #e6e9ed;
+	border: 1px solid #ababab;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	-moz-box-shadow: 0px 1px 0px rgba(255,255,255,0.2),
+		inset 1px 1px 1px rgba(0,0,0,0.2);
+	-webkit-box-shadow: 0px 1px 0px rgba(255,255,255,0.2),
+		inset 1px 1px 1px rgba(0,0,0,0.2);
+	box-shadow: 0px 1px 0px rgba(255,255,255,0.2),
+		inset 1px 1px 1px rgba(0,0,0,0.2);
+	vertical-align: bottom;
+}
+
+input#CPHcontent_TXBpassword.textbox {
+	font-size: 1.2em
+}
+
+div#form .info-label {
+	color: #333;
+	font-size: 0.9em;
+}
+
+div#form .info-text {
+	color: #444;
+	font-size: 0.9em;
+	margin: 0.5em	 0;
+}
+
+div#form ul.info-text.Manuali li a {
+	color: #003b76 !important;
+}
+
+*+html div#form input.jq_watermark,
+*+html div#form input.textbox {
+	border: 1px solid #ababab;
+	color: #2f3c4c;
+}
+
+div#form input:focus {
+	color: #3b5679;
+	background-color: #fff;
+	-moz-box-shadow: inset 0 1px 1px rgba(0,0,0,0.5), 0px 1px 0px rgba(255,255,255,0.2), 0 0 12px rgba(255,255,255,0.3);
+	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.5), 0px 1px 0px rgba(255,255,255,0.2), 0 0 12px rgba(255,255,255,0.3);
+	box-shadow: inset 0 1px 1px rgba(0,0,0,0.5), 0px 1px 0px rgba(255,255,255,0.2), 0 0 12px rgba(255,255,255,0.5);
+	outline: 0 !important;
+}
+
+div#form input.submit,
+div#form span.submit a {	
+	color: #555;
+	text-shadow: 1px 1px 0 rgba(255,255,255,0.2);
+	border: 1px solid #aaa;
+	background-color: #cfcfd1;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#d7d7d9),to(#c7c7c9));
+	background-image: -webkit-linear-gradient(top, #d7d7d9, #c7c7c9);
+	background-image: -moz-linear-gradient(top, #d7d7d9, #c7c7c9);
+	background-image: -o-linear-gradient(top, #d7d7d9, #c7c7c9);
+	background-image: -ms-linear-gradient(top, #d7d7d9, #c7c7c9);
+	background-image: linear-gradient(top, #d7d7d9, #c7c7c9);
+	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#d7d7d9', EndColorStr='#c7c7c9');
+	-moz-box-shadow: 0px 1px 0px rgba(000,000,000,0.2),
+		inset 0px 0px 0px rgba(255,255,255,0.3);
+	-webkit-box-shadow: 0px 1px 0px rgba(000,000,000,0.2),
+		inset 0px 0px 0px rgba(255,255,255,0.3);
+	box-shadow: 0px 1px 0px rgba(000,000,000,0.2),
+		inset 1px 1px 0 rgba(255,255,255,0.3);
+	text-transform: uppercase;
+	font: bold 1.2em "Trebuchet MS", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+*+html div#form.section input.submit {
+	line-height: 1.5em;
+	height: 34px;
+	 filter:chroma(color=#000000);
+}
+
+input[type=submit],
+input[type=reset],
+input[type=button] {
+       filter:chroma(color=#000000);
+}
+
+*:focus {
+    outline: none;
+}
+
+div#form input.submit:hover,
+div#form span.submit a:hover {
+	color: #444;
+	background-color: #bfbfc1;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#c7c7c9),to(#b7b7b9));
+	background-image: -webkit-linear-gradient(top, #c7c7c9, #b7b7b9);
+	background-image: -moz-linear-gradient(top, #c7c7c9, #b7b7b9);
+	background-image: -o-linear-gradient(top, #c7c7c9, #b7b7b9);
+	background-image: -ms-linear-gradient(top, #c7c7c9, #b7b7b9);
+	background-image: linear-gradient(top, #c7c7c9, #b7b7b9);
+	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#c7c7c9', EndColorStr='#b7b7b9');
+	-moz-box-shadow: 0px 1px 0px rgba(000,000,000,0.2),
+		inset 0px 0px 0px rgba(255,255,255,0.3);
+	-webkit-box-shadow: 0px 1px 0px rgba(000,000,000,0.2),
+		inset 0px 0px 0px rgba(255,255,255,0.3);
+	box-shadow: 0px 1px 0px rgba(000,000,000,0.2),
+		inset 1px 1px 0 rgba(255,255,255,0.3);
+}
+
+div#form input.submit:active,
+div#form span.submit a:active {
+	-moz-box-shadow: 0px 1px 0px rgba(255,255,255,0.5),
+		inset 0px 1px 4px rgba(000,000,000,0.35);
+	-webkit-box-shadow: 0px 1px 0px rgba(255,255,255,0.5),
+		inset 0px 1px 4px rgba(000,000,000,0.35);
+	box-shadow: 0px 1px 0px rgba(255,255,255,0.5),
+		inset 0px 1px 4px rgba(000,000,000,0.35);
+	outline: 0 !important;
+}
+
+/* @group Alt version buttons */
+
+div#form.auth-type input a {
+	color: #fff;
+}
+
+div#form.auth-type div.box {
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	-moz-box-shadow: inset 0px 1px 2px rgba(0,0,0,0.3),
+		 0 1px 1px rgba(255,255,255,0.3);
+	-webkit-box-shadow: inset 0px 1px 2px rgba(0,0,0,0.3),
+		 0 1px 1px rgba(255,255,255,0.2);
+	box-shadow: inset 0px 1px 3px rgba(0,0,0,0.3),
+		 0 1px 1px rgba(255,255,255,0.3);
+}
+
+div#form.auth-type div.box:after {
+	content: ".";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	line-height: 0;
+	height: 0;
+}
+
+*+html div#form.auth-type div.box {
+	border: 1px solid #aaa;
+	margin-bottom: 0;
+}
+
+* html div#form.auth-type div.box {
+	border: 1px solid #aaa;
+	margin-bottom: 0;
+}
+
+div#form.auth-type div.box {
+	border: 1px solid #aaa\0/;
+}
+
+div#page-box div#container.page-width div#middle-content div#form.section div.box ul.info-text.Manuali li {
+
+}
+
+div#page-box div#container.page-width div#middle-content div#form.section div.box ul.info-text.Manuali li a {
+	color: #cecece;
+	text-transform: uppercase;	
+}
+
+div#page-box div#container.page-width div#middle-content div#form.section div.box ul.info-text.Manuali li a:hover {
+	text-decoration: underline;
+}
+
+div#form.auth-type div.box ul,
+div#form.auth-type div.box ol,
+div#form.auth-type div.box dl,
+div#form.auth-type div.box span {
+	text-align: left;
+}
+
+div#form.auth-type div.box ul,
+div#form.auth-type div.box dl {
+	padding-left: 10px;
+	margin-left: 0;
+}
+
+div#form.auth-type div.box li {
+	padding-left: 1em;
+	margin-bottom: 1em;
+}
+
+div#form.auth-type div.box dd {
+	color: #888;
+	margin: 0;
+	margin-bottom: 1em;
+	font-style: italic;
+}
+
+div#form .submit.alt a {
+	background: #383838;
+	-moz-box-shadow: 0px 1px 0px rgba(000,000,000,0.2),
+		inset 1px 1px 0 #555;
+	-webkit-box-shadow: 0px 1px 0px rgba(255,255,255,0.2),
+		inset 1px 1px 0 #555;
+	box-shadow: 0px 1px 0px rgba(255,255,255,0.2),
+		inset 1px 1px 0 #555;
+	cursor: pointer;
+}
+
+div#form span.submit.alt span {
+	text-indent: -9999px !important;
+	font-size: 0.01em |important;
+	display: none;
+}
+
+div#form .submit.alt a:hover {
+	background: #383838 url(./images/logo-myunitn.png) no-repeat right;
+	border: 1px solid #565656;
+	-moz-box-shadow: 0px 1px 0px rgba(000,000,000,0.2),
+		inset 1px 1px 0 #555,
+		inset 0px 0 60px rgba(255,255,255,0.05);
+	-webkit-box-shadow: 0px 1px 0px rgba(255,255,255,0.2),
+		inset 1px 1px 0 #555,
+		inset 0px 0 60px rgba(255,255,255,0.05);
+	box-shadow: 0px 1px 0px rgba(255,255,255,0.2),
+		inset 0px 0 60px rgba(255,255,255,0.05);		
+	outline: 0 !important;
+}
+
+div#form .submit.alt a:active {
+	background: #383838 url(./images/logo-myunitn.png) no-repeat right;
+	-moz-box-shadow: 0px 1px 0px rgba(255,255,255,0.5),
+		inset 0px 1px 4px rgba(000,000,000,0.35);
+	-webkit-box-shadow: 0px 1px 0px rgba(255,255,255,0.5),
+		inset 0px 1px 4px rgba(000,000,000,0.35);
+	box-shadow: 0px 1px 0px rgba(255,255,255,0.5),
+		inset 0px 1px 4px rgba(000,000,000,0.35);
+	outline: 0 !important;
+}
+
+/* @end */
+
+/* @end */
+
+/* @group Info */
+
+div#info {
+	color: #666;
+	text-align: center;
+	background-color: transparent;
+	padding: 24px 0 24px 0;
+}
+
+div#info fieldset {
+	margin-left: auto;
+	margin-right: auto;
+	width: 800px;
+	font-size: 0.9em;
+	background-color: inherit;
+	border: 1px solid #ccc;
+	padding: 10px 10px;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	-moz-box-shadow: 1px 1px 0px rgba(255,255,255,0.7), inset 1px 1px 0px rgba(255,255,255,0.7);
+	-webkit-box-shadow: 1px 1px 0px rgba(255,255,255,0.7), inset 1px 1px 0px rgba(255,255,255,0.7);
+	box-shadow: 1px 1px 0px rgba(255,255,255,0.7), inset 1px 1px 0px rgba(255,255,255,0.7);
+	text-align: left;
+}
+
+div#info fieldset p,
+div#info fieldset span {
+	margin: 12px 0;
+}
+
+div#info legend {
+	color: #666;
+	background-color: inherit;
+	font-weight: bold;
+}
+
+/* @end */
+
+
+
+
+/* @group Varie */
+
+a.temp {
+	color: #666;
+	float: right;
+	margin: 0;
+	margin-right: 12px;
+	padding: 0;
+	font-size: 0.8em;
+	font-style: italic;
+}
+
+/* Assegnazione profilo */
+
+.description {   
+    padding-top: 1em;
+}
+        
+.half {
+    width: 437px;
+    height: 130px;
+    display: inline-block;
+    vertical-align: top;
+    border: 1px solid black;
+    background-color: #EEEEEE;
+    padding: 2em 5px 1em 5px;
+    margin-bottom: 15px;
+    text-align: justify;
+}
+    
+.Cbx_Title {
+    font-weight: bold;
+    font-size: 13px;
+    width: 340px !important;
+    height: 34px;
+    padding-left: 3em;
+    display: inline-block;
+}
+        
+.OldProfile {
+    background-repeat: no-repeat;
+    background-image:url("./Images/permessiutenti32.png");
+}
+            
+.NewProfile {
+    background-repeat: no-repeat;
+    background-image:url("./Images/IsNew32.png");
+}
+
+.Cbx_Description {
+    font-weight: normal;
+    font-size: 11px;
+    padding-left: 2.3em;
+}
+    
+
+/* @end */
+
+
+/* @group Footer */
+
+#footer {
+    padding: 0;
+	padding-bottom: 10px;
+	color: #c9c9c9;
+	border-top: 1px solid #858585;
+	background: #454545 !important;
+    background-color: #454545;
+    /*background-image: -webkit-gradient(linear, left top, left bottom, from(#001b4d),to(#003d79))!important;
+    background-image: -webkit-linear-gradient(top, #001b4d, #003d79) !important;
+    background-image: -moz-linear-gradient(top, #001b4d, #003d79) !important;
+    background-image: -o-linear-gradient(top, #001b4d, #003d79) !important;
+    background-image: -ms-linear-gradient(top, #001b4d, #003d79) !important;
+    background-image: linear-gradient(top, #001b4d, #003d79) !important;
+	font: 0.8em/1.5em "Helvetica Neue", Helvetica, Arial,sans-serif;*/
+	
+}
+
+#footer div.chiusura,
+#footer div.chiusura div {
+    line-height: 1.5em;
+	background-repeat: repeat-x;
+	background-position: 0 top;
+}
+
+div.chiusura div.footer_text * {
+	font: 12px "Helvetica Neue", Helvetica, Arial,sans-serif !important;
+}
+
+
+/* @group #cFooter IE hacks 
+
+* html #footer {
+   	background: #003d79 url(./Images/qsa-footer-bg.png) repeat-x 0 top;
+}
+
+*+html #footer {
+    background: #003d79 url(./Images/qsa-footer-bg.png) repeat-x 0 top;
+}
+
+ @end */
+
+#footer em,
+ #footer i,
+ #footer em a,
+  #footer i a {
+ 	font-style: italic !important;
+ }
+
+/*#footer a {
+    color: #999 !important;
+    text-decoration: none;
+    display: inline-block !important;
+    *display:inline !important;
+    *zoom:1;
+}
+
+#footer a:hover {
+    color: #999;
+    text-decoration: underline;
+}
+*/
+#footer b,
+#footer strong {
+	font-weight: bold;
+}
+
+div#footer div#siteinfo div.chiusura ul,
+div#footer div#siteinfo div.chiusura ul li,
+div#footer div#siteinfo div.chiusura ul li a,
+div#footer div#siteinfo div.chiusura ul li a img {
+	border: 0;
+}
+
+
+/* @end */
+
+
+/* @group Footer Euricse */
+
+div.chiusura {
+	width: 960px !important;
+	margin-left:auto;
+	margin-right: auto;
+}
+
+div#footer div.chiusura  a {
+	color: #fff !important;
+}
+
+div.chiusura div.footer_text * {
+	font-size: 14px !important;
+	color: #c9c9c9;
+	border: none !important;
+	text-shadow: 0 1px 0 rgba(0,0,0,0.5) !important;
+	text-align: left !important;
+}
+
+div.page.spacer.w33 td  {
+	padding: 5px !important;
+}
+
+div.page.spacer.w33  {
+	margin-bottom: 10px !important;
+}
+
+div.page.spacer.w33 td.aright  {
+	text-align: right !important;
+	font-size: 10px !important;
+}
+
+div.chiusura div.module {
+	width: 316px;
+	*width: 315px;
+	display: inline-block;
+	*display:inline;
+	zoom: 1;
+	vertical-align: top;
+	text-align: left !important;
+}
+
+div.page.spacer.w33 td div.module {
+	width: 310px;
+}
+
+div.chiusura div.footer_text div.module div.moduleInner {
+	padding: 0 5px !important;
+	text-align: left !important;
+}
+
+div.chiusura div.footer_text table {
+	border-collapse: collapse !important;
+	border: none !important;
+	text-align: left !important;
+}
+
+div.chiusura div.footer_text table {
+	border-collapse: collapse !important;
+	border: none !important;
+}
+
+div.chiusura div.footer_text hr {
+	border-collapse: collapse;
+	border: none;
+	height: 0;
+	border-top: 1px dotted #999 !important;
+	margin: 1px 0 5px 0 !important;
+}
+
+div.chiusura div.footer_text big {
+	font-size: 12px !important;	
+	font-weight: bold !important;
+	margin: 0 !important;
+	padding: 0 !important;
+}
+
+/*div.chiusura div.footer_text a {
+	display: none !important;
+}
+*/
+div.chiusura div.footer_text div.module p {
+	line-height: 18px !important;
+	font-size: 13px !important;
+}
+
+div.chiusura div.footer_text div.module span.ico {
+	display: inline-block;
+	*display:inline;
+	zoom: 1;
+	background-repeat: no-repeat;
+	background-image: url('./Images/qsa_ico_sprite.png');
+	width: 12px;
+	height: 12px;
+	margin-right: 6px ;
+	vertical-align: baseline;
+	*vertical-align: middle;
+}
+
+div.chiusura div.footer_text div.module span.ico.fb {
+	background-position: 0px 0px;
+}
+
+div.chiusura div.footer_text div.module span.ico.mail {
+	background-position: -24px 0px;
+}
+
+div.chiusura div.footer_text div.module span.ico.phone {
+	background-position: -48px 0px;
+}
+
+div.chiusura div.footer_text div.module span.ico.fax {
+	background-position: 0px -24px;
+}
+
+div.chiusura div.footer_text div.module span.ico.skype {
+	background-position: -24px -24px;
+}
+
+div.chiusura div.footer_text div.module span.ico.twitter {
+	background-position: -48px -24px;
+}
+
+/* @end */
+
+
+
+
+
+
+
+
+
+
+/* Footer euricse */
+div#footer div.footer_text
+{
+	max-width: 930px;
+}
+
+
+div#footer div.footer_text div
+{
+	margin-left: -15px;
+    margin-right: -15px;
+	/*font-size: 18px !important;*/
+	text-align: left !important;
+    line-height: 1.2em;
+}
+
+div#footer div.footer_text div div 
+{
+    float: left;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+    position: relative;
+    width: 33.3333%;
+}
+
+/*div#footer  div.footer_text div div.third a:link,
+div#footer  div.footer_text div div.third a:visited {
+    border: 1px solid #4e4e4e !important;
+    border-radius: 5px;
+    box-shadow: 0 0 0 0 #4e4e4e inset;
+    display: block;
+    font-family: "AkkuratProBold",sans-serif;
+    margin-bottom: 10px;
+    padding: 4px;
+    text-align: center !important;
+    text-decoration: none;
+}*/
+
+div#footer ul.Logos
+{
+	display: none;
+}
+
+div#footer div.poweredby
+{
+	width: 100%;
+	clear: both;
+	margin: 0 0 0 -15px !important;
+}
+
+div#tools ul
+{
+	margin-top: 4px
+}
+
+/*
+div#footer div.footer_text div div.third a:hover,
+div#footer div.footer_text div div.third a:active
+{
+	background-color: #4e4e4e !important;
+	color: #000 !important;
+	font-variant: normal;
+    font-weight: normal;
+	font-style: normal;
+	text-decoration: none !important;
+    text-shadow: none !important;
+	text-decoration-color: #000;
+}
+*/

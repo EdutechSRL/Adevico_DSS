@@ -141,6 +141,7 @@ namespace lm.Comol.Modules.CallForPapers.Presentation
         private int SetCallCurrentCommunity(dtoBaseForPaper call)
         {
             dtoCallCommunityContext context = ServiceCall.GetCallCommunityContext(call, View.Portalname);
+            View.CallType = call.Type;
             View.SetContainerName(context.CommunityName, context.CallName);
             View.IdCallCommunity = context.IdCommunity;
             return context.IdCommunity;

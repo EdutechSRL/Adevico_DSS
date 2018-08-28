@@ -1,0 +1,260 @@
+div.RadToolTip_Metro {
+  position: absolute;
+  cursor: default;
+  /* position="rtCalloutCenter" */
+  /* position="rtCalloutBottomRight" */
+  /* position="rtCalloutBottomCenter" */
+  /* position="rtCalloutBottomLeft" */
+  /* position="rtCalloutTopCenter" */
+  /* position="rtCalloutTopLeft" */
+  /* position="rtCalloutTopRight" */
+  /* position="rtCalloutMiddleRight" */
+  /* position="rtCalloutMiddleLeft" */
+  /* overwrite shadow callouts because of the shadow depth */
+  /* overwrite shadow close button position */ }
+  div.RadToolTip_Metro div.rtCallout {
+    display: none; }
+  div.RadToolTip_Metro.rtVisibleCallout div.rtCallout {
+    display: block; }
+  div.RadToolTip_Metro .rtWrapper {
+    padding: 0;
+    margin: 0;
+    border-collapse: collapse; }
+  div.RadToolTip_Metro .rtWrapper .rtWrapperTopLeft,
+  div.RadToolTip_Metro .rtWrapper .rtWrapperTopRight,
+  div.RadToolTip_Metro .rtWrapper .rtWrapperBottomLeft,
+  div.RadToolTip_Metro .rtWrapper .rtWrapperBottomRight {
+    width: 3px;
+    height: 3px;
+    line-height: 1px;
+    font-size: 1px; }
+  div.RadToolTip_Metro .rtWrapper .rtWrapperTopCenter,
+  div.RadToolTip_Metro .rtWrapper .rtWrapperBottomCenter,
+  div.RadToolTip_Metro .rtWrapper .rtWrapperTopLeft,
+  div.RadToolTip_Metro .rtWrapper .rtWrapperTopRight,
+  div.RadToolTip_Metro .rtWrapper .rtWrapperBottomLeft,
+  div.RadToolTip_Metro .rtWrapper .rtWrapperBottomRight,
+  div.RadToolTip_Metro .rtWrapper .rtWrapperTopCenter,
+  div.RadToolTip_Metro .rtWrapper .rtWrapperBottomCenter,
+  div.RadToolTip_Metro .rtWrapper .rtWrapperLeftMiddle,
+  div.RadToolTip_Metro .rtWrapper .rtWrapperRightMiddle {
+    background-color: #25a0da; }
+  div.RadToolTip_Metro .rtWrapper .rtWrapperTopCenter,
+  div.RadToolTip_Metro .rtWrapper .rtWrapperBottomCenter {
+    height: 3px;
+    line-height: 0px;
+    font-size: 1px; }
+  div.RadToolTip_Metro .rtWrapper .rtWrapperTopCenter {
+    background-position: 0 -66px; }
+  div.RadToolTip_Metro .rtWrapper .rtWrapperBottomCenter {
+    background-position: 0 -120px; }
+  div.RadToolTip_Metro .rtWrapper .rtWrapperLeftMiddle,
+  div.RadToolTip_Metro .rtWrapper .rtWrapperRightMiddle {
+    font-size: 1px;
+    width: 3px; }
+  div.RadToolTip_Metro .rtWrapper .rtWrapperLeftMiddle {
+    background-position: 0 0; }
+  div.RadToolTip_Metro table.rtWrapper td.rtWrapperRightMiddle {
+    background-position: -3px 0; }
+  div.RadToolTip_Metro .rtWrapper .rtWrapperContent {
+    font: normal 12px "Segoe UI", Arial, Sans-serif;
+    height: 100%;
+    background-color: #25a0da;
+    padding: 7px !important;
+    color: white; }
+  div.RadToolTip_Metro .rtWrapperTopCenter div.rtTitlebar {
+    color: white;
+    font: normal 14px "Segoe UI", Arial, Sans-serif;
+    text-transform: uppercase;
+    float: left;
+    line-height: 22px; }
+  div.RadToolTip_Metro a.rtCloseButton {
+    display: block;
+    float: right;
+    position: absolute;
+    right: -9px;
+    top: -13px;
+    width: 16px;
+    height: 16px;
+    font-size: 1px;
+    line-height: 1px;
+    margin-top: 5px;
+    margin-right: 3px;
+    background-image: url('ToolTip/ToolTipSprites.png');
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    text-indent: -9999px;
+    outline: none; }
+  div.RadToolTip_Metro a.rtCloseButton:hover {
+    background-position: 0 -16px; }
+  div.RadToolTip_Metro div.rtCallout {
+    position: absolute;
+    height: 11px;
+    width: 11px;
+    line-height: 0px;
+    font-size: 1px;
+    background-image: url('ToolTip/Callouts.gif');
+    background-repeat: no-repeat; }
+  div.RadToolTip_Metro .rtCalloutCenter {
+    visibility: hidden; }
+  div.RadToolTip_Metro .rtCalloutTopLeft {
+    margin-top: -10px;
+    margin-left: 20px;
+    background-position: 0 -22px; }
+  div.RadToolTip_Metro .rtCalloutTopCenter {
+    left: 50%;
+    margin-top: -9px;
+    margin-left: -10px;
+    background-position: 0 0; }
+  div.RadToolTip_Metro .rtCalloutTopRight {
+    left: 100%;
+    margin-top: -10px;
+    margin-left: -25px;
+    background-position: 0 -11px; }
+  div.RadToolTip_Metro .rtCalloutBottomCenter {
+    top: 100%;
+    left: 50%;
+    margin-left: -10px;
+    margin-top: -1px;
+    background-position: 0 -55px; }
+  div.RadToolTip_Metro .rtCalloutBottomRight {
+    top: 100%;
+    left: 100%;
+    margin-left: -40px;
+    margin-top: -1px;
+    background-position: 0 -66px; }
+  div.RadToolTip_Metro .rtCalloutBottomLeft {
+    top: 100%;
+    margin-left: 20px;
+    margin-top: -1px;
+    background-position: 0 -77px; }
+  div.RadToolTip_Metro .rtCalloutMiddleLeft {
+    top: 50%;
+    margin-left: -10px;
+    margin-top: -7px;
+    background-position: 0 -44px; }
+  div.RadToolTip_Metro .rtCalloutMiddleRight {
+    left: 100%;
+    top: 50%;
+    margin-left: -1px;
+    margin-top: -10px;
+    background-position: 0 -33px; }
+  div.RadToolTip_Metro .rtWrapper .rtWrapperTopLeft,
+  div.RadToolTip_Metro .rtWrapper .rtWrapperTopCenter,
+  div.RadToolTip_Metro .rtWrapper .rtWrapperTopRight,
+  div.RadToolTip_Metro .rtWrapper .rtWrapperLeftMiddle,
+  div.RadToolTip_Metro .rtWrapper .rtWrapperContent,
+  div.RadToolTip_Metro .rtWrapper .rtWrapperRightMiddle,
+  div.RadToolTip_Metro .rtWrapper .rtWrapperBottomLeft,
+  div.RadToolTip_Metro .rtWrapper .rtWrapperBottomCenter,
+  div.RadToolTip_Metro .rtWrapper .rtWrapperBottomRight {
+    padding: 0;
+    border: 0;
+    border-collapse: collapse; }
+  div.RadToolTip_Metro .rtWrapper .rtWrapperBottomCenter,
+  div.RadToolTip_Metro .rtWrapper .rtWrapperBottomRight,
+  div.RadToolTip_Metro .rtWrapper .rtWrapperBottomLeft {
+    border-bottom: 1px solid #25a0da; }
+  div.RadToolTip_Metro .rtWrapper .rtWrapperBottomRight,
+  div.RadToolTip_Metro .rtWrapper .rtWrapperRightMiddle,
+  div.RadToolTip_Metro .rtWrapper .rtWrapperTopRight {
+    border-right: 1px solid #25a0da; }
+  div.RadToolTip_Metro .rtWrapper .rtWrapperTopRight,
+  div.RadToolTip_Metro .rtWrapper .rtWrapperTopCenter,
+  div.RadToolTip_Metro .rtWrapper .rtWrapperTopLeft {
+    border-top: 1px solid #25a0da; }
+  div.RadToolTip_Metro .rtWrapper .rtWrapperTopLeft,
+  div.RadToolTip_Metro .rtWrapper .rtWrapperLeftMiddle,
+  div.RadToolTip_Metro .rtWrapper .rtWrapperBottomLeft {
+    border-left: 1px solid #25a0da; }
+  div.RadToolTip_Metro.rtShadow .rtCalloutTopLeft, div.RadToolTip_Metro.rtShadow .rtCalloutTopRight {
+    margin-top: -10px; }
+  div.RadToolTip_Metro.rtShadow .rtCalloutTopCenter {
+    margin-top: -9px; }
+  div.RadToolTip_Metro.rtShadow .rtCalloutMiddleRight {
+    margin-left: -1px; }
+  div.RadToolTip_Metro.rtShadow .rtCalloutMiddleLeft {
+    margin-left: -10px; }
+  div.RadToolTip_Metro.rtShadow .rtCalloutBottomRight, div.RadToolTip_Metro.rtShadow .rtCalloutBottomCenter, div.RadToolTip_Metro.rtShadow .rtCalloutBottomLeft {
+    margin-top: -1px; }
+  div.RadToolTip_Metro table.rtShadow td a.rtCloseButton {
+    margin-right: auto;
+    margin-top: auto; }
+  div.RadToolTip_Metro .rtShadow td a.rtCloseButton {
+    right: -7px;
+    top: -7px; }
+  div.RadToolTip_Metro.RadToolTip_rtl td a.rtCloseButton {
+    right: auto; }
+
+.RadToolTip_Metro.rtLoading {
+  background: url('Common/loading.gif') no-repeat center; }
+
+/* RTL support begin */
+div.RadToolTip_Metro_rtl a.rtCloseButton,
+div.RadToolTip_Metro_rtl a.rtCloseButton:hover {
+  float: left;
+  text-decoration: none;
+  outline: none;
+  left: -9px;
+  top: -9px;
+  margin-left: 1px;
+  right: auto;
+  margin-right: auto; }
+
+div.RadToolTip_Metro_rtl div.rtTitlebar,
+div.RadToolTip_Metro_rtl table.rtWrapper td.rtWrapperTopCenter div.rtTitlebar div {
+  float: right; }
+
+/* position="rtCalloutCenter" */
+div.RadToolTip_Metro_rtl .rtCalloutCenter {
+  right: 0;
+  left: auto; }
+
+/* position="rtCalloutBottomRight" */
+div.RadToolTip_Metro_rtl .rtCalloutTopLeft {
+  margin-right: -8px;
+  left: 0; }
+
+/* position="rtCalloutBottomCenter" */
+div.RadToolTip_Metro_rtl .rtCalloutTopCenter {
+  margin-right: 10px; }
+
+/* position="rtCalloutBottomLeft" */
+div.RadToolTip_Metro_rtl .rtCalloutTopRight {
+  margin-right: 20px; }
+
+/* position="rtCalloutTopCenter" */
+div.RadToolTip_Metro_rtl .rtCalloutBottomCenter {
+  margin-right: 10px; }
+
+/* position="rtCalloutTopLeft" */
+div.RadToolTip_Metro_rtl .rtCalloutBottomRight {
+  margin-right: 40px; }
+
+/* position="rtCalloutTopRight" */
+div.RadToolTip_Metro_rtl .rtCalloutBottomLeft {
+  margin-right: -20px;
+  left: 0; }
+
+/* position="rtCalloutMiddleRight" */
+div.RadToolTip_Metro_rtl .rtCalloutMiddleLeft {
+  margin-right: 10px;
+  left: 0; }
+
+/* position="rtCalloutMiddleLeft" */
+div.RadToolTip_Metro_rtl .rtCalloutMiddleRight {
+  margin-right: 1px; }
+
+/* RTL Shadows */
+* + html div.RadToolTip_Metro_rtl.rtShadow .rtCalloutMiddleLeft {
+  margin-right: 10px !important; }
+
+div.RadToolTip_Metro.RadToolTip_rtl.rtShadow a.rtCloseButton,
+div.RadToolTip_Metro.RadToolTip_rtl.rtShadow a.rtCloseButton:hover {
+  float: left;
+  left: -9px;
+  top: -9px;
+  right: auto; }
+
+/* RTL support end */
+

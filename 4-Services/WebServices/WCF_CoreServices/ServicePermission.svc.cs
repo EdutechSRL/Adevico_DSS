@@ -658,10 +658,10 @@ namespace WCF_CoreServices
                     service = new lm.Comol.Core.BaseModules.CommunityDiary.Business.ServiceCommunityDiary(dc);
                     break;
 
-                //Project Management
-                case lm.Comol.Modules.Standard.ProjectManagement.Domain.ModuleProjectManagement.UniqueCode:
-                    service = new lm.Comol.Modules.Standard.ProjectManagement.Business.ServiceProjectManagement(dc);
-                    break;
+                ////Project Management
+                //case lm.Comol.Modules.Standard.ProjectManagement.Domain.ModuleProjectManagement.UniqueCode:
+                //    service = new lm.Comol.Modules.Standard.ProjectManagement.Business.ServiceProjectManagement(dc);
+                //    break;
 
                 //Bandi
                 case lm.Comol.Modules.CallForPapers.Domain.ModuleCallForPaper.UniqueCode:
@@ -692,7 +692,11 @@ namespace WCF_CoreServices
 
                 //Repository - SCORM
                 case lm.Comol.Core.FileRepository.Domain.ModuleRepository.UniqueCode:
+                    //SOLO Scorm:
                     service = new lm.Comol.Core.BaseModules.FileRepository.Business.ServiceRepositoryScorm(dc, ic);
+
+                    //Scorm ed xapi (NEW!):
+                    //service = new Adevico.Modules.XApi.Business.ServiceRepositoryXApi(dc, ic);
                     break;
 
 

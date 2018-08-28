@@ -1,0 +1,71 @@
+/*$main-sprite: skin-image-url( "Common", "radActionsSprite.png" );*/
+.RadMap_Metro {
+  font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  /* Remove border radius */
+  /* Additional styles */
+  /*Buttons*/
+  /* Markers */
+  /* Older IE Fix */ }
+  .RadMap_Metro .k-header,
+  .RadMap_Metro .k-widget,
+  .RadMap_Metro .k-popup {
+    color: #000000; }
+  .RadMap_Metro .k-widget,
+  .RadMap_Metro .k-header {
+    border-color: #CDCDCD; }
+  .RadMap_Metro .k-buttons-horizontal .k-zoom-out,
+  .RadMap_Metro .k-buttons-horizontal *:first-child,
+  .RadMap_Metro .k-touch-scrollbar, .RadMap_Metro.k-tooltip,
+  .RadMap_Metro .k-animation-container, .RadMap_Metro.k-animation-container {
+    border-radius: 0; }
+  .RadMap_Metro .k-widget,
+  .RadMap_Metro .k-header,
+  .RadMap_Metro .k-button {
+    background-color: #ffffff; }
+  .RadMap_Metro .k-button {
+    border-color: #CDCDCD;
+    color: #000000; }
+  .RadMap_Metro.k-widget.k-tooltip {
+    background-color: #cdcdcd;
+    border-color: #cdcdcd;
+    color: #000000; }
+  .RadMap_Metro .k-tooltip-button {
+    background-color: #000; }
+  .RadMap_Metro .k-tooltip-button:hover {
+    background-color: #25a0da; }
+  .RadMap_Metro .k-i-close:before {
+    color: #ffffff; }
+  .RadMap_Metro .k-callout-s {
+    border-top-color: #cdcdcd; }
+  .RadMap_Metro .k-callout-n {
+    border-bottom-color: #cdcdcd; }
+  .RadMap_Metro .k-callout-e {
+    border-left-color: #cdcdcd; }
+  .RadMap_Metro .k-callout-w {
+    border-right-color: #cdcdcd; }
+  .RadMap_Metro div.k-navigator > .k-button .k-icon:before {
+    color: #000000; }
+  .RadMap_Metro .k-button:hover,
+  .RadMap_Metro div.k-navigator > .k-button:hover {
+    background-color: #e5e5e5;
+    border-color: #e5e5e5; }
+  .RadMap_Metro .k-button:active,
+  .RadMap_Metro .k-button:focus,
+  .RadMap_Metro div.k-navigator > .k-button:active,
+  .RadMap_Metro div.k-navigator > .k-button:focus {
+    background-color: #25a0da;
+    border-color: #25a0da;
+    color: #ffffff; }
+  .RadMap_Metro div.k-navigator > .k-button:active .k-icon:before,
+  .RadMap_Metro div.k-navigator > .k-button:focus .k-icon:before {
+    color: #ffffff; }
+  .RadMap_Metro .k-marker:before {
+    color: #25a0da; }
+  @media \0screen\,screen\9 {
+    .RadMap_Metro .k-icon {
+      background-image: url('Common/radActionsSprite.png'); }
+    .RadMap_Metro .k-i-close,
+    .RadMap_Metro .k-i-close:hover {
+      background-color: transparent;
+      background-position: -22px -762px; } }

@@ -1,0 +1,55 @@
+﻿.box-msg-secretary,
+.box-msg-submitter {
+    padding: 8px;
+    background-color: #fff;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    margin: 0 10px 0px 10px;
+    border: 1px solid #fff;
+    -moz-box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.15);
+    -webkit-box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.15);
+    box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.15);
+    
+}
+
+.box-msg-secretary-edit,
+.box-msg-submitter {
+    border: 2px solid #d57d6b !important;
+}
+
+.box-msg-secretary:after, .box-msg-submitter:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+.box-msg-submitter {
+    margin: 0 20px 6px 20px;
+}
+.box-msg-secretary:first-child {
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    background-color: #ececec;
+    border: 5px solid #fff;
+}
+.box-msg-secretary:first-child textarea {
+    width: 50%;
+    display: block;
+    margin: 4px 0 2px 0;
+}
+.box-msg-secretary .rowcontainer {
+    width: 100%;
+    display:block;
+    margin-bottom: 1px;
+    padding: 1px;
+    clear: both;
+}
+
+.box-msg-secretary .buttonContainer {
+    float: right;
+}
+.box-Radio-btnList{
+    display:block !important;
+}

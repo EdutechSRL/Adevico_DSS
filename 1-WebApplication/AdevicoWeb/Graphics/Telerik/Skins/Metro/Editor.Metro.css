@@ -1,0 +1,207 @@
+.Metro {
+  background-color: #ffffff;
+  /* reWrapper */
+  /*NEW: Only in the Bottom zone - where the Statistics module is commonly set, remove uppper border, because it looks ugly*/
+  /* end of module */
+  /*Toolbar sprites*/
+  /* these settings will not be included in the common CSS file of RadEditor */
+  /* end of reTool_text */
+  /* reDropdown */
+  /* InsertTable itself is a kind of tool strip, so it must be styled as a toolstrip */
+  /* end of context menu and toolstrip */
+  /* spinbox */
+  /* end of spinbox */
+  /* editor input elements */
+  /* editor input elements */
+  /* end of expanded dropdowns */
+  /* color picker */
+  /* end of color picker */
+  /* ajax spellchecker */
+  /* ajax spellchecker */
+  /* custom links */
+  /* end of custom links */
+  /* insert table dropdown */
+  /* Popup Comments */
+  /* Commnet popups */
+  /* Inline Editor */
+  /* Right to Left */ }
+  .Metro.RadEditor .reToolbar a, .Metro.RadEditor .reDropdown, .Metro.RadEditor .reModule, .Metro.RadEditor .reModule td, .Metro.RadEditor .reDropDownBody, .Metro.RadEditor .reDropDownBody td, .Metro.RadEditor .reAjaxspell_wrapper, .Metro.RadEditor .reAjaxspell_button, .Metro.RadEditor .reAjaxspell_addicon, .Metro.RadEditor .reAjaxspell_ignoreicon, .Metro.RadEditor .reAjaxspell_okicon, .Metro.RadEditor .reInsertTable .reTlbVertical ul a.reTool_text span.reButton_text, .Metro.RadEditor .reColorPicker .reCustomColor, .Metro .reModule_domlink_selected, .Metro .reModule_domlink {
+    color: #767676; }
+  .Metro .reEmptyMessage {
+    color: #bbbbbb; }
+  .Metro.RadEditor .reEditorModes a {
+    border: 1px solid #ffffff;
+    background-color: #ffffff;
+    color: #767676; }
+  .Metro.RadEditor .reEditorModes .reMode_selected {
+    background-image: none;
+    border: 1px solid #e5e5e5;
+    background-color: #25a0da !important;
+    color: #ffffff; }
+  .Metro.RadEditor .reEditorModes a:hover {
+    border: 1px solid #e5e5e5; }
+  .Metro.RadEditor .reContentCell {
+    background-color: #ffffff; }
+  .Metro.reWrapper, .Metro.RadEditor .reContentCell, .Metro.reColorPicker, .Metro.reInsertTable, .Metro.reDropDownBody, .Metro.reCustomLinks a:hover {
+    border: 1px solid #e5e5e5; }
+  .Metro.reDropDownBody table {
+    background: transparent; }
+  .Metro.RadEditor .reModule, .Metro.RadEditor .reEditorModes, .Metro.RadEditor .reWrapper {
+    background-color: #ffffff; }
+  .Metro.RadEditor .reBottomZone .reModule {
+    border-top: 0; }
+  .Metro.RadEditor .reModule {
+    border-top: 1px solid #ffffff; }
+  .Metro.reCustomLinks a, .Metro.reCustomLinks a:link, .Metro.reCustomLinks a:visited {
+    border: 1px solid #ffffff;
+    /* should be the same as the background of the dropdown */
+    color: #000 !important; }
+  .Metro.reCustomLinks a:hover {
+    background-color: #e8e8e8;
+    border: 1px solid #767676; }
+  .Metro .reToolbar li, .Metro .reSpinBox a, .Metro.reToolbar .reSeparator, .Metro.reToolbar .reGrip, .Metro .reDialog .reTool, .Metro .reModule .reTool, .Metro .reDialog .reTool:hover, .Metro .reToolbar .reTool:hover, .Metro .reModule .reTool:hover, .Metro .reToolbar .reTool.reTool_selected, .Metro .reToolbar .reTool.reTool_selected:hover, .Metro .reToolbar .reTool_text:hover, .Metro .reToolbar .reTool_text.reTool_selected, .Metro .reToolbar .reTool_text.reTool_selected:hover, .Metro .reTool .split_arrow, .Metro .reSplitButton.reTool_text .split_arrow, .Metro .reToolbar .reTool_text .split_arrow, .Metro .reDialog .reTool.reSplitButton, .Metro .reModule .reTool.reSplitButton, .Metro .reDropdown, .Metro .reTool_disabled.reDropdown:hover, .Metro .reResizeCell div, .Metro.reInsertTable .reToolbar li .reTool:hover, .Metro.RadEditor.reRtl .reDropdown:hover {
+    background-image: url('Editor/ToolBarSprites.gif'); }
+  .Metro.RadEditor .reTlbVertical li, .Metro .reDropdown:hover, .Metro.RadEditor .reTlbVertical .reToolbar.Default .reGrip, .Metro.RadEditor.reTlbVertical .reToolbar.Default .reSeparator, .Metro .reTlbVertical .reTool:hover, .Metro .reTlbVertical .reTool_text.reSplitButton:hover, .Metro .reTlbVertical .reSplitButton:hover, .Metro .reTlbVertical .reTool_text:hover, .Metro .reTlbVertical .reTool.reTool_selected, .Metro .reTlbVertical .reTool_text.reTool_selected, .Metro .reTlbVertical .reTool_text.reTool_selected:hover, .Metro.reDropDownBody .reTlbVertical ul li a:hover, .Metro.reDropDownBody .reTlbVertical .reToolbar, .Metro .reMode_selected, .Metro.reDropDownBody.reInsertTable div.reTlbVertical a.reTool_text:hover {
+    background-image: url('Editor/ToolbarVerticalSprites.gif'); }
+  .Metro .reToolbar li {
+    color: #000; }
+  .Metro .reToolbar .reTool_text:hover {
+    margin-left: 0;
+    margin-right: 0;
+    border-left: 1px solid #767676;
+    border-right: 1px solid #767676; }
+  .Metro .reToolbar .reTool_text.reTool_selected, .Metro .reToolbar .reTool_text.reTool_selected:hover {
+    margin-left: 0;
+    margin-right: 0;
+    border-left: 1px solid #767676;
+    border-right: 1px solid #767676; }
+  .Metro .reToolbar .reTool_text.reTool_disabled, .Metro .reToolbar .reTool_text.reTool_disabled:hover {
+    margin-left: 0;
+    margin-right: 0;
+    border: 0; }
+  .Metro .reDropdown:link, .Metro .reDropdown:visited {
+    color: #767676 !important; }
+  .Metro .reDropdown, .Metro .reTool_disabled.reDropdown:hover {
+    border: 1px solid #e5e5e5;
+    color: #767676;
+    background-color: #ffffff; }
+  .Metro .Metro .reDropdown:hover {
+    border: 1px solid #e5e5e5;
+    color: #000 !important;
+    background-color: #e8e8e8; }
+  .Metro.reDropDownBody .reTlbVertical ul li .reButton_text {
+    color: #767676; }
+  .Metro.reDropDownBody .reTlbVertical ul li .reButton_text:hover {
+    color: #000000; }
+  .Metro.reInsertTable {
+    background-color: #ffffff; }
+  .Metro table.reSpinBox {
+    border: 1px solid #e5e5e5;
+    background: #ffffff; }
+  .Metro table.reSpinBox:hover {
+    border: 1px solid #767676;
+    color: #000000; }
+  .Metro.RadEditor input {
+    border: 1px solid #e5e5e5;
+    background-color: #ffffff;
+    color: #767676; }
+  .Metro.RadEditor input:hover {
+    border: 1px solid #767676;
+    color: #000000; }
+  .Metro.reDropDownBody td {
+    color: #767676; }
+  .Metro.reDropDownBody .reItemOver {
+    background: #e8e8e8;
+    color: #000000; }
+  .Metro .reTool_selected.reTool {
+    _border-left-width: 0 !important;
+    _border-right-width: 0 !important; }
+  .Metro.reColorPicker table div {
+    border: 1px solid #e5e5e5; }
+  .Metro.reColorPicker table td.reItemOver div {
+    border-color: #767676; }
+  .Metro.reColorPicker span {
+    border: 1px solid #e5e5e5; }
+  .Metro .reAjaxspell_button {
+    border: 1px solid #e5e5e5;
+    background: #25a0da;
+    color: #000000; }
+  .Metro .reAjaxSpellCheckSuggestions table {
+    border-width: 0;
+    width: 100%; }
+  .Metro .reAjaxSpellCheckSeparator {
+    background-color: #979797; }
+  .Metro.reCustomLinks, .Metro.reCustomLinks ul {
+    color: #000000; }
+  .Metro.reCustomLinks a {
+    background: none transparent;
+    color: #000000;
+    cursor: default !important; }
+  .Metro.reCustomLinks a:hover {
+    color: #ffffff; }
+  .Metro .reInsertTable table {
+    background: #ffffff; }
+  .Metro.reInsertTable table td {
+    border: 1px solid #e5e5e5;
+    background: #ffffff; }
+  .Metro .reInsertTable .reTlbVertical ul {
+    background-color: #ffffff; }
+  .Metro.reDropDownBody.reInsertTable div.reTlbVertical a.reTool_text, .Metro.reDropDownBody.reInsertTable div.reTlbVertical a.reTool_text:link, .Metro.reDropDownBody.reInsertTable div.reTlbVertical a.reTool_text:visited {
+    color: #000000 !important;
+    background: transparent none; }
+  .Metro .reCommentEdit, .Metro .reCommentTextArea, .Metro .reCommentView, .Metro.rePopupContainer, .Metro.RadEditor .reCommentButton, .Metro .rePopupButtonContainer .rePopupButton, .Metro .reCommentViewText, .Metro .reCommentInfoPanel {
+    border: 1px solid #e5e5e5;
+    background-color: #ffffff;
+    border-radius: 0; }
+  .Metro .reCommentTitle, .Metro .reCommentInfoPanel {
+    color: #000000; }
+  .Metro.RadEditor .reCommentButton, .Metro .rePopupButtonContainer .rePopupButton {
+    border-color: #e5e5e5;
+    color: #767676;
+    background-color: #ffffff; }
+  .Metro.RadEditor .reCommentButton:hover, .Metro .rePopupButtonContainer .rePopupButton:hover {
+    color: #000000;
+    border-color: #767676;
+    background-color: #e8e8e8; }
+  .Metro.RadEditor .reCommentButton:active, .Metro .rePopupButtonContainer .rePopupButton:active {
+    color: #ffffff;
+    border-color: #25a0da;
+    background-color: #25a0da; }
+  .Metro .rePopupContainer .rePopupTitle {
+    color: #ffffff;
+    background-color: #25a0da;
+    border-color: #767676;
+    border-radius: 0; }
+  .Metro .reTool .ToggleEditMode {
+    background-image: url('../Common/CommonIconsLight.png');
+    background-position: -7px -38px; }
+  .Metro.RadWindow.RadEditor.reWrapper {
+    border: 1px solid #e5e5e5; }
+  .Metro.reWrapper.reInlineEditor:hover {
+    border-color: #e5e5e5; }
+  .Metro.reWrapper.reInlineEditorSelected, .Metro.reWrapper.reInlineEditorSelected:hover {
+    border-color: #25a0da; }
+  .Metro.RadEditor.reRtl .reTool .split_arrow:hover {
+    border-right-color: #e5e5e5; }
+  .Metro.RadEditor.reRtl .reDropdown:hover {
+    background-color: #e8e8e8; }
+
+.RadWindow.RadWindow_Metro.reToolbarWindow td.rwWindowContent, .RadWindow.RadWindow_Metro.reToolbarWindow div.rwContent {
+  background-color: #ffffff; }
+
+.RadWindow_Metro .reInsertTableLightWrapper .lightTable {
+  border-color: #e5e5e5; }
+
+.Metro .reTool.reSplitButton:hover {
+  background-image: url('Editor/ToolBarSprites.gif'); }
+
+/* reTool */
+.reTool span, .Metro.reInsertTable .reTlbVertical ul .reTool_text span, .reToolbar .reTool_text span {
+  background-image: url('../Common/CommandSpritesMonoLight.png'); }
+
+/* IE6 does not support PNG alpha channel, so we use gifs for the command sprites instead */
+.reTool span, .reTool_text span, .Metro .reTlbVertical .reTool_text span, .reToolbar .reSplitButton.reTool_text span {
+  _background-image: url('../Common/CommandSpritesMonoLightIE6.png'); }
+
+.reTool .split_arrow:hover {
+  border-left-color: #ffffff; }

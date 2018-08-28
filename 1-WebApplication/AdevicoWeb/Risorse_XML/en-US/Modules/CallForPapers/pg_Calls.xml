@@ -391,12 +391,44 @@
   <item name="SubmissionsListTranslations.OtherOption" html="false" placeholder="false">Other:</item>
   <item name="SubmissionsListTranslations.OtherOptionValue" html="false" placeholder="true" hidden="true" mustcontains="{0}|{1}">{0}:{1}</item>
   <item name="SubmissionsListTranslations.CellMultipleFieldName" html="false" placeholder="true" hidden="true" mustcontains="{0}">{0}</item>
-  <item name="SubmissionsListTranslations.CellMultipleFieldValues" html="false" placeholder="true" hidden="true" mustcontains="{0}">Valori campo {0}</item>
-  <item name="SubmissionsListTranslations.CellMultipleFieldFreeText" html="false" placeholder="true" hidden="true" mustcontains="{0}">Opzione testo libero campo {0}</item>
+  <item name="SubmissionsListTranslations.CellMultipleFieldValues" html="false" placeholder="true" hidden="true" mustcontains="{0}">Values field {0}</item>
+  <item name="SubmissionsListTranslations.CellMultipleFieldFreeText" html="false" placeholder="true" hidden="true" mustcontains="{0}">Free text option field {0}</item>
   <item name="CopyCallPrefix" disambiguation="sostantivo" html="false" placeholder="false">Copy - </item>
   <item name="DisplayUnableToDeleteCall.CallForBids" html="false" placeholder="false">Error while deleting call</item>
   <item name="DisplayUnableToDeleteCall.RequestForMembership" html="false" placeholder="false">Error while deleting request for accession</item>
   <item name="DisplayUnableToDeleteUnknownCall.CallForBids" html="false" placeholder="false">Call was already deleted</item>
   <item name="DisplayUnableToDeleteUnknownCall.RequestForMembership" html="false" placeholder="false">Request for accession was already deleted.</item>
   <item name="UnknownDisplayname" html="false" placeholder="false">Removed user</item>
+
+
+  <!--Add for signs-->
+  <item name="StatusForSubmissions.CallForBids.CallForPaperStatus.Published">Inactive Submissions.</item>
+  <item name="StatusForSubmissions.RequestForMembership.CallForPaperStatus.Published">Inactive Submissions.</item>
+  <item name="StatusForSubmissions.CallForPaperStatus.SubmissionClosed">Closed Submission</item>
+  <item name="StatusForSubmissions.CallForPaperStatus.SubmissionsLimitReached">Applications limit reached</item>
+
+
+  <item name="SubmissionStatus.CallForBids.waitforsignature" disambiguation="domanda di partecipazione/domanda di adesione">Waiting for countersign.</item>
+  <item name="SubmissionStatus.waitforsignature" disambiguation="relativo a richiesta di un bando">Waiting for countersign.</item>
+
+
+  
+  <item name="LTsign.text">Countersign</item>
+  <item name="LTsignMandatory_t.text">Need to add counter-signature ...</item>
+
+  <item name="LBprint_t.text">Print...</item>
+  <item name="LBprint_t.ToolTip"></item>
+  <item name="LBsign_t.text">Countersign:</item>
+  <item name="LBsign_t.ToolTip"></item>
+  <item name="LBUpload.text">Upload Countersign:</item>
+  <item name="LBUpload.ToolTip"></item>
+  <item name="LBsubmittedSign.text">Countersign uploaded:</item>
+  <item name="LBsubmittedSign.ToolTip"></item>
+  <item name="LBsubmitted.text">Countersign uploaded:</item>
+  <item name="LBsubmitted.ToolTip"></item>
+  <item name="LBnotSigned_t.text">Countersign not uploaded.</item>
+  <item name="LBnotSigned_t.ToolTip"></item>
+
+  <item name="LKBupload.text">Carica Countersign</item>
+  <item name="LKBupload.ToolTip">It will not be possible...</item>
 </Resource>

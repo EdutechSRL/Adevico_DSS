@@ -1,0 +1,647 @@
+
+/* ---- Skin Login Elle3 updated 13.11.2013 ---- */
+/* ----- Richiede defaultlogin.css ------ */
+
+/* @group Page layout */
+
+body.internal_body {
+    font: 13px "Lucida Grande", Lucida, Verdana, sans-serif;
+}
+
+div#container {
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+
+#header {
+	/*	height: 100px;*/
+	background-color: #ededed;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#ffffff),to(#dddddd));
+	background-image: -webkit-linear-gradient(top, #ffffff, #dddddd);
+	background-image: -moz-linear-gradient(top, #ffffff, #dddddd);
+	background-image: -o-linear-gradient(top, #ffffff, #dddddd);
+	background-image: -ms-linear-gradient(top, #ffffff, #dddddd);
+	background-image: linear-gradient(top, #ffffff, #dddddd);
+
+	border-bottom: 2px solid #ff5f0a;
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+
+#branding {
+	height: auto;
+}
+
+#header img.logo {
+	border: none;	
+}
+
+/* @group #header IE hacks */
+
+* html #header {
+	background: #ededed;
+	background-image: url(./Images/bg-header.png);
+	background-repeat: repeat-x;
+	background-position: 0 bottom;
+}
+
+*+html #header {
+	background: #ededed;
+	background-image: url(./Images/bg-header.png);
+	background-repeat: repeat-x;
+	background-position: 0 bottom;
+}
+
+#header {
+	background-color: #ededed\9;
+	background-image: url(./Images/bg-header.png)\9;
+	background-repeat: repeat-x\9;
+	background-position: 0 bottom\9;
+}
+
+/* @end */
+
+
+#header img#logo {
+	margin-top: 12px;
+}
+
+#branding img.logo {
+	margin-top: 10px;
+	height: 80px;
+	min-height: 80px;
+	max-height: 80px;
+}
+
+div#top-content {
+	background-color: #c7c7c7;
+}
+
+div#middle-content {
+	background-color: #8e8e8e;
+}
+
+div#bottom-content {
+	background-color: #fff;
+}
+
+/* @end */
+
+/* @group Tools */
+
+div#tools {
+	background-color: #transparent;
+	color: #666;
+	font-size: 1em;
+	font-weight: bold;
+	text-align: left;
+	line-height: 1em;
+	height: 36px;
+}
+
+div#tools a {
+	color: #911C33 !important;
+	text-decoration: none;
+}
+
+div#tools a:hover {
+	text-decoration: underline;
+}
+
+div#tools ul li {
+	background-color: transparent;
+}
+
+div#tools li a.menu {
+	background-image: url(./images/i-triangle_login.png) !important;
+	background-position: right 0.4em !important;
+	padding-right: 15px;
+	padding-left: 0;
+}
+
+div#tools li a.help {
+	background: url(./images/help_login_l3.png) no-repeat left;
+	padding-left: 24px;
+	padding-top: 3px;
+}
+
+div#tools li#Top_Lang {
+	background: url(./images/globe_login_l3.png) no-repeat left center;
+	padding-left: 24px;
+}
+
+div#tools li#Top_Lang a {
+	background-image: url(./images/i-triangle-sprite.png);
+	background-position: right -174px;
+	padding-right: 15px;
+	text-decoration: none;
+	cursor: default;
+}
+
+div#tools li#Top_Lang ul.sub li a {
+	background-image: none;
+	padding-left: 0;
+	cursor: pointer;
+}
+
+div#tools ul li ul.sub {
+	background-color: #c7c7c7;
+	top: 23px;
+	left: 0;
+	font-weight: normal;
+	font-style: normal;
+	padding-left: 0;
+	padding-bottom: 4px;
+	border-top: none;
+	-moz-border-radius-topleft: 0px;
+	-moz-border-radius-topright: 0px;
+	-moz-border-radius-bottomright: 4px;
+	-moz-border-radius-bottomleft: 4px;
+	-webkit-border-radius: 0px 0px 4px 4px;
+	border-radius: 0px 0px 4px 4px;
+	-moz-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.300);
+	-webkit-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.300);
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.00);
+	text-shadow: none;
+}
+
+div#tools ul li ul.sub li a:hover {
+	color: #fff !important;
+	background-color: #911C33 !important;
+}
+
+div#tools ul li li.first a {
+	border-top: 1px solid #c7c7c7;
+}
+
+/* icons */
+
+div#tools li a.Home,
+div#tools li a.home {
+	background: url(./images/i-home.png) top left no-repeat;
+}
+
+div#tools li a.menu {
+	background: url(./images/i-triangle.png) top left no-repeat;
+}
+
+/* @end */
+
+
+/* @group Form */
+
+div#form {
+	background-color: #8e8e8e;
+	background-image: -moz-radial-gradient(50% 50%, ellipse farthest-corner, #aaaaaa 0%,#8e8e8e 66%);
+	background-image: -webkit-radial-gradient(50% 50%, ellipse farthest-corner, #aaaaaa 0%,#8e8e8e 66%);
+	background-image: -o-radial-gradient(50% 50%, ellipse farthest-corner, #aaaaaa 0%,#8e8e8e 66%);
+	background-image: -ms-radial-gradient(50% 50%, ellipse farthest-corner, #aaaaaa 0%,#8e8e8e 66%);
+	background-image: radial-gradient(50% 50%, ellipse farthest-corner, #aaaaaa 0%,#8e8e8e 66%);
+}
+
+div#form  h2 {
+	color: #fff;
+	font-size: 1.4em;
+	margin: 1em 0;
+	text-align: left;
+	text-transform: uppercase;
+	text-shadow: 1px 1px 0 rgba(0,0,0,0.5);
+}
+
+div#form div#submit-feedback span {
+	color: #56493f;
+	background-color: #fff3b7;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#fff3b7),to(#ffe57c));
+	background-image: -webkit-linear-gradient(top, #fff3b7, #ffe57c);
+	background-image: -moz-linear-gradient(top, #fff3b7, #ffe57c);
+	background-image: -o-linear-gradient(top, #fff3b7, #ffe57c);
+	background-image: -ms-linear-gradient(top, #fff3b7, #ffe57c);
+	background-image: linear-gradient(top, #fff3b7, #ffe57c);
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	border: 1px solid #797669;
+	-moz-box-shadow: 0px 1px 3px rgba(0,0,0,0.2),
+		inset 0 1px 0 rgba(255,255,255,0.2);
+	-webkit-box-shadow: 0px 1px 3px rgba(0,0,0,0.2),
+		inset 0 1px 0 rgba(255,255,255,0.2);
+	box-shadow: 0px 1px 3px rgba(0,0,0,0.2),
+		inset 0 1px 0 rgba(255,255,255,0.2);
+	text-shadow: 0 1px 0 rgba(255,255,255,0.7);
+}
+
+div#form div#submit-feedback span.invisible {
+	display: none;
+}
+
+div#form div#submit-feedback a,
+div#form div#submit-feedback a:visited,
+div#form div#submit-feedback a:hover{
+	font-weight: bold;
+	color: #56493f !important;
+	text-decoration: none;
+}
+
+div#form div#submit-feedback a {
+	border-bottom: 1px dotted #56493f;
+}
+
+div#form div#submit-feedback a:hover {
+	border-bottom: 1px solid #56493f;
+}
+
+/* @end */
+
+/* @group Form inputs */
+
+div#form input,
+div#form span.submit {
+	display: inline-block;
+}
+
+div#form input,
+div#form span.submit a {
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	font-size: 16px;
+}
+
+div#form input {
+	line-height: 2em;
+	padding-left: 6px;
+	color: #52606d;
+	background-color: #e6e9ed;
+	border: 1px solid #565656;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	-moz-box-shadow: 0px 1px 0px rgba(255,255,255,0.2),
+		inset 1px 1px 1px rgba(0,0,0,0.5);
+	-webkit-box-shadow: 0px 1px 0px rgba(255,255,255,0.2),
+		inset 1px 1px 1px rgba(0,0,0,0.5);
+	box-shadow: 0px 1px 0px rgba(255,255,255,0.2),
+		inset 1px 1px 1px rgba(0,0,0,0.5);
+	vertical-align: bottom;
+}
+
+div#form input.jq_watermark {
+	line-height: 2em;
+	padding-left: 6px;
+	color: #52606d;
+	background-color: #e6e9ed;
+	border: 1px solid #565656;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	-moz-box-shadow: 0px 1px 0px rgba(255,255,255,0.2),
+		inset 1px 1px 1px rgba(0,0,0,0.5);
+	-webkit-box-shadow: 0px 1px 0px rgba(255,255,255,0.2),
+		inset 1px 1px 1px rgba(0,0,0,0.5);
+	box-shadow: 0px 1px 0px rgba(255,255,255,0.2),
+		inset 1px 1px 1px rgba(0,0,0,0.5);
+	vertical-align: bottom;
+		
+	-webkit-transition: all .2s ease-in-out;
+	-moz-transition: all .2s ease-in-out;
+	-o-transition: all .2s ease-in-out;
+	-ms-transition: all .2s ease-in-out;
+	transition: all .2s ease-in-out;
+}
+
+
+
+div#form .info-label {
+	color: #fff;
+	font-size: 0.9em;
+}
+
+div#form .info-text {
+	color: #fff;
+	font-size: 0.9em;
+	margin: 0.5em 0;
+}
+
+*+html div#form input.jq_watermark,
+*+html div#form input.textbox {
+	border: 1px solid #3b5679;
+	color: #2f3c4c;
+}
+
+div#form input:focus {
+	color: #3b5679;
+	background-color: #fff;
+	-moz-box-shadow: inset 0 1px 1px rgba(0,0,0,0.7), 0px 1px 0px rgba(255,255,255,0.2), 0 0 12px rgba(255,255,255,0.3);
+	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.7), 0px 1px 0px rgba(255,255,255,0.2), 0 0 12px rgba(255,255,255,0.3);
+	box-shadow: inset 0 1px 1px rgba(0,0,0,0.7), 0px 1px 0px rgba(255,255,255,0.2), 0 0 12px rgba(255,255,255,0.3);
+}
+
+div#form input:focus {
+	-webkit-transform: scale(1.05);
+	-moz-transform: scale(1.05);
+	-o-transform: scale(1.05);
+	-ms-transform: scale(1.05);
+	transform: scale(1.05);
+	
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
+	
+	outline: 0 !important;
+}
+
+div#form input.submit {	
+	color: #fff;
+	text-shadow: 0 -1px 0 rgba(0,0,0,0.75);
+	border: 1px solid #565656;
+
+	-moz-box-shadow: 0px 1px 0px rgba(255,255,255,0.2),
+		inset 1px 1px 0 #ff5f0a;
+	-webkit-box-shadow: 0px 1px 0px rgba(255,255,255,0.2),
+		inset 1px 1px 0 #ff5f0a;
+	box-shadow: 0px 1px 0px rgba(255,255,255,0.2),
+		inset 1px 1px 0 #ff5f0a;
+
+	background-color: #cf2f03;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#da3203),to(#c42d03));
+	background-image: -webkit-linear-gradient(top, #da3203, #c42d03);
+	background-image: -moz-linear-gradient(top, #da3203, #c42d03);
+	background-image: -o-linear-gradient(top, #da3203, #c42d03);
+	background-image: -ms-linear-gradient(top, #da3203, #c42d03);
+	background-image: linear-gradient(top, #da3203, #c42d03);
+	
+}
+
+div#form span.submit a {	
+	color: #fff;
+	text-shadow: 0 -1px 0 rgba(0,0,0,0.75);
+	border: 1px solid #565656;
+	-moz-box-shadow: 0px 1px 0px rgba(000,000,000,0.25),
+		inset 1px 1px 0 #ff5f0a;
+	-webkit-box-shadow: 0px 1px 0px rgba(255,255,255,0.25),
+		inset 1px 1px 0 #ff5f0a;
+	box-shadow: 0px 1px 0px rgba(255,255,255,0.25),
+		inset 1px 1px 0 #ff5f0a;
+	
+	background-color: #cf2f03;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#da3203),to(#c42d03));
+	background-image: -webkit-linear-gradient(top, #da3203, #c42d03);
+	background-image: -moz-linear-gradient(top, #da3203, #c42d03);
+	background-image: -o-linear-gradient(top, #da3203, #c42d03);
+	background-image: -ms-linear-gradient(top, #da3203, #c42d03);
+	background-image: linear-gradient(top, #da3203, #c42d03);
+	
+
+}
+
+div#form input.submit:hover,
+div#form span.submit a:hover {
+	-moz-box-shadow: 0px 1px 0px rgba(255,255,255,0.2),
+		inset 1px 1px 0 #e04f00;
+	-webkit-box-shadow: 0px 1px 0px rgba(255,255,255,0.5),
+		inset 1px 1px 0 #e04f00;
+	box-shadow: 0px 1px 0px rgba(255,255,255,0.2),
+		inset 1px 1px 0 #e04f00;
+		
+	background-color: #db3203;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#dd3303),to(#da3203));
+	background-image: -webkit-linear-gradient(top, #dd3303, #da3203);
+	background-image: -moz-linear-gradient(top, #dd3303, #da3203);
+	background-image: -o-linear-gradient(top, #dd3303, #da3203);
+	background-image: -ms-linear-gradient(top, #dd3303, #da3203);
+	background-image: linear-gradient(top, #dd3303, #da3203);
+
+}
+
+
+
+div#form input.submit:active,
+div#form span.submit a:active {
+	-moz-box-shadow: 0px 1px 0px rgba(255,255,255,0.4),
+		inset 0px 1px 4px rgba(000,000,000,0.4);
+	-webkit-box-shadow: 0px 1px 0px rgba(255,255,255,0.4),
+		inset 0px 1px 4px rgba(000,000,000,0.4);
+	box-shadow: 0px 1px 0px rgba(255,255,255,0.4),
+		inset 0px 1px 4px rgba(000,000,000,0.4);
+		
+	background-color: #cf2f03;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#da3203),to(#c42d03));
+	background-image: -webkit-linear-gradient(top, #da3203, #c42d03);
+	background-image: -moz-linear-gradient(top, #da3203, #c42d03);
+	background-image: -o-linear-gradient(top, #da3203, #c42d03);
+	background-image: -ms-linear-gradient(top, #da3203, #c42d03);
+	background-image: linear-gradient(top, #da3203, #c42d03);
+}
+
+/* @group Alt version buttons */
+
+div#form.auth-type input a {
+	color: #fff;
+}
+
+div#form.auth-type div.box {
+	text-shadow: 0 1px 0 #777;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	-moz-box-shadow: inset 0px 1px 2px rgba(0,0,0,0.3),
+		 0 1px 1px rgba(255,255,255,0.3);
+	-webkit-box-shadow: inset 0px 1px 2px rgba(0,0,0,0.3),
+		 0 1px 1px rgba(255,255,255,0.3);
+	box-shadow: inset 0px 1px 3px rgba(0,0,0,0.3),
+		 0 1px 1px rgba(255,255,255,0.3); 
+}
+
+*+html div#form.auth-type div.box {
+	border: 1px solid;
+	border-color: #777 #aaa #aaa #777 ;
+}
+
+* html div#form.auth-type div.box {
+	border: 1px solid;
+	border-color: #777 #aaa #aaa #777 ;
+}
+
+div#form.auth-type div.box {
+	border: 1px solid \9;
+	border-color: #777 #aaa #aaa #777\9;
+}
+
+:root div#form.auth-type div.box /* IE9 + IE10pp4 */ {
+	border: none\9;
+} 
+
+div#page-box div#container.page-width div#middle-content div#form.section div.box ul.info-text.Manuali li a {
+	color: #cecece;
+	text-transform: uppercase;	
+}
+
+div#page-box div#container.page-width div#middle-content div#form.section div.box ul.info-text.Manuali li a:hover {
+	text-decoration: underline;
+}
+
+div#form.auth-type div.box dd {
+	color: #cecece;
+	font-style: italic;
+}
+
+div#form .submit.alt a {
+	background: #383838;
+	-moz-box-shadow: 0px 1px 0px rgba(000,000,000,0.2),
+		inset 1px 1px 0 #555;
+	-webkit-box-shadow: 0px 1px 0px rgba(255,255,255,0.2),
+		inset 1px 1px 0 #555;
+	box-shadow: 0px 1px 0px rgba(255,255,255,0.2),
+		inset 1px 1px 0 #555;
+	cursor: pointer;
+}
+
+div#form span.submit.alt span {
+	text-indent: 0 !important;
+	font-size: inherit !important;
+	display: inline;
+}
+
+div#form .submit.alt a:hover {
+	background: #383838;
+	border: 1px solid #565656;
+	-moz-box-shadow: 0px 1px 0px rgba(000,000,000,0.2),
+		inset 1px 1px 0 #555,
+		inset 0px 0 60px rgba(255,255,255,0.05);
+	-webkit-box-shadow: 0px 1px 0px rgba(255,255,255,0.2),
+		inset 1px 1px 0 #555,
+		inset 0px 0 60px rgba(255,255,255,0.05);
+	box-shadow: 0px 1px 0px rgba(255,255,255,0.2),
+		inset 0px 0 60px rgba(255,255,255,0.05);		
+	outline: none;
+}
+
+div#form .submit.alt a:active {
+	background: #383838;
+	-moz-box-shadow: 0px 1px 0px rgba(255,255,255,0.5),
+		inset 0px 1px 4px rgba(000,000,000,0.35);
+	-webkit-box-shadow: 0px 1px 0px rgba(255,255,255,0.5),
+		inset 0px 1px 4px rgba(000,000,000,0.35);
+	box-shadow: 0px 1px 0px rgba(255,255,255,0.5),
+		inset 0px 1px 4px rgba(000,000,000,0.35);
+	outline: none;
+}
+
+/* @end */
+
+/* @end */
+
+/* @group Info */
+
+div#info {
+	color: #666;
+	text-align: center;
+	background-color: transparent;
+}
+
+div#info fieldset {
+	font-size: 0.9em;
+	background-color: inherit;
+	border: 1px solid #ccc;
+	padding: 10px 10px;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	-moz-box-shadow: 1px 1px 0px rgba(255,255,255,0.7), inset 1px 1px 0px rgba(255,255,255,0.7);
+	-webkit-box-shadow: 1px 1px 0px rgba(255,255,255,0.7), inset 1px 1px 0px rgba(255,255,255,0.7);
+	box-shadow: 1px 1px 0px rgba(255,255,255,0.7), inset 1px 1px 0px rgba(255,255,255,0.7);
+	text-align: left;
+}
+
+div#info legend {
+	color: #666;
+	background-color: inherit;
+	font-weight: bold;
+}
+
+/* @end */
+
+/* @group Footer */
+
+#footer {
+	margin-top: 0;
+	padding-top: 0.7em;
+	font-size: 0.85em;
+	line-height: 2em !important;
+	color: #666;
+	border-top: 2px solid #ff5f0a;
+	background-color: #e5e5e5;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#cccccc),to(#e5e5e5));
+	background-image: -webkit-linear-gradient(top, #cccccc, #e5e5e5);
+	background-image: -moz-linear-gradient(top, #cccccc, #e5e5e5);
+	background-image: -o-linear-gradient(top, #cccccc, #e5e5e5);
+	background-image: -ms-linear-gradient(top, #cccccc, #e5e5e5);
+	background-image: linear-gradient(top, #cccccc, #e5e5e5);
+	text-shadow: 0px 1px 0px #efefef;
+}
+
+/* @group #cFooter IE hacks */
+
+* html #footer {
+	background: #e5e5e5;
+	background-image: none;
+	background-repeat: repeat-x;
+	background-position: 0 top;
+	height: 150px;
+	border-top: 2px solid #ff5f0a;
+}
+
+*+html #footer {
+	background: #e5e5e5;
+	background-image: none;
+	background-repeat: repeat-x;
+	background-position: 0 top;
+	height: 150px;
+	border-top: 2px solid #ff5f0a;
+}
+
+/* @end */
+
+#footer a {
+	color: #ae0000;
+	text-decoration: none;
+}
+
+#footer a:hover {
+	color: #ae0000;
+	text-decoration: underline !important;
+}
+
+#footer  div.chiusura div.footer_text {
+	line-height: 1.5em !important;
+}
+
+div#footer div#siteinfo div.chiusura ul {
+	border: 0;
+}
+
+div#footer div#siteinfo div.chiusura ul li {
+	border: 0;
+}
+
+div#footer div#siteinfo div.chiusura ul li a {
+	border: 0;
+}
+
+div#footer div#siteinfo div.chiusura ul li a img { 
+	border: 0;
+}
+
+/* @end */
+
+/* @group Varie */
+
+a.temp {
+	color: #666;
+	font-size: 0.8em;
+	font-style: italic;
+}
+    
+/* @end */

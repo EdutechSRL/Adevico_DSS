@@ -1,0 +1,182 @@
+.RadMediaPlayer_Metro {
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 17px;
+  font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+  color: #000000; }
+  .RadMediaPlayer_Metro .RadSlider_Metro {
+    padding: 0; }
+  .RadMediaPlayer_Metro .rmpToolbarWrapper .rmpToolbar {
+    color: #ffffff;
+    padding: 9px 0 1px 0; }
+  .RadMediaPlayer_Metro div.rmpVolContrBar,
+  .RadMediaPlayer_Metro .rmpToolbarWrapper .rmpToolbar {
+    border: 0 none;
+    border-radius: 0;
+    background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.7) 100%);
+    background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.7) 100%);
+    background-image: -ms-linear-gradient(top, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.7) 100%);
+    background-image: -o-linear-gradient(top, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.7) 100%);
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.7) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#B3000000', endColorstr='#B3000000',GradientType=0 ); }
+  .RadMediaPlayer_Metro div.rmpRightControlsSet {
+    padding-top: 9px; }
+  .RadMediaPlayer_Metro .rmpToolbar .rslHorizontal .rslTrack {
+    height: 8px !important; }
+  .RadMediaPlayer_Metro .rmpToolbar .rslVertical .rslTrack {
+    margin-left: -1px; }
+  .RadMediaPlayer_Metro div.rmpLoadProgressBar,
+  .RadMediaPlayer_Metro .RadSlider .rslHorizontal .rslSelectedregion {
+    height: 8px; }
+  .RadMediaPlayer_Metro div.rmpLoadProgressBar {
+    margin-top: 0px;
+    background-color: #767676; }
+  .RadMediaPlayer_Metro .rmpToolbar div.rslHorizontal a.rslDraghandle {
+    width: 3px;
+    height: 12px;
+    margin-top: -3px;
+    border: 1px solid #ffffff; }
+  .RadMediaPlayer_Metro .rmpToolbar div.rslVertical a.rslDraghandle {
+    width: 12px;
+    height: 3px;
+    margin-top: 0;
+    margin-left: -4px;
+    border: 1px solid #ffffff; }
+  .RadMediaPlayer_Metro .rmpPlaylist {
+    background: #f9f9f9; }
+    .RadMediaPlayer_Metro .rmpPlaylist li a {
+      background: #f9f9f9;
+      color: #767676; }
+      .RadMediaPlayer_Metro .rmpPlaylist li a:hover {
+        background: #e5e5e5; }
+    .RadMediaPlayer_Metro .rmpPlaylist li.rmpActive a {
+      background: #25a0da;
+      color: #ffffff; }
+    .RadMediaPlayer_Metro .rmpPlaylist .rmpTitle {
+      margin-right: 12px;
+      font: normal 10px/17px "Segoe UI", Arial, sans-serif; }
+    .RadMediaPlayer_Metro .rmpPlaylist .rmpPlaylistPrevButton,
+    .RadMediaPlayer_Metro .rmpPlaylist .rmpPlaylistNextButton {
+      width: 100%;
+      height: 100%;
+      background: #f1f1f1;
+      vertical-align: top; }
+      .RadMediaPlayer_Metro .rmpPlaylist .rmpPlaylistPrevButton:hover,
+      .RadMediaPlayer_Metro .rmpPlaylist .rmpPlaylistNextButton:hover {
+        background: #e5e5e5; }
+    .RadMediaPlayer_Metro .rmpPlaylist .rmpIcon {
+      margin: 0; }
+    .RadMediaPlayer_Metro .rmpPlaylist .rmpPlaylistNextIcon,
+    .RadMediaPlayer_Metro .rmpPlaylist .rmpPlaylistPrevIcon {
+      margin: 2px; }
+  .RadMediaPlayer_Metro .rmpPlaylistVertical,
+  .RadMediaPlayer_Metro .rmpPlaylistVerticalInside {
+    border-left: 1px solid #e5e5e5;
+    border-right: 1px solid #e5e5e5; }
+    .RadMediaPlayer_Metro .rmpPlaylistVertical li,
+    .RadMediaPlayer_Metro .rmpPlaylistVerticalInside li {
+      border-bottom: 1px solid #e5e5e5; }
+    .RadMediaPlayer_Metro .rmpPlaylistVertical .rmpPlaylistPrevButtonWrap,
+    .RadMediaPlayer_Metro .rmpPlaylistVertical .rmpPlaylistNextButtonWrap,
+    .RadMediaPlayer_Metro .rmpPlaylistVerticalInside .rmpPlaylistPrevButtonWrap,
+    .RadMediaPlayer_Metro .rmpPlaylistVerticalInside .rmpPlaylistNextButtonWrap {
+      border-top: 1px solid #e5e5e5;
+      border-bottom: 1px solid #e5e5e5; }
+  .RadMediaPlayer_Metro .rmpPlaylistHorizontal {
+    border-top: 1px solid #e5e5e5; }
+    .RadMediaPlayer_Metro .rmpPlaylistHorizontal.rmpPlaylistNavButtons {
+      border-bottom: 1px solid #e5e5e5; }
+    .RadMediaPlayer_Metro .rmpPlaylistHorizontal li {
+      border-right: 1px solid #e5e5e5; }
+      .RadMediaPlayer_Metro .rmpPlaylistHorizontal li .rmpTitle {
+        padding-top: 7px;
+        max-height: 45px;
+        line-height: 15px; }
+    .RadMediaPlayer_Metro .rmpPlaylistHorizontal .rmpPlaylistPrevButtonWrap,
+    .RadMediaPlayer_Metro .rmpPlaylistHorizontal .rmpPlaylistNextButtonWrap {
+      border-left: 1px solid #e5e5e5;
+      border-right: 1px solid #e5e5e5; }
+  .RadMediaPlayer_Metro .rmpBanner {
+    border: 1px solid #ffffff; }
+    .RadMediaPlayer_Metro .rmpBanner .rmpActionButton {
+      background: #ffffff; }
+  .RadMediaPlayer_Metro .rmpBigPlayButton,
+  .RadMediaPlayer_Metro .rmpBigPauseButton {
+    background: rgba(229, 229, 229, 0.4);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#66E5E5E5', endColorstr='#66E5E5E5',GradientType=0 ); }
+  .RadMediaPlayer_Metro .rmpIcon {
+    background-image: url('Common/radActionsSprite.png'); }
+  .RadMediaPlayer_Metro .rmpToolTip,
+  .RadMediaPlayer_Metro .rmpBigPlayIcon,
+  .RadMediaPlayer_Metro .rmpBigPauseIcon {
+    background-image: url('MediaPlayer/sprite.png'); }
+  .RadMediaPlayer_Metro .rmpBigPlayIcon {
+    background-position: 6px -108px; }
+  .RadMediaPlayer_Metro .rmpBigPauseIcon {
+    background-position: -122px 4px; }
+  .RadMediaPlayer_Metro .rmpToolTip {
+    background-position: -123px -241px; }
+  .RadMediaPlayer_Metro .rmpPlayIcon {
+    background-position: 0px -1999px; }
+  .RadMediaPlayer_Metro .rmpPauseIcon {
+    background-position: 0px -2019px; }
+  .RadMediaPlayer_Metro .rmpVolumeIcon {
+    background-position: 1px -2039px; }
+  .RadMediaPlayer_Metro .rmpMuteIcon {
+    background-position: 1px -2059px; }
+  .RadMediaPlayer_Metro .rmpHDIcon {
+    background-position: 0px -2079px; }
+  .RadMediaPlayer_Metro .rmpFullScrIcon {
+    background-position: 0px -2099px; }
+  .RadMediaPlayer_Metro .rmpExtFullScrIcon {
+    background-position: 0px -2119px; }
+  .RadMediaPlayer_Metro .rmpShareIcon {
+    background-position: 0px -2139px; }
+  .RadMediaPlayer_Metro .rmpClosePlaylistIcon {
+    background-position: 0px -2220px; }
+  .RadMediaPlayer_Metro .rmpOpenPlaylistIcon {
+    background-position: 0px -2200px; }
+  .RadMediaPlayer_Metro .rmpPlaylistVertical .rmpPlaylistPrevIcon,
+  .RadMediaPlayer_Metro .rmpPlaylistVerticalInside .rmpPlaylistPrevIcon {
+    background-position: 0px -2240px; }
+  .RadMediaPlayer_Metro .rmpPlaylistVertical .rmpPlaylistNextIcon,
+  .RadMediaPlayer_Metro .rmpPlaylistVerticalInside .rmpPlaylistNextIcon {
+    background-position: 0px -2260px; }
+  .RadMediaPlayer_Metro .rmpPlaylistHorizontal .rmpPlaylistPrevIcon {
+    background-position: 0px -2280px; }
+  .RadMediaPlayer_Metro .rmpPlaylistHorizontal .rmpPlaylistNextIcon {
+    background-position: 0px -2300px; }
+  .RadMediaPlayer_Metro .rmpActionButton:hover .rmpPlayIcon {
+    background-position: -20px -1999px; }
+  .RadMediaPlayer_Metro .rmpActionButton:hover .rmpPauseIcon {
+    background-position: -20px -2019px; }
+  .RadMediaPlayer_Metro .rmpVolContr:hover .rmpVolumeIcon {
+    background-position: -19px -2039px; }
+  .RadMediaPlayer_Metro .rmpActionButton:hover .rmpMuteIcon {
+    background-position: -19px -2059px; }
+  .RadMediaPlayer_Metro .rmpHDActiveIcon,
+  .RadMediaPlayer_Metro .rmpActionButton:hover .rmpHDIcon {
+    background-position: -34px -2079px; }
+  .RadMediaPlayer_Metro .rmpActionButton:hover .rmpFullScrIcon {
+    background-position: -20px -2099px; }
+  .RadMediaPlayer_Metro .rmpActionButton:hover .rmpExtFullScrIcon {
+    background-position: -20px -2119px; }
+  .RadMediaPlayer_Metro .rmpPlaylistVertical .rmpActionButton:hover .rmpPlaylistPrevIcon,
+  .RadMediaPlayer_Metro .rmpPlaylistVerticalInside .rmpActionButton:hover .rmpPlaylistPrevIcon {
+    background-position: -20px -2240px; }
+  .RadMediaPlayer_Metro .rmpPlaylistVertical .rmpActionButton:hover .rmpPlaylistNextIcon,
+  .RadMediaPlayer_Metro .rmpPlaylistVerticalInside .rmpActionButton:hover .rmpPlaylistNextIcon {
+    background-position: -20px -2260px; }
+  .RadMediaPlayer_Metro .rmpPlaylistHorizontal .rmpActionButton:hover .rmpPlaylistPrevIcon {
+    background-position: -20px -2280px; }
+  .RadMediaPlayer_Metro .rmpPlaylistHorizontal .rmpActionButton:hover .rmpPlaylistNextIcon {
+    background-position: -20px -2300px; }
+  .RadMediaPlayer_Metro .rmpCloseBannerIcon {
+    background-position: 0px -760px; }
+  .RadMediaPlayer_Metro .rmpCloseBannerIcon:hover {
+    background-position: -20px -760px; }
+  .RadMediaPlayer_Metro .rmpSubtitlesIcon {
+    background-position: 0px -2320px; }
+  .RadMediaPlayer_Metro .rmpSubtitlesActiveIcon,
+  .RadMediaPlayer_Metro .rmpActionButton:hover .rmpSubtitlesIcon {
+    background-position: -20px -2320px; }

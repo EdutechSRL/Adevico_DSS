@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="urn:ComolTranslation">
+  <item name="footerTitolo" html="false" placeholder="false" />
+  <item name="footerIndirizzo" html="false" placeholder="false" />
+  <item name="systemMailSender" html="false" placeholder="false">Consolida - elearning-center</item>
+  <item name="systemMail" html="false" placeholder="false" hidden="true">services@elearning-center.it</item>
+  <item name="systemMailError" html="false" placeholder="false" hidden="true">services@elearning-center.it</item>
+  <item name="systemMailSubject" html="false" placeholder="false">[Consolida - elearning-center]</item>
+  <item name="systemMailFirma" html="false" placeholder="false" hidden="true">------------------------------------------------------------------------</item>
+  <item name="systemMailFirmaNotifica" html="true" placeholder="false">------------------------------------------------------------------------&lt;br&gt;Automatisches Benachrichtigungssystem – &lt;br&gt;------------------------------------------------------------------------&lt;br&gt;</item>
+  <item name="aggiornamentoXML" html="false" placeholder="false" hidden="true">4</item>
+  <item name="systemDBcodice" html="false" placeholder="false" hidden="true">98</item>
+  <item name="systemRegistraMail" html="false" placeholder="false" hidden="true">false</item>
+  <item name="showIstruzioni" html="false" placeholder="false" hidden="true">false</item>
+  <item name="Tutor.PercorsoFile" html="false" placeholder="false" hidden="true">./KnowledgeTutorLog</item>
+  <item name="Tutor.AmpiezzaCoda" html="false" placeholder="false" hidden="true">20</item>
+  <item name="Tutor.SaveActivated" html="false" placeholder="false" hidden="true">true</item>
+  <item name="Tutor.SaveOnDB" html="false" placeholder="false" hidden="true">true</item>
+  <item name="Tutor.SaveOnFile" html="false" placeholder="false" hidden="true">false</item>
+  <item name="SendMailError" html="false" placeholder="false" hidden="true">true</item>
+  <item name="SMTPServer" html="false" placeholder="false" hidden="true">smtp.conmail.it</item>
+  <item name="copy" html="false" placeholder="false">Kopie von:</item>
+  <item name="mail_NotificaAttivazione_Subject" html="false" placeholder="false">Aktivierung der Anmeldung an der Plattform</item>
+  <item name="mail_NotificaAttivazione_day0" html="false" placeholder="false">Guten Tag,</item>
+  <item name="mail_NotificaAttivazione_day12" html="false" placeholder="false">Guten Nachmittag,</item>
+  <item name="mail_NotificaAttivazione_day24" html="false" placeholder="false">Guten Abend,</item>
+  <item name="mail_NotificaAttivazione_Body" html="true" placeholder="true" mustcontains="#data#|&lt;br&gt;&lt;br&gt;">Heute #data# wurde Ihr Antrag auf Anmeldung an der Online-Community akzeptiert, ab sofort können Sie deshalb auf das System zugreifen.&lt;br&gt;Mit freundlichen Grüssen.&lt;br&gt;&lt;br&gt;&lt;br&gt;</item>
+  <item name="mail_NotificaChiusa_Subject" html="false" placeholder="false">Benachrichtigung einer Anmeldung an der geschlossenen Community</item>
+  <item name="mail_NotificaAccettazione_Subject" html="false" placeholder="false">Akzeptierung des Antrags auf Anmeldung an einer geschlossenen Community</item>
+  <item name="mail_NotificaChiusa_Body" html="true" placeholder="true" mustcontains="#data#|#username#|#usermail#|#usertipo#|#mansione#|#facolta#|#comunita#|#ruolo#|#link#">&lt;br&gt;Heute #data# hat der Benutzer #username# (#usermail# - #usertipo# #mansione#), der an #facolta# eingeschrieben ist, angefordert, an der Community: #comunita# mit der Rolle von #ruolo# teilnehmen zu können. &lt;br&gt;Um den User zu aktivieren, ist es erforderlich, auf das System und auf die entsprechende Community zuzugreifen; ansonsten klicken Sie auf die unten angegebene Adresse (oder kopieren Sie sie in den Adressenbalken eines Browsers, die Adresse muss in eine einzige Zeile passen): &lt;br&gt;#link#  &lt;br&gt;Mit freundlichen Grüssen.&lt;br&gt;&lt;br&gt;&lt;br&gt;</item>
+  <item name="mail_NotificaAccettazione_Body" html="true" placeholder="true" mustcontains="#data#|#comunita#">&lt;br&gt;Heute #data# hat der Verantwortliche/Administrator der Community: #comunita# den Antrag auf Teilnahme an dieser Community akzeptiert.&lt;br&gt;Mit freundlichen Grüssen.&lt;br&gt;&lt;br&gt;&lt;br&gt;</item>
+  <item name="oggettoForum" html="false" placeholder="true" mustcontains="#nomeTopic#">Neue Antwort im Topic #nomeTopic#</item>
+  <item name="bodyForum" html="true" placeholder="true" mustcontains="#saluto#|#anagrafica#|#nomecomunita#|&lt;br&gt;&lt;br&gt;|#nomeForum#|#nomecomunita#|#nomeMittente#|#linkMessaggio#|#linkRimuoviNotifiche#">#saluto# #anagrafica#,&lt;br&gt;&lt;br&gt;Es gibt eine neue Meldung im Topic: #nomeTopic#&lt;br&gt;Im Forum: #nomeForum#&lt;br&gt;In der Community: #nomecomunita#&lt;br&gt;Die Meldung wurde von: #nomeMittente# eingegeben&lt;br&gt;&lt;br&gt;&lt;br&gt;Klicken Sie auf den folgenden Link, um die neue Meldung anzuzeigen:&lt;br&gt;#linkMessaggio#&lt;br&gt;&lt;br&gt;Um weitere Benachrichtigungen über dieses Topic zu verhindern, klicken Sie auf diesen Link:&lt;br&gt;#linkRimuoviNotifiche#</item>
+  <item name="oggettoForum.2" html="false" placeholder="true" mustcontains="#nomeForum#">neues Topic im Forum #nomeForum#</item>
+  <item name="bodyForum.2" html="true" placeholder="true" mustcontains="#saluto#|#anagrafica#|#nomecomunita#|&lt;br&gt;&lt;br&gt;|#nomeForum#|#nomecomunita#|#nomeMittente#|#linkMessaggio#|#linkRimuoviNotifiche#">#saluto# #anagrafica#,&lt;br&gt;&lt;br&gt;Es gibt ein neues Topic im Forum: #nomeForum#&lt;br&gt;In der Community: #nomecomunita#&lt;br&gt;Das Topic wurde von: #nomeMittente#  eingegeben&lt;br&gt;&lt;br&gt;Klicken Sie auf den folgenden Link, um die neue Meldung anzuzeigen:&lt;br&gt;#linkMessaggio#&lt;br&gt;&lt;br&gt;Um weitere Benachrichtigungen über neue Topics für dieses Forum zu verhindern, klicken Sie auf diesen Link:&lt;br&gt;#linkRimuoviNotifiche#</item>
+  <item name="Sondaggio.Mostra" html="false" placeholder="false" hidden="true">0</item>
+  <item name="Sondaggio.Scadenza" html="false" placeholder="false" hidden="true">14/06/2007</item>
+  <item name="ErrorSubject" html="false" placeholder="false">Automatische Benachrichtigung eines Fehlers</item>
+  <item name="systemErrorMailSender" html="false" placeholder="false" hidden="true">HelpDesk@comunitaonline.unitn.it</item>
+  <item name="systemErrorMailSenderName" html="false" placeholder="false">Fehler</item>
+</Resource>

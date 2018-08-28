@@ -1,0 +1,72 @@
+body  { background: #ffffff url(./Images/bg.png) repeat-x; }       /* Body generale: Il background è visualizzato solo in una fetta dopo il footer */
+body#popup { background-image: none; }  /* Body dei pop-up */
+.mainForm { }   /* Sfondo intorno al content */
+
+/* ELEMENTI PAGINA */
+
+.serviceinfo { }    /* Nome servizio */
+
+/* Input */
+input, select, textarea { border:1px solid #989898; } /* Elementi input */
+
+/* Link */
+a { color: black; text-decoration: none; }       /* Link generici */
+
+/* Tabelle */
+.DataGrid_Generica { border-color: #666666; border-style:solid; }          /* */
+.ROW_header_Small { }           /* Header tabelle */
+.ROW_header_Small_Center { }    /* Header tabelle */
+.ROW_Page_Small { }             /* Paginatore */
+.ROW_Normal_Small { }           /* Riga normale */
+.ROW_Normal_Small * { }         /* Contenuto riga normale */
+.ROW_Alternate_Small { }        /* Riga alternata */
+.ROW_Alternate_Small * { }      /* Contenuto riga alternata */
+A.ROW_ItemLink_Small:link { }   /* Link nelle tabelle... */
+/*  filtri lettere e paginatori*/
+.Filtro_CellSelezionato { }     /* Toggle filtri - Aperto */
+.Filtro_CellApriFiltro { }      /* Toggle filtri - chiuso */
+.Filtro_CellDeSelezionato { }   /* Il resto della riga del filtro... (lasciare transparent) */
+.Filtro_CellFiltri { }          /* Contenitore filtri */
+.FiltroVoceSmall { }            /* Titolo filtri*/
+.FiltroCampoSmall { }           /* Testo filtri */
+.Filtro_RecordPaginazione { }   /* Testo paginazione */
+a.lettera_Selezionata { }       /* Lettera corrente */
+a.lettera_Selezionata:hover { } /* Lettera corrente - mouse hover */
+a.lettera { }                   /* Lettera (altre) */
+a.lettera:hover { }             /* Lettera (altre) - mouse hover*/
+
+/* Form */
+.Titolo_campo  { }     /* Titolo campo */
+.Titolo_campoSmall { } /* Titolo campo - piccolo */
+.Testo_campo { }       /* Testo Campo */
+.Testo_campoSmall { }  /* Testo Campo - piccolo */
+.infoInput { }         /* Testo campo */
+
+/* Pulsanti */
+A.Link_Menu:link { }        /* Pulsante generico */
+A.aspNetDisabled { }        /* Pulsante disabilitato */
+A.aspNetDisabled:hover { }  /* Pulsante disabilitato */
+.pulsante { }               /* Pulsante generico 2 */
+.PulsanteFiltro { }         /* Pulsante generico 3 */
+A.Linksmall_Under { }       /* Pulsante link (generico 4) */
+
+/* Contenitore News...*/
+#newscontainer { border: 1px solid #ccc; }
+
+/* MAIL */
+.mailFieldTo { background-color: #ddd; }    /* Servizio Mail: sezione destinatari*/
+
+/* Footer */
+#cFooter { background: url(./Images/bg-footer.png) repeat-x;	color: #848484;}    /* Genetico footer */
+#cFooter a { color:#666; text-decoration: underline; }  /* Link footer */
+#cFooter a:hover { color: red; text-decoration:underline; }    /* Link footer*/
+
+
+
+/* HEADER - MENU - Aggiungere quel che manca (Nuove Skin) */
+
+/* Book */
+.ico_book_s, .ico_book_m, .ico_book_l
+{   background-image: url("./Images/book.png");
+    height: 26px;   width: 26px;
+}

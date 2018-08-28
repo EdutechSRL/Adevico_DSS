@@ -62,29 +62,17 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\9-AdevicoMIT_Library\lm.Comol.MitLibrary\bin\Debug\COL_BusinessLogic_v2.0.dll</HintPath>
     </Reference>
-    <Reference Include="COL_Questionario, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\9-AdevicoMIT_Library\lm.Comol.MitLibrary\bin\Debug\COL_Questionario.dll</HintPath>
-    </Reference>
     <Reference Include="Iesi.Collections, Version=1.0.0.1, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\Library\lm.Comol.Core.CommonLib\NHibernate_21\Iesi.Collections.dll</HintPath>
     </Reference>
     <Reference Include="lm.Comol.Core.Data, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\9-AdevicoMIT_Library\lm.Comol.MitLibrary\bin\Debug\lm.Comol.Core.Data.dll</HintPath>
-    </Reference>
-    <Reference Include="lm.Comol.Modules.Base, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\9-AdevicoMIT_Library\lm.Comol.MitLibrary\bin\Debug\lm.Comol.Modules.Base.dll</HintPath>
+      <HintPath>..\..\..\9-AdevicoMIT_Library\lm.Comol.MitLibrary\Adevico\MIT\lm.Comol.Core.Data.dll</HintPath>
     </Reference>
     <Reference Include="lm.Comol.Modules.EduPath, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\9-AdevicoMIT_Library\lm.Comol.MitLibrary\bin\Debug\lm.Comol.Modules.EduPath.dll</HintPath>
-    </Reference>
-    <Reference Include="lm.Comol.Modules.Standard, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\9-AdevicoMIT_Library\lm.Comol.MitLibrary\bin\Debug\lm.Comol.Modules.Standard.dll</HintPath>
     </Reference>
     <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -157,6 +145,14 @@
     <Folder Include="Service\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\4-Extension\Adevico.Modules\Adevico.Modules.csproj">
+      <Project>{8a32e206-a6be-425b-816b-fcbb640da46d}</Project>
+      <Name>Adevico.Modules</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\3-Business\1-OldProject\COL_Questionario\COL_Questionario.vbproj">
+      <Project>{10eeacdf-85f8-4aa9-a965-ee1b2fd233d4}</Project>
+      <Name>COL_Questionario</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\..\3-Business\2-Core\lm.Comol.Core.DomainModel\lm.Comol.Core.DomainModel.csproj">
       <Project>{9B7DA676-5030-47CD-8B2B-A30A09C8D0B5}</Project>
       <Name>lm.Comol.Core.DomainModel</Name>
@@ -165,9 +161,21 @@
       <Project>{7FAE537E-6ACF-4C65-9D68-E22AEC839EEA}</Project>
       <Name>lm.Comol.Core.BaseModules</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\..\3-Modules\lm.Comol.Modules.Base\lm.Comol.Modules.Base.vbproj">
+      <Project>{7F38A696-661E-4BDF-9FAD-38E51B3E7E96}</Project>
+      <Name>lm.Comol.Modules.Base</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\..\3-Business\3-Modules\lm.Comol.Modules.CallForPapers\lm.Comol.Modules.CallForPapers.csproj">
       <Project>{86AC380F-16E0-4E8F-AF84-555E13EA456E}</Project>
       <Name>lm.Comol.Modules.CallForPapers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\3-Modules\lm.Comol.Modules.ScormStat\lm.Comol.Modules.ScormStat.csproj">
+      <Project>{88AB4D29-203F-47CA-9F95-DE1ADACDA528}</Project>
+      <Name>lm.Comol.Modules.ScormStat</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\3-Modules\lm.Comol.Modules.Standard\lm.Comol.Modules.Standard.csproj">
+      <Project>{d253bf62-a7f2-48d5-ad05-12ac8ea66279}</Project>
+      <Name>lm.Comol.Modules.Standard</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
@@ -184,16 +192,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
-          <AutoAssignPort>False</AutoAssignPort>
-          <DevelopmentServerPort>1204</DevelopmentServerPort>
-          <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost/WCF_CoreServices</IISUrl>
-          <NTLMAuthentication>False</NTLMAuthentication>
-          <UseCustomServer>False</UseCustomServer>
-          <CustomServerUrl>
-          </CustomServerUrl>
-          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+          <SaveServerSettingsInUserFile>True</SaveServerSettingsInUserFile>
         </WebProjectProperties>
       </FlavorProperties>
     </VisualStudio>

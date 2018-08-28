@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Resource xmlns="urn:ComolTranslation">
+	<item name="footerTitolo"></item>
+	<item name="footerIndirizzo"></item>
+	<item name="systemMailSender">Comunità On Line</item>
+	<item name="systemMail" hidden="true">services@elearning-center.it</item>
+	<item name="systemMailError" hidden="true">services@elearning-center.it</item>
+	<item name="systemMailSubject">[SEAC - elearning-center]</item>
+	<item name="systemMailFirma" hidden="true">------------------------------------------------------------------------</item>
+	<item name="systemMailFirmaNotifica" html="true">------------------------------------------------------------------------&lt;br&gt;Sistema Notifica Automatico – Si prega di non rispondere a questo indirizzo email&lt;br&gt;------------------------------------------------------------------------&lt;br&gt;</item>
+	<item name="aggiornamentoXML" hidden="true">4</item>
+	<item name="systemDBcodice" hidden="true">88</item>
+	<item name="systemRegistraMail" hidden="true">false</item>
+	<item name="Tutor.PercorsoFile" hidden="true">./KnowledgeTutorLog</item>
+	<item name="Tutor.AmpiezzaCoda" hidden="true">20</item>
+	<item name="Tutor.SaveActivated" hidden="true">true</item>
+	<item name="Tutor.SaveOnDB" hidden="true">true</item>
+	<item name="Tutor.SaveOnFile" hidden="true">false</item>
+	<item name="SendMailError" hidden="true">true</item>
+	<item name="SMTPServer" hidden="true">smtp.conmail.it</item>
+  <item name="copy">Copia di:</item>
+  <item name="mail_NotificaAttivazione_Subject">Attivazione iscrizione alla piattaforma</item>
+  <item name="mail_NotificaAttivazione_day0">Buongiorno,</item>
+  <item name="mail_NotificaAttivazione_day12">Buon pomeriggio,</item>
+  <item name="mail_NotificaAttivazione_day24">Buonasera,</item>
+  <item name="mail_NotificaAttivazione_Body" html="true" placeholder="true" mustcontains="#data#|&lt;br&gt;&lt;br&gt;">oggi, #data#, e' stata accettata la sua richiesta di iscrizione a Comunità On Line, da questo momento potrà quindi accedere al sistema.&lt;br&gt;Distinti Saluti.&lt;br&gt;&lt;br&gt;&lt;br&gt;</item>
+  <item name="mail_NotificaChiusa_Subject">Notifica iscrizione a Comunità Chiusa</item>
+  <item name="mail_NotificaAccettazione_Subject">Accettazione richiesta iscrizione a Comunità chiusa</item>
+  <item name="mail_NotificaChiusa_Body" placeholder="true" mustcontains="#data#|#username#|#usermail#|#usertipo#|#mansione#|#facolta#|#comunita#|#ruolo#|#link#" html="true">&lt;br&gt;oggi #data#, l'utente #username# (#usermail# - #usertipo# #mansione#) iscritto a #facolta# , ha chiesto di poter partecipare alla comunità: #comunita# con il ruolo di #ruolo#  &lt;br&gt;Per attivare l'utente e' neccessario accedere al sistema ed alla relativa comunità, altrimenti e' sufficente un semplice clic sull'indirizzo sottostante (oppure copiarlo nella barra degli indirizzi di un browser,l'indirizzo deve stare su una sola riga): &lt;br&gt;#link#  &lt;br&gt;Distinti Saluti.&lt;br&gt;&lt;br&gt;&lt;br&gt;</item>
+  <item name="mail_NotificaAccettazione_Body" placeholder="true" mustcontains="#data#|#comunita#" html="true">&lt;br&gt;oggi #data#, il responsabile/l'amministratore della comunità: #comunita# ha acettato la richiesta di partecipazione alla medesima.&lt;br&gt;Distinti Saluti.&lt;br&gt;&lt;br&gt;&lt;br&gt;</item>
+  <item name="oggettoForum" placeholder="true" mustcontains="#nomeTopic#">nuova risposta nel Topic #nomeTopic#</item>
+  <item name="bodyForum" html="true" placeholder="true" mustcontains="#saluto#|#anagrafica#|#nomecomunita#|&lt;br&gt;&lt;br&gt;|#nomeForum#|#nomecomunita#|#nomeMittente#|#linkMessaggio#|#linkRimuoviNotifiche#">#saluto# #anagrafica#,&lt;br&gt;&lt;br&gt;C'e' un nuovo messaggio nel Topic: #nomeTopic#&lt;br&gt;Nel forum: #nomeForum#&lt;br&gt;Nella comunità: #nomecomunita#&lt;br&gt;Il messaggio e' stato inserito da: #nomeMittente#&lt;br&gt;&lt;br&gt;&lt;br&gt;Prema sul seguente link per vedere il nuovo messaggio:&lt;br&gt;#linkMessaggio#&lt;br&gt;&lt;br&gt;Per impedire ulteriori notifiche per questo topic e' sufficiente premere su questo link:&lt;br&gt;#linkRimuoviNotifiche#</item>
+  <item name="oggettoForum.2" placeholder="true" mustcontains="#nomeForum#">nuovo Topic nel forum #nomeForum#</item>
+  <item name="bodyForum.2" html="true" placeholder="true" mustcontains="#saluto#|#anagrafica#|#nomecomunita#|&lt;br&gt;&lt;br&gt;|#nomeForum#|#nomecomunita#|#nomeMittente#|#linkMessaggio#|#linkRimuoviNotifiche#">#saluto# #anagrafica#,&lt;br&gt;&lt;br&gt;C'e' un nuovo Topic nel forum: #nomeForum#&lt;br&gt;Nella comunità: #nomecomunita#&lt;br&gt;Il topic e' stato inserito da: #nomeMittente#&lt;br&gt;&lt;br&gt;Prema sul seguente link per vedere il nuovo messaggio:&lt;br&gt;#linkMessaggio#&lt;br&gt;&lt;br&gt;Per impedire ulteriori notifiche di nuovi topic per questo forum e' sufficiente premere su questo link:&lt;br&gt;#linkRimuoviNotifiche#</item>
+  <item name="Sondaggio.Mostra" hidden="true">0</item>
+  <item name="Sondaggio.Scadenza" hidden="true">14/06/2007</item>
+  <item name="ErrorSubject">Notifica Errore Automatica</item>
+  <item name="systemErrorMailSender" hidden="true">HelpDesk@comunitaonline.unitn.it</item>
+  <item name="systemErrorMailSenderName">Errori</item>
+</Resource>

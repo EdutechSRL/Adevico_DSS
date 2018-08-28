@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<!--italian-->
+<!-- ita -->
 <Resource xmlns="urn:ComolTranslation">
   <item name="serviceTitleImportProfile">Importazione profili</item>
   <item name="serviceImportProfilesNopermission">Non dispone dei permessi per visualizzare le informazioni relative al profilo selezionato</item>
@@ -51,12 +51,20 @@
   <item name="ProfileImportStep.MailTemplate.Description">Definire il template della mail da inviare al singolo utente iscritto.</item>
   <item name="ProfileImportStep.SubscriptionsSettings.Title" placeholder="true" mustcontains="{0}">Passo {0}: ruoli nelle comunità</item>
   <item name="ProfileImportStep.SubscriptionsSettings.Description">Definire il ruolo svolto dagli utenti da importare nel sistema ed iscrivere nelle comunità selezionate.</item>
+
+  <item name="ProfileImportStep.SubscriptionsSettings.Community.Title" placeholder="true" mustcontains="{0}">Passo {0}: Scadenza accesso</item>
+  <item name="ProfileImportStep.SubscriptionsSettings.Community.Description">Definire l'inizio e la durata del periodo di accesso, se previsto. Sono precaricati i valori di default per ogni comunità</item>
+
   <item name="ProfileImportStep.Summary.Title" placeholder="true" mustcontains="{0}">Passo {0}: conferma finale</item>
   <item name="ProfileImportStep.Summary.Description">Conferma definitiva delle operazioni da realizzare.</item>
   <item name="ProfileImportStep.ImportCompleted.Title">Importazione profili CONCLUSA</item>
   <item name="ProfileImportStep.ImportCompleted.Description"></item>
   <item name="ProfileImportStep.ImportWithErrors.Title">Importazione profili CONCLUSA con errori</item>
   <item name="ProfileImportStep.ImportWithErrors.Description">Dettaglio degli errori nelle procedure di importazione in piattaforma:</item>
+
+  <item name="ProfileImportStep.SelectPersonItem.Title" placeholder="true" mustcontains="{0}">Passo {0}: importazione massiva comunità.</item>
+  <item name="ProfileImportStep.SelectPersonItem.Description">W.I.P.</item>
+  
 
   <item name="LBemptyMessage.text">Sessione di lavoro scaduta, impossibile continuare</item>
   <item name="LBsourceSelector_t.text">Sorgente dati:</item>
@@ -172,6 +180,7 @@
   
   <item name="Mail.Subject">Iscrizione</item>
   <item name="Mail.Standard" html="true" placeholder="true" mustcontains="[name]|[surname]|{0}|{1}" >Buongiorno [name] [surname],&lt;br&gt;             Lei è stato iscritto/a alla piattaforma.{0}&lt;br&gt;Per accedere al sistema deve collegarsi all’indirizzo web {1}.&lt;br&gt;&lt;br&gt;</item>
+  <item name="Mail.Standard.Internal" html="true" placeholder="true" mustcontains="[name]|[surname]|{0}" >Buongiorno [name] [surname],&lt;br&gt;&lt;br&gt;Lei è stato iscritto/a a nuovi corsi.&lt;br&gt;&lt;br&gt;Per accedere al sistema deve collegarsi all’indirizzo web {0}.&lt;br&gt;&lt;br&gt;</item>
   <item name="Mail.Login" html="true" placeholder="true" mustcontains="[login]|[password]" >&lt;br&gt;I dati di accesso sono:&lt;br&gt;Login:[login]&lt;br&gt;Password:[password]&lt;br&gt;</item>
   <item name="InvalidImport.InvalidData" disambiguation="i=dato invalido (uno o due caratteri)" placeholder="true" mustcontains="[|]">[i]</item>
   <item name="InvalidImport.SourceDuplicatedData" disambiguation="sd=dato sorgente duplicato (uno o due caratteri)" placeholder="true" mustcontains="[|]">[sd]</item>
@@ -180,7 +189,8 @@
   <item name="InvalidImport.SourceDuplicatedData.Description" placeholder="true" mustcontains="[|]" disambiguation="sd=dato sorgente duplicato (uno o due caratteri)">[sd] - Dato sorgente duplicato</item>
   <item name="InvalidImport.AlreadyExist.Description" placeholder="true" mustcontains="[|]" disambiguation="pp=dati presenti in piattaforma (uno o due caratteri)">[pp] - Dati presenti in piattaforma</item>
   <item name="CTRLselectCommunities.DisplayInfo">Elenco di ulteriori comunità a cui iscrivere gli utenti da importare</item>
-  <item name="LBmailSelector_t.text">Invia mail agli utenti:</item>
+  <item name="LBmailSelector_t.text">Invia mail ai nuovi iscritti:</item>
+  <item name="LBmailSelector_t.ForInternal">Invia mail agli iscritti in comunità:</item>
   <item name="RBLmailSelector.True">Si</item>
   <item name="RBLmailSelector.False">No</item>
   <item name="LBsummarySubscriptions_t.text">Profili da creare:</item>
@@ -193,6 +203,7 @@
   <item name="LBsummaryMailSelector.False">No</item>
   <item name="LBsummarySubscribeTo_t.text">Iscrivi alle comunità:</item>
   <item name="summarySubscription" placeholder="true" mustcontains="{0}|{1}">{0} - Ruolo: {1}</item>
+  <item name="summarySubscription.role">Ruolo</item>
   <item name="ProfileImportAction.Create" placeholder="true" mustcontains="{0}">creazione profilo {0}</item>
   <item name="ProfileImportAction.Create.True" placeholder="true" mustcontains="{0}">creazione profilo {0} avvenuta.</item>
   <item name="ProfileImportAction.Create.False" placeholder="true" mustcontains="{0}">creazione profilo {0} NON avvenuta</item>
@@ -244,4 +255,7 @@
   <item name="GroupBy.NotMandatoryCommon">Campi NON obbligatori comuni</item>
   <item name="GroupBy.UserTypeStandard" placeholder="true" mustcontains="{0}">Campi profilo {0}</item>
   <item name="Details">Dettagli</item>
+
+
+  
 </Resource>

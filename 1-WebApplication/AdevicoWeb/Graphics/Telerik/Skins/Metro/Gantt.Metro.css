@@ -1,0 +1,286 @@
+.RadGantt_Metro {
+  border-color: #e5e5e5;
+  color: #000000;
+  background-color: #ffffff;
+  font-size: 12px;
+  font-family: "Segoe UI", Arial, Helvetica, sans-serif; }
+  .RadGantt_Metro .k-loading-color {
+    background-color: #ffffff; }
+  .RadGantt_Metro .k-loading-image {
+    background-image: url('Common/loading.gif'); }
+  .RadGantt_Metro .rgtHeader {
+    border-color: #e5e5e5;
+    color: #000000;
+    background-color: #f9f9f9; }
+  .RadGantt_Metro .rgtFooter {
+    border-color: #e5e5e5;
+    color: #000000;
+    background-color: #f9f9f9; }
+  .RadGantt_Metro .rgtTreelist {
+    background-color: #fcfcfc; }
+  .RadGantt_Metro .rgtTreelist .radAlt {
+    background-color: #f2f2f2; }
+  .RadGantt_Metro .rgtTreelist .radStateFocused {
+    box-shadow: inset 0 0 5px #25a0da; }
+  .RadGantt_Metro .rgtTreelist .radStateSelected {
+    color: #ffffff;
+    background-color: #25a0da; }
+  .RadGantt_Metro .rgtSplitbar {
+    border-color: #e5e5e5;
+    background-color: #ffffff; }
+  .RadGantt_Metro .rgtSplitbar .radResizeHandle {
+    background-color: #e5e5e5; }
+  .RadGantt_Metro .rgtSplitbarHover {
+    border-color: #dddddd;
+    background-color: #f7f7f7; }
+  .RadGantt_Metro .radLine {
+    background-color: #767676; }
+  .RadGantt_Metro .radArrowE,
+  .RadGantt_Metro .radArrowW {
+    color: #767676; }
+  .RadGantt_Metro .radLine.radStateSelected {
+    background-color: #000000;
+    box-shadow: 0 1px 3px #dbdbde; }
+  .RadGantt_Metro .radLine.radStateSelected .radArrowE,
+  .RadGantt_Metro .radLine.radStateSelected .radArrowW {
+    color: #000000; }
+  .RadGantt_Metro .radMarqueeColor {
+    background-color: rgba(37, 160, 218, 0.4); }
+  .RadGantt_Metro .rgtTaskDot:after {
+    background-color: #000000; }
+  .RadGantt_Metro .rgtTaskDot:hover:after {
+    border-color: #000000;
+    background-color: #ffffff; }
+  .RadGantt_Metro .rgtResource {
+    background-color: #ffffff; }
+  .RadGantt_Metro .rgtResource.radAlt {
+    background-color: #f5f5f5; }
+  .RadGantt_Metro .rgtTaskMilestone {
+    border-color: #25a0da;
+    background-color: #25a0da; }
+  .RadGantt_Metro .rgtTaskMilestone.radStateSelected {
+    border-color: #000000;
+    background-color: #25a0da; }
+  .RadGantt_Metro .rgtTaskSummary {
+    border-color: #b0b0b0;
+    background-color: #b0b0b0; }
+  .RadGantt_Metro .rgtComplete {
+    border-color: #767676;
+    background-color: #767676; }
+  .RadGantt_Metro .rgtTaskSummary.radStateSelected {
+    border-color: #85d1f5;
+    background-color: #85d1f5; }
+  .RadGantt_Metro .radStateSelected .rgtComplete {
+    border-color: #25a0da;
+    background-color: #25a0da; }
+  .RadGantt_Metro .rgtTaskSingle {
+    border-color: transparent;
+    color: #ffffff;
+    background-color: #85d1f5;
+    text-shadow: 0 0 1px #25a0da; }
+  .RadGantt_Metro .rgtTaskComplete {
+    background-color: #25a0da; }
+  .RadGantt_Metro .rgtTaskSingle .radResizeHandle:after {
+    background-color: #ffffff; }
+  .RadGantt_Metro .rgtTaskSingle.radStateSelected,
+  .RadGantt_Metro .rgtTaskSingle.radStateSelected .rgtTaskComplete {
+    border-color: #000000; }
+
+.radSkin_Metro {
+  color: #000000;
+  font-size: 12px;
+  font-family: "Segoe UI", Arial, Helvetica, sans-serif; }
+  .radSkin_Metro .k-popup, .radSkin_Metro.k-popup,
+  .radSkin_Metro .radPopup, .radSkin_Metro.radPopup {
+    border-color: #cdcdcd;
+    color: #000000;
+    background-color: #ffffff; }
+  .radSkin_Metro .radDragClue, .radSkin_Metro.radDragClue {
+    border-color: #cdcdcd;
+    color: #000000;
+    background-color: #ffffff;
+    box-shadow: 0 0 5px rgba(130, 130, 130, 0.5); }
+  .radSkin_Metro .radList > .radStateHovered,
+  .radSkin_Metro .k-list > .k-state-hover {
+    color: #000000;
+    background-color: #e8e8e8; }
+  .radSkin_Metro .radList > .radStateFocused,
+  .radSkin_Metro .k-list > .k-state-focused {
+    box-shadow: inset 0 0 5px #25a0da; }
+  .radSkin_Metro .radList > .radStateSelected,
+  .radSkin_Metro .k-list > .k-state-selected {
+    color: #ffffff;
+    background-color: #25a0da; }
+  .radSkin_Metro .radGrid td {
+    border-color: #e7e7e7; }
+  .radSkin_Metro .radGridHeader,
+  .radSkin_Metro .radGridHeaderWrap {
+    border-color: #cdcdcd;
+    background-color: #f5f5f5; }
+  .radSkin_Metro .radGridHeader th {
+    border-color: #cdcdcd;
+    color: #555555;
+    background-color: #f5f5f5; }
+  .radSkin_Metro .radFauxRows .radAlt {
+    background-color: whitesmoke; }
+  .radSkin_Metro .radFauxColumns .radNonwork {
+    background-color: rgba(186, 186, 186, 0.15); }
+  .radSkin_Metro .k-grid {
+    border-color: #e5e5e5;
+    color: #000000;
+    background-color: #ffffff; }
+  .radSkin_Metro .k-grid-header,
+  .radSkin_Metro .k-grid-header-wrap {
+    border-color: #cdcdcd;
+    background-color: #f9f9f9; }
+  .radSkin_Metro .k-grid-header .k-header {
+    border-color: #cdcdcd;
+    color: #000000;
+    background-color: #f9f9f9; }
+  .radSkin_Metro .k-grid-content .k-alt {
+    background-color: whitesmoke; }
+  .radSkin_Metro .k-grid-content td {
+    border-color: #e5e5e5; }
+  .radSkin_Metro .k-icon,
+  .radSkin_Metro .radIcon {
+    background-image: url('Common/radActionsSprite.png'); }
+  .radSkin_Metro .k-tooltip,
+  .radSkin_Metro .radTooltip {
+    border-color: #cdcdcd;
+    color: #000000;
+    background-color: #cdcdcd;
+    box-shadow: 0 0 5px rgba(118, 118, 118, 0.4); }
+    .radSkin_Metro .k-tooltip .k-callout-n,
+    .radSkin_Metro .k-tooltip .radCalloutN,
+    .radSkin_Metro .radTooltip .k-callout-n,
+    .radSkin_Metro .radTooltip .radCalloutN {
+      border-bottom-color: #cdcdcd; }
+    .radSkin_Metro .k-tooltip .k-callout-e,
+    .radSkin_Metro .k-tooltip .radCalloutE,
+    .radSkin_Metro .radTooltip .k-callout-e,
+    .radSkin_Metro .radTooltip .radCalloutE {
+      border-left-color: #cdcdcd; }
+    .radSkin_Metro .k-tooltip .k-callout-s,
+    .radSkin_Metro .k-tooltip .radCalloutS,
+    .radSkin_Metro .radTooltip .k-callout-s,
+    .radSkin_Metro .radTooltip .radCalloutS {
+      border-top-color: #cdcdcd; }
+    .radSkin_Metro .k-tooltip .k-callout-w,
+    .radSkin_Metro .k-tooltip .radCalloutW,
+    .radSkin_Metro .radTooltip .k-callout-w,
+    .radSkin_Metro .radTooltip .radCalloutW {
+      border-right-color: #cdcdcd; }
+  .radSkin_Metro .k-tooltip-validation {
+    border-color: #ffffff;
+    color: #d51923;
+    background-color: #ffffff;
+    background-image: none; }
+    .radSkin_Metro .k-tooltip-validation .k-callout-n,
+    .radSkin_Metro .k-tooltip-validation .radCalloutN {
+      border-bottom-color: #ffffff; }
+    .radSkin_Metro .k-tooltip-validation .k-icon.k-warning {
+      background-image: url('Input/sprite.gif');
+      background-position: 0 -299px; }
+  .radSkin_Metro .k-button,
+  .radSkin_Metro .radButton {
+    border-color: #e5e5e5;
+    color: #000000;
+    background-color: #f9f9f9; }
+  .radSkin_Metro .radToolbar .radButton {
+    border-color: transparent;
+    color: inherit;
+    background-color: transparent;
+    background-image: none; }
+  .radSkin_Metro .k-button:hover,
+  .radSkin_Metro .radButton:hover,
+  .radSkin_Metro .radButton.radStateHovered,
+  .radSkin_Metro .radStateHovered > .radButton {
+    border-color: #e5e5e5;
+    color: #000000;
+    background-color: #e5e5e5; }
+  .radSkin_Metro .k-button:focus,
+  .radSkin_Metro .radButton:focus,
+  .radSkin_Metro .radButton.radStateSelected,
+  .radSkin_Metro .radStateSelected > .radButton {
+    border-color: #25a0da;
+    color: #ffffff;
+    background-color: #25a0da; }
+  .radSkin_Metro .k-textbox,
+  .radSkin_Metro .radTextbox {
+    border-color: #e5e5e5;
+    color: #000000;
+    background-color: #ffffff; }
+  .radSkin_Metro .k-numeric-wrap {
+    border-color: #e5e5e5;
+    color: #000000;
+    background-color: #ffffff; }
+    .radSkin_Metro .k-numeric-wrap .k-link {
+      border-color: #e5e5e5;
+      color: #000000;
+      background-color: #f9f9f9; }
+    .radSkin_Metro .k-numeric-wrap .k-link:hover {
+      border-color: #e5e5e5;
+      color: #000000;
+      background-color: #e5e5e5; }
+    .radSkin_Metro .k-numeric-wrap .k-link.k-state-selected {
+      border-color: #25a0da;
+      color: #ffffff;
+      background-color: #25a0da; }
+  .radSkin_Metro .k-dropdown-wrap {
+    border-color: #e5e5e5;
+    color: #000000;
+    background-color: #ffffff; }
+    .radSkin_Metro .k-dropdown-wrap.k-state-hover {
+      border-color: #e5e5e5;
+      color: #000000;
+      background-color: #e5e5e5; }
+    .radSkin_Metro .k-dropdown-wrap.k-state-active {
+      border-color: #25a0da;
+      color: #ffffff;
+      background-color: #25a0da; }
+  .radSkin_Metro .k-picker-wrap {
+    border-color: #e5e5e5;
+    color: #000000;
+    background-color: #ffffff; }
+    .radSkin_Metro .k-picker-wrap .k-select {
+      border-color: #e5e5e5;
+      color: #000000;
+      background-color: #f9f9f9; }
+    .radSkin_Metro .k-picker-wrap .k-select:hover {
+      border-color: #e5e5e5;
+      color: #000000;
+      background-color: #e5e5e5; }
+  .radSkin_Metro .radCalendar {
+    border-color: #e5e5e5;
+    color: #000000;
+    background-color: #ffffff; }
+    .radSkin_Metro .radCalendar .k-header,
+    .radSkin_Metro .radCalendar .k-footer {
+      border-color: #cdcdcd; }
+    .radSkin_Metro .radCalendar .k-header {
+      background-color: #f9f9f9; }
+    .radSkin_Metro .radCalendar th {
+      border-color: #cdcdcd; }
+    .radSkin_Metro .radCalendar td {
+      border-color: transparent; }
+    .radSkin_Metro .radCalendar td.k-other-month {
+      color: #898989; }
+    .radSkin_Metro .radCalendar td.k-state-hover {
+      border-color: #e8e8e8;
+      color: #000000;
+      background-color: #e8e8e8; }
+    .radSkin_Metro .radCalendar td.k-state-focused {
+      box-shadow: inset 0 0 5px #25a0da; }
+    .radSkin_Metro .radCalendar td.k-state-selected {
+      border-color: #25a0da;
+      color: #ffffff;
+      background-color: #25a0da; }
+  .radSkin_Metro.k-window {
+    border-color: #cdcdcd;
+    color: #000000;
+    background-color: #ffffff; }
+  .radSkin_Metro .k-window-titlebar {
+    border-color: #cdcdcd;
+    background-color: #f9f9f9; }
+  .radSkin_Metro .radPopupEditForm .rgtButtonsContainer {
+    border-color: #cdcdcd; }

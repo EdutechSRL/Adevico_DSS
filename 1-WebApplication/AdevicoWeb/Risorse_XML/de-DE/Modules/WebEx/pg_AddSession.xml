@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--ita: commentati elementi rimossi-->
+<Resource xmlns="urn:ComolTranslation">
+
+    
+    
+    
+    <item name="Title.add">Crea nuova sessione Videoconferenza</item>
+    <item name="Title.edit">Modifica sessione Videoconferenza</item>
+
+    <!--<item name="LNBsaveSettings.text">Salva</item>
+    <item name="LNBsaveSettings.ToolTip">Salva le modifiche</item>
+    <item name="LNBsaveSettings.status">Salva le modifiche</item>
+    <item name="LNBdeleteCurrent.ConfirmText">La stanza sarà eliminata e non più modificabile. Non sarà possibile creare nuove sessioni in questa stanza e le stanze create saranno DISATTIVATE. Continuare?</item>
+    
+    <item name="LBnoItems.text">Nessuna stanza presente nel sistema.</item>
+    <item name="LBnoItems.ToolTip"></item>
+
+    -->
+    
+    <item name="LNBsaveSettings.text">Salva</item>
+    <item name="LNBsaveSettings.ToolTip">Salva sessione</item>
+    <item name="LNBsaveSettings.status">Salva sessione</item>
+
+    <item name="LNBaddUser.text">Nuovo utente</item>
+    <item name="LNBaddUser.ToolTip">Aggiunge un utente alla stanza</item>
+    <item name="LNBaddUser.status">Aggiunge un utente alla stanza</item>
+    <item name="LNBaddUser.blocked">Raggiunto limite utenti.</item>
+    
+    <item name="HYPundo.text">Torna alla lista</item>
+    <item name="HYPundo.ToolTip">Torna alla lista</item>
+    <item name="HYPundo.status">Torna alla lista</item>
+    <item name="HYPundo.ConfirmText">La stanza non verrà creata. Continuare?</item>
+
+    <item name="LBname_t.text">Nome</item>
+    <item name="LBname_t.ToolTip">Nome sessione</item>
+
+    <item name="LBroom_t.text">Stanza</item>
+    <item name="LBroom_t.ToolTip">Stanza in cui verrà creata la sessione</item>
+
+    <item name="LBstart_t.text">Data inizio</item>
+    <item name="LBstart_t.ToolTip">Data di inizio prevista</item>
+
+    <item name="LBduration_t.text">Durata</item>
+    <item name="LBduration_t.ToolTip">Durata prevista</item>
+
+    <item name="LBsessionPwd.text">Password accesso</item>
+    <item name="LBsessionPwd.ToolTip">Password accesso</item>
+    
+    <item name="LBnoUsers.text">Nessun utente iscritto alla stanza.</item>
+
+    <item name="LThour_t.text">ore </item>
+
+    <item name="LTminutes_t.text">minuti </item>
+
+    <item name="LTname_t.text">Anagrafica</item>
+    <item name="LTmail_t.text">Mail</item>
+    
+
+
+    <item name="Error.NoPermission">Non si dispone dei permessi per visualizzare la pagina.</item>    
+    <item name="Error.InternalError">Errore interno.</item>
+
+    <item name="Message.None">Operazione completata con successo.</item>
+    <item name="Message.NoName">Necessario specificare un nome per la sessione.</item>
+    <item name="Message.NoRoom">Non è stata trovata la stanza indicata.</item>
+    <item name="Message.NoPermission">Non si dispone dei permessi per creare sessioni nella stanza selezionata</item>
+    <item name="Message.NoDuration">E' necessario indicare una durata.</item>
+    <item name="Message.DateInvalid">La data indicata non è valida o è vuota.</item>
+    <item name="Message.DateCollision">La data e la durata collidono con altre sessioni già create.</item>
+    <item name="Message.ToMuchUsers">Gli utenti selezionati eccedono il limite consentito dalla stanza. Gli utenti in eccesso non sono stati inseriti.</item>
+    <item name="Message.NameCollision">Esiste già una stanza con lo stesso nome.</item>
+    
+
+
+    <item name="LNBfilter.text">Applica</item>
+    <item name="LNBfilter.ToolTip">Applica filtri</item>
+    <item name="LNBfilter.status">Applica filtri</item>
+
+    <item name="LKBfilter.text">Applica</item>
+    <item name="LKBfilter.ToolTip">Applica filtri</item>
+    <item name="LKBfilter.status">Applica filtri</item>
+    
+
+    <item name="LBLfiltValue_t.text">Filtra utenti</item>
+    <item name="LBLfiltValue_t.ToolTip">Filtra gli utenti visualizzati</item>
+
+    <item name="DDLfilterfield.Anagrafica">Anagrafica</item>
+    <item name="DDLfilterfield.Mail">Mail</item>
+
+    
+    <item name="LBLPublicUrl_t.text">Accesso pubblico</item>
+    <item name="LBLPublicUrl_t.ToolTip">Indirizzo per l'accesso pubblico</item>
+
+    <item name="LBLPublicUrl_desc.text">Usare questo link per permettere l'accesso ad utenti esterni. Verrà chiesto loro di inserire un nome da visualizzare all'interno della stanza.</item>
+
+
+    <item name="LKBsend.text"></item>
+    <item name="LKBsend.ToolTip">Cancella utente</item>
+    <item name="LKBsend.status">Cancella utente</item>
+
+    <item name="LKBsendInvitation.text"></item>
+    <item name="LKBsendInvitation.ToolTip">Manda invito</item>
+    <item name="LKBsendInvitation.status">Manda invito</item>
+
+    <item name="Message.mailSended">Mail inviata/e con successo.</item>
+    <item name="Message.mailError">Mail non inviata/e.</item>
+
+    <item name="LKBsendAllInvitation.text">Invita tutti</item>
+    <item name="LKBsendAllInvitation.ToolTip">Manda invito a TUTTI gli iscritti</item>
+    <item name="LKBsendAllInvitation.status">Manda invito a TUTTI gli iscritti</item>
+
+
+    <item name="LNBcsv.text">Statistiche CSV</item>
+    <item name="LNBcsv.ToolTip">Esporta statistiche in CSV</item>
+    <item name="LNBcsv.status">Esporta statistiche in CSV</item>
+
+
+
+    <item name="LTaction_t.text">Azioni</item>
+
+
+    <item name="LNBorderbyName.text"></item>
+    <item name="LNBorderbyName.ToolTip">Ordina per anagrafica</item>
+    <item name="LNBorderbyName.status">Ordina per anagrafica</item>
+
+    <item name="LNBorderbyName.Up.text"></item>
+    <item name="LNBorderbyName.Up.ToolTip">Ordinamento per anagrafica crescente</item>
+    <item name="LNBorderbyName.Up.status">Ordinamento per anagrafica crescente</item>
+
+    <item name="LNBorderbyName.Down.text"></item>
+    <item name="LNBorderbyName.Down.ToolTip">Ordinamento per anagrafica decrescente</item>
+    <item name="LNBorderbyName.Down.status">Ordinamento per anagrafica decrescente</item>
+
+
+
+    <item name="LNBorderbyMail.text"></item>
+    <item name="LNBorderbyMail.ToolTip">Ordina per mail</item>
+    <item name="LNBorderbyMail.status">Ordina per mail</item>
+                
+    <item name="LNBorderbyMail.Up.text"></item>
+    <item name="LNBorderbyMail.Up.ToolTip">Ordinamento per mail crescente</item>
+    <item name="LNBorderbyMail.Up.status">Ordinamento per mail crescente</item>
+                
+    <item name="LNBorderbyMail.Down.text"></item>
+    <item name="LNBorderbyMail.Down.ToolTip">Ordinamento per mail decrescente</item>
+    <item name="LNBorderbyMail.Down.status">Ordinamento per mail decrescente</item>
+    
+
+</Resource>

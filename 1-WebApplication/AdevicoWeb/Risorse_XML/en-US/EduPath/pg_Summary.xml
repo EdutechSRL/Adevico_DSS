@@ -244,7 +244,7 @@
   <item name="EduPathTranslations.CellTitleIdUnit" html="false" placeholder="false">Unit Id</item>
   <item name="EduPathTranslations.CellTitleIdActivity" html="false" placeholder="false">Activity id</item>
   <item name="EduPathTranslations.CellTitleIdSubActivity" html="false" placeholder="false">Action id</item>
-  <item name="EduPathTranslations.CellTitleIdRole" html="false" placeholder="false">Id ruolo</item>
+  <item name="EduPathTranslations.CellTitleIdRole" html="false" placeholder="false">Id Role</item>
   <item name="EduPathTranslations.TitleUserInfoRole" html="false" placeholder="false">Role:</item>
   <item name="EduPathTranslations.CellTitleIdOrganization" html="false" placeholder="false">Organization ID</item>
   <item name="EduPathTranslations.CellTitleOrganizationName" html="false" placeholder="false">Organization ID</item>
@@ -268,38 +268,38 @@
   <item name="DisplayMessageToken.EPCertification" html="false" placeholder="false">The creation of the requested certificate is in progress. Wait a few seconds to download it.</item>
   <item name="DisplayTitleToken.EPCertification" html="false" placeholder="false" />
 
-  <item name="CertificationError.None.savingRequired.False.saved.False">Attestato prodotto correttamente</item>
-  <item name="CertificationError.None.savingRequired.False.saved.True">Attestato prodotto correttamente</item>
-  <item name="CertificationError.None.savingRequired.True.saved.False">Attestato prodotto correttamente, non è stata salvata una copia sul server web</item>
-  <item name="CertificationError.None.savingRequired.True.saved.True">Attestato prodotto correttamente: è stata salvata una copia sul server web</item>
-  <item name="CertificationError.Unknown.savingRequired.False.saved.False">Errore sconosciuto nella generazione dell'attestato</item>
-  <item name="CertificationError.Unknown.savingRequired.False.saved.True">Errore sconosciuto nella generazione dell'attestato</item>
-  <item name="CertificationError.Unknown.savingRequired.True.saved.False">Errore sconosciuto nella generazione dell'attestato, NON è stato possibile salvare una copia dell'attestato  sul server web</item>
-  <item name="CertificationError.Unknown.savingRequired.True.saved.True">Errore sconosciuto nella generazione dell'attestato</item>
-  <item name="CertificationError.RepositoryError.savingRequired.False.saved.False">Errore sul server web</item>
-  <item name="CertificationError.RepositoryError.savingRequired.False.saved.True">Errore sul server web</item>
-  <item name="CertificationError.RepositoryError.savingRequired.True.saved.False">Errore sul server web: impossibile procedere con la memorizzazione del file</item>
-  <item name="CertificationError.RepositoryError.savingRequired.True.saved.True">Errore sul server web: impossibile procedere con la memorizzazione del file</item>
-  <item name="CertificationError.SavingFile.savingRequired.False.saved.False">Errore nella memorizzazione temporanea dell'attestato sul server web per consentirne poi lo scaricamento</item>
-  <item name="CertificationError.SavingFile.savingRequired.False.saved.True">Errore nella memorizzazione temporanea dell'attestato sul server web per consentirne poi lo scaricamento</item>
-  <item name="CertificationError.SavingFile.savingRequired.True.saved.False">Errore nella memorizzazione dell'attestato sul server web</item>
-  <item name="CertificationError.SavingFile.savingRequired.True.saved.True">Errore nella memorizzazione dell'attestato sul server web</item>
-  <item name="CertificationError.TransmittingFile.savingRequired.False.saved.False">Errore nella fase di scaricamento dell'attestato</item>
-  <item name="CertificationError.TransmittingFile.savingRequired.False.saved.True">Errore nella fase di scaricamento dell'attestato</item>
-  <item name="CertificationError.TransmittingFile.savingRequired.True.saved.False">Errore nella fase di scaricamento dell'attestato, NON è stato inoltre creato il relativo file sul server web</item>
-  <item name="CertificationError.TransmittingFile.savingRequired.True.saved.True">Errore nella fase di scaricamento dell'attestato, è stato creato comunque il relativo file sul server web</item>
-  <item name="CertificationError.ParsingTemplate.savingRequired.False.saved.False">Errore nella generazione del contenuto dell'attestato</item>
-  <item name="CertificationError.ParsingTemplate.savingRequired.False.saved.True">Errore nella generazione del contenuto dell'attestato</item>
-  <item name="CertificationError.ParsingTemplate.savingRequired.True.saved.False">Errore nella generazione del contenuto dell'attestato</item>
-  <item name="CertificationError.ParsingTemplate.savingRequired.True.saved.True">Errore nella generazione del contenuto dell'attestato: è stata creata comunque una copia dell'attestato (anche se illeggibile) sul server web</item>
-  <item name="CertificationError.EmptyTemplateItem.savingRequired.False.saved.False">Un campo presente nell'attestato non è stato valorizzato, impossibile salvare l'attestato</item>
-  <item name="CertificationError.EmptyTemplateItem.savingRequired.False.saved.True">Un campo presente nell'attestato non è stato valorizzato, impossibile salvare l'attestato</item>
-  <item name="CertificationError.EmptyTemplateItem.savingRequired.True.saved.False">Un campo presente nell'attestato non è stato valorizzato, impossibile salvare l'attestato</item>
-  <item name="CertificationError.EmptyTemplateItem.savingRequired.True.saved.True">Un campo presente nell'attestato non è stato valorizzato, l'attestato è stato comunque salvato in formato pdf sul server web</item>
-  <item name="CertificationError.EmptyTemplateItems.savingRequired.False.saved.False">Alcuni campi presenti nell'attestato risultano NON compilati</item>
-  <item name="CertificationError.EmptyTemplateItems.savingRequired.False.saved.True">Alcuni campi presenti nell'attestato risultano NON compilati</item>
-  <item name="CertificationError.EmptyTemplateItems.savingRequired.True.saved.False">Alcuni campi presenti nell'attestato risultano NON compilati</item>
-  <item name="CertificationError.EmptyTemplateItems.savingRequired.True.saved.True">Alcuni campi presenti nell'attestato risultano NON compilati, l'attestato è stato comunque salvato in formato pdf sul server web</item>
+  <item name="CertificationError.None.savingRequired.False.saved.False">Certificate attested correctly</item>
+  <item name="CertificationError.None.savingRequired.False.saved.True">Certificate attested correctly</item>
+  <item name="CertificationError.None.savingRequired.True.saved.False">Certificate produced correctly, a copy was NOT saved on the web server</item>
+  <item name="CertificationError.None.savingRequired.True.saved.True">Certificate produced correctly, a copy was saved on the web server</item>
+  <item name="CertificationError.Unknown.savingRequired.False.saved.False">Unknown error in generating the certificate</item>
+  <item name="CertificationError.Unknown.savingRequired.False.saved.True">Unknown error in generating the certificate</item>
+  <item name="CertificationError.Unknown.savingRequired.True.saved.False">Unknown error in generating the certificate, it was NOT possible to save a copy of the certificate on the web server</item>
+  <item name="CertificationError.Unknown.savingRequired.True.saved.True">Unknown error in generating the certificate</item>
+  <item name="CertificationError.RepositoryError.savingRequired.False.saved.False">Web server error</item>
+  <item name="CertificationError.RepositoryError.savingRequired.False.saved.True">Web server error</item>
+  <item name="CertificationError.RepositoryError.savingRequired.True.saved.False">Error on the web server: the file can not be saved</item>
+  <item name="CertificationError.RepositoryError.savingRequired.True.saved.True">Error on the web server: the file can not be saved</item>
+  <item name="CertificationError.SavingFile.savingRequired.False.saved.False">Error in the temporary storage of the certificate on the web server to allow then the download</item>
+  <item name="CertificationError.SavingFile.savingRequired.False.saved.True">Error in the temporary storage of the certificate on the web server to allow then the download</item>
+  <item name="CertificationError.SavingFile.savingRequired.True.saved.False">Error in storing the certificate on the web server</item>
+  <item name="CertificationError.SavingFile.savingRequired.True.saved.True">Error in storing the certificate on the web server</item>
+  <item name="CertificationError.TransmittingFile.savingRequired.False.saved.False">Error in downloading the certificate</item>
+  <item name="CertificationError.TransmittingFile.savingRequired.False.saved.True">Error in downloading the certificate</item>
+  <item name="CertificationError.TransmittingFile.savingRequired.True.saved.False">Error in downloading the certificate, The relative file on the web server has NOT been created</item>
+  <item name="CertificationError.TransmittingFile.savingRequired.True.saved.True">Error in downloading the certificate, however, the relative file has been created on the web server</item>
+  <item name="CertificationError.ParsingTemplate.savingRequired.False.saved.False">Error in generating the certificate contents</item>
+  <item name="CertificationError.ParsingTemplate.savingRequired.False.saved.True">Error in generating the certificate contents</item>
+  <item name="CertificationError.ParsingTemplate.savingRequired.True.saved.False">Error in generating the certificate contents</item>
+  <item name="CertificationError.ParsingTemplate.savingRequired.True.saved.True">Error in generating the certificate contents: however, a copy of the certificate (even if unreadable) was created on the web server</item>
+  <item name="CertificationError.EmptyTemplateItem.savingRequired.False.saved.False">A field present in the certificate has not been evaluated, it is impossible to save the certificate</item>
+  <item name="CertificationError.EmptyTemplateItem.savingRequired.False.saved.True">A field present in the certificate has not been evaluated, it is impossible to save the certificate</item>
+  <item name="CertificationError.EmptyTemplateItem.savingRequired.True.saved.False">A field present in the certificate has not been evaluated, it is impossible to save the certificate</item>
+  <item name="CertificationError.EmptyTemplateItem.savingRequired.True.saved.True">A field present in the certificate was not evaluated, however, the certificate was saved in pdf format on the web server</item>
+  <item name="CertificationError.EmptyTemplateItems.savingRequired.False.saved.False">Some fields in the certificate are NOT compiled</item>
+  <item name="CertificationError.EmptyTemplateItems.savingRequired.False.saved.True">Some fields in the certificate are NOT compiled</item>
+  <item name="CertificationError.EmptyTemplateItems.savingRequired.True.saved.False">Some fields in the certificate are NOT compiled</item>
+  <item name="CertificationError.EmptyTemplateItems.savingRequired.True.saved.True">Some fields in the certificate are NOT compiled, the certificate was however saved in pdf format on the web server</item>
   <item name="LNBcertificate.ToolTip">Download certificate.</item>
   <item name="HYPcertificate.ToolTip">Download certificate.</item>
   <item name="LNBrefreshCertificate.ToolTip">Regenerate the certificate</item>

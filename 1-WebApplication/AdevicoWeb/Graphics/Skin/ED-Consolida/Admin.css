@@ -1,0 +1,176 @@
+/* Admin Skin Updated 03/10/2012 */
+
+/* @group Toolbar, Notifications */
+
+#header #toolbar {
+	background-color: #c00;
+	color: #fff;
+	border-bottom: 0px;
+}
+
+#toolbar a {
+	color: #fff;
+}
+
+#toolbar a:hover {
+	text-decoration: underline;
+}
+
+#toolbar ul li a.menu:hover,
+#toolbar ul li a.status:hover,
+#toolbar ul li li a:hover {
+	text-decoration: none;
+}
+
+#toolbar ul li#greetings {
+	color: #ff9b9d;
+}
+
+#toolbar ul li {
+	background-color: #c00;
+	color: #fff;
+}
+
+#toolbar #tools li#Top_Home {
+	background: #ff6a6d;
+	-moz-box-shadow: inset 0 0 1px #ae0000;
+	-webkit-box-shadow: inset 0 0 1px #ae0000;
+	box-shadow: inset 0 0 1px #ae0000;
+}
+
+#toolbar #tools li#Top_Home a.home {
+	background: url(./Images/Admin-Toolbar-icons-sprite.png) 3px top no-repeat;
+	background-color: transparent;
+	text-shadow: 0 1px 0px #ae0000;
+	color: #fff;
+}
+
+
+#toolbar #tools li.expanded#Top_Tools a,
+#toolbar #tools li.expanded#Top_Lang a,
+#toolbar #notifications ul li.expanded#memo a,
+#toolbar #notifications ul li.expanded#chat a {
+	color: #ff9b9d;
+}
+
+#toolbar #tools li.expanded#Top_Tools .sub a,
+#toolbar #tools li.expanded#Top_Lang .sub a,
+#toolbar #notifications ul li.expanded#memo .sub a,
+#toolbar #notifications ul li.expanded#chat .sub a {
+	color: #fff;
+}
+
+#toolbar #tools ul li ul.sub,
+#toolbar #notifications ul li .sub {
+	background-color: #c00;
+	border: 1px solid #c00;
+	border-top: none;
+	-moz-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.300);
+	-webkit-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.300);
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.00);
+}
+
+#toolbar #tools ul li li a:hover,
+#toolbar #notifications ul li ul.sub li a:hover {
+	color: #fff;
+	background-color: red;
+}
+
+/* @group #toolbar ul li li a:hover IE hacks */
+
+* html #toolbar #tools ul li li a:hover {
+	background-color: red;
+}
+
+*+html #toolbar #tools ul li li a:hover {
+	background-color: red;
+}
+
+#toolbar #tools ul li li a:hover {
+	background-color: red\0/;
+}
+
+* html #toolbar #notifications ul li ul.sub li a:hover {
+	background-color: red;
+}
+
+*+html #toolbar #notifications ul li ul.sub li a:hover {
+	background-color: red;
+}
+
+#toolbar #notifications ul li ul.sub li a:hover {
+	background-color: red\0/;
+}
+
+/* @end */
+
+#toolbar #chat ul.sub li a:hover {
+	background-color: red !important;
+	background: red url(./Images/i-status-offline.png) no-repeat 0 center;
+}
+
+#toolbar #notifications ul li#memo a,
+#toolbar #notifications ul li#chat {
+	cursor: default;
+}
+
+#toolbar #notifications ul li#memo .sub a,
+#toolbar #notifications ul li#chat .sub a {
+	cursor: pointer;
+}
+
+#toolbar #notifications ul li {
+	line-height: 1.4em;
+}
+
+
+#toolbar #memo ul.sub {
+	text-align: left;
+}
+
+#toolbar #notifications ul {
+	padding-top: 2px;
+}
+
+#toolbar #notifications ul li span {
+	background-color: #d4160e;
+	color: #fff;
+}
+
+/* @group #toolbar icons */
+
+#toolbar #tools li a.menu {
+	background-image: url(./Images/Admin-i-triangle-sprite.png);
+	background-position: right -174px;
+	padding-right: 15px
+}
+
+#toolbar #tools li.expanded a.menu {
+	background-image: none !important;
+	background-position: right -999px;
+}
+
+#toolbar #chat a.status {
+	background-image: url(./Images/i-status-offline.png);
+}
+
+#toolbar #chat.online a.status {
+	background-image: url(./Images/i-status-online.png);
+}
+
+#toolbar #chat .sub li a {
+	background-image: url(./Images/i-status-offline.png);
+}
+
+#toolbar #chat .sub li.online a {
+	background-image: url(./Images/i-status-online.png);
+}
+
+#toolbar #memo a.status {
+	background-image: url(./Images/i-memo.png);
+	padding-bottom: 1px;
+}
+
+/* @end */
+
+/* @end */

@@ -36,7 +36,7 @@
     <UpgradeBackupLocation>
     </UpgradeBackupLocation>
     <OldToolsVersion>4.0</OldToolsVersion>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <UseIISExpress>false</UseIISExpress>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\</SolutionDir>
     <RestorePackages>true</RestorePackages>
@@ -67,6 +67,7 @@
     <NoWarn>42016,42017,42018,42019,42032,42353,42354,42355</NoWarn>
     <DebugType>full</DebugType>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <OutputPath>bin\</OutputPath>
@@ -87,6 +88,7 @@
     <NoWarn>42016,42017,42018,42019,42032,42353,42354,42355</NoWarn>
     <DebugType>Full</DebugType>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
     <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
@@ -322,6 +324,7 @@
     <Reference Include="System.Xml">
       <Name>System.XML</Name>
     </Reference>
+    <Reference Include="System.Xml.Linq" />
     <Reference Include="Telerik.Documents.SpreadsheetStreaming">
       <HintPath>..\..\Solution\lib\RCAJAX\2018.1.117.40\AdditionalLibraries\Bin40\Telerik.Documents.SpreadsheetStreaming.dll</HintPath>
     </Reference>
@@ -6785,10 +6788,6 @@
     <Content Include="Modules\Repository\List.aspx" />
     <Content Include="Modules\Repository\MultimediaSettings.aspx" />
     <Content Include="Modules\Repository\MyStatistics.aspx" />
-    <Content Include="Modules\Repository\Player\PlayerIcodeon.html" />
-    <Content Include="Modules\Repository\Player\PlayerIcodeonModal.html" />
-    <Content Include="Modules\Repository\Player\PlayerMultimedia.html" />
-    <Content Include="Modules\Repository\Player\PlayerMultimediaModal.html" />
     <Content Include="Modules\Repository\PublicList.aspx" />
     <Content Include="Modules\Repository\ScormSettings.aspx" />
     <Content Include="Modules\Repository\Statistics.aspx" />
@@ -8946,8 +8945,9 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Modules\Repository\AsyncRepositoryHandler.ashx" />
-    <Content Include="Modules\Repository\Player\PlayerHTMLstatic.zip" />
     <None Include="My Project\PublishProfiles\AdevicoWeb.pubxml" />
+    <None Include="My Project\PublishProfiles\FolderProfile.pubxml" />
+    <None Include="My Project\PublishProfiles\FolderProfile1.pubxml" />
     <None Include="My Project\PublishProfiles\Local.pubxml" />
     <None Include="My Project\PublishProfiles\LocalDemo.pubxml" />
     <Content Include="Questionari\QuestionarioPage.Master" />
@@ -9046,17 +9046,6 @@
     </None>
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Styles.css" />
-    <Content Include="Style\AssoServizi\img\i-balloons.gif" />
-    <Content Include="Style\AssoServizi\img\i-book.png" />
-    <Content Include="Style\AssoServizi\img\i-cog.gif" />
-    <Content Include="Style\AssoServizi\img\i-home.png" />
-    <Content Include="Style\AssoServizi\img\i-new.gif" />
-    <Content Include="Style\AssoServizi\img\i-notes.gif" />
-    <Content Include="Style\AssoServizi\img\i-page.gif" />
-    <Content Include="Style\AssoServizi\img\i-stats.gif" />
-    <Content Include="Style\AssoServizi\img\i-triangle.png" />
-    <Content Include="Style\AssoServizi\img\i-user.gif" />
-    <Content Include="Style\AssoServizi\img\logo.png" />
     <Content Include="Style\Common\UcFile.css" />
     <Content Include="Style\Common\Wizard.css" />
     <Content Include="Style\Common\Wizard_2.css" />
@@ -9117,162 +9106,6 @@
     <Content Include="Style\DynamicComol\unitn.png" />
     <Content Include="Style\DynamicComol\unitn3.png" />
     <Content Include="Style\DynamicComol\Void.png" />
-    <Content Include="Style\ED-ST-Strategie\Menu\img\i-balloons.gif" />
-    <Content Include="Style\ED-ST-Strategie\Menu\img\i-book.png" />
-    <Content Include="Style\ED-ST-Strategie\Menu\img\i-cog.gif" />
-    <Content Include="Style\ED-ST-Strategie\Menu\img\i-home.png" />
-    <Content Include="Style\ED-ST-Strategie\Menu\img\i-new.gif" />
-    <Content Include="Style\ED-ST-Strategie\Menu\img\i-notes.gif" />
-    <Content Include="Style\ED-ST-Strategie\Menu\img\i-page.gif" />
-    <Content Include="Style\ED-ST-Strategie\Menu\img\i-stats.gif" />
-    <Content Include="Style\ED-ST-Strategie\Menu\img\i-triangle.png" />
-    <Content Include="Style\ED-ST-Strategie\Menu\img\i-user.gif" />
-    <Content Include="Style\ED-ST-Strategie\Menu\img\logo.png" />
-    <Content Include="Style\ED-ST-Sparkasse\Login\bg-footer.png" />
-    <Content Include="Style\ED-ST-Sparkasse\Login\bg-form.png" />
-    <Content Include="Style\ED-ST-Sparkasse\Login\bg-header.png" />
-    <Content Include="Style\ED-ST-Sparkasse\Login\bg-submit.png" />
-    <Content Include="Style\ED-ST-Sparkasse\Login\content.png" />
-    <Content Include="Style\ED-ST-Sparkasse\Login\default.htm" />
-    <Content Include="Style\ED-ST-Sparkasse\Login\eng.png" />
-    <Content Include="Style\ED-ST-Sparkasse\Login\header.png" />
-    <Content Include="Style\ED-ST-Sparkasse\Login\header1.png" />
-    <Content Include="Style\ED-ST-Sparkasse\Login\header2.png" />
-    <Content Include="Style\ED-ST-Sparkasse\Login\ita.png" />
-    <Content Include="Style\ED-ST-Sparkasse\Login\laboratorio.gif" />
-    <Content Include="Style\ED-ST-Sparkasse\Login\list.png" />
-    <Content Include="Style\ED-ST-Sparkasse\Login\login.css" />
-    <Content Include="Style\ED-ST-Sparkasse\Login\unitn3.png" />
-    <Content Include="Style\ED-ST-Sparkasse\Menu\img\i-balloons.gif" />
-    <Content Include="Style\ED-ST-Sparkasse\Menu\img\i-book.png" />
-    <Content Include="Style\ED-ST-Sparkasse\Menu\img\i-cog.gif" />
-    <Content Include="Style\ED-ST-Sparkasse\Menu\img\i-home.png" />
-    <Content Include="Style\ED-ST-Sparkasse\Menu\img\i-new.gif" />
-    <Content Include="Style\ED-ST-Sparkasse\Menu\img\i-notes.gif" />
-    <Content Include="Style\ED-ST-Sparkasse\Menu\img\i-page.gif" />
-    <Content Include="Style\ED-ST-Sparkasse\Menu\img\i-stats.gif" />
-    <Content Include="Style\ED-ST-Sparkasse\Menu\img\i-triangle.png" />
-    <Content Include="Style\ED-ST-Sparkasse\Menu\img\i-user.gif" />
-    <Content Include="Style\ED-ST-Sparkasse\Menu\img\logo.png" />
-    <Content Include="Style\ED-QSAservizi\Login\bg-footer.png" />
-    <Content Include="Style\ED-QSAservizi\Login\bg-form.png" />
-    <Content Include="Style\ED-QSAservizi\Login\bg-header.png" />
-    <Content Include="Style\ED-QSAservizi\Login\bg-submit.png" />
-    <Content Include="Style\ED-QSAservizi\Login\content.png" />
-    <Content Include="Style\ED-QSAservizi\Login\default.htm" />
-    <Content Include="Style\ED-QSAservizi\Login\eng.png" />
-    <Content Include="Style\ED-QSAservizi\Login\header.png" />
-    <Content Include="Style\ED-QSAservizi\Login\header1.png" />
-    <Content Include="Style\ED-QSAservizi\Login\header2.png" />
-    <Content Include="Style\ED-QSAservizi\Login\ita.png" />
-    <Content Include="Style\ED-QSAservizi\Login\laboratorio.gif" />
-    <Content Include="Style\ED-QSAservizi\Login\list.png" />
-    <Content Include="Style\ED-QSAservizi\Login\login.css" />
-    <Content Include="Style\ED-QSAservizi\Login\unitn3.png" />
-    <Content Include="Style\ED-QSAservizi\Menu\img\i-balloons.gif" />
-    <Content Include="Style\ED-QSAservizi\Menu\img\i-book.png" />
-    <Content Include="Style\ED-QSAservizi\Menu\img\i-cog.gif" />
-    <Content Include="Style\ED-QSAservizi\Menu\img\i-home.png" />
-    <Content Include="Style\ED-QSAservizi\Menu\img\i-new.gif" />
-    <Content Include="Style\ED-QSAservizi\Menu\img\i-notes.gif" />
-    <Content Include="Style\ED-QSAservizi\Menu\img\i-page.gif" />
-    <Content Include="Style\ED-QSAservizi\Menu\img\i-stats.gif" />
-    <Content Include="Style\ED-QSAservizi\Menu\img\i-triangle.png" />
-    <Content Include="Style\ED-QSAservizi\Menu\img\i-user.gif" />
-    <Content Include="Style\ED-QSAservizi\Menu\img\logo.png" />
-    <Content Include="Style\LoginComolNeutra\bg-footer.png" />
-    <Content Include="Style\LoginComolNeutra\bg-form.png" />
-    <Content Include="Style\LoginComolNeutra\bg-header.png" />
-    <Content Include="Style\LoginComolNeutra\bg-submit.png" />
-    <Content Include="Style\LoginComolNeutra\content.png" />
-    <Content Include="Style\LoginComolNeutra\default.htm" />
-    <Content Include="Style\LoginComolNeutra\eng.png" />
-    <Content Include="Style\LoginComolNeutra\footer.png" />
-    <Content Include="Style\LoginComolNeutra\header.png" />
-    <Content Include="Style\LoginComolNeutra\ita.png" />
-    <Content Include="Style\LoginComolNeutra\laboratorio.gif" />
-    <Content Include="Style\LoginComolNeutra\list.png" />
-    <Content Include="Style\LoginComolNeutra\login.css" />
-    <Content Include="Style\LoginComolNeutra\maieutiche2.png" />
-    <Content Include="Style\LoginComol\bg-footer.png" />
-    <Content Include="Style\LoginComol\bg-form.png" />
-    <Content Include="Style\LoginComol\bg-header.png" />
-    <Content Include="Style\LoginComol\bg-submit.png" />
-    <Content Include="Style\LoginComol\content.png" />
-    <Content Include="Style\LoginComol\default.htm" />
-    <Content Include="Style\LoginComol\eng.png" />
-    <Content Include="Style\LoginComol\footer.png" />
-    <Content Include="Style\LoginComol\header.png" />
-    <Content Include="Style\LoginComol\ita.png" />
-    <Content Include="Style\LoginComol\laboratorio.gif" />
-    <Content Include="Style\LoginComol\list.png" />
-    <Content Include="Style\LoginComol\login.css" />
-    <Content Include="Style\LoginDynamic\bg-footer.png" />
-    <Content Include="Style\LoginDynamic\bg-form.png" />
-    <Content Include="Style\LoginDynamic\bg-header.png" />
-    <Content Include="Style\LoginDynamic\bg-submit.png" />
-    <Content Include="Style\LoginDynamic\content.png" />
-    <Content Include="Style\LoginDynamic\default.htm" />
-    <Content Include="Style\LoginDynamic\eng.png" />
-    <Content Include="Style\LoginDynamic\footer.png" />
-    <Content Include="Style\LoginDynamic\header.png" />
-    <Content Include="Style\LoginDynamic\ita.png" />
-    <Content Include="Style\LoginDynamic\laboratorio.gif" />
-    <Content Include="Style\LoginDynamic\list.png" />
-    <Content Include="Style\LoginDynamic\login.css" />
-    <Content Include="Style\LoginDynamic\maieutiche2.png" />
-    <Content Include="Style\LoginEdutech\bg-footer.png" />
-    <Content Include="Style\LoginEdutech\bg-form.png" />
-    <Content Include="Style\LoginEdutech\bg-header.png" />
-    <Content Include="Style\LoginEdutech\bg-submit.png" />
-    <Content Include="Style\LoginEdutech\content.png" />
-    <Content Include="Style\LoginEdutech\default.htm" />
-    <Content Include="Style\LoginEdutech\eng.png" />
-    <Content Include="Style\LoginEdutech\header.png" />
-    <Content Include="Style\LoginEdutech\header1.png" />
-    <Content Include="Style\LoginEdutech\header2.png" />
-    <Content Include="Style\LoginEdutech\ita.png" />
-    <Content Include="Style\LoginEdutech\laboratorio.gif" />
-    <Content Include="Style\LoginEdutech\list.png" />
-    <Content Include="Style\LoginEdutech\login.css" />
-    <Content Include="Style\LoginEdutech\unitn3.png" />
-    <Content Include="Style\LoginSEAC\bg-footer.png" />
-    <Content Include="Style\LoginSEAC\bg-form.png" />
-    <Content Include="Style\LoginSEAC\bg-header.png" />
-    <Content Include="Style\LoginSEAC\bg-submit.png" />
-    <Content Include="Style\LoginSEAC\content.png" />
-    <Content Include="Style\LoginSEAC\default.htm" />
-    <Content Include="Style\LoginSEAC\eng.png" />
-    <Content Include="Style\LoginSEAC\header.png" />
-    <Content Include="Style\LoginSEAC\header1.png" />
-    <Content Include="Style\LoginSEAC\header2.png" />
-    <Content Include="Style\LoginSEAC\ita.png" />
-    <Content Include="Style\LoginSEAC\laboratorio.gif" />
-    <Content Include="Style\LoginSEAC\list.png" />
-    <Content Include="Style\LoginSEAC\login.css" />
-    <Content Include="Style\LoginSEAC\unitn3.png" />
-    <Content Include="Style\MenuAssoServizi\img\i-balloons.gif" />
-    <Content Include="Style\MenuAssoServizi\img\i-book.png" />
-    <Content Include="Style\MenuAssoServizi\img\i-cog.gif" />
-    <Content Include="Style\MenuAssoServizi\img\i-home.png" />
-    <Content Include="Style\MenuAssoServizi\img\i-new.gif" />
-    <Content Include="Style\MenuAssoServizi\img\i-notes.gif" />
-    <Content Include="Style\MenuAssoServizi\img\i-page.gif" />
-    <Content Include="Style\MenuAssoServizi\img\i-stats.gif" />
-    <Content Include="Style\MenuAssoServizi\img\i-triangle.png" />
-    <Content Include="Style\MenuAssoServizi\img\i-user.gif" />
-    <Content Include="Style\MenuAssoServizi\img\logo.png" />
-    <Content Include="Style\MenuStrategie\img\i-balloons.gif" />
-    <Content Include="Style\MenuStrategie\img\i-book.png" />
-    <Content Include="Style\MenuStrategie\img\i-cog.gif" />
-    <Content Include="Style\MenuStrategie\img\i-home.png" />
-    <Content Include="Style\MenuStrategie\img\i-new.gif" />
-    <Content Include="Style\MenuStrategie\img\i-notes.gif" />
-    <Content Include="Style\MenuStrategie\img\i-page.gif" />
-    <Content Include="Style\MenuStrategie\img\i-stats.gif" />
-    <Content Include="Style\MenuStrategie\img\i-triangle.png" />
-    <Content Include="Style\MenuStrategie\img\i-user.gif" />
-    <Content Include="Style\MenuStrategie\img\logo.png" />
     <Content Include="Style\NewMenuDemo\css\d.css" />
     <Content Include="Style\NewMenuDemo\css\d_Adm.css" />
     <Content Include="Style\NewMenuDemo\css\d_Demo.css" />
@@ -15908,10 +15741,10 @@
     <Folder Include="Modules\Common\RadControls\" />
     <Folder Include="Modules\CommunityEvent\UC\" />
     <Folder Include="Modules\ProjectManagement\UC\Attachments\" />
+    <Folder Include="Modules\Repository\Player\" />
     <Folder Include="RadControls\TreeView\Skins\Comunita\logo\temp\" />
     <Folder Include="RadControls\TreeView\Skins\ForumPost\" />
     <Folder Include="Statistiche_Servizi\AccessRegister\PageBase\" />
-    <Folder Include="Style\ED-ST-Strategie\Login\" />
     <Folder Include="uc\Editor\tiny_mce\plugins\autosave\images\" />
     <Folder Include="uc\Editor\tiny_mce\plugins\spellchecker\classes\utils\" />
     <Folder Include="uc\Editor\tiny_mce\plugins\spellchecker\includes\" />

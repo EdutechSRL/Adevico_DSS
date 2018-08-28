@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- eng -->
 <Resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="urn:ComolTranslation">
   <item name="LTtitle_t.text" description="Template=schema predefinito per la creazione di documenti" html="false" placeholder="false">management of certificate's templates</item>
   <item name="BTNaddUp.text" description="Skin - veste grafica" html="false" placeholder="false">Import from Skin</item>
@@ -80,7 +81,7 @@
   <item name="LITlegendCenter.text" html="false" placeholder="false">Central element</item>
   <item name="LITlegendRight.text" html="false" placeholder="false">Element to the right</item>
   <item name="LBLpageTag_t.text" description="Tag inteso come segnaposto" html="false" placeholder="false">Page tag </item>
-  <item name="LBLtype_t.text" description="Tipologia di un elemento: nessuno, testo, immagine" html="false" placeholder="false">Tipo</item>
+  <item name="LBLtype_t.text" description="Tipologia di un elemento: nessuno, testo, immagine" html="false" placeholder="false">Type</item>
   <item name="RBLtype.none" description="Tipologia di un elemento: nessuno=elemento vuoto" html="false" placeholder="false">None </item>
   <item name="RBLtype.txt" description="Tipologia di un elemento: test" html="false" placeholder="false">Text</item>
   <item name="RBLtype.img" description="Tipologia di un elemento: immagine" html="false" placeholder="false">Image</item>
@@ -155,28 +156,30 @@
   <item name="LKBshowComSel.ToolTip" html="false" placeholder="false">Community selector</item>
   <item name="LKBshowComSel.status" html="false" placeholder="false">Community selector</item>
   <item name="LKBshowComSel.hide" html="false" placeholder="false">Hide selector</item>
-  <item name="Step.0.text" html="false" placeholder="false">Seleziona importazione</item>
-  <item name="Step.0.description" html="false" placeholder="false">Selezionare l'elemento da cui importare la skin.</item>
-  <item name="Step.1.text" html="false" placeholder="false">Seleziona Organizzazione</item>
-  <item name="Step.1.description" html="false" placeholder="false">Selezionare l'organizzazione da cui importare la skin.</item>
-  <item name="Step.2.text" html="false" placeholder="false">Seleziona Comunità</item>
-  <item name="Step.2.description" html="false" placeholder="false">Selezionare la Comunità da cui importare la skin.</item>
-  <item name="Step.3.text" html="false" placeholder="false">Associa elementi</item>
-  <item name="Step.3.description" html="false" placeholder="false">Specificare quale elemento del template sarà sostituito con l'elemento di skin.</item>
-  <item name="LKBundot.text" html="false" placeholder="false">Annulla</item>
-  <item name="LKBundot.ToolTip" html="false" placeholder="false">Annulla</item>
-  <item name="LKBundot.status" html="false" placeholder="false">Annulla</item>
-  <item name="LKBundob.text" html="false" placeholder="false">Annulla</item>
-  <item name="LKBundob.ToolTip" html="false" placeholder="false">Annulla</item>
-  <item name="LKBundob.status" html="false" placeholder="false">Annulla</item>
-  <item name="RBLsource.0.text" html="false" placeholder="false">Corrente</item>
-  <item name="RBLsource.0.description" html="false" placeholder="false">Seleziona elementi dalla skin attualmente in uso.</item>
-  <item name="RBLsource.1.text" html="false" placeholder="false">Portale</item>
-  <item name="RBLsource.1.description" html="false" placeholder="false">Seleziona elementi dalla skin predefinita di portale.</item>
-  <item name="RBLsource.2.text" html="false" placeholder="false">Organizzazione</item>
-  <item name="RBLsource.2.description" html="false" placeholder="false">Seleziona elementi da una skin associata a una organizzazione.</item>
-  <item name="RBLsource.3.text" disambiguation="singolare" html="false" placeholder="false">comunità</item>
-  <item name="RBLsource.3.description" html="false" placeholder="false">Seleziona elementi da una skin associata a una comunità.</item>
+  
+  <item name="Step.0.text" html="false" placeholder="false">Select import</item>
+  <item name="Step.0.description" html="false" placeholder="false">Select the item from which to import the skin.</item>
+  <item name="Step.1.text" html="false" placeholder="false">Select organization</item>
+  <item name="Step.1.description" html="false" placeholder="false">Select organization from whitch to import the skin</item>
+  <item name="Step.2.text" html="false" placeholder="false">Select community</item>
+  <item name="Step.2.description" html="false" placeholder="false">Select community from whitch to import the skin</item>
+  <item name="Step.3.text" html="false" placeholder="false">Assocciate Elements</item>
+  
+  <item name="Step.3.description" html="false" placeholder="false">Specify which element of the template will be replaced with the skin element.</item>
+  <item name="LKBundot.text" html="false" placeholder="false">Cancel</item>
+  <item name="LKBundot.ToolTip" html="false" placeholder="false">Cancel</item>
+  <item name="LKBundot.status" html="false" placeholder="false">Cancel</item>
+  <item name="LKBundob.text" html="false" placeholder="false">Cancel</item>
+  <item name="LKBundob.ToolTip" html="false" placeholder="false">Cancel</item>
+  <item name="LKBundob.status" html="false" placeholder="false">Cancel</item>
+  <item name="RBLsource.0.text" html="false" placeholder="false">Current</item>
+  <item name="RBLsource.0.description" html="false" placeholder="false">Select items from the currently used skin.</item>
+  <item name="RBLsource.1.text" html="false" placeholder="false">Portal</item>
+  <item name="RBLsource.1.description" html="false" placeholder="false">Select items from the default portal skin.</item>
+  <item name="RBLsource.2.text" html="false" placeholder="false">Organization</item>
+  <item name="RBLsource.2.description" html="false" placeholder="false">Select items from a skin associated with an organization.</item>
+  <item name="RBLsource.3.text" disambiguation="singolare" html="false" placeholder="false">community</item>
+  <item name="RBLsource.3.description" html="false" placeholder="false">Select items from a skin associated with a community.</item>
   <item name="LKBcomSelector.text" html="false" placeholder="false">Open</item>
   <item name="LKBcomSelector.ToolTip" html="false" placeholder="false">Select community</item>
   <item name="LKBcomSelector.status" html="false" placeholder="false">Select community</item>
@@ -185,24 +188,24 @@
   <item name="LKBorgnSelector.ToolTip" html="false" placeholder="false">Select Organization</item>
   <item name="LKBorgnSelector.status" html="false" placeholder="false">Select Organization</item>
   <item name="LKBorgnSelector.hide" html="false" placeholder="false">Close</item>
-  <item name="LKBnextt.text" html="false" placeholder="false">Avanti</item>
-  <item name="LKBnextt.ToolTip" html="false" placeholder="false">Avanti</item>
-  <item name="LKBnextt.status" html="false" placeholder="false">Avanti</item>
-  <item name="LKBnextb.text" html="false" placeholder="false">Avanti</item>
-  <item name="LKBnextb.ToolTip" html="false" placeholder="false">Avanti</item>
-  <item name="LKBnextb.status" html="false" placeholder="false">Avanti</item>
-  <item name="LKBconfirmt.text" disambiguation="verbo" html="false" placeholder="false">Conferma</item>
-  <item name="LKBconfirmt.ToolTip" disambiguation="verbo" html="false" placeholder="false">Conferma</item>
-  <item name="LKBconfirmt.status" disambiguation="verbo" html="false" placeholder="false">Conferma</item>
-  <item name="LKBconfirmb.text" disambiguation="verbo" html="false" placeholder="false">Conferma</item>
-  <item name="LKBconfirmb.ToolTip" disambiguation="verbo" html="false" placeholder="false">Conferma</item>
-  <item name="LKBconfirmb.status" disambiguation="verbo" html="false" placeholder="false">Conferma</item>
-  <item name="LKBbackt.text" html="false" placeholder="false">Indietro</item>
-  <item name="LKBbackt.ToolTip" html="false" placeholder="false">Indietro</item>
-  <item name="LKBbackt.status" html="false" placeholder="false">Indietro</item>
-  <item name="LKBbackb.text" html="false" placeholder="false">Indietro</item>
-  <item name="LKBbackb.ToolTip" html="false" placeholder="false">Indietro</item>
-  <item name="LKBbackb.status" html="false" placeholder="false">Indietro</item>
+  <item name="LKBnextt.text" html="false" placeholder="false">Cancel</item>
+  <item name="LKBnextt.ToolTip" html="false" placeholder="false">Cancel</item>
+  <item name="LKBnextt.status" html="false" placeholder="false">Cancel</item>
+  <item name="LKBnextb.text" html="false" placeholder="false">Cancel</item>
+  <item name="LKBnextb.ToolTip" html="false" placeholder="false">Cancel</item>
+  <item name="LKBnextb.status" html="false" placeholder="false">Cancel</item>
+  <item name="LKBconfirmt.text" disambiguation="verbo" html="false" placeholder="false">Confirm</item>
+  <item name="LKBconfirmt.ToolTip" disambiguation="verbo" html="false" placeholder="false">Confirm</item>
+  <item name="LKBconfirmt.status" disambiguation="verbo" html="false" placeholder="false">Confirm</item>
+  <item name="LKBconfirmb.text" disambiguation="verbo" html="false" placeholder="false">Confirm</item>
+  <item name="LKBconfirmb.ToolTip" disambiguation="verbo" html="false" placeholder="false">Confirm</item>
+  <item name="LKBconfirmb.status" disambiguation="verbo" html="false" placeholder="false">Confirm</item>
+  <item name="LKBbackt.text" html="false" placeholder="false">Back</item>
+  <item name="LKBbackt.ToolTip" html="false" placeholder="false">Back</item>
+  <item name="LKBbackt.status" html="false" placeholder="false">Back</item>
+  <item name="LKBbackb.text" html="false" placeholder="false">Back</item>
+  <item name="LKBbackb.ToolTip" html="false" placeholder="false">Back</item>
+  <item name="LKBbackb.status" html="false" placeholder="false">Back</item>
   <item name="NewPlacing.10" html="false" placeholder="false">Header - Left</item>
   <item name="NewPlacing.11" html="false" placeholder="false">Header - Center</item>
   <item name="NewPlacing.12" html="false" placeholder="false">Header - Right</item>
@@ -246,12 +249,12 @@
   <item name="RBLalignment.-1" description="Posizione elemento" html="false" placeholder="false">Left</item>
   <item name="RBLalignment.0" description="Posizione elemento" html="false" placeholder="false">Center</item>
   <item name="RBLalignment.1" description="Posizione elemento" html="false" placeholder="false">Right</item>
-  <item name="LBLalignment_t.text" description="Allinamento elemento" html="false" placeholder="false">Allignmenteamento</item>
-  <item name="LITrevision_t.text" html="false" placeholder="false">Revisioni</item>
+  <item name="LBLalignment_t.text" description="Allinamento elemento" html="false" placeholder="false">Allignment</item>
+  <item name="LITrevision_t.text" html="false" placeholder="false">Revisions</item>
   <item name="Services.Common" disambiguation="common" html="false" placeholder="false">Common</item>
   <item name="LBLcode_t.text" description="Abbreviazione codice/identificativo" html="false" placeholder="false">Code</item>
   <item name="LITcode_t.text" description="Abbreviazione codice/identificativo" html="false" placeholder="false">Cod.</item>
   <item name="PageTag.CurPage" html="false" placeholder="false">Current page number</item>
-  <item name="PageTag.CreateDate" html="false" placeholder="false">Data Generazione</item>
-  <item name="PageTag.CreateTime" html="false" placeholder="false">Ora Generazione</item>
+  <item name="PageTag.CreateDate" html="false" placeholder="false">Generation Date</item>
+  <item name="PageTag.CreateTime" html="false" placeholder="false">Generation Hour</item>
 </Resource>

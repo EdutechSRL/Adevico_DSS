@@ -1,0 +1,289 @@
+﻿body {
+}
+.stepcontainer .stepinfo.validation {
+    float:left;
+}
+.commissionbox .title{
+    font-weight:bold;
+}
+.flex-row {
+    display: -webkit-flex !important;
+    display: flex !important;
+    -webkit-align-items: stretch !important;
+    align-items: stretch !important;
+}
+.box-ordinable-steps {
+    padding: 14px 0 24px 0;
+    clear: both;
+}
+.stepinfo.validation {
+    margin: 0;
+    padding: 0;
+}
+.contentwrapper.editsteps.clearfix {
+    clear: both;
+}
+.stepcontainer.addSteps .icons {
+    float: right;
+}
+.stepcontainer.addSteps {
+    margin-bottom: 0;
+    background-color: transparent;
+    border: none;
+    box-shadow: none
+}
+.stepcontainer.addSteps:after {
+    display: table;
+    content: " ";
+    clear: both;
+}
+div.stepcontainer {
+    padding: 14px;
+    display: block;
+    background-color: #e6e9ed;
+    width: auto;
+    border: 1px solid #ccc;
+    -moz-box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.5), 1px 1px 1px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.5), 1px 1px 1px rgba(0, 0, 0, 0.3);
+    box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.5), 1px 1px 0 rgba(0, 0, 0, 0.15);
+    margin-bottom: 12px;
+}
+div.stepcontainer .commissionboxconteiner.steps {
+    background-color: transparent;
+    border: none;
+    margin:0;
+    padding:0;
+}
+div.stepcontainer .commissionbox.validation {
+    background-color: #fff;
+    border: none;
+    margin-right: 6px;
+    border-bottom: solid 1px #cecece;
+    margin: 0;
+}
+div.addSteps {
+    min-height: 0px;
+    padding: 5px 0;
+}
+.right-icons {
+    float:right;
+    margin-left:3px;
+}
+div.stepinfo {
+    display: inline-block;
+    width: 200px;
+    vertical-align: top;
+    margin: 5px;
+    padding: 10px;
+}
+div.commissionbox .iconcontainer.icons {
+    position: absolute;
+    bottom: 12px;
+    top: auto;
+}
+div.commissionbox {
+    display: inline-block;
+    width: 150px;
+    background-color: #dcdcdc; /*colore a caso*/
+    border: 1px solid #808080; /*colore a caso*/
+    margin: 5px;
+    padding: 14px 14px 30px 14px;
+    margin-right: 6px !important;
+    position: relative;
+}
+
+div.commissionboxconteiner {
+    display: inline-block;
+    max-width: 75%;
+    background-color: #f0f0f0; /*colore a caso*/
+    border: 1px solid #808080; /*colore a caso*/
+    margin: 5px;
+    padding: 10px;
+}
+
+a.actionIco {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    position: relative;
+    overflow: hidden;
+    background-position: center center;
+    background-repeat: no-repeat;
+    text-indent: -9999px;
+}
+a.actionIco.confirm {
+    background-image: url('../../images/TaskList/completed20.png');
+}
+
+a.actionIco.draft {
+    background-image: url('../../Graphics/Generics/Command/img/delete16.png');
+}
+.points.commission > .score{
+    display:block;
+}
+table.tree_table {
+    font-size: 12px;
+}
+.points.commission > .score > * {
+    line-height: 20px;
+    vertical-align: middle;
+}
+
+.score .score span.submission {
+    background-color: #ccc;
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border-radius: 8px;
+    text-indent: -1000px;
+    overflow: hidden;
+    position: relative;
+}
+.vote.blue {
+    background-color: #4a9ac7;
+    color: #fff;
+}
+.vote.blue a{
+    color: #fff;
+}
+
+.sumbmissiondetails {
+    padding: 24px;
+    line-height: 18px;
+    margin: 0 0 12px 0;
+    background-color: #ececec;
+}
+
+/* table styles */
+table.table.evaluation {
+    font-size: 10px;
+    margin: 6px 0 18px 0;
+}
+/*tr status:*/
+
+tr.Started .score .score span.success,
+tr.Locked .score .score span.success,
+tr.Draft .score .score span.success {
+    background-color: #aaa;
+    color: #aaa !important;
+}
+
+tr.Started .score .score span.fail,
+tr.Locked .score .score span.fail,
+tr.Draft .score .score span.fail {
+    background-color: #aaa;
+    color: #aaa !important;
+}
+tr.Closed .score .score span.success,
+tr.ValutationConfirmed .score .score span.success,
+tr.ValutationEnded .score .score span.success,
+.score .score span.success {
+    background-color: #99c74a;
+    color: #99c74a;
+    border-width: 2px;
+    border-radius: 50%;
+    border-style: solid;
+    border-color: #99c74a;
+}
+
+tr.Closed .score .score span.fail,
+tr.ValutationConfirmed .score .score span.fail,
+tr.ValutationEnded .score .score span.fail,
+.score .score span.fail {
+    background-color: #c74a40;
+    color: #c74a40;
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 50%;
+    border-color: #c74a40;
+}
+
+span.score span.boolean span.success {
+    background-color: #fff !important;
+    text-indent: 0;
+    border-width: 0px !important;
+}
+span.score span.boolean span.fail {
+    background-color: #fff !important;
+    text-indent: 0;
+    border-width: 0px !important;
+}
+span.score span.boolean span.fail:after {
+    content: "X";
+    display: inline-block;
+    font-size: 10px;
+    font-weight: bold;
+    line-height: 18px;
+    text-align: center;
+}
+
+span.score span.boolean span.success:after {
+    content: "✓";
+    display: inline-block;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 18px;
+    text-align: center;
+}
+
+
+
+table.evaluation tr.submitter td
+{
+    text-align: center;
+}
+
+table.evaluation tr.submitter td.submittername {
+        text-align: justify;
+    }
+
+
+
+
+td.points span.container span.score {
+    display: inline-block;
+    width: 3.5em; /*25px;*/ /*allargata anche intestazione tabella a definizione precedente*/
+}
+
+
+table.evaluation th.submitternumber {
+    width: 30px;
+}
+
+table.evaluation th.submittername {
+    width: 150px;
+}
+
+table.evaluation th.totalpoints {
+    width: 60px;
+}
+
+table.evaluation th.success {
+    width: 150px;
+}
+
+table.evaluation th.admit {
+    width: 60px;
+}
+
+
+table.evaluation th.points {
+    width: 120px !important;
+}
+
+table.evaluation .points span.container {
+   width: 100px;
+   display: inline-block;
+}
+
+    table.evaluation .points span.container span.numeric {
+        width: 50px;
+    }
+
+    table.evaluation .points span.container span.boolean {
+        width: 20px;
+    }
+
+    table.evaluation .points span.container span.success {
+        width: 16px;
+    }

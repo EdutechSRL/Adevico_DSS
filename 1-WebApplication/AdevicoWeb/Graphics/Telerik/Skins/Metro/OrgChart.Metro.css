@@ -1,0 +1,57 @@
+.RadOrgChart_Metro {
+  color: #767676;
+  font: normal 12px/22px "Segoe UI", Arial, sans-serif; }
+  .RadOrgChart_Metro .rocGroup {
+    background-color: #e5e5e5; }
+  .RadOrgChart_Metro .rocItem {
+    color: #ffffff; }
+  .RadOrgChart_Metro .rocItemContent,
+  .RadOrgChart_Metro .rocItemTemplate {
+    border-color: #25a0da;
+    background-color: #25a0da; }
+  .RadOrgChart_Metro .rocExpandArrow,
+  .RadOrgChart_Metro .rocCollapseArrow,
+  .RadOrgChart_Metro .rocExpandGroupArrow,
+  .RadOrgChart_Metro .rocCollapseGroupArrow {
+    border-color: #25a0da;
+    background-color: #25a0da;
+    background-image: url('../Common/Actions/actionExpandCollapseLight.png'); }
+  .RadOrgChart_Metro .rocLoadingNodes .rocExpandArrow,
+  .RadOrgChart_Metro .rocLoadingNodes .rocCollapseArrow,
+  .RadOrgChart_Metro .rocLoadingGroups .rocExpandGroupArrow,
+  .RadOrgChart_Metro .rocLoadingGroups .rocCollapseGroupArrow {
+    border-color: transparent;
+    background-color: transparent;
+    background-image: url('Common/loading_small.gif'); }
+  .RadOrgChart_Metro .rocLineUp,
+  .RadOrgChart_Metro .rocLineDown,
+  .RadOrgChart_Metro .rocLineHorizontal {
+    background-image: url('../Common/OrgChart/rocLinesDark.png'); }
+
+.rocDetachedItemContainer.RadOrgChart_Metro .rocGhostItem,
+.rocDetachedItemContainer.RadOrgChart_Metro .rocGhostNode,
+.rocDetachedNodeContainer.RadOrgChart_Metro .rocGhostItem,
+.rocDetachedNodeContainer.RadOrgChart_Metro .rocGhostNode {
+  border-color: #e5e5e5;
+  color: #ffffff;
+  background-color: #25a0da; }
+.rocDetachedItemContainer.RadOrgChart_Metro .rocDropClue,
+.rocDetachedNodeContainer.RadOrgChart_Metro .rocDropClue {
+  background-image: url('../Common/Actions/actionDragDropLight.png'); }
+
+.rocToolbar_Metro {
+  border-color: #e5e5e5;
+  border-radius: 0;
+  background-color: #e5e5e5; }
+  .rocToolbar_Metro .rocToolbarButton {
+    border-color: #e5e5e5;
+    background-color: #25a0da;
+    text-indent: -999em;
+    float: left;
+    overflow: hidden; }
+  .rocToolbar_Metro .rocToolbarButton.rocActionDrillHere {
+    background-position: -32px 0; }
+  .rocToolbar_Metro .rocToolbarButton.rocActionGoToParent {
+    background-position: -32px -16px; }
+  .rocToolbar_Metro .rocToolbarButton.rocActionGoToRoot {
+    background-position: -32px -32px; }

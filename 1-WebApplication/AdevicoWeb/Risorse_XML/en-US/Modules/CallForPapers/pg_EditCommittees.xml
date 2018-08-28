@@ -170,9 +170,9 @@
   <item name="CriterionCreator.CriterionType.RatingScaleFuzzy.Description" placeholder="false">Fuzzy qualitative evaluation criterion</item>
   <item name="CriterionCreator.CriterionType.RatingScaleFuzzy.Help"></item>
 
-  <item name="CriterionCreator.CriterionType.Boolean.Text" placeholder="true" mustcontains="{0}">Criterio booleano</item>
-  <item name="CriterionCreator.CriterionType.Boolean.Description" placeholder="false">Criterio di valutazione Sì/No</item>
-  <item name="CriterionCreator.CriterionType.Boolean.Help">Da usare per indicare se la sottomissione supera o meno il criterio</item>
+  <item name="CriterionCreator.CriterionType.Boolean.Text" placeholder="true" mustcontains="{0}">Boolean criterion {0}</item>
+  <item name="CriterionCreator.CriterionType.Boolean.Description" placeholder="false">Evaluation criterion Yes / No</item>
+  <item name="CriterionCreator.CriterionType.Boolean.Help">To be used to indicate whether the submission exceeds the criterion or not</item>
   
   <item name="OptionDefault" html="false" placeholder="true" mustcontains="{0}">Option {0}</item>
   <item name="Submitters.data-placeholder" html="false" placeholder="false">Select submitter types</item>
@@ -723,46 +723,46 @@
   <item name="DisplayEvaluationSummaryToken.Title" html="false" placeholder="false">Wait.</item>
   <item name="DisplayEvaluationSummaryToken.Message" html="false" placeholder="false">The requested file is almost ready, please wait few seconds.</item>
   <!-- DSS -->
-  <item name="CallDssDescription">Selezionare il metodo di aggregazione delle commissioni di valutazione</item>
-  <item name="MethodTitleTranslation">Predefinito:</item>
-  <item name="Call.TranslationWeightsSetTitle">Pesi commissioni bando:</item>
-  <item name="Committee.TranslationWeightsSetTitle">Pesi criteri:</item>
-  <item name="CommitteeDssDescription">Selezionare il metodo di aggregazione dei criteri di valutazione della commissione</item>
-  <item name="CommitteeRatingSetTranslation">Scala di valutazione:</item>
-  <item name="CommitteeSelectRatingTranslation">Seleziona una scala di valutazione</item>
-  <item name="CommitteeInheritsTranslation">Eredita dal bando</item>
-  <item name="CommitteeTranslationWeightTitle">Peso:</item>
-  <item name="CommitteeTranslationWeightChoose">seleziona il peso della commissione</item>
-  <item name="CriterionTranslationWeightTitle">Peso:</item>
-  <item name="CriterionTranslationWeightChoose">seleziona il peso del criterio</item>
-  <item name="LBratingscale.Text">seleziona il peso del criterio</item>
-  <item name="LBratingscalefuzzy.Text">seleziona il peso del criterio</item>
-  <item name="EvaluationEditorErrors.DssSettings" disambiguation="commissione di valutazione di un bando">ATTENZIONE: verificare le impostazioni di valutazione.</item>
-  <item name="WizardEvaluationStep.GeneralSettings.Message" placeholder="true" mustcontains="{0}">{0} commissioni/e</item>
-  <item name="WizardEvaluationStep.GeneralSettings.Message.EditingErrors.CommitteeDssSettings">Errore impostazioni avanzate</item>
-  <item name="WizardEvaluationStep.GeneralInfo.Message" placeholder="true" mustcontains="{0}">{0} commissioni/e</item>
-  <item name="WizardEvaluationStep.GeneralInfo.Message.EditingErrors.CommitteeDssSettings">Errore impostazioni avanzate</item>
-  <item name="DisplayDssErrors">Errore nelle impostazioni avanzate, vanno verificati i seguenti aspetti nelle commissioni:</item>
-  <item name="DisplayDssErrors.1">Errore nelle impostazioni avanzate, vanno verificati i seguenti aspetti nella commissione:</item>
-  <item name="CommiteeDssErrors" placeholder="true" mustcontains="{0}" hidden="true">Commissione "{0}": </item>
-  <item name="CriterionDssErrors" placeholder="true" mustcontains="{0}" hidden="true">Criterio "{0}": </item>
-  <item name="CommiteeDssError.DssError.MissingMethod">metodo di aggregazione mancante</item>
-  <item name="CommiteeDssError.DssError.MissingRatingSet">scala valori mancante</item>
-  <item name="CommiteeDssError.DssError.MissingWeight">peso non definito</item>
-  <item name="CommiteeDssError.DssError.InvalidWeight">peso invalido</item>
-  <item name="CommiteeDssError.DssError.InvalidType">criteri fuzzy con algoritmo di aggregazione NON fuzzy (rimuovere i criteri fuzzy)</item>
-  <item name="CommiteeDssError.DssError.MissingManualWeight">pesi manual NON indicati</item>
-  <item name="CommiteeDssError.DssError.InvalidManualWeight">pesi errati</item>
-  <item name="DssWaitingEvaluations">Voto indicativo - Necessita conclusione attività di valutazione</item>
-  <item name="DssNotcompleted">Necessita conclusione attività di valutazione per avere valore significativo</item>
-  <item name="DssNotcompleted.Evaluator">Il valutatore non ha concluso la sua valutazione, il valore NON è significativo</item>
-  <item name="DisplayDssWarning.NoDate">ATTENZIONE: al momento non sono presenti valutazioni avanzate sulle domande di partecipazione elencate</item>
-  <item name="DisplayDssWarning.Date.isCompleted.True" mustcontains="{0}" placeholder="true">ATTENZIONE: le valutazioni sono state aggiornate in data {0}</item>
-  <item name="DisplayDssWarning.Date.isCompleted.False" mustcontains="{0}" placeholder="true">ATTENZIONE: le valutazioni sono state aggiornate in data {0}, la procedura di valutazione NON è conclusa e di conseguenza i dati visualizzati sono meramente indicativi</item>
-  <item name="EvaluationTranslations.CellTitleDss">Voto</item>
-  <item name="EvaluationTranslations.CellTitleAverage">Media</item>
-  <item name="EvaluationTranslations.CellTitleCriterionFuzzyValue">Valore fuzzy</item>
-  <item name="EvaluationTranslations.CellTitleDssFuzzyValue">Valore fuzzy</item>
-  <item name="EvaluationTranslations.CellTitleDssEvaluation">Ranking valutatore</item>
-  <item name="EvaluationTranslations.CellTitleDssEvaluationFuzzyValue">Ranking fuzzy valutatore</item>
+  <item name="CallDssDescription">Select the aggregation method for evaluation commissions</item>
+  <item name="MethodTitleTranslation">Customized:</item>
+  <item name="Call.TranslationWeightsSetTitle">Commission fee weights:</item>
+  <item name="Committee.TranslationWeightsSetTitle">Weights criteria:</item>
+  <item name="CommitteeDssDescription">Select the aggregation method of the commission evaluation criteria</item>
+  <item name="CommitteeRatingSetTranslation">Evaluation scale:</item>
+  <item name="CommitteeSelectRatingTranslation">Select an evaluation scale</item>
+  <item name="CommitteeInheritsTranslation">It inherits from the announcement</item>
+  <item name="CommitteeTranslationWeightTitle">Weight:</item>
+  <item name="CommitteeTranslationWeightChoose">select the commission weight</item>
+  <item name="CriterionTranslationWeightTitle">Weight:</item>
+  <item name="CriterionTranslationWeightChoose">select the weight of the criterion</item>
+  <item name="LBratingscale.Text">select the weight of the criterion</item>
+  <item name="LBratingscalefuzzy.Text">select the weight of the criterion</item>
+  <item name="EvaluationEditorErrors.DssSettings" disambiguation="commissione di valutazione di un bando">WARNING: check the evaluation settings.</item>
+  <item name="WizardEvaluationStep.GeneralSettings.Message" placeholder="true" mustcontains="{0}">{0} commission(s)</item>
+  <item name="WizardEvaluationStep.GeneralSettings.Message.EditingErrors.CommitteeDssSettings">Advanced settings error</item>
+  <item name="WizardEvaluationStep.GeneralInfo.Message" placeholder="true" mustcontains="{0}">{0} commission(s)</item>
+  <item name="WizardEvaluationStep.GeneralInfo.Message.EditingErrors.CommitteeDssSettings">Advanced settings error</item>
+  <item name="DisplayDssErrors">Error in the advanced settings, check the following aspects in the commissions:</item>
+  <item name="DisplayDssErrors.1">Error in advanced settings, check the following aspects in the commission:</item>
+  <item name="CommiteeDssErrors" placeholder="true" mustcontains="{0}" hidden="true">Commission "{0}": </item>
+  <item name="CriterionDssErrors" placeholder="true" mustcontains="{0}" hidden="true">Criterion "{0}": </item>  
+  <item name="CommiteeDssError.DssError.MissingMethod">missing aggregation method</item>
+  <item name="CommiteeDssError.DssError.MissingRatingSet">missing value scale</item>
+  <item name="CommiteeDssError.DssError.MissingWeight">undefined weight</item>
+  <item name="CommiteeDssError.DssError.InvalidWeight">invalid weight</item>
+  <item name="CommiteeDssError.DssError.InvalidType">fuzzy criteria with NON fuzzy aggregation algorithm (remove fuzzy criteria)</item>
+  <item name="CommiteeDssError.DssError.MissingManualWeight">manual weights NOT indicated</item>
+  <item name="CommiteeDssError.DssError.InvalidManualWeight">wrong weights</item>
+  <item name="DssWaitingEvaluations">Indicative rating - Evaluation activity needed</item>
+  <item name="DssNotcompleted">Evaluation activity is required to have significant value</item>
+  <item name="DssNotcompleted.Evaluator">The evaluator has not completed his evaluation, the value is NOT significant</item>
+  <item name="DisplayDssWarning.NoDate">WARNING: at the moment there are no advanced evaluations on the listed applications</item>
+  <item name="DisplayDssWarning.Date.isCompleted.True" mustcontains="{0}" placeholder="true">WARNING: the evaluations have been updated on {0}</item>
+  <item name="DisplayDssWarning.Date.isCompleted.False" mustcontains="{0}" placeholder="true">WARNING: the evaluations have been updated on {0}, the evaluation procedure is NOT completed and consequently the displayed data are merely indicative</item>
+  <item name="EvaluationTranslations.CellTitleDss">Mark</item>
+  <item name="EvaluationTranslations.CellTitleAverage">Average</item>
+  <item name="EvaluationTranslations.CellTitleCriterionFuzzyValue">Fuzzy value</item>
+  <item name="EvaluationTranslations.CellTitleDssFuzzyValue">Fuzzy value</item>
+  <item name="EvaluationTranslations.CellTitleDssEvaluation">Evaluator Ranking</item>
+  <item name="EvaluationTranslations.CellTitleDssEvaluationFuzzyValue">Evaluator fuzzy ranking</item>
 </Resource>

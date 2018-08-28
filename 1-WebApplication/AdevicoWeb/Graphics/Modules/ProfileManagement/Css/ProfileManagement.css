@@ -69,10 +69,12 @@ span.Fieldrow {
 
 /*div.StepData */
 
-span.Fieldrow .Titolo_campo {
-	display: inline-block;
-	width: 165px;
-}
+    span.Fieldrow .Titolo_campo {
+        display: inline-block;
+        /*	width: 165px;*/
+        padding-right: 1em;
+        padding-left: 1em;
+    }
 
 /* Pages ProfileManagement.aspx */
 
@@ -292,7 +294,12 @@ input.AgencyText {
 }
 
 table td  {
-	font-size: .9em;
+	/*font-size: .9em;*/
+}
+
+
+table.light * {
+    vertical-align: middle;
 }
 
 #content table.light tbody tr th.actions,

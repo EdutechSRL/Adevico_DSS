@@ -1,5 +1,154 @@
 /* @group Edupath Stats */
 
+
+
+/* webinar 06/06/2017 */
+td.tdActions {
+    width: 1%;
+}
+
+#addSubActivity .fieldrow {
+    width: 50%;
+    float: left;
+}
+
+.fieldobject.box.basicinfo {
+    padding: 12px;
+    background-color: #ededed;
+}
+
+#addSubActivity .fieldrow.fieldbutton {
+    width: 100%;
+    float: none;
+    clear: both;
+}
+
+.clearfix:after, .clearfix:before {
+    display: table;
+    content: " ";
+    clear: both;
+}
+
+.fieldrow.fieldbutton a {
+    float: right;
+}
+
+table td.tdActions a {
+    display: inline-block;
+    padding: 4px 12px;
+    margin-bottom: 0;
+    font-size: 12px;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    color: #333;
+    background-color: #fff;
+    border-color: #ccc;
+}
+
+.table {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 20px;
+}
+
+.table-striped > tbody > tr:nth-of-type(odd) {
+    background-color: #f9f9f9;
+}
+
+.table > tbody > tr > td, .table > tbody > tr > th, .table > tfoot > tr > td, .table > tfoot > tr > th, .table > thead > tr > td, .table > thead > tr > th {
+    padding: 8px;
+    line-height: 1.42857143;
+    vertical-align: top;
+    border-top: 1px solid #ddd;
+}
+
+.table > caption + thead > tr:first-child > td, .table > caption + thead > tr:first-child > th, .table > colgroup + thead > tr:first-child > td, .table > colgroup + thead > tr:first-child > th, .table > thead:first-child > tr:first-child > td, .table > thead:first-child > tr:first-child > th {
+    border-top: 0;
+}
+
+.table > thead > tr > th {
+    vertical-align: bottom;
+    border-bottom: 2px solid #ddd;
+}
+
+.table > tbody > tr > td, .table > tbody > tr > th, .table > tfoot > tr > td, .table > tfoot > tr > th, .table > thead > tr > td, .table > thead > tr > th {
+    padding: 8px;
+    line-height: 1.42857143;
+    vertical-align: top;
+    border-top: 1px solid #ddd;
+}
+
+.webinar.showInfo {
+    display: inline-block;
+    position: relative;
+    width: 14px;
+    height: 14px;
+    line-height: 14px;
+    border: solid 1px #333;
+    color: #333;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 11px;
+    margin-left: 4px;
+}
+
+.webinar.info {
+    position: absolute;
+    width: 300px;
+    z-index: 111;
+    border: 1px solid transparent;
+    color: #31708f;
+    background-color: #d9edf7;
+    border-color: #bce8f1;
+    padding: 15px;
+    margin-bottom: 20px;
+    line-height: 16px;
+    display: none;
+    top: 0;
+    left: 15px;
+    text-align: left;
+}
+
+a.webinar.play {
+    color: #333;
+    text-decoration: none;
+}
+
+    a.webinar.play:hover {
+        text-decoration: underline;
+    }
+
+.webinar.showInfo:hover .webinar.info {
+    display: block;
+}
+
+.play:before {
+    content: '';
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background-image: url("../../../../Graphics/Modules/EduPath/img/play.gif");
+    margin-right: 6px;
+    background-size: cover;
+}
+
+html .play[disabled=disabled]:before {
+    background-image: url("../../../../Graphics/Modules/EduPath/img/NotPlay.gif");
+}
+
+html .play[disabled=disabled] {
+    cursor: default;
+}
+/* fine webinar 06/06/2017 */
+
+
+
 /* Mooc Edupath stylesheet - updated 01/06/2016 */
 
 table.stats {
@@ -1465,10 +1614,39 @@ ul.units li.unit ul.activities li.activity span.itemTitle a {
 
 ul.units li.unit ul.activities li.activity.nodateconstraint .left {
 	display: inline-block;
-	width: 738px;
-	*width: 708px;
+	width: 728px;
+	*width: 698px;
 }
-
+span.lang {
+    border: 1px solid #ececec !important;
+    padding: 0.1em 0.2em !important;
+    width: 40px !important;
+    display: inline-block !important;
+    text-align: center !important;
+    border-radius: 4px !important;
+    background-color: #dcdcdc !important;
+    color: #fff !important;
+    font-size: 12px !important;
+}
+.main_language_selector_container:after {
+    content: ' ';
+    visibility: hidden;
+    clear: both;
+    display:block;
+    height:0;
+}
+.main_language_selector_container {
+    padding: 8px 20px;
+    background-color: #efede3;
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    margin: -12px 18px 0 17px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2), 0 0 20px rgba(0, 0, 0, 0.067) inset !important;
+}
+.main_language_selector_container #main_language_selector {
+    float: right;
+    margin-right: 21px;
+}
 ul.units li.unit .description {
 	margin: .5em 0 1em 20px;
 	border-top: 1px solid #ccc;
@@ -1698,10 +1876,13 @@ ul.activities li.activity .right {
 	float: right;
 	width: 280px;
 }
-
+.pf_language_selector {
+    margin-bottom: 4px;
+    min-width:62px;
+}
 ul.activities li.activity.nodateconstraint .right {
 	float: right;
-	width: 60px;
+	width: 90px;
 }
 
 ul.activities li.note .right {

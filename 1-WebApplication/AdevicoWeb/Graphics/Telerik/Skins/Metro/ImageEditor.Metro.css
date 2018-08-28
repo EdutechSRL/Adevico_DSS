@@ -1,0 +1,61 @@
+.RadImageEditor_Metro {
+  /* Base overrides */
+  /* Expand down button */
+  /*Custom skin*/
+  /* Vertical ToolBar */ }
+  .RadImageEditor_Metro, .RadImageEditor_Metro.rieDialogs .riePrintContent {
+    border-color: #cdcdcd;
+    background-color: white; }
+  .RadImageEditor_Metro .rieStatusBarInfo .rieLabel {
+    color: black; }
+  .RadImageEditor_Metro .rieStatusBarInfo span {
+    color: #767676; }
+  .RadImageEditor_Metro .RadToolBar_Metro .rtbWrap {
+    width: 26px;
+    height: 26px; }
+  .RadImageEditor_Metro .RadToolBar_Metro .rtbIcon {
+    margin: 4px 0 0 1px; }
+  .RadImageEditor_Metro .RadToolBar_Metro .rtbSplBtn .rtbExpandDown {
+    width: 40px; }
+  .RadImageEditor_Metro span.rtbIn .rtbChoiceArrow {
+    width: 10px;
+    height: 10px;
+    vertical-align: middle;
+    background-image: url('Common/radActionsSprite.png');
+    background-position: -5px -25px;
+    margin: 8px 0 0 11px; }
+  .RadImageEditor_Metro .RadToolBar_Metro .rtbItem a.rieCustomizedIconClass .rtbIcon,
+  .RadImageEditor_Metro .RadToolBar_Metro .rtbItemHovered a.rieCustomizedIconClass .rtbIcon,
+  .RadImageEditor_Metro .RadToolBar_Metro .rtbChecked a.rieCustomizedIconClass .rtbIcon {
+    top: 5px;
+    left: 5px; }
+  .RadImageEditor_Metro li.rtbItem .rieBackgroundImg span.rtbIcon {
+    left: 7px;
+    top: 7px; }
+  .RadImageEditor_Metro div.rieZoneLeft,
+  .RadImageEditor_Metro div.rieZoneRight {
+    width: 38px; }
+
+/* ImageEditor Dialogs using RadDock as Wrapper */
+.RadDock_Metro.rieDialogs .rbPrimaryIcon,
+.RadImageEditor_Metro .rieResizeHandle,
+.RadImageEditor_Metro .rieBackgroundImg .rtbIcon {
+  background-image: url('../Common/ImageEditor/rieToolsLight.png');
+  _background-image: url('../Common/ImageEditor/rieToolsLightIE6.png'); }
+
+.RadDock_Metro.rieDialogs .rieThumbsBottomRow td,
+.RadDock_Metro.rieDialogs .rieDialogsThumbsLeft,
+.RadDock_Metro.rieDialogs .riePrintContent img,
+.RadDock_Metro.rieDialogs .rieThumbsLink,
+.RadImageEditor_Metro .rieContentArea {
+  border-color: #cdcdcd; }
+
+.RadDock_Metro.rieDialogs .rieActiveThumbsLink,
+.RadDock_Metro.rieDialogs .rieThumbsLink:hover,
+.RadImageEditor_Metro .rieHighlightVertical,
+.RadImageEditor_Metro .rieHighlightHorizontal {
+  border-color: #cdcdcd;
+  background-color: #e5e5e5; }
+
+.RadDock_Metro.rieDialogs .rdContent {
+  color: #767676; }
