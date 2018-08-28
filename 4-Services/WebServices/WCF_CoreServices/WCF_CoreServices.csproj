@@ -114,7 +114,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="hibernate.cfg.xml.config" />
-    <Content Include="Icodeon\Config_IcodeonConn_Eduth.config" />
     <Content Include="ServiceCommunity.svc" />
     <Content Include="ServicePermission.svc" />
     <Content Include="Web.config">
@@ -179,6 +178,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Player\Config_Player.config" />
     <None Include="Properties\PublishProfiles\Deploy.pubxml" />
   </ItemGroup>
   <PropertyGroup>
