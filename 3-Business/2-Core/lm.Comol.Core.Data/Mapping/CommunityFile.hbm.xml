@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="lm.Comol.Core.DomainModel" namespace="lm.Comol.Core.DomainModel">
+	<class name="CommunityFile" table="FILE_DISPONIBILE" lazy="true">
+		<id name="Id" column="FLDS_id" type="Int64">
+			<generator class="native"/>
+		</id>
+		<many-to-one name="CommunityOwner" class="lm.Comol.Core.DomainModel.Community, lm.Comol.Core.DomainModel" column="FLDS_CMNT_id"
+					 foreign-key="FLDS_CMNT_id" cascade="none" lazy="false"/>
+		<many-to-one name="Owner" class="lm.Comol.Core.DomainModel.Person, lm.Comol.Core.DomainModel" column="FLDS_PRSN_ID" foreign-key="FLDS_PRSN_ID" cascade="none" lazy="false"/>
+		<property name="Name" type="String" column="FLDS_nome" />
+		<property name="Description" type="String" column="FLDS_descrizione" />
+		<property name="CreatedOn" type="DateTime" column="FLDS_dataInserimento"/>
+		<property name="Size" type="Int64" column="FLDS_dimensione" />
+		<property name="ContentType" type="String" column="ContentType" />
+
+		<property name="IsDownloadable" type="Boolean" column="IsDownloadable" />
+		<property name="isFile" type="Boolean" column="FLDS_isFile" />
+		<property name="isVirtual" type="Boolean" column="FLDS_isVirtual" />
+		<property name="isSCORM" type="Boolean" column="FLDS_isSCORM" />
+		<property name="isVideocast" type="Boolean" column="FLDS_isVideocast" />
+		<property name="isDeleted" type="Boolean" column="FLDS_isDeleted" />
+		<property name="isPersonal" type="Boolean" column="FLDS_IsPersonal" />
+		<property name="isVisible" type="Boolean" column="FLDS_visibile" />
+		
+		<property name="Level" type="Int32" column="FLDS_Livello" />
+		<property name="FileCategoryID" type="Int32" column="FLDS_CTGR_id" />
+		<property name="FolderId" type="Int64" column="FLDS_padreID" />
+		<property name="CloneID" type="Int64" column="FLDS_CloneID" />
+		<property name="Downloads" type="Int64" column="FLDS_numeroScaricamenti" />
+		<property name="FilePath" type="String" column="FLDS_path" />
+		<many-to-one name="ModifiedBy" class="Person" column="_ModifiedBy" foreign-key="_ModifiedBy" cascade="none"/>
+		<property name="ModifiedOn" type="DateTime" column="_ModifiedOn" not-null="false"/>
+		<property name="UniqueID" type="Guid" column="FLDS_GUID" />
+		<!--<many-to-one name="UserSubscription" class="Subscription" column="FLDS_RLPC_id" foreign-key="FLDS_RLPC_id" cascade="none"/>-->
+		<property name="DisplayOrder" type="Int32" column="FLDS_Ordine" />
+		<property name="Extension" type="String" column="Extension" />
+		<property name="DisplayName" type="String" formula="{fn CONCAT(FLDS_nome, Extension)}" update="false" insert="false"/>
+		<property name="CloneUniqueID" type="Guid" column="CloneUniqueID" />
+
+		<!--<bag name="Assignments" table="CR_CommunityFileAssignment" lazy="true" fetch="subselect" cascade="all-delete-orphan" inverse="true">
+			<key column="IdCommunityFile" foreign-key="FLDS_id"/>
+			<one-to-many class="lm.Comol.Core.DomainModel.CommunityFileAssignment, lm.Comol.Core.DomainModel"/>
+		</bag>-->
+	</class>
+</hibernate-mapping>

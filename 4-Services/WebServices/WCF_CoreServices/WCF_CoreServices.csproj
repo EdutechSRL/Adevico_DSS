@@ -58,10 +58,6 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\Library\lm.Comol.Core.CommonLib\NHibernate_21\Castle.DynamicProxy2.dll</HintPath>
     </Reference>
-    <Reference Include="COL_BusinessLogic_v2.0, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\9-AdevicoMIT_Library\lm.Comol.MitLibrary\bin\Debug\COL_BusinessLogic_v2.0.dll</HintPath>
-    </Reference>
     <Reference Include="Iesi.Collections, Version=1.0.0.1, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\Library\lm.Comol.Core.CommonLib\NHibernate_21\Iesi.Collections.dll</HintPath>
@@ -147,6 +143,10 @@
     <ProjectReference Include="..\..\..\..\4-Extension\Adevico.Modules\Adevico.Modules.csproj">
       <Project>{8a32e206-a6be-425b-816b-fcbb640da46d}</Project>
       <Name>Adevico.Modules</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\3-Business\1-OldProject\COL_BusinessLogic\COL_BusinessLogic_v2.0.vbproj">
+      <Project>{51f57fb8-1245-4ea5-bf34-d6412c283afb}</Project>
+      <Name>COL_BusinessLogic_v2.0</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\..\3-Business\1-OldProject\COL_Questionario\COL_Questionario.vbproj">
       <Project>{10eeacdf-85f8-4aa9-a965-ee1b2fd233d4}</Project>

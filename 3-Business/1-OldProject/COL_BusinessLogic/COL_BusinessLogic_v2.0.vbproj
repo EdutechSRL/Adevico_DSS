@@ -1,0 +1,496 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{51F57FB8-1245-4EA5-BF34-D6412C283AFB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>COL_BusinessLogic_v2</RootNamespace>
+    <AssemblyName>COL_BusinessLogic_v2.0</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>Windows</MyType>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <OptionExplicit>On</OptionExplicit>
+    <OptionCompare>Binary</OptionCompare>
+    <OptionStrict>Off</OptionStrict>
+    <OptionInfer>On</OptionInfer>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>COL_BusinessLogic_v2.0.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>COL_BusinessLogic_v2.0.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="COL_DataLayer, Version=1.0.6814.25867, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\9-AdevicoMIT_Library\lm.Comol.MitLibrary\Adevico\MIT\COL_DataLayer.dll</HintPath>
+    </Reference>
+    <Reference Include="COL_Utility, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\9-AdevicoMIT_Library\lm.Comol.MitLibrary\Adevico\MIT\COL_Utility.dll</HintPath>
+    </Reference>
+    <Reference Include="Ionic.Utils.Zip, Version=1.3.0.0, Culture=neutral, PublicKeyToken=c551e179877da246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Library\lm.Comol.Core.CommonLib\Zip\Ionic.Utils.Zip.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common, Version=3.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\9-AdevicoMIT_Library\lm.Comol.MitLibrary\External\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Data, Version=3.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\9-AdevicoMIT_Library\lm.Comol.MitLibrary\External\Microsoft.Practices.EnterpriseLibrary.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.DirectoryServices.Protocols" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="Telerik.Web.Spreadsheet, Version=2017.3.1314.40, Culture=neutral, PublicKeyToken=121fae78165ba3d4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Solution\lib\RCAJAX\2018.1.117.40\AdditionalLibraries\Bin40\Telerik.Web.Spreadsheet.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Web.UI, Version=2018.1.117.40, Culture=neutral, PublicKeyToken=121fae78165ba3d4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Solution\lib\RCAJAX\2018.1.117.40\Telerik.Web.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Web.UI.Skins, Version=2018.1.117.40, Culture=neutral, PublicKeyToken=121fae78165ba3d4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Solution\lib\RCAJAX\2018.1.117.40\Telerik.Web.UI.Skins.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Core, Version=2018.1.112.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Solution\lib\RCAJAX\2018.1.117.40\AdditionalLibraries\Bin40\Telerik.Windows.Documents.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Flow, Version=2018.1.112.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Solution\lib\RCAJAX\2018.1.117.40\AdditionalLibraries\Bin40\Telerik.Windows.Documents.Flow.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Spreadsheet, Version=2018.1.112.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Solution\lib\RCAJAX\2018.1.117.40\AdditionalLibraries\Bin40\Telerik.Windows.Documents.Spreadsheet.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Spreadsheet.FormatProviders.OpenXml, Version=2018.1.112.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Solution\lib\RCAJAX\2018.1.117.40\AdditionalLibraries\Bin40\Telerik.Windows.Documents.Spreadsheet.FormatProviders.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Zip, Version=2018.1.112.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Solution\lib\RCAJAX\2018.1.117.40\AdditionalLibraries\Bin40\Telerik.Windows.Zip.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="COL_BusinessLogic_v2" />
+    <Import Include="COL_BusinessLogic_v2.Attivita" />
+    <Import Include="COL_BusinessLogic_v2.CL_permessi" />
+    <Import Include="COL_BusinessLogic_v2.CL_persona" />
+    <Import Include="COL_BusinessLogic_v2.Comol.Manager" />
+    <Import Include="COL_BusinessLogic_v2.Comol.Manager.Esse3" />
+    <Import Include="COL_BusinessLogic_v2.Comol.Materiale" />
+    <Import Include="COL_BusinessLogic_v2.Comunita" />
+    <Import Include="COL_BusinessLogic_v2.ContattiMail" />
+    <Import Include="COL_BusinessLogic_v2.Curriculum_Europeo" />
+    <Import Include="COL_BusinessLogic_v2.Localizzazione" />
+    <Import Include="COL_BusinessLogic_v2.NEW_Tesi" />
+    <Import Include="COL_BusinessLogic_v2.Statistiche" />
+    <Import Include="COL_BusinessLogic_v2.UCServices" />
+    <Import Include="COL_BusinessLogic_v2.UCServices.Abstract" />
+    <Import Include="COL_DataLayer" />
+    <Import Include="Comol" />
+    <Import Include="Comol.Entity" />
+    <Import Include="Comol.Entity.Configuration" />
+    <Import Include="Comol.Entity.Configuration.Components" />
+    <Import Include="Comol.Entity.Events" />
+    <Import Include="Comol.Entity.File" />
+    <Import Include="Comol.Entity.Forum" />
+    <Import Include="Comol.Entity.ModuloEsse3" />
+    <Import Include="Comol.Entity.ModuloEsse3.OffertaFormativa" />
+    <Import Include="Comol.Entity.ModuloEsse3.Registro" />
+    <Import Include="Microsoft.Practices.EnterpriseLibrary.Common" />
+    <Import Include="Microsoft.Practices.EnterpriseLibrary.Data" />
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Configuration" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Linq.Expressions" />
+    <Import Include="System.Net" />
+    <Import Include="System.Net.Mail" />
+    <Import Include="System.Web" />
+    <Import Include="System.Web.Configuration" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="UtilityLibrary" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="8_Resource\Resource.Designer.vb">
+      <DependentUpon>Resource.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="COL_Autenticazione.vb" />
+    <Compile Include="Comunita\Comunita.vb" />
+    <Compile Include="Comunita\Corso.vb" />
+    <Compile Include="Comunita\Iscrizione.vb" />
+    <Compile Include="Comunita\Istituzione.vb" />
+    <Compile Include="Comunita\Modello_Comunita.vb" />
+    <Compile Include="Comunita\Organizzazione.vb" />
+    <Compile Include="Comunita\RuoloPersonaComunita.vb" />
+    <Compile Include="Comunita\Tipo_Comunita.vb" />
+    <Compile Include="Comunita\Tree_Comunita.vb" />
+    <Compile Include="Curriculum\EuropeanCurriculum.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Curriculum\Education.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Curriculum\LanguagesKnown.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Curriculum\WorkingExperience.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Encrypter.vb" />
+    <Compile Include="Entity\DAL\StandardDB\DALservice.vb" />
+    <Compile Include="Entity\DAL\DALabstract.vb" />
+    <Compile Include="Entity\DAL\Interface\iDALbase.vb" />
+    <Compile Include="Entity\DAL\StandardDB\DALaccademicYear.vb" />
+    <Compile Include="Entity\DAL\StandardDB\DALcommunity.vb" />
+    <Compile Include="Entity\DAL\StandardDB\DALevents.vb" />
+    <Compile Include="Entity\DAL\StandardDB\DALlingua.vb" />
+    <Compile Include="Entity\DAL\StandardDB\DALorganization.vb" />
+    <Compile Include="Entity\DAL\StandardDB\DALperiodo.vb" />
+    <Compile Include="Entity\DAL\StandardDB\DALpersona.vb" />
+    <Compile Include="Entity\DAL\StandardDB\DALprovincia.vb" />
+    <Compile Include="Entity\DAL\StandardDB\DALrepository.vb" />
+    <Compile Include="Entity\DAL\StandardDB\DALstatistic.vb" />
+    <Compile Include="Entity\DAL\StandardDB\DalSubscriptionAdvanced.vb" />
+    <Compile Include="Entity\DAL\StandardDB\DALsubscriptions.vb" />
+    <Compile Include="Entity\DAL\StandardDB\DALwhiteBoard.vb" />
+    <Compile Include="Entity\Manager\Generici\ManagerBacheca.vb" />
+    <Compile Include="Entity\Manager\Generici\ManagerBrowsingRepository.vb" />
+    <Compile Include="Entity\Manager\Generici\ManagerCommunity.vb" />
+    <Compile Include="Entity\Manager\Generici\ManagerConfiguration.vb" />
+    <Compile Include="Entity\Manager\Generici\ManagerConfigurationSettings.vb" />
+    <Compile Include="Entity\Manager\Generici\ManagerEvents.vb" />
+    <Compile Include="Entity\Manager\Generici\ManagerLingua.vb" />
+    <Compile Include="Entity\Manager\Generici\ManagerPeriodo.vb" />
+    <Compile Include="Entity\Manager\Generici\ManagerPersona.vb" />
+    <Compile Include="Entity\Manager\Generici\ManagerProvincia.vb" />
+    <Compile Include="Entity\Manager\Generici\ManagerRepository.vb" />
+    <Compile Include="Entity\Manager\Generici\ManagerService.vb" />
+    <Compile Include="Entity\Manager\Generici\ManagerStatistic.vb" />
+    <Compile Include="Entity\Manager\Generici\ManagerStato.vb" />
+    <Compile Include="Entity\Manager\Generici\ManagerSubscription.vb" />
+    <Compile Include="Entity\Manager\Generici\ManagerSubscriptionAdvanced.vb" />
+    <Compile Include="Generali\new\PlainPermission.vb" />
+    <Compile Include="Entity\Manager\iManager.vb" />
+    <Compile Include="Entity\Manager\iManagerAdvanced.vb" />
+    <Compile Include="Entity\OwnerType_enum.vb" />
+    <Compile Include="Entity\PlainRole.vb" />
+    <Compile Include="Enum.vb" />
+    <Compile Include="Evento\Evento.vb" />
+    <Compile Include="Evento\Notifica.vb" />
+    <Compile Include="Evento\Orario.vb" />
+    <Compile Include="Evento\Programma_Evento.vb" />
+    <Compile Include="Evento\Reminder.vb" />
+    <Compile Include="Evento\Tipo_Evento.vb" />
+    <Compile Include="E_Mail.vb" />
+    <Compile Include="File\CategoriaFile.vb" />
+    <Compile Include="File\File.vb" />
+    <Compile Include="File\HASH_CategoriaFile.vb" />
+    <Compile Include="File\HASH_TipoMateriale.vb" />
+    <Compile Include="File\Materiale\FileSystem.vb" />
+    <Compile Include="File\Materiale\FileSystemItem.vb" />
+    <Compile Include="File\Materiale\FileSystemManager.vb" />
+    <Compile Include="File\Scorm\Metadata\SCORM_Contribute.vb" />
+    <Compile Include="File\Scorm\Metadata\SCORM_Identifier.vb" />
+    <Compile Include="File\Scorm\Metadata\SCORM_Keyword.vb" />
+    <Compile Include="File\Scorm\Metadata\SCORM_LangString.vb" />
+    <Compile Include="File\Scorm\Metadata\SCORM_MetaDataClassification.vb" />
+    <Compile Include="File\Scorm\Metadata\SCORM_MetaDataGeneral.vb" />
+    <Compile Include="File\Scorm\Metadata\SCORM_MetaDataLifeCycle.vb" />
+    <Compile Include="File\Scorm\Metadata\SCORM_MetaDataRights.vb" />
+    <Compile Include="File\Scorm\Metadata\SCORM_MetaDataTechnical.vb" />
+    <Compile Include="File\Scorm\Metadata\SCORM_SourceValue.vb" />
+    <Compile Include="File\Scorm\Metadata\SCORM_Taxon.vb" />
+    <Compile Include="File\Scorm\Metadata\SCORM_TaxonPath.vb" />
+    <Compile Include="File\Scorm\SCORM_Item.vb" />
+    <Compile Include="File\Scorm\SCORM_MetaData.vb" />
+    <Compile Include="File\Scorm\SCORM_Organization.vb" />
+    <Compile Include="File\Scorm\SCORM_Package.vb" />
+    <Compile Include="File\Scorm\SCORM_Resource.vb" />
+    <Compile Include="File\Scorm\SCORM_ResourceFile.vb" />
+    <Compile Include="File\Scorm\SCORM_Sequencing.vb" />
+    <Compile Include="File\Scorm\SCORM_TreeNode.vb" />
+    <Compile Include="File\Scorm\SCORM_Type.vb" />
+    <Compile Include="File\Scorm\SCORM_XMLtranslator.vb" />
+    <Compile Include="File\Structure_FilePahConfiguration.vb" />
+    <Compile Include="File\TipoMateriale.vb" />
+    <Compile Include="Forum\Forums.vb" />
+    <Compile Include="Forum\Forum_posts.vb" />
+    <Compile Include="Forum\Forum_threads.vb" />
+    <Compile Include="Forum\TipoRuoloForum.vb" />
+    <Compile Include="Generali\Main.vb" />
+    <Compile Include="Generali\new\FilterElement.vb" />
+    <Compile Include="Generali\new\GenericCacheManager.vb" />
+    <Compile Include="Generali\new\GenericElement.vb" />
+    <Compile Include="Generali\new\GenericsCollection.vb" />
+    <Compile Include="Generali\new\GenericTree.vb" />
+    <Compile Include="Generali\new\GenericValidator.vb" />
+    <Compile Include="Generali\new\GLOBAL_Utility.vb" />
+    <Compile Include="Generali\new\HistoryElement.vb" />
+    <Compile Include="Generali\new\HistoryProvider.vb" />
+    <Compile Include="Generali\new\IscrizioneComunita.vb" />
+    <Compile Include="Generali\new\LinkElement.vb" />
+    <Compile Include="Generali\new\MenuElement.vb" />
+    <Compile Include="Generali\new\ObjectBase.vb" />
+    <Compile Include="Generali\new\PlainComunita.vb" />
+    <Compile Include="Generali\new\PlainMateriale.vb" />
+    <Compile Include="Generali\new\PlainOrganizzazione.vb" />
+    <Compile Include="Generali\new\PlainService.vb" />
+    <Compile Include="Generali\new\PlainServiceComunita.vb" />
+    <Compile Include="Generali\new\PlainServizioComunita.vb" />
+    <Compile Include="Generali\new\QuickSearchElement.vb" />
+    <Compile Include="Generali\new\ServiceElement.vb" />
+    <Compile Include="Generali\new\ServicePage.vb" />
+    <Compile Include="Generali\new\ServiziCorrenti.vb" />
+    <Compile Include="Generali\new\ValueObject.vb" />
+    <Compile Include="Generali\Stato.vb" />
+    <Compile Include="Generali\VideoCast.vb" />
+    <Compile Include="Generici\Banner.vb" />
+    <Compile Include="Generici\BookMark.vb" />
+    <Compile Include="Generici\Chat.vb" />
+    <Compile Include="Generici\Cover.vb" />
+    <Compile Include="Generici\MailingList.vb" />
+    <Compile Include="Generici\RaccoltaLink.vb" />
+    <Compile Include="Internazionalizzazione\Internazionalizzazione.vb" />
+    <Compile Include="Internazionalizzazione\LocalizationConfiguration.vb" />
+    <Compile Include="Internazionalizzazione\Localizzazione.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="New\BiDirectionalRelation.vb" />
+    <Compile Include="New\Contatto.vb" />
+    <Compile Include="New\TriDirectionalRelation.vb" />
+    <Compile Include="Parametri.vb" />
+    <Compile Include="Permessi\BaseService.vb" />
+    <Compile Include="Permessi\Services_Abstract.vb" />
+    <Compile Include="Permessi\Services_Neutral.vb" />
+    <Compile Include="Permessi_servizi\Menu.vb" />
+    <Compile Include="Permessi_servizi\MenuLimbo.vb" />
+    <Compile Include="Permessi_servizi\Permessi.vb" />
+    <Compile Include="Permessi_servizi\PermissionAssociation.vb" />
+    <Compile Include="Permessi_servizi\Permesso.vb" />
+    <Compile Include="Permessi_servizi\ProfiloServizio.vb" />
+    <Compile Include="Permessi_servizi\RuoliServizio.vb" />
+    <Compile Include="Permessi_servizi\Servizio.vb" />
+    <Compile Include="Permessi_servizi\Tipo_Ruolo.vb" />
+    <Compile Include="Persona\TaxCodeGenerator.vb" />
+    <Compile Include="Persona\PasswordGenerator.vb" />
+    <Compile Include="Persona\Docente.vb" />
+    <Compile Include="Persona\DocenteSuperiori.vb" />
+    <Compile Include="Persona\Dottorando.vb" />
+    <Compile Include="Persona\Esterno.vb" />
+    <Compile Include="Persona\ImpostazioniUtente.vb" />
+    <Compile Include="Persona\Persona.vb" />
+    <Compile Include="Persona\Tipo_Persona.vb" />
+    <Compile Include="Services_Definition\10000_Services_SocialNoticeboard.vb" />
+    <Compile Include="Services_Definition\1400_Services_Curriculum.vb" />
+    <Compile Include="Services_Definition\4000_Services_WorkBook.vb" />
+    <Compile Include="Services_Definition\1900_Services_AmministraComunita.vb" />
+    <Compile Include="Services_Definition\2100_Services_AmministrazioneGlobale.vb" />
+    <Compile Include="Services_Definition\7200_Services_UsageResults.vb" />
+    <Compile Include="Services_Definition\7400_Services_TaskList.vb" />
+    <Compile Include="Services_Definition\7500_Services_OnLineUsers.vb" />
+    <Compile Include="Services_Definition\7600_Services_NotificationManagement.vb" />
+    <Compile Include="Services_Definition\8200_Services_CommunityNews.vb" />
+    <Compile Include="Services_Definition\8400_Service_Faq.vb" />
+    <Compile Include="Services_Definition\8500_Service_CallForPapers.vb" />
+    <Compile Include="Services_Definition\8600_Service_Glossary.vb" />
+    <Compile Include="Services_Definition\8700_Service_Sticky.vb" />
+    <Compile Include="Services_Definition\8800_Service_CommunityInfo.vb" />
+    <Compile Include="Services_Definition\1200_Services_Bacheca.vb" />
+    <Compile Include="Services_Definition\2000_Services_Chat.vb" />
+    <Compile Include="Services_Definition\1300_Services_Cover.vb" />
+    <Compile Include="Services_Definition\1000_Services_DiarioLezioni.vb" />
+    <Compile Include="Services_Definition\1800_Services_ElencaComunita.vb" />
+    <Compile Include="Services_Definition\7700_Services_Eventi.vb" />
+    <Compile Include="Services_Definition\7000_Services_File.vb" />
+    <Compile Include="Services_Definition\6000_Services_Forum.vb" />
+    <Compile Include="Services_Definition\8300_Services_EduPath.vb" />
+    <Compile Include="Services_Definition\Services_Gallery.vb" />
+    <Compile Include="Services_Definition\7900_Services_GestioneIscritti.vb" />
+    <Compile Include="Services_Definition\Services_GestioneSottoIscritti.vb" />
+    <Compile Include="Services_Definition\1700_Services_IscrizioneComunita.vb" />
+    <Compile Include="Services_Definition\Services_Listaiscritti.vb" />
+    <Compile Include="Services_Definition\1100_Services_Mail.vb" />
+    <Compile Include="Services_Definition\8100_Services_PostIt.vb" />
+    <Compile Include="Services_Definition\5000_Services_Questionario.vb" />
+    <Compile Include="Services_Definition\7800_Services_RaccoltaLink.vb" />
+    <Compile Include="Services_Definition\7100_Services_Statistiche.vb" />
+    <Compile Include="Services_Definition\3000_Services_Wiki.vb" />
+    <Compile Include="Statistiche\Statistiche.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="8_Resource\Resource.en.resx">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="8_Resource\Resource.it.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="8_Resource\Resource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="File\Scorm\DiagrammaScorm.cd" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\2-Core\lm.Comol.Core.File\lm.Comol.Core.File.csproj">
+      <Project>{FFA417B0-A44B-441A-921B-FEB57C5FD7DA}</Project>
+      <Name>lm.Comol.Core.File</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\COL_Entity\0_COL_Entity.vbproj">
+      <Project>{D1EFB82A-DE0C-43D2-8DC7-AD808B32C2A2}</Project>
+      <Name>0_COL_Entity</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Entity\DAL\Hibernate\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

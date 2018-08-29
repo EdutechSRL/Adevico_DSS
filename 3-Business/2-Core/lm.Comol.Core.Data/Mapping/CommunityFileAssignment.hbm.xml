@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="lm.Comol.Core.DomainModel" namespace="lm.Comol.Core.DomainModel">
+	<class name="CommunityFileAssignment" table="CR_CommunityFileAssignment" discriminator-value="0" lazy="true">
+		<id name="Id" column="Id" type="Int64">
+			<generator class="native"/>
+		</id>
+		<discriminator column="Discriminator" not-null="true" insert ="true" type="Int32"/>
+		<property name="CreatedOn" type="DateTime" column="_CreatedOn" not-null="false"/>
+		<many-to-one name="CreatedBy" class="lm.Comol.Core.DomainModel.Person, lm.Comol.Core.DomainModel" column="_CreatedBy" foreign-key="_CreatedBy" cascade="none" lazy="false" />
+		<many-to-one name="ModifiedBy" class="lm.Comol.Core.DomainModel.Person, lm.Comol.Core.DomainModel" column="_ModifiedBy" foreign-key="_ModifiedBy" cascade="none" lazy="false"/>
+		<property name="ModifiedOn" type="DateTime" column="_ModifiedOn" not-null="false"/>
+		<many-to-one name="File" class="lm.Comol.Core.DomainModel.CommunityFile, lm.Comol.Core.DomainModel" column="IdCommunityFile"
+					 foreign-key="IdCommunityFile" cascade="none" lazy="false"/>
+		<property name="Deny" type="Boolean" column="Denyed" not-null="false"/>
+		<property name="Inherited" type="Boolean" column="Inherited" not-null="false"/>
+		
+		<subclass
+		discriminator-value="0"
+		name="CommunityFileCommunityAssignment">
+			<many-to-one name="AssignedTo" class="lm.Comol.Core.DomainModel.Community, lm.Comol.Core.DomainModel" column="IdCommunity" foreign-key="IdCommunity" cascade="none" lazy="false" />
+		</subclass>
+
+		<subclass
+			 discriminator-value="1"
+			 name="CommunityFileRoleAssignment">
+			<many-to-one name="AssignedTo" class="lm.Comol.Core.DomainModel.Role, lm.Comol.Core.DomainModel" column="IdRole" foreign-key="IdRole" cascade="none" lazy="false" />
+		</subclass>
+		<subclass
+			 discriminator-value="2"
+			 name="CommunityFilePersonAssignment">
+			<many-to-one name="AssignedTo" class="lm.Comol.Core.DomainModel.Person, lm.Comol.Core.DomainModel" column="IdPerson" foreign-key="IdPerson" cascade="none" lazy="false" />
+		</subclass>
+
+		<subclass
+					 discriminator-value="3"
+					 name="CommunityFilePersonTypeAssignment">
+			<property name="AssignedTo" type="Int32" column="IdPersonType" lazy="false" />
+		</subclass>
+		
+	</class>
+</hibernate-mapping>

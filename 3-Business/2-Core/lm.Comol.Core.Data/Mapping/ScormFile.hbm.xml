@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="lm.Comol.Core.DomainModel" namespace="lm.Comol.Core.DomainModel">
+	<class name="ScormFile" table="SCORM_FileStato" lazy="true">
+		<id name="Id" column="Id" type="Int64">
+			<generator class="native"/>
+		</id>
+		<property name="FileUniqueID" type="Guid" column="SCST_Id" />
+		<many-to-one name="File" class="lm.Comol.Core.DomainModel.CommunityFile, lm.Comol.Core.DomainModel" column="SCST_FILE_Id" foreign-key="SCST_FILE_Id" cascade="none" lazy="false"/>
+		<property name="Status" type="lm.Comol.Core.DomainModel.ScormStatus,lm.Comol.Core.DomainModel" column="SCST_FLST_Id" />
+		<property name="CompleteID" type="Int32" column="SCST_Compl" />
+		<property name="Info" type="String" column="SCST_Info" />
+		<property name="FileName" type="String" column="SCST_FileName" />
+		<property name="Path" type="String" column="SCST_Path" />
+		<property name="Unzip" type="Boolean" column="SCST_Decompress" />
+		<property name="ModifiedBy" type="DateTime" column="SCST_LastModify" not-null="false"/>
+		<property name="CloneID" type="Guid" column="SCST_CloneId" />
+		<property name="ActivityNumber" type="Int64" column="SCST_TotActivity" />
+	</class>
+</hibernate-mapping>

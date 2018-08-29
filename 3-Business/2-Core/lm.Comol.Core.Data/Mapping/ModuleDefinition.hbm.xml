@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="lm.Comol.Core.DomainModel" namespace="lm.Comol.Core.DomainModel">
+  <class name="ModuleDefinition" table="SERVIZIO" lazy="true" where="SRVZ_id>0"> 
+    <id name="Id" column="SRVZ_id" type="Int32" unsaved-value="0">
+      <generator class="native"/>
+    </id>
+    <property name="Name" type="String" column="SRVZ_nome" />
+	<property name="Code" type="String" column="SRVZ_codice" />
+	<property name="Available" type="Boolean" column="SRVZ_Attivato" />
+	  <!--<property name="DefaultUrl" type="String" column="SRVZ_DefaultUrl" />-->  
+  </class>
+</hibernate-mapping>

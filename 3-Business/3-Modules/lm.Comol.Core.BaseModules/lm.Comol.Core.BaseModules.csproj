@@ -44,10 +44,6 @@
     <Reference Include="Castle.DynamicProxy2">
       <HintPath>..\..\..\Library\lm.Comol.Core.CommonLib\NHibernate_21\Castle.DynamicProxy2.dll</HintPath>
     </Reference>
-    <Reference Include="COL_BusinessLogic_v2.0, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\9-AdevicoMIT_Library\lm.Comol.MitLibrary\bin\Debug\COL_BusinessLogic_v2.0.dll</HintPath>
-    </Reference>
     <Reference Include="COMOL_Entity, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\9-AdevicoMIT_Library\lm.Comol.MitLibrary\bin\Debug\COMOL_Entity.dll</HintPath>
@@ -915,6 +911,10 @@
     <Compile Include="WebControls\Generic\ExtendedDropDown.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\1-OldProject\COL_BusinessLogic\COL_BusinessLogic_v2.0.vbproj">
+      <Project>{51f57fb8-1245-4ea5-bf34-d6412c283afb}</Project>
+      <Name>COL_BusinessLogic_v2.0</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\1-OldProject\COL_Entity\0_COL_Entity.vbproj">
       <Project>{d1efb82a-de0c-43d2-8dc7-ad808b32c2a2}</Project>
       <Name>0_COL_Entity</Name>

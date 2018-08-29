@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="lm.Comol.Core.DomainModel" namespace="lm.Comol.Core.DomainModel">
+	<class name="Community" table="COMUNITA" lazy="true" where="CMNT_id>0">
+		<id name="Id" column="CMNT_id" type="Int32" unsaved-value="0">
+			<generator class="native"/>
+		</id>
+		<property name="Name" type="String" column="CMNT_nome" />
+		<many-to-one name="Father" class="Community" column="CMNT_idPadre" foreign-key="CMNT_idPadre" cascade="none" lazy="proxy" not-found="ignore"/>
+		<many-to-one name="Creator" class="Person" column="CMNT_PRSN_ID" foreign-key="CMNT_PRSN_ID" cascade="none" lazy="false"/>
+		<many-to-one name="TypeOfCommunity" class="CommunityType" column="CMNT_TPCM_ID" foreign-key="CMNT_TPCM_ID" cascade="none" lazy="false"/>
+
+		<property name="isClosedByAdministrator" type="Boolean" column="CMNT_Bloccata" />
+		<property name="isArchived" type="Boolean" column="CMNT_Archiviata" />
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="lm.Comol.Core.DomainModel" namespace="lm.Comol.Core.DomainModel">
+	<class name="EventFile" table="EV_EventItemFile" discriminator-value="0"  lazy="true">
+		<id name="Id" column="Id" type="Guid">
+			<generator class="guid"/>
+		</id>
+		<discriminator column="Discriminator" not-null="true" insert ="true" type="Int32"/>
+		<many-to-one name="EventOwner" class="lm.Comol.Core.DomainModel.CommunityEvent, lm.Comol.Modules.Base" column="IdEvent" foreign-key="IdEvent" cascade="none" />
+		<many-to-one name="ItemOwner" class="lm.Comol.Core.DomainModel.CommunityEventItem, lm.Comol.Modules.Base" column="IdEventItem" foreign-key="IdEventItem" cascade="none" />
+		<many-to-one name="CommunityOwner" class="lm.Comol.Core.DomainModel.Community, lm.Comol.Core.DomainModel" column="IdCommunity" foreign-key="IdCommunity" cascade="none" />
+		<many-to-one name="Owner" class="lm.Comol.Core.DomainModel.Person, lm.Comol.Core.DomainModel" column="_OwnedBy" foreign-key="_OwnedBy" cascade="none" lazy="false" />
+		<property name="CreatedOn" type="DateTime" column="_CreatedOn" not-null="false"/>
+		<many-to-one name="CreatedBy" class="lm.Comol.Core.DomainModel.Person, lm.Comol.Core.DomainModel" column="_CreatedBy" foreign-key="_CreatedBy" cascade="none" lazy="false" />
+		<many-to-one name="ModifiedBy" class="lm.Comol.Core.DomainModel.Person, lm.Comol.Core.DomainModel" column="_ModifiedBy" foreign-key="_ModifiedBy" cascade="none" lazy="false"/>
+		<property name="ModifiedOn" type="DateTime" column="_ModifiedOn" not-null="false"/>
+		<property name="isDeleted" type="Boolean" column="_Deleted" />
+		<subclass
+			discriminator-value="0"
+			name="EventInternalFile">
+			<many-to-one name="File" class="lm.Comol.Core.DomainModel.BaseFile, lm.Comol.Core.DomainModel" column="IdUserFile" foreign-key="IdUserFile" cascade="all-delete-orphan" lazy="false" />
+		</subclass>
+
+		<subclass
+			 discriminator-value="1"
+			 name="EventCommunityFile">
+			<many-to-one name="FileCommunity" class="lm.Comol.Core.DomainModel.CommunityFile, lm.Comol.Core.DomainModel" column="IdCommunityFile" foreign-key="IdCommunityFile" cascade="none" lazy="false" />
+		</subclass>
+	</class>
+</hibernate-mapping>

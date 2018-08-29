@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="lm.Comol.Core.DomainModel" namespace="lm.Comol.Core.DomainModel">
+	<class name="RoleCommunityTypeTemplate" table="LK_TPRL_TPCM" lazy="true" where="LKTT_id>0">
+		<id name="Id" column="LKTT_id" type="Int32" unsaved-value="0">
+			<generator class="native"/>
+		</id>
+		<many-to-one name="Type" class="lm.Comol.Core.DomainModel.CommunityType, lm.Comol.Core.DomainModel" column="LKTT_TPCM_id" foreign-key="LKTT_TPCM_id"/>
+		<many-to-one name="Role" class="Role" column="LKTT_TPRL_id" foreign-key="LKTT_TPRL_id"/>
+		<property name="isDefault" type="Boolean" column="LKTT_default" />
+		<property name="AlwaysAvailable" type="Boolean" column="LKTT_Allways" />
+	</class>
+</hibernate-mapping>

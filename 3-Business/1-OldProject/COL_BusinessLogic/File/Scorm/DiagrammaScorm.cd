@@ -1,0 +1,180 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" GroupingSetting="Access" MembersFormat="FullSignature">
+  <Font Name="Tahoma" Size="8.25" />
+  <Class Name="COL_BusinessLogic_v2.Comol.Materiale.Scorm.SCORM_Item">
+    <Position X="2" Y="10.25" Width="2.5" />
+    <TypeIdentifier>
+      <FileName>File\Scorm\SCORM_Item.vb</FileName>
+      <HashCode>BAAAAAAAABCAiEgABBgAAIAAAIAAAAAAAEAAIAAEAAA=</HashCode>
+    </TypeIdentifier>
+    <Compartments>
+      <Compartment Name="Private" Collapsed="true" />
+    </Compartments>
+  </Class>
+  <Class Name="COL_BusinessLogic_v2.Comol.Materiale.Scorm.SCORM_XMLtranslator" Collapsed="true">
+    <Position X="18.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>File\Scorm\SCORM_XMLtranslator.vb</FileName>
+      <HashCode>AgAAAAAEAQgCBAACAAAAAAAAQQAIAAICAggAAAACCAA=</HashCode>
+    </TypeIdentifier>
+    <Compartments>
+      <Compartment Name="Private" Collapsed="true" />
+    </Compartments>
+  </Class>
+  <Class Name="COL_BusinessLogic_v2.Comol.Materiale.Scorm.SCORM_MetaData">
+    <Position X="4.5" Y="5" Width="2.75" />
+    <TypeIdentifier>
+      <FileName>File\Scorm\SCORM_MetaData.vb</FileName>
+      <HashCode>AAIARAAAAAAAAAAAAAQgACAEAEgAABAAAECAACACAAA=</HashCode>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="General" />
+      <Property Name="Lifecycle" />
+      <Property Name="Technical" />
+      <Property Name="Rights" />
+      <Property Name="Classification" />
+    </ShowAsAssociation>
+    <Compartments>
+      <Compartment Name="Private" Collapsed="true" />
+    </Compartments>
+    <AssociationLine Name="Lifecycle" Type="COL_BusinessLogic_v2.Comol.Materiale.Scorm.Metadata.SCORM_MetaDataLifeCycle" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="7.25" Y="5.094" />
+        <Point X="7.625" Y="5.094" />
+        <Point X="7.625" Y="2.625" />
+        <Point X="8.25" Y="2.625" />
+      </Path>
+    </AssociationLine>
+  </Class>
+  <Class Name="COL_BusinessLogic_v2.Comol.Materiale.Scorm.SCORM_Organization">
+    <Position X="7" Y="11" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>File\Scorm\SCORM_Organization.vb</FileName>
+      <HashCode>BAAAAAAAABGAiEAAABgAABAAAIAAEAAAAEAAIAAEgAA=</HashCode>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Items" />
+    </ShowAsCollectionAssociation>
+    <Compartments>
+      <Compartment Name="Private" Collapsed="true" />
+    </Compartments>
+  </Class>
+  <Class Name="COL_BusinessLogic_v2.Comol.Materiale.Scorm.SCORM_Package">
+    <Position X="7.25" Y="7.5" Width="2.25" />
+    <TypeIdentifier>
+      <FileName>File\Scorm\SCORM_Package.vb</FileName>
+      <HashCode>IQAAAAAAIACAAIBAEYgAAAgABgAAAEAAIEAECAAEAAA=</HashCode>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="MetaData" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="Resources" />
+      <Property Name="Organizations" />
+    </ShowAsCollectionAssociation>
+    <Compartments>
+      <Compartment Name="Private" Collapsed="true" />
+    </Compartments>
+  </Class>
+  <Class Name="COL_BusinessLogic_v2.Comol.Materiale.Scorm.SCORM_Resource">
+    <Position X="11" Y="8" Width="2" />
+    <TypeIdentifier>
+      <FileName>File\Scorm\SCORM_Resource.vb</FileName>
+      <HashCode>JAAAAAAAAACAiAAAAAgAEAgAAAAAAABgAUAIAAAEBAA=</HashCode>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="ResourceFiles" />
+    </ShowAsCollectionAssociation>
+    <Compartments>
+      <Compartment Name="Private" Collapsed="true" />
+    </Compartments>
+    <AssociationLine Name="ResourceFiles" Type="COL_BusinessLogic_v2.Comol.Materiale.Scorm.SCORM_ResourceFile">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.027" Y="0.06" />
+      </MemberNameLabel>
+    </AssociationLine>
+  </Class>
+  <Class Name="COL_BusinessLogic_v2.Comol.Materiale.Scorm.SCORM_ResourceFile">
+    <Position X="14" Y="7.75" Width="2.75" />
+    <TypeIdentifier>
+      <FileName>File\Scorm\SCORM_ResourceFile.vb</FileName>
+      <HashCode>QAAAAAAAAAAAAAAAAAAAIAQAAAAAAAAACAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="COL_BusinessLogic_v2.Comol.Materiale.Scorm.Metadata.SCORM_MetaDataClassification">
+    <Position X="8" Y="5.25" Width="2.75" />
+    <TypeIdentifier>
+      <FileName>File\Scorm\Metadata\SCORM_MetaDataClassification.vb</FileName>
+      <HashCode>AAgAAAAAIAAgCAAAIAAAAAAAAAAAAAAEJEAAAAAAgAA=</HashCode>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="TaxonPath" />
+    </ShowAsCollectionAssociation>
+    <Compartments>
+      <Compartment Name="Private" Collapsed="true" />
+    </Compartments>
+  </Class>
+  <Class Name="COL_BusinessLogic_v2.Comol.Materiale.Scorm.Metadata.SCORM_MetaDataTechnical">
+    <Position X="4.5" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>File\Scorm\Metadata\SCORM_MetaDataTechnical.vb</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="COL_BusinessLogic_v2.Comol.Materiale.Scorm.Metadata.SCORM_MetaDataGeneral">
+    <Position X="4.5" Y="2" Width="2.5" />
+    <TypeIdentifier>
+      <FileName>File\Scorm\Metadata\SCORM_MetaDataGeneral.vb</FileName>
+      <HashCode>AAAAAAAACAAgiEAAAAAAAAQAAIAAAAAEBEAAAAAEgAA=</HashCode>
+    </TypeIdentifier>
+    <Compartments>
+      <Compartment Name="Private" Collapsed="true" />
+    </Compartments>
+  </Class>
+  <Class Name="COL_BusinessLogic_v2.Comol.Materiale.Scorm.Metadata.SCORM_MetaDataLifeCycle">
+    <Position X="8.25" Y="1.75" Width="3.5" />
+    <TypeIdentifier>
+      <FileName>File\Scorm\Metadata\SCORM_MetaDataLifeCycle.vb</FileName>
+      <HashCode>IAAAAAAEAAAAACQAAAAAAABAAAAAAAAAAAAAAAAgAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="COL_BusinessLogic_v2.Comol.Materiale.Scorm.Metadata.SCORM_MetaDataRights">
+    <Position X="1.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>File\Scorm\Metadata\SCORM_MetaDataRights.vb</FileName>
+      <HashCode>AAAAAAgAAAAgCAAAAAAAABAAAAAABAAEAEAAAgAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="System.Collections.Generic.List(Of T)" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="16.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="COL_BusinessLogic_v2.Comol.Materiale.Scorm.Metadata.SCORM_TaxonPath">
+    <Position X="14.75" Y="5" Width="2.75" />
+    <TypeIdentifier>
+      <FileName>File\Scorm\Metadata\SCORM_TaxonPath.vb</FileName>
+      <HashCode>AAEAAAAAAgAACAAAAAAAAAAAAEAAAAAAAEAAAAAAAQA=</HashCode>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Taxon" />
+    </ShowAsCollectionAssociation>
+    <Compartments>
+      <Compartment Name="Private" Collapsed="true" />
+    </Compartments>
+  </Class>
+  <Class Name="COL_BusinessLogic_v2.Comol.Materiale.Scorm.Metadata.SCORM_Taxon">
+    <Position X="17.75" Y="7" Width="4" />
+    <TypeIdentifier>
+      <FileName>File\Scorm\Metadata\SCORM_Taxon.vb</FileName>
+      <HashCode>AAAQAQAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAEAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="COL_BusinessLogic_v2.SCORM_Type">
+    <Position X="16.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>File\Scorm\SCORM_Type.vb</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAQABA=</HashCode>
+    </TypeIdentifier>
+  </Enum>
+</ClassDiagram>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="lm.Comol.Core.DomainModel" namespace="lm.Comol.Core.DomainModel">
+	<class name="FileDownloadInfo" table="File_Download" lazy="true">
+		<id name="Id" column="FLDN_Id" type="Int64">
+			<generator class="native"/>
+		</id>
+		<many-to-one name="File" class="lm.Comol.Core.DomainModel.CommunityFile, lm.Comol.Core.DomainModel" column="FLDN_FLDS_Id"
+					 foreign-key="FLDN_FLDS_Id" cascade="none"/>
+		<many-to-one name="CommunityOwner" class="lm.Comol.Core.DomainModel.Community, lm.Comol.Core.DomainModel" column="FLDN_CMNT_Id"
+					 foreign-key="FLDN_CMNT_Id" cascade="none"/>
+		<many-to-one name="Downloader" class="lm.Comol.Core.DomainModel.Person, lm.Comol.Core.DomainModel" column="FLDN_PRSN_Id" foreign-key="FLDN_PRSN_Id" cascade="none"/>
+		<property name="CreatedOn" type="DateTime" column="FLDN_Data"/>
+		<property name="TypeID" type="Int32" column="FLDN_Tipo_Id" />
+		<property name="UniqueID" type="Guid" column="FLDN_FLDS_Guid" />
+	</class>
+</hibernate-mapping>
