@@ -245,7 +245,7 @@ Public Class cpAdvEvalSummary
         Set(value As Boolean)
             Me.ViewState("AllowExportCurrent") = value
             '      LNBexportFilteredEvaluationsSummaryToXLS.Visible = value
-            LNBexportFilteredEvaluationsSummaryToCsv.Visible = value
+            'LNBexportFilteredEvaluationsSummaryToCsv.Visible = value
         End Set
     End Property
     Private ReadOnly Property AnonymousDisplayname As String Implements IViewEvaluationsSummary.AnonymousDisplayname
@@ -380,15 +380,15 @@ Public Class cpAdvEvalSummary
             .setLabel(LBsearchEvaluationsFor_t)
             .setLabel(LBevaluationStatusFilter_t)
             .setButton(BTNfindEvaluations, True)
-            .setLinkButton(LNBexportAllEvaluationsSummaryToXLS, True, True)
-            .setLinkButton(LNBexportFilteredEvaluationsSummaryToXLS, True, True)
-            .setLinkButton(LNBexportAllEvaluationsSummaryData, True, True)
+            '.setLinkButton(LNBexportAllEvaluationsSummaryToXLS, True, True)
+            '.setLinkButton(LNBexportFilteredEvaluationsSummaryToXLS, True, True)
+            '.setLinkButton(LNBexportAllEvaluationsSummaryData, True, True)
 
             .setLinkButton(LNBexportAllEvaluationsSummaryToCsv, True, True)
-            .setLinkButton(LNBexportFilteredEvaluationsSummaryToCsv, True, True)
-            .setLinkButton(LNBexportAllEvaluationsSummaryDataToCsv, True, True)
-            .setLinkButton(LNBexportFullEvaluationsSummaryDataToXml, True, True)
-            .setLinkButton(LNBexportFullEvaluationsSummaryDataToCsv, True, True)
+            '.setLinkButton(LNBexportFilteredEvaluationsSummaryToCsv, True, True)
+            '.setLinkButton(LNBexportAllEvaluationsSummaryDataToCsv, True, True)
+            '.setLinkButton(LNBexportFullEvaluationsSummaryDataToXml, True, True)
+            '.setLinkButton(LNBexportFullEvaluationsSummaryDataToCsv, True, True)
             .setHyperLink(HYPtoCommitteesSummary, False, True)
             .setLabel(LBsubmitterType_t)
         End With
@@ -887,86 +887,102 @@ Public Class cpAdvEvalSummary
 #Region "Export Data"
 
 #Region "Button"
-    Private Sub LNBexportAllEvaluationsSummaryData_Click(sender As Object, e As System.EventArgs) Handles LNBexportAllEvaluationsSummaryData.Click
-        ExportEvaluations(ItemsToExport.All, ExportData.Fulldata, Helpers.Export.ExportFileType.xml)
-    End Sub
-    Private Sub LNBexportAllEvaluationsSummaryToXLS_Click(sender As Object, e As System.EventArgs) Handles LNBexportAllEvaluationsSummaryToXLS.Click
-        ExportEvaluations(ItemsToExport.All, ExportData.DisplayData, Helpers.Export.ExportFileType.xml)
-    End Sub
-    Private Sub LNBexportFilteredEvaluationsSummaryToXLS_Click(sender As Object, e As System.EventArgs) Handles LNBexportFilteredEvaluationsSummaryToXLS.Click
-        ExportEvaluations(ItemsToExport.Filtered, ExportData.DisplayData, Helpers.Export.ExportFileType.xml)
-    End Sub
-    Private Sub LNBexportFullEvaluationsSummaryDataToXml_Click(sender As Object, e As System.EventArgs) Handles LNBexportFullEvaluationsSummaryDataToXml.Click
-        ExportEvaluations(ItemsToExport.All, ExportData.FulldataToAnalyze, Helpers.Export.ExportFileType.xml)
-    End Sub
-    Private Sub LNBexportAllEvaluationsSummaryDataToCsv_Click(sender As Object, e As System.EventArgs) Handles LNBexportAllEvaluationsSummaryDataToCsv.Click
-        ExportEvaluations(ItemsToExport.All, ExportData.Fulldata, Helpers.Export.ExportFileType.csv)
-    End Sub
+
     Private Sub LNBexportAllEvaluationsSummaryToCsv_Click(sender As Object, e As System.EventArgs) Handles LNBexportAllEvaluationsSummaryToCsv.Click
-        ExportEvaluations(ItemsToExport.All, ExportData.DisplayData, Helpers.Export.ExportFileType.csv)
+        ExportEvaluationsADVFull(ItemsToExport.All, ExportData.DisplayData, Helpers.Export.ExportFileType.csv)
     End Sub
-    Private Sub LNBexportFilteredEvaluationsSummaryToCsv_Click(sender As Object, e As System.EventArgs) Handles LNBexportFilteredEvaluationsSummaryToCsv.Click
-        ExportEvaluations(ItemsToExport.Filtered, ExportData.DisplayData, Helpers.Export.ExportFileType.csv)
-    End Sub
-    Private Sub LNBexportFullEvaluationsSummaryDataToCsv_Click(sender As Object, e As System.EventArgs) Handles LNBexportFullEvaluationsSummaryDataToCsv.Click
-        ExportEvaluations(ItemsToExport.All, ExportData.FulldataToAnalyze, Helpers.Export.ExportFileType.csv)
-    End Sub
+
+    'Private Sub LNBexportAllEvaluationsSummaryData_Click(sender As Object, e As System.EventArgs) Handles LNBexportAllEvaluationsSummaryData.Click
+    '    ExportEvaluations(ItemsToExport.All, ExportData.Fulldata, Helpers.Export.ExportFileType.xml)
+    'End Sub
+    'Private Sub LNBexportAllEvaluationsSummaryToXLS_Click(sender As Object, e As System.EventArgs) Handles LNBexportAllEvaluationsSummaryToXLS.Click
+    '    ExportEvaluations(ItemsToExport.All, ExportData.DisplayData, Helpers.Export.ExportFileType.xml)
+    'End Sub
+    'Private Sub LNBexportFilteredEvaluationsSummaryToXLS_Click(sender As Object, e As System.EventArgs) Handles LNBexportFilteredEvaluationsSummaryToXLS.Click
+    '    ExportEvaluations(ItemsToExport.Filtered, ExportData.DisplayData, Helpers.Export.ExportFileType.xml)
+    'End Sub
+    'Private Sub LNBexportFullEvaluationsSummaryDataToXml_Click(sender As Object, e As System.EventArgs) Handles LNBexportFullEvaluationsSummaryDataToXml.Click
+    '    ExportEvaluations(ItemsToExport.All, ExportData.FulldataToAnalyze, Helpers.Export.ExportFileType.xml)
+    'End Sub
+    'Private Sub LNBexportAllEvaluationsSummaryDataToCsv_Click(sender As Object, e As System.EventArgs) Handles LNBexportAllEvaluationsSummaryDataToCsv.Click
+    '    ExportEvaluations(ItemsToExport.All, ExportData.Fulldata, Helpers.Export.ExportFileType.csv)
+    'End Sub
+
+    'Private Sub LNBexportFilteredEvaluationsSummaryToCsv_Click(sender As Object, e As System.EventArgs) Handles LNBexportFilteredEvaluationsSummaryToCsv.Click
+    '    ExportEvaluations(ItemsToExport.Filtered, ExportData.DisplayData, Helpers.Export.ExportFileType.csv)
+    'End Sub
+    'Private Sub LNBexportFullEvaluationsSummaryDataToCsv_Click(sender As Object, e As System.EventArgs) Handles LNBexportFullEvaluationsSummaryDataToCsv.Click
+    '    ExportEvaluations(ItemsToExport.All, ExportData.FulldataToAnalyze, Helpers.Export.ExportFileType.csv)
+    'End Sub
 #End Region
 
-    Private Sub ExportEvaluations(items As ItemsToExport, data As ExportData, fileType As lm.Comol.Core.DomainModel.Helpers.Export.ExportFileType)
-        Response.Clear()
-        Response.ClearHeaders()
-        Response.AppendCookie(New HttpCookie(Me.CTRLreport.CookieName, HDNdownloadTokenValue.Value)) '; //downloadTokenValue will have been provided in the form submit via the hidden input field
-        Dim fileName As String = Resource.getValue(SummaryType.Evaluations.ToString() & "." & items.ToString & "." & data.ToString)
-        If String.IsNullOrEmpty(fileName) Then
-            fileName = GetFileName(fileType)
-        Else
-            fileName = CurrentPresenter.GetFileName(fileName, items, data)
-            fileName &= "." & fileType.ToString()
-        End If
-        Response.AddHeader("Content-Disposition", "attachment; filename=" & fileName)
-        '  Response.ContentType = "application/xml"
+    'Private Sub ExportEvaluations(
+    '                             Data As ExportData,
+    '                             fileType As lm.Comol.Core.DomainModel.Helpers.Export.ExportFileType)
+
+    '    Dim items As ItemsToExport = ItemsToExport.All
+
+    '    Response.Clear()
+    '    Response.ClearHeaders()
+    '    Response.AppendCookie(New HttpCookie(Me.CTRLreport.CookieName, HDNdownloadTokenValue.Value)) '; //downloadTokenValue will have been provided in the form submit via the hidden input field
+    '    Dim fileName As String = Resource.getValue(SummaryType.Evaluations.ToString() & "." & items.ToString & "." & Data.ToString)
+    '    If String.IsNullOrEmpty(fileName) Then
+    '        fileName = GetFileName(fileType)
+    '    Else
+    '        fileName = CurrentPresenter.GetFileName(fileName, items, Data)
+    '        fileName &= "." & fileType.ToString()
+    '    End If
+    '    Response.AddHeader("Content-Disposition", "attachment; filename=" & fileName)
+    '    '  Response.ContentType = "application/xml"
 
 
-        Try
-            Dim translations As New Dictionary(Of lm.Comol.Modules.CallForPapers.Domain.Evaluation.EvaluationTranslations, String)
-            For Each name As String In [Enum].GetNames(GetType(lm.Comol.Modules.CallForPapers.Domain.Evaluation.EvaluationTranslations))
-                translations.Add([Enum].Parse(GetType(lm.Comol.Modules.CallForPapers.Domain.Evaluation.EvaluationTranslations), name), Me.Resource.getValue("EvaluationTranslations." & name))
-            Next
-            Dim tStatus As New Dictionary(Of lm.Comol.Modules.CallForPapers.Domain.Evaluation.EvaluationStatus, String)
-            For Each name As String In [Enum].GetNames(GetType(lm.Comol.Modules.CallForPapers.Domain.Evaluation.EvaluationStatus))
-                tStatus.Add([Enum].Parse(GetType(lm.Comol.Modules.CallForPapers.Domain.Evaluation.EvaluationStatus), name), Me.Resource.getValue("EvaluationTranslations.EvaluationStatus." & name))
-            Next
+    '    Try
+    '        Dim translations As New Dictionary(Of lm.Comol.Modules.CallForPapers.Domain.Evaluation.EvaluationTranslations, String)
+    '        For Each name As String In [Enum].GetNames(GetType(lm.Comol.Modules.CallForPapers.Domain.Evaluation.EvaluationTranslations))
+    '            translations.Add([Enum].Parse(GetType(lm.Comol.Modules.CallForPapers.Domain.Evaluation.EvaluationTranslations), name), Me.Resource.getValue("EvaluationTranslations." & name))
+    '        Next
+    '        Dim tStatus As New Dictionary(Of lm.Comol.Modules.CallForPapers.Domain.Evaluation.EvaluationStatus, String)
+    '        For Each name As String In [Enum].GetNames(GetType(lm.Comol.Modules.CallForPapers.Domain.Evaluation.EvaluationStatus))
+    '            tStatus.Add([Enum].Parse(GetType(lm.Comol.Modules.CallForPapers.Domain.Evaluation.EvaluationStatus), name), Me.Resource.getValue("EvaluationTranslations.EvaluationStatus." & name))
+    '        Next
 
-            Select Case fileType
-                Case Helpers.Export.ExportFileType.xls
-                    Response.ContentType = "application/ms-excel"
-                Case Helpers.Export.ExportFileType.xml
-                    Response.ContentType = "application/ms-excel"
-                Case Helpers.Export.ExportFileType.csv
-                    Response.Charset = "utf-16"
-                    Response.ContentType = "text/csv"
-                Case Else
-                    Response.Charset = "utf-16"
-                    Response.ContentType = "text/csv"
-            End Select
-            Dim exportData As String = CurrentPresenter.ExportTo(CurrentFilters, SummaryType.Evaluations, items, data, fileType, translations, tStatus)
-            Response.BinaryWrite(Response.ContentEncoding.GetPreamble())
-            'If fileType = Helpers.Export.ExportFileType.csv Then
+    '        Select Case fileType
+    '            Case Helpers.Export.ExportFileType.xls
+    '                Response.ContentType = "application/ms-excel"
+    '            Case Helpers.Export.ExportFileType.xml
+    '                Response.ContentType = "application/ms-excel"
+    '            Case Helpers.Export.ExportFileType.csv
+    '                Response.Charset = "utf-16"
+    '                Response.ContentType = "text/csv"
+    '            Case Else
+    '                Response.Charset = "utf-16"
+    '                Response.ContentType = "text/csv"
+    '        End Select
+    '        Dim exportData As String = CurrentPresenter.ExportTo(CurrentFilters, SummaryType.Evaluations, items, Data, fileType, translations, tStatus)
 
-            '    Using sw As IO.StreamWriter = New IO.StreamWriter(Context.Response.OutputStream, System.Text.Encoding.Unicode)
-            '        sw.Write(exportData)
-            '        sw.Close()
-            '    End Using
-            'Else
-            Response.Write(exportData)
-            '   End If
+    '        ' List<dtoEvaluationSummaryItem> items = 
+    '        '   ServiceCall.GetEvaluationsList(IdCall, 
+    '        '       idCommission,
+    '        '       Type, Filters,
+    '        '       View.AnonymousDisplayname,
+    '        '       View.UnknownDisplayname);
 
-        Catch de As Exception
+    '        Response.BinaryWrite(Response.ContentEncoding.GetPreamble())
+    '        'If fileType = Helpers.Export.ExportFileType.csv Then
 
-        End Try
-        Response.End()
-    End Sub
+    '        '    Using sw As IO.StreamWriter = New IO.StreamWriter(Context.Response.OutputStream, System.Text.Encoding.Unicode)
+    '        '        sw.Write(exportData)
+    '        '        sw.Close()
+    '        '    End Using
+    '        'Else
+    '        Response.Write(exportData)
+    '        '   End If
+
+    '    Catch de As Exception
+
+    '    End Try
+    '    Response.End()
+    'End Sub
 
 
     Private Sub ExportEvaluationsADVFull(

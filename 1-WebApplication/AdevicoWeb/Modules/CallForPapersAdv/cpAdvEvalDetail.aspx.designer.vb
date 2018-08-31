@@ -32,24 +32,6 @@ Partial Public Class cpAdvEvalDetail
     Protected WithEvents DVexport As Global.System.Web.UI.HtmlControls.HtmlGenericControl
     
     '''<summary>
-    '''LNBexportCommitteesEvaluationsToCsv control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents LNBexportCommitteesEvaluationsToCsv As Global.System.Web.UI.WebControls.LinkButton
-    
-    '''<summary>
-    '''LNBexportCommitteesEvaluationsOneColumnToCsv control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents LNBexportCommitteesEvaluationsOneColumnToCsv As Global.System.Web.UI.WebControls.LinkButton
-    
-    '''<summary>
     '''LNBexportCommitteeEvaluationsToCsv control.
     '''</summary>
     '''<remarks>

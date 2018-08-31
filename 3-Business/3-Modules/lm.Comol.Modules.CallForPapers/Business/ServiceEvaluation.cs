@@ -5476,7 +5476,11 @@ namespace lm.Comol.Modules.CallForPapers.Business
             return GetErrorDocument(call, person, fileType, translations,status);
         }
 
-                public String ExportSummaryStatistics(SummaryType summaryType, dtoCall call, dtoSubmissionRevision submission,long idSubmission, long idCommittee, String anonymousDisplayName, String unknownUserDisplayName, ExportData exportData, lm.Comol.Core.DomainModel.Helpers.Export.ExportFileType fileType, Dictionary<lm.Comol.Modules.CallForPapers.Domain.Evaluation.EvaluationTranslations, String> translations, Dictionary<lm.Comol.Modules.CallForPapers.Domain.Evaluation.EvaluationStatus, String> status)
+
+
+      
+
+        public String ExportSummaryStatistics(SummaryType summaryType, dtoCall call, dtoSubmissionRevision submission,long idSubmission, long idCommittee, String anonymousDisplayName, String unknownUserDisplayName, ExportData exportData, lm.Comol.Core.DomainModel.Helpers.Export.ExportFileType fileType, Dictionary<lm.Comol.Modules.CallForPapers.Domain.Evaluation.EvaluationTranslations, String> translations, Dictionary<lm.Comol.Modules.CallForPapers.Domain.Evaluation.EvaluationStatus, String> status)
                 {
                     HelperExportToXml helperXml = null;
                     HelperExportToCsv helperCsv = null;

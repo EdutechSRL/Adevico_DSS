@@ -40,7 +40,11 @@
 </asp:Content>
 <asp:Content ID="Content5" ContentPlaceHolderID="CPHservice" runat="server">
 	<div class="viewbuttons clearfix">
-		<div class="ddbuttonlist enabled" id="DVexport" runat="server"><!--
+        <div id="DVexport" style="display:inline-block;" runat="server">
+        <asp:LinkButton ID="LNBexportAllEvaluationsSummaryToCsv" runat="server" Text="Esporta" CssClass="linkMenu" OnClientClick="blockUIForDownload(6);return true;" Visible="false"></asp:LinkButton>
+        </div>
+
+<%--		<div class="ddbuttonlist enabled" id="DVexport" runat="server"><!--
 	--><asp:LinkButton ID="LNBexportAllEvaluationsSummaryToCsv" runat="server" Text="Esporta" CssClass="linkMenu" OnClientClick="blockUIForDownload(6);return true;" Visible="false"></asp:LinkButton><!--
 	--><asp:LinkButton ID="LNBexportAllEvaluationsSummaryToXLS" runat="server" Text="Esporta" CssClass="linkMenu" OnClientClick="blockUIForDownload(5);return true;" Visible="false"></asp:LinkButton><!--
 	--><asp:LinkButton ID="LNBexportFilteredEvaluationsSummaryToCsv" runat="server" Text="Esporta" CssClass="linkMenu" OnClientClick="blockUIForDownload(6);return true;" Visible="false"></asp:LinkButton><!--
@@ -49,7 +53,7 @@
 	--><asp:LinkButton ID="LNBexportAllEvaluationsSummaryData" runat="server" Text="Esporta" CssClass="linkMenu"  OnClientClick="blockUIForDownload(5);return true;" Visible="false"></asp:LinkButton><!--
 	--><asp:LinkButton ID="LNBexportFullEvaluationsSummaryDataToCsv" runat="server" Text="Esporta" CssClass="linkMenu"  OnClientClick="blockUIForDownload(6);return true;" Visible="false"></asp:LinkButton><!--
 	--><asp:LinkButton ID="LNBexportFullEvaluationsSummaryDataToXml" runat="server" Text="Esporta" CssClass="linkMenu"  OnClientClick="blockUIForDownload(5);return true;" Visible="false"></asp:LinkButton><!--
-	--></div>
+	--></div>--%>
 		<asp:HyperLink ID="HYPlist" runat="server" Text="List calls" CssClass="Link_Menu" Visible="false"></asp:HyperLink>
 		<asp:HyperLink ID="HYPmanage" runat="server" Text="Manage calls" CssClass="Link_Menu" Visible="false"></asp:HyperLink>
 		<asp:HyperLink ID="HYPtoCommitteesSummary" runat="server" Text="Details" CssClass="Link_Menu" Visible="false"></asp:HyperLink>

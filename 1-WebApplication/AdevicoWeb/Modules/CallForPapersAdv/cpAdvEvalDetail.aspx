@@ -302,11 +302,11 @@ position: relative;*/
 <asp:Content ID="Content4" ContentPlaceHolderID="TitleContent" runat="server">
 </asp:Content>
 <asp:Content ID="Content5" ContentPlaceHolderID="CPHservice" runat="server">
+    <%----><asp:LinkButton ID="LNBexportCommitteesEvaluationsToCsv" runat="server" Text="*Esporta" CssClass="linkMenu" OnClientClick="blockUIForDownload(6);return true;" Visible="false"></asp:LinkButton><!--
+		--><asp:LinkButton ID="LNBexportCommitteesEvaluationsOneColumnToCsv" runat="server" Text="*Esporta" CssClass="linkMenu" OnClientClick="blockUIForDownload(6);return true;" Visible="false"></asp:LinkButton><!----%>
 	<div class="contentwrapper edit clearfix">
 		<div class="viewbuttons clearfix">
 			<div class="ddbuttonlist enabled" id="DVexport" runat="server"><!--
-		--><asp:LinkButton ID="LNBexportCommitteesEvaluationsToCsv" runat="server" Text="*Esporta" CssClass="linkMenu" OnClientClick="blockUIForDownload(6);return true;" Visible="false"></asp:LinkButton><!--
-		--><asp:LinkButton ID="LNBexportCommitteesEvaluationsOneColumnToCsv" runat="server" Text="*Esporta" CssClass="linkMenu" OnClientClick="blockUIForDownload(6);return true;" Visible="false"></asp:LinkButton><!--
 		--><asp:LinkButton ID="LNBexportCommitteeEvaluationsToCsv" runat="server" Text="*Esporta" CssClass="linkMenu" OnClientClick="blockUIForDownload(6);return true;" Visible="false"></asp:LinkButton><!--
 		--><asp:LinkButton ID="LNBexportCommitteeEvaluationsOneColumnToCsv" runat="server" Text="*Esporta" CssClass="linkMenu" OnClientClick="blockUIForDownload(6);return true;" Visible="false"></asp:LinkButton><!--
 		--></div>

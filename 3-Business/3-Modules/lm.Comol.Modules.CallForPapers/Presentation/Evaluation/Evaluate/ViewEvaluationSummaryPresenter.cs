@@ -241,15 +241,193 @@ namespace lm.Comol.Modules.CallForPapers.Presentation.Evaluation
             return Service.GetStatisticFileName(idCall, ServiceCall.GetCallName(idCall),idCommittee, Service.GetCommitteeDisplayOrder(idCommittee), Service.GetCommitteeName(idCommittee),idSubmission, filename, summaryType);
         }
 
-        public String ExportTo(SummaryType summaryType, long idCall, long idSubmission, long idCommittee, ExportData exportData, lm.Comol.Core.DomainModel.Helpers.Export.ExportFileType fileType, Dictionary<lm.Comol.Modules.CallForPapers.Domain.Evaluation.EvaluationTranslations, String> translations, Dictionary<lm.Comol.Modules.CallForPapers.Domain.Evaluation.EvaluationStatus, String> status)
+        public String ExportTo(
+            SummaryType summaryType, 
+            long idCall, 
+            long idSubmission, 
+            long idCommittee, 
+            ExportData exportData, 
+            lm.Comol.Core.DomainModel.Helpers.Export.ExportFileType fileType, 
+            Dictionary<lm.Comol.Modules.CallForPapers.Domain.Evaluation.EvaluationTranslations, String> translations, 
+            Dictionary<lm.Comol.Modules.CallForPapers.Domain.Evaluation.EvaluationStatus, String> status)
         {
             if (UserContext.isAnonymous)
             {
                 View.DisplaySessionTimeout(RootObject.ViewSubmissionTableEvaluations(idSubmission, idCall, View.IdCallCommunity));
                 return "";
             }
+
+            dtoBaseForPaper call = ServiceCall.GetDtoBaseCall(idCall);
+
+            dtoSubmissionRevision submission = ServiceCall.GetSubmissionWithRevisions(idSubmission, false);
+
+            List<dtoCommitteeEvaluationInfo> committees =
+                ServiceCall.GetCommitteesInfoForSubmission(submission.Id, call.Id, View.AdvCommissionId);
+                                                                                                        
+            EvaluationType evalType = View.CurrentEvaluationType;
+
+            bool isAdvance = ServiceCall.CallIsAdvanced(idCall);
+
+            List<dtoSubmissionCommitteeItem> evaluations =
+                ServiceCall.GetSubmissionEvaluations(idCall, idSubmission, idCommittee, View.UnknownDisplayname);
+
+            String export = "";
+
+            //INTESTAZIONE GENERICA
+
+            export += string.Format(translations[EvaluationTranslations.CallTitle], call.Name) + ";";
+            export += "\r\n";
+
+            export += translations[EvaluationTranslations.CellTitleSubmissionOwner] + " ";
+            export += submission.Owner.SurnameAndName + ";";
+            export += "\r\n";
+
+            if(submission.SubmittedOn != null)
+            {
+                DateTime submitOn = (DateTime)submission.SubmittedOn;
+
+                export += string.Format(translations[EvaluationTranslations.SubmittedOn],
+                    submitOn.ToString("dd MM yyyy"),
+                    submitOn.ToString("h:mm:ss")
+                    ) + ";";
+
+                export += "\r\n";
+            }
+
+            export += translations[EvaluationTranslations.CellTitleCommittee] + ";";
+            export += committees.FirstOrDefault().Name;
+            export += "\r\n";
+            export += "\r\n";
+
+
+            if (exportData == ExportData.Fulldata)
+            {
+                //INTESTAZIONE ESPORTAZIONE
+
+                export += translations[EvaluationTranslations.CellTitleEvaluator] + ";";
+                export += translations[EvaluationTranslations.CellTitleGenericCriterion] + ";";
+                export += "Tipo criterio;";
+                export += translations[EvaluationTranslations.CellTitleGenericCriterionUserValue] + ";";
+
+                //export += ((evalType == EvaluationType.Average) ? 
+                //    translations[Domain.Evaluation.EvaluationTranslations.CellTitleAverage] :
+                //    translations[Domain.Evaluation.EvaluationTranslations.CellTitleSum])
+                //    + ";";
+
+                export += translations[EvaluationTranslations.CellTitleGenericCriterionComment] + ";";
+                export += "Commento complessivo;";
+
+                export += "\r\n";
+
+                //DATA
+                foreach (dtoEvaluatorDisplayItem evaluator in evaluations.FirstOrDefault().Evaluators)
+                {
+
+                    foreach (dtoCriterionEvaluated criterion in evaluator.Values)
+                    {
+                        export += evaluator.EvaluatorName + ";";
+                        export += criterion.Criterion.Name + ";";
+
+
+
+                        switch (criterion.Criterion.Type)
+                        {
+                            case CriterionType.Boolean:
+                                export += "Boolean;";
+                                export += (criterion.DecimalValue > 0) ? "1;" : "0;";
+                                break;
+                            case CriterionType.IntegerRange:
+                                export += "Interi;";
+                                export += criterion.DecimalValue.ToString("F0") + ";";
+                                break;
+                            case CriterionType.DecimalRange:
+                                export += "Decimale;";
+                                export += criterion.DecimalValue + ";";
+                                break;
+                            case CriterionType.StringRange:
+                                export += "Qualitativo;";
+                                export += criterion.StringValue + ";";
+                                break;
+
+
+                        }
+
+                        export += criterion.Comment + ";";
+                        export += evaluator.Comment + ";";
+                        export += "\r\n";
+                    }
+
+                }
+            }
             else
-                return Service.ExportSummaryStatistics(summaryType, ServiceCall.GetDtoCall(idCall), ServiceCall.GetSubmissionWithRevisions(idSubmission, false), idSubmission, idCommittee, View.AnonymousDisplayName, View.UnknownDisplayname, exportData, fileType, translations, status);
+            {
+
+                //INTESTAZIONE ESPORTAZIONE
+
+                //export += translations[EvaluationTranslations.CellTitleEvaluator] + ";";
+                //export += translations[EvaluationTranslations.CellTitleGenericCriterion] + ";";
+                //export += "Tipo criterio;";
+                //export += translations[EvaluationTranslations.CellTitleGenericCriterionUserValue] + ";";
+
+                ////export += ((evalType == EvaluationType.Average) ? 
+                ////    translations[Domain.Evaluation.EvaluationTranslations.CellTitleAverage] :
+                ////    translations[Domain.Evaluation.EvaluationTranslations.CellTitleSum])
+                ////    + ";";
+
+                //export += translations[EvaluationTranslations.CellTitleGenericCriterionComment] + ";";
+                //export += "Commento complessivo;";
+
+                //export += "\r\n";
+
+                //DATA
+                foreach (dtoEvaluatorDisplayItem evaluator in evaluations.FirstOrDefault().Evaluators)
+                {
+
+                    export += evaluator.EvaluatorName + ";";
+
+                    foreach (dtoCriterionEvaluated criterion in evaluator.Values)
+                    {
+                        export += criterion.Criterion.Name + ";";
+
+
+                        switch (criterion.Criterion.Type)
+                        {
+                            case CriterionType.Boolean:
+                                export += "Boolean;";
+                                export += (criterion.DecimalValue > 0) ? "Approvato;" : "Non approvato;";
+                                break;
+                            case CriterionType.IntegerRange:
+                                export += "Interi;";
+                                export += criterion.DecimalValue.ToString("F0") + ";";
+                                break;
+                            case CriterionType.DecimalRange:
+                                export += "Decimale;";
+                                export += criterion.DecimalValue + ";";
+                                break;
+                            case CriterionType.StringRange:
+                                export += "Qualitativo;";
+                                export += criterion.StringValue + ";";
+                                break;
+
+
+                        }
+
+                        export += criterion.Comment + ";";
+
+                    }
+
+                    export += evaluator.Comment + ";";
+
+                    export += "\r\n";
+
+                }
+
+            }
+
+            return export;
+
+
+            //return Service.ExportSummaryStatistics(summaryType, ServiceCall.GetDtoCall(idCall), ServiceCall.GetSubmissionWithRevisions(idSubmission, false), idSubmission, idCommittee, View.AnonymousDisplayName, View.UnknownDisplayname, exportData, fileType, translations, status);
         }
 
         private litePerson GetCurrentUser(ref Int32 idUser)

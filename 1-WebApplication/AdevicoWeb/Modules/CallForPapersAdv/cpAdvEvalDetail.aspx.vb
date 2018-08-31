@@ -150,8 +150,8 @@ Public Class cpAdvEvalDetail
         End Get
         Set(value As Boolean)
             Me.ViewState("AllowExportAll") = value
-            LNBexportCommitteesEvaluationsToCsv.Visible = value
-            LNBexportCommitteesEvaluationsOneColumnToCsv.Visible = value
+            'LNBexportCommitteesEvaluationsToCsv.Visible = value
+            'LNBexportCommitteesEvaluationsOneColumnToCsv.Visible = value
         End Set
     End Property
     Private Property AllowExportCurrent As Boolean Implements IViewEvaluationSummary.AllowExportCurrent
@@ -305,9 +305,9 @@ Public Class cpAdvEvalDetail
             .setHyperLink(HYPviewExtendedEvaluation, False, True)
             .setHyperLink(HYPviewSubmission, False, True)
             .setLinkButton(LNBexportCommitteeEvaluationsToCsv, False, True)
-            .setLinkButton(LNBexportCommitteesEvaluationsToCsv, False, True)
+            '.setLinkButton(LNBexportCommitteesEvaluationsToCsv, False, True)
             .setLinkButton(LNBexportCommitteeEvaluationsOneColumnToCsv, False, True)
-            .setLinkButton(LNBexportCommitteesEvaluationsOneColumnToCsv, False, True)
+            '.setLinkButton(LNBexportCommitteesEvaluationsOneColumnToCsv, False, True)
         End With
     End Sub
 
@@ -627,6 +627,7 @@ Public Class cpAdvEvalDetail
         End Select
 
         oLabel.CssClass &= css
+
     End Sub
     Private _tempIdCommittee As Long
     Private Sub RPTcommittees_ItemDataBound(sender As Object, e As System.Web.UI.WebControls.RepeaterItemEventArgs) Handles RPTcommittees.ItemDataBound
@@ -644,7 +645,6 @@ Public Class cpAdvEvalDetail
 
         oLiteral = e.Item.FindControl("LTevaluatorsSliderBottom")
         Resource.setLiteral(oLiteral)
-
 
         Dim oTableCell As HtmlTableCell = e.Item.FindControl("TDevaluatorPlaceHolder")
         oTableCell.Visible = item.Evaluators.Count < 5
@@ -1090,15 +1090,15 @@ Public Class cpAdvEvalDetail
     Private Sub LNBexportAllEvaluationsSummaryData_Click(sender As Object, e As System.EventArgs) Handles LNBexportCommitteeEvaluationsToCsv.Click
         ExportEvaluations(SummaryType.EvaluationCommittees, IdSubmission, ExportData.Fulldata, Helpers.Export.ExportFileType.csv)
     End Sub
-    Private Sub LNBexportAllCommitteeSummaryToXLS_Click(sender As Object, e As System.EventArgs) Handles LNBexportCommitteesEvaluationsToCsv.Click
-        ExportEvaluations(SummaryType.EvaluationCommittee, IdSubmission, ExportData.Fulldata, Helpers.Export.ExportFileType.csv)
-    End Sub
+    'Private Sub LNBexportAllCommitteeSummaryToXLS_Click(sender As Object, e As System.EventArgs) Handles LNBexportCommitteesEvaluationsToCsv.Click
+    '    ExportEvaluations(SummaryType.EvaluationCommittee, IdSubmission, ExportData.Fulldata, Helpers.Export.ExportFileType.csv)
+    'End Sub
     Private Sub LNBexportCommitteeEvaluationsOneColumnToCsv_Click(sender As Object, e As System.EventArgs) Handles LNBexportCommitteeEvaluationsOneColumnToCsv.Click
         ExportEvaluations(SummaryType.EvaluationCommittees, IdSubmission, ExportData.FulldataToAnalyze, Helpers.Export.ExportFileType.csv)
     End Sub
-    Private Sub LNBexportCommitteesEvaluationsOneColumnToCsv_Click(sender As Object, e As System.EventArgs) Handles LNBexportCommitteesEvaluationsOneColumnToCsv.Click
-        ExportEvaluations(SummaryType.EvaluationCommittee, IdSubmission, ExportData.FulldataToAnalyze, Helpers.Export.ExportFileType.csv)
-    End Sub
+    'Private Sub LNBexportCommitteesEvaluationsOneColumnToCsv_Click(sender As Object, e As System.EventArgs) Handles LNBexportCommitteesEvaluationsOneColumnToCsv.Click
+    '    ExportEvaluations(SummaryType.EvaluationCommittee, IdSubmission, ExportData.FulldataToAnalyze, Helpers.Export.ExportFileType.csv)
+    'End Sub
 #End Region
 
     Private Sub ExportEvaluations(type As SummaryType, idSubmission As Long, data As ExportData, fileType As lm.Comol.Core.DomainModel.Helpers.Export.ExportFileType)

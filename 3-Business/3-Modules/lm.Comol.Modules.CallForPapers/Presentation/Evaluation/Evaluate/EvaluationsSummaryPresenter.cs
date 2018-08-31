@@ -469,10 +469,7 @@ namespace lm.Comol.Modules.CallForPapers.Presentation.Evaluation
         {
             return Service.GetStatisticFileName(View.IdCall, ServiceCall.GetCallName(View.IdCall),filename, SummaryType.Evaluations,items,xdata);
         }
-        public String ExportTo(dtoEvaluationsFilters filters, SummaryType summaryType, ItemsToExport itemsToExport, ExportData xdata,lm.Comol.Core.DomainModel.Helpers.Export.ExportFileType fileType, Dictionary<lm.Comol.Modules.CallForPapers.Domain.Evaluation.EvaluationTranslations, String> translations, Dictionary<lm.Comol.Modules.CallForPapers.Domain.Evaluation.EvaluationStatus, String> status)
-        {
-            return Service.ExportSummaryStatistics(ServiceCall.GetDtoCall(View.IdCall), filters, View.AnonymousDisplayname, View.UnknownDisplayname, summaryType, itemsToExport, xdata, fileType, translations, status);
-        }
+       
         private litePerson GetCurrentUser(ref Int32 idUser)
         {
             litePerson person = null;
@@ -484,11 +481,93 @@ namespace lm.Comol.Modules.CallForPapers.Presentation.Evaluation
             else
                 person = CurrentManager.GetLitePerson(idUser);
             return person;
-        }
+        }   
 
-        public String ExportToFullAdv(long CallId)
+        public String ExportTo(
+           dtoEvaluationsFilters filters,
+           SummaryType summaryType,
+           ItemsToExport itemsToExport,
+           ExportData xdata,
+           lm.Comol.Core.DomainModel.Helpers.Export.ExportFileType fileType,
+           Dictionary<lm.Comol.Modules.CallForPapers.Domain.Evaluation.EvaluationTranslations, String> translations,
+           Dictionary<lm.Comol.Modules.CallForPapers.Domain.Evaluation.EvaluationStatus, String> status)
         {
-            return ""; // ServiceCall.ExportAdvFullData(CallId);
+
+            dtoCall call = ServiceCall.GetDtoCall(View.IdCall);
+
+            //NOTA: CALL.EVALUATIONTYPE NON SERVE A NULLA!!!
+
+            List<dtoEvaluationSummaryItem> items = ServiceCall.GetEvaluationsList(
+                call.Id,
+                  View.IdCallAdvCommission,
+                  call.EvaluationType,
+                  filters,
+                  View.AnonymousDisplayname,
+                  View.UnknownDisplayname);
+
+            //"#"; "Domanda di"; "Tipo domanda"; "Punti"; "N. valutazioni"; "Completate"; "In valutazione"; "Non iniziate"
+
+
+            //TODO: RECUPERARE IL VALORE CORRETTO!!!
+            EvaluationType CurrentEvalType = View.CurrentEvaluationType;// EvaluationType.Average;
+
+
+            string output = call.Name + "\r\n\r\n";
+
+
+            //Header
+            output += "#;";
+            output += translations[Domain.Evaluation.EvaluationTranslations.CellTitleSubmissionOwner] + ";";
+            output += translations[Domain.Evaluation.EvaluationTranslations.CellTitleSubmitterType] + ";";
+
+            if(CurrentEvalType == EvaluationType.Average)
+                output += translations[Domain.Evaluation.EvaluationTranslations.CellTitleAverage] + ";";
+            else
+                output += translations[Domain.Evaluation.EvaluationTranslations.CellTitleSum] + ";";
+
+            output += translations[Domain.Evaluation.EvaluationTranslations.CellTitleEvaluationsCount] + ";";
+
+            output += "Confermate;";
+            output += translations[Domain.Evaluation.EvaluationTranslations.CellTitleEvaluationsEvaluated] + ";";
+            output += translations[Domain.Evaluation.EvaluationTranslations.CellTitleEvaluationsEvaluating] + ";";
+            output += translations[Domain.Evaluation.EvaluationTranslations.CellTitleEvaluationsNotStarted] + ";";
+            //output += translations[Domain.Evaluation.EvaluationTranslations.CellTitleEvaluationsNotStarted] + ";";
+
+            output += "\r\n";
+
+            foreach (dtoEvaluationSummaryItem itm in items.OrderBy(it => it.Position))
+            {
+                //"#"; 
+                output += itm.Position + ";";
+
+                //"Domanda di"; 
+                output += itm.DisplayName + ";";
+
+                //"Tipo domanda"; 
+                output += itm.SubmitterType + ";";
+
+                //"Punti"; 
+                output += ((CurrentEvalType == EvaluationType.Average) ? itm.AverageRating : itm.SumRating) + ";";
+
+                //"N. valutazioni"; 
+                output += itm.Evaluations.Count() + ";";
+
+                //"Confermate"
+                output += itm.GetEvaluationsCount(EvaluationStatus.Confirmed) + ";";
+
+                //"Completate"; 
+                output += itm.GetEvaluationsCount(EvaluationStatus.Evaluated) + ";";
+
+                //"In valutazione"; 
+                output += itm.GetEvaluationsCount(EvaluationStatus.Evaluating) + ";";
+
+                //"Non iniziate"
+                output += itm.GetEvaluationsCount(EvaluationStatus.None) + ";";
+
+                output += "\r\n";
+            }
+
+            return output;
 
             //return Service.ExportSummaryStatistics(ServiceCall.GetDtoCall(View.IdCall), filters, View.AnonymousDisplayname, View.UnknownDisplayname, summaryType, itemsToExport, xdata, fileType, translations, status);
         }

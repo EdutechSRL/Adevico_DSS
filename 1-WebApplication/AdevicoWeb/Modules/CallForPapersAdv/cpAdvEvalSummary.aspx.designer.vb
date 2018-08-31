@@ -41,69 +41,6 @@ Partial Public Class cpAdvEvalSummary
     Protected WithEvents LNBexportAllEvaluationsSummaryToCsv As Global.System.Web.UI.WebControls.LinkButton
     
     '''<summary>
-    '''LNBexportAllEvaluationsSummaryToXLS control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents LNBexportAllEvaluationsSummaryToXLS As Global.System.Web.UI.WebControls.LinkButton
-    
-    '''<summary>
-    '''LNBexportFilteredEvaluationsSummaryToCsv control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents LNBexportFilteredEvaluationsSummaryToCsv As Global.System.Web.UI.WebControls.LinkButton
-    
-    '''<summary>
-    '''LNBexportFilteredEvaluationsSummaryToXLS control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents LNBexportFilteredEvaluationsSummaryToXLS As Global.System.Web.UI.WebControls.LinkButton
-    
-    '''<summary>
-    '''LNBexportAllEvaluationsSummaryDataToCsv control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents LNBexportAllEvaluationsSummaryDataToCsv As Global.System.Web.UI.WebControls.LinkButton
-    
-    '''<summary>
-    '''LNBexportAllEvaluationsSummaryData control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents LNBexportAllEvaluationsSummaryData As Global.System.Web.UI.WebControls.LinkButton
-    
-    '''<summary>
-    '''LNBexportFullEvaluationsSummaryDataToCsv control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents LNBexportFullEvaluationsSummaryDataToCsv As Global.System.Web.UI.WebControls.LinkButton
-    
-    '''<summary>
-    '''LNBexportFullEvaluationsSummaryDataToXml control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents LNBexportFullEvaluationsSummaryDataToXml As Global.System.Web.UI.WebControls.LinkButton
-    
-    '''<summary>
     '''HYPlist control.
     '''</summary>
     '''<remarks>
