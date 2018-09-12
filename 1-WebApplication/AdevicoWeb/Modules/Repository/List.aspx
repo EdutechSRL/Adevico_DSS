@@ -188,8 +188,4 @@
 <CTRL:CTRLaddFiles id="CTRLaddFiles" runat="server" visible="false" MaxItems="4"/>
 <CTRL:CTRLaddVersion id="CTRLaddVersion" runat="server" visible="false" />
 
-
-    <CTRL:UC_xApiHelper runat="server" id="UC_xApiHelper" />
-
-
 </asp:Content>
