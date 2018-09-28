@@ -138,6 +138,8 @@ Public Class ProjectGantt
             .setHyperLink(HYPgoToProjectEditBottom, False, True)
             .setHyperLink(HYPbackToResourceDashboardBottom, False, True)
             .setHyperLink(HYPbackToManagerDashboardBottom, False, True)
+            .setHyperLink(HYPgoToEditProjectMapTop, False, True)
+            .setHyperLink(HYPgoToEditProjectMapBottom, False, True)
         End With
     End Sub
 
@@ -177,6 +179,14 @@ Public Class ProjectGantt
             End Select
         End If
     End Sub
+    Protected Overrides Sub SetEditMapUrl(url As String)
+        If Not String.IsNullOrEmpty(url) Then
+            HYPgoToEditProjectMapTop.Visible = True
+            HYPgoToEditProjectMapBottom.Visible = True
+            HYPgoToEditProjectMapTop.NavigateUrl = PageUtility.ApplicationUrlBase() & url
+            HYPgoToEditProjectMapBottom.NavigateUrl = HYPgoToEditProjectMapTop.NavigateUrl
+        End If
+    End Sub
 #Region "Display"
     Protected Overrides Sub DisplayUnknownProject()
         Me.MLVprojectMap.SetActiveView(VIWempty)
@@ -204,6 +214,21 @@ Public Class ProjectGantt
 
         'HYPprojectMapBulkEdit.NavigateUrl = ApplicationUrlBase & RootObject.MapBulk(IdProject, project.IdCommunity, project.isPortal, project.isPersonal, FromPage, PreloadIdContainerCommunity)
     End Sub
+    Protected Overrides Sub LoadAttachments(attachments As List(Of dtoAttachmentItem))
+        LBattachments.Visible = Not IsNothing(attachments) AndAlso attachments.Any()
+        If Not IsNothing(attachments) AndAlso attachments.Any() Then
+            Select Case attachments.Count
+                Case 1, 0
+                    LBattachments.ToolTip = Resource.getValue("LBattachments.ToolTip." & Items.Count.ToString)
+                Case Else
+                    LBattachments.ToolTip = String.Format(Resource.getValue("LBattachments.ToolTip.n"), Items.Count)
+            End Select
+            CTRLattachment.Visible = True
+            CTRLattachment.InitializeControl(attachments)
+        Else
+            CTRLattachment.Visible = False
+        End If
+    End Sub
 #End Region
 
 #Region "Implements"
@@ -227,7 +252,7 @@ Public Class ProjectGantt
     Private Sub DisplayProjectWithNoTasks() Implements IViewProjectGantt.DisplayProjectWithNoTasks
         DVganttCommands.Visible = False
     End Sub
-   
+
 #End Region
 
     Private Sub ProjectResources_PreInit(sender As Object, e As System.EventArgs) Handles Me.PreInit
@@ -240,5 +265,4 @@ Public Class ProjectGantt
         CurrentPresenter.SaveProjectDate(IdProject, CTRLprojectInfo.InEditStartDate, CTRLprojectInfo.InEditDeadline)
     End Sub
 
-   
 End Class

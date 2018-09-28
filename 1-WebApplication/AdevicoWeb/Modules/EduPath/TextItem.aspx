@@ -5,7 +5,7 @@
 <%@ Register Src="~/Modules/Common/Editor/UC_Editor.ascx" TagName="CTRLeditor" TagPrefix="CTRL" %>
 <%@ MasterType VirtualPath="~/AjaxPortal.Master" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
-    <link href="../../Graphics/Modules/Edupath/css/PfStyle.css" rel="Stylesheet" />
+    <link href="../../Graphics/Modules/Edupath/css/<%=GetCssFileByType()%>pfstyle.css?v=201605041410lm" rel="Stylesheet" />
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="CPHservice" runat="server">
@@ -13,6 +13,7 @@
     <asp:MultiView ID="MLVtextItem" runat="server" ActiveViewIndex="0">
         <asp:View ID="VIWitemText" runat="server">
             <CTRL:Messages runat="server" ID="CTRLmoduleStatusMessage" Visible="false" />
+            <CTRL:Messages runat="server" ID="CTRLgenericMessage" Visible="false" />
             <asp:Wizard ID="WZRnoteCreate" runat="server" ActiveStepIndex="0" Width="100%" BackColor="#EFF3FB"
                 BorderColor="#B5C7DE" BorderWidth="1px" DisplaySideBar="False">
                 <WizardSteps>
@@ -31,64 +32,7 @@
                     <asp:Label ID="LBerrorEditor" runat="server" CssClass="erroreSmall" Visible="false" />
                 </div>
             </div>
-           <%-- <br />
-            <div class="DIVrepeater">
-                            <asp:Label ID="LBcroleSummary" runat="server" Text="*resu" CssClass="Titolo_campo"></asp:Label>
-                            <asp:Repeater ID="RPcRoleSummary" runat="server" EnableViewState="false" OnItemDataBound="RPsummary_ItemDataBound">
-                                <HeaderTemplate>
-                                    <table id="tableMap" border="1" width="100%" cellspacing="0">
-                                        <tr class="ROW_header_Small_Center">
-                                            <td>
-                                                <asp:Label ID="LBnameCroleTitle" runat="server"></asp:Label>
-                                            </td>
-                                            <td>
-                                                <asp:Label ID="LBpartecipantTitle" runat="server" Text="*PArtecipante"></asp:Label>
-                                            </td>
-                                            <td  "<%#Me.NotIsAutoTimePath %>">
-                                                <asp:Label ID="LBevaluatorTitle" runat="server" Text="*"></asp:Label>
-                                            </td>
-                                            <td>
-                                                <asp:Label ID="LBmanagerTitle" runat="server"></asp:Label>
-                                            </td>
-                                        </tr>
-                                </HeaderTemplate>
-                                <ItemTemplate>
-                                    <tr class="ROW_Normal_Small">
-                                        <td class="TableItem">
-                                            <asp:Label ID="LBname" runat="server" CssClass="Titolo_campoSmall"></asp:Label>
-                                        </td>
-                                       <td class="TableItem">
-                                             &nbsp<asp:Image ID="IMGpartecipant" runat="server" />
-                                        </td>
-                                        <td class="TableItem"  "<%#Me.NotIsAutoTimePath %>">
-                                            &nbsp<asp:Image ID="IMGevaluator" runat="server" />&nbsp
-                                        </td>
-                                        <td class="TableItem">
-                                            &nbsp<asp:Image ID="IMGmanager" runat="server" />&nbsp
-                                        </td>
-                                    </tr>
-                                </ItemTemplate>
-                                <AlternatingItemTemplate>
-                                    <tr class="ROW_Alternate_Small">
-                                        <td class="TableItem">
-                                            <asp:Label ID="LBname" runat="server" CssClass="Titolo_campoSmall"></asp:Label>
-                                        </td>
-                                        <td class="TableItem">
-                                            &nbsp<asp:Image ID="IMGpartecipant" runat="server" />
-                                        </td>
-                                        <td class="TableItem"  "<%#Me.NotIsAutoTimePath %>">
-                                            &nbsp<asp:Image ID="IMGevaluator" runat="server" />&nbsp
-                                        </td>
-                                        <td class="TableItem">
-                                            &nbsp<asp:Image ID="IMGmanager" runat="server" />&nbsp
-                                        </td>
-                                    </tr>
-                                </AlternatingItemTemplate>
-                                <FooterTemplate>
-                                    </table>
-                                </FooterTemplate>
-                            </asp:Repeater>
-                        </div><br />--%>
+       
                         <div class="DIVrepeater">
                             <asp:Label ID="LBpersonSummary" runat="server" Text="*resum" CssClass="Titolo_campo"></asp:Label>
                             <asp:Repeater ID="RPpersonSummary" runat="server" EnableViewState="false" OnItemDataBound="RPsummary_ItemDataBound">
@@ -314,9 +258,7 @@
                 <div class="DivEpButton">
                     <asp:HyperLink ID="HYPerror" runat="server" CssClass="Link_Menu" />
                 </div>
-                <div align="center">
-                    <asp:Label ID="LBerror" runat="server" CssClass="messaggio"></asp:Label>
-                </div>
+                 <CTRL:Messages runat="server" ID="CTRLerrorMessage" Visible="false" />
             </div>
         </asp:View>
         <asp:View ID="VIWmessages" runat="server">

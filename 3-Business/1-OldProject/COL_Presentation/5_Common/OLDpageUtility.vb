@@ -2229,12 +2229,15 @@ Public Class OLDpageUtility
                                      ByVal LoadUrl As String, ByVal UpdateAccessDate As Boolean) _
                                  As lm.Comol.Core.DomainModel.SubscriptionStatus
 
+        '_Session("Track") = "accessTocommunity_00"
         Dim fed As lm.Comol.Core.BaseModules.Federation.Enums.FederationType = FederationNS.Enums.FederationType.None
+
+
 
         Try
             fed = PermissionService.FederationCommunityCheck(CommunityID)
         Catch ex As Exception
-
+            _Session("Track") = ex.ToString()
         End Try
 
 
@@ -2250,7 +2253,7 @@ Public Class OLDpageUtility
             If (result = FederationNS.Enums.FederationResult.CommunityNotFederated) Then
                 Return lm.Comol.Core.DomainModel.SubscriptionStatus.notFederated
             End If
-
+            '_Session("Track") = "accessTocommunity_00"
         End If
 
         Dim iResponse As lm.Comol.Core.DomainModel.SubscriptionStatus = lm.Comol.Core.DomainModel.SubscriptionStatus.none
@@ -2285,7 +2288,7 @@ Public Class OLDpageUtility
                             RoleID = oIscrizione.TipoRuolo.Id
                             _Session("IdRuolo") = RoleID
                             _Session("RLPC_ID") = oIscrizione.Id
-
+                            '_Session("Track") = "accessTocommunity_01"
                             Dim oListaServizi As GenericCollection(Of PlainServizioComunita)
                             oListaServizi = PlainServizioComunita.ElencaByComunita(RoleID, CommunityID)
 
@@ -2402,9 +2405,11 @@ Public Class OLDpageUtility
                     End If
                 End If
             Else
+                _Session("Track") = "accessTocommunity_dB_Err"
                 oTreeComunita.Delete(CommunityID, CommunityPath)
             End If
         Catch ex As Exception
+            _Session("Track") = ex.ToString()
             Dim err As String = ex.ToString()
         End Try
         Return iResponse
@@ -2966,52 +2971,60 @@ Public Class OLDpageUtility
 
     Public Function CheckUser(UserId As Integer, Optional ByVal update As Boolean = False) As FederationNS.Enums.FederationResult
 
+
+
         Dim result As FederationNS.Enums.FederationResult = FederationNS.Enums.FederationResult.Unknow
 
-        Dim FederationData As FederationNS.Domain.dtoUserfederationData
-
-        'If Not IsNothing(_Application.Item(FederationAppKey)) Then
-
-        'End If
-
-        Dim Federated As Dictionary(Of Integer, FederationNS.Domain.dtoUserfederationData)
-
         Try
-            Federated = _Application.Item(FederationAppKey)
+
+            Dim FederationData As FederationNS.Domain.dtoUserfederationData
+
+            'If Not IsNothing(_Application.Item(FederationAppKey)) Then
+
+            'End If
+
+            Dim Federated As Dictionary(Of Integer, FederationNS.Domain.dtoUserfederationData)
+
+            Try
+                Federated = _Application.Item(FederationAppKey)
+            Catch ex As Exception
+
+            End Try
+
+            If IsNothing(Federated) Then
+                Federated = New Dictionary(Of Integer, FederationNS.Domain.dtoUserfederationData)
+            End If
+
+            If (Federated.ContainsKey(UserId)) Then
+                FederationData = Federated(UserId)
+            End If
+
+            If IsNothing(FederationData) OrElse FederationData.LifeTime >= MaxLifeTime OrElse update Then
+                FederationData = New FederationNS.Domain.dtoUserfederationData()
+                FederationData.UserId = UserId
+                'FederationData.Creation = DateTime.Now()
+                FederationData.CommunityId = 0
+                FederationData.Result = PermissionService.FederationUserCheck(0, UserId, SystemSettings.FederationSettings)
+            End If
+
+
+
+            FederationData.Creation = DateTime.Now()
+            result = FederationData.Result
+
+            Federated(UserId) = FederationData
+
+
+            _Application.Item(FederationAppKey) = Federated
+
+
+
+
+            Return result
         Catch ex As Exception
 
         End Try
 
-        If IsNothing(Federated) Then
-            Federated = New Dictionary(Of Integer, FederationNS.Domain.dtoUserfederationData)
-        End If
-
-        If (Federated.ContainsKey(UserId)) Then
-            FederationData = Federated(UserId)
-        End If
-
-        If IsNothing(FederationData) OrElse FederationData.LifeTime >= MaxLifeTime OrElse update Then
-            FederationData = New FederationNS.Domain.dtoUserfederationData()
-            FederationData.UserId = UserId
-            'FederationData.Creation = DateTime.Now()
-            FederationData.CommunityId = 0
-            FederationData.Result = PermissionService.FederationUserCheck(0, UserId, SystemSettings.FederationSettings)
-        End If
-
-
-
-        FederationData.Creation = DateTime.Now()
-        result = FederationData.Result
-
-        Federated(UserId) = FederationData
-
-
-        _Application.Item(FederationAppKey) = Federated
-
-
-
-
-        Return result
 
     End Function
 

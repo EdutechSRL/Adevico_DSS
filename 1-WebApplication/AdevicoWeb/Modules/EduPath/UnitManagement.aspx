@@ -8,7 +8,7 @@
 <%@ Register Src="./UC/UC_HelpVisibility.ascx" TagName="CTRLhelpVisibility" TagPrefix="CTRL" %>
 <%@ MasterType VirtualPath="~/AjaxPortal.Master" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
-    <link href="../../Graphics/Modules/Edupath/css/PfStyle.css" rel="Stylesheet" />
+     <link href="../../Graphics/Modules/Edupath/css/<%=GetCssFileByType()%>pfstyle.css?v=201605041410lm" rel="Stylesheet" />
     <script type="text/javascript">
         $(document).ready(function () {
             $("#helpDialog1").dialog({
@@ -43,10 +43,6 @@
             });
 
         });
-
-
- 
-
     </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="CPHservice" runat="server">
@@ -136,7 +132,7 @@
                                 <asp:CheckBox ID="CKBmandatoryUnit" runat="server" CssClass="Titolo_campoSmall" />
                             </div>
                             <div class="btnAdvanced DetailItem">
-                                <asp:Label ID="LBadvanced" runat="server" CssClass="show_hide Link_Menu" Text="*advanced" />
+                                <asp:Label ID="LBadvanced" runat="server" CssClass="show_hide Link_Menu" Text="*advanced" Visible="False"/>
                             </div>
                             <div class="DIVrepeater slidingDiv">
                                 <asp:Label ID="LBcroleSummary" runat="server" Text="*resu" CssClass="Titolo_campo"></asp:Label>
@@ -420,9 +416,7 @@
                     <div align="right" style="text-align: right; clear: right;">
                         <asp:Button ID="BTNerror" runat="server" CssClass="Link_Menu" />
                     </div>
-                    <div align="center">
-                        <asp:Label ID="LBerror" runat="server" CssClass="messaggio"></asp:Label>
-                    </div>
+                   <CTRL:Messages runat="server" ID="CTRLerrorMessage" Visible="false" />
                 </div>
             </asp:View>
             <asp:View ID="VIWmessages" runat="server">

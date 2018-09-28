@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="lm.Comol.Modules.Standard" namespace="lm.Comol.Modules.Standard.Menu.Domain">
+    <class name="_Menubar" table="MN_Menubar" lazy="false">
+        
+        <id name="Id" column="Id" type="Int64">
+            <generator class="native"/>
+        </id>
+ <version name="TimeStamp"
+        generated="always"
+        unsaved-value="null"
+        type="BinaryBlob">
+            <column name="_Timestamp"
+                    not-null="false"
+                    sql-type="timestamp"/>
+        </version>
+        <bag name="Items" table="MN_MenuItem" lazy="false" order-by="DisplayOrder asc" where="Discriminator=1" fetch="subselect">
+            <key column="IdMenubar" foreign-key="Id"/>
+            <one-to-many class="_TopItem" />
+        </bag>
+
+        <property name="CssClass" type="String" column="CssClass" />
+        <property name="Name" type="String" column="Name" />
+        <property name="IsCurrent" type="Boolean" column="IsCurrent" />
+        <property name="MenuBarType" type="lm.Comol.Modules.Standard.Menu.Domain.MenuBarType,lm.Comol.Modules.Standard" column="IdMenuBarType" />
+        <property name="Status" type="lm.Comol.Modules.Standard.Menu.Domain.ItemStatus,lm.Comol.Modules.Standard" column="Status" />
+        <property name="Deleted" type="lm.Comol.Core.DomainModel.BaseStatusDeleted, lm.Comol.Core.DomainModel" column="_Deleted" />
+    </class>
+</hibernate-mapping>

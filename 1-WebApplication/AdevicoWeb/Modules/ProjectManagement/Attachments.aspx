@@ -1,14 +1,14 @@
 ﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/AjaxPortal.Master" CodeBehind="Attachments.aspx.vb" Inherits="Comunita_OnLine.ProjectAttachments" %>
 <%@ Register TagPrefix="CTRL" TagName="WizardSteps" Src="~/Modules/ProjectManagement/UC/UC_WizardSteps.ascx" %>
 <%@ Register TagPrefix="CTRL" TagName="Messages" Src="~/Modules/Common/UC/UC_ActionMessages.ascx" %>
-<%@ Register TagPrefix="CTRL" TagName="AttachmentsCommands" Src="~/Modules/Common/UC/UC_AttachmentInlineCommands.ascx" %>
-<%@ Register TagPrefix="CTRL" TagName="DisplayFile" Src="~/Modules/Repository/UC/UC_ModuleRepositoryAction.ascx" %>
+<%@ Register TagPrefix="CTRL" TagName="AttachmentsCommands" Src="~/Modules/Repository/Common/UC_ModuleAttachmentInlineCommands.ascx" %>
+<%@ Register TagPrefix="CTRL" TagName="DisplayItem" Src="~/Modules/Repository/Common/UC_ModuleRenderAction.ascx" %>
 <%@ Register TagPrefix="CTRL" TagName="DisplayUrl" Src="~/Modules/Common/UC/UC_DisplayUrlItem.ascx" %>
 <%@ Register TagPrefix="CTRL" TagName="EditUrl" Src="~/Modules/Common/UC/UC_EditUrlItems.ascx" %>
 <%@ Register TagPrefix="CTRL" TagName="EditUrlHeader" Src="~/Modules/Common/UC/UC_EditUrlItemsHeader.ascx" %>
 <%@ Register TagPrefix="CTRL" TagName="Attachments" Src="~/Modules/ProjectManagement/UC/UC_PMaddAttachment.ascx" %>
-<%@ Register TagPrefix="CTRL" TagName="AttachmentsHeader" Src="~/Modules/Common/UC/UC_AttachmentJqueryHeaderCommands.ascx" %>
-
+<%@ Register TagPrefix="CTRL" TagName="AttachmentsHeader" Src="~/Modules/Repository/Common/UC_ModuleAttachmentJqueryHeaderCommands.ascx" %>
+<%@ Register TagPrefix="CTRL" TagName="ModalPlayerHeader" Src="~/Modules/Repository/UC_New/UC_ModalPlayerHeader.ascx" %>
 <%@ MasterType VirtualPath="~/AjaxPortal.Master" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="PageTitleContent" runat="server">
 </asp:Content>
@@ -29,6 +29,7 @@
     <script type="text/javascript" src="../../Jscript/Modules/ProjectManagement/projectmanagement.js"></script>
     <CTRL:AttachmentsHeader ID="CTRLattachmentsHeader" runat="server" />
     <CTRL:EditUrlHeader ID="CTRLeditUrlItemsHeader" runat="server" EditingCssClass="dlgeditinlineurl" />
+    <CTRL:ModalPlayerHeader ID="CTRLmodalPlayerHeader" runat="server" />
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="TitleContent" runat="server">
 </asp:Content>
@@ -112,7 +113,7 @@
                                                                     </td>
                                                                     <td class="attachmentname">
                                                                         <CTRL:DisplayUrl ID="CTRLdisplayUrl" runat="server" Visible="false" />
-                                                                        <CTRL:DisplayFile ID="CTRLdisplayFile" runat="server" />
+                                                                        <CTRL:DisplayItem ID="CTRLdisplayItem" runat="server" EnableAnchor="true" DisplayExtraInfo="true" DisplayLinkedBy="true" Visible="false"/>
                                                                     </td>
                                                                     <td class="attachmenttype"><asp:literal ID="LTattachmentType" runat="server"></asp:literal></td>
                                                                     <td class="actions" id="TDactions" runat="server">

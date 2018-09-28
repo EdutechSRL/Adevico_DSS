@@ -14,6 +14,15 @@ Option Explicit On
 Partial Public Class FullPlay
 
     '''<summary>
+    '''CTRLmodalHeader control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents CTRLmodalHeader As Global.Comunita_OnLine.UC_ModalPlayerHeader
+
+    '''<summary>
     '''MLVeduPathView control.
     '''</summary>
     '''<remarks>

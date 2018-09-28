@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="lm.Comol.Modules.Standard" namespace="lm.Comol.Modules.Standard.ProjectManagement.Domain">
+  <class name="lm.Comol.Modules.Standard.ProjectManagement.Domain.litePmActivity" table="PM_Activity" lazy="true">
+    <id name="Id" column="Id" type="long">
+      <generator class="native"/>
+    </id>
+    <property name="IdCommunity" type="Int32" column="IdCommunity" />
+    <property name="IdProject" type="Int64" column="IdProject" />
+    <property name="Name" type="String" column="Name" />
+    <property name="Description" type="String" column="Description" />
+    <property name="Notes" type="String" column="Notes" />
+    <property name="Completeness" type="Int32" column="Completeness" />
+    <property name="IsDurationEstimated" type="boolean" column="IsDurationEstimated" />
+    <property name="Status" type="lm.Comol.Modules.Standard.ProjectManagement.Domain.ProjectItemStatus, lm.Comol.Modules.Standard" column="Status" />
+    <property name="DisplayOrder" type="Int64" column="DisplayOrder" />
+    <property name="Depth" type="Int64" column="Depth" />
+    <property name="EarlyStart" type="Double" column="EarlyStart" />
+    <property name="EarlyFinish" type="Double" column="EarlyFinish" />
+    <property name="LatestStart" type="Double" column="LatestStart" />
+    <property name="LatestFinish" type="Double" column="LatestFinish" />
+    <property name="EarlyStartDate" type="DateTime" column="EarlyStartDate" />
+    <property name="EarlyFinishDate" type="DateTime" column="EarlyFinishDate" />
+    <property name="LatestStartDate" type="DateTime" column="LatestStartDate" />
+    <property name="LatestFinishDate" type="DateTime" column="LatestFinishDate" />
+    <property name="Deadline" type="DateTime" column="Deadline" />
+    <property name="IsSummary" type="Boolean" column="IsSummary" />
+    <property name="IsCompleted" type="Boolean" column="IsCompleted" />
+    <property name="Duration" type="Double" column="Duration" />
+    <property name="WBSindex" type="Int64" column="WBSindex" />
+    <property name="WBSstring" type="String" column="WBSstring" />
+    <many-to-one name="Parent" class="lm.Comol.Modules.Standard.ProjectManagement.Domain.litePmActivity, lm.Comol.Modules.Standard" column="IdParent" foreign-key="IdParent" cascade="none" not-null="false"  not-found="ignore"  lazy="false" />
+    <bag name="Children" table="PM_Activity" inverse="true" lazy="false" fetch="subselect" cascade="none" >
+      <key column="IdParent"/>
+      <one-to-many class="lm.Comol.Modules.Standard.ProjectManagement.Domain.litePmActivity"/>
+    </bag>
+    <bag name="PredecessorLinks" table="PM_ActivityLink" inverse="true" lazy="false" fetch="subselect" cascade="none" >
+      <key column="IdSource"/>
+      <one-to-many class="lm.Comol.Modules.Standard.ProjectManagement.Domain.litePmActivityLink"/>
+    </bag>
+    <bag name="SuccessorLinks" table="PM_ActivityLink" inverse="true" lazy="false" fetch="subselect" cascade="none" >
+      <key column="IdTarget"/>
+      <one-to-many class="lm.Comol.Modules.Standard.ProjectManagement.Domain.litePmActivityLink"/>
+    </bag>
+    <bag name="Assignments" table="PM_Assignment" inverse="true" lazy="false" fetch="subselect" cascade="none" >
+      <key column="IdActivity"/>
+      <one-to-many class="lm.Comol.Modules.Standard.ProjectManagement.Domain.liteProjectActivityAssignment"/>
+    </bag>
+    
+    <property name="Deleted" type="lm.Comol.Core.DomainModel.BaseStatusDeleted,lm.Comol.Core.DomainModel" column="_Deleted" />
+  </class>
+</hibernate-mapping>

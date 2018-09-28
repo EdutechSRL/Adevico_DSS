@@ -1,0 +1,147 @@
+﻿USE [test]
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+/****** Oggetto:  Table [dbo].[Skin]    Data script: 09/27/2011 16:33:46 ******/
+CREATE TABLE [dbo].[Skin](
+	[ID] [bigint] IDENTITY(1,1) NOT NULL,
+	[Name] [nvarchar](255) COLLATE Latin1_General_CI_AS NOT NULL,
+	[MainCss] [nvarchar](255) COLLATE Latin1_General_CI_AS NULL,
+	[IECss] [nvarchar](255) COLLATE Latin1_General_CI_AS NULL,
+	[AdminCss] [nvarchar](255) COLLATE Latin1_General_CI_AS NULL,
+	[IsPortal] [bit] NOT NULL CONSTRAINT [DF_Skin_IsPortal]  DEFAULT ((0)),
+	[_Timestamp] [timestamp] NOT NULL,
+	[_Deleted] [smallint] NULL CONSTRAINT [DF_Skin__Deleted]  DEFAULT ((0)),
+	[_CreatedOn] [datetime] NOT NULL,
+	[_CreatedBy] [bigint] NULL,
+	[_ModifiedOn] [datetime] NULL,
+	[_ModifiedBy] [bigint] NULL,
+	[_CreatedProxyIPaddress] [nvarchar](50) COLLATE Latin1_General_CI_AS NULL,
+	[_CreatedIPaddress] [nvarchar](50) COLLATE Latin1_General_CI_AS NULL,
+	[_ModifiedIPaddress] [nvarchar](50) COLLATE Latin1_General_CI_AS NULL,
+	[_ModifiedProxyIPaddress] [nvarchar](50) COLLATE Latin1_General_CI_AS NULL,
+ CONSTRAINT [PK_Skin] PRIMARY KEY CLUSTERED 
+(
+	[ID] ASC
+)WITH (PAD_INDEX  = OFF, IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+
+CREATE TABLE [dbo].[Skin_FootText](
+	[ID] [bigint] IDENTITY(1,1) NOT NULL,
+	[LangCode] [nvarchar](10) COLLATE Latin1_General_CI_AS NOT NULL,
+	[Value] [text] COLLATE Latin1_General_CI_AS NULL,
+	[SkinId] [bigint] NOT NULL,
+	[_Timestamp] [timestamp] NOT NULL,
+	[_Deleted] [smallint] NULL CONSTRAINT [DF_Skin_FootText__Deleted]  DEFAULT ((0)),
+	[_CreatedOn] [datetime] NOT NULL,
+	[_CreatedBy] [bigint] NULL,
+	[_ModifiedOn] [datetime] NULL,
+	[_ModifiedBy] [bigint] NULL,
+	[_CreatedProxyIPaddress] [nvarchar](50) COLLATE Latin1_General_CI_AS NULL,
+	[_CreatedIPaddress] [nvarchar](50) COLLATE Latin1_General_CI_AS NULL,
+	[_ModifiedIPaddress] [nvarchar](50) COLLATE Latin1_General_CI_AS NULL,
+	[_ModifiedProxyIPaddress] [nvarchar](50) COLLATE Latin1_General_CI_AS NULL,
+ CONSTRAINT [PK_Skin_FootText] PRIMARY KEY CLUSTERED 
+(
+	[ID] ASC
+)WITH (PAD_INDEX  = OFF, IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+
+GO
+ALTER TABLE [dbo].[Skin_FootText]  WITH CHECK ADD  CONSTRAINT [FK_Skin_FootText_Skin] FOREIGN KEY([SkinId])
+REFERENCES [dbo].[Skin] ([ID])
+GO
+ALTER TABLE [dbo].[Skin_FootText] CHECK CONSTRAINT [FK_Skin_FootText_Skin]
+GO
+
+
+CREATE TABLE [dbo].[Skin_Logo](
+	[ID] [bigint] IDENTITY(1,1) NOT NULL,
+	[Alt] [nvarchar](255) COLLATE Latin1_General_CI_AS NULL,
+	[DisplayOrder] [int] NULL,
+	[IsHeader] [bit] NOT NULL,
+	[LangCode] [nvarchar](10) COLLATE Latin1_General_CI_AS NULL,
+	[Link] [nvarchar](255) COLLATE Latin1_General_CI_AS NULL,
+	[ImageUrl] [nvarchar](255) COLLATE Latin1_General_CI_AS NULL,
+	[SkinId] [bigint] NOT NULL,
+	[_Timestamp] [timestamp] NOT NULL,
+	[_Deleted] [smallint] NULL CONSTRAINT [DF_Skin_Logo__Deleted]  DEFAULT ((0)),
+	[_CreatedOn] [datetime] NOT NULL,
+	[_CreatedBy] [bigint] NULL,
+	[_ModifiedOn] [datetime] NULL,
+	[_ModifiedBy] [bigint] NULL,
+	[_CreatedProxyIPaddress] [nvarchar](50) COLLATE Latin1_General_CI_AS NULL,
+	[_CreatedIPaddress] [nvarchar](50) COLLATE Latin1_General_CI_AS NULL,
+	[_ModifiedIPaddress] [nvarchar](50) COLLATE Latin1_General_CI_AS NULL,
+	[_ModifiedProxyIPaddress] [nvarchar](50) COLLATE Latin1_General_CI_AS NULL,
+ CONSTRAINT [PK_Skin_Logo] PRIMARY KEY CLUSTERED 
+(
+	[ID] ASC
+)WITH (PAD_INDEX  = OFF, IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+ALTER TABLE [dbo].[Skin_Logo]  WITH CHECK ADD  CONSTRAINT [FK_Skin_Logo_Skin] FOREIGN KEY([SkinId])
+REFERENCES [dbo].[Skin] ([ID])
+GO
+ALTER TABLE [dbo].[Skin_Logo] CHECK CONSTRAINT [FK_Skin_Logo_Skin]
+GO
+
+
+
+CREATE TABLE [dbo].[Skin_LogoToLang](
+	[ID] [bigint] IDENTITY(1,1) NOT NULL,
+	[LogoId] [bigint] NOT NULL,
+	[LangCode] [nvarchar](50) COLLATE Latin1_General_CI_AS NULL,
+ CONSTRAINT [PK_Skin_LogoToLang] PRIMARY KEY CLUSTERED 
+(
+	[ID] ASC
+)WITH (PAD_INDEX  = OFF, IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+ALTER TABLE [dbo].[Skin_LogoToLang]  WITH CHECK ADD  CONSTRAINT [FK_Skin_LogoToLang_Skin_Logo] FOREIGN KEY([LogoId])
+REFERENCES [dbo].[Skin_Logo] ([ID])
+GO
+ALTER TABLE [dbo].[Skin_LogoToLang] CHECK CONSTRAINT [FK_Skin_LogoToLang_Skin_Logo]
+GO
+
+
+
+
+
+
+CREATE TABLE [dbo].[Skin_Share](
+	[ID] [bigint] IDENTITY(1,1) NOT NULL,
+	[Discriminator] [int] NULL,
+	[SkinId] [bigint] NOT NULL,
+	[IdCommunity] [int] NULL,
+	[IdOrganization] [int] NULL,
+	[_Timestamp] [timestamp] NOT NULL,
+	[_Deleted] [smallint] NULL CONSTRAINT [DF_Skin_Share__Deleted]  DEFAULT ((0)),
+	[_CreatedOn] [datetime] NOT NULL,
+	[_CreatedBy] [bigint] NULL,
+	[_ModifiedOn] [datetime] NULL,
+	[_ModifiedBy] [bigint] NULL,
+	[_CreatedProxyIPaddress] [nvarchar](50) COLLATE Latin1_General_CI_AS NULL,
+	[_CreatedIPaddress] [nvarchar](50) COLLATE Latin1_General_CI_AS NULL,
+	[_ModifiedIPaddress] [nvarchar](50) COLLATE Latin1_General_CI_AS NULL,
+	[_ModifiedProxyIPaddress] [nvarchar](50) COLLATE Latin1_General_CI_AS NULL,
+ CONSTRAINT [PK_Skin_Share] PRIMARY KEY CLUSTERED 
+(
+	[ID] ASC
+)WITH (PAD_INDEX  = OFF, IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+ALTER TABLE [dbo].[Skin_Share]  WITH CHECK ADD  CONSTRAINT [FK_Skin_Share_Skin] FOREIGN KEY([SkinId])
+REFERENCES [dbo].[Skin] ([ID])
+GO
+ALTER TABLE [dbo].[Skin_Share] CHECK CONSTRAINT [FK_Skin_Share_Skin]
+GO

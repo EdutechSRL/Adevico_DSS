@@ -1,0 +1,896 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D253BF62-A7F2-48D5-AD05-12AC8EA66279}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>lm.Comol.Modules.Standard</RootNamespace>
+    <AssemblyName>lm.Comol.Modules.Standard</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.1.0.39271, Culture=neutral, PublicKeyToken=3a9cab8f8d22bfb7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Library\lm.Comol.Core.CommonLib\NHibernate_21\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Core, Version=1.1.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Library\lm.Comol.Core.CommonLib\NHibernate_21\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.DynamicProxy2, Version=2.1.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Library\lm.Comol.Core.CommonLib\NHibernate_21\Castle.DynamicProxy2.dll</HintPath>
+    </Reference>
+    <Reference Include="Iesi.Collections, Version=1.0.1.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Library\lm.Comol.Core.CommonLib\NHibernate_21\Iesi.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="lm.Comol.Modules.Base, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\9-AdevicoMIT_Library\lm.Comol.MitLibrary\Adevico\MIT\lm.Comol.Modules.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Library\lm.Comol.Core.CommonLib\NHibernate_21\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate">
+      <HintPath>..\..\..\Library\lm.Comol.Core.CommonLib\NHibernate_21\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate.ByteCode.Castle, Version=2.1.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Library\lm.Comol.Core.CommonLib\NHibernate_21\NHibernate.ByteCode.Castle.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate.Linq, Version=1.0.0.4000, Culture=neutral, PublicKeyToken=444cf6a87fdab271, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Library\lm.Comol.Core.CommonLib\NHibernate_21\NHibernate.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Business\BaseManager.cs" />
+    <Compile Include="Chat\ChatCommunity\CC_EnumStatic.cs" />
+    <Compile Include="Chat\ChatCommunity\CC_FilePermission.cs" />
+    <Compile Include="Chat\ChatCommunity\CC_LkToFiles.cs" />
+    <Compile Include="Chat\ChatCommunity\CC_LkToPartecipant.cs" />
+    <Compile Include="Chat\ChatCommunity\CC_Manager.cs" />
+    <Compile Include="Chat\ChatCommunity\CC_Message.cs" />
+    <Compile Include="Chat\ChatCommunity\CC_Permission.cs" />
+    <Compile Include="Chat\ChatCommunity\CC_Session.cs" />
+    <Compile Include="Chat\InstantMessaging\IM_MessagesPresenter.cs" />
+    <Compile Include="Chat\InstantMessaging\IM_SharedFunction.cs" />
+    <Compile Include="Chat\InstantMessaging\IM_UserPresenter.cs" />
+    <Compile Include="Chat\InstantMessaging\IView_IM_Messages.cs" />
+    <Compile Include="Chat\InstantMessaging\IView_IM_Users.cs" />
+    <Compile Include="Faq\Business\Category.cs" />
+    <Compile Include="Faq\Business\Category_Int.cs" />
+    <Compile Include="Faq\Business\Faq.cs" />
+    <Compile Include="Faq\Business\FaqOnCategory.cs" />
+    <Compile Include="Faq\Business\Faq_Int.cs" />
+    <Compile Include="Faq\Business\Link.cs" />
+    <Compile Include="Faq\Business\Manager\FAQService.cs" />
+    <Compile Include="Faq\DAL\FAQDal.cs" />
+    <Compile Include="Faq\Enum\ErrorCodeEnum.cs" />
+    <Compile Include="Faq\Model\BaseFaqModel.cs" />
+    <Compile Include="Faq\Model\DTO_Category.cs" />
+    <Compile Include="Faq\Model\DTO_Faq.cs" />
+    <Compile Include="Faq\Model\EditCategoryModel.cs" />
+    <Compile Include="Faq\Model\EditFaqModel.cs" />
+    <Compile Include="Faq\Model\FaqListModel.cs" />
+    <Compile Include="GlossaryNew\Business\GlossaryHelper.cs" />
+    <Compile Include="GlossaryNew\Business\ServiceGlossary.cs" />
+    <Compile Include="GlossaryNew\Domain\dto\DTO_Glossary.cs" />
+    <Compile Include="GlossaryNew\Domain\dto\DTO_GlossaryDelete.cs" />
+    <Compile Include="GlossaryNew\Domain\dto\DTO_GlossaryDisplayOrder.cs" />
+    <Compile Include="GlossaryNew\Domain\dto\DTO_GlossaryStep.cs" />
+    <Compile Include="GlossaryNew\Domain\dto\DTO_GlossaryTerms.cs" />
+    <Compile Include="GlossaryNew\Domain\dto\DTO_Share.cs" />
+    <Compile Include="GlossaryNew\Domain\dto\DTO_Term.cs" />
+    <Compile Include="GlossaryNew\Domain\dto\DTO_TermDelete.cs" />
+    <Compile Include="GlossaryNew\Domain\dto\DTO_TermEmbed.cs" />
+    <Compile Include="GlossaryNew\Domain\dto\DTO_TermMap.cs" />
+    <Compile Include="GlossaryNew\Domain\dto\DTO_TermsEmbed.cs" />
+    <Compile Include="GlossaryNew\Domain\enum\DisplayMode.cs" />
+    <Compile Include="GlossaryNew\Domain\enum\GlossaryStep.cs" />
+    <Compile Include="GlossaryNew\Domain\enum\GlossaryType.cs" />
+    <Compile Include="GlossaryNew\Domain\enum\ItemStatus.cs" />
+    <Compile Include="GlossaryNew\Domain\enum\SaveStateEnum.cs" />
+    <Compile Include="GlossaryNew\Domain\enum\SharePermissionEnum.cs" />
+    <Compile Include="GlossaryNew\Domain\enum\ShareStatusEnum.cs" />
+    <Compile Include="GlossaryNew\Domain\enum\ShareTypeEnum.cs" />
+    <Compile Include="GlossaryNew\Domain\enum\TermAttachmentType.cs" />
+    <Compile Include="GlossaryNew\Domain\Glossary.cs" />
+    <Compile Include="GlossaryNew\Domain\GlossaryCounterInfo.cs" />
+    <Compile Include="GlossaryNew\Domain\GlossaryDisplayOrder.cs" />
+    <Compile Include="GlossaryNew\Domain\GlossaryDisplayOrderImport.cs" />
+    <Compile Include="GlossaryNew\Domain\GlossaryFilter.cs" />
+    <Compile Include="GlossaryNew\Domain\GlossaryImport.cs" />
+    <Compile Include="GlossaryNew\Domain\GlossaryPermission.cs" />
+    <Compile Include="GlossaryNew\Domain\lite\liteGlossary.cs" />
+    <Compile Include="GlossaryNew\Domain\lite\liteTerm.cs" />
+    <Compile Include="GlossaryNew\Domain\lite\liteTermAttachment.cs" />
+    <Compile Include="GlossaryNew\Domain\lite\liteTermMap.cs" />
+    <Compile Include="GlossaryNew\Domain\lite\liteTermSearch.cs" />
+    <Compile Include="GlossaryNew\Domain\ModuleGlossaryNew.cs" />
+    <Compile Include="GlossaryNew\Domain\RootObject.cs" />
+    <Compile Include="GlossaryNew\Domain\SaveInfo.cs" />
+    <Compile Include="GlossaryNew\Domain\serialization\GlossaryContainer.cs" />
+    <Compile Include="GlossaryNew\Domain\serialization\GlossarySerialized.cs" />
+    <Compile Include="GlossaryNew\Domain\serialization\TermSerialized.cs" />
+    <Compile Include="GlossaryNew\Domain\Share.cs" />
+    <Compile Include="GlossaryNew\Domain\Statistics.cs" />
+    <Compile Include="GlossaryNew\Domain\Term.cs" />
+    <Compile Include="GlossaryNew\Domain\TermAttachment.cs" />
+    <Compile Include="GlossaryNew\Domain\TermImport.cs" />
+    <Compile Include="GlossaryNew\Presentation\GlossaryAddPresenter.cs" />
+    <Compile Include="GlossaryNew\Presentation\GlossaryEditImportTermsPresenter.cs" />
+    <Compile Include="GlossaryNew\Presentation\GlossaryEditPresenter.cs" />
+    <Compile Include="GlossaryNew\Presentation\GlossaryEditSharePresenter.cs" />
+    <Compile Include="GlossaryNew\Presentation\GlossaryListOrderPresenter.cs" />
+    <Compile Include="GlossaryNew\Presentation\GlossaryListPresenter.cs" />
+    <Compile Include="GlossaryNew\Presentation\GlossaryMapViewPresenter.cs" />
+    <Compile Include="GlossaryNew\Presentation\GlossarySearchPresenter.cs" />
+    <Compile Include="GlossaryNew\Presentation\GlossaryViewPresenter.cs" />
+    <Compile Include="GlossaryNew\Presentation\ImportExportPresenter.cs" />
+    <Compile Include="GlossaryNew\Presentation\ImportPresenter.cs" />
+    <Compile Include="GlossaryNew\Presentation\Iview\IViewBase.cs" />
+    <Compile Include="GlossaryNew\Presentation\Iview\IViewGenerateFromOld.cs" />
+    <Compile Include="GlossaryNew\Presentation\Iview\IViewGlossaryAdd.cs" />
+    <Compile Include="GlossaryNew\Presentation\Iview\IViewGlossaryEdit.cs" />
+    <Compile Include="GlossaryNew\Presentation\Iview\IViewGlossaryEditShare.cs" />
+    <Compile Include="GlossaryNew\Presentation\Iview\IViewGlossaryImportTerms.cs" />
+    <Compile Include="GlossaryNew\Presentation\Iview\IViewGlossaryList.cs" />
+    <Compile Include="GlossaryNew\Presentation\Iview\IViewGlossaryListOrder.cs" />
+    <Compile Include="GlossaryNew\Presentation\Iview\IViewGlossaryMapView.cs" />
+    <Compile Include="GlossaryNew\Presentation\Iview\IViewGlossarySearch.cs" />
+    <Compile Include="GlossaryNew\Presentation\Iview\IViewGlossaryView.cs" />
+    <Compile Include="GlossaryNew\Presentation\Iview\IViewImport.cs" />
+    <Compile Include="GlossaryNew\Presentation\Iview\IViewImportExport.cs" />
+    <Compile Include="GlossaryNew\Presentation\Iview\IViewPageBase.cs" />
+    <Compile Include="GlossaryNew\Presentation\Iview\IViewRecycleBin.cs" />
+    <Compile Include="GlossaryNew\Presentation\Iview\IViewRecycleBinTerms.cs" />
+    <Compile Include="GlossaryNew\Presentation\Iview\IViewTermAdd.cs" />
+    <Compile Include="GlossaryNew\Presentation\Iview\IViewTermEdit.cs" />
+    <Compile Include="GlossaryNew\Presentation\Iview\IViewTermView.cs" />
+    <Compile Include="GlossaryNew\Presentation\Iview\UC\IViewUC_CommunityGlossaryTerms.cs" />
+    <Compile Include="GlossaryNew\Presentation\Iview\UC\IViewUC_GlossariesList.cs" />
+    <Compile Include="GlossaryNew\Presentation\Iview\UC\IViewUC_GlossaryImportTerms.cs" />
+    <Compile Include="GlossaryNew\Presentation\Iview\UC\IViewUC_GlossarySettings.cs" />
+    <Compile Include="GlossaryNew\Presentation\Iview\UC\IViewUC_GlossaryShare.cs" />
+    <Compile Include="GlossaryNew\Presentation\Iview\UC\IViewUC_GlosssaryShareState.cs" />
+    <Compile Include="GlossaryNew\Presentation\Iview\UC\IViewUC_ImportCommunityGlossary.cs" />
+    <Compile Include="GlossaryNew\Presentation\Iview\UC\IView_PageBaseControls.cs" />
+    <Compile Include="GlossaryNew\Presentation\RecycleBinPresenter.cs" />
+    <Compile Include="GlossaryNew\Presentation\RecycleBinTermsPresenter.cs" />
+    <Compile Include="GlossaryNew\Presentation\TermAddPresenter.cs" />
+    <Compile Include="GlossaryNew\Presentation\TermEditPresenter.cs" />
+    <Compile Include="GlossaryNew\Presentation\TermViewPresenter.cs" />
+    <Compile Include="GlossaryNew\Presentation\UC\UC_CommunityGlossaryTermsPresenter.cs" />
+    <Compile Include="GlossaryNew\Presentation\UC\UC_GlossariesListPresenter.cs" />
+    <Compile Include="GlossaryNew\Presentation\UC\UC_GlossaryImportTermsPresenter.cs" />
+    <Compile Include="GlossaryNew\Presentation\UC\UC_GlossarySettingsPresenter.cs" />
+    <Compile Include="GlossaryNew\Presentation\UC\UC_GlossarySharePresenter.cs" />
+    <Compile Include="GlossaryNew\Presentation\UC\UC_GlossaryShareStatePresenter.cs" />
+    <Compile Include="GlossaryNew\Presentation\UC\UC_ImportCommunityGlossaryPresenter.cs" />
+    <Compile Include="Glossary\Business\ServiceGlossary.cs" />
+    <Compile Include="Glossary\Domain\Dto\AddEditItemDto.cs" />
+    <Compile Include="Glossary\Domain\Dto\AddItemGroupDto.cs" />
+    <Compile Include="Glossary\Business\GlossaryHelpers.cs" />
+    <Compile Include="Glossary\Domain\Dto\GlossaryGroupSummaryDTO.cs" />
+    <Compile Include="Glossary\Domain\Dto\LetterDto.cs" />
+    <Compile Include="Glossary\Domain\Dto\GlossaryTermDTO.cs" />
+    <Compile Include="Glossary\Domain\Enum\EnumDefaultView.cs" />
+    <Compile Include="Glossary\Domain\Enum\EnumOwnerType.cs" />
+    <Compile Include="Glossary\Domain\GlossaryGroup.cs" />
+    <Compile Include="Glossary\Domain\GlossaryItem.cs" />
+    <Compile Include="Glossary\Domain\ModuleGlossary.cs" />
+    <Compile Include="Glossary\Model\DTO_GlsItem.cs" />
+    <Compile Include="Glossary\Model\DTO_GlsGroup.cs" />
+    <Compile Include="Glossary\Model\EditGroup.cs" />
+    <Compile Include="Glossary\Model\EditItemModel.cs" />
+    <Compile Include="Glossary\Model\ListGlossaryModel.cs" />
+    <Compile Include="Glossary\Model\ListModel.cs" />
+    <Compile Include="Glossary\Presentation\GlossarySelectorPresenter.cs" />
+    <Compile Include="Glossary\Presentation\iViewGlossarySelector.cs" />
+    <Compile Include="GraphTheory\DirectedGraphCycle.cs" />
+    <Compile Include="GraphTheory\DirectedGraphEdge.cs" />
+    <Compile Include="GraphTheory\DirectedGraphNode.cs" />
+    <Compile Include="GraphTheory\DirectedGraphExtensions.cs" />
+    <Compile Include="Header\Business\ServiceTopbar.cs" />
+    <Compile Include="Header\Domain\DisplayNameMode.cs" />
+    <Compile Include="Header\IViewPortalHeader.cs" />
+    <Compile Include="Header\IViewTopBar.cs" />
+    <Compile Include="Header\PortalHeaderPresenter.cs" />
+    <Compile Include="Header\TopBarPresenter.cs" />
+    <Compile Include="Menu\Business\ServiceMenubar.cs" />
+    <Compile Include="Menu\Domain\CacheKeys.cs" />
+    <Compile Include="Menu\Domain\dto\dtoMenuItem.cs" />
+    <Compile Include="Menu\Domain\dto\dtoColumn.cs" />
+    <Compile Include="Menu\Domain\dto\dtoItem.cs" />
+    <Compile Include="Menu\Domain\dto\dtoBaseMenuItem.cs" />
+    <Compile Include="Menu\Domain\dto\dtoTree.cs" />
+    <Compile Include="Menu\Domain\dto\dtoTopMenuItem.cs" />
+    <Compile Include="Menu\Domain\Lazy\_BaseItem.cs" />
+    <Compile Include="Menu\Domain\dto\dtoMenubarPermission.cs" />
+    <Compile Include="Menu\Domain\dto\dtoMenubarItem.cs" />
+    <Compile Include="Menu\Domain\dto\dtoPermission.cs" />
+    <Compile Include="Menu\Domain\Lazy\_ProfileAssignment.cs" />
+    <Compile Include="Menu\Domain\BaseMenuItem.cs" />
+    <Compile Include="Menu\Domain\ItemColumn.cs" />
+    <Compile Include="Menu\Domain\Menubar.cs" />
+    <Compile Include="Menu\Domain\MenuItem.cs" />
+    <Compile Include="Menu\Domain\MenuItemTranslation.cs" />
+    <Compile Include="Menu\Domain\ProfileAssignment.cs" />
+    <Compile Include="Menu\Domain\TopMenuItem.cs" />
+    <Compile Include="Menu\Domain\TextPosition.cs" />
+    <Compile Include="Menu\Domain\Lazy\_Column.cs" />
+    <Compile Include="Menu\Domain\dto\dtoTranslation.cs" />
+    <Compile Include="Menu\Domain\ItemStatus.cs" />
+    <Compile Include="Menu\Domain\dto\dtoMenubar.cs" />
+    <Compile Include="Menu\Domain\MenuItemType.cs" />
+    <Compile Include="Menu\Domain\Lazy\_TopItem.cs" />
+    <Compile Include="Menu\Domain\Lazy\_MenuItem.cs" />
+    <Compile Include="Menu\Domain\Lazy\_Menubar.cs" />
+    <Compile Include="Menu\Domain\old\PermissionMenuDTO.cs" />
+    <Compile Include="Menu\Domain\old\PersonTypeMenu_DTO.cs" />
+    <Compile Include="Menu\Domain\old\ServiceMenu_DTO.cs" />
+    <Compile Include="Menu\Domain\MenuBarType.cs" />
+    <Compile Include="Menu\Domain\Lazy\_ItemTranslation.cs" />
+    <Compile Include="Menu\Domain\ModuleMenu.cs" />
+    <Compile Include="Menu\Domain\rootObject.cs" />
+    <Compile Include="Menu\Presentation\AddMenubarPresenter.cs" />
+    <Compile Include="Menu\Presentation\ViewMenubarPresenter.cs" />
+    <Compile Include="Menu\Presentation\IViewViewMenubar.cs" />
+    <Compile Include="Menu\Presentation\SubItems\IViewMenuItem.cs" />
+    <Compile Include="Menu\Presentation\SubItems\IViewTopItem.cs" />
+    <Compile Include="Menu\Presentation\SubItems\IViewItemColumn.cs" />
+    <Compile Include="Menu\Presentation\SubItems\IViewMenubarInfo.cs" />
+    <Compile Include="Menu\Presentation\SubItems\IViewProfileTypeAssignments.cs" />
+    <Compile Include="Menu\Presentation\SubItems\IViewItemModuleAssignments.cs" />
+    <Compile Include="Menu\Presentation\SubItems\IViewItemTranslations.cs" />
+    <Compile Include="Menu\Presentation\EditMenubarPresenter.cs" />
+    <Compile Include="Menu\Presentation\IViewEditMenubar.cs" />
+    <Compile Include="Menu\Presentation\IViewAddMenubar.cs" />
+    <Compile Include="Menu\Presentation\IViewMenuBarList.cs" />
+    <Compile Include="Menu\Presentation\SubItems\IViewMenubarTree.cs" />
+    <Compile Include="Menu\Presentation\MenubarListPresenter.cs" />
+    <Compile Include="ProjectManagement\Business\ServiceProjectManagement.iNotifiableService.cs" />
+    <Compile Include="ProjectManagement\Business\ServiceProjectManagement.iLinkedService.cs" />
+    <Compile Include="ProjectManagement\Business\ServiceProjectManagement.Attachments.cs" />
+    <Compile Include="ProjectManagement\Business\ServiceProjectManagement.Dashboard.cs" />
+    <Compile Include="ProjectManagement\Business\ServiceProjectManagement.List.cs" />
+    <Compile Include="ProjectManagement\Business\CPMExtensions.cs" />
+    <Compile Include="ProjectManagement\Business\ServiceProjectManagement.ProjectMap.cs" />
+    <Compile Include="ProjectManagement\Business\ServiceProjectManagement.CPM.cs" />
+    <Compile Include="ProjectManagement\Business\ServiceProjectManagement.cs" />
+    <Compile Include="ProjectManagement\Domain\Dashboard\dtoTaskCompletion.cs" />
+    <Compile Include="ProjectManagement\Domain\Dashboard\dtoMyAssignmentCompletion.cs" />
+    <Compile Include="ProjectManagement\Domain\Dashboard\dtoProjectGroupInfo.cs" />
+    <Compile Include="ProjectManagement\Domain\Dashboard\dtoCommunityProjectTasksGroup.cs" />
+    <Compile Include="ProjectManagement\Domain\Dashboard\dtoPlainTask.cs" />
+    <Compile Include="ProjectManagement\Domain\Dashboard\dtoTasksGroup.cs" />
+    <Compile Include="ProjectManagement\Domain\dto\dtoAttachmentItem.cs" />
+    <Compile Include="ProjectManagement\Domain\dto\dtoAttachment.cs" />
+    <Compile Include="ProjectManagement\Domain\dto\dtoAttachmentPermission.cs" />
+    <Compile Include="ProjectManagement\Domain\dto\dtoReorderAction.cs" />
+    <Compile Include="ProjectManagement\Domain\dto\dtoActivityTreeItem.cs" />
+    <Compile Include="ProjectManagement\Domain\Entities\BaseProjectItem.cs" />
+    <Compile Include="ProjectManagement\Domain\Entities\lite\liteProjectAttachment.cs" />
+    <Compile Include="ProjectManagement\Domain\Entities\lite\liteProjectAttachmentLink.cs" />
+    <Compile Include="ProjectManagement\Domain\Entities\ProjectAttachmentLink.cs" />
+    <Compile Include="ProjectManagement\Domain\Entities\lite\liteReorderActivityLink.cs" />
+    <Compile Include="ProjectManagement\Domain\Entities\lite\liteResource.cs" />
+    <Compile Include="ProjectManagement\Domain\enum\AssignmentStatus.cs" />
+    <Compile Include="ProjectManagement\Domain\enum\AttachmentLinkType.cs" />
+    <Compile Include="ProjectManagement\Domain\enum\ReorderError.cs" />
+    <Compile Include="ProjectManagement\Domain\enum\ReorderAction.cs" />
+    <Compile Include="ProjectManagement\Domain\List\dtoDisplayTimelineContext.cs" />
+    <Compile Include="ProjectManagement\Domain\List\Enum\ResourceActivityStatus.cs" />
+    <Compile Include="ProjectManagement\Domain\List\dtoProjectsGroup.cs" />
+    <Compile Include="ProjectManagement\Domain\List\dtoProjectUrls.cs" />
+    <Compile Include="ProjectManagement\Domain\List\dtoProjectPermission.cs" />
+    <Compile Include="ProjectManagement\Domain\List\dtoItemFilter.cs" />
+    <Compile Include="ProjectManagement\Domain\List\dtoItemsFilter.cs" />
+    <Compile Include="ProjectManagement\Domain\List\dtoPlainProject.cs" />
+    <Compile Include="ProjectManagement\Domain\List\dtoProjectRole.cs" />
+    <Compile Include="ProjectManagement\Domain\List\Enum\CacheKeys.cs" />
+    <Compile Include="ProjectManagement\Domain\Class1.cs" />
+    <Compile Include="ProjectManagement\Domain\dto\dtoActivity.cs" />
+    <Compile Include="ProjectManagement\Domain\dto\dtoCompletion.cs" />
+    <Compile Include="ProjectManagement\Domain\dto\dtoDuration.cs" />
+    <Compile Include="ProjectManagement\Domain\dto\dtoActivityPermission.cs" />
+    <Compile Include="ProjectManagement\Domain\dto\dtoField.cs" />
+    <Compile Include="ProjectManagement\Domain\dto\dtoMapActivity.cs" />
+    <Compile Include="ProjectManagement\Domain\dto\dtoWorkingDay.cs" />
+    <Compile Include="ProjectManagement\Domain\dto\dtoCPMactivity.cs" />
+    <Compile Include="ProjectManagement\Domain\enum\AddActivityAction.cs" />
+    <Compile Include="ProjectManagement\Domain\enum\ActivityEditingErrors.cs" />
+    <Compile Include="ProjectManagement\Domain\enum\ModifyPolicy.cs" />
+    <Compile Include="ProjectManagement\Domain\enum\FieldStatus.cs" />
+    <Compile Include="ProjectManagement\Domain\Entities\Gantt\ActivityForGantt.cs" />
+    <Compile Include="ProjectManagement\Domain\Entities\Gantt\GanttCssClass.cs" />
+    <Compile Include="ProjectManagement\Domain\Entities\Gantt\ProjectForGantt.cs" />
+    <Compile Include="ProjectManagement\Domain\List\dtoTimeGroup.cs" />
+    <Compile Include="ProjectManagement\Domain\List\Enum\TimeGroup.cs" />
+    <Compile Include="ProjectManagement\Domain\List\Enum\ItemDeleted.cs" />
+    <Compile Include="ProjectManagement\Domain\List\Enum\ProjectOrderBy.cs" />
+    <Compile Include="ProjectManagement\Domain\List\Enum\ItemsGroupBy.cs" />
+    <Compile Include="ProjectManagement\Domain\List\Enum\PageContainerType.cs" />
+    <Compile Include="ProjectManagement\Domain\List\Enum\TabListitem.cs" />
+    <Compile Include="ProjectManagement\Domain\List\Enum\UserActivityStatus.cs" />
+    <Compile Include="ProjectManagement\Domain\List\Enum\PageListType.cs" />
+    <Compile Include="ProjectManagement\Domain\List\Enum\SummaryDisplay.cs" />
+    <Compile Include="ProjectManagement\Domain\List\Enum\SummaryTimeLine.cs" />
+    <Compile Include="ProjectManagement\Domain\List\Enum\ItemListStatus.cs" />
+    <Compile Include="ProjectManagement\Domain\List\Enum\ProjectFilterBy.cs" />
+    <Compile Include="ProjectManagement\Domain\Entities\lite\liteProjectSettings.cs" />
+    <Compile Include="ProjectManagement\Domain\Entities\WorkingDay.cs" />
+    <Compile Include="ProjectManagement\Domain\dto\dtoCalendar.cs" />
+    <Compile Include="ProjectManagement\Domain\dto\dtoWorkingDayHour.cs" />
+    <Compile Include="ProjectManagement\Domain\dto\dtoDateException.cs" />
+    <Compile Include="ProjectManagement\Domain\Entities\WorkingDayHour.cs" />
+    <Compile Include="ProjectManagement\Domain\Entities\CPM\CPMresult.cs" />
+    <Compile Include="ProjectManagement\Domain\List\dtoTimelineActivity.cs" />
+    <Compile Include="ProjectManagement\Domain\dto\dtoProjectSettingsSelectedActions.cs" />
+    <Compile Include="ProjectManagement\Domain\dto\dtoProjectSettingsAction.cs" />
+    <Compile Include="ProjectManagement\Domain\dto\dtoProjectStatistics.cs" />
+    <Compile Include="ProjectManagement\Domain\dto\dtoReorder.cs" />
+    <Compile Include="ProjectManagement\Domain\enum\ConfirmActions.cs" />
+    <Compile Include="ProjectManagement\Domain\Entities\lite\liteActivityDate.cs" />
+    <Compile Include="ProjectManagement\Domain\Entities\lite\liteDisplayActivity.cs" />
+    <Compile Include="ProjectManagement\Domain\Entities\PmActivityLink.cs" />
+    <Compile Include="ProjectManagement\Domain\dto\dtoProjectContext.cs" />
+    <Compile Include="ProjectManagement\Domain\enum\CalendarType.cs" />
+    <Compile Include="ProjectManagement\Domain\enum\CPMStatus.cs" />
+    <Compile Include="ProjectManagement\Domain\enum\PmActivityLinkType.cs" />
+    <Compile Include="ProjectManagement\Domain\enum\ProjectAvailability.cs" />
+    <Compile Include="ProjectManagement\Domain\enum\DateType.cs" />
+    <Compile Include="ProjectManagement\Domain\Entities\CPM\ParsedActivityLink.cs" />
+    <Compile Include="ProjectManagement\Domain\Entities\lite\litePmActivityLink.cs" />
+    <Compile Include="ProjectManagement\Domain\Entities\lite\litePmActivity.cs" />
+    <Compile Include="ProjectManagement\Domain\Entities\ProjectCalendar.cs" />
+    <Compile Include="ProjectManagement\Domain\dto\dtoResource.cs" />
+    <Compile Include="ProjectManagement\Domain\dto\dtoBaseProjectItem.cs" />
+    <Compile Include="ProjectManagement\Domain\Entities\ProjectDateException.cs" />
+    <Compile Include="ProjectManagement\Domain\Entities\PmActivity.cs" />
+    <Compile Include="ProjectManagement\Domain\enum\FlagDayOfWeek.cs" />
+    <Compile Include="ProjectManagement\Domain\Entities\Project.cs" />
+    <Compile Include="ProjectManagement\Domain\dto\dtoExternalResource.cs" />
+    <Compile Include="ProjectManagement\Domain\dto\dtoProjectManagementStep.cs" />
+    <Compile Include="ProjectManagement\Domain\dto\dtoProjectResource.cs" />
+    <Compile Include="ProjectManagement\Domain\dto\dtoProject.cs" />
+    <Compile Include="ProjectManagement\Domain\dto\dtoActivityCompletion.cs" />
+    <Compile Include="ProjectManagement\Domain\enum\RemoveAction.cs" />
+    <Compile Include="ProjectManagement\Domain\enum\ResourceType.cs" />
+    <Compile Include="ProjectManagement\Domain\enum\EditingErrors.cs" />
+    <Compile Include="ProjectManagement\Domain\Entities\lite\liteProjectActivityAssignment.cs" />
+    <Compile Include="ProjectManagement\Domain\ModuleProjectManagement.cs" />
+    <Compile Include="ProjectManagement\Domain\TemplatePlaceHolders.cs" />
+    <Compile Include="ProjectManagement\Domain\Entities\ProjectAttachment.cs" />
+    <Compile Include="ProjectManagement\Domain\enum\AttachmentType.cs" />
+    <Compile Include="ProjectManagement\Domain\enum\TaskConstraint.cs" />
+    <Compile Include="ProjectManagement\Domain\enum\PmActivityPermission.cs" />
+    <Compile Include="ProjectManagement\Domain\enum\ActivityRole.cs" />
+    <Compile Include="ProjectManagement\Domain\enum\ProjectItemStatus.cs" />
+    <Compile Include="ProjectManagement\Domain\enum\ProjectVisibility.cs" />
+    <Compile Include="ProjectManagement\Domain\Entities\ProjectResource.cs" />
+    <Compile Include="ProjectManagement\Domain\RootObject.cs" />
+    <Compile Include="ProjectManagement\Domain\ToBeRemovedProjectTask.cs" />
+    <Compile Include="ProjectManagement\Domain\enum\TaskPriority.cs" />
+    <Compile Include="ProjectManagement\Domain\Entities\ProjectActivityAssignment.cs" />
+    <Compile Include="ProjectManagement\Domain\ToBeRemovedTaskListFile.cs" />
+    <Compile Include="ProjectManagement\Domain\ToBeRemovedTaskListFilePermission.cs" />
+    <Compile Include="ProjectManagement\Domain\enum\WizardProjectStep.cs" />
+    <Compile Include="ProjectManagement\Presentation\0_IView\Base\IViewPageBaseEdit.cs" />
+    <Compile Include="ProjectManagement\Presentation\0_IView\Base\IViewPageBase.cs" />
+    <Compile Include="ProjectManagement\Presentation\0_IView\Dashboard\Controls\IViewTaskInfo.cs" />
+    <Compile Include="ProjectManagement\Presentation\0_IView\Dashboard\Controls\IViewTasksListMultipleTree.cs" />
+    <Compile Include="ProjectManagement\Presentation\0_IView\Dashboard\Controls\IViewTasksListTree.cs" />
+    <Compile Include="ProjectManagement\Presentation\0_IView\Dashboard\Controls\IViewTasksListPlain.cs" />
+    <Compile Include="ProjectManagement\Presentation\0_IView\Dashboard\Controls\IViewTasksListBase.cs" />
+    <Compile Include="ProjectManagement\Presentation\0_IView\Dashboard\IViewProjectDashboard.cs" />
+    <Compile Include="ProjectManagement\Presentation\0_IView\Dashboard\IViewDashboard.cs" />
+    <Compile Include="ProjectManagement\Presentation\0_IView\Dashboard\IViewBaseDashboard.cs" />
+    <Compile Include="ProjectManagement\Presentation\0_IView\List\Controls\IViewProjectListBase.cs" />
+    <Compile Include="ProjectManagement\Presentation\0_IView\List\Controls\IViewDashBoardListTopControl.cs" />
+    <Compile Include="ProjectManagement\Presentation\0_IView\List\Controls\IViewProjectListTree.cs" />
+    <Compile Include="ProjectManagement\Presentation\0_IView\List\Controls\IViewProjectListPlain.cs" />
+    <Compile Include="ProjectManagement\Presentation\0_IView\List\IViewProjectsList.cs" />
+    <Compile Include="ProjectManagement\Presentation\0_IView\List\IViewBaseList.cs" />
+    <Compile Include="ProjectManagement\Presentation\0_IView\Settings\Controls\IViewAddAttachment.cs" />
+    <Compile Include="ProjectManagement\Presentation\0_IView\Settings\IViewAttachments.cs" />
+    <Compile Include="ProjectManagement\Presentation\1_Presenter\1_Settings\Controls\AddExternalResourcesPresenter.cs" />
+    <Compile Include="ProjectManagement\Presentation\1_Presenter\1_Settings\Controls\ConfirmResourceToRemovePresenter.cs" />
+    <Compile Include="ProjectManagement\Presentation\1_Presenter\1_Settings\Controls\ConfirmSettingsToApplyPresenter.cs" />
+    <Compile Include="ProjectManagement\Presentation\1_Presenter\1_Settings\CalendarsPresenter.cs" />
+    <Compile Include="ProjectManagement\Presentation\1_Presenter\1_Settings\AttachmentsPresenter.cs" />
+    <Compile Include="ProjectManagement\Presentation\1_Presenter\1_Settings\Controls\AddAttachmentPresenter.cs" />
+    <Compile Include="ProjectManagement\Presentation\1_Presenter\3_List\Controls\DasboardListTopControlPresenter.cs" />
+    <Compile Include="ProjectManagement\Presentation\1_Presenter\3_List\Controls\ProjectListTreePresenter.cs" />
+    <Compile Include="ProjectManagement\Presentation\1_Presenter\3_List\Controls\ProjectListPlainPresenter.cs" />
+    <Compile Include="ProjectManagement\Presentation\1_Presenter\3_List\ProjectsListPresenter.cs" />
+    <Compile Include="ProjectManagement\Presentation\Dashboard\Controls\TaskInfoPresenter.cs" />
+    <Compile Include="ProjectManagement\Presentation\Dashboard\Controls\TasksListMultipleTreePresenter.cs" />
+    <Compile Include="ProjectManagement\Presentation\Dashboard\Controls\TasksListTreePresenter.cs" />
+    <Compile Include="ProjectManagement\Presentation\Dashboard\Controls\TasksListPlainPresenter.cs" />
+    <Compile Include="ProjectManagement\Presentation\Dashboard\ProjectDashboardPresenter.cs" />
+    <Compile Include="ProjectManagement\Presentation\Dashboard\DashboardPresenter.cs" />
+    <Compile Include="ProjectManagement\Presentation\1_Presenter\2_Edit\MapBulkPresenter.cs" />
+    <Compile Include="ProjectManagement\Presentation\0_IView\Edit\IViewMapBulk.cs" />
+    <Compile Include="ProjectManagement\Presentation\1_Presenter\2_Edit\MapReorderPresenter.cs" />
+    <Compile Include="ProjectManagement\Presentation\1_Presenter\2_Edit\GenerateGanttPresenter.cs" />
+    <Compile Include="ProjectManagement\Presentation\1_Presenter\2_Edit\Controls\DisplayGanttPresenter.cs" />
+    <Compile Include="ProjectManagement\Presentation\0_IView\Edit\IViewMapReorder.cs" />
+    <Compile Include="ProjectManagement\Presentation\0_IView\Edit\Controls\IViewGenerateGantt.cs" />
+    <Compile Include="ProjectManagement\Presentation\0_IView\Edit\Controls\IViewDisplayGantt.cs" />
+    <Compile Include="ProjectManagement\Presentation\1_Presenter\2_Edit\ProjectGanttPresenter.cs" />
+    <Compile Include="ProjectManagement\Presentation\0_IView\Edit\IViewProjectGantt.cs" />
+    <Compile Include="ProjectManagement\Presentation\1_Presenter\2_Edit\Controls\ProjectDateInfoPresenter.cs" />
+    <Compile Include="ProjectManagement\Presentation\1_Presenter\2_Edit\Controls\EditActivityPresenter.cs" />
+    <Compile Include="ProjectManagement\Presentation\0_IView\Edit\Controls\IViewProjectDateInfo.cs" />
+    <Compile Include="ProjectManagement\Presentation\0_IView\Edit\Controls\IViewEditActivity.cs" />
+    <Compile Include="ProjectManagement\Presentation\0_IView\Settings\IViewCalendars.cs" />
+    <Compile Include="ProjectManagement\Presentation\0_IView\Settings\Controls\IViewConfirmSettingsToApply.cs" />
+    <Compile Include="ProjectManagement\Presentation\0_IView\Settings\Controls\IViewSelectOwnerFromResources.cs" />
+    <Compile Include="ProjectManagement\Presentation\0_IView\Settings\IViewEditProject.cs" />
+    <Compile Include="ProjectManagement\Presentation\0_IView\Settings\Controls\IViewProjectSettings.cs" />
+    <Compile Include="ProjectManagement\Presentation\0_IView\Settings\Controls\IViewConfirmResourceToRemove.cs" />
+    <Compile Include="ProjectManagement\Presentation\0_IView\Settings\IViewBaseEdit.cs" />
+    <Compile Include="ProjectManagement\Presentation\0_IView\Base\IViewBase.cs" />
+    <Compile Include="ProjectManagement\Presentation\0_IView\Edit\IViewBaseProjectMap.cs" />
+    <Compile Include="ProjectManagement\Presentation\1_Presenter\2_Edit\ViewProjectMapPresenter.cs" />
+    <Compile Include="ProjectManagement\Presentation\0_IView\Edit\IViewViewProjectMap.cs" />
+    <Compile Include="ProjectManagement\Presentation\1_Presenter\1_Settings\Controls\ManageProjectResourcesPresenter.cs" />
+    <Compile Include="ProjectManagement\Presentation\1_Presenter\1_Settings\AddProjectPresenter.cs" />
+    <Compile Include="ProjectManagement\Presentation\0_IView\Settings\Controls\IViewAddExternalResources.cs" />
+    <Compile Include="ProjectManagement\Presentation\0_IView\Settings\IViewAddProject.cs" />
+    <Compile Include="ProjectManagement\Presentation\0_IView\Settings\Controls\IViewManageProjectResources.cs" />
+    <Compile Include="ProjectManagement\Presentation\0_IView\Edit\IViewProjectMap.cs" />
+    <Compile Include="ProjectManagement\Presentation\0_IView\Settings\IViewProjectResources.cs" />
+    <Compile Include="ProjectManagement\Presentation\1_Presenter\2_Edit\ProjectMapPresenter.cs" />
+    <Compile Include="ProjectManagement\Presentation\1_Presenter\1_Settings\ProjectResourcesPresenter.cs" />
+    <Compile Include="ProjectManagement\Presentation\1_Presenter\1_Settings\EditProjectPresenter.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\InstantMessangerService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\OMroomService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\OMuserService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Skin\Business\SkinFileManagement.cs" />
+    <Compile Include="Skin\Business\ServiceSkin.cs" />
+    <Compile Include="Skin\Business\SkinHtmlHelper.cs" />
+    <Compile Include="Skin\Domain\BaseSkin.cs" />
+    <Compile Include="Skin\Domain\LoadItemsBy.cs" />
+    <Compile Include="Skin\Domain\RootObject.cs" />
+    <Compile Include="Skin\Domain\SkinDisplayType.cs" />
+    <Compile Include="Skin\Domain\ModuleAssociation.cs" />
+    <Compile Include="Skin\Domain\DTO\DtoDisplaySkin.cs" />
+    <Compile Include="Skin\Domain\ModuleSkin.cs" />
+    <Compile Include="Skin\Domain\DTO\DtoHeadLogoLang.cs" />
+    <Compile Include="Skin\Domain\DTO\DtoFooterLogosList.cs" />
+    <Compile Include="Skin\Domain\DTO\DtoShare.cs" />
+    <Compile Include="Skin\Domain\DTO\DtoSkinCommunity.cs" />
+    <Compile Include="Skin\Domain\DTO\DtoSkinFooterText.cs" />
+    <Compile Include="Skin\Domain\DTO\DtoSkinImage.cs" />
+    <Compile Include="Skin\Domain\DTO\DtoSkinCss.cs" />
+    <Compile Include="Skin\Domain\DTO\DtoSkin.cs" />
+    <Compile Include="Skin\Domain\DTO\DtoSkinLanguage.cs" />
+    <Compile Include="Skin\Domain\DTO\DtoSkinLinkSet.cs" />
+    <Compile Include="Skin\Domain\DTO\DtoSkinList.cs" />
+    <Compile Include="Skin\Domain\DTO\DtoSkinOrganization.cs" />
+    <Compile Include="Skin\Domain\DTO\DtoSkinShareItem.cs" />
+    <Compile Include="Skin\Domain\DTO\DtoSkinShares.cs" />
+    <Compile Include="Skin\Domain\DTO\DtoSkinsID.cs" />
+    <Compile Include="Skin\Domain\DTO\DtoSkinTemplate.cs" />
+    <Compile Include="Skin\Domain\DTO\DtoSkinTemplates.cs" />
+    <Compile Include="Skin\Domain\HTML\HTMLSkin.cs" />
+    <Compile Include="Skin\Domain\HTML\HTMLSkinComId.cs" />
+    <Compile Include="Skin\Domain\IcoFile.cs" />
+    <Compile Include="Skin\Domain\FooterText.cs" />
+    <Compile Include="Skin\Domain\Logo.cs" />
+    <Compile Include="Skin\Domain\LogoToLang.cs" />
+    <Compile Include="Skin\Domain\RenderedSkin.cs" />
+    <Compile Include="Skin\Domain\Skin.cs" />
+    <Compile Include="Skin\Domain\SkinType.cs" />
+    <Compile Include="Skin\Domain\Skin_Share.cs" />
+    <Compile Include="Skin\Domain\Skin_Template.cs" />
+    <Compile Include="Skin\Presentation\Edit\IView\IViewSkinEditorLogos.cs" />
+    <Compile Include="Skin\Presentation\Edit\IView\IViewSkinEditor.cs" />
+    <Compile Include="Skin\Presentation\Module\ModuleSkinDeletePresenter.cs" />
+    <Compile Include="Skin\Presentation\Module\IView\IViewModuleSkinDelete.cs" />
+    <Compile Include="Skin\Presentation\SkinView.cs" />
+    <Compile Include="Skin\Presentation\Module\ModuleSkinEditPresenter.cs" />
+    <Compile Include="Skin\Presentation\Module\ModuleSkinAddPresenter.cs" />
+    <Compile Include="Skin\Presentation\Module\ModuleSkinPreviewPresenter.cs" />
+    <Compile Include="Skin\Presentation\Module\IView\IViewSkinPreview.cs" />
+    <Compile Include="Skin\Presentation\Module\ModuleSkinSelectorPresenter.cs" />
+    <Compile Include="Skin\Presentation\Module\IView\IViewModuleSkinAdd.cs" />
+    <Compile Include="Skin\Presentation\Module\IView\IViewModuleSkinBase.cs" />
+    <Compile Include="Skin\Presentation\Module\IView\IViewModuleSkinEdit.cs" />
+    <Compile Include="Skin\Presentation\Module\IView\IViewModuleSkinList.cs" />
+    <Compile Include="Skin\Presentation\Module\IView\IViewModuleSkinSelector.cs" />
+    <Compile Include="Skin\Presentation\Edit\IView\IViewSkinCSS.cs" />
+    <Compile Include="Skin\Presentation\IView\iViewSkinEdit.cs" />
+    <Compile Include="Skin\Presentation\Edit\IView\IViewSkinFooterLogo.cs" />
+    <Compile Include="Skin\Presentation\Edit\IView\IViewSkinFooterText.cs" />
+    <Compile Include="Skin\Presentation\Edit\IView\IViewSkinHeaderLogo.cs" />
+    <Compile Include="Skin\Presentation\Edit\IView\IViewSkinImages.cs" />
+    <Compile Include="Skin\Presentation\IView\iViewSkinShare.cs" />
+    <Compile Include="Skin\Presentation\IView\iViewSkinList.cs" />
+    <Compile Include="Skin\Presentation\Edit\IView\IViewSkinTemplate.cs" />
+    <Compile Include="Skin\Presentation\SkinSharePresenter.cs" />
+    <Compile Include="Skin\Presentation\Edit\SkinCssPresenter.cs" />
+    <Compile Include="Skin\Presentation\SkinEditPresenter.cs" />
+    <Compile Include="Skin\Presentation\Edit\SkinFooterLogoPresenter.cs" />
+    <Compile Include="Skin\Presentation\Edit\SkinFooterTextPresenter.cs" />
+    <Compile Include="Skin\Presentation\Edit\SkinHeaderLogoPresenter.cs" />
+    <Compile Include="Skin\Presentation\Edit\SkinImagesPresenter.cs" />
+    <Compile Include="Skin\Presentation\SkinListPresenter.cs" />
+    <Compile Include="Skin\Presentation\Edit\SkinTemplatePresenter.cs" />
+    <Compile Include="WebConferencing\DAL\WbGenericDAL.cs" />
+    <Compile Include="WebConferencing\Domain\CodeHelper.cs" />
+    <Compile Include="WebConferencing\Domain\DTO\dtoSelectItem.cs" />
+    <Compile Include="WebConferencing\Domain\DTO\dtoUsersByMessageFilter.cs" />
+    <Compile Include="WebConferencing\Domain\DTO\dtoWebConferenceMessageRecipient.cs" />
+    <Compile Include="WebConferencing\Domain\DTO\DTO_AccessType.cs" />
+    <Compile Include="WebConferencing\Domain\DTO\DTO_ExtUser.cs" />
+    <Compile Include="WebConferencing\Domain\DTO\DTO_FiledTag.cs" />
+    <Compile Include="WebConferencing\Domain\DTO\DTO_GenericRoomData.cs" />
+    <Compile Include="WebConferencing\Domain\DTO\DTO_Language.cs" />
+    <Compile Include="WebConferencing\Domain\DTO\DTO_MailTagSettings.cs" />
+    <Compile Include="WebConferencing\Domain\DTO\DTO_RoomListFilter.cs" />
+    <Compile Include="WebConferencing\Domain\DTO\DTO_RoomTagData.cs" />
+    <Compile Include="WebConferencing\Domain\DTO\DTO_UserListFilters.cs" />
+    <Compile Include="WebConferencing\Domain\DTO\DTO_UserTagData.cs" />
+    <Compile Include="WebConferencing\Domain\Enum.cs" />
+    <Compile Include="WebConferencing\Domain\eWorks\DTO\DTOAvailableParameters.cs" />
+    <Compile Include="WebConferencing\Domain\eWorks\DTO\DTOKeyInfo.cs" />
+    <Compile Include="WebConferencing\Domain\eWorks\DTO\DTOmasterKey.cs" />
+    <Compile Include="WebConferencing\Domain\eWorks\DTO\DTOMeeting.cs" />
+    <Compile Include="WebConferencing\Domain\eWorks\DTO\DTOreport.cs" />
+    <Compile Include="WebConferencing\Domain\eWorks\DTO\DTOuser.cs" />
+    <Compile Include="WebConferencing\Domain\eWorks\DTO\DTOUserInfo.cs" />
+    <Compile Include="WebConferencing\Domain\eWorks\DTO\DTOVideoFormat.cs" />
+    <Compile Include="WebConferencing\Domain\eWorks\eWAPIConnector.cs" />
+    <Compile Include="WebConferencing\Domain\eWorks\eWRoomParameters.cs" />
+    <Compile Include="WebConferencing\Domain\eWorks\eWService.cs" />
+    <Compile Include="WebConferencing\Domain\eWorks\eWService.iNotifiableService.cs" />
+    <Compile Include="WebConferencing\Domain\eWorks\eWSystemParameter.cs" />
+    <Compile Include="WebConferencing\Domain\eWorks\eWurlHelper.cs" />
+    <Compile Include="WebConferencing\Domain\eWorks\tmpParameter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WebConferencing\Domain\ModuleWebConferencing.cs" />
+    <Compile Include="WebConferencing\Domain\OpenMeetings\oMRoomParameters.cs" />
+    <Compile Include="WebConferencing\Domain\OpenMeetings\oMService.cs" />
+    <Compile Include="WebConferencing\Domain\OpenMeetings\oMService.iNotifiableService.cs" />
+    <Compile Include="WebConferencing\Domain\OpenMeetings\oMSystemParameter.cs" />
+    <Compile Include="WebConferencing\Domain\RootObject.cs" />
+    <Compile Include="WebConferencing\Domain\TemplatePlaceHolders.cs" />
+    <Compile Include="WebConferencing\Domain\WbAccessCode.cs" />
+    <Compile Include="WebConferencing\Domain\WbRoom.cs" />
+    <Compile Include="WebConferencing\Domain\WbRoomParameter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WebConferencing\Domain\WbService.cs" />
+    <Compile Include="WebConferencing\Domain\WbServiceGeneric.cs" />
+    <Compile Include="WebConferencing\Domain\WbSystemParameter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WebConferencing\Domain\WbUser.cs" />
+    <Compile Include="WebConferencing\Presentation\SelectUsersForMessageService.cs" />
+    <Compile Include="WebConferencing\Presentation\View\IViewSelectUsersForMessageService.cs" />
+    <Compile Include="WebConferencing\Presentation\View\iViewWbCreate.cs" />
+    <Compile Include="WebConferencing\Presentation\View\iViewWbEdit.cs" />
+    <Compile Include="WebConferencing\Presentation\View\iViewWbExtAccess.cs" />
+    <Compile Include="WebConferencing\Presentation\View\iViewWbList.cs" />
+    <Compile Include="WebConferencing\Presentation\WbCreatePresenter.cs" />
+    <Compile Include="WebConferencing\Presentation\WbEditPresenter.cs" />
+    <Compile Include="WebConferencing\Presentation\WbExtAccessPresenter.cs" />
+    <Compile Include="WebConferencing\Presentation\WbListPresenter.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ProjectManagement\Documentation\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\2-Core\lm.Comol.Core.File\lm.Comol.Core.File.csproj">
+      <Project>{FFA417B0-A44B-441A-921B-FEB57C5FD7DA}</Project>
+      <Name>lm.Comol.Core.File</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\1-OldProject\COL_BusinessLogic\COL_BusinessLogic_v2.0.vbproj">
+      <Project>{51F57FB8-1245-4EA5-BF34-D6412C283AFB}</Project>
+      <Name>COL_BusinessLogic_v2.0</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\1-OldProject\COL_Entity\0_COL_Entity.vbproj">
+      <Project>{D1EFB82A-DE0C-43D2-8DC7-AD808B32C2A2}</Project>
+      <Name>0_COL_Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\2-Core\lm.Comol.Core.DomainModel\lm.Comol.Core.DomainModel.csproj">
+      <Project>{9B7DA676-5030-47CD-8B2B-A30A09C8D0B5}</Project>
+      <Name>lm.Comol.Core.DomainModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\lm.Comol.Core.BaseModules\lm.Comol.Core.BaseModules.csproj">
+      <Project>{7FAE537E-6ACF-4C65-9D68-E22AEC839EEA}</Project>
+      <Name>lm.Comol.Core.BaseModules</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\2-Core\lm.Comol.Core.MailCommons\lm.Comol.Core.MailCommons.csproj">
+      <Project>{428243cb-28cd-4d81-8099-74d1448b5e1d}</Project>
+      <Name>lm.Comol.Core.MailCommons</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Chat\ChatCommunity\ClassDiagram1.cd" />
+    <None Include="Chat\InstantMessaging\IM_ClassDiagram.cd" />
+    <None Include="Faq\Business\FAQDiagram.cd" />
+    <None Include="Glossary\Documentation\ClassDiagram.cd" />
+    <None Include="Menu\Documentation\Menu.cd" />
+    <None Include="ProjectManagement\Domain\ProjectManagement.cd" />
+    <None Include="Service References\InstantMessangerService\InstantMessengerService.wsdl" />
+    <None Include="Service References\InstantMessangerService\InstantMessengerService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\InstantMessangerService\InstantMessengerService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\InstantMessangerService\InstantMessengerService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\OMroomService\lm.Comol.Modules.Standard.OMroomService.FlvRecording.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\OMroomService\lm.Comol.Modules.Standard.OMroomService.FLVRecordingReturn.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\OMroomService\lm.Comol.Modules.Standard.OMroomService.RoomCountBean.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\OMroomService\lm.Comol.Modules.Standard.OMroomService.RoomReturn.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\OMroomService\lm.Comol.Modules.Standard.OMroomService.Rooms.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\OMroomService\lm.Comol.Modules.Standard.OMroomService.RoomTypes.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\OMroomService\RoomService.wsdl" />
+    <None Include="Service References\OMuserService\lm.Comol.Modules.Standard.OMuserService.ErrorResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\OMuserService\lm.Comol.Modules.Standard.OMuserService.Sessiondata.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\OMuserService\lm.Comol.Modules.Standard.OMuserService.Users.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\OMuserService\UserService.wsdl" />
+    <None Include="Skin\Documentation\Skins.cd" />
+    <None Include="WebConferencing\Domain\OpenMeetings\OpenMeeting_InstallConfig.docx" />
+    <None Include="WebConferencing\Domain\WebConferencing.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Faq\Mapping\Category.hbm.xml" />
+    <EmbeddedResource Include="Faq\Mapping\Category_Int.hbm.xml" />
+    <EmbeddedResource Include="Faq\Mapping\Faq.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Faq\Mapping\FaqOnCategory.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Faq\Mapping\Faq_Int.hbm.xml" />
+    <EmbeddedResource Include="Faq\Mapping\Link.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Glossary\Mapping\GlossaryGroup.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProjectManagement\Mapping\ProjectActivityAssignment.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProjectManagement\Mapping\ProjectAttachment.hbm.xml" />
+    <EmbeddedResource Include="WebConferencing\Mapping\WbAccessCode.hbm.xml" />
+    <EmbeddedResource Include="WebConferencing\Mapping\WbRoom.hbm.xml" />
+    <EmbeddedResource Include="WebConferencing\Mapping\WbUser.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Glossary\Mapping\GlossaryItem.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Glossary\Mapping\GlossaryTermDTO.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="WebConferencing\DAL\dBdiagram.png" />
+    <Content Include="WebConferencing\Domain\eWorks\eWorksNOTE.txt" />
+    <Content Include="WebConferencing\Domain\OpenMeetings\OpenMeetingNOTE.txt" />
+    <Content Include="WebConferencing\Info-Develop.txt" />
+    <None Include="Service References\OMroomService\configuration91.svcinfo" />
+    <None Include="Service References\OMroomService\configuration.svcinfo" />
+    <None Include="Service References\OMroomService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\OMuserService\configuration91.svcinfo" />
+    <None Include="Service References\OMuserService\configuration.svcinfo" />
+    <None Include="Service References\OMuserService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <EmbeddedResource Include="ProjectManagement\Mapping\Project.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProjectManagement\Mapping\ProjectResource.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProjectManagement\Mapping\lite\liteProjectActivityAssignment.hbm.xml" />
+    <EmbeddedResource Include="ProjectManagement\Mapping\ProjectDateException.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProjectManagement\Mapping\PmActivity.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProjectManagement\Mapping\ProjectCalendar.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProjectManagement\Mapping\lite\litePmActivityLink.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProjectManagement\Mapping\PmActivityLink.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProjectManagement\Mapping\lite\litePmActivity.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProjectManagement\Mapping\lite\liteDisplayActivity.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProjectManagement\Mapping\lite\liteActivityDate.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProjectManagement\Mapping\WorkingDayHour.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProjectManagement\Mapping\lite\liteProjectSettings.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProjectManagement\Mapping\lite\liteResource.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProjectManagement\Mapping\lite\liteReorderActivityLink.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProjectManagement\Mapping\ProjectAttachmentLink.hbm.xml" />
+    <EmbeddedResource Include="ProjectManagement\Mapping\lite\liteProjectAttachment.hbm.xml" />
+    <EmbeddedResource Include="ProjectManagement\Mapping\lite\liteProjectAttachmentLink.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GlossaryNew\Mapping\Glossary.hbm.xml" />
+    <EmbeddedResource Include="GlossaryNew\Mapping\GlossaryDisplayOrder.hbm.xml" />
+    <EmbeddedResource Include="GlossaryNew\Mapping\GlossaryDisplayOrderImport.hbm.xml" />
+    <EmbeddedResource Include="GlossaryNew\Mapping\GlossaryImport.hbm.xml" />
+    <EmbeddedResource Include="GlossaryNew\Mapping\lite\liteGlossary.hbm.xml" />
+    <EmbeddedResource Include="GlossaryNew\Mapping\lite\liteTerm.hbm.xml" />
+    <EmbeddedResource Include="GlossaryNew\Mapping\lite\liteTermMap.hbm.xml" />
+    <EmbeddedResource Include="GlossaryNew\Mapping\lite\liteTermSearch.hbm.xml" />
+    <Content Include="GlossaryNew\Mapping\serialization\GlossarySerialized.hbm.xml" />
+    <Content Include="GlossaryNew\Mapping\serialization\TermSerialized.hbm.xml" />
+    <EmbeddedResource Include="GlossaryNew\Mapping\Share.hbm.xml" />
+    <EmbeddedResource Include="GlossaryNew\Mapping\Statistics.hbm.xml" />
+    <EmbeddedResource Include="GlossaryNew\Mapping\Term.hbm.xml" />
+    <EmbeddedResource Include="GlossaryNew\Mapping\TermAttachment.hbm.xml" />
+    <EmbeddedResource Include="GlossaryNew\Mapping\TermImport.hbm.xml" />
+    <Content Include="Chat\InstantMessaging\UnderConstruction.txt" />
+    <Content Include="Menu\Documentation\Commenti_TinyRC.txt" />
+    <EmbeddedResource Include="Menu\Mapping\ItemColumn.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menu\Mapping\BaseMenuItem.hbm.xml" />
+    <EmbeddedResource Include="Menu\Mapping\ProfileAssignment.hbm.xml" />
+    <EmbeddedResource Include="Menu\Mapping\_BaseItem.hbm.xml" />
+    <EmbeddedResource Include="Menu\Mapping\_ProfileAssignment.hbm.xml" />
+    <EmbeddedResource Include="Menu\Mapping\_Column.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menu\Mapping\_Menubar.hbm.xml" />
+    <EmbeddedResource Include="Menu\Mapping\_ItemTranslation.hbm.xml" />
+    <Content Include="Skin\Documentation\File-Struttura cartelle.txt" />
+    <Content Include="Skin\Documentation\Note.txt" />
+    <EmbeddedResource Include="Skin\Mapping\Skin.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Skin\Mapping\Logo.hbm.xml" />
+    <EmbeddedResource Include="Skin\Mapping\FooterText.hbm.xml" />
+    <EmbeddedResource Include="Skin\Mapping\DtoSkin.hbm.xml" />
+    <EmbeddedResource Include="Skin\Mapping\DtoSkinCss.hbm.xml" />
+    <EmbeddedResource Include="Skin\Mapping\DtoSkinLanguage.hbm.xml" />
+    <EmbeddedResource Include="Skin\Mapping\LogoToLang.hbm.xml" />
+    <EmbeddedResource Include="Skin\Mapping\DtoSkinOrganization.hbm.xml" />
+    <EmbeddedResource Include="Skin\Mapping\DtoSkinCommunity.hbm.xml" />
+    <Content Include="Skin\Documentation\SchemadB.png" />
+    <Content Include="Skin\Documentation\SQL.txt" />
+    <EmbeddedResource Include="Skin\Mapping\DtoShare.hbm.xml" />
+    <EmbeddedResource Include="Skin\Mapping\Skin_Template.hbm.xml" />
+    <EmbeddedResource Include="Skin\Mapping\DtoSkinTemplate.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Skin\Mapping\ModuleAssociation.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menu\Mapping\MenuItemTranslation.hbm.xml" />
+    <EmbeddedResource Include="Menu\Mapping\Menubar.hbm.xml" />
+    <EmbeddedResource Include="Skin\Mapping\Skin_Share.hbm.xml" />
+    <None Include="Service References\InstantMessangerService\lm.Comol.Modules.Standard.InstantMessangerService.Ct1o1_Chat_DTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\InstantMessangerService\lm.Comol.Modules.Standard.InstantMessangerService.Ct1o1_MessagesContainer_DTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\InstantMessangerService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\InstantMessangerService\configuration.svcinfo" />
+    <None Include="Service References\InstantMessangerService\configuration91.svcinfo" />
+    <None Include="Service References\InstantMessangerService\InstantMessengerService.disco" />
+    <Content Include="Faq\FAQ_NoteSviluppo.txt" />
+    <Content Include="Faq\Mapping\NotUsedCode.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\InstantMessangerService\" />
+    <WCFMetadataStorage Include="Service References\OMroomService\" />
+    <WCFMetadataStorage Include="Service References\OMuserService\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

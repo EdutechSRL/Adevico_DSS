@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="lm.Comol.Modules.Standard" namespace="lm.Comol.Modules.Standard.ProjectManagement.Domain">
+ 
+  <class name="lm.Comol.Modules.Standard.ProjectManagement.Domain.liteReorderActivityLink"  table="PM_ActivityLink" lazy="false">
+    <id name="Id" column ="Id" type="long" >
+      <generator class="native"/>
+    </id>
+    <property name="IdProject" type="Int64" column="IdProject" />
+    <property name="IdSource" type="Int64" column="IdSource" />
+    <property name="IdTarget" type="Int64" column="IdTarget" />
+    <property name="Type" type="lm.Comol.Modules.Standard.ProjectManagement.Domain.PmActivityLinkType, lm.Comol.Modules.Standard" column="Type" />
+    <property name="LeadLag" type="Double" column="LeadLag" />
+    <property name="Deleted" type="lm.Comol.Core.DomainModel.BaseStatusDeleted,lm.Comol.Core.DomainModel" column="_Deleted" />
+    </class>
+</hibernate-mapping>

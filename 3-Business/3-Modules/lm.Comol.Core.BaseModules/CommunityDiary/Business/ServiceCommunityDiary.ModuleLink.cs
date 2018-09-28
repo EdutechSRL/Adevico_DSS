@@ -187,5 +187,10 @@ namespace lm.Comol.Core.BaseModules.CommunityDiary.Business
             StatTreeNode<StatFileTreeLeaf> node = null;
             return node;
         }
+
+        public void PhisicalDeleteCommunity(string baseFileRepositoryPath, int idCommunity, int idUser)
+        {
+            //throw new NotImplementedException();
+        }
     }
 }

@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="lm.Comol.Modules.Standard.Menu.Domain.BaseMenuItem">
+    <Position X="7.75" Y="1.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAAAIAAAACAAEAAAQAAAAgAAIACAAQQQAgEAA=</HashCode>
+      <FileName>Menu\Domain\BaseMenuItem.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="TextPosition" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="Translations" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="lm.Comol.Modules.Standard.Menu.Domain.ItemColumn">
+    <Position X="5.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgCAQAAAAAIACAAAAAEAAAAEAAAAAAQACAAAAAAAAAA=</HashCode>
+      <FileName>Menu\Domain\ItemColumn.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Items" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="lm.Comol.Modules.Standard.Menu.Domain.Menubar">
+    <Position X="3.25" Y="2" Width="1.5" />
+    <AssociationLine Name="Status" Type="lm.Comol.Modules.Standard.Menu.Domain.ItemStatus" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="3.25" Y="3.285" />
+        <Point X="2.875" Y="3.285" />
+        <Point X="2.875" Y="4.344" />
+        <Point X="2" Y="4.344" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="Items" Type="lm.Comol.Modules.Standard.Menu.Domain.TopMenuItem">
+      <MemberNameLabel ManuallyPlaced="true" ManuallySized="true">
+        <Position X="0.016" Y="0.06" Height="0.182" Width="0.582" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAAASAAAAAAAAAQAAAAAAAAACAAAAAAAAAA=</HashCode>
+      <FileName>Menu\Domain\Menubar.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="MenuBarType" />
+      <Property Name="Status" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="Items" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="lm.Comol.Modules.Standard.Menu.Domain.MenuItem">
+    <Position X="8" Y="5.75" Width="1.5" />
+    <InheritanceLine Type="lm.Comol.Modules.Standard.Menu.Domain.BaseMenuItem" FixedFromPoint="true">
+      <Path>
+        <Point X="8.75" Y="4.656" />
+        <Point X="8.75" Y="5.75" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAAAAAAAgAAAEAAAAAAAAAAAAAQAAAAAAQAA=</HashCode>
+      <FileName>Menu\Domain\MenuItem.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Type" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="lm.Comol.Modules.Standard.Menu.Domain.MenuItemTranslation">
+    <Position X="11.25" Y="1.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgACAIAAAAAAAAAAAwEAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Menu\Domain\MenuItemTranslation.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="lm.Comol.Modules.Standard.Menu.Domain.ProfileAssignment">
+    <Position X="3" Y="5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAgQAA=</HashCode>
+      <FileName>Menu\Domain\ProfileAssignment.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="lm.Comol.Modules.Standard.Menu.Domain.TopMenuItem">
+    <Position X="5.5" Y="2.25" Width="1.5" />
+    <AssociationLine Name="Columns" Type="lm.Comol.Modules.Standard.Menu.Domain.ItemColumn" ManuallyRouted="true">
+      <Path>
+        <Point X="6.25" Y="3.247" />
+        <Point X="6.25" Y="5" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAA=</HashCode>
+      <FileName>Menu\Domain\TopMenuItem.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Columns" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Enum Name="lm.Comol.Modules.Standard.Menu.Domain.ItemStatus">
+    <Position X="0.5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAgAAAAAAEAAAA=</HashCode>
+      <FileName>Menu\Domain\ItemStatus.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="lm.Comol.Modules.Standard.Menu.Domain.MenuBarType">
+    <Position X="0.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAAAAAAAAAQAIAAAAACAAAAAAAAAAEBAAA=</HashCode>
+      <FileName>Menu\Domain\MenuBarType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="lm.Comol.Modules.Standard.Menu.Domain.MenuItemType">
+    <Position X="11.25" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAIAAAAAAAAAAAEACAAAABAAQAAQSAEAAAg=</HashCode>
+      <FileName>Menu\Domain\MenuItemType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="lm.Comol.Modules.Standard.Menu.Domain.TextPosition">
+    <Position X="11.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAABAAAAgAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>Menu\Domain\TextPosition.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

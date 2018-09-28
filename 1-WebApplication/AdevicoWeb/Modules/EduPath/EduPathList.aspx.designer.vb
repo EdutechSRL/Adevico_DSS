@@ -86,6 +86,24 @@ Partial Public Class EPList
     Protected WithEvents CTRLmoduleStatusMessage As Global.Comunita_OnLine.UC_ActionMessages
 
     '''<summary>
+    '''CTRLgenericMessage control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents CTRLgenericMessage As Global.Comunita_OnLine.UC_ActionMessages
+
+    '''<summary>
+    '''CTRLactionMessage control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents CTRLactionMessage As Global.Comunita_OnLine.UC_ActionMessages
+
+    '''<summary>
     '''RBLvisibility control.
     '''</summary>
     '''<remarks>
@@ -95,58 +113,103 @@ Partial Public Class EPList
     Protected WithEvents RBLvisibility As Global.System.Web.UI.WebControls.RadioButtonList
 
     '''<summary>
-    '''LBLeditoptionsdescription control.
+    '''LBeditingOptions control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents LBLeditoptionsdescription As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents LBeditingOptions As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''BTNeditoption1 control.
+    '''BTNreadonlyOption control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents BTNeditoption1 As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents BTNreadonlyOption As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
-    '''LBLeditoption1 control.
+    '''LBreadonlyOption control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents LBLeditoption1 As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents LBreadonlyOption As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''BTNeditoption2 control.
+    '''BTNeditOption control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents BTNeditoption2 As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents BTNeditOption As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
-    '''LBLeditoption2 control.
+    '''LBeditOption control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents LBLeditoption2 As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents LBeditOption As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''HIDpathid control.
+    '''LBclearStatisticsOptions control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents HIDpathid As Global.System.Web.UI.HtmlControls.HtmlInputHidden
+    Protected WithEvents LBclearStatisticsOptions As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''BTNundoResetOption control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents BTNundoResetOption As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''LBundoResetOption control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents LBundoResetOption As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''BTNresetOption control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents BTNresetOption As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''LBdoResetOption control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents LBdoResetOption As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''HDNidPath control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents HDNidPath As Global.System.Web.UI.HtmlControls.HtmlInputHidden
 
     '''<summary>
     '''ULPathList control.
@@ -185,13 +248,13 @@ Partial Public Class EPList
     Protected WithEvents HYPerror As Global.System.Web.UI.WebControls.HyperLink
 
     '''<summary>
-    '''LBerror control.
+    '''CTRLerrorMessage control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents LBerror As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents CTRLerrorMessage As Global.Comunita_OnLine.UC_ActionMessages
 
     '''<summary>
     '''VIWmessages control.
@@ -210,6 +273,51 @@ Partial Public Class EPList
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents CTRLmessages As Global.Comunita_OnLine.UC_ActionMessages
+
+    '''<summary>
+    '''LTitemLinkManagementCssClass control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents LTitemLinkManagementCssClass As Global.System.Web.UI.WebControls.Literal
+
+    '''<summary>
+    '''LTitemLinkStandardCssClass control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents LTitemLinkStandardCssClass As Global.System.Web.UI.WebControls.Literal
+
+    '''<summary>
+    '''LTitemLinkMoocCssClass control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents LTitemLinkMoocCssClass As Global.System.Web.UI.WebControls.Literal
+
+    '''<summary>
+    '''LTresetstatsCssClass control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents LTresetstatsCssClass As Global.System.Web.UI.WebControls.Literal
+
+    '''<summary>
+    '''LTresetstatsMoocCssClass control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents LTresetstatsMoocCssClass As Global.System.Web.UI.WebControls.Literal
 
     '''<summary>
     '''UDPperson control.

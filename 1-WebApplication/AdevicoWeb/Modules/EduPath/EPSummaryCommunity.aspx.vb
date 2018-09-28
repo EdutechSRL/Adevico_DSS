@@ -9,7 +9,7 @@ Imports lm.Comol.Modules.EduPath.Presentation
 Imports lm.ActionDataContract
 
 Public Class EPSummaryCommunity
-    Inherits PageBase
+    Inherits EPlitePageBaseEduPath
     Implements IViewSummaryCommunity
 
 #Region "Context"
@@ -143,7 +143,13 @@ Public Class EPSummaryCommunity
         End Set
     End Property
 #End Region
-
+    'Protected Friend ReadOnly Property PreloadIsMooc() As Boolean
+    '    Get
+    '        Dim isMoocObject As Boolean = False
+    '        Boolean.TryParse(Request.QueryString("isMooc"), isMoocObject)
+    '        Return isMoocObject
+    '    End Get
+    'End Property
 #Region "Controls / Page"
     Dim _order As String = ""
     Public Property Order As String
@@ -238,7 +244,11 @@ Public Class EPSummaryCommunity
 
     End Sub
     Public Overrides Sub SetCultureSettings()
-        MyBase.SetCulture("pg_Summary", "EduPath")
+        If PreloadIsMooc Then
+            MyBase.SetCulture("pg_MoocsSummary", "EduPath")
+        Else
+            MyBase.SetCulture("pg_Summary", "EduPath")
+        End If
     End Sub
 
     Public Overrides Sub SetInternazionalizzazione()
@@ -482,7 +492,7 @@ Public Class EPSummaryCommunity
 
             Dim hyp As HyperLink
             hyp = e.Item.FindControl("HYPstats")
-            hyp.NavigateUrl = BaseUrl & RootObject.PathSummary(dto.IdCommunity)
+            hyp.NavigateUrl = BaseUrl & RootObject.PathSummary(dto.IdCommunity, PreloadIsMooc)
 
         Else
             If (e.Item.ItemType = ListItemType.Header) Then

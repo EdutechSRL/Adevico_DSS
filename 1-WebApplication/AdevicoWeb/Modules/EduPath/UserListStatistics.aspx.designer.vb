@@ -230,13 +230,22 @@ Partial Public Class UserListStatistics
     Protected WithEvents LBitemName As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''PLHaction control.
+    '''CTRLquestionnaire control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents PLHaction As Global.System.Web.UI.WebControls.PlaceHolder
+    Protected WithEvents CTRLquestionnaire As Global.Comunita_OnLine.UC_ModuleQuizAction
+
+    '''<summary>
+    '''CTRLdisplayItem control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents CTRLdisplayItem As Global.Comunita_OnLine.UC_RepositoryRenderAction
 
     '''<summary>
     '''CTRLtextAction control.

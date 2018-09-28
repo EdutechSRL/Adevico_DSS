@@ -133,7 +133,7 @@ Public Class ProjectMap
             Return CTRLprojectInfo.InEditDeadline
         End Get
     End Property
-  
+
     Private Function GetDefaultActivityName() As String Implements IViewProjectMap.GetDefaultActivityName
         Return Resource.getValue("GetDefaultActivityName")
     End Function
@@ -282,7 +282,21 @@ Public Class ProjectMap
         CTRLinLineAdd.Visible = AllowAddActivity
         CTRLinLineAdd.InitializeControl(AllowAddActivity, project.DateCalculationByCpm, project.AllowSummary)
     End Sub
-
+    Protected Overrides Sub LoadAttachments(attachments As List(Of dtoAttachmentItem))
+        LBattachments.Visible = Not IsNothing(attachments) AndAlso attachments.Any()
+        If Not IsNothing(attachments) AndAlso attachments.Any() Then
+            Select Case attachments.Count
+                Case 1, 0
+                    LBattachments.ToolTip = Resource.getValue("LBattachments.ToolTip." & Items.Count.ToString)
+                Case Else
+                    LBattachments.ToolTip = String.Format(Resource.getValue("LBattachments.ToolTip.n"), Items.Count)
+            End Select
+            CTRLattachment.Visible = True
+            CTRLattachment.InitializeControl(attachments)
+        Else
+            CTRLattachment.Visible = False
+        End If
+    End Sub
 #End Region
 
 #Region "Implements"
@@ -1081,4 +1095,9 @@ Public Class ProjectMap
         Me.Master.ShowDocType = True
     End Sub
 
+    Protected Overrides Sub SetEditMapUrl(url As String)
+
+    End Sub
+
+  
 End Class

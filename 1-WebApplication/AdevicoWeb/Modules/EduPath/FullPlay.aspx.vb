@@ -10,8 +10,17 @@ Imports lm.Comol.Modules.EduPath.Presentation
 
 Public Class FullPlay
     'Inherits System.Web.UI.Page
-    Inherits PageBaseEduPath
+    Inherits EPpageBaseEduPath
 
+    Private _ServiceQuestionnaire As COL_Questionario.Business.ServiceQuestionnaire
+    Private ReadOnly Property ServiceQuestionnaire() As COL_Questionario.Business.ServiceQuestionnaire
+        Get
+            If IsNothing(_ServiceQuestionnaire) Then
+                _ServiceQuestionnaire = New COL_Questionario.Business.ServiceQuestionnaire(Me.PageUtility.CurrentContext)
+            End If
+            Return _ServiceQuestionnaire
+        End Get
+    End Property
 #Region "Inherits"
     Public Overrides ReadOnly Property AlwaysBind As Boolean
         Get
@@ -22,12 +31,13 @@ Public Class FullPlay
     Public Overrides ReadOnly Property VerifyAuthentication As Boolean
         Get
             If IsSessioneScaduta(False) Then
-                RedirectOnSessionTimeOut(RootObject.ViewFullPlay(CurrentPathId, CurrentCommunityID), CurrentCommunityID)
+                RedirectOnSessionTimeOut(RootObject.ViewFullPlay(CurrentPathId, CurrentCommunityID, PreloadIsMooc), CurrentCommunityID)
             End If
             Return False
         End Get
     End Property
 #End Region
+
 
 #Region "Page"
 
@@ -105,7 +115,22 @@ Public Class FullPlay
             Me.ViewState("ShowSwitchMessage") = value
         End Set
     End Property
-
+    Public Property PathDisplayPolicy As DisplayPolicy
+        Get
+            Return ViewStateOrDefault("PathDisplayPolicy", DisplayPolicy.NoModal)
+        End Get
+        Set(ByVal value As DisplayPolicy)
+            ViewState("PathDisplayPolicy") = value
+        End Set
+    End Property
+    Public Property PathPolicySettings As PolicySettings
+        Get
+            Return ViewStateOrDefault("PathPolicySettings", New PolicySettings())
+        End Get
+        Set(ByVal value As PolicySettings)
+            ViewState("PathPolicySettings") = value
+        End Set
+    End Property
     Private _isSetCanProceedEndDate As Boolean = False
     Private _CanProceedByEndDate As Boolean
 
@@ -287,7 +312,7 @@ Public Class FullPlay
             If IsNumeric(qs_communityId) Then
                 Return qs_communityId
             Else
-                Return Me.CurrentContext.UserContext.CurrentCommunityID
+                Return PageUtility.CurrentContext.UserContext.CurrentCommunityID
             End If
         End Get
     End Property
@@ -338,12 +363,18 @@ Public Class FullPlay
 
     Private ReadOnly Property CurrentUserId() As Integer
         Get
-            Return Me.CurrentContext.UserContext.CurrentUserID
+            Return PageUtility.CurrentContext.UserContext.CurrentUserID
         End Get
     End Property
-    Private ReadOnly Property CurrentCommRoleID As Integer
+    Private ReadOnly Property IdCommunityRole As Integer
         Get
-            Return UtenteCorrente.GetIDRuoloForComunita(CurrentCommunityID)
+            Dim key As String = "CurrentCommRoleID_" & CurrentPathId.ToString() & "_" & CurrentUserId.ToString
+            Dim idRole As Integer = ViewStateOrDefault(key, -1)
+            If idRole = -1 Then
+                idRole = ServiceEP.GetIdCommunityRole(CurrentUserId, ServiceEP.GetPathIdCommunity(CurrentPathId))
+                ViewState(key) = idRole
+            End If
+            Return idRole
         End Get
     End Property
 
@@ -388,7 +419,7 @@ Public Class FullPlay
 #Region "Inherits"
     Public Overrides Sub BindDati()
         If Not ServiceEP.isPlayModePath(CurrentPathId) Then
-            RedirectToUrl(RootObject.PathView(CurrentPathId, CurrentCommunityID, EpViewModeType.View, True))
+            RedirectToUrl(RootObject.PathView(CurrentPathId, CurrentCommunityID, EpViewModeType.View, True, GetIsMooc(CurrentPathId)))
         End If
         Me.PageUtility.AddAction(Me.CurrentCommunityID, Services_EduPath.ActionType.Access, Me.PageUtility.CreateObjectsList(Services_EduPath.ObjectType.EduPath, Me.CurrentPathId), InteractionType.UserWithLearningObject)
 
@@ -432,16 +463,24 @@ Public Class FullPlay
 
     '    End Get
     'End Property
+    Private Sub UpdatePathStatistics(idPath As Long, idPerson As Integer)
+        'Dim evaluations As List(Of dtoItemEvaluation(Of Long))
+        ''Dim path As Path = ServiceEP.GetPath(idPath)
+        ''If path.Polic Then
 
+        'evaluations = ServiceEP.ServiceStat.GetUserPathEvaluations(idPath, idPerson, ServiceScorm)
+
+    End Sub
     Private Sub UpdateScormStat()
-        Dim ModuleLinkIds As IList(Of Long) = ServiceEP.GetMaterialModuleLinkIds_ByPathId(Me.CurrentPathId)
-        If ModuleLinkIds.Any() Then
+        Dim idPerson As Integer = PageUtility.CurrentContext.UserContext.CurrentUserID
+        Dim ModuleLinkIds As IList(Of Long) = ServiceEP.GetRepositoryLinksPath(Me.CurrentPathId, idPerson)
+        If ModuleLinkIds.Count > 0 Then
             Dim oSender As PermissionService.IServicePermission = Nothing
             Dim results As List(Of dtoItemEvaluation(Of Long))
-            Dim UserID As Integer = CurrentContext.UserContext.CurrentUserID
+
             Try
                 oSender = New PermissionService.ServicePermissionClient
-                results = oSender.GetPendingEvaluations(ModuleLinkIds, UserID).ToList()
+                results = oSender.GetPendingEvaluations(ModuleLinkIds, idPerson)
                 If Not IsNothing(oSender) Then
                     Dim service As System.ServiceModel.ClientBase(Of PermissionService.IServicePermission) = DirectCast(oSender, System.ServiceModel.ClientBase(Of PermissionService.IServicePermission))
                     service.Close()
@@ -454,46 +493,16 @@ Public Class FullPlay
                     service = Nothing
                 End If
             End Try
-            ServiceEP.SaveActionsExecution(results, UserID)
+            If Not IsNothing(results) AndAlso results.Any Then
+                ServiceEP.SaveActionsExecution(results, idPerson)
+            End If
         End If
     End Sub
 
-    Private Sub UpdateWebinarStat()
-        Dim ModuleLinkIds As List(Of Long) = ServiceEP.GetWebinarModuleLinkIds_ByPathId(Me.CurrentPathId).ToList()
-
-        If ModuleLinkIds.Any() Then
-            Dim oSender As PermissionService.IServicePermission = Nothing
-            Dim results As List(Of dtoItemEvaluation(Of Long))
-            Dim UserID As Integer = CurrentContext.UserContext.CurrentUserID
-
-            Try
-                oSender = New PermissionService.ServicePermissionClient
-                results = oSender.EvaluateModuleLinks(ModuleLinkIds, UserID)
-                'results = oSender.EvaluateModuleLink().ToList()
-                If Not IsNothing(oSender) Then
-                    Dim service As System.ServiceModel.ClientBase(Of PermissionService.IServicePermission) = DirectCast(oSender, System.ServiceModel.ClientBase(Of PermissionService.IServicePermission))
-                    service.Close()
-                    service = Nothing
-                End If
-            Catch ex As Exception
-                If Not IsNothing(oSender) Then
-                    Dim service As System.ServiceModel.ClientBase(Of PermissionService.IServicePermission) = DirectCast(oSender, System.ServiceModel.ClientBase(Of PermissionService.IServicePermission))
-                    service.Abort()
-                    service = Nothing
-                End If
-            End Try
-            ServiceEP.SaveActionsExecution(results, UserID)
-        End If
-
-    End Sub
 
     Private Sub InitPlayer()
-
-
-        Dim lastActivity As dtoActivityPlayer = ServiceEP.GetLastViewedActivity(Me.CurrentUserId, Me.CurrentCommRoleID, Me.CurrentPathId, isAutoEp, DateTime.Now)
-
+        Dim lastActivity As dtoActivityPlayer = ServiceEP.GetLastViewedActivity(Me.CurrentUserId, IdCommunityRole, Me.CurrentPathId, isAutoEp, DateTime.Now)
         Dim lastSubactivity As SubActivity
-        '
 
         CouldActivityWithSingleSubActivityBeOmitted = CurrentPath.SingleAction
 
@@ -509,9 +518,9 @@ Public Class FullPlay
             Me.DIVLastActivity.Visible = True
 
             '@Start LastSubactivity
-            Dim count As Int64 = ServiceEP.GetCountDtoSubActivity_View(lastActivity.Id, Me.CurrentUserId, Me.CurrentCommRoleID)
+            Dim count As Int64 = ServiceEP.GetCountDtoSubActivity_View(lastActivity.Id, Me.CurrentUserId, IdCommunityRole)
             If (CouldActivityWithSingleSubActivityBeOmitted And count = 1) Then
-                lastSubactivity = ServiceEP.GetFirstSubActivity_View(lastActivity.Id, Me.CurrentUserId, Me.CurrentCommRoleID)
+                lastSubactivity = ServiceEP.GetFirstSubActivity_View(lastActivity.Id, Me.CurrentUserId, IdCommunityRole)
             Else
                 lastSubactivity = Nothing
             End If
@@ -589,12 +598,12 @@ Public Class FullPlay
             ''    Me.LBdate.Text = Me.SetDateLabel(lastActivity.StartDate, lastActivity.EndDate)
             ''End If
 
-            If lastActivity.Description.Count > 0 Then
-                'Me.LBdescription.Text = SmartTagsAvailable.TagAll(lastActivity.Description)
-            Else
-                'hideControl(LBdescription)
+            'If lastActivity.Description.Count > 0 Then
+            '    'Me.LBdescription.Text = SmartTagsAvailable.TagAll(lastActivity.Description)
+            'Else
+            '    'hideControl(LBdescription)
 
-            End If
+            'End If
 
             'SetImgStatusMedium(Me.IMGstatus, lastActivity.StatusStatistic)
 
@@ -603,73 +612,25 @@ Public Class FullPlay
     End Sub
 
     Private Sub initPageView()
-
         UpdateScormStat()
-
-        UpdateWebinarStat()
-
+        Dim idPath As Long = CurrentPathId
         Me.CTRLhelpStatus.Init()
-        Dim dtoEP As dtoEduPath = Me.ServiceEP.GetEduPathStructure_PlayMode(Me.CurrentPathId, Me.CurrentUserId, Me.CurrentCommRoleID, DateTime.Now)
+        Dim dtoEP As dtoEduPath = Me.ServiceEP.GetEduPathStructure_PlayMode(idPath, Me.CurrentUserId, IdCommunityRole, DateTime.Now)
 
-        Dim currentUserPermission As PermissionEP = Me.ServiceEP.GetUserPermission_ByPath(Me.CurrentPathId, Me.CurrentUserId, Me.CurrentCommRoleID)
+        PathDisplayPolicy = dtoEP.Display
+        Dim currentUserPermission As PermissionEP = Me.ServiceEP.GetUserPermission_ByPath(idPath, Me.CurrentUserId, IdCommunityRole)
 
         If IsNothing(dtoEP) OrElse ServiceEP.CheckStatus(dtoEP.Status, Status.Locked) OrElse (currentUserPermission.Read <> True) Then
             Me.ShowError(EpError.NotPermission)
         Else
-            Dim userId As Int32 = Me.CurrentUserId
-            Dim pathId As Int64 = Me.CurrentPathId
-
-            'unit rules
-            Dim unit As IList(Of dtoUnitUser) = ServiceEP.GetFreeUnitsByPathId(pathId, userId)
-
-            Dim rulesUnit As IList(Of RuleUnitCompletion) = ServiceEP.MergeUnitRulesWithUserCompletion(pathId, userId)
-
-            Dim engineUnit As New RuleEngine(Of dtoUnitUser)
-
-            'engine.AddRulesRange(rules)
-            For Each rule As RuleUnitCompletion In rulesUnit
-                engineUnit.AddRule(rule)
-            Next
-
-            Dim resultUnit As IList(Of KeyValuePair(Of dtoUnitUser, RuleEngineResult(Of dtoUnitUser))) = engineUnit.ExecuteFromTopByRoots(unit)
-            If IsNothing(resultUnit) Then
-                resultUnit = New List(Of KeyValuePair(Of dtoUnitUser, RuleEngineResult(Of dtoUnitUser)))
-            End If
-            VisibleUnit = (From item In resultUnit Select item.Key.Id).ToList()
-
-            'end unit rules
-
-
-
-            Dim act As IList(Of dtoActivityUser) = ServiceEP.GetFreeActivitiesByPathId(pathId, userId)
-
-            '        Dim rules As IList(Of RuleActivityCompletion) = ServiceEP.GetActivityRulesByPathId(238)
-
-            Dim rules As IList(Of RuleActivityCompletion) = ServiceEP.MergeActivityRulesWithUserCompletion(pathId, userId)
-
-            Dim engine As New RuleEngine(Of dtoActivityUser)
-
-            'engine.AddRulesRange(rules)
-            For Each rule As RuleActivityCompletion In rules
-                engine.AddRule(rule)
-            Next
-
-            Dim result As IList(Of KeyValuePair(Of dtoActivityUser, RuleEngineResult(Of dtoActivityUser))) = engine.ExecuteFromTopByRoots(act)
-            If IsNothing(result) Then
-                result = New List(Of KeyValuePair(Of dtoActivityUser, RuleEngineResult(Of dtoActivityUser)))
-            End If
-            VisibleActivity = (From item In result Select item.Key.Id).ToList()
-
-            ''VisibleActivity = Nothing
-
-            If ServiceStat.InitPathBrowsed(pathId, Me.CurrentUserId, Me.CurrentUserId, OLDpageUtility.ClientIPadress, OLDpageUtility.ProxyIPadress) Then
-                InitPlayer()
+            If ServiceStat.InitPathBrowsed(idPath, Me.CurrentUserId, Me.CurrentUserId, OLDpageUtility.ClientIPadress, OLDpageUtility.ProxyIPadress) Then
                 'InitProgressBar(dtoEP.
-                Me.Master.ServiceTitle = dtoEP.Name
-                Me.HYPstat.NavigateUrl = Me.BaseUrl & RootObject.UserStatisticsView(CurrentPathId, Me.CurrentCommunityID, DateTime.Now, False)
+                Master.ServiceTitle = dtoEP.Name
+                HYPstat.NavigateUrl = Me.BaseUrl & RootObject.UserStatisticsView(idPath, Me.CurrentCommunityID, DateTime.Now, False, dtoEP.IsMooc)
 
-                If ServiceEP.GetPathCount_ViewMode(CurrentUserId, CurrentCommRoleID, CurrentCommunityID) > 2 Then
-                    Me.HYPlistEduPath.NavigateUrl = Me.BaseUrl & RootObject.EduPathList(Me.CurrentCommunityID, EpViewModeType.View)
+                InitPlayer()
+                If ServiceEP.GetPathCount_ViewMode(CurrentUserId, IdCommunityRole, CurrentCommunityID) > 2 Then
+                    Me.HYPlistEduPath.NavigateUrl = Me.BaseUrl & RootObject.EduPathList(Me.CurrentCommunityID, EpViewModeType.View, dtoEP.IsMooc)
                 Else
                     hideControl(Me.HYPlistEduPath)
                 End If
@@ -677,23 +638,109 @@ Public Class FullPlay
                 Me.PermissionOverPath = dtoEP.PermissionEP
 
                 Me.InitProgressBar(True)
+
+                'Check unità/attività visibili
+                
+                If VisibleActivity Is Nothing Then
+
+
+                    ' act regole
+                    Dim act As IList(Of dtoActivityUser) = ServiceEP.GetFreeActivitiesByPathId(dtoEP.Id, CurrentUserId)
+                    'Incluso nello step successivo, ma serve al motore di regole: la cosa non è chiara.
+
+                    'ServiceEP.GetFreeActivitiesByPathId_Validate(EvaluatedItems)
+
+                    Dim rules As IList(Of RuleActivityCompletion) = _
+                        ServiceEP.MergeActivityRulesWithUserCompletion(dtoEP.Id, CurrentUserId)
+
+                    'ServiceEP.MergeActivityRulesWithUserCompletion_Validate(EvaluatedItems)
+
+                    Dim engine As New RuleEngine(Of dtoActivityUser)
+
+                    For Each rule As RuleActivityCompletion In rules
+                        engine.AddRule(rule)
+                    Next
+                    Dim result As IList(Of KeyValuePair(Of dtoActivityUser, RuleEngineResult(Of dtoActivityUser))) = engine.ExecuteFromTopByRoots(act)
+
+                    If result IsNot Nothing Then
+                        VisibleActivity = (From item In result Select item.Key.Id).ToList()
+                    End If
+                    'fine regole
+
+
+
+                    'Ed anche sto schifo non funziona in questo contesto:
+                    'VisibleActivity = ( _
+                    '    From act As dtoActivityUser In _
+                    '    ServiceEP.GetFreeActivitiesByPathId(dtoEP.Id, CurrentUserId)
+                    '    Select act.Id).ToList()
+
+                    'Questo mi da SOLO le attività che NON HANNO VINCOLI!!!!
+                    'In TEORIA non mi restituisce quelle COMPLETATE!!!
+                    'E comunque non mi restituisce quelle a cui l'utente HA ACCESSO!!!!
+                    'VisibleActivity = ServiceEP.GetFreeOrUserCompletedActivitiesIdByPathId(dtoEP.Id, CurrentUserId)
+                End If
+
+
+                If VisibleUnit Is Nothing Then
+                    Dim units As IList(Of dtoUnitUser) = ServiceEP.GetFreeUnitsByPathId(dtoEP.Id, CurrentUserId)
+
+                    Dim urules As IList(Of RuleUnitCompletion) = _
+                        ServiceEP.MergeUnitRulesWithUserCompletion(dtoEP.Id, CurrentUserId)
+
+                    Dim engine As New RuleEngine(Of dtoUnitUser)
+
+                    For Each rule As RuleUnitCompletion In urules
+                        engine.AddRule(rule)
+                    Next
+                    Dim result As IList(Of KeyValuePair(Of dtoUnitUser, RuleEngineResult(Of dtoUnitUser))) = engine.ExecuteFromTopByRoots(units)
+
+
+                    Dim unitsId As List(Of Int64) = (From item In result Select item.Key.Id).ToList()
+
+                    If result IsNot Nothing Then
+                        If IsNothing(VisibleUnit) Then
+                            VisibleUnit = New List(Of Long)()
+                        End If
+
+                        'Nasconde unità vuote:
+                        'For Each dUnit As dtoUnit In dtoEP.Units
+                        '    If unitsId.Contains(dUnit.Id) AndAlso _
+                        '        dUnit.Activities.Any(Function(a As dtoActivity) VisibleActivity.Contains(a.Id)) Then
+                        '        VisibleUnit.Add(dUnit.Id)
+                        '    End If
+                        'Next
+
+                        'Mostra unità vuote:
+                        VisibleUnit = (From item In result Select item.Key.Id).ToList()
+                    End If
+
+                    'If result IsNot Nothing Then
+                    '    '    VisibleUnit = (From unit As dtoUnitUser In ServiceEP.GetFreeUnitsByPathId(dtoEP.Id, CurrentUserId)
+                    '    '                   Select unit.Id).ToList()
+                    'Else
+                    '    '    'VisibleUnit = ServiceEP.GetFreeOrUserCompletedUnitsIdByPathId(dtoEP.Id, CurrentUserId)
+                    'End If
+
+
+                End If
+
+
                 If VisibleUnit Is Nothing Then
                     'RPunit.DataSource = dtoEP.Units
                     RPTunits.DataSource = dtoEP.Units
-
                 Else
                     RPTunits.DataSource = (From item In dtoEP.Units Where VisibleUnit.Contains(item.Id)).ToList()
                 End If
+
+                ''ToDo: END CHECK THIS!!!
 
                 RPTunits.DataBind()
             Else
                 Me.ShowError(EpError.Generic)
             End If
         End If
-
-
     End Sub
-
     Private Sub InitProgressBar(ByVal isVisible As Boolean)
         If isVisible Then
             If isAutoEp Then
@@ -715,7 +762,7 @@ Public Class FullPlay
 
     Private Sub ShowError(ByVal ErrorType As EpError)
         Me.Resource.setHyperLink(Me.HYPerror, False, True)
-        Me.HYPerror.NavigateUrl = Me.BaseUrl & RootObject.EduPathList(Me.CurrentCommunityID, EpViewModeType.View)
+        Me.HYPerror.NavigateUrl = Me.BaseUrl & RootObject.EduPathList(Me.CurrentCommunityID, EpViewModeType.View, GetIsMooc(CurrentPathId))
         Select Case ErrorType
             Case EpError.Generic
                 Me.LBerror.Text = Me.Resource.getValue("Error." & EpError.Generic.ToString)
@@ -734,27 +781,24 @@ Public Class FullPlay
         Me.MLVeduPathView.ActiveViewIndex = 1
     End Sub
 
+#Region "Units"
     Private Sub RPTunits_ItemDataBound(sender As Object, e As System.Web.UI.WebControls.RepeaterItemEventArgs) Handles RPTunits.ItemDataBound
         If (e.Item.ItemType = ListItemType.Item Or e.Item.ItemType = ListItemType.AlternatingItem) Then
             Dim dtoItem As dtoUnit = e.Item.DataItem
             _unitId = dtoItem.Id
 
             If ServiceEP.CheckStatus(dtoItem.Status, Status.Text) Then
-                'hideControl(e.Item.FindControl("LIunit"))
-                'Dim oLB As Label = e.Item.FindControl("LBtextNote")
-                'oLB.Text = dtoItem.Description
-
                 hideControl(e.Item.FindControl("DIVGenericUnit"))
                 e.Item.FindControl("DIVUnitNoteFix").Visible = True
                 Dim x As HtmlControl = e.Item.FindControl("DIVUnitNote")
                 x.Visible = True
 
                 Dim oLB As Label = x.FindControl("LBLUnitNote")
-                oLB.Text = dtoItem.Description
-
-
-
-
+                If Not String.IsNullOrWhiteSpace(dtoItem.Description) Then
+                    oLB.Text = SmartTagsAvailable.TagAll(dtoItem.Description)
+                Else
+                    oLB.Text = ""
+                End If
             Else
                 'hideControl(e.Item.FindControl("LInote"))
 
@@ -764,12 +808,9 @@ Public Class FullPlay
                 'RPactivityGeneric_ItemDataBound(e, dtoItem)
 
                 Me.RPunitGeneric_ItemDataBound(e, dtoItem)
-
             End If
-
         End If
     End Sub
-
     Private Sub RPunitGeneric_ItemDataBound(ByRef e As System.Web.UI.WebControls.RepeaterItemEventArgs, ByRef dtoItem As dtoUnit)
         Dim LBunit As Label
         Dim RpActivities As Repeater
@@ -823,9 +864,8 @@ Public Class FullPlay
         End If
 
         LBunit = e.Item.FindControl("LBLUnitDescription")
-        If dtoItem.Description.Count > 0 Then
-
-            LBunit.Text = dtoItem.Description
+        If Not String.IsNullOrWhiteSpace(dtoItem.Description) Then
+            LBunit.Text = SmartTagsAvailable.TagAll(dtoItem.Description)
         Else
             'hideControl(LBunit)
             'hideControl(e.Item.FindControl("DIVunitDescription"))
@@ -836,11 +876,16 @@ Public Class FullPlay
 
         ''from rule
 
+
+        ''ToDo: CHECK THIS!!!!
+
+
         If VisibleActivity Is Nothing Then
             RpActivities.DataSource = dtoItem.Activities
         Else
             RpActivities.DataSource = (From item In dtoItem.Activities Where VisibleActivity.Contains(item.Id)).ToList()
         End If
+        ''ToDo: END CHECK THIS !!!
 
         'AddHandler RpActivities.ItemDataBound, AddressOf RPactivity_ItemDataBound
         AddHandler RpActivities.ItemDataBound, AddressOf RPTactivities_ItemDataBound
@@ -861,6 +906,9 @@ Public Class FullPlay
             'hideControl(ulRule)
         End If
     End Sub
+#End Region
+   
+#Region "Activities"
 
     Private Sub RPTactivities_ItemDataBound(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.RepeaterItemEventArgs)
         If e.Item.ItemType = ListItemType.Item Or e.Item.ItemType = ListItemType.AlternatingItem Then
@@ -874,8 +922,9 @@ Public Class FullPlay
                 x.Visible = True
 
                 Dim oLB As Label = x.FindControl("LBLActivityNote")
-                oLB.Text = dtoItem.Description
-
+                If Not String.IsNullOrWhiteSpace(dtoItem.Description) Then
+                    oLB.Text = SmartTagsAvailable.TagAll(dtoItem.Description)
+                End If
             Else
                 hideControl(e.Item.FindControl("DIVActivityNote"))
                 hideControl(e.Item.FindControl("DIVActivityNoteFix"))
@@ -925,8 +974,8 @@ Public Class FullPlay
         SetLbActName(oLb, dtoItem.Name)
 
         oLb = e.Item.FindControl("LBLActivityDescription")
-        If dtoItem.Description.Count > 0 Then
-            oLb.Text = dtoItem.Description
+        If Not String.IsNullOrWhiteSpace(dtoItem.Description) Then
+            oLb.Text = SmartTagsAvailable.TagAll(dtoItem.Description)
         Else
             hideControl(oLb)
         End If
@@ -1005,7 +1054,10 @@ Public Class FullPlay
                 'SetImgStatusSmall(e.Item.FindControl("IMGstatus_single"), dtoItem.statusStat)
                 'oImg = e.Item.FindControl("IMGmandatory_single")
                 Dim lbl As Label = e.Item.FindControl("LBLActivitySingleDescription")
-                lbl.Text = dtoItem.Description
+                If Not String.IsNullOrWhiteSpace(dtoItem.Description) Then
+                    lbl.Text = SmartTagsAvailable.TagAll(dtoItem.Description)
+                End If
+
 
                 'verify
                 'If Not String.IsNullOrEmpty(dtoItem.SubActivities.First().Description) Then
@@ -1059,58 +1111,15 @@ Public Class FullPlay
             hideControl(e.Item.FindControl("UlsubAct"))
         End If
     End Sub
+#End Region
 
     Private Sub RpSubAct_ItemDataBound(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.RepeaterItemEventArgs)
         If e.Item.ItemType = ListItemType.Item Or e.Item.ItemType = ListItemType.AlternatingItem Then
-
-            '    Dim oLb As Label
-            '    Dim oLkb As LinkButton
-            '    Dim oHyp As HyperLink
-            '    Dim oImg As System.Web.UI.WebControls.Image
             Dim dtoItem As dtoSubActivity = e.Item.DataItem
-
             SetStatus(dtoItem.StatusStat, e.Item.FindControl("ImgStatus"))
 
-            '    'SetImgStatusSmall(e.Item.FindControl("IMGstatus"), dtoItem.StatusStat)
-
-            '    oImg = e.Item.FindControl("IMGmandatory")
-
-            '    If ServiceEP.CheckStatus(dtoItem.Status, Status.Mandatory) Then
-            '        oImg.ImageUrl = RootObject.ImgMandatoryMedium(Me.BaseUrl)
-            '        oImg.ToolTip = Me.Resource.getValue("SubActivityMandatory")
-            '        oImg.Visible = True
-            '    Else
-            '        hideControl(oImg)
-            '    End If
-
             Dim isVisible As Boolean = ServiceEP.CheckStatus(dtoItem.Status, Status.NotLocked) And _canViewSubAct_byAct
-
-            '    'SetImgBlocked(e.Item.FindControl("IMGvisibility"), Not isVisible)
-
-
-            '    'oImg = e.Item.FindControl("IMGtype")
-            '    'oImg.ImageUrl = RootObject.ImgContentType(Me.BaseUrl, dtoItem.ContentType)
-
-
-            '    'oLb = e.Item.FindControl("LBpoints")
-
-            '    'If isMarkEp Then
-            '    '    oLb.Text = " (" & dtoItem.Weight & Resource.getValue("Points")
-            '    'Else
-            '    '    hideControl(oLb)  ' oLb.Text = ServiceEP.GetTime(dtoItem.Weight)
-            '    'End If
-
-            '    'oLb = e.Item.FindControl("LBnameTitle")
-            '    'Me.Resource.setLabel(oLb)
-
-            '    'oHyp = e.Item.FindControl("HYPname")
-            '    'oHyp.Text = dtoItem.Name
-            '    'oHyp.NavigateUrl = dtoItem.Link
-
-            '    'oLb = e.Item.FindControl("LBdescription")
-
-            '    'oLkb = e.Item.FindControl("LKBexecute")
-            Dim oPlaceHolder As PlaceHolder = e.Item.FindControl("PHLAction")
+            ' Dim oPlaceHolder As PlaceHolder = e.Item.FindControl("PHLAction")
 
             Dim weight As String
             If isMarkEp Then
@@ -1150,6 +1159,14 @@ Public Class FullPlay
                         e.Item.FindControl("CTRLtextAction").Visible = True
                         oDisplayAction.RefreshContainer = True
 
+                        Select Case PathPolicySettings.Statistics
+                            Case CompletionPolicy.NoUpdateIfCompleted
+                                Select Case dtoItem.StatusStat
+                                    Case StatusStatistic.Completed, StatusStatistic.CompletedPassed
+                                        initializer.SaveLinkStatistics = False
+                                        initializer.Display = lm.Comol.Core.ModuleLinks.DisplayActionMode.text
+                                End Select
+                        End Select
                         ' DIMENSIONI IMMAGINI
                         oDisplayAction.IconSize = Helpers.IconSize.Small
                         oDisplayAction.EnableAnchor = True
@@ -1180,62 +1197,90 @@ Public Class FullPlay
                         oCertAction.InitializeControl(initializer)
                 End Select
             Else
-                e.Item.FindControl("CTRLtextAction").Visible = False
-                Dim oDisplayAction As lm.Comol.Core.ModuleLinks.IExternalModuleDisplayAction = CType(LoadControl(BaseUrl & lm.Comol.Core.DomainModel.Common.CoreRootObject.GenericNewDisplayActionControl), lm.Comol.Core.ModuleLinks.IExternalModuleDisplayAction)
-                'Dim oDisplayAction As lm.Comol.Core.ModuleLinks.IExternalModuleDisplayAction = e.Item .FindControl("textAction")
-                '        hideControl(oLkb)
-                '        oLb.Text = Me.SmartTagsAvailable.TagAll(dtoItem.Description)
-
-                Dim initializer As New lm.Comol.Core.ModuleLinks.dtoExternalModuleInitializer
-                initializer.Link = dtoItem.ModuleLink
-                ' AGGIUNTA PLACEHOLDER
-                ' --> initializer.PlaceHolders.Add(New lm.Comol.Core.ModuleLinks.dtoPlaceHolder() With {.Text = "HH:ss", .Type = lm.Comol.Core.ModuleLinks.PlaceHolderType.three})
-                initializer.PlaceHolders.Add(New lm.Comol.Core.ModuleLinks.dtoPlaceHolder() With {.Text = weight, .Type = lm.Comol.Core.ModuleLinks.PlaceHolderType.three})
-                ' DEFINISCO UNA CLASSE PER IL CONTAINER
-                oDisplayAction.ContainerCSS = SubActivityCssClass(dtoItem)
-                ' DIMENSIONI IMMAGINI
-                oDisplayAction.IconSize = Helpers.IconSize.Small
-
-                oDisplayAction.EnableAnchor = True
+                Dim itemAction As lm.Comol.Core.ModuleLinks.DisplayActionMode = lm.Comol.Core.ModuleLinks.DisplayActionMode.text
                 If isVisible AndAlso _isVisibleByDateConstraint AndAlso CanProceedByEndDate Then
-                    oDisplayAction.Display = lm.Comol.Core.ModuleLinks.DisplayActionMode.defaultAction
-                Else
-                    oDisplayAction.Display = lm.Comol.Core.ModuleLinks.DisplayActionMode.text
+                    itemAction = lm.Comol.Core.ModuleLinks.DisplayActionMode.defaultAction
                 End If
-                oDisplayAction.InitializeControl(initializer)
-                oPlaceHolder.Controls.Add(oDisplayAction)
+                e.Item.FindControl("CTRLtextAction").Visible = False
+                e.Item.FindControl("CTRLquestionnaire").Visible = False
+                e.Item.FindControl("CTRLdisplayItem").Visible = False
+                Select Case dtoItem.ContentType
+                    Case SubActivityType.File
+                        Dim renderItem As UC_RepositoryRenderAction = e.Item.FindControl("CTRLdisplayItem")
+                        Dim repositoryInitializer As New lm.Comol.Core.ModuleLinks.dtoObjectRenderInitializer
+                        repositoryInitializer.RefreshContainerPage = True
+                        repositoryInitializer.Link = New liteModuleLink(dtoItem.ModuleLink)
+                        Select Case PathDisplayPolicy
+                            Case DisplayPolicy.ModalByItem
+                                Select Case dtoItem.Display
+                                    Case DisplayPolicy.ModalForAllByAvailability
+                                        repositoryInitializer.ForceOnModalPage = True
+                                    Case DisplayPolicy.ModalByItem
+                                        repositoryInitializer.SetOnModalPageByItem = True
+                                End Select
+                            Case DisplayPolicy.ModalForAllByAvailability
+                                repositoryInitializer.ForceOnModalPage = True
+                        End Select
+                        repositoryInitializer.SaveObjectStatistics = True
+                        repositoryInitializer.SaveOwnerStatistics = True
+                        Select Case PathPolicySettings.Statistics
+                            Case CompletionPolicy.NoUpdateIfCompleted
+                                Select Case dtoItem.StatusStat
+                                    Case StatusStatistic.Completed, StatusStatistic.CompletedPassed
+                                        repositoryInitializer.RefreshContainerPage = False
+                                        repositoryInitializer.SaveOwnerStatistics = False
+                                End Select
+                        End Select
+                        repositoryInitializer.SetPreviousPage = False
+                        repositoryInitializer.PlaceHolders.Add(New lm.Comol.Core.ModuleLinks.dtoPlaceHolder() With {.Text = weight, .Type = lm.Comol.Core.ModuleLinks.PlaceHolderType.three, .CssClass = "duration"})
+                        renderItem.CssClass = SubActivityCssClass(dtoItem)
 
+
+                        renderItem.Visible = True
+                        renderItem.InitializeControl(repositoryInitializer, itemAction)
+                    Case SubActivityType.Quiz
+                        Dim renderQuizItem As UC_ModuleQuizAction = e.Item.FindControl("CTRLquestionnaire")
+                        Dim initializer As New lm.Comol.Core.ModuleLinks.dtoExternalModuleInitializer
+                        initializer.Link = dtoItem.ModuleLink
+                        initializer.OpenLinkCssClass = ""
+                        'Select Case PathDisplayPolicy
+                        '    Case DisplayPolicy.ModalByItem
+                        '        Select Case dtoItem.Display
+                        '            Case DisplayPolicy.ModalForAllByAvailability, DisplayPolicy.ModalByItem
+                        '                initializer.OpenLinkCssClass = LTmodalCssClass.Text
+                        '                initializer.OnModalPage = True
+                        '        End Select
+                        '    Case DisplayPolicy.ModalForAllByAvailability
+                        '        initializer.OpenLinkCssClass = LTmodalCssClass.Text
+                        '        initializer.OnModalPage = True
+                        'End Select
+                        initializer.RefreshContainerPage = False
+                        Select Case PathPolicySettings.Statistics
+                            Case CompletionPolicy.NoUpdateIfCompleted
+                                Select Case dtoItem.StatusStat
+                                    Case StatusStatistic.Completed, StatusStatistic.CompletedPassed
+                                        initializer.SaveLinkStatistics = False
+                                End Select
+                        End Select
+
+
+                        ' AGGIUNTA PLACEHOLDER
+                        ' --> initializer.PlaceHolders.Add(New lm.Comol.Core.ModuleLinks.dtoPlaceHolder() With {.Text = "HH:ss", .Type = lm.Comol.Core.ModuleLinks.PlaceHolderType.three})
+                        initializer.PlaceHolders.Add(New lm.Comol.Core.ModuleLinks.dtoPlaceHolder() With {.Text = weight, .Type = lm.Comol.Core.ModuleLinks.PlaceHolderType.three, .CssClass = "duration"})
+                        ' DEFINISCO UNA CLASSE PER IL CONTAINER
+                        renderQuizItem.ContainerCSS = SubActivityCssClass(dtoItem)
+                        ' DIMENSIONI IMMAGINI
+                        renderQuizItem.IconSize = Helpers.IconSize.Small
+                        renderQuizItem.EnableAnchor = True
+                        renderQuizItem.Display = itemAction
+                        renderQuizItem.Visible = True
+                        renderQuizItem.InitializeControl(lm.Comol.Core.ModuleLinks.dtoModuleDisplayActionInitializer.Create(initializer, renderQuizItem.Display, renderQuizItem.ContainerCSS, Helpers.IconSize.Small), itemAction)
+
+                End Select
+               
             End If
-
-            If Not _isVisibleByDateConstraint Then
-                '        Dim oSp As HtmlControl = e.Item.FindControl("SPsubActName")
-                '        oSp.Attributes.Add("class", "row left timeConstraint")
-            End If
-
         End If
-
     End Sub
-
-    'Private Sub SetImgStatusSmall(ByRef oImg As System.Web.UI.WebControls.Image, ByRef status As StatusStatistic)
-    '    'oImg.Visible = True
-    '    'Dim tooltip As String
-    '    'Select Case status
-    '    '    Case StatusStatistic.CompletedPassed
-    '    '        oImg.ImageUrl = RootObject.ImgStatusGreenSmall(Me.BaseUrl)
-    '    '        tooltip = Resource.getValue("StatusStatistic." & StatusStatistic.CompletedPassed.ToString)
-    '    '    Case StatusStatistic.Browsed
-    '    '        oImg.ImageUrl = RootObject.ImgStatusGreySmall(Me.BaseUrl)
-    '    '        tooltip = Resource.getValue("StatusStatistic." & StatusStatistic.Browsed.ToString)
-    '    '    Case StatusStatistic.None
-    '    '        oImg.ImageUrl = RootObject.ImgStatusGreySmall(Me.BaseUrl)
-    '    '        tooltip = Resource.getValue("StatusStatistic." & StatusStatistic.Browsed.ToString)
-    '    '    Case Else
-    '    '        oImg.ImageUrl = RootObject.ImgStatusYellowSmall(Me.BaseUrl)
-    '    '        tooltip = Resource.getValue("StatusStatistic." & StatusStatistic.Started.ToString)
-    '    'End Select
-    '    'oImg.AlternateText = tooltip
-    '    'oImg.ToolTip = tooltip
-    'End Sub
 
 
     Private Function SetStatus(status As StatusStatistic) As String
@@ -1352,7 +1397,7 @@ Public Class FullPlay
 
         'oLkb = e.FindControl("LKBexecute_single")
 
-        Dim oPlaceHolder As PlaceHolder = e.FindControl("PHLAction_single")
+        'Dim oPlaceHolder As PlaceHolder = e.FindControl("PHLAction_single")
 
         If ServiceEP.isSubActityInternalModule(dtoItem.ContentType) Then
 
@@ -1377,6 +1422,14 @@ Public Class FullPlay
                     e.FindControl("CTRLtextAction").Visible = True
                     oDisplayAction.RefreshContainer = True
 
+                    Select Case PathPolicySettings.Statistics
+                        Case CompletionPolicy.NoUpdateIfCompleted
+                            Select Case dtoItem.StatusStat
+                                Case StatusStatistic.Completed, StatusStatistic.CompletedPassed
+                                    initializer.SaveLinkStatistics = False
+                                    initializer.Display = lm.Comol.Core.ModuleLinks.DisplayActionMode.text
+                            End Select
+                    End Select
                     ' DIMENSIONI IMMAGINI
                     oDisplayAction.IconSize = Helpers.IconSize.Small
                     oDisplayAction.EnableAnchor = True
@@ -1436,42 +1489,85 @@ Public Class FullPlay
 
 
         Else
-
-
-            e.FindControl("CTRLtextAction").Visible = False
-            Dim oDisplayAction As lm.Comol.Core.ModuleLinks.IExternalModuleDisplayAction = CType(LoadControl(BaseUrl & lm.Comol.Core.DomainModel.Common.CoreRootObject.GenericNewDisplayActionControl), lm.Comol.Core.ModuleLinks.IExternalModuleDisplayAction)
-            'hideControl(oLkb)
-            'oLb.Text = Me.SmartTagsAvailable.TagAll(dtoItem.Description)
-
-
-            'If isVisible AndAlso _isVisibleByDateConstraint AndAlso CanProceedByEndDate Then
-            '    oDisplayAction.InitializeControlInlineByLink(dtoItem.ModuleLink)
-            'Else
-
-            '    oDisplayAction.InitializeRemoteControlInlineByLink(True, dtoItem.ModuleLink)
-            'End If
-
-            Dim initializer As New lm.Comol.Core.ModuleLinks.dtoExternalModuleInitializer
-            initializer.Link = dtoItem.ModuleLink
-            ' AGGIUNTA PLACEHOLDER
-            ' --> initializer.PlaceHolders.Add(New lm.Comol.Core.ModuleLinks.dtoPlaceHolder() With {.Text = "HH:ss", .Type = lm.Comol.Core.ModuleLinks.PlaceHolderType.three})
-            initializer.PlaceHolders.Add(New lm.Comol.Core.ModuleLinks.dtoPlaceHolder() With {.Text = weight, .Type = lm.Comol.Core.ModuleLinks.PlaceHolderType.three, .CssClass = "duration"})
-            ' DEFINISCO UNA CLASSE PER IL CONTAINER
-            oDisplayAction.ContainerCSS = SubActivityCssClass(dtoItem)
-            ' DIMENSIONI IMMAGINI
-            oDisplayAction.IconSize = Helpers.IconSize.Small
-
-            oDisplayAction.EnableAnchor = True
+            Dim itemAction As lm.Comol.Core.ModuleLinks.DisplayActionMode = lm.Comol.Core.ModuleLinks.DisplayActionMode.text
             If isVisible AndAlso _isVisibleByDateConstraint AndAlso CanProceedByEndDate Then
-                oDisplayAction.Display = lm.Comol.Core.ModuleLinks.DisplayActionMode.defaultAction
-            Else
-                oDisplayAction.Display = lm.Comol.Core.ModuleLinks.DisplayActionMode.text
+                itemAction = lm.Comol.Core.ModuleLinks.DisplayActionMode.defaultAction
             End If
-            oDisplayAction.InitializeControl(initializer)
-            oPlaceHolder.Controls.Add(oDisplayAction)
+            e.FindControl("CTRLtextAction").Visible = False
+            e.FindControl("CTRLquestionnaire").Visible = False
+            e.FindControl("CTRLdisplayItem").Visible = False
+            Select Case dtoItem.ContentType
+                Case SubActivityType.File
+                    Dim renderItem As UC_RepositoryRenderAction = e.FindControl("CTRLdisplayItem")
+                    Dim repositoryInitializer As New lm.Comol.Core.ModuleLinks.dtoObjectRenderInitializer
+                    repositoryInitializer.RefreshContainerPage = True
+                    repositoryInitializer.Link = New liteModuleLink(dtoItem.ModuleLink)
+                    Select Case PathDisplayPolicy
+                        Case DisplayPolicy.ModalByItem
+                            Select Case dtoItem.Display
+                                Case DisplayPolicy.ModalForAllByAvailability
+                                    repositoryInitializer.ForceOnModalPage = True
+                                Case DisplayPolicy.ModalByItem
+                                    repositoryInitializer.SetOnModalPageByItem = True
+                            End Select
+                        Case DisplayPolicy.ModalForAllByAvailability
+                            repositoryInitializer.ForceOnModalPage = True
+                    End Select
+                    repositoryInitializer.SaveObjectStatistics = True
+                    repositoryInitializer.SaveOwnerStatistics = True
+                    Select Case PathPolicySettings.Statistics
+                        Case CompletionPolicy.NoUpdateIfCompleted
+                            Select Case dtoItem.StatusStat
+                                Case StatusStatistic.Completed, StatusStatistic.CompletedPassed
+                                    repositoryInitializer.RefreshContainerPage = False
+                                    repositoryInitializer.SaveOwnerStatistics = False
+                            End Select
+                    End Select
+                    repositoryInitializer.SetPreviousPage = False
+                    repositoryInitializer.PlaceHolders.Add(New lm.Comol.Core.ModuleLinks.dtoPlaceHolder() With {.Text = weight, .Type = lm.Comol.Core.ModuleLinks.PlaceHolderType.three, .CssClass = "duration"})
+                    renderItem.CssClass = SubActivityCssClass(dtoItem)
+                    renderItem.Visible = True
 
-            'oPlaceHolder.Controls.Add(oDisplayAction)
+                   
+                    renderItem.InitializeControl(repositoryInitializer, itemAction)
+                Case SubActivityType.Quiz
+                    Dim renderQuizItem As UC_ModuleQuizAction = e.FindControl("CTRLquestionnaire")
+                    Dim initializer As New lm.Comol.Core.ModuleLinks.dtoExternalModuleInitializer
+                    initializer.Link = dtoItem.ModuleLink
+                    initializer.OpenLinkCssClass = ""
+                    'Select Case PathDisplayPolicy
+                    '    Case DisplayPolicy.ModalByItem
+                    '        Select Case dtoItem.Display
+                    '            Case DisplayPolicy.ModalForAllByAvailability, DisplayPolicy.ModalByItem
+                    '                initializer.OpenLinkCssClass = LTmodalCssClass.Text
+                    '                initializer.OnModalPage = True
+                    '        End Select
+                    '    Case DisplayPolicy.ModalForAllByAvailability
+                    '        initializer.OpenLinkCssClass = LTmodalCssClass.Text
+                    '        initializer.OnModalPage = True
+                    'End Select
+                    initializer.RefreshContainerPage = False
+                    Select Case PathPolicySettings.Statistics
+                        Case CompletionPolicy.NoUpdateIfCompleted
+                            Select Case dtoItem.StatusStat
+                                Case StatusStatistic.Completed, StatusStatistic.CompletedPassed
+                                    initializer.SaveLinkStatistics = False
+                            End Select
+                    End Select
 
+
+                    ' AGGIUNTA PLACEHOLDER
+                    ' --> initializer.PlaceHolders.Add(New lm.Comol.Core.ModuleLinks.dtoPlaceHolder() With {.Text = "HH:ss", .Type = lm.Comol.Core.ModuleLinks.PlaceHolderType.three})
+                    initializer.PlaceHolders.Add(New lm.Comol.Core.ModuleLinks.dtoPlaceHolder() With {.Text = weight, .Type = lm.Comol.Core.ModuleLinks.PlaceHolderType.three, .CssClass = "duration"})
+                    ' DEFINISCO UNA CLASSE PER IL CONTAINER
+                    renderQuizItem.ContainerCSS = SubActivityCssClass(dtoItem)
+                    ' DIMENSIONI IMMAGINI
+                    renderQuizItem.IconSize = Helpers.IconSize.Small
+                    renderQuizItem.Display = itemAction
+                    renderQuizItem.Visible = True
+                    renderQuizItem.InitializeControl(lm.Comol.Core.ModuleLinks.dtoModuleDisplayActionInitializer.Create(initializer, renderQuizItem.Display, renderQuizItem.ContainerCSS, Helpers.IconSize.Small), itemAction)
+
+            End Select
         End If
 
         If Not _isVisibleByDateConstraint Then
@@ -1481,6 +1577,47 @@ Public Class FullPlay
             End If
         End If
     End Sub
+
+    Public Function GetItemStatus(dto As dtoActivity) As String
+       Return GetStatusCssClass(dto.StatusStat)
+    End Function
+    Public Function GetItemStatus(dto As dtoSubActivity) As String
+        Return GetStatusCssClass(dto.StatusStat)
+    End Function
+    Public Function GetItemStatusTitle(dto As dtoActivity) As String
+        Return GetStatusTitle(dto.statusStat)
+    End Function
+    Public Function GetItemStatusTitle(dto As dtoSubActivity) As String
+        Return GetStatusTitle(dto.StatusStat)
+    End Function
+    Public Function GetStatusCssClass(status As StatusStatistic)
+        Dim color As String
+        Select Case status
+            Case StatusStatistic.CompletedPassed
+                color = " green"
+            Case StatusStatistic.Browsed
+                color = " gray"
+            Case StatusStatistic.None
+                color = " gray"
+            Case Else
+                color = " yellow"
+        End Select
+        Return color
+    End Function
+
+    Public Function GetStatusTitle(status As StatusStatistic)
+        Select Case status
+            Case StatusStatistic.CompletedPassed
+                Return Resource.getValue("StatusStatistic." & StatusStatistic.CompletedPassed.ToString)
+            Case StatusStatistic.Browsed
+                Return Resource.getValue("StatusStatistic." & StatusStatistic.Browsed.ToString)
+            Case StatusStatistic.None
+                Return Resource.getValue("StatusStatistic." & StatusStatistic.Browsed.ToString)
+            Case Else
+                Return Resource.getValue("StatusStatistic." & StatusStatistic.Started.ToString)
+        End Select
+        Return ""
+    End Function
 
     Private Sub SetLbActName(ByRef oLB As Label, ByRef name As String)
         oLB.Text = name

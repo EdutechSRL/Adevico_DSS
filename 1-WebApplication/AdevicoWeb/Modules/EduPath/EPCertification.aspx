@@ -10,7 +10,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="CPHserviceLocalization" runat="server">
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="HeadContent" runat="server">
-    <link href="../../Graphics/Modules/Edupath/css/edupath.css" rel="Stylesheet" />
+    <link href="../../Graphics/Modules/Edupath/css/<%=GetCssFileByType()%>edupath.css?v=201605041410lm" rel="Stylesheet" />
      <script type="text/javascript">
          var DisplayTitle = ""
          var DisplayMessage = "<h2><%=DisplayMessageToken%></h2>"
@@ -64,7 +64,7 @@
                             <DateInput ID="DateInput1" DateFormat="dd/MM/yyyy" DisplayDateFormat="dd/MM/yyyy"
                                 Width="" runat="server">
                             </DateInput>
-                            <DatePopupButton CssClass="" HoverImageUrl="" ImageUrl="" />
+                            <DatePopupButton />
                         </telerik:RadDatePicker>
                     </div>
                     <div class="fieldrow filterenddate">
@@ -76,7 +76,7 @@
                             <DateInput ID="DateInput2" DateFormat="dd/MM/yyyy" DisplayDateFormat="dd/MM/yyyy"
                                 Width="" runat="server">
                             </DateInput>
-                            <DatePopupButton CssClass="" HoverImageUrl="" ImageUrl="" />
+                            <DatePopupButton />
                         </telerik:RadDatePicker>
                     </div>
                     <div class="fieldrow">

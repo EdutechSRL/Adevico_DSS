@@ -224,6 +224,11 @@ Public Class UC_DasboardListTopControl
             Return dto
         End Get
     End Property
+    Private ReadOnly Property UnknownUserTranslation As String Implements IViewDashBoardListTopControl.UnknownUserTranslation
+        Get
+            Return Me.Resource.getValue("UnknownUser")
+        End Get
+    End Property
 #End Region
 
 #Region "Inherits"
@@ -260,7 +265,9 @@ Public Class UC_DasboardListTopControl
             .setLabel(LBsummaryResourceActivities_t)
             .setLabel(LBsummaryManageActivities_t)
             .setLabel(LBdashboardProjectName_t)
-            LBattachments.ToolTip = .getValue("LBattachments.ToolTip")
+            If String.IsNullOrWhiteSpace(LBattachments.ToolTip) Then
+                LBattachments.ToolTip = .getValue("LBattachments.ToolTip")
+            End If
             LTsummaryTitleTop.Text = LTsummaryTitle.Text
             LBcloseSummary.ToolTip = .getValue("LBcloseSummary.ToolTip")
         End With
@@ -329,13 +336,26 @@ Public Class UC_DasboardListTopControl
     Public Sub RefreshSummary(filter As dtoItemsFilter, Optional ByVal idProject As Long = 0) Implements IViewDashBoardListTopControl.RefreshSummary
         CurrentPresenter.RefreshSummary(filter, idProject)
     End Sub
-    Private Sub DisplayProjectName(name As String) Implements IViewDashBoardListTopControl.DisplayProjectName
+    Private Sub DisplayProjectName(name As String, items As List(Of dtoAttachmentItem)) Implements IViewDashBoardListTopControl.DisplayProjectName
         LTsummarySubtitle.Text = String.Format(LTtemplateSummarySubtitle.Text, name)
         LTsummarySubtitle.Visible = True
         LTsummarySubtitleTop.Text = LTsummarySubtitle.Text
         LTsummarySubtitleTop.Visible = True
         DVprojectInfo.Visible = True
         LBdashboardProjectName.Text = name
+        LBattachments.Visible = Not IsNothing(items) AndAlso items.Any()
+        If Not IsNothing(items) AndAlso items.Any() Then
+            Select Case items.Count
+                Case 1, 0
+                    LBattachments.ToolTip = Resource.getValue("LBattachments.ToolTip." & items.Count.ToString)
+                Case Else
+                    LBattachments.ToolTip = String.Format(Resource.getValue("LBattachments.ToolTip.n"), items.Count)
+            End Select
+            CTRLattachment.Visible = True
+            CTRLattachment.InitializeControl(items)
+        Else
+            CTRLattachment.Visible = False
+        End If
     End Sub
     Private Sub DisplayUserName(name As String) Implements IViewDashBoardListTopControl.DisplayUserName
         LTsummarySubtitle.Text = String.Format(LTtemplateSummarySubtitle.Text, name)

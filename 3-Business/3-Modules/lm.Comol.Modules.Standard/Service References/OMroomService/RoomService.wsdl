@@ -1,0 +1,2595 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:ax219="http://user.beans.persistence.app.openmeetings.org/xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:ax222="http://basic.beans.persistence.app.openmeetings.org/xsd" xmlns:ax220="http://adresses.beans.persistence.app.openmeetings.org/xsd" xmlns:ax215="http://session.conference.app.openmeetings.org/xsd" xmlns:ax224="http://domain.beans.persistence.app.openmeetings.org/xsd" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ax218="http://flvrecord.beans.persistence.app.openmeetings.org/xsd" xmlns:ns="http://services.axis.openmeetings.org" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:ax212="http://services.axis.openmeetings.org/xsd" xmlns:ns1="http://org.apache.axis2/xsd" xmlns:ax214="http://rooms.beans.persistence.app.openmeetings.org/xsd" targetNamespace="http://services.axis.openmeetings.org" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation>RoomService</wsdl:documentation>
+  <wsdl:types>
+    <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://adresses.beans.persistence.app.openmeetings.org/xsd">
+      <xs:complexType name="Adresses">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="additionalname" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="adresses_id" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="comment" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="deleted" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="fax" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="phone" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="starttime" nillable="true" type="xs:date" />
+          <xs:element minOccurs="0" name="states" nillable="true" type="ax220:States" />
+          <xs:element minOccurs="0" name="street" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="town" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="updatetime" nillable="true" type="xs:date" />
+          <xs:element minOccurs="0" name="zip" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="States">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="deleted" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="starttime" nillable="true" type="xs:date" />
+          <xs:element minOccurs="0" name="state_id" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="updatetime" nillable="true" type="xs:date" />
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+    <xs:schema xmlns:ax228="http://rooms.beans.persistence.app.openmeetings.org/xsd" xmlns:ax226="http://user.beans.persistence.app.openmeetings.org/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://flvrecord.beans.persistence.app.openmeetings.org/xsd">
+      <xs:import namespace="http://user.beans.persistence.app.openmeetings.org/xsd" />
+      <xs:import namespace="http://rooms.beans.persistence.app.openmeetings.org/xsd" />
+      <xs:complexType name="FlvRecording">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="alternateDownload" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="comment" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="creator" nillable="true" type="ax226:Users" />
+          <xs:element minOccurs="0" name="deleted" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="fileHash" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="fileName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="fileSize" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="flvHeight" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="flvRecordingId" type="xs:long" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="flvRecordingLog" nillable="true" type="ax218:FlvRecordingLog" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="flvRecordingMetaData" nillable="true" type="ax218:FlvRecordingMetaData" />
+          <xs:element minOccurs="0" name="flvWidth" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="height" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="inserted" nillable="true" type="xs:date" />
+          <xs:element minOccurs="0" name="insertedBy" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="isFolder" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="isImage" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="isInterview" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="isPresentation" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="isRecording" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="organization_id" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="ownerId" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="parentFileExplorerItemId" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="previewImage" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="progressPostProcessing" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="recordEnd" nillable="true" type="xs:date" />
+          <xs:element minOccurs="0" name="recordStart" nillable="true" type="xs:date" />
+          <xs:element minOccurs="0" name="recorderStreamId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="room" nillable="true" type="ax228:Rooms" />
+          <xs:element minOccurs="0" name="room_id" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="updated" nillable="true" type="xs:date" />
+          <xs:element minOccurs="0" name="width" nillable="true" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="FlvRecordingLog">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="exitValue" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="flvRecording" nillable="true" type="ax218:FlvRecording" />
+          <xs:element minOccurs="0" name="flvRecordingLogId" type="xs:long" />
+          <xs:element minOccurs="0" name="fullMessage" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="inserted" nillable="true" type="xs:date" />
+          <xs:element minOccurs="0" name="msgType" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="FlvRecordingMetaData">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="audioIsValid" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="deleted" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="flvRecording" nillable="true" type="ax218:FlvRecording" />
+          <xs:element minOccurs="0" name="flvRecordingMetaDataId" type="xs:long" />
+          <xs:element minOccurs="0" name="freeTextUserName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="fullWavAudioData" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="initialGapSeconds" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="inserted" nillable="true" type="xs:date" />
+          <xs:element minOccurs="0" name="insertedBy" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="interiewPodId" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="isAudioOnly" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="isScreenData" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="isVideoOnly" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="recordEnd" nillable="true" type="xs:date" />
+          <xs:element minOccurs="0" name="recordStart" nillable="true" type="xs:date" />
+          <xs:element minOccurs="0" name="streamName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="streamReaderThreadComplete" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="updated" nillable="true" type="xs:date" />
+          <xs:element minOccurs="0" name="wavAudioData" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+    <xs:schema xmlns:ax221="http://adresses.beans.persistence.app.openmeetings.org/xsd" xmlns:ax223="http://basic.beans.persistence.app.openmeetings.org/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://user.beans.persistence.app.openmeetings.org/xsd">
+      <xs:import namespace="http://adresses.beans.persistence.app.openmeetings.org/xsd" />
+      <xs:import namespace="http://basic.beans.persistence.app.openmeetings.org/xsd" />
+      <xs:complexType name="Users">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="activatehash" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="adresses" nillable="true" type="ax221:Adresses" />
+          <xs:element minOccurs="0" name="age" nillable="true" type="xs:date" />
+          <xs:element minOccurs="0" name="availible" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="deleted" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="externalUserId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="externalUserType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="firstname" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="forceTimeZoneCheck" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="language_id" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="lastlogin" nillable="true" type="xs:date" />
+          <xs:element minOccurs="0" name="lastname" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="lasttrans" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="level_id" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="lieferadressen" nillable="true" type="ax219:Userdata" />
+          <xs:element minOccurs="0" name="login" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="omTimeZone" nillable="true" type="ax223:OmTimeZone" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="organisation_users" nillable="true" type="ax224:Organisation_Users" />
+          <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="pictureuri" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="rechnungsaddressen" nillable="true" type="ax219:Userdata" />
+          <xs:element minOccurs="0" name="regdate" nillable="true" type="xs:date" />
+          <xs:element minOccurs="0" name="resethash" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="sessionData" nillable="true" type="ax223:Sessiondata" />
+          <xs:element minOccurs="0" name="showContactData" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="showContactDataToContacts" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="starttime" nillable="true" type="xs:date" />
+          <xs:element minOccurs="0" name="status" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="title_id" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="updatetime" nillable="true" type="xs:date" />
+          <xs:element minOccurs="0" name="userOffers" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="userSearchs" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="userSipData" nillable="true" type="ax219:UserSipData" />
+          <xs:element minOccurs="0" name="user_id" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="userlevel" nillable="true" type="ax219:Userlevel" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="Userdata">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="comment" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="data" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="data_id" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="data_key" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="deleted" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="starttime" nillable="true" type="xs:date" />
+          <xs:element minOccurs="0" name="updatetime" nillable="true" type="xs:date" />
+          <xs:element minOccurs="0" name="user_id" nillable="true" type="xs:long" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="UserSipData">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="authId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="inserted" nillable="true" type="xs:date" />
+          <xs:element minOccurs="0" name="updated" nillable="true" type="xs:date" />
+          <xs:element minOccurs="0" name="userSipDataId" type="xs:long" />
+          <xs:element minOccurs="0" name="username" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="userpass" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="Userlevel">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="deleted" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="level_id" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="starttime" nillable="true" type="xs:date" />
+          <xs:element minOccurs="0" name="statuscode" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="updatetime" nillable="true" type="xs:date" />
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+    <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://domain.beans.persistence.app.openmeetings.org/xsd">
+      <xs:complexType name="Organisation_Users">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="deleted" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="isModerator" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="organisation" nillable="true" type="ax224:Organisation" />
+          <xs:element minOccurs="0" name="organisation_users_id" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="starttime" nillable="true" type="xs:date" />
+          <xs:element minOccurs="0" name="updatetime" nillable="true" type="xs:date" />
+          <xs:element minOccurs="0" name="user_id" nillable="true" type="xs:long" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="Organisation">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="deleted" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="insertedby" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="organisation_id" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="starttime" nillable="true" type="xs:date" />
+          <xs:element minOccurs="0" name="updatedby" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="updatetime" nillable="true" type="xs:date" />
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+    <xs:schema xmlns:ax217="http://rooms.beans.persistence.app.openmeetings.org/xsd" xmlns:ax216="http://session.conference.app.openmeetings.org/xsd" xmlns:ax227="http://flvrecord.beans.persistence.app.openmeetings.org/xsd" xmlns:ax213="http://services.axis.openmeetings.org/xsd" xmlns:ax225="http://domain.beans.persistence.app.openmeetings.org/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://services.axis.openmeetings.org">
+      <xs:import namespace="http://services.axis.openmeetings.org/xsd" />
+      <xs:import namespace="http://session.conference.app.openmeetings.org/xsd" />
+      <xs:import namespace="http://rooms.beans.persistence.app.openmeetings.org/xsd" />
+      <xs:import namespace="http://domain.beans.persistence.app.openmeetings.org/xsd" />
+      <xs:import namespace="http://flvrecord.beans.persistence.app.openmeetings.org/xsd" />
+      <xs:element name="updateRoomWithModerationAndQuestions">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="SID" nillable="true" type="xs:string" />
+            <xs:element name="room_id" type="xs:long" />
+            <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+            <xs:element name="roomtypes_id" type="xs:long" />
+            <xs:element minOccurs="0" name="comment" nillable="true" type="xs:string" />
+            <xs:element name="numberOfPartizipants" type="xs:long" />
+            <xs:element name="ispublic" type="xs:boolean" />
+            <xs:element name="appointment" type="xs:boolean" />
+            <xs:element name="isDemoRoom" type="xs:boolean" />
+            <xs:element name="demoTime" type="xs:int" />
+            <xs:element name="isModeratedRoom" type="xs:boolean" />
+            <xs:element name="allowUserQuestions" type="xs:boolean" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="updateRoomWithModerationAndQuestionsResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="xs:long" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="updateRoomWithModeration">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="SID" nillable="true" type="xs:string" />
+            <xs:element name="room_id" type="xs:long" />
+            <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+            <xs:element name="roomtypes_id" type="xs:long" />
+            <xs:element minOccurs="0" name="comment" nillable="true" type="xs:string" />
+            <xs:element name="numberOfPartizipants" type="xs:long" />
+            <xs:element name="ispublic" type="xs:boolean" />
+            <xs:element name="appointment" type="xs:boolean" />
+            <xs:element name="isDemoRoom" type="xs:boolean" />
+            <xs:element name="demoTime" type="xs:int" />
+            <xs:element name="isModeratedRoom" type="xs:boolean" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="updateRoomWithModerationResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="xs:long" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="updateRoom">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="SID" nillable="true" type="xs:string" />
+            <xs:element name="rooms_id" type="xs:long" />
+            <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+            <xs:element name="roomtypes_id" type="xs:long" />
+            <xs:element minOccurs="0" name="comment" nillable="true" type="xs:string" />
+            <xs:element name="numberOfPartizipants" type="xs:long" />
+            <xs:element name="ispublic" type="xs:boolean" />
+            <xs:element name="videoPodWidth" type="xs:int" />
+            <xs:element name="videoPodHeight" type="xs:int" />
+            <xs:element name="videoPodXPosition" type="xs:int" />
+            <xs:element name="videoPodYPosition" type="xs:int" />
+            <xs:element name="moderationPanelXPosition" type="xs:int" />
+            <xs:element name="showWhiteBoard" type="xs:boolean" />
+            <xs:element name="whiteBoardPanelXPosition" type="xs:int" />
+            <xs:element name="whiteBoardPanelYPosition" type="xs:int" />
+            <xs:element name="whiteBoardPanelHeight" type="xs:int" />
+            <xs:element name="whiteBoardPanelWidth" type="xs:int" />
+            <xs:element name="showFilesPanel" type="xs:boolean" />
+            <xs:element name="filesPanelXPosition" type="xs:int" />
+            <xs:element name="filesPanelYPosition" type="xs:int" />
+            <xs:element name="filesPanelHeight" type="xs:int" />
+            <xs:element name="filesPanelWidth" type="xs:int" />
+            <xs:element name="appointment" type="xs:boolean" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="updateRoomResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="xs:long" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="sendInvitationHashWithDateObject">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="SID" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="username" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="message" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="baseurl" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="subject" nillable="true" type="xs:string" />
+            <xs:element name="room_id" type="xs:long" />
+            <xs:element minOccurs="0" name="conferencedomain" nillable="true" type="xs:string" />
+            <xs:element name="isPasswordProtected" type="xs:boolean" />
+            <xs:element minOccurs="0" name="invitationpass" nillable="true" type="xs:string" />
+            <xs:element name="valid" type="xs:int" />
+            <xs:element minOccurs="0" name="fromDate" nillable="true" type="xs:date" />
+            <xs:element minOccurs="0" name="toDate" nillable="true" type="xs:date" />
+            <xs:element name="language_id" type="xs:long" />
+            <xs:element name="sendMail" type="xs:boolean" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="sendInvitationHashWithDateObjectResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="sendInvitationHash">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="SID" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="username" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="message" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="baseurl" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="subject" nillable="true" type="xs:string" />
+            <xs:element name="room_id" type="xs:long" />
+            <xs:element minOccurs="0" name="conferencedomain" nillable="true" type="xs:string" />
+            <xs:element name="isPasswordProtected" type="xs:boolean" />
+            <xs:element minOccurs="0" name="invitationpass" nillable="true" type="xs:string" />
+            <xs:element name="valid" type="xs:int" />
+            <xs:element minOccurs="0" name="validFromDate" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="validFromTime" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="validToDate" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="validToTime" nillable="true" type="xs:string" />
+            <xs:element name="language_id" type="xs:long" />
+            <xs:element name="sendMail" type="xs:boolean" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="sendInvitationHashResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="kickUser">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="SID_Admin" nillable="true" type="xs:string" />
+            <xs:element name="room_id" type="xs:long" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="kickUserResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="xs:boolean" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getRoomsWithCurrentUsersByListAndType">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="SID" nillable="true" type="xs:string" />
+            <xs:element name="start" type="xs:int" />
+            <xs:element name="max" type="xs:int" />
+            <xs:element minOccurs="0" name="orderby" nillable="true" type="xs:string" />
+            <xs:element name="asc" type="xs:boolean" />
+            <xs:element minOccurs="0" name="externalRoomType" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getRoomsWithCurrentUsersByListAndTypeResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="return" nillable="true" type="ax213:RoomReturn" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getRoomsWithCurrentUsersByList">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="SID" nillable="true" type="xs:string" />
+            <xs:element name="start" type="xs:int" />
+            <xs:element name="max" type="xs:int" />
+            <xs:element minOccurs="0" name="orderby" nillable="true" type="xs:string" />
+            <xs:element name="asc" type="xs:boolean" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getRoomsWithCurrentUsersByListResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="return" nillable="true" type="ax213:RoomReturn" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getRoomsWithCurrentUsers">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="SID" nillable="true" type="xs:string" />
+            <xs:element name="start" type="xs:int" />
+            <xs:element name="max" type="xs:int" />
+            <xs:element minOccurs="0" name="orderby" nillable="true" type="xs:string" />
+            <xs:element name="asc" type="xs:boolean" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getRoomsWithCurrentUsersResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="return" nillable="true" type="ax217:Rooms" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getRoomsPublic">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="SID" nillable="true" type="xs:string" />
+            <xs:element name="roomtypes_id" type="xs:long" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getRoomsPublicResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="return" nillable="true" type="ax217:Rooms" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getRooms">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="SID" nillable="true" type="xs:string" />
+            <xs:element name="start" type="xs:int" />
+            <xs:element name="max" type="xs:int" />
+            <xs:element minOccurs="0" name="orderby" nillable="true" type="xs:string" />
+            <xs:element name="asc" type="xs:boolean" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getRoomsResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="return" nillable="true" type="ax217:Rooms" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getRoomWithCurrentUsersById">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="SID" nillable="true" type="xs:string" />
+            <xs:element name="rooms_id" type="xs:long" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getRoomWithCurrentUsersByIdResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="ax217:Rooms" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getRoomWithClientObjectsById">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="SID" nillable="true" type="xs:string" />
+            <xs:element name="rooms_id" type="xs:long" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getRoomWithClientObjectsByIdResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="ax213:RoomReturn" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getRoomTypes">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="SID" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getRoomTypesResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="return" nillable="true" type="ax217:RoomTypes" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getRoomIdByExternalId">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="SID" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+            <xs:element name="roomtypes_id" type="xs:long" />
+            <xs:element minOccurs="0" name="comment" nillable="true" type="xs:string" />
+            <xs:element name="numberOfPartizipants" type="xs:long" />
+            <xs:element name="ispublic" type="xs:boolean" />
+            <xs:element name="appointment" type="xs:boolean" />
+            <xs:element name="isDemoRoom" type="xs:boolean" />
+            <xs:element name="demoTime" type="xs:int" />
+            <xs:element name="isModeratedRoom" type="xs:boolean" />
+            <xs:element name="externalRoomId" type="xs:long" />
+            <xs:element minOccurs="0" name="externalRoomType" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getRoomIdByExternalIdResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="xs:long" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getRoomCounters">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="SID" nillable="true" type="xs:string" />
+            <xs:element name="roomId1" type="xs:int" />
+            <xs:element name="roomId2" type="xs:int" />
+            <xs:element name="roomId3" type="xs:int" />
+            <xs:element name="roomId4" type="xs:int" />
+            <xs:element name="roomId5" type="xs:int" />
+            <xs:element name="roomId6" type="xs:int" />
+            <xs:element name="roomId7" type="xs:int" />
+            <xs:element name="roomId8" type="xs:int" />
+            <xs:element name="roomId9" type="xs:int" />
+            <xs:element name="roomId10" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getRoomCountersResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="return" nillable="true" type="ax213:RoomCountBean" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getRoomById">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="SID" nillable="true" type="xs:string" />
+            <xs:element name="rooms_id" type="xs:long" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getRoomByIdResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="ax217:Rooms" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getInvitationHash">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="SID" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="username" nillable="true" type="xs:string" />
+            <xs:element name="room_id" type="xs:long" />
+            <xs:element name="isPasswordProtected" type="xs:boolean" />
+            <xs:element minOccurs="0" name="invitationpass" nillable="true" type="xs:string" />
+            <xs:element name="valid" type="xs:int" />
+            <xs:element minOccurs="0" name="validFromDate" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="validFromTime" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="validToDate" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="validToTime" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getInvitationHashResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getFlvRecordingByRoomId">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="SID" nillable="true" type="xs:string" />
+            <xs:element name="roomId" type="xs:long" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getFlvRecordingByRoomIdResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="return" nillable="true" type="ax227:FlvRecording" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getFlvRecordingByExternalUserId">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="SID" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="externalUserId" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getFlvRecordingByExternalUserIdResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="return" nillable="true" type="ax213:FLVRecordingReturn" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getFlvRecordingByExternalRoomTypeByList">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="SID" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="externalRoomType" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getFlvRecordingByExternalRoomTypeByListResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="return" nillable="true" type="ax227:FlvRecording" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getFlvRecordingByExternalRoomTypeAndCreator">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="SID" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="externalRoomType" nillable="true" type="xs:string" />
+            <xs:element name="insertedBy" type="xs:long" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getFlvRecordingByExternalRoomTypeAndCreatorResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="return" nillable="true" type="ax213:FLVRecordingReturn" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getFlvRecordingByExternalRoomType">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="SID" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="externalRoomType" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getFlvRecordingByExternalRoomTypeResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="return" nillable="true" type="ax227:FlvRecording" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="deleteRoom">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="SID" nillable="true" type="xs:string" />
+            <xs:element name="rooms_id" type="xs:long" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="deleteRoomResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="xs:long" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="deleteFlvRecording">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="SID" nillable="true" type="xs:string" />
+            <xs:element name="flvRecordingId" type="xs:long" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="deleteFlvRecordingResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="xs:boolean" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="closeRoom">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="SID" nillable="true" type="xs:string" />
+            <xs:element name="room_id" type="xs:long" />
+            <xs:element name="status" type="xs:boolean" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="closeRoomResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="addRoomWithModerationQuestionsAndAudioType">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="SID" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+            <xs:element name="roomtypes_id" type="xs:long" />
+            <xs:element minOccurs="0" name="comment" nillable="true" type="xs:string" />
+            <xs:element name="numberOfPartizipants" type="xs:long" />
+            <xs:element name="ispublic" type="xs:boolean" />
+            <xs:element name="appointment" type="xs:boolean" />
+            <xs:element name="isDemoRoom" type="xs:boolean" />
+            <xs:element name="demoTime" type="xs:int" />
+            <xs:element name="isModeratedRoom" type="xs:boolean" />
+            <xs:element name="allowUserQuestions" type="xs:boolean" />
+            <xs:element name="isAudioOnly" type="xs:boolean" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="addRoomWithModerationQuestionsAndAudioTypeResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="xs:long" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="addRoomWithModerationExternalTypeAndTopBarOption">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="SID" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+            <xs:element name="roomtypes_id" type="xs:long" />
+            <xs:element minOccurs="0" name="comment" nillable="true" type="xs:string" />
+            <xs:element name="numberOfPartizipants" type="xs:long" />
+            <xs:element name="ispublic" type="xs:boolean" />
+            <xs:element name="appointment" type="xs:boolean" />
+            <xs:element name="isDemoRoom" type="xs:boolean" />
+            <xs:element name="demoTime" type="xs:int" />
+            <xs:element name="isModeratedRoom" type="xs:boolean" />
+            <xs:element minOccurs="0" name="externalRoomType" nillable="true" type="xs:string" />
+            <xs:element name="allowUserQuestions" type="xs:boolean" />
+            <xs:element name="isAudioOnly" type="xs:boolean" />
+            <xs:element name="waitForRecording" type="xs:boolean" />
+            <xs:element name="allowRecording" type="xs:boolean" />
+            <xs:element name="hideTopBar" type="xs:boolean" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="addRoomWithModerationExternalTypeAndTopBarOptionResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="xs:long" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="addRoomWithModerationExternalTypeAndAudioType">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="SID" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+            <xs:element name="roomtypes_id" type="xs:long" />
+            <xs:element minOccurs="0" name="comment" nillable="true" type="xs:string" />
+            <xs:element name="numberOfPartizipants" type="xs:long" />
+            <xs:element name="ispublic" type="xs:boolean" />
+            <xs:element name="appointment" type="xs:boolean" />
+            <xs:element name="isDemoRoom" type="xs:boolean" />
+            <xs:element name="demoTime" type="xs:int" />
+            <xs:element name="isModeratedRoom" type="xs:boolean" />
+            <xs:element minOccurs="0" name="externalRoomType" nillable="true" type="xs:string" />
+            <xs:element name="allowUserQuestions" type="xs:boolean" />
+            <xs:element name="isAudioOnly" type="xs:boolean" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="addRoomWithModerationExternalTypeAndAudioTypeResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="xs:long" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="addRoomWithModerationAndRecordingFlags">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="SID" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+            <xs:element name="roomtypes_id" type="xs:long" />
+            <xs:element minOccurs="0" name="comment" nillable="true" type="xs:string" />
+            <xs:element name="numberOfPartizipants" type="xs:long" />
+            <xs:element name="ispublic" type="xs:boolean" />
+            <xs:element name="appointment" type="xs:boolean" />
+            <xs:element name="isDemoRoom" type="xs:boolean" />
+            <xs:element name="demoTime" type="xs:int" />
+            <xs:element name="isModeratedRoom" type="xs:boolean" />
+            <xs:element minOccurs="0" name="externalRoomType" nillable="true" type="xs:string" />
+            <xs:element name="allowUserQuestions" type="xs:boolean" />
+            <xs:element name="isAudioOnly" type="xs:boolean" />
+            <xs:element name="waitForRecording" type="xs:boolean" />
+            <xs:element name="allowRecording" type="xs:boolean" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="addRoomWithModerationAndRecordingFlagsResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="xs:long" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="addRoomWithModerationAndQuestions">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="SID" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+            <xs:element name="roomtypes_id" type="xs:long" />
+            <xs:element minOccurs="0" name="comment" nillable="true" type="xs:string" />
+            <xs:element name="numberOfPartizipants" type="xs:long" />
+            <xs:element name="ispublic" type="xs:boolean" />
+            <xs:element name="appointment" type="xs:boolean" />
+            <xs:element name="isDemoRoom" type="xs:boolean" />
+            <xs:element name="demoTime" type="xs:int" />
+            <xs:element name="isModeratedRoom" type="xs:boolean" />
+            <xs:element name="allowUserQuestions" type="xs:boolean" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="addRoomWithModerationAndQuestionsResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="xs:long" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="addRoomWithModerationAndExternalTypeAndStartEnd">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="SID" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+            <xs:element name="roomtypes_id" type="xs:long" />
+            <xs:element minOccurs="0" name="comment" nillable="true" type="xs:string" />
+            <xs:element name="numberOfPartizipants" type="xs:long" />
+            <xs:element name="ispublic" type="xs:boolean" />
+            <xs:element name="appointment" type="xs:boolean" />
+            <xs:element name="isDemoRoom" type="xs:boolean" />
+            <xs:element name="demoTime" type="xs:int" />
+            <xs:element name="isModeratedRoom" type="xs:boolean" />
+            <xs:element minOccurs="0" name="externalRoomType" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="validFromDate" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="validFromTime" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="validToDate" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="validToTime" nillable="true" type="xs:string" />
+            <xs:element name="isPasswordProtected" type="xs:boolean" />
+            <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+            <xs:element name="reminderTypeId" type="xs:long" />
+            <xs:element minOccurs="0" name="redirectURL" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="addRoomWithModerationAndExternalTypeAndStartEndResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="xs:long" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="addRoomWithModerationAndExternalType">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="SID" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+            <xs:element name="roomtypes_id" type="xs:long" />
+            <xs:element minOccurs="0" name="comment" nillable="true" type="xs:string" />
+            <xs:element name="numberOfPartizipants" type="xs:long" />
+            <xs:element name="ispublic" type="xs:boolean" />
+            <xs:element name="appointment" type="xs:boolean" />
+            <xs:element name="isDemoRoom" type="xs:boolean" />
+            <xs:element name="demoTime" type="xs:int" />
+            <xs:element name="isModeratedRoom" type="xs:boolean" />
+            <xs:element minOccurs="0" name="externalRoomType" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="addRoomWithModerationAndExternalTypeResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="xs:long" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="addRoomWithModeration">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="SID" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+            <xs:element name="roomtypes_id" type="xs:long" />
+            <xs:element minOccurs="0" name="comment" nillable="true" type="xs:string" />
+            <xs:element name="numberOfPartizipants" type="xs:long" />
+            <xs:element name="ispublic" type="xs:boolean" />
+            <xs:element name="appointment" type="xs:boolean" />
+            <xs:element name="isDemoRoom" type="xs:boolean" />
+            <xs:element name="demoTime" type="xs:int" />
+            <xs:element name="isModeratedRoom" type="xs:boolean" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="addRoomWithModerationResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="xs:long" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="addRoom">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="SID" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+            <xs:element name="roomtypes_id" type="xs:long" />
+            <xs:element minOccurs="0" name="comment" nillable="true" type="xs:string" />
+            <xs:element name="numberOfPartizipants" type="xs:long" />
+            <xs:element name="ispublic" type="xs:boolean" />
+            <xs:element name="videoPodWidth" type="xs:int" />
+            <xs:element name="videoPodHeight" type="xs:int" />
+            <xs:element name="videoPodXPosition" type="xs:int" />
+            <xs:element name="videoPodYPosition" type="xs:int" />
+            <xs:element name="moderationPanelXPosition" type="xs:int" />
+            <xs:element name="showWhiteBoard" type="xs:boolean" />
+            <xs:element name="whiteBoardPanelXPosition" type="xs:int" />
+            <xs:element name="whiteBoardPanelYPosition" type="xs:int" />
+            <xs:element name="whiteBoardPanelHeight" type="xs:int" />
+            <xs:element name="whiteBoardPanelWidth" type="xs:int" />
+            <xs:element name="showFilesPanel" type="xs:boolean" />
+            <xs:element name="filesPanelXPosition" type="xs:int" />
+            <xs:element name="filesPanelYPosition" type="xs:int" />
+            <xs:element name="filesPanelHeight" type="xs:int" />
+            <xs:element name="filesPanelWidth" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="addRoomResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="xs:long" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="addMeetingMemberRemindToRoom">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="SID" nillable="true" type="xs:string" />
+            <xs:element name="room_id" type="xs:long" />
+            <xs:element minOccurs="0" name="firstname" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="lastname" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="baseUrl" nillable="true" type="xs:string" />
+            <xs:element name="language_id" type="xs:long" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="addMeetingMemberRemindToRoomResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="xs:long" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="addExternalMeetingMemberRemindToRoom">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="SID" nillable="true" type="xs:string" />
+            <xs:element name="room_id" type="xs:long" />
+            <xs:element minOccurs="0" name="firstname" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="lastname" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="baseUrl" nillable="true" type="xs:string" />
+            <xs:element name="language_id" type="xs:long" />
+            <xs:element minOccurs="0" name="jNameTimeZone" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="invitorName" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="addExternalMeetingMemberRemindToRoomResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="xs:long" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+    <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://services.axis.openmeetings.org/xsd">
+      <xs:complexType name="RoomReturn">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="created" nillable="true" type="xs:date" />
+          <xs:element minOccurs="0" name="creator" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="roomUser" nillable="true" type="ax212:RoomUser" />
+          <xs:element minOccurs="0" name="room_id" nillable="true" type="xs:long" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="RoomUser">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="avsettings" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="broadcastId" type="xs:long" />
+          <xs:element minOccurs="0" name="firstname" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="isBroadCasting" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="lastname" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="publicSID" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="RoomCountBean">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="maxUser" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="roomCount" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="roomId" type="xs:long" />
+          <xs:element minOccurs="0" name="roomName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="FLVRecordingReturn">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="alternateDownload" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="comment" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="deleted" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="fileHash" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="fileName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="fileSize" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="flvHeight" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="flvRecordingId" type="xs:long" />
+          <xs:element minOccurs="0" name="flvWidth" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="height" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="inserted" nillable="true" type="xs:date" />
+          <xs:element minOccurs="0" name="insertedBy" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="isFolder" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="isImage" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="isInterview" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="isPresentation" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="isRecording" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="organization_id" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="ownerId" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="parentFileExplorerItemId" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="previewImage" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="progressPostProcessing" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="recordEnd" nillable="true" type="xs:date" />
+          <xs:element minOccurs="0" name="recordStart" nillable="true" type="xs:date" />
+          <xs:element minOccurs="0" name="recorderStreamId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="room_id" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="updated" nillable="true" type="xs:date" />
+          <xs:element minOccurs="0" name="width" nillable="true" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+    <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://session.conference.app.openmeetings.org/xsd">
+      <xs:complexType name="RoomClient">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="VHeight" type="xs:int" />
+          <xs:element minOccurs="0" name="VWidth" type="xs:int" />
+          <xs:element minOccurs="0" name="VX" type="xs:int" />
+          <xs:element minOccurs="0" name="VY" type="xs:int" />
+          <xs:element minOccurs="0" name="allowRecording" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="avsettings" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="broadCastID" type="xs:long" />
+          <xs:element minOccurs="0" name="canDraw" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="canGiveAudio" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="canRemote" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="canShare" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="chatUserRoomId" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="connectedSince" nillable="true" type="xs:date" />
+          <xs:element minOccurs="0" name="externalUserId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="externalUserType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="firstname" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="flvRecordingId" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="flvRecordingMetaDataId" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="formatedDate" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="interviewPodId" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="isAVClient" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="isBroadcasting" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="isChatNotification" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="isMod" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="isRecording" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="isScreenClient" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="isSuperModerator" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="language" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="lastLogin" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="lastname" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="mail" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="micMuted" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="official_code" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="organization_id" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="picture_uri" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="publicSID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="roomClientId" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="roomEnter" nillable="true" type="xs:date" />
+          <xs:element minOccurs="0" name="roomRecordingName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="room_id" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="scope" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="screenPublishStarted" type="xs:boolean" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="sharerSIDs" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="startRecording" type="xs:boolean" />
+          <xs:element minOccurs="0" name="startStreaming" type="xs:boolean" />
+          <xs:element minOccurs="0" name="streamPublishName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="streamid" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="swfurl" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="user_id" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="usercolor" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="userip" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="username" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="userport" type="xs:int" />
+          <xs:element minOccurs="0" name="userpos" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="zombieCheckFlag" nillable="true" type="xs:boolean" />
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+    <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://rooms.beans.persistence.app.openmeetings.org/xsd">
+      <xs:complexType name="Rooms">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="allowRecording" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="allowUserQuestions" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="appointment" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="comment" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="conferencePin" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="currentusers" nillable="true" type="ax215:RoomClient" />
+          <xs:element minOccurs="0" name="deleted" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="demoTime" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="externalRoomId" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="externalRoomType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="hideActionsMenu" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="hideActivitiesAndActions" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="hideChat" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="hideFilesExplorer" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="hideScreenSharing" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="hideTopBar" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="hideWhiteboard" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="isAudioOnly" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="isClosed" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="isDemoRoom" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="isModeratedRoom" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="ispublic" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="numberOfPartizipants" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="ownerId" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="redirectURL" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="rooms_id" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="roomtype" nillable="true" type="ax214:RoomTypes" />
+          <xs:element minOccurs="0" name="showMicrophoneStatus" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="sipNumber" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="starttime" nillable="true" type="xs:date" />
+          <xs:element minOccurs="0" name="updatetime" nillable="true" type="xs:date" />
+          <xs:element minOccurs="0" name="waitForRecording" nillable="true" type="xs:boolean" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="RoomTypes">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="deleted" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="roomtypes_id" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="starttime" nillable="true" type="xs:date" />
+          <xs:element minOccurs="0" name="updatetime" nillable="true" type="xs:date" />
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+    <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://basic.beans.persistence.app.openmeetings.org/xsd">
+      <xs:complexType name="OmTimeZone">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="frontEndLabel" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ical" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="inserted" nillable="true" type="xs:date" />
+          <xs:element minOccurs="0" name="jname" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="label" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="omtimezoneId" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="orderId" nillable="true" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="Sessiondata">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="id" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="language_id" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="organization_id" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="refresh_time" nillable="true" type="xs:date" />
+          <xs:element minOccurs="0" name="sessionXml" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="session_id" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="starttermin_time" nillable="true" type="xs:date" />
+          <xs:element minOccurs="0" name="storePermanent" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="user_id" nillable="true" type="xs:long" />
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="deleteRoomRequest">
+    <wsdl:part name="parameters" element="ns:deleteRoom" />
+  </wsdl:message>
+  <wsdl:message name="deleteRoomResponse">
+    <wsdl:part name="parameters" element="ns:deleteRoomResponse" />
+  </wsdl:message>
+  <wsdl:message name="getRoomWithClientObjectsByIdRequest">
+    <wsdl:part name="parameters" element="ns:getRoomWithClientObjectsById" />
+  </wsdl:message>
+  <wsdl:message name="getRoomWithClientObjectsByIdResponse">
+    <wsdl:part name="parameters" element="ns:getRoomWithClientObjectsByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="updateRoomWithModerationAndQuestionsRequest">
+    <wsdl:part name="parameters" element="ns:updateRoomWithModerationAndQuestions" />
+  </wsdl:message>
+  <wsdl:message name="updateRoomWithModerationAndQuestionsResponse">
+    <wsdl:part name="parameters" element="ns:updateRoomWithModerationAndQuestionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="getRoomsWithCurrentUsersRequest">
+    <wsdl:part name="parameters" element="ns:getRoomsWithCurrentUsers" />
+  </wsdl:message>
+  <wsdl:message name="getRoomsWithCurrentUsersResponse">
+    <wsdl:part name="parameters" element="ns:getRoomsWithCurrentUsersResponse" />
+  </wsdl:message>
+  <wsdl:message name="deleteFlvRecordingRequest">
+    <wsdl:part name="parameters" element="ns:deleteFlvRecording" />
+  </wsdl:message>
+  <wsdl:message name="deleteFlvRecordingResponse">
+    <wsdl:part name="parameters" element="ns:deleteFlvRecordingResponse" />
+  </wsdl:message>
+  <wsdl:message name="getInvitationHashRequest">
+    <wsdl:part name="parameters" element="ns:getInvitationHash" />
+  </wsdl:message>
+  <wsdl:message name="getInvitationHashResponse">
+    <wsdl:part name="parameters" element="ns:getInvitationHashResponse" />
+  </wsdl:message>
+  <wsdl:message name="addRoomWithModerationAndQuestionsRequest">
+    <wsdl:part name="parameters" element="ns:addRoomWithModerationAndQuestions" />
+  </wsdl:message>
+  <wsdl:message name="addRoomWithModerationAndQuestionsResponse">
+    <wsdl:part name="parameters" element="ns:addRoomWithModerationAndQuestionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="getRoomsWithCurrentUsersByListRequest">
+    <wsdl:part name="parameters" element="ns:getRoomsWithCurrentUsersByList" />
+  </wsdl:message>
+  <wsdl:message name="getRoomsWithCurrentUsersByListResponse">
+    <wsdl:part name="parameters" element="ns:getRoomsWithCurrentUsersByListResponse" />
+  </wsdl:message>
+  <wsdl:message name="addExternalMeetingMemberRemindToRoomRequest">
+    <wsdl:part name="parameters" element="ns:addExternalMeetingMemberRemindToRoom" />
+  </wsdl:message>
+  <wsdl:message name="addExternalMeetingMemberRemindToRoomResponse">
+    <wsdl:part name="parameters" element="ns:addExternalMeetingMemberRemindToRoomResponse" />
+  </wsdl:message>
+  <wsdl:message name="closeRoomRequest">
+    <wsdl:part name="parameters" element="ns:closeRoom" />
+  </wsdl:message>
+  <wsdl:message name="closeRoomResponse">
+    <wsdl:part name="parameters" element="ns:closeRoomResponse" />
+  </wsdl:message>
+  <wsdl:message name="addMeetingMemberRemindToRoomRequest">
+    <wsdl:part name="parameters" element="ns:addMeetingMemberRemindToRoom" />
+  </wsdl:message>
+  <wsdl:message name="addMeetingMemberRemindToRoomResponse">
+    <wsdl:part name="parameters" element="ns:addMeetingMemberRemindToRoomResponse" />
+  </wsdl:message>
+  <wsdl:message name="sendInvitationHashWithDateObjectRequest">
+    <wsdl:part name="parameters" element="ns:sendInvitationHashWithDateObject" />
+  </wsdl:message>
+  <wsdl:message name="sendInvitationHashWithDateObjectResponse">
+    <wsdl:part name="parameters" element="ns:sendInvitationHashWithDateObjectResponse" />
+  </wsdl:message>
+  <wsdl:message name="getRoomsRequest">
+    <wsdl:part name="parameters" element="ns:getRooms" />
+  </wsdl:message>
+  <wsdl:message name="getRoomsResponse">
+    <wsdl:part name="parameters" element="ns:getRoomsResponse" />
+  </wsdl:message>
+  <wsdl:message name="sendInvitationHashRequest">
+    <wsdl:part name="parameters" element="ns:sendInvitationHash" />
+  </wsdl:message>
+  <wsdl:message name="sendInvitationHashResponse">
+    <wsdl:part name="parameters" element="ns:sendInvitationHashResponse" />
+  </wsdl:message>
+  <wsdl:message name="addRoomRequest">
+    <wsdl:part name="parameters" element="ns:addRoom" />
+  </wsdl:message>
+  <wsdl:message name="addRoomResponse">
+    <wsdl:part name="parameters" element="ns:addRoomResponse" />
+  </wsdl:message>
+  <wsdl:message name="addRoomWithModerationQuestionsAndAudioTypeRequest">
+    <wsdl:part name="parameters" element="ns:addRoomWithModerationQuestionsAndAudioType" />
+  </wsdl:message>
+  <wsdl:message name="addRoomWithModerationQuestionsAndAudioTypeResponse">
+    <wsdl:part name="parameters" element="ns:addRoomWithModerationQuestionsAndAudioTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="getRoomsWithCurrentUsersByListAndTypeRequest">
+    <wsdl:part name="parameters" element="ns:getRoomsWithCurrentUsersByListAndType" />
+  </wsdl:message>
+  <wsdl:message name="getRoomsWithCurrentUsersByListAndTypeResponse">
+    <wsdl:part name="parameters" element="ns:getRoomsWithCurrentUsersByListAndTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="getFlvRecordingByExternalRoomTypeAndCreatorRequest">
+    <wsdl:part name="parameters" element="ns:getFlvRecordingByExternalRoomTypeAndCreator" />
+  </wsdl:message>
+  <wsdl:message name="getFlvRecordingByExternalRoomTypeAndCreatorResponse">
+    <wsdl:part name="parameters" element="ns:getFlvRecordingByExternalRoomTypeAndCreatorResponse" />
+  </wsdl:message>
+  <wsdl:message name="addRoomWithModerationExternalTypeAndTopBarOptionRequest">
+    <wsdl:part name="parameters" element="ns:addRoomWithModerationExternalTypeAndTopBarOption" />
+  </wsdl:message>
+  <wsdl:message name="addRoomWithModerationExternalTypeAndTopBarOptionResponse">
+    <wsdl:part name="parameters" element="ns:addRoomWithModerationExternalTypeAndTopBarOptionResponse" />
+  </wsdl:message>
+  <wsdl:message name="addRoomWithModerationAndExternalTypeAndStartEndRequest">
+    <wsdl:part name="parameters" element="ns:addRoomWithModerationAndExternalTypeAndStartEnd" />
+  </wsdl:message>
+  <wsdl:message name="addRoomWithModerationAndExternalTypeAndStartEndResponse">
+    <wsdl:part name="parameters" element="ns:addRoomWithModerationAndExternalTypeAndStartEndResponse" />
+  </wsdl:message>
+  <wsdl:message name="getFlvRecordingByRoomIdRequest">
+    <wsdl:part name="parameters" element="ns:getFlvRecordingByRoomId" />
+  </wsdl:message>
+  <wsdl:message name="getFlvRecordingByRoomIdResponse">
+    <wsdl:part name="parameters" element="ns:getFlvRecordingByRoomIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="getFlvRecordingByExternalUserIdRequest">
+    <wsdl:part name="parameters" element="ns:getFlvRecordingByExternalUserId" />
+  </wsdl:message>
+  <wsdl:message name="getFlvRecordingByExternalUserIdResponse">
+    <wsdl:part name="parameters" element="ns:getFlvRecordingByExternalUserIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="getRoomWithCurrentUsersByIdRequest">
+    <wsdl:part name="parameters" element="ns:getRoomWithCurrentUsersById" />
+  </wsdl:message>
+  <wsdl:message name="getRoomWithCurrentUsersByIdResponse">
+    <wsdl:part name="parameters" element="ns:getRoomWithCurrentUsersByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="updateRoomRequest">
+    <wsdl:part name="parameters" element="ns:updateRoom" />
+  </wsdl:message>
+  <wsdl:message name="updateRoomResponse">
+    <wsdl:part name="parameters" element="ns:updateRoomResponse" />
+  </wsdl:message>
+  <wsdl:message name="getRoomIdByExternalIdRequest">
+    <wsdl:part name="parameters" element="ns:getRoomIdByExternalId" />
+  </wsdl:message>
+  <wsdl:message name="getRoomIdByExternalIdResponse">
+    <wsdl:part name="parameters" element="ns:getRoomIdByExternalIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="addRoomWithModerationRequest">
+    <wsdl:part name="parameters" element="ns:addRoomWithModeration" />
+  </wsdl:message>
+  <wsdl:message name="addRoomWithModerationResponse">
+    <wsdl:part name="parameters" element="ns:addRoomWithModerationResponse" />
+  </wsdl:message>
+  <wsdl:message name="getRoomByIdRequest">
+    <wsdl:part name="parameters" element="ns:getRoomById" />
+  </wsdl:message>
+  <wsdl:message name="getRoomByIdResponse">
+    <wsdl:part name="parameters" element="ns:getRoomByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="kickUserRequest">
+    <wsdl:part name="parameters" element="ns:kickUser" />
+  </wsdl:message>
+  <wsdl:message name="kickUserResponse">
+    <wsdl:part name="parameters" element="ns:kickUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="getRoomCountersRequest">
+    <wsdl:part name="parameters" element="ns:getRoomCounters" />
+  </wsdl:message>
+  <wsdl:message name="getRoomCountersResponse">
+    <wsdl:part name="parameters" element="ns:getRoomCountersResponse" />
+  </wsdl:message>
+  <wsdl:message name="addRoomWithModerationAndRecordingFlagsRequest">
+    <wsdl:part name="parameters" element="ns:addRoomWithModerationAndRecordingFlags" />
+  </wsdl:message>
+  <wsdl:message name="addRoomWithModerationAndRecordingFlagsResponse">
+    <wsdl:part name="parameters" element="ns:addRoomWithModerationAndRecordingFlagsResponse" />
+  </wsdl:message>
+  <wsdl:message name="addRoomWithModerationAndExternalTypeRequest">
+    <wsdl:part name="parameters" element="ns:addRoomWithModerationAndExternalType" />
+  </wsdl:message>
+  <wsdl:message name="addRoomWithModerationAndExternalTypeResponse">
+    <wsdl:part name="parameters" element="ns:addRoomWithModerationAndExternalTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="getRoomTypesRequest">
+    <wsdl:part name="parameters" element="ns:getRoomTypes" />
+  </wsdl:message>
+  <wsdl:message name="getRoomTypesResponse">
+    <wsdl:part name="parameters" element="ns:getRoomTypesResponse" />
+  </wsdl:message>
+  <wsdl:message name="updateRoomWithModerationRequest">
+    <wsdl:part name="parameters" element="ns:updateRoomWithModeration" />
+  </wsdl:message>
+  <wsdl:message name="updateRoomWithModerationResponse">
+    <wsdl:part name="parameters" element="ns:updateRoomWithModerationResponse" />
+  </wsdl:message>
+  <wsdl:message name="getRoomsPublicRequest">
+    <wsdl:part name="parameters" element="ns:getRoomsPublic" />
+  </wsdl:message>
+  <wsdl:message name="getRoomsPublicResponse">
+    <wsdl:part name="parameters" element="ns:getRoomsPublicResponse" />
+  </wsdl:message>
+  <wsdl:message name="addRoomWithModerationExternalTypeAndAudioTypeRequest">
+    <wsdl:part name="parameters" element="ns:addRoomWithModerationExternalTypeAndAudioType" />
+  </wsdl:message>
+  <wsdl:message name="addRoomWithModerationExternalTypeAndAudioTypeResponse">
+    <wsdl:part name="parameters" element="ns:addRoomWithModerationExternalTypeAndAudioTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="getFlvRecordingByExternalRoomTypeRequest">
+    <wsdl:part name="parameters" element="ns:getFlvRecordingByExternalRoomType" />
+  </wsdl:message>
+  <wsdl:message name="getFlvRecordingByExternalRoomTypeResponse">
+    <wsdl:part name="parameters" element="ns:getFlvRecordingByExternalRoomTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="getFlvRecordingByExternalRoomTypeByListRequest">
+    <wsdl:part name="parameters" element="ns:getFlvRecordingByExternalRoomTypeByList" />
+  </wsdl:message>
+  <wsdl:message name="getFlvRecordingByExternalRoomTypeByListResponse">
+    <wsdl:part name="parameters" element="ns:getFlvRecordingByExternalRoomTypeByListResponse" />
+  </wsdl:message>
+  <wsdl:portType name="RoomServicePortType">
+    <wsdl:operation name="deleteRoom">
+      <wsdl:input wsaw:Action="urn:deleteRoom" message="ns:deleteRoomRequest" />
+      <wsdl:output wsaw:Action="urn:deleteRoomResponse" message="ns:deleteRoomResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getRoomWithClientObjectsById">
+      <wsdl:input wsaw:Action="urn:getRoomWithClientObjectsById" message="ns:getRoomWithClientObjectsByIdRequest" />
+      <wsdl:output wsaw:Action="urn:getRoomWithClientObjectsByIdResponse" message="ns:getRoomWithClientObjectsByIdResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="updateRoomWithModerationAndQuestions">
+      <wsdl:input wsaw:Action="urn:updateRoomWithModerationAndQuestions" message="ns:updateRoomWithModerationAndQuestionsRequest" />
+      <wsdl:output wsaw:Action="urn:updateRoomWithModerationAndQuestionsResponse" message="ns:updateRoomWithModerationAndQuestionsResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getRoomsWithCurrentUsers">
+      <wsdl:input wsaw:Action="urn:getRoomsWithCurrentUsers" message="ns:getRoomsWithCurrentUsersRequest" />
+      <wsdl:output wsaw:Action="urn:getRoomsWithCurrentUsersResponse" message="ns:getRoomsWithCurrentUsersResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteFlvRecording">
+      <wsdl:input wsaw:Action="urn:deleteFlvRecording" message="ns:deleteFlvRecordingRequest" />
+      <wsdl:output wsaw:Action="urn:deleteFlvRecordingResponse" message="ns:deleteFlvRecordingResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getInvitationHash">
+      <wsdl:input wsaw:Action="urn:getInvitationHash" message="ns:getInvitationHashRequest" />
+      <wsdl:output wsaw:Action="urn:getInvitationHashResponse" message="ns:getInvitationHashResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="addRoomWithModerationAndQuestions">
+      <wsdl:input wsaw:Action="urn:addRoomWithModerationAndQuestions" message="ns:addRoomWithModerationAndQuestionsRequest" />
+      <wsdl:output wsaw:Action="urn:addRoomWithModerationAndQuestionsResponse" message="ns:addRoomWithModerationAndQuestionsResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getRoomsWithCurrentUsersByList">
+      <wsdl:input wsaw:Action="urn:getRoomsWithCurrentUsersByList" message="ns:getRoomsWithCurrentUsersByListRequest" />
+      <wsdl:output wsaw:Action="urn:getRoomsWithCurrentUsersByListResponse" message="ns:getRoomsWithCurrentUsersByListResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="addExternalMeetingMemberRemindToRoom">
+      <wsdl:input wsaw:Action="urn:addExternalMeetingMemberRemindToRoom" message="ns:addExternalMeetingMemberRemindToRoomRequest" />
+      <wsdl:output wsaw:Action="urn:addExternalMeetingMemberRemindToRoomResponse" message="ns:addExternalMeetingMemberRemindToRoomResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="closeRoom">
+      <wsdl:input wsaw:Action="urn:closeRoom" message="ns:closeRoomRequest" />
+      <wsdl:output wsaw:Action="urn:closeRoomResponse" message="ns:closeRoomResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="addMeetingMemberRemindToRoom">
+      <wsdl:input wsaw:Action="urn:addMeetingMemberRemindToRoom" message="ns:addMeetingMemberRemindToRoomRequest" />
+      <wsdl:output wsaw:Action="urn:addMeetingMemberRemindToRoomResponse" message="ns:addMeetingMemberRemindToRoomResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="sendInvitationHashWithDateObject">
+      <wsdl:input wsaw:Action="urn:sendInvitationHashWithDateObject" message="ns:sendInvitationHashWithDateObjectRequest" />
+      <wsdl:output wsaw:Action="urn:sendInvitationHashWithDateObjectResponse" message="ns:sendInvitationHashWithDateObjectResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getRooms">
+      <wsdl:input wsaw:Action="urn:getRooms" message="ns:getRoomsRequest" />
+      <wsdl:output wsaw:Action="urn:getRoomsResponse" message="ns:getRoomsResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="sendInvitationHash">
+      <wsdl:input wsaw:Action="urn:sendInvitationHash" message="ns:sendInvitationHashRequest" />
+      <wsdl:output wsaw:Action="urn:sendInvitationHashResponse" message="ns:sendInvitationHashResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="addRoom">
+      <wsdl:input wsaw:Action="urn:addRoom" message="ns:addRoomRequest" />
+      <wsdl:output wsaw:Action="urn:addRoomResponse" message="ns:addRoomResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="addRoomWithModerationQuestionsAndAudioType">
+      <wsdl:input wsaw:Action="urn:addRoomWithModerationQuestionsAndAudioType" message="ns:addRoomWithModerationQuestionsAndAudioTypeRequest" />
+      <wsdl:output wsaw:Action="urn:addRoomWithModerationQuestionsAndAudioTypeResponse" message="ns:addRoomWithModerationQuestionsAndAudioTypeResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getRoomsWithCurrentUsersByListAndType">
+      <wsdl:input wsaw:Action="urn:getRoomsWithCurrentUsersByListAndType" message="ns:getRoomsWithCurrentUsersByListAndTypeRequest" />
+      <wsdl:output wsaw:Action="urn:getRoomsWithCurrentUsersByListAndTypeResponse" message="ns:getRoomsWithCurrentUsersByListAndTypeResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getFlvRecordingByExternalRoomTypeAndCreator">
+      <wsdl:input wsaw:Action="urn:getFlvRecordingByExternalRoomTypeAndCreator" message="ns:getFlvRecordingByExternalRoomTypeAndCreatorRequest" />
+      <wsdl:output wsaw:Action="urn:getFlvRecordingByExternalRoomTypeAndCreatorResponse" message="ns:getFlvRecordingByExternalRoomTypeAndCreatorResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="addRoomWithModerationExternalTypeAndTopBarOption">
+      <wsdl:input wsaw:Action="urn:addRoomWithModerationExternalTypeAndTopBarOption" message="ns:addRoomWithModerationExternalTypeAndTopBarOptionRequest" />
+      <wsdl:output wsaw:Action="urn:addRoomWithModerationExternalTypeAndTopBarOptionResponse" message="ns:addRoomWithModerationExternalTypeAndTopBarOptionResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="addRoomWithModerationAndExternalTypeAndStartEnd">
+      <wsdl:input wsaw:Action="urn:addRoomWithModerationAndExternalTypeAndStartEnd" message="ns:addRoomWithModerationAndExternalTypeAndStartEndRequest" />
+      <wsdl:output wsaw:Action="urn:addRoomWithModerationAndExternalTypeAndStartEndResponse" message="ns:addRoomWithModerationAndExternalTypeAndStartEndResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getFlvRecordingByRoomId">
+      <wsdl:input wsaw:Action="urn:getFlvRecordingByRoomId" message="ns:getFlvRecordingByRoomIdRequest" />
+      <wsdl:output wsaw:Action="urn:getFlvRecordingByRoomIdResponse" message="ns:getFlvRecordingByRoomIdResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getFlvRecordingByExternalUserId">
+      <wsdl:input wsaw:Action="urn:getFlvRecordingByExternalUserId" message="ns:getFlvRecordingByExternalUserIdRequest" />
+      <wsdl:output wsaw:Action="urn:getFlvRecordingByExternalUserIdResponse" message="ns:getFlvRecordingByExternalUserIdResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getRoomWithCurrentUsersById">
+      <wsdl:input wsaw:Action="urn:getRoomWithCurrentUsersById" message="ns:getRoomWithCurrentUsersByIdRequest" />
+      <wsdl:output wsaw:Action="urn:getRoomWithCurrentUsersByIdResponse" message="ns:getRoomWithCurrentUsersByIdResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="updateRoom">
+      <wsdl:input wsaw:Action="urn:updateRoom" message="ns:updateRoomRequest" />
+      <wsdl:output wsaw:Action="urn:updateRoomResponse" message="ns:updateRoomResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getRoomIdByExternalId">
+      <wsdl:input wsaw:Action="urn:getRoomIdByExternalId" message="ns:getRoomIdByExternalIdRequest" />
+      <wsdl:output wsaw:Action="urn:getRoomIdByExternalIdResponse" message="ns:getRoomIdByExternalIdResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="addRoomWithModeration">
+      <wsdl:input wsaw:Action="urn:addRoomWithModeration" message="ns:addRoomWithModerationRequest" />
+      <wsdl:output wsaw:Action="urn:addRoomWithModerationResponse" message="ns:addRoomWithModerationResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getRoomById">
+      <wsdl:input wsaw:Action="urn:getRoomById" message="ns:getRoomByIdRequest" />
+      <wsdl:output wsaw:Action="urn:getRoomByIdResponse" message="ns:getRoomByIdResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="kickUser">
+      <wsdl:input wsaw:Action="urn:kickUser" message="ns:kickUserRequest" />
+      <wsdl:output wsaw:Action="urn:kickUserResponse" message="ns:kickUserResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getRoomCounters">
+      <wsdl:input wsaw:Action="urn:getRoomCounters" message="ns:getRoomCountersRequest" />
+      <wsdl:output wsaw:Action="urn:getRoomCountersResponse" message="ns:getRoomCountersResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="addRoomWithModerationAndRecordingFlags">
+      <wsdl:input wsaw:Action="urn:addRoomWithModerationAndRecordingFlags" message="ns:addRoomWithModerationAndRecordingFlagsRequest" />
+      <wsdl:output wsaw:Action="urn:addRoomWithModerationAndRecordingFlagsResponse" message="ns:addRoomWithModerationAndRecordingFlagsResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="addRoomWithModerationAndExternalType">
+      <wsdl:input wsaw:Action="urn:addRoomWithModerationAndExternalType" message="ns:addRoomWithModerationAndExternalTypeRequest" />
+      <wsdl:output wsaw:Action="urn:addRoomWithModerationAndExternalTypeResponse" message="ns:addRoomWithModerationAndExternalTypeResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getRoomTypes">
+      <wsdl:input wsaw:Action="urn:getRoomTypes" message="ns:getRoomTypesRequest" />
+      <wsdl:output wsaw:Action="urn:getRoomTypesResponse" message="ns:getRoomTypesResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="updateRoomWithModeration">
+      <wsdl:input wsaw:Action="urn:updateRoomWithModeration" message="ns:updateRoomWithModerationRequest" />
+      <wsdl:output wsaw:Action="urn:updateRoomWithModerationResponse" message="ns:updateRoomWithModerationResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getRoomsPublic">
+      <wsdl:input wsaw:Action="urn:getRoomsPublic" message="ns:getRoomsPublicRequest" />
+      <wsdl:output wsaw:Action="urn:getRoomsPublicResponse" message="ns:getRoomsPublicResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="addRoomWithModerationExternalTypeAndAudioType">
+      <wsdl:input wsaw:Action="urn:addRoomWithModerationExternalTypeAndAudioType" message="ns:addRoomWithModerationExternalTypeAndAudioTypeRequest" />
+      <wsdl:output wsaw:Action="urn:addRoomWithModerationExternalTypeAndAudioTypeResponse" message="ns:addRoomWithModerationExternalTypeAndAudioTypeResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getFlvRecordingByExternalRoomType">
+      <wsdl:input wsaw:Action="urn:getFlvRecordingByExternalRoomType" message="ns:getFlvRecordingByExternalRoomTypeRequest" />
+      <wsdl:output wsaw:Action="urn:getFlvRecordingByExternalRoomTypeResponse" message="ns:getFlvRecordingByExternalRoomTypeResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getFlvRecordingByExternalRoomTypeByList">
+      <wsdl:input wsaw:Action="urn:getFlvRecordingByExternalRoomTypeByList" message="ns:getFlvRecordingByExternalRoomTypeByListRequest" />
+      <wsdl:output wsaw:Action="urn:getFlvRecordingByExternalRoomTypeByListResponse" message="ns:getFlvRecordingByExternalRoomTypeByListResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="RoomServiceSoap11Binding" type="ns:RoomServicePortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getRoomWithClientObjectsById">
+      <soap:operation soapAction="urn:getRoomWithClientObjectsById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteRoom">
+      <soap:operation soapAction="urn:deleteRoom" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateRoomWithModerationAndQuestions">
+      <soap:operation soapAction="urn:updateRoomWithModerationAndQuestions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRoomsWithCurrentUsers">
+      <soap:operation soapAction="urn:getRoomsWithCurrentUsers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getInvitationHash">
+      <soap:operation soapAction="urn:getInvitationHash" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteFlvRecording">
+      <soap:operation soapAction="urn:deleteFlvRecording" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addRoomWithModerationAndQuestions">
+      <soap:operation soapAction="urn:addRoomWithModerationAndQuestions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRoomsWithCurrentUsersByList">
+      <soap:operation soapAction="urn:getRoomsWithCurrentUsersByList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addExternalMeetingMemberRemindToRoom">
+      <soap:operation soapAction="urn:addExternalMeetingMemberRemindToRoom" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="closeRoom">
+      <soap:operation soapAction="urn:closeRoom" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sendInvitationHashWithDateObject">
+      <soap:operation soapAction="urn:sendInvitationHashWithDateObject" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addMeetingMemberRemindToRoom">
+      <soap:operation soapAction="urn:addMeetingMemberRemindToRoom" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sendInvitationHash">
+      <soap:operation soapAction="urn:sendInvitationHash" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRooms">
+      <soap:operation soapAction="urn:getRooms" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addRoom">
+      <soap:operation soapAction="urn:addRoom" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRoomsWithCurrentUsersByListAndType">
+      <soap:operation soapAction="urn:getRoomsWithCurrentUsersByListAndType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addRoomWithModerationQuestionsAndAudioType">
+      <soap:operation soapAction="urn:addRoomWithModerationQuestionsAndAudioType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getFlvRecordingByExternalRoomTypeAndCreator">
+      <soap:operation soapAction="urn:getFlvRecordingByExternalRoomTypeAndCreator" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addRoomWithModerationExternalTypeAndTopBarOption">
+      <soap:operation soapAction="urn:addRoomWithModerationExternalTypeAndTopBarOption" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addRoomWithModerationAndExternalTypeAndStartEnd">
+      <soap:operation soapAction="urn:addRoomWithModerationAndExternalTypeAndStartEnd" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getFlvRecordingByExternalUserId">
+      <soap:operation soapAction="urn:getFlvRecordingByExternalUserId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getFlvRecordingByRoomId">
+      <soap:operation soapAction="urn:getFlvRecordingByRoomId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateRoom">
+      <soap:operation soapAction="urn:updateRoom" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRoomWithCurrentUsersById">
+      <soap:operation soapAction="urn:getRoomWithCurrentUsersById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRoomById">
+      <soap:operation soapAction="urn:getRoomById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRoomIdByExternalId">
+      <soap:operation soapAction="urn:getRoomIdByExternalId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addRoomWithModeration">
+      <soap:operation soapAction="urn:addRoomWithModeration" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="kickUser">
+      <soap:operation soapAction="urn:kickUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRoomCounters">
+      <soap:operation soapAction="urn:getRoomCounters" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addRoomWithModerationAndRecordingFlags">
+      <soap:operation soapAction="urn:addRoomWithModerationAndRecordingFlags" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addRoomWithModerationAndExternalType">
+      <soap:operation soapAction="urn:addRoomWithModerationAndExternalType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRoomTypes">
+      <soap:operation soapAction="urn:getRoomTypes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateRoomWithModeration">
+      <soap:operation soapAction="urn:updateRoomWithModeration" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRoomsPublic">
+      <soap:operation soapAction="urn:getRoomsPublic" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addRoomWithModerationExternalTypeAndAudioType">
+      <soap:operation soapAction="urn:addRoomWithModerationExternalTypeAndAudioType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getFlvRecordingByExternalRoomType">
+      <soap:operation soapAction="urn:getFlvRecordingByExternalRoomType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getFlvRecordingByExternalRoomTypeByList">
+      <soap:operation soapAction="urn:getFlvRecordingByExternalRoomTypeByList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="RoomServiceSoap12Binding" type="ns:RoomServicePortType">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getRoomWithClientObjectsById">
+      <soap12:operation soapAction="urn:getRoomWithClientObjectsById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteRoom">
+      <soap12:operation soapAction="urn:deleteRoom" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateRoomWithModerationAndQuestions">
+      <soap12:operation soapAction="urn:updateRoomWithModerationAndQuestions" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRoomsWithCurrentUsers">
+      <soap12:operation soapAction="urn:getRoomsWithCurrentUsers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getInvitationHash">
+      <soap12:operation soapAction="urn:getInvitationHash" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteFlvRecording">
+      <soap12:operation soapAction="urn:deleteFlvRecording" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addRoomWithModerationAndQuestions">
+      <soap12:operation soapAction="urn:addRoomWithModerationAndQuestions" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRoomsWithCurrentUsersByList">
+      <soap12:operation soapAction="urn:getRoomsWithCurrentUsersByList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addExternalMeetingMemberRemindToRoom">
+      <soap12:operation soapAction="urn:addExternalMeetingMemberRemindToRoom" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="closeRoom">
+      <soap12:operation soapAction="urn:closeRoom" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sendInvitationHashWithDateObject">
+      <soap12:operation soapAction="urn:sendInvitationHashWithDateObject" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addMeetingMemberRemindToRoom">
+      <soap12:operation soapAction="urn:addMeetingMemberRemindToRoom" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sendInvitationHash">
+      <soap12:operation soapAction="urn:sendInvitationHash" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRooms">
+      <soap12:operation soapAction="urn:getRooms" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addRoom">
+      <soap12:operation soapAction="urn:addRoom" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRoomsWithCurrentUsersByListAndType">
+      <soap12:operation soapAction="urn:getRoomsWithCurrentUsersByListAndType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addRoomWithModerationQuestionsAndAudioType">
+      <soap12:operation soapAction="urn:addRoomWithModerationQuestionsAndAudioType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getFlvRecordingByExternalRoomTypeAndCreator">
+      <soap12:operation soapAction="urn:getFlvRecordingByExternalRoomTypeAndCreator" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addRoomWithModerationExternalTypeAndTopBarOption">
+      <soap12:operation soapAction="urn:addRoomWithModerationExternalTypeAndTopBarOption" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addRoomWithModerationAndExternalTypeAndStartEnd">
+      <soap12:operation soapAction="urn:addRoomWithModerationAndExternalTypeAndStartEnd" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getFlvRecordingByExternalUserId">
+      <soap12:operation soapAction="urn:getFlvRecordingByExternalUserId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getFlvRecordingByRoomId">
+      <soap12:operation soapAction="urn:getFlvRecordingByRoomId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateRoom">
+      <soap12:operation soapAction="urn:updateRoom" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRoomWithCurrentUsersById">
+      <soap12:operation soapAction="urn:getRoomWithCurrentUsersById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRoomById">
+      <soap12:operation soapAction="urn:getRoomById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRoomIdByExternalId">
+      <soap12:operation soapAction="urn:getRoomIdByExternalId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addRoomWithModeration">
+      <soap12:operation soapAction="urn:addRoomWithModeration" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="kickUser">
+      <soap12:operation soapAction="urn:kickUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRoomCounters">
+      <soap12:operation soapAction="urn:getRoomCounters" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addRoomWithModerationAndRecordingFlags">
+      <soap12:operation soapAction="urn:addRoomWithModerationAndRecordingFlags" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addRoomWithModerationAndExternalType">
+      <soap12:operation soapAction="urn:addRoomWithModerationAndExternalType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRoomTypes">
+      <soap12:operation soapAction="urn:getRoomTypes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateRoomWithModeration">
+      <soap12:operation soapAction="urn:updateRoomWithModeration" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRoomsPublic">
+      <soap12:operation soapAction="urn:getRoomsPublic" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addRoomWithModerationExternalTypeAndAudioType">
+      <soap12:operation soapAction="urn:addRoomWithModerationExternalTypeAndAudioType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getFlvRecordingByExternalRoomType">
+      <soap12:operation soapAction="urn:getFlvRecordingByExternalRoomType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getFlvRecordingByExternalRoomTypeByList">
+      <soap12:operation soapAction="urn:getFlvRecordingByExternalRoomTypeByList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="RoomServiceHttpBinding" type="ns:RoomServicePortType">
+    <http:binding verb="POST" />
+    <wsdl:operation name="getRoomWithClientObjectsById">
+      <http:operation location="getRoomWithClientObjectsById" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteRoom">
+      <http:operation location="deleteRoom" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateRoomWithModerationAndQuestions">
+      <http:operation location="updateRoomWithModerationAndQuestions" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRoomsWithCurrentUsers">
+      <http:operation location="getRoomsWithCurrentUsers" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getInvitationHash">
+      <http:operation location="getInvitationHash" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteFlvRecording">
+      <http:operation location="deleteFlvRecording" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addRoomWithModerationAndQuestions">
+      <http:operation location="addRoomWithModerationAndQuestions" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRoomsWithCurrentUsersByList">
+      <http:operation location="getRoomsWithCurrentUsersByList" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addExternalMeetingMemberRemindToRoom">
+      <http:operation location="addExternalMeetingMemberRemindToRoom" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="closeRoom">
+      <http:operation location="closeRoom" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sendInvitationHashWithDateObject">
+      <http:operation location="sendInvitationHashWithDateObject" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addMeetingMemberRemindToRoom">
+      <http:operation location="addMeetingMemberRemindToRoom" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sendInvitationHash">
+      <http:operation location="sendInvitationHash" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRooms">
+      <http:operation location="getRooms" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addRoom">
+      <http:operation location="addRoom" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRoomsWithCurrentUsersByListAndType">
+      <http:operation location="getRoomsWithCurrentUsersByListAndType" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addRoomWithModerationQuestionsAndAudioType">
+      <http:operation location="addRoomWithModerationQuestionsAndAudioType" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getFlvRecordingByExternalRoomTypeAndCreator">
+      <http:operation location="getFlvRecordingByExternalRoomTypeAndCreator" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addRoomWithModerationExternalTypeAndTopBarOption">
+      <http:operation location="addRoomWithModerationExternalTypeAndTopBarOption" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addRoomWithModerationAndExternalTypeAndStartEnd">
+      <http:operation location="addRoomWithModerationAndExternalTypeAndStartEnd" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getFlvRecordingByExternalUserId">
+      <http:operation location="getFlvRecordingByExternalUserId" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getFlvRecordingByRoomId">
+      <http:operation location="getFlvRecordingByRoomId" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateRoom">
+      <http:operation location="updateRoom" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRoomWithCurrentUsersById">
+      <http:operation location="getRoomWithCurrentUsersById" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRoomById">
+      <http:operation location="getRoomById" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRoomIdByExternalId">
+      <http:operation location="getRoomIdByExternalId" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addRoomWithModeration">
+      <http:operation location="addRoomWithModeration" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="kickUser">
+      <http:operation location="kickUser" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRoomCounters">
+      <http:operation location="getRoomCounters" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addRoomWithModerationAndRecordingFlags">
+      <http:operation location="addRoomWithModerationAndRecordingFlags" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addRoomWithModerationAndExternalType">
+      <http:operation location="addRoomWithModerationAndExternalType" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRoomTypes">
+      <http:operation location="getRoomTypes" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateRoomWithModeration">
+      <http:operation location="updateRoomWithModeration" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRoomsPublic">
+      <http:operation location="getRoomsPublic" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addRoomWithModerationExternalTypeAndAudioType">
+      <http:operation location="addRoomWithModerationExternalTypeAndAudioType" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getFlvRecordingByExternalRoomType">
+      <http:operation location="getFlvRecordingByExternalRoomType" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getFlvRecordingByExternalRoomTypeByList">
+      <http:operation location="getFlvRecordingByExternalRoomTypeByList" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="RoomService">
+    <wsdl:port name="RoomServiceHttpsSoap11Endpoint" binding="ns:RoomServiceSoap11Binding">
+      <soap:address location="https://192.168.222.240:8443/openmeetings/services/RoomService.RoomServiceHttpsSoap11Endpoint/" />
+    </wsdl:port>
+    <wsdl:port name="RoomServiceHttpSoap11Endpoint" binding="ns:RoomServiceSoap11Binding">
+      <soap:address location="http://192.168.222.240:8080/openmeetings/services/RoomService.RoomServiceHttpSoap11Endpoint/" />
+    </wsdl:port>
+    <wsdl:port name="RoomServiceHttpsSoap12Endpoint" binding="ns:RoomServiceSoap12Binding">
+      <soap12:address location="https://192.168.222.240:8443/openmeetings/services/RoomService.RoomServiceHttpsSoap12Endpoint/" />
+    </wsdl:port>
+    <wsdl:port name="RoomServiceHttpSoap12Endpoint" binding="ns:RoomServiceSoap12Binding">
+      <soap12:address location="http://192.168.222.240:8080/openmeetings/services/RoomService.RoomServiceHttpSoap12Endpoint/" />
+    </wsdl:port>
+    <wsdl:port name="RoomServiceHttpsEndpoint" binding="ns:RoomServiceHttpBinding">
+      <http:address location="https://192.168.222.240:8443/openmeetings/services/RoomService.RoomServiceHttpsEndpoint/" />
+    </wsdl:port>
+    <wsdl:port name="RoomServiceHttpEndpoint" binding="ns:RoomServiceHttpBinding">
+      <http:address location="http://192.168.222.240:8080/openmeetings/services/RoomService.RoomServiceHttpEndpoint/" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

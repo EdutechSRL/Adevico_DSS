@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Comment CommentText="View/Presenter&#xD;&#xA; per la visualizzazione dei messaggi">
+    <Position X="5.448" Y="0.615" Height="0.906" Width="1.888" />
+  </Comment>
+  <Comment CommentText="View/Presenter&#xD;&#xA; per la visualizzazione delle chat correnti (utenti)">
+    <Position X="5.448" Y="3.052" Height="0.906" Width="1.888" />
+  </Comment>
+  <Comment CommentText="Funzioni shared che vengono richiamate da altre pagine:&#xD;&#xA;CreateChat, etc...">
+    <Position X="8.281" Y="2.552" Height="0.906" Width="1.888" />
+  </Comment>
+  <Class Name="lm.Comol.Modules.Standard.Chat.IM_MessagesPresenter">
+    <Position X="0.75" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAAAAAAAAAACAAAAAAAAAAAAAAACAAAAAAAAA=</HashCode>
+      <FileName>Chat\InstantMessaging\IM_MessagesPresenter.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_view" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="lm.Comol.Modules.Standard.Chat.IM_SharedFunction">
+    <Position X="8.25" Y="1" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAgACAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Chat\InstantMessaging\IM_SharedFunction.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="lm.Comol.Modules.Standard.Chat.IM_UserPresenter">
+    <Position X="0.75" Y="3" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAA=</HashCode>
+      <FileName>Chat\InstantMessaging\IM_UserPresenter.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_view" />
+    </ShowAsAssociation>
+  </Class>
+  <Interface Name="lm.Comol.Modules.Standard.Chat.IView_IM_Messages">
+    <Position X="3.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAACAAAAAAAGAAAAAAAAAAAAAAAACAAAA=</HashCode>
+      <FileName>Chat\InstantMessaging\IView_IM_Messages.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="lm.Comol.Modules.Standard.Chat.IView_IM_Users">
+    <Position X="3.5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAIAACAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Chat\InstantMessaging\IView_IM_Users.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

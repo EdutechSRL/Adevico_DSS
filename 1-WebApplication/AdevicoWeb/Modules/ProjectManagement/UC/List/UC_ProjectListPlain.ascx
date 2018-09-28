@@ -3,6 +3,7 @@
 <%@ Register TagPrefix="CTRL" TagName="Roles" Src="~/Modules/ProjectManagement/UC/list/UC_InLineProjectRoles.ascx" %>
 <%@ Register TagPrefix="CTRL" TagName="Completion" Src="~/Modules/Common/UC/UC_AdvancedProgressBar.ascx" %>
 <%@ Register TagPrefix="CTRL" TagName="GridPager" Src="~/UC/UC_PagerControl.ascx" %>
+<%@ Register TagPrefix="CTRL" TagName="Attachment" Src="~/Modules/ProjectManagement/UC/UC_DialogProjectAttachments.ascx" %>
 <div class="tablewrapper">
     <table class="table projects <%=GetTableCssClass() %> light fullwidth plain showinfo">
         <thead>
@@ -41,7 +42,9 @@
                     <td class="name">
                         <span class="text">
                             <a name="<%# Container.DataItem.Id.ToString() %>"></a><asp:HyperLink ID="HYPprojectName" runat="server"></asp:HyperLink>
+                            <asp:linkbutton runat="server" ID="LNBattachments" CommandName="attachment" CommandArgument="<%#Container.DataItem.Id %>"><span class="icons right"><span title="#title#" class="icon xs attacchment">&nbsp;</span></span></asp:linkbutton>
                         </span>
+
                         <asp:Label ID="LBcommunityName" runat="server" CssClass="extrainfo"></asp:Label>
                     </td>
                     <td class="status">
@@ -113,3 +116,4 @@
 <asp:Literal ID="LTcssClassResource" runat="server" Visible="false">asresource</asp:Literal>
 <asp:Literal ID="LThasdeadline" runat="server" Visible="false">hasdeadline</asp:Literal>
 <asp:Literal ID="LTnodeadline" runat="server" Visible="false">nodeadline</asp:Literal>
+<CTRL:Attachment id="CTRLattachment" runat="server" Visible="false" CssClass="dlgviewprojectattachments hiddendialog" DialogIdentifier="dlgviewprojectattachments"></CTRL:Attachment>

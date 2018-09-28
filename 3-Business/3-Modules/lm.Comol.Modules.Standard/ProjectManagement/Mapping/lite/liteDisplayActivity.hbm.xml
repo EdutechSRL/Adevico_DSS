@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="lm.Comol.Modules.Standard" namespace="lm.Comol.Modules.Standard.ProjectManagement.Domain">
+  <class name="lm.Comol.Modules.Standard.ProjectManagement.Domain.liteDisplayActivity" table="PM_Activity" lazy="false">
+    <id name="Id" column="Id" type="long">
+      <generator class="native"/>
+    </id>
+    <property name="IdProject" type="Int64" column="IdProject" />
+    <property name="IdParent" type="Int64" column="IdParent" />
+    <property name="Depth" type="Int64" column="Depth" />
+    <property name="DisplayOrder" type="Int64" column="DisplayOrder" />
+    <property name="IsDurationEstimated" type="boolean" column="IsDurationEstimated" />
+    <property name="IsSummary" type="Boolean" column="IsSummary" />
+    <property name="Duration" type="Double" column="Duration" />
+    <property name="WBSindex" type="Int64" column="WBSindex" />
+    <property name="WBSstring" type="String" column="WBSstring" />
+    <property name="Deleted" type="lm.Comol.Core.DomainModel.BaseStatusDeleted,lm.Comol.Core.DomainModel" column="_Deleted" />
+  </class>
+</hibernate-mapping>

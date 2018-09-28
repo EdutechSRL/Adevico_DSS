@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="lm.Comol.Modules.Standard" namespace="lm.Comol.Modules.Standard.ProjectManagement.Domain">
+  <class name="lm.Comol.Modules.Standard.ProjectManagement.Domain.liteProjectSettings"  table="PM_Project" lazy="true">
+    <id name="Id" column="Id" type="Int64"  unsaved-value="0">
+      <generator class="native"/>
+    </id> 
+    <property name="Name" type="String" column="Name" />
+    <property name="IsDurationEstimated" type="boolean" column="IsDurationEstimated" />
+    <property name="Completeness" type="Int32" column="Completeness" />
+    <property name="Status" type="lm.Comol.Modules.Standard.ProjectManagement.Domain.ProjectItemStatus, lm.Comol.Modules.Standard" column="Status" />
+    <property name="IdCommunity" type="Int32" column="IdCommunity" />
+    <property name="isPersonal" type="boolean" column="IsPersonal" />
+    <property name="isArchived" type="boolean" column="IsArchived" />
+    <property name="isPortal" type="boolean" column="IsPortal" />
+    <property name="IsCompleted" type="boolean" column="IsCompleted" />
+    
+    <property name="ConfirmCompletion" type="boolean" column="ConfirmCompletion" />
+    <property name="AllowMilestones" type="boolean" column="AllowMilestones" />
+    <property name="AllowEstimatedDuration" type="boolean" column="AllowEstimatedDuration" />
+    <property name="Visibility" type="lm.Comol.Modules.Standard.ProjectManagement.Domain.ProjectVisibility, lm.Comol.Modules.Standard" column="Visibility" />
+    <property name="Availability" type="lm.Comol.Modules.Standard.ProjectManagement.Domain.ProjectAvailability, lm.Comol.Modules.Standard" column="Availability" />
+    <property name="StartDate" type="DateTime" column="StartDate" />
+    <property name="EndDate" type="DateTime" column="EndDate" not-null="false" />
+    <property name="Deadline" type="DateTime" column="Deadline" not-null="false" />
+
+    <property name="AllowSummary" type="boolean" column="AllowSummary" />
+    <property name="DateCalculationByCpm" type="boolean" column="DateCalculationByCpm" />
+    <property name="Duration" type="Double" column="Duration" />
+    <property name="Deleted" type="lm.Comol.Core.DomainModel.BaseStatusDeleted,lm.Comol.Core.DomainModel" column="_Deleted" />
+    <bag name="Resources" table="PM_ProjectResources" inverse="true" lazy="true" fetch="subselect" cascade="all-delete-orphan" >
+      <key column="IdProject"/>
+      <one-to-many class="lm.Comol.Modules.Standard.ProjectManagement.Domain.ProjectResource"/>
+    </bag>
+  </class>
+</hibernate-mapping>

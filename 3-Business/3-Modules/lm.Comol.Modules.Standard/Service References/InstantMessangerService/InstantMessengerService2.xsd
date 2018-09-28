@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/WCF_StandardModules.Chat1o1.Domain" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/WCF_StandardModules.Chat1o1.Domain" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:2205/InstantMessengerService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="Ct1o1_MessagesContainer_DTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="ser:guid" />
+      <xs:element minOccurs="0" name="IsActive" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsStarted" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Messages" nillable="true" type="tns:ArrayOfCt1o1_Message_DTO" />
+      <xs:element minOccurs="0" name="Person1" nillable="true" type="tns:Ct1o1_User_DTO" />
+      <xs:element minOccurs="0" name="Person2" nillable="true" type="tns:Ct1o1_User_DTO" />
+      <xs:element minOccurs="0" name="UserDiscarded" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Ct1o1_MessagesContainer_DTO" nillable="true" type="tns:Ct1o1_MessagesContainer_DTO" />
+  <xs:complexType name="ArrayOfCt1o1_Message_DTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Ct1o1_Message_DTO" nillable="true" type="tns:Ct1o1_Message_DTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCt1o1_Message_DTO" nillable="true" type="tns:ArrayOfCt1o1_Message_DTO" />
+  <xs:complexType name="Ct1o1_Message_DTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Date" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="MessageText" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SenderId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Ct1o1_Message_DTO" nillable="true" type="tns:Ct1o1_Message_DTO" />
+  <xs:complexType name="Ct1o1_User_DTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DisplayName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="IsActive" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsEnter" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LastAccess" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Ct1o1_User_DTO" nillable="true" type="tns:Ct1o1_User_DTO" />
+  <xs:complexType name="ArrayOfCt1o1_Chat_DTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Ct1o1_Chat_DTO" nillable="true" type="tns:Ct1o1_Chat_DTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCt1o1_Chat_DTO" nillable="true" type="tns:ArrayOfCt1o1_Chat_DTO" />
+  <xs:complexType name="Ct1o1_Chat_DTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="ser:guid" />
+      <xs:element minOccurs="0" name="IsActive" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsStarted" type="xs:boolean" />
+      <xs:element minOccurs="0" name="MessagesCount" type="xs:int" />
+      <xs:element minOccurs="0" name="Person1" nillable="true" type="tns:Ct1o1_User_DTO" />
+      <xs:element minOccurs="0" name="Person2" nillable="true" type="tns:Ct1o1_User_DTO" />
+      <xs:element minOccurs="0" name="UserDiscarded" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Ct1o1_Chat_DTO" nillable="true" type="tns:Ct1o1_Chat_DTO" />
+</xs:schema>

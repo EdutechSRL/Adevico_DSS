@@ -4,7 +4,7 @@ Imports lm.ActionDataContract
 Imports lm.Comol.Modules.EduPath.Domain
 
 Public Class EPCertificationList
-    Inherits PageBase
+    Inherits EPlitePageBaseEduPath
     Implements IViewCertificationList
 
 
@@ -242,7 +242,7 @@ Public Class EPCertificationList
             ohyp = e.Item.FindControl("HYPcertificateName")
             ohyp.Text = dto.CertificateName
 
-            ohyp.NavigateUrl = Me.BaseUrl + RootObject.EPCertification(CurrentPathIdCommunity, CurrentIdPath, dto.CertificateId)
+            ohyp.NavigateUrl = Me.BaseUrl + RootObject.EPCertification(CurrentPathIdCommunity, CurrentIdPath, dto.CertificateId, IsMoocPath)
 
             olbl = e.Item.FindControl("LBparticipants")
             olbl.Text = String.Format("{0} / {1}", dto.Obtained, dto.Total)
@@ -268,7 +268,7 @@ Public Class EPCertificationList
         Set(value As Boolean)
             _onlyone = value
             If (_onlyone) Then
-                Response.Redirect(Me.BaseUrl + RootObject.EPCertification(CurrentPathIdCommunity, CurrentIdPath, CertificateStats.First().CertificateId))
+                Response.Redirect(Me.BaseUrl + RootObject.EPCertification(CurrentPathIdCommunity, CurrentIdPath, CertificateStats.First().CertificateId, IsMoocPath))
             End If
         End Set
     End Property

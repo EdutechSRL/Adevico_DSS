@@ -9,7 +9,10 @@ Public Class UC_ProgressBar
 
 
 
-    Public Sub InitBar(ByVal progress As Int16, ByVal minProgress As Int16, ByVal itemLabel As String)
+    Public Sub InitBar(ByVal progress As Int16, ByVal minProgress As Int16, ByVal itemLabel As String) ', ByVal width As Double)
+
+        'RDpathBar.Width = New Unit(width)
+
         RDpathBar.Series.Clear()
         Const lineWidth As Decimal = 0.3
         Const maxBarLenght As Decimal = 100

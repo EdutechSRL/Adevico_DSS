@@ -27,7 +27,7 @@
                  closeOnEscape: false,
                  modal: true,
                  width: 890,
-                 height: 600,
+                 height: 350,
                  minHeight: 300,
                  minWidth: 700,
                  title: '<%=ConfirmSettingsDialogTitleTranslation() %>',

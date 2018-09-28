@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="lm.Comol.Modules.EduPath" namespace="lm.Comol.Modules.EduPath.Domain">
+    <class name="ExportField" table="EP_ExportConfigurationSettingField" optimistic-lock ="version">
+        <id name="Id" column="Id" type="Int64">
+            <generator class="native"/>
+        </id>
+        <version name="TimeStamp"
+       generated="always"
+       unsaved-value="null"
+       type="BinaryBlob">
+            <column name="_Timestamp"
+                    not-null="false"
+                    sql-type="timestamp"/>
+        </version>
+      <property name="Type" column="FieldType" type="ExportFieldType" />
+      <property name="Availability" column="Availability" type="ExportFieldTypeAvailability" />
+      <property name="IdConfiguration" column="IdConfiguration" type="Int64" />
+      
+    </class>
+</hibernate-mapping>

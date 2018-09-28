@@ -4,6 +4,8 @@
 <%@ Register Src="UC/UC_TimeStat.ascx" TagName="SelectTime" TagPrefix="CTRL" %>
 <%@ Register Src="UC/UC_TextAction.ascx" TagName="TextAction" TagPrefix="CTRL" %>
 <%@ Register Src="UC/UC_CertificationAction.ascx" TagName="CertificationAction" TagPrefix="CTRL" %>
+<%@ Register TagPrefix="CTRL" TagName="DisplayItem" Src="~/Modules/Repository/Common/UC_ModuleRenderAction.ascx" %>
+<%@ Register TagPrefix="CTRL" TagName="QuestionnaireItem" Src="~/Modules/Questionnaire/UC/UC_ModuleQuizAction.ascx" %>
 <%@ Register TagPrefix="CTRL" TagName="Messages" Src="~/Modules/Common/UC/UC_ActionMessages.ascx" %>
 <%@ Register TagPrefix="CTRL" TagName="GridPager" Src="../../UC/UC_PagerControl.ascx" %>
 
@@ -12,7 +14,7 @@
     <%--<link href="PfStyle.css" type="text/css" rel="stylesheet" />--%>
     <%--<link href="../../Graphics/Modules/Edupath/css/edupathstats.css" type="text/css" rel="stylesheet" />--%>
     <script src="../../Jscript/Modules/Common/jquery.ddbuttonlist.js" type="text/javascript"></script>
-    <link href="../../Graphics/Modules/Edupath/css/edupath.css" rel="Stylesheet" />
+    <link href="../../Graphics/Modules/Edupath/css/<%=GetCssFileByType()%>edupath.css?v=201605041410lm" rel="Stylesheet" />
      <script type="text/javascript">
          var DisplayTitle = ""
          var DisplayMessage = "<h2><%=DisplayMessageToken%></h2>"
@@ -100,7 +102,8 @@
                 <asp:Image ID="IMGmandatory" runat="server" Visible="false" />
                 <asp:Label ID="LBitemType" runat="server" CssClass="Titolo_campo inline"></asp:Label>
                 <asp:Label ID="LBitemName" runat="server" CssClass="label inline" Visible="false" style="margin-bottom:3px;"></asp:Label>
-                <asp:PlaceHolder ID="PLHaction" runat="server" Visible="false"></asp:PlaceHolder>
+                <CTRL:QuestionnaireItem ID="CTRLquestionnaire" runat="server" EnableAnchor="true"  Visible="false"/>
+                <CTRL:DisplayItem ID="CTRLdisplayItem" runat="server" EnableAnchor="true" DisplayExtraInfo="false" DisplayLinkedBy="false" DisplaySize="false"  Visible="false"/>
                 <CTRL:TextAction runat="server" id="CTRLtextAction"/>
                 <CTRL:CertificationAction runat="server" id="CTRLcertificationAction" visible="false" />
                 <asp:Label ID="LBpoint" runat="server"></asp:Label>

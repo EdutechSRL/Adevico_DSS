@@ -5,31 +5,16 @@
 <%@ Register TagPrefix="CTRL" TagName="TopControls" Src="~/Modules/ProjectManagement/UC/List/UC_DasboardListTopControl.ascx" %>
 <%@ Register TagPrefix="CTRL" TagName="List" Src="~/Modules/ProjectManagement/UC/List/UC_TaskListPlain.ascx" %>
 <%@ Register TagPrefix="CTRL" TagName="Tree" Src="~/Modules/ProjectManagement/UC/List/UC_TaskListTree.ascx" %>
-<%@ Register TagPrefix="CTRL" TagName="ProgressBar" Src="~/Modules/Common/UC/UC_AdvancedProgressBarHeader.ascx" %>
-<%@ Register TagPrefix="CTRL" TagName="Dialog" Src="~/Modules/ProjectManagement/UC/List/UC_TaskInfoHeader.ascx" %>
+<%@ Register TagPrefix="CTRL" TagName="Header" Src="~/Modules/ProjectManagement/UC/UC_ProjectManagementHeader.ascx" %>
+<%@ Register TagPrefix="CTRL" TagName="ModalPlayerHeader" Src="~/Modules/Repository/UC_New/UC_ModalPlayerHeader.ascx" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="PageTitleContent" runat="server">
-</asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="CPHserviceLocalization" runat="server">
-</asp:Content>
+<asp:Content ID="Content1" ContentPlaceHolderID="PageTitleContent" runat="server"></asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="CPHserviceLocalization" runat="server"></asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="HeadContent" runat="server">
-  <link href="../../Graphics/Modules/ProjectManagement/Css/ProjectManagement.css" rel="Stylesheet" />
-    <link href="../../Jscript/Modules/Common/Choosen/chosen.css" rel="Stylesheet" />
-    <link rel="stylesheet" href="../../Graphics/Plugins/jquery.treeTable/jquery.treeTable.css" />
-    <script type="text/javascript" src="../../Jscript/Modules/Common/jquery.simpleEqualize.js"></script>
-    <script type="text/javascript" src="../../Jscript/Modules/Common/Choosen/chosen.jquery.js"></script>
-    <script type="text/javascript" src="../../Jscript/Modules/Common/jquery.blockableFieldset.js"></script>
-    <script type="text/javascript" src="../../Jscript/Modules/Common/jquery.inputActivator.js"></script>
-    <script type="text/javascript" src="../../Jscript/Modules/Common/jquery.collapsableTreeAdv.js"></script>
-    <script type="text/javascript" src="../../Jscript/Modules/Common/jquery.treeTable.js"></script>
-    <script type="text/javascript" src="../../Jscript/Modules/Common/jquery.ddbuttonlist.js"></script>
-    <script type="text/javascript" src="../../Jscript/Modules/Common/jquery.autoresize.js"></script>
-    <CTRL:ProgressBar id="CTRLadvancedProgressBarHeader" runat="server" />
-    <script type="text/javascript" src="../../Jscript/Modules/ProjectManagement/projectmanagement.js"></script>
-    <CTRL:Dialog id="CTRLdialogHeader" runat="server"></CTRL:Dialog>
+    <CTRL:Header id="CTRLheader" runat="server"></CTRL:Header>
+      <CTRL:ModalPlayerHeader ID="CTRLmodalPlayerHeader" runat="server" />
 </asp:Content>
-<asp:Content ID="Content4" ContentPlaceHolderID="TitleContent" runat="server">
-</asp:Content>
+<asp:Content ID="Content4" ContentPlaceHolderID="TitleContent" runat="server"></asp:Content>
 <asp:Content ID="Content5" ContentPlaceHolderID="CPHservice" runat="server">
  <asp:MultiView ID="MLVprojectList" runat="server" ActiveViewIndex="1">
         <asp:View ID="VIWempty" runat="server">

@@ -1,7 +1,7 @@
 ﻿<%@ Control Language="vb" AutoEventWireup="false" CodeBehind="UC_TaskInfo.ascx.vb"
     Inherits="Comunita_OnLine.UC_TaskInfo" %>
 
-<div class="dlgtask <%=GetContainerCssClass() %> hiddendialog" title="<%=GetDialogTitle() %>">
+<div class="dlgtask <%=GetContainerCssClass()%> hiddendialog" title="<%=GetDialogTitle() %>">
 <asp:MultiView ID="MLVtaskInfo" runat="server">
     <asp:View ID="VIWsettings" runat="server">     
             <div class="tabs">

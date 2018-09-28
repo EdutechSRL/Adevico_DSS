@@ -370,7 +370,7 @@ namespace lm.Comol.Core.BaseModules.FileRepository.Business
 
         public void PhisicalDeleteCommunity(string baseFileRepositoryPath, int idCommunity, int idUser)
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
         }
     }
 }

@@ -7,6 +7,7 @@ Public MustInherit Class PMbaseProjectMap
     Inherits PMpageBaseEdit
     Implements IViewBaseProjectMap
 
+
 #Region "Implements Property"
     Protected ReadOnly Property UnknownUser As String Implements IViewBaseProjectMap.UnknownUser
         Get
@@ -23,10 +24,12 @@ Public MustInherit Class PMbaseProjectMap
 #Region "Implements"
     Protected MustOverride Sub SetDashboardUrl(url As String, dashboard As PageListType) Implements IViewBaseProjectMap.SetDashboardUrl
     Protected MustOverride Sub SetEditProjectUrl(url As String) Implements IViewBaseProjectMap.SetEditProjectUrl
+    Protected MustOverride Sub SetEditMapUrl(url As String) Implements IViewBaseProjectMap.SetEditMapUrl
     Protected MustOverride Sub SetProjectsUrl(url As String) Implements IViewBaseProjectMap.SetProjectsUrl
     Protected MustOverride Sub DisplaySessionTimeout() Implements IViewBaseProjectMap.DisplaySessionTimeout
     Protected MustOverride Sub DisplayUnknownProject() Implements IViewBaseProjectMap.DisplayUnknownProject
     Protected MustOverride Sub LoadProjectDateInfo(project As dtoProject, allowEdit As Boolean) Implements IViewBaseProjectMap.LoadProjectDateInfo
+    Protected MustOverride Sub LoadAttachments(attachments As List(Of dtoAttachmentItem)) Implements IViewBaseProjectMap.LoadAttachments
 
     Protected Overloads Sub RedirectToUrl(url As String) Implements IViewBaseProjectMap.RedirectToUrl
         PageUtility.RedirectToUrl(url)
@@ -143,5 +146,6 @@ Public MustInherit Class PMbaseProjectMap
         Return defaultDateTime
     End Function
 #End Region
+
 
 End Class

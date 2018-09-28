@@ -811,25 +811,15 @@ Public Class UC_CertificationAction
                 End If
                 If allowSave Then
                     If IsNothing(template) Then
-                        template = CurrentPresenter.FillDataIntoTemplate(IdSubActivity, TemplateBaseUrl, PageUtility.SystemSettings.Presenter.PortalDisplay.LocalizeIstanceName(language.Id), result, GetWebinarInfo(IdPath, idUser))
+                        template = CurrentPresenter.FillDataIntoTemplate(IdSubActivity, TemplateBaseUrl, PageUtility.SystemSettings.Presenter.PortalDisplay.LocalizeIstanceName(language.Id), result)
                     End If
-                    Dim xp As New lm.Comol.Core.BaseModules.DocTemplate.Helpers.HelperExportPDF
 
                     If result = lm.Comol.Core.Certifications.CertificationError.None OrElse (allowEmptyPlaceHolders AndAlso (result = lm.Comol.Core.Certifications.CertificationError.EmptyTemplateItem OrElse result = lm.Comol.Core.Certifications.CertificationError.EmptyTemplateItems)) Then
                         Dim idFile As Guid = Guid.NewGuid
-                        If xp.ExportToFile(template, baseFilePath & idFile.ToString & ".cer") Then
-                            filename = baseFilePath & idFile.ToString & ".cer"
-                            Dim uResource As New ResourceManager
-                            uResource.UserLanguages = language.Code
-                            uResource.ResourcesName = "pg_Certification"
-                            uResource.Folder_Level1 = "Modules"
-                            uResource.Folder_Level2 = "EduPath"
-                            uResource.setCulture()
 
-                            Me.CurrentPresenter.SaveCertificationFile(crType, (result <> lm.Comol.Core.Certifications.CertificationError.None), IdCommunityContainer, idUser, CurrentPresenter.GetUserCertificationFileName(uResource.getValue("Certification.FileName")), uResource.getValue("Certification.CertificationDescription"), IdPath, IdSubActivity, idFile, "." & Helpers.Export.ExportFileType.pdf.ToString())
-                        Else
-                            result = lm.Comol.Core.Certifications.CertificationError.SavingFile
-                        End If
+                        'ToDo: Export
+                        result = lm.Comol.Core.Certifications.CertificationError.SavingFile
+
                     End If
                 Else
                     result = lm.Comol.Core.Certifications.CertificationError.RepositoryError
@@ -844,113 +834,6 @@ Public Class UC_CertificationAction
     End Function
 
 
-    'Private Function _GenerateCertificationFile(ByVal idUser As Integer, ByVal saveFile As Boolean, ByVal saveAction As Boolean, ByVal onlyDownload As Boolean, ByVal cookieValue As String, Optional ByVal fileUniqueId As String = "", Optional ByVal fileExtension As String = "") As Boolean
-    '    Dim result As Boolean = True
-    '    Response.Clear()
-    '    Dim fileType As Helpers.Export.ExportFileType = Helpers.Export.ExportFileType.pdf
-    '    Dim templateError As New lm.Comol.Core.DomainModel.DocTemplateVers.Domain.DTO.ServiceExport.DTO_Template
-    '    If String.IsNullOrEmpty(fileExtension) Then
-    '        fileExtension = fileType.ToString
-    '    End If
-    '    If saveAction Then
-    '        Me.CurrentPresenter.ExecuteAction(IdPath, IdSubActivity, StatusStatistic.CompletedPassed)
-    '    End If
-    '    Dim t As lm.Comol.Core.Certifications.CertificationError
-    '    Dim template As lm.Comol.Core.DomainModel.DocTemplateVers.Domain.DTO.ServiceExport.DTO_Template = CurrentPresenter.FillDataIntoTemplate(IdSubActivity, TemplateBaseUrl, PageUtility.SystemSettings.Presenter.PortalDisplay.LocalizeIstanceName(PageUtility.LinguaID), t)
-    '    Dim xp As New lm.Comol.Core.BaseModules.DocTemplate.Helpers.HelperExportPDF
-    '    Dim fileName As String = CurrentPresenter.GetUserCertificationFileName(Resource.getValue("Certification.FileName"))
-
-    '    Dim raiseError As Boolean = True
-    '    Dim addContentDisposition As Boolean = True
-    '    Try
-    '        Dim executed As Boolean = False
-    '        Dim baseFilePath As String = Me.CertificationFilePath
-    '        If String.IsNullOrEmpty(baseFilePath) AndAlso saveFile Then
-    '            saveFile = False
-    '        Else
-    '            baseFilePath &= IIf(baseFilePath.EndsWith("/") OrElse baseFilePath.EndsWith("\"), "", "\") & idUser.ToString() & "\"
-    '        End If
-    '        If Not lm.Comol.Core.File.Exists.Directory(baseFilePath) Then
-    '            lm.Comol.Core.File.Create.Directory(baseFilePath)
-    '        End If
-
-    '        If onlyDownload AndAlso lm.Comol.Core.File.Exists.File(baseFilePath & fileUniqueId & ".cer") Then
-
-    '            Dim hFileName As String = CurrentPresenter.ReplaceInvalidFileName(fileName) & IIf(fileExtension.StartsWith("."), "", ".") & fileExtension.ToLower
-    '            If hFileName.Contains("..") Then
-    '                hFileName = Replace(hFileName, "..", ".")
-    '            End If
-    '            Response.AddHeader("Content-Disposition", "attachment; filename=" & hFileName)
-    '            addContentDisposition = False
-    '            Select Case (fileExtension)
-    '                Case "pdf"
-    '                Case ".pdf"
-    '                    Response.ContentType = "application/pdf"
-    '                Case "rtf"
-    '                Case ".rtf"
-    '                    Response.ContentType = "application/rtf"
-    '            End Select
-
-    '            raiseError = False
-    '            Response.AppendCookie(New HttpCookie(CookieName, cookieValue))
-    '            Dim chunkSize As Integer = 64
-    '            Dim offset As Integer = 0, read As Integer = 0
-
-    '            If Not lm.Comol.Core.File.TransmitFactory.TransmitFile(baseFilePath & fileUniqueId & ".cer", Response) = lm.Comol.Core.File.FileMessage.Read Then
-    '                xp.GetErrorDocument(template, False, addContentDisposition, fileName, Response, Nothing)
-
-    '                result = False
-    '            End If
-    '        Else
-    '            Dim idFile As Guid = Guid.NewGuid
-    '            xp.ExportToPdf(template, True, fileName, saveFile, baseFilePath & idFile.ToString & ".cer", False, Response, New HttpCookie(CookieName, cookieValue))
-
-    '            If saveFile Then
-    '                Me.CurrentPresenter.SaveCertificationFile(lm.Comol.Core.Certifications.CertificationType.AutoProduced, IdCommunityContainer, True, idUser, fileName, Resource.getValue("Certification.CertificationDescription"), IdPath, IdSubActivity, idFile, "." & fileType.ToString())
-    '            End If
-    '        End If
-
-    '    Catch de As Exception
-    '        NotifyError(PageUtility.SystemSettings, de)
-    '        If raiseError Then
-    '            xp.GetErrorDocument(template, False, addContentDisposition, fileName, Response, New HttpCookie(CookieName, cookieValue))
-    '            result = False
-    '        End If
-    '    End Try
-    '    If Response.IsClientConnected Then
-    '        Response.End()
-    '    End If
-    '    Return result
-    'End Function
-
-    'Private Sub DownloadExistingFile(webFileName As String, storedFileName As String, certification As lm.Comol.Core.Certifications.Certification, saveRequired As Boolean, cookieValue As String)
-    '    DownloadExistingFile(webFileName, storedFileName, certification.FileExtension.ToLower, saveRequired, cookieValue)
-    'End Sub
-    'Private Sub DownloadExistingFile(webFileName As String, storedFileName As String, fileExtension As String, saveRequired As Boolean, cookieValue As String)
-    '    Dim contentType As String = Response.ContentType
-    '    Dim cFilename As String = CurrentPresenter.ReplaceInvalidFileName(webFileName) & fileExtension.ToLower
-    '    Response.AddHeader("Content-Disposition", "attachment; filename=" & cFilename)
-    '    Select Case (fileExtension.ToLower)
-    '        Case ".pdf"
-    '            Response.ContentType = "application/pdf"
-    '        Case ".rtf"
-    '            Response.ContentType = "application/rtf"
-    '    End Select
-
-    '    Response.AppendCookie(New HttpCookie(CookieName, cookieValue))
-    '    Dim chunkSize As Integer = 64
-    '    Dim offset As Integer = 0, read As Integer = 0
-
-    '    If Not lm.Comol.Core.File.TransmitFactory.TransmitFile(storedFileName, Response) = lm.Comol.Core.File.FileMessage.Read Then
-    '        RaiseEvent ItemActionResult(lm.Comol.Core.Certifications.CertificationError.TransmittingFile, saveRequired, True)
-    '        Response.ContentType = contentType
-    '        Response.Headers.Remove("Content-Disposition")
-    '    End If
-    '    Context.ApplicationInstance.CompleteRequest()
-    '    'If Response.IsClientConnected Then
-    '    '    Response.End()
-    '    'End If
-    'End Sub
 #End Region
 
 #End Region
@@ -1187,8 +1070,5 @@ Public Class UC_CertificationAction
 
 #End Region
 
-    Private Function GetWebinarInfo(ByVal pathId As Long, ByVal userId As Integer) As List(Of lm.Comol.Modules.EduPath.Domain.DTO.dtoWebinarInfo)
-        Return New List(Of lm.Comol.Modules.EduPath.Domain.DTO.dtoWebinarInfo)()
-    End Function
 
 End Class

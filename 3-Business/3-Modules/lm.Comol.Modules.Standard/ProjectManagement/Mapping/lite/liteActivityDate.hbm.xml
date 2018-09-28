@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="lm.Comol.Modules.Standard" namespace="lm.Comol.Modules.Standard.ProjectManagement.Domain">
+  <class name="lm.Comol.Modules.Standard.ProjectManagement.Domain.liteActivityDate" table="PM_Activity" lazy="false" optimistic-lock ="version" >
+    <id name="Id" column="Id" type="long">
+      <generator class="native"/>
+    </id>
+    <version name="TimeStamp" generated="always" unsaved-value="null" type="BinaryBlob">
+      <column name="_Timestamp" not-null="false" sql-type="timestamp"/>
+    </version>
+    <property name="IdProject" type="Int64" column="IdProject" />
+    <property name="DisplayOrder" type="Int64" column="DisplayOrder" />
+    <property name="EarlyStart" type="Double" column="EarlyStart" />
+    <property name="EarlyFinish" type="Double" column="EarlyFinish" />
+    <property name="LatestStart" type="Double" column="LatestStart" />
+    <property name="LatestFinish" type="Double" column="LatestFinish" />
+    <property name="EarlyStartDate" type="DateTime" column="EarlyStartDate" />
+    <property name="EarlyFinishDate" type="DateTime" column="EarlyFinishDate" />
+    <property name="LatestStartDate" type="DateTime" column="LatestStartDate" />
+    <property name="LatestFinishDate" type="DateTime" column="LatestFinishDate" />
+    <property name="Deadline" type="DateTime" column="Deadline" />
+    <property name="IsSummary" type="Boolean" column="IsSummary" />
+    <property name="IsCompleted" type="Boolean" column="IsCompleted" />
+    <property name="Duration" type="Double" column="Duration" />
+    <property name="WBSindex" type="Int64" column="WBSindex" />
+    <property name="WBSstring" type="String" column="WBSstring" />
+
+    <property name="Deleted" type="lm.Comol.Core.DomainModel.BaseStatusDeleted,lm.Comol.Core.DomainModel" column="_Deleted" />
+  </class>
+</hibernate-mapping>

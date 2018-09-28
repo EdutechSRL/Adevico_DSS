@@ -17,6 +17,8 @@
 <%@ Register TagPrefix="CTRL" TagName="PredecessorsHelper" Src="~/Modules/ProjectManagement/UC/UC_PredecessorsHelper.ascx" %>
 <%@ Register TagPrefix="CTRL" TagName="Legend" Src="~/Modules/ProjectManagement/UC/UC_StatusLegend.ascx" %>
 <%@ Register TagPrefix="CTRL" TagName="Info" Src="~/Modules/ProjectManagement/UC/UC_ProjectDateInfo.ascx" %>
+<%@ Register TagPrefix="CTRL" TagName="Attachment" Src="~/Modules/ProjectManagement/UC/UC_DialogProjectAttachments.ascx" %>
+<%@ Register TagPrefix="CTRL" TagName="ModalPlayerHeader" Src="~/Modules/Repository/UC_New/UC_ModalPlayerHeader.ascx" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="PageTitleContent" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="CPHserviceLocalization" runat="server">
@@ -215,8 +217,8 @@
             return null;
         }   
     </script>
-    <CTRL:SelectUsersHeader ID="CTRLselectUsersHeader" runat="server" />
-     
+        <CTRL:SelectUsersHeader ID="CTRLselectUsersHeader" runat="server" />
+      <CTRL:ModalPlayerHeader ID="CTRLmodalPlayerHeader" runat="server" />
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="TitleContent" runat="server">
 </asp:Content>
@@ -251,11 +253,16 @@
             <div class="fieldobject header">	
         	    <div class="fieldrow title clearfix">
         		    <div class="left">
-                         <h2><asp:Literal id="LTprojectName" runat="server"></asp:Literal></h2>
+                         <h2>
+                            <span class="projectnametitle">
+                                <span><asp:Literal id="LTprojectName" runat="server"></asp:Literal></span>
+                                <span class="icons">
+                                    <asp:Label ID="LBattachments" runat="server" Visible="false" CssClass="icon xs attacchment">&nbsp;</asp:Label>
+                                </span>
+                            </span>
+                        </h2>
         		    </div>
-        		    <div class="right">
-        			    <span class="extra"></span>
-        		    </div>
+        		    <div class="right"><span class="extra"></span></div>
         	    </div>
             </div>
             <CTRL:Messages ID="CTRLmessages" runat="server" Visible="false" />
@@ -448,6 +455,7 @@
             </div>
         </asp:View>
     </asp:MultiView>
+    <CTRL:Attachment id="CTRLattachment" runat="server" CssClass="dlgprojectattachments" Visible="false"></CTRL:Attachment>
     <asp:Literal ID="LTstatusContent" runat="server" Visible="false"><span class="th">{0}%</span></asp:Literal>
     <asp:Literal ID="LTstatuslight" runat="server" Visible="false">statuslight</asp:Literal>
     <asp:Literal ID="LTfullColSpan" runat="server" Visible="false">8</asp:Literal>

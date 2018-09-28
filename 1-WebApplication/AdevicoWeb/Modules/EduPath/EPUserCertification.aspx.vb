@@ -5,7 +5,7 @@ Imports lm.Comol.Modules.EduPath.Domain
 Imports lm.Comol.Core.DomainModel
 
 Public Class EPUserCertification
-    Inherits PageBase
+    Inherits EPlitePageBaseEduPath
     Implements IViewCertificationUser
 
 #Region "Context"
@@ -216,9 +216,9 @@ Public Class EPUserCertification
         Me.CurrentPresenter.InitView()
         MLVcertification.SetActiveView(VIWcertification)
         If (CurrentIdCertificate > 0) Then
-            HYPback.NavigateUrl = BaseUrl + RootObject.EPCertification(CurrentPathIdCommunity, CurrentIdPath, CurrentIdCertificate)
+            HYPback.NavigateUrl = BaseUrl + RootObject.EPCertification(CurrentPathIdCommunity, CurrentIdPath, CurrentIdCertificate, IsMoocPath)
         Else
-            HYPback.NavigateUrl = BaseUrl + RootObject.EPCertificationList(CurrentPathIdCommunity, CurrentIdPath)
+            HYPback.NavigateUrl = BaseUrl + RootObject.EPCertificationList(CurrentPathIdCommunity, CurrentIdPath, IsMoocPath)
         End If
 
     End Sub
@@ -364,7 +364,7 @@ Public Class EPUserCertification
             Dim lnb As HyperLink
             lnb = e.Item.FindControl("HYPcertificate")
             lnb.Text = dto.CertificateName
-            lnb.NavigateUrl = BaseUrl + RootObject.EPCertification(dto.CommunityId, dto.PathId, dto.CertificateId)
+            lnb.NavigateUrl = BaseUrl + RootObject.EPCertification(dto.CommunityId, dto.PathId, dto.CertificateId, IsMoocPath)
 
             Dim initializer As New dtoInternalActionInitializer
             initializer.IdPath = CurrentIdPath

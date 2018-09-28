@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="lm.Comol.Modules.Standard" namespace="lm.Comol.Modules.Standard.Glossary.Domain.Dto">
+    <class name="ListItemDTO" table="GLOSSARY_Item" >
+        <id name="Id" column="ID" type="Int64">
+            <generator class="native"/>
+        </id>
+
+        <property name="Term" type="String" column="Term" />
+        <property name="FirstLetter" type="Char" column="FirstLetter" />
+
+        <many-to-one name="Group" class="lm.Comol.Modules.Standard.Glossary.Domain.GlossaryGroup" column="Group_ID" foreign-key="Group_ID"  cascade="none" not-found="ignore" />
+        
+    </class>
+</hibernate-mapping>

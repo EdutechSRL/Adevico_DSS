@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="lm.Comol.Modules.Standard" namespace="lm.Comol.Modules.Standard.ProjectManagement.Domain">
+  <class name="lm.Comol.Modules.Standard.ProjectManagement.Domain.liteResource" table="PM_ProjectResources" lazy="true">
+    <id name="Id" column="Id" type="long">
+      <generator class="native"/>
+    </id>
+    <property name="IdProject" type="Int64" column="IdProject" />
+    <many-to-one name="Person" class="lm.Comol.Core.DomainModel.litePerson, lm.Comol.Core.DomainModel" column="IdPerson" foreign-key="IdPerson" not-found="ignore"/>
+    <property name="LongName" type="String" column="LongName" />
+    <property name="ShortName" type="String" column="ShortName" />
+    <property name="Number" type="Int64" column="Number" />
+    <property name="Mail" type="String" column="Mail" />
+    <property name="Type" type="lm.Comol.Modules.Standard.ProjectManagement.Domain.ResourceType, lm.Comol.Modules.Standard" column="Type" />
+    <property name="LateActivities" type="Int64" column="LateActivities" />
+    <property name="ConfirmedActivities" type="Int64" column="ConfirmedActivities" />
+    <property name="CompletedActivities" type="Int64" column="CompletedActivities" />
+    <property name="AssignedActivities" type="Int64" column="AssignedActivities" />
+    <property name="StartedActivities" type="Int64" column="StartedActivities" />
+    
+    <property name="ProjectRole" type="lm.Comol.Modules.Standard.ProjectManagement.Domain.ActivityRole, lm.Comol.Modules.Standard" column="ProjectRole" />
+    <property name="Visibility" type="lm.Comol.Modules.Standard.ProjectManagement.Domain.ProjectVisibility, lm.Comol.Modules.Standard" column="Visibility" />
+    <property name ="UniqueIdentifier" type="guid" column="UniqueIdentifier"></property>
+    <property name ="DefaultForActivity" type="Boolean" column="DefaultForActivity"></property>
+    <property name="Deleted" type="lm.Comol.Core.DomainModel.BaseStatusDeleted,lm.Comol.Core.DomainModel" column="_Deleted" />
+  </class>
+</hibernate-mapping>

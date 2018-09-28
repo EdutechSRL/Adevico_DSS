@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="lm.Comol.Modules.EduPath" namespace="lm.Comol.Modules.EduPath.Domain">
+    <class name="BaseStatistic" table="EP_Stat" discriminator-value="0" optimistic-lock ="version" lazy="true">
+        <id name="Id" column="Id" type="Int64">
+            <generator class="native"/>
+        </id>
+        <discriminator column="Discriminator" not-null="true" insert ="true" type="Int16"/>
+        <version name="TimeStamp"
+       generated="always"
+       unsaved-value="null"
+       type="BinaryBlob">
+            <column name="_Timestamp"
+                    not-null="false"
+                    sql-type="timestamp"/>
+        </version>
+        <many-to-one name="Person" class="lm.Comol.Core.DomainModel.litePerson, lm.Comol.Core.DomainModel"  column ="IdPerson" foreign-key="IdPerson" cascade="none" lazy="proxy" fetch="select"/>
+        <property name="Status" type="StatusStatistic" column="Status" />
+        <property name="StartDate" type="DateTime" column="StartDate" />
+      <!--<property name="IdPerson" type="Int32" column="IdPerson" />-->
+      <!--<property name="IdPath" type="Int64" column="IdPath" />
+      <property name="IdUnit" type="Int64" column="IdUnit" />
+      <property name="IdActivity" type="Int64" column="IdActivity" />
+      <property name="IdSubActivity" type="Int64" column="IdSubActivity" />-->
+
+      <property name="Deleted" type="lm.Comol.Core.DomainModel.BaseStatusDeleted,lm.Comol.Core.DomainModel" column="_Deleted" />
+      <property name="IdModifiedBy" type="Int32" column="_ModifiedBy" />
+      <property name="CreatedOn" type="DateTime" column="_CreatedOn" />
+      <property name="ModifiedOn" type="DateTime" column="_ModifiedOn" />
+      <property name="IdCreatedBy" type="Int32" column="_CreatedBy" />
+      <property name="CreatorProxyIpAddress" type="String" column="_CreatedProxyIPaddress" />
+      <property name="CreatorIpAddress" type="String" column="_CreatedIPaddress" />
+      <property name="ModifiedProxyIpAddress" type="String" column="_ModifiedProxyIPaddress" />
+      <property name="ModifiedIpAddress" type="String" column="_ModifiedIPaddress" />
+        <property name="Completion" type="Int64" column="Completion" />
+        <property name="Mark" type="Int16" column="Mark" />
+        <property name="Discriminator" type="StatisticDiscriminator" column="Discriminator" update="false" insert="false"/>
+
+        <subclass discriminator-value="1" name="PathStatistic"  extends="BaseStatistic">
+            <many-to-one name="Path" class="lm.Comol.Modules.EduPath.Domain.Path, lm.Comol.Modules.EduPath.Domain" column="IdPath" foreign-key="IdPath" cascade="none" not-null="false"  lazy="false"/>
+            <property name="MandatoryPassedUnitCount" type="Int16" column="MandatoryPassedItemCount" />
+            <property name="MandatoryCompletedUnitCount" type="Int16" column="MandatoryCompletedItemCount" />
+            <property name="MandatoryPassedCompletedUnitCount" type="Int16" column="MandatoryPassedCompletedItemCount" />
+
+
+          <!--      <bag name="ChildrenStats" inverse="true" lazy="true" >
+                <key column="ParentId"/>
+                <one-to-many class="lm.Comol.Modules.EduPath.Domain.UnitStatistic"/>
+            </bag> -->
+
+        </subclass>
+
+        <subclass discriminator-value="2" name="UnitStatistic"  extends="BaseStatistic">
+            <many-to-one name="Unit" class="lm.Comol.Modules.EduPath.Domain.Unit, lm.Comol.Modules.EduPath.Domain" column="IdUnit" foreign-key="IdUnit" cascade="none" not-null="false"  lazy="false"/>
+            <property name="MandatoryPassedActivityCount" type="Int16" column="MandatoryPassedItemCount" />
+            <property name="MandatoryCompletedActivityCount" type="Int16" column="MandatoryCompletedItemCount" />
+            <property name="MandatoryPassedCompletedActivityCount" type="Int16" column="MandatoryPassedCompletedItemCount" />
+
+          <property name="IdPath" type="Int64" column="IdPath" />
+
+          <!--      <many-to-one name="ParentStat" class="lm.Comol.Modules.EduPath.Domain.PathStatistic" column="ParentId" foreign-key="ParentId" cascade="none" />
+            <bag name="ChildrenStats" inverse="true" lazy="true" >
+                <key column="ParentId"/>
+                <one-to-many class="lm.Comol.Modules.EduPath.Domain.ActivityStatistic"/>
+            </bag> -->
+
+        </subclass>
+
+        <subclass discriminator-value="3" name="ActivityStatistic"   extends="BaseStatistic">
+            <many-to-one name="Activity" class="lm.Comol.Modules.EduPath.Domain.Activity, lm.Comol.Modules.EduPath.Domain" column="IdActivity" foreign-key="IdActivity" cascade="none" not-null="false"  lazy="false"/>
+            <property name="MandatoryPassedSubActivityCount" type="Int16" column="MandatoryPassedItemCount" />
+            <property name="MandatoryCompletedSubActivityCount" type="Int16" column="MandatoryCompletedItemCount" />
+          <property name="MandatoryPassedCompletedSubActivityCount" type="Int16" column="MandatoryPassedCompletedItemCount" />
+
+          <property name="IdPath" type="Int64" column="IdPath" />
+          <property name="IdUnit" type="Int64" column="IdUnit" />
+
+          <!--    <many-to-one name="ParentStat" class="lm.Comol.Modules.EduPath.Domain.UnitStatistic" column="ParentId" foreign-key="ParentId" cascade="none" />
+            <bag name="ChildrenStats" inverse="true" lazy="true" >
+                <key column="ParentId"/>
+                <one-to-many class="lm.Comol.Modules.EduPath.Domain.SubActivityStatistic"/>
+            </bag> -->
+        </subclass>
+
+        <subclass discriminator-value="4" name="SubActivityStatistic"  extends="BaseStatistic">
+            <many-to-one name="SubActivity" class="lm.Comol.Modules.EduPath.Domain.SubActivity, lm.Comol.Modules.EduPath.Domain" column="IdSubActivity" foreign-key="IdSubActivity" cascade="none" not-null="false"  lazy="false"/>
+
+          <property name="IdPath" type="Int64" column="IdPath" />
+          <property name="IdUnit" type="Int64" column="IdUnit" />
+          <property name="IdActivity" type="Int64" column="IdActivity" />
+
+         <!--<many-to-one name="ParentStat" class="lm.Comol.Modules.EduPath.Domain.ActivityStatistic" column="ParentId" foreign-key="ParentId" cascade="none" />
+--> 
+        </subclass>
+    </class>
+</hibernate-mapping>

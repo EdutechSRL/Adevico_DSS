@@ -10,7 +10,7 @@ Imports System.Linq
 Imports lm.Comol.Modules.EduPath.Presentation
 
 Public Class EPSummaryUser
-    Inherits PageBase
+    Inherits EPlitePageBaseEduPath
     Implements IViewSummaryUser
 
 #Region "Context"
@@ -572,7 +572,11 @@ Public Class EPSummaryUser
     End Sub
 
     Public Overrides Sub SetCultureSettings()
-        MyBase.SetCulture("pg_Summary", "EduPath")
+        If PreloadIsMooc Then
+            MyBase.SetCulture("pg_MoocsSummary", "EduPath")
+        Else
+            MyBase.SetCulture("pg_Summary", "EduPath")
+        End If
     End Sub
 
     Public Overrides Sub SetInternazionalizzazione()
@@ -738,14 +742,14 @@ Public Class EPSummaryUser
 
                 Dim p As New PagerBase(20, 0)
 
-                stat = ServiceStat.GetSelectedUserPathsCount(idUser, DateTime.Now, 0, 20, StartEndDeadline, Order, Ascending, PathFilter, CommunityFilter, StartDateFilter, EndDateFilter, StatusFilter, list)
+                stat = ServiceStat.GetSelectedUserPathsCount(PreloadIsMooc, idUser, DateTime.Now, 0, 20, StartEndDeadline, Order, Ascending, PathFilter, CommunityFilter, StartDateFilter, EndDateFilter, StatusFilter, list)
 
                 p.Count = stat.Total - 1
                 p.initialize()
 
                 Pager = p
             Else
-                stat = ServiceStat.GetSelectedUserPathsCount(idUser, DateTime.Now, Pager.PageIndex, Pager.PageSize, StartEndDeadline, Order, Ascending, PathFilter, CommunityFilter, StartDateFilter, EndDateFilter, StatusFilter, list)
+                stat = ServiceStat.GetSelectedUserPathsCount(PreloadIsMooc, idUser, DateTime.Now, Pager.PageIndex, Pager.PageSize, StartEndDeadline, Order, Ascending, PathFilter, CommunityFilter, StartDateFilter, EndDateFilter, StatusFilter, list)
                 Pager.Count = stat.Total
                 Pager.initialize()
             End If
@@ -900,29 +904,29 @@ Public Class EPSummaryUser
 
             Dim hyp As HyperLink
             hyp = e.Item.FindControl("HYPplay")
-            hyp.NavigateUrl = BaseUrl & RootObject.ViewFullPlay(dto.IdPath, dto.IdCommunity)
+            hyp.NavigateUrl = BaseUrl & RootObject.ViewFullPlay(dto.IdPath, dto.IdCommunity, preloadismooc)
             hyp.Visible = dto.CanPlay
 
             hyp = e.Item.FindControl("HYPstats")
             If dto.CanManage Then
-                hyp.NavigateUrl = BaseUrl & RootObject.UserStatisticsManage(dto.IdPath, dto.IdCommunity, dto.IdPerson, ItemType.Path, 0, DateTime.Now, False, SummaryType.User, SummaryIdCommunity, FromSummary)
+                hyp.NavigateUrl = BaseUrl & RootObject.UserStatisticsManage(dto.IdPath, dto.IdCommunity, dto.IdPerson, ItemType.Path, 0, DateTime.Now, False, SummaryType.User, SummaryIdCommunity, FromSummary, dto.IsMooc)
             Else
-                hyp.NavigateUrl = BaseUrl & RootObject.UserStatisticsView(dto.IdPath, dto.IdCommunity, DateTime.Now, False, SummaryType.User, SummaryIdCommunity, FromSummary)
+                hyp.NavigateUrl = BaseUrl & RootObject.UserStatisticsView(dto.IdPath, dto.IdCommunity, DateTime.Now, False, SummaryType.User, SummaryIdCommunity, FromSummary, dto.IsMooc)
             End If
             hyp.Visible = dto.CanStat
 
             hyp = e.Item.FindControl("HYPedit")
-            hyp.NavigateUrl = BaseUrl & RootObject.PathView(dto.IdPath, dto.IdCommunity, EpViewModeType.Manage, False)
+            hyp.NavigateUrl = BaseUrl & RootObject.PathView(dto.IdPath, dto.IdCommunity, EpViewModeType.Manage, False, PreloadIsMooc)
             hyp.Visible = dto.CanManage
 
             hyp = e.Item.FindControl("HYPsettings")
-            hyp.NavigateUrl = BaseUrl & RootObject.PathManagement(dto.IdCommunity, dto.IdPath, "-2", dto.PathType)
+            hyp.NavigateUrl = BaseUrl & RootObject.PathManagement(dto.IdCommunity, dto.IdPath, "-2", dto.PathType, dto.IsMooc)
             hyp.Visible = dto.CanManage
 
             hyp = e.Item.FindControl("HYPcertificates")
             Me.Resource.setHyperLink(hyp, False, True)
             hyp.Text = ""
-            hyp.NavigateUrl = Me.BaseUrl + RootObject.EPCertificationUser(dto.IdCommunity, dto.IdPath, dto.IdPerson)
+            hyp.NavigateUrl = Me.BaseUrl + RootObject.EPCertificationUser(dto.IdCommunity, dto.IdPath, dto.IdPerson, dto.IsMooc)
 
             hyp.Visible = ServiceEP.PathHasSubActivityType(dto.IdPath, SubActivityType.Certificate) AndAlso Not IsNothing(dto.Ps) AndAlso dto.Ps.Status > StatusStatistic.Browsed
 
@@ -969,9 +973,9 @@ Public Class EPSummaryUser
 
             Dim p As ModuleEduPath = CurrentPresenter.GetModulePermission(idcomm)
             If p.Administration Then
-                hyp.NavigateUrl = Me.BaseUrl & RootObject.EduPathList(idcomm, EpViewModeType.Manage)
+                hyp.NavigateUrl = Me.BaseUrl & RootObject.EduPathList(idcomm, EpViewModeType.Manage, PreloadIsMooc)
             Else
-                hyp.NavigateUrl = Me.BaseUrl & RootObject.EduPathList(idcomm, EpViewModeType.View)
+                hyp.NavigateUrl = Me.BaseUrl & RootObject.EduPathList(idcomm, EpViewModeType.View, PreloadIsMooc)
             End If
 
 
@@ -989,30 +993,30 @@ Public Class EPSummaryUser
 
             Dim hyp As HyperLink
             hyp = e.Item.FindControl("HYPplay")
-            hyp.NavigateUrl = BaseUrl & RootObject.ViewFullPlay(dto.IdPath, dto.IdCommunity)
+            hyp.NavigateUrl = BaseUrl & RootObject.ViewFullPlay(dto.IdPath, dto.IdCommunity, PreloadIsMooc)
             hyp.Visible = dto.CanPlay
 
             hyp = e.Item.FindControl("HYPstats")
             If dto.CanManage Then
-                hyp.NavigateUrl = BaseUrl & RootObject.UserStatisticsManage(dto.IdPath, dto.IdCommunity, dto.IdPerson, ItemType.Path, 0, DateTime.Now, False, SummaryType.User, SummaryIdCommunity, FromSummary)
+                hyp.NavigateUrl = BaseUrl & RootObject.UserStatisticsManage(dto.IdPath, dto.IdCommunity, dto.IdPerson, ItemType.Path, 0, DateTime.Now, False, SummaryType.User, SummaryIdCommunity, FromSummary, dto.IsMooc)
             Else
-                hyp.NavigateUrl = BaseUrl & RootObject.UserStatisticsView(dto.IdPath, dto.IdCommunity, DateTime.Now, False, SummaryType.User, SummaryIdCommunity, FromSummary)
+                hyp.NavigateUrl = BaseUrl & RootObject.UserStatisticsView(dto.IdPath, dto.IdCommunity, DateTime.Now, False, SummaryType.User, SummaryIdCommunity, FromSummary, dto.IsMooc)
             End If
             hyp.Visible = dto.CanStat
 
             hyp = e.Item.FindControl("HYPedit")
-            hyp.NavigateUrl = BaseUrl & RootObject.PathView(dto.IdPath, dto.IdCommunity, EpViewModeType.Manage, False)
+            hyp.NavigateUrl = BaseUrl & RootObject.PathView(dto.IdPath, dto.IdCommunity, EpViewModeType.Manage, False, PreloadIsMooc)
             hyp.Visible = dto.CanManage
 
             hyp = e.Item.FindControl("HYPsettings")
-            hyp.NavigateUrl = BaseUrl & RootObject.PathManagement(dto.IdCommunity, dto.IdPath, "-2", dto.PathType)
+            hyp.NavigateUrl = BaseUrl & RootObject.PathManagement(dto.IdCommunity, dto.IdPath, "-2", dto.PathType, dto.IsMooc)
             hyp.Visible = dto.CanManage
 
 
             hyp = e.Item.FindControl("HYPcertificates")
             Me.Resource.setHyperLink(hyp, False, True)
             hyp.Text = ""
-            hyp.NavigateUrl = Me.BaseUrl + RootObject.EPCertificationUser(dto.IdCommunity, dto.IdPath, dto.IdPerson)
+            hyp.NavigateUrl = Me.BaseUrl + RootObject.EPCertificationUser(dto.IdCommunity, dto.IdPath, dto.IdPerson, dto.IsMooc)
 
             hyp.Visible = ServiceEP.PathHasSubActivityType(dto.IdPath, SubActivityType.Certificate)
         End If
@@ -1050,7 +1054,7 @@ Public Class EPSummaryUser
             Dim scm As New lm.Comol.Core.BaseModules.CommunityManagement.Business.ServiceCommunityManagement(PageUtility.CurrentContext)
             list = scm.GetOrganizationIdChildrenCommunities(DDLfilterOrganization.SelectedValue, "")
         End If
-        Dim stat As dtoUserPaths = ServiceStat.GetSelectedUserPathsCount(SummaryIdUser, DateTime.Now, 0, 0, StartEndDeadline, Order, Ascending, PathFilter, CommunityFilter, StartDateFilter, EndDateFilter, StatusFilter, list, (export = ExporPathData.Certification))
+        Dim stat As dtoUserPaths = ServiceStat.GetSelectedUserPathsCount(PreloadIsMooc, SummaryIdUser, DateTime.Now, 0, 0, StartEndDeadline, Order, Ascending, PathFilter, CommunityFilter, StartDateFilter, EndDateFilter, StatusFilter, list, (export = ExporPathData.Certification))
 
         Dim clientFileName As String = GetFileName(exportType)
         Dim translations As New Dictionary(Of EduPathTranslations, String)
@@ -1071,8 +1075,7 @@ Public Class EPSummaryUser
                 oTemplate.Settings = lm.Comol.Core.DomainModel.Helpers.Export.ExportBaseHelper.GetDefaultPageSettings()
                 oTemplate.Settings.Size = DocTemplateVers.PageSize.A4_L
 
-                Dim helperPDF As New HelperExportToPdf(New lm.Comol.Core.Business.BaseModuleManager(PageUtility.CurrentContext), HelperExportToPdf.ExportContentType.UserAdvancedStatistics, translations, roleTranslations, oTemplate)
-                Dim doc As iTextSharp5.text.Document = helperPDF.UserPathsStatistics(Now, SummaryIdUser, stat.Person, stat, GetQuizInfos(stat.QuizInfos()), settings, export, False, clientFileName, Response, cookie)
+                'ToDo: Export
 
             Else
                 Response.AppendCookie(cookie)

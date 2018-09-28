@@ -4,6 +4,8 @@
 <%@ Register Src="UC/UC_TimeStat.ascx" TagName="SelectTime" TagPrefix="CTRL" %>
 <%@ Register TagPrefix="CTRL" TagName="ProgressBar" Src="UC/UC_ProgressBar.ascx" %>
 <%@ Register Src="UC/UC_CertificationAction.ascx" TagName="CertificationAction" TagPrefix="CTRL" %>
+<%@ Register TagPrefix="CTRL" TagName="DisplayItem" Src="~/Modules/Repository/Common/UC_ModuleRenderAction.ascx" %>
+<%@ Register TagPrefix="CTRL" TagName="QuestionnaireItem" Src="~/Modules/Questionnaire/UC/UC_ModuleQuizAction.ascx" %>
 <%@ Register TagPrefix="CTRL" TagName="Messages" Src="~/Modules/Common/UC/UC_ActionMessages.ascx" %>
 
 <%@ MasterType VirtualPath="~/AjaxPortal.Master" %>
@@ -12,7 +14,7 @@
     <script type="text/javascript" src="../../Jscript/Modules/Common/jquery.progressbar.js"></script>
     <link href="../../Content/jquery.treeTable/jquery.treeTable.css" type="text/css" rel="Stylesheet" />
     <script src="../../Jscript/Modules/Common/jquery.ddbuttonlist.js" type="text/javascript"></script>
-    <link href="../../Graphics/Modules/Edupath/css/edupath.css" rel="Stylesheet" />
+    <link href="../../Graphics/Modules/Edupath/css/<%=GetCssFileByType()%>edupath.css?v=201605041410lm" rel="Stylesheet" />
 
     <script type="text/javascript">
          var DisplayTitle = ""
@@ -360,25 +362,22 @@
                                     <ItemTemplate>
                                         <tr class="item subactivity<%# Me.isSingle(Container.Dataitem) %> child-of-<%# Me.ActivityUnit(Container.Dataitem) %>-<%# Container.Dataitem.parentId %>" id="subactivity-<%# Container.Dataitem.SubActivity.Id %>">
                                             <td class="description">
-                                                <%--<span class="iteminfo">
-                                                    <span class="name">--%>
                                                 <CTRL:TextAction runat="server" id="CTRLtextAction" Visible="false"  />
                                                 <CTRL:CertificationAction runat="server" id="CTRLcertificationAction" visible="false" onItemActionResult="ItemActionResult" />
-                                                <asp:PlaceHolder runat="server" ID="PHLAction" Visible="false"></asp:PlaceHolder>
-                                                    <%--</span>
-                                                    <span class="itemdetail"><asp:Label ID="LBweight" runat="server"></asp:Label></span>--%>
-                                                </span>
+                                                <CTRL:QuestionnaireItem ID="CTRLquestionnaire" runat="server" EnableAnchor="true"  Visible="false"/>
+                                                <CTRL:DisplayItem ID="CTRLdisplayItem" runat="server" EnableAnchor="true" DisplayExtraInfo="false" DisplayLinkedBy="false" DisplaySize="false"  Visible="false"/>
+                                                
                                                 <span class="icons right">
                                                     <%--<span class="icon mandatory" title="Mandatory">&nbsp;</span>--%>
                                                     <%--<span class="icon unlocked" title="Unlocked">&nbsp;</span>--%>
 
                                                     <asp:Label ID="IMGisMandatory" runat="server" Visible="false" CssClass="icon mandatory" ></asp:Label>
-                                                <asp:Image ID="IMGmandatory" runat="server" Visible="false" CssClass="icon openDetail_Activity" />
-                                                <asp:Label ID="LBmandatoryItem" runat="server" CssClass="hideDetail"></asp:Label>
+                                                    <asp:Image ID="IMGmandatory" runat="server" Visible="false" CssClass="icon openDetail_Activity" />
+                                                    <asp:Label ID="LBmandatoryItem" runat="server" CssClass="hideDetail"></asp:Label>
                                         
-                                                <asp:LinkButton ID="LKBblocked" runat="server" Text="Visible**" CommandName="blockedA"
-                                                    Visible="false"></asp:LinkButton>
-                                                <asp:label ID="IMGblocked" runat="server" Visible="false" ></asp:label> 
+                                                    <asp:LinkButton ID="LKBblocked" runat="server" Text="Visible**" CommandName="blockedA"
+                                                        Visible="false"></asp:LinkButton>
+                                                    <asp:label ID="IMGblocked" runat="server" Visible="false" ></asp:label> 
                                                 </span>
                                             </td>
                                             <td class="timecompletion">
@@ -492,11 +491,7 @@
                         </tr>
                     </tbody>
                     <tfoot>
-                        <tr>
-                            <td>
-                                ---
-                            </td>
-                        </tr>
+                        <!--<tr><td>---</td></tr>-->
                     </tfoot>
                 </table>
             </div>

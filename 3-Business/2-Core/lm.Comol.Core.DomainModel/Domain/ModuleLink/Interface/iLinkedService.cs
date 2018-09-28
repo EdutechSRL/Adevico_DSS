@@ -67,6 +67,8 @@ namespace lm.Comol.Core.DomainModel
             String baseFilePath, 
             String baseThumbnailPath);
 
+        //void PhisicalDeleteCommunity(string baseFileRepositoryPath, int idCommunity, int idUser);
+
         void PhisicalDeleteRepositoryItem(
             long idFileItem, 
             Int32 idCommunity, 

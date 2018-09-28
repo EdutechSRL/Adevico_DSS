@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="lm.Comol.Modules.Standard" namespace="lm.Comol.Modules.Standard.Skin.Domain.DTO">
+    <class name="DtoSkinOrganization" table="ORGANIZZAZIONE" >
+        <id name="Id" column="ORGN_id" type="Int32">
+            <generator class="native"/>
+        </id>
+        <property name="Name" type="String" column="ORGN_ragioneSociale" />
+        <property name="Url" type="String" column="ORGN_homePage" />
+    </class>
+</hibernate-mapping>

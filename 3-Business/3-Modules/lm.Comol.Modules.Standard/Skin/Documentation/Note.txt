@@ -1,0 +1,34 @@
+﻿
+Stavo buttando dentro un oggetto (che contiene solo stringhe = render dei vari elementi) da buttare in cache.
+
+Nella cache pensavo di buttare un Dictionary la cui chiave è il codice della linga (o l'ID se è più performante e non crea problemi).
+
+SE il dictionary NON esiste, ricarico la skin interessata, ne faccio il render e la sbatto in cache.
+SE nel dictionary non c'è la chiave con la lingua corrente, vado a pescare la lingua di default (che a questo punto ci deve essere).
+
+In fase di render effettivo, controllo che le stringhe contenute nell'oggetto "Skin Renderizzata" e se sono vuote:
+
+    CSS: li tralascio, tanto si pesca comunque quelli dei "padri" (Portal/Organizazion se comunità, Portal se Organization)
+    Loghi: vado a pescare quelli dell'elemento superiore
+
+
+Questo mi porta al seguente vincolo:
+
+    DEVO inserire i dati per la lingua di default (un po' come per i servizi)
+
+
+
+
+L'alternativa è quella di mettere nella chiave della cache anche l'ID della lingua.
+Il meccanismo sarebbe simile, ma invece di due controlli in cascata (uno per vedere se c'è la chiave relativa alla skin e successivamente alla lingua),
+avere dei controlli più lineari ed articolati:
+controllo che ci sia per la lingua corrente,
+controllo che ci sia per la lingua di deafult,
+se non c'è carico nuovamente la skin e via di nuovo.
+
+Forse nel secondo caso il tutto diventa più pesante,
+nel primo caso con il primo controllo so già se ho la skin ed eventualmente la ricarico,
+mentre nel secondo devo controllare due lingue
+e nel secondo caso si deve valutare TUTTE le chiavi in cache, mentre nel primo se trova la skin, controlla solo quelle interne al dictionary...
+
+

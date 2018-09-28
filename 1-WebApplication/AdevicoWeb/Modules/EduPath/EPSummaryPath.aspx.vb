@@ -8,7 +8,7 @@ Imports lm.Comol.Modules.EduPath.Presentation
 Imports lm.ActionDataContract
 
 Public Class EPSummaryPath
-    Inherits PageBase
+    Inherits EPlitePageBaseEduPath
     Implements IViewSummaryPath
 
 #Region "Context"
@@ -441,7 +441,11 @@ Public Class EPSummaryPath
 
     End Sub
     Public Overrides Sub SetCultureSettings()
-        MyBase.SetCulture("pg_Summary", "EduPath")
+        If PreloadIsMooc Then
+            MyBase.SetCulture("pg_MoocsSummary", "EduPath")
+        Else
+            MyBase.SetCulture("pg_Summary", "EduPath")
+        End If
     End Sub
 
     Public Overrides Sub SetInternazionalizzazione()
@@ -635,16 +639,16 @@ Public Class EPSummaryPath
 
             hyp = e.Item.FindControl("HYPstats")
 
-            hyp.NavigateUrl = BaseUrl & RootObject.PathStatistics(dto.IdPath, dto.IdCommunity, DateTime.Now, False, SummaryType.Path, SummaryIdCommunity, FromSummary)
+            hyp.NavigateUrl = BaseUrl & RootObject.PathStatistics(dto.IdPath, dto.IdCommunity, DateTime.Now, False, SummaryType.Path, SummaryIdCommunity, FromSummary, dto.IsMooc)
 
             hyp.Visible = dto.CanStat
 
             hyp = e.Item.FindControl("HYPedit")
-            hyp.NavigateUrl = BaseUrl & RootObject.PathView(dto.IdPath, dto.IdCommunity, EpViewModeType.Manage, False)
+            hyp.NavigateUrl = BaseUrl & RootObject.PathView(dto.IdPath, dto.IdCommunity, EpViewModeType.Manage, False, dto.IsMooc)
             hyp.Visible = dto.CanManage
 
             hyp = e.Item.FindControl("HYPsettings")
-            hyp.NavigateUrl = BaseUrl & RootObject.PathManagement(dto.IdCommunity, dto.IdPath, "-2", dto.PathType)
+            hyp.NavigateUrl = BaseUrl & RootObject.PathManagement(dto.IdCommunity, dto.IdPath, "-2", dto.PathType, dto.IsMooc)
             hyp.Visible = dto.CanManage
 
         ElseIf e.Item.ItemType = ListItemType.Header Then
@@ -715,9 +719,9 @@ Public Class EPSummaryPath
 
             Dim p As ModuleEduPath = CurrentPresenter.GetModulePermission(idcomm)
             If p.Administration Then
-                hyp.NavigateUrl = Me.BaseUrl & RootObject.EduPathList(idcomm, EpViewModeType.Manage)
+                hyp.NavigateUrl = Me.BaseUrl & RootObject.EduPathList(idcomm, EpViewModeType.Manage, PreloadIsMooc)
             Else
-                hyp.NavigateUrl = Me.BaseUrl & RootObject.EduPathList(idcomm, EpViewModeType.View)
+                hyp.NavigateUrl = Me.BaseUrl & RootObject.EduPathList(idcomm, EpViewModeType.View, PreloadIsMooc)
             End If
 
 
@@ -752,16 +756,16 @@ Public Class EPSummaryPath
 
             hyp = e.Item.FindControl("HYPstats")
 
-            hyp.NavigateUrl = BaseUrl & RootObject.PathStatistics(dto.IdPath, dto.IdCommunity, DateTime.Now, False)
+            hyp.NavigateUrl = BaseUrl & RootObject.PathStatistics(dto.IdPath, dto.IdCommunity, DateTime.Now, False, dto.IsMooc)
 
             hyp.Visible = dto.CanStat
 
             hyp = e.Item.FindControl("HYPedit")
-            hyp.NavigateUrl = BaseUrl & RootObject.PathView(dto.IdPath, dto.IdCommunity, EpViewModeType.Manage, False)
+            hyp.NavigateUrl = BaseUrl & RootObject.PathView(dto.IdPath, dto.IdCommunity, EpViewModeType.Manage, False, dto.IsMooc)
             hyp.Visible = dto.CanManage
 
             hyp = e.Item.FindControl("HYPsettings")
-            hyp.NavigateUrl = BaseUrl & RootObject.PathManagement(dto.IdCommunity, dto.IdPath, "-2", dto.PathType)
+            hyp.NavigateUrl = BaseUrl & RootObject.PathManagement(dto.IdCommunity, dto.IdPath, "-2", dto.PathType, dto.IsMooc)
             hyp.Visible = dto.CanManage
         End If
     End Sub

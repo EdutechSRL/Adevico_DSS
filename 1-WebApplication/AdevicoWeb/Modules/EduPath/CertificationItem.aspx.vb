@@ -5,11 +5,17 @@ Imports lm.ActionDataContract
 Imports COL_BusinessLogic_v2.UCServices
 
 Public Class CertificationItem
-    Inherits PageBaseEduPath
+    Inherits EPpageBaseEduPath
 
-    Private ReadOnly Property CurrentCommRoleID As Integer
+    Private ReadOnly Property IdCommunityRole As Integer
         Get
-            Return UtenteCorrente.GetIDRuoloForComunita(CurrentCommunityID)
+            Dim key As String = "CurrentCommRoleID_" & PathId.ToString() & "_" & CurrentUserId.ToString
+            Dim idRole As Integer = ViewStateOrDefault(key, -1)
+            If idRole = -1 Then
+                idRole = ServiceEP.GetIdCommunityRole(CurrentUserId, ServiceEP.GetPathIdCommunity(PathId))
+                ViewState(key) = idRole
+            End If
+            Return idRole
         End Get
     End Property
 
@@ -19,13 +25,13 @@ Public Class CertificationItem
             If IsNumeric(qs_communityId) Then
                 Return qs_communityId
             Else
-                Return Me.CurrentContext.UserContext.CurrentCommunityID
+                Return PageUtility.CurrentContext.UserContext.CurrentCommunityID
             End If
         End Get
     End Property
     Private ReadOnly Property CurrentUserId() As Integer
         Get
-            Return Me.CurrentContext.UserContext.CurrentUserID
+            Return PageUtility.CurrentContext.UserContext.CurrentUserID
         End Get
     End Property
 
@@ -80,7 +86,7 @@ Public Class CertificationItem
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         Me.HYPviewActivity.Visible = True
-        Me.HYPviewActivity.NavigateUrl = Me.BaseUrl & RootObject.ViewActivity(ActivityId, UnitId, PathId, CurrentCommunityID, lm.Comol.Modules.EduPath.Domain.EpViewModeType.Manage)
+        Me.HYPviewActivity.NavigateUrl = Me.BaseUrl & RootObject.ViewActivity(ActivityId, UnitId, PathId, CurrentCommunityID, lm.Comol.Modules.EduPath.Domain.EpViewModeType.Manage, IsMoocPath, PreloadIsFromReadOnly)
         'Me.HYPlistEduPath.Visible = ViewModeType = EpViewModeType.Manage OrElse (ServiceEP.GetEduPathCountInCommunity(Me.CurrentCommunityID, True) > 1)
         'Me.HYPlistEduPath.NavigateUrl = Me.BaseUrl & RootObject.EduPathList(Me.CurrentCommunityID, Me.ViewModeType, True)
 
@@ -111,7 +117,7 @@ Public Class CertificationItem
     Public Overrides Function HasPermessi() As Boolean
         Dim ok As Boolean = False
 
-        ok = ServiceEP.HasPermessi_ByItem(Of SubActivity)(SubActId, CurrentCommunityID) AndAlso ServiceEP.AdminCanUpdate(SubActId, lm.Comol.Modules.EduPath.Domain.ItemType.SubActivity, CurrentUserId, CurrentCommRoleID)
+        ok = ServiceEP.HasPermessi_ByItem(Of SubActivity)(SubActId, CurrentCommunityID) AndAlso ServiceEP.AdminCanUpdate(SubActId, lm.Comol.Modules.EduPath.Domain.ItemType.SubActivity, CurrentUserId, IdCommunityRole)
 
         Return ok
 
@@ -151,7 +157,7 @@ Public Class CertificationItem
 
     Private Sub ShowError(ByVal ErrorType As EpError)
         Me.Resource.setHyperLink(Me.HYPerror, False, True)
-        Me.HYPerror.NavigateUrl = Me.BaseUrl & RootObject.EduPathList(Me.CurrentCommunityID, EpViewModeType.Manage)
+        Me.HYPerror.NavigateUrl = Me.BaseUrl & RootObject.EduPathList(Me.CurrentCommunityID, EpViewModeType.Manage, IsMoocPath)
         Select Case ErrorType
             Case EpError.Generic
                 Me.LBerror.Text = Me.Resource.getValue("Error." & EpError.Generic.ToString)

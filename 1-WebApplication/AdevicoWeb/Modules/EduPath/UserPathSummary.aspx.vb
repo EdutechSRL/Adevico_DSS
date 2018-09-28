@@ -9,12 +9,111 @@ Imports lm.Comol.Core.DomainModel
 Imports lm.Comol.Modules.EduPath.Presentation
 
 Public Class UserPathSummary
-    Inherits PageBaseEduPath
+    Inherits EPpageBaseEduPath
 
+#Region "Inherits"
+    Public Overrides ReadOnly Property AlwaysBind As Boolean
+        Get
+            Return False
+        End Get
+    End Property
+    Public Overrides ReadOnly Property VerifyAuthentication As Boolean
+        Get
+            If IsSessioneScaduta(False) Then
+                RedirectOnSessionTimeOut(Request.Url.AbsoluteUri, CurrentCommunityID)
+            End If
+            Return False
+        End Get
+    End Property
+#End Region
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
 
     End Sub
 
+#Region "Inherits"
+    Public Overrides Sub BindDati()
+        MLVpathsummary.SetActiveView(VIWpathsummary)
+
+        If Not UserIdquery Then
+            Me.HYPlistEduPath.NavigateUrl = Me.BaseUrl & RootObject.EduPathList(CmntId, EpViewModeType.View, PreloadIsMooc)
+            Me.HYPlistEduPath.Visible = True
+            Me.HYPback.Visible = False
+        Else
+            Try
+                Dim page As Int32 = Int32.Parse(Request.QueryString("Page"))
+                Dim role As Int32 = Int32.Parse(Request.QueryString("RId"))
+                Dim search As String = Request.QueryString("Search")
+
+                If (From = "list") Then
+                    Me.HYPback.NavigateUrl = Me.BaseUrl & RootObject.EduPathList(CmntId, EpViewModeType.View, PreloadIsMooc)
+                Else
+                    Me.HYPback.NavigateUrl = Me.BaseUrl & RootObject.PathSummary(CmntId, Me.UserId, 0, page, role, search, PreloadIsMooc)
+                End If
+            Catch ex As Exception
+                If (From = "list") Then
+                    Me.HYPback.NavigateUrl = Me.BaseUrl & RootObject.EduPathList(CmntId, EpViewModeType.View, PreloadIsMooc)
+                Else
+                    Me.HYPback.NavigateUrl = Me.BaseUrl & RootObject.PathSummary(CmntId, Me.UserId, 0, PreloadIsMooc)
+                End If
+            End Try
+            Me.HYPlistEduPath.Visible = False
+            Me.HYPback.Visible = True
+        End If
+
+        Dim list As IList(Of dtoUserPaths) = New List(Of dtoUserPaths)
+        If Not Page.IsPostBack Then
+            Dim l As New List(Of Comol.Entity.Role)
+
+            l = ServiceEP.GetActiveRoles(CmntId, LinguaID)
+            l.Add(New Comol.Entity.Role() With {.ID = 0, .Name = Me.Resource.getValue("NONE")})
+            l = l.OrderBy(Function(x) x.Name).ToList()
+        End If
+
+        Dim dtou As dtoUserPaths = Me.ServiceStat.GetSelectedUserPathsCount(PreloadIsMooc, CmntId, UserId)
+        If (Not dtou Is Nothing) Then
+            list.Add(dtou)
+        Else
+            ShowMessageToPage(Me.Resource.getValue("Error.Url"))
+        End If
+
+        RPTusers.DataSource = list
+        RPTusers.DataBind()
+    End Sub
+    Public Overrides Sub BindNoPermessi()
+        MLVpathsummary.SetActiveView(VIWerror)
+    End Sub
+
+    Public Overrides Function HasPermessi() As Boolean
+        Dim result As Boolean = False
+        If (UserId = UtenteCorrente.ID) Then
+            result = True
+        Else
+            result = MyBase.PermissionOtherCommunity(CmntId).Admin
+        End If
+        LBerror.Text = Me.Resource.getValue("Error.NotPermission")
+
+        Return result
+    End Function
+    Public Overrides Sub SetCultureSettings()
+        If PreloadIsMooc Then
+            MyBase.SetCulture("pg_MoocStatistics", "EduPath")
+        Else
+            MyBase.SetCulture("pg_Stat", "EduPath")
+        End If
+    End Sub
+
+    Public Overrides Sub SetInternazionalizzazione()
+        With Me.Resource
+            .setLabel(LBservice)
+            .setHyperLink(Me.HYPlistEduPath, False, True)
+            .setHyperLink(Me.HYPback, False, True)
+            .setLabel(LBcommunitynameTitle)
+            .setLabel(LBstatusTitle)
+        End With
+    End Sub
+#End Region
+
+#Region "Internal"
     Public Function Zero(value As Int32) As String
         If (value = 0) Then
             Return "nopath"
@@ -22,7 +121,6 @@ Public Class UserPathSummary
             Return ""
         End If
     End Function
-
     Public Function ExpandMe(value As Int32) As String
         If (Request.QueryString("UserId") = value.ToString()) Then
             Return "expanded"
@@ -30,9 +128,7 @@ Public Class UserPathSummary
             Return ""
         End If
     End Function
-
     Public Function Status(s As String) As String
-
         Select Case s
             Case "notstarted"
                 Return "gray"
@@ -40,15 +136,11 @@ Public Class UserPathSummary
                 Return "yellow"
             Case "completed"
                 Return "green"
-
             Case Else
                 Return ""
         End Select
-
     End Function
-
     Public Function StatusTitle(s As String) As String
-
         Select Case s
             Case "notstarted"
                 Return Me.Resource.getValue("EduPathTranslations.NotStarted")
@@ -56,84 +148,13 @@ Public Class UserPathSummary
                 Return Me.Resource.getValue("EduPathTranslations.Started")
             Case "completed"
                 Return Me.Resource.getValue("EduPathTranslations.Completed")
-
             Case Else
                 Return ""
         End Select
-
     End Function
+#End Region
 
-    Public Overrides ReadOnly Property AlwaysBind As Boolean
-        Get
-            Return False
-        End Get
-    End Property
-
-    Public Overrides Sub BindDati()
-        MLVpathsummary.SetActiveView(VIWpathsummary)
-
-        If Not UserIdquery Then
-            Me.HYPlistEduPath.NavigateUrl = Me.BaseUrl & RootObject.EduPathList(CmntId, EpViewModeType.View)
-            Me.HYPlistEduPath.Visible = True
-            Me.HYPback.Visible = False
-        Else
-
-            Try
-                Dim page As Int32 = Int32.Parse(Request.QueryString("Page"))
-                Dim role As Int32 = Int32.Parse(Request.QueryString("RId"))
-                Dim search As String = Request.QueryString("Search")
-
-                If (From = "list") Then
-                    Me.HYPback.NavigateUrl = Me.BaseUrl & RootObject.EduPathList(CmntId, EpViewModeType.View)
-                Else
-                    Me.HYPback.NavigateUrl = Me.BaseUrl & RootObject.PathSummary(CmntId, Me.UserId, 0, page, role, search)
-                End If
-
-
-            Catch ex As Exception
-                If (From = "list") Then
-                    Me.HYPback.NavigateUrl = Me.BaseUrl & RootObject.EduPathList(CmntId, EpViewModeType.View)
-                Else
-                    Me.HYPback.NavigateUrl = Me.BaseUrl & RootObject.PathSummary(CmntId, Me.UserId, 0)
-                End If
-
-            End Try
-
-
-
-
-
-            Me.HYPlistEduPath.Visible = False
-            Me.HYPback.Visible = True
-        End If
-
-        Dim list As IList(Of dtoUserPaths) = New List(Of dtoUserPaths)
-        If Not Page.IsPostBack Then
-
-
-            Dim l As New List(Of Comol.Entity.Role)
-
-            l = ServiceEP.GetActiveRoles(CmntId, LinguaID)
-            l.Add(New Comol.Entity.Role() With {.ID = 0, .Name = Me.Resource.getValue("NONE")})
-
-            l = l.OrderBy(Function(x) x.Name).ToList()
-
-
-        End If
-
-        Dim dtou As dtoUserPaths = Me.ServiceStat.GetSelectedUserPathsCount(CmntId, UserId)
-
-        If (Not dtou Is Nothing) Then
-            list.Add(dtou)
-        Else
-            ShowMessageToPage(Me.Resource.getValue("Error.Url"))
-        End If
-
-
-
-        RPTusers.DataSource = list
-        RPTusers.DataBind()
-    End Sub
+  
 
 
     Public ReadOnly Property UserIdquery As Boolean
@@ -188,25 +209,7 @@ Public Class UserPathSummary
         End Get
     End Property
 
-    Public Overrides Sub BindNoPermessi()
-        MLVpathsummary.SetActiveView(VIWerror)
-    End Sub
-
-    Public Overrides Function HasPermessi() As Boolean
-        Dim result As Boolean = False
-
-        If (UserId = UtenteCorrente.ID) Then
-            result = True
-        Else
-            result = MyBase.PermissionOtherCommunity(CmntId).Admin
-        End If
-
-        LBerror.Text = Me.Resource.getValue("Error.NotPermission")
-
-        'LBerror.Text = Me.Resource.getValue("Error.NotPermission")
-
-        Return result
-    End Function
+  
 
 
     Protected Overrides ReadOnly Property PathType As lm.Comol.Modules.EduPath.Domain.EPType
@@ -219,19 +222,7 @@ Public Class UserPathSummary
 
     End Sub
 
-    Public Overrides Sub SetCultureSettings()
-        MyBase.SetCulture("pg_Stat", "EduPath")
-    End Sub
-
-    Public Overrides Sub SetInternazionalizzazione()
-        With Me.Resource
-            .setLabel(LBservice)
-            .setHyperLink(Me.HYPlistEduPath, False, True)
-            .setHyperLink(Me.HYPback, False, True)
-            .setLabel(LBcommunitynameTitle)
-            .setLabel(LBstatusTitle)
-        End With
-    End Sub
+   
 
     Public Overrides Sub ShowMessageToPage(errorMessage As String)
         LBerror.Text = errorMessage
@@ -254,14 +245,7 @@ Public Class UserPathSummary
         'End If
     End Sub
 
-    Public Overrides ReadOnly Property VerifyAuthentication As Boolean
-        Get
-            If IsSessioneScaduta(False) Then
-                RedirectOnSessionTimeOut(Request.Url.AbsoluteUri, CurrentCommunityID)
-            End If
-            Return False
-        End Get
-    End Property
+  
 
     Private Sub UserPathSummary_PreLoad(sender As Object, e As System.EventArgs) Handles Me.PreLoad
         Me.Master.ShowDocType = True
@@ -402,9 +386,9 @@ Public Class UserPathSummary
             If dto.PathInfo.Status = lm.Comol.Modules.EduPath.Domain.Status.Locked AndAlso Not dto.CanManage Then
                 oHyp.Visible = False
             ElseIf dto.CanManage Then
-                oHyp.NavigateUrl = Me.BaseUrl & RootObject.UserStatisticsManage(dto.IdPath, Me.CurrentCommunityID, dto.IdPerson, ItemType.Path, 0, DateTime.Now, False, "PathSummary")
+                oHyp.NavigateUrl = Me.BaseUrl & RootObject.UserStatisticsManage(dto.IdPath, Me.CurrentCommunityID, dto.IdPerson, ItemType.Path, 0, DateTime.Now, False, "PathSummary", PreloadIsMooc)
             ElseIf dto.CanStat Then
-                oHyp.NavigateUrl = Me.BaseUrl & RootObject.UserStatisticsView(dto.IdPath, Me.CurrentCommunityID, DateTime.Now, False)
+                oHyp.NavigateUrl = Me.BaseUrl & RootObject.UserStatisticsView(dto.IdPath, Me.CurrentCommunityID, DateTime.Now, False, PreloadIsMooc)
             Else
                 oHyp.Visible = False
             End If
@@ -423,7 +407,7 @@ Public Class UserPathSummary
             oHyp = e.Item.FindControl("HYPcertificates")
             Me.Resource.setHyperLink(oHyp, False, True)
             oHyp.Text = ""
-            oHyp.NavigateUrl = Me.BaseUrl + RootObject.EPCertificationUser(Me.CurrentCommunityID, dto.IdPath, dto.IdPerson)
+            oHyp.NavigateUrl = Me.BaseUrl + RootObject.EPCertificationUser(Me.CurrentCommunityID, dto.IdPath, dto.IdPerson, dto.IsMooc)
 
             oHyp.Visible = ServiceEP.PathHasSubActivityType(dto.IdPath, SubActivityType.Certificate) AndAlso Not IsNothing(dto.Ps) AndAlso dto.Ps.Status > StatusStatistic.Browsed
 

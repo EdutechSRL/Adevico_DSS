@@ -262,6 +262,10 @@ Namespace Business
         Public Sub PhisicalDeleteCommunity(idCommunity As Integer, idUser As Integer, baseFilePath As String, baseThumbnailPath As String) Implements iLinkedService.PhisicalDeleteCommunity
 
         End Sub
+
+        Public Sub PhisicalDeleteCommunity(baseFileRepositoryPath As String, idCommunity As Integer, idUser As Integer) 'Implements iLinkedService.PhisicalDeleteCommunity
+
+        End Sub
         Public Sub PhisicalDeleteRepositoryItem(idFileItem As Long, idCommunity As Integer, idUser As Integer, Optional moduleUserLong As Dictionary(Of String, Long) = Nothing, Optional moduleUserString As Dictionary(Of String, String) = Nothing) Implements iLinkedService.PhisicalDeleteRepositoryItem
 
         End Sub
@@ -2000,7 +2004,6 @@ Namespace Business
 
             Return recipient
         End Function
-
 
     End Class
 

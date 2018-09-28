@@ -145,7 +145,7 @@
         </div>
     </div>
 </div>           
-<div class="fieldrow fieldprojecttype">
+<div class="fieldrow fieldprojecttype" id="DVcpm" runat="server" visible="false">
     <asp:Label ID="LBprojectDateCalculationByCpm_t" class="fieldlabel" AssociatedControlID="CBXdateCalculationByCpm" runat="server">*Automatic date:</asp:Label>
     <div class="inlinewrapper">
         <asp:CheckBox ID="CBXdateCalculationByCpm" runat="server" CssClass="inputtext mastercheck" data-uncheck=".estimatedduration" data-disable=".estimatedduration" />

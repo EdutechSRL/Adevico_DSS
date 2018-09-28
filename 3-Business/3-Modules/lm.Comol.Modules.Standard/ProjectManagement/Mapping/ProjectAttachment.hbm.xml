@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="lm.Comol.Modules.Standard" namespace="lm.Comol.Modules.Standard.ProjectManagement.Domain">
+  <class name="ProjectAttachment" table="PM_Attachment" optimistic-lock ="version">
+    <id name="Id" column="Id" type="Int64">
+      <generator class="native"/>
+    </id>
+    <version name="TimeStamp"
+   generated="always"
+   unsaved-value="null"
+   type="BinaryBlob">
+      <column name="_Timestamp"
+              not-null="false"
+              sql-type="timestamp"/>
+    </version>
+    <property name="Type" type="lm.Comol.Modules.Standard.ProjectManagement.Domain.AttachmentType, lm.Comol.Modules.Standard"  column="Type" />
+    <property name="Url" type="String" column="Url"/>
+    <property name="UrlName" type="String" column="UrlName"/>
+    <property name="Description" type="String" column="Description" />
+    <property name="IsForProject" type="Boolean" column="IsForProject" />
+    <many-to-one name="Item" class="lm.Comol.Core.FileRepository.Domain.liteRepositoryItem" column="IdFile" foreign-key="IdFile" cascade="none" not-found="ignore" />
+    <many-to-one name="Version" class="lm.Comol.Core.FileRepository.Domain.liteRepositoryItemVersion" column="IdVersion" foreign-key="IdVersion" cascade="none" not-found="ignore" />
+    <many-to-one name="Project" class="lm.Comol.Modules.Standard.ProjectManagement.Domain.Project, lm.Comol.Modules.Standard" column="IdProject" foreign-key="IdProject" cascade="none" not-found="ignore" />
+    <many-to-one name="Activity" class="lm.Comol.Modules.Standard.ProjectManagement.Domain.PmActivity, lm.Comol.Modules.Standard" column="IdActivity" foreign-key="IdActivity" cascade="none" not-found="ignore" />
+    <many-to-one name="Link" class="lm.Comol.Core.DomainModel.liteModuleLink" column="IdLink" foreign-key="IdLink" cascade="none" not-found="ignore"  />
+    <bag name="SharedItems" table="PM_AttachmentLink" inverse="true" lazy="true" fetch="subselect"  >
+      <key column="IdAttachment"/>
+      <one-to-many class="lm.Comol.Modules.Standard.ProjectManagement.Domain.ProjectAttachmentLink"/>
+    </bag>
+    <property name="IdModifiedBy" type="Int32" column="_ModifiedBy" />
+    <property name="CreatedOn" type="DateTime" column="_CreatedOn" />
+    <property name="ModifiedOn" type="DateTime" column="_ModifiedOn" />
+    <property name="IdCreatedBy" type="Int32" column="_CreatedBy" />
+    <property name="CreatorProxyIpAddress" type="String" column="_CreatedProxyIPaddress" />
+    <property name="CreatorIpAddress" type="String" column="_CreatedIPaddress" />
+    <property name="ModifiedProxyIpAddress" type="String" column="_ModifiedProxyIPaddress" />
+    <property name="ModifiedIpAddress" type="String" column="_ModifiedIPaddress" />
+    <property name="Deleted" type="lm.Comol.Core.DomainModel.BaseStatusDeleted,lm.Comol.Core.DomainModel" column="_Deleted" />
+  </class>
+</hibernate-mapping>

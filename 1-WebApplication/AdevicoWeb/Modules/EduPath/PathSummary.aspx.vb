@@ -9,8 +9,25 @@ Imports lm.Comol.Core.DomainModel
 Imports lm.Comol.Modules.EduPath.Presentation
 
 Public Class PathSummary
-    Inherits PageBaseEduPath
+    Inherits EPpageBaseEduPath
 
+#Region "Inherits"
+    Public Overrides ReadOnly Property AlwaysBind As Boolean
+        Get
+            Return False
+        End Get
+    End Property
+    Public Overrides ReadOnly Property VerifyAuthentication As Boolean
+        Get
+            If IsSessioneScaduta(False) Then
+                RedirectOnSessionTimeOut(Request.Url.AbsoluteUri, CurrentCommunityID)
+            End If
+            Return False
+        End Get
+    End Property
+#End Region
+
+#Region "Internal"
     Dim i As List(Of dtoUserPaths)
 
     Dim _pathcount As Int32
@@ -28,23 +45,6 @@ Public Class PathSummary
             Return PathCount = 1
         End Get
     End Property
-
-    Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-        Me.PGgridTop.Pager = Me.Pager
-        Me.PGgridBottom.Pager = Me.Pager
-    End Sub
-
-    Private Sub PathSummary_PreLoad(sender As Object, e As System.EventArgs) Handles Me.PreLoad
-        Me.Master.ShowDocType = True
-    End Sub
-
-    Public Overrides ReadOnly Property AlwaysBind As Boolean
-        Get
-            Return False
-        End Get
-    End Property
-
-
     Public Property orole As Int32
         Get
             Return ViewStateOrDefault("selectedRole", 0)
@@ -71,9 +71,33 @@ Public Class PathSummary
                 Dim _id As Int32 = Integer.Parse(Request.QueryString("ComId"))
                 Return _id
             End If
-
         End Get
     End Property
+    Private Property Pager As PagerBase
+        Get
+            Return ViewStateOrDefault("Pager", New lm.Comol.Core.DomainModel.PagerBase)
+        End Get
+        Set(ByVal value As PagerBase)
+            Me.ViewState("Pager") = value
+            Me.PGgridTop.Pager = value
+            Me.PGgridBottom.Pager = value
+            'Me.DVpagerTop.Visible = Not value.Count = 0 AndAlso (value.Count + 1 > value.PageSize)
+            'Me.DVpagerBottom.Visible = Not value.Count = 0 AndAlso (value.Count + 1 > value.PageSize)
+        End Set
+    End Property
+#End Region
+  
+
+    Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+        Me.PGgridTop.Pager = Me.Pager
+        Me.PGgridBottom.Pager = Me.Pager
+    End Sub
+
+    Private Sub PathSummary_PreLoad(sender As Object, e As System.EventArgs) Handles Me.PreLoad
+        Me.Master.ShowDocType = True
+    End Sub
+
+
 
     Public Overrides Sub BindDati()
         MLVpathsummary.SetActiveView(VIWpathsummary)
@@ -88,10 +112,10 @@ Public Class PathSummary
 
         'i.Add(o)
 
-        PathCount = ServiceEP.CountActivePaths(CmntId)
+        PathCount = ServiceEP.CountActivePaths(CmntId, PreloadIsMooc)
 
         Dim c As New COL_Comunita(CmntId)
-        Me.HYPlistEduPath.NavigateUrl = Me.BaseUrl & RootObject.EduPathList(Me.CurrentCommunityID, EpViewModeType.Manage)
+        Me.HYPlistEduPath.NavigateUrl = Me.BaseUrl & RootObject.EduPathList(Me.CurrentCommunityID, EpViewModeType.Manage, PreloadIsMooc)
 
         LBserviceCommunity.Text = c.EstraiNomeBylingua(LinguaID)
 
@@ -152,7 +176,7 @@ Public Class PathSummary
             'Pager.initialize()
         End If
 
-        list = Me.ServiceStat.GetUserPathsCount(CmntId, orole, name, Me.Pager.PageIndex, Me.Pager.PageSize, CHBshowall.Checked)
+        list = Me.ServiceStat.GetUserPathsCount(PreloadIsMooc, CmntId, orole, name, Me.Pager.PageIndex, Me.Pager.PageSize, CHBshowall.Checked)
 
         If UniquePath Then
             DIVinfo.Visible = True
@@ -183,18 +207,7 @@ Public Class PathSummary
         Response.Redirect(url + updatedQueryString)
     End Sub
 
-    Private Property Pager As PagerBase
-        Get
-            Return ViewStateOrDefault("Pager", New lm.Comol.Core.DomainModel.PagerBase)
-        End Get
-        Set(ByVal value As PagerBase)
-            Me.ViewState("Pager") = value
-            Me.PGgridTop.Pager = value
-            Me.PGgridBottom.Pager = value
-            'Me.DVpagerTop.Visible = Not value.Count = 0 AndAlso (value.Count + 1 > value.PageSize)
-            'Me.DVpagerBottom.Visible = Not value.Count = 0 AndAlso (value.Count + 1 > value.PageSize)
-        End Set
-    End Property
+ 
 
     Public Overrides Function HasPermessi() As Boolean
         'Error.NotPermission
@@ -227,7 +240,11 @@ Public Class PathSummary
     End Sub
 
     Public Overrides Sub SetCultureSettings()
-        MyBase.SetCulture("pg_Stat", "EduPath")
+        If PreloadIsMooc Then
+            MyBase.SetCulture("pg_MoocStatistics", "EduPath")
+        Else
+            MyBase.SetCulture("pg_Stat", "EduPath")
+        End If
     End Sub
 
     Public Overrides Sub SetInternazionalizzazione()
@@ -260,14 +277,7 @@ Public Class PathSummary
 
     End Sub
 
-    Public Overrides ReadOnly Property VerifyAuthentication As Boolean
-        Get
-            If IsSessioneScaduta(False) Then
-                RedirectOnSessionTimeOut(Request.Url.AbsoluteUri, CurrentCommunityID)
-            End If
-            Return False
-        End Get
-    End Property
+   
 
     Private Sub SetLbValueWithMinValueFormat(ByRef oLb As Label, ByRef value As Int16, ByRef minValue As Int16, isAutoEp As Boolean)
         If isAutoEp Then
@@ -310,7 +320,7 @@ Public Class PathSummary
             Dim hyp As HyperLink
             hyp = e.Item.FindControl("HYPinfo")
             Me.Resource.setHyperLink(hyp, False, True)
-            hyp.NavigateUrl = Me.BaseUrl & RootObject.UserPathSummary(dto.Person.Id, CmntId, Pager.PageIndex, Server.UrlEncode(orole), name)
+            hyp.NavigateUrl = Me.BaseUrl & RootObject.UserPathSummary(dto.Person.Id, CmntId, Pager.PageIndex, Server.UrlEncode(orole), Server.UrlEncode(name), PreloadIsMooc)
 
             If UniquePath Then
 
@@ -364,8 +374,7 @@ Public Class PathSummary
                     oHyp.Visible = True
                     Me.Resource.setHyperLink(oHyp, False, True)
                     oHyp.Text = ""
-                    oHyp.NavigateUrl = Me.BaseUrl & RootObject.UserStatisticsManage(dtoUnique.IdPath, Me.CurrentCommunityID, dtoUnique.IdPerson, ItemType.Path, 0, DateTime.Now, CHBshowall.Checked, "PathSummary")
-                    'Me.GetDetailUrl(dtoItem.UserId)
+                    oHyp.NavigateUrl = Me.BaseUrl & RootObject.UserStatisticsManage(dtoUnique.IdPath, Me.CurrentCommunityID, dtoUnique.IdPerson, ItemType.Path, 0, DateTime.Now, CHBshowall.Checked, PreloadIsMooc)
                 Else
                     hyp = e.Item.FindControl("HYPinfo")
                     hyp.Visible = False
@@ -482,13 +491,13 @@ Public Class PathSummary
             oHyp = e.Item.FindControl("HYPstats")
             Me.Resource.setHyperLink(oHyp, False, True)
             oHyp.Text = ""
-            oHyp.NavigateUrl = Me.BaseUrl & RootObject.UserStatisticsManage(dto.IdPath, Me.CurrentCommunityID, dto.IdPerson, ItemType.Path, 0, DateTime.Now, False, "PathSummary")
+            oHyp.NavigateUrl = Me.BaseUrl & RootObject.UserStatisticsManage(dto.IdPath, Me.CurrentCommunityID, dto.IdPerson, ItemType.Path, 0, DateTime.Now, CHBshowall.Checked, True, PreloadIsMooc)
             'Me.GetDetailUrl(dtoItem.UserId)
 
             oHyp = e.Item.FindControl("HYPcertificates")
             Me.Resource.setHyperLink(oHyp, False, True)
             oHyp.Text = ""
-            oHyp.NavigateUrl = Me.BaseUrl + RootObject.EPCertificationUser(dto.IdCommunity, dto.IdPath, dto.IdPerson)
+            oHyp.NavigateUrl = Me.BaseUrl + RootObject.EPCertificationUser(dto.IdCommunity, dto.IdPath, dto.IdPerson, dto.IsMooc)
 
             oHyp.Visible = ServiceEP.PathHasSubActivityType(dto.IdPath, SubActivityType.Certificate) AndAlso Not IsNothing(dto.Ps) AndAlso dto.Ps.Status > StatusStatistic.Started
 

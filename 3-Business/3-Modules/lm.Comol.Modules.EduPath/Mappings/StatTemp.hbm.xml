@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="lm.Comol.Modules.EduPath" namespace="lm.Comol.Modules.EduPath.Domain">
+  <class name="OldStat" table="EP_oldStat" discriminator-value="0" optimistic-lock ="version" lazy="true">
+    <id name="Id" column="Id" type="Int64">
+      <generator class="native"/>
+    </id>
+    <property name="Deleted" type="lm.Comol.Core.DomainModel.BaseStatusDeleted,lm.Comol.Core.DomainModel" column="_Deleted" />
+ 
+    <many-to-one name="Person" class="lm.Comol.Core.DomainModel.litePerson, lm.Comol.Core.DomainModel"  column ="IdPerson" foreign-key="IdPerson" cascade="none"  lazy="false" fetch="select"/>
+    <property name="Status" type="StatusStatistic" column="Status" />
+    <property name="StartDate" type="DateTime" column="StartDate" />
+
+
+ 
+
+    <property name="Completion" type="Int64" column="Completion" />
+    <property name="Mark" type="Int16" column="Mark" />
+
+      <many-to-one name="SubActivity" class="lm.Comol.Modules.EduPath.Domain.SubActivity, lm.Comol.Modules.EduPath.Domain" column="IdSubActivity" foreign-key="IdSubActivity" cascade="none" not-null="false"  lazy="false"/>
+
+      
+   
+  </class>
+</hibernate-mapping>

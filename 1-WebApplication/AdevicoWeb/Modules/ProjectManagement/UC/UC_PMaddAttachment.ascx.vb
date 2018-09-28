@@ -2,6 +2,7 @@
 Imports lm.Comol.Modules.Standard.ProjectManagement.Domain
 Imports lm.Comol.Core.DomainModel
 Imports lm.ActionDataContract
+Imports lm.Comol.Core.FileRepository.Domain
 
 Public Class UC_PMaddAttachment
     Inherits BaseControl
@@ -134,19 +135,19 @@ Public Class UC_PMaddAttachment
 #Region "Implements"
 
 #Region "Initializers"
-    Public Sub InitializeControl(idProject As Long, action As lm.Comol.Core.DomainModel.Repository.RepositoryAttachmentUploadActions, idCommunity As Integer, rPermissions As lm.Comol.Core.DomainModel.CoreModuleRepository, Optional description As String = "", Optional dialogclass As String = "") Implements IViewAddAttachment.InitializeControl
-        InitializeControl(idProject, 0, action, idCommunity, rPermissions, description, dialogclass)
+    Public Sub InitializeControl(idProject As Long, action As lm.Comol.Core.DomainModel.Repository.RepositoryAttachmentUploadActions, identifier As lm.Comol.Core.FileRepository.Domain.RepositoryIdentifier, rPermissions As lm.Comol.Core.FileRepository.Domain.ModuleRepository, Optional description As String = "", Optional dialogclass As String = "") Implements IViewAddAttachment.InitializeControl
+        InitializeControl(idProject, 0, action, identifier, rPermissions, description, dialogclass)
     End Sub
-    Public Sub InitializeControl(idProject As Long, action As lm.Comol.Core.DomainModel.Repository.RepositoryAttachmentUploadActions, idCommunity As Integer, Optional description As String = "", Optional dialogclass As String = "") Implements IViewAddAttachment.InitializeControl
-        InitializeControl(idProject, 0, action, idCommunity, description, dialogclass)
+    Public Sub InitializeControl(idProject As Long, action As lm.Comol.Core.DomainModel.Repository.RepositoryAttachmentUploadActions, identifier As lm.Comol.Core.FileRepository.Domain.RepositoryIdentifier, Optional description As String = "", Optional dialogclass As String = "") Implements IViewAddAttachment.InitializeControl
+        InitializeControl(idProject, 0, action, identifier, description, dialogclass)
     End Sub
-    Public Sub InitializeControl(idProject As Long, idActivity As Long, action As lm.Comol.Core.DomainModel.Repository.RepositoryAttachmentUploadActions, idCommunity As Integer, Optional description As String = "", Optional dialogclass As String = "") Implements IViewAddAttachment.InitializeControl
+    Public Sub InitializeControl(idProject As Long, idActivity As Long, action As lm.Comol.Core.DomainModel.Repository.RepositoryAttachmentUploadActions, identifier As lm.Comol.Core.FileRepository.Domain.RepositoryIdentifier, Optional description As String = "", Optional dialogclass As String = "") Implements IViewAddAttachment.InitializeControl
         BaseInitializeControl(action, description, dialogclass)
-        CurrentPresenter.InitView(idProject, idActivity, action, idCommunity)
+        CurrentPresenter.InitView(idProject, idActivity, action, identifier)
     End Sub
-    Public Sub InitializeControl(idProject As Long, idActivity As Long, action As lm.Comol.Core.DomainModel.Repository.RepositoryAttachmentUploadActions, idCommunity As Integer, rPermissions As lm.Comol.Core.DomainModel.CoreModuleRepository, Optional description As String = "", Optional dialogclass As String = "") Implements IViewAddAttachment.InitializeControl
+    Public Sub InitializeControl(idProject As Long, idActivity As Long, action As lm.Comol.Core.DomainModel.Repository.RepositoryAttachmentUploadActions, identifier As lm.Comol.Core.FileRepository.Domain.RepositoryIdentifier, rPermissions As lm.Comol.Core.FileRepository.Domain.ModuleRepository, Optional description As String = "", Optional dialogclass As String = "") Implements IViewAddAttachment.InitializeControl
         BaseInitializeControl(action, description, dialogclass)
-        CurrentPresenter.InitView(idProject, idActivity, action, idCommunity, rPermissions)
+        CurrentPresenter.InitView(idProject, idActivity, action, identifier, rPermissions)
     End Sub
     Private Sub BaseInitializeControl(action As lm.Comol.Core.DomainModel.Repository.RepositoryAttachmentUploadActions, Optional description As String = "", Optional dialogclass As String = "")
         BTNaddAttachment.OnClientClick = ""
@@ -161,31 +162,38 @@ Public Class UC_PMaddAttachment
     End Sub
 #End Region
 
-    Private Function UploadFiles(activity As PmActivity) As MultipleUploadResult(Of dtoModuleUploadedFile) Implements IViewAddAttachment.UploadFiles
-        Return Me.CTRLinternalUploader.AddModuleInternalFiles(lm.Comol.Core.DomainModel.FileRepositoryType.InternalLong, activity, ModuleProjectManagement.UniqueCode, ModuleProjectManagement.ActionType.AssignmentDownload, ModuleProjectManagement.ObjectType.Task)
+    Private Function UploadFiles(activity As PmActivity, addToRepository As Boolean) As List(Of dtoModuleUploadedItem) Implements IViewAddAttachment.UploadFiles
+        If addToRepository Then
+            Return CTRLrepositoryItemsUploader.AddFilesToRepository(activity, activity.Id, CInt(ModuleProjectManagement.ObjectType.Task), ModuleProjectManagement.UniqueCode, ModuleProjectManagement.ActionType.AssignmentDownload)
+        Else
+            Return CTRLinternalUploader.AddModuleInternalFiles(activity, activity.Id, CInt(ModuleProjectManagement.ObjectType.Task), ModuleProjectManagement.UniqueCode, ModuleProjectManagement.ActionType.AssignmentDownload)
+        End If
     End Function
-    Private Function UploadFiles(project As Project) As MultipleUploadResult(Of dtoModuleUploadedFile) Implements IViewAddAttachment.UploadFiles
-        Return Me.CTRLinternalUploader.AddModuleInternalFiles(lm.Comol.Core.DomainModel.FileRepositoryType.InternalLong, project, ModuleProjectManagement.UniqueCode, ModuleProjectManagement.ActionType.AssignmentDownload, ModuleProjectManagement.ObjectType.Project)
+    Private Function UploadFiles(project As Project, addToRepository As Boolean) As List(Of dtoModuleUploadedItem) Implements IViewAddAttachment.UploadFiles
+        If addToRepository Then
+            Return CTRLrepositoryItemsUploader.AddFilesToRepository(project, project.Id, CInt(ModuleProjectManagement.ObjectType.Project), ModuleProjectManagement.UniqueCode, ModuleProjectManagement.ActionType.AssignmentDownload)
+        Else
+            Return CTRLinternalUploader.AddModuleInternalFiles(project, project.Id, CInt(ModuleProjectManagement.ObjectType.Project), ModuleProjectManagement.UniqueCode, ModuleProjectManagement.ActionType.AssignmentDownload)
+        End If
     End Function
-    Private Sub InitializeUploaderControl(action As lm.Comol.Core.DomainModel.Repository.RepositoryAttachmentUploadActions, Optional idCommunity As Integer = -1) Implements IViewAddAttachment.InitializeUploaderControl
+    Private Sub InitializeUploaderControl(action As lm.Comol.Core.DomainModel.Repository.RepositoryAttachmentUploadActions, identifier As lm.Comol.Core.FileRepository.Domain.RepositoryIdentifier) Implements IViewAddAttachment.InitializeUploaderControl
         Select Case action
             Case lm.Comol.Core.DomainModel.Repository.RepositoryAttachmentUploadActions.addurltomoduleitem
                 CTRLurls.Visible = True
                 CTRLurls.InitializeControl()
             Case lm.Comol.Core.DomainModel.Repository.RepositoryAttachmentUploadActions.uploadtomoduleitem
                 CTRLinternalUploader.Visible = True
-                CTRLinternalUploader.InitializeControl(idCommunity)
-                BTNaddAttachment.OnClientClick = "ProgressStart();"
+                CTRLinternalUploader.InitializeControl(PageUtility.CurrentContext.UserContext.CurrentUserID, identifier)
+                'BTNaddAttachment.OnClientClick = "ProgressStart();"
         End Select
     End Sub
-    Private Sub InitializeCommunityUploader(rPermissions As lm.Comol.Core.DomainModel.CoreModuleRepository, idCommunity As Integer) Implements IViewAddAttachment.InitializeCommunityUploader
-        CTRLrepositoryUploader.Visible = True
-        CTRLrepositoryUploader.InitializeControl(0, idCommunity, rPermissions)
-        BTNaddAttachment.OnClientClick = "ProgressStart();"
+    Private Sub InitializeCommunityUploader(identifier As lm.Comol.Core.FileRepository.Domain.RepositoryIdentifier) Implements IViewAddAttachment.InitializeCommunityUploader
+        CTRLrepositoryItemsUploader.Visible = True
+        CTRLrepositoryItemsUploader.InitializeControl(0, identifier)
     End Sub
-    Private Sub InitializeLinkRepositoryItems(rPermissions As lm.Comol.Core.DomainModel.CoreModuleRepository, idCommunity As Integer, alreadyLinkedFiles As List(Of iCoreItemFileLink(Of Long))) Implements IViewAddAttachment.InitializeLinkRepositoryItems
+    Private Sub InitializeLinkRepositoryItems(idUser As Integer, rPermissions As lm.Comol.Core.FileRepository.Domain.ModuleRepository, identifier As lm.Comol.Core.FileRepository.Domain.RepositoryIdentifier, alreadyLinkedFiles As List(Of RepositoryItemLinkBase(Of Long))) Implements IViewAddAttachment.InitializeLinkRepositoryItems
         CTRLlinkItems.Visible = True
-        CTRLlinkItems.InitializeControl(idCommunity, alreadyLinkedFiles, False, False, rPermissions.Administration, rPermissions.Administration)
+        CTRLlinkItems.InitializeControl(idUser, identifier, alreadyLinkedFiles, False, False, rPermissions.Administration, rPermissions.Administration)
     End Sub
 
 #Region "Display Messages"
@@ -232,6 +240,16 @@ Public Class UC_PMaddAttachment
 #End Region
 
 #Region "Internal"
+    Private Sub CTRLinternalUploader_IsValidOperation(ByRef isvalid As Boolean) Handles CTRLinternalUploader.IsValidOperation
+        isvalid = True
+    End Sub
+
+    Private Sub CTRLrepositoryItemsUploader_AllowUploadUpdate(allowUpload As Boolean) Handles CTRLrepositoryItemsUploader.AllowUploadUpdate
+        BTNaddAttachment.Enabled = allowUpload
+    End Sub
+    Private Sub CTRLrepositoryItemsUploader_IsValidOperation(ByRef isvalid As Boolean) Handles CTRLrepositoryItemsUploader.IsValidOperation
+        isvalid = True
+    End Sub
     Private Sub BTNaddAttachment_Click(sender As Object, e As System.EventArgs) Handles BTNaddAttachment.Click
         Dim objOwner As lm.Comol.Core.DomainModel.ModuleObject '= GetOwner()
         Select Case CurrentAction
@@ -243,7 +261,7 @@ Public Class UC_PMaddAttachment
             Case lm.Comol.Core.DomainModel.Repository.RepositoryAttachmentUploadActions.uploadtomoduleitem
                 CurrentPresenter.AddFilesToItem(IdProject, IdActivity)
             Case lm.Comol.Core.DomainModel.Repository.RepositoryAttachmentUploadActions.uploadtomoduleitemandcommunity
-                CurrentPresenter.AddCommunityFilesToItem(IdProject, IdActivity, CTRLrepositoryUploader.AddFilesToCommunityRepository())
+                CurrentPresenter.AddCommunityFilesToItem(IdProject, IdActivity)
         End Select
     End Sub
     Private Sub LNBcloseAttachmentWindow_Click(sender As Object, e As System.EventArgs) Handles LNBcloseAttachmentWindow.Click
@@ -252,4 +270,5 @@ Public Class UC_PMaddAttachment
     End Sub
 #End Region
 
+   
 End Class

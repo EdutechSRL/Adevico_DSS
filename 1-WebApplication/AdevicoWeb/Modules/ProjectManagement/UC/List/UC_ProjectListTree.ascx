@@ -42,7 +42,14 @@
                         <ItemTemplate>
                         <tr class="project child-of-<%#Container.DataItem.IdFatherRow %>" id="prj-<%#Container.DataItem.Id %>">
                             <td class="name">
-                                <span class="text"><a name="<%# Container.DataItem.Id.ToString() %>"></a><asp:HyperLink ID="HYPprojectName" runat="server"></asp:HyperLink></span>
+                                <span class="text"><a name="<%# Container.DataItem.Id.ToString() %>"></a><asp:HyperLink ID="HYPprojectName" runat="server"></asp:HyperLink>
+
+                                       <span class="icons right">
+                                           <asp:linkbutton ID="LNBattachments" CommandName="attachment" CommandArgument="<%#Container.DataItem.Id %>" CssClass="icon xs attacchment"></asp:linkbutton>
+                            <span title="3 attachments" class="icon xs attacchment">&nbsp;</span>
+                        </span>
+                                </span>
+                             
                                 <asp:Label ID="LBcommunityName" runat="server" CssClass="extrainfo"></asp:Label>
                             </td>
                             <td class="status">

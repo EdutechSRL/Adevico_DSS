@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<hibernate-mapping assembly="lm.Comol.Modules.Standard" namespace="lm.Comol.Modules.Standard.GlossaryNew.Domain"
+                   xmlns="urn:nhibernate-mapping-2.2">
+  <class name="TermSerialized" table="GL_GlossaryTerm" lazy="true">
+    <id name="Id" column="Id" type="Int64">
+      <generator class="native" />
+    </id>
+    <version name="TimeStamp" generated="always" unsaved-value="null" type="BinaryBlob">
+      <column name="_Timestamp" not-null="false" sql-type="timestamp" />
+    </version>
+
+    <property name="IdGlossary">
+      <column name="IdGlossary" sql-type="bigint" not-null="false" />
+    </property>
+
+    <property name="IdCommunity">
+      <column name="IdCommunity" sql-type="int" not-null="false" />
+    </property>
+    <property name="Name">
+      <column name="Name" sql-type="nvarchar" not-null="true" />
+    </property>
+    <property name="Description">
+      <column name="Description" sql-type="ntext" not-null="false" />
+    </property>
+    <property name="DescriptionText">
+      <column name="DescriptionText" sql-type="ntext" not-null="false" />
+    </property>
+    <property name="Status">
+      <column name="Status" sql-type="smallint" not-null="false" />
+    </property>
+    <property name="FirstLetter">
+      <column name="FirstLetter" sql-type="nchar" not-null="false" />
+    </property>
+    <property name="IsPublic">
+      <column name="IsPublic" sql-type="bit" not-null="true" />
+    </property>
+    <property name="IsPublished" />
+
+    <!--<bag name="Attachments">
+      <key column="IdTerm" />
+      <one-to-many class="TermAttachment" />
+    </bag>
+
+    --><!--Static Fields--><!--
+    <property name="CreatedOn" type="DateTime" column="_CreatedOn" />
+    <many-to-one name="CreatedBy" class="lm.Comol.Core.DomainModel.litePerson" column="_CreatedBy"
+                 foreign-key="_CreatedBy" cascade="none" />
+    <property name="ModifiedOn" type="DateTime" column="_ModifiedOn" />
+    <many-to-one name="ModifiedBy" class="lm.Comol.Core.DomainModel.litePerson" column="_ModifiedBy"
+                 foreign-key="_ModifiedBy" cascade="none" />
+    <property name="CreatorProxyIpAddress" type="String" column="_CreatedProxyIPaddress" />
+    <property name="CreatorIpAddress" type="String" column="_CreatedIPaddress" />
+    <property name="ModifiedProxyIpAddress" type="String" column="_ModifiedProxyIPaddress" />
+    <property name="ModifiedIpAddress" type="String" column="_ModifiedIPaddress" />
+    <property name="Deleted" type="lm.Comol.Core.DomainModel.BaseStatusDeleted,lm.Comol.Core.DomainModel" column="_Deleted" />-->
+  </class>
+</hibernate-mapping>

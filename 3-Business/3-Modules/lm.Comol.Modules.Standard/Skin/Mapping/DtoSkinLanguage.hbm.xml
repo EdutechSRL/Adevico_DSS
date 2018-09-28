@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="lm.Comol.Modules.Standard" namespace="lm.Comol.Modules.Standard.Skin.Domain.DTO">
+    <class name="DtoSkinLanguage" table="LINGUA" >
+        <id name="Id" column="LNGU_id" type="Int32">
+            <generator class="native"/>
+        </id>
+        <property name="LangName" type="String" column="LNGU_nome" />
+        <property name="LangCode" type="String" column="LNGU_codice" />
+        <property name="IsDefault" type="Boolean" column="LNGU_default" />
+    </class>
+</hibernate-mapping>

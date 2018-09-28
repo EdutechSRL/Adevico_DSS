@@ -31,8 +31,28 @@ Public Class ProjectAttachments
             THactions.Visible = value
         End Set
     End Property
-#End Region
+    Private Property RepositoryIdentifier As lm.Comol.Core.FileRepository.Domain.RepositoryIdentifier Implements IViewAttachments.RepositoryIdentifier
+        Get
+            Dim result As lm.Comol.Core.FileRepository.Domain.RepositoryIdentifier = Nothing
+            If Not IsNothing(ViewState("RepositoryIdentifier")) Then
+                Try
+                    result = DirectCast(ViewState("RepositoryIdentifier"), lm.Comol.Core.FileRepository.Domain.RepositoryIdentifier)
+                Catch ex As Exception
 
+                End Try
+            End If
+            Return result
+        End Get
+        Set(value As lm.Comol.Core.FileRepository.Domain.RepositoryIdentifier)
+            ViewState("RepositoryIdentifier") = value
+        End Set
+    End Property
+#End Region
+    Private ReadOnly Property UnknownUserTranslation As String Implements IViewAttachments.UnknownUserTranslation
+        Get
+            Return Resource.getValue("UnknownUserTranslation")
+        End Get
+    End Property
 #End Region
 
 #Region "Inherits"
@@ -59,7 +79,7 @@ Public Class ProjectAttachments
 
     Public Overrides Sub BindDati()
         Master.ShowNoPermission = False
-        Me.CurrentPresenter.InitView()
+        Me.CurrentPresenter.InitView(UnknownUserTranslation)
     End Sub
 
     Public Overrides Sub BindNoPermessi()
@@ -206,36 +226,36 @@ Public Class ProjectAttachments
 
         End If
     End Sub
-    Private Sub InitializeAttachmentsControl(rPermissions As CoreModuleRepository, actions As List(Of lm.Comol.Core.DomainModel.Repository.RepositoryAttachmentUploadActions), Optional dAction As lm.Comol.Core.DomainModel.Repository.RepositoryAttachmentUploadActions = lm.Comol.Core.DomainModel.Repository.RepositoryAttachmentUploadActions.none) Implements IViewAttachments.InitializeAttachmentsControl
-        Me.CTRLcommands.Visible = actions.Any()
-        Me.CTRLcommands.InitializeControlForJQuery(actions, dAction)
+    Private Sub InitializeAttachmentsControl(identifier As lm.Comol.Core.FileRepository.Domain.RepositoryIdentifier, rPermissions As lm.Comol.Core.FileRepository.Domain.ModuleRepository, actions As List(Of lm.Comol.Core.DomainModel.Repository.RepositoryAttachmentUploadActions), Optional dAction As lm.Comol.Core.DomainModel.Repository.RepositoryAttachmentUploadActions = lm.Comol.Core.DomainModel.Repository.RepositoryAttachmentUploadActions.none) Implements IViewAttachments.InitializeAttachmentsControl
+        CTRLcommands.Visible = actions.Any()
+        CTRLcommands.InitializeControlForJQuery(actions, dAction)
         If Not IsNothing(actions) Then
-            Me.CTRLattachmentsHeader.InitializeControlForJQuery(actions, actions.ToDictionary(Of lm.Comol.Core.DomainModel.Repository.RepositoryAttachmentUploadActions, String)(Function(a) a, Function(a) Resource.getValue("dialogTitle.RepositoryAttachmentUploadActions." & a.ToString)))
+            CTRLattachmentsHeader.InitializeControlForJQuery(actions, actions.ToDictionary(Of lm.Comol.Core.DomainModel.Repository.RepositoryAttachmentUploadActions, String)(Function(a) a, Function(a) Resource.getValue("dialogTitle.RepositoryAttachmentUploadActions." & a.ToString)))
 
             If actions.Contains(lm.Comol.Core.DomainModel.Repository.RepositoryAttachmentUploadActions.addurltomoduleitem) Then
                 CTRLaddUrls.Visible = True
-                CTRLaddUrls.InitializeControl(IdProject, Repository.RepositoryAttachmentUploadActions.addurltomoduleitem, ProjectIdCommunity, Resource.getValue("dialogDescription.Project." & lm.Comol.Core.DomainModel.Repository.RepositoryAttachmentUploadActions.addurltomoduleitem.ToString))
+                CTRLaddUrls.InitializeControl(IdProject, Repository.RepositoryAttachmentUploadActions.addurltomoduleitem, identifier, Resource.getValue("dialogDescription.Project." & lm.Comol.Core.DomainModel.Repository.RepositoryAttachmentUploadActions.addurltomoduleitem.ToString))
             Else
                 CTRLaddUrls.Visible = False
             End If
 
             If actions.Contains(lm.Comol.Core.DomainModel.Repository.RepositoryAttachmentUploadActions.uploadtomoduleitem) Then
                 CTRLinternalUpload.Visible = True
-                CTRLinternalUpload.InitializeControl(IdProject, Repository.RepositoryAttachmentUploadActions.uploadtomoduleitem, ProjectIdCommunity, Resource.getValue("dialogDescription.Project." & lm.Comol.Core.DomainModel.Repository.RepositoryAttachmentUploadActions.uploadtomoduleitem.ToString))
+                CTRLinternalUpload.InitializeControl(IdProject, Repository.RepositoryAttachmentUploadActions.uploadtomoduleitem, identifier, Resource.getValue("dialogDescription.Project." & lm.Comol.Core.DomainModel.Repository.RepositoryAttachmentUploadActions.uploadtomoduleitem.ToString))
             Else
                 CTRLinternalUpload.Visible = False
             End If
 
             If actions.Contains(lm.Comol.Core.DomainModel.Repository.RepositoryAttachmentUploadActions.uploadtomoduleitemandcommunity) Then
                 CTRLcommunityUpload.Visible = True
-                CTRLcommunityUpload.InitializeControl(IdProject, Repository.RepositoryAttachmentUploadActions.uploadtomoduleitemandcommunity, ProjectIdCommunity, rPermissions, Resource.getValue("dialogDescription.Project." & lm.Comol.Core.DomainModel.Repository.RepositoryAttachmentUploadActions.uploadtomoduleitemandcommunity.ToString))
+                CTRLcommunityUpload.InitializeControl(IdProject, Repository.RepositoryAttachmentUploadActions.uploadtomoduleitemandcommunity, identifier, rPermissions, Resource.getValue("dialogDescription.Project." & lm.Comol.Core.DomainModel.Repository.RepositoryAttachmentUploadActions.uploadtomoduleitemandcommunity.ToString))
             Else
                 CTRLcommunityUpload.Visible = False
             End If
 
             If actions.Contains(lm.Comol.Core.DomainModel.Repository.RepositoryAttachmentUploadActions.linkfromcommunity) Then
                 CTRLlinkFromCommunity.Visible = True
-                CTRLlinkFromCommunity.InitializeControl(IdProject, Repository.RepositoryAttachmentUploadActions.linkfromcommunity, ProjectIdCommunity, rPermissions, Resource.getValue("dialogDescription.Project." & lm.Comol.Core.DomainModel.Repository.RepositoryAttachmentUploadActions.linkfromcommunity.ToString))
+                CTRLlinkFromCommunity.InitializeControl(IdProject, Repository.RepositoryAttachmentUploadActions.linkfromcommunity, identifier, rPermissions, Resource.getValue("dialogDescription.Project." & lm.Comol.Core.DomainModel.Repository.RepositoryAttachmentUploadActions.linkfromcommunity.ToString))
             Else
                 CTRLlinkFromCommunity.Visible = False
             End If
@@ -283,10 +303,10 @@ Public Class ProjectAttachments
         CTRLmessages.Visible = False
         Select Case e.CommandName
             Case "edit"
-                CurrentPresenter.EditUrl(e.CommandArgument.ToString.Split("|")(0), e.CommandArgument.ToString.Split("|")(1))
+                CurrentPresenter.EditUrl(e.CommandArgument.ToString.Split("|")(0), e.CommandArgument.ToString.Split("|")(1), UnknownUserTranslation)
             Case "virtualdelete"
                 Dim idAttachmentLink As Long = CLng(e.CommandArgument)
-                CurrentPresenter.VirtualDeleteAttachment(idAttachmentLink)
+                CurrentPresenter.VirtualDeleteAttachment(idAttachmentLink, UnknownUserTranslation)
         End Select
     End Sub
     Private Sub RPTattachments_ItemDataBound(sender As Object, e As System.Web.UI.WebControls.RepeaterItemEventArgs) Handles RPTattachments.ItemDataBound
@@ -321,38 +341,73 @@ Public Class ProjectAttachments
                         renderUrl.InitializeControl(lm.Comol.Core.ModuleLinks.DisplayActionMode.defaultAction, dto.Attachment.Url, dto.Attachment.DisplayName)
                         renderUrl.Visible = True
                     Case AttachmentType.file
-                        Dim renderFile As UC_ModuleRepositoryAction = e.Item.FindControl("CTRLdisplayFile")
-
-                        Dim initializer As New lm.Comol.Core.ModuleLinks.dtoModuleDisplayActionInitializer
-
-                        ' DIMENSIONI IMMAGINI
-                        initializer.IconSize = Helpers.IconSize.Small
-                        renderFile.EnableAnchor = True
-                        initializer.Display = lm.Comol.Core.ModuleLinks.DisplayActionMode.defaultAction Or lm.Comol.Core.ModuleLinks.DisplayActionMode.actions
+                        Dim renderItem As UC_RepositoryRenderAction = e.Item.FindControl("CTRLdisplayItem")
+                        Dim initializer As New lm.Comol.Core.ModuleLinks.dtoObjectRenderInitializer
+                        initializer.RefreshContainerPage = False
+                        initializer.SaveObjectStatistics = True
                         initializer.Link = dto.Attachment.Link
-                        renderFile.InsideOtherModule = True
+                        initializer.SetOnModalPageByItem = True
+                        initializer.SetPreviousPage = False
+
                         Dim actions As List(Of dtoModuleActionControl)
-                        'actions = renderFile.InitializeRemoteControl(initializer, StandardActionType.Play Or StandardActionType.EditMetadata Or StandardActionType.ViewUserStatistics)
-                        actions = renderFile.InitializeRemoteControl(initializer, StandardActionType.Play)
-                        Dim isReadyToPlay As Boolean = renderFile.IsReadyToPlay
+                        'initializer.OnModalPage
+                        '  initializer.OpenLinkCssClass
+                        renderItem.Visible = True
+                        actions = renderItem.InitializeRemoteControl(initializer, StandardActionType.Play, lm.Comol.Core.ModuleLinks.DisplayActionMode.defaultAction Or lm.Comol.Core.ModuleLinks.DisplayActionMode.actions)
+                        If renderItem.ItemType = lm.Comol.Core.FileRepository.Domain.ItemType.Link Then
+                            oLiteral.Text = Resource.getValue("LTattachmentType.AttachmentType." & AttachmentType.url.ToString)
+                        End If
+                        Dim isReadyToPlay As Boolean = (renderItem.Availability = lm.Comol.Core.FileRepository.Domain.ItemAvailability.available)
+                        Dim isReadyToManage As Boolean = isReadyToPlay OrElse (renderItem.Availability = lm.Comol.Core.FileRepository.Domain.ItemAvailability.waitingsettings)
                         Dim oHyperlink As HyperLink
                         If isReadyToPlay AndAlso dto.Permissions.ViewOtherStatistics AndAlso actions.Where(Function(a) a.ControlType = StandardActionType.ViewAdvancedStatistics).Any Then
                             oHyperlink = e.Item.FindControl("HYPstats")
                             oHyperlink.Visible = True
-                            oHyperlink.ToolTip = Resource.getValue("statistic.RepositoryItemType." & renderFile.ItemType.ToString)
+                            oHyperlink.ToolTip = Resource.getValue("statistic.ItemType." & renderItem.ItemType.ToString)
                             oHyperlink.NavigateUrl = actions.Where(Function(a) a.ControlType = StandardActionType.ViewAdvancedStatistics).Select(Function(a) a.LinkUrl).FirstOrDefault
                         ElseIf isReadyToPlay AndAlso dto.Permissions.ViewMyStatistics AndAlso actions.Where(Function(a) a.ControlType = StandardActionType.ViewUserStatistics).Any Then
                             oHyperlink = e.Item.FindControl("HYPstats")
-                            oHyperlink.ToolTip = Resource.getValue("statistic.RepositoryItemType." & renderFile.ItemType.ToString)
+                            oHyperlink.ToolTip = Resource.getValue("statistic.ItemType." & renderItem.ItemType.ToString)
                             oHyperlink.Visible = True
                             oHyperlink.NavigateUrl = actions.Where(Function(a) a.ControlType = StandardActionType.ViewUserStatistics).Select(Function(a) a.LinkUrl).FirstOrDefault
                         End If
-                        If isReadyToPlay AndAlso dto.Permissions.SetMetadata AndAlso actions.Where(Function(a) a.ControlType = StandardActionType.EditMetadata).Any Then
+                        If isReadyToManage AndAlso dto.Permissions.SetMetadata AndAlso actions.Where(Function(a) a.ControlType = StandardActionType.EditMetadata).Any Then
                             oHyperlink = e.Item.FindControl("HYPeditMetadata")
-                            oHyperlink.ToolTip = Resource.getValue("settings.RepositoryItemType." & renderFile.ItemType.ToString)
+                            oHyperlink.ToolTip = Resource.getValue("settings.ItemType." & renderItem.ItemType.ToString)
                             oHyperlink.Visible = True
                             oHyperlink.NavigateUrl = actions.Where(Function(a) a.ControlType = StandardActionType.EditMetadata).Select(Function(a) a.LinkUrl).FirstOrDefault
                         End If
+
+                        'Dim initializer As New lm.Comol.Core.ModuleLinks.dtoModuleDisplayActionInitializer
+
+                        '' DIMENSIONI IMMAGINI
+                        'initializer.IconSize = Helpers.IconSize.Small
+                        'renderFile.EnableAnchor = True
+                        'initializer.Display = lm.Comol.Core.ModuleLinks.DisplayActionMode.defaultAction Or lm.Comol.Core.ModuleLinks.DisplayActionMode.actions
+                        'initializer.Link = dto.Attachment.Link
+                        'renderFile.InsideOtherModule = True
+                        'Dim actions As List(Of dtoModuleActionControl)
+                        ''actions = renderFile.InitializeRemoteControl(initializer, StandardActionType.Play Or StandardActionType.EditMetadata Or StandardActionType.ViewUserStatistics)
+                        'actions = renderFile.InitializeRemoteControl(initializer, StandardActionType.Play)
+                        'Dim isReadyToPlay As Boolean = renderFile.IsReadyToPlay
+                        'Dim oHyperlink As HyperLink
+                        'If isReadyToPlay AndAlso dto.Permissions.ViewOtherStatistics AndAlso actions.Where(Function(a) a.ControlType = StandardActionType.ViewAdvancedStatistics).Any Then
+                        '    oHyperlink = e.Item.FindControl("HYPstats")
+                        '    oHyperlink.Visible = True
+                        '    oHyperlink.ToolTip = Resource.getValue("statistic.RepositoryItemType." & renderFile.ItemType.ToString)
+                        '    oHyperlink.NavigateUrl = actions.Where(Function(a) a.ControlType = StandardActionType.ViewAdvancedStatistics).Select(Function(a) a.LinkUrl).FirstOrDefault
+                        'ElseIf isReadyToPlay AndAlso dto.Permissions.ViewMyStatistics AndAlso actions.Where(Function(a) a.ControlType = StandardActionType.ViewUserStatistics).Any Then
+                        '    oHyperlink = e.Item.FindControl("HYPstats")
+                        '    oHyperlink.ToolTip = Resource.getValue("statistic.RepositoryItemType." & renderFile.ItemType.ToString)
+                        '    oHyperlink.Visible = True
+                        '    oHyperlink.NavigateUrl = actions.Where(Function(a) a.ControlType = StandardActionType.ViewUserStatistics).Select(Function(a) a.LinkUrl).FirstOrDefault
+                        'End If
+                        'If isReadyToPlay AndAlso dto.Permissions.SetMetadata AndAlso actions.Where(Function(a) a.ControlType = StandardActionType.EditMetadata).Any Then
+                        '    oHyperlink = e.Item.FindControl("HYPeditMetadata")
+                        '    oHyperlink.ToolTip = Resource.getValue("settings.RepositoryItemType." & renderFile.ItemType.ToString)
+                        '    oHyperlink.Visible = True
+                        '    oHyperlink.NavigateUrl = actions.Where(Function(a) a.ControlType = StandardActionType.EditMetadata).Select(Function(a) a.LinkUrl).FirstOrDefault
+                        'End If
                 End Select
             Case ListItemType.Footer
 
@@ -381,19 +436,19 @@ Public Class ProjectAttachments
         Master.ClearOpenedDialogOnPostback()
         CTRLmessages.Visible = True
         CTRLmessages.InitializeControl(Resource.getValue("ItemsAdded.Project.RepositoryAttachmentUploadActions." & action.ToString), Helpers.MessageType.success)
-        CurrentPresenter.LoadAttachments(IdProject, forPortal, isPersonal, ProjectIdCommunity)
+        CurrentPresenter.LoadAttachments(UnknownUserTranslation, IdProject, forPortal, isPersonal, ProjectIdCommunity)
     End Sub
     Private Sub CTRLaddUrls_ItemsNotAdded(action As lm.Comol.Core.DomainModel.Repository.RepositoryAttachmentUploadActions) Handles CTRLaddUrls.ItemsNotAdded, CTRLcommunityUpload.ItemsNotAdded, CTRLinternalUpload.ItemsNotAdded, CTRLlinkFromCommunity.ItemsNotAdded
         Master.ClearOpenedDialogOnPostback()
         CTRLmessages.Visible = True
         CTRLmessages.InitializeControl(Resource.getValue("ItemsNotAdded.Project.RepositoryAttachmentUploadActions." & action.ToString), Helpers.MessageType.error)
-        CurrentPresenter.LoadAttachments(IdProject, forPortal, isPersonal, ProjectIdCommunity)
+        CurrentPresenter.LoadAttachments(UnknownUserTranslation, IdProject, forPortal, isPersonal, ProjectIdCommunity)
     End Sub
     Private Sub CTRLadd_NoFilesToAdd(action As lm.Comol.Core.DomainModel.Repository.RepositoryAttachmentUploadActions) Handles CTRLcommunityUpload.NoFilesToAdd, CTRLinternalUpload.NoFilesToAdd, CTRLlinkFromCommunity.NoFilesToAdd
         Master.ClearOpenedDialogOnPostback()
         CTRLmessages.Visible = True
         CTRLmessages.InitializeControl(Resource.getValue("NoFilesToAdd.Project.RepositoryAttachmentUploadActions." & action.ToString), Helpers.MessageType.alert)
-        CurrentPresenter.LoadAttachments(IdProject, forPortal, isPersonal, ProjectIdCommunity)
+        CurrentPresenter.LoadAttachments(UnknownUserTranslation, IdProject, forPortal, isPersonal, ProjectIdCommunity)
     End Sub
     Private Sub CTRLadd_WorkingSessionExpired() Handles CTRLaddUrls.WorkingSessionExpired, CTRLcommunityUpload.WorkingSessionExpired, CTRLinternalUpload.WorkingSessionExpired, CTRLlinkFromCommunity.WorkingSessionExpired
         Master.ClearOpenedDialogOnPostback()
@@ -403,16 +458,16 @@ Public Class ProjectAttachments
         Master.ClearOpenedDialogOnPostback()
         Me.MLVsettings.SetActiveView(VIWempty)
         Me.LBnoResources.Text = Resource.getValue("DisplayUnknownProject.ProjectAttachments")
-        CurrentPresenter.LoadAttachments(IdProject, forPortal, isPersonal, ProjectIdCommunity)
+        CurrentPresenter.LoadAttachments(UnknownUserTranslation, IdProject, forPortal, isPersonal, ProjectIdCommunity)
     End Sub
 #End Region
 
     Private Sub CTRLeditUrl_SavingSettings(items As List(Of lm.Comol.Core.DomainModel.dtoUrl)) Handles CTRLeditUrl.SavingSettings
         CTRLeditUrl.Visible = False
-        CurrentPresenter.SaveUrl(items.FirstOrDefault())
+        CurrentPresenter.SaveUrl(items.FirstOrDefault(), UnknownUserTranslation)
     End Sub
     Private Sub BTNvirtualDeleteSelectedAttacchments_Click(sender As Object, e As System.EventArgs) Handles BTNvirtualDeleteSelectedAttacchments.Click
-        CurrentPresenter.VirtualDeleteAttachments(GetSelectedItems)
+        CurrentPresenter.VirtualDeleteAttachments(GetSelectedItems, UnknownUserTranslation)
     End Sub
 
     Private Function GetSelectedItems() As List(Of Long)

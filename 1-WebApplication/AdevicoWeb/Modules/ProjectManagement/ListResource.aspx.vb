@@ -196,4 +196,7 @@ Public Class ListResource
     End Sub
 #End Region
 
+    Private Sub CTRLlistPlain_SetOpenDialogOnPostbackByCssClass(identifier As String) Handles CTRLlistPlain.SetOpenDialogOnPostbackByCssClass
+        Master.SetOpenDialogOnPostbackByCssClass(identifier)
+    End Sub
 End Class

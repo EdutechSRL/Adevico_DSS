@@ -14,13 +14,22 @@ Option Explicit On
 Partial Public Class ListResource
 
     '''<summary>
-    '''CTRLadvancedProgressBarHeader control.
+    '''CTRLheader control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents CTRLadvancedProgressBarHeader As Global.Comunita_OnLine.UC_AdvancedProgressBarHeader
+    Protected WithEvents CTRLheader As Global.Comunita_OnLine.UC_ProjectManagementHeader
+
+    '''<summary>
+    '''CTRLmodalPlayerHeader control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents CTRLmodalPlayerHeader As Global.Comunita_OnLine.UC_ModalPlayerHeader
 
     '''<summary>
     '''MLVprojectList control.

@@ -113,6 +113,15 @@ Partial Public Class ActivityManagement
     Protected WithEvents CTRLeditorDescription As Global.Comunita_OnLine.UC_Editor
 
     '''<summary>
+    '''DIVtype control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents DIVtype As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+
+    '''<summary>
     '''LBtypeTitle control.
     '''</summary>
     '''<remarks>
@@ -608,13 +617,13 @@ Partial Public Class ActivityManagement
     Protected WithEvents BTNerror As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
-    '''LBerror control.
+    '''CTRLerrorMessage control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents LBerror As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents CTRLerrorMessage As Global.Comunita_OnLine.UC_ActionMessages
 
     '''<summary>
     '''VIWmessages control.

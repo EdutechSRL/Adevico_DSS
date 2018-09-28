@@ -7,7 +7,7 @@ Imports lm.Comol.Core.DomainModel
 Imports lm.ActionDataContract
 
 Public Class UnitManagement
-    Inherits PageBaseEduPath
+    Inherits EPpageBaseEduPath
 
     Protected Overrides ReadOnly Property PathType As EPType
         Get
@@ -17,6 +17,17 @@ Public Class UnitManagement
             Return _PathType
         End Get
     End Property
+
+#Region "Internal"
+    'Private Property IsInReadOnlyMode As Boolean
+    '    Get
+    '        Return ViewStateOrDefault("IsInReadOnlyMode", False)
+    '    End Get
+    '    Set(value As Boolean)
+    '        ViewState("IsInReadOnlyMode") = value
+    '    End Set
+    'End Property
+#End Region
 
 #Region "Property"
 
@@ -98,7 +109,7 @@ Public Class UnitManagement
             If IsNumeric(qs_communityId) Then
                 Return qs_communityId
             Else
-                Return Me.CurrentContext.UserContext.CurrentCommunityID
+                Return PageUtility.CurrentContext.UserContext.CurrentCommunityID
             End If
         End Get
     End Property
@@ -290,9 +301,9 @@ Public Class UnitManagement
         Get
             If IsSessioneScaduta(False) Then
                 If CurrentUnitID > 0 Then
-                    RedirectOnSessionTimeOut(RootObject.UpdateUnit(Me.CurrentCommunityID, CurrentUnitID, PathID), CurrentCommunityID)
+                    RedirectOnSessionTimeOut(RootObject.UpdateUnit(Me.CurrentCommunityID, CurrentUnitID, PathID, PreloadIsMooc, PreloadIsFromReadOnly), CurrentCommunityID)
                 Else
-                    RedirectOnSessionTimeOut(RootObject.NewUnit(Me.CurrentCommunityID, PathID), CurrentCommunityID)
+                    RedirectOnSessionTimeOut(RootObject.NewUnit(Me.CurrentCommunityID, PathID, PreloadIsMooc), CurrentCommunityID)
                 End If
             End If
             Return False
@@ -310,10 +321,10 @@ Public Class UnitManagement
         Me.Resource.setButton(Me.BTNerror)
         Select Case ErrorType
             Case EpError.Generic
-                Me.LBerror.Text = Me.Resource.getValue("Error." & EpError.Generic.ToString)
+                CTRLerrorMessage.InitializeControl(Resource.getValue("Error." & ErrorType.ToString), Helpers.MessageType.error)
                 Me.PageUtility.AddAction(Services_EduPath.ActionType.GenericError, Nothing, InteractionType.UserWithLearningObject)
             Case EpError.NotPermission
-                Me.LBerror.Text = Me.Resource.getValue("Error." & EpError.NotPermission.ToString)
+                CTRLerrorMessage.InitializeControl(Resource.getValue("Error." & ErrorType.ToString), Helpers.MessageType.alert)
                 Me.PageUtility.AddAction(Services_EduPath.ActionType.NoPermission, Nothing, InteractionType.UserWithLearningObject)
         End Select
         Me.MLVunitCreate.ActiveViewIndex = 1
@@ -346,7 +357,7 @@ Public Class UnitManagement
         currentUnit.Status = currentUnit.Status Or Status.Draft
         Me.SubInitSelectPermissionByCRole()
         Me.SubInitSelectPermissionByPerson()
-        Me.ServiceEP.SaveUnit(currentUnit, PathID, Me.CurrentContext.UserContext.CurrentUserID, OLDpageUtility.ProxyIPadress, OLDpageUtility.ClientIPadress, CurrentCommunityID)
+        Me.ServiceEP.SaveUnit(currentUnit, PathID, PageUtility.CurrentContext.UserContext.CurrentUserID, OLDpageUtility.ProxyIPadress, OLDpageUtility.ClientIPadress, CurrentCommunityID)
         If IsNothing(currentUnit) Then
             ShowError(EpError.Generic)
         Else
@@ -472,9 +483,9 @@ Public Class UnitManagement
     Private Sub SubInitSelectPermissionByCRole() 'attualmente carico solo i ruoli selezionti come manager o valutatori nel path
         If Me.ListOfAssignmentByCommRole.Count = 0 Then
             If (currentUnit.Status And Status.Draft) = Status.Draft Then
-                Me.ListOfAssignmentByCommRole = Me.ServiceAssignment.GetListCRoleUnitAssignment(0, Me.PathID, Me.CurrentCommunityID, Me.CurrentContext.UserContext.CurrentUserID, Me.CurrentContext.UserContext.Language.Id)
+                Me.ListOfAssignmentByCommRole = Me.ServiceAssignment.GetListCRoleUnitAssignment(0, Me.PathID, Me.CurrentCommunityID, PageUtility.CurrentContext.UserContext.CurrentUserID, PageUtility.CurrentContext.UserContext.Language.Id)
             Else
-                Me.ListOfAssignmentByCommRole = Me.ServiceAssignment.GetListCRoleUnitAssignment(Me.CurrentUnitID, Me.PathID, Me.CurrentCommunityID, Me.CurrentContext.UserContext.CurrentUserID, Me.CurrentContext.UserContext.Language.Id)
+                Me.ListOfAssignmentByCommRole = Me.ServiceAssignment.GetListCRoleUnitAssignment(Me.CurrentUnitID, Me.PathID, Me.CurrentCommunityID, PageUtility.CurrentContext.UserContext.CurrentUserID, PageUtility.CurrentContext.UserContext.Language.Id)
             End If
         End If
         If Me.ListOfAssignmentByCommRole.Count = 0 Then
@@ -583,7 +594,7 @@ Public Class UnitManagement
 
 
     Private Function PersistData()
-        Dim IsTransactionExecute As Boolean = Me.ServiceEP.SaveOrUpdateUnitandAssignment(currentUnit, Me.PathID, ListOfAssignmentByCommRole, ListOfAssignmentByPerson, Me.CurrentContext.UserContext.CurrentUserID, OLDpageUtility.ClientIPadress, OLDpageUtility.ProxyIPadress, LinguaID)
+        Dim IsTransactionExecute As Boolean = Me.ServiceEP.SaveOrUpdateUnitandAssignment(currentUnit, Me.PathID, ListOfAssignmentByCommRole, ListOfAssignmentByPerson, PageUtility.CurrentContext.UserContext.CurrentUserID, OLDpageUtility.ClientIPadress, OLDpageUtility.ProxyIPadress, LinguaID)
         If Not IsTransactionExecute Then
             ShowError(EpError.Generic)
         End If
@@ -634,7 +645,7 @@ Public Class UnitManagement
                     currentUnit.Status = currentUnit.Status - Status.Draft
                 End If
                 If PersistData() Then
-                    RedirectToUrl(RootObject.PathView(PathID, CurrentCommunityID, EpViewModeType.Manage, ServiceEP.isPlayModePath(PathID)))
+                    RedirectToUrl(RootObject.PathView(PathID, CurrentCommunityID, EpViewModeType.Manage, ServiceEP.isPlayModePath(PathID), IsMoocPath, False))
                 Else
                     Me.ShowError(EpError.Generic)
                 End If
@@ -644,21 +655,21 @@ Public Class UnitManagement
                     currentUnit.Status = currentUnit.Status - Status.Draft
                 End If
                 If PersistData() Then
-                    RedirectToUrl(RootObject.PathView(PathID, CurrentCommunityID, EpViewModeType.Manage, ServiceEP.isPlayModePath(PathID)))
+                    RedirectToUrl(RootObject.PathView(PathID, CurrentCommunityID, EpViewModeType.Manage, ServiceEP.isPlayModePath(PathID), IsMoocPath, PreloadIsFromReadOnly))
                 Else
                     Me.ShowError(EpError.Generic)
                 End If
                 'Me.PageUtility.RedirectToUrl(RootObject.UnitManagement(currentUnit.Id, Me.PathID, Me.CurrentCommunityID, StepUnitManagement.SelectPermission))
             Case StepUnitManagement.SelectPermission
                 Me.GetSelectedPermission()
-                Me.PageUtility.RedirectToUrl(RootObject.UnitManagement(currentUnit.Id, Me.PathID, Me.CurrentCommunityID, StepUnitManagement.Detail))
+                Me.PageUtility.RedirectToUrl(RootObject.UnitManagement(currentUnit.Id, Me.PathID, Me.CurrentCommunityID, StepUnitManagement.Detail, IsMoocPath, PreloadIsFromReadOnly))
             Case StepUnitManagement.SelectPerson
                 Me.GetSelectedPerson()
-                Me.PageUtility.RedirectToUrl(RootObject.UnitManagement(currentUnit.Id, Me.PathID, Me.CurrentCommunityID, StepUnitManagement.SelectPermission))
+                Me.PageUtility.RedirectToUrl(RootObject.UnitManagement(currentUnit.Id, Me.PathID, Me.CurrentCommunityID, StepUnitManagement.SelectPermission, IsMoocPath, PreloadIsFromReadOnly))
             Case StepUnitManagement.Update
                 Me.UpdateDetail()
                 If PersistData() Then
-                    RedirectToUrl(RootObject.PathView(PathID, CurrentCommunityID, EpViewModeType.Manage, ServiceEP.isPlayModePath(PathID)))
+                    RedirectToUrl(RootObject.PathView(PathID, CurrentCommunityID, EpViewModeType.Manage, ServiceEP.isPlayModePath(PathID), IsMoocPath, PreloadIsFromReadOnly))
                 Else
                     Me.ShowError(EpError.Generic)
                 End If
@@ -668,7 +679,7 @@ Public Class UnitManagement
     Public Sub BTNedit_Click(ByVal sender As Object, ByVal e As EventArgs)
         Me.UpdateDetail()
         If Me.PersistData() Then
-            Me.PageUtility.RedirectToUrl(RootObject.UnitManagement(currentUnit.Id, Me.PathID, Me.CurrentCommunityID, StepUnitManagement.SelectPermission))
+            Me.PageUtility.RedirectToUrl(RootObject.UnitManagement(currentUnit.Id, Me.PathID, Me.CurrentCommunityID, StepUnitManagement.SelectPermission, IsMoocPath, PreloadIsFromReadOnly))
         Else
             Me.ShowError(EpError.Generic)
         End If
@@ -678,10 +689,10 @@ Public Class UnitManagement
         Select Case Me.CurrentStep
             Case StepUnitManagement.SelectPermission
                 Me.GetSelectedPermission()
-                Me.PageUtility.RedirectToUrl(RootObject.UnitManagement(currentUnit.Id, Me.PathID, Me.CurrentCommunityID, StepUnitManagement.Detail))
+                Me.PageUtility.RedirectToUrl(RootObject.UnitManagement(currentUnit.Id, Me.PathID, Me.CurrentCommunityID, StepUnitManagement.Detail, IsMoocPath, PreloadIsFromReadOnly))
             Case StepUnitManagement.SelectPerson
                 Me.GetSelectedPerson()
-                Me.PageUtility.RedirectToUrl(RootObject.UnitManagement(currentUnit.Id, Me.PathID, Me.CurrentCommunityID, StepUnitManagement.SelectPermission))
+                Me.PageUtility.RedirectToUrl(RootObject.UnitManagement(currentUnit.Id, Me.PathID, Me.CurrentCommunityID, StepUnitManagement.SelectPermission, IsMoocPath, PreloadIsFromReadOnly))
         End Select
     End Sub
 
@@ -694,14 +705,14 @@ Public Class UnitManagement
         ClearSession()
 
         If (From units In currentUnit.ParentPath.UnitList Where (Not ServiceEP.CheckStatus(units.Status, Status.Draft) And units.Deleted = 0) Select units).Count = 0 Then
-            PageUtility.RedirectToUrl(RootObject.EduPathList(CurrentCommunityID, EpViewModeType.Manage))
+            PageUtility.RedirectToUrl(RootObject.EduPathList(CurrentCommunityID, EpViewModeType.Manage, IsMoocPath))
         Else
-            PageUtility.RedirectToUrl(RootObject.PathView(Me.PathID, Me.CurrentCommunityID, EpViewModeType.Manage, ServiceEP.isPlayModePath(PathID)))
+            PageUtility.RedirectToUrl(RootObject.PathView(Me.PathID, Me.CurrentCommunityID, EpViewModeType.Manage, ServiceEP.isPlayModePath(PathID), IsMoocPath, PreloadIsFromReadOnly))
         End If
     End Sub
     Private Sub BTNselectPerson_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BTNselectPerson.Click
         Me.GetSelectedPermission()
-        PageUtility.RedirectToUrl(RootObject.UnitManagement(Me.currentUnit.Id, Me.PathID, Me.CurrentCommunityID, StepUnitManagement.SelectPerson))
+        PageUtility.RedirectToUrl(RootObject.UnitManagement(Me.currentUnit.Id, Me.PathID, Me.CurrentCommunityID, StepUnitManagement.SelectPerson, IsMoocPath, PreloadIsFromReadOnly))
     End Sub
 #End Region
 
@@ -907,12 +918,23 @@ Public Class UnitManagement
 
     Private Sub Page_PreLoad(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.PreLoad
         PageUtility.CurrentModule = PageUtility.GetModule(Services_EduPath.Codex)
+        If Not _IsMoocPath.HasValue Then
+            Dim idPath As Long = PathID
+            If (idPath > 0) Then
+                IsMoocPath = ServiceEP.IsMooc(idPath)
+                If PreloadIsMooc AndAlso Not IsMoocPath Then
+                    IsMoocPath = PreloadIsMooc
+                End If
+            Else
+                IsMoocPath = PreloadIsMooc
+            End If
+        End If
     End Sub
 
 
     Private Sub BTNerror_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BTNerror.Click
         Me.ClearSession()
-        Me.PageUtility.RedirectToUrl(RootObject.EduPathList(Me.CurrentCommunityID, EpViewModeType.Manage))
+        Me.PageUtility.RedirectToUrl(RootObject.EduPathList(Me.CurrentCommunityID, EpViewModeType.Manage, IsMoocPath))
     End Sub
 
     Protected Overrides Sub NotifyModuleStatus(status As lm.Comol.Core.DomainModel.ModuleStatus)

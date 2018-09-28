@@ -1,0 +1,176 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="lm.Comol.Modules.EduPath.Domain.ActivityStatistic">
+    <Position X="13" Y="9.25" Width="3.25" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <AssociationLine Name="Activity" Type="lm.Comol.Modules.EduPath.Domain.Activity" FixedToPoint="true">
+      <Path>
+        <Point X="14.5" Y="11.896" />
+        <Point X="14.5" Y="12.5" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-0.707" Y="0.124" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAADAAAAAAAAAEIAAAAAAAAAAAAAAIAAAgBAAEAAAAA=</HashCode>
+      <FileName>Domain\Statistic\ActivityStatistic.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Activity" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="lm.Comol.Modules.EduPath.Domain.BaseStatistic">
+    <Position X="12" Y="6.25" Width="2.25" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <InheritanceLine Type="lm.Comol.Modules.EduPath.Domain.DomainBaseMetaInfo" FixedToPoint="true">
+      <Path>
+        <Point X="13" Y="5.838" />
+        <Point X="13" Y="6.25" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AIAAAAAMAAAAAAAAAAAAAAAiAAAAAAAAAACAAEAAAAA=</HashCode>
+      <FileName>Domain\Statistic\BaseStatistic.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Status" />
+      <Property Name="Discriminator" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="lm.Comol.Modules.EduPath.Domain.PathStatistic">
+    <Position X="6.75" Y="9.25" Width="2.75" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <AssociationLine Name="Path" Type="lm.Comol.Modules.EduPath.Domain.Path">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-0.708" Y="0.158" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAQAAAAAIAAgAAAAAAgAAQAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Domain\Statistic\PathStatistic.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Path" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="lm.Comol.Modules.EduPath.Domain.SubActivityStatistic">
+    <Position X="16.5" Y="9.25" Width="2.5" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <AssociationLine Name="SubActivity" Type="lm.Comol.Modules.EduPath.Domain.SubActivity">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.061" Y="0.307" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAABAAAAAUAA=</HashCode>
+      <FileName>Domain\Statistic\SubActivityStatistic.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="SubActivity" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="lm.Comol.Modules.EduPath.Domain.UnitStatistic">
+    <Position X="9.75" Y="9.25" Width="3" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <AssociationLine Name="Unit" Type="lm.Comol.Modules.EduPath.Domain.Unit">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-0.699" Y="0.139" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAAAACAAAIAAAAAAAAAAAAAAAQABAEQAAAAA=</HashCode>
+      <FileName>Domain\Statistic\UnitStatistic.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Unit" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="lm.Comol.Modules.EduPath.Domain.DomainBaseMetaInfo">
+    <Position X="12" Y="3" Width="2" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>ACAACABAAAAACAQAAAAAAAAAAABCEAAAAAAAAAAAAAE=</HashCode>
+      <FileName>Domain\DomainBaseMetaInfo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="lm.Comol.Modules.EduPath.Domain.DomainBase">
+    <Position X="12.25" Y="1.75" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAACAACAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Domain\DomainBase.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Deleted" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="lm.Comol.Modules.EduPath.Domain.Activity" Collapsed="true">
+    <Position X="13.75" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABQAAAAAIiAAKAAAAAAARgACAAAAAAIAAQAECAAAA=</HashCode>
+      <FileName>Domain\Activity.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="lm.Comol.Modules.EduPath.Domain.Unit" Collapsed="true">
+    <Position X="10.5" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAAAIiAACAAAAAAAQgBCAAAAAAAAAAAEKAAAA=</HashCode>
+      <FileName>Domain\Unit.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="lm.Comol.Modules.EduPath.Domain.Path" Collapsed="true">
+    <Position X="7" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAEAAAMiAACAAAAQAAQgQCAAAAAAAAAAAECABAA=</HashCode>
+      <FileName>Domain\Path.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="lm.Comol.Modules.EduPath.Domain.SubActivity" Collapsed="true">
+    <Position X="17.25" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAARAAAAAIgAAIAEAQAAAQAACgAAAIAAACQSAAACAA=</HashCode>
+      <FileName>Domain\SubActivity.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Enum Name="lm.Comol.Modules.EduPath.Domain.StatisticDiscriminator">
+    <Position X="15.5" Y="6.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAAAAAAIAIAAAAAAAAAAAAAAAAAAAAEAAQAA=</HashCode>
+      <FileName>Domain\Statistic\BaseStatistic.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="lm.Comol.Modules.EduPath.Domain.BaseStatusDeleted">
+    <Position X="9.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQAAAAAAAAAAAAAAAAAIIAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>Domain\DomainBase.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="lm.Comol.Modules.EduPath.Domain.StatusStatistic">
+    <Position X="9.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAAAACIAAAAAAAAAABIAAAAAAAAAAQEAAAA=</HashCode>
+      <FileName>Domain\Enum\StatusStatistic.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

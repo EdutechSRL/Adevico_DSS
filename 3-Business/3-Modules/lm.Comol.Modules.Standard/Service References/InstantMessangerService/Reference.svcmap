@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="28387c34-5be7-462d-95ae-0adc152deef5" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:2205/InstantMessengerService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="InstantMessengerService.wsdl" MetadataType="Wsdl" ID="066f0ddb-a0b0-41de-a9b3-8cf7d6f7dbf9" SourceId="1" SourceUrl="http://localhost:2205/InstantMessengerService.svc?wsdl" />
+    <MetadataFile FileName="InstantMessengerService.disco" MetadataType="Disco" ID="0c3e43ce-300c-4b6b-8aab-5496e93f241c" SourceId="1" SourceUrl="http://localhost:2205/InstantMessengerService.svc?disco" />
+    <MetadataFile FileName="InstantMessengerService.xsd" MetadataType="Schema" ID="f2e9d24b-10ce-43c7-9560-88bdaa4ee612" SourceId="1" SourceUrl="http://localhost:2205/InstantMessengerService.svc?xsd=xsd1" />
+    <MetadataFile FileName="InstantMessengerService1.xsd" MetadataType="Schema" ID="a5d91f21-bb72-4ee1-8f68-789ce1e79cf6" SourceId="1" SourceUrl="http://localhost:2205/InstantMessengerService.svc?xsd=xsd0" />
+    <MetadataFile FileName="InstantMessengerService2.xsd" MetadataType="Schema" ID="9d869d4f-4be0-4997-a064-85083fd2719f" SourceId="1" SourceUrl="http://localhost:2205/InstantMessengerService.svc?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

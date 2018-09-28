@@ -590,6 +590,15 @@ Partial Public Class UC_ProjectBaseSettings
     Protected WithEvents LBprojectConfirmCompletionDescription As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
+    '''DVcpm control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents DVcpm As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+
+    '''<summary>
     '''LBprojectDateCalculationByCpm_t control.
     '''</summary>
     '''<remarks>

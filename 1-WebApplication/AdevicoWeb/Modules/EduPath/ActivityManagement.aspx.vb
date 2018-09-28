@@ -7,7 +7,7 @@ Imports lm.Comol.Core.DomainModel
 Imports lm.ActionDataContract
 
 Public Class ActivityManagement
-    Inherits PageBaseEduPath
+    Inherits EPpageBaseEduPath
 
     Protected Overrides ReadOnly Property PathType As EPType
         Get
@@ -272,9 +272,9 @@ Public Class ActivityManagement
                             If Me.ServiceEP.CheckStatus(currentActivity.Status, Status.Draft) Then
                                 currentActivity.Status = currentActivity.Status - Status.Draft
                             End If
-                            RedirectToUrl(RootObject.ActivityManagement(CurrentActivityID, currentActivity.ParentUnit.Id, ComunitaCorrenteID, StepActivityManagement.Detail))
+                            RedirectToUrl(RootObject.ActivityManagement(CurrentActivityID, currentActivity.ParentUnit.Id, ComunitaCorrenteID, StepActivityManagement.Detail, IsMoocPath, PreloadIsFromReadOnly))
                         Else
-                            RedirectToUrl(RootObject.ViewActivity(CurrentActivityID, currentActivity.ParentUnit.Id, currentActivity.Path.Id, ComunitaCorrenteID, EpViewModeType.Manage))
+                            RedirectToUrl(RootObject.ViewActivity(CurrentActivityID, currentActivity.ParentUnit.Id, currentActivity.Path.Id, ComunitaCorrenteID, EpViewModeType.Manage, IsMoocPath, PreloadIsFromReadOnly))
                         End If
                     End If
 
@@ -377,10 +377,10 @@ Public Class ActivityManagement
         Me.Resource.setButton(Me.BTNerror)
         Select Case ErrorType
             Case EpError.Generic
-                Me.LBerror.Text = Me.Resource.getValue("Error." & EpError.Generic.ToString)
+                CTRLerrorMessage.InitializeControl(Resource.getValue("Error." & ErrorType.ToString), Helpers.MessageType.error)
                 Me.PageUtility.AddAction(Services_EduPath.ActionType.GenericError, Nothing, InteractionType.UserWithLearningObject)
             Case EpError.NotPermission
-                Me.LBerror.Text = Me.Resource.getValue("Error." & EpError.NotPermission.ToString)
+                CTRLerrorMessage.InitializeControl(Resource.getValue("Error." & ErrorType.ToString), Helpers.MessageType.alert)
                 Me.PageUtility.AddAction(Services_EduPath.ActionType.NoPermission, Nothing, InteractionType.UserWithLearningObject)
         End Select
         Me.MLVactivityCreate.ActiveViewIndex = 1
@@ -420,13 +420,24 @@ Public Class ActivityManagement
         oItem.Text = Me.Resource.getValue("ActivityType." & ActivityManagementType.General.ToString)
         oItem.Value = ActivityManagementType.General
         Me.DDLtype.Items.Add(oItem)
-
-        If ServiceEP.IsServiceActive(COL_Questionario.ModuleQuestionnaire.UniqueID, CurrentCommunityID) Then
-            oItem = New ListItem
-            oItem.Text = Me.Resource.getValue("ActivityType." & ActivityManagementType.Quiz.ToString)
-            oItem.Value = ActivityManagementType.Quiz
-            Me.DDLtype.Items.Add(oItem)
+        DIVtype.Visible = False
+        If CurrentActivityID > 0 Then
+            If currentActivity.isQuiz Then
+                oItem = New ListItem
+                oItem.Text = Me.Resource.getValue("ActivityType." & ActivityManagementType.Quiz.ToString)
+                oItem.Value = ActivityManagementType.Quiz
+                Me.DDLtype.Items.Add(oItem)
+                DIVtype.Visible = True
+                DDLtype.Enabled = False
+            End If
+            'If ServiceEP.IsServiceActive(COL_Questionario.ModuleQuestionnaire.UniqueID, CurrentCommunityID) Then
+            '    oItem = New ListItem
+            '    oItem.Text = Me.Resource.getValue("ActivityType." & ActivityManagementType.Quiz.ToString)
+            '    oItem.Value = ActivityManagementType.Quiz
+            '    Me.DDLtype.Items.Add(oItem)
+            'End If
         End If
+
     End Sub
     Private Sub InitNewActivity()
         currentActivity = New Activity
@@ -836,7 +847,7 @@ Public Class ActivityManagement
                         currentActivity.Status = currentActivity.Status - Status.Draft
                     End If
                     If PersistData() Then 'cancella currentActivity
-                        RedirectToUrl(RootObject.PathView(PathId, CurrentCommunityID, EpViewModeType.Manage, False))
+                        RedirectToUrl(RootObject.PathView(PathId, CurrentCommunityID, EpViewModeType.Manage, False, IsMoocPath, PreloadIsFromReadOnly))
                     Else
                         Me.ShowError(EpError.Generic)
                     End If
@@ -851,7 +862,7 @@ Public Class ActivityManagement
                         currentActivity.Status = currentActivity.Status - Status.Draft
                     End If
                     If PersistData() Then 'cancella currentActivity
-                        RedirectToUrl(RootObject.PathView(PathId, CurrentCommunityID, EpViewModeType.Manage, False))
+                        RedirectToUrl(RootObject.PathView(PathId, CurrentCommunityID, EpViewModeType.Manage, False, IsMoocPath, PreloadIsFromReadOnly))
                     Else
                         Me.ShowError(EpError.Generic)
                     End If
@@ -861,18 +872,18 @@ Public Class ActivityManagement
 
             Case StepActivityManagement.SelectPermission
                 Me.GetSelectedPermission()
-                Me.PageUtility.RedirectToUrl(RootObject.ActivityManagement(CurrentActivityID, Me.UnitID, Me.CurrentCommunityID, StepActivityManagement.Detail))
+                Me.PageUtility.RedirectToUrl(RootObject.ActivityManagement(CurrentActivityID, Me.UnitID, Me.CurrentCommunityID, StepActivityManagement.Detail, IsMoocPath, PreloadIsFromReadOnly))
 
             Case StepActivityManagement.SelectPerson
                 Me.GetSelectedPerson()
-                Me.PageUtility.RedirectToUrl(RootObject.ActivityManagement(CurrentActivityID, Me.UnitID, Me.CurrentCommunityID, StepActivityManagement.SelectPermission))
+                Me.PageUtility.RedirectToUrl(RootObject.ActivityManagement(CurrentActivityID, Me.UnitID, Me.CurrentCommunityID, StepActivityManagement.SelectPermission, IsMoocPath, PreloadIsFromReadOnly))
             Case StepActivityManagement.Update
                 If Me.UpdateDetail() Then
                     If Me.ServiceEP.CheckStatus(currentActivity.Status, Status.Draft) Then
                         currentActivity.Status = currentActivity.Status - Status.Draft
                     End If
                     If PersistData() Then 'cancella currentActivity
-                        RedirectToUrl(RootObject.PathView(PathId, CurrentCommunityID, EpViewModeType.Manage, False))
+                        RedirectToUrl(RootObject.PathView(PathId, CurrentCommunityID, EpViewModeType.Manage, False, IsMoocPath, PreloadIsFromReadOnly))
                     Else
                         Me.ShowError(EpError.Generic)
                     End If
@@ -884,7 +895,7 @@ Public Class ActivityManagement
     Public Sub BTNedit_Click(ByVal sender As Object, ByVal e As EventArgs)
         If Me.UpdateDetail() Then
             If Me.PersistData() Then
-                Me.PageUtility.RedirectToUrl(RootObject.ActivityManagement(CurrentActivityID, Me.UnitID, Me.CurrentCommunityID, StepActivityManagement.SelectPermission))
+                Me.PageUtility.RedirectToUrl(RootObject.ActivityManagement(CurrentActivityID, Me.UnitID, Me.CurrentCommunityID, StepActivityManagement.SelectPermission, IsMoocPath, PreloadIsFromReadOnly))
             Else
                 Me.ShowError(EpError.Generic)
             End If
@@ -897,10 +908,10 @@ Public Class ActivityManagement
         Select Case Me.CurrentStep
             Case StepActivityManagement.SelectPermission
                 Me.GetSelectedPermission()
-                Me.PageUtility.RedirectToUrl(RootObject.ActivityManagement(currentActivity.Id, Me.UnitID, Me.CurrentCommunityID, StepActivityManagement.Detail))
+                Me.PageUtility.RedirectToUrl(RootObject.ActivityManagement(currentActivity.Id, Me.UnitID, Me.CurrentCommunityID, StepActivityManagement.Detail, IsMoocPath, PreloadIsFromReadOnly))
             Case StepActivityManagement.SelectPerson
                 Me.GetSelectedPerson()
-                Me.PageUtility.RedirectToUrl(RootObject.ActivityManagement(currentActivity.Id, Me.UnitID, Me.CurrentCommunityID, StepActivityManagement.SelectPermission))
+                Me.PageUtility.RedirectToUrl(RootObject.ActivityManagement(currentActivity.Id, Me.UnitID, Me.CurrentCommunityID, StepActivityManagement.SelectPermission, IsMoocPath, PreloadIsFromReadOnly))
         End Select
     End Sub
     Public Sub BTNcancel_Click(ByVal sender As Object, ByVal e As EventArgs)
@@ -911,11 +922,11 @@ Public Class ActivityManagement
             End If
         End If
         ClearSession()
-        PageUtility.RedirectToUrl(RootObject.PathView(PathId, Me.CurrentCommunityID, EpViewModeType.Manage, False))
+        PageUtility.RedirectToUrl(RootObject.PathView(PathId, Me.CurrentCommunityID, EpViewModeType.Manage, False, IsMoocPath, PreloadIsFromReadOnly))
     End Sub
     Private Sub BTNselectPerson_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BTNselectPerson.Click
         Me.GetSelectedPermission()
-        Me.PageUtility.RedirectToUrl(RootObject.ActivityManagement(currentActivity.Id, Me.UnitID, Me.CurrentCommunityID, StepActivityManagement.SelectPerson))
+        Me.PageUtility.RedirectToUrl(RootObject.ActivityManagement(currentActivity.Id, Me.UnitID, Me.CurrentCommunityID, StepActivityManagement.SelectPerson, IsMoocPath, PreloadIsFromReadOnly))
     End Sub
 #End Region
 
@@ -1123,11 +1134,22 @@ Public Class ActivityManagement
 
     Private Sub Page_PreLoad(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.PreLoad
         PageUtility.CurrentModule = PageUtility.GetModule(Services_EduPath.Codex)
+        If Not _IsMoocPath.HasValue Then
+            Dim idPath As Long = PathId
+            If (idPath > 0) Then
+                IsMoocPath = ServiceEP.IsMooc(PathId)
+                If PreloadIsMooc AndAlso Not IsMoocPath Then
+                    IsMoocPath = PreloadIsMooc
+                End If
+            Else
+                IsMoocPath = PreloadIsMooc
+            End If
+        End If
     End Sub
 
     Private Sub BTNerror_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BTNerror.Click
         Me.ClearSession()
-        RedirectToUrl(RootObject.PathView(ServiceEP.GetPathId_ByUnitId(UnitID), Me.CurrentCommunityID, EpViewModeType.Manage, False))
+        RedirectToUrl(RootObject.PathView(ServiceEP.GetPathId_ByUnitId(UnitID), Me.CurrentCommunityID, EpViewModeType.Manage, False, IsMoocPath, PreloadIsFromReadOnly))
     End Sub
     Private Sub DDLtype_SelectedIndexChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles DDLtype.SelectedIndexChanged
         If Me.UpdateDetail() Then

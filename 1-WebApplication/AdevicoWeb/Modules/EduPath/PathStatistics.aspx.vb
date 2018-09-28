@@ -8,7 +8,7 @@ Imports lm.Comol.Core.DomainModel
 Imports System.Linq
 
 Public Class PathStatistics
-    Inherits PageBaseEduPath
+    Inherits EPpageBaseEduPath
 
 #Region "Context"
     Private _QSservice As COL_Questionario.Business.ServiceQuestionnaire
@@ -135,14 +135,14 @@ Public Class PathStatistics
             If IsNumeric(qs_communityId) Then
                 Return qs_communityId
             Else
-                Return Me.CurrentContext.UserContext.CurrentCommunityID
+                Return PageUtility.CurrentContext.UserContext.CurrentCommunityID
             End If
         End Get
     End Property
 
     Private ReadOnly Property CurrentUserId() As Integer
         Get
-            Return Me.CurrentContext.UserContext.CurrentUserID
+            Return PageUtility.CurrentContext.UserContext.CurrentUserID
         End Get
     End Property
 
@@ -175,6 +175,7 @@ Public Class PathStatistics
         PageUtility.CurrentModule = PageUtility.GetModule(Services_EduPath.Codex)
         CouldActivityWithSingleSubActivityBeOmitted = True 'EduPathConfiguration.UseSingleActionView
         Me.Master.ShowDocType = True
+        IsMoocPath = GetIsMooc(PathID)
     End Sub
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
@@ -218,7 +219,6 @@ Public Class PathStatistics
         ' Me.CTRLselTime.InitView(TimeStat, dtoDate.EndDateStr, dtoDate.OverEndDateStr, True, True, dtoDate.EndDate)
 
         Me.CTRLselTime.InitView(TimeStat, IIf(EpEndDate Is Nothing, "", ServiceEP.GetDate(EpEndDate)), "", True, True, EpEndDate)
-
         Me.InitHyperLink()
         Dim stat As dtoEpGlobalStat = ServiceEP.ServiceStat.GetGlobalEpStats(Me.PathID, Me.CurrentCommunityID, Me.CurrentUserId, Me.CurrentCommRoleID, IsEvaluable, TimeStat, CHBshowall.Checked)
         If IsNothing(stat) Then
@@ -264,7 +264,7 @@ Public Class PathStatistics
                 If Not IsEvaluable Then
                     Me.Resource.setHyperLink(HYPdetail, False, True)
                     HYPdetail.Text = ""
-                    HYPdetail.NavigateUrl = Me.BaseUrl & RootObject.UsersStatistics(PathID, Me.CurrentCommunityID, ItemType.Path, 0, TimeStat, CHBshowall.Checked)
+                    HYPdetail.NavigateUrl = Me.BaseUrl & RootObject.UsersStatistics(PathID, Me.CurrentCommunityID, ItemType.Path, 0, TimeStat, CHBshowall.Checked, IsMoocPath)
                     Me.HYPdetail.Visible = True
                 End If
 
@@ -284,7 +284,7 @@ Public Class PathStatistics
             End If
 
             HYPcertificates.Text = ""
-            HYPcertificates.NavigateUrl = Me.BaseUrl + RootObject.EPCertificationList(CurrentCommunityID, PathID)
+            HYPcertificates.NavigateUrl = Me.BaseUrl + RootObject.EPCertificationList(CurrentCommunityID, PathID, IsMoocPath)
 
             HYPcertificates.Visible = ServiceEP.PathHasSubActivityType(PathID, SubActivityType.Certificate)
         End If
@@ -352,7 +352,11 @@ Public Class PathStatistics
     End Sub
 
     Public Overrides Sub SetCultureSettings()
-        MyBase.SetCulture("pg_Stat", "EduPath")
+        If PreloadIsMooc Then
+            MyBase.SetCulture("pg_MoocStatistics", "EduPath")
+        Else
+            MyBase.SetCulture("pg_Stat", "EduPath")
+        End If
     End Sub
 
     Public Overrides Sub SetInternazionalizzazione()
@@ -361,14 +365,12 @@ Public Class PathStatistics
             .setLinkButton(Me.LNBexportPSstandardToCsv, False, True)
             .setLinkButton(Me.LNBexportPSfullToCsv, False, True)
             .setLinkButton(Me.LNBexportPSfullCertificationToCsv, False, True)
-
             .setLinkButton(Me.LNBexportPSstandardToXml, False, True)
             .setLinkButton(Me.LNBexportPSfullToXml, False, True)
             .setLinkButton(Me.LNBexportPSfullCertificationToXml, False, True)
 
             .setLinkButton(Me.LNBexportPSstandardToPdf, False, True)
             .setHyperLink(Me.HYPuserStat, False, True)
-            '.setHyperLink(Me.HYPdetail, False, True)
             .setHyperLink(Me.HYPeduPathList, False, True)
             .setCheckBox(Me.CHBshowall)
             .setLabel(Me.LBnameTit)
@@ -402,55 +404,55 @@ Public Class PathStatistics
 
     Public Sub LoadCertifiedDate() Handles CTRLselTime.ViewCertifiedStat
 
-        RedirectToUrl(RootObject.PathStatistics(PathID, CurrentCommunityID, EpEndDate, CHBshowall.Checked))
+        RedirectToUrl(RootObject.PathStatistics(PathID, CurrentCommunityID, EpEndDate, CHBshowall.Checked, IsMoocPath))
 
     End Sub
 
     Private Sub ReloadStat(ByVal dateToView As DateTime?) Handles CTRLselTime.DateSelected
-        RedirectToUrl(RootObject.PathStatistics(PathID, CurrentCommunityID, dateToView, CHBshowall.Checked))
+        RedirectToUrl(RootObject.PathStatistics(PathID, CurrentCommunityID, dateToView, CHBshowall.Checked, IsMoocPath))
     End Sub
 
 
-    Private Sub UpdateScormStat()
-        Dim ModuleLinkIds As IList(Of Long) = ServiceEP.GetMaterialModuleLinkIds_ByPathId(Me.PathID)
-        If ModuleLinkIds.Count > 0 Then
-            Dim oSender As PermissionService.IServicePermission = Nothing
-            Dim results As List(Of dtoItemEvaluation(Of Long))
-            Dim UserID As Integer = CurrentContext.UserContext.CurrentUserID
-            Try
-                oSender = New PermissionService.ServicePermissionClient
-                results = oSender.GetPendingEvaluations(ModuleLinkIds, UserID).ToList()
-                If Not IsNothing(oSender) Then
-                    Dim service As System.ServiceModel.ClientBase(Of PermissionService.IServicePermission) = DirectCast(oSender, System.ServiceModel.ClientBase(Of PermissionService.IServicePermission))
-                    service.Close()
-                    service = Nothing
-                End If
-            Catch ex As Exception
-                If Not IsNothing(oSender) Then
-                    Dim service As System.ServiceModel.ClientBase(Of PermissionService.IServicePermission) = DirectCast(oSender, System.ServiceModel.ClientBase(Of PermissionService.IServicePermission))
-                    service.Abort()
-                    service = Nothing
-                End If
-            End Try
+    'Private Sub UpdateScormStat()
+    '    Dim ModuleLinkIds As IList(Of Long) = ServiceEP.GetMaterialModuleLinkIds_ByPathId(Me.PathID)
+    '    If ModuleLinkIds.Count > 0 Then
+    '        Dim oSender As PermissionService.IServicePermission = Nothing
+    '        Dim results As List(Of dtoItemEvaluation(Of Long))
+    '        Dim UserID As Integer = CurrentContext.UserContext.CurrentUserID
+    '        Try
+    '            oSender = New PermissionService.ServicePermissionClient
+    '            results = oSender.GetPendingEvaluations(ModuleLinkIds, UserID)
+    '            If Not IsNothing(oSender) Then
+    '                Dim service As System.ServiceModel.ClientBase(Of PermissionService.IServicePermission) = DirectCast(oSender, System.ServiceModel.ClientBase(Of PermissionService.IServicePermission))
+    '                service.Close()
+    '                service = Nothing
+    '            End If
+    '        Catch ex As Exception
+    '            If Not IsNothing(oSender) Then
+    '                Dim service As System.ServiceModel.ClientBase(Of PermissionService.IServicePermission) = DirectCast(oSender, System.ServiceModel.ClientBase(Of PermissionService.IServicePermission))
+    '                service.Abort()
+    '                service = Nothing
+    '            End If
+    '        End Try
 
-            ServiceEP.SaveActionsExecution(results, UserID)
-        End If
-    End Sub
+    '        ServiceEP.SaveActionsExecution(results, UserID)
+    '    End If
+    'End Sub
 
     Private Sub InitHyperLink()
 
         ''Me.HYPuserStat.ImageUrl = RootObject.ImgUsersStat(Me.BaseUrl)
-        Me.HYPuserStat.NavigateUrl = Me.BaseUrl & RootObject.UsersStatistics(Me.PathID, Me.CurrentCommunityID, ItemType.Path, 0, TimeStat, CHBshowall.Checked)
+        Me.HYPuserStat.NavigateUrl = Me.BaseUrl & RootObject.UsersStatistics(Me.PathID, Me.CurrentCommunityID, ItemType.Path, 0, TimeStat, CHBshowall.Checked, IsMoocPath)
 
-        Me.HYPeduPathList.NavigateUrl = Me.BaseUrl & RootObject.EduPathList(Me.CurrentCommunityID, EpViewModeType.Manage)
+        Me.HYPeduPathList.NavigateUrl = Me.BaseUrl & RootObject.EduPathList(Me.CurrentCommunityID, EpViewModeType.Manage, IsMoocPath)
 
-        Me.HYPeduPathView.NavigateUrl = Me.BaseUrl & RootObject.PathView(PathID, Me.CurrentCommunityID, EpViewModeType.Manage, ServiceEP.isPlayModePath(PathID))
+        Me.HYPeduPathView.NavigateUrl = Me.BaseUrl & RootObject.PathView(PathID, Me.CurrentCommunityID, EpViewModeType.Manage, ServiceEP.isPlayModePath(PathID), IsMoocPath)
     End Sub
 
     Private Sub ShowError(ByVal errorType As EpError)
         Me.MLVstat.SetActiveView(Me.VIWerror)
         Me.Resource.setHyperLink(Me.HYPerror, False, True)
-        Me.HYPerror.NavigateUrl = Me.BaseUrl & RootObject.EduPathList(Me.CurrentCommunityID, Me.ViewModeType)
+        Me.HYPerror.NavigateUrl = Me.BaseUrl & RootObject.EduPathList(Me.CurrentCommunityID, Me.ViewModeType, IsMoocPath)
         Select Case errorType
             Case EpError.Generic
                 Me.LBerror.Text = Me.Resource.getValue("Error." & EpError.Generic.ToString)
@@ -633,7 +635,7 @@ Public Class PathStatistics
                     Dim oHyp As HyperLink = e.Item.FindControl("HYPdetail")
                     Me.Resource.setHyperLink(oHyp, False, True)
                     oHyp.Text = ""
-                    oHyp.NavigateUrl = Me.BaseUrl & RootObject.UsersStatistics(dtoItem.itemId, Me.CurrentCommunityID, ItemType.Activity, 0, TimeStat, CHBshowall.Checked)
+                    oHyp.NavigateUrl = Me.BaseUrl & RootObject.UsersStatistics(dtoItem.itemId, Me.CurrentCommunityID, ItemType.Activity, 0, TimeStat, CHBshowall.Checked, IsMoocPath)
                     oHyp.Visible = True
                 End If
 
@@ -675,8 +677,8 @@ Public Class PathStatistics
             '    Dim oPlaceHolder As PlaceHolder = e.Item.FindControl("PLHaction")
             '    oPlaceHolder.Visible = True
 
-            Dim oPlaceHolder As PlaceHolder = e.Item.FindControl("PHLAction")
-            oPlaceHolder.Visible = True
+            'Dim oPlaceHolder As PlaceHolder = e.Item.FindControl("PHLAction")
+            'oPlaceHolder.Visible = True
 
             If ServiceEP.isSubActityInternalModule(dtoItem.ContentType) Then
                 If isAutoEp Then
@@ -731,7 +733,7 @@ Public Class PathStatistics
                         Me.Resource.setHyperLink(ohypStat, False, True)
                         ohypStat.Visible = True
 
-                        ohypStat.NavigateUrl = Me.BaseUrl & RootObject.PathSubActivityCertifications(PathID, dtoItem.SubActivity.Id, Me.CurrentCommunityID, TimeStat)
+                        ohypStat.NavigateUrl = Me.BaseUrl & RootObject.PathSubActivityCertifications(PathID, dtoItem.SubActivity.Id, Me.CurrentCommunityID, TimeStat, IsMoocPath)
                         ohypStat.Visible = False 'TEMP HIDDEN
                 End Select
 
@@ -776,69 +778,103 @@ Public Class PathStatistics
                     TD.Visible = False
                 End If
 
-                Dim oDisplayAction As lm.Comol.Core.ModuleLinks.IExternalModuleDisplayAction = CType(LoadControl(BaseUrl & lm.Comol.Core.DomainModel.Common.CoreRootObject.GenericNewDisplayActionControl), lm.Comol.Core.ModuleLinks.IExternalModuleDisplayAction)
-                Dim initializer As New lm.Comol.Core.ModuleLinks.dtoExternalModuleInitializer
-                initializer.Link = dtoItem.ModuleLink
+                Dim itemAction As lm.Comol.Core.ModuleLinks.DisplayActionMode = lm.Comol.Core.ModuleLinks.DisplayActionMode.text
+                e.Item.FindControl("CTRLtextAction").Visible = False
+                e.Item.FindControl("CTRLquestionnaire").Visible = False
+                e.Item.FindControl("CTRLdisplayItem").Visible = False
 
-                ' AGGIUNTA PLACEHOLDER
-                ' --> 
-                'initializer.PlaceHolders.Add(New lm.Comol.Core.ModuleLinks.dtoPlaceHolder() With {.Type = lm.Comol.Core.ModuleLinks.PlaceHolderType.three})
-                ' DEFINISCO UNA CLASSE PER IL CONTAINER
-                oDisplayAction.ContainerCSS = ""
-                ' DIMENSIONI IMMAGINI
-                oDisplayAction.IconSize = Helpers.IconSize.Small
-                oDisplayAction.EnableAnchor = True
-
-                If dtoItem.isSingle Then
-                    Dim weight = ""
-                    If isTimeEp Then
-                        weight = " (" & ServiceEP.GetTime(dtoItem.Weight) & ")"
-                    Else
-                        weight = " (" & dtoItem.Weight & "pt)"
-                    End If
-
-                    initializer.PlaceHolders.Add(New lm.Comol.Core.ModuleLinks.dtoPlaceHolder() With {.Text = weight, .Type = lm.Comol.Core.ModuleLinks.PlaceHolderType.three, .CssClass = "duration"})
-
-                End If
-
-                'DISPLAY PLAY MODE
-                ' --> oDisplayAction.Display = lm.Comol.Core.ModuleLinks.DisplayActionMode.defaultAction
-                'DISPLAY PLAY MODE SE NON POSSO ESEGUIRE AZIONE
-                ' --> oDisplayAction.Display = lm.Comol.Core.ModuleLinks.DisplayActionMode.text
-                'DISPLAY EDIT MODE
-                ' -->  
 
                 Dim actions As List(Of dtoModuleActionControl)
-
                 If dtoItem.ContentType = SubActivityType.Quiz Then
-                    oDisplayAction.Display = lm.Comol.Core.ModuleLinks.DisplayActionMode.textDefault
-                Else
-                    oDisplayAction.Display = lm.Comol.Core.ModuleLinks.DisplayActionMode.text
+                    itemAction = lm.Comol.Core.ModuleLinks.DisplayActionMode.textDefault
                 End If
-                'lm.Comol.Core.ModuleLinks.DisplayActionMode.defaultAction Or lm.Comol.Core.ModuleLinks.DisplayActionMode.actions
-                actions = oDisplayAction.InitializeRemoteControl(initializer, StandardActionType.EditMetadata Or StandardActionType.ViewAdvancedStatistics)
+
+                Select Case dtoItem.ContentType
+                    Case SubActivityType.File
+                        Dim renderItem As UC_RepositoryRenderAction = e.Item.FindControl("CTRLdisplayItem")
+                        Dim repositoryInitializer As New lm.Comol.Core.ModuleLinks.dtoObjectRenderInitializer
+                        repositoryInitializer.RefreshContainerPage = True
+                        repositoryInitializer.Link = New liteModuleLink(dtoItem.ModuleLink)
+                        repositoryInitializer.ForceOnModalPage = False
+                        repositoryInitializer.SetOnModalPageByItem = False
+                        repositoryInitializer.SaveObjectStatistics = False
+                        repositoryInitializer.SaveOwnerStatistics = False
+                        repositoryInitializer.SetPreviousPage = False
+                        If dtoItem.isSingle Then
+                            Dim weight = ""
+                            If isTimeEp Then
+                                weight = " (" & ServiceEP.GetTime(dtoItem.Weight) & ")"
+                            Else
+                                weight = " (" & dtoItem.Weight & "pt)"
+                            End If
+                            repositoryInitializer.PlaceHolders.Add(New lm.Comol.Core.ModuleLinks.dtoPlaceHolder() With {.Text = weight, .Type = lm.Comol.Core.ModuleLinks.PlaceHolderType.three, .CssClass = "duration"})
+                        End If
+
+                        renderItem.CssClass = SubActivityTypeCssClass(dtoItem.ContentType)
 
 
-                'DISPLAY STATISTICHE
-                ' --> oDisplayAction.Display = lm.Comol.Core.ModuleLinks.DisplayActionMode.text
+                        renderItem.Visible = True
+                        actions = renderItem.InitializeRemoteControl(repositoryInitializer, StandardActionType.EditMetadata Or StandardActionType.ViewAdvancedStatistics, itemAction)
+                    Case SubActivityType.Quiz
+                        Dim renderQuizItem As UC_ModuleQuizAction = e.Item.FindControl("CTRLquestionnaire")
+                        Dim initializer As New lm.Comol.Core.ModuleLinks.dtoExternalModuleInitializer
+                        initializer.Link = dtoItem.ModuleLink
+
+                        ' AGGIUNTA PLACEHOLDER
+                        ' --> 
+                        'initializer.PlaceHolders.Add(New lm.Comol.Core.ModuleLinks.dtoPlaceHolder() With {.Type = lm.Comol.Core.ModuleLinks.PlaceHolderType.three})
+                        ' DEFINISCO UNA CLASSE PER IL CONTAINER
+                        renderQuizItem.ContainerCSS = ""
+                        ' DIMENSIONI IMMAGINI
+                        renderQuizItem.IconSize = Helpers.IconSize.Small
+                        renderQuizItem.EnableAnchor = True
+                        renderQuizItem.Display = itemAction
+                        If dtoItem.isSingle Then
+                            Dim weight = ""
+                            If isTimeEp Then
+                                weight = " (" & ServiceEP.GetTime(dtoItem.Weight) & ")"
+                            Else
+                                weight = " (" & dtoItem.Weight & "pt)"
+                            End If
+
+                            initializer.PlaceHolders.Add(New lm.Comol.Core.ModuleLinks.dtoPlaceHolder() With {.Text = weight, .Type = lm.Comol.Core.ModuleLinks.PlaceHolderType.three, .CssClass = "duration"})
+
+                        End If
+
+                        'DISPLAY PLAY MODE
+                        ' --> oDisplayAction.Display = lm.Comol.Core.ModuleLinks.DisplayActionMode.defaultAction
+                        'DISPLAY PLAY MODE SE NON POSSO ESEGUIRE AZIONE
+                        ' --> oDisplayAction.Display = lm.Comol.Core.ModuleLinks.DisplayActionMode.text
+                        'DISPLAY EDIT MODE
+                        ' -->  
+
+
+                        'lm.Comol.Core.ModuleLinks.DisplayActionMode.defaultAction Or lm.Comol.Core.ModuleLinks.DisplayActionMode.actions
+                        actions = renderQuizItem.InitializeRemoteControl(lm.Comol.Core.ModuleLinks.dtoModuleDisplayActionInitializer.Create(initializer, renderQuizItem.Display, renderQuizItem.ContainerCSS, Helpers.IconSize.Small), StandardActionType.EditMetadata Or StandardActionType.ViewAdvancedStatistics)
+
+
+                        'DISPLAY STATISTICHE
+                        ' --> oDisplayAction.Display = lm.Comol.Core.ModuleLinks.DisplayActionMode.text
 
 
 
-                ' PLAY MODE
-                ' --> oDisplayAction.InitializeControl(initializer)
-                'DISPLAY EDIT MODE
-                ' -->oDisplayAction.InitializeControl(initializer, StandardActionType.Edit Or StandardActionType.DownloadItem Or StandardActionType.EditMetadata Or StandardActionType.ViewAdvancedStatistics)
-                'DISPLAY STATISTICHE amministratore generiche
+                        ' PLAY MODE
+                        ' --> oDisplayAction.InitializeControl(initializer)
+                        'DISPLAY EDIT MODE
+                        ' -->oDisplayAction.InitializeControl(initializer, StandardActionType.Edit Or StandardActionType.DownloadItem Or StandardActionType.EditMetadata Or StandardActionType.ViewAdvancedStatistics)
+                        'DISPLAY STATISTICHE amministratore generiche
 
-                'DISPLAY STATISTICHE amministratore su utente
-                ' --actions = oDisplayAction.InitializeRemoteControl(idUser,initializer, StandardActionType.DownloadItem Or StandardActionType.EditMetadata Or StandardActionType.ViewAdvancedStatistics)
+                        'DISPLAY STATISTICHE amministratore su utente
+                        ' --actions = oDisplayAction.InitializeRemoteControl(idUser,initializer, StandardActionType.DownloadItem Or StandardActionType.EditMetadata Or StandardActionType.ViewAdvancedStatistics)
 
-                'DISPLAY STATISTICHE utente
-                ' -->actions = oDisplayAction.InitializeRemoteControl(initializer, StandardActionType.ViewPersonalStatistics)
-                ' Display TOTALE
+                        'DISPLAY STATISTICHE utente
+                        ' -->actions = oDisplayAction.InitializeRemoteControl(initializer, StandardActionType.ViewPersonalStatistics)
+                        ' Display TOTALE
 
-                'oDisplayAction.InitializeControl(initializer, StandardActionType.Play Or StandardActionType.DownloadItem Or StandardActionType.EditMetadata Or StandardActionType.ViewAdvancedStatistics Or StandardActionType.ViewUserStatistics Or StandardActionType.Edit Or StandardActionType.ViewPersonalStatistics)
-
+                        'oDisplayAction.InitializeControl(initializer, StandardActionType.Play Or StandardActionType.DownloadItem Or StandardActionType.EditMetadata Or StandardActionType.ViewAdvancedStatistics Or StandardActionType.ViewUserStatistics Or StandardActionType.Edit Or StandardActionType.ViewPersonalStatistics)
+                        renderQuizItem.Visible = True
+                End Select
+              
                 Dim actStat = actions.Where(Function(x) x.ControlType = StandardActionType.ViewAdvancedStatistics).FirstOrDefault()
 
                 If (Not actStat Is Nothing) Then
@@ -868,10 +904,6 @@ Public Class PathStatistics
                         ohypHYPquizstats.NavigateUrl = actQuizStat.LinkUrl
                     End If
                 End If
-
-
-
-                oPlaceHolder.Controls.Add(oDisplayAction)
 
 
                 'Dim oDisplayAction As lm.Comol.Core.DomainModel.Common.iModuleActionView = CType(LoadControl(BaseUrl & lm.Comol.Core.DomainModel.Common.CoreRootObject.GenericDisplayActionControl), lm.Comol.Core.DomainModel.Common.iModuleActionView)
@@ -936,7 +968,7 @@ Public Class PathStatistics
                     oHyp.Visible = True
                     Me.Resource.setHyperLink(oHyp, False, True)
                     oHyp.Text = ""
-                    oHyp.NavigateUrl = Me.BaseUrl & RootObject.UsersStatistics(dtoItem.itemId, Me.CurrentCommunityID, ItemType.SubActivity, 0, TimeStat, CHBshowall.Checked)
+                    oHyp.NavigateUrl = Me.BaseUrl & RootObject.UsersStatistics(dtoItem.itemId, Me.CurrentCommunityID, ItemType.SubActivity, 0, TimeStat, CHBshowall.Checked, IsMoocPath)
 
                 End If
 
@@ -1097,6 +1129,8 @@ Public Class PathStatistics
             Dim settings As dtoExportConfigurationSetting = ServiceEP.GetExportSetting(Me.PathID, CurrentCommunityID, StatisticsPageType.PathStatistic, ConfigurationType.Export)
 
             Dim oDisplayAction As lm.Comol.Core.ModuleLinks.IExternalModuleDisplayAction = CType(LoadControl(BaseUrl & lm.Comol.Core.DomainModel.Common.CoreRootObject.GenericNewDisplayActionControl), lm.Comol.Core.ModuleLinks.IExternalModuleDisplayAction)
+            Dim quizAction As lm.Comol.Core.ModuleLinks.IGenericModuleDisplayAction = CType(LoadControl(BaseUrl & "Modules/Questionnaire/UC/UC_ModuleQuizAction.ascx"), lm.Comol.Core.ModuleLinks.IGenericModuleDisplayAction)
+            Dim repAction As lm.Comol.Core.ModuleLinks.IViewModuleRenderAction = CType(LoadControl(BaseUrl & "/Modules/Repository/Common/UC_ModuleRenderAction.ascx"), lm.Comol.Core.ModuleLinks.IViewModuleRenderAction)
             Dim textAction As lm.Comol.Modules.EduPath.Presentation.IViewModuleTextAction = CType(LoadControl(BaseUrl & RootObject.RenderTextAction), lm.Comol.Modules.EduPath.Presentation.IViewModuleTextAction)
             Dim certAction As lm.Comol.Modules.EduPath.Presentation.IViewModuleCertificationAction = CType(LoadControl(BaseUrl & RootObject.RenderCertificationAction), lm.Comol.Modules.EduPath.Presentation.IViewModuleCertificationAction)
 
@@ -1107,11 +1141,9 @@ Public Class PathStatistics
                 oTemplate.Settings = lm.Comol.Core.DomainModel.Helpers.Export.ExportBaseHelper.GetDefaultPageSettings()
                 oTemplate.Settings.Size = DocTemplateVers.PageSize.A4_L
 
-                Dim doc As iTextSharp5.text.Document = ServiceEP.ServiceStat.ExportGlobalEpStats_ToPdf(PageUtility.CurrentContext, Me.PathID, Me.CurrentCommunityID, Me.CurrentUserId, Me.CurrentCommRoleID, Me.CHBshowall.Checked, translations, roleTranslations, oDisplayAction, textAction, certAction, oTemplate, False, clientFileName, Response, New HttpCookie(CookieName, HDNdownloadTokenValue.Value), TimeStat)
+                'ToDo: export
+                ShowError(EpError.Generic)
 
-                If IsNothing(doc) Then
-                    ShowError(EpError.Generic)
-                End If
             Else
                 Response.AppendCookie(cookie)
                 Response.AddHeader("Content-Disposition", "attachment; filename=" & clientFileName)
@@ -1120,10 +1152,10 @@ Public Class PathStatistics
                 Select Case exportType
                     Case Helpers.Export.ExportFileType.xml
                         Response.ContentType = "application/ms-excel"
-                        Response.Write(ServiceEP.ServiceStat.ExportGlobalEpStats_ToXml(PageUtility.CurrentContext, Me.PathID, Me.CurrentCommunityID, Me.CurrentUserId, Me.CurrentCommRoleID, Me.CHBshowall.Checked, translations, roleTranslations, oDisplayAction, textAction, certAction, TimeStat))
+                        Response.Write(ServiceEP.ServiceStat.ExportGlobalEpStats_ToXml(PageUtility.CurrentContext, Me.PathID, Me.CurrentCommunityID, Me.CurrentUserId, Me.CurrentCommRoleID, Me.CHBshowall.Checked, translations, roleTranslations, quizAction, repAction, textAction, certAction, TimeStat))
                     Case Else
                         Response.ContentType = "text/csv"
-                        Response.Write(ServiceEP.ServiceStat.ExportGlobalEpStats_ToCsv(PageUtility.CurrentContext, Me.PathID, Me.CurrentCommunityID, Me.CurrentUserId, Me.CurrentCommRoleID, Me.CHBshowall.Checked, translations, roleTranslations, oDisplayAction, textAction, certAction, TimeStat))
+                        Response.Write(ServiceEP.ServiceStat.ExportGlobalEpStats_ToCsv(PageUtility.CurrentContext, Me.PathID, Me.CurrentCommunityID, Me.CurrentUserId, Me.CurrentCommRoleID, Me.CHBshowall.Checked, translations, roleTranslations, quizAction, repAction, textAction, certAction, TimeStat))
                 End Select
             End If
         Catch ex As Exception
@@ -1334,7 +1366,7 @@ Public Class PathStatistics
                         oHyp.Visible = True
                         Me.Resource.setHyperLink(oHyp, False, True)
                         oHyp.Text = ""
-                        oHyp.NavigateUrl = Me.BaseUrl & RootObject.UsersStatistics(dtoItem.itemId, Me.CurrentCommunityID, ItemType.Unit, 0, TimeStat, CHBshowall.Checked)
+                        oHyp.NavigateUrl = Me.BaseUrl & RootObject.UsersStatistics(dtoItem.itemId, Me.CurrentCommunityID, ItemType.Unit, 0, TimeStat, CHBshowall.Checked, IsMoocPath)
 
                     End If
 
@@ -1463,16 +1495,6 @@ Public Class PathStatistics
 
         End Get
     End Property
-    'Protected ReadOnly Property ActivityBlocked(dtoitem As dtoActivityGlobalStat) As String
-    '    Get
-    '        Return Me.Resource.getValue(ServiceEP.CheckStatus(dtoitem.status, Status.Locked))
-    '    End Get
-    'End Property
-    'Protected ReadOnly Property SubActivityBlocked(dtoitem As dtoSubActGlobalStat) As String
-    '    Get
-    '        Return Me.Resource.getValue(ServiceEP.CheckStatus(dtoitem.status, Status.Locked))
-    '    End Get
-    'End Property
 
     Private Sub CHBshowall_CheckedChanged(sender As Object, e As System.EventArgs) Handles CHBshowall.CheckedChanged
         BindDati()

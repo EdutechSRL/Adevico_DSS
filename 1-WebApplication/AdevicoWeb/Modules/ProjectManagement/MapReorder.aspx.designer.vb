@@ -23,6 +23,15 @@ Partial Public Class MapReorder
     Protected WithEvents LTreorderScript As Global.System.Web.UI.WebControls.Literal
 
     '''<summary>
+    '''CTRLmodalPlayerHeader control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents CTRLmodalPlayerHeader As Global.Comunita_OnLine.UC_ModalPlayerHeader
+
+    '''<summary>
     '''MLVprojectMap control.
     '''</summary>
     '''<remarks>
@@ -120,6 +129,15 @@ Partial Public Class MapReorder
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LTprojectName As Global.System.Web.UI.WebControls.Literal
+
+    '''<summary>
+    '''LBattachments control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents LBattachments As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''CTRLmessages control.
@@ -399,6 +417,15 @@ Partial Public Class MapReorder
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents HDMserializeTasks As Global.System.Web.UI.HtmlControls.HtmlInputHidden
+
+    '''<summary>
+    '''CTRLattachment control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents CTRLattachment As Global.Comunita_OnLine.UC_DialogProjectAttachments
 
     '''<summary>
     '''Master property.

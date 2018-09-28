@@ -95,13 +95,13 @@ Partial Public Class EduPathView
     Protected WithEvents CTRLmoduleStatusMessage As Global.Comunita_OnLine.UC_ActionMessages
 
     '''<summary>
-    '''LBErrorMSG control.
+    '''CTRLgenericMessage control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents LBErrorMSG As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents CTRLgenericMessage As Global.Comunita_OnLine.UC_ActionMessages
 
     '''<summary>
     '''DIVprogressBar control.
@@ -248,13 +248,13 @@ Partial Public Class EduPathView
     Protected WithEvents HYPerror As Global.System.Web.UI.WebControls.HyperLink
 
     '''<summary>
-    '''LBerror control.
+    '''CTRLerrorMessage control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents LBerror As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents CTRLerrorMessage As Global.Comunita_OnLine.UC_ActionMessages
 
     '''<summary>
     '''VIWmessages control.
@@ -273,6 +273,60 @@ Partial Public Class EduPathView
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents CTRLmessages As Global.Comunita_OnLine.UC_ActionMessages
+
+    '''<summary>
+    '''DVconfirmEditing control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents DVconfirmEditing As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+
+    '''<summary>
+    '''LBeditingOptions control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents LBeditingOptions As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''BTNreadonlyOption control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents BTNreadonlyOption As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''LBreadonlyOption control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents LBreadonlyOption As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''BTNeditOption control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents BTNeditOption As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''LBeditOption control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents LBeditOption As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''UDPaddRule control.

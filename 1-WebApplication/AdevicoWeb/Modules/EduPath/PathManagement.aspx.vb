@@ -7,7 +7,7 @@ Imports lm.Comol.Core.DomainModel
 Imports lm.ActionDataContract
 
 Public Class PathManagement
-    Inherits PageBaseEduPath
+    Inherits EPpageBaseEduPath
 
 #Region "Property"
 
@@ -96,17 +96,17 @@ Public Class PathManagement
         End Set
     End Property
 
-    Private ReadOnly Property CurrentCommunityID() As Integer
-        Get
-            Dim qs_communityId As String = Request.QueryString("ComId")
-            If IsNumeric(qs_communityId) Then
-                Return qs_communityId
-            Else
-                Return Me.CurrentContext.UserContext.CurrentCommunityID
-            End If
+    'Private ReadOnly Property CurrentCommunityID() As Integer
+    '    Get
+    '        Dim qs_communityId As String = Request.QueryString("ComId")
+    '        If IsNumeric(qs_communityId) Then
+    '            Return qs_communityId
+    '        Else
+    '            Return Me.CurrentContext.UserContext.CurrentCommunityID
+    '        End If
 
-        End Get
-    End Property
+    '    End Get
+    'End Property
     Private Function VerifyUrl() As Boolean
         If Me.CurrentStep <> StepPathManagement.NewPath And Me.CurrentPathID = -1 Then
             Me.ShowError(EpError.Url)
@@ -148,6 +148,7 @@ Public Class PathManagement
         Get
             If IsNothing(_currentPath) Then
                 _currentPath = New Path
+                _currentPath.IsMooc = PreloadIsMooc
             End If
             If _currentPath.Id = 0 AndAlso CurrentPathID > 0 Then
                 _currentPath = Me.ServiceEP.GetPath(Me.CurrentPathID)
@@ -191,6 +192,7 @@ Public Class PathManagement
         If Not IsPostBack Then
             Select Case Me.CurrentStep
                 Case StepPathManagement.NewPath
+                    IsMoocPath = PreloadIsMooc
                     If Me.CurrentCommunityID <= 0 Then
                         Me.PageUtility.RedirectToUrl(RootObject.PathManagementSelectCommunity())
                     ElseIf VerifyUrl() Then
@@ -276,15 +278,20 @@ Public Class PathManagement
     End Sub
 
     Public Overrides Sub BindNoPermessi()
+        If Not _IsMoocPath.HasValue Then
+            If CurrentStep = CInt(StepPathManagement.NewPath) Then
+                IsMoocPath = PreloadIsMooc
+            Else
+                IsMoocPath = ServiceEP.IsMooc(CurrentPathID)
+                If PreloadIsMooc AndAlso Not IsMoocPath Then
+                    IsMoocPath = PreloadIsMooc
+                End If
+            End If
+        End If
         Me.ShowError(EpError.NotPermission)
     End Sub
 
     Public Overrides Function HasPermessi() As Boolean
-        'Dim value As Boolean
-        'With Me.CurrentService
-        '    value = .Admin
-        'End With
-        'Return value
         Return True
     End Function
 
@@ -293,7 +300,11 @@ Public Class PathManagement
     End Sub
 
     Public Overrides Sub SetCultureSettings()
-        MyBase.SetCulture("pg_Create", "EduPath")
+        If PreloadIsMooc Then
+            MyBase.SetCulture("pg_MoocCreate", "EduPath")
+        Else
+            MyBase.SetCulture("pg_Create", "EduPath")
+        End If
     End Sub
 
     Public Overrides Sub SetInternazionalizzazione()
@@ -305,9 +316,9 @@ Public Class PathManagement
             .setCheckBox(CKBfloatingDeadlines)
             .setLabel_To_Value(Me.LBdetailTitle, "LBdetailTitle.Path")
             .setLabel(Me.LBnameTitle)
+            .setLabel(Me.LBcodeTitle)
             .setLabel(Me.LBdescriptionTitle)
             .setLabel(Me.LBminCompletionTitle)
-            .setLabel(LBtype_t)
             .setLabel_To_Value(LBhours, "LBhours.Path")
             .setRequiredFieldValidator(RFVname, True, False)
             .setLabel(LBminMark)
@@ -348,7 +359,6 @@ Public Class PathManagement
             .setLabel(LBsetEndDate)
             .setLabel(LBcompletionPolicy_t)
             .setLabel(LBdisplayPolicy_t)
-            .setLabel(LBscormSettingsPolicy_t)
 
             .setLiteral(LTadvancedSettingsTitle)
             .setLabel(LBspanCollapseList)
@@ -356,7 +366,6 @@ Public Class PathManagement
 
             .setLabel(LBcompletionPolicyTitle)
             .setLabel(LBdisplayPolicyTitle)
-            .setLabel(LBscormSettingsPolicyTitle)
 
         End With
         Aclearit.InnerText = Me.Resource.getValue("Aclearit.text")
@@ -370,11 +379,10 @@ Public Class PathManagement
         Get
             If IsSessioneScaduta(False) Then
                 If CurrentPathID > 0 Then
-                    RedirectOnSessionTimeOut(RootObject.PathManagement(CurrentCommunityID, CurrentPathID, CInt(StepPathManagement.Detail).ToString, PathType), CurrentCommunityID)
+                    RedirectOnSessionTimeOut(RootObject.PathManagement(CurrentCommunityID, CurrentPathID, CInt(StepPathManagement.Detail).ToString, PathType, PreloadIsMooc), CurrentCommunityID)
                 Else
-                    RedirectOnSessionTimeOut(RootObject.AddPath(CurrentCommunityID, EpType.TimeAuto), CurrentCommunityID)
+                    RedirectOnSessionTimeOut(RootObject.AddPath(CurrentCommunityID, EpType.TimeAuto, PreloadIsMooc), CurrentCommunityID)
                 End If
-
             End If
             Return False
         End Get
@@ -448,6 +456,12 @@ Public Class PathManagement
     End Sub
     Private ReadOnly Property EpType As EPType
         Get
+
+            'Verificare che non dia problemi,
+            'ma è IMPENSABILE che il TIPO passato via QUERYSTRING
+            'generi ERRORE se non è corretto, quando le funzioni di lista danno QUEL PARAMETRO!
+
+            
             Dim qs As String = Request.QueryString("Type")
             If IsNumeric(qs) Then
 
@@ -463,11 +477,13 @@ Public Class PathManagement
                 ElseIf ServiceEP.CheckEpType(qs, EpType.TimeManual) Then
                     Return EpType.TimeManual
                 Else
-                    ShowError(EpError.Url)
+                    Return EpType.None
+                    'ShowError(EpError.Url)
                 End If
 
             Else
-                ShowError(EpError.Url)
+                Return EpType.None
+                'ShowError(EpError.Url)
             End If
 
 
@@ -484,8 +500,11 @@ Public Class PathManagement
         currentPath = New Path
         currentPath.Status = currentPath.Status Or Status.Draft
         currentPath.EPType = EpType
+        currentPath.IsMooc = PreloadIsMooc
+        currentPath.Name = Resource.getValue("NewPathName.IsMooc." & currentPath.IsMooc.ToString) & Now.ToShortDateString
+        IsMoocPath = currentPath.IsMooc
         _PathType = currentPath.EPType 'senza questo PathType cerca di leggerlo dal DB
-        Me.ServiceEP.SaveEP(currentPath, Me.CurrentContext.UserContext.CurrentUserID, OLDpageUtility.ProxyIPadress, OLDpageUtility.ClientIPadress)
+        Me.ServiceEP.SaveEP(currentPath, PageUtility.CurrentContext.UserContext.CurrentUserID, OLDpageUtility.ProxyIPadress, OLDpageUtility.ClientIPadress)
         If IsNothing(currentPath) Then
             Me.ShowError(EpError.Generic)
         Else
@@ -499,13 +518,7 @@ Public Class PathManagement
         Me.InitWizardButton()
 
         Me.TXBname.Text = Me.currentPath.Name
-
-        Try
-            Me.RBLtype.SelectedValue = Me.currentPath.Type
-        Catch ex As Exception
-            Me.RBLtype.SelectedValue = 0
-        End Try
-
+        Me.TXBcode.Text = Me.currentPath.PathCode
         Me.CTRLeditorDescription.InitializeControl(lm.Comol.Modules.EduPath.Domain.ModuleEduPath.UniqueCode)
         Me.CTRLeditorDescription.HTML = Me.currentPath.Description
 
@@ -543,7 +556,6 @@ Public Class PathManagement
                 Dim endDateOverFlow As DateTime = CType(currentPath.EndDateOverflow, DateTime)
                 TXBhEndOver.Text = ((endDateOverFlow - endDate).Days * 24) + (endDateOverFlow - endDate).Hours
                 TXBmEndOver.Text = (endDateOverFlow - endDate).Minutes
-
             End If
         End If
 
@@ -556,12 +568,33 @@ Public Class PathManagement
 
         CKBcontinueExecution.Checked = ServiceEP.CheckEpType(currentPath.EPType, lm.Comol.Modules.EduPath.Domain.EPType.AlwaysStat)
 
+        UpdateDurationMessage()
         Me.WZRpathCreate.ActiveStepIndex = StepPathManagement.Detail
 
         UpdateRadioButtonList(RBLcompletionPolicy, GetCompletionItems(currentPath.Policy.Statistics))
         UpdateRadioButtonList(RBLdisplayPolicy, GetDisplayItems(currentPath.Policy.DisplaySubActivity))
-        UpdateRadioButtonList(RBLscormSettings, GetScormItems(currentPath.Policy.Scorm))
     End Sub
+
+    Private Sub UpdateDurationMessage()
+        Select Case VerifyPathDuration()
+            Case TimeError.autoLessThenPath
+                CTRLpathMessage.InitializeControl(Resource.getValue("Path.TimeError." & TimeError.autoLessThenPath.ToString), Helpers.MessageType.alert)
+                CTRLpathMessage.Visible = True
+            Case TimeError.autoLessThenPath
+                CTRLpathMessage.Visible = True
+                CTRLpathMessage.InitializeControl(Resource.getValue("Path.TimeError." & TimeError.autoLessThenPath.ToString), Helpers.MessageType.error)
+            Case Else
+                CTRLpathMessage.Visible = False
+        End Select
+    End Sub
+    Private Function VerifyPathDuration() As TimeError
+        Dim hours As Integer = 0
+        Dim minutes As Integer = 0
+        Integer.TryParse(TXBhours.Text, hours)
+        Integer.TryParse(TXBmins.Text, minutes)
+
+        Return VerifyDuration((hours * 60 + minutes), currentPath.WeightAuto)
+    End Function
 
     Private Function GetCompletionItems(dItem As CompletionPolicy) As List(Of dtoSettingsItem)
         Dim items As List(Of CompletionPolicy) = (From e In [Enum].GetValues(GetType(CompletionPolicy)).Cast(Of CompletionPolicy)() Where e <> CompletionPolicy.UpdateOnlyIfWorst AndAlso e <> CompletionPolicy.UpdateOnlyIfBetter Select e).ToList()
@@ -571,18 +604,11 @@ Public Class PathManagement
         Return items.Select(Function(e) New dtoSettingsItem With {.Id = CInt(e), .IsSelected = (e = dItem), .Name = Resource.getValue("Selector.Name.CompletionPolicy." & e.ToString), .Description = Resource.getValue("Selector.Description.CompletionPolicy." & e.ToString)}).ToList()
     End Function
     Private Function GetDisplayItems(dItem As DisplayPolicy) As List(Of dtoSettingsItem)
-        Dim items As List(Of DisplayPolicy) = (From e In [Enum].GetValues(GetType(DisplayPolicy)).Cast(Of DisplayPolicy)() Where e <> DisplayPolicy.InheritedByPath AndAlso e <> DisplayPolicy.InheritedByUnit AndAlso e <> DisplayPolicy.InheritedByActivity Select e).ToList()
+        Dim items As List(Of DisplayPolicy) = (From e In [Enum].GetValues(GetType(DisplayPolicy)).Cast(Of DisplayPolicy)() Where e <> DisplayPolicy.InheritedByPath AndAlso e <> DisplayPolicy.InheritedByUnit AndAlso e <> DisplayPolicy.InheritedByActivity AndAlso e <> DisplayPolicy.ModalByItem Select e).ToList()
         If Not items.Contains(dItem) Then
             dItem = items.FirstOrDefault()
         End If
         Return items.Select(Function(e) New dtoSettingsItem With {.Id = CInt(e), .IsSelected = (e = dItem), .Name = Resource.getValue("Selector.Name.DisplayPolicy." & e.ToString), .Description = Resource.getValue("Selector.Description.DisplayPolicy." & e.ToString)}).ToList()
-    End Function
-    Private Function GetScormItems(dItem As ScormSettingsPolicy) As List(Of dtoSettingsItem)
-        Dim items As List(Of ScormSettingsPolicy) = (From e In [Enum].GetValues(GetType(ScormSettingsPolicy)).Cast(Of ScormSettingsPolicy)() Select e).ToList()
-        If Not items.Contains(dItem) Then
-            dItem = items.FirstOrDefault()
-        End If
-        Return items.Select(Function(e) New dtoSettingsItem With {.Id = CInt(e), .IsSelected = (e = dItem), .Name = Resource.getValue("Selector.Name.ScormSettingsPolicy." & e.ToString), .Description = Resource.getValue("Selector.Description.ScormSettingsPolicy." & e.ToString)}).ToList()
     End Function
     Private Sub UpdateRadioButtonList(obj As RadioButtonList, items As List(Of dtoSettingsItem))
         obj.Items.Clear()
@@ -595,12 +621,10 @@ Public Class PathManagement
             obj.Items.Add(oListItem)
         Next
     End Sub
-    Private Function UpdateDetail()
+    Private Function UpdateDetail() As Boolean
         currentPath.Name = Me.TXBname.Text
-        currentPath.Type = Me.RBLtype.SelectedValue
-
+        currentPath.PathCode = Me.TXBcode.Text
         currentPath.Description = removeBRfromStringEnd(Me.CTRLeditorDescription.HTML)
-
         currentPath.setLocked()
 
         If Not CKBplayMode.Checked AndAlso ServiceEP.CheckEpType(currentPath.EPType, EpType.PlayMode) Then
@@ -626,7 +650,6 @@ Public Class PathManagement
         currentPath.EndDateOverflow = Nothing
         currentPath.EndDate = Nothing
 
-        currentPath.Policy.Scorm = DirectCast(CInt(RBLscormSettings.SelectedValue), ScormSettingsPolicy)
         currentPath.Policy.Statistics = DirectCast(CInt(RBLcompletionPolicy.SelectedValue), CompletionPolicy)
         currentPath.Policy.DisplaySubActivity = DirectCast(CInt(RBLdisplayPolicy.SelectedValue), DisplayPolicy)
 
@@ -705,12 +728,12 @@ Public Class PathManagement
     Private Sub SubInitSelectPermissionByCRole()
         If Me.ListOfAssignmentByCommRole.Count = 0 Then
             If (currentPath.Status And Status.Draft) = Status.Draft Then
-                Me.ListOfAssignmentByCommRole = Me.ServiceAssignment.GetListCRolePathAssignment(0, Me.CurrentCommunityID, Me.CurrentContext.UserContext.CurrentUserID, Me.CurrentContext.UserContext.Language.Id)
+                Me.ListOfAssignmentByCommRole = Me.ServiceAssignment.GetListCRolePathAssignment(0, Me.CurrentCommunityID, PageUtility.CurrentContext.UserContext.CurrentUserID, PageUtility.CurrentContext.UserContext.Language.Id)
             Else
-                Me.ListOfAssignmentByCommRole = Me.ServiceAssignment.GetListCRolePathAssignment(currentPath.Id, Me.CurrentCommunityID, Me.CurrentContext.UserContext.CurrentUserID, Me.CurrentContext.UserContext.Language.Id)
+                Me.ListOfAssignmentByCommRole = Me.ServiceAssignment.GetListCRolePathAssignment(currentPath.Id, Me.CurrentCommunityID, PageUtility.CurrentContext.UserContext.CurrentUserID, PageUtility.CurrentContext.UserContext.Language.Id)
             End If
         End If
-        Me.RPcrolePermission.DataSource = Me.ListOfAssignmentByCommRole
+        Me.RPcrolePermission.DataSource = Me.ListOfAssignmentByCommRole.OrderBy(Function(r) r.ItemName)
         Me.RPcrolePermission.DataBind()
     End Sub
 
@@ -888,12 +911,11 @@ Public Class PathManagement
         End If
         LBcompletionPolicy.Text = Resource.getValue("Selector.Name.CompletionPolicy." & currentPath.Policy.Statistics.ToString)
         LBdisplayPolicy.Text = Resource.getValue("Selector.Name.DisplayPolicy." & currentPath.Policy.DisplaySubActivity.ToString)
-        LBscormSettingsPolicy.Text = Resource.getValue("Selector.Name.ScormSettingsPolicy." & currentPath.Policy.Scorm.ToString)
         Me.WZRpathCreate.ActiveStepIndex = StepPathManagement.SummaryPermission
     End Sub
 
     Private Function PersistData() As Boolean
-        Dim IsTransactionExecute As Boolean = Me.ServiceEP.SaveOrUpdateEPandAssignment(currentPath, ListOfAssignmentByCommRole, ListOfAssignmentByPerson, CurrentCommunityID, Me.CurrentContext.UserContext.CurrentUserID, OLDpageUtility.ClientIPadress, OLDpageUtility.ProxyIPadress)
+        Dim IsTransactionExecute As Boolean = Me.ServiceEP.SaveOrUpdateEPandAssignment(currentPath, ListOfAssignmentByCommRole, ListOfAssignmentByPerson, CurrentCommunityID, PageUtility.CurrentContext.UserContext.CurrentUserID, OLDpageUtility.ClientIPadress, OLDpageUtility.ProxyIPadress)
         If IsTransactionExecute Then
             ClearSession()
         Else
@@ -944,13 +966,13 @@ Public Class PathManagement
         Select Case Me.CurrentStep
             Case StepPathManagement.NewPath
                 Dim riseAlert As Boolean = isAutoEp AndAlso ServiceEP.CheckStatus(currentPath.Status, Status.NotLocked) AndAlso Not currentPath.WeightAuto = (TXBhours.Text * 60 + TXBmins.Text)
-                If riseAlert Then
-                    LITalert.Text = Resource.getValue("MSGalert")
-                End If
+                'If riseAlert Then
+                '    LITalert.Text = Resource.getValue("MSGalert")
+                'End If
                 If Me.UpdateDetail() Then
                     If Not riseAlert Then
                         If PersistData() Then
-                            RedirectToUrl((RootObject.PathManagement(CurrentCommunityID, currentPath.Id, StepPathManagement.SelectPermission, EpType)))
+                            RedirectToUrl((RootObject.PathManagement(CurrentCommunityID, currentPath.Id, StepPathManagement.SelectPermission, EpType, currentPath.IsMooc)))
                         Else
                             Me.ShowError(EpError.Generic)
                         End If
@@ -961,14 +983,15 @@ Public Class PathManagement
 
             Case StepPathManagement.Detail
                 Dim riseAlert As Boolean = isAutoEp AndAlso ServiceEP.CheckStatus(currentPath.Status, Status.NotLocked) AndAlso Not currentPath.WeightAuto = (TXBhours.Text * 60 + TXBmins.Text)
-                If riseAlert Then
-                    LITalert.Text = Resource.getValue("MSGalert")
+                UpdateDurationMessage()
+                'If riseAlert Then
+                '    LITalert.Text = Resource.getValue("MSGalert")
 
-                End If
+                'End If
                 If Me.UpdateDetail() Then
                     If Not riseAlert Then
                         If PersistData() Then
-                            RedirectToUrl(RootObject.PathManagement(CurrentCommunityID, currentPath.Id, StepPathManagement.SelectPermission, EpType))
+                            RedirectToUrl(RootObject.PathManagement(CurrentCommunityID, currentPath.Id, StepPathManagement.SelectPermission, EpType, currentPath.IsMooc))
                         Else
                             ShowError(EpError.Generic)
                         End If
@@ -980,16 +1003,16 @@ Public Class PathManagement
 
             Case StepPathManagement.SelectPermission
                 Me.GetSelectedPermission()
-                RedirectToUrl(RootObject.PathManagement(CurrentCommunityID, currentPath.Id, StepPathManagement.SummaryPermission, EpType))
+                RedirectToUrl(RootObject.PathManagement(CurrentCommunityID, currentPath.Id, StepPathManagement.SummaryPermission, EpType, currentPath.IsMooc))
             Case StepPathManagement.SelectPerson
                 Me.GetSelectedPerson()
-                RedirectToUrl(RootObject.PathManagement(CurrentCommunityID, currentPath.Id, StepPathManagement.SelectPermission, EpType))
+                RedirectToUrl(RootObject.PathManagement(CurrentCommunityID, currentPath.Id, StepPathManagement.SelectPermission, EpType, currentPath.IsMooc))
             Case StepPathManagement.SummaryPermission
                 If Me.ServiceEP.CheckStatus(currentPath.Status, Status.Draft) Then
                     currentPath.Status = currentPath.Status - Status.Draft
                 End If
                 If PersistData() Then
-                    RedirectToUrl(RootObject.EduPathList(Me.CurrentCommunityID, EpViewModeType.Manage) & "#" & CurrentPathID)
+                    RedirectToUrl(RootObject.EduPathList(Me.CurrentCommunityID, EpViewModeType.Manage, currentPath.IsMooc) & "#" & CurrentPathID)
                 End If
 
             Case StepPathManagement.Update
@@ -1001,7 +1024,7 @@ Public Class PathManagement
                 If Not riseAlert Then
                     Me.UpdateDetail()
                     If PersistData() Then
-                        RedirectToUrl(RootObject.PathManagement(CurrentCommunityID, currentPath.Id, StepPathManagement.SelectPermission, EpType))
+                        RedirectToUrl(RootObject.PathManagement(CurrentCommunityID, currentPath.Id, StepPathManagement.SelectPermission, EpType, currentPath.IsMooc))
                     Else
                         ShowError(EpError.Generic)
                     End If
@@ -1009,7 +1032,7 @@ Public Class PathManagement
 
             Case StepPathManagement.SelectCommunity
                 Dim SelectedCommId = GetSelectedCommunityID()
-                Me.PageUtility.RedirectToUrl("Modules/EduPath/PathManagement.aspx?ComId=" & SelectedCommId & "&Step=" & StepPathManagement.NewPath)
+                Me.PageUtility.RedirectToUrl(RootObject.AddPath(CurrentCommunityID, EpType, PreloadIsMooc))
         End Select
     End Sub
     Private Function GetSelectedCommunityID() As Integer
@@ -1026,12 +1049,12 @@ Public Class PathManagement
 
             Case StepPathManagement.SelectPermission
                 Me.GetSelectedPermission()
-                Me.PageUtility.RedirectToUrl(RootObject.PathManagement(CurrentCommunityID, currentPath.Id, StepPathManagement.Detail, EpType))
+                Me.PageUtility.RedirectToUrl(RootObject.PathManagement(CurrentCommunityID, currentPath.Id, StepPathManagement.Detail, EpType, currentPath.IsMooc))
             Case StepPathManagement.SelectPerson
                 Me.GetSelectedPerson()
-                Me.PageUtility.RedirectToUrl(RootObject.PathManagement(CurrentCommunityID, currentPath.Id, StepPathManagement.SelectPermission, EpType))
+                Me.PageUtility.RedirectToUrl(RootObject.PathManagement(CurrentCommunityID, currentPath.Id, StepPathManagement.SelectPermission, EpType, currentPath.IsMooc))
             Case StepPathManagement.SummaryPermission
-                Me.PageUtility.RedirectToUrl(RootObject.PathManagement(CurrentCommunityID, currentPath.Id, StepPathManagement.SelectPermission, EpType))
+                Me.PageUtility.RedirectToUrl(RootObject.PathManagement(CurrentCommunityID, currentPath.Id, StepPathManagement.SelectPermission, EpType, currentPath.IsMooc))
         End Select
     End Sub
     Public Sub BTNcancel_Click(ByVal sender As Object, ByVal e As EventArgs)
@@ -1041,11 +1064,11 @@ Public Class PathManagement
             End If
         End If
         ClearSession()
-        PageUtility.RedirectToUrl(RootObject.EduPathList(Me.CurrentCommunityID, EpViewModeType.Manage))
+        PageUtility.RedirectToUrl(RootObject.EduPathList(Me.CurrentCommunityID, EpViewModeType.Manage, currentPath.IsMooc))
     End Sub
     Private Sub BTNselectPerson_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BTNselectPerson.Click
         Me.GetSelectedPermission()
-        Me.PageUtility.RedirectToUrl(RootObject.PathManagement(CurrentCommunityID, currentPath.Id, StepPathManagement.SelectPerson, EpType))
+        Me.PageUtility.RedirectToUrl(RootObject.PathManagement(CurrentCommunityID, currentPath.Id, StepPathManagement.SelectPerson, EpType, currentPath.IsMooc))
     End Sub
 #End Region
 
@@ -1290,7 +1313,7 @@ Public Class PathManagement
 
     Private Sub BTNerror_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BTNerror.Click
         Me.ClearSession()
-        Me.PageUtility.RedirectToUrl(RootObject.EduPathList(Me.CurrentCommunityID, EpViewModeType.Manage))
+        Me.PageUtility.RedirectToUrl(RootObject.EduPathList(Me.CurrentCommunityID, EpViewModeType.Manage, currentPath.IsMooc))
     End Sub
 
     Protected Overrides Sub NotifyModuleStatus(status As lm.Comol.Core.DomainModel.ModuleStatus)

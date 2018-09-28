@@ -8,7 +8,7 @@ Imports System.Web.Script.Services
 Imports System.Web.Services
 
 Public Class SubActText
-    Inherits PageBaseEduPath
+    Inherits EPpageBaseEduPath
 
     Protected Overrides ReadOnly Property PathType As EPType
         Get
@@ -23,6 +23,17 @@ Public Class SubActText
     Private Sub Page_PreLoad(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.PreLoad
         PageUtility.CurrentModule = PageUtility.GetModule(Services_EduPath.Codex)
         Me.CTRLeditorDescription.InitializeControl(lm.Comol.Modules.EduPath.Domain.ModuleEduPath.UniqueCode)
+        If Not _IsMoocPath.HasValue Then
+            Dim idPath As Long = ServiceEP.GetPathId_BySubActivityId(SubActId)
+            If (idPath > 0) Then
+                IsMoocPath = ServiceEP.IsMooc(idPath)
+                If PreloadIsMooc AndAlso Not IsMoocPath Then
+                    IsMoocPath = PreloadIsMooc
+                End If
+            Else
+                IsMoocPath = PreloadIsMooc
+            End If
+        End If
     End Sub
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
@@ -39,7 +50,7 @@ Public Class SubActText
 
     Public Overrides Sub BindDati()
 
-        Dim urlViewActivity As String = Me.BaseUrl & RootObject.ViewActivity(ActivityId, ServiceEP.GetUnitId_ByActivityId(ActivityId), ServiceEP.GetPathId_ByActivityId(ActivityId), Me.CurrentCommunityID, EpViewModeType.Manage)
+        Dim urlViewActivity As String = Me.BaseUrl & RootObject.ViewActivity(ActivityId, ServiceEP.GetUnitId_ByActivityId(ActivityId), ServiceEP.GetPathId_ByActivityId(ActivityId), Me.CurrentCommunityID, EpViewModeType.Manage, IsMoocPath, PreloadIsFromReadOnly)
 
         Me.HYPviewActivity.NavigateUrl = urlViewActivity
         Me.HYPerror.NavigateUrl = urlViewActivity
@@ -63,8 +74,6 @@ Public Class SubActText
             hideControl(DIVweight)
             hideControl(DIVmandatory)
         End If
-
-
     End Sub
     Public Overrides Sub BindNoPermessi()
         Me.ShowError(EpError.NotPermission)
@@ -128,13 +137,13 @@ Public Class SubActText
             If IsNumeric(qs_communityId) Then
                 Return qs_communityId
             Else
-                Return Me.CurrentContext.UserContext.CurrentCommunityID
+                Return PageUtility.CurrentContext.UserContext.CurrentCommunityID
             End If
         End Get
     End Property
     Private ReadOnly Property CurrentUserId() As Integer
         Get
-            Return Me.CurrentContext.UserContext.CurrentUserID
+            Return PageUtility.CurrentContext.UserContext.CurrentUserID
         End Get
     End Property
 
@@ -186,7 +195,7 @@ Public Class SubActText
 
     Private Sub ShowError(ByVal ErrorType As EpError)
         Me.Resource.setHyperLink(Me.HYPerror, False, True)
-        Me.HYPerror.NavigateUrl = Me.BaseUrl & RootObject.EduPathList(CurrentCommunityID, EpViewModeType.Manage)
+        Me.HYPerror.NavigateUrl = Me.BaseUrl & RootObject.EduPathList(CurrentCommunityID, EpViewModeType.Manage, IsMoocPath)
         Select Case ErrorType
             Case EpError.Generic
                 Me.LBerror.Text = Me.Resource.getValue("Error." & EpError.Generic.ToString)
@@ -208,7 +217,8 @@ Public Class SubActText
 
                 Dim pathId As Long = ServiceEP.GetPathId_BySubActivityId(SubActId)
 
-                _isManageable = ServiceEP.isEditablePath(pathId, Me.PageUtility.CurrentUser.ID)
+                _isManageable = (ServiceEP.GetPathAvailability(pathId, CurrentUserId) = PathAvailability.Blocked)
+                'ServiceEP.isEditablePath(pathId, Me.PageUtility.CurrentUser.ID)
             End If
             Return _isManageable
         End Get
@@ -280,11 +290,9 @@ Public Class SubActText
             If IsNothing(ServiceEP.SaveOrUpdateSubActivityText(dtoSubAct, Me.ActivityId, Me.CurrentCommunityID, Me.CurrentUserId, OLDpageUtility.ClientIPadress, OLDpageUtility.ProxyIPadress)) Then
                 Me.ShowError(EpError.Generic)
             Else
-                Me.PageUtility.RedirectToUrl(RootObject.ViewActivity(ActivityId, ServiceEP.GetUnitId_ByActivityId(ActivityId), ServiceEP.GetPathId_ByActivityId(ActivityId), Me.CurrentCommunityID, EpViewModeType.Manage))
+                Me.PageUtility.RedirectToUrl(RootObject.ViewActivity(ActivityId, ServiceEP.GetUnitId_ByActivityId(ActivityId), ServiceEP.GetPathId_ByActivityId(ActivityId), Me.CurrentCommunityID, EpViewModeType.Manage, IsMoocPath, PreloadIsFromReadOnly))
             End If
-
         End If
-
     End Sub
 
     Protected Overrides Sub NotifyModuleStatus(status As lm.Comol.Core.DomainModel.ModuleStatus)

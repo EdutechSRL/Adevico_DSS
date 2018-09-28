@@ -76,6 +76,14 @@ Public MustInherit Class PMprojectListBase
     End Sub
 #End Region
 
+#Region "Implements"
+    Protected Friend ReadOnly Property UnknownUserTranslation As String Implements IViewProjectListBase.UnknownUserTranslation
+        Get
+            Return Me.Resource.getValue("UnknownUser")
+        End Get
+    End Property
+#End Region
+
     Protected MustOverride Sub DisplayToggleProjectRoles(ByVal display As Boolean)
 
     Private Sub SendUserAction(idCommunity As Integer, idModule As Integer, action As ModuleProjectManagement.ActionType) Implements IViewProjectListBase.SendUserAction

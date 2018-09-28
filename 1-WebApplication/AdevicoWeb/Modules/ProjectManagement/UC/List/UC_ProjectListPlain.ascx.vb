@@ -47,6 +47,8 @@ Public Class UC_ProjectListPlain
     Public Event GetCurrentFilter(ByRef filter As dtoItemsFilter)
     Public Event AddDeletedStatus()
     Public Event RemoveDeletedStatus()
+    Public Event SetOpenDialogOnPostbackByCssClass(ByVal identifier As String)
+
 #End Region
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
@@ -138,6 +140,13 @@ Public Class UC_ProjectListPlain
         LNBorderByNameDown.Visible = (projects.Count > 1)
         LNBorderByNameUp.Visible = (projects.Count > 1)
     End Sub
+
+    Private Sub LoadAttachments(items As List(Of dtoAttachmentItem)) Implements IViewProjectListPlain.LoadAttachments
+        CTRLattachment.InitializeControl(items)
+        CTRLattachment.Visible = True
+
+        RaiseEvent SetOpenDialogOnPostbackByCssClass(CTRLattachment.DialogIdentifier)
+    End Sub
 #End Region
 
 #Region "Internal"
@@ -165,6 +174,9 @@ Public Class UC_ProjectListPlain
                 If (deletedRecords = 0) Then
                     RaiseEvent RemoveDeletedStatus()
                 End If
+            Case "attachment"
+                CurrentPresenter.LoadAttachments(CLng(e.CommandArgument), CurrentPageType)
+
         End Select
     End Sub
     Private Sub RPTprojects_ItemDataBound(sender As Object, e As System.Web.UI.WebControls.RepeaterItemEventArgs) Handles RPTprojects.ItemDataBound
@@ -252,6 +264,17 @@ Public Class UC_ProjectListPlain
                 oLinkButton = e.Item.FindControl("LNBvirtualUnDeleteProject")
                 Resource.setLinkButton(oLinkButton, False, True)
                 oLinkButton.Visible = project.Permissions.VirtualUndelete
+
+                oLinkButton = e.Item.FindControl("LNBattachments")
+                oLinkButton.Visible = project.Permissions.ViewAttachments AndAlso project.HasProjectAttachments
+                If oLinkButton.Text.Contains("#title#") Then
+                    Select Case project.ProjectAttachmentsCount
+                        Case 1, 0
+                            oLinkButton.Text = Replace(oLinkButton.Text, "#title#", Resource.getValue("LBattachments.ToolTip." & project.ProjectAttachmentsCount.ToString))
+                        Case Else
+                            oLinkButton.Text = Replace(oLinkButton.Text, "#title#", String.Format(Resource.getValue("LBattachments.ToolTip.n"), project.ProjectAttachmentsCount))
+                    End Select
+                End If
             Case ListItemType.Footer
                 Dim oTableItem As HtmlControl = e.Item.FindControl("TRempty")
                 oTableItem.Visible = (RPTprojects.Items.Count = 0)
@@ -344,5 +367,6 @@ Public Class UC_ProjectListPlain
 #End Region
 
 
-    
+
+   
 End Class

@@ -235,7 +235,11 @@ namespace lm.Comol.Core.BaseModules.Tickets
         public void PhisicalDeleteCommunity(Int32 idCommunity, Int32 idUser, String baseFilePath, String baseThumbnailPath)
 		{
 		}
-		public void PhisicalDeleteRepositoryItem(long idFileItem, int idCommunity, int idUser, Dictionary<string, long> moduleUserLong = null, Dictionary<string, string> moduleUserString = null)
+        public void PhisicalDeleteCommunity(string baseFileRepositoryPath, int idCommunity, int idUser)
+        {
+            //throw new NotImplementedException();
+        }
+        public void PhisicalDeleteRepositoryItem(long idFileItem, int idCommunity, int idUser, Dictionary<string, long> moduleUserLong = null, Dictionary<string, string> moduleUserString = null)
 		{
 		}
 	#endregion

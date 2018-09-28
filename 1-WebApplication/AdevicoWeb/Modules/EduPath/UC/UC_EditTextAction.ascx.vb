@@ -195,9 +195,6 @@ Public Class UC_EditTextAction
             dto.Weight = 1
         End If
 
-        If (String.IsNullOrEmpty(dto.Description)) Then
-            dto.Description = "--"
-        End If
 
         If dto.Description.Length = 0 Then
             Me.LBerrorEditor.Visible = True

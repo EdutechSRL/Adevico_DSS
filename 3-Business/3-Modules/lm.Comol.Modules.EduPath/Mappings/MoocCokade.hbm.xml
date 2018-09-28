@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="lm.Comol.Modules.EduPath" namespace="lm.Comol.Modules.EduPath.Domain">
+  <class name="MoocCokade" table="EP_MoocCokade" optimistic-lock ="version">
+    <id name="Id" column="Id" type="System.Int64">
+      <generator class="native"/>
+    </id>
+    
+    <property name="CommunityId" type="Int32" column="CommunityId" />
+    <property name="CokadeEnable" type="Boolean" column="CokadeEnable" />
+    
+  </class>
+</hibernate-mapping>

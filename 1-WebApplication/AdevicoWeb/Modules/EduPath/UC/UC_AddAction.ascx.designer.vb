@@ -12,7 +12,7 @@ Option Explicit On
 
 
 Partial Public Class UC_AddAction
-    
+
     '''<summary>
     '''DVcommandsTop control.
     '''</summary>
@@ -21,7 +21,7 @@ Partial Public Class UC_AddAction
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents DVcommandsTop As Global.System.Web.UI.HtmlControls.HtmlGenericControl
-    
+
     '''<summary>
     '''LTcurrentAction control.
     '''</summary>
@@ -30,25 +30,7 @@ Partial Public Class UC_AddAction
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LTcurrentAction As Global.System.Web.UI.WebControls.Literal
-    
-    '''<summary>
-    '''BTNcreateActionTop control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents BTNcreateActionTop As Global.System.Web.UI.WebControls.Button
-    
-    '''<summary>
-    '''BTNselectActionTop control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents BTNselectActionTop As Global.System.Web.UI.WebControls.Button
-    
+
     '''<summary>
     '''BTNcloseAddActionWindowTop control.
     '''</summary>
@@ -57,7 +39,25 @@ Partial Public Class UC_AddAction
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents BTNcloseAddActionWindowTop As Global.System.Web.UI.WebControls.Button
-    
+
+    '''<summary>
+    '''BTNselectActionTop control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents BTNselectActionTop As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''BTNcreateActionTop control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents BTNcreateActionTop As Global.System.Web.UI.WebControls.Button
+
     '''<summary>
     '''MLVaddSubActivity control.
     '''</summary>
@@ -66,7 +66,7 @@ Partial Public Class UC_AddAction
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents MLVaddSubActivity As Global.System.Web.UI.WebControls.MultiView
-    
+
     '''<summary>
     '''VIWempty control.
     '''</summary>
@@ -75,7 +75,7 @@ Partial Public Class UC_AddAction
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents VIWempty As Global.System.Web.UI.WebControls.View
-    
+
     '''<summary>
     '''VIWselector control.
     '''</summary>
@@ -84,7 +84,7 @@ Partial Public Class UC_AddAction
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents VIWselector As Global.System.Web.UI.WebControls.View
-    
+
     '''<summary>
     '''BTNaddRepositoryActivity control.
     '''</summary>
@@ -93,7 +93,7 @@ Partial Public Class UC_AddAction
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents BTNaddRepositoryActivity As Global.System.Web.UI.WebControls.Button
-    
+
     '''<summary>
     '''LBsubActRepository control.
     '''</summary>
@@ -102,7 +102,7 @@ Partial Public Class UC_AddAction
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LBsubActRepository As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''BTNaddTextAction control.
     '''</summary>
@@ -111,7 +111,7 @@ Partial Public Class UC_AddAction
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents BTNaddTextAction As Global.System.Web.UI.WebControls.Button
-    
+
     '''<summary>
     '''LBsubActText control.
     '''</summary>
@@ -120,7 +120,7 @@ Partial Public Class UC_AddAction
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LBsubActText As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''DVquestionnaire control.
     '''</summary>
@@ -129,7 +129,7 @@ Partial Public Class UC_AddAction
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents DVquestionnaire As Global.System.Web.UI.HtmlControls.HtmlGenericControl
-    
+
     '''<summary>
     '''BTNaddQuestionario control.
     '''</summary>
@@ -138,7 +138,7 @@ Partial Public Class UC_AddAction
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents BTNaddQuestionario As Global.System.Web.UI.WebControls.Button
-    
+
     '''<summary>
     '''LBsubActQuiz control.
     '''</summary>
@@ -147,7 +147,7 @@ Partial Public Class UC_AddAction
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LBsubActQuiz As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''DVcertifications control.
     '''</summary>
@@ -156,7 +156,7 @@ Partial Public Class UC_AddAction
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents DVcertifications As Global.System.Web.UI.HtmlControls.HtmlGenericControl
-    
+
     '''<summary>
     '''BTNaddCertificationAction control.
     '''</summary>
@@ -165,7 +165,7 @@ Partial Public Class UC_AddAction
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents BTNaddCertificationAction As Global.System.Web.UI.WebControls.Button
-    
+
     '''<summary>
     '''LBsubActCertification control.
     '''</summary>
@@ -174,34 +174,7 @@ Partial Public Class UC_AddAction
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LBsubActCertification As Global.System.Web.UI.WebControls.Label
-    
-    '''<summary>
-    '''DVwebinar control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents DVwebinar As Global.System.Web.UI.HtmlControls.HtmlGenericControl
-    
-    '''<summary>
-    '''BTNaddWebinarAction control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents BTNaddWebinarAction As Global.System.Web.UI.WebControls.Button
-    
-    '''<summary>
-    '''LBsubActWebinar control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents LBsubActWebinar As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''VIWrepository control.
     '''</summary>
@@ -210,7 +183,16 @@ Partial Public Class UC_AddAction
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents VIWrepository As Global.System.Web.UI.WebControls.View
-    
+
+    '''<summary>
+    '''CTRLattachments control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents CTRLattachments As Global.Comunita_OnLine.UC_EduPathAddRepositoryAction
+
     '''<summary>
     '''CTRLmoduleToRepository control.
     '''</summary>
@@ -219,7 +201,7 @@ Partial Public Class UC_AddAction
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents CTRLmoduleToRepository As Global.Comunita_OnLine.UC_ModuleToRepository
-    
+
     '''<summary>
     '''VIWquiz control.
     '''</summary>
@@ -228,7 +210,7 @@ Partial Public Class UC_AddAction
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents VIWquiz As Global.System.Web.UI.WebControls.View
-    
+
     '''<summary>
     '''CTRLmoduleToQuiz control.
     '''</summary>
@@ -237,7 +219,7 @@ Partial Public Class UC_AddAction
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents CTRLmoduleToQuiz As Global.Comunita_OnLine.UC_ModuleToQuiz
-    
+
     '''<summary>
     '''VIWcertifications control.
     '''</summary>
@@ -246,7 +228,7 @@ Partial Public Class UC_AddAction
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents VIWcertifications As Global.System.Web.UI.WebControls.View
-    
+
     '''<summary>
     '''CTRLcertificationAction control.
     '''</summary>
@@ -255,7 +237,7 @@ Partial Public Class UC_AddAction
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents CTRLcertificationAction As Global.Comunita_OnLine.UC_EditCertificationAction
-    
+
     '''<summary>
     '''VIWtextAction control.
     '''</summary>
@@ -264,7 +246,7 @@ Partial Public Class UC_AddAction
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents VIWtextAction As Global.System.Web.UI.WebControls.View
-    
+
     '''<summary>
     '''CTRLtextAction control.
     '''</summary>
@@ -273,7 +255,7 @@ Partial Public Class UC_AddAction
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents CTRLtextAction As Global.Comunita_OnLine.UC_EditTextAction
-    
+
     '''<summary>
     '''DVcommandsBottom control.
     '''</summary>
@@ -282,25 +264,7 @@ Partial Public Class UC_AddAction
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents DVcommandsBottom As Global.System.Web.UI.HtmlControls.HtmlGenericControl
-    
-    '''<summary>
-    '''BTNcreateActionBottom control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents BTNcreateActionBottom As Global.System.Web.UI.WebControls.Button
-    
-    '''<summary>
-    '''BTNselectActionBottom control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents BTNselectActionBottom As Global.System.Web.UI.WebControls.Button
-    
+
     '''<summary>
     '''BTNcloseAddActionWindowBottom control.
     '''</summary>
@@ -309,4 +273,22 @@ Partial Public Class UC_AddAction
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents BTNcloseAddActionWindowBottom As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''BTNselectActionBottom control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents BTNselectActionBottom As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''BTNcreateActionBottom control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents BTNcreateActionBottom As Global.System.Web.UI.WebControls.Button
 End Class

@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="lm.Comol.Modules.Standard" namespace="lm.Comol.Modules.Standard.Skin.Domain">
+
+    <class name="Skin_Template" table="SK_Template" discriminator-value="null">
+        
+        <!--Begin DomainBase-->
+        <id name="Id" column="ID" type="Int64">
+            <generator class="native"/>
+        </id>
+        
+        <!-- Discriminator -->
+        <discriminator column="IsHeader" type="boolean" not-null="true"/>
+        
+        <version name="TimeStamp"
+            generated="always"
+            unsaved-value="null"
+            type="BinaryBlob">
+            <column name="_Timestamp"
+                not-null="false"
+                sql-type="timestamp"/>
+        </version>
+
+        <property name="CreatedOn" type="DateTime" column="_CreatedOn" />
+        <many-to-one name="CreatedBy" class="lm.Comol.Core.DomainModel.Person" column="_CreatedBy" foreign-key="_CreatedBy" cascade="none" />
+        <property name="ModifiedOn" type="DateTime" column="_ModifiedOn" />
+        <many-to-one name="ModifiedBy" class="lm.Comol.Core.DomainModel.Person" column="_ModifiedBy" foreign-key="_ModifiedBy" cascade="none" />
+        <property name="CreatorProxyIpAddress" type="String" column="_CreatedProxyIPaddress" />
+        <property name="CreatorIpAddress" type="String" column="_CreatedIPaddress" />
+        <property name="ModifiedProxyIpAddress" type="String" column="_ModifiedProxyIPaddress" />
+        <property name="ModifiedIpAddress" type="String" column="_ModifiedIPaddress" />
+        <property name="Deleted" type="lm.Comol.Core.DomainModel.BaseStatusDeleted,lm.Comol.Core.DomainModel" column="_Deleted" />
+        <!--End DomainBase-->
+        
+        <property name="Name" type="String" column="Nome" />
+        <property name="Css" type="String" column="Css" />
+
+        <subclass name="HeaderTemplate" extends="Skin_Template" discriminator-value="true"></subclass>
+        <subclass name="FooterTemplate" extends="Skin_Template" discriminator-value="false"></subclass>
+        
+    </class>
+</hibernate-mapping>

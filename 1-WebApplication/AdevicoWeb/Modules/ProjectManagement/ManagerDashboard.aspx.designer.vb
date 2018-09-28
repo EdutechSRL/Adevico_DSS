@@ -14,13 +14,22 @@ Option Explicit On
 Partial Public Class ManagerDashboard
 
     '''<summary>
-    '''CTRLdialogHeader control.
+    '''CTRLheader control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents CTRLdialogHeader As Global.Comunita_OnLine.UC_TaskInfoHeader
+    Protected WithEvents CTRLheader As Global.Comunita_OnLine.UC_ProjectManagementHeader
+
+    '''<summary>
+    '''CTRLmodalPlayerHeader control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents CTRLmodalPlayerHeader As Global.Comunita_OnLine.UC_ModalPlayerHeader
 
     '''<summary>
     '''MLVprojectList control.

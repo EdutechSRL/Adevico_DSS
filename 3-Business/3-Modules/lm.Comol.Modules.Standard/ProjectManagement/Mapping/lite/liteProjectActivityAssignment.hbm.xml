@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="lm.Comol.Modules.Standard" namespace="lm.Comol.Modules.Standard.ProjectManagement.Domain">
+ 
+  <class name="lm.Comol.Modules.Standard.ProjectManagement.Domain.liteProjectActivityAssignment" table="PM_Assignment" lazy="true">
+    <id name="Id" column ="Id" type="long" >
+      <generator class="native"/>
+    </id>
+    
+    <property name="Role" type="lm.Comol.Modules.Standard.ProjectManagement.Domain.ActivityRole, lm.Comol.Modules.Standard" column="Role" />
+    <property name="Visibility" type="lm.Comol.Modules.Standard.ProjectManagement.Domain.ProjectVisibility, lm.Comol.Modules.Standard" column="Visibility" />
+    <property name="Permissions" type="Int64" column="Permissions" />
+    <property name="Completeness" type="Int32" column="Completeness" />
+    <property name="IsApproved" type="Boolean" column="IsApproved" />
+    <!--<property name="IdActivity" type="Int64" column="IdActivity" />-->
+    <many-to-one name="Activity" class="lm.Comol.Modules.Standard.ProjectManagement.Domain.litePmActivity" column="IdActivity" foreign-key="IdActivity" fetch="select" />
+    <many-to-one name="Project" class="lm.Comol.Modules.Standard.ProjectManagement.Domain.liteProjectSettings" column="IdProject" foreign-key="IdProject" fetch="select"/>
+    <!--<property name="IdProject" type="Int64" column="IdProject" />-->
+    <many-to-one name="Resource" class="lm.Comol.Modules.Standard.ProjectManagement.Domain.liteResource" column="IdResource" foreign-key="IdResource" fetch="select" />
+    <property name="IdPerson" type="Int32" column="IdPerson" />
+    <property name="Deleted" type="lm.Comol.Core.DomainModel.BaseStatusDeleted,lm.Comol.Core.DomainModel" column="_Deleted" />
+    </class>
+</hibernate-mapping>

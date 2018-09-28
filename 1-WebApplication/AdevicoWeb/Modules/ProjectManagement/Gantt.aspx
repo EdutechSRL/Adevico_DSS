@@ -6,6 +6,8 @@
 <%@ Register TagPrefix="CTRL" TagName="Info" Src="~/Modules/ProjectManagement/UC/UC_ProjectDateInfo.ascx" %>
 <%@ Register TagPrefix="CTRL" TagName="Gantt" Src="~/Modules/ProjectManagement/UC/UC_Gantt.ascx" %>
 <%@ Register TagPrefix="CTRL" TagName="GanttHeader" Src="~/Modules/ProjectManagement/UC/UC_GanttHeader.ascx" %>
+<%@ Register TagPrefix="CTRL" TagName="Attachment" Src="~/Modules/ProjectManagement/UC/UC_DialogProjectAttachments.ascx" %>
+<%@ Register TagPrefix="CTRL" TagName="ModalPlayerHeader" Src="~/Modules/Repository/UC_New/UC_ModalPlayerHeader.ascx" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="PageTitleContent" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="CPHserviceLocalization" runat="server">
@@ -121,6 +123,7 @@
         }   
 
     </script>
+    <CTRL:ModalPlayerHeader ID="CTRLmodalPlayerHeader" runat="server" />
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="TitleContent" runat="server">
 </asp:Content>
@@ -143,19 +146,23 @@
                 <div class="DivEpButton DivEpButtonTop">
                     <asp:Button ID="BTNsaveProjectDateInfoTop" runat="server" Text="*Save" CssClass="linkMenu savesubmit" CausesValidation="true" />
                     <asp:HyperLink ID="HYPgoToProjectEditTop" class="linkMenu" runat="server" Text="*Edit project" Visible="false"></asp:HyperLink>
+                    <asp:HyperLink ID="HYPgoToEditProjectMapTop" class="linkMenu" runat="server" Text="*Edit project map" Visible="false"></asp:HyperLink>
                     <asp:HyperLink ID="HYPbackToResourceDashboardTop" class="linkMenu" runat="server" Text="*Resource dashboard" Visible="false"></asp:HyperLink>
                     <asp:HyperLink ID="HYPbackToManagerDashboardTop" class="linkMenu" runat="server" Text="*Resource dashboard" Visible="false"></asp:HyperLink>
                     <asp:HyperLink ID="HYPbackToProjectsTop" class="linkMenu" runat="server" Text="*Back" Visible="false"></asp:HyperLink>
                 </div>
                 <div class="fieldobject header">	
-        	        <div class="fieldrow title clearfix">
-        		        <div class="left">
-                             <h2><asp:Literal id="LTprojectName" runat="server"></asp:Literal></h2>
-        		        </div>
-        		        <div class="right">
-        			        <span class="extra"></span>
-        		        </div>
-        	        </div>
+        	         <div class="left">
+                         <h2>
+                            <span class="projectnametitle">
+                                <span><asp:Literal id="LTprojectName" runat="server"></asp:Literal></span>
+                                <span class="icons">
+                                    <asp:Label ID="LBattachments" runat="server" Visible="false" CssClass="icon xs attacchment">&nbsp;</asp:Label>
+                                </span>
+                            </span>
+                        </h2>
+        		    </div>
+        		    <div class="right"><span class="extra"></span></div>
                 </div>
                 <CTRL:Messages ID="CTRLmessages" runat="server" Visible="false" />
                 <CTRL:Info id="CTRLprojectInfo" runat="server"></CTRL:Info>
@@ -182,6 +189,7 @@
                 <div class="DivEpButton DivEpButtonBottom" runat="server" visible="false" id="DVcommandsBottom">
                     <asp:Button ID="BTNsaveProjectDateInfoBottom" runat="server" Text="*Save" CssClass="linkMenu" OnClientClick="return onUpdating();"/>
                      <asp:HyperLink ID="HYPgoToProjectEditBottom" class="linkMenu" runat="server" Text="*Edit project" Visible="false"></asp:HyperLink>
+                     <asp:HyperLink ID="HYPgoToEditProjectMapBottom" class="linkMenu" runat="server" Text="*Edit project map" Visible="false"></asp:HyperLink>
                 <asp:HyperLink ID="HYPbackToResourceDashboardBottom" class="linkMenu" runat="server" Text="*Resource dashboard" Visible="false"></asp:HyperLink>
                 <asp:HyperLink ID="HYPbackToManagerDashboardBottom" class="linkMenu" runat="server" Text="*Resource dashboard" Visible="false"></asp:HyperLink>
                 <asp:HyperLink ID="HYPbackToProjectsBottom" class="linkMenu" runat="server" Text="*Back"
@@ -190,4 +198,5 @@
             </div>
         </asp:View>
     </asp:MultiView>
+    <CTRL:Attachment id="CTRLattachment" runat="server" CssClass="dlgprojectattachments"></CTRL:Attachment>
 </asp:Content>

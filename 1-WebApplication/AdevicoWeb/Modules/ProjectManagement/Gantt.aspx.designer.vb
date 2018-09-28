@@ -23,6 +23,15 @@ Partial Public Class ProjectGantt
     Protected WithEvents CTRLganttHeader As Global.Comunita_OnLine.UC_GanttHeader
 
     '''<summary>
+    '''CTRLmodalPlayerHeader control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents CTRLmodalPlayerHeader As Global.Comunita_OnLine.UC_ModalPlayerHeader
+
+    '''<summary>
     '''MLVprojectMap control.
     '''</summary>
     '''<remarks>
@@ -77,6 +86,15 @@ Partial Public Class ProjectGantt
     Protected WithEvents HYPgoToProjectEditTop As Global.System.Web.UI.WebControls.HyperLink
 
     '''<summary>
+    '''HYPgoToEditProjectMapTop control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents HYPgoToEditProjectMapTop As Global.System.Web.UI.WebControls.HyperLink
+
+    '''<summary>
     '''HYPbackToResourceDashboardTop control.
     '''</summary>
     '''<remarks>
@@ -111,6 +129,15 @@ Partial Public Class ProjectGantt
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LTprojectName As Global.System.Web.UI.WebControls.Literal
+
+    '''<summary>
+    '''LBattachments control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents LBattachments As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''CTRLmessages control.
@@ -230,6 +257,15 @@ Partial Public Class ProjectGantt
     Protected WithEvents HYPgoToProjectEditBottom As Global.System.Web.UI.WebControls.HyperLink
 
     '''<summary>
+    '''HYPgoToEditProjectMapBottom control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents HYPgoToEditProjectMapBottom As Global.System.Web.UI.WebControls.HyperLink
+
+    '''<summary>
     '''HYPbackToResourceDashboardBottom control.
     '''</summary>
     '''<remarks>
@@ -255,6 +291,15 @@ Partial Public Class ProjectGantt
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents HYPbackToProjectsBottom As Global.System.Web.UI.WebControls.HyperLink
+
+    '''<summary>
+    '''CTRLattachment control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents CTRLattachment As Global.Comunita_OnLine.UC_DialogProjectAttachments
 
     '''<summary>
     '''Master property.

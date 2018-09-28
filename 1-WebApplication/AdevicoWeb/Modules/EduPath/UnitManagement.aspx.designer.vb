@@ -473,13 +473,13 @@ Partial Public Class UnitManagement
     Protected WithEvents BTNerror As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
-    '''LBerror control.
+    '''CTRLerrorMessage control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents LBerror As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents CTRLerrorMessage As Global.Comunita_OnLine.UC_ActionMessages
 
     '''<summary>
     '''VIWmessages control.

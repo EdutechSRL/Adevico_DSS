@@ -20,7 +20,7 @@ Partial Public Class ProjectAttachments
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents CTRLattachmentsHeader As Global.Comunita_OnLine.UC_AttachmentJqueryHeaderCommands
+    Protected WithEvents CTRLattachmentsHeader As Global.Comunita_OnLine.UC_ModuleAttachmentJqueryHeaderCommands
 
     '''<summary>
     '''CTRLeditUrlItemsHeader control.
@@ -30,6 +30,15 @@ Partial Public Class ProjectAttachments
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents CTRLeditUrlItemsHeader As Global.Comunita_OnLine.UC_EditUrlItemsHeader
+
+    '''<summary>
+    '''CTRLmodalPlayerHeader control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents CTRLmodalPlayerHeader As Global.Comunita_OnLine.UC_ModalPlayerHeader
 
     '''<summary>
     '''MLVsettings control.
@@ -128,7 +137,7 @@ Partial Public Class ProjectAttachments
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents CTRLcommands As Global.Comunita_OnLine.UC_AttachmentInlineCommands
+    Protected WithEvents CTRLcommands As Global.Comunita_OnLine.UC_ModuleAttachmentInlineCommands
 
     '''<summary>
     '''LTprojectAttacments control.

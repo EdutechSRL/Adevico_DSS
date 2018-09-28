@@ -202,17 +202,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\9-AdevicoMIT_Library\lm.Comol.MitLibrary\Adevico\MIT\lm.Comol.Modules.Chat.dll</HintPath>
     </Reference>
-    <Reference Include="lm.Comol.Modules.EduPath, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\9-AdevicoMIT_Library\lm.Comol.MitLibrary\Adevico\MIT\lm.Comol.Modules.EduPath.dll</HintPath>
-    </Reference>
     <Reference Include="lm.Comol.Modules.ScormStat, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\9-AdevicoMIT_Library\lm.Comol.MitLibrary\Adevico\MIT\lm.Comol.Modules.ScormStat.dll</HintPath>
-    </Reference>
-    <Reference Include="lm.Comol.Modules.Standard, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\9-AdevicoMIT_Library\lm.Comol.MitLibrary\Adevico\MIT\lm.Comol.Modules.Standard.dll</HintPath>
     </Reference>
     <Reference Include="lm.Comol.Modules.TaskList, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -1391,13 +1383,6 @@
       <DependentUpon>EduPathList.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Modules\EduPath\EduPathPlay.aspx.designer.vb">
-      <DependentUpon>EduPathPlay.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Modules\EduPath\EduPathPlay.aspx.vb">
-      <DependentUpon>EduPathPlay.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
     <Compile Include="Modules\EduPath\EduPathSelect.aspx.designer.vb">
       <DependentUpon>EduPathSelect.aspx</DependentUpon>
     </Compile>
@@ -1487,6 +1472,12 @@
     </Compile>
     <Compile Include="Modules\EduPath\LoadCertificationModal.aspx.vb">
       <DependentUpon>LoadCertificationModal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\EduPath\PageBase\EPcommonPagebaseEduPath.vb">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\EduPath\PageBase\EPliteCommonPageBaseEduPath.vb">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Modules\EduPath\PageBase\EPlitePageBaseEduPath.vb">
@@ -1596,6 +1587,13 @@
     </Compile>
     <Compile Include="Modules\EduPath\UC\UC_AddAction.ascx.vb">
       <DependentUpon>UC_AddAction.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\EduPath\UC\UC_AddRepositoryAction.ascx.designer.vb">
+      <DependentUpon>UC_AddRepositoryAction.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\EduPath\UC\UC_AddRepositoryAction.ascx.vb">
+      <DependentUpon>UC_AddRepositoryAction.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Modules\EduPath\UC\UC_CertificationAction.ascx.designer.vb">
@@ -2000,11 +1998,32 @@
       <DependentUpon>ViewTerm.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="Modules\PlatformVersion\CurrentVersion.aspx.designer.vb">
+      <DependentUpon>CurrentVersion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\PlatformVersion\CurrentVersion.aspx.vb">
+      <DependentUpon>CurrentVersion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="Modules\ProfileManagement\UC\UC_ProfileManagementHeader.ascx.designer.vb">
       <DependentUpon>UC_ProfileManagementHeader.ascx</DependentUpon>
     </Compile>
     <Compile Include="Modules\ProfileManagement\UC\UC_ProfileManagementHeader.ascx.vb">
       <DependentUpon>UC_ProfileManagementHeader.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\ProjectManagement\UC\UC_DialogProjectAttachments.ascx.designer.vb">
+      <DependentUpon>UC_DialogProjectAttachments.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\ProjectManagement\UC\UC_DialogProjectAttachments.ascx.vb">
+      <DependentUpon>UC_DialogProjectAttachments.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\ProjectManagement\UC\UC_ProjectManagementHeader.ascx.designer.vb">
+      <DependentUpon>UC_ProjectManagementHeader.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\ProjectManagement\UC\UC_ProjectManagementHeader.ascx.vb">
+      <DependentUpon>UC_ProjectManagementHeader.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Modules\ProviderManagement\UC\UC_ProviderManagementHeader.ascx.designer.vb">
@@ -6177,7 +6196,6 @@
     <Content Include="Modules\EduPath\EditingSettings.aspx" />
     <Content Include="Modules\EduPath\EduPathIndex.aspx" />
     <Content Include="Modules\EduPath\EduPathList.aspx" />
-    <Content Include="Modules\EduPath\EduPathPlay.aspx" />
     <Content Include="Modules\EduPath\EduPathSelect.aspx" />
     <Content Include="Modules\EduPath\EduPathView.aspx" />
     <Content Include="Modules\EduPath\EPCertification.aspx" />
@@ -6286,6 +6304,7 @@
     <Content Include="Modules\EduPath\tree.css" />
     <Content Include="Modules\EduPath\UC\UCDialog.ascx" />
     <Content Include="Modules\EduPath\UC\UC_AddAction.ascx" />
+    <Content Include="Modules\EduPath\UC\UC_AddRepositoryAction.ascx" />
     <Content Include="Modules\EduPath\UC\UC_CertificationAction.ascx" />
     <Content Include="Modules\EduPath\UC\UC_EditCertificationAction.ascx" />
     <Content Include="Modules\EduPath\UC\UC_EditTextAction.ascx" />
@@ -6343,7 +6362,10 @@
     <Content Include="Modules\Glossary\View.aspx" />
     <Content Include="Modules\Glossary\ViewMap.aspx" />
     <Content Include="Modules\Glossary\ViewTerm.aspx" />
+    <Content Include="Modules\PlatformVersion\CurrentVersion.aspx" />
     <Content Include="Modules\ProfileManagement\UC\UC_ProfileManagementHeader.ascx" />
+    <Content Include="Modules\ProjectManagement\UC\UC_DialogProjectAttachments.ascx" />
+    <Content Include="Modules\ProjectManagement\UC\UC_ProjectManagementHeader.ascx" />
     <Content Include="Modules\ProviderManagement\UC\UC_ProviderManagementHeader.ascx" />
     <Content Include="Modules\Common\Editor\Dialogs\ImageRender.aspx" />
     <Content Include="Modules\Common\Editor\Telerik\Scripts\BaseDialogScript.js" />
@@ -8859,6 +8881,7 @@
     <Content Include="Style\NewMenuDemo\js\OLD\jquery-hoverIntent.js" />
     <Content Include="Style\NewMenuDemo\js\OLD\jquery.bgiframe.js" />
     <Content Include="Style\New\statistiche.css" />
+    <Content Include="Test\Test.aspx" />
     <Content Include="uc\Header\UC_TopBar.ascx" />
     <Content Include="Authentication\UC\UC_InternalLogin.ascx" />
     <Content Include="uc\UC_PortalExternalHeader.ascx" />
@@ -13021,6 +13044,13 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Test\Test.aspx.designer.vb">
+      <DependentUpon>Test.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Test\Test.aspx.vb">
+      <DependentUpon>Test.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="uc\Header\UC_TopBar.ascx.designer.vb">
       <DependentUpon>UC_TopBar.ascx</DependentUpon>
     </Compile>
@@ -15436,6 +15466,14 @@
     <ProjectReference Include="..\..\3-Business\2-Core\lm.Comol.Core.File\lm.Comol.Core.File.csproj">
       <Project>{FFA417B0-A44B-441A-921B-FEB57C5FD7DA}</Project>
       <Name>lm.Comol.Core.File</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\3-Business\3-Modules\lm.Comol.Modules.EduPath\lm.Comol.Modules.EduPath.csproj">
+      <Project>{72bc03af-85e6-4d60-b529-5b0d303d6632}</Project>
+      <Name>lm.Comol.Modules.EduPath</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\3-Business\3-Modules\lm.Comol.Modules.Standard\lm.Comol.Modules.Standard.csproj">
+      <Project>{d253bf62-a7f2-48d5-ad05-12ac8ea66279}</Project>
+      <Name>lm.Comol.Modules.Standard</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

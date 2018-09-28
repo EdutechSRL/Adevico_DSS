@@ -14,6 +14,24 @@ Option Explicit On
 Partial Public Class ListManager
 
     '''<summary>
+    '''CTRLheader control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents CTRLheader As Global.Comunita_OnLine.UC_ProjectManagementHeader
+
+    '''<summary>
+    '''CTRLmodalPlayerHeader control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents CTRLmodalPlayerHeader As Global.Comunita_OnLine.UC_ModalPlayerHeader
+
+    '''<summary>
     '''MLVprojectList control.
     '''</summary>
     '''<remarks>

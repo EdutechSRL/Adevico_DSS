@@ -4,10 +4,8 @@
 <%@ Register TagPrefix="CTRL" TagName="ProgressBar" Src="UC/UC_ProgressBar.ascx" %>
 <%@ MasterType VirtualPath="~/AjaxPortal.Master" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
-    <link href="../../Graphics/Modules/Edupath/css/PfStyle.css" rel="Stylesheet" />
-   
-    <script type="text/javascript" language="javascript">
-
+    <link href="../../Graphics/Modules/Edupath/css/<%=GetCssFileByType()%>pfstyle.css?v=201605041410lm" rel="Stylesheet" />
+    <script type="text/javascript">
         var hash = new Array();
         var code = "ep-pathview";
 

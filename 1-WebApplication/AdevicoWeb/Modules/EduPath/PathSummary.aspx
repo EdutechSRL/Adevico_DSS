@@ -8,11 +8,9 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="HeadContent" runat="server">
 <script src="../../Scripts/jquery.anchor.js" type="text/javascript"></script>
   <script type="text/javascript" src="<%#ResolveUrl("~/Jscript/FileDownloadCookie.js")%>"></script>
-  
   <link href="../../Content/jquery.treeTable/jquery.treeTable.css" type="text/css" rel="Stylesheet" />
   <script src="../../Scripts/jquery.treeTable.js" type="text/javascript"></script>
-
-  <link href="../../Graphics/Modules/Edupath/css/edupath.css" rel="Stylesheet" />
+  <link href="../../Graphics/Modules/Edupath/css/<%=GetCssFileByType()%>edupath.css?v=201605041410lm" rel="Stylesheet" />
   <script type="text/javascript">
       $(function () {
           $(".treetable").treeTable({ clickableNodeNames: true });
@@ -26,7 +24,6 @@
   </script>
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="TitleContent" runat="server">
-
 <asp:Label runat="server" ID="LBservice">**Path Summary</asp:Label> - <asp:Label runat="server" ID="LBserviceCommunity">**Path Summary</asp:Label>
 </asp:Content>
 <asp:Content ID="Content5" ContentPlaceHolderID="CPHservice" runat="server">
@@ -38,7 +35,6 @@
             </div>
             <div class="fieldobject filters">
                 <div class="fieldrow">
-                    
                     <asp:Label runat="server" ID="LBuserfilterTitle" CssClass="fieldlabel">**User</asp:Label>                                        
                     <asp:TextBox runat="server" ID="TXBuserFilter"></asp:TextBox><a runat="server" id="Aclearit" class="clearIt Link_Menu">**cancella</a>
                 </div>
@@ -294,5 +290,4 @@
             </div>
     </asp:View>
 </asp:MultiView>
-
 </asp:Content>

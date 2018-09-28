@@ -133,4 +133,31 @@ Public MustInherit Class EPlitePageBaseEduPath
 #End Region
 
 
+#Region "Internal"
+    Protected _IsMoocPath As Boolean?
+    Protected Property IsMoocPath() As Boolean
+        Get
+            If _IsMoocPath.HasValue Then
+                Return _IsMoocPath.Value
+            Else
+                Return ViewStateOrDefault("IsMoocPath", False)
+            End If
+        End Get
+        Set(value As Boolean)
+            _IsMoocPath = value
+            ViewState("IsMoocPath") = value
+        End Set
+    End Property
+    Public Function GetCssFileByType() As String
+        Dim isMoocPath = PreloadIsMooc
+        If _IsMoocPath.HasValue Then
+            isMoocPath = _IsMoocPath
+        End If
+        If _IsMoocPath Then
+            Return "mooc-"
+        Else
+            Return "mooc-"
+        End If
+    End Function
+#End Region
 End Class

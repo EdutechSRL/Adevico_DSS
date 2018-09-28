@@ -9,7 +9,7 @@
 
 <%@ MasterType VirtualPath="~/AjaxPortal.Master" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
-    <link href="../../Graphics/Modules/Edupath/css/PfStyle.css" rel="Stylesheet" />
+     <link href="../../Graphics/Modules/Edupath/css/<%=GetCssFileByType()%>pfstyle.css?v=201605041410lm" rel="Stylesheet" />
     <script type="text/javascript">
         $(document).ready(function () {
 
@@ -81,7 +81,7 @@
                                     </CTRL:CTRLeditor>
                             </div>
                         </div>
-                        <div id="DIVtype" class="DetailItem">
+                        <div id="DIVtype" class="DetailItem" runat="server">
                             <div class="DetailLeftItem">
                                 <asp:Label ID="LBtypeTitle" runat="server" CssClass="Titolo_campoSmall">Type:**</asp:Label>
                             </div>
@@ -484,9 +484,7 @@
                 <div align="right" style="text-align: right; clear: right;">
                     <asp:Button ID="BTNerror" runat="server" CssClass="Link_Menu" />
                 </div>
-                <div align="center">
-                    <asp:Label ID="LBerror" runat="server" CssClass="messaggio"></asp:Label>
-                </div>
+                 <CTRL:Messages runat="server" ID="CTRLerrorMessage" Visible="false" />
             </div>
         </asp:View>
         <asp:View ID="VIWmessages" runat="server">
@@ -505,5 +503,4 @@
         <asp:Label ID="LBmarkHelpAct" runat="server" CssClass="helpMark hideMe hidden" />
         <asp:Label ID="LBweightHelpAct" runat="server" CssClass="helpWeight hideMe hidden" />
     </div>
-
 </asp:Content>

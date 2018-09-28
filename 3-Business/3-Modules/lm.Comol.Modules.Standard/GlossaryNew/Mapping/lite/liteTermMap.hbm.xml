@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<hibernate-mapping assembly="lm.Comol.Modules.Standard" namespace="lm.Comol.Modules.Standard.GlossaryNew.Domain"
+                   xmlns="urn:nhibernate-mapping-2.2">
+  <class name="liteTermMap" table="GL_GlossaryTerm" lazy="true">
+
+    <id name="Id" column="Id" type="Int64">
+      <generator class="native" />
+    </id>
+
+    <property name="Name">
+      <column name="Name" sql-type="nvarchar" not-null="true" />
+    </property>
+
+    <property name="IdGlossary">
+      <column name="IdGlossary" sql-type="bigint" not-null="false" />
+    </property>
+
+    <property name="FirstLetter">
+      <column name="FirstLetter" sql-type="nchar" not-null="false" />
+    </property>
+
+    <property name="IsPublished" />
+
+    <property name="Deleted" type="lm.Comol.Core.DomainModel.BaseStatusDeleted,lm.Comol.Core.DomainModel"
+              column="_Deleted" />
+
+  </class>
+</hibernate-mapping>

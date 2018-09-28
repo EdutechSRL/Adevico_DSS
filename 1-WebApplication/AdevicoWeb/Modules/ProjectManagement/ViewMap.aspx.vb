@@ -93,6 +93,10 @@ Public Class ViewMap
             .setHyperLink(HYPgoToProjectEditBottom, False, True)
             .setHyperLink(HYPbackToResourceDashboardBottom, False, True)
             .setHyperLink(HYPbackToManagerDashboardBottom, False, True)
+
+            .setHyperLink(HYPgoToProjectMapTop, False, True)
+            .setHyperLink(HYPgoToProjectMapBottom, False, True)
+
         End With
     End Sub
     Public Overrides Sub ShowMessageToPage(errorMessage As String)
@@ -127,7 +131,21 @@ Public Class ViewMap
         THpredecessors.Visible = project.DateCalculationByCpm
         TDfooterToolBar.ColSpan = IIf(project.DateCalculationByCpm, CInt(LTfullColSpan.Text), CInt(LTnocpmColSpan.Text))
     End Sub
-
+    Protected Overrides Sub LoadAttachments(attachments As List(Of dtoAttachmentItem))
+        LBattachments.Visible = Not IsNothing(attachments) AndAlso attachments.Any()
+        If Not IsNothing(attachments) AndAlso attachments.Any() Then
+            Select Case attachments.Count
+                Case 1, 0
+                    LBattachments.ToolTip = Resource.getValue("LBattachments.ToolTip." & Items.Count.ToString)
+                Case Else
+                    LBattachments.ToolTip = String.Format(Resource.getValue("LBattachments.ToolTip.n"), Items.Count)
+            End Select
+            CTRLattachment.Visible = True
+            CTRLattachment.InitializeControl(attachments)
+        Else
+            CTRLattachment.Visible = False
+        End If
+    End Sub
 #End Region
 
 #Region "Implements"
@@ -168,6 +186,14 @@ Public Class ViewMap
             HYPgoToProjectEditBottom.NavigateUrl = HYPgoToProjectEditTop.NavigateUrl
         End If
     End Sub
+    Protected Overrides Sub SetEditMapUrl(url As String)
+        If Not String.IsNullOrEmpty(url) Then
+            HYPgoToProjectMapTop.Visible = True
+            HYPgoToProjectMapBottom.Visible = True
+            HYPgoToProjectMapTop.NavigateUrl = PageUtility.ApplicationUrlBase() & url
+            HYPgoToProjectMapBottom.NavigateUrl = HYPgoToProjectEditTop.NavigateUrl
+        End If
+    End Sub
     Protected Overrides Sub SetDashboardUrl(url As String, fromPage As PageListType)
         If Not String.IsNullOrEmpty(url) Then
             Select Case fromPage
@@ -182,7 +208,6 @@ Public Class ViewMap
                     HYPbackToResourceDashboardTop.NavigateUrl = PageUtility.ApplicationUrlBase() & url
                     HYPbackToResourceDashboardBottom.NavigateUrl = HYPbackToResourceDashboardTop.NavigateUrl
             End Select
-
         End If
     End Sub
 #End Region
@@ -208,9 +233,9 @@ Public Class ViewMap
         oLabel.CssClass = LTstatuslight.Text & " " & GetCssStatuslight(dto.Completeness, dto.IsCompleted)
         oControlInput = e.Item.FindControl("CTRLdurationInput")
         '   oControlInput.ContainerCssClass &= " disabled"
-     
+
         oControlInput.AutoInitialize(dto.Duration.GetValue.Value & IIf(dto.Duration.GetValue.IsEstimated, "?", ""))
-      
+
 
         Dim oTDpredecessors As HtmlTableCell = e.Item.FindControl("TDpredecessors")
         oTDpredecessors.Visible = THpredecessors.Visible
@@ -254,4 +279,5 @@ Public Class ViewMap
         Me.Master.ShowDocType = True
     End Sub
 
+   
 End Class

@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="/#baseurl#Graphics/Plugins/jquery.treeTable/jquery.treeTable.css"/>
     <script type="text/javascript" src="/#baseurl#Jscript/Modules/Common/jquery.treeTable.js"></script></asp:Literal>
 <asp:Literal ID="LTmoduleScripts" runat="server"><script type="text/javascript" src="/#baseurl#Jscript/Modules/CallForPapers/callforpapers.js"></script></asp:Literal>
-<asp:Literal ID="LTbaseUrl" runat="server" Visible="false">AdevicoWeb/</asp:Literal>
+<asp:Literal ID="LTbaseUrl" runat="server" Visible="false"></asp:Literal>
 <link href="/<%=GetBaseUrl %>Graphics/Modules/CallForPapers/css/callforpeaperADV.css?v=201707191642adv" rel="stylesheet" />
 <!-- END Call HEADER -->
 

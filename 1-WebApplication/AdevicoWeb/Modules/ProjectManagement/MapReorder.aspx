@@ -5,6 +5,8 @@
 <%@ Register TagPrefix="CTRL" TagName="Messages" Src="~/Modules/Common/UC/UC_ActionMessages.ascx" %>
 <%@ Register TagPrefix="CTRL" TagName="Info" Src="~/Modules/ProjectManagement/UC/UC_ProjectDateInfo.ascx" %>
 <%@ Register TagPrefix="CTRL" TagName="ProjectTreeItem" Src="~/Modules/ProjectManagement/UC/UC_ProjectTreeItem.ascx" %>
+<%@ Register TagPrefix="CTRL" TagName="Attachment" Src="~/Modules/ProjectManagement/UC/UC_DialogProjectAttachments.ascx" %>
+<%@ Register TagPrefix="CTRL" TagName="ModalPlayerHeader" Src="~/Modules/Repository/UC_New/UC_ModalPlayerHeader.ascx" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="PageTitleContent" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="CPHserviceLocalization" runat="server">
@@ -162,6 +164,7 @@
             });
         });
     </script>
+     <CTRL:ModalPlayerHeader ID="CTRLmodalPlayerHeader" runat="server" />
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="TitleContent" runat="server">
 </asp:Content>
@@ -191,7 +194,12 @@
                 <div class="fieldobject header">
                     <div class="fieldrow title clearfix">
                         <div class="left">
-                            <h2><asp:Literal ID="LTprojectName" runat="server"></asp:Literal></h2>
+                            <h2><span class="projectnametitle">
+                                <span><asp:Literal id="LTprojectName" runat="server"></asp:Literal></span>
+                                <span class="icons">
+                                    <asp:Label ID="LBattachments" runat="server" Visible="false" CssClass="icon xs attacchment">&nbsp;</asp:Label>
+                                </span>
+                            </span></h2>
                         </div>
                         <div class="right">
                             <span class="extra"></span>
@@ -287,4 +295,5 @@
         </div>
     </div>
     <input type="hidden" id="HDMserializeTasks" runat="server" class="serialize_output" />
+    <CTRL:Attachment id="CTRLattachment" runat="server" CssClass="dlgprojectattachments" Visible="false"></CTRL:Attachment>
 </asp:Content>

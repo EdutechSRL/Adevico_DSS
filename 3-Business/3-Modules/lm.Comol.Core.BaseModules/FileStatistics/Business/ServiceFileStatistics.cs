@@ -144,6 +144,11 @@ namespace lm.Comol.Core.BaseModules.Scorm.Business
         {
 
         }
+        public void PhisicalDeleteCommunity(string baseFileRepositoryPath, int idCommunity, int idUser)
+        {
+            //throw new NotImplementedException();
+        }
+
         public void PhisicalDeleteRepositoryItem(long idFileItem, Int32 idCommunity, Int32 idUser, Dictionary<String, long> moduleUserLong = null, Dictionary<String, String> moduleUserString = null)
         {
             //throw new NotImplementedException();

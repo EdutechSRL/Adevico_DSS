@@ -3,6 +3,8 @@
 <%@ Register Src="~/Modules/Common/UC/UC_StackedBar.ascx" TagName="StackedBar" TagPrefix="CTRL" %>
 <%@ Register Src="UC/UC_TextAction.ascx" TagName="TextAction" TagPrefix="CTRL" %>
 <%@ Register Src="UC/UC_CertificationAction.ascx" TagName="CertificationAction" TagPrefix="CTRL" %>
+<%@ Register TagPrefix="CTRL" TagName="DisplayItem" Src="~/Modules/Repository/Common/UC_ModuleRenderAction.ascx" %>
+<%@ Register TagPrefix="CTRL" TagName="QuestionnaireItem" Src="~/Modules/Questionnaire/UC/UC_ModuleQuizAction.ascx" %>
 <%@ MasterType VirtualPath="~/AjaxPortal.Master" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
@@ -11,7 +13,7 @@
     <script type="text/javascript" src="../../Jscript/Modules/Common/jquery.progressbar.js"></script>
     <link href="../../Content/jquery.treeTable/jquery.treeTable.css" type="text/css" rel="Stylesheet" />
     
-    <link href="../../Graphics/Modules/Edupath/css/edupath.css" rel="Stylesheet" />
+    <link href="../../Graphics/Modules/Edupath/css/<%=GetCssFileByType()%>edupath.css?v=201605041410lm" rel="Stylesheet" />
     <script type="text/javascript">
         var TokenHiddenFieldId = "<% = HDNdownloadTokenValue.ClientID %>";
         var CookieName = "<% = Me.CookieName %>";
@@ -127,30 +129,16 @@
                     --><asp:LinkButton ID="LNBexportPSfullCertificationToCsv" runat="server" Text=" " OnClientClick="blockUIForDownload();return true;" CssClass="linkMenu"></asp:LinkButton><!--
                     --><asp:LinkButton ID="LNBexportPSfullCertificationToXml" runat="server" Text="" OnClientClick="blockUIForDownload();return true;" CssClass="linkMenu"></asp:LinkButton><!--                    
                 --></div>        
-                <%--<asp:HyperLink runat="server" ID="HYPcertificates" CssClass="Link_Menu"></asp:HyperLink>--%>
                 <asp:HyperLink ID="HYPeduPathView" runat="server" Text="**edu view" CssClass="Link_Menu"></asp:HyperLink>
                 <asp:HyperLink ID="HYPeduPathList" runat="server" Text="**edu list" CssClass="Link_Menu"></asp:HyperLink>
             </div>
-            <%--<div class="exportButtons">
-                <span class="label">Esporta statistiche</span>
-                <span class="exportButton">Csv</span>
-                <span class="exportButton">Xml</span>
-                <span class="exportButton">Pdf</span>
-            </div>--%>
             <div class="dateFilter">
-                <%--<span class="label"></span>--%>
                 <ctrl:SelectTime id="CTRLselTime" runat="server"></ctrl:SelectTime>
-                <%--<div class="dateTime">
-                    <input class="date">&nbsp;
-                    <input />hh&nbsp;<input />mm
-                    <input type="button" value="show" />
-                </div>--%>
                 <br />
                 <asp:CheckBox runat="server" ID="CHBshowall" Visible="true" Text="Show hidden" Checked="false" AutoPostBack="true" />
             </div>
             <asp:Label ID="LBuserName" runat="server" CssClass="Titolo_campo" Visible="false"></asp:Label>
             <div class="visibilityNav">
-                <%--<span class="label">Visibility:</span>--%>
                 <ul class="expandbuttons">
                     <li class="expandbutton switchunitVis"><asp:Literal runat="server" ID="LTRNavUnitTop">Unit</asp:Literal>
                         <ul class="expandbuttons">
@@ -294,7 +282,8 @@
                                                 <td class="description">
                                                     <CTRL:TextAction runat="server" id="CTRLtextAction" Visible="false"  />
                                                     <CTRL:CertificationAction runat="server" id="CTRLcertificationAction" visible="false" />
-                                                    <asp:PlaceHolder runat="server" ID="PHLAction"></asp:PlaceHolder>
+                                                    <CTRL:QuestionnaireItem ID="CTRLquestionnaire" runat="server" EnableAnchor="true"  Visible="false"/>
+                                                    <CTRL:DisplayItem ID="CTRLdisplayItem" runat="server" EnableAnchor="true" DisplayExtraInfo="false" DisplayLinkedBy="false" DisplaySize="false"  Visible="false"/>
                                                     <span class="icons right">
                                                         <span class="icon mandatory" runat="server" id="ImgMandatory" visible="false"  title="<%# Me.SubActivityMandatory %>">&nbsp;</span>
                                                         <span class="icon" id="ImgSubActivityLock" runat="server" title="<%# Me.ItemBlocked(Container.Dataitem) %>" visible="false">&nbsp;</span>

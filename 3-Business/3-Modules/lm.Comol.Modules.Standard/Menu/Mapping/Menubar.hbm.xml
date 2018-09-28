@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="lm.Comol.Modules.Standard" namespace="lm.Comol.Modules.Standard.Menu.Domain">
+    <class name="Menubar" table="MN_Menubar"  optimistic-lock ="version">
+        
+        <id name="Id" column="Id" type="Int64" unsaved-value="0">
+            <generator class="native"/>
+        </id>
+
+        <version name="TimeStamp"
+            generated="always"
+            unsaved-value="null"
+            type="BinaryBlob">
+            <column name="_Timestamp"
+                    not-null="false"
+                    sql-type="timestamp"/>
+        </version>
+
+      <!---->
+      <bag name="Items" table="MN_MenuItem" lazy="true" cascade="all-delete-orphan" order-by="DisplayOrder asc" where="Discriminator=1"  inverse="true">
+            <key column="IdMenubar" foreign-key="Id"/>
+            <one-to-many class="TopMenuItem"/>
+        </bag>
+
+        <property name="CssClass" type="String" column="CssClass" />
+        <property name="Name" type="String" column="Name" />
+        <property name="IsCurrent" type="Boolean" column="IsCurrent" />
+        <property name="MenuBarType" type="lm.Comol.Modules.Standard.Menu.Domain.MenuBarType,lm.Comol.Modules.Standard" column="IdMenuBarType" />
+        <property name="Status" type="lm.Comol.Modules.Standard.Menu.Domain.ItemStatus,lm.Comol.Modules.Standard" column="Status" />
+        
+        <property name="CreatedOn" type="DateTime" column="_CreatedOn" />
+        <many-to-one name="CreatedBy" class="lm.Comol.Core.DomainModel.litePerson" column="_CreatedBy" foreign-key="_CreatedBy" cascade="none" />
+        <property name="CreatorProxyIpAddress" type="String" column="_CreatedProxyIPaddress" />
+        <property name="CreatorIpAddress" type="String" column="_CreatedIPaddress" />
+        <property name="ModifiedOn" type="DateTime" column="_ModifiedOn" />
+        <many-to-one name="ModifiedBy" class="lm.Comol.Core.DomainModel.litePerson" column="_ModifiedBy" foreign-key="_ModifiedBy" cascade="none" lazy="false" />
+        <property name="ModifiedProxyIpAddress" type="String" column="_ModifiedProxyIPaddress" />
+        <property name="ModifiedIpAddress" type="String" column="_ModifiedIPaddress" />
+      <property name="Deleted" type="lm.Comol.Core.DomainModel.BaseStatusDeleted, lm.Comol.Core.DomainModel" column="_Deleted" />
+    </class>
+</hibernate-mapping>

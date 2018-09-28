@@ -1,78 +1,69 @@
 ﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/AjaxPortal.Master"
     CodeBehind="EduPathView.aspx.vb" Inherits="Comunita_OnLine.EduPathView" %>
+
 <%@ Register Src="~/Modules/Common/UC/UC_ActionMessages.ascx" TagPrefix="CTRL" TagName="Messages" %>
 <%@ Register TagPrefix="CTRL" TagName="ProgressBar" Src="UC/UC_ProgressBar.ascx" %>
 <%@ Register TagPrefix="COL" Assembly="Comunita_OnLine" Namespace="Comunita_OnLine.MyUC" %>
 <%@ Register Src="UC/UC_HelpStatus.ascx" TagName="helpStatus" TagPrefix="CTRL" %>
 <%@ MasterType VirtualPath="~/AjaxPortal.Master" %>
-
-
 <%@ Register TagPrefix="CTRL" TagName="EditCertificationAction" Src="~/Modules/EduPath/UC/UC_EditCertificationAction.ascx" %>
-
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
+    <!-- HEADER EDUPATH VIEW START-->
     <script type="text/javascript">
-		var EnabledSort = <%# me.sortVisibility()%>;
+        var EnabledSort = <%# me.sortVisibility()%>;
     </script>
-    <%= "<!--"%>
-    <script type="text/javascript" src="../../Jscript/jquery-1.4.2.min.js"></script>
-    <script type="text/javascript" src="../../Jscript/TSMmenu/jquery-ui-1.7.3.custom.min.js"></script>
-    <%= "-->"%>
-    <link href="../../Graphics/Modules/Edupath/css/PfStyle.css" rel="Stylesheet" />
-   
+     <link href="../../Graphics/Modules/Edupath/css/<%=GetCssFileByType()%>pfstyle.css?v=201605041410lm" rel="Stylesheet" />
     <script type="text/javascript" language="javascript">
-
-
-
         var hash = new Array();
         var code = "ep-pathview";
 
-//        function cookieName(id) {
-//            return code + "-item-" + id;
-//        }
+        //        function cookieName(id) {
+        //            return code + "-item-" + id;
+        //        }
 
-//        function createCookie(name, value, days) {
-//            if (days) {
-//                var date = new Date();
-//                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-//                var expires = "; expires=" + date.toGMTString();
-//            }
-//            else var expires = "";
-//            document.cookie = name + "=" + value + expires + "; path=/";
-//        }
+        //        function createCookie(name, value, days) {
+        //            if (days) {
+        //                var date = new Date();
+        //                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+        //                var expires = "; expires=" + date.toGMTString();
+        //            }
+        //            else var expires = "";
+        //            document.cookie = name + "=" + value + expires + "; path=/";
+        //        }
 
-//        function readCookie(name) {
-//            var nameEQ = name + "=";
-//            var ca = document.cookie.split(';');
-//            for (var i = 0; i < ca.length; i++) {
-//                var c = ca[i];
-//                while (c.charAt(0) == ' ') c = c.substring(1, c.length);
-//                if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
-//            }
-//            return null;
-//        }
+        //        function readCookie(name) {
+        //            var nameEQ = name + "=";
+        //            var ca = document.cookie.split(';');
+        //            for (var i = 0; i < ca.length; i++) {
+        //                var c = ca[i];
+        //                while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+        //                if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+        //            }
+        //            return null;
+        //        }
 
-//        function eraseCookie(name) {
-//            createCookie(name, "", -1);
-//        }
+        //        function eraseCookie(name) {
+        //            createCookie(name, "", -1);
+        //        }
 
-//        function WriteOpenCloseStatus(ItemId, current) {
-//            createCookie(cookieName(ItemId), current);
-//        }
+        //        function WriteOpenCloseStatus(ItemId, current) {
+        //            createCookie(cookieName(ItemId), current);
+        //        }
 
-//        function OpenFromCookie(External, Internal, Class) {
-//            $(External).each(function () {
-//                var itemId = $(this).attr("id");
-//                var value = readCookie(cookieName(itemId));
+        //        function OpenFromCookie(External, Internal, Class) {
+        //            $(External).each(function () {
+        //                var itemId = $(this).attr("id");
+        //                var value = readCookie(cookieName(itemId));
 
-//                if (value != "true") {
-//                    //$(this).removeClass(Class).children(Internal).show();
-//                    $(this).find("span.switch").removeClass("collapsed");
-//                    $(this).find("ul.activities").toggleClass("hidden");
-//                    //$(this).parents("li.unit").children("ul.rules").toggleClass("hidden");
+        //                if (value != "true") {
+        //                    //$(this).removeClass(Class).children(Internal).show();
+        //                    $(this).find("span.switch").removeClass("collapsed");
+        //                    $(this).find("ul.activities").toggleClass("hidden");
+        //                    //$(this).parents("li.unit").children("ul.rules").toggleClass("hidden");
 
-//                }
-//            });
-//        }
+        //                }
+        //            });
+        //        }
 
         function OpenClose(el, External, Internal, Class) {
             var itemParent = el.parents(External);
@@ -81,16 +72,11 @@
 
             var currentClosed = itemParent.find("span.switch").hasClass(Class);
 
-
             //WriteOpenCloseStatus(itemParentId, currentClosed);
-
         }
 
         function UpdateUnitOrder(event, ui) {
             CheckOrderButtons();
-            //alert($(this).sortable("serialize"));
-
-
             var Data = $(this).sortable("serialize");
 
             $.ajax({
@@ -136,11 +122,9 @@
         }
 
         $(document).ready(function () {
-
             function Change(el) {
                 el.prevAll("input[type=radio]").attr("checked", true);
                 el.prevAll("input[type=radio]").change();
-
             }
 
             $(".amount").live("keyup", function () {
@@ -173,7 +157,6 @@
                     amountUp.removeClass("ui-state-error");
                 }
             });
-
 
             $(".enabler").live("click", function () {
                 var wrapper = $(this).parents(".slider-wrapper").first();
@@ -338,6 +321,33 @@
                 return ret;
             });
 
+
+            $('.dialog.dlgeditoptions').dialog({
+                appendTo:"form",
+                closeOnEscape: false,
+                autoOpen: true,
+                draggable: true,
+                modal: true,
+                title: "",
+                width: 820,
+                height: 400,
+                minHeight: 200,
+                //                minWidth: 700,
+                zIndex: 1000,
+                open: function (type, data) {
+                    //                $(this).dialog('option', 'width', 700);
+                    //                $(this).dialog('option', 'height', 600);
+                    //$(this).parent().appendTo("form");
+                    $(".ui-dialog-titlebar-close", this.parentNode).hide();
+                }
+
+            });
+
+            $(".closedlgeditoptions").click(function () {
+                $(".dialog.dlgeditoptions").dialog("close");
+                return false;
+            });
+
             InitializeAll();
             //$('#addRule').parent().appendTo('#dialog_target');
         });
@@ -372,9 +382,6 @@
         }
 
         function InitializeAll() {
-
-
-
             $(".slider").each(function () {
                 var id = $(this).attr("id");
 
@@ -407,7 +414,6 @@
                     amountLow.removeClass("ui-state-error");
                     amountUp.removeClass("ui-state-error");
                 }
-
             });
 
             $("ul.activities").not(":has(li.activity)").not(":has(li.note)").parents("li.unit").addClass("empty");
@@ -454,7 +460,7 @@
         }
 
         function CheckOrderButtons() {
-        //attenzione: se si ripristina, le classi css han cambiato nome
+            //attenzione: se si ripristina, le classi css han cambiato nome
             //            $(".moveUp").removeClass("invisible");
             //            $(".moveDown").removeClass("invisible");
             ////                        $("li.unit").first().children().children().children(".moveUp").addClass("invisible");
@@ -508,62 +514,62 @@
             //alert(unit + " ; " + activity);
 
             //verificare:
-//            if (unit == null && activity != null) {
-//                unit = activity;
-//                activity = null;
+            //            if (unit == null && activity != null) {
+            //                unit = activity;
+            //                activity = null;
 
-//                //unit rule
+            //                //unit rule
 
-//            } else {
-//                //activity rule                
+            //            } else {
+            //                //activity rule                
 
-//                var value = $("#ACT-" + activity).html();
-//                alert(value);
-//                $(".Act1").val(value);
+            //                var value = $("#ACT-" + activity).html();
+            //                alert(value);
+            //                $(".Act1").val(value);
 
-//                $(".Act2-lbl").html($(".Act2").children("option:selected").text());
-//                $(".Act1-lbl").html($(".Act1").val());
-//                $("input[id$='HIDact2']").val($(".Act2").first().val().replace("ACT-", ""));
-//                alert(activity);
-//                $("input[id$='HIDact1']").val(activity);
+            //                $(".Act2-lbl").html($(".Act2").children("option:selected").text());
+            //                $(".Act1-lbl").html($(".Act1").val());
+            //                $("input[id$='HIDact2']").val($(".Act2").first().val().replace("ACT-", ""));
+            //                alert(activity);
+            //                $("input[id$='HIDact1']").val(activity);
 
             //                        }
 
 
             //fine verifica
-                if (unit != null && activity == null) {
-                    //unit = activity;
-                    activity = unit;
+            if (unit != null && activity == null) {
+                //unit = activity;
+                activity = unit;
 
-                    //unit rule
+                //unit rule
 
-                    var value = $("#UNIT_" + activity).html();
+                var value = $("#UNIT_" + activity).html();
                     
-                    $(".Act1").val(value);
+                $(".Act1").val(value);
 
-                    $(".Act2-lbl").html($(".Act2").children("option:selected").text());
-                    $(".Act1-lbl").html($(".Act1").val());
-                    $("input[id$='HIDact2']").val($(".Act2").first().val().replace("ACT-", ""));
+                $(".Act2-lbl").html($(".Act2").children("option:selected").text());
+                $(".Act1-lbl").html($(".Act1").val());
+                $("input[id$='HIDact2']").val($(".Act2").first().val().replace("ACT-", ""));
                     
-                    $("input[id$='HIDact1']").val(activity);
+                $("input[id$='HIDact1']").val(activity);
 
                             
 
 
-                } else {
-                    //activity rule                
+            } else {
+                //activity rule                
 
-                    var value = $("#ACT-" + activity).html();
+                var value = $("#ACT-" + activity).html();
                     
-                    $(".Act1").val(value);
+                $(".Act1").val(value);
 
-                    $(".Act2-lbl").html($(".Act2").children("option:selected").text());
-                    $(".Act1-lbl").html($(".Act1").val());
-                    $("input[id$='HIDact2']").val($(".Act2").first().val().replace("ACT-", ""));
+                $(".Act2-lbl").html($(".Act2").children("option:selected").text());
+                $(".Act1-lbl").html($(".Act1").val());
+                $("input[id$='HIDact2']").val($(".Act2").first().val().replace("ACT-", ""));
                     
-                    $("input[id$='HIDact1']").val(activity);
+                $("input[id$='HIDact1']").val(activity);
 
-                            }
+            }
 
             
 
@@ -703,11 +709,9 @@
             });
         });
     </script>--%>
-
-
+    <!-- HEADER EDUPATH VIEW END-->
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="CPHservice" runat="server">
-
     <asp:UpdatePanel ID="UDPpath" UpdateMode="Conditional" ChildrenAsTriggers="true"
         runat="server">
         <ContentTemplate>
@@ -723,10 +727,8 @@
                         <asp:HyperLink ID="HYPlistEduPath" runat="server" Text="**list edu path" CssClass="Link_Menu"></asp:HyperLink>
                     </div>
                     <CTRL:Messages runat="server" ID="CTRLmoduleStatusMessage" Visible="false" />
-                    <div align="center">
-                        <asp:Label ID="LBErrorMSG" runat="server" CssClass="errore"></asp:Label>
-                    </div>
-                     <div id="DIVprogressBar" runat="server">
+                    <CTRL:Messages runat="server" ID="CTRLgenericMessage" Visible="false" />
+                    <div id="DIVprogressBar" runat="server">
                         <CTRL:ProgressBar ID="CTRLprogressBar" runat="server"></CTRL:ProgressBar>
                     </div>
                     <br />
@@ -744,11 +746,11 @@
                             <asp:Label ID="LBstatusPlayerTitle" runat="server" Text="**Status:" CssClass="Titolo_dettagliSmall"></asp:Label>
                             <asp:Label ID="LBstatusPlayer" runat="server" CssClass="dettagli_CampoSmall" />
                             <asp:Image ID="IMGstatus" runat="server" Visible="false" />
-                            <span class="openStatus inline img_span ico_help_s" ></span>
+                            <span class="openStatus inline img_span ico_help_s"></span>
 
                         </span>
                     </asp:Panel>
-                    <br />                   
+                    <br />
                     <span class="titleFuture">
                         <asp:Label ID="LBunitList" runat="server" Text="**UnitList" Visible="false"></asp:Label></span>
                     <asp:Repeater ID="RPunit" runat="server" OnItemCommand="RPunit_ItemCommand">
@@ -762,7 +764,7 @@
                                     <asp:Image ID="IMGmandatory" runat="server" Visible="false" />
                                     <asp:LinkButton ID="LKBmandatory" runat="server" Visible="false" CommandName="mandatory"></asp:LinkButton>
                                 </span>
-                                <div class="title FloatRightIE " runat="server" id="DIVunitName" >
+                                <div class="title FloatRightIE " runat="server" id="DIVunitName">
                                     <span class="leftSide">
                                         <asp:Label ID="LBunitNumber" runat="server" Visible="false" />
                                         <asp:Label ID="LBunit" runat="server" Visible="false" CssClass="Titolo_campoSmall"
@@ -773,7 +775,7 @@
                                     <span class="buttons rightSide leftBordered">
                                         <asp:LinkButton ID="LKBdeleteUnit" runat="server" Text="del**" CommandName="unitDelete"
                                             Visible="false" CssClass="img_link ico_delete_m "></asp:LinkButton>
-                                        <asp:HyperLink ID="HYPupdateUnit" runat="server" Text="**Stat" Visible="false" CssClass="img_link ico_edit_m" ></asp:HyperLink>
+                                        <asp:HyperLink ID="HYPupdateUnit" runat="server" Text="**Stat" Visible="false" CssClass="img_link ico_edit_m"></asp:HyperLink>
                                         <asp:LinkButton ID="LKBvisibUnit" runat="server" Text="Visible**" CommandName="visibility"
                                             Visible="false"></asp:LinkButton>
                                         <asp:Image ID="IMGvisibility" runat="server" Visible="false" />
@@ -842,7 +844,7 @@
                                                 </asp:Repeater>
                                             </ul>
                                         </li>
-                                    </ItemTemplate> 
+                                    </ItemTemplate>
                                     <FooterTemplate>
                                         </ul>
                                     </FooterTemplate>
@@ -858,7 +860,7 @@
                                         <ItemTemplate>
                                             <li class="rule"><span class="buttons">
                                                 <asp:LinkButton ID="LKBunitDeleteRule" runat="server" Visible="false" Text="del**"
-                                                    CommandName="ruleDelete" CommandArgument="" CssClass="img_link ico_delete_m" ></asp:LinkButton>
+                                                    CommandName="ruleDelete" CommandArgument="" CssClass="img_link ico_delete_m"></asp:LinkButton>
                                                 <asp:LinkButton ID="LKBunitEditRule" runat="server" Visible="false" Text="edit**"
                                                     CommandName="ruleEdit" CommandArgument=""></asp:LinkButton>
                                             </span>
@@ -880,18 +882,34 @@
                         <div class="DivEpButton">
                             <asp:HyperLink ID="HYPerror" runat="server" CssClass="Link_Menu" />
                         </div>
-                        <div align="center">
-                            <asp:Label ID="LBerror" runat="server" CssClass="messaggio"></asp:Label>
-                        </div>
+                        <CTRL:Messages runat="server" ID="CTRLerrorMessage" />
                     </div>
                 </asp:View>
                 <asp:View ID="VIWmessages" runat="server">
                     <CTRL:Messages runat="server" ID="CTRLmessages" />
                 </asp:View>
             </asp:MultiView>
-      
         </ContentTemplate>
     </asp:UpdatePanel>
+    <div class="dialog dlgeditoptions" id="DVconfirmEditing" runat="server" visible="false">
+        <div class="fieldobject">
+            <div class="fieldrow title">
+                <div class="description">
+                    <asp:Label ID="LBeditingOptions" runat="server">*Si sta cercando di accedere ad un mooc con statistiche già registrate, selezionare una delle opzioni sottostanti prima di procedere</asp:Label>
+                </div>
+            </div>
+            <div class="fieldrow commandoptions clearfix">
+                <div class="commandoption left">
+                    <asp:Button Text="* Visualizza in sola lettura" runat="server" CssClass="commandbutton editoption1 closedlgeditoptions" ID="BTNreadonlyOption" />
+                    <asp:Label ID="LBreadonlyOption" runat="server" CssClass="commanddescription">* Visualizza in sola lettura: visualizza il moocs in sola lettura. Non saranno consentite modifiche alla struttura del mooc.</asp:Label>
+                </div>
+                <div class="commandoption right">
+                    <asp:Button Text="* Consenti modifiche" runat="server" CssClass="commandbutton editoption2" ID="BTNeditOption" />
+                    <asp:Label ID="LBeditOption" runat="server" CssClass="commanddescription">* Modifica: verranno rimosse tutte le statistiche utente raccolte ad oggi, il mooc sarà bloccato e le modifiche saranno abilitate. Per consentire agli utenti di riprendere il mooc dovrai successivamente togliere il blocco impostato automaticamente.</asp:Label>
+                </div>
+            </div>
+        </div>
+    </div>
     <div id="dialog_target">
     </div>
     <div id="addRule" class="addRule">
@@ -1026,20 +1044,17 @@
     </div>
     <div class="dialog switchAct" id="switchAct">
         <div>
-            <asp:Label ID="LBswitchCombo" runat="server" Text="*msg combo regole + controlla pesi"/>
+            <asp:Label ID="LBswitchCombo" runat="server" Text="*msg combo regole + controlla pesi" />
             <asp:Label ID="LBswitch" runat="server" Text="save vote" />
         </div>
         <div>
             <asp:Button ID="BTNswitch" runat="server" CssClass="Link_Menu" />
             <asp:HyperLink ID="HYPannulSwitch" runat="server" CssClass="Link_Menu closeDialog" />
-         
         </div>
     </div>
 
-    <div class="dialog switchMessage" id="switchMessage">    
+    <div class="dialog switchMessage" id="switchMessage">
         <asp:Label ID="LbSwitchFirst" runat="server"></asp:Label>
     </div>
-
-    <ctrl:helpStatus id="CTRLhelpStatus" runat="server" />
-
+    <CTRL:helpStatus ID="CTRLhelpStatus" runat="server" />
 </asp:Content>

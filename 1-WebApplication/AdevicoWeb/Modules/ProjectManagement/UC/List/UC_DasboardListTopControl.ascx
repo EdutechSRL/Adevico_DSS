@@ -1,4 +1,5 @@
 ﻿<%@ Control Language="vb" AutoEventWireup="false" CodeBehind="UC_DasboardListTopControl.ascx.vb" Inherits="Comunita_OnLine.UC_DasboardListTopControl" %>
+<%@ Register TagPrefix="CTRL" TagName="Attachment" Src="~/Modules/ProjectManagement/UC/UC_DialogProjectAttachments.ascx" %>
 <%@ Register Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="telerik" %>
 
 <asp:MultiView ID="MLVtopItem" runat="server" ActiveViewIndex="0">
@@ -95,9 +96,11 @@
         <div class="fieldobject" id="DVprojectInfo" runat="server" visible="false">
             <div class="fieldrow">
                 <asp:Label ID="LBdashboardProjectName_t" runat="server" CssClass="fieldlabel" AssociatedControlID="LBdashboardProjectName"></asp:Label>
-                <asp:Label ID="LBdashboardProjectName" runat="server" CssClass="text"></asp:Label>
-                <span class="icons">
-                    <asp:Label ID="LBattachments" runat="server" Visible="false" CssClass="icon xs attacchment">&nbsp;</asp:Label>
+                <span class="projectname">
+                    <asp:Label ID="LBdashboardProjectName" runat="server" CssClass="text"></asp:Label>
+                    <span class="icons">
+                        <asp:Label ID="LBattachments" runat="server" Visible="false" CssClass="icon xs attacchment">&nbsp;</asp:Label>
+                    </span>
                 </span>
             </div>
         </div>
@@ -133,3 +136,4 @@
     <span class="text">{1}</span>
     <span class="timeframe">{2}</span>
 </asp:Literal>
+<CTRL:Attachment id="CTRLattachment" runat="server" CssClass="dlgprojectattachments"></CTRL:Attachment>

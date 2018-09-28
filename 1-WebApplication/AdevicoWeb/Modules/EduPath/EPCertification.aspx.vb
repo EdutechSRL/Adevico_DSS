@@ -4,7 +4,7 @@ Imports lm.ActionDataContract
 Imports lm.Comol.Modules.EduPath.Domain
 Imports lm.Comol.Core.DomainModel
 Public Class EPCertification
-    Inherits PageBase
+    Inherits EPlitePageBaseEduPath
     Implements IViewCertification
 
 #Region "Context"
@@ -223,7 +223,7 @@ Public Class EPCertification
     Public Overrides Sub BindDati()
         Me.CurrentPresenter.InitView()
         Me.MLVcertification.SetActiveView(VIWcertification)
-        HYPback.NavigateUrl = BaseUrl + RootObject.EPCertificationList(CurrentPathIdCommunity, CurrentIdPath)
+        HYPback.NavigateUrl = BaseUrl + RootObject.EPCertificationList(CurrentPathIdCommunity, CurrentIdPath, IsMoocPath)
     End Sub
 
     Public Overrides Sub BindNoPermessi()
@@ -240,7 +240,11 @@ Public Class EPCertification
     End Sub
 
     Public Overrides Sub SetCultureSettings()
+        'If PreloadIsMooc Then
+        '    MyBase.SetCulture("pg_MoocsSummary", "EduPath")
+        'Else
         MyBase.SetCulture("pg_Summary", "EduPath")
+        'End If
     End Sub
 
     Public Overrides Sub SetInternazionalizzazione()

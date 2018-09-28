@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<hibernate-mapping assembly="lm.Comol.Modules.Standard" namespace="lm.Comol.Modules.Standard.GlossaryNew.Domain"
+                   xmlns="urn:nhibernate-mapping-2.2">
+  <class name="Statistics" table="GL_Statistics" lazy="true">
+    <id name="Id" column="Id" type="Int64" unsaved-value="0">
+      <generator class="native" />
+    </id>
+
+    <property name="IdGlossary" />
+    <property name="IdTerm" />
+    <property name="IdCommunity" />
+    <property name="IdPerson" />
+    <property name="ViewdOn" />
+    <property name="Deleted" type="lm.Comol.Core.DomainModel.BaseStatusDeleted,lm.Comol.Core.DomainModel"
+              column="_Deleted" />
+
+  </class>
+</hibernate-mapping>

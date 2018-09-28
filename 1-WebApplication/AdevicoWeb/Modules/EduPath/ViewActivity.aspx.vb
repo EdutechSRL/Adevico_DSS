@@ -9,8 +9,37 @@ Imports System.Web.Script.Services
 Imports lm.Comol.Core.DomainModel
 
 Public Class ViewActivity
-    Inherits PageBaseEduPath
+    Inherits EPpageBaseEduPath
 
+#Region "Internal temp"
+    Public Property PathDisplayPolicy As DisplayPolicy
+        Get
+            Return ViewStateOrDefault("PathDisplayPolicy", DisplayPolicy.NoModal)
+        End Get
+        Set(ByVal value As DisplayPolicy)
+            ViewState("PathDisplayPolicy") = value
+        End Set
+    End Property
+    Public Property PathPolicySettings As PolicySettings
+        Get
+            Return ViewStateOrDefault("PathPolicySettings", New PolicySettings())
+        End Get
+        Set(ByVal value As PolicySettings)
+            ViewState("PathPolicySettings") = value
+        End Set
+    End Property
+#End Region
+
+#Region "Internal"
+    Private Property IsInReadOnlyMode As Boolean
+        Get
+            Return ViewStateOrDefault("IsInReadOnlyMode", False)
+        End Get
+        Set(value As Boolean)
+            ViewState("IsInReadOnlyMode") = value
+        End Set
+    End Property
+#End Region
     Public Sub RefreshContainerEvent(sender As Object, e As lm.Comol.Modules.EduPath.Presentation.RefreshContainerArgs)
         CTRLmessages.Visible = False
         If (e.Executed) Then
@@ -41,30 +70,30 @@ Public Class ViewActivity
         value = Me.HDNdownloadTokenValue.Value
     End Sub
 
-    Private Sub UpdateScormStat()
-        Dim ModuleLinkIds As IList(Of Long) = ServiceEP.GetMaterialModuleLinkIds_ByActId(Me.CurrentActivityID)
-        If ModuleLinkIds.Count > 0 Then
-            Dim oSender As PermissionService.IServicePermission = Nothing
-            Dim results As List(Of dtoItemEvaluation(Of Long))
-            Dim UserID As Integer = CurrentContext.UserContext.CurrentUserID
-            Try
-                oSender = New PermissionService.ServicePermissionClient
-                results = oSender.GetPendingEvaluations(ModuleLinkIds, UserID).ToList()
-                If Not IsNothing(oSender) Then
-                    Dim service As System.ServiceModel.ClientBase(Of PermissionService.IServicePermission) = DirectCast(oSender, System.ServiceModel.ClientBase(Of PermissionService.IServicePermission))
-                    service.Close()
-                    service = Nothing
-                End If
-            Catch ex As Exception
-                If Not IsNothing(oSender) Then
-                    Dim service As System.ServiceModel.ClientBase(Of PermissionService.IServicePermission) = DirectCast(oSender, System.ServiceModel.ClientBase(Of PermissionService.IServicePermission))
-                    service.Abort()
-                    service = Nothing
-                End If
-            End Try
-            ServiceEP.SaveActionsExecution(results, UserID)
-        End If
-    End Sub
+    'Private Sub UpdateScormStat()
+    '    Dim ModuleLinkIds As IList(Of Long) = ServiceEP.GetMaterialModuleLinkIds_ByActId(Me.CurrentActivityID)
+    '    If ModuleLinkIds.Count > 0 Then
+    '        Dim oSender As PermissionService.IServicePermission = Nothing
+    '        Dim results As List(Of dtoItemEvaluation(Of Long))
+    '        Dim UserID As Integer = CurrentContext.UserContext.CurrentUserID
+    '        Try
+    '            oSender = New PermissionService.ServicePermissionClient
+    '            results = oSender.GetPendingEvaluations(ModuleLinkIds, UserID)
+    '            If Not IsNothing(oSender) Then
+    '                Dim service As System.ServiceModel.ClientBase(Of PermissionService.IServicePermission) = DirectCast(oSender, System.ServiceModel.ClientBase(Of PermissionService.IServicePermission))
+    '                service.Close()
+    '                service = Nothing
+    '            End If
+    '        Catch ex As Exception
+    '            If Not IsNothing(oSender) Then
+    '                Dim service As System.ServiceModel.ClientBase(Of PermissionService.IServicePermission) = DirectCast(oSender, System.ServiceModel.ClientBase(Of PermissionService.IServicePermission))
+    '                service.Abort()
+    '                service = Nothing
+    '            End If
+    '        End Try
+    '        ServiceEP.SaveActionsExecution(results, UserID)
+    '    End If
+    'End Sub
 
     Protected ReadOnly Property CookieName() As String
         Get
@@ -87,10 +116,21 @@ Public Class ViewActivity
         PageUtility.CurrentModule = PageUtility.GetModule(Services_EduPath.Codex)
 
         Me.Master.ShowDocType = True
+        If Not _IsMoocPath.HasValue Then
+            Dim idPath As Long = ServiceEP.GetPathId_ByActivityId(CurrentActivityID)
+            If (idPath > 0) Then
+                IsMoocPath = ServiceEP.IsMooc(idPath)
+                If PreloadIsMooc AndAlso Not IsMoocPath Then
+                    IsMoocPath = PreloadIsMooc
+                End If
+            Else
+                IsMoocPath = PreloadIsMooc
+            End If
+        End If
     End Sub
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-        Me.CTRLaddAction.InitializeControl(Me.Master.FindControl("SCMmanager"), Me.CurrentCommunityID, Me.CurrentPathId, Me.CurrentUnitId, Me.CurrentActivityID)
+        Me.CTRLaddAction.InitializeControl(Me.Master.FindControl("SCMmanager"), Me.CurrentCommunityID, Me.CurrentPathId, Me.CurrentUnitId, Me.CurrentActivityID, IsMoocPath, PreloadIsFromReadOnly)
     End Sub
 
     Public Overrides ReadOnly Property AlwaysBind As Boolean
@@ -100,42 +140,94 @@ Public Class ViewActivity
     End Property
 
     Public Overrides Sub BindDati()
-
         If CurrentActivityID > 0 Then
+            If Not Page.IsPostBack Then
+                Dim idPath As Long = ServiceEP.GetPathId_ByActivityId(CurrentActivityID)
+                If idPath > 0 Then
+                    Dim oPath As Path = ServiceEP.GetPath(idPath)
+                    If Not IsNothing(oPath) Then
+                        PathDisplayPolicy = oPath.Policy.DisplaySubActivity
+                        PathPolicySettings = oPath.Policy
+                        IsMoocPath = oPath.IsMooc
+                    End If
+                End If
+            End If
+
+
             Me.PageUtility.AddAction(Me.CurrentCommunityID, Services_EduPath.ActionType.List, Me.PageUtility.CreateObjectsList(Services_EduPath.ObjectType.Activity, CurrentActivityID), InteractionType.UserWithLearningObject)
 
             Select Case ViewModeType
                 Case EpViewModeType.Manage
-                    InitPageManage()
-                    If isManageable Then
-                        LBErrorMSG.Visible = False
+
+                    Dim status As PathAvailability = ServiceEP.GetPathAvailability(CurrentPathId, CurrentUserId)
+                    isManageable = (status = PathAvailability.Blocked)
+                    If Not (status = PathAvailability.Blocked) Then
+                        IsInReadOnlyMode = True
+                        DisplayPathStatus(status, IsMoocPath)
                     Else
-                        Me.Resource.setLabel_To_Value(LBErrorMSG, "MSGstarted")
-                        LBErrorMSG.Visible = True
+                        IsInReadOnlyMode = PreloadIsFromReadOnly
                     End If
+                    InitPageManage()
 
                 Case EpViewModeType.View
                     If ServiceEP.isPlayModePath(CurrentPathId) Then
-                        RedirectToUrl(RootObject.PathView(CurrentPathId, CurrentCommunityID, EpViewModeType.View, True))
+                        RedirectToUrl(RootObject.PathView(CurrentPathId, CurrentCommunityID, EpViewModeType.View, True, IsMoocPath, False))
                     End If
-                    UpdateScormStat()
+                    'UpdateScormStat()
                     InitPageView()
-
                 Case Else
                     Me.ShowError(EpError.Url)
-
             End Select
             setControls_ByEpType()
         Else
-            RedirectToUrl(RootObject.EduPathList(CurrentPathId, EpViewModeType.View))
+            RedirectToUrl(RootObject.EduPathList(CurrentPathId, EpViewModeType.View, PreloadIsMooc))
         End If
     End Sub
+    Private Sub DisplayPathStatus(ByVal status As PathAvailability, ByVal isMooc As Boolean)
+        CTRLitemMessage.Visible = True
+        Select Case status
+            Case PathAvailability.Blocked
+                CTRLitemMessage.Visible = False
+            Case PathAvailability.WithMyStatistics
+                CTRLitemMessage.InitializeControl(Resource.getValue(GetKeyString("Error", status, isMooc)), Helpers.MessageType.alert)
+            Case Else
+                CTRLitemMessage.InitializeControl(Resource.getValue(GetKeyString("Error", status, isMooc)), Helpers.MessageType.error)
+        End Select
+    End Sub
+    Private Function GetKeyString(prefix As String, ByVal status As PathAvailability, ByVal isMooc As Boolean)
+        Dim key As String = prefix
+        If Not key.EndsWith(".") Then
+            key &= "."
+        End If
+        key &= "PathAvailability."
+        Select Case status
+            Case PathAvailability.Available, PathAvailability.UnknownItem, PathAvailability.WithOtherUserStatistics, PathAvailability.WithMyStatistics, PathAvailability.Blocked
+                key &= status.ToString()
+            Case (PathAvailability.Available Or PathAvailability.WithOtherUserStatistics)
+                key &= "Available." & PathAvailability.WithOtherUserStatistics.ToString
+            Case (PathAvailability.Available Or PathAvailability.WithMyStatistics)
+                key &= "Available." & PathAvailability.WithMyStatistics.ToString
+            Case (PathAvailability.Blocked Or PathAvailability.WithOtherUserStatistics)
+                key &= PathAvailability.WithOtherUserStatistics.ToString
+            Case (PathAvailability.Blocked Or PathAvailability.WithMyStatistics)
+                key &= PathAvailability.WithMyStatistics.ToString
+        End Select
+
+        key &= ".IsMooc." & isMooc.ToString
+        Return key
+    End Function
     Private Sub setControls_ByEpType()
         If isAutoEp Then
             hideControl(LKBupdateWeight)
         End If
     End Sub
     Public Overrides Sub BindNoPermessi()
+        If PreloadIsMooc AndAlso Not IsMoocPath Then
+            IsMoocPath = PreloadIsMooc
+        End If
+        If PreloadIsFromReadOnly Then
+            IsInReadOnlyMode = PreloadIsFromReadOnly
+        End If
         Me.ShowError(EpError.NotPermission)
     End Sub
 
@@ -185,9 +277,8 @@ Public Class ViewActivity
 
 #Region "Property"
     Private _hideSummary As Boolean = True
-    Private _CanSwichSubAct As Boolean
     Private _SubActCount As Int16
-    Private _isManageable As Int16 = -10
+    Private _isManageable As Boolean?
     Private _SmartTagsAvailable As SmartTags
     Public ReadOnly Property SmartTagsAvailable() As Comol.Entity.SmartTags
         Get
@@ -197,13 +288,16 @@ Public Class ViewActivity
             Return _SmartTagsAvailable
         End Get
     End Property
-    Protected ReadOnly Property isManageable As Boolean
+    Protected Property isManageable As Boolean
         Get
-            If _isManageable = -10 Then
-                _isManageable = ((ViewModeType = EpViewModeType.Manage) AndAlso ServiceEP.isEditablePath(CurrentPathId, CurrentUserId))
+            If Not _isManageable.HasValue Then
+                isManageable = (ServiceEP.GetPathAvailability(CurrentPathId, CurrentUserId) = PathAvailability.Blocked)
             End If
-            Return _isManageable
+            Return _isManageable.Value
         End Get
+        Set(value As Boolean)
+            _isManageable = value
+        End Set
     End Property
     Protected Overrides ReadOnly Property PathType As EPType
         Get
@@ -225,25 +319,28 @@ Public Class ViewActivity
 
     Public Property CanSwichSubAct As Boolean
         Get
-            Return _CanSwichSubAct
+            Return ViewStateOrDefault("CanSwichSubAct", False)
         End Get
         Set(ByVal value As Boolean)
-            _CanSwichSubAct = value
+            ViewState("CanSwichSubAct") = value
         End Set
     End Property
 
     Public ReadOnly Property sortVisibility() As String
         Get
-            If Me.CanSwichSubAct Then
-                Return "true"
-            End If
-            Return "false"
+            Return CanSwichSubAct.ToString.ToLower.ToString
         End Get
     End Property
 
-    Private ReadOnly Property CurrentCommRoleID As Integer
+    Private ReadOnly Property IdCommunityRole As Integer
         Get
-            Return UtenteCorrente.GetIDRuoloForComunita(CurrentCommunityID)
+            Dim key As String = "CurrentCommRoleID_" & CurrentPathId.ToString() & "_" & CurrentUserId.ToString
+            Dim idRole As Integer = ViewStateOrDefault(key, -1)
+            If idRole = -1 Then
+                idRole = ServiceEP.GetIdCommunityRole(CurrentUserId, ServiceEP.GetPathIdCommunity(CurrentPathId))
+                ViewState(key) = idRole
+            End If
+            Return idRole
         End Get
     End Property
 
@@ -253,7 +350,7 @@ Public Class ViewActivity
             If IsNumeric(qs_communityId) Then
                 Return qs_communityId
             Else
-                Return Me.CurrentContext.UserContext.CurrentCommunityID
+                Return PageUtility.CurrentContext.UserContext.CurrentCommunityID
             End If
         End Get
     End Property
@@ -318,7 +415,7 @@ Public Class ViewActivity
 
     Private ReadOnly Property CurrentUserId() As Integer
         Get
-            Return Me.CurrentContext.UserContext.CurrentUserID
+            Return PageUtility.CurrentContext.UserContext.CurrentUserID
         End Get
     End Property
 
@@ -401,18 +498,18 @@ Public Class ViewActivity
             hideControl(DIVdate)
         End If
     End Sub
-    Private Sub ShowError(ByVal ErrorType As EpError)
+    Private Sub ShowError(ByVal errorType As EpError)
         Me.Resource.setHyperLink(Me.HYPerror, False, True)
-        Me.HYPerror.NavigateUrl = Me.BaseUrl & RootObject.PathView(Me.CurrentPathId, Me.CurrentCommunityID, Me.ViewModeType, ServiceEP.isPlayModePath(CurrentPathId))
-        Select Case ErrorType
+        Me.HYPerror.NavigateUrl = Me.BaseUrl & RootObject.PathView(Me.CurrentPathId, Me.CurrentCommunityID, Me.ViewModeType, ServiceEP.isPlayModePath(CurrentPathId), IsMoocPath, PreloadIsFromReadOnly)
+        Select Case errorType
             Case EpError.Generic
-                Me.LBerror.Text = Me.Resource.getValue("Error." & EpError.Generic.ToString)
+                CTRLerrorMessage.InitializeControl(Resource.getValue("Error." & errorType.ToString), Helpers.MessageType.error)
                 Me.PageUtility.AddAction(Services_EduPath.ActionType.GenericError, Nothing, InteractionType.UserWithLearningObject)
             Case EpError.NotPermission
-                Me.LBerror.Text = Me.Resource.getValue("Error." & EpError.NotPermission.ToString)
+                CTRLerrorMessage.InitializeControl(Resource.getValue("Error." & errorType.ToString), Helpers.MessageType.alert)
                 Me.PageUtility.AddAction(Services_EduPath.ActionType.NoPermission, Nothing, InteractionType.UserWithLearningObject)
             Case EpError.Url
-                Me.LBerror.Text = Me.Resource.getValue("Error." & EpError.Url.ToString)
+                CTRLerrorMessage.InitializeControl(Resource.getValue("Error." & errorType.ToString), Helpers.MessageType.alert)
                 Me.PageUtility.AddAction(Services_EduPath.ActionType.GenericError, Nothing, InteractionType.UserWithLearningObject)
         End Select
         'Me.MLVviewActivity.ActiveViewIndex = 1
@@ -436,10 +533,10 @@ Public Class ViewActivity
     End Sub
 
     Private Sub InitPageView()
-
+        CTRLheader.Visible = False
         If ServiceStat.InitActBrowsed(CurrentActivityID, Me.CurrentUserId, Me.CurrentUserId, OLDpageUtility.ClientIPadress, OLDpageUtility.ProxyIPadress) Then
             Dim dtoActivity As dtoActivity
-            dtoActivity = ServiceEP.GetActivityStructure_View(CurrentActivityID, Me.CurrentContext.UserContext.CurrentUserID, Me.CurrentCommRoleID, OLDpageUtility.ClientIPadress, OLDpageUtility.ProxyIPadress, DateTime.Now)
+            dtoActivity = ServiceEP.GetActivityStructure_View(CurrentActivityID, PageUtility.CurrentContext.UserContext.CurrentUserID, IdCommunityRole, OLDpageUtility.ClientIPadress, OLDpageUtility.ProxyIPadress, DateTime.Now)
             If dtoActivity Is Nothing OrElse Not ServiceEP.CanViewAct_byDate(dtoActivity.StartDate, dtoActivity.EndDate) Then
                 Me.ShowError(EpError.NotPermission)
             Else
@@ -447,7 +544,7 @@ Public Class ViewActivity
                 If ServiceEP.CheckStatus(dtoActivity.Status, Status.Text) Then
                     InitNote(dtoActivity.Description)
                 Else
-                    InitActivityDetail(dtoActivity)
+                    InitActivityDetail(dtoActivity, False)
                 End If
                 InitButton()
                 InitNavigationButton()
@@ -459,7 +556,9 @@ Public Class ViewActivity
 
     Private Sub InitPageManage()
         Dim dtoActivity As dtoActivity
-        dtoActivity = ServiceEP.GetActivityStructure_Manage(CurrentActivityID, Me.CurrentContext.UserContext.CurrentUserID, Me.CurrentCommRoleID, OLDpageUtility.ClientIPadress, OLDpageUtility.ProxyIPadress)
+        CTRLheader.InitializeHeader()
+        CTRLheader.Visible = True
+        dtoActivity = ServiceEP.GetActivityStructure_Manage(CurrentActivityID, PageUtility.CurrentContext.UserContext.CurrentUserID, IdCommunityRole, Resource.getValue("UnknownUserTranslation"))
         If dtoActivity Is Nothing Then
             Me.ShowError(EpError.Generic)
         Else
@@ -467,21 +566,21 @@ Public Class ViewActivity
             Me.CanSwichSubAct = SubActCount > 1 AndAlso ServiceEP.CheckRoleEp(dtoActivity.RoleEP, RoleEP.Manager)
             Me.InitDialog()
             InitButton()
-            InitActivityDetail(dtoActivity)
+            InitActivityDetail(dtoActivity, True)
         End If
     End Sub
 
     Private Sub InitNavigationButton()
-        Dim dtoNextActivity As dtoNavigationActivity = ServiceEP.GetdtoNextActivity(Me.CurrentActivityID, Me.CurrentUserId, Me.CurrentCommRoleID)
+        Dim dtoNextActivity As dtoNavigationActivity = ServiceEP.GetdtoNextActivity(Me.CurrentActivityID, Me.CurrentUserId, IdCommunityRole)
         If Not dtoNextActivity Is Nothing Then
             Me.HYPnextAct.Visible = True
-            Me.HYPnextAct.NavigateUrl = Me.BaseUrl & RootObject.ViewActivity(dtoNextActivity.ActivityId, dtoNextActivity.ParentUnitId, Me.CurrentPathId, Me.CurrentCommunityID, Me.ViewModeType)
+            Me.HYPnextAct.NavigateUrl = Me.BaseUrl & RootObject.ViewActivity(dtoNextActivity.ActivityId, dtoNextActivity.ParentUnitId, Me.CurrentPathId, Me.CurrentCommunityID, Me.ViewModeType, IsMoocPath, False)
         End If
 
-        Dim dtoPreviousActivity As dtoNavigationActivity = ServiceEP.GetdtoPreviousActivity(Me.CurrentActivityID, Me.CurrentUserId, Me.CurrentCommRoleID)
+        Dim dtoPreviousActivity As dtoNavigationActivity = ServiceEP.GetdtoPreviousActivity(Me.CurrentActivityID, Me.CurrentUserId, IdCommunityRole)
         If Not dtoPreviousActivity Is Nothing Then
             Me.HYPpreviousAct.Visible = True
-            Me.HYPpreviousAct.NavigateUrl = Me.BaseUrl & RootObject.ViewActivity(dtoPreviousActivity.ActivityId, dtoPreviousActivity.ParentUnitId, Me.CurrentPathId, Me.CurrentCommunityID, Me.ViewModeType)
+            Me.HYPpreviousAct.NavigateUrl = Me.BaseUrl & RootObject.ViewActivity(dtoPreviousActivity.ActivityId, dtoPreviousActivity.ParentUnitId, Me.CurrentPathId, Me.CurrentCommunityID, Me.ViewModeType, IsMoocPath, False)
         End If
     End Sub
 
@@ -492,12 +591,15 @@ Public Class ViewActivity
     End Sub
 
     Public Sub InitButton()
-        Me.Resource.setLinkButton(LKBeduPathView, False, False)
-        LKBeduPathView.PostBackUrl = Me.BaseUrl & RootObject.PathView(Me.CurrentPathId, Me.CurrentCommunityID, Me.ViewModeType, ServiceEP.isPlayModePath(CurrentPathId))
-
+        If IsMoocPath Then
+            Resource.setLinkButtonToValue(LKBeduPathView, "IsMooc.True", False, True)
+        Else
+            Resource.setLinkButton(LKBeduPathView, False, False)
+        End If
+        LKBeduPathView.PostBackUrl = Me.BaseUrl & RootObject.PathView(Me.CurrentPathId, Me.CurrentCommunityID, Me.ViewModeType, ServiceEP.isPlayModePath(CurrentPathId), IsMoocPath, PreloadIsFromReadOnly)
     End Sub
 
-    Private Sub InitActivityDetail(ByRef dtoActivity As dtoActivity)
+    Private Sub InitActivityDetail(ByRef dtoActivity As dtoActivity, ByVal forManage As Boolean)
         hideControl(LBtext)
         If dtoActivity.PermissionEP.Create AndAlso isManageable AndAlso Not dtoActivity.isQuiz Then
             Me.Resource.setLinkButton(Me.LNBnewSubAct, False, False)
@@ -511,7 +613,7 @@ Public Class ViewActivity
         If dtoActivity.PermissionEP.Update AndAlso isManageable Then
             Me.Resource.setHyperLink(Me.HYPupdateAct, False, True)
             Me.HYPupdateAct.Visible = False
-            Me.HYPupdateAct.NavigateUrl = Me.BaseUrl & RootObject.UpdateActivity(Me.CurrentCommunityID, Me.CurrentActivityID, Me.CurrentUnitId)
+            Me.HYPupdateAct.NavigateUrl = Me.BaseUrl & RootObject.UpdateActivity(Me.CurrentCommunityID, Me.CurrentActivityID, Me.CurrentUnitId, IsMoocPath, False)
             Me.Resource.setLinkButton(LKBupdateWeight, False, True)
             Me.LKBupdateWeight.Visible = True
         End If
@@ -547,49 +649,69 @@ Public Class ViewActivity
             Me.RPsubActivity.DataBind()
         Else
             Me.LBnoSubAct.Visible = True
-            If (ViewModeType = EpViewModeType.Manage) Then
-                Me.Resource.setLabel_To_Value(Me.LBnoSubAct, "LBnoSubAct.Manage")
+            If IsMoocPath Then
+                If (ViewModeType = EpViewModeType.Manage) Then
+                    Resource.setLabel_To_Value(Me.LBnoSubAct, "LBnoSubAct.Manage.IsMooc.True")
+                Else
+                    Resource.setLabel_To_Value(Me.LBnoSubAct, "LBnoSubAct.View.IsMooc.True")
+                End If
             Else
-                Me.Resource.setLabel_To_Value(Me.LBnoSubAct, "LBnoSubAct.View")
+                If (ViewModeType = EpViewModeType.Manage) Then
+                    Me.Resource.setLabel_To_Value(Me.LBnoSubAct, "LBnoSubAct.Manage")
+                Else
+                    Me.Resource.setLabel_To_Value(Me.LBnoSubAct, "LBnoSubAct.View")
+                End If
             End If
         End If
-
-
     End Sub
     Private Sub RPsubActivity_ItemCommand(ByVal source As Object, ByVal e As System.Web.UI.WebControls.RepeaterCommandEventArgs) Handles RPsubActivity.ItemCommand
         CTRLmessages.Visible = False
         Try
             Select Case e.CommandName
-
+                Case "addversion"
+                    Dim idItem As Long = 0
+                    Long.TryParse(e.CommandArgument, idItem)
+                    If idItem > 0 Then
+                        Dim item As lm.Comol.Core.FileRepository.Domain.dtoDisplayRepositoryItem = ServiceRepository.GetItemWithPermissions(idItem, PageUtility.CurrentContext.UserContext.CurrentUserID, lm.Comol.Core.FileRepository.Domain.RepositoryIdentifier.Create(lm.Comol.Core.FileRepository.Domain.RepositoryType.Community, CurrentCommunityID), Resource.getValue("UnknownUserTranslation"), True, True)
+                        If Not IsNothing(item) Then
+                            Master.SetOpenDialogOnPostbackByCssClass(CTRLaddVersion.DialogIdentifier)
+                            CTRLaddVersion.Visible = True
+                            If item.IsInternal Then
+                                CTRLaddVersion.InitializeControlForInternalItem(item)
+                            Else
+                                CTRLaddVersion.InitializeControl(item, ServiceRepository.GetFolderQuota(PageUtility.GetRepositoryDiskPath(), item.IdFolder, item.Repository))
+                            End If
+                        End If
+                    End If
                 Case "delete"
                     If ServiceEP.VirtualDeleteSubActivity(e.CommandArgument, Me.CurrentCommunityID, Me.CurrentUserId, OLDpageUtility.ClientIPadress, OLDpageUtility.ProxyIPadress) Then
-                        Me.PageUtility.RedirectToUrl(RootObject.ViewActivity(Me.CurrentActivityID, Me.CurrentUnitId, Me.CurrentPathId, Me.CurrentCommunityID, Me.ViewModeType))
+                        Me.PageUtility.RedirectToUrl(RootObject.ViewActivity(Me.CurrentActivityID, Me.CurrentUnitId, Me.CurrentPathId, Me.CurrentCommunityID, Me.ViewModeType, IsMoocPath, PreloadIsFromReadOnly))
                     Else
                         ShowError(EpError.Generic)
                     End If
 
                 Case "moveUp"
                     If ServiceEP.MoveSubActivityDisplayOrderBefore(e.CommandArgument, Me.CurrentUserId, OLDpageUtility.ClientIPadress, OLDpageUtility.ProxyIPadress) Then
-                        Me.PageUtility.RedirectToUrl(RootObject.ViewActivity(Me.CurrentActivityID, Me.CurrentUnitId, Me.CurrentPathId, Me.CurrentCommunityID, Me.ViewModeType))
+                        Me.PageUtility.RedirectToUrl(RootObject.ViewActivity(Me.CurrentActivityID, Me.CurrentUnitId, Me.CurrentPathId, Me.CurrentCommunityID, Me.ViewModeType, IsMoocPath, PreloadIsFromReadOnly))
                     Else
                         ShowError(EpError.Generic)
                     End If
 
                 Case "moveDown"
                     If ServiceEP.MoveSubActivityDisplayOrderAfter(e.CommandArgument, Me.CurrentUserId, OLDpageUtility.ClientIPadress, OLDpageUtility.ProxyIPadress) Then
-                        Me.PageUtility.RedirectToUrl(RootObject.ViewActivity(Me.CurrentActivityID, Me.CurrentUnitId, Me.CurrentPathId, Me.CurrentCommunityID, Me.ViewModeType))
+                        Me.PageUtility.RedirectToUrl(RootObject.ViewActivity(Me.CurrentActivityID, Me.CurrentUnitId, Me.CurrentPathId, Me.CurrentCommunityID, Me.ViewModeType, IsMoocPath, PreloadIsFromReadOnly))
                     Else
                         ShowError(EpError.Generic)
                     End If
                 Case "mandatory"
                     If ServiceEP.UpdateSubActivityMandatoryStatus(e.CommandArgument, Me.CurrentUserId, OLDpageUtility.ClientIPadress, OLDpageUtility.ProxyIPadress) Then
-                        Me.PageUtility.RedirectToUrl(RootObject.ViewActivity(Me.CurrentActivityID, Me.CurrentUnitId, Me.CurrentPathId, Me.CurrentCommunityID, Me.ViewModeType))
+                        Me.PageUtility.RedirectToUrl(RootObject.ViewActivity(Me.CurrentActivityID, Me.CurrentUnitId, Me.CurrentPathId, Me.CurrentCommunityID, Me.ViewModeType, IsMoocPath, PreloadIsFromReadOnly))
                     Else
                         ShowError(EpError.Generic)
                     End If
                 Case "visibility"
                     If ServiceEP.UpdateSubActivityVisibilityStatus(e.CommandArgument, Me.CurrentUserId, OLDpageUtility.ClientIPadress, OLDpageUtility.ProxyIPadress) Then
-                        Me.PageUtility.RedirectToUrl(RootObject.ViewActivity(Me.CurrentActivityID, Me.CurrentUnitId, Me.CurrentPathId, Me.CurrentCommunityID, Me.ViewModeType))
+                        Me.PageUtility.RedirectToUrl(RootObject.ViewActivity(Me.CurrentActivityID, Me.CurrentUnitId, Me.CurrentPathId, Me.CurrentCommunityID, Me.ViewModeType, IsMoocPath, PreloadIsFromReadOnly))
                     Else
                         ShowError(EpError.Generic)
                     End If
@@ -598,8 +720,8 @@ Public Class ViewActivity
                     Response.Redirect(e.CommandArgument.ToString.Split(",")(1))
 
                 Case "executed"
-                    If ServiceEP.ExecuteSubActivityInternal(e.CommandArgument, Me.CurrentUserId, Me.CurrentCommRoleID, OLDpageUtility.ClientIPadress, OLDpageUtility.ProxyIPadress) Then
-                        Me.PageUtility.RedirectToUrl(RootObject.ViewActivity(Me.CurrentActivityID, Me.CurrentUnitId, Me.CurrentPathId, Me.CurrentCommunityID, Me.ViewModeType))
+                    If ServiceEP.ExecuteSubActivityInternal(e.CommandArgument, Me.CurrentUserId, IdCommunityRole, OLDpageUtility.ClientIPadress, OLDpageUtility.ProxyIPadress) Then
+                        Me.PageUtility.RedirectToUrl(RootObject.ViewActivity(Me.CurrentActivityID, Me.CurrentUnitId, Me.CurrentPathId, Me.CurrentCommunityID, Me.ViewModeType, IsMoocPath, PreloadIsFromReadOnly))
                     Else
                         ShowError(EpError.Generic)
                     End If
@@ -617,10 +739,16 @@ Public Class ViewActivity
             Dim oHyp As HyperLink
             Dim oImg As System.Web.UI.WebControls.Image
             Dim dtoItem As dtoSubActivity = e.Item.DataItem
-            Dim oDisplayAction As lm.Comol.Core.ModuleLinks.IExternalModuleDisplayAction = CType(LoadControl(BaseUrl & Common.CoreRootObject.GenericNewDisplayActionControl), lm.Comol.Core.ModuleLinks.IExternalModuleDisplayAction)
             Dim isPlayMode As Boolean = True
             Select Case Me.ViewModeType
                 Case EpViewModeType.Manage
+                    Select Case dtoItem.ContentType
+                        Case SubActivityType.File
+                            oLkb = e.Item.FindControl("LNBaddVersion")
+                            Resource.setLinkButton(oLkb, False, True)
+                            oLkb.CommandArgument = dtoItem.IdObject
+                            oLkb.Visible = dtoItem.AllowAddVersion
+                    End Select
                     If Me.CanSwichSubAct Then
                         oLkb = e.Item.FindControl("LKBup")
                         Me.Resource.setLinkButton(oLkb, False, True)
@@ -640,9 +768,7 @@ Public Class ViewActivity
 
                     If dtoItem.PermissionEP.Update Then
                         If isManageable Then
-
                             Dim oTlkTxt As Telerik.Web.UI.RadNumericTextBox
-
                             If isTimeEp Then
                                 hideControl(e.Item.FindControl("LBpoints"))
                                 hideControl(e.Item.FindControl("TXBweight"))
@@ -686,9 +812,9 @@ Public Class ViewActivity
                                     oHyp.Visible = isManageable
                                     Select Case dtoItem.ContentType
                                         Case SubActivityType.Text
-                                            oHyp.NavigateUrl = Me.BaseUrl & RootObject.UpdateSubActText(dtoItem.Id, Me.CurrentActivityID, Me.CurrentCommunityID)
+                                            oHyp.NavigateUrl = Me.BaseUrl & RootObject.UpdateSubActText(dtoItem.Id, Me.CurrentActivityID, Me.CurrentCommunityID, IsMoocPath, PreloadIsFromReadOnly)
                                         Case SubActivityType.Certificate
-                                            oHyp.NavigateUrl = Me.BaseUrl & RootObject.UpdateSubActCertification(Me.CurrentPathId, Me.CurrentUnitId, Me.CurrentActivityID, dtoItem.Id, Me.CurrentCommunityID)
+                                            oHyp.NavigateUrl = Me.BaseUrl & RootObject.UpdateSubActCertification(Me.CurrentPathId, Me.CurrentUnitId, Me.CurrentActivityID, dtoItem.Id, Me.CurrentCommunityID, IsMoocPath, PreloadIsFromReadOnly)
 
                                             Dim oCertAction As lm.Comol.Modules.EduPath.Presentation.IViewModuleCertificationAction = e.Item.FindControl("CTRLcertificationAction")
                                             'oCertAction.RefreshContainer = True
@@ -716,44 +842,123 @@ Public Class ViewActivity
                                     Me.Resource.setLinkButton(oLkb, False, True)
                                     oLkb.Visible = isManageable
                                     'oLkb.Text = "<img src=" & """" & "{0}" & """" & " alt=" & """" & "{1}" & """" & "/>"
+                                    Dim itemAction As lm.Comol.Core.ModuleLinks.DisplayActionMode = lm.Comol.Core.ModuleLinks.DisplayActionMode.text
 
-                                    Dim initializer As New lm.Comol.Core.ModuleLinks.dtoExternalModuleInitializer
-                                    oDisplayAction.ContainerCSS = SubActivityCssClass(dtoItem)
-                                    oDisplayAction.IconSize = Helpers.IconSize.Small
-
-                                    oDisplayAction.EnableAnchor = True
                                     Select Case dtoItem.ContentType
+                                        Case SubActivityType.File
+                                            itemAction = lm.Comol.Core.ModuleLinks.DisplayActionMode.textDefault
+
+                                            Dim renderItem As UC_RepositoryRenderAction = e.Item.FindControl("CTRLdisplayItem")
+                                            renderItem.CssClass = SubActivityCssClass(dtoItem)
+                                            renderItem.EnableAnchor = True
+
+                                            Dim repositoryInitializer As New lm.Comol.Core.ModuleLinks.dtoObjectRenderInitializer
+                                            repositoryInitializer.Link = New liteModuleLink(dtoItem.ModuleLink)
+                                            Select Case PathDisplayPolicy
+                                                Case DisplayPolicy.ModalByItem
+                                                    Select Case dtoItem.Display
+                                                        Case DisplayPolicy.ModalForAllByAvailability
+                                                            repositoryInitializer.ForceOnModalPage = True
+                                                        Case DisplayPolicy.ModalByItem
+                                                            repositoryInitializer.SetOnModalPageByItem = True
+                                                    End Select
+                                                Case DisplayPolicy.ModalForAllByAvailability
+                                                    repositoryInitializer.ForceOnModalPage = True
+                                            End Select
+                                            repositoryInitializer.SaveObjectStatistics = True
+
+                                            Dim rActions As List(Of dtoModuleActionControl) = renderItem.InitializeRemoteControl(repositoryInitializer, StandardActionType.Edit, itemAction)
+                                            'Dim rEditControl As dtoModuleActionControl = (From c In rActions Where c.ControlType = StandardActionType.Edit AndAlso c.isEnabled Select c).FirstOrDefault
+                                            'If Not rEditControl Is Nothing Then
+                                            '    oLkb.CommandArgument = dtoItem.ModuleLink.DestinationItem.ObjectLongID & "," & rEditControl.LinkUrl
+                                            'End If
+                                            Dim rMetaData As dtoModuleActionControl = (From c In rActions Where c.ControlType = StandardActionType.EditMetadata AndAlso c.isEnabled Select c).FirstOrDefault
+                                            If Not IsNothing(rMetaData) Then
+                                                oHyp = e.Item.FindControl("HYPeditMetadata")
+                                                Resource.setHyperLink(oHyp, False, True)
+                                                oHyp.Visible = True
+                                                oHyp.NavigateUrl = rMetaData.LinkUrl
+                                            End If
                                         Case SubActivityType.Quiz
-                                            oDisplayAction.Display = lm.Comol.Core.ModuleLinks.DisplayActionMode.textDefault
-                                        Case Else
-                                            oDisplayAction.Display = lm.Comol.Core.ModuleLinks.DisplayActionMode.text
+                                            Dim renderQuizItem As UC_ModuleQuizAction = e.Item.FindControl("CTRLquestionnaire")
+                                            renderQuizItem.Visible = True
+                                            renderQuizItem.ContainerCSS = SubActivityCssClass(dtoItem)
+                                            renderQuizItem.IconSize = Helpers.IconSize.Small
+                                            renderQuizItem.EnableAnchor = True
+                                            renderQuizItem.Display = lm.Comol.Core.ModuleLinks.DisplayActionMode.textDefault
+
+                                            Dim qInitializer As New lm.Comol.Core.ModuleLinks.dtoExternalModuleInitializer
+                                            qInitializer.Link = dtoItem.ModuleLink
+                                            qInitializer.OpenLinkCssClass = ""
+
+                                            Dim qActions As List(Of dtoModuleActionControl) = renderQuizItem.InitializeRemoteControl(lm.Comol.Core.ModuleLinks.dtoModuleDisplayActionInitializer.Create(qInitializer, renderQuizItem.Display, renderQuizItem.ContainerCSS, Helpers.IconSize.Small), StandardActionType.Edit)
+                                            Dim qEditControl As dtoModuleActionControl = (From c In qActions Where c.ControlType = StandardActionType.Edit AndAlso c.isEnabled Select c).FirstOrDefault
+                                            If Not qEditControl Is Nothing Then
+                                                oLkb.CommandArgument = dtoItem.ModuleLink.DestinationItem.ObjectLongID & "," & qEditControl.LinkUrl
+                                            End If
                                     End Select
-
-                                    initializer.Link = dtoItem.ModuleLink
-
-
-                                    Dim oList As List(Of dtoModuleActionControl) = oDisplayAction.InitializeRemoteControl(initializer, StandardActionType.Edit)
-                                    Dim EditControl As dtoModuleActionControl = (From c In oList Where c.ControlType = StandardActionType.Edit AndAlso c.isEnabled Select c).FirstOrDefault
-                                    If Not EditControl Is Nothing Then
-                                        oLkb.CommandArgument = dtoItem.ModuleLink.DestinationItem.ObjectLongID & "," & EditControl.LinkUrl
-                                    End If
                                 End If
                             Else
-
-                                Dim initializer As New lm.Comol.Core.ModuleLinks.dtoExternalModuleInitializer
-                                oDisplayAction.ContainerCSS = SubActivityCssClass(dtoItem)
-                                oDisplayAction.IconSize = Helpers.IconSize.Small
-
-                                oDisplayAction.EnableAnchor = True
-                                oDisplayAction.Display = If(dtoItem.ContentType = SubActivityType.File, lm.Comol.Core.ModuleLinks.DisplayActionMode.adminMode, lm.Comol.Core.ModuleLinks.DisplayActionMode.text)
+                                Dim itemAction As lm.Comol.Core.ModuleLinks.DisplayActionMode = lm.Comol.Core.ModuleLinks.DisplayActionMode.text
                                 Select Case dtoItem.ContentType
-                                    Case SubActivityType.Quiz
-                                        oDisplayAction.Display = lm.Comol.Core.ModuleLinks.DisplayActionMode.textDefault
-                                    
-                                End Select
-                                initializer.Link = dtoItem.ModuleLink
+                                    Case SubActivityType.File
+                                        itemAction = If(dtoItem.ContentType = SubActivityType.File, lm.Comol.Core.ModuleLinks.DisplayActionMode.adminMode, lm.Comol.Core.ModuleLinks.DisplayActionMode.text)
 
-                                oDisplayAction.InitializeRemoteControl(initializer, StandardActionType.Play)
+                                        Dim renderItem As UC_RepositoryRenderAction = e.Item.FindControl("CTRLdisplayItem")
+                                        renderItem.Visible = True
+                                        renderItem.CssClass = SubActivityCssClass(dtoItem)
+                                        renderItem.EnableAnchor = True
+
+                                        Dim repositoryInitializer As New lm.Comol.Core.ModuleLinks.dtoObjectRenderInitializer
+                                        repositoryInitializer.Link = New liteModuleLink(dtoItem.ModuleLink)
+                                        Select Case PathDisplayPolicy
+                                            Case DisplayPolicy.ModalByItem
+                                                Select Case dtoItem.Display
+                                                    Case DisplayPolicy.ModalForAllByAvailability
+                                                        repositoryInitializer.ForceOnModalPage = True
+                                                    Case DisplayPolicy.ModalByItem
+                                                        repositoryInitializer.SetOnModalPageByItem = True
+                                                End Select
+                                            Case DisplayPolicy.ModalForAllByAvailability
+                                                repositoryInitializer.ForceOnModalPage = True
+                                        End Select
+                                        repositoryInitializer.SaveObjectStatistics = True
+                                        repositoryInitializer.SaveOwnerStatistics = False
+
+                                        'renderItem.InitializeRemoteControl(repositoryInitializer, StandardActionType.Play, itemAction)
+                                        Dim rActions As List(Of dtoModuleActionControl) = renderItem.InitializeRemoteControl(repositoryInitializer, StandardActionType.Edit, itemAction)
+                                      
+                                        Dim rMetaData As dtoModuleActionControl = (From c In rActions Where c.ControlType = StandardActionType.EditMetadata AndAlso c.isEnabled Select c).FirstOrDefault
+                                        If Not IsNothing(rMetaData) Then
+                                            oHyp = e.Item.FindControl("HYPeditMetadata")
+                                            Resource.setHyperLink(oHyp, False, True)
+                                            oHyp.Visible = True
+                                            oHyp.NavigateUrl = rMetaData.LinkUrl
+                                        End If
+
+
+                                        'Dim qActions As List(Of dtoModuleActionControl) = renderQuizItem.InitializeRemoteControl(lm.Comol.Core.ModuleLinks.dtoModuleDisplayActionInitializer.Create(qInitializer, renderQuizItem.Display, renderQuizItem.ContainerCSS, Helpers.IconSize.Small), StandardActionType.Edit)
+                                        'Dim qEditControl As dtoModuleActionControl = (From c In qActions Where c.ControlType = StandardActionType.Edit AndAlso c.isEnabled Select c).FirstOrDefault
+                                        'If Not qEditControl Is Nothing Then
+                                        '    oLkb.CommandArgument = dtoItem.ModuleLink.DestinationItem.ObjectLongID & "," & qEditControl.LinkUrl
+                                        'End If
+                                    Case SubActivityType.Quiz
+                                        Dim renderQuizItem As UC_ModuleQuizAction = e.Item.FindControl("CTRLquestionnaire")
+                                        renderQuizItem.Visible = True
+                                        Dim initializer As New lm.Comol.Core.ModuleLinks.dtoExternalModuleInitializer
+                                        initializer.Link = dtoItem.ModuleLink
+                                        initializer.OpenLinkCssClass = ""
+
+                                        initializer.RefreshContainerPage = False
+                                        initializer.SaveLinkStatistics = False
+                                        renderQuizItem.ContainerCSS = SubActivityCssClass(dtoItem)
+                                        renderQuizItem.IconSize = Helpers.IconSize.Small
+                                        renderQuizItem.EnableAnchor = True
+                                        renderQuizItem.Display = lm.Comol.Core.ModuleLinks.DisplayActionMode.textDefault
+                                        renderQuizItem.Visible = True
+                                        renderQuizItem.InitializeControl(lm.Comol.Core.ModuleLinks.dtoModuleDisplayActionInitializer.Create(initializer, renderQuizItem.Display, renderQuizItem.ContainerCSS, Helpers.IconSize.Small), itemAction)
+                                        renderQuizItem.InitializeRemoteControl(lm.Comol.Core.ModuleLinks.dtoModuleDisplayActionInitializer.Create(initializer, renderQuizItem.Display, renderQuizItem.ContainerCSS, Helpers.IconSize.Small), StandardActionType.Play)
+                                End Select
                             End If
                         Else
                             hideControl(e.Item.FindControl("TXBweight"))
@@ -818,21 +1023,64 @@ Public Class ViewActivity
                                 'AddHandler oDisplayAction.RefreshContainerEvent, AddressOf RefreshContainerEvent
                                 oCertAction.InitializeControl(initializer)
                             Case Else
-                                Dim initializer As New lm.Comol.Core.ModuleLinks.dtoExternalModuleInitializer
-                                oDisplayAction.ContainerCSS = SubActivityCssClass(dtoItem)
-                                oDisplayAction.IconSize = Helpers.IconSize.Small
-
-                                oDisplayAction.EnableAnchor = True
-
+                                Dim itemAction As lm.Comol.Core.ModuleLinks.DisplayActionMode = lm.Comol.Core.ModuleLinks.DisplayActionMode.text
                                 Select Case dtoItem.ContentType
-                                    Case SubActivityType.Quiz
-                                        oDisplayAction.Display = lm.Comol.Core.ModuleLinks.DisplayActionMode.textDefault
-                                    Case Else
-                                        oDisplayAction.Display = If(dtoItem.ContentType = SubActivityType.File, lm.Comol.Core.ModuleLinks.DisplayActionMode.adminMode, lm.Comol.Core.ModuleLinks.DisplayActionMode.text)
-                                End Select
-                                initializer.Link = dtoItem.ModuleLink
+                                    Case SubActivityType.File
+                                        Dim renderItem As UC_RepositoryRenderAction = e.Item.FindControl("CTRLdisplayItem")
+                                        renderItem.Visible = True
+                                        Dim repositoryInitializer As New lm.Comol.Core.ModuleLinks.dtoObjectRenderInitializer
+                                        repositoryInitializer.RefreshContainerPage = True
+                                        repositoryInitializer.Link = New liteModuleLink(dtoItem.ModuleLink)
+                                        Select Case PathDisplayPolicy
+                                            Case DisplayPolicy.ModalByItem
+                                                Select Case dtoItem.Display
+                                                    Case DisplayPolicy.ModalForAllByAvailability
+                                                        repositoryInitializer.ForceOnModalPage = True
+                                                    Case DisplayPolicy.ModalByItem
+                                                        repositoryInitializer.SetOnModalPageByItem = True
+                                                End Select
+                                            Case DisplayPolicy.ModalForAllByAvailability
+                                                repositoryInitializer.ForceOnModalPage = True
+                                        End Select
+                                        repositoryInitializer.SaveObjectStatistics = True
+                                        repositoryInitializer.SaveOwnerStatistics = False
+                                        repositoryInitializer.SetPreviousPage = False
+                                        renderItem.CssClass = SubActivityCssClass(dtoItem)
+                                        itemAction = If(dtoItem.ContentType = SubActivityType.File, lm.Comol.Core.ModuleLinks.DisplayActionMode.adminMode, lm.Comol.Core.ModuleLinks.DisplayActionMode.text)
 
-                                oDisplayAction.InitializeRemoteControl(initializer, StandardActionType.Play)
+                                        renderItem.Visible = True
+                                        'renderItem.InitializeControl(repositoryInitializer, itemAction)
+
+                                        Dim rActions As List(Of dtoModuleActionControl) = renderItem.InitializeRemoteControl(repositoryInitializer, StandardActionType.Edit, itemAction)
+                                        Dim rMetaData As dtoModuleActionControl = (From c In rActions Where c.ControlType = StandardActionType.EditMetadata AndAlso c.isEnabled Select c).FirstOrDefault
+                                        If Not IsNothing(rMetaData) Then
+                                            oHyp = e.Item.FindControl("HYPeditMetadata")
+                                            Resource.setHyperLink(oHyp, False, True)
+                                            oHyp.Visible = True
+                                            oHyp.NavigateUrl = rMetaData.LinkUrl
+                                        End If
+                                    Case SubActivityType.Quiz
+                                        Dim renderQuizItem As UC_ModuleQuizAction = e.Item.FindControl("CTRLquestionnaire")
+                                        renderQuizItem.Visible = True
+                                        Dim initializer As New lm.Comol.Core.ModuleLinks.dtoExternalModuleInitializer
+                                        initializer.Link = dtoItem.ModuleLink
+                                        Select Case PathPolicySettings.Statistics
+                                            Case CompletionPolicy.NoUpdateIfCompleted
+                                                Select Case dtoItem.StatusStat
+                                                    Case StatusStatistic.Completed, StatusStatistic.CompletedPassed
+                                                        initializer.SaveLinkStatistics = False
+                                                End Select
+                                        End Select
+                                        ' DEFINISCO UNA CLASSE PER IL CONTAINER
+                                        renderQuizItem.ContainerCSS = SubActivityCssClass(dtoItem)
+                                        ' DIMENSIONI IMMAGINI
+                                        renderQuizItem.IconSize = Helpers.IconSize.Small
+                                        renderQuizItem.EnableAnchor = True
+                                        renderQuizItem.Display = lm.Comol.Core.ModuleLinks.DisplayActionMode.textDefault
+                                        renderQuizItem.Visible = True
+                                        renderQuizItem.InitializeControl(lm.Comol.Core.ModuleLinks.dtoModuleDisplayActionInitializer.Create(initializer, renderQuizItem.Display, renderQuizItem.ContainerCSS, Helpers.IconSize.Small), itemAction)
+
+                                End Select
                         End Select
                     End If
 
@@ -952,59 +1200,126 @@ Public Class ViewActivity
                 End Select
             Else
                 oLb.Text = Me.SmartTagsAvailable.TagAll(dtoItem.Description)
-                Dim oPlaceHolder As PlaceHolder = e.Item.FindControl("PLHaction")
-                DisplayAction(oPlaceHolder, oDisplayAction, dtoItem, isPlayMode)
+                If ViewModeType = EpViewModeType.View OrElse ViewModeType = EpViewModeType.Stat Then
+                    Dim itemAction As lm.Comol.Core.ModuleLinks.DisplayActionMode = lm.Comol.Core.ModuleLinks.DisplayActionMode.text
+                    If isPlayMode Then
+                        itemAction = lm.Comol.Core.ModuleLinks.DisplayActionMode.defaultAction
+                    End If
+                    Select Case dtoItem.ContentType
+                        Case SubActivityType.File
+                            Dim renderItem As UC_RepositoryRenderAction = e.Item.FindControl("CTRLdisplayItem")
+                            Dim repositoryInitializer As New lm.Comol.Core.ModuleLinks.dtoObjectRenderInitializer
+                            renderItem.Visible = True
+                            repositoryInitializer.RefreshContainerPage = True
+                            repositoryInitializer.Link = New liteModuleLink(dtoItem.ModuleLink)
+                            Select Case PathDisplayPolicy
+                                Case DisplayPolicy.ModalByItem
+                                    Select Case dtoItem.Display
+                                        Case DisplayPolicy.ModalForAllByAvailability
+                                            repositoryInitializer.ForceOnModalPage = True
+                                        Case DisplayPolicy.ModalByItem
+                                            repositoryInitializer.SetOnModalPageByItem = True
+                                    End Select
+                                Case DisplayPolicy.ModalForAllByAvailability
+                                    repositoryInitializer.ForceOnModalPage = True
+                            End Select
+                            repositoryInitializer.SaveObjectStatistics = True
+                            repositoryInitializer.SaveOwnerStatistics = True
+                            Select Case PathPolicySettings.Statistics
+                                Case CompletionPolicy.NoUpdateIfCompleted
+                                    Select Case dtoItem.StatusStat
+                                        Case StatusStatistic.Completed, StatusStatistic.CompletedPassed
+                                            repositoryInitializer.RefreshContainerPage = False
+                                            repositoryInitializer.SaveOwnerStatistics = False
+                                    End Select
+                            End Select
+                            repositoryInitializer.SetPreviousPage = False
+                            renderItem.CssClass = SubActivityCssClass(dtoItem)
+
+
+                            renderItem.Visible = True
+                            renderItem.InitializeControl(repositoryInitializer, itemAction)
+                        Case SubActivityType.Quiz
+                            Dim renderQuizItem As UC_ModuleQuizAction = e.Item.FindControl("CTRLquestionnaire")
+                            renderQuizItem.Visible = True
+                            Dim initializer As New lm.Comol.Core.ModuleLinks.dtoExternalModuleInitializer
+                            initializer.Link = dtoItem.ModuleLink
+                            initializer.OpenLinkCssClass = ""
+                            Select Case PathPolicySettings.Statistics
+                                Case CompletionPolicy.NoUpdateIfCompleted
+                                    Select Case dtoItem.StatusStat
+                                        Case StatusStatistic.Completed, StatusStatistic.CompletedPassed
+                                            initializer.SaveLinkStatistics = False
+                                    End Select
+                            End Select
+                            ' DEFINISCO UNA CLASSE PER IL CONTAINER
+                            renderQuizItem.ContainerCSS = SubActivityCssClass(dtoItem)
+                            ' DIMENSIONI IMMAGINI
+                            renderQuizItem.IconSize = Helpers.IconSize.Small
+                            renderQuizItem.EnableAnchor = True
+                            renderQuizItem.Display = itemAction
+                            renderQuizItem.Visible = True
+                            renderQuizItem.InitializeControl(lm.Comol.Core.ModuleLinks.dtoModuleDisplayActionInitializer.Create(initializer, renderQuizItem.Display, renderQuizItem.ContainerCSS, Helpers.IconSize.Small), itemAction)
+
+                    End Select
+
+                End If
+                'Select Case dtoItem.ContentType
+                '    Case SubActivityType.File
+                '        DisplayAction(e.Item.FindControl("CTRLdisplayItem"), dtoItem, isPlayMode)
+                '    Case SubActivityType.Quiz
+                '        DisplayAction(e.Item.FindControl("CTRLquestionnaire"), dtoItem, isPlayMode)
+                'End Select
             End If
         End If
     End Sub
 
-    Private Sub DisplayAction(ByRef oPlaceHolder As PlaceHolder, ByRef oDisplayAction As lm.Comol.Core.ModuleLinks.IExternalModuleDisplayAction, ByRef dtoItem As dtoSubActivity, ByVal isPlayActive As Boolean)
-        oPlaceHolder.Visible = True
+    'Private Sub DisplayAction(control As Control, ByRef oDisplayAction As lm.Comol.Core.ModuleLinks.IExternalModuleDisplayAction, ByRef dtoItem As dtoSubActivity, ByVal isPlayActive As Boolean)
+    '    control.Visible = True
 
-        If Me.ViewModeType = EpViewModeType.View OrElse Me.ViewModeType = EpViewModeType.Stat Then
-            Dim initializer As New lm.Comol.Core.ModuleLinks.dtoExternalModuleInitializer
-            oDisplayAction.ContainerCSS = SubActivityCssClass(dtoItem)
-            oDisplayAction.IconSize = Helpers.IconSize.Small
+    '    If Me.ViewModeType = EpViewModeType.View OrElse Me.ViewModeType = EpViewModeType.Stat Then
+    '        Dim initializer As New lm.Comol.Core.ModuleLinks.dtoExternalModuleInitializer
+    '        oDisplayAction.ContainerCSS = SubActivityCssClass(dtoItem)
+    '        oDisplayAction.IconSize = Helpers.IconSize.Small
 
-            oDisplayAction.EnableAnchor = True
-            oDisplayAction.Display = lm.Comol.Core.ModuleLinks.DisplayActionMode.text
-            initializer.Link = dtoItem.ModuleLink
-
-
-            If isPlayActive Then
-                'oDisplayAction.InitializeControlInlineByLink(dtoItem.ModuleLink)
-                oDisplayAction.Display = lm.Comol.Core.ModuleLinks.DisplayActionMode.defaultAction
-
-            Else
-                ' oDisplayAction.InitializeRemoteControlInlineByLink(True, dtoItem.ModuleLink)
-                oDisplayAction.Display = lm.Comol.Core.ModuleLinks.DisplayActionMode.text
-                oDisplayAction.InitializeControl(initializer)
-            End If
-            oDisplayAction.InitializeControl(initializer)
-        ElseIf Me.ViewModeType = EpViewModeType.Manage Then
-
-        End If
-        oPlaceHolder.Controls.Add(oDisplayAction)
-        ' OPPURE QUESTO SE VUOI RECUPERARE I PULSANTI:
-        'Dim oList As List(Of dtoModuleActionControl) = oDisplayActionFile.InitializeRemoteControlByLink(False, dtoItem.ModuleLink)
-        'Dim PlayControl As dtoModuleActionControl = (From c In oList Where c.ControlType = ModuleActionControlType.Play AndAlso c.Enabled Select c).FirstOrDefault
-        'Dim EditControl As dtoModuleActionControl = (From c In oList Where c.ControlType = ModuleActionControlType.Edit AndAlso c.Enabled Select c).FirstOrDefault
-        'Dim DeleteControl As dtoModuleActionControl = (From c In oList Where c.ControlType = ModuleActionControlType.Delete AndAlso c.Enabled Select c).FirstOrDefault
+    '        oDisplayAction.EnableAnchor = True
+    '        oDisplayAction.Display = lm.Comol.Core.ModuleLinks.DisplayActionMode.text
+    '        initializer.Link = dtoItem.ModuleLink
 
 
-    End Sub
+    '        If isPlayActive Then
+    '            'oDisplayAction.InitializeControlInlineByLink(dtoItem.ModuleLink)
+    '            oDisplayAction.Display = lm.Comol.Core.ModuleLinks.DisplayActionMode.defaultAction
+
+    '        Else
+    '            ' oDisplayAction.InitializeRemoteControlInlineByLink(True, dtoItem.ModuleLink)
+    '            oDisplayAction.Display = lm.Comol.Core.ModuleLinks.DisplayActionMode.text
+    '            oDisplayAction.InitializeControl(initializer)
+    '        End If
+    '        oDisplayAction.InitializeControl(initializer)
+    '    ElseIf Me.ViewModeType = EpViewModeType.Manage Then
+
+    '    End If
+
+    '    ' OPPURE QUESTO SE VUOI RECUPERARE I PULSANTI:
+    '    'Dim oList As List(Of dtoModuleActionControl) = oDisplayActionFile.InitializeRemoteControlByLink(False, dtoItem.ModuleLink)
+    '    'Dim PlayControl As dtoModuleActionControl = (From c In oList Where c.ControlType = ModuleActionControlType.Play AndAlso c.Enabled Select c).FirstOrDefault
+    '    'Dim EditControl As dtoModuleActionControl = (From c In oList Where c.ControlType = ModuleActionControlType.Edit AndAlso c.Enabled Select c).FirstOrDefault
+    '    'Dim DeleteControl As dtoModuleActionControl = (From c In oList Where c.ControlType = ModuleActionControlType.Delete AndAlso c.Enabled Select c).FirstOrDefault
+
+
+    'End Sub
 
     Private Sub LKBdeleteAct_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles LKBdeleteAct.Click
         Me.ServiceEP.VirtualDeleteAllActivity(Me.CurrentActivityID, isAutoEp, Me.CurrentCommunityID, Me.CurrentUserId, OLDpageUtility.ClientIPadress, OLDpageUtility.ProxyIPadress)
-        Me.PageUtility.RedirectToUrl(RootObject.PathView(CurrentPathId, CurrentCommunityID, EpViewModeType.Manage, False))
+        Me.PageUtility.RedirectToUrl(RootObject.PathView(CurrentPathId, CurrentCommunityID, EpViewModeType.Manage, False, IsMoocPath, PreloadIsFromReadOnly))
     End Sub
 
 #Region "ADD"
     Private Sub LNBnewSubAct_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles LNBnewSubAct.Click
         '  Me.DVaddSubActivity.Visible = True
-        Me.CTRLaddAction.Visible = True
-        Me.CTRLaddAction.SetActionvView(UC_AddAction.ActionView.SelectAction)
-        'DVaddSubActivity.Attributes.Add("class", "view-modal")
+        CTRLaddAction.Visible = True
+        CTRLaddAction.SetActionvView(UC_AddAction.ActionView.SelectAction)
         Me.LTscriptOpen.Visible = True
 
         'Dim script As String = String.Format("showDialog('{0}')", "addSubActivity")
@@ -1025,7 +1340,7 @@ Public Class ViewActivity
         'Me.CTRLaddAction.Visible = False
         'Me.LTscriptOpen.Visible = False
         'Me.BindDati()+
-        PageUtility.RedirectToUrl(RootObject.ViewActivity(idSubactivity, Me.CurrentActivityID, Me.CurrentUnitId, Me.CurrentPathId, Me.CurrentCommunityID, EpViewModeType.Manage))
+        PageUtility.RedirectToUrl(RootObject.ViewActivity(idSubactivity, Me.CurrentActivityID, Me.CurrentUnitId, Me.CurrentPathId, Me.CurrentCommunityID, EpViewModeType.Manage, IsMoocPath, PreloadIsFromReadOnly))
     End Sub
 
     'Protected Sub CTRLaddAction_UpdateContainer() Handles CTRLaddAction.UpdateContainer
@@ -1120,7 +1435,7 @@ Public Class ViewActivity
     End Sub
 
     Protected Overrides Sub NotifyUnavailableModule(status As lm.Comol.Core.DomainModel.ModuleStatus)
-        Dim dtoActivity As dtoActivity = ServiceEP.GetActivityStructure_View(CurrentActivityID, Me.CurrentContext.UserContext.CurrentUserID, Me.CurrentCommRoleID, OLDpageUtility.ClientIPadress, OLDpageUtility.ProxyIPadress, DateTime.Now)
+        Dim dtoActivity As dtoActivity = ServiceEP.GetActivityStructure_View(CurrentActivityID, PageUtility.CurrentContext.UserContext.CurrentUserID, IdCommunityRole, OLDpageUtility.ClientIPadress, OLDpageUtility.ProxyIPadress, DateTime.Now)
         If Not IsNothing(dtoActivity) Then
             If ServiceEP.CheckStatus(dtoActivity.Status, lm.Comol.Modules.EduPath.Domain.Status.Text) Then
                 Master.ServiceTitle = Me.Resource.getValue("Note")
@@ -1137,4 +1452,17 @@ Public Class ViewActivity
             Return True
         End Get
     End Property
+
+    Private Sub CTRLaddVersion_AddVersion(idItem As Long, file As lm.Comol.Core.FileRepository.Domain.dtoUploadedItem) Handles CTRLaddVersion.AddVersion
+        Dim result As lm.Comol.Core.BaseModules.FileRepository.Domain.VersionErrors = ServiceRepository.AddVersionToFile(SystemSettings.NotificationErrorService.ComolUniqueID, idItem, file, Resource.getValue("UnknownUserTranslation"), PageUtility.GetRepositoryDiskPath, lm.Comol.Core.FileRepository.Domain.RepositoryIdentifier.Create(lm.Comol.Core.FileRepository.Domain.RepositoryType.Community, CurrentCommunityID), True, True, True)
+        Master.ClearOpenedDialogOnPostback()
+        CTRLaddVersion.Visible = True
+        Select Case result
+            Case lm.Comol.Core.BaseModules.FileRepository.Domain.VersionErrors.none
+                PageUtility.RedirectToUrl(RootObject.ViewActivity(Me.CurrentActivityID, Me.CurrentUnitId, Me.CurrentPathId, Me.CurrentCommunityID, EpViewModeType.Manage, IsMoocPath, PreloadIsFromReadOnly))
+            Case Else
+                CTRLversionMessage.Visible = True
+                CTRLversionMessage.InitializeControl(Resource.getValue("VersionErrors." & result.ToString), Helpers.MessageType.error)
+        End Select
+    End Sub
 End Class

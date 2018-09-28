@@ -6,7 +6,7 @@ Imports lm.Comol.Core.DomainModel
 Imports lm.Comol.Modules.EduPath.Presentation
 
 Public Class EPSummaryIndex
-    Inherits PageBase
+    Inherits EPlitePageBaseEduPath
     Implements IViewSummaryIndex
 
 

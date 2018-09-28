@@ -4,9 +4,30 @@ Imports lm.ActionDataContract
 Imports lm.Comol.Modules.EduPath.BusinessLogic
 
 Public Class TextItem
-    Inherits PageBaseEduPath
+    Inherits EPpageBaseEduPath
 
-#Region "property"
+#Region "Inherits"
+    Public Overrides ReadOnly Property AlwaysBind As Boolean
+        Get
+            Return False
+        End Get
+    End Property
+    Public Overrides ReadOnly Property VerifyAuthentication As Boolean
+        Get
+            If IsSessioneScaduta(False) Then
+                RedirectOnSessionTimeOut(Request.Url.AbsoluteUri, CurrentCommunityID)
+            End If
+            Return False
+        End Get
+    End Property
+    Protected Overrides ReadOnly Property CheckModuleStatus As Boolean
+        Get
+            Return True
+        End Get
+    End Property
+#End Region
+
+#Region "Internal"
 
     Private _currentStatus As Status = Status.None
     Private Property CurrentStatus As Status
@@ -158,13 +179,19 @@ Public Class TextItem
 
     Private ReadOnly Property CurrentUserId() As Integer
         Get
-            Return Me.CurrentContext.UserContext.CurrentUserID
+            Return PageUtility.CurrentContext.UserContext.CurrentUserID
         End Get
     End Property
 
-    Private ReadOnly Property CurrentCommRoleID As Integer
+    Private ReadOnly Property IdCommunityRole As Integer
         Get
-            Return UtenteCorrente.GetIDRuoloForComunita(CurrentCommunityID)
+            Dim key As String = "CurrentCommRoleID_" & PathId.ToString() & "_" & CurrentUserId.ToString
+            Dim idRole As Integer = ViewStateOrDefault(key, -1)
+            If idRole = -1 Then
+                idRole = ServiceEP.GetIdCommunityRole(CurrentUserId, ServiceEP.GetPathIdCommunity(PathId))
+                ViewState(key) = idRole
+            End If
+            Return idRole
         End Get
     End Property
 
@@ -180,6 +207,10 @@ Public Class TextItem
 
 #End Region
 
+    Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+
+    End Sub
+
 #Region " Base"
 
 
@@ -188,48 +219,36 @@ Public Class TextItem
         Me.CTRLeditorDescription.InitializeControl(lm.Comol.Modules.EduPath.Domain.ModuleEduPath.UniqueCode)
     End Sub
 
-    Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
 
-    End Sub
 
-    Public Overrides ReadOnly Property AlwaysBind As Boolean
-        Get
-            Return False
-        End Get
-    End Property
+#End Region
 
+#Region "Inherits"
     Public Overrides Sub BindDati()
         Me.Master.ServiceTitle = Me.Resource.getValue("TitleTextItem")
-
-                Me.HYPerror.NavigateUrl = Me.BaseUrl & RootObject.PathView(PathId, Me.CurrentCommunityID, EpViewModeType.Manage, ServiceEP.isPlayModePath(PathId))
-
-                Me.InitWizardButton()
-
-                Select Case CurrentStep
-                    Case StepTextItem.NewNote
-                        Me.PageUtility.AddAction(Me.CurrentCommunityID, Services_EduPath.ActionType.Create, Me.PageUtility.CreateObjectsList(ItemType, PathId), InteractionType.UserWithLearningObject)
-                        RealItemId = ServiceEP.SaveActOrUnitNoteDraft(ItemType, ParentId, Me.CurrentUserId, OLDpageUtility.ProxyIPadress, OLDpageUtility.ClientIPadress, CurrentCommunityID)
-                        InitSummaryAssignment()
-
-                    Case StepTextItem.Update
-                        Me.PageUtility.AddAction(Me.CurrentCommunityID, Services_EduPath.ActionType.Edit, Me.PageUtility.CreateObjectsList(ItemType, PathId), InteractionType.UserWithLearningObject)
-                        RealItemId = QueryItemId
-                        InitSummaryAssignment()
-                        Me.CTRLeditorDescription.HTML = Text
-
-                    Case StepTextItem.SelectPermission
-                        Me.PageUtility.AddAction(Me.CurrentCommunityID, Services_EduPath.ActionType.Create, Me.PageUtility.CreateObjectsList(Services_EduPath.ObjectType.Assignment, "0"), InteractionType.UserWithLearningObject)
-                        RealItemId = QueryItemId
-                        Me.InitSelectPermission()
-
-                    Case StepTextItem.SelectPerson
-                        RealItemId = QueryItemId
-                        Me.InitSelectPerson()
-
-                    Case Else
-                        Me.ShowError(EpError.Url)
-                End Select
-
+        IsMoocPath = ServiceEP.IsMooc(PathId)
+        Me.HYPerror.NavigateUrl = Me.BaseUrl & RootObject.PathView(PathId, Me.CurrentCommunityID, EpViewModeType.Manage, ServiceEP.isPlayModePath(PathId), IsMoocPath, PreloadIsFromReadOnly)
+        Me.InitWizardButton()
+        Select Case CurrentStep
+            Case StepTextItem.NewNote
+                Me.PageUtility.AddAction(Me.CurrentCommunityID, Services_EduPath.ActionType.Create, Me.PageUtility.CreateObjectsList(ItemType, PathId), InteractionType.UserWithLearningObject)
+                RealItemId = ServiceEP.SaveActOrUnitNoteDraft(ItemType, ParentId, Me.CurrentUserId, OLDpageUtility.ProxyIPadress, OLDpageUtility.ClientIPadress, CurrentCommunityID)
+                InitSummaryAssignment()
+            Case StepTextItem.Update
+                Me.PageUtility.AddAction(Me.CurrentCommunityID, Services_EduPath.ActionType.Edit, Me.PageUtility.CreateObjectsList(ItemType, PathId), InteractionType.UserWithLearningObject)
+                RealItemId = QueryItemId
+                InitSummaryAssignment()
+                Me.CTRLeditorDescription.HTML = Text
+            Case StepTextItem.SelectPermission
+                Me.PageUtility.AddAction(Me.CurrentCommunityID, Services_EduPath.ActionType.Create, Me.PageUtility.CreateObjectsList(Services_EduPath.ObjectType.Assignment, "0"), InteractionType.UserWithLearningObject)
+                RealItemId = QueryItemId
+                Me.InitSelectPermission()
+            Case StepTextItem.SelectPerson
+                RealItemId = QueryItemId
+                Me.InitSelectPerson()
+            Case Else
+                Me.ShowError(EpError.Url)
+        End Select
     End Sub
 
     Public Overrides Sub BindNoPermessi()
@@ -237,26 +256,21 @@ Public Class TextItem
     End Sub
 
     Public Overrides Function HasPermessi() As Boolean
-
         If ItemType = lm.Comol.Modules.EduPath.Domain.ItemType.Unit Then
             If QueryItemId > 0 Then
-                Return ServiceEP.CheckCommunityId(Of Unit)(QueryItemId, CurrentCommunityID) AndAlso ServiceEP.AdminCanUpdate(QueryItemId, ItemType, CurrentUserId, CurrentCommRoleID)
+                Return ServiceEP.CheckCommunityId(Of Unit)(QueryItemId, CurrentCommunityID) AndAlso ServiceEP.AdminCanUpdate(QueryItemId, ItemType, CurrentUserId, IdCommunityRole)
             Else
-                Return ServiceEP.HasPermessi_ByItem(Of Path)(ParentId, CurrentCommunityID) AndAlso ServiceEP.AdminCanUpdate(ParentId, lm.Comol.Modules.EduPath.Domain.ItemType.Path, CurrentUserId, CurrentCommRoleID)
-
+                Return ServiceEP.HasPermessi_ByItem(Of Path)(ParentId, CurrentCommunityID) AndAlso ServiceEP.AdminCanUpdate(ParentId, lm.Comol.Modules.EduPath.Domain.ItemType.Path, CurrentUserId, IdCommunityRole)
             End If
-
         ElseIf ItemType = lm.Comol.Modules.EduPath.Domain.ItemType.Activity Then
             If QueryItemId > 0 Then
-                Return ServiceEP.CheckCommunityId(Of Activity)(Me.QueryItemId, Me.CurrentCommunityID) AndAlso ServiceEP.AdminCanUpdate(QueryItemId, ItemType, CurrentUserId, CurrentCommRoleID)
+                Return ServiceEP.CheckCommunityId(Of Activity)(Me.QueryItemId, Me.CurrentCommunityID) AndAlso ServiceEP.AdminCanUpdate(QueryItemId, ItemType, CurrentUserId, IdCommunityRole)
             Else
-                Return ServiceEP.HasPermessi_ByItem(Of Unit)(ParentId, CurrentCommunityID) AndAlso ServiceEP.AdminCanUpdate(ParentId, lm.Comol.Modules.EduPath.Domain.ItemType.Unit, CurrentUserId, CurrentCommRoleID)
-
+                Return ServiceEP.HasPermessi_ByItem(Of Unit)(ParentId, CurrentCommunityID) AndAlso ServiceEP.AdminCanUpdate(ParentId, lm.Comol.Modules.EduPath.Domain.ItemType.Unit, CurrentUserId, IdCommunityRole)
             End If
         Else
             Return False
         End If
-
     End Function
 
     Public Overrides Sub RegistraAccessoPagina()
@@ -275,19 +289,21 @@ Public Class TextItem
             .setLabel(Me.LBpersonSummary)
         End With
     End Sub
-
     Public Overrides Sub ShowMessageToPage(ByVal errorMessage As String)
 
     End Sub
 
-    Public Overrides ReadOnly Property VerifyAuthentication As Boolean
-        Get
-            If IsSessioneScaduta(False) Then
-                RedirectOnSessionTimeOut(Request.Url.AbsoluteUri, CurrentCommunityID)
-            End If
-            Return False
-        End Get
-    End Property
+    Protected Overrides Sub NotifyModuleStatus(status As lm.Comol.Core.DomainModel.ModuleStatus)
+        CTRLmoduleStatusMessage.Visible = True
+        CTRLmoduleStatusMessage.InitializeControl(Resource.getValue("EduPath.ModuleStatus." & status.ToString), lm.Comol.Core.DomainModel.Helpers.MessageType.alert)
+    End Sub
+
+    Protected Overrides Sub NotifyUnavailableModule(status As lm.Comol.Core.DomainModel.ModuleStatus)
+        Me.Master.ServiceTitle = Me.Resource.getValue("TitleTextItem")
+        MLVtextItem.SetActiveView(VIWmessages)
+        CTRLmessages.InitializeControl(Resource.getValue("EduPath.ModuleStatus." & status.ToString), lm.Comol.Core.DomainModel.Helpers.MessageType.error)
+    End Sub
+
 
 #End Region
 
@@ -359,9 +375,9 @@ Public Class TextItem
             End If
             If Me.ListOfAssignmentByCommRole.Count = 0 Then
                 If ServiceEP.CheckStatus(CurrentStatus, Status.Draft) Then
-                    Me.ListOfAssignmentByCommRole = Me.ServiceAssignment.GetListCRoleActivityAssignment(0, Me.ParentId, Me.CurrentCommunityID, Me.CurrentContext.UserContext.CurrentUserID, Me.CurrentContext.UserContext.Language.Id)
+                    Me.ListOfAssignmentByCommRole = Me.ServiceAssignment.GetListCRoleActivityAssignment(0, Me.ParentId, Me.CurrentCommunityID, PageUtility.CurrentContext.UserContext.CurrentUserID, PageUtility.CurrentContext.UserContext.Language.Id)
                 Else
-                    Me.ListOfAssignmentByCommRole = Me.ServiceAssignment.GetListCRoleActivityAssignment(Me.RealItemId, Me.ParentId, Me.CurrentCommunityID, Me.CurrentContext.UserContext.CurrentUserID, Me.CurrentContext.UserContext.Language.Id)
+                    Me.ListOfAssignmentByCommRole = Me.ServiceAssignment.GetListCRoleActivityAssignment(Me.RealItemId, Me.ParentId, Me.CurrentCommunityID, PageUtility.CurrentContext.UserContext.CurrentUserID, PageUtility.CurrentContext.UserContext.Language.Id)
                 End If
             End If
 
@@ -377,9 +393,9 @@ Public Class TextItem
             End If
             If Me.ListOfAssignmentByCommRole.Count = 0 Then
                 If ServiceEP.CheckStatus(CurrentStatus, Status.Draft) Then
-                    Me.ListOfAssignmentByCommRole = Me.ServiceAssignment.GetListCRoleUnitAssignment(0, Me.PathId, Me.CurrentCommunityID, Me.CurrentContext.UserContext.CurrentUserID, Me.CurrentContext.UserContext.Language.Id)
+                    Me.ListOfAssignmentByCommRole = Me.ServiceAssignment.GetListCRoleUnitAssignment(0, Me.PathId, Me.CurrentCommunityID, PageUtility.CurrentContext.UserContext.CurrentUserID, PageUtility.CurrentContext.UserContext.Language.Id)
                 Else
-                    Me.ListOfAssignmentByCommRole = Me.ServiceAssignment.GetListCRoleUnitAssignment(Me.RealItemId, Me.PathId, Me.CurrentCommunityID, Me.CurrentContext.UserContext.CurrentUserID, Me.CurrentContext.UserContext.Language.Id)
+                    Me.ListOfAssignmentByCommRole = Me.ServiceAssignment.GetListCRoleUnitAssignment(Me.RealItemId, Me.PathId, Me.CurrentCommunityID, PageUtility.CurrentContext.UserContext.CurrentUserID, PageUtility.CurrentContext.UserContext.Language.Id)
                 End If
             End If
         End If
@@ -511,7 +527,7 @@ Public Class TextItem
                     CurrentStatus = CurrentStatus - Status.Draft
                 End If
                 If PersistData() Then
-                    PageUtility.RedirectToUrl(RootObject.PathView(PathId, CurrentCommunityID, EpViewModeType.Manage, ServiceEP.isPlayModePath(PathId)))
+                    PageUtility.RedirectToUrl(RootObject.PathView(PathId, CurrentCommunityID, EpViewModeType.Manage, ServiceEP.isPlayModePath(PathId), IsMoocPath, PreloadIsFromReadOnly))
                 Else
                     Me.ShowError(EpError.Generic)
                 End If
@@ -527,12 +543,12 @@ Public Class TextItem
             Case StepTextItem.SelectPermission
                 Me.SubGetSelectedPermissionByCRole()
                 Me.SubGetSelectedPermissionByPerson()
-                PageUtility.RedirectToUrl(RootObject.TextItem(RealItemId, ParentId, ItemType, CurrentCommunityID, StepTextItem.Update))
+                PageUtility.RedirectToUrl(RootObject.TextItem(RealItemId, ParentId, ItemType, CurrentCommunityID, StepTextItem.Update, IsMoocPath, PreloadIsFromReadOnly))
 
 
             Case StepTextItem.SelectPerson
                 Me.GetSelectedPerson()
-                PageUtility.RedirectToUrl(RootObject.TextItem(RealItemId, ParentId, ItemType, CurrentCommunityID, StepTextItem.SelectPermission))
+                PageUtility.RedirectToUrl(RootObject.TextItem(RealItemId, ParentId, ItemType, CurrentCommunityID, StepTextItem.SelectPermission, IsMoocPath, PreloadIsFromReadOnly))
 
             Case StepTextItem.Update
                 If ServiceEP.CheckStatus(CurrentStatus, Status.Draft) Then
@@ -540,7 +556,7 @@ Public Class TextItem
                 End If
                 Text = Me.CTRLeditorDescription.HTML
                 If PersistData() Then
-                    RedirectToUrl(RootObject.PathView(PathId, CurrentCommunityID, EpViewModeType.Manage, ServiceEP.isPlayModePath(PathId)))
+                    RedirectToUrl(RootObject.PathView(PathId, CurrentCommunityID, EpViewModeType.Manage, ServiceEP.isPlayModePath(PathId), IsMoocPath, PreloadIsFromReadOnly))
                 Else
                     Me.ShowError(EpError.Generic)
                 End If
@@ -550,7 +566,7 @@ Public Class TextItem
     Public Sub BTNedit_Click(ByVal sender As Object, ByVal e As EventArgs)
         Text = Me.CTRLeditorDescription.HTML
         If Me.PersistData() Then
-            PageUtility.RedirectToUrl(RootObject.TextItem(RealItemId, ParentId, ItemType, CurrentCommunityID, StepTextItem.SelectPermission))
+            PageUtility.RedirectToUrl(RootObject.TextItem(RealItemId, ParentId, ItemType, CurrentCommunityID, StepTextItem.SelectPermission, IsMoocPath, PreloadIsFromReadOnly))
         Else
             Me.ShowError(EpError.Generic)
         End If
@@ -561,11 +577,11 @@ Public Class TextItem
             Case StepTextItem.SelectPermission
                 Me.SubGetSelectedPermissionByCRole()
                 Me.SubGetSelectedPermissionByPerson()
-                Me.PageUtility.RedirectToUrl(RootObject.UpdateTextItem(RealItemId, ParentId, ItemType, CurrentCommunityID))
+                Me.PageUtility.RedirectToUrl(RootObject.UpdateTextItem(RealItemId, ParentId, ItemType, CurrentCommunityID, IsMoocPath, PreloadIsFromReadOnly))
 
             Case StepTextItem.SelectPerson
                 Me.GetSelectedPerson()
-                Me.PageUtility.RedirectToUrl(RootObject.TextItem(RealItemId, ParentId, ItemType, CurrentCommunityID, StepTextItem.SelectPermission))
+                Me.PageUtility.RedirectToUrl(RootObject.TextItem(RealItemId, ParentId, ItemType, CurrentCommunityID, StepTextItem.SelectPermission, IsMoocPath, PreloadIsFromReadOnly))
         End Select
     End Sub
 
@@ -581,14 +597,14 @@ Public Class TextItem
         End If
         ClearSession()
 
-        PageUtility.RedirectToUrl(RootObject.PathView(Me.PathId, Me.CurrentCommunityID, EpViewModeType.Manage, ServiceEP.isPlayModePath(PathId)))
+        PageUtility.RedirectToUrl(RootObject.PathView(Me.PathId, Me.CurrentCommunityID, EpViewModeType.Manage, ServiceEP.isPlayModePath(PathId), IsMoocPath, PreloadIsFromReadOnly))
 
     End Sub
 
     Private Sub BTNselectPerson_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BTNselectPerson.Click
         Me.SubGetSelectedPermissionByCRole()
         Me.SubGetSelectedPermissionByPerson()
-        PageUtility.RedirectToUrl(RootObject.TextItem(RealItemId, ParentId, ItemType, CurrentCommunityID, StepTextItem.SelectPerson))
+        PageUtility.RedirectToUrl(RootObject.TextItem(RealItemId, ParentId, ItemType, CurrentCommunityID, StepTextItem.SelectPerson, IsMoocPath, PreloadIsFromReadOnly))
     End Sub
 
 #End Region
@@ -800,19 +816,19 @@ Public Class TextItem
 
     Private Sub ShowError(ByVal ErrorType As EpError)
         Me.Resource.setHyperLink(Me.HYPerror, False, True)
-        Me.HYPerror.NavigateUrl = Me.BaseUrl & RootObject.EduPathList(Me.CurrentCommunityID, EpViewModeType.Manage)
+        Me.HYPerror.NavigateUrl = Me.BaseUrl & RootObject.EduPathList(Me.CurrentCommunityID, EpViewModeType.Manage, IsMoocPath)
         Select Case ErrorType
             Case EpError.Generic
-                Me.LBerror.Text = Me.Resource.getValue("Error." & EpError.Generic.ToString)
+                CTRLerrorMessage.InitializeControl(Resource.getValue("Error." & ErrorType.ToString), lm.Comol.Core.DomainModel.Helpers.MessageType.error)
                 Me.PageUtility.AddAction(Services_EduPath.ActionType.GenericError, Nothing, InteractionType.UserWithLearningObject)
             Case EpError.NotPermission
-                Me.LBerror.Text = Me.Resource.getValue("Error." & EpError.NotPermission.ToString)
+                CTRLerrorMessage.InitializeControl(Resource.getValue("Error." & ErrorType.ToString), lm.Comol.Core.DomainModel.Helpers.MessageType.alert)
                 Me.PageUtility.AddAction(Services_EduPath.ActionType.NoPermission, Nothing, InteractionType.UserWithLearningObject)
             Case EpError.Url
-                Me.LBerror.Text = Me.Resource.getValue("Error." & EpError.Url.ToString)
+                CTRLerrorMessage.InitializeControl(Resource.getValue("Error." & ErrorType.ToString), lm.Comol.Core.DomainModel.Helpers.MessageType.alert)
                 Me.PageUtility.AddAction(Services_EduPath.ActionType.GenericError, Nothing, InteractionType.UserWithLearningObject)
             Case EpError.PathNotFind
-                Me.LBerror.Text = Me.Resource.getValue("Error." & EpError.Url.ToString)
+                CTRLerrorMessage.InitializeControl(Resource.getValue("Error." & ErrorType.ToString), lm.Comol.Core.DomainModel.Helpers.MessageType.error)
                 Me.PageUtility.AddAction(Services_EduPath.ActionType.GenericError, Nothing, InteractionType.UserWithLearningObject)
 
         End Select
@@ -828,22 +844,7 @@ Public Class TextItem
         Return transactionOk
     End Function
 
-    Protected Overrides Sub NotifyModuleStatus(status As lm.Comol.Core.DomainModel.ModuleStatus)
-        CTRLmoduleStatusMessage.Visible = True
-        CTRLmoduleStatusMessage.InitializeControl(Resource.getValue("EduPath.ModuleStatus." & status.ToString), lm.Comol.Core.DomainModel.Helpers.MessageType.alert)
-    End Sub
 
-    Protected Overrides Sub NotifyUnavailableModule(status As lm.Comol.Core.DomainModel.ModuleStatus)
-        Me.Master.ServiceTitle = Me.Resource.getValue("TitleTextItem")
-        MLVtextItem.SetActiveView(VIWmessages)
-        CTRLmessages.InitializeControl(Resource.getValue("EduPath.ModuleStatus." & status.ToString), lm.Comol.Core.DomainModel.Helpers.MessageType.error)
-    End Sub
-
-    Protected Overrides ReadOnly Property CheckModuleStatus As Boolean
-        Get
-            Return True
-        End Get
-    End Property
 End Class
 
 Public Enum StepTextItem

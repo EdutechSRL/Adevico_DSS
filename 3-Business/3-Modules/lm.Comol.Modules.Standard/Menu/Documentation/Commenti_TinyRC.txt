@@ -1,0 +1,63 @@
+﻿Questa versione è la più leggera del punto di vista delle classi.
+
+Una sola classe rappresenta ogni elemento possibile all'interno del menu.
+
+Questa strada puo' andare bene se i sottoelementi sono rappresentati dentro UnorderList e distinti SOLO dalla classe CSS.
+Sarà compito della business poi valutare la correttezza degli elementi.
+
+DATA:
+	* -> utilizzati internamente, trasparenti per gli utenti
+    # -> intanto con valori di default, ma potrenno avere la loro valenza in futuro
+    @ -> domain Object
+    
+	Menu
+		@   ID
+		@*  DisplayOrder (via treeview)
+		@ # CssClass
+		@   Link
+		@   Name
+		@   LocalName
+		    IsCurrent
+		    Enabled (not used)
+		 *# Type	<- Se di comunità/Sistema/Amministrazione, etc...
+		 *  Permission (??)
+		  # CommunityId
+		  # CommunitytypeId
+
+	ITEM
+									* = obbligatorio	@ = Facoltativo	/ = inutile	? = da definire
+						Elementi	1	8	2	3	4	11	12	13	
+		@   ID						*	*	*	*	*	*	*	*
+		@*  DisplayOrder			*	*	*	*	*	*	*	*	(via treeview)
+		@ # CssClass				*	*	*	*	*	*	*	*
+		@   Link					*	/	/	/	*	*	*	*
+		@   Name					*	*	*	*	*	*	*	*
+		@   LocalName				*	*	*	*	*	*	*	*
+			AssociatedService		*	?	/	@	*	*	*	*
+			ServicePermission		*	?	/	@	*	*	*	*
+			Type (vedi enum)		*	*	*	*	*	*	*	*
+			Children				*	@	/	/	3	/	/	/
+			Father					*	/	*	*	*	*	*	*
+			Menubar					*	*	*	*	*	*	*	*
+			IsEnabled				*	*	*	*	*	*	*	*
+			IsDisabledShow			*	*	*	*	*	*	*	*
+
+ 1	MainVoice
+ 8	Column
+ 2	Sparator
+ 3	Text
+ 4	Link
+11	ImgNew
+12	ImgStat
+13	ImgAdmin
+
+Valutare SE:
+1 UC con TUTTI i dati eventualmente necessari e nasconde quelli non necessari		(quella che farei)
+2 UC uno per il "main level" e l'altro per gli altri. Il secondo come il punto 1	(attuale)
+N UC quanti sono i tipi di elemento. Seleziono il tipo ed in base a quello attivo una multiview con tutti i controlli
+
+Da fare:
+1. Rivedere UC ed allinearli con le classi
+2. Confermato il tutto creare tabelle e funzioni CRUD
+3. Aggiornare/Allinare i vari UC
+4. Creare la funzione di RENDER: una funzione che mi restituisce il render corretto (Stringa HTML) da usare anche per MVC a seconda di utente e permessi

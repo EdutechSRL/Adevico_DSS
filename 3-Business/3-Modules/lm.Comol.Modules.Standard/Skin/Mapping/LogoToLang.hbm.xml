@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="lm.Comol.Modules.Standard" namespace="lm.Comol.Modules.Standard.Skin.Domain">
+    <class name="LogoToLang" table="Skin_LogoToLang" >
+        <id name="ID" column="ID" type="Int64">
+            <generator class="native"/>
+        </id>
+        <property name="LangCode" type="String" column="LangCode" />
+        
+        <many-to-one name="Logo" class="lm.Comol.Modules.Standard.Skin.Domain.FooterLogo" column="LogoId" foreign-key="LogoId" cascade="none"/>
+        
+    </class>
+</hibernate-mapping>

@@ -5,6 +5,8 @@ Imports System.Threading
 Imports System.Threading.Tasks
 Imports lm.Comol.Core.FileRepository.Domain
 
+Imports ColDomain = lm.Comol.Core.DomainModel
+
 
 Public Class AsyncRepositoryHandler
     Implements System.Web.IHttpAsyncHandler, IReadOnlySessionState
@@ -450,29 +452,70 @@ Public Class AsynchOperation
         Dim ItemPermission As Boolean = False
 
         If idLink > 0 Then
-            Dim oSender As PermissionService.IServicePermission = Nothing
+
+            'Su WCF_CoreService
             Try
-                oSender = New PermissionService.ServicePermissionClient
-                Dim permission As Integer = 0 'oSender.ModuleLinkActionPermission(LinkID, UCServices.Services_File.ActionType.DownloadFile, UserID, lm.Comol.Core.DomainModel.ModuleObject.CreateLongObject(oFile.Id, oFile, IIf(oFile.isSCORM, UCServices.Services_File.ObjectType.FileScorm, UCServices.Services_File.ObjectType.File), CommunityID, UCServices.Services_File.Codex))
+                Dim permission As Integer = 0
+
+
+                Dim moduleObject As lm.Comol.Core.DomainModel.ModuleObject =
+                    lm.Comol.Core.DomainModel.ModuleObject.CreateLongObject(
+                            item.Id,
+                            itemVersion.Id,
+                            item,
+                            IIf(item.Type = ItemType.ScormPackage, ModuleRepository.ObjectType.ScormPackage, ModuleRepository.ObjectType.File),
+                            item.IdCommunity,
+                            ModuleRepository.UniqueCode)
+
                 If item.Type = ItemType.File Then
-                    permission = oSender.ModuleLinkActionPermission(idLink, ModuleRepository.ActionType.DownloadFile, lm.Comol.Core.DomainModel.ModuleObject.CreateLongObject(item.Id, itemVersion.Id, item, IIf(item.Type = ItemType.ScormPackage, ModuleRepository.ObjectType.ScormPackage, ModuleRepository.ObjectType.File), item.IdCommunity, ModuleRepository.UniqueCode), idUser, GetExternalUsers(), Nothing)
+                    permission = MyModuleLinkActionPermission(
+                        idLink,
+                        ModuleRepository.ActionType.DownloadFile,
+                        moduleObject,
+                        idUser,
+                        GetExternalUsers(),
+                        Nothing)
+
                 Else
-                    permission = oSender.ModuleLinkActionPermission(idLink, ModuleRepository.ActionType.PlayFile, lm.Comol.Core.DomainModel.ModuleObject.CreateLongObject(item.Id, itemVersion.Id, item, IIf(item.Type = ItemType.ScormPackage, ModuleRepository.ObjectType.ScormPackage, ModuleRepository.ObjectType.File), item.IdCommunity, ModuleRepository.UniqueCode), idUser, GetExternalUsers(), Nothing)
+                    permission = MyModuleLinkActionPermission(
+                        idLink,
+                        ModuleRepository.ActionType.PlayFile,
+                        moduleObject,
+                        idUser,
+                        GetExternalUsers(),
+                        Nothing)
+
                 End If
 
                 iResponse = (ModuleRepository.Base2Permission.DownloadOrPlay And permission)
-                If Not IsNothing(oSender) Then
-                    Dim service As System.ServiceModel.ClientBase(Of PermissionService.IServicePermission) = DirectCast(oSender, System.ServiceModel.ClientBase(Of PermissionService.IServicePermission))
-                    service.Close()
-                    service = Nothing
-                End If
+
             Catch ex As Exception
-                If Not IsNothing(oSender) Then
-                    Dim service As System.ServiceModel.ClientBase(Of PermissionService.IServicePermission) = DirectCast(oSender, System.ServiceModel.ClientBase(Of PermissionService.IServicePermission))
-                    service.Abort()
-                    service = Nothing
-                End If
+
             End Try
+
+            'Dim oSender As PermissionService.IServicePermission = Nothing
+            'Try
+            'oSender = New PermissionService.ServicePermissionClient
+            'Dim permission As Integer = 0 'oSender.ModuleLinkActionPermission(LinkID, UCServices.Services_File.ActionType.DownloadFile, UserID, lm.Comol.Core.DomainModel.ModuleObject.CreateLongObject(oFile.Id, oFile, IIf(oFile.isSCORM, UCServices.Services_File.ObjectType.FileScorm, UCServices.Services_File.ObjectType.File), CommunityID, UCServices.Services_File.Codex))
+            'If item.Type = ItemType.File Then
+            '    permission = oSender.ModuleLinkActionPermission(idLink, ModuleRepository.ActionType.DownloadFile, lm.Comol.Core.DomainModel.ModuleObject.CreateLongObject(item.Id, itemVersion.Id, item, IIf(item.Type = ItemType.ScormPackage, ModuleRepository.ObjectType.ScormPackage, ModuleRepository.ObjectType.File), item.IdCommunity, ModuleRepository.UniqueCode), idUser, GetExternalUsers(), Nothing)
+            'Else
+            '    permission = oSender.ModuleLinkActionPermission(idLink, ModuleRepository.ActionType.PlayFile, lm.Comol.Core.DomainModel.ModuleObject.CreateLongObject(item.Id, itemVersion.Id, item, IIf(item.Type = ItemType.ScormPackage, ModuleRepository.ObjectType.ScormPackage, ModuleRepository.ObjectType.File), item.IdCommunity, ModuleRepository.UniqueCode), idUser, GetExternalUsers(), Nothing)
+            'End If
+
+            'iResponse = (ModuleRepository.Base2Permission.DownloadOrPlay And permission)
+            'If Not IsNothing(oSender) Then
+            '    Dim service As System.ServiceModel.ClientBase(Of PermissionService.IServicePermission) = DirectCast(oSender, System.ServiceModel.ClientBase(Of PermissionService.IServicePermission))
+            '    service.Close()
+            '    service = Nothing
+            'End If
+            'Catch ex As Exception
+            '    If Not IsNothing(oSender) Then
+            '        Dim service As System.ServiceModel.ClientBase(Of PermissionService.IServicePermission) = DirectCast(oSender, System.ServiceModel.ClientBase(Of PermissionService.IServicePermission))
+            '        service.Abort()
+            '        service = Nothing
+            '    End If
+            'End Try
         ElseIf idModule = 0 OrElse moduleCode = lm.Comol.Core.FileRepository.Domain.ModuleRepository.UniqueCode Then
             iResponse = Service.HasPermissionToSeeItem(idUser, item, itemVersion, ModuleRepository.ActionType.DownloadFile)
         Else
@@ -481,6 +524,185 @@ Public Class AsynchOperation
 
         Return iResponse
     End Function
+
+
+#Region "Service Permissions"
+    Public Function MyModuleLinkActionPermission(
+            ByVal idLink As Int64,
+            ByVal idAction As Integer,
+            ByVal destination As ColDomain.ModuleObject,
+            ByVal idUser As Integer,
+            ByVal moduleUserLong As Dictionary(Of String, Long),
+            ByVal moduleUserString As Dictionary(Of String, String)
+            ) As Long
+
+        Dim permissions As Long = 0
+
+        If AllowActionExecutionForExternal(idLink, idAction, destination, idUser, moduleUserLong, moduleUserString) Then
+
+            Dim link As ColDomain.liteModuleLink = BaseManager.Get(Of ColDomain.liteModuleLink)(idLink)
+
+            If Not IsNothing(link) Then
+                permissions = link.Permission
+            End If
+
+        End If
+        Return permissions
+    End Function
+
+
+    Public Function AllowActionExecutionForExternal(
+        ByVal idLink As Long,
+        ByVal idAction As Int32,
+        ByVal destination As ColDomain.ModuleObject,
+        ByVal idUser As Int32,
+        ByVal moduleUserLong As Dictionary(Of String, Long),
+        ByVal moduleUserString As Dictionary(Of String, String)) _
+        As Boolean
+
+        Dim allow As Boolean = False
+
+        Dim link As ColDomain.ModuleLink = BaseManager.Get(Of ColDomain.ModuleLink)(idLink)
+
+        If Not IsNothing(link) _
+            AndAlso link.Action = idAction _
+            AndAlso Not IsNothing(link.DestinationItem) _
+            AndAlso link.DestinationItem.Equals(destination) _
+            Then
+
+            Dim idSourceCommunity As Integer = link.SourceItem.CommunityID
+            Dim idRole As Integer = GetIdRole(idUser, idSourceCommunity)
+
+
+            Try
+                Select Case link.SourceItem.ServiceCode
+                    Case UCServices.Services_EduPath.Codex
+                        Dim localService As New lm.Comol.Modules.EduPath.BusinessLogic.Service(PageUtility.CurrentContext.DataContext)
+                        allow = localService.AllowActionExecution(link, idUser, idSourceCommunity, idRole, moduleUserLong, moduleUserString)
+
+                    Case lm.Comol.Core.BaseModules.CommunityDiary.Domain.ModuleCommunityDiary.UniqueID
+                        Dim localService As New lm.Comol.Core.BaseModules.CommunityDiary.Business.ServiceCommunityDiary(PageUtility.CurrentContext.DataContext)
+                        allow = localService.AllowActionExecution(link, idUser, idSourceCommunity, idRole, moduleUserLong, moduleUserString)
+
+                    'Case lm.Comol.Modules.Standard.ProjectManagement.Domain.ModuleProjectManagement.UniqueCode
+                    '    Dim localService As New lm.Comol.Modules.Standard.ProjectManagement.Business.ServiceProjectManagement(PageUtility.CurrentContext.DataContext)
+                    '    allow = localService.AllowActionExecution(link, idUser, idSourceCommunity, idRole, moduleUserLong, moduleUserString)
+
+                    Case lm.Comol.Modules.CallForPapers.Domain.ModuleCallForPaper.UniqueCode
+                        Dim localService As New lm.Comol.Modules.CallForPapers.Business.ServiceCallOfPapers(PageUtility.CurrentContext.DataContext)
+                        allow = localService.AllowActionExecution(link, idUser, idSourceCommunity, idRole, moduleUserLong, moduleUserString)
+
+                    Case lm.Comol.Modules.CallForPapers.Domain.ModuleRequestForMembership.UniqueCode
+                        Dim localService As New lm.Comol.Modules.CallForPapers.Business.ServiceRequestForMembership(PageUtility.CurrentContext.DataContext)
+                        allow = localService.AllowActionExecution(link, idUser, idSourceCommunity, idRole, moduleUserLong, moduleUserString)
+
+                    Case lm.Comol.Core.BaseModules.Tickets.ModuleTicket.UniqueCode
+                        Dim localService As New lm.Comol.Core.BaseModules.Tickets.TicketService(PageUtility.CurrentContext.DataContext)
+                        allow = localService.AllowActionExecution(link, idUser, idSourceCommunity, idRole, moduleUserLong, moduleUserString)
+
+                    Case COL_Questionario.ModuleQuestionnaire.UniqueID
+                        Dim localService As New COL_Questionario.Business.ServiceQuestionnaire(PageUtility.CurrentContext.DataContext)
+                        allow = localService.AllowActionExecution(link, idUser, idSourceCommunity, idRole, moduleUserLong, moduleUserString)
+
+                    Case lm.Comol.Core.FileRepository.Domain.ModuleRepository.UniqueCode
+                        Dim localService As New lm.Comol.Core.BaseModules.FileRepository.Business.ServiceRepositoryScorm(PageUtility.CurrentContext.DataContext, Nothing)
+                        allow = localService.AllowActionExecution(link, idUser, idSourceCommunity, idRole, moduleUserLong, moduleUserString)
+
+                    Case Else
+                        allow = False
+                End Select
+            Catch ex As Exception
+
+            End Try
+
+            'Return AllowActionExecution(
+            '        ,
+            '        PageUtility.CurrentContext.DataContext,
+            '        PageUtility.CurrentContext.DataContext,
+            '        link, idUser, , idRole, moduleUserLong, moduleUserString)
+
+            'Dim lkService As ColDomain.iLinkedService
+
+            'Try
+            '    lkService = AllowActionExecution(
+            '        link.SourceItem.ServiceCode,
+            '        PageUtility.CurrentContext.DataContext,
+            '        PageUtility.CurrentContext.DataContext,
+            '        link, idUser, idSourceCommunity, idRole, moduleUserLong, moduleUserString)
+
+            'Catch ex As Exception
+
+            'End Try
+
+
+            'If Not IsNothing(lkService) Then
+            '    allow = lkService.AllowActionExecution(link, idUser, idSourceCommunity, idRole, moduleUserLong, moduleUserString)
+            'End If
+        End If
+
+        Return allow
+
+    End Function
+
+    Private Function GetIdRole(ByVal idUser As Int32, ByVal idCommunity As Int32) As Int32
+
+        Dim roleId As Integer = (From r In BaseManager.GetIQ(Of ColDomain.liteSubscriptionInfo)()
+                                 Where r.IdCommunity = idCommunity _
+                                AndAlso r.IdPerson = idUser _
+                                AndAlso r.Accepted AndAlso r.Enabled
+                                 Select r.IdRole).Skip(0).Take(1).ToList().FirstOrDefault()
+
+        If IsNothing(roleId) OrElse roleId = 0 Then
+            roleId = CInt(COL_BusinessLogic_v2.Main.TipoRuoloStandard.Guest)
+        End If
+
+        Return roleId
+    End Function
+
+
+    Dim _baseManager As lm.Comol.Core.Business.BaseModuleManager
+
+    Private ReadOnly Property BaseManager As lm.Comol.Core.Business.BaseModuleManager
+        Get
+            If IsNothing(_baseManager) Then
+                _baseManager = New lm.Comol.Core.Business.BaseModuleManager(PageUtility.CurrentContext)
+            End If
+
+            Return _baseManager
+        End Get
+    End Property
+
+    Private _PageUtility As PresentationLayer.OLDpageUtility
+    Protected ReadOnly Property PageUtility() As PresentationLayer.OLDpageUtility
+        Get
+            If IsNothing(_PageUtility) Then
+                _PageUtility = New OLDpageUtility(HttpContext.Current)
+            End If
+            Return _PageUtility
+        End Get
+    End Property
+
+
+    'Private Function AllowActionExecution(
+    '            ByVal serviceCode As String,
+    '            ByVal dc As ColDomain.iDataContext,
+    '            ByVal ic As ColDomain.iDataContext,
+    '             ByVal link As ColDomain.ModuleLink,
+    '        ByVal idUser As Int32,
+    '        ByVal idCommunity As Int32,
+    '        ByVal idRole As Int32,
+    '        Optional ByVal moduleUserLong As Dictionary(Of String, Long) = Nothing,
+    '        Optional ByVal moduleUserString As Dictionary(Of String, String) = Nothing) _
+    '    As Boolean
+
+    '    'Dim service As ColDomain.iLinkedService
+
+
+
+    'End Function
+
+#End Region
+
 #End Region
 
 #Region "Manage News"

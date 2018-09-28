@@ -9,7 +9,7 @@ Imports lm.Comol.Core.DomainModel
 
 
 Public Class Validate
-    Inherits PageBaseEduPath
+    Inherits EPpageBaseEduPath
 
 #Region "InitStandard"
 
@@ -58,29 +58,47 @@ Public Class Validate
 
 #End Region
 
-#Region " Base"
-
-
-    Private Sub Page_PreLoad(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.PreLoad
-        PageUtility.CurrentModule = PageUtility.GetModule(Services_EduPath.Codex)
-    End Sub
-
-    Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-
-    End Sub
-
+#Region "Inherits"
+    Public Overrides ReadOnly Property VerifyAuthentication As Boolean
+        Get
+            If IsSessioneScaduta(False) Then
+                RedirectOnSessionTimeOut(Request.Url.AbsoluteUri, CurrentCommunityID)
+            End If
+            Return False
+        End Get
+    End Property
     Public Overrides ReadOnly Property AlwaysBind As Boolean
         Get
             Return False
         End Get
     End Property
+#End Region
 
+#Region "Internal"
+    Private ReadOnly Property IdCommunityRole As Integer
+        Get
+            Dim key As String = "CurrentCommRoleID_" & CurrentPathId.ToString() & "_" & CurrentUserId.ToString
+            Dim idRole As Integer = ViewStateOrDefault(key, -1)
+            If idRole = -1 Then
+                idRole = ServiceEP.GetIdCommunityRole(CurrentUserId, ServiceEP.GetPathIdCommunity(CurrentPathId))
+                ViewState(key) = idRole
+            End If
+            Return idRole
+        End Get
+    End Property
+#End Region
+
+
+
+    Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+
+    End Sub
+
+#Region "Internal"
     Public Overrides Sub BindDati()
         Me.PageUtility.AddAction(Me.CurrentCommunityID, Services_EduPath.ActionType.Access, Me.PageUtility.CreateObjectsList(Services_EduPath.ObjectType.EduPath, Me.CurrentPathId), InteractionType.UserWithLearningObject)
-
-        EvaluatedItems = ServiceEP.GetEpStructure_toValidate(CurrentPathId, CurrentUserId, CurrentCommRoleID)
+        EvaluatedItems = ServiceEP.GetEpStructure_toValidate(CurrentPathId, CurrentUserId, IdCommunityRole)
         initPageValidate()
-
     End Sub
 
     Public Overrides Sub BindNoPermessi()
@@ -88,17 +106,20 @@ Public Class Validate
     End Sub
 
     Public Overrides Function HasPermessi() As Boolean
-
-        Return ServiceEP.CheckCommunityId(Of Path)(Me.CurrentPathId, Me.CurrentCommunityID) AndAlso Not (lm.Comol.Modules.EduPath.Domain.ItemType.Unit = ItemType AndAlso isAutoEp) AndAlso ServiceEP.GetUserPermission_ByPath(CurrentPathId, Me.CurrentUserId, Me.CurrentCommRoleID).Evaluate
-
+        Return ServiceEP.CheckCommunityId(Of Path)(Me.CurrentPathId, Me.CurrentCommunityID) AndAlso Not (lm.Comol.Modules.EduPath.Domain.ItemType.Unit = ItemType AndAlso isAutoEp) AndAlso ServiceEP.GetUserPermission_ByPath(CurrentPathId, Me.CurrentUserId, IdCommunityRole).Evaluate
     End Function
 
-    Public Overrides Sub RegistraAccessoPagina()
-
-    End Sub
-
     Public Overrides Sub SetCultureSettings()
-        MyBase.SetCulture("pg_EpView", "EduPath")
+        If Not Page.IsPostBack AndAlso String.IsNullOrWhiteSpace(Request.QueryString("isMooc")) Then
+            IsMoocPath = ServiceEP.IsMooc(CurrentPathId)
+        ElseIf Not Page.IsPostBack Then
+            IsMoocPath = PreloadIsMooc
+        End If
+        If IsMoocPath Then
+            MyBase.SetCulture("pg_MoocView", "EduPath")
+        Else
+            MyBase.SetCulture("pg_EpView", "EduPath")
+        End If
     End Sub
 
     Public Overrides Sub SetInternazionalizzazione()
@@ -109,19 +130,26 @@ Public Class Validate
             .setLabel(Me.LBunitList)
         End With
     End Sub
+    Public Overrides Sub RegistraAccessoPagina()
 
+    End Sub
     Public Overrides Sub ShowMessageToPage(ByVal errorMessage As String)
 
     End Sub
 
-    Public Overrides ReadOnly Property VerifyAuthentication As Boolean
-        Get
-            If IsSessioneScaduta(False) Then
-                RedirectOnSessionTimeOut(Request.Url.AbsoluteUri, CurrentCommunityID)
-            End If
-            Return False
-        End Get
-    End Property
+#End Region
+#Region " Base"
+
+
+    Private Sub Page_PreLoad(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.PreLoad
+        PageUtility.CurrentModule = PageUtility.GetModule(Services_EduPath.Codex)
+    End Sub
+
+
+
+
+
+
 
 #End Region
 
@@ -161,12 +189,7 @@ Public Class Validate
     End Property
     Private ReadOnly Property CurrentUserId() As Integer
         Get
-            Return Me.CurrentContext.UserContext.CurrentUserID
-        End Get
-    End Property
-    Private ReadOnly Property CurrentCommRoleID As Integer
-        Get
-            Return UtenteCorrente.GetIDRuoloForComunita(CurrentCommunityID)
+            Return PageUtility.CurrentContext.UserContext.CurrentUserID
         End Get
     End Property
 
@@ -222,17 +245,17 @@ Public Class Validate
     End Property
 
     Private Sub InitHyperlink()
-        Me.HYPerror.NavigateUrl = Me.BaseUrl & RootObject.PathView(CurrentPathId, Me.CurrentCommunityID, EpViewModeType.Manage, ServiceEP.isPlayModePath(CurrentPathId))
+        Me.HYPerror.NavigateUrl = Me.BaseUrl & RootObject.PathView(CurrentPathId, Me.CurrentCommunityID, EpViewModeType.Manage, ServiceEP.isPlayModePath(CurrentPathId), IsMoocPath, PreloadIsFromReadOnly)
 
         If Not isAutoEp Then
             If ItemType = lm.Comol.Modules.EduPath.Domain.ItemType.Unit Then
-                Me.HYPswitchMode.NavigateUrl = Me.BaseUrl & RootObject.Validate(Me.CurrentPathId, Me.CurrentCommunityID, lm.Comol.Modules.EduPath.Domain.ItemType.Activity)
+                Me.HYPswitchMode.NavigateUrl = Me.BaseUrl & RootObject.Validate(Me.CurrentPathId, Me.CurrentCommunityID, lm.Comol.Modules.EduPath.Domain.ItemType.Activity, IsMoocPath, PreloadIsFromReadOnly)
 
                 Me.HYPswitchMode.Text = Resource.getValue("SwitchMode.Activity")
                 Me.HYPswitchMode.ToolTip = Resource.getValue("SwitchMode.Activity")
 
             Else
-                Me.HYPswitchMode.NavigateUrl = Me.BaseUrl & RootObject.Validate(Me.CurrentPathId, Me.CurrentCommunityID, lm.Comol.Modules.EduPath.Domain.ItemType.Unit)
+                Me.HYPswitchMode.NavigateUrl = Me.BaseUrl & RootObject.Validate(Me.CurrentPathId, Me.CurrentCommunityID, lm.Comol.Modules.EduPath.Domain.ItemType.Unit, IsMoocPath, PreloadIsFromReadOnly)
                 Me.HYPswitchMode.Text = Resource.getValue("SwitchMode.Unit")
                 Me.HYPswitchMode.ToolTip = Resource.getValue("SwitchMode.Unit")
             End If
@@ -249,26 +272,9 @@ Public Class Validate
             Dim userId As Int32 = Me.CurrentUserId
             Dim pathId As Int64 = Me.CurrentPathId
 
-            'unit rules
-            Dim unit As IList(Of dtoUnitUser) = ServiceEP.GetFreeUnitsByPathId_Validate(EvaluatedItems)
 
-            Dim rulesUnit As IList(Of RuleUnitCompletion) = ServiceEP.MergeUnitRulesWithUserCompletion_Validate(EvaluatedItems)
-
-            Dim engineUnit As New RuleEngine(Of dtoUnitUser)
-
-            For Each rule As RuleUnitCompletion In rulesUnit
-                engineUnit.AddRule(rule)
-            Next
-
-            Dim resultUnit As IList(Of KeyValuePair(Of dtoUnitUser, RuleEngineResult(Of dtoUnitUser))) = engineUnit.ExecuteFromTopByRoots(unit)
-            If IsNothing(resultUnit) Then
-                resultUnit = New List(Of KeyValuePair(Of dtoUnitUser, RuleEngineResult(Of dtoUnitUser)))
-            End If
-            VisibleUnit = (From item In resultUnit Select item.Key.Id).ToList()
-
-            'end unit rules
-
-            ' act regole
+            ' Rules
+            ' act rules
             Dim act As IList(Of dtoActivityUser) = ServiceEP.GetFreeActivitiesByPathId_Validate(EvaluatedItems)
 
             Dim rules As IList(Of RuleActivityCompletion) = ServiceEP.MergeActivityRulesWithUserCompletion_Validate(EvaluatedItems)
@@ -282,6 +288,47 @@ Public Class Validate
             If result IsNot Nothing Then
                 VisibleActivity = (From item In result Select item.Key.Id).ToList()
             End If
+            'end act rules
+
+            'unit rules
+            Dim unit As IList(Of dtoUnitUser) = ServiceEP.GetFreeUnitsByPathId_Validate(EvaluatedItems)
+
+            Dim rulesUnit As IList(Of RuleUnitCompletion) = ServiceEP.MergeUnitRulesWithUserCompletion_Validate(EvaluatedItems)
+
+            Dim engineUnit As New RuleEngine(Of dtoUnitUser)
+
+            For Each rule As RuleUnitCompletion In rulesUnit
+                engineUnit.AddRule(rule)
+            Next
+
+            Dim resultUnit As IList(Of KeyValuePair(Of dtoUnitUser, RuleEngineResult(Of dtoUnitUser))) = engineUnit.ExecuteFromTopByRoots(unit)
+
+            ''ToDo: FIXED!!!
+            Dim unitsId As List(Of Int64) = (From item In resultUnit Select item.Key.Id).ToList()
+
+            If result IsNot Nothing Then
+                If IsNothing(VisibleUnit) Then
+                    VisibleUnit = New List(Of Long)()
+                End If
+
+                For Each dUnit As dtoUnitStructureValidate In EvaluatedItems.Units
+                    If unitsId.Contains(dUnit.Id) AndAlso _
+                        dUnit.Activities.Any(Function(a As dtoActStructureValidate) VisibleActivity.Contains(a.Id)) Then
+                        VisibleUnit.Add(dUnit.Id)
+                    End If
+                Next
+
+                'VisibleUnit = (From item In result Select item.Key.Id).ToList()
+            End If
+
+            'OLD RULES: mostra unità senza attività visibili:
+            'If IsNothing(resultUnit) Then
+            '    resultUnit = New List(Of KeyValuePair(Of dtoUnitUser, RuleEngineResult(Of dtoUnitUser)))
+            'End If
+            'VisibleUnit = (From item In resultUnit Select item.Key.Id).ToList()
+
+            'end unit rules
+
             'fine regole
 
 
@@ -813,11 +860,8 @@ Public Class Validate
     End Sub
 
     Private Sub LKBeduPathView_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles LKBeduPathView.Click
-
         ClearSession()
-
-        PageUtility.RedirectToUrl(RootObject.PathView(CurrentPathId, Me.CurrentCommunityID, EpViewModeType.Manage, ServiceEP.isPlayModePath(CurrentPathId)))
-
+        PageUtility.RedirectToUrl(RootObject.PathView(CurrentPathId, Me.CurrentCommunityID, EpViewModeType.Manage, ServiceEP.isPlayModePath(CurrentPathId), IsMoocPath, PreloadIsFromReadOnly))
     End Sub
 
     Private Sub LKBreset_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles LKBreset.Click
@@ -830,7 +874,7 @@ Public Class Validate
     End Sub
 
     Protected Overrides Sub NotifyUnavailableModule(status As lm.Comol.Core.DomainModel.ModuleStatus)
-         EvaluatedItems = ServiceEP.GetEpStructure_toValidate(CurrentPathId, CurrentUserId, CurrentCommRoleID)
+        EvaluatedItems = ServiceEP.GetEpStructure_toValidate(CurrentPathId, CurrentUserId, IdCommunityRole)
         Master.ServiceTitle = EvaluatedItems.Name
 
         MLVeduPathView.SetActiveView(VIWmessages)

@@ -16,16 +16,7 @@ Public MustInherit Class EPpageBaseEduPath
     Private _History As HistoryElement
     Private _Permission As Services_EduPath
     Private _Service As Services_EduPath
-    Private _IsIe As Boolean?
 
-    Protected Friend ReadOnly Property IsIe As Boolean
-        Get
-            If Not _IsIe.HasValue Then
-                _IsIe = (Request.Browser.Browser = "InternetExplorer")
-            End If
-            Return _IsIe.Value
-        End Get
-    End Property
     Public ReadOnly Property Permission() As COL_BusinessLogic_v2.UCServices.Services_EduPath
         Get
             If IsNothing(_Permission) Then
@@ -104,45 +95,6 @@ Public MustInherit Class EPpageBaseEduPath
         End Try
         Return oElement
     End Function
-    'Public Property PostItSistema() As COL_BusinessLogic_v2.COL_PostIt Implements IviewBase.PostItSistema
-    '    Get
-    '        Try
-    '            PostItSistema = DirectCast(Me.Application.Item("oSystemPostIt"), COL_PostIt)
-    '        Catch ex As Exception
-    '            PostItSistema = Nothing
-    '            Me.Application.Item("ShowSystemPostIt") = False
-    '        End Try
-    '    End Get
-    '    Set(ByVal value As COL_BusinessLogic_v2.COL_PostIt)
-    '        Me.Application.Item("oSystemPostIt") = value
-    '    End Set
-    'End Property
-    'Public Property ShowPostItSistema() As Boolean Implements IviewBase.ShowPostItSistema
-    '    Get
-    '        Try
-    '            ShowPostItSistema = DirectCast(Me.Application.Item("ShowSystemPostIt"), Boolean)
-    '        Catch ex As Exception
-    '            Me.Application.Item("ShowSystemPostIt") = False
-    '            ShowPostItSistema = False
-    '        End Try
-    '    End Get
-    '    Set(ByVal value As Boolean)
-    '        Me.Application.Item("ShowSystemPostIt") = value
-    '    End Set
-    'End Property
-    'Public Property RiepilogoPostIt() As Integer Implements IviewBase.RiepilogoPostIt
-    '    Get
-    '        Try
-    '            RiepilogoPostIt = DirectCast(Session("Popupwin"), Integer)
-    '        Catch ex As Exception
-    '            RiepilogoPostIt = 0
-    '        End Try
-
-    '    End Get
-    '    Set(ByVal value As Integer)
-    '        Session("Popupwin") = value
-    '    End Set
-    'End Property
 
     Public Property UtentiConnessi() As Integer Implements IviewGeneric.UtentiConnessi
         Get
@@ -490,6 +442,16 @@ Public MustInherit Class EPpageBaseEduPath
             Return _ServiceCertification
         End Get
     End Property
+    Protected _ServiceRepository As lm.Comol.Core.BaseModules.FileRepository.Business.ServiceRepository
+
+    Protected ReadOnly Property ServiceRepository As lm.Comol.Core.BaseModules.FileRepository.Business.ServiceRepository
+        Get
+            If IsNothing(_ServiceRepository) Then
+                _ServiceRepository = New lm.Comol.Core.BaseModules.FileRepository.Business.ServiceRepository(PageUtility.CurrentContext)
+            End If
+            Return _ServiceRepository
+        End Get
+    End Property
 #End Region
 
 #Region "Preload"
@@ -697,7 +659,7 @@ Public MustInherit Class EPpageBaseEduPath
             Return SubActivityTypeCssClass(item.ContentType)
         End Get
     End Property
-  
+
     Public Function ViewStateOrDefault(Of T)(ByVal Key As String, ByVal DefaultValue As T) As T
         If (ViewState(Key) Is Nothing) Then
             ViewState(Key) = DefaultValue
@@ -773,7 +735,7 @@ Public MustInherit Class EPpageBaseEduPath
         Dim result As Boolean = False
         If Not _IsMoocPath.HasValue Then
             If (idPath > 0) Then
-                _IsMoocPath = False ' ServiceEP.IsMooc(idPath)
+                _IsMoocPath = ServiceEP.IsMooc(idPath)
                 'If PreloadIsMooc AndAlso Not IsMoocPath Then
                 '    IsMoocPath = PreloadIsMooc
                 'End If
@@ -804,4 +766,18 @@ Public MustInherit Class EPpageBaseEduPath
         autoOverThenPath = 2
         autoEqual = 3
     End Enum
+
+#Region "Internal"
+    Public Function GetCssFileByType() As String
+        Dim isMoocPath = PreloadIsMooc
+        If _IsMoocPath.HasValue Then
+            isMoocPath = _IsMoocPath
+        End If
+        If isMoocPath Then
+            Return "mooc-"
+        Else
+            Return ""
+        End If
+    End Function
+#End Region
 End Class

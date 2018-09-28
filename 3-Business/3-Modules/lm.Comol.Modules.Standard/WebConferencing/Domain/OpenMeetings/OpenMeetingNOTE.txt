@@ -1,0 +1,104 @@
+﻿1. CREO la stanza
+2. Gli utenti sono gestiti da COMOL. Alla creazione del link di accesso:
+	2a. Verifico se l'utente può accedere alla stanza (COMOL)
+	2b. SE può accedere, genero il link ISCRIVENDO IN QUEL MOMENTO l'utente nella stanza
+
+  DA VERIFICARE: se l'utente che cerco di inserire nella stanza DEVE essere iscritto in Open Meetings!
+
+
+
+
+  INSTALLAZIONE:
+  Configurare FIREWALL:
+	
+	- FIRESTARTER
+		Abilitare porte 5080, 1935 e 8088
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  PROVARE CON QUESTO:
+
+  2. Specify Name Server IP Address in resolv.conf
+
+- Open the file by typing the below command from a terminal
+
+openmeetings# pico /etc/resolv.conf
+
+- Modify the below parameters in the file.
+nameserver XXX.XXX.XXX.XXX nameserver XXX.XXX.XXX.XXX
+Restart the Network Service.
+
+- Type the below command to restart the network service.
+
+openmeetings# /etc/init.d/networking restart
+
+Confirm IP Address of your VMWare Image
+
+- Type the below command to check IP Address of your VMWare Image
+
+openmeetings# ifconfig eth0
+
+Please ensure that you have provided the proper netmask / broadcast ip address / default gateway/ dns server address.
+
+Notes:
+
+1) You can enter to Virtual Machine via ssh with root or openmeetings user. 2) If networking not working: rm /etc/udev/rules.d/z25_persistent-net.rules and then reboot (fixed in new image).
+
+
+  CONFIGURARE PORTE (NON VA UNA SEGAAA!!!):
+
+  PER MODIFICARE I FILE, CERCARLI CON:
+  ALT+F2	->	gksu nautilus
+
+
+  $RED5_HOME = /usr/lib/red5/
+
+  I successfully installed Apache openmeetings [Incubating] for web conferences.
+http://openmeetings.apache.org/
+It works OK for 
+http://localhost:5080/openmeetings/
+It failed  for my local IP 192.168.1.56
+ http://192.168.1.56:5080/openmeetings/
+The error messages:
+ Error missing [556],
+Error missing [204],
+Error missing [642]
+I realize I need to change configuration:
+
+•	Server-Side configuration: $RED5_HOME/conf/red5.properties, you need to restart the red5-service so that changes are online.
+•	Client-Side configuration: $RED5_HOME/webapps/openmeetings/config.xml, you need to clear your browser cache after changing the file. 
+ http://openmeetings.apache.org/PortSettings.html
+
+ In : $RED5_HOME/webapps/openmeetings/config.xml, line 29 change
+<rtmphostlocal></rtmphostlocal>
+to 
+<rtmphostlocal>192.168.1.56</rtmphostlocal> 
+
+ $RED5_HOME/conf/red5.properties
+change  all 0.0.0.0 and localhost  to 192.168.1.56
+restart red5.bat
+Now  http://192.168.1.56:5080/openmeetings/ works but
+http://localhost:5080/openmeetings/ failed. But it is OK for me.
+For ports in openmeetings:
+Config-Name	Default-value	Name in red5.properties	Name in config.xml
+HTTP	5080	http.port	red5httpport
+RTMP	1935	rtmp.port	rtmpport
+RTMPT	8088	rtmpt.host	rtmpTunnelport
+We need to keep port 5080, 1935 and 8088 open for firewall.
+
+
+
+

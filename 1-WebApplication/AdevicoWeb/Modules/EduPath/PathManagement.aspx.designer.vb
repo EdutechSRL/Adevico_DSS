@@ -59,6 +59,15 @@ Partial Public Class PathManagement
     Protected WithEvents WSTdata As Global.System.Web.UI.WebControls.WizardStep
 
     '''<summary>
+    '''CTRLpathMessage control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents CTRLpathMessage As Global.Comunita_OnLine.UC_ActionMessages
+
+    '''<summary>
     '''LBdetailTitle control.
     '''</summary>
     '''<remarks>
@@ -95,22 +104,22 @@ Partial Public Class PathManagement
     Protected WithEvents RFVname As Global.System.Web.UI.WebControls.RequiredFieldValidator
 
     '''<summary>
-    '''LBtype_t control.
+    '''LBcodeTitle control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents LBtype_t As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents LBcodeTitle As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''RBLtype control.
+    '''TXBcode control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents RBLtype As Global.System.Web.UI.WebControls.RadioButtonList
+    Protected WithEvents TXBcode As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''LBdescriptionTitle control.
@@ -563,24 +572,6 @@ Partial Public Class PathManagement
     Protected WithEvents RBLdisplayPolicy As Global.System.Web.UI.WebControls.RadioButtonList
 
     '''<summary>
-    '''LBscormSettingsPolicy_t control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents LBscormSettingsPolicy_t As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''RBLscormSettings control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents RBLscormSettings As Global.System.Web.UI.WebControls.RadioButtonList
-
-    '''<summary>
     '''WSTselectPermission control.
     '''</summary>
     '''<remarks>
@@ -894,24 +885,6 @@ Partial Public Class PathManagement
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LBdisplayPolicy As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''LBscormSettingsPolicyTitle control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents LBscormSettingsPolicyTitle As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''LBscormSettingsPolicy control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents LBscormSettingsPolicy As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''DIVendTimeRes control.

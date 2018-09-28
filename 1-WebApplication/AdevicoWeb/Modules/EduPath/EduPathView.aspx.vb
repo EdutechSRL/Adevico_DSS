@@ -8,7 +8,7 @@ Imports lm.ActionDataContract
 Imports lm.Comol.Core.DomainModel
 
 Public Class EduPathView
-    Inherits PageBaseEduPath
+    Inherits EPpageBaseEduPath
 
 #Region "InitStandard"
 
@@ -59,112 +59,12 @@ Public Class EduPathView
 
 #End Region
 
-#Region " Base"
-
-
-    Private Sub Page_PreLoad(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.PreLoad
-        PageUtility.CurrentModule = PageUtility.GetModule(Services_EduPath.Codex)
-    End Sub
-
-    Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-
-    End Sub
-
+#Region "Inherits"
     Public Overrides ReadOnly Property AlwaysBind As Boolean
         Get
             Return False
         End Get
     End Property
-
-    Public Overrides Sub BindDati()
-        Me.PageUtility.AddAction(Me.CurrentCommunityID, Services_EduPath.ActionType.Access, Me.PageUtility.CreateObjectsList(Services_EduPath.ObjectType.EduPath, Me.CurrentPathId), InteractionType.UserWithLearningObject)
-        Select Case Me.ViewModeType
-            Case EpViewModeType.Manage
-                IsEditablePath = ServiceEP.isEditablePath(CurrentPathId, CurrentUserId) 'ServiceStat.UsersStartedPath(CurrentPathId, CurrentUserId)
-
-                If Not IsEditablePath Then
-                    Me.Resource.setLabel_To_Value(LBErrorMSG, "MSGstarted")
-                    LBErrorMSG.Visible = True
-                Else
-                    ShowSwitchMessage = True
-                    LBErrorMSG.Visible = False
-                End If
-
-                initPageManage()
-            Case EpViewModeType.View
-                If ServiceEP.isPlayModePath(CurrentPathId) Then
-                    RedirectToUrl(RootObject.PathView(CurrentPathId, CurrentCommunityID, EpViewModeType.View, True))
-                End If
-                initPageView()
-            Case Else
-                Me.ShowError(EpError.Url)
-        End Select
-
-    End Sub
-
-    Public Overrides Sub BindNoPermessi()
-        Me.ShowError(EpError.NotPermission)
-    End Sub
-
-    Public Overrides Function HasPermessi() As Boolean
-        'non si possono controllare qui gli altri permessi visto che un utente potrebbe avere i permessi attivi 
-        'esclusivamente in un sub item e non sull'intero path
-        If ViewModeType = EpViewModeType.View Then
-            Return ServiceEP.CheckCommunityId(Of Path)(Me.CurrentPathId, Me.CurrentCommunityID) AndAlso ServiceEP.ItemIsVisible(CurrentPathId, ItemType.Path)
-        ElseIf ViewModeType = EpViewModeType.Manage Then
-            Return ServiceEP.CheckCommunityId(Of Path)(Me.CurrentPathId, Me.CurrentCommunityID)
-        Else
-            Return False
-        End If
-    End Function
-
-    Public Overrides Sub RegistraAccessoPagina()
-
-    End Sub
-
-    Public Overrides Sub SetCultureSettings()
-        MyBase.SetCulture("pg_EpView", "EduPath")
-    End Sub
-
-    Public Overrides Sub SetInternazionalizzazione()
-        With Me.Resource
-            .setHyperLink(Me.HYPnewUnit, False, True)
-            .setHyperLink(Me.HYPlistEduPath, False, True)
-            .setHyperLink(Me.HYPnewUnitNote, False, True)
-            .setLabel(Me.LBunitList)
-            .setLabel(LBdescriptionTitle)
-            .setLinkButton(LNBcreateUnitRule, False, True)
-            .setLinkButtonForName(LNBcreateActivityRule, "LNBcreateUnitRule", False, True)
-
-            .setCompareValidator(COVlowerThan)
-            .setCompareValidator(COVgreaterThan, COVlowerThan)
-            .setCompareValidator(COVupperBound, COVlowerThan)
-            .setCompareValidator(COVlowerBound, COVlowerThan)
-            .setCompareValidator(COVbetween)
-            .setRangeValidator(RVlowerThan)
-            .setRangeValidator(RVgreaterThan, RVlowerThan)
-            .setRangeValidator(RVlowerBound, RVlowerThan)
-            .setRangeValidator(RVupperBound, RVlowerThan)
-
-            .setLiteral(LITactivity1c)
-
-            .setLiteral(LITactivity4)
-            .setLiteral(LITactivity5)
-            .setLiteral(LITexplanation)
-            .setLabel(LBswitch)
-            .setLabel(LBswitchCombo)
-            .setLabel(LbSwitchFirst)
-            .setButton(Me.BTNswitch)
-            .setHyperLink(HYPannulSwitch, False, True)
-            .setHyperLink(HYPvalidateByAct, False, True)
-
-        End With
-    End Sub
-
-    Public Overrides Sub ShowMessageToPage(ByVal errorMessage As String)
-
-    End Sub
-
     Public Overrides ReadOnly Property VerifyAuthentication As Boolean
         Get
             If IsSessioneScaduta(False) Then
@@ -173,9 +73,17 @@ Public Class EduPathView
             Return False
         End Get
     End Property
-
 #End Region
 
+#Region "Internal"
+    Private Property IsInReadOnlyMode As Boolean
+        Get
+            Return ViewStateOrDefault("IsInReadOnlyMode", False)
+        End Get
+        Set(value As Boolean)
+            ViewState("IsInReadOnlyMode") = value
+        End Set
+    End Property
 #Region "Property"
     Private _PermissionOverPath As PermissionEP = New PermissionEP(RoleEP.None)
     Private _PermissionOverUnit As PermissionEP = New PermissionEP(RoleEP.None)
@@ -306,7 +214,7 @@ Public Class EduPathView
             If IsNumeric(qs_communityId) Then
                 Return qs_communityId
             Else
-                Return Me.CurrentContext.UserContext.CurrentCommunityID
+                Return PageUtility.CurrentContext.UserContext.CurrentCommunityID
             End If
         End Get
     End Property
@@ -323,18 +231,127 @@ Public Class EduPathView
     End Property
     Private ReadOnly Property CurrentUserId() As Integer
         Get
-            Return Me.CurrentContext.UserContext.CurrentUserID
+            Return PageUtility.CurrentContext.UserContext.CurrentUserID
         End Get
     End Property
-    Private ReadOnly Property CurrentCommRoleID As Integer
+    Private ReadOnly Property IdCommunityRole As Integer
         Get
-            Return UtenteCorrente.GetIDRuoloForComunita(CurrentCommunityID)
+            Dim key As String = "CurrentCommRoleID_" & CurrentPathId.ToString() & "_" & CurrentUserId.ToString
+            Dim idRole As Integer = ViewStateOrDefault(key, -1)
+            If idRole = -1 Then
+                idRole = ServiceEP.GetIdCommunityRole(CurrentUserId, ServiceEP.GetPathIdCommunity(CurrentPathId))
+                ViewState(key) = idRole
+            End If
+            Return idRole
         End Get
     End Property
-
-
 
 #End Region
+#End Region
+
+    Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+
+    End Sub
+
+#Region " Inherits"
+    Private Sub Page_PreLoad(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.PreLoad
+        PageUtility.CurrentModule = PageUtility.GetModule(Services_EduPath.Codex)
+    End Sub
+
+    Public Overrides Sub BindDati()
+        Me.PageUtility.AddAction(Me.CurrentCommunityID, Services_EduPath.ActionType.Access, Me.PageUtility.CreateObjectsList(Services_EduPath.ObjectType.EduPath, Me.CurrentPathId), InteractionType.UserWithLearningObject)
+        Select Case Me.ViewModeType
+            Case EpViewModeType.Manage
+                initPageManage()
+            Case EpViewModeType.View
+                RedirectToUrl(RootObject.EduPathList(CurrentCommunityID, EpViewModeType.View, PreloadIsMooc))
+
+                'If ServiceEP.isPlayModePath(CurrentPathId) Then
+                '    RedirectToUrl(RootObject.PathView(CurrentPathId, CurrentCommunityID, EpViewModeType.View, True))
+                'End If
+                'initPageView()
+            Case Else
+                Me.ShowError(EpError.Url)
+        End Select
+    End Sub
+
+    Public Overrides Sub BindNoPermessi()
+        ShowError(EpError.NotPermission)
+    End Sub
+
+    Public Overrides Function HasPermessi() As Boolean
+        'non si possono controllare qui gli altri permessi visto che un utente potrebbe avere i permessi attivi 
+        'esclusivamente in un sub item e non sull'intero path
+        If ViewModeType = EpViewModeType.View Then
+            Return ServiceEP.CheckCommunityId(Of Path)(Me.CurrentPathId, Me.CurrentCommunityID) AndAlso ServiceEP.ItemIsVisible(CurrentPathId, ItemType.Path)
+        ElseIf ViewModeType = EpViewModeType.Manage Then
+            Return ServiceEP.CheckCommunityId(Of Path)(Me.CurrentPathId, Me.CurrentCommunityID)
+        Else
+            Return False
+        End If
+    End Function
+
+    Public Overrides Sub RegistraAccessoPagina()
+
+    End Sub
+
+    Public Overrides Sub SetCultureSettings()
+        If Not Page.IsPostBack AndAlso String.IsNullOrWhiteSpace(Request.QueryString("isMooc")) Then
+            IsMoocPath = ServiceEP.IsMooc(CurrentPathId)
+        ElseIf Not Page.IsPostBack Then
+            IsMoocPath = PreloadIsMooc
+        Else
+            IsMoocPath = ServiceEP.IsMooc(CurrentPathId)
+        End If
+        If IsMoocPath Then
+            MyBase.SetCulture("pg_MoocView", "EduPath")
+        Else
+            MyBase.SetCulture("pg_EpView", "EduPath")
+        End If
+    End Sub
+
+    Public Overrides Sub SetInternazionalizzazione()
+        With Me.Resource
+            .setHyperLink(Me.HYPnewUnit, False, True)
+            .setHyperLink(Me.HYPlistEduPath, False, True)
+            .setHyperLink(Me.HYPnewUnitNote, False, True)
+            .setLabel(Me.LBunitList)
+            .setLabel(LBdescriptionTitle)
+            .setLinkButton(LNBcreateUnitRule, False, True)
+            .setLinkButtonForName(LNBcreateActivityRule, "LNBcreateUnitRule", False, True)
+
+            .setCompareValidator(COVlowerThan)
+            .setCompareValidator(COVgreaterThan, COVlowerThan)
+            .setCompareValidator(COVupperBound, COVlowerThan)
+            .setCompareValidator(COVlowerBound, COVlowerThan)
+            .setCompareValidator(COVbetween)
+            .setRangeValidator(RVlowerThan)
+            .setRangeValidator(RVgreaterThan, RVlowerThan)
+            .setRangeValidator(RVlowerBound, RVlowerThan)
+            .setRangeValidator(RVupperBound, RVlowerThan)
+
+            .setLiteral(LITactivity1c)
+
+            .setLiteral(LITactivity4)
+            .setLiteral(LITactivity5)
+            .setLiteral(LITexplanation)
+            .setLabel(LBswitch)
+            .setLabel(LBswitchCombo)
+            .setLabel(LbSwitchFirst)
+            .setButton(Me.BTNswitch)
+            .setHyperLink(HYPannulSwitch, False, True)
+            .setHyperLink(HYPvalidateByAct, False, True)
+
+        End With
+    End Sub
+
+    Public Overrides Sub ShowMessageToPage(ByVal errorMessage As String)
+
+    End Sub
+
+#End Region
+
+
 
     Public Function GetActivityCssClass(ByRef status As Status) As String
         If ServiceEP.CheckStatus(status, status.Text) Then
@@ -344,30 +361,30 @@ Public Class EduPathView
         End If
     End Function
 
-    Private Sub UpdateScormStat()
-        Dim ModuleLinkIds As IList(Of Long) = ServiceEP.GetMaterialModuleLinkIds_ByPathId(Me.CurrentPathId)
-        If ModuleLinkIds.Count > 0 Then
-            Dim oSender As PermissionService.IServicePermission = Nothing
-            Dim results As List(Of dtoItemEvaluation(Of Long))
-            Dim UserID As Integer = CurrentContext.UserContext.CurrentUserID
-            Try
-                oSender = New PermissionService.ServicePermissionClient
-                results = oSender.GetPendingEvaluations(ModuleLinkIds, UserID).ToList()
-                If Not IsNothing(oSender) Then
-                    Dim service As System.ServiceModel.ClientBase(Of PermissionService.IServicePermission) = DirectCast(oSender, System.ServiceModel.ClientBase(Of PermissionService.IServicePermission))
-                    service.Close()
-                    service = Nothing
-                End If
-            Catch ex As Exception
-                If Not IsNothing(oSender) Then
-                    Dim service As System.ServiceModel.ClientBase(Of PermissionService.IServicePermission) = DirectCast(oSender, System.ServiceModel.ClientBase(Of PermissionService.IServicePermission))
-                    service.Abort()
-                    service = Nothing
-                End If
-            End Try
-            ServiceEP.SaveActionsExecution(results, UserID)
-        End If
-    End Sub
+    'Private Sub UpdateScormStat()
+    '    Dim ModuleLinkIds As IList(Of Long) = ServiceEP.GetMaterialModuleLinkIds_ByPathId(Me.CurrentPathId)
+    '    If ModuleLinkIds.Count > 0 Then
+    '        Dim oSender As PermissionService.IServicePermission = Nothing
+    '        Dim results As List(Of dtoItemEvaluation(Of Long))
+    '        Dim UserID As Integer = CurrentContext.UserContext.CurrentUserID
+    '        Try
+    '            oSender = New PermissionService.ServicePermissionClient
+    '            results = oSender.GetPendingEvaluations(ModuleLinkIds, UserID)
+    '            If Not IsNothing(oSender) Then
+    '                Dim service As System.ServiceModel.ClientBase(Of PermissionService.IServicePermission) = DirectCast(oSender, System.ServiceModel.ClientBase(Of PermissionService.IServicePermission))
+    '                service.Close()
+    '                service = Nothing
+    '            End If
+    '        Catch ex As Exception
+    '            If Not IsNothing(oSender) Then
+    '                Dim service As System.ServiceModel.ClientBase(Of PermissionService.IServicePermission) = DirectCast(oSender, System.ServiceModel.ClientBase(Of PermissionService.IServicePermission))
+    '                service.Abort()
+    '                service = Nothing
+    '            End If
+    '        End Try
+    '        ServiceEP.SaveActionsExecution(results, UserID)
+    '    End If
+    'End Sub
 
 
     Private tempActivityRule As Long = 0
@@ -399,7 +416,7 @@ Public Class EduPathView
     End Sub
 
     Private Sub InitPlayer()
-        Dim lastActivity As dtoActivityPlayer = ServiceEP.GetLastViewedActivity(Me.CurrentUserId, Me.CurrentCommRoleID, Me.CurrentPathId, isAutoEp, DateTime.Now)
+        Dim lastActivity As dtoActivityPlayer = ServiceEP.GetLastViewedActivity(Me.CurrentUserId, Me.IdCommunityRole, Me.CurrentPathId, isAutoEp, DateTime.Now)
 
         Me.Resource.setLabel(Me.LBplayerTitle)
 
@@ -437,9 +454,9 @@ Public Class EduPathView
     End Sub
 
     Private Sub initPageView()
-        UpdateScormStat()
+        'UpdateScormStat()
         Me.CTRLhelpStatus.Init()
-        Dim dtoEP As dtoEduPath = Me.ServiceEP.GetEduPathStructure_View(Me.CurrentPathId, Me.CurrentUserId, Me.CurrentCommRoleID, OLDpageUtility.ProxyIPadress, OLDpageUtility.ClientIPadress, DateTime.Now)
+        Dim dtoEP As dtoEduPath = Me.ServiceEP.GetEduPathStructure_View(Me.CurrentPathId, Me.CurrentUserId, Me.IdCommunityRole, OLDpageUtility.ProxyIPadress, OLDpageUtility.ClientIPadress, DateTime.Now)
 
 
 
@@ -498,7 +515,7 @@ Public Class EduPathView
                 ' InitProgressBar(dtoEP.
                 Me.Master.ServiceTitle = dtoEP.Name
                 Me.HYPlistEduPath.Visible = ViewModeType = EpViewModeType.Manage OrElse (ServiceEP.GetEduPathCountInCommunity(Me.CurrentCommunityID, True) > 1)
-                Me.HYPlistEduPath.NavigateUrl = Me.BaseUrl & RootObject.EduPathList(Me.CurrentCommunityID, Me.ViewModeType, True)
+                Me.HYPlistEduPath.NavigateUrl = Me.BaseUrl & RootObject.EduPathList(Me.CurrentCommunityID, Me.ViewModeType, dtoEP.IsMooc)
                 Me.PermissionOverPath = dtoEP.PermissionEP
 
                 Me.InitProgressBar(True)
@@ -517,34 +534,47 @@ Public Class EduPathView
     End Sub
 
     Private Sub initPageManage()
-        Dim dtoEP As dtoEduPath = Me.ServiceEP.GetEduPathStructure_Manage(Me.CurrentPathId, Me.CurrentUserId, Me.CurrentCommRoleID, OLDpageUtility.ProxyIPadress, OLDpageUtility.ClientIPadress)
-
+        Dim dtoEP As dtoEduPath = Me.ServiceEP.GetEduPathStructure_Manage(Me.CurrentPathId, Me.CurrentUserId, Me.IdCommunityRole, OLDpageUtility.ProxyIPadress, OLDpageUtility.ClientIPadress)
+        IsInReadOnlyMode = PreloadIsForReadOnly
         If Not IsNothing(dtoEP) Then
+            Dim status As PathAvailability = ServiceEP.GetPathAvailability(CurrentPathId, CurrentUserId)
+            IsEditablePath = (status = PathAvailability.Blocked)
+
+            IsMoocPath = dtoEP.IsMooc
+            Dim autoWeight As Long = ServiceEP.GetActiveUnitsWeightSum(dtoEP.Id)
+            'Dim e As Long = ServiceEP.GetPathWeight(dtoEP.Id)
+            If Not IsEditablePath Then
+                IsInReadOnlyMode = True
+                DisplayPathStatus(status, PreloadIsForReadOnly, dtoEP.IsMooc, dtoEP.Weight, autoWeight)
+            Else
+                ShowSwitchMessage = True
+                UpdateDurationMessage(dtoEP.Weight, autoWeight)
+            End If
+
             'se non ci sono unità, va automaticamente alla creazione della prim
             If dtoEP.Units.Count > 0 Then
-
                 'ECA.InitializeControl(Me.CurrentCommunityID, Me.CurrentPathId, 1, 1)
 
                 If isAutoEp Then
-                    _canAddActivityRules = ServiceEP.CanAddActivityRule(dtoEP.Units.SelectMany(Function(x) x.Activities).ToList())
+                    _canAddActivityRules = ServiceEP.CanAddActivityRule(dtoEP.Units.SelectMany(Function(x) x.Activities).ToList()) ' Not dtoEP.IsMooc AndAlso ServiceEP.CanAddActivityRule(dtoEP.Units.SelectMany(Function(x) x.Activities).ToList())
                 End If
 
-                Me.PlayerCssVisibility = "hidePlayer"
-                Me.SPANactivitiesInProgress.Visible = False
-                Me.Master.ServiceTitle = dtoEP.Name
+                PlayerCssVisibility = "hidePlayer"
+                SPANactivitiesInProgress.Visible = False
+                Master.ServiceTitle = dtoEP.Name
+
                 If dtoEP.PermissionEP.Create Then
                     Me.HYPnewUnit.Visible = IsEditablePath
-                    HYPnewUnit.NavigateUrl = Me.BaseUrl & RootObject.NewUnit(Me.CurrentCommunityID, Me.CurrentPathId) 'path= al redirectToURL nell'else
+                    HYPnewUnit.NavigateUrl = Me.BaseUrl & RootObject.NewUnit(Me.CurrentCommunityID, Me.CurrentPathId, IsMoocPath) 'path= al redirectToURL nell'else
                     Me.HYPnewUnitNote.Visible = dtoEP.PermissionEP.Create
-                    Me.HYPnewUnitNote.NavigateUrl = Me.BaseUrl & RootObject.AddTextItem(Me.CurrentPathId, ItemType.Unit, CurrentCommunityID)
-
+                    Me.HYPnewUnitNote.NavigateUrl = Me.BaseUrl & RootObject.AddTextItem(Me.CurrentPathId, ItemType.Unit, CurrentCommunityID, IsMoocPath, IsInReadOnlyMode)
                 End If
 
                 Me.HYPvalidateByAct.Visible = True
-                Me.HYPvalidateByAct.NavigateUrl = Me.BaseUrl & RootObject.Validate(CurrentPathId, CurrentCommunityID, ItemType.Activity)
+                Me.HYPvalidateByAct.NavigateUrl = Me.BaseUrl & RootObject.Validate(CurrentPathId, CurrentCommunityID, ItemType.Activity, IsMoocPath, IsInReadOnlyMode)
 
                 Me.HYPlistEduPath.Visible = ViewModeType = EpViewModeType.Manage OrElse (ServiceEP.GetEduPathCountInCommunity(Me.CurrentCommunityID, False) > 1)
-                Me.HYPlistEduPath.NavigateUrl = Me.BaseUrl & RootObject.EduPathList(Me.CurrentCommunityID, Me.ViewModeType, True)
+                Me.HYPlistEduPath.NavigateUrl = Me.BaseUrl & RootObject.EduPathList(Me.CurrentCommunityID, Me.ViewModeType, dtoEP.IsMooc)
                 Me.PermissionOverPath = dtoEP.PermissionEP
                 Me.InitProgressBar(False)
                 Me.InitDialog()
@@ -557,53 +587,183 @@ Public Class EduPathView
                     hideControl(DIVruleSlider)
                     TXBcompleteLow.Text = 100
                 End If
-
-
+                DVconfirmEditing.Visible = False
+                If Not PreloadIsForReadOnly AndAlso status <> PathAvailability.Blocked Then
+                    If dtoEP.IsMooc OrElse status = PathAvailability.Available Then
+                        DVconfirmEditing.Visible = True
+                        SetConfirmDialogTranslations(dtoEP.Name, status, dtoEP.IsMooc)
+                    End If
+                End If
             ElseIf (dtoEP.PermissionEP.Create) Then
-                Me.RedirectToUrl(RootObject.NewUnit(Me.CurrentCommunityID, Me.CurrentPathId)) 'path= a HYPnewUnit.NavigateUrl
+                Me.RedirectToUrl(RootObject.NewUnit(Me.CurrentCommunityID, Me.CurrentPathId, IsMoocPath)) 'path= a HYPnewUnit.NavigateUrl
             Else
-                initPageView()
+                RedirectToUrl(RootObject.EduPathList(CurrentCommunityID, EpViewModeType.View, dtoEP.IsMooc))
+                'initPageView()
             End If
-
-
-
         Else
             Me.ShowError(EpError.PathNotFind)
         End If
-
     End Sub
 
+    Private Sub SetConfirmDialogTranslations(pathName As String, ByVal status As PathAvailability, ByVal isMooc As Boolean)
+        Dim basekey As String = GetKeyString("", status, isMooc)
 
-    Private Sub ShowError(ByVal ErrorType As EpError)
-        Me.Resource.setHyperLink(Me.HYPerror, False, True)
-        Me.HYPerror.NavigateUrl = Me.BaseUrl & RootObject.EduPathList(Me.CurrentCommunityID, Me.ViewModeType)
-        Select Case ErrorType
+        LBeditingOptions.Text = String.Format(Resource.getValue("LBeditingOptions" & basekey), pathName)
+        BTNreadonlyOption.Text = Resource.getValue("BTNreadonlyOption.text")
+        BTNreadonlyOption.ToolTip = Resource.getValue("BTNreadonlyOption.ToolTip.IsMooc." & isMooc.ToString)
+        LBreadonlyOption.Text = Resource.getValue("LBreadonlyOption.IsMooc." & isMooc.ToString)
+        BTNeditOption.Text = Resource.getValue("BTNeditOption.text")
+        BTNeditOption.ToolTip = Resource.getValue("BTNeditOption.ToolTip.IsMooc." & isMooc.ToString)
+        BTNeditOption.CommandArgument = CInt(status)
+        LBeditOption.Text = Resource.getValue("LBeditOption" & basekey)
+  
+    End Sub
+
+    Private Sub DisplayPathStatus(ByVal status As PathAvailability, ByVal isForReadonly As Boolean, ByVal isMooc As Boolean, pathWeight As Long, pathAutoWeight As Long)
+        Dim messages As New List(Of lm.Comol.Core.DomainModel.Helpers.dtoMessage)
+        Select Case VerifyDuration(pathWeight, pathAutoWeight)
+            Case TimeError.autoLessThenPath
+                messages.Add(New lm.Comol.Core.DomainModel.Helpers.dtoMessage() With {.Text = GetDurationInfoMessage(pathWeight, pathAutoWeight, TimeError.autoLessThenPath), .Type = Helpers.MessageType.alert})
+            Case TimeError.autoOverThenPath
+                messages.Add(New lm.Comol.Core.DomainModel.Helpers.dtoMessage() With {.Text = GetDurationInfoMessage(pathWeight, pathAutoWeight, TimeError.autoOverThenPath), .Type = Helpers.MessageType.alert})
+        End Select
+
+        CTRLgenericMessage.Visible = True
+        Select Case status
+            Case PathAvailability.Blocked
+                If messages.Any Then
+                    CTRLgenericMessage.InitializeControl(messages)
+                Else
+                    CTRLgenericMessage.Visible = False
+                End If
+            Case PathAvailability.WithMyStatistics
+                messages.Insert(0, New lm.Comol.Core.DomainModel.Helpers.dtoMessage() With {.Text = Resource.getValue(GetKeyString("Error", status, isMooc)), .Type = Helpers.MessageType.alert})
+                CTRLgenericMessage.InitializeControl(messages)
+            Case Else
+                messages.Insert(0, New lm.Comol.Core.DomainModel.Helpers.dtoMessage() With {.Text = Resource.getValue(GetKeyString("Error", status, isMooc)), .Type = Helpers.MessageType.error})
+                CTRLgenericMessage.InitializeControl(messages)
+        End Select
+    End Sub
+    Private Sub UpdateDurationMessage(pathWeight As Long, pathAutoWeight As Long)
+        Select Case VerifyDuration(pathWeight, pathAutoWeight)
+            Case TimeError.autoLessThenPath
+                CTRLgenericMessage.InitializeControl(GetDurationInfoMessage(pathWeight, pathAutoWeight, TimeError.autoLessThenPath), Helpers.MessageType.alert)
+                CTRLgenericMessage.Visible = True
+            Case TimeError.autoOverThenPath
+                CTRLgenericMessage.Visible = True
+                CTRLgenericMessage.InitializeControl(GetDurationInfoMessage(pathWeight, pathAutoWeight, TimeError.autoOverThenPath), Helpers.MessageType.error)
+            Case Else
+                CTRLgenericMessage.Visible = False
+        End Select
+    End Sub
+
+    Private Function GetDurationInfoMessage(pathWeight As Long, pathAutoWeight As Long, er As TimeError) As String
+        Dim message As String = Resource.getValue("DurationMessage.TimeError." & er.ToString)
+        Dim hours As Long = 0
+        Dim minutes As Long = 0
+        Select Case er
+            Case TimeError.autoLessThenPath
+                hours = New DateTime().AddMinutes(pathWeight - pathAutoWeight).Hour
+                minutes = New DateTime().AddMinutes(pathWeight - pathAutoWeight).Minute
+
+                message = String.Format(message, GetPathDurationToString(pathAutoWeight), GetPathDurationToString(hours, minutes), GetPathDurationToString(pathWeight))
+            Case TimeError.autoOverThenPath
+                hours = New DateTime().AddMinutes(pathAutoWeight - pathWeight).Hour
+                minutes = New DateTime().AddMinutes(pathAutoWeight - pathWeight).Minute
+
+                message = String.Format(message, GetPathDurationToString(pathAutoWeight), GetPathDurationToString(hours, minutes), GetPathDurationToString(pathWeight))
+            Case Else
+                message = ""
+        End Select
+        Return message
+    End Function
+
+    Private Function GetPathDurationToString(weight) As String
+        Dim hours As Long = 0
+        Dim minutes As Long = 0
+        hours = New DateTime().AddMinutes(weight).Hour
+        minutes = New DateTime().AddMinutes(weight).Minute
+
+        Return GetPathDurationToString(hours, minutes)
+    End Function
+    Private Function GetPathDurationToString(hours As Long, minutes As Long) As String
+        Dim key As String = "GetPathDurationToString."
+        Select Case hours
+            Case 1
+                key &= "1."
+            Case 0
+            Case Else
+                key &= "h."
+        End Select
+        Select Case minutes
+            Case 1
+                key &= "1"
+            Case 0
+            Case Else
+                key &= "m"
+        End Select
+        Dim message As String = Resource.getValue(key)
+        Select Case hours
+            Case 1, 0
+            Case Else
+                message = Replace(message, "#hour#", hours)
+        End Select
+        Select Case minutes
+            Case 1, 0
+            Case Else
+                message = Replace(message, "#minutes#", minutes)
+        End Select
+        Return message
+    End Function
+
+    Private Function GetKeyString(prefix As String, ByVal status As PathAvailability, ByVal isMooc As Boolean)
+        Dim key As String = prefix
+        If Not key.EndsWith(".") Then
+            key &= "."
+        End If
+        key &= "PathAvailability."
+        Select Case status
+            Case PathAvailability.Available, PathAvailability.UnknownItem, PathAvailability.WithOtherUserStatistics, PathAvailability.WithMyStatistics, PathAvailability.Blocked
+                key &= status.ToString()
+            Case (PathAvailability.Available Or PathAvailability.WithOtherUserStatistics)
+                key &= "Available." & PathAvailability.WithOtherUserStatistics.ToString
+            Case (PathAvailability.Available Or PathAvailability.WithMyStatistics)
+                key &= "Available." & PathAvailability.WithMyStatistics.ToString
+            Case (PathAvailability.Blocked Or PathAvailability.WithOtherUserStatistics)
+                key &= PathAvailability.WithOtherUserStatistics.ToString
+            Case (PathAvailability.Blocked Or PathAvailability.WithMyStatistics)
+                key &= PathAvailability.WithMyStatistics.ToString
+        End Select
+
+        key &= ".IsMooc." & isMooc.ToString
+        Return key
+    End Function
+    Private Sub ShowError(ByVal errorType As EpError)
+        Resource.setHyperLink(Me.HYPerror, False, True)
+        HYPerror.NavigateUrl = Me.BaseUrl & RootObject.EduPathList(Me.CurrentCommunityID, Me.ViewModeType, IsMoocPath)
+        Select Case errorType
             Case EpError.Generic
-                Me.LBerror.Text = Me.Resource.getValue("Error." & EpError.Generic.ToString)
+                CTRLerrorMessage.InitializeControl(Resource.getValue("Error." & errorType.ToString), Helpers.MessageType.error)
                 Me.PageUtility.AddAction(Services_EduPath.ActionType.GenericError, Nothing, InteractionType.UserWithLearningObject)
             Case EpError.NotPermission
-                Me.LBerror.Text = Me.Resource.getValue("Error." & EpError.NotPermission.ToString)
+                CTRLerrorMessage.InitializeControl(Resource.getValue("Error." & errorType.ToString), Helpers.MessageType.alert)
                 Me.PageUtility.AddAction(Services_EduPath.ActionType.NoPermission, Nothing, InteractionType.UserWithLearningObject)
             Case EpError.Url
-                Me.LBerror.Text = Me.Resource.getValue("Error." & EpError.Url.ToString)
+                CTRLerrorMessage.InitializeControl(Resource.getValue("Error." & errorType.ToString), Helpers.MessageType.alert)
                 Me.PageUtility.AddAction(Services_EduPath.ActionType.GenericError, Nothing, InteractionType.UserWithLearningObject)
             Case EpError.PathNotFind
-                Me.LBerror.Text = Me.Resource.getValue("Error." & EpError.Url.ToString)
+                CTRLerrorMessage.InitializeControl(Resource.getValue("Error." & errorType.ToString), Helpers.MessageType.error)
                 Me.PageUtility.AddAction(Services_EduPath.ActionType.GenericError, Nothing, InteractionType.UserWithLearningObject)
-
         End Select
-        Me.MLVeduPathView.ActiveViewIndex = 1
+        MLVeduPathView.SetActiveView(VIWerror)
     End Sub
-
 #Region "Repeater Item Data Bound"
     Public Sub RPrule_ItemCommand(ByVal source As Object, ByVal e As System.Web.UI.WebControls.RepeaterCommandEventArgs)
         Try
-
             Dim id As Long = Long.Parse(e.CommandArgument)
             ViewState("CurrentEditRule") = id
 
             Select Case e.CommandName
-
                 Case "ruleDelete"
 
                     'If ServiceEP.SetPathVisibility(e.CommandArgument, Me.CurrentCommunityID, Me.CurrentUserId, OLDpageUtility.ClientIPadress, OLDpageUtility.ProxyIPadress) Then
@@ -721,8 +881,6 @@ Public Class EduPathView
 
                     Dim q1 As List(Of dtoGenericItem) = (From item In q Where Not realRuleIds.Contains(item.Id) Select item).ToList
 
-
-
                     Me.RPactivity2.DataSource = q1
                     Me.RPactivity2.DataBind()
 
@@ -730,8 +888,6 @@ Public Class EduPathView
 
                     ScriptManager.RegisterClientScriptBlock(MyBase.Page, Me.GetType, Me.UniqueID, script, True)
                     Me.UDPaddRule.Update()
-
-
             End Select
         Catch ex As Exception
 
@@ -756,17 +912,16 @@ Public Class EduPathView
     End Sub
 
     Private Sub MoveDownAct(ByRef actId)
-        If ServiceEP.MoveActivityDisplayOrderAfter(actId, Me.CurrentUserId, Me.CurrentCommRoleID, IsEditablePath, OLDpageUtility.ClientIPadress, OLDpageUtility.ProxyIPadress) Then
-            RedirectToUrl(RootObject.PathView(Me.CurrentPathId, Me.CurrentCommunityID, EpViewModeType.Manage, False))
+        If ServiceEP.MoveActivityDisplayOrderAfter(actId, Me.CurrentUserId, Me.IdCommunityRole, IsEditablePath, OLDpageUtility.ClientIPadress, OLDpageUtility.ProxyIPadress) Then
+            RedirectToUrl(RootObject.PathView(Me.CurrentPathId, Me.CurrentCommunityID, EpViewModeType.Manage, False, IsMoocPath, IsInReadOnlyMode))
         Else
             ShowError(EpError.Generic)
         End If
     End Sub
 
     Private Sub MoveUpAct(ByRef actId)
-        If ServiceEP.MoveActivityDisplayOrderBefore(actId, Me.CurrentUserId, Me.CurrentCommRoleID, IsEditablePath, OLDpageUtility.ClientIPadress, OLDpageUtility.ProxyIPadress) Then
-            RedirectToUrl(RootObject.PathView(Me.CurrentPathId, Me.CurrentCommunityID, EpViewModeType.Manage, False))
-
+        If ServiceEP.MoveActivityDisplayOrderBefore(actId, Me.CurrentUserId, Me.IdCommunityRole, IsEditablePath, OLDpageUtility.ClientIPadress, OLDpageUtility.ProxyIPadress) Then
+            RedirectToUrl(RootObject.PathView(Me.CurrentPathId, Me.CurrentCommunityID, EpViewModeType.Manage, False, IsMoocPath, IsInReadOnlyMode))
         Else
             ShowError(EpError.Generic)
         End If
@@ -777,20 +932,20 @@ Public Class EduPathView
             Select Case e.CommandName
                 Case "mandatory"
                     If ServiceEP.UpdateActivityMandatoryStatus(e.CommandArgument, Me.CurrentUserId, OLDpageUtility.ClientIPadress, OLDpageUtility.ProxyIPadress) Then
-                        Me.PageUtility.RedirectToUrl(RootObject.PathView(Me.CurrentPathId, Me.CurrentCommunityID, Me.ViewModeType, False))
+                        Me.PageUtility.RedirectToUrl(RootObject.PathView(Me.CurrentPathId, Me.CurrentCommunityID, Me.ViewModeType, False, IsMoocPath, IsInReadOnlyMode))
                     Else
                         ShowError(EpError.Generic)
                     End If
                 Case "visibility"
                     If ServiceEP.UpdateActivityVisibilityStatus(e.CommandArgument, Me.CurrentUserId, OLDpageUtility.ClientIPadress, OLDpageUtility.ProxyIPadress) Then
-                        Me.PageUtility.RedirectToUrl(RootObject.PathView(Me.CurrentPathId, Me.CurrentCommunityID, Me.ViewModeType, False))
+                        Me.PageUtility.RedirectToUrl(RootObject.PathView(Me.CurrentPathId, Me.CurrentCommunityID, Me.ViewModeType, False, IsMoocPath, IsInReadOnlyMode))
                     Else
                         ShowError(EpError.Generic)
                     End If
 
                 Case "activityDelete"
                     If ServiceEP.VirtualDeleteAllActivity(e.CommandArgument, isAutoEp, Me.CurrentCommunityID, Me.CurrentUserId, OLDpageUtility.ClientIPadress, OLDpageUtility.ProxyIPadress) Then
-                        Me.PageUtility.RedirectToUrl(RootObject.PathView(Me.CurrentPathId, Me.CurrentCommunityID, Me.ViewModeType, False))
+                        Me.PageUtility.RedirectToUrl(RootObject.PathView(Me.CurrentPathId, Me.CurrentCommunityID, Me.ViewModeType, False, IsMoocPath, IsInReadOnlyMode))
                     Else
                         ShowError(EpError.Generic)
                     End If
@@ -928,33 +1083,33 @@ Public Class EduPathView
             Select Case e.CommandName
                 Case "mandatory"
                     If ServiceEP.UpdateUnitMandatoryStatus(e.CommandArgument, Me.CurrentUserId, OLDpageUtility.ClientIPadress, OLDpageUtility.ProxyIPadress) Then
-                        Me.PageUtility.RedirectToUrl(RootObject.PathView(Me.CurrentPathId, Me.CurrentCommunityID, Me.ViewModeType, False))
+                        Me.PageUtility.RedirectToUrl(RootObject.PathView(Me.CurrentPathId, Me.CurrentCommunityID, Me.ViewModeType, False, IsMoocPath, IsInReadOnlyMode))
                     Else
                         ShowError(EpError.Generic)
                     End If
                 Case "visibility"
                     If ServiceEP.UpdateUnitVisibilityStatus(e.CommandArgument, Me.CurrentUserId, OLDpageUtility.ClientIPadress, OLDpageUtility.ProxyIPadress) Then
-                        Me.PageUtility.RedirectToUrl(RootObject.PathView(Me.CurrentPathId, Me.CurrentCommunityID, Me.ViewModeType, False))
+                        Me.PageUtility.RedirectToUrl(RootObject.PathView(Me.CurrentPathId, Me.CurrentCommunityID, Me.ViewModeType, False, IsMoocPath, IsInReadOnlyMode))
                     Else
                         ShowError(EpError.Generic)
                     End If
                 Case "unitDelete"
                     If ServiceEP.VirtualDeleteAllUnit(e.CommandArgument, Me.CurrentCommunityID, Me.CurrentUserId, OLDpageUtility.ClientIPadress, OLDpageUtility.ProxyIPadress) Then
-                        Me.PageUtility.RedirectToUrl(RootObject.PathView(Me.CurrentPathId, Me.CurrentCommunityID, Me.ViewModeType, False))
+                        Me.PageUtility.RedirectToUrl(RootObject.PathView(Me.CurrentPathId, Me.CurrentCommunityID, Me.ViewModeType, False, IsMoocPath, IsInReadOnlyMode))
                     Else
                         ShowError(EpError.Generic)
                     End If
 
                 Case "moveUpU"
                     If ServiceEP.MoveUnitDisplayOrderBefore(e.CommandArgument, Me.CurrentUserId, OLDpageUtility.ClientIPadress, OLDpageUtility.ProxyIPadress) Then
-                        RedirectToUrl(RootObject.PathView(Me.CurrentPathId, Me.CurrentCommunityID, EpViewModeType.Manage, False))
+                        RedirectToUrl(RootObject.PathView(Me.CurrentPathId, Me.CurrentCommunityID, EpViewModeType.Manage, False, IsMoocPath, IsInReadOnlyMode))
                     Else
                         ShowError(EpError.Generic)
                     End If
 
                 Case "moveDownU"
                     If ServiceEP.MoveUnitDisplayOrderAfter(e.CommandArgument, Me.CurrentUserId, OLDpageUtility.ClientIPadress, OLDpageUtility.ProxyIPadress) Then
-                        RedirectToUrl(RootObject.PathView(Me.CurrentPathId, Me.CurrentCommunityID, EpViewModeType.Manage, False))
+                        RedirectToUrl(RootObject.PathView(Me.CurrentPathId, Me.CurrentCommunityID, EpViewModeType.Manage, False, IsMoocPath, IsInReadOnlyMode))
                     Else
                         ShowError(EpError.Generic)
                     End If
@@ -1212,9 +1367,9 @@ Public Class EduPathView
         oHyp = e.Item.FindControl("HYPupdateUnit")
         Me.Resource.setHyperLink(oHyp, False, True)
         If ServiceEP.CheckStatus(dtoItem.Status, Status.Text) Then
-            oHyp.NavigateUrl = Me.BaseUrl & RootObject.UpdateTextItem(dtoItem.Id, Me.CurrentPathId, ItemType.Unit, CurrentCommunityID)
+            oHyp.NavigateUrl = Me.BaseUrl & RootObject.UpdateTextItem(dtoItem.Id, Me.CurrentPathId, ItemType.Unit, CurrentCommunityID, IsMoocPath, IsInReadOnlyMode)
         Else
-            oHyp.NavigateUrl = Me.BaseUrl & RootObject.UpdateUnit(Me.CurrentCommunityID, dtoItem.Id, Me.CurrentPathId)
+            oHyp.NavigateUrl = Me.BaseUrl & RootObject.UpdateUnit(Me.CurrentCommunityID, dtoItem.Id, Me.CurrentPathId, IsMoocPath, IsInReadOnlyMode)
 
         End If
 
@@ -1320,24 +1475,24 @@ Public Class EduPathView
                 If dtoItem.PermissionEP.Create AndAlso IsEditablePath Then
                     oHyp = e.Item.FindControl("HYPnewAct")
                     Me.Resource.setHyperLink(oHyp, False, True)
-                    oHyp.NavigateUrl = Me.BaseUrl & RootObject.NewActivity(Me.CurrentCommunityID, dtoItem.Id)
+                    oHyp.NavigateUrl = Me.BaseUrl & RootObject.NewActivity(Me.CurrentCommunityID, dtoItem.Id, IsMoocPath)
                     oHyp.Visible = True
                     oHyp = e.Item.FindControl("HYPnewActNote")
                     Me.Resource.setHyperLink(oHyp, False, True)
-                    oHyp.NavigateUrl = Me.BaseUrl & RootObject.AddTextItem(dtoItem.Id, ItemType.Activity, CurrentCommunityID)
+                    oHyp.NavigateUrl = Me.BaseUrl & RootObject.AddTextItem(dtoItem.Id, ItemType.Activity, CurrentCommunityID, IsMoocPath, IsInReadOnlyMode)
                     oHyp.Visible = True
                 End If
 
                 If dtoItem.PermissionEP.Create Then
                     oHyp = e.Item.FindControl("HYPnewActNote")
                     Me.Resource.setHyperLink(oHyp, False, True)
-                    oHyp.NavigateUrl = Me.BaseUrl & RootObject.AddTextItem(dtoItem.Id, ItemType.Activity, CurrentCommunityID)
+                    oHyp.NavigateUrl = Me.BaseUrl & RootObject.AddTextItem(dtoItem.Id, ItemType.Activity, CurrentCommunityID, IsMoocPath, IsInReadOnlyMode)
                     oHyp.Visible = True
                 End If
 
 
                 If Not isAutoEp Then
-                    _canAddActivityRules = ServiceEP.CanAddActivityRule(dtoItem.Activities)
+                    _canAddActivityRules = Not IsMoocPath AndAlso ServiceEP.CanAddActivityRule(dtoItem.Activities)
                 End If
 
 
@@ -1389,10 +1544,10 @@ Public Class EduPathView
         End If
 
         LBunit = e.Item.FindControl("LBunitDesc")
-        If dtoItem.Description.Count > 0 Then
+        If Not String.IsNullOrWhiteSpace(dtoItem.Description) Then
             Dim div As HtmlControl = e.Item.FindControl("DIVunitDescription")
             div.Visible = True
-            LBunit.Text = dtoItem.Description
+            LBunit.Text = SmartTagsAvailable.TagAll(dtoItem.Description)
         Else
             hideControl(LBunit)
         End If
@@ -1448,9 +1603,9 @@ Public Class EduPathView
                 oImg.AlternateText = Resource.getValue("TextNote")
                 oImg.Visible = True
                 Dim oLb As Label = e.Item.FindControl("LBdescription")
-                If dtoItem.Description <> "" Then
+                If Not String.IsNullOrWhiteSpace(dtoItem.Description) Then
                     oLb.Visible = True
-                    oLb.Text = dtoItem.Description
+                    oLb.Text = SmartTagsAvailable.TagAll(dtoItem.Description)
                 Else
                     hideControl(LBdescription)
                 End If
@@ -1529,9 +1684,9 @@ Public Class EduPathView
         oHyp = e.Item.FindControl("HYPupdateAct")
         Me.Resource.setHyperLink(oHyp, False, True)
         If ServiceEP.CheckStatus(dtoItem.Status, Status.Text) Then
-            oHyp.NavigateUrl = Me.BaseUrl & RootObject.UpdateTextItem(dtoItem.Id, _unitId, ItemType.Activity, CurrentCommunityID)
+            oHyp.NavigateUrl = Me.BaseUrl & RootObject.UpdateTextItem(dtoItem.Id, _unitId, ItemType.Activity, CurrentCommunityID, IsMoocPath, IsInReadOnlyMode)
         Else
-            oHyp.NavigateUrl = Me.BaseUrl & RootObject.UpdateActivity(Me.CurrentCommunityID, dtoItem.Id, Me.TempUnitId)
+            oHyp.NavigateUrl = Me.BaseUrl & RootObject.UpdateActivity(Me.CurrentCommunityID, dtoItem.Id, Me.TempUnitId, IsMoocPath, IsInReadOnlyMode)
         End If
         oHyp.Visible = True
     End Sub
@@ -1592,8 +1747,14 @@ Public Class EduPathView
 
                     End If
 
-                    oHyp = e.Item.FindControl("HYPactName")
-                    SetHypActName(oHyp, dtoItem)
+                    If dtoItem.isQuiz AndAlso Not IsEditablePath Then
+                        oLb = e.Item.FindControl("LBactName")
+                        SetLbActName(oLb, dtoItem.Name)
+                    Else
+                        oHyp = e.Item.FindControl("HYPactName")
+                        SetHypActName(oHyp, dtoItem, True)
+                    End If
+
 
                 Else
                     oLb = e.Item.FindControl("LBactName")
@@ -1634,7 +1795,7 @@ Public Class EduPathView
                     SetLbActName(oLb, dtoItem.Name)
                 Else
                     oHyp = e.Item.FindControl("HYPactName")
-                    SetHypActName(oHyp, dtoItem)
+                    SetHypActName(oHyp, dtoItem, False)
                 End If
                 SetImgStatusSmall(e.Item.FindControl("IMGstatus"), dtoItem.statusStat)
                 oImg = e.Item.FindControl("IMGmandatory")
@@ -1739,7 +1900,10 @@ Public Class EduPathView
 
                 Dim oLb As Label = e.Item.FindControl("LBdescription")
                 oLb.Visible = True
-                oLb.Text = dtoItem.Description
+                If Not String.IsNullOrWhiteSpace(dtoItem.Description) Then
+                    oLb.Text = SmartTagsAvailable.TagAll(dtoItem.Description)
+                End If
+
 
                 Dim ul As HtmlControl = e.Item.FindControl("ULactRules")
                 hideControl(ul)
@@ -1774,11 +1938,15 @@ Public Class EduPathView
         oLB.Text = name
     End Sub
 
-    Private Sub SetHypActName(ByRef oHyp As HyperLink, ByRef dtoItem As dtoActivity)
+    Private Sub SetHypActName(ByRef oHyp As HyperLink, ByRef dtoItem As dtoActivity, ByVal manageMode As Boolean)
         oHyp.Visible = True
         oHyp.Text = dtoItem.Name
-        oHyp.NavigateUrl = Me.BaseUrl & RootObject.ViewActivity(dtoItem.Id, Me.TempUnitId, Me.CurrentPathId, Me.CurrentCommunityID, Me.ViewModeType)
 
+        If dtoItem.isQuiz AndAlso manageMode Then
+            oHyp.NavigateUrl = Me.BaseUrl & RootObject.UpdateActivity(Me.CurrentCommunityID, dtoItem.Id, Me.TempUnitId, IsMoocPath, IsInReadOnlyMode)
+        Else
+            oHyp.NavigateUrl = Me.BaseUrl & RootObject.ViewActivity(dtoItem.Id, Me.TempUnitId, Me.CurrentPathId, Me.CurrentCommunityID, Me.ViewModeType, IsMoocPath, IsInReadOnlyMode)
+        End If
     End Sub
 
 
@@ -1804,6 +1972,8 @@ Public Class EduPathView
     End Sub
 
 #End Region
+
+#Region "events"
     Private Sub RPshownRules_ItemDataBound(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.RepeaterItemEventArgs) Handles RPshownRules.ItemDataBound
         If e.Item.ItemType = ListItemType.Item Or e.Item.ItemType = ListItemType.AlternatingItem Then
             Dim lbl As Label
@@ -2088,6 +2258,72 @@ Public Class EduPathView
     'End Sub
 #End Region
 
+    Private Sub BTNeditOption_Click(sender As Object, e As EventArgs) Handles BTNeditOption.Click
+        Dim oButton As Button = DirectCast(sender, Button)
+        If IsNumeric(oButton.CommandArgument) Then
+            Dim idPath As Long = CurrentPathId
+
+            GotoPathEditing(idPath, DirectCast(CInt(oButton.CommandArgument), PathAvailability))
+        End If
+        DVconfirmEditing.Visible = False
+    End Sub
+  
+    Private Sub GotoPathEditing(idPath As Long, status As PathAvailability)
+        Dim redirect As Boolean = False
+
+        If (idPath > 0) Then
+            If status = PathAvailability.Available OrElse (status Or PathAvailability.Available > 0) Then
+                ServiceEP.PathSetToBlockStatus(idPath, Me.CurrentUserId, OLDpageUtility.ClientIPadress, OLDpageUtility.ProxyIPadress)
+            End If
+            If (status Or PathAvailability.WithMyStatistics > 0) OrElse (status Or PathAvailability.WithOtherUserStatistics > 0) Then
+                ClearPathStatistics(idPath, IsMoocPath)
+            End If
+            PageUtility.RedirectToUrl(RootObject.PathView(idPath, CurrentCommunityID, ViewModeType, ServiceEP.CheckEpType(ServiceEP.GetPathType(idPath), EPType.PlayMode), IsMoocPath, IsInReadOnlyMode))
+        End If
+    End Sub
+    Private Sub BTNreadonlyOption_Click(sender As Object, e As EventArgs) Handles BTNreadonlyOption.Click
+        Dim idPath As Long = CurrentPathId
+        DVconfirmEditing.Visible = False
+        PageUtility.RedirectToUrl(RootObject.PathView(idPath, CurrentCommunityID, ViewModeType, ServiceEP.CheckEpType(ServiceEP.GetPathType(idPath), EPType.PlayMode), IsMoocPath, True))
+    End Sub
+    Private Function ClearPathStatistics(idPath As Long, isMooc As Boolean) As Boolean
+        Dim allowReset As Boolean = isMooc
+        If Not allowReset Then
+            Dim setting As lm.Comol.Modules.EduPath.Domain.dtoConfigurationSetting
+            setting = ServiceEP.GetConfigurationSetting(idPath, CurrentCommunityID, ConfigurationType.Module)
+            allowReset = setting.AllowDeleteStatistics
+        End If
+        Dim resetCompleted As Boolean = False
+        If allowReset Then
+            Dim items As List(Of Long) = Me.ServiceEP.GetSubactiviesIdLinkedObjects(idPath, SubActivityType.Quiz)
+            Dim idModule As Integer = ServiceEP.ServiceModuleID()
+
+            ServiceEP.ServiceStat.DeleteAllEpStat(idPath)
+            If ServiceEP.GetSubactiviesIdLinkedObjects(idPath, SubActivityType.Certificate).Any() Then
+                ServiceCF.DeleteUsersCertifications(idPath, idModule, COL_BusinessLogic_v2.UCServices.Services_EduPath.Codex, True)
+            End If
+            If items.Count > 0 Then
+                Dim s As New COL_Questionario.Business.ServiceQuestionnaire(PageUtility.CurrentContext)
+                For Each idQuestionnaire As Long In items
+                    s.DeleteStatistics(idQuestionnaire)
+                Next
+            End If
+
+                'For Each item As ListItem In (From i As ListItem In CBLusers.Items Where i.Selected Select i).ToList
+                '    ServiceEP.ServiceStat.DeleteAllEpStat(idPath, CInt(item.Value))
+                '    ServiceCF.DeleteUsersCertifications(idPath, idModule, COL_BusinessLogic_v2.UCServices.Services_EduPath.Codex, CInt(item.Value), True)
+                '    If items.Count > 0 Then
+                '        Dim s As New COL_Questionario.Business.ServiceQuestionnaire(PageUtility.CurrentContext)
+                '        For Each idQuestionnaire As Long In items
+                '            s.DeleteStatistics(idQuestionnaire, CInt(item.Value))
+                '        Next
+                '    End If
+                'Next
+                resetCompleted = True
+            End If
+            Return resetCompleted
+    End Function
+#End Region
 
     Protected Overrides Sub NotifyModuleStatus(status As lm.Comol.Core.DomainModel.ModuleStatus)
         CTRLmoduleStatusMessage.Visible = True
@@ -2105,10 +2341,6 @@ Public Class EduPathView
             Return True
         End Get
     End Property
+
+   
 End Class
-
-
-
-
-
-

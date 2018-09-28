@@ -99,6 +99,22 @@ Public Class UC_AddAction
             ViewState("isInitialized") = value
         End Set
     End Property
+    Public Property IsFromReadonly As Boolean
+        Get
+            Return ViewStateOrDefault("IsFromReadonly", False)
+        End Get
+        Set(value As Boolean)
+            ViewState("IsFromReadonly") = value
+        End Set
+    End Property
+    Public Property IsMoocPath As Boolean
+        Get
+            Return ViewStateOrDefault("IsMoocPath", False)
+        End Get
+        Set(value As Boolean)
+            ViewState("IsMoocPath") = value
+        End Set
+    End Property
 #End Region
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
@@ -119,11 +135,7 @@ Public Class UC_AddAction
             .setButton(Me.BTNaddRepositoryActivity, True)
             .setButton(Me.BTNaddCertificationAction, True)
             .setButton(Me.BTNaddTextAction, True)
-
-            .setButton(Me.BTNaddWebinarAction, True)
-
             .setLabel(Me.LBsubActCertification)
-            .setLabel(LBsubActWebinar)
 
             .setButton(BTNcloseAddActionWindowTop, True)
             .setButton(BTNselectActionTop, True)
@@ -137,16 +149,17 @@ Public Class UC_AddAction
     End Sub
 #End Region
 
-    Public Sub InitializeControl(manager As ScriptManager, ByVal idCommunity As Integer, ByVal idPath As Long, ByVal idUnit As Long, ByVal idActivity As Long)
+    Public Sub InitializeControl(manager As ScriptManager, ByVal idCommunity As Integer, ByVal idPath As Long, ByVal idUnit As Long, ByVal idActivity As Long, ByVal isMooc As Boolean, isFromReadonly As Boolean)
         IdActionPath = idPath
         IdActionCommunity = idCommunity
         IdActionActivity = idActivity
         IdActionUnit = idUnit
-        'Me.CTRLmoduleToRepository.PageScriptManager = manager
-        'Me.HYPaddSubText.NavigateUrl = Me.BaseUrl & RootObject.AddSubActText(idActivity, idCommunity)
-        Me.CTRLmoduleToRepository.SetInternazionalizzazione()
+        IsMoocPath = isMooc
+        isFromReadonly = isFromReadonly
+        'CTRLmoduleToRepository.SetInternazionalizzazione()
+        '     CTRLattachments.setin
         If Not isInitialized Then
-            DVcertifications.Visible = ServiceTemplate.HasAvailableTemplates(ServiceEP.ServiceModuleID())
+            DVcertifications.Visible = ServiceTemplate.HasAvailableTemplates(ServiceEP.ServiceModuleID()) ' Not isMooc AndAlso ServiceTemplate.HasAvailableTemplates(ServiceEP.ServiceModuleID())
             DVquestionnaire.Visible = ServiceEP.IsServiceActive(COL_Questionario.ModuleQuestionnaire.UniqueID, idCommunity)
         End If
         isInitialized = True
@@ -160,30 +173,62 @@ Public Class UC_AddAction
 #Region "Repository"
     Private Sub BTNaddRepositoryActivity_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BTNaddRepositoryActivity.Click
         Me.MLVaddSubActivity.SetActiveView(Me.VIWrepository)
-        ' QUI SI POTRREBBE AGGIUNGERE IL CODICE PER AVERE I FILE GIA ASSOCIATI ALL?ACTIVITY ED EVITARNE LA RISELEZIONE
-        Dim manager As ScriptManager
-        RaiseEvent GetScriptManager(manager)
+        '' QUI SI POTRREBBE AGGIUNGERE IL CODICE PER AVERE I FILE GIA ASSOCIATI ALL?ACTIVITY ED EVITARNE LA RISELEZIONE
+        'Dim manager As ScriptManager
+        'RaiseEvent GetScriptManager(manager)
 
-        Me.CTRLmoduleToRepository.AjaxInitializeControl(Me.IdActionCommunity, COL_BusinessLogic_v2.UCServices.Services_EduPath.Codex, COL_BusinessLogic_v2.UCServices.Services_EduPath.ActionType.DoSubActivity, lm.Comol.Core.DomainModel.FileRepositoryType.InternalLong, manager)
+        'Me.CTRLmoduleToRepository.AjaxInitializeControl(Me.IdActionCommunity, COL_BusinessLogic_v2.UCServices.Services_EduPath.Codex, COL_BusinessLogic_v2.UCServices.Services_EduPath.ActionType.DoSubActivity, lm.Comol.Core.DomainModel.FileRepositoryType.InternalLong, manager)
         If IsInAjaxPanel Then
             RaiseEvent UpdateContainer()
         End If
+        CTRLattachments.InitializeControl(lm.Comol.Core.FileRepository.Domain.RepositoryIdentifier.Create(lm.Comol.Core.FileRepository.Domain.RepositoryType.Community, IdActionCommunity), IdActionActivity)
     End Sub
 
+#Region "New"
+
+    Private Sub CTRLattachments_CloseClientWindow() Handles CTRLattachments.CloseClientWindow
+        RaiseEvent UpdateAndCloseContainer(0)
+    End Sub
+    Private Sub CTRLattachments_ContainerCommands(show As Boolean) Handles CTRLattachments.ContainerCommands
+        DVcommandsTop.Visible = show
+        DVcommandsBottom.Visible = show
+        BTNselectActionTop.Visible = show
+        BTNselectActionBottom.Visible = show
+        BTNcreateActionBottom.Visible = False
+        BTNcreateActionTop.Visible = False
+    End Sub
+    Private Sub CTRLattachments_EmptyUpload() Handles CTRLattachments.EmptyUpload
+        MLVaddSubActivity.SetActiveView(VIWselector)
+        If IsInAjaxPanel Then
+            RaiseEvent UpdateAndCloseContainer(0)
+        End If
+    End Sub
+    Private Sub CTRLattachments_LinksAdded() Handles CTRLattachments.LinksAdded
+        PageUtility.RedirectToUrl(RootObject.ViewActivity(IdActionActivity, IdActionUnit, IdActionPath, IdActionCommunity, EpViewModeType.Manage, IsMoocPath, IsFromReadonly))
+    End Sub
+#End Region
+#Region "Old"
     Private Sub CTRLmoduleToRepository_CloseClientWindow() Handles CTRLmoduleToRepository.CloseClientWindow
         RaiseEvent UpdateAndCloseContainer(0)
     End Sub
-
     Private Sub CTRLmoduleToRepository_ContainerCommands(show As Boolean) Handles CTRLmoduleToRepository.ContainerCommands
-        Me.DVcommandsTop.Visible = show
-        Me.DVcommandsBottom.Visible = show
+        DVcommandsTop.Visible = show
+        DVcommandsBottom.Visible = show
         BTNselectActionTop.Visible = show
         BTNselectActionBottom.Visible = show
 
-        Me.BTNcreateActionBottom.Visible = False
-        Me.BTNcreateActionTop.Visible = False
+        BTNcreateActionBottom.Visible = False
+        BTNcreateActionTop.Visible = False
     End Sub
-
+    Private Sub CTRLmoduleToRepository_EmptyUpload() Handles CTRLmoduleToRepository.EmptyUpload
+        Me.MLVaddSubActivity.SetActiveView(VIWselector)
+        If IsInAjaxPanel Then
+            RaiseEvent UpdateAndCloseContainer(0)
+        End If
+    End Sub
+    Private Sub CTRLmoduleToRepository_UpdateAjaxPanel() Handles CTRLmoduleToRepository.UpdateAjaxPanel
+        '# Me.UDPaddActivity.Update()
+    End Sub
     'summary
     '   ADD ACTION TO ITEM/S OF COMMUNITY REPOSITORY
     '
@@ -208,10 +253,8 @@ Public Class UC_AddAction
         Catch ex As Exception
 
         End Try
-        Me.PageUtility.RedirectToUrl(RootObject.ViewActivity(IdActionActivity, IdActionUnit, IdActionPath, IdActionCommunity, EpViewModeType.Manage))
+        Me.PageUtility.RedirectToUrl(RootObject.ViewActivity(IdActionActivity, IdActionUnit, IdActionPath, IdActionCommunity, EpViewModeType.Manage, IsMoocPath, IsFromReadonly))
     End Sub
-
-
     Private Sub CTRLmoduleToRepository_AddedModuleObjects(ByVal items As List(Of ModuleActionLink)) Handles CTRLmoduleToRepository.AddedModuleObjects
         Dim Links As New List(Of ModuleLink)
         Dim InternalObjectsToRemove As New List(Of iModuleObject)
@@ -258,19 +301,20 @@ Public Class UC_AddAction
         'Me.CloseDialog("addSubActivity")
         'Me.MLVaddSubActivity.ActiveViewIndex = 0
         'Me.UDPaddActivity.Update()
-        Me.PageUtility.RedirectToUrl(RootObject.ViewActivity(IdActionActivity, IdActionUnit, IdActionPath, IdActionCommunity, EpViewModeType.Manage))
+        Me.PageUtility.RedirectToUrl(RootObject.ViewActivity(IdActionActivity, IdActionUnit, IdActionPath, IdActionCommunity, EpViewModeType.Manage, IsMoocPath, IsFromReadonly))
 
     End Sub
 
-    Private Sub CTRLmoduleToRepository_EmptyUpload() Handles CTRLmoduleToRepository.EmptyUpload
-        Me.MLVaddSubActivity.SetActiveView(VIWselector)
-        If IsInAjaxPanel Then
-            RaiseEvent UpdateAndCloseContainer(0)
-        End If
-    End Sub
-    Private Sub CTRLmoduleToRepository_UpdateAjaxPanel() Handles CTRLmoduleToRepository.UpdateAjaxPanel
-        '# Me.UDPaddActivity.Update()
-    End Sub
+#End Region
+
+
+  
+
+   
+
+  
+ 
+   
 #End Region
 
 #Region "Question"
@@ -304,14 +348,14 @@ Public Class UC_AddAction
         Me.MLVaddSubActivity.SetActiveView(Me.VIWtextAction)
         Me.LTcurrentAction.Text = Resource.getValue("Selected.TextAction")
         BTNselectActionTop.Visible = True
-        BTNselectActionBottom.Visible = True
+        BTNselectActionTop.Visible = True
         Me.BTNcreateActionBottom.Visible = True
         Me.BTNcreateActionTop.Visible = True
 
         Dim visible As Boolean = Me.CTRLtextAction.InitializeControl(IdActionCommunity, IdActionPath, IdActionUnit, IdActionActivity)
         Dim result As Long = Me.CTRLtextAction.SaveAction(IdActionCommunity, PageUtility.CurrentContext.UserContext.CurrentUserID)
         If result > 0 Then
-            PageUtility.RedirectToUrl(RootObject.ViewActivity(IdActionActivity, IdActionUnit, IdActionPath, IdActionCommunity, EpViewModeType.Manage))
+            PageUtility.RedirectToUrl(RootObject.ViewActivity(IdActionActivity, IdActionUnit, IdActionPath, IdActionCommunity, EpViewModeType.Manage, IsMoocPath, IsFromReadonly))
         Else
             RaiseEvent UpdateAndCloseContainer(result)
         End If
@@ -323,7 +367,7 @@ Public Class UC_AddAction
         Me.MLVaddSubActivity.SetActiveView(Me.VIWcertifications)
         Me.LTcurrentAction.Text = Resource.getValue("Selected.Certification")
         BTNselectActionTop.Visible = True
-        BTNselectActionBottom.Visible = True
+        BTNselectActionTop.Visible = True
         Me.BTNcreateActionBottom.Visible = True
         Me.BTNcreateActionTop.Visible = True
 
@@ -367,7 +411,7 @@ Public Class UC_AddAction
 #End Region
   
     Private Sub BTNcloseAddActionWindow_Click(sender As Object, e As System.EventArgs) Handles BTNcloseAddActionWindowBottom.Click, BTNcloseAddActionWindowTop.Click
-        PageUtility.RedirectToUrl(RootObject.ViewActivity(IdActionActivity, IdActionUnit, IdActionPath, IdActionCommunity, EpViewModeType.Manage))
+        PageUtility.RedirectToUrl(RootObject.ViewActivity(IdActionActivity, IdActionUnit, IdActionPath, IdActionCommunity, EpViewModeType.Manage, IsMoocPath, IsFromReadonly))
     End Sub
 
     Private Sub BTNcreateActionTop_Click(sender As Object, e As System.EventArgs) Handles BTNcreateActionTop.Click, BTNcreateActionBottom.Click
@@ -375,7 +419,7 @@ Public Class UC_AddAction
         If view Is VIWtextAction Then
             Dim result As Long = Me.CTRLtextAction.SaveAction(IdActionCommunity, PageUtility.CurrentContext.UserContext.CurrentUserID)
             If result > 0 Then
-                PageUtility.RedirectToUrl(RootObject.ViewActivity(IdActionActivity, IdActionUnit, IdActionPath, IdActionCommunity, EpViewModeType.Manage))
+                PageUtility.RedirectToUrl(RootObject.ViewActivity(IdActionActivity, IdActionUnit, IdActionPath, IdActionCommunity, EpViewModeType.Manage, IsMoocPath, IsFromReadonly))
             Else
                 If IsInAjaxPanel Then
                     If result > 0 Then
@@ -392,6 +436,4 @@ Public Class UC_AddAction
             End If
         End If
     End Sub
-
-
 End Class

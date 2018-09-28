@@ -5,7 +5,7 @@
 <%@ Register TagPrefix="CTRL" TagName="ProgressBar" Src="UC/UC_ProgressBar.ascx" %>
 <%@ MasterType VirtualPath="~/AjaxPortal.Master" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
-    <link href="../../Graphics/Modules/Edupath/css/PfStyle.css" rel="Stylesheet" />
+    <link href="../../Graphics/Modules/Edupath/css/<%=GetCssFileByType()%>pfstyle.css?v=201605041410lm" rel="Stylesheet" />
     <script>
         $(document).ready(function () {
             $(".DialogDetail").dialog({
@@ -88,10 +88,6 @@
             });
         });
     </script>
-    <link href="PfStyle.css" type="text/css" rel="stylesheet" />
-    <style type="text/css">
-        
-    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="CPHservice" runat="server">
     <asp:MultiView ID="MLVstat" runat="server" ActiveViewIndex="0">

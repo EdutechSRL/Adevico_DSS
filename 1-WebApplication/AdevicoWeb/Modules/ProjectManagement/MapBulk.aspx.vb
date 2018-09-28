@@ -167,7 +167,7 @@ Public Class MapBulk
         CTRLprojectInfo.UpdateDate(startDate, endDate, deadLine)
     End Sub
 #End Region
-   
+
 #End Region
 
     Private Sub ProjectResources_PreInit(sender As Object, e As System.EventArgs) Handles Me.PreInit
@@ -178,4 +178,11 @@ Public Class MapBulk
         CurrentPresenter.SaveProjectDate(IdProject, CTRLprojectInfo.InEditStartDate, CTRLprojectInfo.InEditDeadline)
     End Sub
 
+    Protected Overrides Sub SetEditMapUrl(url As String)
+
+    End Sub
+
+    Protected Overrides Sub LoadAttachments(attachments As List(Of dtoAttachmentItem))
+
+    End Sub
 End Class

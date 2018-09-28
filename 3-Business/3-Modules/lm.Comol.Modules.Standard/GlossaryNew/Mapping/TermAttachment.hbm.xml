@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<hibernate-mapping assembly="lm.Comol.Modules.Standard" namespace="lm.Comol.Modules.Standard.GlossaryNew.Domain"
+                   xmlns="urn:nhibernate-mapping-2.2">
+  <class name="TermAttachment" table="GL_Attachment" lazy="true">
+    <id name="Id" column="Id" type="Int64">
+      <generator class="native" />
+    </id>
+    <version name="TimeStamp" generated="always" unsaved-value="null" type="BinaryBlob">
+      <column name="_Timestamp" not-null="false" sql-type="timestamp" />
+    </version>
+
+    <!--Auto Gerated Field-->
+    <many-to-one name="GlossaryTerm">
+      <column name="IdTerm" sql-type="bigint" not-null="false" />
+    </many-to-one>
+    <property name="IdGlossary">
+      <column name="IdGlossary" sql-type="bigint" not-null="false" />
+    </property>
+    <property name="IdFile">
+      <column name="IdFile" sql-type="bigint" not-null="false" />
+    </property>
+    <property name="IdLink">
+      <column name="IdLink" sql-type="bigint" not-null="false" />
+    </property>
+    <property name="Type">
+      <column name="Type" sql-type="smallint" not-null="false" />
+    </property>
+    <property name="Url">
+      <column name="Url" sql-type="nvarchar" not-null="false" />
+    </property>
+    <property name="UrlName">
+      <column name="UrlName" sql-type="nvarchar" not-null="false" />
+    </property>
+    <property name="Description">
+      <column name="Description" sql-type="ntext" not-null="false" />
+    </property>
+
+    <!--Static Fields-->
+    <property name="CreatedOn" type="DateTime" column="_CreatedOn" />
+    <many-to-one name="CreatedBy" class="lm.Comol.Core.DomainModel.Person" column="_CreatedBy" foreign-key="_CreatedBy"
+                 cascade="none" />
+    <property name="ModifiedOn" type="DateTime" column="_ModifiedOn" />
+    <many-to-one name="ModifiedBy" class="lm.Comol.Core.DomainModel.Person" column="_ModifiedBy"
+                 foreign-key="_ModifiedBy" cascade="none" />
+    <property name="CreatorProxyIpAddress" type="String" column="_CreatedProxyIPaddress" />
+    <property name="CreatorIpAddress" type="String" column="_CreatedIPaddress" />
+    <property name="ModifiedProxyIpAddress" type="String" column="_ModifiedProxyIPaddress" />
+    <property name="ModifiedIpAddress" type="String" column="_ModifiedIPaddress" />
+    <property name="Deleted" type="lm.Comol.Core.DomainModel.BaseStatusDeleted,lm.Comol.Core.DomainModel"
+              column="_Deleted" />
+
+  </class>
+</hibernate-mapping>

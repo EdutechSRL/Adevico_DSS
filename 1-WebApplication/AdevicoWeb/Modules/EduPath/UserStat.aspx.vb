@@ -7,7 +7,7 @@ Imports lm.Comol.Core.DomainModel.Common
 Imports lm.Comol.Core.DomainModel
 
 Public Class EpUserStat
-    Inherits PageBaseEduPath
+    Inherits EPpageBaseEduPath
 
 #Region "Property"
 
@@ -164,20 +164,20 @@ Public Class EpUserStat
 
     End Property
 
-    Private ReadOnly Property CurrentCommunityID() As Integer
-        Get
-            Dim qs_communityId As String = Request.QueryString("ComId")
-            If IsNumeric(qs_communityId) Then
-                Return qs_communityId
-            Else
-                Return Me.CurrentContext.UserContext.CurrentCommunityID
-            End If
-        End Get
-    End Property
+    'Private ReadOnly Property CurrentCommunityID() As Integer
+    '    Get
+    '        Dim qs_communityId As String = Request.QueryString("ComId")
+    '        If IsNumeric(qs_communityId) Then
+    '            Return qs_communityId
+    '        Else
+    '            Return Me.CurrentContext.UserContext.CurrentCommunityID
+    '        End If
+    '    End Get
+    'End Property
 
     Private ReadOnly Property CurrentUserId() As Integer
         Get
-            Return Me.CurrentContext.UserContext.CurrentUserID
+            Return PageUtility.CurrentContext.UserContext.CurrentUserID
         End Get
     End Property
 
@@ -186,7 +186,13 @@ Public Class EpUserStat
             Return UtenteCorrente.GetIDRuoloForComunita(CurrentCommunityID)
         End Get
     End Property
-
+    Private ReadOnly Property PreloadAutoUpdate As Boolean
+        Get
+            Dim result As Boolean = False
+            Boolean.TryParse(Request.QueryString("autoUpdate"), result)
+            Return result
+        End Get
+    End Property
 #End Region
 
 #Region " Base"
@@ -265,7 +271,11 @@ Public Class EpUserStat
     End Sub
 
     Public Overrides Sub SetCultureSettings()
-        MyBase.SetCulture("pg_Stat", "EduPath")
+        If PreloadIsMooc Then
+            MyBase.SetCulture("pg_MoocStatistics", "EduPath")
+        Else
+            MyBase.SetCulture("pg_Stat", "EduPath")
+        End If
     End Sub
 
     Public Overrides Sub SetInternazionalizzazione()
@@ -343,14 +353,17 @@ Public Class EpUserStat
 
 
     Private Sub UpdateScormStat()
-        Dim ModuleLinkIds As IList(Of Long) = ServiceEP.GetMaterialModuleLinkIds_ByPathId(Me.PathID)
+        Dim idPerson As Integer = UserToViewStat
+        If idPerson = -1 Then
+            idPerson = PageUtility.CurrentContext.UserContext.CurrentUserID
+        End If
+        Dim ModuleLinkIds As IList(Of Long) = ServiceEP.GetRepositoryLinksPath(Me.PathID, idPerson)
         If ModuleLinkIds.Count > 0 Then
             Dim oSender As PermissionService.IServicePermission = Nothing
             Dim results As List(Of dtoItemEvaluation(Of Long))
-            Dim UserID As Integer = CurrentContext.UserContext.CurrentUserID
             Try
                 oSender = New PermissionService.ServicePermissionClient
-                results = oSender.GetPendingEvaluations(ModuleLinkIds, UserID).ToList()
+                results = oSender.GetPendingEvaluations(ModuleLinkIds, idPerson)
                 If Not IsNothing(oSender) Then
                     Dim service As System.ServiceModel.ClientBase(Of PermissionService.IServicePermission) = DirectCast(oSender, System.ServiceModel.ClientBase(Of PermissionService.IServicePermission))
                     service.Close()
@@ -363,7 +376,9 @@ Public Class EpUserStat
                     service = Nothing
                 End If
             End Try
-            ServiceEP.SaveActionsExecution(results, UserID)
+            If Not IsNothing(results) AndAlso results.Any Then
+                ServiceEP.SaveActionsExecution(results, idPerson)
+            End If
         End If
     End Sub
 
@@ -482,19 +497,19 @@ Public Class EpUserStat
             Case EpViewModeType.Manage
                 'Me.HYPpathStat.ImageUrl = RootObject.ImgEduPathStat(Me.BaseUrl)
                 Me.HYPpathStat.Visible = True
-                Me.HYPpathStat.NavigateUrl = Me.BaseUrl & RootObject.PathStatistics(PathID, Me.CurrentCommunityID, TimeStat, PreloadShowAll)
+                Me.HYPpathStat.NavigateUrl = Me.BaseUrl & RootObject.PathStatistics(PathID, Me.CurrentCommunityID, TimeStat, PreloadShowAll, GetIsMooc(PathID))
 
                 'Me.HYPuserStat.ImageUrl = RootObject.ImgUsersStat(Me.BaseUrl)
-                Me.HYPuserStat.NavigateUrl = Me.BaseUrl & RootObject.UsersStatistics(Me.PathID, Me.CurrentCommunityID, ItemType.Path, PageIndex, TimeStat, PreloadShowAll)
+                Me.HYPuserStat.NavigateUrl = Me.BaseUrl & RootObject.UsersStatistics(Me.PathID, Me.CurrentCommunityID, ItemType.Path, PageIndex, TimeStat, PreloadShowAll, GetIsMooc(PathID))
 
-                Me.HYPback.NavigateUrl = Me.BaseUrl & RootObject.UsersStatistics(ItemId, CurrentCommunityID, Type, PageIndex, TimeStat, PreloadShowAll)
+                Me.HYPback.NavigateUrl = Me.BaseUrl & RootObject.UsersStatistics(ItemId, CurrentCommunityID, Type, PageIndex, TimeStat, PreloadShowAll, GetIsMooc(PathID))
 
             Case EpViewModeType.View
-                Me.HYPback.NavigateUrl = Me.BaseUrl & RootObject.EduPathList(Me.CurrentCommunityID, EpViewModeType.View)
+                Me.HYPback.NavigateUrl = Me.BaseUrl & RootObject.EduPathList(Me.CurrentCommunityID, EpViewModeType.View, GetIsMooc(PathID))
 
 
         End Select
-        Me.HYPeduPathView.NavigateUrl = Me.BaseUrl & RootObject.PathView(PathID, Me.CurrentCommunityID, Me.ViewModeType, ServiceEP.isPlayModePath(PathID))
+        Me.HYPeduPathView.NavigateUrl = Me.BaseUrl & RootObject.PathView(PathID, Me.CurrentCommunityID, Me.ViewModeType, ServiceEP.isPlayModePath(PathID), GetIsMooc(PathID))
 
     End Sub
 
@@ -568,7 +583,7 @@ Public Class EpUserStat
     Private Sub ShowError(ByVal errorType As EpError)
         Me.MLVstat.SetActiveView(Me.VIWerror)
         Me.Resource.setHyperLink(Me.HYPerror, False, True)
-        Me.HYPerror.NavigateUrl = Me.BaseUrl & RootObject.EduPathList(Me.CurrentCommunityID, Me.ViewModeType)
+        Me.HYPerror.NavigateUrl = Me.BaseUrl & RootObject.EduPathList(Me.CurrentCommunityID, Me.ViewModeType, GetIsMooc(PathID))
         Select Case errorType
             Case EpError.Generic
                 Me.LBerror.Text = Me.Resource.getValue("Error." & EpError.Generic.ToString)
@@ -669,9 +684,9 @@ Public Class EpUserStat
 
     Private Sub ReloadStat(ByVal dateToView As DateTime?) Handles CTRLselTime.DateSelected
         If ViewModeType = EpViewModeType.Manage Then
-            RedirectToUrl(RootObject.UserStatisticsManage(PathID, CurrentCommunityID, UserToViewStat, ItemType.Path, PageIndex, dateToView, PreloadShowAll))
+            RedirectToUrl(RootObject.UserStatisticsManage(PathID, CurrentCommunityID, UserToViewStat, ItemType.Path, PageIndex, dateToView, PreloadShowAll, PreloadAutoUpdate, GetIsMooc(PathID)))
         Else
-            RedirectToUrl(RootObject.UserStatisticsView(PathID, CurrentCommunityID, dateToView, PreloadShowAll))
+            RedirectToUrl(RootObject.UserStatisticsView(PathID, CurrentCommunityID, dateToView, PreloadShowAll, GetIsMooc(PathID)))
 
         End If
 
@@ -680,9 +695,9 @@ Public Class EpUserStat
     Public Sub LoadCertifiedDate() Handles CTRLselTime.ViewCertifiedStat
 
         If ViewModeType = EpViewModeType.Manage Then
-            RedirectToUrl(RootObject.UserStatisticsManage(PathID, CurrentCommunityID, UserToViewStat, ItemType.Path, PageIndex, EpEndDate, PreloadShowAll))
+            RedirectToUrl(RootObject.UserStatisticsManage(PathID, CurrentCommunityID, UserToViewStat, ItemType.Path, PageIndex, EpEndDate, PreloadShowAll, PreloadAutoUpdate, GetIsMooc(PathID)))
         Else
-            RedirectToUrl(RootObject.UserStatisticsView(PathID, CurrentCommunityID, EpEndDate, PreloadShowAll))
+            RedirectToUrl(RootObject.UserStatisticsView(PathID, CurrentCommunityID, EpEndDate, PreloadShowAll, GetIsMooc(PathID)))
 
         End If
 
@@ -749,9 +764,9 @@ Public Class EpUserStat
 
             Dim oHyp As HyperLink = e.Item.FindControl("HYPdetail")
             If ViewModeType = EpViewModeType.Manage Then
-                oHyp.NavigateUrl = Me.BaseUrl & RootObject.UserActivityStatManage_PrevUsersStat(PathID, dtoItem.Id, CurrentCommunityID, UserToViewStat, TimeStat, PreloadShowAll)
+                oHyp.NavigateUrl = Me.BaseUrl & RootObject.UserActivityStatManage_PrevUsersStat(PathID, dtoItem.Id, CurrentCommunityID, UserToViewStat, TimeStat, PreloadShowAll, GetIsMooc(PathID))
             Else
-                oHyp.NavigateUrl = Me.BaseUrl & RootObject.UserActivityStatView(PathID, dtoItem.Id, CurrentCommunityID, Me.TimeStat, PreloadShowAll)
+                oHyp.NavigateUrl = Me.BaseUrl & RootObject.UserActivityStatView(PathID, dtoItem.Id, CurrentCommunityID, Me.TimeStat, PreloadShowAll, GetIsMooc(PathID))
             End If
             Me.Resource.setHyperLink(oHyp, False, True)
 

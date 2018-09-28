@@ -7,7 +7,7 @@ Imports lm.Comol.Core.DomainModel.Common
 Imports lm.Comol.Core.DomainModel
 
 Public Class UserListStatistics
-    Inherits PageBaseEduPath
+    Inherits EPpageBaseEduPath
 
 #Region "Context"
     Private _QSservice As COL_Questionario.Business.ServiceQuestionnaire
@@ -161,12 +161,12 @@ Public Class UserListStatistics
     End Property
 
     Private Sub ReloadStat(ByVal dateToView As DateTime?) Handles CTRLselTime.DateSelected
-        RedirectToUrl(RootObject.UsersStatistics(ItemId, CurrentCommunityID, Me.ItemType, PageIndex, dateToView, CHBshowall.Checked))
+        RedirectToUrl(RootObject.UsersStatistics(ItemId, CurrentCommunityID, Me.ItemType, PageIndex, dateToView, CHBshowall.Checked, IsMoocPath))
     End Sub
 
     Public Sub LoadCertifiedDate() Handles CTRLselTime.ViewCertifiedStat
 
-        RedirectToUrl(RootObject.UsersStatistics(ItemId, CurrentCommunityID, Me.ItemType, PageIndex, EpEndDate, CHBshowall.Checked))
+        RedirectToUrl(RootObject.UsersStatistics(ItemId, CurrentCommunityID, Me.ItemType, PageIndex, EpEndDate, CHBshowall.Checked, IsMoocPath))
 
     End Sub
 
@@ -174,10 +174,10 @@ Public Class UserListStatistics
 
         Select Case ItemType
             Case lm.Comol.Modules.EduPath.Domain.ItemType.Path
-                Return Me.BaseUrl & RootObject.UserStatisticsManage(ItemId, Me.CurrentCommunityID, userId, ItemType, PageIndex, TimeStat, CHBshowall.Checked)
+                Return Me.BaseUrl & RootObject.UserStatisticsManage(ItemId, Me.CurrentCommunityID, userId, ItemType, PageIndex, TimeStat, CHBshowall.Checked, True, IsMoocPath)
 
             Case lm.Comol.Modules.EduPath.Domain.ItemType.Unit
-                Return Me.BaseUrl & RootObject.UserStatisticsManage(ItemId, Me.CurrentCommunityID, userId, ItemType, PageIndex, TimeStat, CHBshowall.Checked)
+                Return Me.BaseUrl & RootObject.UserStatisticsManage(ItemId, Me.CurrentCommunityID, userId, ItemType, PageIndex, TimeStat, CHBshowall.Checked, False, IsMoocPath)
 
             Case lm.Comol.Modules.EduPath.Domain.ItemType.Activity
                 'Return Me.BaseUrl & RootObject.UserActivityStatManage_PrevUsersStat(GetPathId, ItemId, CurrentCommunityID, userId, PageIndex, TimeStat)
@@ -259,20 +259,20 @@ Public Class UserListStatistics
         End Get
     End Property
 
-    Private ReadOnly Property CurrentCommunityID() As Integer
-        Get
-            Dim qs_communityId As String = Request.QueryString("ComId")
-            If IsNumeric(qs_communityId) Then
-                Return qs_communityId
-            Else
-                Return Me.CurrentContext.UserContext.CurrentCommunityID
-            End If
-        End Get
-    End Property
+    'Private ReadOnly Property CurrentCommunityID() As Integer
+    '    Get
+    '        Dim qs_communityId As String = Request.QueryString("ComId")
+    '        If IsNumeric(qs_communityId) Then
+    '            Return qs_communityId
+    '        Else
+    '            Return Me.CurrentContext.UserContext.CurrentCommunityID
+    '        End If
+    '    End Get
+    'End Property
 
     Private ReadOnly Property CurrentUserId() As Integer
         Get
-            Return Me.CurrentContext.UserContext.CurrentUserID
+            Return PageUtility.CurrentContext.UserContext.CurrentUserID
         End Get
     End Property
 
@@ -305,6 +305,14 @@ Public Class UserListStatistics
     Private Sub Page_PreLoad(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.PreLoad
         PageUtility.CurrentModule = PageUtility.GetModule(Services_EduPath.Codex)
         Me.Master.ShowDocType = True
+        If Not _IsMoocPath.HasValue Then
+            Dim idPath As Long = IdCurrentPath
+            If (idPath > 0) Then
+                IsMoocPath = ServiceEP.IsMooc(idPath)
+            Else
+                IsMoocPath = PreloadIsMooc
+            End If
+        End If
     End Sub
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
@@ -323,7 +331,7 @@ Public Class UserListStatistics
             Me.CHBshowall.Checked = PreloadShowAll
         End If
         If (ItemType = lm.Comol.Modules.EduPath.Domain.ItemType.SubActivity) Then
-            UpdateScormStat()
+            'UpdateScormStat()
 
         End If
 
@@ -489,7 +497,11 @@ Public Class UserListStatistics
     End Sub
 
     Public Overrides Sub SetCultureSettings()
-        MyBase.SetCulture("pg_Stat", "EduPath")
+        If PreloadIsMooc Then
+            MyBase.SetCulture("pg_MoocStatistics", "EduPath")
+        Else
+            MyBase.SetCulture("pg_Stat", "EduPath")
+        End If
     End Sub
 
     Public Overrides Sub SetInternazionalizzazione()
@@ -550,23 +562,16 @@ Public Class UserListStatistics
         oPager.PageSize = PageSize
 
         If IsEvaluable Then
-
             If Filter = EvaluationFilter.Evaluated Then
                 oPager.Count = Me.EvaluatedItemsId.Count - 1
-
             Else
                 oPager.Count = Me.ItemsIdToEval.Count - 1
-
             End If
-
         Else
             oPager.Count = ServiceAssignment.GetAllParticipantInPathCount(ItemId, Me.CurrentCommunityID, ItemType, CTRLselTime.GetSelectedDate, CHBshowall.Checked) - 1
-
         End If
         Me.PGgrid.Visible = (oPager.Count + 1) > PageSize AndAlso PageIndex <= (Math.Ceiling(oPager.Count / PageSize))
-
         oPager.PageIndex = PageIndex
-
         Me.Pager = oPager
     End Sub
     Private Sub InitRblEvaluationFilter()
@@ -585,31 +590,31 @@ Public Class UserListStatistics
         End If
 
     End Sub
-    Private Sub UpdateScormStat()
-        Dim pathId As Long = ServiceEP.GetPathId_ByItemId(ItemId, ItemType)
-        Dim ModuleLinkIds As IList(Of Long) = ServiceEP.GetMaterialModuleLinkIds_ByPathId(pathId)
-        If ModuleLinkIds.Count > 0 Then
-            Dim oSender As PermissionService.IServicePermission = Nothing
-            Dim results As List(Of dtoItemEvaluation(Of Long))
-            Dim UserID As Integer = CurrentContext.UserContext.CurrentUserID
-            Try
-                oSender = New PermissionService.ServicePermissionClient
-                results = oSender.GetPendingEvaluations(ModuleLinkIds, UserID).ToList()
-                If Not IsNothing(oSender) Then
-                    Dim service As System.ServiceModel.ClientBase(Of PermissionService.IServicePermission) = DirectCast(oSender, System.ServiceModel.ClientBase(Of PermissionService.IServicePermission))
-                    service.Close()
-                    service = Nothing
-                End If
-            Catch ex As Exception
-                If Not IsNothing(oSender) Then
-                    Dim service As System.ServiceModel.ClientBase(Of PermissionService.IServicePermission) = DirectCast(oSender, System.ServiceModel.ClientBase(Of PermissionService.IServicePermission))
-                    service.Abort()
-                    service = Nothing
-                End If
-            End Try
-            ServiceEP.SaveActionsExecution(results, UserID)
-        End If
-    End Sub
+    'Private Sub UpdateScormStat()
+    '    Dim pathId As Long = ServiceEP.GetPathId_ByItemId(ItemId, ItemType)
+    '    Dim ModuleLinkIds As IList(Of Long) = ServiceEP.GetMaterialModuleLinkIds_ByPathId(pathId)
+    '    If ModuleLinkIds.Count > 0 Then
+    '        Dim oSender As PermissionService.IServicePermission = Nothing
+    '        Dim results As List(Of dtoItemEvaluation(Of Long))
+    '        Dim UserID As Integer = CurrentContext.UserContext.CurrentUserID
+    '        Try
+    '            oSender = New PermissionService.ServicePermissionClient
+    '            results = oSender.GetPendingEvaluations(ModuleLinkIds, UserID)
+    '            If Not IsNothing(oSender) Then
+    '                Dim service As System.ServiceModel.ClientBase(Of PermissionService.IServicePermission) = DirectCast(oSender, System.ServiceModel.ClientBase(Of PermissionService.IServicePermission))
+    '                service.Close()
+    '                service = Nothing
+    '            End If
+    '        Catch ex As Exception
+    '            If Not IsNothing(oSender) Then
+    '                Dim service As System.ServiceModel.ClientBase(Of PermissionService.IServicePermission) = DirectCast(oSender, System.ServiceModel.ClientBase(Of PermissionService.IServicePermission))
+    '                service.Abort()
+    '                service = Nothing
+    '            End If
+    '        End Try
+    '        ServiceEP.SaveActionsExecution(results, UserID)
+    '    End If
+    'End Sub
 
     Public isACertificate As Boolean = False
 
@@ -618,25 +623,7 @@ Public Class UserListStatistics
         Dim dtoItem As IdtoSubActUserList = subAct
         If ServiceEP.isSubActityInternalModule(subAct.ContentType) Then
             Me.LBitemName.Visible = True
-            Me.PLHaction.Visible = True
             Me.CTRLtextAction.Visible = True
-
-            'Dim oDisplayAction As lm.Comol.Modules.EduPath.Presentation.IViewModuleTextAction = Me.CTRLtextAction
-
-
-
-
-
-            ''oDisplayAction.RefreshContainer = True
-            'Dim initializer As New dtoInternalActionInitializer
-            'initializer.SubActivity = ServiceEP.GetDtoSubActivity(subAct.IdSubActivity)
-            'initializer.Display = lm.Comol.Core.ModuleLinks.DisplayActionMode.text
-
-            ''AddHandler oDisplayAction.RefreshContainerEvent, AddressOf RefreshContainerEvent
-            'oDisplayAction.InitializeControl(initializer)
-
-            'PLHaction.Controls.Add(oDisplayAction)
-
             Dim initializer As New dtoInternalActionInitializer
             ' initializer.IdPath = Me.cur
             initializer.IdPathCommunity = Me.CurrentCommunityID
@@ -671,43 +658,38 @@ Public Class UserListStatistics
                     TDdetail.Visible = True
             End Select
         Else
-            Me.CTRLtextAction.Visible = False
-            Me.PLHaction.Visible = True
-            'Dim oDisplayAction As lm.Comol.Core.DomainModel.Common.iModuleActionView = CType(LoadControl(BaseUrl & lm.Comol.Core.DomainModel.Common.CoreRootObject.GenericDisplayActionControl), lm.Comol.Core.DomainModel.Common.iModuleActionView)
-            'oDisplayAction.InitializeRemoteControlByLink(True, subAct.ModuleLink)
+            CTRLtextAction.Visible = False
+            CTRLcertificationAction.Visible = False
 
+            Dim itemAction As lm.Comol.Core.ModuleLinks.DisplayActionMode = lm.Comol.Core.ModuleLinks.DisplayActionMode.text
+            If dtoItem.ContentType = SubActivityType.Quiz Then
+                itemAction = lm.Comol.Core.ModuleLinks.DisplayActionMode.textDefault
+            End If
+            Select Case dtoItem.ContentType
+                Case SubActivityType.File
+                    Dim repositoryInitializer As New lm.Comol.Core.ModuleLinks.dtoObjectRenderInitializer
+                    repositoryInitializer.RefreshContainerPage = True
+                    repositoryInitializer.Link = New liteModuleLink(dtoItem.ModuleLink)
+                    repositoryInitializer.ForceOnModalPage = False
+                    repositoryInitializer.SetOnModalPageByItem = False
+                    repositoryInitializer.SaveObjectStatistics = False
+                    repositoryInitializer.SaveOwnerStatistics = False
+                    repositoryInitializer.SetPreviousPage = False
+                    CTRLdisplayItem.CssClass = SubActivityTypeCssClass(dtoItem.ContentType)
+                    CTRLdisplayItem.Visible = True
+                    CTRLdisplayItem.InitializeControl(repositoryInitializer, itemAction)
+                Case SubActivityType.Quiz
+                    Dim initializer As New lm.Comol.Core.ModuleLinks.dtoExternalModuleInitializer
+                    initializer.Link = dtoItem.ModuleLink
+                    CTRLquestionnaire.ContainerCSS = ""
 
-            Dim oDisplayAction As lm.Comol.Core.ModuleLinks.IExternalModuleDisplayAction = CType(LoadControl(BaseUrl & lm.Comol.Core.DomainModel.Common.CoreRootObject.GenericNewDisplayActionControl), lm.Comol.Core.ModuleLinks.IExternalModuleDisplayAction)
-            'Dim oDisplayAction As lm.Comol.Core.ModuleLinks.IExternalModuleDisplayAction = e.Item .FindControl("textAction")
-            '        hideControl(oLkb)
-            '        oLb.Text = Me.SmartTagsAvailable.TagAll(dtoItem.Description)
-
-            Dim initializer As New lm.Comol.Core.ModuleLinks.dtoExternalModuleInitializer
-            initializer.Link = dtoItem.ModuleLink
-            ' AGGIUNTA PLACEHOLDER
-            ' --> initializer.PlaceHolders.Add(New lm.Comol.Core.ModuleLinks.dtoPlaceHolder() With {.Text = "HH:ss", .Type = lm.Comol.Core.ModuleLinks.PlaceHolderType.three})
-
-            ' DEFINISCO UNA CLASSE PER IL CONTAINER
-            'oDisplayAction.ContainerCSS = SubActivityCssClass(dtoItem)
-            ' DIMENSIONI IMMAGINI
-            oDisplayAction.IconSize = Helpers.IconSize.Small
-
-            oDisplayAction.EnableAnchor = True
-
-            oDisplayAction.Display = lm.Comol.Core.ModuleLinks.DisplayActionMode.text
-
-            oDisplayAction.InitializeControl(initializer)
-            'PLHaction.Controls.Add(oDisplayAction)
-
-
-            PLHaction.Controls.Add(oDisplayAction)
-
+                    CTRLquestionnaire.IconSize = Helpers.IconSize.Small
+                    CTRLquestionnaire.EnableAnchor = True
+                    CTRLquestionnaire.Display = itemAction
+                    CTRLquestionnaire.InitializeControl(lm.Comol.Core.ModuleLinks.dtoModuleDisplayActionInitializer.Create(initializer, CTRLquestionnaire.Display, CTRLquestionnaire.ContainerCSS, Helpers.IconSize.Small))
+                    CTRLquestionnaire.Visible = True
+            End Select
         End If
-
-        'Me.IMGsubType.Visible = True
-        'Me.IMGsubType.ImageUrl = RootObject.ImgContentType(Me.BaseUrl, subAct.ContentType)
-        'Me.IMGsubType.AlternateText = Me.Resource.getValue("SubActivityType." & subAct.ContentType.ToString)
-
         If ServiceEP.CheckStatus(subAct.Status, Status.Mandatory) Then
             Me.IMGmandatory.ImageUrl = RootObject.ImgMandatoryMedium(Me.BaseUrl)
             Me.IMGmandatory.Visible = True
@@ -719,11 +701,11 @@ Public Class UserListStatistics
         Dim pathId As Long = IdCurrentPath
 
         'Me.HYPpathStat.ImageUrl = RootObject.ImgEduPathStat(Me.BaseUrl)
-        Me.HYPpathStat.NavigateUrl = Me.BaseUrl & RootObject.PathStatistics(pathId, Me.CurrentCommunityID, TimeStat, CHBshowall.Checked)
+        Me.HYPpathStat.NavigateUrl = Me.BaseUrl & RootObject.PathStatistics(pathId, Me.CurrentCommunityID, TimeStat, CHBshowall.Checked, IsMoocPath)
 
         If ItemType <> lm.Comol.Modules.EduPath.Domain.ItemType.Path Then
             'Me.HYPuserStat.ImageUrl = RootObject.ImgUsersStat(Me.BaseUrl)
-            Me.HYPuserStat.NavigateUrl = Me.BaseUrl & RootObject.UsersStatistics(pathId, Me.CurrentCommunityID, ItemType.Path, 0, TimeStat, CHBshowall.Checked)
+            Me.HYPuserStat.NavigateUrl = Me.BaseUrl & RootObject.UsersStatistics(pathId, Me.CurrentCommunityID, ItemType.Path, 0, TimeStat, CHBshowall.Checked, IsMoocPath)
         Else
             Me.HYPuserStat.Visible = False
         End If
@@ -734,7 +716,7 @@ Public Class UserListStatistics
 
         Else
 
-            Me.HYPeduPathView.NavigateUrl = Me.BaseUrl & RootObject.PathView(pathId, Me.CurrentCommunityID, EpViewModeType.Manage, ServiceEP.isPlayModePath(pathId))
+            Me.HYPeduPathView.NavigateUrl = Me.BaseUrl & RootObject.PathView(pathId, Me.CurrentCommunityID, EpViewModeType.Manage, ServiceEP.isPlayModePath(pathId), IsMoocPath)
         End If
     End Sub
 
@@ -742,7 +724,7 @@ Public Class UserListStatistics
     Private Sub ShowError(ByVal errorType As EpError)
         Me.MLVstat.SetActiveView(Me.VIWerror)
         Me.Resource.setHyperLink(Me.HYPerror, False, True)
-        Me.HYPerror.NavigateUrl = Me.BaseUrl & RootObject.EduPathList(Me.CurrentCommunityID, EpViewModeType.Manage)
+        Me.HYPerror.NavigateUrl = Me.BaseUrl & RootObject.EduPathList(Me.CurrentCommunityID, EpViewModeType.Manage, IsMoocPath)
         Select Case errorType
             Case EpError.Generic
                 Me.LBerror.Text = Me.Resource.getValue("Error." & EpError.Generic.ToString)
@@ -1209,6 +1191,8 @@ Public Class UserListStatistics
             Dim settings As dtoExportConfigurationSetting = ServiceEP.GetExportSetting(Me.GetPathId, CurrentCommunityID, StatisticsPageType.UsersStatistics, ConfigurationType.Export)
 
             Dim gAction As lm.Comol.Core.ModuleLinks.IExternalModuleDisplayAction = CType(LoadControl(BaseUrl & lm.Comol.Core.DomainModel.Common.CoreRootObject.GenericNewDisplayActionControl), lm.Comol.Core.ModuleLinks.IExternalModuleDisplayAction)
+            Dim quizAction As lm.Comol.Core.ModuleLinks.IGenericModuleDisplayAction = CType(LoadControl(BaseUrl & "Modules/Questionnaire/UC/UC_ModuleQuizAction.ascx"), lm.Comol.Core.ModuleLinks.IGenericModuleDisplayAction)
+            Dim repAction As lm.Comol.Core.ModuleLinks.IViewModuleRenderAction = CType(LoadControl(BaseUrl & "/Modules/Repository/Common/UC_ModuleRenderAction.ascx"), lm.Comol.Core.ModuleLinks.IViewModuleRenderAction)
             Dim tAction As lm.Comol.Modules.EduPath.Presentation.IViewModuleTextAction = CType(LoadControl(BaseUrl & RootObject.RenderTextAction), lm.Comol.Modules.EduPath.Presentation.IViewModuleTextAction)
             Dim cAction As lm.Comol.Modules.EduPath.Presentation.IViewModuleCertificationAction = CType(LoadControl(BaseUrl & RootObject.RenderCertificationAction), lm.Comol.Modules.EduPath.Presentation.IViewModuleCertificationAction)
 
@@ -1219,42 +1203,34 @@ Public Class UserListStatistics
                 oTemplate.Settings = lm.Comol.Core.DomainModel.Helpers.Export.ExportBaseHelper.GetDefaultPageSettings()
                 oTemplate.Settings.Size = DocTemplateVers.PageSize.A4_L
 
-                Dim doc As iTextSharp5.text.Document
-                If Me.ItemType <> lm.Comol.Modules.EduPath.Domain.ItemType.SubActivity Then
+                'ToDo: Export
 
-                    doc = ServiceEP.ServiceStat.ExportUsersStatistics_ToPDf(PageUtility.CurrentContext, ItemId, Me.CurrentCommunityID, ItemType, Me.CHBshowall.Checked, translations, roleTranslations, settings, ExporPathData.Normal, oTemplate, False, clientFileName, Response, New HttpCookie(CookieName, HDNdownloadTokenValue.Value), TimeStat)
-                Else
-                    oTemplate.Settings.Size = DocTemplateVers.PageSize.A4
-                    doc = ServiceEP.ServiceStat.ExportUsersSubActivityStatistics_ToPdf(PageUtility.CurrentContext, ItemId, Me.CurrentCommunityID, Me.CHBshowall.Checked, translations, roleTranslations, settings, ExporPathData.Normal, gAction, tAction, cAction, oTemplate, False, clientFileName, Response, New HttpCookie(CookieName, HDNdownloadTokenValue.Value), TimeStat)
+                ShowError(EpError.Generic)
 
-                End If
-                If IsNothing(doc) Then
-                    ShowError(EpError.Generic)
-                End If
             Else
-                If Not IsNothing(cookie) Then
-                    Response.AppendCookie(cookie)
-                End If
+            If Not IsNothing(cookie) Then
+                Response.AppendCookie(cookie)
+            End If
 
-                Response.AddHeader("Content-Disposition", "attachment; filename=" & clientFileName)
-                Response.Charset = ""
-                Response.ContentEncoding = System.Text.Encoding.Default
-                Select Case exportType
-                    Case Helpers.Export.ExportFileType.xml
-                        Response.ContentType = "application/ms-excel"
-                        If ItemType <> lm.Comol.Modules.EduPath.Domain.ItemType.SubActivity Then
-                            Response.Write(ServiceEP.ServiceStat.ExportUsersStatistics_ToXml(PageUtility.CurrentContext, ItemId, Me.CurrentCommunityID, ItemType, CHBshowall.Checked, translations, roleTranslations, settings, ExporPathData.Normal, TimeStat))
-                        Else
-                            Response.Write(ServiceEP.ServiceStat.ExportUsersSubActivityStatistics_ToXml(PageUtility.CurrentContext, ItemId, Me.CurrentCommunityID, CHBshowall.Checked, translations, roleTranslations, settings, ExporPathData.Normal, gAction, tAction, cAction, TimeStat))
-                        End If
-                    Case Else
-                        Response.ContentType = "text/csv"
-                        If Me.ItemType <> lm.Comol.Modules.EduPath.Domain.ItemType.SubActivity Then
-                            Response.Write(ServiceEP.ServiceStat.ExportUsersStatistics_ToCsv(PageUtility.CurrentContext, ItemId, Me.CurrentCommunityID, ItemType, Me.CHBshowall.Checked, translations, roleTranslations, settings, ExporPathData.Normal, TimeStat))
-                        Else
-                            Response.Write(ServiceEP.ServiceStat.ExportUsersSubActivityStatistics_ToCsv(PageUtility.CurrentContext, ItemId, Me.CurrentCommunityID, Me.CHBshowall.Checked, translations, roleTranslations, settings, ExporPathData.Normal, gAction, tAction, cAction, TimeStat))
-                        End If
-                End Select
+            Response.AddHeader("Content-Disposition", "attachment; filename=" & clientFileName)
+            Response.Charset = ""
+            Response.ContentEncoding = System.Text.Encoding.Default
+            Select Case exportType
+                Case Helpers.Export.ExportFileType.xml
+                    Response.ContentType = "application/ms-excel"
+                    If ItemType <> lm.Comol.Modules.EduPath.Domain.ItemType.SubActivity Then
+                        Response.Write(ServiceEP.ServiceStat.ExportUsersStatistics_ToXml(PageUtility.CurrentContext, ItemId, Me.CurrentCommunityID, ItemType, CHBshowall.Checked, translations, roleTranslations, settings, ExporPathData.Normal, TimeStat))
+                    Else
+                        Response.Write(ServiceEP.ServiceStat.ExportUsersSubActivityStatistics_ToXml(PageUtility.CurrentContext, ItemId, Me.CurrentCommunityID, CHBshowall.Checked, translations, roleTranslations, settings, ExporPathData.Normal, quizAction, repAction, tAction, cAction, TimeStat))
+                    End If
+                Case Else
+                    Response.ContentType = "text/csv"
+                    If Me.ItemType <> lm.Comol.Modules.EduPath.Domain.ItemType.SubActivity Then
+                        Response.Write(ServiceEP.ServiceStat.ExportUsersStatistics_ToCsv(PageUtility.CurrentContext, ItemId, Me.CurrentCommunityID, ItemType, Me.CHBshowall.Checked, translations, roleTranslations, settings, ExporPathData.Normal, TimeStat))
+                    Else
+                        Response.Write(ServiceEP.ServiceStat.ExportUsersSubActivityStatistics_ToCsv(PageUtility.CurrentContext, ItemId, Me.CurrentCommunityID, Me.CHBshowall.Checked, translations, roleTranslations, settings, ExporPathData.Normal, quizAction, repAction, tAction, cAction, TimeStat))
+                    End If
+            End Select
             End If
         Catch ex As Exception
             Select Case exportType
@@ -1389,7 +1365,7 @@ Public Class UserListStatistics
             Me.LTopenDialog.Visible = True
         Else
             Me.LTopenDialog.Visible = False
-            Me.PageUtility.RedirectToUrl(RootObject.EvaluateSubAct(ItemId, Me.CurrentCommunityID, Me.RBLfilter.SelectedValue, Me.Pager.PageIndex, TimeStat))
+            Me.PageUtility.RedirectToUrl(RootObject.EvaluateSubAct(ItemId, Me.CurrentCommunityID, Me.RBLfilter.SelectedValue, Me.Pager.PageIndex, TimeStat, IsMoocPath))
         End If
     End Sub
 
@@ -1407,13 +1383,13 @@ Public Class UserListStatistics
 
             Else
                 Me.LTopenDialog.Visible = False
-                Me.PageUtility.RedirectToUrl(RootObject.EvaluateSubAct(ItemId, Me.CurrentCommunityID, Me.RBLfilter.SelectedValue, Me.Pager.PageIndex, TimeStat))
+                Me.PageUtility.RedirectToUrl(RootObject.EvaluateSubAct(ItemId, Me.CurrentCommunityID, Me.RBLfilter.SelectedValue, Me.Pager.PageIndex, TimeStat, IsMoocPath))
 
             End If
 
         Else
 
-            Me.PageUtility.RedirectToUrl(RootObject.UsersStatistics(ItemId, Me.CurrentCommunityID, ItemType, Me.Pager.PageIndex, TimeStat, CHBshowall.Checked))
+            Me.PageUtility.RedirectToUrl(RootObject.UsersStatistics(ItemId, Me.CurrentCommunityID, ItemType, Me.Pager.PageIndex, TimeStat, CHBshowall.Checked, IsMoocPath))
         End If
 
     End Sub
@@ -1442,19 +1418,19 @@ Public Class UserListStatistics
         Select Case _buttonClicked
 
             Case ButtonClicked.Pager
-                Me.PageUtility.RedirectToUrl(RootObject.EvaluateSubAct(ItemId, Me.CurrentCommunityID, Me.RBLfilter.SelectedValue, Me.Pager.PageIndex, TimeStat))
+                Me.PageUtility.RedirectToUrl(RootObject.EvaluateSubAct(ItemId, Me.CurrentCommunityID, Me.RBLfilter.SelectedValue, Me.Pager.PageIndex, TimeStat, IsMoocPath))
 
             Case ButtonClicked.RblFilter
-                Me.PageUtility.RedirectToUrl(RootObject.EvaluateSubAct(ItemId, Me.CurrentCommunityID, Me.RBLfilter.SelectedValue, 0, Me.TimeStat))
+                Me.PageUtility.RedirectToUrl(RootObject.EvaluateSubAct(ItemId, Me.CurrentCommunityID, Me.RBLfilter.SelectedValue, 0, Me.TimeStat, IsMoocPath))
 
             Case ButtonClicked.EduPathView
                 Me.ClearSession()
                 Dim pathId As Long = IdCurrentPath
-                Me.PageUtility.RedirectToUrl(RootObject.PathView(pathId, Me.CurrentCommunityID, EpViewModeType.Manage, ServiceEP.isPlayModePath(pathId)))
+                Me.PageUtility.RedirectToUrl(RootObject.PathView(pathId, Me.CurrentCommunityID, EpViewModeType.Manage, ServiceEP.isPlayModePath(pathId), IsMoocPath))
 
             Case ButtonClicked.UpdateList
                 Me.ClearSession()
-                Me.PageUtility.RedirectToUrl(RootObject.EvaluateSubAct(ItemId, Me.CurrentCommunityID, Me.RBLfilter.SelectedValue, 0, Me.TimeStat))
+                Me.PageUtility.RedirectToUrl(RootObject.EvaluateSubAct(ItemId, Me.CurrentCommunityID, Me.RBLfilter.SelectedValue, 0, Me.TimeStat, IsMoocPath))
 
         End Select
     End Sub
@@ -1486,7 +1462,7 @@ Public Class UserListStatistics
             Me.LTopenDialog.Visible = False
             ClearSession()
             Dim pathId As Long = IdCurrentPath
-            Me.PageUtility.RedirectToUrl(RootObject.PathView(pathId, Me.CurrentCommunityID, EpViewModeType.Manage, ServiceEP.isPlayModePath(pathId)))
+            Me.PageUtility.RedirectToUrl(RootObject.PathView(pathId, Me.CurrentCommunityID, EpViewModeType.Manage, ServiceEP.isPlayModePath(pathId), IsMoocPath))
         End If
     End Sub
 
@@ -1501,7 +1477,7 @@ Public Class UserListStatistics
         Else
             Me.LTopenDialog.Visible = False
             ClearSession()
-            Me.PageUtility.RedirectToUrl(RootObject.EvaluateSubAct(ItemId, Me.CurrentCommunityID, Me.RBLfilter.SelectedValue, 0, TimeStat))
+            Me.PageUtility.RedirectToUrl(RootObject.EvaluateSubAct(ItemId, Me.CurrentCommunityID, Me.RBLfilter.SelectedValue, 0, TimeStat, IsMoocPath))
 
         End If
 

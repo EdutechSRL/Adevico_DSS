@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<hibernate-mapping assembly="lm.Comol.Modules.Standard" namespace="lm.Comol.Modules.Standard.GlossaryNew.Domain"
+                   xmlns="urn:nhibernate-mapping-2.2">
+  <class name="liteGlossary" table="GL_Glossary" lazy="true">
+
+    <id name="Id" column="Id" type="Int64">
+      <generator class="native" />
+    </id>
+
+    <version name="TimeStamp" generated="always" unsaved-value="null" type="BinaryBlob">
+      <column name="_Timestamp" not-null="false" sql-type="timestamp" />
+    </version>
+
+    <property name="Name" />
+    <property name="Description" />
+    <property name="IdCommunity" />
+    <property name="Status" type="lm.Comol.Modules.Standard.GlossaryNew.Domain.ItemStatus, lm.Comol.Modules.Standard"
+              column="Status" />
+    <property name="DisplayMode"
+              type="lm.Comol.Modules.Standard.GlossaryNew.Domain.DisplayMode, lm.Comol.Modules.Standard"
+              column="DisplayMode" />
+    <property name="DisplayOrder" />
+    <property name="IdLanguage" />
+    <property name="IsPublic" />
+    <property name="IsShared" />
+    <property name="IsPublished" />
+    <property name="Type" type="lm.Comol.Modules.Standard.GlossaryNew.Domain.GlossaryType, lm.Comol.Modules.Standard"
+              column="Type" />
+    <property name="TermsArePaged" />
+    <property name="TermsPerPage" />
+    <property name="TermsCount" />
+
+    <property name="ModifiedOn" column="_ModifiedOn" />
+    <property name="Deleted" type="lm.Comol.Core.DomainModel.BaseStatusDeleted,lm.Comol.Core.DomainModel"
+              column="_Deleted" />
+  </class>
+</hibernate-mapping>

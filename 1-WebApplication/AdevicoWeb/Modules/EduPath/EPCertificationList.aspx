@@ -6,7 +6,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="CPHserviceLocalization" runat="server">
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="HeadContent" runat="server">
-<link href="../../Graphics/Modules/Edupath/css/edupath.css" rel="Stylesheet" />
+<link href="../../Graphics/Modules/Edupath/css/<%=GetCssFileByType()%>edupath.css?v=201605041410lm" rel="Stylesheet" />
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="TitleContent" runat="server">
 <asp:Label runat="server" ID="LBserviceCertificationList">**Certification List</asp:Label>   
@@ -25,7 +25,7 @@
             </Calendar>
             <DateInput ID="DateInput1" DateFormat="dd/MM/yyyy" DisplayDateFormat="dd/MM/yyyy" Width="" runat="server">
             </DateInput>
-            <DatePopupButton CssClass="" HoverImageUrl="" ImageUrl="" />
+            <DatePopupButton />
         </telerik:RadDatePicker>
     </div>
     <div class="fieldrow filterenddate">

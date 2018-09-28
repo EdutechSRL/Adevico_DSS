@@ -9,7 +9,7 @@
 <%@ MasterType VirtualPath="~/AjaxPortal.Master" %>
 <%@ Register Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="telerik" %>
 <asp:Content ID="Content2" ContentPlaceHolderID="HeadContent" runat="server">
-    <link href="../../Graphics/Modules/Edupath/css/PfStyle.css" rel="Stylesheet" />
+    <link href="../../Graphics/Modules/Edupath/css/<%=GetCssFileByType()%>pfstyle.css?v=201605041410lm" rel="Stylesheet" />
     <script type="text/javascript">
         $(document).ready(function () {
             $("#helpDialog1").dialog({
@@ -104,10 +104,12 @@
         <asp:MultiView ID="MLVpathCreate" runat="server" ActiveViewIndex="0">
             <asp:View ID="VIWcreatePath" runat="server">
                 <CTRL:Messages runat="server" ID="CTRLmoduleStatusMessage" Visible="false" />
+               
                 <asp:Wizard ID="WZRpathCreate" runat="server" ActiveStepIndex="0" Width="100%" BackColor="#EFF3FB"
                     BorderColor="#B5C7DE" BorderWidth="1px" DisplaySideBar="False">
                     <WizardSteps>
                         <asp:WizardStep ID="WSTdata" runat="server" Title="*Path Detail" StepType="Step">
+                             <CTRL:Messages runat="server" ID="CTRLpathMessage" Visible="false" />
                             <asp:Label runat="server" ID="LBdetailTitle" Font-Bold="true" ForeColor="#00008B"
                                 Text="PathDetail**"></asp:Label><br />
                             <hr style="color: #00008B;" />
@@ -121,17 +123,17 @@
                                         Display="Static" ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>
                                 </div>
                             </div>
-                            <div id="DIVtype" class="DetailItem">
+                            <div class="DetailItem">
                                 <div class="DetailLeftItem">
-                                    <asp:Label ID="LBtype_t" runat="server" CssClass="Titolo_campoSmall">Type:*</asp:Label>
+                                    <asp:Label ID="LBcodeTitle" runat="server" CssClass="Titolo_campoSmall">Code:</asp:Label>
                                 </div>
                                 <div class="DetailRightItem">
-                                    <asp:RadioButtonList ID="RBLtype" runat="server" RepeatLayout="Flow" RepeatDirection="Horizontal">
-                                        <asp:ListItem runat="server" Value="0" Selected="true">e-learning</asp:ListItem>
-                                        <asp:ListItem runat="server" Value="1">webinar</asp:ListItem>
-                                    </asp:RadioButtonList>
+                                    <asp:TextBox ID="TXBcode" runat="server" MaxLength="250" Width="30%"></asp:TextBox>
+                                    
                                 </div>
                             </div>
+                            
+
                             <div id="DIVdescriptionEdit" class="DetailItem">
                                 <div class="DetailLeftItem">
                                     <asp:Label ID="LBdescriptionTitle" runat="server" CssClass="Titolo_campoSmall">Description:**</asp:Label>
@@ -280,7 +282,7 @@
                                 </AjaxSettings>                   
                             </telerik:RadAjaxManager>
 
-                             <div class="clearfix collapsable collapsed" runat="server" visible="false" id="DVadvancedSettings">
+                            <div class="clearfix collapsable collapsed" runat="server" id="DVadvancedSettings">
                                 <div class="sectionheader clearfix">
                                     <div class="left">
                                         <h3 class="sectiontitle clearifx"><asp:Literal ID="LTadvancedSettingsTitle" runat="server"></asp:Literal><span class="extrainfo expander" id="SPNexpand" runat="server"><asp:Label ID="LBspanExpandList" runat="server" CssClass="on">*click to expand</asp:Label><asp:Label ID="LBspanCollapseList" runat="server" CssClass="off">*click to collapse</asp:Label></span></h3>
@@ -304,14 +306,6 @@
                                             </label>
                                             <div class="inlinewrapper">
                                                 <asp:RadioButtonList ID="RBLdisplayPolicy" CssClass="radiobuttonlist" RepeatLayout="Flow" RepeatDirection="Horizontal" runat="server"/>
-                                            </div>
-                                        </div>
-                                        <div class="fieldrow fieldlongtext">
-                                            <label class="fieldlabel">  
-                                                <asp:Label ID="LBscormSettingsPolicy_t" runat="server">*SCORM subactivities</asp:Label>
-                                            </label>
-                                            <div class="inlinewrapper"> 
-                                                <asp:RadioButtonList ID="RBLscormSettings" CssClass="radiobuttonlist" RepeatLayout="Flow" RepeatDirection="Horizontal" runat="server"/>
                                             </div>
                                         </div>
                                     </div>
@@ -543,10 +537,6 @@
                                     <asp:Label ID="LBstatusTitleRes" runat="server" Text="title res" CssClass="Titolo_campoSmall"></asp:Label></div>
                                 <div class="DetailRightItem">
                                     <asp:Label ID="LBstatusRes" runat="server" Text="title res" CssClass="dettagli_CampoSmall"></asp:Label></div>
-                                <%--  <div class="DetailMulti">
-                                <asp:Label ID="LBmandatoryTitleRes" runat="server" Text="title res" CssClass="Titolo_campoSmall"></asp:Label></div>
-                            <div class="DetailMulti">
-                                <asp:Image ID="IMGmandatory" runat="server" /></div>--%>
                             </div>
                             <div class="DetailItem">
                                 <div class="DetailLeftItem">
@@ -560,29 +550,23 @@
                                 <div class="DetailRightItem">
                                     <asp:Label ID="LBsingleAction" runat="server" Text="title res" CssClass="dettagli_CampoSmall"></asp:Label></div>
                             </div>
-                            <div class="DetailItem" style="display:none;">
+                            <div class="DetailItem">
                                 <div class="DetailLeftItem">
                                     <asp:Label ID="LBfloatingDeadlinesTitle" runat="server" Text="title res" CssClass="Titolo_campoSmall"></asp:Label></div>
                                 <div class="DetailRightItem">
                                     <asp:Label ID="LBfloatingDeadlines" runat="server" Text="title res" CssClass="dettagli_CampoSmall"></asp:Label></div>
                             </div>
-                            <div class="DetailItem" style="display:none;">
+                            <div class="DetailItem">
                                 <div class="DetailLeftItem">
                                     <asp:Label ID="LBcompletionPolicyTitle" runat="server" CssClass="Titolo_campoSmall"></asp:Label></div>
                                 <div class="DetailRightItem">
                                     <asp:Label ID="LBcompletionPolicy" runat="server"  CssClass="dettagli_CampoSmall"></asp:Label></div>
                             </div>
-                            <div class="DetailItem" style="display:none;">
+                            <div class="DetailItem">
                                 <div class="DetailLeftItem">
                                     <asp:Label ID="LBdisplayPolicyTitle" runat="server" CssClass="Titolo_campoSmall"></asp:Label></div>
                                 <div class="DetailRightItem">
                                     <asp:Label ID="LBdisplayPolicy" runat="server"  CssClass="dettagli_CampoSmall"></asp:Label></div>
-                            </div>
-                            <div class="DetailItem">
-                                <div class="DetailLeftItem">
-                                    <asp:Label ID="LBscormSettingsPolicyTitle" runat="server" CssClass="Titolo_campoSmall"></asp:Label></div>
-                                <div class="DetailRightItem">
-                                    <asp:Label ID="LBscormSettingsPolicy" runat="server"  CssClass="dettagli_CampoSmall"></asp:Label></div>
                             </div>
                             <div id="DIVendTimeRes" runat="server">
                                 <div class="DetailItem">

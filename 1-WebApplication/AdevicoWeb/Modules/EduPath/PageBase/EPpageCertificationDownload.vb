@@ -213,6 +213,12 @@ Public MustInherit Class EPpageCertificationDownload
                     Response.AppendCookie(GetDownloadCookie())
                     DisplayMessage(Resource.getValue("IViewCertificationDownload.CertificationError." & err.ToString), lm.Comol.Core.DomainModel.Helpers.MessageType.error)
                 Else
+                    If String.IsNullOrEmpty(fileExtension) Then
+                        fileExtension = "." & Helpers.Export.ExportFileType.pdf.ToString().ToLower
+                    End If
+                    If Not webFileName.EndsWith(fileExtension) Then
+                        webFileName &= fileExtension
+                    End If
                     Dim contentType As String = Response.ContentType
                     Response.BufferOutput = False
                     Response.ClearHeaders()
@@ -259,30 +265,16 @@ Public MustInherit Class EPpageCertificationDownload
                 End If
                 If allowSave Then
                     If IsNothing(template) Then
-                        template = CurrentPresenter.FillDataIntoTemplate( _
-                            PreloadIdSubactivity, _
-                            TemplateBaseUrl, _
-                            PageUtility.SystemSettings.Presenter.PortalDisplay.LocalizeIstanceName(language.Id), _
-                            result, _
-                            GetWebinarInfo(IdPath, idUser))
+                        template = CurrentPresenter.FillDataIntoTemplate(PreloadIdSubactivity, TemplateBaseUrl, PageUtility.SystemSettings.Presenter.PortalDisplay.LocalizeIstanceName(language.Id), result)
                     End If
-                    Dim xp As New lm.Comol.Core.BaseModules.DocTemplate.Helpers.HelperExportPDF
+
 
                     If result = lm.Comol.Core.Certifications.CertificationError.None OrElse (allowEmptyPlaceHolders AndAlso (result = lm.Comol.Core.Certifications.CertificationError.EmptyTemplateItem OrElse result = lm.Comol.Core.Certifications.CertificationError.EmptyTemplateItems)) Then
                         Dim idFile As Guid = Guid.NewGuid
-                        If xp.ExportToFile(template, baseFilePath & idFile.ToString & ".cer") Then
-                            filename = baseFilePath & idFile.ToString & ".cer"
-                            Dim uResource As New ResourceManager
-                            uResource.UserLanguages = language.Code
-                            uResource.ResourcesName = "pg_Certification"
-                            uResource.Folder_Level1 = "Modules"
-                            uResource.Folder_Level2 = "EduPath"
-                            uResource.setCulture()
 
-                            Me.CurrentPresenter.SaveCertificationFile(crType, (result <> lm.Comol.Core.Certifications.CertificationError.None), IdCommunityContainer, idUser, webFileName, uResource.getValue("Certification.CertificationDescription"), IdPath, PreloadIdSubactivity, idFile, "." & Helpers.Export.ExportFileType.pdf.ToString())
-                        Else
-                            result = lm.Comol.Core.Certifications.CertificationError.SavingFile
-                        End If
+                        ''ToDo: Export
+                        result = lm.Comol.Core.Certifications.CertificationError.SavingFile
+
                     End If
                 Else
                     result = lm.Comol.Core.Certifications.CertificationError.RepositoryError
@@ -375,9 +367,5 @@ Public MustInherit Class EPpageCertificationDownload
     End Sub
 #End Region
 
-    Private Function GetWebinarInfo(ByVal pathId As Long, ByVal userId As Integer) As List(Of lm.Comol.Modules.EduPath.Domain.DTO.dtoWebinarInfo)
-
-        Return New List(Of lm.Comol.Modules.EduPath.Domain.DTO.dtoWebinarInfo)()
-    End Function
-
+   
 End Class

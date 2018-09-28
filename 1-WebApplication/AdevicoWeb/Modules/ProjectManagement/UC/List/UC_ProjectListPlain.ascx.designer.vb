@@ -282,4 +282,13 @@ Partial Public Class UC_ProjectListPlain
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LTnodeadline As Global.System.Web.UI.WebControls.Literal
+
+    '''<summary>
+    '''CTRLattachment control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents CTRLattachment As Global.Comunita_OnLine.UC_DialogProjectAttachments
 End Class

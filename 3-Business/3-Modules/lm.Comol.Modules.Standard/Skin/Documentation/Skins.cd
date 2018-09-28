@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="lm.Comol.Modules.Standard.Skin.Domain.Skin">
+    <Position X="1.25" Y="1" Width="1.5" />
+    <AssociationLine Name="HeaderLogos" Type="lm.Comol.Modules.Standard.Skin.Domain.HeaderLogo" FixedFromPoint="true">
+      <Path>
+        <Point X="2.75" Y="2.265" />
+        <Point X="4.75" Y="2.265" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.902" Y="0.102" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="FooterLogos" Type="lm.Comol.Modules.Standard.Skin.Domain.FooterLogo">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.881" Y="0.039" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="FooterText" Type="lm.Comol.Modules.Standard.Skin.Domain.FooterText" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="2.75" Y="2.798" />
+        <Point X="4.271" Y="2.798" />
+        <Point X="4.271" Y="3.438" />
+        <Point X="7" Y="3.438" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="3.287" Y="0.862" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>QABAQAAAAAACAABAhCAAAAQAwABAAAAAAABAAAAAAAE=</HashCode>
+      <FileName>Skin\Domain\Skin.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="HeaderLogos" />
+      <Property Name="FooterLogos" />
+      <Property Name="FooterText" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="lm.Comol.Modules.Standard.Skin.Domain.Logo">
+    <Position X="7" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAQAQAAAA=</HashCode>
+      <FileName>Skin\Domain\Logo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="lm.Comol.Modules.Standard.Skin.Domain.FooterText">
+    <Position X="7" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAgAAQAAAA=</HashCode>
+      <FileName>Skin\Domain\FooterText.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="lm.Comol.Modules.Standard.Skin.Domain.Skin_Share">
+    <Position X="1.25" Y="4.5" Width="2.25" />
+    <AssociationLine Name="Skin" Type="lm.Comol.Modules.Standard.Skin.Domain.Skin">
+      <MemberNameLabel ManuallyPlaced="true" ManuallySized="true">
+        <Position X="-0.755" Y="0.101" Height="0.182" Width="0.649" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAA=</HashCode>
+      <FileName>Skin\Domain\Skin_Share.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Skin" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="lm.Comol.Modules.Standard.Skin.Domain.Skin_ShareCommunity">
+    <Position X="6" Y="4.75" Width="1.75" />
+    <InheritanceLine Type="lm.Comol.Modules.Standard.Skin.Domain.Skin_Share" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="3.188" Y="4.5" />
+        <Point X="3.188" Y="4.125" />
+        <Point X="6.51" Y="4.125" />
+        <Point X="6.51" Y="4.75" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAA=</HashCode>
+      <FileName>Skin\Domain\Skin_Share.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="lm.Comol.Modules.Standard.Skin.Domain.Skin_ShareOrganization">
+    <Position X="3.75" Y="4.75" Width="2" />
+    <InheritanceLine Type="lm.Comol.Modules.Standard.Skin.Domain.Skin_Share" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="3.188" Y="4.5" />
+        <Point X="3.188" Y="4.125" />
+        <Point X="4.75" Y="4.125" />
+        <Point X="4.75" Y="4.75" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Skin\Domain\Skin_Share.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="lm.Comol.Modules.Standard.Skin.Business.ServiceSkin">
+    <Position X="9" Y="0.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>sWABAqgRQMwADQRAkAFAABCiABJAhESCMAkEQJKSsQA=</HashCode>
+      <FileName>Skin\Business\ServiceSkin.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="lm.Comol.Modules.Standard.Skin.Domain.FooterLogo">
+    <Position X="4.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Skin\Domain\Logo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="lm.Comol.Modules.Standard.Skin.Domain.HeaderLogo">
+    <Position X="4.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Skin\Domain\Logo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="lm.Comol.Modules.Standard.Skin.Domain.SkinShareType">
+    <Position X="1.25" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAIAAAAAAAAAAAAAQAAAAAAAAIAACAABIAA=</HashCode>
+      <FileName>Skin\Domain\Skin_Share.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

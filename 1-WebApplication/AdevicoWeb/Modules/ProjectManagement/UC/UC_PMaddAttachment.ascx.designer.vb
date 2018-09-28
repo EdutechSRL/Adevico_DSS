@@ -47,7 +47,7 @@ Partial Public Class UC_PMaddAttachment
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents CTRLinternalUploader As Global.Comunita_OnLine.UC_ModuleInternalFileMultipleUploader
+    Protected WithEvents CTRLinternalUploader As Global.Comunita_OnLine.UC_ModuleInternalUploader
 
     '''<summary>
     '''CTRLlinkItems control.
@@ -56,16 +56,16 @@ Partial Public Class UC_PMaddAttachment
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents CTRLlinkItems As Global.Comunita_OnLine.UC_OtherModuleLinkRepositoryItems
+    Protected WithEvents CTRLlinkItems As Global.Comunita_OnLine.UC_ModuleInternalLink
 
     '''<summary>
-    '''CTRLrepositoryUploader control.
+    '''CTRLrepositoryItemsUploader control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents CTRLrepositoryUploader As Global.Comunita_OnLine.UC_AjaxMultipleFileUploader
+    Protected WithEvents CTRLrepositoryItemsUploader As Global.Comunita_OnLine.UC_ModuleRepositoryUploader
 
     '''<summary>
     '''DVcommands control.
@@ -77,15 +77,6 @@ Partial Public Class UC_PMaddAttachment
     Protected WithEvents DVcommands As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 
     '''<summary>
-    '''BTNaddAttachment control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents BTNaddAttachment As Global.System.Web.UI.WebControls.Button
-
-    '''<summary>
     '''LNBcloseAttachmentWindow control.
     '''</summary>
     '''<remarks>
@@ -93,4 +84,13 @@ Partial Public Class UC_PMaddAttachment
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LNBcloseAttachmentWindow As Global.System.Web.UI.WebControls.LinkButton
+
+    '''<summary>
+    '''BTNaddAttachment control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents BTNaddAttachment As Global.System.Web.UI.WebControls.Button
 End Class

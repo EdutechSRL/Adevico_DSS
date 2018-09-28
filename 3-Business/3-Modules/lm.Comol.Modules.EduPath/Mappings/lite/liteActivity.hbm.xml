@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="lm.Comol.Modules.EduPath" namespace="lm.Comol.Modules.EduPath.Domain">
+    <class name="liteActivity" table="EP_Activity" optimistic-lock ="version">
+        <id name="Id" column="Id" type="Int64">
+            <generator class="native"/>
+        </id>
+        <version name="TimeStamp"
+       generated="always"
+       unsaved-value="null"
+       type="BinaryBlob">
+            <column name="_Timestamp"
+                    not-null="false"
+                    sql-type="timestamp"/>
+        </version>
+        <property name="Name" type="String" column="Name" update="false" insert="false"/>
+        <property name="Description" type="String" column="Description" update="false" insert="false"/>
+        <property name="DisplayOrder" type="Int16" column="DisplayOrder" update="false" insert="false"/>
+        <property name="IdUnit" type="Int64" update="false" insert="false"/>
+        <property name="IdPath" type="Int64" update="false" insert="false"/>
+        <property name="IdCommunity" type="Int32" update="false" insert="false"/>
+        <property name="StartDate" type="DateTime" column="StartDate" update="false" insert="false"/>
+        <property name="EndDate" type="DateTime" column="EndDate" update="false" insert="false"/>
+        <property name="Status" type="Status" column="Status" update="false" insert="false"/>
+
+        <property name="StartSpan" type="TimeAsTimeSpan" column="StartSpan" update="false" insert="false"/>
+        <property name="EndSpan" type="TimeAsTimeSpan" column="EndSpan" update="false" insert="false"/>
+
+        <property name="MinCompletion" type="Int64" column="MinCompletion" update="false" insert="false"/>
+        <property name="MinMark" type="Int16" column="MinMark" update="false" insert="false"/>        
+        <property name="Weight" type="Int64" column="Weight" update="false" insert="false"/>
+        <property name="Duration" type="Int64" column="Duration" update="false" insert="false"/>
+        <property name="isQuiz" type="Boolean" column="isQuiz" update="false" insert="false"/>
+        
+      <property name="Deleted" type="lm.Comol.Core.DomainModel.BaseStatusDeleted,lm.Comol.Core.DomainModel" column="_Deleted" />
+    </class>
+</hibernate-mapping>

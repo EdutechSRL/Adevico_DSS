@@ -1,0 +1,22 @@
+﻿1. Al momento la gestione dei file avverrà LATO COMOL nel code-Behind delle pagine
+2. Il path sarà del tipo: /File/#SkinId/
+3. Css:
+	/File/Skin/#SkinId/default.css
+	/File/Skin/#SkinId/admin.css
+	/File/Skin/#SkinId/IE.css
+4. Loghi
+	/File/Skin/#SkinId/#LogoID_OriginalName.ext
+5. Altri file
+	/File/Skin/#SkinId/Images/*img.ext
+
+Esempio di cartella completa:
+	/File/Skin/15/default.css
+	/File/Skin/15/admin.css
+	/File/Skin/15/IE.css
+	/File/Skin/15/1_Unitn.pgn
+	/File/Skin/15/2_Labma.gif
+	/File/Skin/15/3_Labma.jpg
+	/File/Skin/15/Images/i-book.jpg
+	/File/Skin/15/Images/i-home.gif
+	/File/Skin/15/Images/actionico.png
+

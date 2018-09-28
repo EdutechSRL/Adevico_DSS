@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="lm.Comol.Modules.EduPath.Domain.DomainBase">
+    <Position X="8" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAACAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Domain\DomainBase.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Deleted" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="lm.Comol.Modules.EduPath.Domain.DomainBaseMetaInfo">
+    <Position X="7.5" Y="3.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>ACAACABAAAAACAQAAAAAAAAAAABCEAAAAAAAAAAAAAE=</HashCode>
+      <FileName>Domain\DomainBaseMetaInfo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="lm.Comol.Modules.EduPath.Domain.DomainBaseMetaInfoStatus">
+    <Position X="7.5" Y="7" Width="2.25" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <InheritanceLine Type="lm.Comol.Modules.EduPath.Domain.DomainBaseMetaInfo" FixedToPoint="true">
+      <Path>
+        <Point X="8.75" Y="6.723" />
+        <Point X="8.75" Y="7" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AEEAAAAEAAAggAAAAMAAAAABAAAAAAAACABAAAEAAAE=</HashCode>
+      <FileName>Domain\DomainBaseMetaInfoStatus.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Status" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="lm.Comol.Modules.EduPath.Domain.Path">
+    <Position X="3.25" Y="9" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAEAAAMiAACAAAAQAAQgQCAAAAAAAAAAAECABAA=</HashCode>
+      <FileName>Domain\Path.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="EPType" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="UnitList" />
+    </ShowAsCollectionAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="lm.Comol.Modules.EduPath.Domain.SubActivity">
+    <Position X="12" Y="9" Width="1.75" />
+    <AssociationLine Name="Path" Type="lm.Comol.Modules.EduPath.Domain.Path" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="12.875" Y="12.992" />
+        <Point X="12.875" Y="13.367" />
+        <Point X="4.125" Y="13.367" />
+        <Point X="4.125" Y="12.992" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-0.64" Y="0.112" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAARAAAAAIgAAIAEAQAAAQAACgAAAIAAACQSAAACAA=</HashCode>
+      <FileName>Domain\SubActivity.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="ParentActivity" />
+      <Property Name="ModuleLink" />
+      <Property Name="Path" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="lm.Comol.Modules.EduPath.Domain.Unit">
+    <Position X="6.25" Y="9" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAAAIiAACAAAAAAAQgBCAAAAAAAAAAAEKAAAA=</HashCode>
+      <FileName>Domain\Unit.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="ParentPath" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="ActivityList" />
+    </ShowAsCollectionAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="lm.Comol.Modules.EduPath.Domain.Activity">
+    <Position X="9" Y="9" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAABQAAAAAIiAAKAAAAAAARgACAAAAAAIAAQAECAAAA=</HashCode>
+      <FileName>Domain\Activity.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="ParentUnit" />
+      <Property Name="Path" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="SubActivityList" />
+    </ShowAsCollectionAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="lm.Comol.Core.DomainModel.ModuleLink">
+    <Position X="11.5" Y="4.75" Width="2.25" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Enum Name="lm.Comol.Modules.EduPath.Domain.BaseStatusDeleted">
+    <Position X="4.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQAAAAAAAAAAAAAAAAAIIAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>Domain\DomainBase.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="lm.Comol.Modules.EduPath.Domain.Status">
+    <Position X="5" Y="3.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAgAAAAAEAAAAQAACAAEAAEAAAAAAACCEEAAAA=</HashCode>
+      <FileName>Domain\Enum\Status.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="lm.Comol.Modules.EduPath.Domain.EPType">
+    <Position X="3.25" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAQAAABggAAAAAAAAgAAAAAAAAAACABCEAAQA=</HashCode>
+      <FileName>Domain\Enum\EPType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

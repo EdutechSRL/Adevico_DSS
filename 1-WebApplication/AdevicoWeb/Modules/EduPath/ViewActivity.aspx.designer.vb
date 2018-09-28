@@ -14,6 +14,24 @@ Option Explicit On
 Partial Public Class ViewActivity
 
     '''<summary>
+    '''CTRLmodalHeader control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents CTRLmodalHeader As Global.Comunita_OnLine.UC_ModalPlayerHeader
+
+    '''<summary>
+    '''CTRLheader control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents CTRLheader As Global.Comunita_OnLine.UC_ModuleInternalUploaderHeader
+
+    '''<summary>
     '''LTscriptOpen control.
     '''</summary>
     '''<remarks>
@@ -104,6 +122,15 @@ Partial Public Class ViewActivity
     Protected WithEvents HYPnextAct As Global.System.Web.UI.WebControls.HyperLink
 
     '''<summary>
+    '''LBconfirmMSG control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents LBconfirmMSG As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
     '''CTRLmoduleStatusMessage control.
     '''</summary>
     '''<remarks>
@@ -113,22 +140,22 @@ Partial Public Class ViewActivity
     Protected WithEvents CTRLmoduleStatusMessage As Global.Comunita_OnLine.UC_ActionMessages
 
     '''<summary>
-    '''LBErrorMSG control.
+    '''CTRLitemMessage control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents LBErrorMSG As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents CTRLitemMessage As Global.Comunita_OnLine.UC_ActionMessages
 
     '''<summary>
-    '''LBconfirmMSG control.
+    '''CTRLversionMessage control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents LBconfirmMSG As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents CTRLversionMessage As Global.Comunita_OnLine.UC_ActionMessages
 
     '''<summary>
     '''DIVsummaryBlock control.
@@ -275,13 +302,13 @@ Partial Public Class ViewActivity
     Protected WithEvents HYPerror As Global.System.Web.UI.WebControls.HyperLink
 
     '''<summary>
-    '''LBerror control.
+    '''CTRLerrorMessage control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents LBerror As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents CTRLerrorMessage As Global.Comunita_OnLine.UC_ActionMessages
 
     '''<summary>
     '''VIWmessages control.
@@ -318,6 +345,15 @@ Partial Public Class ViewActivity
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents HDNdownloadTokenValue As Global.System.Web.UI.WebControls.HiddenField
+
+    '''<summary>
+    '''CTRLaddVersion control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents CTRLaddVersion As Global.Comunita_OnLine.UC_AddVersion
 
     '''<summary>
     '''Master property.

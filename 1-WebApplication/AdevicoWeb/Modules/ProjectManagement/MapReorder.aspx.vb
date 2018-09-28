@@ -78,6 +78,9 @@ Public Class MapReorder
             .setHyperLink(HYPbackToResourceDashboardBottom, False, True)
             .setHyperLink(HYPbackToManagerDashboardBottom, False, True)
 
+            HYPbackToProjectsBottom.Text = HYPbackToProjectsTop.Text
+            HYPbackToProjectsBottom.ToolTip = HYPbackToProjectsTop.ToolTip
+
             .setLiteral(LTreorderMessageDescription)
             .setLiteral(LTmapReorderIstructions)
             .setLabel(LBthStartDate)
@@ -155,6 +158,21 @@ Public Class MapReorder
 
         Me.BTNsaveProjectDateInfoBottom.Visible = allowUpdate
         Me.BTNsaveProjectDateInfoTop.Visible = allowUpdate
+    End Sub
+    Protected Overrides Sub LoadAttachments(attachments As List(Of dtoAttachmentItem))
+        LBattachments.Visible = Not IsNothing(attachments) AndAlso attachments.Any()
+        If Not IsNothing(attachments) AndAlso attachments.Any() Then
+            Select Case attachments.Count
+                Case 1, 0
+                    LBattachments.ToolTip = Resource.getValue("LBattachments.ToolTip." & Items.Count.ToString)
+                Case Else
+                    LBattachments.ToolTip = String.Format(Resource.getValue("LBattachments.ToolTip.n"), Items.Count)
+            End Select
+            CTRLattachment.Visible = True
+            CTRLattachment.InitializeControl(attachments)
+        Else
+            CTRLattachment.Visible = False
+        End If
     End Sub
 #End Region
 
@@ -272,7 +290,7 @@ Public Class MapReorder
         DVconfirmReorder.Visible = False
         CTRLmessages.Visible = False
         Dim action As ReorderAction = ReorderAction.Ignore
-       
+
         CurrentPresenter.ApplyReorder(GetActivitiesReordered(), GetDefaultAction)
     End Sub
     Private Function GetActivitiesReordered() As List(Of dtoReorderGraphActivity)
@@ -329,9 +347,9 @@ Public Class MapReorder
     End Sub
 #End Region
 
+    Protected Overrides Sub SetEditMapUrl(url As String)
 
-
-
+    End Sub
 
     
 End Class
