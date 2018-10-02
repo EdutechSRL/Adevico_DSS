@@ -25,7 +25,7 @@ Public Class OLDpageUtility
     Private _TrapSender As WsSnmtp.WsSnmtpSoapClient
     Private _NotificationManager As lm.Modules.NotificationSystem.Business.ManagerCommunitynews
     Private _CommunitiesNews As Dictionary(Of Integer, List(Of lm.Modules.NotificationSystem.Presentation.dtoCommunityNewsCount))
-    Private _PermissionService As PermissionService.IServicePermission
+    Private _PermissionService As WCF_CoreServices.ServicePermission 'PermissionService.IServicePermission
     Private _BaseUrl As String
     Private _SecureBaseUrl As String
     Private _AllowRegisterActions As Boolean?

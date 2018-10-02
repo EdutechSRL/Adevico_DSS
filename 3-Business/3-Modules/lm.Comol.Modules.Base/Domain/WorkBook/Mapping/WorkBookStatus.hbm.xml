@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+	<class name="lm.Comol.Modules.Base.DomainModel.WorkBookStatus, lm.Comol.Modules.Base" table="WK_WorkBookStatus" dynamic-update="true" select-before-update="true">
+		<id name="Id" column="Id" type="Int32">
+			<generator class="native"/>
+		</id>
+		<property name="Name" type="String" column="Name" />
+		<property name="DefaultPermissionToEdit" type="lm.Comol.Modules.Base.DomainModel.EditingPermission, lm.Comol.Modules.Base" column="Permission" />
+		<property name="AvailableFor" type="lm.Comol.Modules.Base.DomainModel.EditingPermission, lm.Comol.Modules.Base" column="AvailableFor" />
+	    <bag name="Translations" table="WK_StatusTranslations" fetch="subselect" cascade="all-delete-orphan" lazy="true">
+		 <key column="IdStatus" foreign-key="Id"/>
+		 <one-to-many class="lm.Comol.Modules.Base.DomainModel.WorkBookStatusTraslations, lm.Comol.Modules.Base"/>
+	    </bag>
+		<property name="IsDefault" type="Boolean" column="IsDefault" />
+	</class>
+</hibernate-mapping>

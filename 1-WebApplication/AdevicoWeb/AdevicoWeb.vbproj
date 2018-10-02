@@ -194,10 +194,6 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\9-AdevicoMIT_Library\lm.Comol.MitLibrary\Adevico\MIT\lm.Comol.Core.Statistiche.dll</HintPath>
     </Reference>
-    <Reference Include="lm.Comol.Modules.Base, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\9-AdevicoMIT_Library\lm.Comol.MitLibrary\Adevico\MIT\lm.Comol.Modules.Base.dll</HintPath>
-    </Reference>
     <Reference Include="lm.Comol.Modules.Chat, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\9-AdevicoMIT_Library\lm.Comol.MitLibrary\Adevico\MIT\lm.Comol.Modules.Chat.dll</HintPath>
@@ -15442,6 +15438,10 @@
     <ProjectReference Include="..\..\3-Business\2-Core\lm.Comol.Core.Data\lm.Comol.Core.Data.vbproj">
       <Project>{0890f82d-3130-489d-92b2-8b2a1e3dc5fe}</Project>
       <Name>lm.Comol.Core.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\3-Business\3-Modules\lm.Comol.Modules.Base\lm.Comol.Modules.Base.vbproj">
+      <Project>{7f38a696-661e-4bdf-9fad-38e51b3e7e96}</Project>
+      <Name>lm.Comol.Modules.Base</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\3-Business\3-Modules\lm.Comol.Modules.CallForPapers\lm.Comol.Modules.CallForPapers.csproj">
       <Project>{86ac380f-16e0-4e8f-af84-555e13ea456e}</Project>

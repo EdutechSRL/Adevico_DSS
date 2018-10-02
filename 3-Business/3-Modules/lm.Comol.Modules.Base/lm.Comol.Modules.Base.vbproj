@@ -1,0 +1,447 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7F38A696-661E-4BDF-9FAD-38E51B3E7E96}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>
+    </RootNamespace>
+    <AssemblyName>lm.Comol.Modules.Base</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>Windows</MyType>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <OptionExplicit>On</OptionExplicit>
+    <OptionCompare>Binary</OptionCompare>
+    <OptionStrict>Off</OptionStrict>
+    <OptionInfer>On</OptionInfer>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>lm.Comol.Modules.Base.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>lm.Comol.Modules.Base.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="lm.Comol.Core.DataLayer, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\9-AdevicoMIT_Library\lm.Comol.MitLibrary\Adevico\MIT\lm.Comol.Core.DataLayer.dll</HintPath>
+    </Reference>
+    <Reference Include="lm.Comol.Modules.TaskList, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\9-AdevicoMIT_Library\lm.Comol.MitLibrary\Adevico\MIT\lm.Comol.Modules.TaskList.dll</HintPath>
+    </Reference>
+    <Reference Include="lm.Modules.NotificationSystem, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\9-AdevicoMIT_Library\lm.Comol.MitLibrary\Adevico\MIT\lm.Modules.NotificationSystem.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common, Version=3.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Library\lm.Comol.Core.CommonLib\EnterpriseLibrary\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Data, Version=3.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Library\lm.Comol.Core.CommonLib\EnterpriseLibrary\Microsoft.Practices.EnterpriseLibrary.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate">
+      <HintPath>..\..\..\Library\lm.Comol.Core.CommonLib\NHibernate_21\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate.Linq, Version=1.0.0.4000, Culture=neutral, PublicKeyToken=444cf6a87fdab271, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Library\lm.Comol.Core.CommonLib\NHibernate_21\NHibernate.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.ServiceModel">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Business\Common\ManagerCommunityFiles.vb" />
+    <Compile Include="Business\Common\ManagerCommon.vb" />
+    <Compile Include="Business\Common\ManagerFiles.vb" />
+    <Compile Include="Business\Modules\ManagerNoticeBoardSQL.vb" />
+    <Compile Include="Business\Modules\ManagerPermission.vb" />
+    <Compile Include="Business\Modules\ManagerDashBoard.vb" />
+    <Compile Include="Business\Modules\ManagerForum.vb" />
+    <Compile Include="Business\Modules\ManagerNoticeBoard.vb" />
+    <Compile Include="Business\Modules\ManagerProfiles.vb" />
+    <Compile Include="Business\Modules\ManagerWorkBook.vb" />
+    <Compile Include="Domain\Core\dtoPermission.vb" />
+    <Compile Include="Domain\Core\dtoTemplateRolePermission.vb" />
+    <Compile Include="Domain\Core\dtoCommunityItemRepository.vb" />
+    <Compile Include="Domain\Core\ModuleFaq.vb" />
+    <Compile Include="Domain\Core\RepositoryRootObject.vb" />
+    <Compile Include="Domain\Faq\ModuleCommunityFaq.vb" />
+    <Compile Include="Domain\NoticeBoard\Domain\MessagesToShow.vb" />
+    <Compile Include="Presentation\Common\ManagementCommunityPresenter.vb" />
+    <Compile Include="Presentation\Common\IViewCommonSessionExpired.vb" />
+    <Compile Include="Domain\Core\dtoDeletedItem.vb" />
+    <Compile Include="Domain\Core\dtoImportedItem.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Domain\Core\FileTransferContext.vb" />
+    <Compile Include="Domain\Core\PermissionAction.vb" />
+    <Compile Include="Domain\Core\RepositoryPage.vb" />
+    <Compile Include="Domain\Core\CommunityFileOrder.vb" />
+    <Compile Include="Domain\Core\dtoFolderFilter.vb" />
+    <Compile Include="Domain\Core\dtoGenericFile.vb" />
+    <Compile Include="Domain\Core\dtoTemplateModulePermission.vb" />
+    <Compile Include="Domain\Core\dtoFileFolder.vb" />
+    <Compile Include="Domain\Core\ModuleCommunityRepository.vb" />
+    <Compile Include="Domain\Core\RemotePost.vb" />
+    <Compile Include="Domain\DashBoard\dtoSubscription.vb" />
+    <Compile Include="Domain\NoticeBoard\Domain\dtoMessage.vb" />
+    <Compile Include="Domain\NoticeBoard\Domain\dtoSmallMessage.vb" />
+    <Compile Include="Domain\NoticeBoard\Domain\ModuleNoticeBoard.vb" />
+    <Compile Include="Domain\NoticeBoard\Domain\NoticeBoard.vb" />
+    <Compile Include="Domain\NoticeBoard\Domain\NoticeBoardContext.vb" />
+    <Compile Include="Domain\NoticeBoard\Domain\TextStyle.vb" />
+    <Compile Include="Domain\Profiles\Dto\dtoProfile.vb" />
+    <Compile Include="Domain\Profiles\Dto\ProfileOrder.vb" />
+    <Compile Include="Domain\Profiles\Dto\ProfileSearchBy.vb" />
+    <Compile Include="Domain\Profiles\Dto\dtoProfileFilters.vb" />
+    <Compile Include="Domain\Profiles\Dto\ProfileStatus.vb" />
+    <Compile Include="Domain\WorkBook\Domain\ModuleWorkBookManagement.vb" />
+    <Compile Include="Domain\WorkBook\Domain\WorkBookCommunityFilter.vb" />
+    <Compile Include="Domain\WorkBook\Domain\WorkBookTypeFilter.vb" />
+    <Compile Include="Domain\WorkBook\Domain\WorkBookStatusTraslations.vb" />
+    <Compile Include="Domain\WorkBook\Domain\WorkBookStatus.vb" />
+    <Compile Include="Domain\WorkBook\Domain\EditingPermission.vb" />
+    <Compile Include="Domain\WorkBook\Dto\dtoCommunityWorkbook.vb" />
+    <Compile Include="Domain\WorkBook\Dto\dtoWorkBookStatus.vb" />
+    <Compile Include="Domain\WorkBook\Dto\dtoWorkBookStatusTranslation.vb" />
+    <Compile Include="Domain\WorkBook\Dto\NEWdtoWorkbooks.vb" />
+    <Compile Include="Domain\WorkBook\Dto\dtoFileToPublish.vb" />
+    <Compile Include="Domain\WorkBook\Dto\dtoItemStatusEditing.vb" />
+    <Compile Include="Domain\WorkBook\Dto\dtoWorkBookFile.vb" />
+    <Compile Include="Domain\WorkBook\Dto\dtoWorkBook.vb" />
+    <Compile Include="Domain\WorkBook\Dto\dtoWorkBookAuthor.vb" />
+    <Compile Include="Domain\WorkBook\Dto\dtoWorkBookItem.vb" />
+    <Compile Include="Domain\WorkBook\Dto\dtoWorkbooks.vb" />
+    <Compile Include="Domain\WorkBook\Interface\iWorkBookPermission.vb" />
+    <Compile Include="Domain\WorkBook\PersonalBase\ApprovationStatus.vb" />
+    <Compile Include="Domain\WorkBook\PersonalBase\WorkBookItemPermission.vb" />
+    <Compile Include="Domain\WorkBook\Domain\WorkBookInternalFile.vb" />
+    <Compile Include="Domain\WorkBook\Domain\WorkBookCommunityFile.vb" />
+    <Compile Include="Domain\WorkBook\Domain\WorkBookFile.vb" />
+    <Compile Include="Domain\WorkBook\Domain\WorkBookItem.vb" />
+    <Compile Include="Domain\WorkBook\PersonalBase\ModuleWorkBook.vb" />
+    <Compile Include="Domain\WorkBook\PersonalBase\WorkBokItemFileOrder.vb" />
+    <Compile Include="Domain\WorkBook\Domain\WorkBook.vb" />
+    <Compile Include="Domain\WorkBook\Domain\WorkBookAuthor.vb" />
+    <Compile Include="Domain\WorkBook\PersonalBase\WorkBookItemOrder.vb" />
+    <Compile Include="Domain\WorkBook\PersonalBase\WorkBooFilePermission.vb" />
+    <Compile Include="Domain\WorkBook\PersonalBase\WorkBookOrder.vb" />
+    <Compile Include="Domain\WorkBook\PersonalBase\WorkBookPermission.vb" />
+    <Compile Include="Domain\WorkBook\PersonalBase\WorkBookType.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Presentation\CommunityFile\LinkToModule\ImoduleToRepositoryAction.vb" />
+    <Compile Include="Presentation\CommunityFile\LinkToModule\ModuleToRepositoryAction.vb" />
+    <Compile Include="Presentation\CommunityFile\ModuleMultipleFileUploaderPresenter.vb" />
+    <Compile Include="Presentation\CommunityFile\ModuleSingleFileUploaderPresenter.vb" />
+    <Compile Include="Presentation\CommunityFile\dtoRemoteFileToRename.vb" />
+    <Compile Include="Presentation\CommunityFile\MultipleFileUploaderPresenter.vb" />
+    <Compile Include="Presentation\CommunityFile\ScormPresenter.vb" />
+    <Compile Include="Presentation\CommunityFile\CRmultipleDeletePresenter.vb" />
+    <Compile Include="Presentation\CommunityFile\CRmultipleUploadPresenter.vb" />
+    <Compile Include="Presentation\CommunityFile\CRmanagementPresenter.vb" />
+    <Compile Include="Presentation\CommunityFile\CRerrorPresenter.vb" />
+    <Compile Include="Presentation\CommunityFile\CRfileDetailPresenter.vb" />
+    <Compile Include="Presentation\CommunityFile\CRitemEditPresenter.vb" />
+    <Compile Include="Presentation\CommunityFile\CRsizePresenter.vb" />
+    <Compile Include="Presentation\CommunityFile\CRuploadPresenter.vb" />
+    <Compile Include="Presentation\CommunityFile\CRitemPermissionPresenter.vb" />
+    <Compile Include="Presentation\CommunityFile\SingleFileUploaderPresenter.vb" />
+    <Compile Include="Presentation\CommunityFile\View\IviewCommunityFolderSelect.vb" />
+    <Compile Include="Presentation\CommunityFile\View\IviewModuleMultipleFileUploader.vb" />
+    <Compile Include="Presentation\CommunityFile\View\IviewModuleSingleFileUploader.vb" />
+    <Compile Include="Presentation\CommunityFile\View\IviewMultipleFileUploader.vb" />
+    <Compile Include="Presentation\CommunityFile\View\IviewScormFileSelector.vb" />
+    <Compile Include="Presentation\CommunityFile\View\IviewMultipleDelete.vb" />
+    <Compile Include="Presentation\CommunityFile\View\IViewCommunityFileMultipleUpload.vb" />
+    <Compile Include="Presentation\CommunityFile\View\IViewCommunityFileEdit.vb" />
+    <Compile Include="Presentation\CommunityFile\View\IviewCommunityRepositorySize.vb" />
+    <Compile Include="Presentation\CommunityFile\View\IviewItemPermission.vb" />
+    <Compile Include="Presentation\CommunityFile\View\IViewCommunityRepositoryError.vb" />
+    <Compile Include="Presentation\CommunityFile\View\IViewCommunityFileUpload.vb" />
+    <Compile Include="Presentation\CommunityFile\View\IViewCommunityFileDetail.vb" />
+    <Compile Include="Presentation\CommunityFile\CRexplorePresenter.vb" />
+    <Compile Include="Presentation\CommunityFile\CommunityFolderSelectPresenter.vb" />
+    <Compile Include="Presentation\CommunityFile\View\IViewExploreCommunityRepository.vb" />
+    <Compile Include="Presentation\CommunityFile\View\IViewManagementCommunityRepository.vb" />
+    <Compile Include="Presentation\CommunityFile\View\IviewSingleFileUploader.vb" />
+    <Compile Include="Presentation\CommunityFile\View\IviewImportItemsIntoRepository.vb" />
+    <Compile Include="Presentation\CommunityFile\CRimportPresenter.vb" />
+    <Compile Include="Presentation\DashBoard\DashBoardPresenter.vb" />
+    <Compile Include="Presentation\DashBoard\IViewDashBoard.vb" />
+    <Compile Include="Presentation\NoticeBoard\IViewNoticeBoard.vb" />
+    <Compile Include="Presentation\TaskList\AddProjectPresenter.vb" />
+    <Compile Include="Presentation\TaskList\AddTaskAssignmentUCPresenter.vb" />
+    <Compile Include="Presentation\TaskList\AddTaskPresenter.vb" />
+    <Compile Include="Presentation\TaskList\AddVirtualTaskAssignmentUCPresenter.vb" />
+    <Compile Include="Presentation\TaskList\AssignedTasksPresenter.vb" />
+    <Compile Include="Presentation\TaskList\AssignedUserUCPresenter.vb" />
+    <Compile Include="Presentation\TaskList\CreateUpdateTaskPresenter.vb" />
+    <Compile Include="Presentation\TaskList\GanttPresenter.vb" />
+    <Compile Include="Presentation\TaskList\GenerateGanttXMLPresenter.vb" />
+    <Compile Include="Presentation\TaskList\InvolvedUsersDetailUCPresenter.vb" />
+    <Compile Include="Presentation\TaskList\InvolvingProjectsPresenter.vb" />
+    <Compile Include="Presentation\TaskList\IView\IViewAddProject.vb" />
+    <Compile Include="Presentation\TaskList\IView\IViewAddTask.vb" />
+    <Compile Include="Presentation\TaskList\IView\IViewAssignedTasks.vb" />
+    <Compile Include="Presentation\TaskList\IView\IViewCreateUpdateTask.vb" />
+    <Compile Include="Presentation\TaskList\IView\IviewGantt.vb" />
+    <Compile Include="Presentation\TaskList\IView\IViewGenerateGanttXML.vb" />
+    <Compile Include="Presentation\TaskList\IView\IViewInvolvingProjects.vb" />
+    <Compile Include="Presentation\TaskList\IView\IViewManageTaskAssignment.vb" />
+    <Compile Include="Presentation\TaskList\IView\iViewProjectDetailWithUsersResume.vb" />
+    <Compile Include="Presentation\TaskList\IView\IViewReallocateUsers.vb" />
+    <Compile Include="Presentation\TaskList\IView\IViewSelectTask.vb" />
+    <Compile Include="Presentation\TaskList\IView\IViewTaskAdministration.vb" />
+    <Compile Include="Presentation\TaskList\IView\IViewTaskDetail.vb" />
+    <Compile Include="Presentation\TaskList\IView\IViewTaskListTodayActivities.vb" />
+    <Compile Include="Presentation\TaskList\IView\IViewTaskMap.vb" />
+    <Compile Include="Presentation\TaskList\IView\IViewTasksManagement.vb" />
+    <Compile Include="Presentation\TaskList\IView\IViewTodayActivities.vb" />
+    <Compile Include="Presentation\TaskList\IView\IviewUC_AddTaskAssignment.vb" />
+    <Compile Include="Presentation\TaskList\IView\IviewUC_AddVirtualTaskAssignments.vb" />
+    <Compile Include="Presentation\TaskList\IView\IViewUC_AssignedUser.vb" />
+    <Compile Include="Presentation\TaskList\IView\IViewUC_AssignUsers_new.vb" />
+    <Compile Include="Presentation\TaskList\IView\IViewUC_involvedUsersDetail.vb" />
+    <Compile Include="Presentation\TaskList\IView\IViewUC_ProjectWithRolesProUsersDetail.vb" />
+    <Compile Include="Presentation\TaskList\IView\IViewUC_QuickSelectionTaskUsers.vb" />
+    <Compile Include="Presentation\TaskList\IView\IViewUC_ReallocateResourcesOnNodes.vb" />
+    <Compile Include="Presentation\TaskList\IView\IViewUC_SwichTaskMap.vb" />
+    <Compile Include="Presentation\TaskList\IView\IViewUC_TaskDetail.vb" />
+    <Compile Include="Presentation\TaskList\IView\IViewUC_TasksMap.vb" />
+    <Compile Include="Presentation\TaskList\IView\IViewUsersPerTaskDetail.vb" />
+    <Compile Include="Presentation\TaskList\ManageTaskAssignmentPresenter.vb" />
+    <Compile Include="Presentation\TaskList\ModuleTaskList.vb" />
+    <Compile Include="Presentation\TaskList\ProjectDetailWithUsersResumePresenter.vb" />
+    <Compile Include="Presentation\TaskList\ProjectWithRolesProUsersDetaiUCPresenter.vb" />
+    <Compile Include="Presentation\TaskList\QuickSelectionTaskUsersUCPresenter.vb" />
+    <Compile Include="Presentation\TaskList\ReallocateResourcesOnNodesUCPresenter.vb" />
+    <Compile Include="Presentation\TaskList\ReallocateUsersPresenter.vb" />
+    <Compile Include="Presentation\TaskList\SelectTaskPresenter.vb" />
+    <Compile Include="Presentation\TaskList\SwichTaskMapUCPresenter.vb" />
+    <Compile Include="Presentation\TaskList\TaskAdministrationPresenter.vb" />
+    <Compile Include="Presentation\TaskList\TaskDetailPresenter.vb" />
+    <Compile Include="Presentation\TaskList\TaskDetailUCPresenter.vb" />
+    <Compile Include="Presentation\TaskList\TaskListCommunityPermission.vb" />
+    <Compile Include="Presentation\TaskList\TaskListContext.vb" />
+    <Compile Include="Presentation\TaskList\TasksManagementPresenter.vb" />
+    <Compile Include="Presentation\TaskList\TasksMapPresenter.vb" />
+    <Compile Include="Presentation\TaskList\TasksMapUCPresenter.vb" />
+    <Compile Include="Presentation\TaskList\UC_AssignUsers_newPresenter.vb" />
+    <Compile Include="Presentation\TaskList\UsersPerTaskDetailPresenter.vb" />
+    <Compile Include="Presentation\WorkBook\BaseFilePresenter.vb" />
+    <Compile Include="Presentation\WorkBook\TemporaryBaseFilePresenter.vb" />
+    <Compile Include="Presentation\WorkBook\IviewBaseFileDownload.vb" />
+    <Compile Include="Presentation\CommunityFile\View\IviewBaseFileUpload.vb" />
+    <Compile Include="Domain\WorkBook\Dto\dtoWorkBookListView.vb" />
+    <Compile Include="Presentation\WorkBook\New\IWKstatusEdit.vb" />
+    <Compile Include="Presentation\WorkBook\New\IWKstatusManagement.vb" />
+    <Compile Include="Presentation\WorkBook\New\IWKworkBookList.vb" />
+    <Compile Include="Presentation\WorkBook\New\IWKpublishFileToCommunity.vb" />
+    <Compile Include="Presentation\WorkBook\New\SelectCommunityFile.vb" />
+    <Compile Include="Presentation\WorkBook\New\EditingSettings.vb" />
+    <Compile Include="Presentation\WorkBook\New\IviewPrintWorkBook.vb" />
+    <Compile Include="Presentation\WorkBook\IviewWorkBookAdd.vb" />
+    <Compile Include="Presentation\WorkBook\IviewWorkBookEdit.vb" />
+    <Compile Include="Presentation\WorkBook\New\IWKitemsList.vb" />
+    <Compile Include="Presentation\WorkBook\New\WKIPublishFileToCommunity.vb" />
+    <Compile Include="Presentation\WorkBook\New\WKstatusEditPresenter.vb" />
+    <Compile Include="Presentation\WorkBook\New\WKstatusManagementPresenter.vb" />
+    <Compile Include="Presentation\WorkBook\New\WKworkbookListPresenter.vb" />
+    <Compile Include="Domain\WorkBook\Domain\WorkBookContext.vb" />
+    <Compile Include="Presentation\WorkBook\New\WorkBookItemPresenter.vb" />
+    <Compile Include="Presentation\WorkBook\New\IviewWorkBookItem.vb" />
+    <Compile Include="Presentation\WorkBook\New\IviewWorkBookItemErrors.vb" />
+    <Compile Include="Presentation\WorkBook\New\IviewWorkBookItemFileList.vb" />
+    <Compile Include="Presentation\WorkBook\New\IWKSelectCommunityFile.vb" />
+    <Compile Include="Presentation\WorkBook\New\WorkBookItemFilePresenter.vb" />
+    <Compile Include="Presentation\WorkBook\New\IWorkBookItemManagementFile.vb" />
+    <Compile Include="Presentation\WorkBook\New\IWorkbookMultipleFileUpload.vb" />
+    <Compile Include="Presentation\WorkBook\New\WorkBookItemManagementFilePresenter.vb" />
+    <Compile Include="Presentation\WorkBook\New\WKItemsListPresenter.vb" />
+    <Compile Include="Presentation\WorkBook\New\PrintWorkBookPresenter.vb" />
+    <Compile Include="Presentation\WorkBook\WorkBookAddPresenter.vb" />
+    <Compile Include="Presentation\WorkBook\WorkBookCommunityPermission.vb" />
+    <Compile Include="Presentation\WorkBook\WorkBookEditPresenter.vb" />
+    <Compile Include="Presentation\WorkBook\New\WorkBookItemMultipleUploadPresenter.vb" />
+    <Compile Include="Resource\ModuleBaseResource.Designer.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resource\ModuleBaseResource.en.resx" />
+    <EmbeddedResource Include="Resource\ModuleBaseResource.it.resx" />
+    <EmbeddedResource Include="Resource\ModuleBaseResource.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Domain\WorkBook\Domain\WorkBook.cd" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Domain\NoticeBoard\Mapping\NoticeBoard.hbm.xml" />
+    <EmbeddedResource Include="Domain\NoticeBoard\Mapping\TextStyle.hbm.xml" />
+    <EmbeddedResource Include="Domain\WorkBook\Mapping\WorkBookItem.hbm.xml" />
+    <EmbeddedResource Include="Domain\WorkBook\Mapping\WorkBook.hbm.xml" />
+    <EmbeddedResource Include="Domain\WorkBook\Mapping\WorkBookAuthor.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\2-Core\lm.Comol.Core.File\lm.Comol.Core.File.csproj">
+      <Project>{FFA417B0-A44B-441A-921B-FEB57C5FD7DA}</Project>
+      <Name>lm.Comol.Core.File</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\1-OldProject\COL_BusinessLogic\COL_BusinessLogic_v2.0.vbproj">
+      <Project>{51F57FB8-1245-4EA5-BF34-D6412C283AFB}</Project>
+      <Name>COL_BusinessLogic_v2.0</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\1-OldProject\COL_Entity\0_COL_Entity.vbproj">
+      <Project>{D1EFB82A-DE0C-43D2-8DC7-AD808B32C2A2}</Project>
+      <Name>0_COL_Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\2-Core\lm.Comol.Core.DomainModel\lm.Comol.Core.DomainModel.csproj">
+      <Project>{9B7DA676-5030-47CD-8B2B-A30A09C8D0B5}</Project>
+      <Name>lm.Comol.Core.DomainModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\2-Core\lm.Comol.Core.Data\lm.Comol.Core.Data.vbproj">
+      <Project>{0890F82D-3130-489D-92B2-8B2A1E3DC5FE}</Project>
+      <Name>lm.Comol.Core.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\lm.Comol.Core.BaseModules\lm.Comol.Core.BaseModules.csproj">
+      <Project>{7fae537e-6acf-4c65-9d68-e22aec839eea}</Project>
+      <Name>lm.Comol.Core.BaseModules</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Domain\WorkBook\Mapping\WorkBookFile.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Domain\WorkBook\Mapping\WorkBookStatus.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Domain\WorkBook\Mapping\WorkBookStatusTraslations.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Presentation\Profiles\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

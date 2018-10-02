@@ -1,0 +1,189 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Comment CommentText="Reference.svcmap">
+    <Position X="0.5" Y="3.934" Height="0.263" Width="16.647" />
+  </Comment>
+  <Class Name="lm.Comol.Modules.Base.Presentation.DAL_Room">
+    <Position X="0.5" Y="1" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEBCAAAAAAMAAEQAAgAAAQAAAEAAAAAAAACA=</HashCode>
+      <FileName>Presentation\WebMeeting\WM_DAL\DAL_Room.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Room">
+    <Position X="3.25" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAIIgAAIAAgAAAAAAQEAAAhAQAIAAAAAgA=</HashCode>
+      <FileName>Presentation\WebMeeting\Room.vb</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Field Name="ConnectedUsers" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="WMUser">
+    <Position X="6" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAEAAgAAAAAAAAAAAA=</HashCode>
+      <FileName>Presentation\WebMeeting\WMUser.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WCF_OMuserService.setUserObjectAndGenerateRoomHashRequest">
+    <Position X="5.75" Y="4.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAACAhAAAAgAAAAAAEAAAEAAAAAABAAAABAAgI=</HashCode>
+      <FileName>Service References\WCF_OMuserService\Reference.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WCF_OMuserService.setUserObjectAndGenerateRoomHashResponse">
+    <Position X="11.25" Y="4.5" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>Service References\WCF_OMuserService\Reference.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WCF_OMuserService.setUserObjectWithExternalUserRequest">
+    <Position X="6" Y="9.25" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAAhAAAAgAAAAAAEAAAEAAAAAABAAAABAAAA=</HashCode>
+      <FileName>Service References\WCF_OMuserService\Reference.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WCF_OMuserService.setUserObjectWithExternalUserResponse">
+    <Position X="8" Y="6" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>Service References\WCF_OMuserService\Reference.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WCF_OMuserService.addUserToOrganisationRequest">
+    <Position X="3" Y="4.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAgAABAAAAQAAAAAAAAAAAAAAAAAAAAAABAAAA=</HashCode>
+      <FileName>Service References\WCF_OMuserService\Reference.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WCF_OMuserService.addUserToOrganisationResponse">
+    <Position X="8.5" Y="7.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>Service References\WCF_OMuserService\Reference.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WCF_OMuserService.setUserObjectRequest">
+    <Position X="0.5" Y="8" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAhAAAAgAAAAAAEAAAAAAAAAABAAAABAAAA=</HashCode>
+      <FileName>Service References\WCF_OMuserService\Reference.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WCF_OMuserService.setUserObjectResponse">
+    <Position X="0.5" Y="10.25" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>Service References\WCF_OMuserService\Reference.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WCF_OMuserService.Sessiondata" BaseTypeListCollapsed="true">
+    <Position X="11.75" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CIgAAghiEAAEQFAAAQHgABACgAQYiCEAAAABBAAAAgA=</HashCode>
+      <FileName>Service References\WCF_OMuserService\Reference.vb</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="WCF_OMuserService.SearchResult" BaseTypeListCollapsed="true">
+    <Position X="13.75" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAEACAAAAAAAABAAIAIAAgAAQAAAAAAFAICAIACA=</HashCode>
+      <FileName>Service References\WCF_OMuserService\Reference.vb</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="WCF_OMuserService.ErrorResult" BaseTypeListCollapsed="true">
+    <Position X="13.5" Y="6.25" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAAAgEAAAAAAAAIAAgAAQAAAAAgFAAAAAAAQ=</HashCode>
+      <FileName>Service References\WCF_OMuserService\Reference.vb</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="WCF_OMuserService.getSessionRequest">
+    <Position X="3" Y="6.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Service References\WCF_OMuserService\Reference.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WCF_OMuserService.getSessionResponse">
+    <Position X="14.5" Y="4.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>Service References\WCF_OMuserService\Reference.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WCF_OMuserService.getErrorByCodeRequest">
+    <Position X="15" Y="6.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAABAABAAAA=</HashCode>
+      <FileName>Service References\WCF_OMuserService\Reference.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WCF_OMuserService.getErrorByCodeResponse">
+    <Position X="8" Y="4.5" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>Service References\WCF_OMuserService\Reference.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WCF_OMuserService.getUsersByOrganisationRequest">
+    <Position X="3.25" Y="9.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAAAAAAwAAAAAAAAAAAAAAAAAEAAAADAAAA=</HashCode>
+      <FileName>Service References\WCF_OMuserService\Reference.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WCF_OMuserService.getUsersByOrganisationResponse">
+    <Position X="6" Y="7.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>Service References\WCF_OMuserService\Reference.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WCF_OMuserService.loginUserRequest">
+    <Position X="15.5" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAEAAAQAAAAAAAAAAABAAAA=</HashCode>
+      <FileName>Service References\WCF_OMuserService\Reference.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WCF_OMuserService.loginUserResponse">
+    <Position X="3.25" Y="8" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>Service References\WCF_OMuserService\Reference.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WCF_OMuserService.UserServicePortTypeClient" BaseTypeListCollapsed="true">
+    <Position X="9.25" Y="9.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>IBEMCAhAAAAAAABAAAAQCAABAAAAAAAAAAAIAQIAAQA=</HashCode>
+      <FileName>Service References\WCF_OMuserService\Reference.vb</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Interface Name="WCF_OMuserService.UserServicePortType">
+    <Position X="0.5" Y="4.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>IBAIAAAAAAAAAAAAAAAQAAABAAAAAAAAAAAIAQIAAAA=</HashCode>
+      <FileName>Service References\WCF_OMuserService\Reference.vb</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="WCF_OMuserService.UserServicePortTypeChannel" Collapsed="true">
+    <Position X="0.5" Y="7" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Service References\WCF_OMuserService\Reference.vb</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Tahoma" Size="8.25" />
+</ClassDiagram>

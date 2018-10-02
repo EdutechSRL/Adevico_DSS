@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="lm.Comol.Modules.Base" namespace="lm.Comol.Modules.Base.DomainModel">
+	<class name="WorkBookAuthor" table="WK_WorkBookAuthor" lazy="false">
+		<id name="Id" column="Id" type="Guid">
+			<generator class="guid"/>
+		</id>
+		<property name="IsOwner" type="Boolean" column="isOwner" />
+		<many-to-one name="WorkBookOwner" class="lm.Comol.Modules.Base.DomainModel.WorkBook, lm.Comol.Modules.Base" column="IdWorkBook" foreign-key="IdWorkBook"/>
+		<many-to-one name="Author" class="lm.Comol.Core.DomainModel.Person, lm.Comol.Core.DomainModel" column="IdPerson" foreign-key="IdPerson" cascade="none" lazy="false"/>
+		<property name="CreatedOn" type="DateTime" column="_CreatedOn" not-null="false"/>
+		<many-to-one name="CreatedBy" class="lm.Comol.Core.DomainModel.Person, lm.Comol.Core.DomainModel" column="_CreatedBy" foreign-key="_CreatedBy" cascade="none" lazy="false" />
+		<property name="isDeleted" type="Boolean" column="_Deleted" />
+		<many-to-one name="ModifiedBy" class="lm.Comol.Core.DomainModel.Person, lm.Comol.Core.DomainModel" column="_ModifiedBy" foreign-key="_ModifiedBy" cascade="none" lazy="false"/>
+		<property name="ModifiedOn" type="DateTime" column="_ModifiedOn" not-null="false"/>
+	</class>
+</hibernate-mapping>

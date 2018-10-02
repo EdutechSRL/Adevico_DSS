@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+	<class name="lm.Comol.Modules.Base.DomainModel.WorkBookStatusTraslations, lm.Comol.Modules.Base" table="WK_StatusTranslations" lazy="true" dynamic-update="true" select-before-update="true">
+		<id name="Id" column="Id" type="Int32">
+			<generator class="native"/>
+		</id>
+		<property name="Translation" type="String" column="Translation" />
+		<many-to-one name="Status" class="lm.Comol.Modules.Base.DomainModel.WorkBookStatus, lm.Comol.Modules.Base.DomainModel" column="IdStatus" foreign-key="IdStatus"  cascade="all-delete-orphan"/>
+		<many-to-one name="SelectedLanguage" class="lm.Comol.Core.DomainModel.Language, lm.Comol.Core.DomainModel" column="IDLanguage" foreign-key="IDLanguage" cascade="none"/>
+	</class>
+</hibernate-mapping>

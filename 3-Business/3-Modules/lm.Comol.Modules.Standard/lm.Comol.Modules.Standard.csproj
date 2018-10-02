@@ -48,10 +48,6 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\Library\lm.Comol.Core.CommonLib\NHibernate_21\Iesi.Collections.dll</HintPath>
     </Reference>
-    <Reference Include="lm.Comol.Modules.Base, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\9-AdevicoMIT_Library\lm.Comol.MitLibrary\Adevico\MIT\lm.Comol.Modules.Base.dll</HintPath>
-    </Reference>
     <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\Library\lm.Comol.Core.CommonLib\NHibernate_21\log4net.dll</HintPath>
@@ -658,6 +654,10 @@
     <ProjectReference Include="..\..\2-Core\lm.Comol.Core.MailCommons\lm.Comol.Core.MailCommons.csproj">
       <Project>{428243cb-28cd-4d81-8099-74d1448b5e1d}</Project>
       <Name>lm.Comol.Core.MailCommons</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\lm.Comol.Modules.Base\lm.Comol.Modules.Base.vbproj">
+      <Project>{7f38a696-661e-4bdf-9fad-38e51b3e7e96}</Project>
+      <Name>lm.Comol.Modules.Base</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

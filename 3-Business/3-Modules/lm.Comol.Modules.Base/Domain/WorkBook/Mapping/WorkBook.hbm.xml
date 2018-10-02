@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+	<class name="lm.Comol.Modules.Base.DomainModel.WorkBook, lm.Comol.Modules.Base" table="PDS_PersonalDiary" lazy="false" dynamic-update="true" select-before-update="true">
+		<id name="Id" column="PRSD_ID" type="Guid">
+			<generator class="guid"/>
+		</id>
+		<property name="Title" type="String" column="PRSD_Title" />
+		<property name="Text" type="String" column="PRSD_Text" />
+		<property name="Note" type="String" column="PRSD_Note" />
+		<!--<many-to-one name="MetaInfo" class="lm.Comol.Core.DomainModel.MetaData, lm.Comol.Core.DomainModel" column="PRSD_MTDT_ID" foreign-key="PRSD_MTDT_ID"  cascade="all-delete-orphan"/>-->
+		<many-to-one name="CommunityOwner" class="lm.Comol.Core.DomainModel.Community, lm.Comol.Core.DomainModel" column="PRSD_CommunityID" foreign-key="PRSD_CommunityID" cascade="none" lazy="false"/>
+		<many-to-one name="Owner" class="lm.Comol.Core.DomainModel.Person, lm.Comol.Core.DomainModel" column="PRSD_PersonID" foreign-key="PRSD_PersonID" cascade="none"/>
+	    <bag name="Items" table="WK_WorkBookItem" fetch="subselect" cascade="all-delete-orphan" lazy="true">
+		 <key column="IdWorkBook" foreign-key="PRSD_ID"/>
+		 <one-to-many class="lm.Comol.Modules.Base.DomainModel.WorkBookItem, lm.Comol.Modules.Base"/>
+	    </bag>
+	  <property name="isPersonal" type="Boolean" column="PRSD_isPersonal" />
+	  <bag name="WorkBookAuthors" table="WK_WorkBookAuthor" fetch="subselect" cascade="all-delete-orphan" lazy="true">
+	    <key column="IdWorkBook" foreign-key="PRSD_ID"/>
+	    <one-to-many class="lm.Comol.Modules.Base.DomainModel.WorkBookAuthor, lm.Comol.Modules.Base"/>
+	  </bag>
+    <property name="Type" type="lm.Comol.Modules.Base.DomainModel.WorkBookType, lm.Comol.Modules.Base" column="WRKB_type" />
+
+    <property name="isDraft" type="Boolean" column="isDraft" />
+    <property name="ApprovedOn" type="DateTime" column="_ApprovedOn" not-null="false"/>
+    <many-to-one name="ApprovedBy" class="lm.Comol.Core.DomainModel.Person, lm.Comol.Core.DomainModel" column="_ApprovedBy" foreign-key="_ApprovedBy" cascade="none" lazy="false" />
+    <property name="CreatedOn" type="DateTime" column="_CreatedOn" not-null="false"/>
+    <many-to-one name="CreatedBy" class="lm.Comol.Core.DomainModel.Person, lm.Comol.Core.DomainModel" column="_CreatedBy" foreign-key="_CreatedBy" cascade="none" lazy="false" />
+    <property name="isDeleted" type="Boolean" column="_Deleted" />
+    <many-to-one name="ModifiedBy" class="lm.Comol.Core.DomainModel.Person, lm.Comol.Core.DomainModel" column="_ModifiedBy" foreign-key="_ModifiedBy" cascade="none" lazy="false"/>
+    <property name="ModifiedOn" type="DateTime" column="_ModifiedOn" not-null="false"/>
+    <many-to-one name="Status" class="lm.Comol.Modules.Base.DomainModel.WorkBookStatus, lm.Comol.Modules.Base.DomainModel" column="IdStatus" foreign-key="IdStatus"  cascade="none"/>
+    <property name="Editing" type="lm.Comol.Modules.Base.DomainModel.EditingPermission, lm.Comol.Modules.Base" column="Permission" />
+
+  </class>
+</hibernate-mapping>

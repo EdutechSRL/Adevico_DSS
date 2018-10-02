@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="lm.Comol.Modules.Base" namespace="lm.Comol.Modules.Base.DomainModel">
+	<class name="WorkBookItem" table="WK_WorkBookItem" >
+		<id name="Id" column="Id" type="Guid">
+			<generator class="guid"/>
+		</id>
+		<many-to-one name="WorkBookOwner" class="lm.Comol.Modules.Base.DomainModel.WorkBook, lm.Comol.Modules.Base" column="IdWorkBook" foreign-key="IdWorkBook" cascade="none" />
+		<property name="Title" type="String" column="Title" />
+		<property name="Body" type="String" column="Body" />
+		<property name="Note" type="String" column="Note" />
+		<property name="StartDate" type="DateTime" column="StartDate" />
+		<property name="EndDate" type="DateTime" column="EndDate" />
+		<bag name="Files" table="WK_WorkbookItemFile" fetch="subselect" cascade="all-delete-orphan"  inverse="true">
+			<key column="IdWorkBookItem" foreign-key="DRIT_ID"/>
+			<one-to-many class="lm.Comol.Modules.Base.DomainModel.WorkBookFile, lm.Comol.Modules.Base"/>
+		</bag>
+		<many-to-one name="Owner" class="lm.Comol.Core.DomainModel.Person, lm.Comol.Core.DomainModel" column="_OwnedBy" foreign-key="_OwnedBy" cascade="none" lazy="false"/>
+		<property name="isDraft" type="Boolean" column="isDraft" />
+		<property name="ApprovedOn" type="DateTime" column="_ApprovedOn" not-null="false"/>
+		<many-to-one name="ApprovedBy" class="lm.Comol.Core.DomainModel.Person, lm.Comol.Core.DomainModel" column="_ApprovedBy" foreign-key="_ApprovedBy" cascade="none" lazy="false" />
+		<property name="CreatedOn" type="DateTime" column="_CreatedOn" not-null="false"/>	
+		<many-to-one name="CreatedBy" class="lm.Comol.Core.DomainModel.Person, lm.Comol.Core.DomainModel" column="_CreatedBy" foreign-key="_CreatedBy" cascade="none" lazy="false" />
+		<property name="isDeleted" type="Boolean" column="_Deleted" />
+		<many-to-one name="ModifiedBy" class="lm.Comol.Core.DomainModel.Person, lm.Comol.Core.DomainModel" column="_ModifiedBy" foreign-key="_ModifiedBy" cascade="none" lazy="false"/>
+		<property name="ModifiedOn" type="DateTime" column="_ModifiedOn" not-null="false"/>
+		<many-to-one name="Status" class="lm.Comol.Modules.Base.DomainModel.WorkBookStatus, lm.Comol.Modules.Base.DomainModel" column="IdStatus" foreign-key="IdStatus"  cascade="none"/>
+		<property name="Editing" type="lm.Comol.Modules.Base.DomainModel.EditingPermission, lm.Comol.Modules.Base" column="Permission" />
+		
+	</class>
+</hibernate-mapping>

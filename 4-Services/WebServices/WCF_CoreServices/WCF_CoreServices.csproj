@@ -140,10 +140,6 @@
     <Folder Include="Service\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\4-Extension\Adevico.Modules\Adevico.Modules.csproj">
-      <Project>{8a32e206-a6be-425b-816b-fcbb640da46d}</Project>
-      <Name>Adevico.Modules</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\..\3-Business\1-OldProject\COL_BusinessLogic\COL_BusinessLogic_v2.0.vbproj">
       <Project>{51f57fb8-1245-4ea5-bf34-d6412c283afb}</Project>
       <Name>COL_BusinessLogic_v2.0</Name>
@@ -160,19 +156,11 @@
       <Project>{7FAE537E-6ACF-4C65-9D68-E22AEC839EEA}</Project>
       <Name>lm.Comol.Core.BaseModules</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\3-Modules\lm.Comol.Modules.Base\lm.Comol.Modules.Base.vbproj">
-      <Project>{7F38A696-661E-4BDF-9FAD-38E51B3E7E96}</Project>
-      <Name>lm.Comol.Modules.Base</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\..\3-Business\3-Modules\lm.Comol.Modules.CallForPapers\lm.Comol.Modules.CallForPapers.csproj">
       <Project>{86AC380F-16E0-4E8F-AF84-555E13EA456E}</Project>
       <Name>lm.Comol.Modules.CallForPapers</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\3-Modules\lm.Comol.Modules.ScormStat\lm.Comol.Modules.ScormStat.csproj">
-      <Project>{88AB4D29-203F-47CA-9F95-DE1ADACDA528}</Project>
-      <Name>lm.Comol.Modules.ScormStat</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\3-Modules\lm.Comol.Modules.Standard\lm.Comol.Modules.Standard.csproj">
+    <ProjectReference Include="..\..\..\3-Business\3-Modules\lm.Comol.Modules.Standard\lm.Comol.Modules.Standard.csproj">
       <Project>{d253bf62-a7f2-48d5-ad05-12ac8ea66279}</Project>
       <Name>lm.Comol.Modules.Standard</Name>
     </ProjectReference>
