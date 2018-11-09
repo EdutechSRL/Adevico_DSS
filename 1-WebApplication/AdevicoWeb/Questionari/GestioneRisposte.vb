@@ -139,8 +139,12 @@ Public Class GestioneRisposte
     Public Function getRisposte(
                                ByVal DLPagine As DataList,
                                ByRef isValida As Boolean,
+                               ByRef RisposteObbligatorieSaltate As Integer,
                                Optional ByVal isTempoScaduto As Boolean = False) _
                                As RispostaQuestionario
+
+        RisposteObbligatorieSaltate = 0
+
 
         Dim IdUtenteQuestionario As Integer = Me.UtenteCorrente.ID
 
@@ -186,6 +190,27 @@ Public Class GestioneRisposte
                 Dim oDomanda As New Domanda
                 Dim isRisposta As Boolean = False
                 oDomanda = oDomanda.findDomandaBYID(Me.QuestionarioCorrente.domande, idQuestion)
+
+                Dim isMandatory As Boolean = oDomanda.isObbligatoria
+
+
+
+
+
+
+                Dim hasAnswer As Boolean = False    ''ToDo: controllare se ho risposta          <--------------------
+
+
+
+
+
+
+
+
+
+
+
+
                 Select Case oDomanda.tipo
                     Case Domanda.TipoDomanda.Multipla And Not oDomanda.isMultipla
                         Dim tabella As New Table
@@ -222,6 +247,8 @@ Public Class GestioneRisposte
                                     oRisp.tipo = oDomanda.tipo
                                     oDomanda.risposteDomanda.Add(oRisp)
                                     oRispostaQ.risposteDomande.Add(oRisp)
+
+                                    hasAnswer = True
                                 End If
                                 iOpzione = iOpzione + 1
                             Next
@@ -243,12 +270,21 @@ Public Class GestioneRisposte
                                     End If
                                 Next
                             Next
+
                             If quanteChecked > oDomanda.numeroMaxRisposte And oDomanda.numeroMaxRisposte > 0 Then
                                 oDomanda.isValida = False
                                 numeroTroppeRisposte = numeroTroppeRisposte + 1
                             Else
+
+                                If (quanteChecked > 0) Then
+                                    hasAnswer = True
+                                End If
+
                                 oDomanda.isValida = True
                             End If
+
+
+
                             If Not (isTempoScaduto And Not oDomanda.isValida) Then
                                 Dim iOpzione As Integer = 0
                                 For Each row As TableRow In tabella.Rows
@@ -305,14 +341,22 @@ Public Class GestioneRisposte
                                 oRisp.tipo = oDomanda.tipo
                                 oDomanda.risposteDomanda.Add(oRisp)
                                 oRispostaQ.risposteDomande.Add(oRisp)
+
+                                hasAnswer = True
                             End If
                         End If
                     Case Domanda.TipoDomanda.Rating
+
+                        Dim answerRows As Integer = 0
+                        Dim answeredRow As Integer = 0
                         Dim tabella As New Table
                         tabella = FindControlRecursive(itemD, "TBLRadiobutton_" + itemD.ItemIndex.ToString())
                         If Not tabella Is Nothing Then
                             Dim iRiga As Integer = 0
                             For Each row As TableRow In tabella.Rows
+
+                                answerRows += 1
+
                                 Dim iCella As Integer = 0
                                 If iRiga > 0 Then
                                     Dim testoIsAltro As String = String.Empty
@@ -337,6 +381,8 @@ Public Class GestioneRisposte
                                                         oRisp.tipo = oDomanda.tipo
                                                         oDomanda.risposteDomanda.Add(oRisp)
                                                         oRispostaQ.risposteDomande.Add(oRisp)
+
+                                                        answeredRow += 1
                                                     End If
                                                 End If
                                             End If
@@ -348,12 +394,25 @@ Public Class GestioneRisposte
                                 iRiga = iRiga + 1
                             Next
                         End If
+
+                        If answeredRow >= (answerRows - 1) Then 'conta l'intestazione...
+                            hasAnswer = True
+                        End If
                     Case Domanda.TipoDomanda.RatingStars
+
+                        Dim answerRows As Integer = 0
+                        Dim answeredRow As Integer = 0
+
                         Dim tabella As New Table
                         tabella = FindControlRecursive(itemD, "TBLRadiobutton_" + itemD.ItemIndex.ToString())
+
+
                         If Not tabella Is Nothing Then
                             Dim iRiga As Integer = 0
                             For Each row As TableRow In tabella.Rows
+
+                                answerRows += 1
+
                                 Dim iCella As Integer = 0
                                 'If iRiga > 0 Then
                                 Dim testoIsAltro As String = String.Empty
@@ -389,7 +448,7 @@ Public Class GestioneRisposte
                                             oDomanda.risposteDomanda.Add(oRisp)
                                             oRispostaQ.risposteDomande.Add(oRisp)
 
-
+                                            answeredRow += 1
                                             '        Dim dlOpzioni As New RadioButton
                                             '        dlOpzioni = DirectCast(ctrl, RadioButton)
                                             '        If Not dlOpzioni Is Nothing Then
@@ -411,6 +470,11 @@ Public Class GestioneRisposte
                                 iRiga = iRiga + 1
                             Next
                         End If
+
+                        If answeredRow >= (answerRows - 1) Then  'conta l'intestazione!
+                            hasAnswer = True
+                        End If
+
                     Case Domanda.TipoDomanda.Meeting
                         Dim tabella As New Table
                         tabella = FindControlRecursive(itemD, "TBLRadiobutton_" + itemD.ItemIndex.ToString())
@@ -435,6 +499,8 @@ Public Class GestioneRisposte
                                                         oDomanda.risposteDomanda.Add(oRisp)
                                                         oRispostaQ.risposteDomande.Add(oRisp)
                                                         isUpdated = True
+
+                                                        hasAnswer = True
                                                     End If
                                                 End If
                                             End If
@@ -464,6 +530,8 @@ Public Class GestioneRisposte
                                                 oRisp.tipo = oDomanda.tipo
                                                 oDomanda.risposteDomanda.Add(oRisp)
                                                 oRispostaQ.risposteDomande.Add(oRisp)
+
+                                                hasAnswer = True
                                             End If
                                         End If
                                         iOpzione = iOpzione + 1
@@ -486,6 +554,8 @@ Public Class GestioneRisposte
                                             If Not txOpzioni.Text = String.Empty Then
                                                 oRisp = setRisposta(oDomanda.opzioniNumerica(iOpzione).id, oDomanda.opzioniNumerica(iOpzione).numero, txOpzioni.Text, txOpzioni.Text, Domanda.TipoDomanda.Numerica)
                                                 isRisposta = True
+
+                                                hasAnswer = True
                                             Else
                                                 oRisp = setRisposta(oDomanda.opzioniNumerica(iOpzione).id, oDomanda.opzioniNumerica(iOpzione).numero, Integer.MinValue, Integer.MinValue, Domanda.TipoDomanda.Numerica)
                                             End If
@@ -500,6 +570,12 @@ Public Class GestioneRisposte
                             Next
                         End If
                 End Select
+
+                If isMandatory AndAlso Not hasAnswer Then
+                    RisposteObbligatorieSaltate += 1
+                End If
+
+
             Next
         Next
         If numeroTroppeRisposte > 0 Then

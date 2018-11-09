@@ -318,4 +318,13 @@ Partial Public Class DomandaEdit
         MyBase.Page_PreLoad(sender, e)
         Me.Master.ShowDocType = True
     End Sub
+
+    Private Sub DomandaEdit_PreRender(sender As Object, e As EventArgs) Handles Me.PreRender
+        If MLVquestionari.GetActiveView().ID = VIWSceltaTipoDomanda.ID _
+            OrElse MLVquestionari.GetActiveView().ID = VIWmessaggi.ID Then
+            Me.LNBSalva.Visible = False
+        Else
+            Me.LNBSalva.Visible = True
+        End If
+    End Sub
 End Class

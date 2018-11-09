@@ -37,7 +37,7 @@ Partial Public Class ucDaySurvey
     Public ReadOnly Property SmartTagsAvailable() As Comol.Entity.SmartTags
         Get
             If _SmartTagsAvailable Is Nothing Then
-                _SmartTagsAvailable = ManagerConfiguration.GetSmartTags(Me.ApplicationUrlBase(True))
+                _SmartTagsAvailable = ManagerConfiguration.GetSmartTags(Me.ApplicationUrlBase())
             End If
             Return _SmartTagsAvailable
         End Get
@@ -180,7 +180,14 @@ Partial Public Class ucDaySurvey
         Try
             Dim isValida As Boolean = True
             Me.QuestionarioCorrente = Me.CurrentSurvey
-            Me.QuestionarioCorrente.rispostaQuest = oGestioneRisposte.getRisposte(DLPagine, isValida)
+
+            Dim ObbligatorieSaltate As Integer = 0
+
+            Me.QuestionarioCorrente.rispostaQuest = oGestioneRisposte.getRisposte(DLPagine, isValida, ObbligatorieSaltate)
+
+
+
+
             If isValida Then
                 Me.QuestionarioCorrente.rispostaQuest.ultimaRisposta = 0
                 Me.QuestionarioCorrente.rispostaQuest.idQuestionario = Me.QuestionarioCorrente.id

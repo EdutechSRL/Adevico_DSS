@@ -149,6 +149,15 @@ Partial Public Class UICompile_
     Protected WithEvents LBisMandatoryInfoTop As Global.System.Web.UI.WebControls.Label
     
     '''<summary>
+    '''LBMandatoryNotAnswered control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents LBMandatoryNotAnswered As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
     '''LBTroppeRispostePagina control.
     '''</summary>
     '''<remarks>

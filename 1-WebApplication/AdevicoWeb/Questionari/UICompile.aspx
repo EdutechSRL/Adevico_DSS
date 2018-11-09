@@ -374,7 +374,9 @@
 							<asp:LinkButton ID="LNBdescrizione" runat="server" CssClass="Link_Menu" Visible="true"></asp:LinkButton>
 						</asp:Panel>
 						<asp:label ID="LBisMandatoryInfoTop" runat="server"></asp:label>
+                        <asp:label ID="LBMandatoryNotAnswered" runat="server" CssClass="Errore" Visible="false"></asp:label>
 						<asp:Label ID="LBTroppeRispostePagina" Visible="false" runat="server" CssClass="Errore"></asp:Label>
+
 						<asp:Label runat="server" ID="LBnoRisposta" CssClass="Errore" Visible="false"></asp:Label>
 						<asp:PlaceHolder runat="server" ID="PHucValutazione"></asp:PlaceHolder>
 						<asp:Panel ID="PNLElenco" runat="server" CssClass="elenco">

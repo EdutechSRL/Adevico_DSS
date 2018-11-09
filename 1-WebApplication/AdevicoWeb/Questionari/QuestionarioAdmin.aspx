@@ -381,7 +381,7 @@
                 <asp:RadioButtonList ID="RBLlibraryVisibility" runat="server" RepeatDirection="Vertical" RepeatLayout="Flow" AutoPostBack="true">
                     <asp:ListItem Selected="True" Value="currentCommunity">I gestori dei questionari nella comunità corrente</asp:ListItem>
                     <asp:ListItem Value="currentAndChildren">Tutti i gestori dei questionari nella comunità corrente e relative figlie</asp:ListItem>
-                    <asp:ListItem Value="someUser">SOLO ad alcuni utenti</asp:ListItem>
+                    <%--<asp:ListItem Value="someUser">SOLO ad alcuni utenti</asp:ListItem>--%>
                 </asp:RadioButtonList>
                 <br />
                 <div class="fieldrow" id="DVroles" runat="server" visible="false">

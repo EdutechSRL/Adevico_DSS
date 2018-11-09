@@ -189,7 +189,7 @@ Partial Public Class QuestionarioCompile
     Public ReadOnly Property SmartTagsAvailable() As Comol.Entity.SmartTags
         Get
             If _SmartTagsAvailable Is Nothing Then
-                _SmartTagsAvailable = ManagerConfiguration.GetSmartTags(Me.ApplicationUrlBase(True))
+                _SmartTagsAvailable = ManagerConfiguration.GetSmartTags(Me.ApplicationUrlBase())
             End If
             Return _SmartTagsAvailable
         End Get
@@ -356,7 +356,10 @@ Partial Public Class QuestionarioCompile
     Protected Sub LkbBack_Click(ByVal sender As System.Object, ByVal e As EventArgs) Handles LkbBack.Click
         If iPag > 0 Then
             Dim isValida As Boolean = True
-            Me.QuestionarioCorrente.rispostaQuest = oGestioneRisposte.getRisposte(DLPagine, isValida)
+
+            Dim ObbligatorieSaltate As Integer = 0
+            Me.QuestionarioCorrente.rispostaQuest = oGestioneRisposte.getRisposte(DLPagine, isValida, ObbligatorieSaltate)
+
             If isValida Then
                 If PHnumeroPagina.Controls.Count > iPag And iPag >= 0 Then
                     DirectCast(PHnumeroPagina.Controls(iPag), LinkButton).Style.Clear()
@@ -392,8 +395,10 @@ Partial Public Class QuestionarioCompile
         LBnoRisposta.Visible = False
         If iPag > -2 Then
             Dim isValida As Boolean = True
+            Dim ObbligatorieSaltate As Integer = 0  'Ok, non controllare!
+
             If isCorrezione Or Not Me.QuestionarioCorrente.tipo = Me.QuestionarioCorrente.TipoQuestionario.Autovalutazione Then
-                Me.QuestionarioCorrente.rispostaQuest = oGestioneRisposte.getRisposte(DLPagine, isValida)
+                Me.QuestionarioCorrente.rispostaQuest = oGestioneRisposte.getRisposte(DLPagine, isValida, ObbligatorieSaltate)
             End If
             If isValida Then
                 LBTroppeRispostePagina.Visible = False
@@ -895,7 +900,8 @@ Partial Public Class QuestionarioCompile
                 iPag = 0
                 Me.MLVquestionari.SetActiveView(Me.VIWdati)
                 'setLabelTitolo()
-                Me.QuestionarioCorrente.rispostaQuest = oGestioneRisposte.getRisposte(DLPagine, True)
+                Dim ObbligatorieSaltate As Integer = 0
+                Me.QuestionarioCorrente.rispostaQuest = oGestioneRisposte.getRisposte(DLPagine, True, ObbligatorieSaltate)
                 If Not Me.QuestionarioCorrente.rispostaQuest.dataInizio Is Nothing Then
                     If Me.QuestionarioCorrente.rispostaQuest.dataInizio.TrimEnd = String.Empty Then
                         Me.QuestionarioCorrente.rispostaQuest.dataInizio = DateTime.Now
@@ -914,6 +920,11 @@ Partial Public Class QuestionarioCompile
                 LNBdescrizione.Visible = False
             End If
         End If
+
+        If QuestionarioCorrente.pagine.Count < 2 Then
+            PHnumeroPagina.Visible = False
+        End If
+
         setCampiVisibili()
         If isValidPage Then
             If Not QuestionarioCorrente.editaRisposta OrElse Not QuestionarioCorrente.visualizzaRisposta Then
@@ -1220,7 +1231,9 @@ Partial Public Class QuestionarioCompile
             End If
 
             Dim isValida As Boolean = True
-            Me.QuestionarioCorrente.rispostaQuest = oGestioneRisposte.getRisposte(DLPagine, isValida)
+            Dim ObbligatorieSaltate As Integer = 0
+            Me.QuestionarioCorrente.rispostaQuest = oGestioneRisposte.getRisposte(DLPagine, isValida, ObbligatorieSaltate)
+
             If isValida Then
                 Dim pageRedirect As Integer = oGestioneRisposte.checkMandatoryAnswers(QuestionarioCorrente)
                 If pageRedirect = -10 Then
@@ -1358,7 +1371,15 @@ Partial Public Class QuestionarioCompile
                 Exit Sub
             End If
             Dim isValida As Boolean = True
-            Me.QuestionarioCorrente.rispostaQuest = oGestioneRisposte.getRisposte(DLPagine, isValida)
+            Dim ObbligatorieSaltate As Integer = 0
+            Me.QuestionarioCorrente.rispostaQuest = oGestioneRisposte.getRisposte(DLPagine, isValida, ObbligatorieSaltate)
+
+
+            ShowMandatory(ObbligatorieSaltate)
+            If ObbligatorieSaltate > 0 Then
+                Return
+            End If
+
             If isValida Then
 
                 oGestioneQuest.setCampiRispostaQuestionario(False)
@@ -1490,7 +1511,8 @@ Partial Public Class QuestionarioCompile
                 Exit Sub
             End If
             Dim isValida As Boolean = True
-            Me.QuestionarioCorrente.rispostaQuest = oGestioneRisposte.getRisposte(DLPagine, isValida)
+            Dim ObbligatorieSaltate As Integer = 0
+            Me.QuestionarioCorrente.rispostaQuest = oGestioneRisposte.getRisposte(DLPagine, isValida, ObbligatorieSaltate)
             If isValida Then
 
                 oGestioneQuest.setCampiRispostaQuestionario(False)
@@ -1603,7 +1625,8 @@ Partial Public Class QuestionarioCompile
                             '    ' POSSO SALVARE I DATI
                             '    ' DEVO SALVARE DEI DATI ASSOLUTAMENTE !
                             Dim isValida As Boolean = True
-                            Me.QuestionarioCorrente.rispostaQuest = oGestioneRisposte.getRisposte(DLPagine, isValida)
+                            Dim ObbligatorieSaltate As Integer = 0
+                            Me.QuestionarioCorrente.rispostaQuest = oGestioneRisposte.getRisposte(DLPagine, isValida, ObbligatorieSaltate)
                             If isValida AndAlso Not QuestionarioCorrente.tipo = QuestionnaireType.RandomMultipleAttempts AndAlso (QuestionarioCorrente.editaRisposta OrElse (Not QuestionarioCorrente.editaRisposta AndAlso CurrentService.IsValidSave(QuestionarioCorrente.id, QuestionarioCorrente.rispostaQuest.idPersona, QuestionarioCorrente.rispostaQuest.idUtenteInvitato, QuestionarioCorrente.rispostaQuest.id))) Then
                                 oGestioneQuest.setCampiRispostaQuestionario(False)
                                 Dim oGestioneRisposte As New GestioneRisposte
@@ -1678,7 +1701,8 @@ Partial Public Class QuestionarioCompile
         Dim isValida As Boolean = True
         LBnoRisposta.Visible = False
         Try
-            Me.QuestionarioCorrente.rispostaQuest = oGestioneRisposte.getRisposte(DLPagine, isValida)
+            Dim ObbligatorieSaltate As Integer = 0
+            Me.QuestionarioCorrente.rispostaQuest = oGestioneRisposte.getRisposte(DLPagine, isValida, ObbligatorieSaltate)
             If isValida Then
                 Dim LKBpag As New LinkButton
                 LKBpag = DirectCast(sender, LinkButton)
@@ -1745,7 +1769,8 @@ Partial Public Class QuestionarioCompile
                         'If TempoRimanente < 1 Then
                         Try
                             Dim isValida As Boolean = True
-                            Me.QuestionarioCorrente.rispostaQuest = oGestioneRisposte.getRisposte(DLPagine, isValida, True)
+                            Dim ObbligatorieSaltate As Integer = 0
+                            Me.QuestionarioCorrente.rispostaQuest = oGestioneRisposte.getRisposte(DLPagine, isValida, ObbligatorieSaltate, True)
 
                             oGestioneQuest.setCampiRispostaQuestionario(False)
 
@@ -1839,7 +1864,8 @@ Partial Public Class QuestionarioCompile
                         Exit Sub
                     Else
                         Dim isValida As Boolean = True
-                        Me.QuestionarioCorrente.rispostaQuest = oGestioneRisposte.getRisposte(DLPagine, isValida, True)
+                        Dim ObbligatorieSaltate As Integer = 0
+                        Me.QuestionarioCorrente.rispostaQuest = oGestioneRisposte.getRisposte(DLPagine, isValida, ObbligatorieSaltate, True)
                         oGestioneQuest.setCampiRispostaQuestionario(True)
                         If QuestionarioCorrente.tipo = QuestionnaireType.AutoEvaluation AndAlso QuestionarioCorrente.idFiglio = 0 Then
                             DALQuestionario.InsertRandomDestinatario(Me.QuestionarioCorrente, Me.UtenteCorrente.ID)
@@ -2006,6 +2032,20 @@ Partial Public Class QuestionarioCompile
         LkbBack.ToolTip = value
 
     End Sub
+
+
+
+    Private Sub ShowMandatory(ByVal mandatoryNum As Integer)
+
+        If mandatoryNum <= 0 Then
+            LBMandatoryNotAnswered.Visible = False
+        Else
+            LBMandatoryNotAnswered.Visible = True
+            LBMandatoryNotAnswered.Text = String.Format("Risposte saltate: {0}", mandatoryNum)
+        End If
+
+    End Sub
+
 
     ''' <summary>
     ''' Aggiunto per il salva!

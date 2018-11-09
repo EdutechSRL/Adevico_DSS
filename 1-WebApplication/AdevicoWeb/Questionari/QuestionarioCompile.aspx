@@ -321,6 +321,7 @@
 						   <asp:Label ID="LBname" runat="server" CssClass="RigaTitolo"></asp:Label>
 							<br /><br /><br />
 							<asp:label ID="LBisMandatoryInfoTop" runat="server"></asp:label>
+                            <asp:label ID="LBMandatoryNotAnswered" runat="server" CssClass="Errore" Visible="false"></asp:label>
 							<asp:Label ID="LBTroppeRispostePagina" Visible="false" runat="server" CssClass="Errore"> </asp:Label>
 							<asp:Label runat="server" ID="LBnoRisposta" CssClass="Errore" Visible="false"></asp:Label>
 							<asp:PlaceHolder runat="server" ID="PHucValutazione"></asp:PlaceHolder>

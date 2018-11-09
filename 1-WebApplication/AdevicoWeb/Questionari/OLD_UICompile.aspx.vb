@@ -79,7 +79,7 @@ Partial Public Class UICompile
     Public ReadOnly Property SmartTagsAvailable() As Comol.Entity.SmartTags
         Get
             If _SmartTagsAvailable Is Nothing Then
-                _SmartTagsAvailable = ManagerConfiguration.GetSmartTags(Me.ApplicationUrlBase(True))
+                _SmartTagsAvailable = ManagerConfiguration.GetSmartTags(Me.ApplicationUrlBase())
             End If
             Return _SmartTagsAvailable
         End Get
@@ -220,7 +220,8 @@ Partial Public Class UICompile
     Protected Sub IMBprima_Click(ByVal sender As System.Object, ByVal e As System.Web.UI.ImageClickEventArgs) Handles IMBprima.Click
         If iPag > 0 Then
             Dim isValida As Boolean = True
-            Me.QuestionarioCorrente.rispostaQuest = oGestioneRisposte.getRisposte(DLPagine, isValida)
+            Dim ObbligatorieSaltate As Integer = 0
+            Me.QuestionarioCorrente.rispostaQuest = oGestioneRisposte.getRisposte(DLPagine, isValida, ObbligatorieSaltate)
             If isValida Then
                 If PHnumeroPagina.Controls.Count > iPag And iPag >= 0 Then
                     DirectCast(PHnumeroPagina.Controls(iPag), LinkButton).Style.Clear()
@@ -245,7 +246,8 @@ Partial Public Class UICompile
         If iPag > -2 Then
             Dim isValida As Boolean = True
             If isCorrezione Or Not Me.QuestionarioCorrente.tipo = Me.QuestionarioCorrente.TipoQuestionario.Autovalutazione Then
-                Me.QuestionarioCorrente.rispostaQuest = oGestioneRisposte.getRisposte(DLPagine, isValida)
+                Dim ObbligatorieSaltate As Integer = 0
+                Me.QuestionarioCorrente.rispostaQuest = oGestioneRisposte.getRisposte(DLPagine, isValida, ObbligatorieSaltate)
             End If
             If isValida Then
                 LBTroppeRispostePagina.Visible = False
@@ -654,7 +656,8 @@ Partial Public Class UICompile
                 End If
                 iPag = 0
                 Me.MLVquestionari.SetActiveView(Me.VIWdati)
-                Me.QuestionarioCorrente.rispostaQuest = oGestioneRisposte.getRisposte(DLPagine, True)
+                Dim ObbligatorieSaltate As Integer = 0
+                Me.QuestionarioCorrente.rispostaQuest = oGestioneRisposte.getRisposte(DLPagine, True, ObbligatorieSaltate)
                 If Not Me.QuestionarioCorrente.rispostaQuest.dataInizio Is Nothing Then
                     If Me.QuestionarioCorrente.rispostaQuest.dataInizio.TrimEnd = String.Empty Then
                         Me.QuestionarioCorrente.rispostaQuest.dataInizio = DateTime.Now
@@ -752,7 +755,8 @@ Partial Public Class UICompile
     Protected Sub BTNFine_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BTNFine.Click
         Try
             Dim isValida As Boolean = True
-            Me.QuestionarioCorrente.rispostaQuest = oGestioneRisposte.getRisposte(DLPagine, isValida)
+            Dim ObbligatorieSaltate As Integer = 0
+            Me.QuestionarioCorrente.rispostaQuest = oGestioneRisposte.getRisposte(DLPagine, isValida, ObbligatorieSaltate)
             If isValida Then
                 Dim pageRedirect As Integer = oGestioneRisposte.checkMandatoryAnswers(QuestionarioCorrente)
                 If pageRedirect = -10 Then
@@ -798,7 +802,8 @@ Partial Public Class UICompile
     Protected Sub BTNSalvaEEsci_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BTNSalvaEEsci.Click
         Try
             Dim isValida As Boolean = True
-            Me.QuestionarioCorrente.rispostaQuest = oGestioneRisposte.getRisposte(DLPagine, isValida)
+            Dim ObbligatorieSaltate As Integer = 0
+            Me.QuestionarioCorrente.rispostaQuest = oGestioneRisposte.getRisposte(DLPagine, isValida, ObbligatorieSaltate)
             If isValida Then
                 oGestioneQuest.setCampiRispostaQuestionario(True)
                 Dim oGestioneRisposte As New GestioneRisposte
@@ -819,7 +824,8 @@ Partial Public Class UICompile
     Protected Sub BTNSalvaContinua_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BTNSalvaContinua.Click
         Try
             Dim isValida As Boolean = True
-            Me.QuestionarioCorrente.rispostaQuest = oGestioneRisposte.getRisposte(DLPagine, isValida)
+            Dim ObbligatorieSaltate As Integer = 0
+            Me.QuestionarioCorrente.rispostaQuest = oGestioneRisposte.getRisposte(DLPagine, isValida, ObbligatorieSaltate)
             If isValida Then
 
                 oGestioneQuest.setCampiRispostaQuestionario(True)
@@ -920,7 +926,8 @@ Partial Public Class UICompile
                         'If TempoRimanente < 1 Then
                         'Try
                         Dim isValida As Boolean = True
-                        Me.QuestionarioCorrente.rispostaQuest = oGestioneRisposte.getRisposte(DLPagine, isValida, True)
+                        Dim ObbligatorieSaltate As Integer = 0
+                        Me.QuestionarioCorrente.rispostaQuest = oGestioneRisposte.getRisposte(DLPagine, isValida, ObbligatorieSaltate, True)
                         oGestioneQuest.setCampiRispostaQuestionario(True)
                         Me.QuestionarioCorrente.rispostaQuest.dataFine = Date.MinValue.ToString
                         If TempoRimanente < 1 Then
@@ -946,7 +953,8 @@ Partial Public Class UICompile
                 TempoRimanente = Integer.MaxValue
                 'salva comunque la risposta
                 Dim isValida As Boolean = True
-                Me.QuestionarioCorrente.rispostaQuest = oGestioneRisposte.getRisposte(DLPagine, isValida, True)
+                Dim ObbligatorieSaltate As Integer = 0
+                Me.QuestionarioCorrente.rispostaQuest = oGestioneRisposte.getRisposte(DLPagine, isValida, ObbligatorieSaltate, True)
                 oGestioneQuest.setCampiRispostaQuestionario(True)
                 If oGestioneRisposte.SalvaRisposta(Me.QuestionarioCorrente, UserId, False) = "-1" Then
                     LBErrore.Visible = True
@@ -958,7 +966,8 @@ Partial Public Class UICompile
         LBnoRisposta.Visible = False
         Dim isValida As Boolean = True
         Try
-            Me.QuestionarioCorrente.rispostaQuest = oGestioneRisposte.getRisposte(DLPagine, isValida)
+            Dim ObbligatorieSaltate As Integer = 0
+            Me.QuestionarioCorrente.rispostaQuest = oGestioneRisposte.getRisposte(DLPagine, ObbligatorieSaltate, isValida)
             If isValida Then
                 Dim LKBpag As New LinkButton
                 LKBpag = DirectCast(sender, LinkButton)

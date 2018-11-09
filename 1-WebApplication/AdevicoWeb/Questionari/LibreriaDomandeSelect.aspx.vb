@@ -50,7 +50,7 @@ Partial Public Class LibreriaDomandeSelect
     Public ReadOnly Property SmartTagsAvailable() As Comol.Entity.SmartTags
         Get
             If _SmartTagsAvailable Is Nothing Then
-                _SmartTagsAvailable = ManagerConfiguration.GetSmartTags(Me.ApplicationUrlBase(True))
+                _SmartTagsAvailable = ManagerConfiguration.GetSmartTags(Me.ApplicationUrlBase())
             End If
             Return _SmartTagsAvailable
         End Get

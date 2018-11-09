@@ -1017,7 +1017,7 @@ Partial Public Class QuestionarioAdmin
         Resource.setButton(BTNaddUser, True)
         Resource.setRadioButtonList(RBLlibraryVisibility, LibraryAccessibility.currentCommunity.ToString)
         Resource.setRadioButtonList(RBLlibraryVisibility, LibraryAccessibility.currentAndChildren.ToString)
-        Resource.setRadioButtonList(RBLlibraryVisibility, LibraryAccessibility.someUser.ToString)
+        'Resource.setRadioButtonList(RBLlibraryVisibility, LibraryAccessibility.someUser.ToString)
         Resource.setButton(BTNunsavePerson, True)
         Resource.setButton(BTNsavePerson, True)
 

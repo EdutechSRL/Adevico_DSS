@@ -80,7 +80,7 @@
                         <asp:BoundField DataField="dataInizio" />
                         <asp:BoundField DataField="dataFine" />
                         <asp:BoundField DataField="creator" />
-                        <asp:BoundField />
+                        <asp:BoundField Visible="false"/>
                     </Columns>
                     <RowStyle CssClass="ROW_Normal_Small" Height="22px" />
                     <EditRowStyle BackColor="#2461BF" />
