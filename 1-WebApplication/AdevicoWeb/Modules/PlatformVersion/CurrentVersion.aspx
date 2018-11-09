@@ -63,9 +63,9 @@
 </asp:Content>
 <asp:Content ID="Content5" ContentPlaceHolderID="CPHservice" runat="server">
     <h3>Versione corrente</h3>
-    <span class="Titolo_Campo">Versione</span><span class="Testo_campo">0582925b</span>
+    <span class="Titolo_Campo">Versione</span><span class="Testo_campo">a40c216f</span>
     <br />
-    <span class="Titolo_Campo">Data versione</span><span class="Testo_campo">28/09/2018</span>
+    <span class="Titolo_Campo">Data versione</span><span class="Testo_campo">09/11/2018</span>
     <br />
     <span class="Titolo_Campo">Base Url</span>
     <span class="Testo_campo">
@@ -74,6 +74,20 @@
     <br />
     <h3>Dettagli versioni</h3>
     <ul class="month">
+        <li>
+            <h4>Novembre 2018</h4>
+             <ul>
+                 <li>
+                    <span class="Titolo_CampoSmall">a40c216f</span>
+                     <span class="Titolo_CampoSmall">09/11/2018</span>
+                      <ul>
+                        <li class="fix">
+                           Fix - Questionari: risposte obbligatorie
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
          <li>
             <h4>Settembre 2018</h4>
              <ul>
