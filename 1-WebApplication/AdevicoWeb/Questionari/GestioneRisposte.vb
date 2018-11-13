@@ -193,23 +193,7 @@ Public Class GestioneRisposte
 
                 Dim isMandatory As Boolean = oDomanda.isObbligatoria
 
-
-
-
-
-
                 Dim hasAnswer As Boolean = False    ''ToDo: controllare se ho risposta          <--------------------
-
-
-
-
-
-
-
-
-
-
-
 
                 Select Case oDomanda.tipo
                     Case Domanda.TipoDomanda.Multipla And Not oDomanda.isMultipla

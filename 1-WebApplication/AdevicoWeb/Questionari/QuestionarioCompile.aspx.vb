@@ -360,6 +360,11 @@ Partial Public Class QuestionarioCompile
             Dim ObbligatorieSaltate As Integer = 0
             Me.QuestionarioCorrente.rispostaQuest = oGestioneRisposte.getRisposte(DLPagine, isValida, ObbligatorieSaltate)
 
+            ShowMandatory(ObbligatorieSaltate)
+            If ObbligatorieSaltate > 0 Then
+                Return
+            End If
+
             If isValida Then
                 If PHnumeroPagina.Controls.Count > iPag And iPag >= 0 Then
                     DirectCast(PHnumeroPagina.Controls(iPag), LinkButton).Style.Clear()
@@ -395,11 +400,17 @@ Partial Public Class QuestionarioCompile
         LBnoRisposta.Visible = False
         If iPag > -2 Then
             Dim isValida As Boolean = True
-            Dim ObbligatorieSaltate As Integer = 0  'Ok, non controllare!
+            Dim ObbligatorieSaltate As Integer = 0  'Ok, SE vado avanti: CONTROLLO!
 
             If isCorrezione Or Not Me.QuestionarioCorrente.tipo = Me.QuestionarioCorrente.TipoQuestionario.Autovalutazione Then
                 Me.QuestionarioCorrente.rispostaQuest = oGestioneRisposte.getRisposte(DLPagine, isValida, ObbligatorieSaltate)
             End If
+
+            ShowMandatory(ObbligatorieSaltate)
+            If ObbligatorieSaltate > 0 Then
+                Return
+            End If
+
             If isValida Then
                 LBTroppeRispostePagina.Visible = False
                 If Me.QuestionarioCorrente.tipo = Questionario.TipoQuestionario.Autovalutazione Then
@@ -1703,6 +1714,12 @@ Partial Public Class QuestionarioCompile
         Try
             Dim ObbligatorieSaltate As Integer = 0
             Me.QuestionarioCorrente.rispostaQuest = oGestioneRisposte.getRisposte(DLPagine, isValida, ObbligatorieSaltate)
+
+            ShowMandatory(ObbligatorieSaltate)
+            If ObbligatorieSaltate > 0 Then
+                Return
+            End If
+
             If isValida Then
                 Dim LKBpag As New LinkButton
                 LKBpag = DirectCast(sender, LinkButton)
