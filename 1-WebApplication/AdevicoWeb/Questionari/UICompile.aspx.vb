@@ -278,6 +278,12 @@ Partial Public Class UICompile_
             Dim ObbligatorieSaltate As Integer = 0
 
             Me.QuestionarioCorrente.rispostaQuest = oGestioneRisposte.getRisposte(DLPagine, isValida, ObbligatorieSaltate)
+
+            ShowMandatory(ObbligatorieSaltate)
+            If ObbligatorieSaltate > 0 Then
+                Return
+            End If
+
             If isValida Then
                 If PHnumeroPagina.Controls.Count > iPag And iPag >= 0 Then
                     DirectCast(PHnumeroPagina.Controls(iPag), LinkButton).Style.Clear()
@@ -305,12 +311,18 @@ Partial Public Class UICompile_
         LBnoRisposta.Visible = False
         If iPag > -2 Then
             Dim isValida As Boolean = True
-            If isCorrezione Or Not Me.QuestionarioCorrente.tipo = Me.QuestionarioCorrente.TipoQuestionario.Autovalutazione Then
+            Dim ObbligatorieSaltate As Integer = 0
 
-                Dim ObbligatorieSaltate As Integer = 0
+            If isCorrezione Or Not Me.QuestionarioCorrente.tipo = Me.QuestionarioCorrente.TipoQuestionario.Autovalutazione Then
 
                 Me.QuestionarioCorrente.rispostaQuest = oGestioneRisposte.getRisposte(DLPagine, isValida, ObbligatorieSaltate)
             End If
+
+            ShowMandatory(ObbligatorieSaltate)
+            If ObbligatorieSaltate > 0 Then
+                Return
+            End If
+
             If isValida Then
                 LBTroppeRispostePagina.Visible = False
                 If Me.QuestionarioCorrente.tipo = Questionario.TipoQuestionario.Autovalutazione Then
@@ -731,7 +743,7 @@ Partial Public Class UICompile_
             PNLIndietro.Visible = False
             BTNSalvaEEsci.Visible = False
         End If
-      
+
         If Me.EncryptedQueryString("ida", SecretKeyUtil.EncType.Questionario) = "1" Then
             BTNSalvaContinua.Visible = False
             LBAvvisoSalva.Visible = False
@@ -976,6 +988,14 @@ Partial Public Class UICompile_
             Dim ObbligatorieSaltate As Integer = 0
 
             Me.QuestionarioCorrente.rispostaQuest = oGestioneRisposte.getRisposte(DLPagine, isValida, ObbligatorieSaltate)
+
+
+            ShowMandatory(ObbligatorieSaltate)
+            If ObbligatorieSaltate > 0 Then
+                Return
+            End If
+
+
             If isValida Then
                 Dim pageRedirect As Integer = oGestioneRisposte.checkMandatoryAnswers(QuestionarioCorrente)
                 If pageRedirect = -10 Then
@@ -1123,32 +1143,32 @@ Partial Public Class UICompile_
 
 
             If iPag = -1 Then
-                    TMSessione.Enabled = True
-                    TMSessione.Interval = RootObject.tickMassimo
-                    TMSessione_Tick(sender, e)
-                    If Me.QuestionarioCorrente.isPrimaRisposta Or Me.QuestionarioCorrente.editaRisposta Then
-                        If RootObject.setNullDate(Me.QuestionarioCorrente.rispostaQuest.dataInizio) Is System.DBNull.Value Then
-                            Me.QuestionarioCorrente.rispostaQuest.dataInizio = Now()
-                            Me.QuestionarioCorrente.rispostaQuest.indirizzoIPStart = OLDpageUtility.ProxyIPadress() & " / " & OLDpageUtility.ClientIPadress
-                        End If
-                        isFirstRun = True
-                        'DirectCast(UPTempo.FindControl("LBTempoRimanente"), Label).Visible = LBTempoRimanenteVIWDescrizione.Visible
-                        DirectCast(UPTempo.FindControl("LBTempoRimanente"), Label).Text = String.Format(LBTempoRimanente.Text, Me.QuestionarioCorrente.durata)
-                        'Me.SetFocus(IMBdopo)
-                        'per disattivare i timer commentare l'if seguente
-                        If Me.QuestionarioCorrente.durata > 0 Then
-                            LBTempoRimanente.Text = String.Format(Me.Resource.getValue("LBTempoRimanente.text"), Me.QuestionarioCorrente.durata, Me.Resource.getValue("minuti"))
-                            'DIVpanelTempo.Attributes.CssStyle.Clear()
-                            DIVpanelTempo_Container.Attributes.Add("class", "div_paneltempo_container time_visible")
-                            'DIVpanelTempo.Style.Item("display") = "block"
+                TMSessione.Enabled = True
+                TMSessione.Interval = RootObject.tickMassimo
+                TMSessione_Tick(sender, e)
+                If Me.QuestionarioCorrente.isPrimaRisposta Or Me.QuestionarioCorrente.editaRisposta Then
+                    If RootObject.setNullDate(Me.QuestionarioCorrente.rispostaQuest.dataInizio) Is System.DBNull.Value Then
+                        Me.QuestionarioCorrente.rispostaQuest.dataInizio = Now()
+                        Me.QuestionarioCorrente.rispostaQuest.indirizzoIPStart = OLDpageUtility.ProxyIPadress() & " / " & OLDpageUtility.ClientIPadress
+                    End If
+                    isFirstRun = True
+                    'DirectCast(UPTempo.FindControl("LBTempoRimanente"), Label).Visible = LBTempoRimanenteVIWDescrizione.Visible
+                    DirectCast(UPTempo.FindControl("LBTempoRimanente"), Label).Text = String.Format(LBTempoRimanente.Text, Me.QuestionarioCorrente.durata)
+                    'Me.SetFocus(IMBdopo)
+                    'per disattivare i timer commentare l'if seguente
+                    If Me.QuestionarioCorrente.durata > 0 Then
+                        LBTempoRimanente.Text = String.Format(Me.Resource.getValue("LBTempoRimanente.text"), Me.QuestionarioCorrente.durata, Me.Resource.getValue("minuti"))
+                        'DIVpanelTempo.Attributes.CssStyle.Clear()
+                        DIVpanelTempo_Container.Attributes.Add("class", "div_paneltempo_container time_visible")
+                        'DIVpanelTempo.Style.Item("display") = "block"
 
-                            TMDurata.Enabled = True
-                            TMDurata.Interval = RootObject.autoSaveTimer
-                            TMDurata_Tick(sender, e)
-                        Else
-                            ' salvo la risposta al questionario
-                            oGestioneQuest.setCampiRispostaQuestionario(True)
-                            Me.QuestionarioCorrente.rispostaQuest.dataFine = Date.MinValue.ToString
+                        TMDurata.Enabled = True
+                        TMDurata.Interval = RootObject.autoSaveTimer
+                        TMDurata_Tick(sender, e)
+                    Else
+                        ' salvo la risposta al questionario
+                        oGestioneQuest.setCampiRispostaQuestionario(True)
+                        Me.QuestionarioCorrente.rispostaQuest.dataFine = Date.MinValue.ToString
                         If oGestioneRisposte.SalvaRisposta(Me.QuestionarioCorrente, UserId, False) = "-1" Then
                             CTRLerrorMessages.Visible = True
                             CTRLerrorMessages.InitializeControl(Resource.getValue("QuestionnaireError.AnswerNotSaved"), lm.Comol.Core.DomainModel.Helpers.MessageType.error)
@@ -1156,14 +1176,14 @@ Partial Public Class UICompile_
                         End If
                     End If
 
-                    End If
-
-                    isCorrezione = False 'serve per i test di autovalutazione
-                    vaiPaginaDopo()
-                    oGestioneQuest.CompileStartActionAdd()
                 End If
 
+                isCorrezione = False 'serve per i test di autovalutazione
+                vaiPaginaDopo()
+                oGestioneQuest.CompileStartActionAdd()
             End If
+
+        End If
     End Sub
     Protected Sub LNBindietro_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles LNBindietro.Click
         Me.RedirectToUrl(RootObject.QuestionariList & "?Type=" & Me.QuestionarioCorrente.tipo)
@@ -1275,6 +1295,14 @@ Partial Public Class UICompile_
 
             Dim ObbligatorieSaltate As Integer = 0
             Me.QuestionarioCorrente.rispostaQuest = oGestioneRisposte.getRisposte(DLPagine, isValida, ObbligatorieSaltate)
+
+
+            ShowMandatory(ObbligatorieSaltate)
+            If ObbligatorieSaltate > 0 Then
+                Return
+            End If
+
+
             If isValida Then
                 Dim LKBpag As New LinkButton
                 LKBpag = DirectCast(sender, LinkButton)
