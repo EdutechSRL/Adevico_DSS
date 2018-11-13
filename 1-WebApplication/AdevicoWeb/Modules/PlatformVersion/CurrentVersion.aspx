@@ -63,7 +63,7 @@
 </asp:Content>
 <asp:Content ID="Content5" ContentPlaceHolderID="CPHservice" runat="server">
     <h3>Versione corrente</h3>
-    <span class="Titolo_Campo">Versione</span><span class="Testo_campo">d15f57ba</span>
+    <span class="Titolo_Campo">Versione</span><span class="Testo_campo">ec67e27e</span>
     <br />
     <span class="Titolo_Campo">Data versione</span><span class="Testo_campo">13/11/2018</span>
     <br />
@@ -78,7 +78,7 @@
             <h4>Novembre 2018</h4>
              <ul>
                  <li>
-                    <span class="Titolo_CampoSmall">d15f57ba</span>
+                    <span class="Titolo_CampoSmall">ec67e27e</span>
                      <span class="Titolo_CampoSmall">13/11/2018</span>
                       <ul>
                         <li class="fix">
