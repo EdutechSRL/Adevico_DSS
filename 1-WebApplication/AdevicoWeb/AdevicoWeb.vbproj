@@ -8877,6 +8877,7 @@
     <Content Include="Style\NewMenuDemo\js\OLD\jquery-hoverIntent.js" />
     <Content Include="Style\NewMenuDemo\js\OLD\jquery.bgiframe.js" />
     <Content Include="Style\New\statistiche.css" />
+    <Content Include="Test\InternalTest.aspx" />
     <Content Include="Test\Test.aspx" />
     <Content Include="uc\Header\UC_TopBar.ascx" />
     <Content Include="Authentication\UC\UC_InternalLogin.ascx" />
@@ -13039,6 +13040,13 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Test\InternalTest.aspx.designer.vb">
+      <DependentUpon>InternalTest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Test\InternalTest.aspx.vb">
+      <DependentUpon>InternalTest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Test\Test.aspx.designer.vb">
       <DependentUpon>Test.aspx</DependentUpon>

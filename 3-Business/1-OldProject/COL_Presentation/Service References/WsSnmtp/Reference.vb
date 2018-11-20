@@ -693,13 +693,15 @@ Namespace WsSnmtp
         Function WsSnmtp_WsSnmtpSoap_SendTrapActionValue(ByVal request As WsSnmtp.SendTrapActionValueRequest) As WsSnmtp.SendTrapActionValueResponse Implements WsSnmtp.WsSnmtpSoap.SendTrapActionValue
             Return MyBase.Channel.SendTrapActionValue(request)
         End Function
-        
-        Public Sub SendTrapActionValue(ByVal id As String, ByVal value As WsSnmtp.dtoActionValues)
+
+        Public Function SendTrapActionValue(ByVal id As String, ByVal value As WsSnmtp.dtoActionValues) As WsSnmtp.SendTrapActionValueResponse
             Dim inValue As WsSnmtp.SendTrapActionValueRequest = New WsSnmtp.SendTrapActionValueRequest()
             inValue.Body = New WsSnmtp.SendTrapActionValueRequestBody()
             inValue.Body.id = id
             inValue.Body.value = value
-            Dim retVal As WsSnmtp.SendTrapActionValueResponse = CType(Me,WsSnmtp.WsSnmtpSoap).SendTrapActionValue(inValue)
-        End Sub
+            Dim retVal As WsSnmtp.SendTrapActionValueResponse = CType(Me, WsSnmtp.WsSnmtpSoap).SendTrapActionValue(inValue)
+
+            Return retVal
+        End Function
     End Class
 End Namespace

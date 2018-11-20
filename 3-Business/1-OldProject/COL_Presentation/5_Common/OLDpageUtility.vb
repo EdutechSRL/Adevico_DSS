@@ -3037,9 +3037,66 @@ Public Class OLDpageUtility
     ''' <summary>
     ''' Test invio trap login
     ''' </summary>
-    Public Sub SendTrapLoginTest()
-        SendTrapLogin()
-    End Sub
+    Public Function SendTrapLoginTest() As String
+        Dim response As String = ""
+
+        response = String.Format("AllowSendTrap: {0}; IsNothingTRapSender: {1};", AllowSendTrapActions, IsNothing(TrapSender))
+
+        If AllowSendTrapActions AndAlso Not IsNothing(TrapSender) Then
+
+            response = String.Format("{0} SNMTP Data: {1};", response, TrapSender.State)
+
+            Dim actionvalue As WsSnmtp.dtoActionValues = New WsSnmtp.dtoActionValues()
+            With actionvalue
+                .Progressive = TrapProgressive
+                .EventId = TrapIdEnums.LoginSuccess
+                .User = New WsSnmtp.dtoUserValues()
+                .Action = New WsSnmtp.dtoActionData()
+            End With
+
+            With actionvalue.User
+                .id = Me.CurrentUser.ID
+                .login = Me.CurrentUser.Login
+                .mail = Me.CurrentUser.Mail
+                .name = Me.CurrentUser.Nome
+                .surname = Me.CurrentUser.Cognome
+                .taxCode = Me.CurrentUser.CodFiscale
+                .Ip = Me.ClientIPadress
+                .ProxyIp = Me.ProxyIPadress
+            End With
+
+            With actionvalue.Action
+                .ActionCodeId = "4624"
+                .ActionTypeId = "login"
+                .CommunityId = Me.WorkingCommunityID
+                .CommunityIsFederated = False
+                .InteractionType = InteractionType.Generic
+                .ModuleCode = "Login"
+                .ModuleId = CurrentModule.ID
+                .SuccessInfo = "Success"
+                .ObjectId = 0
+                .ObjectType = 0
+            End With
+
+            Dim TrapId As Integer = TrapIdEnums.LoginSuccess
+            Dim WsSnmtpresponse As WsSnmtp.SendTrapActionValueResponse = TrapSender.SendTrapActionValue(TrapId, actionvalue)
+
+            response = String.Format("{0}<br/>Response:{1}{2}", response, vbCrLf, WsSnmtpresponse.Body.ToString())
+        ElseIf IsNothing(TrapSender) Then
+            Try
+                Dim new_TrapSender As WsSnmtp.WsSnmtpSoapClient = New WsSnmtp.WsSnmtpSoapClient()
+            Catch ex As Exception
+                response = String.Format("{0}; <br/> Exception: {1}", response, ex.ToString())
+            End Try
+
+
+
+
+        End If
+
+        Return response
+
+    End Function
 
     ''' <summary>
     ''' Invio del trap dopo la login
