@@ -248,6 +248,8 @@ Public Class HTTPhandler_DownloadRepositoryItem
                     service.Abort()
                     service = Nothing
                 End If
+
+                iResponse = True
             End Try
 
         ElseIf ModuleID = 0 OrElse ModuleCode = Services_File.Codex Then
