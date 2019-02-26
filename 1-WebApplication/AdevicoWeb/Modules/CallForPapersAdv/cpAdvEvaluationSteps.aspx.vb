@@ -105,10 +105,12 @@ Public Class cpAdvEvaluationSteps
 #Region "BindSteps"
 
     Private _IsManager As Boolean = False
+    Private _CanShowSubmission As Boolean = False
 
     Public Sub Initialize(Steps As dto.dtoStepsEdit, IsManager As Boolean, CanShowSubmission As Boolean) Implements iView.iViewAdvCallSteps.Initialize
 
         _IsManager = IsManager
+        _CanShowSubmission = CanShowSubmission
 
         LkbAddStep.Visible = IsManager
         BindValidation(Steps.ValidationStep)
@@ -421,7 +423,8 @@ Public Class cpAdvEvaluationSteps
 
 
 
-            HYPstepValstatus.Visible = _IsManager
+            HYPstepValstatus.Visible = _IsManager OrElse _CanShowSubmission
+
             ' _IsManager _
             'OrElse (validation.StepPermission And GenericStepPermission.Member = GenericStepPermission.Member) _
             'OrElse (validation.StepPermission And GenericStepPermission.Secretary = GenericStepPermission.Secretary) _
