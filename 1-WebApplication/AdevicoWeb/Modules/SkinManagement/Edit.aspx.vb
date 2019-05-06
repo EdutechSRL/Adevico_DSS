@@ -257,7 +257,10 @@ Public Class EditSkin
     End Sub
 
     Private Function HasPermissionForItem(item As lm.Comol.Core.DomainModel.ModuleObject) As Boolean Implements IViewModuleSkinBase.HasPermissionForItem
-        Dim retval As Boolean
+        Dim retval As Boolean = False
+
+
+
         Dim oSender As PermissionService.IServicePermission = Nothing
         Try
             oSender = New PermissionService.ServicePermissionClient
@@ -275,6 +278,27 @@ Public Class EditSkin
                 service = Nothing
             End If
         End Try
+
+        If Not retval Then
+
+            Dim currentTypeId As Integer = CurrentPresenter.UserContext.UserTypeID
+
+            If Not IsNothing(SystemSettings.SkinSettings.PersonTypeIds) Then
+                retval = SystemSettings.SkinSettings.PersonTypeIds.Any(Function(t) t = currentTypeId)
+            End If
+
+        End If
+
+        If Not retval Then
+
+            Dim currentUserId As Integer = CurrentPresenter.UserContext.CurrentUserID
+
+            If Not IsNothing(SystemSettings.SkinSettings.PersonTypeIds) Then
+                retval = SystemSettings.SkinSettings.PersonTypeIds.Any(Function(p) p = currentUserId)
+            End If
+
+        End If
+
         Return retval
     End Function
     Private Sub LoadAvailableViews(views As List(Of SkinView)) Implements IViewModuleSkinEdit.LoadAvailableViews

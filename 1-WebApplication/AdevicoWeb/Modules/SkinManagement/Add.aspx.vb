@@ -224,7 +224,30 @@ Public Class AddSkin
         PageUtility.RedirectToUrl(RootObject.EditModuleSkin(IdSkin, Source.ServiceID, Source.CommunityID, Source.ObjectLongID, Source.ObjectTypeID, Server.UrlEncode(BackUrl)))
     End Sub
     Public Function HasPermissionForItem(item As lm.Comol.Core.DomainModel.ModuleObject) As Boolean Implements IViewModuleSkinBase.HasPermissionForItem
-        Dim retval As Boolean
+        'Dim retval As Boolean
+        'Dim oSender As PermissionService.IServicePermission = Nothing
+        'Try
+        '    oSender = New PermissionService.ServicePermissionClient
+        '    retval = oSender.AllowStandardAction(lm.Comol.Core.DomainModel.StandardActionType.Edit, item, Nothing, CurrentContext.UserContext.CurrentUserID)
+
+        '    If Not IsNothing(oSender) Then
+        '        Dim service As System.ServiceModel.ClientBase(Of PermissionService.IServicePermission) = DirectCast(oSender, System.ServiceModel.ClientBase(Of PermissionService.IServicePermission))
+        '        service.Close()
+        '        service = Nothing
+        '    End If
+        'Catch ex As Exception
+        '    If Not IsNothing(oSender) Then
+        '        Dim service As System.ServiceModel.ClientBase(Of PermissionService.IServicePermission) = DirectCast(oSender, System.ServiceModel.ClientBase(Of PermissionService.IServicePermission))
+        '        service.Abort()
+        '        service = Nothing
+        '    End If
+        'End Try
+        'Return retval
+
+        Dim retval As Boolean = False
+
+
+
         Dim oSender As PermissionService.IServicePermission = Nothing
         Try
             oSender = New PermissionService.ServicePermissionClient
@@ -242,6 +265,27 @@ Public Class AddSkin
                 service = Nothing
             End If
         End Try
+
+        If Not retval Then
+
+            Dim currentTypeId As Integer = CurrentPresenter.UserContext.UserTypeID
+
+            If Not IsNothing(SystemSettings.SkinSettings.PersonTypeIds) Then
+                retval = SystemSettings.SkinSettings.PersonTypeIds.Any(Function(t) t = currentTypeId)
+            End If
+
+        End If
+
+        If Not retval Then
+
+            Dim currentUserId As Integer = CurrentPresenter.UserContext.CurrentUserID
+
+            If Not IsNothing(SystemSettings.SkinSettings.PersonTypeIds) Then
+                retval = SystemSettings.SkinSettings.PersonTypeIds.Any(Function(p) p = currentUserId)
+            End If
+
+        End If
+
         Return retval
     End Function
 #End Region
