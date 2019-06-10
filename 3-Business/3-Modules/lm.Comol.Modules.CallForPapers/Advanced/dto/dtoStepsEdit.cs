@@ -56,7 +56,7 @@ namespace lm.Comol.Modules.CallForPapers.Advanced.dto
         /// </summary>
         /// <param name="steps">Elenco step</param>
         /// <param name="userId">Id utente: per permessi</param>
-        public dtoStepsEdit(IList<Domain.AdvStep> steps, int userId)
+        public dtoStepsEdit(IList<Domain.AdvStep> steps, int userId, int creatorId)
         {
             if (steps == null || !steps.Any())
             {
@@ -76,7 +76,7 @@ namespace lm.Comol.Modules.CallForPapers.Advanced.dto
                 (from Domain.AdvStep stp in steps
                  where stp.Type == StepType.validation
                  select stp).FirstOrDefault(),
-                userId);
+                userId, creatorId);
 
 
             if (steps.Any(st => st.Type == StepType.economics))
@@ -85,14 +85,14 @@ namespace lm.Comol.Modules.CallForPapers.Advanced.dto
                 (from Domain.AdvStep stp in steps
                  where stp.Type == StepType.economics
                  select stp).FirstOrDefault(),
-                userId);
+                userId, creatorId);
             }
 
             if (steps.Any(st => st.Type == StepType.custom))
             {
                 CustomSteps = (from Domain.AdvStep stp in steps.OrderBy(st => st.Order)
                                where stp.Type == StepType.custom
-                               select new dtoAdvStepContainer(stp, userId)).ToList();
+                               select new dtoAdvStepContainer(stp, userId, creatorId)).ToList();
             }
         }
 

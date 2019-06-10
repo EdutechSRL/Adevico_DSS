@@ -75,7 +75,7 @@ namespace lm.Comol.Modules.CallForPapers.Advanced.dto
         /// </summary>
         /// <param name="step">Step di riferimento</param>
         /// <param name="userId">Id Utente (per calcolo permessi)</param>
-        public dtoAdvStepContainer(Domain.AdvStep step, int userId)
+        public dtoAdvStepContainer(Domain.AdvStep step, int userId, int creatorId)
         {
             Id = step.Id;
             Name = step.Name;
@@ -117,6 +117,15 @@ namespace lm.Comol.Modules.CallForPapers.Advanced.dto
                     StepPermission |= GenericStepPermission.Member;
                 }
             }
+
+            if (creatorId > 0 && creatorId == userId)
+            {
+                StepPermission |= GenericStepPermission.MainPresident;
+                StepPermission |= GenericStepPermission.MainSecretary;
+                StepPermission |= GenericStepPermission.President;
+                StepPermission |= GenericStepPermission.Secretary;
+            }
+
         }
     }
 }

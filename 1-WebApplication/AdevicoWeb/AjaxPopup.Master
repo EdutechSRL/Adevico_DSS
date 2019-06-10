@@ -58,6 +58,13 @@
     </asp:ContentPlaceHolder>
         <!-- Mantain dialog open-->
     <script type="text/javascript" src="<%#ResolveUrl("~/JScript/Modules/Common/autoopendialog.js")%>"></script>
+
+    <style type="text/css">
+        div#page-box
+		{
+			margin-top: 0px;
+		}
+    </style>
 </head>
 <body style="margin-top: 0px; margin-right: 0px; margin-left: 0px;" id="popup" class="internal_body <%=Me.DocTypeClass %>">
      <form id="aspnetForm" class="mainForm" runat="server">

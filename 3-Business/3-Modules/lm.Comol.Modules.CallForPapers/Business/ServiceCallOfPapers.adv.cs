@@ -221,7 +221,8 @@ namespace lm.Comol.Modules.CallForPapers.Business
             if (!CallSteps.Any())
                 return addValidationIfEmpty(call, defaultValCommissionName, defaultEcoCommissionName);
 
-            dtoStepsEdit step = new dtoStepsEdit(CallSteps, UC.CurrentUserID);
+            dtoStepsEdit step = new dtoStepsEdit(CallSteps, UC.CurrentUserID, call.CreatedBy.Id);
+
 
             if(step.ValidationStep != null && step.ValidationStep.StepPermission == GenericStepPermission.none)
             {
@@ -4804,7 +4805,7 @@ namespace lm.Comol.Modules.CallForPapers.Business
             if (StepEco != null)
                 Steps.Add(StepVal);
 
-            return new dtoStepsEdit(Steps, UC.CurrentUserID);
+            return new dtoStepsEdit(Steps, UC.CurrentUserID, call.CreatedBy.Id);
         }
         
         /// <summary>
