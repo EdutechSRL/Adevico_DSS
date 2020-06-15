@@ -5840,7 +5840,10 @@ namespace lm.Comol.Modules.CallForPapers.Business
                                             c.Where(x => x.IdEvaluator == e.Evaluator.Id).Select(x => x.Id).DefaultIfEmpty(0).FirstOrDefault())
                                     .FirstOrDefault(), 
                                 unknownUser)
-                            ).ToList();
+                            )
+                            .ToList();
+
+                    // .OrderBy(ev => ev.Surname).ThenBy(ev => ev.Name).ThenBy(ev => ev.IdMembership)
 
                     item.Criteria.ForEach(cr => cr.LoadEvaluations(item.Evaluators));
                     items.Add(item);
@@ -5855,12 +5858,12 @@ namespace lm.Comol.Modules.CallForPapers.Business
             foreach(var itm in items)
             {
 
-                itm.Evaluators = itm.Evaluators.OrderBy(e => e.Name).ThenBy(e => e.IdMembership).ToList();
+                itm.Evaluators = itm.Evaluators.OrderBy(e => e.Surname).ThenBy(e => e.Name).ThenBy(e => e.IdMembership).ToList();
                     
                 foreach (var eval in itm.Criteria)
                 {
                     eval.Evaluations = 
-                        eval.Evaluations.OrderBy(e => e.Evaluator.Name).ThenBy(e => e.Evaluator.IdMembership).ToList();
+                        eval.Evaluations.OrderBy(e => e.Evaluator.Surname).ThenBy(e => e.Evaluator.Name).ThenBy(e => e.Evaluator.IdMembership).ToList();
                 }
             }
 

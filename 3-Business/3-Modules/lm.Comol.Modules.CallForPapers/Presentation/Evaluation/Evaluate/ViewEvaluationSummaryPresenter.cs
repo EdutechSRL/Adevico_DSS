@@ -261,15 +261,29 @@ namespace lm.Comol.Modules.CallForPapers.Presentation.Evaluation
 
             dtoSubmissionRevision submission = ServiceCall.GetSubmissionWithRevisions(idSubmission, false);
 
-            List<dtoCommitteeEvaluationInfo> committees =
-                ServiceCall.GetCommitteesInfoForSubmission(submission.Id, call.Id, View.AdvCommissionId);
-                                                                                                        
+            List<dtoCommitteeEvaluationInfo> committees = new List<dtoCommitteeEvaluationInfo>();
+
+            
+
+                
+
             EvaluationType evalType = View.CurrentEvaluationType;
 
             bool isAdvance = ServiceCall.CallIsAdvanced(idCall);
 
-            List<dtoSubmissionCommitteeItem> evaluations =
-                ServiceCall.GetSubmissionEvaluations(idCall, idSubmission, idCommittee, View.UnknownDisplayname);
+            List<dtoSubmissionCommitteeItem> evaluations = new List<dtoSubmissionCommitteeItem>();
+            if (isAdvance)
+            {
+                evaluations = ServiceCall.GetSubmissionEvaluations(idCall, idSubmission, idCommittee, View.UnknownDisplayname);
+                committees = ServiceCall.GetCommitteesInfoForSubmission(submission.Id, call.Id, View.AdvCommissionId);
+            }
+            else
+            {
+                evaluations = Service.GetSubmissionEvaluations(idCall, idSubmission, idCommittee, View.UnknownDisplayname);
+                committees = Service.GetCommitteesInfoForSubmission(submission.Id, call.Id);
+            }
+            
+                
 
             String export = "";
 
@@ -295,7 +309,16 @@ namespace lm.Comol.Modules.CallForPapers.Presentation.Evaluation
             }
 
             export += translations[EvaluationTranslations.CellTitleCommittee] + ";";
-            export += committees.FirstOrDefault().Name;
+
+            if(committees != null && committees.Any())
+            {
+                export += committees.FirstOrDefault().Name;
+            } else
+            {
+                export += "--";
+            }
+
+            
             export += "\r\n";
             export += "\r\n";
 

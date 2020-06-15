@@ -5488,7 +5488,7 @@ namespace lm.Comol.Modules.CallForPapers.Business
                                                                select e).ToList();
 
                 Advanced.Domain.AdvCommission commission = Manager.Get<Advanced.Domain.AdvCommission>(idCommittee);
-                
+
                 List<Advanced.Domain.AdvMember> members =
                         (from m in Manager.GetIQ<Advanced.Domain.AdvMember>()
                          where m.Deleted == Core.DomainModel.BaseStatusDeleted.None
@@ -5556,7 +5556,7 @@ namespace lm.Comol.Modules.CallForPapers.Business
 
             return items;
         }
-        
+
         /// <summary>
         /// Valutazioni sottomissione
         /// </summary>

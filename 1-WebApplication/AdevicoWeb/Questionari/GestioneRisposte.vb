@@ -4142,7 +4142,21 @@ Public Class GestioneRisposte
         End If
     End Sub
 
-    Private Shared Sub ExportQuestionnaireAnswersOneColumnForEachQuestion(appContext As lm.Comol.Core.DomainModel.iApplicationContext, ByVal idQuest As Integer, ByVal platformTaxCodeRequired As Boolean, ByVal status As AnswerStatus, ByVal idLanguage As Integer, ByVal anonymousUser As String, ByVal translations As Dictionary(Of QuestionnaireExportTranslations, String), ByVal type As lm.Comol.Core.DomainModel.Helpers.Export.ExportFileType, openCloseConnection As Boolean, clientFilename As String, webResponse As System.Web.HttpResponse, cookie As System.Web.HttpCookie)
+    Private Shared Sub ExportQuestionnaireAnswersOneColumnForEachQuestion(
+                    appContext As lm.Comol.Core.DomainModel.iApplicationContext,
+                    ByVal idQuest As Integer,
+                    ByVal platformTaxCodeRequired As Boolean,
+                    ByVal status As AnswerStatus,
+                    ByVal idLanguage As Integer,
+                    ByVal anonymousUser As String,
+                    ByVal translations As Dictionary(Of QuestionnaireExportTranslations, String),
+                    ByVal type As lm.Comol.Core.DomainModel.Helpers.Export.ExportFileType,
+                    openCloseConnection As Boolean,
+                    clientFilename As String,
+                    webResponse As System.Web.HttpResponse,
+                    cookie As System.Web.HttpCookie)
+
+
         Dim quest As Questionario = DALQuestionario.readQuestionarioBYLingua(appContext, idQuest, idLanguage, True)
         Dim displayTaxCode As Boolean = platformTaxCodeRequired AndAlso Not quest.risultatiAnonimi
 
