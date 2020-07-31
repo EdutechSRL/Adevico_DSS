@@ -127,6 +127,8 @@ namespace lm.Comol.Modules.CallForPapers.Domain.Evaluation
                     Options = ((StringRangeCriterion)criterion).Options.Where(o=>o.Deleted== BaseStatusDeleted.None).OrderBy(o => o.DisplayOrder).ThenBy(o => o.Name).Select(o => new dtoCriterionOption(o)).ToList();
                     break;
                 case  CriterionType.Textual:
+                    var curType = criterion.GetType().ToString();
+
                     MaxLength = ((TextualCriterion)criterion).MaxLength;
                     break;
                 case CriterionType.RatingScale:

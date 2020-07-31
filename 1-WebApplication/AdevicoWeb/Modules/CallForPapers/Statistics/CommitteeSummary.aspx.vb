@@ -1148,7 +1148,9 @@ Public Class CommitteeSummary
                     Response.ContentType = "text/csv"
             End Select
             Response.BinaryWrite(Response.ContentEncoding.GetPreamble())
-            Response.Write(CurrentPresenter.ExportTo(CurrentFilters, type, items, data, fileType, translations, tStatus))
+            Dim Export As String = CurrentPresenter.ExportTo(CurrentFilters, type, items, data, fileType, translations, tStatus)
+
+            Response.Write(Export)
         Catch de As Exception
 
         End Try

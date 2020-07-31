@@ -1,0 +1,369 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+      <xs:complexType>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="Table">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="ALCM_Livello" type="xs:int" minOccurs="0" />
+                <xs:element name="CMNT_AccessoLibero" type="xs:boolean" minOccurs="0" />
+                <xs:element name="CMNT_AccessoCopisteria" type="xs:boolean" minOccurs="0" />
+                <xs:element name="CMNT_PRFS_ID" type="xs:int" minOccurs="0" />
+                <xs:element name="CMNT_id" type="xs:int" minOccurs="0" />
+                <xs:element name="CMNT_isChiusa" type="xs:boolean" minOccurs="0" />
+                <xs:element name="CMNT_Nome" type="xs:string" minOccurs="0" />
+                <xs:element name="CMNT_TPCM_ID" type="xs:int" minOccurs="0" />
+                <xs:element name="CMNT_Responsabile" type="xs:string" minOccurs="0" />
+                <xs:element name="AnagraficaCreatore" type="xs:string" minOccurs="0" />
+                <xs:element name="CMNT_nomePadre" type="xs:string" minOccurs="0" />
+                <xs:element name="CMNT_Iscritti" type="xs:int" minOccurs="0" />
+                <xs:element name="TPCM_icona" type="xs:string" minOccurs="0" />
+                <xs:element name="TPCM_descrizione" type="xs:string" minOccurs="0" />
+                <xs:element name="CMNT_dataCreazione" type="xs:dateTime" minOccurs="0" />
+                <xs:element name="CMNT_dataCessazione" type="xs:dateTime" minOccurs="0" />
+                <xs:element name="CMNT_dataInizioIscrizione" type="xs:dateTime" minOccurs="0" />
+                <xs:element name="CMNT_dataFineIscrizione" type="xs:dateTime" minOccurs="0" />
+                <xs:element name="CMNT_CanUnsubscribe" type="xs:boolean" minOccurs="0" />
+                <xs:element name="CMNT_MaxIscrittiOverList" type="xs:int" minOccurs="0" />
+                <xs:element name="CMNT_CanSubscribe" type="xs:boolean" minOccurs="0" />
+                <xs:element name="CMNT_CloneEsternoID" type="xs:int" minOccurs="0" />
+                <xs:element name="CMNT_Bloccata" type="xs:boolean" minOccurs="0" />
+                <xs:element name="CMNT_Archiviata" type="xs:boolean" minOccurs="0" />
+                <xs:element name="PRDO_descrizione" type="xs:string" minOccurs="0" />
+                <xs:element name="Column1" type="xs:int" minOccurs="0" />
+                <xs:element name="CMNT_anno" type="xs:int" minOccurs="0" />
+                <xs:element name="CMNT_AnnoAccademico" type="xs:string" minOccurs="0" />
+                <xs:element name="CRSO_codice" type="xs:string" minOccurs="0" />
+                <xs:element name="ALCM_PadreID" type="xs:int" minOccurs="0" />
+                <xs:element name="ALCM_PadreVirtuale_ID" type="xs:int" minOccurs="0" />
+                <xs:element name="ALCM_isChiusa" type="xs:boolean" minOccurs="0" />
+                <xs:element name="ALCM_isChiusaForPadre" type="xs:boolean" minOccurs="0" />
+                <xs:element name="ALCM_isDiretto" type="xs:boolean" minOccurs="0" />
+                <xs:element name="ALCM_HasFigli" type="xs:boolean" minOccurs="0" />
+                <xs:element name="ALCM_PercorsoDiretto" type="xs:boolean" minOccurs="0" />
+                <xs:element name="ALCM_Path" type="xs:string" minOccurs="0" />
+                <xs:element name="ALCM_RealPath" type="xs:string" minOccurs="0" />
+                <xs:element name="CMNT_MaxIscritti" type="xs:int" minOccurs="0" />
+                <xs:element name="TPCS_Nome" type="xs:string" minOccurs="0" />
+                <xs:element name="RLPC_TPRL_ID" type="xs:int" minOccurs="0" />
+                <xs:element name="RLPC_attivato" type="xs:boolean" minOccurs="0" />
+                <xs:element name="RLPC_abilitato" type="xs:boolean" minOccurs="0" />
+                <xs:element name="RLPC_UltimoCollegamento" type="xs:dateTime" minOccurs="0" />
+                <xs:element name="TPRL_NOME" type="xs:string" minOccurs="0" />
+                <xs:element name="CMNT_dataCreazione1" type="xs:dateTime" minOccurs="0" />
+                <xs:element name="CMNT_dataCessazione1" type="xs:dateTime" minOccurs="0" />
+                <xs:element name="CMNT_PRSN_ID" type="xs:int" minOccurs="0" />
+                <xs:element name="TPCS_id" type="xs:int" minOccurs="0" />
+                <xs:element name="NoDelete" type="xs:int" minOccurs="0" />
+                <xs:element name="CMNT_ORGN_id" type="xs:int" minOccurs="0" />
+                <xs:element name="CRDS_id" type="xs:int" minOccurs="0" />
+                <xs:element name="ALCM_ResponsabileID" type="xs:int" minOccurs="0" />
+                <xs:element name="HasNews" type="xs:boolean" minOccurs="0" />
+                <xs:element name="Proprieta" type="xs:string" minOccurs="0" />
+                <xs:element name="Alternative" type="xs:string" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <Table>
+    <ALCM_Livello>0</ALCM_Livello>
+    <CMNT_AccessoLibero>false</CMNT_AccessoLibero>
+    <CMNT_AccessoCopisteria>true</CMNT_AccessoCopisteria>
+    <CMNT_PRFS_ID>0</CMNT_PRFS_ID>
+    <CMNT_id>22</CMNT_id>
+    <CMNT_isChiusa>true</CMNT_isChiusa>
+    <CMNT_Nome>ARCA</CMNT_Nome>
+    <CMNT_TPCM_ID>0</CMNT_TPCM_ID>
+    <CMNT_Responsabile>Capra Luca</CMNT_Responsabile>
+    <AnagraficaCreatore>Capra Luca</AnagraficaCreatore>
+    <CMNT_Iscritti>22</CMNT_Iscritti>
+    <TPCM_icona>./RadControls/TreeView/Skins/Comunita/logo/com_Organizzazione.gif</TPCM_icona>
+    <TPCM_descrizione>Organizzazione</TPCM_descrizione>
+    <CMNT_dataCreazione>2011-10-28T16:14:38+02:00</CMNT_dataCreazione>
+    <CMNT_CanUnsubscribe>true</CMNT_CanUnsubscribe>
+    <CMNT_MaxIscrittiOverList>0</CMNT_MaxIscrittiOverList>
+    <CMNT_CanSubscribe>true</CMNT_CanSubscribe>
+    <CMNT_Bloccata>false</CMNT_Bloccata>
+    <CMNT_Archiviata>false</CMNT_Archiviata>
+    <PRDO_descrizione />
+    <Column1>0</Column1>
+    <CMNT_anno>2011</CMNT_anno>
+    <CMNT_AnnoAccademico>2011/2012</CMNT_AnnoAccademico>
+    <CRSO_codice />
+    <ALCM_PadreID>0</ALCM_PadreID>
+    <ALCM_PadreVirtuale_ID>0</ALCM_PadreVirtuale_ID>
+    <ALCM_isChiusa>true</ALCM_isChiusa>
+    <ALCM_isChiusaForPadre>true</ALCM_isChiusaForPadre>
+    <ALCM_isDiretto>true</ALCM_isDiretto>
+    <ALCM_HasFigli>false</ALCM_HasFigli>
+    <ALCM_PercorsoDiretto>true</ALCM_PercorsoDiretto>
+    <ALCM_Path>.22.</ALCM_Path>
+    <ALCM_RealPath>.22.</ALCM_RealPath>
+    <CMNT_MaxIscritti>0</CMNT_MaxIscritti>
+    <TPCS_Nome />
+    <RLPC_TPRL_ID>10</RLPC_TPRL_ID>
+    <RLPC_attivato>true</RLPC_attivato>
+    <RLPC_abilitato>true</RLPC_abilitato>
+    <RLPC_UltimoCollegamento>2017-12-11T15:27:59+01:00</RLPC_UltimoCollegamento>
+    <TPRL_NOME>Segreteria</TPRL_NOME>
+    <CMNT_dataCreazione1>2011-10-28T16:14:38+02:00</CMNT_dataCreazione1>
+    <CMNT_PRSN_ID>8</CMNT_PRSN_ID>
+    <TPCS_id>0</TPCS_id>
+    <NoDelete>1</NoDelete>
+    <CMNT_ORGN_id>6</CMNT_ORGN_id>
+    <CRDS_id>0</CRDS_id>
+    <ALCM_ResponsabileID>8</ALCM_ResponsabileID>
+  </Table>
+  <Table>
+    <ALCM_Livello>0</ALCM_Livello>
+    <CMNT_AccessoLibero>false</CMNT_AccessoLibero>
+    <CMNT_AccessoCopisteria>false</CMNT_AccessoCopisteria>
+    <CMNT_PRFS_ID>0</CMNT_PRFS_ID>
+    <CMNT_id>3</CMNT_id>
+    <CMNT_isChiusa>false</CMNT_isChiusa>
+    <CMNT_Nome>Premio D2T - Adventure X</CMNT_Nome>
+    <CMNT_TPCM_ID>0</CMNT_TPCM_ID>
+    <CMNT_Responsabile>Capra Luca</CMNT_Responsabile>
+    <AnagraficaCreatore>Villa Nicola</AnagraficaCreatore>
+    <CMNT_nomePadre />
+    <CMNT_Iscritti>470</CMNT_Iscritti>
+    <TPCM_icona>./RadControls/TreeView/Skins/Comunita/logo/com_Organizzazione.gif</TPCM_icona>
+    <TPCM_descrizione>Organizzazione</TPCM_descrizione>
+    <CMNT_dataCreazione>2010-09-09T15:03:20+02:00</CMNT_dataCreazione>
+    <CMNT_CanUnsubscribe>true</CMNT_CanUnsubscribe>
+    <CMNT_MaxIscrittiOverList>0</CMNT_MaxIscrittiOverList>
+    <CMNT_CanSubscribe>true</CMNT_CanSubscribe>
+    <CMNT_Bloccata>false</CMNT_Bloccata>
+    <CMNT_Archiviata>false</CMNT_Archiviata>
+    <PRDO_descrizione />
+    <Column1>0</Column1>
+    <CMNT_anno>2010</CMNT_anno>
+    <CMNT_AnnoAccademico>2010/2011</CMNT_AnnoAccademico>
+    <CRSO_codice />
+    <ALCM_PadreID>0</ALCM_PadreID>
+    <ALCM_PadreVirtuale_ID>0</ALCM_PadreVirtuale_ID>
+    <ALCM_isChiusa>false</ALCM_isChiusa>
+    <ALCM_isChiusaForPadre>false</ALCM_isChiusaForPadre>
+    <ALCM_isDiretto>true</ALCM_isDiretto>
+    <ALCM_HasFigli>true</ALCM_HasFigli>
+    <ALCM_PercorsoDiretto>true</ALCM_PercorsoDiretto>
+    <ALCM_Path>.3.</ALCM_Path>
+    <ALCM_RealPath>.3.</ALCM_RealPath>
+    <CMNT_MaxIscritti>0</CMNT_MaxIscritti>
+    <TPCS_Nome />
+    <RLPC_TPRL_ID>1</RLPC_TPRL_ID>
+    <RLPC_attivato>true</RLPC_attivato>
+    <RLPC_abilitato>true</RLPC_abilitato>
+    <RLPC_UltimoCollegamento>2018-05-07T09:39:09+02:00</RLPC_UltimoCollegamento>
+    <TPRL_NOME>Amministratore Comunità</TPRL_NOME>
+    <CMNT_dataCreazione1>2010-09-09T15:03:20+02:00</CMNT_dataCreazione1>
+    <CMNT_PRSN_ID>5</CMNT_PRSN_ID>
+    <TPCS_id>0</TPCS_id>
+    <NoDelete>1</NoDelete>
+    <CMNT_ORGN_id>2</CMNT_ORGN_id>
+    <CRDS_id>0</CRDS_id>
+    <ALCM_ResponsabileID>8</ALCM_ResponsabileID>
+  </Table>
+  <Table>
+    <ALCM_Livello>0</ALCM_Livello>
+    <CMNT_AccessoLibero>false</CMNT_AccessoLibero>
+    <CMNT_AccessoCopisteria>true</CMNT_AccessoCopisteria>
+    <CMNT_PRFS_ID>0</CMNT_PRFS_ID>
+    <CMNT_id>49</CMNT_id>
+    <CMNT_isChiusa>true</CMNT_isChiusa>
+    <CMNT_Nome>BIC</CMNT_Nome>
+    <CMNT_TPCM_ID>0</CMNT_TPCM_ID>
+    <CMNT_Responsabile>Capra Luca</CMNT_Responsabile>
+    <AnagraficaCreatore>Capra Luca</AnagraficaCreatore>
+    <CMNT_Iscritti>279</CMNT_Iscritti>
+    <TPCM_icona>./RadControls/TreeView/Skins/Comunita/logo/com_Organizzazione.gif</TPCM_icona>
+    <TPCM_descrizione>Organizzazione</TPCM_descrizione>
+    <CMNT_dataCreazione>2016-04-12T16:42:30+02:00</CMNT_dataCreazione>
+    <CMNT_dataInizioIscrizione>2017-07-21T00:00:00+02:00</CMNT_dataInizioIscrizione>
+    <CMNT_CanUnsubscribe>true</CMNT_CanUnsubscribe>
+    <CMNT_MaxIscrittiOverList>0</CMNT_MaxIscrittiOverList>
+    <CMNT_CanSubscribe>true</CMNT_CanSubscribe>
+    <CMNT_Bloccata>false</CMNT_Bloccata>
+    <CMNT_Archiviata>false</CMNT_Archiviata>
+    <PRDO_descrizione />
+    <Column1>0</Column1>
+    <CMNT_anno>2016</CMNT_anno>
+    <CMNT_AnnoAccademico>2016/2017</CMNT_AnnoAccademico>
+    <CRSO_codice />
+    <ALCM_PadreID>0</ALCM_PadreID>
+    <ALCM_PadreVirtuale_ID>0</ALCM_PadreVirtuale_ID>
+    <ALCM_isChiusa>true</ALCM_isChiusa>
+    <ALCM_isChiusaForPadre>true</ALCM_isChiusaForPadre>
+    <ALCM_isDiretto>true</ALCM_isDiretto>
+    <ALCM_HasFigli>false</ALCM_HasFigli>
+    <ALCM_PercorsoDiretto>true</ALCM_PercorsoDiretto>
+    <ALCM_Path>.49.</ALCM_Path>
+    <ALCM_RealPath>.49.</ALCM_RealPath>
+    <CMNT_MaxIscritti>0</CMNT_MaxIscritti>
+    <TPCS_Nome />
+    <RLPC_TPRL_ID>1</RLPC_TPRL_ID>
+    <RLPC_attivato>true</RLPC_attivato>
+    <RLPC_abilitato>true</RLPC_abilitato>
+    <RLPC_UltimoCollegamento>2020-07-21T08:41:48.8151949+02:00</RLPC_UltimoCollegamento>
+    <TPRL_NOME>Amministratore Comunità</TPRL_NOME>
+    <CMNT_dataCreazione1>2016-04-12T16:42:30+02:00</CMNT_dataCreazione1>
+    <CMNT_PRSN_ID>8</CMNT_PRSN_ID>
+    <TPCS_id>0</TPCS_id>
+    <NoDelete>1</NoDelete>
+    <CMNT_ORGN_id>18</CMNT_ORGN_id>
+    <CRDS_id>0</CRDS_id>
+    <ALCM_ResponsabileID>8</ALCM_ResponsabileID>
+  </Table>
+  <Table>
+    <ALCM_Livello>0</ALCM_Livello>
+    <CMNT_AccessoLibero>false</CMNT_AccessoLibero>
+    <CMNT_AccessoCopisteria>false</CMNT_AccessoCopisteria>
+    <CMNT_PRFS_ID>0</CMNT_PRFS_ID>
+    <CMNT_id>50</CMNT_id>
+    <CMNT_isChiusa>false</CMNT_isChiusa>
+    <CMNT_Nome>ICT Speed Business Meeting - Trento incontra Torino</CMNT_Nome>
+    <CMNT_TPCM_ID>0</CMNT_TPCM_ID>
+    <CMNT_Responsabile>Capra Luca</CMNT_Responsabile>
+    <AnagraficaCreatore>Capra Luca</AnagraficaCreatore>
+    <CMNT_Iscritti>120</CMNT_Iscritti>
+    <TPCM_icona>./RadControls/TreeView/Skins/Comunita/logo/com_Organizzazione.gif</TPCM_icona>
+    <TPCM_descrizione>Organizzazione</TPCM_descrizione>
+    <CMNT_dataCreazione>2016-10-10T12:02:15+02:00</CMNT_dataCreazione>
+    <CMNT_CanUnsubscribe>true</CMNT_CanUnsubscribe>
+    <CMNT_MaxIscrittiOverList>0</CMNT_MaxIscrittiOverList>
+    <CMNT_CanSubscribe>true</CMNT_CanSubscribe>
+    <CMNT_Bloccata>false</CMNT_Bloccata>
+    <CMNT_Archiviata>false</CMNT_Archiviata>
+    <PRDO_descrizione />
+    <Column1>0</Column1>
+    <CMNT_anno>2016</CMNT_anno>
+    <CMNT_AnnoAccademico>2016/2017</CMNT_AnnoAccademico>
+    <CRSO_codice />
+    <ALCM_PadreID>0</ALCM_PadreID>
+    <ALCM_PadreVirtuale_ID>0</ALCM_PadreVirtuale_ID>
+    <ALCM_isChiusa>false</ALCM_isChiusa>
+    <ALCM_isChiusaForPadre>true</ALCM_isChiusaForPadre>
+    <ALCM_isDiretto>true</ALCM_isDiretto>
+    <ALCM_HasFigli>false</ALCM_HasFigli>
+    <ALCM_PercorsoDiretto>true</ALCM_PercorsoDiretto>
+    <ALCM_Path>.50.</ALCM_Path>
+    <ALCM_RealPath>.50.</ALCM_RealPath>
+    <CMNT_MaxIscritti>0</CMNT_MaxIscritti>
+    <TPCS_Nome />
+    <RLPC_TPRL_ID>10</RLPC_TPRL_ID>
+    <RLPC_attivato>true</RLPC_attivato>
+    <RLPC_abilitato>true</RLPC_abilitato>
+    <RLPC_UltimoCollegamento>2017-10-31T16:46:59+01:00</RLPC_UltimoCollegamento>
+    <TPRL_NOME>Segreteria</TPRL_NOME>
+    <CMNT_dataCreazione1>2016-10-10T12:02:15+02:00</CMNT_dataCreazione1>
+    <CMNT_PRSN_ID>8</CMNT_PRSN_ID>
+    <TPCS_id>0</TPCS_id>
+    <NoDelete>1</NoDelete>
+    <CMNT_ORGN_id>19</CMNT_ORGN_id>
+    <CRDS_id>0</CRDS_id>
+    <ALCM_ResponsabileID>8</ALCM_ResponsabileID>
+  </Table>
+  <Table>
+    <ALCM_Livello>0</ALCM_Livello>
+    <CMNT_AccessoLibero>false</CMNT_AccessoLibero>
+    <CMNT_AccessoCopisteria>false</CMNT_AccessoCopisteria>
+    <CMNT_PRFS_ID>0</CMNT_PRFS_ID>
+    <CMNT_id>60</CMNT_id>
+    <CMNT_isChiusa>false</CMNT_isChiusa>
+    <CMNT_Nome>APSTI</CMNT_Nome>
+    <CMNT_TPCM_ID>0</CMNT_TPCM_ID>
+    <CMNT_Responsabile>Capra Luca</CMNT_Responsabile>
+    <AnagraficaCreatore>Capra Luca</AnagraficaCreatore>
+    <CMNT_Iscritti>27</CMNT_Iscritti>
+    <TPCM_icona>./RadControls/TreeView/Skins/Comunita/logo/com_Organizzazione.gif</TPCM_icona>
+    <TPCM_descrizione>Organizzazione</TPCM_descrizione>
+    <CMNT_dataCreazione>2018-03-23T10:50:02+01:00</CMNT_dataCreazione>
+    <CMNT_CanUnsubscribe>true</CMNT_CanUnsubscribe>
+    <CMNT_MaxIscrittiOverList>0</CMNT_MaxIscrittiOverList>
+    <CMNT_CanSubscribe>true</CMNT_CanSubscribe>
+    <CMNT_Bloccata>false</CMNT_Bloccata>
+    <CMNT_Archiviata>false</CMNT_Archiviata>
+    <PRDO_descrizione />
+    <Column1>0</Column1>
+    <CMNT_anno>2018</CMNT_anno>
+    <CMNT_AnnoAccademico>2018/2019</CMNT_AnnoAccademico>
+    <CRSO_codice />
+    <ALCM_PadreID>0</ALCM_PadreID>
+    <ALCM_PadreVirtuale_ID>0</ALCM_PadreVirtuale_ID>
+    <ALCM_isChiusa>false</ALCM_isChiusa>
+    <ALCM_isChiusaForPadre>true</ALCM_isChiusaForPadre>
+    <ALCM_isDiretto>true</ALCM_isDiretto>
+    <ALCM_HasFigli>false</ALCM_HasFigli>
+    <ALCM_PercorsoDiretto>true</ALCM_PercorsoDiretto>
+    <ALCM_Path>.60.</ALCM_Path>
+    <ALCM_RealPath>.60.</ALCM_RealPath>
+    <CMNT_MaxIscritti>0</CMNT_MaxIscritti>
+    <TPCS_Nome />
+    <RLPC_TPRL_ID>15</RLPC_TPRL_ID>
+    <RLPC_attivato>true</RLPC_attivato>
+    <RLPC_abilitato>true</RLPC_abilitato>
+    <RLPC_UltimoCollegamento>2018-12-20T08:41:38+01:00</RLPC_UltimoCollegamento>
+    <TPRL_NOME>Partecipante</TPRL_NOME>
+    <CMNT_dataCreazione1>2018-03-23T10:50:02+01:00</CMNT_dataCreazione1>
+    <CMNT_PRSN_ID>8</CMNT_PRSN_ID>
+    <TPCS_id>0</TPCS_id>
+    <NoDelete>1</NoDelete>
+    <CMNT_ORGN_id>28</CMNT_ORGN_id>
+    <CRDS_id>0</CRDS_id>
+    <ALCM_ResponsabileID>8</ALCM_ResponsabileID>
+  </Table>
+  <Table>
+    <ALCM_Livello>0</ALCM_Livello>
+    <CMNT_AccessoLibero>false</CMNT_AccessoLibero>
+    <CMNT_AccessoCopisteria>false</CMNT_AccessoCopisteria>
+    <CMNT_PRFS_ID>0</CMNT_PRFS_ID>
+    <CMNT_id>61</CMNT_id>
+    <CMNT_isChiusa>false</CMNT_isChiusa>
+    <CMNT_Nome>KIC-Climate Greenhouse</CMNT_Nome>
+    <CMNT_TPCM_ID>0</CMNT_TPCM_ID>
+    <CMNT_Responsabile>Capra Luca</CMNT_Responsabile>
+    <AnagraficaCreatore>Capra Luca</AnagraficaCreatore>
+    <CMNT_Iscritti>20</CMNT_Iscritti>
+    <TPCM_icona>./RadControls/TreeView/Skins/Comunita/logo/com_Organizzazione.gif</TPCM_icona>
+    <TPCM_descrizione>Organizzazione</TPCM_descrizione>
+    <CMNT_dataCreazione>2018-04-11T08:28:16+02:00</CMNT_dataCreazione>
+    <CMNT_CanUnsubscribe>true</CMNT_CanUnsubscribe>
+    <CMNT_MaxIscrittiOverList>0</CMNT_MaxIscrittiOverList>
+    <CMNT_CanSubscribe>true</CMNT_CanSubscribe>
+    <CMNT_Bloccata>false</CMNT_Bloccata>
+    <CMNT_Archiviata>false</CMNT_Archiviata>
+    <PRDO_descrizione />
+    <Column1>0</Column1>
+    <CMNT_anno>2018</CMNT_anno>
+    <CMNT_AnnoAccademico>2018/2019</CMNT_AnnoAccademico>
+    <CRSO_codice />
+    <ALCM_PadreID>0</ALCM_PadreID>
+    <ALCM_PadreVirtuale_ID>0</ALCM_PadreVirtuale_ID>
+    <ALCM_isChiusa>false</ALCM_isChiusa>
+    <ALCM_isChiusaForPadre>true</ALCM_isChiusaForPadre>
+    <ALCM_isDiretto>true</ALCM_isDiretto>
+    <ALCM_HasFigli>false</ALCM_HasFigli>
+    <ALCM_PercorsoDiretto>true</ALCM_PercorsoDiretto>
+    <ALCM_Path>.61.</ALCM_Path>
+    <ALCM_RealPath>.61.</ALCM_RealPath>
+    <CMNT_MaxIscritti>0</CMNT_MaxIscritti>
+    <TPCS_Nome />
+    <RLPC_TPRL_ID>30</RLPC_TPRL_ID>
+    <RLPC_attivato>true</RLPC_attivato>
+    <RLPC_abilitato>true</RLPC_abilitato>
+    <RLPC_UltimoCollegamento>2018-06-13T08:48:43+02:00</RLPC_UltimoCollegamento>
+    <TPRL_NOME>Commissario</TPRL_NOME>
+    <CMNT_dataCreazione1>2018-04-11T08:28:16+02:00</CMNT_dataCreazione1>
+    <CMNT_PRSN_ID>8</CMNT_PRSN_ID>
+    <TPCS_id>0</TPCS_id>
+    <NoDelete>1</NoDelete>
+    <CMNT_ORGN_id>29</CMNT_ORGN_id>
+    <CRDS_id>0</CRDS_id>
+    <ALCM_ResponsabileID>8</ALCM_ResponsabileID>
+  </Table>
+</NewDataSet>

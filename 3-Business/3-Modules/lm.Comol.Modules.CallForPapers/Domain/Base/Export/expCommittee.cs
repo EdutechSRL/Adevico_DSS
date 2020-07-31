@@ -19,9 +19,8 @@ namespace lm.Comol.Modules.CallForPapers.Domain.Evaluation.Export
         public virtual List<expEvaluator> Evaluators
         {
             get
-
             {
-                return (Evaluations == null) ? new List<expEvaluator>() : Evaluations.Select(e => e.Evaluator).Distinct().ToList();
+                return (Evaluations == null) ? new List<expEvaluator>() : Evaluations.Where(e => e.Evaluator != null).Select(e => e.Evaluator).Distinct().ToList();
             }
         }
         public virtual Boolean UseDss { get; set; }

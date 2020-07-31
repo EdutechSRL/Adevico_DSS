@@ -505,29 +505,104 @@ namespace lm.Comol.Modules.CallForPapers.Business
                 return export;
             }
             #region "Committee"
-                public String ExportSummaryDisplayStatistics(dtoCall call, expCommittee committee, List<expEvaluation> evaluations, String anonymousDisplayName, litePerson person, Boolean oneColumnForCriteria=true)
+        public String ExportSummaryDisplayStatistics(dtoCall call, expCommittee committee, List<expEvaluation> evaluations, String anonymousDisplayName, litePerson person, Boolean oneColumnForCriteria=true)
+        {
+
+            string UnknownUsers = "Unknown";
+            try
+            {
+                UnknownUsers = EvaluationsTranslations[Domain.Evaluation.EvaluationTranslations.UnknownUser];
+            }  catch (Exception ex)
+            {
+                
+            }
+            
+
+            String result = "";
+            Int32 columNumber = (committee.Criteria !=null) ? 5 : (committee.Criteria.Count * 3) + 5;
+            StringBuilder content = new StringBuilder();
+            AddStandardEvaluationsInfo(content,call, person, columNumber);
+            AppendToRow(content, String.Format(EvaluationsTranslations[EvaluationTranslations.CommitteeName], committee.Name), false);
+            AddEmptyRow(content, 2);
+            AppendToRow(content, EvaluationsTranslations[EvaluationTranslations.EvaluationsSummaryTitle], false);
+            AddEmptyRow(content);
+            AddEvaluationsTableHeader(call.EvaluationType, (call.IsDssMethodFuzzy || (committee.UseDss && committee.MethodSettings!= null && committee.MethodSettings.IsFuzzyMethod)), content, committee, oneColumnForCriteria);
+            result = content.ToString();
+            if (committee.Evaluators.Any()) { 
+                if (oneColumnForCriteria)
                 {
-                    String result = "";
-                    Int32 columNumber = (committee.Criteria !=null) ? 5 : (committee.Criteria.Count * 3) + 5;
-                    StringBuilder content = new StringBuilder();
-                    AddStandardEvaluationsInfo(content,call, person, columNumber);
-                    AppendToRow(content, String.Format(EvaluationsTranslations[EvaluationTranslations.CommitteeName], committee.Name), false);
-                    AddEmptyRow(content, 2);
-                    AppendToRow(content, EvaluationsTranslations[EvaluationTranslations.EvaluationsSummaryTitle], false);
-                    AddEmptyRow(content);
-                    AddEvaluationsTableHeader(call.EvaluationType, (call.IsDssMethodFuzzy || (committee.UseDss && committee.MethodSettings!= null && committee.MethodSettings.IsFuzzyMethod)), content, committee, oneColumnForCriteria);
-                    result = content.ToString();
-                    if (committee.Evaluators.Any()) { 
-                        if (oneColumnForCriteria)
-                            committee.Evaluators.OrderBy(e => e.DisplayName(EvaluationsTranslations[Domain.Evaluation.EvaluationTranslations.UnknownUser]) ).ToList().ForEach(e =>
-                                result += AddEvaluatorStatisticRows(new StringBuilder(), call.EvaluationType, (call.EvaluationType== EvaluationType.Dss && (call.IsDssMethodFuzzy || (committee.UseDss && committee.MethodSettings!= null && committee.MethodSettings.IsFuzzyMethod))), committee, e, evaluations.Where(ev => ev.Evaluator == e && ev.Submission != null).OrderBy(ev => ev.IdSubmission).ToList()).ToString());
-                        else
-                            committee.Evaluators.OrderBy(e => e.DisplayName(EvaluationsTranslations[Domain.Evaluation.EvaluationTranslations.UnknownUser])).ToList().ForEach(e =>
-                                result += AddEvaluatorStatisticCriteriaRows(new StringBuilder(), call.EvaluationType,(call.EvaluationType== EvaluationType.Dss && (call.IsDssMethodFuzzy || (committee.UseDss && committee.MethodSettings!= null && committee.MethodSettings.IsFuzzyMethod))), committee, e, evaluations.Where(ev => ev.Evaluator == e && ev.Submission != null).OrderBy(ev => ev.IdSubmission).ToList()).ToString());
+                    IList<expEvaluator> evaluators = new List<expEvaluator>();
+                    try
+                    {
+                        evaluators = committee.Evaluators.OrderBy(e => e.DisplayName(UnknownUsers))
+                            .ToList();
+                    }
+                    catch (Exception ex)
+                    {
+
                     }
 
-                    return result;
+                    
+                    foreach(expEvaluator evaluator in evaluators)
+                    {
+                        try
+                        {
+                            string currentvalue = "";
+
+                            IList<expEvaluation> curEvaluations = evaluations.Where(ev => ev.Evaluator == evaluator && ev.Submission != null).OrderBy(ev => ev.IdSubmission).ToList();
+
+                            if(curEvaluations != null)
+                            {
+                                currentvalue = AddEvaluatorStatisticRows(
+                                                        new StringBuilder(),
+                                                        call.EvaluationType,
+                                                        (call.EvaluationType == EvaluationType.Dss
+                                                            && (call.IsDssMethodFuzzy || (committee.UseDss && committee.MethodSettings != null && committee.MethodSettings.IsFuzzyMethod))),
+                                                        committee,
+                                                        evaluator,
+                                                        curEvaluations.ToList()
+                                                        )
+                                                    .ToString();
+                            }
+
+                            if (!String.IsNullOrWhiteSpace(currentvalue))
+                            {
+                                result += currentvalue;
+                            }
+                        } catch(Exception ex)
+                        {
+
+                        }
+
+                    }
+
+                    //committee.Evaluators
+                    //.OrderBy(e => e.DisplayName(EvaluationsTranslations[Domain.Evaluation.EvaluationTranslations.UnknownUser]))
+                    //.ToList()
+                    //.ForEach(e =>
+                    //                result += AddEvaluatorStatisticRows(
+                    //                                new StringBuilder(),
+                    //                                call.EvaluationType,
+                    //                                (call.EvaluationType == EvaluationType.Dss
+                    //                                    && (call.IsDssMethodFuzzy || (committee.UseDss && committee.MethodSettings != null && committee.MethodSettings.IsFuzzyMethod))),
+                    //                                committee,
+                    //                                e,
+                    //                                evaluations.Where(ev => ev.Evaluator == e && ev.Submission != null)
+                    //                                .OrderBy(ev => ev.IdSubmission)
+                    //                            .ToList())
+                    //                .ToString());
+
+                }                
+                else
+                {
+                    committee.Evaluators.OrderBy(e => e.DisplayName(UnknownUsers)).ToList().ForEach(e =>
+                            result += AddEvaluatorStatisticCriteriaRows(new StringBuilder(), call.EvaluationType, (call.EvaluationType == EvaluationType.Dss && (call.IsDssMethodFuzzy || (committee.UseDss && committee.MethodSettings != null && committee.MethodSettings.IsFuzzyMethod))), committee, e, evaluations.Where(ev => ev.Evaluator == e && ev.Submission != null).OrderBy(ev => ev.IdSubmission).ToList()).ToString());
                 }
+                    
+            }
+
+            return result;
+        }
                 private void AddEvaluationsTableHeader(EvaluationType type, Boolean isFuzzy, StringBuilder builder, expCommittee committee, Boolean oneColumnForCriteria)
                 {
                     AddField(builder, (EvaluationsTranslations[Domain.Evaluation.EvaluationTranslations.CellTitleEvaluator]));

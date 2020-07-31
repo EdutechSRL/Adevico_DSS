@@ -33,7 +33,13 @@
                 var value = $(this).attr(config.valueAttrib);
                 if (value != "") {
                     var match = value.match(config.regex); //Extract numeric info
-                    value = parseInt(match[0]);
+
+                    if (!match || !match[0]) {
+                        value = 0;
+                    } else {
+                        value = parseInt(match[0]);
+                    }
+                    //value = parseInt(match[0]);
                     calcSize += value * newSize / 100;
                     $(this).css(config.variableSize, value * newSize / 100-0.3);
                 }

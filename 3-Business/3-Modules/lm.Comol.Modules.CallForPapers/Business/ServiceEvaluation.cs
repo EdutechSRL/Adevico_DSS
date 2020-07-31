@@ -812,624 +812,647 @@ namespace lm.Comol.Modules.CallForPapers.Business
                         return call;
                     }
                 #endregion
-                #region "1.1 - Editing committee"
-                    public EvaluationCommittee AddCommitteeToCall(long idCall, List<dtoCommittee> committees, String name, String description, Boolean useDss, lm.Comol.Core.Dss.Domain.Templates.dtoItemMethodSettings settings)
+    #region "1.1 - Editing committee"
+        public EvaluationCommittee AddCommitteeToCall(long idCall, List<dtoCommittee> committees, String name, String description, Boolean useDss, lm.Comol.Core.Dss.Domain.Templates.dtoItemMethodSettings settings)
+        {
+            BaseForPaper call = Manager.Get<BaseForPaper>(idCall);
+            if (call != null)
+            {
+                if (useDss && committees.Count == 1)
+                {
+                    call.IdDssMethod = committees[0].MethodSettings.IdMethod;
+                    call.IdDssRatingSet = committees[0].MethodSettings.IdRatingSet;
+                    call.IsDssMethodFuzzy = committees[0].MethodSettings.IsFuzzyMethod;
+                    call.UseManualWeights = committees[0].MethodSettings.UseManualWeights;
+                    call.UseOrderedWeights = committees[0].MethodSettings.UseOrderedWeights;
+                    call.FuzzyMeWeights = "";
+                    Manager.SaveOrUpdate(call);
+                    settings = new Core.Dss.Domain.Templates.dtoItemMethodSettings();
+                    settings.IsDefaultForChildren = true;
+                    settings.IdMethod = call.IdDssMethod;
+                    settings.IdRatingSet = call.IdDssRatingSet;
+                    settings.IsFuzzyMethod = call.IsDssMethodFuzzy;
+                    settings.UseManualWeights = call.UseManualWeights;
+                    settings.UseOrderedWeights = call.UseOrderedWeights;
+                    committees[0].MethodSettings.InheritsFromFather = true;
+                }
+                SaveCommittees(call, committees, settings);
+            }
+            return AddCommittee(call, name, description, useDss, settings);
+        }
+        public EvaluationCommittee AddCommittee(long idCall, String name, String description, Boolean useDss, lm.Comol.Core.Dss.Domain.Templates.dtoItemMethodSettings settings)
+        {
+            BaseForPaper call = Manager.Get<BaseForPaper>(idCall);
+            return AddCommittee(call, name, description, useDss, settings);
+        }
+        public EvaluationCommittee AddFirstCommittee(BaseForPaper call, String name, String description, Boolean useDss)
+        {
+            EvaluationCommittee committee = null;
+            try
+            {
+                Manager.BeginTransaction();
+                litePerson person = Manager.GetLitePerson(UC.CurrentUserID);
+                if (call != null && person != null)
+                {
+                    committee = new EvaluationCommittee();
+                    committee.CreateMetaInfo(person, UC.IpAddress, UC.ProxyIpAddress);
+                    committee.DisplayOrder = (from s in Manager.GetIQ<EvaluationCommittee>() where s.Call.Id == call.Id select s.DisplayOrder).Max() + 1;
+                    committee.Name = name + committee.DisplayOrder.ToString();
+                    committee.Description = description;
+                    committee.UseDss = useDss;
+                    if (useDss)
                     {
-                        BaseForPaper call = Manager.Get<BaseForPaper>(idCall);
-                        if (call != null)
-                        {
-                            if (useDss && committees.Count == 1)
-                            {
-                                call.IdDssMethod = committees[0].MethodSettings.IdMethod;
-                                call.IdDssRatingSet = committees[0].MethodSettings.IdRatingSet;
-                                call.IsDssMethodFuzzy = committees[0].MethodSettings.IsFuzzyMethod;
-                                call.UseManualWeights = committees[0].MethodSettings.UseManualWeights;
-                                call.UseOrderedWeights = committees[0].MethodSettings.UseOrderedWeights;
-                                call.FuzzyMeWeights = "";
-                                Manager.SaveOrUpdate(call);
-                                settings = new Core.Dss.Domain.Templates.dtoItemMethodSettings();
-                                settings.IsDefaultForChildren = true;
-                                settings.IdMethod = call.IdDssMethod;
-                                settings.IdRatingSet = call.IdDssRatingSet;
-                                settings.IsFuzzyMethod = call.IsDssMethodFuzzy;
-                                settings.UseManualWeights = call.UseManualWeights;
-                                settings.UseOrderedWeights = call.UseOrderedWeights;
-                                committees[0].MethodSettings.InheritsFromFather = true;
-                            }
-                            SaveCommittees(call, committees, settings);
-                        }
-                        return AddCommittee(call, name, description, useDss, settings);
-                    }
-                    public EvaluationCommittee AddCommittee(long idCall, String name, String description, Boolean useDss, lm.Comol.Core.Dss.Domain.Templates.dtoItemMethodSettings settings)
-                    {
-                        BaseForPaper call = Manager.Get<BaseForPaper>(idCall);
-                        return AddCommittee(call, name, description, useDss, settings);
-                    }
-                    public EvaluationCommittee AddFirstCommittee(BaseForPaper call, String name, String description, Boolean useDss)
-                    {
-                        EvaluationCommittee committee = null;
-                        try
-                        {
-                            Manager.BeginTransaction();
-                            litePerson person = Manager.GetLitePerson(UC.CurrentUserID);
-                            if (call != null && person != null)
-                            {
-                                committee = new EvaluationCommittee();
-                                committee.CreateMetaInfo(person, UC.IpAddress, UC.ProxyIpAddress);
-                                committee.DisplayOrder = (from s in Manager.GetIQ<EvaluationCommittee>() where s.Call.Id == call.Id select s.DisplayOrder).Max() + 1;
-                                committee.Name = name + committee.DisplayOrder.ToString();
-                                committee.Description = description;
-                                committee.UseDss = useDss;
-                                if (useDss)
-                                {
-                                    committee.MethodSettings = new ItemMethodSettings();
-                                    committee.WeightSettings = new ItemWeightSettings();
-                                    committee.MethodSettings.InheritsFromFather = false;
+                        committee.MethodSettings = new ItemMethodSettings();
+                        committee.WeightSettings = new ItemWeightSettings();
+                        committee.MethodSettings.InheritsFromFather = false;
 
-                                    committee.WeightSettings.IdRatingValue = -1;
-                                    committee.WeightSettings.IdRatingValueEnd = -1;
-                                    committee.WeightSettings.Weight = 0;
-                                    committee.WeightSettings.WeightFuzzy = "";
-                                    committee.WeightSettings.IsFuzzyWeight = committee.MethodSettings.IsFuzzyMethod;
-                                    if (call.UseManualWeights)
+                        committee.WeightSettings.IdRatingValue = -1;
+                        committee.WeightSettings.IdRatingValueEnd = -1;
+                        committee.WeightSettings.Weight = 0;
+                        committee.WeightSettings.WeightFuzzy = "";
+                        committee.WeightSettings.IsFuzzyWeight = committee.MethodSettings.IsFuzzyMethod;
+                        if (call.UseManualWeights)
+                        {
+                            call.IsValidFuzzyMeWeights = false;
+                            if (call.UseOrderedWeights)
+                            {
+                                List<String> values = (String.IsNullOrWhiteSpace(call.FuzzyMeWeights) ? new List<String>() : call.FuzzyMeWeights.Split('#').ToList());
+                                if (values.Any())
+                                {
+                                    switch (values.Count())
                                     {
-                                        call.IsValidFuzzyMeWeights = false;
-                                        if (call.UseOrderedWeights)
-                                        {
-                                            List<String> values = (String.IsNullOrWhiteSpace(call.FuzzyMeWeights) ? new List<String>() : call.FuzzyMeWeights.Split('#').ToList());
-                                            if (values.Any())
+                                        case 0:
+                                        case 1:
+                                            values.Add("");
+                                            break;
+                                        default:
+                                            if (!String.IsNullOrWhiteSpace(values[values.Count - 1]) && values[values.Count - 1].Contains(":"))
                                             {
-                                                switch (values.Count())
-                                                {
-                                                    case 0:
-                                                    case 1:
-                                                        values.Add("");
-                                                        break;
-                                                    default:
-                                                        if (!String.IsNullOrWhiteSpace(values[values.Count - 1]) && values[values.Count - 1].Contains(":"))
-                                                        {
-                                                            values.Add((values.Count + 1).ToString() + ":" + values[values.Count - 1].Split(':')[1]);
-                                                            values[values.Count - 1] = "";
-                                                        }
-                                                        else
-                                                            values.Add((values.Count + 1).ToString() + ":");
-                                                        break;
-                                                }
-                                                call.FuzzyMeWeights = (values.Count == 1 ? values.FirstOrDefault() : String.Join("#", values));
+                                                values.Add((values.Count + 1).ToString() + ":" + values[values.Count - 1].Split(':')[1]);
+                                                values[values.Count - 1] = "";
                                             }
-                                        }
-                                        Manager.SaveOrUpdate(call);
+                                            else
+                                                values.Add((values.Count + 1).ToString() + ":");
+                                            break;
                                     }
-                                }
-                                committee.Call = call;
-                                committee.ForAllSubmittersType = true;
-                                Manager.SaveOrUpdate(committee);
-                            }
-                            Manager.Commit();
-                        }
-                        catch (Exception ex)
-                        {
-                            committee = null;
-                            Manager.RollBack();
-                        }
-                        return committee;
-                    }
-                    private EvaluationCommittee AddCommittee(BaseForPaper call, String name, String description, Boolean useDss, lm.Comol.Core.Dss.Domain.Templates.dtoItemMethodSettings settings)
-                    {
-                        EvaluationCommittee committee = null;
-                        try
-                        {
-                            Manager.BeginTransaction();
-                            litePerson person = Manager.GetLitePerson(UC.CurrentUserID);
-                            if (call != null && person != null)
-                            {
-                                committee = new EvaluationCommittee();
-                                committee.CreateMetaInfo(person, UC.IpAddress, UC.ProxyIpAddress);
-                                committee.DisplayOrder = (from s in Manager.GetIQ<EvaluationCommittee>() where s.Call.Id == call.Id select s.DisplayOrder).Max() + 1;
-                                committee.Name = name + committee.DisplayOrder.ToString();
-                                committee.Description = description;
-                                committee.UseDss = useDss;
-                                if (useDss)
-                                {
-                                    committee.MethodSettings = new ItemMethodSettings();
-                                    committee.WeightSettings = new ItemWeightSettings();
-                                    committee.MethodSettings.InheritsFromFather = true;
-                                    if (settings!=null){
-                                        committee.MethodSettings.IdMethod = settings.IdMethod;
-                                        committee.MethodSettings.IdRatingSet = settings.IdRatingSet;
-                                        committee.MethodSettings.IsFuzzyMethod = settings.IsFuzzyMethod;
-                                        committee.MethodSettings.UseManualWeights = settings.UseManualWeights;
-                                        committee.MethodSettings.UseOrderedWeights = settings.UseOrderedWeights;
-                                    }
-                                    else
-                                    {
-                                        committee.MethodSettings.IdMethod = -1;
-                                        committee.MethodSettings.IdRatingSet = -1;
-                                    }
-                                    committee.WeightSettings.IdRatingValue = -1;
-                                    committee.WeightSettings.IdRatingValueEnd = -1;
-                                    committee.WeightSettings.Weight = 0;
-                                    committee.WeightSettings.WeightFuzzy = "";
-                                    committee.WeightSettings.IsFuzzyWeight = committee.MethodSettings.IsFuzzyMethod;
-                                    if (call.UseManualWeights)
-                                    {
-                                        call.IsValidFuzzyMeWeights = false;
-                                        if (call.UseOrderedWeights){
-                                            List<String> values = (String.IsNullOrWhiteSpace(call.FuzzyMeWeights) ? new List<String>() : call.FuzzyMeWeights.Split('#').ToList());
-                                            if (values.Any())
-                                            {
-                                                switch (values.Count())
-                                                {
-                                                    case 0:
-                                                    case 1:
-                                                        values.Add("");
-                                                        break;
-                                                    default:
-                                                        if (!String.IsNullOrWhiteSpace(values[values.Count - 1]) && values[values.Count - 1].Contains(":"))
-                                                        {
-                                                            values.Add((values.Count +1).ToString() + ":" + values[values.Count - 1].Split(':')[1]);
-                                                            values[values.Count - 1] = "";
-                                                        }
-                                                        else
-                                                            values.Add((values.Count +1).ToString() + ":");
-                                                        break;
-                                                }
-                                                call.FuzzyMeWeights = (values.Count == 1 ? values.FirstOrDefault() : String.Join("#", values));
-                                            }
-                                        }
-                                        Manager.SaveOrUpdate(call);
-                                    }
-                                }
-                                committee.Call = call;
-                                committee.ForAllSubmittersType = true;
-                                Manager.SaveOrUpdate(committee);
-                            }
-                            Manager.Commit();
-                        }
-                        catch (Exception ex)
-                        {
-                            committee = null;
-                            Manager.RollBack();
-                        }
-                        return committee;
-                    }
-
-
-                    public Boolean RemoveDssInheritsFromCommittee(long idCall, IEnumerable<dtoCommittee> committees, lm.Comol.Core.Dss.Domain.Templates.dtoItemMethodSettings settings)
-                    {
-                        Boolean result = false;
-                        try
-                        {
-                            if (settings != null && committees.Count() == 1 && committees.Any(c => c.MethodSettings.InheritsFromFather))
-                            {
-                                dtoCommittee item = committees.FirstOrDefault();
-                                litePerson person = Manager.GetLitePerson(UC.CurrentUserID);
-                                if (person != null)
-                                {
-                                    Manager.BeginTransaction();
-                                    EvaluationCommittee committee = Manager.Get<EvaluationCommittee>(item.Id);
-                                    if (committee != null)
-                                    {
-                                        committee.UpdateMetaInfo(person, UC.IpAddress, UC.ProxyIpAddress);
-                                        committee.MethodSettings.IdMethod = settings.IdMethod;
-                                        committee.MethodSettings.IdRatingSet = settings.IdRatingSet;
-                                        committee.MethodSettings.InheritsFromFather = false;
-                                        Manager.SaveOrUpdate(committee);
-                                        item.MethodSettings.IdMethod = settings.IdMethod;
-                                        item.MethodSettings.IdRatingSet = settings.IdRatingSet;
-                                        item.MethodSettings.InheritsFromFather = false;
-                                        item.MethodSettings.IsFuzzyMethod = settings.IsFuzzyMethod;
-                                        result = true;
-                                    }
-                                    BaseForPaper bCall = Manager.Get<BaseForPaper>(idCall);
-                                    CallForPaper call = Manager.Get<CallForPaper>(idCall);
-                                    if (bCall != null && bCall.UseManualWeights)
-                                    {
-                                        bCall.UseManualWeights = false;
-                                        bCall.UseOrderedWeights = false;
-                                        bCall.IdDssMethod = 0;
-                                        bCall.IdDssRatingSet = 0;
-                                        bCall.IsDssMethodFuzzy = false;
-                                        bCall.FuzzyMeWeights = "";
-                                        bCall.IsValidFuzzyMeWeights = false;
-                                        Manager.SaveOrUpdate(bCall);
-                                    }
-                                    if (call != null && call.UseManualWeights)
-                                    {
-                                        call.UseManualWeights = false;
-                                        call.UseOrderedWeights = false;
-                                        call.IdDssMethod = 0;
-                                        call.IdDssRatingSet = 0;
-                                        call.IsDssMethodFuzzy = false;
-                                        call.FuzzyMeWeights = "";
-                                        call.IsValidFuzzyMeWeights = false;
-                                        Manager.SaveOrUpdate(call);
-                                    }
-                                    Manager.Commit();
-                                    result = true;
+                                    call.FuzzyMeWeights = (values.Count == 1 ? values.FirstOrDefault() : String.Join("#", values));
                                 }
                             }
+                            Manager.SaveOrUpdate(call);
                         }
-                        catch (Exception ex)
-                        {
-                            if (Manager.IsInTransaction())
-                                Manager.RollBack();
-                        }
-                        return result;
                     }
-                    public Boolean SaveCommittees(long idCall, List<dtoCommittee> committees, lm.Comol.Core.Dss.Domain.Templates.dtoItemMethodSettings settings)
+                    committee.Call = call;
+                    committee.ForAllSubmittersType = true;
+                    Manager.SaveOrUpdate(committee);
+                }
+                Manager.Commit();
+            }
+            catch (Exception ex)
+            {
+                committee = null;
+                Manager.RollBack();
+            }
+            return committee;
+        }
+        private EvaluationCommittee AddCommittee(BaseForPaper call, String name, String description, Boolean useDss, lm.Comol.Core.Dss.Domain.Templates.dtoItemMethodSettings settings)
+        {
+            EvaluationCommittee committee = null;
+            try
+            {
+                Manager.BeginTransaction();
+                litePerson person = Manager.GetLitePerson(UC.CurrentUserID);
+                if (call != null && person != null)
+                {
+                    committee = new EvaluationCommittee();
+                    committee.CreateMetaInfo(person, UC.IpAddress, UC.ProxyIpAddress);
+                    committee.DisplayOrder = (from s in Manager.GetIQ<EvaluationCommittee>() where s.Call.Id == call.Id select s.DisplayOrder).Max() + 1;
+                    committee.Name = name + committee.DisplayOrder.ToString();
+                    committee.Description = description;
+                    committee.UseDss = useDss;
+                    if (useDss)
                     {
-                        BaseForPaper call = Manager.Get<BaseForPaper>(idCall);
-                        return SaveCommittees(call, committees, settings);
-                    }
-                    public Boolean SaveCommittees(BaseForPaper call, List<dtoCommittee> committees, lm.Comol.Core.Dss.Domain.Templates.dtoItemMethodSettings settings)
-                    {
-                        Boolean result = false;
-                        try
-                        {
-                            litePerson person = Manager.GetLitePerson(UC.CurrentUserID);
-                            if (call != null && person != null)
-                            {
-                                Manager.BeginTransaction();
-                                if (settings != null)
-                                {
-                                    CallForPaper cfp = GetCallForCommiteeSettings(call.Id);
-                                    if (cfp != null && cfp.EvaluationType == EvaluationType.Dss)
-                                    {
-                                        if (committees.Count == 1 && settings.IdMethod < 1)
-                                        {
-                                            settings.IdMethod = committees[0].MethodSettings.IdMethod;
-                                            settings.IdRatingSet = committees[0].MethodSettings.IdRatingSet;
-                                            settings.IsFuzzyMethod = committees[0].MethodSettings.IsFuzzyMethod;
-                                            settings.UseOrderedWeights = committees[0].MethodSettings.UseOrderedWeights;
-                                            settings.UseManualWeights = committees[0].MethodSettings.UseManualWeights;
-                                            settings.FuzzyMeWeights = committees[0].MethodSettings.FuzzyMeWeights;
-                                            settings.Error = committees[0].MethodSettings.Error;
-                                        }
-                                        cfp.IdDssMethod = settings.IdMethod;
-                                        cfp.IdDssRatingSet = settings.IdRatingSet;
-                                        cfp.IsDssMethodFuzzy = settings.IsFuzzyMethod;
-                                        cfp.UseOrderedWeights = settings.UseOrderedWeights;
-                                        cfp.UseManualWeights = settings.UseManualWeights;
-                                        cfp.FuzzyMeWeights = settings.FuzzyMeWeights;
-                                        cfp.IsValidFuzzyMeWeights = (settings.Error == DssError.None);
-                                        cfp.UpdateMetaInfo(person, UC.IpAddress, UC.ProxyIpAddress);
-                                        Manager.SaveOrUpdate(cfp);
-                                        call.IdDssMethod = settings.IdMethod;
-                                        call.IdDssRatingSet = settings.IdRatingSet;
-                                        call.IsDssMethodFuzzy = settings.IsFuzzyMethod;
-                                        call.UseOrderedWeights = settings.UseOrderedWeights;
-                                        call.UseManualWeights = settings.UseManualWeights;
-                                        call.FuzzyMeWeights = settings.FuzzyMeWeights;
-                                        call.IsValidFuzzyMeWeights = (settings.Error == DssError.None);
-                                    }
-                                    else
-                                        settings = null;
-                                }
-                                int displayNumber = 1;
-                                foreach (dtoCommittee item in committees)
-                                {
-                                    if (String.IsNullOrEmpty(item.Name))
-                                        item.Name = displayNumber.ToString();
-                                    EvaluationCommittee committee = Manager.Get<EvaluationCommittee>(item.Id);
-                                    if (committee == null)
-                                    {
-                                        committee = new EvaluationCommittee();
-                                        committee.Call = call;
-                                        committee.CreateMetaInfo(person, UC.IpAddress, UC.ProxyIpAddress);
-                                        committee.DisplayOrder = GetNewCommitteeDisplayOrder(call);
-                                        committee.Name = item.Name;
-                                        committee.Description = item.Description;
-                                    }
-                                    else if (committee.Name != item.Name || committee.Description != item.Description)
-                                    {
-                                        committee.Name = item.Name;
-                                        committee.Description = item.Description;
-                                        committee.UpdateMetaInfo(person, UC.IpAddress, UC.ProxyIpAddress);
-                                    }
-                                    if (settings == null)
-                                        committee.UseDss = false;
-                                    else
-                                    {
-                                        committee.UseDss = true;
-                                        committee.MethodSettings.InheritsFromFather = item.MethodSettings.InheritsFromFather;
-                                        if (item.MethodSettings.InheritsFromFather)
-                                        {
-                                            committee.MethodSettings.IdMethod = settings.IdMethod;
-                                            committee.MethodSettings.IdRatingSet = settings.IdRatingSet;
-                                            committee.MethodSettings.IsFuzzyMethod = settings.IsFuzzyMethod;
-                                            committee.MethodSettings.UseManualWeights = settings.UseManualWeights;
-                                            committee.MethodSettings.UseOrderedWeights = settings.UseOrderedWeights;
-                                        }
-                                        else
-                                        {
-                                            committee.MethodSettings.IdMethod = item.MethodSettings.IdMethod;
-                                            committee.MethodSettings.IdRatingSet = item.MethodSettings.IdRatingSet;
-                                            committee.MethodSettings.UseManualWeights = item.MethodSettings.UseManualWeights;
-                                            committee.MethodSettings.UseOrderedWeights = item.MethodSettings.UseOrderedWeights;
-                                            committee.MethodSettings.IsFuzzyMethod = item.MethodSettings.IsFuzzyMethod;
-                                        }
-                                        committee.WeightSettings = item.WeightSettings.Copy();
-                                        if (committee.MethodSettings.UseManualWeights)
-                                            committee.WeightSettings.IsValidFuzzyMeWeights = (!String.IsNullOrWhiteSpace(committee.WeightSettings.FuzzyMeWeights) && item.WeightSettings.IsValidFuzzyMeWeights);
-                                    }
-                                    committee.DisplayOrder = displayNumber;
-                                    Manager.SaveOrUpdate(committee);
-
-                                    if (item.ForAllSubmittersType && committee.Id > 0 && committee.AssignedTypes.Any()) {
-                                        committee.AssignedTypes.Where(t => t.Deleted == BaseStatusDeleted.None).ToList().ForEach(t => t.SetDeleteMetaInfo(person, UC.IpAddress, UC.ProxyIpAddress));
-                                    }
-                                    else if (!item.ForAllSubmittersType) {
-                                        if (item.Submitters.Count == 0)
-                                            committee.AssignedTypes.Where(t => t.Deleted == BaseStatusDeleted.None).ToList().ForEach(t => t.SetDeleteMetaInfo(person, UC.IpAddress, UC.ProxyIpAddress));
-                                        else {
-                                            committee.AssignedTypes.Where(t => t.Deleted == BaseStatusDeleted.None && !item.Submitters.Contains(t.SubmitterType.Id)).ToList().ForEach(t => t.SetDeleteMetaInfo(person, UC.IpAddress, UC.ProxyIpAddress));
-                                            committee.AssignedTypes.Where(t => t.Deleted != BaseStatusDeleted.None &&  item.Submitters.Contains(t.SubmitterType.Id)).ToList().ForEach(t => t.RecoverMetaInfo(person, UC.IpAddress, UC.ProxyIpAddress));
-                                            foreach (long idType in item.Submitters.Where(i => !committee.AssignedTypes.Select(t => t.SubmitterType.Id).ToList().Contains(i)).ToList()) { 
-                                                CommitteeAssignedSubmitterType aType = new CommitteeAssignedSubmitterType();
-                                                aType.CreateMetaInfo(person, UC.IpAddress, UC.ProxyIpAddress);
-                                                aType.Committee = committee;
-                                                aType.SubmitterType = Manager.Get<SubmitterType>(idType);
-                                                if (aType.SubmitterType != null) {
-                                                    Manager.SaveOrUpdate(aType);
-                                                    committee.AssignedTypes.Add(aType);
-                                                }
-                                            }
-                                        }
-                                    }
-                                    committee.ForAllSubmittersType = item.ForAllSubmittersType;
-
-                                    Manager.SaveOrUpdate(committee);
-                                    SaveCriteria(call, committee, item.Criteria);
-                                    displayNumber++;
-                                }
-                                Manager.Commit();
-                                result = true;
-                            }
-                        }
-                        catch (Exception ex)
-                        {
-                            if (Manager.IsInTransaction())
-                                Manager.RollBack();
-                        }
-                        return result;
-                    }
-
-                    public List<dtoCommittee> GetEditorCommittees(long idCall)
-                    {
-                        BaseForPaper call = Manager.Get<BaseForPaper>(idCall);
-                        return GetEditorCommittees(call);
-                    }
-                    public List<dtoCommittee> GetEditorCommittees(BaseForPaper call)
-                    {
-                        List<dtoCommittee> items = new List<dtoCommittee>();
-                        try
-                        {
-                            items = (from s in Manager.GetIQ<EvaluationCommittee>()
-                                     where s.Deleted == BaseStatusDeleted.None && s.Call == call select s).ToList().Select(
-                                     s=>  new dtoCommittee()
-                                     {
-                                         Id = s.Id,
-                                         Name = s.Name,
-                                         Description = s.Description,
-                                         DisplayOrder = s.DisplayOrder,
-                                         ForAllSubmittersType = s.ForAllSubmittersType,
-                                         IdCall = call.Id,
-                                         WeightSettings = (s.UseDss ?  lm.Comol.Core.Dss.Domain.Templates.dtoItemWeightSettings.Create(s.WeightSettings, call.UseManualWeights): new dtoItemWeightSettings()),
-                                         MethodSettings = (s.UseDss ? lm.Comol.Core.Dss.Domain.Templates.dtoItemMethodSettings.Create(s.MethodSettings, call.UseManualWeights) : new dtoItemMethodSettings()),
-                                         UseDss= s.UseDss
-                                     }).ToList();
-                            List<long> idCommitees = items.Select(c => c.Id).ToList();
-                            List<lm.Comol.Modules.CallForPapers.Domain.Evaluation.dtoCriterion> criteria = (from bc in Manager.GetIQ<BaseCriterion>()
-                                                                                                            where bc.Committee!=null && idCommitees.Contains(bc.Committee.Id) && bc.Deleted == BaseStatusDeleted.None
-                                                                                                            select bc).ToList().Select(bc => new lm.Comol.Modules.CallForPapers.Domain.Evaluation.dtoCriterion(bc)).ToList();
-
-                            foreach (dtoCommittee comittee in items)
-                            {
-                                comittee.Criteria = (from c in criteria where c.IdCommittee == comittee.Id orderby c.DisplayOrder, c.Name select c).ToList();
-                                foreach (dtoCriterion criterion in comittee.Criteria)
-                                { 
-                                    criterion.HasInEvaluations = (from e in Manager.GetIQ<CriterionEvaluated>() where e.Criterion.Id == criterion.Id && e.Deleted== BaseStatusDeleted.None && e.Evaluation.Status== EvaluationStatus.Evaluating select e.Id ).Any();
-                                    criterion.HasEvaluations = (from e in Manager.GetIQ<CriterionEvaluated>()
-                                                                where e.Criterion.Id == criterion.Id && e.Deleted == BaseStatusDeleted.None && (e.Evaluation.Status != EvaluationStatus.Evaluating && e.Evaluation.Status != EvaluationStatus.None) select e.Id ).Any();
-                                }
-                            }
-                            //items.ForEach(i => i.Criteria = (from c in criteria where c.IdCommittee == i.Id orderby c.DisplayOrder, c.Name select c).ToList());
-                            items.Where(i => !i.ForAllSubmittersType).ToList().ForEach(c => c.Submitters = (from s in Manager.GetIQ<CommitteeAssignedSubmitterType>()
-                                                                                                            where s.Deleted == BaseStatusDeleted.None && s.SubmitterType != null && s.Committee != null && s.Committee.Id == c.Id
-                                                                                                            select s.SubmitterType.Id).ToList());
-                        }
-                        catch (Exception ex)
-                        {
-
-                        }
-                        if (items.Any(i => i.UseDss))
-                        {
-                            foreach (dtoCommittee c in items)
-                            {
-                                c.BaseWeights = GetAvailableWeights(call, c);
-                            }
-                        }
-                        
-                        return items.OrderBy(s => s.DisplayOrder).ThenBy(s => s.Name).ToList();
-                    }
-
-
-                    private List<lm.Comol.Core.Dss.Domain.Templates.dtoItemWeightBase> GetAvailableWeights(BaseForPaper call, dtoCommittee committee)
-                    {
-                        Dictionary<long, String> weights = committee.GetFuzzyMeItems();
-                        List<lm.Comol.Core.Dss.Domain.Templates.dtoItemWeightBase> items = null;
-                        Boolean isFuzzy = (committee.MethodSettings.InheritsFromFather && call.IsDssMethodFuzzy) || (!committee.MethodSettings.InheritsFromFather && committee.MethodSettings.IsFuzzyMethod);
-                        if ((!committee.MethodSettings.InheritsFromFather && committee.MethodSettings.UseOrderedWeights) || (committee.MethodSettings.InheritsFromFather && call.UseOrderedWeights))
-                        {
-                            if (committee.Criteria.Count() >0)
-                            {
-                                if (committee.Criteria.Count() == weights.Count)
-                                    items = (from int i in Enumerable.Range(1, committee.Criteria.Count()) select i).ToList().Select(i => new lm.Comol.Core.Dss.Domain.Templates.dtoItemWeightBase() { IdObject = (long)i, IsFuzzyValue = isFuzzy, OrderedItem = true, Name = i.ToString(), Value = (weights.ContainsKey((long)i) ? weights[(long)i] : "") }).ToList();
-                                else
-                                {
-                                    Int32 index = 1;
-                                    items = (from int i in Enumerable.Range(1, committee.Criteria.Count()) select i).ToList().Select(i => new lm.Comol.Core.Dss.Domain.Templates.dtoItemWeightBase() { IdObject = (long)i, IsFuzzyValue = isFuzzy, OrderedItem = true, Name = i.ToString(), Value = "" }).ToList();
-                                    List<String> values = weights.Values.ToList();
-                                    if (values.Any())
-                                    {
-                                        items[0].Value = values[0];
-                                        switch (values.Count)
-                                        {
-                                            case 0:
-                                            case 1:
-                                                break;
-                                            case 2:
-                                                items.Last().Value = values.Last();
-                                                break;
-                                            default:
-                                                items.Last().Value = values.Last();
-                                                foreach (String v in values.Skip(1).Take(values.Count - 2))
-                                                {
-                                                    items[index++].Value = v;
-                                                }
-                                                break;
-                                        }
-                                    }
-                                }
-                            }
+                        committee.MethodSettings = new ItemMethodSettings();
+                        committee.WeightSettings = new ItemWeightSettings();
+                        committee.MethodSettings.InheritsFromFather = true;
+                        if (settings!=null){
+                            committee.MethodSettings.IdMethod = settings.IdMethod;
+                            committee.MethodSettings.IdRatingSet = settings.IdRatingSet;
+                            committee.MethodSettings.IsFuzzyMethod = settings.IsFuzzyMethod;
+                            committee.MethodSettings.UseManualWeights = settings.UseManualWeights;
+                            committee.MethodSettings.UseOrderedWeights = settings.UseOrderedWeights;
                         }
                         else
-                            items = committee.Criteria.Select(c => c.ToWeightItem(weights, isFuzzy)).ToList();
-                        return items;
-                    }
-                    public Boolean UpdateCommitteesDisplayOrder(List<long> idCommittees)
-                    {
-                        litePerson person = Manager.GetLitePerson(UC.CurrentUserID);
-                        if (idCommittees.Count > 0 && AllowReorder(GetCallFromCommittees(idCommittees), person))
                         {
-                            DateTime CurrentTime = DateTime.Now;
-                            EvaluationCommittee committee = null;
-                            try
-                            {
-                                Manager.BeginTransaction();
-                                int displayOrder = 1;
-                                foreach (var idCommittee in idCommittees)
-                                {
-                                    committee = Manager.Get<EvaluationCommittee>(idCommittee);
-                                    if (committee != null)
-                                    {
-                                        committee.DisplayOrder = displayOrder;
-                                        committee.UpdateMetaInfo(person, UC.IpAddress, UC.ProxyIpAddress);
-                                        Manager.SaveOrUpdate<EvaluationCommittee>(committee);
-                                        displayOrder++;
-                                    }
-                                }
-                                Manager.Commit();
-                                return true;
-                            }
-                            catch (Exception ex)
-                            {
-                                Manager.RollBack();
-                                return false;
-                            }
+                            committee.MethodSettings.IdMethod = -1;
+                            committee.MethodSettings.IdRatingSet = -1;
                         }
-                        return false;
-                    }
-                    private BaseForPaper GetCallFromCommittees(List<long> idCommittees)
-                    {
-                        List<long> idCalls = (from s in Manager.GetIQ<EvaluationCommittee>() where idCommittees.Contains(s.Id) select s.Call.Id).ToList();
-                        if (idCalls.Distinct<long>().ToList().Count != 1)
-                            return null;
-                        else
-                            return Manager.Get<BaseForPaper>(idCalls[0]);
-                    }
-                    private Dictionary<long, BaseForPaper> GetCallsFromCommittees(List<long> idCommittees)
-                    {
-                        return (from s in Manager.GetIQ<EvaluationCommittee>() where idCommittees.Contains(s.Id) select s).ToDictionary(s => s.Id, s => s.Call);
-                    }
-                    public Boolean VirtualDeleteCommittee(long idCommittee, Boolean delete, ref long outputIdCommittee)
-                    {
-                        Boolean result = false;
-                        try
+                        committee.WeightSettings.IdRatingValue = -1;
+                        committee.WeightSettings.IdRatingValueEnd = -1;
+                        committee.WeightSettings.Weight = 0;
+                        committee.WeightSettings.WeightFuzzy = "";
+                        committee.WeightSettings.IsFuzzyWeight = committee.MethodSettings.IsFuzzyMethod;
+                        if (call.UseManualWeights)
                         {
-                            litePerson person = Manager.GetLitePerson(UC.CurrentUserID);
-                            EvaluationCommittee committee = Manager.Get<EvaluationCommittee>(idCommittee);
-                            if (committee != null)
-                            {
-                                outputIdCommittee = committee.Id;
-                                if (committee.Call != null &&
-                                     (committee.Call.Type == CallForPaperType.CallForBids && (from s in Manager.GetIQ<Evaluation>()
-                                                                                            where s.Committee.Id == committee.Id  && s.Deleted == BaseStatusDeleted.None && s.Status!= Domain.Evaluation.EvaluationStatus.None 
-                                                                                            select s.Id).Any())
-                                    )
-                                    throw new EvaluationStarted();
-                                else
+                            call.IsValidFuzzyMeWeights = false;
+                            if (call.UseOrderedWeights){
+                                List<String> values = (String.IsNullOrWhiteSpace(call.FuzzyMeWeights) ? new List<String>() : call.FuzzyMeWeights.Split('#').ToList());
+                                if (values.Any())
                                 {
-                                    Manager.BeginTransaction();
-                                    committee.UpdateMetaInfo(person, UC.IpAddress, UC.ProxyIpAddress);
-                                    committee.Deleted = delete ? BaseStatusDeleted.Manual : BaseStatusDeleted.None;
-                                    foreach (BaseCriterion criterion in committee.Criteria)
+                                    switch (values.Count())
                                     {
-                                        criterion.Deleted = delete ? (criterion.Deleted | BaseStatusDeleted.Cascade) : (criterion.Deleted = (BaseStatusDeleted)((int)criterion.Deleted - (int)BaseStatusDeleted.Cascade));
-                                        Manager.SaveOrUpdate(criterion);
+                                        case 0:
+                                        case 1:
+                                            values.Add("");
+                                            break;
+                                        default:
+                                            if (!String.IsNullOrWhiteSpace(values[values.Count - 1]) && values[values.Count - 1].Contains(":"))
+                                            {
+                                                values.Add((values.Count +1).ToString() + ":" + values[values.Count - 1].Split(':')[1]);
+                                                values[values.Count - 1] = "";
+                                            }
+                                            else
+                                                values.Add((values.Count +1).ToString() + ":");
+                                            break;
                                     }
-                                    foreach (CommitteeMember member in committee.Members)
-                                    {
-                                        foreach (Evaluation evaluation in (from e in Manager.GetIQ<Evaluation>() where e.Committee.Id== committee.Id && e.Evaluator.Id == member.Evaluator.Id select e).ToList())
-                                        {
-                                            evaluation.Deleted = delete ? (evaluation.Deleted | BaseStatusDeleted.Cascade) : (evaluation.Deleted = (BaseStatusDeleted)((int)evaluation.Deleted - (int)BaseStatusDeleted.Cascade));
-                                            Manager.SaveOrUpdate(evaluation);
-                                        }
-                                        member.Deleted = delete ? (member.Deleted | BaseStatusDeleted.Cascade) : (member.Deleted = (BaseStatusDeleted)((int)member.Deleted - (int)BaseStatusDeleted.Cascade));
-                                        Manager.SaveOrUpdate(member);
-                                    }
-                                    foreach (CommitteeAssignedSubmitterType assignment in committee.AssignedTypes)
-                                    {
-                                        assignment.Deleted = delete ? (assignment.Deleted | BaseStatusDeleted.Cascade) : (assignment.Deleted = (BaseStatusDeleted)((int)assignment.Deleted - (int)BaseStatusDeleted.Cascade));
-                                        Manager.SaveOrUpdate(assignment);
-                                    }
-                                    if (delete)
-                                    {
-                                        var query = (from s in Manager.GetIQ<EvaluationCommittee>()
-                                                     where s.Call.Id == committee.Call.Id && s.Deleted == BaseStatusDeleted.None && s.Id != committee.Id
-                                                     select s);
-                                        outputIdCommittee = (from s in query where s.DisplayOrder <= committee.DisplayOrder orderby s.DisplayOrder descending select s.Id).FirstOrDefault();
-                                        if (outputIdCommittee == 0)
-                                            outputIdCommittee = (from s in query where s.DisplayOrder > committee.DisplayOrder orderby s.DisplayOrder select s.Id).FirstOrDefault();
-
-                                    }
-                                    Manager.SaveOrUpdate(committee);
-                                    Manager.Commit();
-                                    result = true;
+                                    call.FuzzyMeWeights = (values.Count == 1 ? values.FirstOrDefault() : String.Join("#", values));
                                 }
+                            }
+                            Manager.SaveOrUpdate(call);
+                        }
+                    }
+                    committee.Call = call;
+                    committee.ForAllSubmittersType = true;
+                    Manager.SaveOrUpdate(committee);
+                }
+                Manager.Commit();
+            }
+            catch (Exception ex)
+            {
+                committee = null;
+                Manager.RollBack();
+            }
+            return committee;
+        }
+
+
+        public Boolean RemoveDssInheritsFromCommittee(long idCall, IEnumerable<dtoCommittee> committees, lm.Comol.Core.Dss.Domain.Templates.dtoItemMethodSettings settings)
+        {
+            Boolean result = false;
+            try
+            {
+                if (settings != null && committees.Count() == 1 && committees.Any(c => c.MethodSettings.InheritsFromFather))
+                {
+                    dtoCommittee item = committees.FirstOrDefault();
+                    litePerson person = Manager.GetLitePerson(UC.CurrentUserID);
+                    if (person != null)
+                    {
+                        Manager.BeginTransaction();
+                        EvaluationCommittee committee = Manager.Get<EvaluationCommittee>(item.Id);
+                        if (committee != null)
+                        {
+                            committee.UpdateMetaInfo(person, UC.IpAddress, UC.ProxyIpAddress);
+                            committee.MethodSettings.IdMethod = settings.IdMethod;
+                            committee.MethodSettings.IdRatingSet = settings.IdRatingSet;
+                            committee.MethodSettings.InheritsFromFather = false;
+                            Manager.SaveOrUpdate(committee);
+                            item.MethodSettings.IdMethod = settings.IdMethod;
+                            item.MethodSettings.IdRatingSet = settings.IdRatingSet;
+                            item.MethodSettings.InheritsFromFather = false;
+                            item.MethodSettings.IsFuzzyMethod = settings.IsFuzzyMethod;
+                            result = true;
+                        }
+                        BaseForPaper bCall = Manager.Get<BaseForPaper>(idCall);
+                        CallForPaper call = Manager.Get<CallForPaper>(idCall);
+                        if (bCall != null && bCall.UseManualWeights)
+                        {
+                            bCall.UseManualWeights = false;
+                            bCall.UseOrderedWeights = false;
+                            bCall.IdDssMethod = 0;
+                            bCall.IdDssRatingSet = 0;
+                            bCall.IsDssMethodFuzzy = false;
+                            bCall.FuzzyMeWeights = "";
+                            bCall.IsValidFuzzyMeWeights = false;
+                            Manager.SaveOrUpdate(bCall);
+                        }
+                        if (call != null && call.UseManualWeights)
+                        {
+                            call.UseManualWeights = false;
+                            call.UseOrderedWeights = false;
+                            call.IdDssMethod = 0;
+                            call.IdDssRatingSet = 0;
+                            call.IsDssMethodFuzzy = false;
+                            call.FuzzyMeWeights = "";
+                            call.IsValidFuzzyMeWeights = false;
+                            Manager.SaveOrUpdate(call);
+                        }
+                        Manager.Commit();
+                        result = true;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                if (Manager.IsInTransaction())
+                    Manager.RollBack();
+            }
+            return result;
+        }
+        public Boolean SaveCommittees(long idCall, List<dtoCommittee> committees, lm.Comol.Core.Dss.Domain.Templates.dtoItemMethodSettings settings)
+        {
+            BaseForPaper call = Manager.Get<BaseForPaper>(idCall);
+            return SaveCommittees(call, committees, settings);
+        }
+        public Boolean SaveCommittees(BaseForPaper call, List<dtoCommittee> committees, lm.Comol.Core.Dss.Domain.Templates.dtoItemMethodSettings settings)
+        {
+            Boolean result = false;
+            try
+            {
+                litePerson person = Manager.GetLitePerson(UC.CurrentUserID);
+                if (call != null && person != null)
+                {
+                    Manager.BeginTransaction();
+                    if (settings != null)
+                    {
+                        CallForPaper cfp = GetCallForCommiteeSettings(call.Id);
+                        if (cfp != null && cfp.EvaluationType == EvaluationType.Dss)
+                        {
+                            if (committees.Count == 1 && settings.IdMethod < 1)
+                            {
+                                settings.IdMethod = committees[0].MethodSettings.IdMethod;
+                                settings.IdRatingSet = committees[0].MethodSettings.IdRatingSet;
+                                settings.IsFuzzyMethod = committees[0].MethodSettings.IsFuzzyMethod;
+                                settings.UseOrderedWeights = committees[0].MethodSettings.UseOrderedWeights;
+                                settings.UseManualWeights = committees[0].MethodSettings.UseManualWeights;
+                                settings.FuzzyMeWeights = committees[0].MethodSettings.FuzzyMeWeights;
+                                settings.Error = committees[0].MethodSettings.Error;
+                            }
+                            cfp.IdDssMethod = settings.IdMethod;
+                            cfp.IdDssRatingSet = settings.IdRatingSet;
+                            cfp.IsDssMethodFuzzy = settings.IsFuzzyMethod;
+                            cfp.UseOrderedWeights = settings.UseOrderedWeights;
+                            cfp.UseManualWeights = settings.UseManualWeights;
+                            cfp.FuzzyMeWeights = settings.FuzzyMeWeights;
+                            cfp.IsValidFuzzyMeWeights = (settings.Error == DssError.None);
+                            cfp.UpdateMetaInfo(person, UC.IpAddress, UC.ProxyIpAddress);
+                            Manager.SaveOrUpdate(cfp);
+                            call.IdDssMethod = settings.IdMethod;
+                            call.IdDssRatingSet = settings.IdRatingSet;
+                            call.IsDssMethodFuzzy = settings.IsFuzzyMethod;
+                            call.UseOrderedWeights = settings.UseOrderedWeights;
+                            call.UseManualWeights = settings.UseManualWeights;
+                            call.FuzzyMeWeights = settings.FuzzyMeWeights;
+                            call.IsValidFuzzyMeWeights = (settings.Error == DssError.None);
+                        }
+                        else
+                            settings = null;
+                    }
+                    int displayNumber = 1;
+                    foreach (dtoCommittee item in committees)
+                    {
+                        if (String.IsNullOrEmpty(item.Name))
+                            item.Name = displayNumber.ToString();
+                        EvaluationCommittee committee = Manager.Get<EvaluationCommittee>(item.Id);
+                        if (committee == null)
+                        {
+                            committee = new EvaluationCommittee();
+                            committee.Call = call;
+                            committee.CreateMetaInfo(person, UC.IpAddress, UC.ProxyIpAddress);
+                            committee.DisplayOrder = GetNewCommitteeDisplayOrder(call);
+                            committee.Name = item.Name;
+                            committee.Description = item.Description;
+                        }
+                        else if (committee.Name != item.Name || committee.Description != item.Description)
+                        {
+                            committee.Name = item.Name;
+                            committee.Description = item.Description;
+                            committee.UpdateMetaInfo(person, UC.IpAddress, UC.ProxyIpAddress);
+                        }
+                        if (settings == null)
+                            committee.UseDss = false;
+                        else
+                        {
+                            committee.UseDss = true;
+                            committee.MethodSettings.InheritsFromFather = item.MethodSettings.InheritsFromFather;
+                            if (item.MethodSettings.InheritsFromFather)
+                            {
+                                committee.MethodSettings.IdMethod = settings.IdMethod;
+                                committee.MethodSettings.IdRatingSet = settings.IdRatingSet;
+                                committee.MethodSettings.IsFuzzyMethod = settings.IsFuzzyMethod;
+                                committee.MethodSettings.UseManualWeights = settings.UseManualWeights;
+                                committee.MethodSettings.UseOrderedWeights = settings.UseOrderedWeights;
                             }
                             else
-                                result = true;
+                            {
+                                committee.MethodSettings.IdMethod = item.MethodSettings.IdMethod;
+                                committee.MethodSettings.IdRatingSet = item.MethodSettings.IdRatingSet;
+                                committee.MethodSettings.UseManualWeights = item.MethodSettings.UseManualWeights;
+                                committee.MethodSettings.UseOrderedWeights = item.MethodSettings.UseOrderedWeights;
+                                committee.MethodSettings.IsFuzzyMethod = item.MethodSettings.IsFuzzyMethod;
+                            }
+                            committee.WeightSettings = item.WeightSettings.Copy();
+                            if (committee.MethodSettings.UseManualWeights)
+                                committee.WeightSettings.IsValidFuzzyMeWeights = (!String.IsNullOrWhiteSpace(committee.WeightSettings.FuzzyMeWeights) && item.WeightSettings.IsValidFuzzyMeWeights);
                         }
-                        catch (EvaluationStarted ex)
-                        {
-                            throw ex;
-                        }
-                        catch (Exception ex)
-                        {
-                            Manager.RollBack();
-                        }
-                        return result;
-                    }
+                        committee.DisplayOrder = displayNumber;
+                        Manager.SaveOrUpdate(committee);
 
-                    private int GetNewCommitteeDisplayOrder(BaseForPaper call)
+                        if (item.ForAllSubmittersType && committee.Id > 0 && committee.AssignedTypes.Any()) {
+                            committee.AssignedTypes.Where(t => t.Deleted == BaseStatusDeleted.None).ToList().ForEach(t => t.SetDeleteMetaInfo(person, UC.IpAddress, UC.ProxyIpAddress));
+                        }
+                        else if (!item.ForAllSubmittersType) {
+                            if (item.Submitters.Count == 0)
+                                committee.AssignedTypes.Where(t => t.Deleted == BaseStatusDeleted.None).ToList().ForEach(t => t.SetDeleteMetaInfo(person, UC.IpAddress, UC.ProxyIpAddress));
+                            else {
+                                committee.AssignedTypes.Where(t => t.Deleted == BaseStatusDeleted.None && !item.Submitters.Contains(t.SubmitterType.Id)).ToList().ForEach(t => t.SetDeleteMetaInfo(person, UC.IpAddress, UC.ProxyIpAddress));
+                                committee.AssignedTypes.Where(t => t.Deleted != BaseStatusDeleted.None &&  item.Submitters.Contains(t.SubmitterType.Id)).ToList().ForEach(t => t.RecoverMetaInfo(person, UC.IpAddress, UC.ProxyIpAddress));
+                                foreach (long idType in item.Submitters.Where(i => !committee.AssignedTypes.Select(t => t.SubmitterType.Id).ToList().Contains(i)).ToList()) { 
+                                    CommitteeAssignedSubmitterType aType = new CommitteeAssignedSubmitterType();
+                                    aType.CreateMetaInfo(person, UC.IpAddress, UC.ProxyIpAddress);
+                                    aType.Committee = committee;
+                                    aType.SubmitterType = Manager.Get<SubmitterType>(idType);
+                                    if (aType.SubmitterType != null) {
+                                        Manager.SaveOrUpdate(aType);
+                                        committee.AssignedTypes.Add(aType);
+                                    }
+                                }
+                            }
+                        }
+                        committee.ForAllSubmittersType = item.ForAllSubmittersType;
+
+                        Manager.SaveOrUpdate(committee);
+                        SaveCriteria(call, committee, item.Criteria);
+                        displayNumber++;
+                    }
+                    Manager.Commit();
+                    result = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                if (Manager.IsInTransaction())
+                    Manager.RollBack();
+            }
+            return result;
+        }
+
+        public List<dtoCommittee> GetEditorCommittees(long idCall)
+        {
+            BaseForPaper call = Manager.Get<BaseForPaper>(idCall);
+            return GetEditorCommittees(call);
+        }
+        public List<dtoCommittee> GetEditorCommittees(BaseForPaper call)
+        {
+            List<dtoCommittee> items = new List<dtoCommittee>();
+            try
+            {
+                items = (from s in Manager.GetIQ<EvaluationCommittee>()
+                            where s.Deleted == BaseStatusDeleted.None && s.Call == call select s).ToList().Select(
+                            s=>  new dtoCommittee()
+                            {
+                                Id = s.Id,
+                                Name = s.Name,
+                                Description = s.Description,
+                                DisplayOrder = s.DisplayOrder,
+                                ForAllSubmittersType = s.ForAllSubmittersType,
+                                IdCall = call.Id,
+                                WeightSettings = (s.UseDss ?  lm.Comol.Core.Dss.Domain.Templates.dtoItemWeightSettings.Create(s.WeightSettings, call.UseManualWeights): new dtoItemWeightSettings()),
+                                MethodSettings = (s.UseDss ? lm.Comol.Core.Dss.Domain.Templates.dtoItemMethodSettings.Create(s.MethodSettings, call.UseManualWeights) : new dtoItemMethodSettings()),
+                                UseDss= s.UseDss
+                            }).ToList();
+                List<long> idCommitees = items.Select(c => c.Id).ToList();
+
+                IList<BaseCriterion> bcs = Manager.GetAll<BaseCriterion>(bc =>
+                    bc.Committee != null
+                    && idCommitees.Contains(bc.Committee.Id)
+                    && bc.Deleted == BaseStatusDeleted.None);
+
+                List<dtoCriterion> criteria = new List<dtoCriterion>();
+
+                foreach (BaseCriterion bc in bcs)
+                {
+                    try
                     {
-                        try
-                        {
-                            int displayOrder = (from s in Manager.GetIQ<EvaluationCommittee>()
-                                                where s.Call == call && s.Deleted == BaseStatusDeleted.None
-                                                select s.DisplayOrder).Max();
-                            displayOrder++;
-                            return displayOrder;
-                        }
-                        catch (Exception)
-                        {
-                            return 1;
+                    
+                        dtoCriterion dto = new dtoCriterion(bc);
+                        criteria.Add(dto);
+                    } catch(Exception ex)
+                    {
 
+                    }
+                }
+
+
+
+                //List<lm.Comol.Modules.CallForPapers.Domain.Evaluation.dtoCriterion> criteria = (from bc in Manager.GetIQ<BaseCriterion>()
+                //                                                                                where bc.Committee!=null && idCommitees.Contains(bc.Committee.Id) && bc.Deleted == BaseStatusDeleted.None
+                //                                                                                select bc).ToList().Select(bc => new lm.Comol.Modules.CallForPapers.Domain.Evaluation.dtoCriterion(bc)).ToList();
+
+                foreach (dtoCommittee comittee in items)
+                {
+                    comittee.Criteria = (from c in criteria where c.IdCommittee == comittee.Id orderby c.DisplayOrder, c.Name select c).ToList();
+                    foreach (dtoCriterion criterion in comittee.Criteria)
+                    { 
+                        criterion.HasInEvaluations = (from e in Manager.GetIQ<CriterionEvaluated>() where e.Criterion.Id == criterion.Id && e.Deleted== BaseStatusDeleted.None && e.Evaluation.Status== EvaluationStatus.Evaluating select e.Id ).Any();
+                        criterion.HasEvaluations = (from e in Manager.GetIQ<CriterionEvaluated>()
+                                                    where e.Criterion.Id == criterion.Id && e.Deleted == BaseStatusDeleted.None && (e.Evaluation.Status != EvaluationStatus.Evaluating && e.Evaluation.Status != EvaluationStatus.None) select e.Id ).Any();
+                    }
+                }
+                //items.ForEach(i => i.Criteria = (from c in criteria where c.IdCommittee == i.Id orderby c.DisplayOrder, c.Name select c).ToList());
+                items.Where(i => !i.ForAllSubmittersType).ToList().ForEach(c => c.Submitters = (from s in Manager.GetIQ<CommitteeAssignedSubmitterType>()
+                                                                                                where s.Deleted == BaseStatusDeleted.None && s.SubmitterType != null && s.Committee != null && s.Committee.Id == c.Id
+                                                                                                select s.SubmitterType.Id).ToList());
+            }
+            catch (Exception ex)
+            {
+
+            }
+            if (items.Any(i => i.UseDss))
+            {
+                foreach (dtoCommittee c in items)
+                {
+                    c.BaseWeights = GetAvailableWeights(call, c);
+                }
+            }
+                        
+            return items.OrderBy(s => s.DisplayOrder).ThenBy(s => s.Name).ToList();
+        }
+
+
+        private List<lm.Comol.Core.Dss.Domain.Templates.dtoItemWeightBase> GetAvailableWeights(BaseForPaper call, dtoCommittee committee)
+        {
+            Dictionary<long, String> weights = committee.GetFuzzyMeItems();
+            List<lm.Comol.Core.Dss.Domain.Templates.dtoItemWeightBase> items = null;
+            Boolean isFuzzy = (committee.MethodSettings.InheritsFromFather && call.IsDssMethodFuzzy) || (!committee.MethodSettings.InheritsFromFather && committee.MethodSettings.IsFuzzyMethod);
+            if ((!committee.MethodSettings.InheritsFromFather && committee.MethodSettings.UseOrderedWeights) || (committee.MethodSettings.InheritsFromFather && call.UseOrderedWeights))
+            {
+                if (committee.Criteria.Count() >0)
+                {
+                    if (committee.Criteria.Count() == weights.Count)
+                        items = (from int i in Enumerable.Range(1, committee.Criteria.Count()) select i).ToList().Select(i => new lm.Comol.Core.Dss.Domain.Templates.dtoItemWeightBase() { IdObject = (long)i, IsFuzzyValue = isFuzzy, OrderedItem = true, Name = i.ToString(), Value = (weights.ContainsKey((long)i) ? weights[(long)i] : "") }).ToList();
+                    else
+                    {
+                        Int32 index = 1;
+                        items = (from int i in Enumerable.Range(1, committee.Criteria.Count()) select i).ToList().Select(i => new lm.Comol.Core.Dss.Domain.Templates.dtoItemWeightBase() { IdObject = (long)i, IsFuzzyValue = isFuzzy, OrderedItem = true, Name = i.ToString(), Value = "" }).ToList();
+                        List<String> values = weights.Values.ToList();
+                        if (values.Any())
+                        {
+                            items[0].Value = values[0];
+                            switch (values.Count)
+                            {
+                                case 0:
+                                case 1:
+                                    break;
+                                case 2:
+                                    items.Last().Value = values.Last();
+                                    break;
+                                default:
+                                    items.Last().Value = values.Last();
+                                    foreach (String v in values.Skip(1).Take(values.Count - 2))
+                                    {
+                                        items[index++].Value = v;
+                                    }
+                                    break;
+                            }
                         }
                     }
-                #endregion
+                }
+            }
+            else
+                items = committee.Criteria.Select(c => c.ToWeightItem(weights, isFuzzy)).ToList();
+            return items;
+        }
+        public Boolean UpdateCommitteesDisplayOrder(List<long> idCommittees)
+        {
+            litePerson person = Manager.GetLitePerson(UC.CurrentUserID);
+            if (idCommittees.Count > 0 && AllowReorder(GetCallFromCommittees(idCommittees), person))
+            {
+                DateTime CurrentTime = DateTime.Now;
+                EvaluationCommittee committee = null;
+                try
+                {
+                    Manager.BeginTransaction();
+                    int displayOrder = 1;
+                    foreach (var idCommittee in idCommittees)
+                    {
+                        committee = Manager.Get<EvaluationCommittee>(idCommittee);
+                        if (committee != null)
+                        {
+                            committee.DisplayOrder = displayOrder;
+                            committee.UpdateMetaInfo(person, UC.IpAddress, UC.ProxyIpAddress);
+                            Manager.SaveOrUpdate<EvaluationCommittee>(committee);
+                            displayOrder++;
+                        }
+                    }
+                    Manager.Commit();
+                    return true;
+                }
+                catch (Exception ex)
+                {
+                    Manager.RollBack();
+                    return false;
+                }
+            }
+            return false;
+        }
+        private BaseForPaper GetCallFromCommittees(List<long> idCommittees)
+        {
+            List<long> idCalls = (from s in Manager.GetIQ<EvaluationCommittee>() where idCommittees.Contains(s.Id) select s.Call.Id).ToList();
+            if (idCalls.Distinct<long>().ToList().Count != 1)
+                return null;
+            else
+                return Manager.Get<BaseForPaper>(idCalls[0]);
+        }
+        private Dictionary<long, BaseForPaper> GetCallsFromCommittees(List<long> idCommittees)
+        {
+            return (from s in Manager.GetIQ<EvaluationCommittee>() where idCommittees.Contains(s.Id) select s).ToDictionary(s => s.Id, s => s.Call);
+        }
+        public Boolean VirtualDeleteCommittee(long idCommittee, Boolean delete, ref long outputIdCommittee)
+        {
+            Boolean result = false;
+            try
+            {
+                litePerson person = Manager.GetLitePerson(UC.CurrentUserID);
+                EvaluationCommittee committee = Manager.Get<EvaluationCommittee>(idCommittee);
+                if (committee != null)
+                {
+                    outputIdCommittee = committee.Id;
+                    if (committee.Call != null &&
+                            (committee.Call.Type == CallForPaperType.CallForBids && (from s in Manager.GetIQ<Evaluation>()
+                                                                                where s.Committee.Id == committee.Id  && s.Deleted == BaseStatusDeleted.None && s.Status!= Domain.Evaluation.EvaluationStatus.None 
+                                                                                select s.Id).Any())
+                        )
+                        throw new EvaluationStarted();
+                    else
+                    {
+                        Manager.BeginTransaction();
+                        committee.UpdateMetaInfo(person, UC.IpAddress, UC.ProxyIpAddress);
+                        committee.Deleted = delete ? BaseStatusDeleted.Manual : BaseStatusDeleted.None;
+                        foreach (BaseCriterion criterion in committee.Criteria)
+                        {
+                            criterion.Deleted = delete ? (criterion.Deleted | BaseStatusDeleted.Cascade) : (criterion.Deleted = (BaseStatusDeleted)((int)criterion.Deleted - (int)BaseStatusDeleted.Cascade));
+                            Manager.SaveOrUpdate(criterion);
+                        }
+                        foreach (CommitteeMember member in committee.Members)
+                        {
+                            foreach (Evaluation evaluation in (from e in Manager.GetIQ<Evaluation>() where e.Committee.Id== committee.Id && e.Evaluator.Id == member.Evaluator.Id select e).ToList())
+                            {
+                                evaluation.Deleted = delete ? (evaluation.Deleted | BaseStatusDeleted.Cascade) : (evaluation.Deleted = (BaseStatusDeleted)((int)evaluation.Deleted - (int)BaseStatusDeleted.Cascade));
+                                Manager.SaveOrUpdate(evaluation);
+                            }
+                            member.Deleted = delete ? (member.Deleted | BaseStatusDeleted.Cascade) : (member.Deleted = (BaseStatusDeleted)((int)member.Deleted - (int)BaseStatusDeleted.Cascade));
+                            Manager.SaveOrUpdate(member);
+                        }
+                        foreach (CommitteeAssignedSubmitterType assignment in committee.AssignedTypes)
+                        {
+                            assignment.Deleted = delete ? (assignment.Deleted | BaseStatusDeleted.Cascade) : (assignment.Deleted = (BaseStatusDeleted)((int)assignment.Deleted - (int)BaseStatusDeleted.Cascade));
+                            Manager.SaveOrUpdate(assignment);
+                        }
+                        if (delete)
+                        {
+                            var query = (from s in Manager.GetIQ<EvaluationCommittee>()
+                                            where s.Call.Id == committee.Call.Id && s.Deleted == BaseStatusDeleted.None && s.Id != committee.Id
+                                            select s);
+                            outputIdCommittee = (from s in query where s.DisplayOrder <= committee.DisplayOrder orderby s.DisplayOrder descending select s.Id).FirstOrDefault();
+                            if (outputIdCommittee == 0)
+                                outputIdCommittee = (from s in query where s.DisplayOrder > committee.DisplayOrder orderby s.DisplayOrder select s.Id).FirstOrDefault();
+
+                        }
+                        Manager.SaveOrUpdate(committee);
+                        Manager.Commit();
+                        result = true;
+                    }
+                }
+                else
+                    result = true;
+            }
+            catch (EvaluationStarted ex)
+            {
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                Manager.RollBack();
+            }
+            return result;
+        }
+
+        private int GetNewCommitteeDisplayOrder(BaseForPaper call)
+        {
+            try
+            {
+                int displayOrder = (from s in Manager.GetIQ<EvaluationCommittee>()
+                                    where s.Call == call && s.Deleted == BaseStatusDeleted.None
+                                    select s.DisplayOrder).Max();
+                displayOrder++;
+                return displayOrder;
+            }
+            catch (Exception)
+            {
+                return 1;
+
+            }
+        }
+    #endregion
                 #region "1.2 - Editing Criteria"
                     public List<BaseCriterion> AddCriteria(long idCall, List<dtoCommittee> committees, lm.Comol.Core.Dss.Domain.Templates.dtoItemMethodSettings settings, long idCommittee, List<lm.Comol.Modules.CallForPapers.Domain.Evaluation.dtoCriterion> items)
                     {
@@ -1468,9 +1491,15 @@ namespace lm.Comol.Modules.CallForPapers.Business
                                             ((DssCriterion)criterion).IsFuzzy = (dto.Type== CriterionType.RatingScaleFuzzy);
                                             ((DssCriterion)criterion).IdRatingSet = dto.IdRatingSet;
                                             break;
+
+                                        //case CriterionType.Boolean:
+                                        //    criterion = new BoolCriterion();
+                                        //    criterion.Type = CriterionType.Boolean;
+                                        //    break;
+
                                         default:
                                             criterion = new BaseCriterion();
-                                            criterion.Type = CriterionType.Textual;
+                                            criterion.Type = CriterionType.Boolean;
                                             break;
                                     }
                                     criterion.UseDss = committee.UseDss;
@@ -5411,6 +5440,7 @@ namespace lm.Comol.Modules.CallForPapers.Business
                                         :"";
                                 case SummaryType.Committee:
                                     expCommittee committee = Manager.Get<expCommittee>(idCommittee);
+
                                     if (committee != null && committee.Evaluations != null && committee.Evaluations.Any())
                                     {
                                         return (helperXml != null) ? ""// helperXml.ExportSummaryDisplayStatistics(call, committee, GetEvaluationsList(call.Id, committee.Id,filterToUse, anonymousDisplayName), cvQuery, anonymousDisplayName, person)
@@ -5825,6 +5855,44 @@ namespace lm.Comol.Modules.CallForPapers.Business
                             item.Criteria.Last().DisplayAs = displayAs.last;
                         }
                     }
+
+                    item.Evaluators = new List<dtoEvaluatorDisplayItem>();
+
+                    foreach(expCommitteeMember member in members)
+                    {
+                        try
+                        {
+                            if(member.Evaluator != null)
+                            {
+                                dtoEvaluatorDisplayItem evaluator = CreateEvaluatorDisplayItem(
+                                        c.Key.Id,
+                                        idSubmission,
+                                        item.Criteria,
+                                        member.Status,
+                                        member.Evaluator,
+                                        c.FirstOrDefault(g => g.IdEvaluator == member.Evaluator.Id),
+                                        dssEvaluatorEvaluations
+                                            .Where(d =>
+                                                d.IdEvaluation ==
+                                                    c.Where(x => x.IdEvaluator == member.Evaluator.Id).Select(x => x.Id).DefaultIfEmpty(0).FirstOrDefault())
+                                            .FirstOrDefault(),
+                                        unknownUser);
+
+
+                                item.Evaluators.Add(evaluator);
+                            }  else
+                            {
+
+                            }
+
+                            
+                        } catch(Exception ex)
+                        {
+
+                        }
+                        
+                    }
+
                     item.Evaluators = 
                         members.Select(e => 
                             CreateEvaluatorDisplayItem(

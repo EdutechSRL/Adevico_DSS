@@ -497,13 +497,19 @@ namespace lm.Comol.Modules.CallForPapers.Presentation.Evaluation
 
             //NOTA: CALL.EVALUATIONTYPE NON SERVE A NULLA!!!
 
-            List<dtoEvaluationSummaryItem> items = ServiceCall.GetEvaluationsList(
-                call.Id,
-                  View.IdCallAdvCommission,
-                  call.EvaluationType,
-                  filters,
-                  View.AnonymousDisplayname,
-                  View.UnknownDisplayname);
+            //List<dtoEvaluationSummaryItem> items = ServiceCall.GetEvaluationsList(
+            //    call.Id,
+            //      View.IdCallAdvCommission,
+            //      call.EvaluationType,
+            //      filters,
+            //      View.AnonymousDisplayname,
+            //      View.UnknownDisplayname);
+
+
+            List<dtoEvaluationSummaryItem> items =
+                call.AdvacedEvaluation ?
+                ServiceCall.GetEvaluationsList(call.Id, View.IdCallAdvCommission, call.EvaluationType, filters, View.AnonymousDisplayname, View.UnknownDisplayname) :
+                Service.GetEvaluationsList(call.Id, call.EvaluationType, filters, View.AnonymousDisplayname, View.UnknownDisplayname, true);
 
             //"#"; "Domanda di"; "Tipo domanda"; "Punti"; "N. valutazioni"; "Completate"; "In valutazione"; "Non iniziate"
 

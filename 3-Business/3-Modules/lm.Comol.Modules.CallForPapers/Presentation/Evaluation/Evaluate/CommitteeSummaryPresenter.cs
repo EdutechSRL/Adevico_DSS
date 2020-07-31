@@ -234,7 +234,18 @@ namespace lm.Comol.Modules.CallForPapers.Presentation.Evaluation
         }
         public String ExportTo(dtoEvaluationsFilters filters, SummaryType summaryType, ItemsToExport itemsToExport, ExportData xdata,lm.Comol.Core.DomainModel.Helpers.Export.ExportFileType fileType,  Dictionary<lm.Comol.Modules.CallForPapers.Domain.Evaluation.EvaluationTranslations, String> translations, Dictionary<lm.Comol.Modules.CallForPapers.Domain.Evaluation.EvaluationStatus, String> status)
         {
-            return Service.ExportSummaryStatistics(ServiceCall.GetDtoCall(View.IdCall), filters, View.AnonymousDisplayname, View.UnknownDisplayname, summaryType, itemsToExport, xdata, fileType, translations, status, View.CurrentIdCommittee);
+            return Service.ExportSummaryStatistics(
+                ServiceCall.GetDtoCall(View.IdCall), 
+                filters, 
+                View.AnonymousDisplayname, 
+                View.UnknownDisplayname, 
+                summaryType, 
+                itemsToExport, 
+                xdata, 
+                fileType, 
+                translations, 
+                status, 
+                View.CurrentIdCommittee);
         }
         private litePerson GetCurrentUser(ref Int32 idUser)
         {

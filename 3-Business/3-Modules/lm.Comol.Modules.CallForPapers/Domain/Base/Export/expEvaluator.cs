@@ -19,7 +19,16 @@ namespace lm.Comol.Modules.CallForPapers.Domain.Evaluation.Export
         }
         public virtual String DisplayName(String unknownUser)
         {
-            return (Person == null) ? unknownUser : Person.SurnameAndName;
+            string value = unknownUser;
+            try
+            {
+                value = (Person == null) ? unknownUser : Person.SurnameAndName;
+            } catch(Exception ex)
+            {
+
+            }
+            return value;
+            
         }
 
         public virtual bool Equals(expEvaluator other)
