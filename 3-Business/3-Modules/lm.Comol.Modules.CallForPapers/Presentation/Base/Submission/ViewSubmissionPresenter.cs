@@ -673,6 +673,8 @@ namespace lm.Comol.Modules.CallForPapers.Presentation
                     
             }
 
+            View.SendSuccessTrap();
+
             View.SendUserAction(
                    UserContext.CurrentCommunityID,
                    ServiceCall.ServiceModuleID(),

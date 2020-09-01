@@ -19,8 +19,12 @@ Public Class cpAdvEconomicEvaluation
     Inherits PageBase
     Implements Eco.Presentation.View.iViewEcoEvaluation
 
-    Private Shared CurrencyFormat As String = "C2"
+    Private Shared CurrencyFormat As String = "N2" '"C2"
     Private Shared CurrencyCulture As String = "it-IT"
+
+    Public Function GetCultureInfo() As System.Globalization.CultureInfo
+        Return System.Globalization.CultureInfo.CreateSpecificCulture(CurrencyCulture)
+    End Function
 
     Private _canModify As Boolean = False
 
@@ -104,7 +108,8 @@ Public Class cpAdvEconomicEvaluation
 #End Region
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-
+        'Dim ci As System.Globalization.CultureInfo = GetCultureInfo()
+        'ci.NumberFormat
     End Sub
 
 
@@ -210,9 +215,9 @@ Public Class cpAdvEconomicEvaluation
 
         LBowner.Text = evaluations.SubmissionName
         LBsubmitterType.Text = evaluations.SubmissionType
-        LBFinalTotalRequest.Text = evaluations.RequestTotal.ToString(CurrencyFormat, System.Globalization.CultureInfo.CreateSpecificCulture(CurrencyCulture)).Remove(0, 2)
+        LBFinalTotalRequest.Text = evaluations.RequestTotal.ToString(CurrencyFormat, GetCultureInfo()) '.Remove(0, 2)
 
-        LBFinalTotalAdmit.Text = evaluations.AdmitTotal.ToString(CurrencyFormat, System.Globalization.CultureInfo.CreateSpecificCulture(CurrencyCulture)).Remove(0, 2)
+        LBFinalTotalAdmit.Text = evaluations.AdmitTotal.ToString(CurrencyFormat, GetCultureInfo()) '.Remove(0, 2)
 
         RPTtables.DataSource = evaluations.Tables
         RPTtables.DataBind()
@@ -223,7 +228,7 @@ Public Class cpAdvEconomicEvaluation
             RPTtables.DataSource = evaluations.Tables
             RPTtables.DataBind()
 
-            LBFinalMAXadmit.Text = evaluations.AdmitMax 'evaluations.Tables.Sum(Function(t) t.AdmitMax).ToString(CurrencyFormat, System.Globalization.CultureInfo.CreateSpecificCulture(CurrencyCulture)).Remove(0, 2)
+            LBFinalMAXadmit.Text = evaluations.AdmitMax 'evaluations.Tables.Sum(Function(t) t.AdmitMax).ToString(CurrencyFormat,GetCultureInfo()).Remove(0, 2)
 
         Else
 
@@ -297,17 +302,17 @@ Public Class cpAdvEconomicEvaluation
 
             Lit = e.Item.FindControl("LTtotalReqFoot")
             If Not IsNothing(Lit) Then
-                Lit.Text = Table.TotalRequired.ToString(CurrencyFormat, System.Globalization.CultureInfo.CreateSpecificCulture(CurrencyCulture)).Remove(0, 2)
+                Lit.Text = Table.TotalRequired.ToString(CurrencyFormat, GetCultureInfo()) '.Remove(0, 2)
             End If
 
             Lit = e.Item.FindControl("LTAdmitTotalFoot")
             If Not IsNothing(Lit) Then
-                Lit.Text = Table.TotalAdmit.ToString(CurrencyFormat, System.Globalization.CultureInfo.CreateSpecificCulture(CurrencyCulture)).Remove(0, 2)
+                Lit.Text = Table.TotalAdmit.ToString(CurrencyFormat, GetCultureInfo()) '.Remove(0, 2)
             End If
 
             Lit = e.Item.FindControl("LTadmitMax")
             If Not IsNothing(Lit) Then
-                Lit.Text = Table.AdmitMax.ToString(CurrencyFormat, System.Globalization.CultureInfo.CreateSpecificCulture(CurrencyCulture)).Remove(0, 2)
+                Lit.Text = Table.AdmitMax.ToString(CurrencyFormat, GetCultureInfo()) '.Remove(0, 2)
             End If
 
 
@@ -358,12 +363,12 @@ Public Class cpAdvEconomicEvaluation
 
             Lit = e.Item.FindControl("LTunitPrice")
             If Not IsNothing(Lit) Then
-                Lit.Text = RowItem.ReqPrice.ToString(CurrencyFormat, System.Globalization.CultureInfo.CreateSpecificCulture(CurrencyCulture)).Remove(0, 2)
+                Lit.Text = RowItem.ReqPrice.ToString(CurrencyFormat, GetCultureInfo()) '.Remove(0, 2)
             End If
 
             Lit = e.Item.FindControl("LTtotal")
             If Not IsNothing(Lit) Then
-                Lit.Text = RowItem.ReqTotal.ToString(CurrencyFormat, System.Globalization.CultureInfo.CreateSpecificCulture(CurrencyCulture)).Remove(0, 2)
+                Lit.Text = RowItem.ReqTotal.ToString(CurrencyFormat, GetCultureInfo()) '.Remove(0, 2)
             End If
 
             Dim Cbx As CheckBox = e.Item.FindControl("CBXadmit")
@@ -374,7 +379,7 @@ Public Class cpAdvEconomicEvaluation
 
             Dim Txb As TextBox = e.Item.FindControl("TXBadmitValue")
             If Not IsNothing(Txb) Then
-                Txb.Text = RowItem.AdmitTotal.ToString(CurrencyFormat, System.Globalization.CultureInfo.CreateSpecificCulture(CurrencyCulture)).Remove(0, 2)
+                Txb.Text = RowItem.AdmitTotal.ToString(CurrencyFormat, GetCultureInfo()) '.Remove(0, 2)
                 Txb.Enabled = _canModify
             End If
 

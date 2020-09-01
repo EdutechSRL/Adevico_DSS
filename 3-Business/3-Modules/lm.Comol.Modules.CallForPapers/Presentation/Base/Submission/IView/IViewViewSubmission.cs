@@ -64,5 +64,10 @@ namespace lm.Comol.Modules.CallForPapers.Presentation
 
         void SendUserAction(int idCommunity, int idModule, Int64 idCall, ModuleCallForPaper.ActionType action);
 
+
+        /// <summary>
+        /// Invia TRAP di corretto caricamento controfirma
+        /// </summary>
+        void SendSuccessTrap();
     }
 }

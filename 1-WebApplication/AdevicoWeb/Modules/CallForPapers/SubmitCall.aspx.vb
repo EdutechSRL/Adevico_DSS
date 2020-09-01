@@ -278,7 +278,7 @@ Public Class SubmitCall
             lm.Comol.Modules.CallForPapers.Trap.CallTrapId.SubmissionCompileView,
             Me.IdSubmission,
             lm.Comol.Modules.CallForPapers.Trap.CallObjectId.UserSubmission,
-            "")
+            "BindDati")
         End If
 
         Me.CurrentPresenter.InitView(False)
@@ -378,7 +378,11 @@ Public Class SubmitCall
     Private Sub DisplaySubmissionTimeAfter(submitAfter As Date?) Implements IViewBaseSubmitCall.DisplaySubmissionTimeAfter
         MLVpreview.SetActiveView(VIWempty)
 
-        Dim message As String = Me.Resource.getValue("SubmissionErrorView." & CallForPaperType.CallForBids.ToString & "." & SubmissionErrorView.SubmissionTimeExpired.ToString)
+        Dim Key As String = "SubmissionErrorView." & CallForPaperType.CallForBids.ToString & "." & SubmissionErrorView.SubmissionTimeExpired.ToString
+        Dim message As String = Me.Resource.getValue(Key)
+        If String.IsNullOrWhiteSpace(message) Then
+            message = Key
+        End If
 
         CallTrapHelper.SendTrap(
             lm.Comol.Modules.CallForPapers.Trap.CallTrapId.SubmissionCompileSubmit,
@@ -395,7 +399,16 @@ Public Class SubmitCall
     End Sub
     Private Sub DisplaySubmissionTimeBefore(submitBefore As Date) Implements IViewBaseSubmitCall.DisplaySubmissionTimeBefore
         MLVpreview.SetActiveView(VIWempty)
-        Dim message As String = Me.Resource.getValue("SubmissionErrorView." & CallForPaperType.CallForBids.ToString & "." & SubmissionErrorView.SubmissionEarlyTime.ToString)
+
+        Dim Key As String = "SubmissionErrorView." & CallForPaperType.CallForBids.ToString & "." & SubmissionErrorView.SubmissionEarlyTime.ToString
+        Dim message As String = Me.Resource.getValue(Key)
+        If String.IsNullOrWhiteSpace(Key) Then
+            message = Key
+        End If
+
+        If (message.Contains("{0}") AndAlso message.Contains("{1}")) Then
+            message = String.Format(message, submitBefore.ToString("dd/MM/yy"), submitBefore.ToString("HH:mm"))
+        End If
 
         CallTrapHelper.SendTrap(
             lm.Comol.Modules.CallForPapers.Trap.CallTrapId.SubmissionCompileSubmit,
@@ -403,9 +416,7 @@ Public Class SubmitCall
             lm.Comol.Modules.CallForPapers.Trap.CallObjectId.UserSubmission,
             message)
 
-        If (message.Contains("{0}") AndAlso message.Contains("{1}")) Then
-            message = String.Format(message, submitBefore.ToString("dd/MM/yy"), submitBefore.ToString("HH:mm"))
-        End If
+
         CTRLerrorMessages.InitializeControl(message, Helpers.MessageType.alert)
 
     End Sub
@@ -634,7 +645,7 @@ Public Class SubmitCall
                lm.Comol.Modules.CallForPapers.Trap.CallTrapId.SubmissionCompileStart,
                Me.IdSubmission,
                lm.Comol.Modules.CallForPapers.Trap.CallObjectId.UserSubmission,
-               "")
+               "StartCompile")
 
             Me.CurrentPresenter.SaveSubmission(GetValues(), ClickDt)
         Else
@@ -794,7 +805,7 @@ Public Class SubmitCall
             lm.Comol.Modules.CallForPapers.Trap.CallTrapId.SubmissionCompileSaveDraft,
             Me.IdSubmission,
             lm.Comol.Modules.CallForPapers.Trap.CallObjectId.UserSubmission,
-            "")
+            "SaveDraft")
 
         Me.CurrentPresenter.SaveSubmission(GetValues(), ClickDt)
 
@@ -808,7 +819,7 @@ Public Class SubmitCall
           lm.Comol.Modules.CallForPapers.Trap.CallTrapId.SubmissionCompileDelete,
           Me.IdSubmission,
           lm.Comol.Modules.CallForPapers.Trap.CallObjectId.UserSubmission,
-          "")
+          "VirtualDelete")
 
         Me.CurrentPresenter.VirtualDeleteSubmission(ClickDt)
 
@@ -865,7 +876,7 @@ Public Class SubmitCall
           lm.Comol.Modules.CallForPapers.Trap.CallTrapId.SubmissionCompileSubmit,
           Me.IdSubmission,
           lm.Comol.Modules.CallForPapers.Trap.CallObjectId.UserSubmission,
-          "")
+          "Submission.Start")
 
         Me.CTRLmessages.Visible = False
         Me.CurrentPresenter.SaveSubmission(GetValues(), ClickTime)
@@ -886,7 +897,7 @@ Public Class SubmitCall
             lm.Comol.Modules.CallForPapers.Trap.CallTrapId.SubmissionCompileSubmit,
             Me.IdSubmission,
             lm.Comol.Modules.CallForPapers.Trap.CallObjectId.UserSubmission,
-            "")
+            "Submission.Saved")
 
         Me.CurrentPresenter.SaveCompleteSubmission(GetValues(), _
                                                    PageUtility.CurrentSmtpConfig, PageUtility.ApplicationUrlBase, _

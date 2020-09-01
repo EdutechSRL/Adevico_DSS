@@ -36,8 +36,8 @@ namespace lm.Comol.Modules.CallForPapers.AdvEconomic.Helpers
         /// <param name="DocFormat">Formato - Solo XLSX</param>
         /// <param name="settings">Impostazioni di esportazione (caratteri, larghezze, colori) - Per personalizzazioni future.</param>
         public static void EcoEvalTableExportStream(
-            Eco.Domain.EconomicEvaluation Eval, 
-            Stream documentStream, 
+            Eco.Domain.EconomicEvaluation Eval,
+            Stream documentStream,
             SpreadDocumentFormat DocFormat = SpreadDocumentFormat.Xlsx,
             dto.dtoEcoTableExportSettings settings = null)
         {
@@ -61,18 +61,20 @@ namespace lm.Comol.Modules.CallForPapers.AdvEconomic.Helpers
                 int SheetNumber = 0;
                 foreach (Eco.Domain.EconomicTable table in Eval.Tables)
                 {
-                    if(table != null && table.FieldDefinition != null)
-                        { 
+                    if (table != null && table.FieldDefinition != null)
+                    {
                         SheetNumber++;
                         int headCols = table.HeaderValues.Count();
                         int totalCols = headCols + 7;
 
-                        string sheetName = string.Format("{0}-{1}", SheetNumber, table.FieldDefinition.Name) ;
+                        string sheetName = string.Format("{0}-{1}", SheetNumber, table.FieldDefinition.Name);
 
-                        if(sheetName.Length > 25)
+                        if (sheetName.Length > 25)
                         {
                             sheetName = string.Format("{0}...", sheetName.Substring(0, 20));
                         }
+
+                        sheetName = CleanFileName(sheetName);
 
 
                         using (IWorksheetExporter worksheetExporter = workbookExporter.CreateWorksheetExporter(sheetName))
@@ -103,19 +105,19 @@ namespace lm.Comol.Modules.CallForPapers.AdvEconomic.Helpers
 
                                     int columnIndex = 0;
 
-                                    int iv = 0;                                  
+                                    int iv = 0;
 
 
                                     foreach (string value in itm.InfoValues)
                                     {
                                         iv++;
 
-                                        if(iv <= headCols)
-                                        using (ICellExporter cellExporter = rowExporter.CreateCellExporter())
-                                        {   
-                                            cellExporter.SetFormat(dto.dtoEcoTableExportSettings.InvalidCellFormat(settings.NormalFormat, itm.IsAdmit));
-                                            cellExporter.SetValue(value.Replace("&nbsp;", " "));
-                                        }                                      
+                                        if (iv <= headCols)
+                                            using (ICellExporter cellExporter = rowExporter.CreateCellExporter())
+                                            {
+                                                cellExporter.SetFormat(dto.dtoEcoTableExportSettings.InvalidCellFormat(settings.NormalFormat, itm.IsAdmit));
+                                                cellExporter.SetValue(value.Replace("&nbsp;", " "));
+                                            }
                                     }
 
                                     if (iv < headCols)
@@ -183,11 +185,30 @@ namespace lm.Comol.Modules.CallForPapers.AdvEconomic.Helpers
 
 
                 }
-                
+
             }
 
         }
-                                           
+
+        public static string CleanFileName(string value) 
+        {
+            string cleanedString = value
+                .Replace("\\", "")
+                .Replace("/", "")
+                .Replace("?", "")
+                .Replace("*", "")
+                .Replace("[", "")
+                .Replace("]", "")
+                .Replace(":", "");
+
+            if(String.IsNullOrWhiteSpace(cleanedString))
+            {
+                cleanedString = "empty";
+            }
+
+            return cleanedString;
+        }
+
 
         /// <summary>
         /// Creazione riga Header

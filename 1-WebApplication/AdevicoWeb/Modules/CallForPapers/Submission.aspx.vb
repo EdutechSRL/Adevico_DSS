@@ -264,7 +264,7 @@ Public Class Submission
             lm.Comol.Modules.CallForPapers.Trap.CallTrapId.SubmissionView,
             Me.IdSubmission,
             lm.Comol.Modules.CallForPapers.Trap.CallObjectId.UserSubmission,
-            "")
+            "BindDati")
         End If
 
         Me.CurrentPresenter.InitView(False)
@@ -1049,7 +1049,7 @@ Public Class Submission
             lm.Comol.Modules.CallForPapers.Trap.CallTrapId.SubmissionCompileUploadSign,
             Me.IdSubmission,
             lm.Comol.Modules.CallForPapers.Trap.CallObjectId.UserSubmission,
-            "")
+            "Start")
 
         Me.CurrentPresenter.UploadSign(
             False,
@@ -1147,6 +1147,15 @@ Public Class Submission
             CTRLerrorMessages.InitializeControl("Errore invio notifica.", Helpers.MessageType.alert)
         End If
 
+    End Sub
+
+    Public Sub SendSuccessTrap() Implements IViewViewSubmission.SendSuccessTrap
+
+        CallTrapHelper.SendTrap(
+            lm.Comol.Modules.CallForPapers.Trap.CallTrapId.SubmissionCompileUploadSign,
+            Me.IdSubmission,
+            lm.Comol.Modules.CallForPapers.Trap.CallObjectId.UserSubmission,
+            "Success")
     End Sub
 
 
