@@ -1,4 +1,4 @@
-<%@ Page Language="vb" AutoEventWireup="false" MasterPageFile="~/AjaxPortal.Master"
+
 <%@ Page Language="vb" AutoEventWireup="false" MasterPageFile="~/AjaxPortal.Master"
     CodeBehind="QuestionariGestioneList.aspx.vb" Inherits="Comunita_OnLine._QuestionariGestioneList" %>
 

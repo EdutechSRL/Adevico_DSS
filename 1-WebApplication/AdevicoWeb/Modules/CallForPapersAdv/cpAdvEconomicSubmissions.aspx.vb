@@ -16,8 +16,13 @@ Public Class cpAdvEconomicSubmissions
     Implements Eco.Presentation.View.iViewEcoSummary
 
 
-    Private Shared CurrencyFormat As String = "C2"
+    Private Shared CurrencyFormat As String = "N2"
     Private Shared CurrencyCulture As String = "it-IT"
+
+    Public Function GetCultureInfo() As System.Globalization.CultureInfo
+        Return System.Globalization.CultureInfo.CreateSpecificCulture(CurrencyCulture)
+    End Function
+
     Private Totalfunded As Double = 0
 
     Private Property IsAverage As Boolean
@@ -164,7 +169,7 @@ Public Class cpAdvEconomicSubmissions
             Me.RPTsubmission.DataBind()
         End If
 
-        LTtotal.Text = Totalfunded.ToString(CurrencyFormat, System.Globalization.CultureInfo.CreateSpecificCulture(CurrencyCulture)).Remove(0, 2)
+        LTtotal.Text = Totalfunded.ToString(CurrencyFormat, GetCultureInfo()) '.ToString(CurrencyFormat, System.Globalization.CultureInfo.CreateSpecificCulture(CurrencyCulture)).Remove(0, 2)
 
     End Sub
 
@@ -204,7 +209,8 @@ Public Class cpAdvEconomicSubmissions
 
             Lit = e.Item.FindControl("LTfunded")
             If Not IsNothing(Lit) Then
-                Lit.Text = Eval.Founded.ToString(CurrencyFormat, System.Globalization.CultureInfo.CreateSpecificCulture(CurrencyCulture)).Remove(0, 2)
+                Lit.Text = Eval.Founded.ToString(CurrencyFormat, GetCultureInfo()) '.ToString(CurrencyFormat, System.Globalization.CultureInfo.CreateSpecificCulture(CurrencyCulture)).Remove(0, 2)
+                'evaluations.RequestTotal.ToString(CurrencyFormat, GetCultureInfo()) 
                 Totalfunded += Eval.Founded
             End If
 
